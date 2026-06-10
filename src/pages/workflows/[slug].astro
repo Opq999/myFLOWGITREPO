@@ -25,7 +25,7 @@ const jsonLd = howToJsonLd(d, steps, pageUrl);
 const category = CATEGORY_META[d.category];
 ---
 
-<Base title={d.title} description={d.description}>
+<Base title={d.title} description={d.description} ogImage={`/og/${workflow.id}.png`}>
   <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} slot="head" />
 
   <article data-pagefind-body>
