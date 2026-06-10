@@ -1,0 +1,59 @@
+name: Daily ingest
+
+on:
+  schedule:
+    # 05:30 UTC = 06:30 WAT, daily (PRD section 7)
+    - cron: '30 5 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Write everything to drafts only'
+        type: boolean
+        default: false
+      backfill:
+        description: 'Backfill mode (12-month windows)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ingest
+  cancel-in-progress: false
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Run pipeline
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: >
+          npx tsx pipeline/run.ts
+          ${{ inputs.dry_run == true && '--dry-run' || '' }}
+          ${{ inputs.backfill == true && '--backfill' || '' }}
+
+      - name: Commit new content
+        run: |
+          git config user.name "opqai-pipeline"
+          git config user.email "actions@users.noreply.github.com"
+          git add src/content pipeline/seen.json
+          if git diff --cached --quiet; then
+            echo "No new content today."
+          else
+            git commit -m "content: daily ingest $(date -u +%F)"
+            git push
+          fi

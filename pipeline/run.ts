@@ -1,0 +1,170 @@
+/**
+ * Pipeline orchestrator (PRD section 7).
+ *
+ *   npx tsx pipeline/run.ts             daily run: score → draft → publish
+ *   npx tsx pipeline/run.ts --dry-run   everything goes to src/content/drafts/
+ *   npx tsx pipeline/run.ts --backfill  12-month windows for the launch corpus
+ *
+ * Per-candidate errors are logged and skipped; only fatal config errors
+ * (e.g. missing GEMINI_API_KEY) exit non-zero.
+ */
+import { appendFileSync, existsSync, mkdirSync, writeFileSync } from 'node:fs';
+import { join } from 'node:path';
+import { CAPS } from './sources.config';
+import type { Candidate, RunOptions } from './types';
+import { fetchAll } from './fetchers';
+import { dedupe, getExistingTitles, loadSeen, markSeen, saveSeen } from './lib/dedupe';
+import { draftWorkflow } from './lib/draft';
+import { scoreCandidate } from './lib/score';
+
+const ROOT = process.cwd();
+const SEEN_PATH = join(ROOT, 'pipeline', 'seen.json');
+const LOG_DIR = join(ROOT, 'pipeline', 'logs');
+const WORKFLOWS_DIR = join(ROOT, 'src', 'content', 'workflows');
+const DRAFTS_DIR = join(ROOT, 'src', 'content', 'drafts');
+
+const logFile = join(LOG_DIR, `run-${new Date().toISOString().slice(0, 10)}.jsonl`);
+
+function logEvent(event: Record<string, unknown>): void {
+  mkdirSync(LOG_DIR, { recursive: true });
+  appendFileSync(logFile, JSON.stringify({ at: new Date().toISOString(), ...event }) + '\n');
+}
+
+function info(msg: string): void {
+  console.log(msg);
+}
+
+function uniqueSlugPath(dir: string, slug: string): string {
+  let path = join(dir, `${slug}.mdx`);
+  let n = 2;
+  while (existsSync(path)) {
+    path = join(dir, `${slug}-${n}.mdx`);
+    n++;
+  }
+  return path;
+}
+
+/** Drafts MDX marked unpublished so the drafts collection stays invisible. */
+function asUnpublished(mdx: string): string {
+  return mdx.replace(/^published: true$/m, 'published: false');
+}
+
+async function main(): Promise<void> {
+  const opts: RunOptions = {
+    dryRun: process.argv.includes('--dry-run'),
+    backfill: process.argv.includes('--backfill'),
+  };
+  info(`Pipeline run — dryRun=${opts.dryRun} backfill=${opts.backfill}`);
+
+  // Stage 1 — fetch
+  const fetched = await fetchAll({ backfill: opts.backfill }, (m) => {
+    info(m);
+    logEvent({ stage: 'fetch', msg: m });
+  });
+  info(`[fetch] total: ${fetched.length} candidates`);
+
+  // Stage 2 — dedupe
+  const ledger = loadSeen(SEEN_PATH);
+  const existingTitles = getExistingTitles([WORKFLOWS_DIR, DRAFTS_DIR]);
+  const fresh = dedupe(fetched, ledger, existingTitles);
+  info(`[dedupe] ${fresh.length} new candidates (${fetched.length - fresh.length} dropped)`);
+
+  // Round-robin across platforms (each already sorted by engagement) so
+  // sources without vote counts (e.g. Reddit RSS) aren't starved by the cap.
+  const byPlatform = new Map<string, Candidate[]>();
+  for (const c of fresh) {
+    const list = byPlatform.get(c.platform) ?? [];
+    list.push(c);
+    byPlatform.set(c.platform, list);
+  }
+  for (const list of byPlatform.values()) {
+    list.sort((a, b) => (b.stats.points ?? 0) - (a.stats.points ?? 0));
+  }
+  const toScore: Candidate[] = [];
+  while (toScore.length < CAPS.scorePerRun) {
+    let added = false;
+    for (const list of byPlatform.values()) {
+      const next = list.shift();
+      if (next && toScore.length < CAPS.scorePerRun) {
+        toScore.push(next);
+        added = true;
+      }
+    }
+    if (!added) break;
+  }
+
+  if (toScore.length === 0) {
+    info('Nothing new to score. Done.');
+    return;
+  }
+
+  if (!process.env.GEMINI_API_KEY) {
+    info(
+      `\nFetch + dedupe OK (${toScore.length} candidates ready), but GEMINI_API_KEY is not set.\n` +
+        'Create a free key at https://aistudio.google.com, then either:\n' +
+        '  - locally: set it in .env / your shell, or\n' +
+        '  - CI: add it as a GitHub Actions secret named GEMINI_API_KEY.'
+    );
+    process.exit(1);
+  }
+
+  // Stage 3 + 4 — score then draft
+  const counts = { scored: 0, published: 0, drafted: 0, discarded: 0, failed: 0 };
+  mkdirSync(WORKFLOWS_DIR, { recursive: true });
+  mkdirSync(DRAFTS_DIR, { recursive: true });
+
+  for (const candidate of toScore) {
+    try {
+      const score = await scoreCandidate(candidate);
+      counts.scored++;
+      markSeen(ledger, candidate.url);
+      saveSeen(SEEN_PATH, ledger);
+      logEvent({ stage: 'score', url: candidate.url, score: score.score, reason: score.reason });
+
+      if (!score.isWorkflow || score.score < 5) {
+        counts.discarded++;
+        info(`[discard] ${score.score}/10 — ${candidate.title}`);
+        continue;
+      }
+
+      const result = await draftWorkflow(candidate, score, (m) => logEvent({ stage: 'draft', msg: m }));
+      if (!result) {
+        counts.failed++;
+        logEvent({ stage: 'draft', url: candidate.url, outcome: 'failed-validation-twice' });
+        continue;
+      }
+
+      const publishable = score.score >= 7 && !opts.dryRun && counts.published < CAPS.publishPerRun;
+      if (publishable) {
+        writeFileSync(uniqueSlugPath(WORKFLOWS_DIR, result.slug), result.mdx, 'utf8');
+        counts.published++;
+        info(`[publish] ${score.score}/10 — ${result.slug}`);
+        logEvent({ stage: 'publish', url: candidate.url, slug: result.slug, score: score.score });
+      } else {
+        writeFileSync(uniqueSlugPath(DRAFTS_DIR, result.slug), asUnpublished(result.mdx), 'utf8');
+        counts.drafted++;
+        info(`[draft] ${score.score}/10 — ${result.slug}`);
+        logEvent({ stage: 'to-drafts', url: candidate.url, slug: result.slug, score: score.score });
+      }
+    } catch (err) {
+      counts.failed++;
+      const message = err instanceof Error ? err.message : String(err);
+      info(`[error] skipping "${candidate.title}": ${message.slice(0, 200)}`);
+      logEvent({ stage: 'error', url: candidate.url, error: message.slice(0, 500) });
+      // A missing/invalid API key is fatal — every candidate would fail.
+      if (message.includes('GEMINI_API_KEY') || message.includes('Gemini API error 4')) {
+        throw err;
+      }
+    }
+  }
+
+  info(
+    `\nSummary: fetched=${fetched.length} new=${fresh.length} scored=${counts.scored} ` +
+      `published=${counts.published} drafted=${counts.drafted} discarded=${counts.discarded} failed=${counts.failed}`
+  );
+}
+
+main().catch((err) => {
+  console.error(`Fatal: ${err instanceof Error ? err.message : err}`);
+  process.exit(1);
+});
