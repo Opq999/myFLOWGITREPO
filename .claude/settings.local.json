@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(node --version)",
+      "PowerShell(npm --version)",
+      "PowerShell(gh --version)",
+      "PowerShell(git add docs)",
+      "PowerShell(npm create astro@latest . -- --template minimal --no-install --no-git --yes)",
+      "PowerShell(Move-Item -Destination . -Force)",
+      "PowerShell(Remove-Item .\\\\tremendous-telescope -Recurse -Force -Confirm:$false)"
+    ]
+  }
+}

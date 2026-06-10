@@ -1,0 +1,18 @@
+---
+import { SITE } from '../site.config';
+const year = new Date().getFullYear();
+---
+
+<footer class="mt-12 border-t border-zinc-200 py-6 text-sm text-zinc-500">
+  <div class="mx-auto flex w-full max-w-3xl flex-wrap items-center justify-between gap-3 px-4">
+    <p>
+      © {year}
+      {SITE.name} · Built for Nigeria 🇳🇬, open to the world.
+    </p>
+    <nav class="flex gap-4">
+      <a href="/about/" class="hover:text-brand-700">About</a>
+      <a href="/submit/" class="hover:text-brand-700">Submit</a>
+      <a href="/rss.xml" class="hover:text-brand-700">RSS</a>
+    </nav>
+  </div>
+</footer>

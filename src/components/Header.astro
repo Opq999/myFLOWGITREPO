@@ -1,0 +1,58 @@
+---
+import { SITE } from '../site.config';
+---
+
+<header class="border-b border-zinc-200">
+  <div class="mx-auto flex w-full max-w-3xl flex-wrap items-center gap-x-4 gap-y-2 px-4 py-3">
+    <a href="/" class="text-lg font-extrabold tracking-tight text-brand-800">{SITE.name}</a>
+    <nav class="order-3 flex w-full gap-4 text-sm font-medium text-zinc-700 sm:order-2 sm:w-auto">
+      <a href="/workflows/" class="py-1 hover:text-brand-700">Workflows</a>
+      <a href="/about/" class="py-1 hover:text-brand-700">About</a>
+      <a href="/submit/" class="py-1 hover:text-brand-700">Submit</a>
+    </nav>
+    <button
+      id="search-toggle"
+      type="button"
+      class="order-2 ml-auto rounded-lg border border-zinc-300 px-3 py-1.5 text-sm text-zinc-600 hover:border-brand-600 hover:text-brand-700 sm:order-3"
+      aria-expanded="false"
+      aria-controls="search-panel"
+    >
+      🔍 Search
+    </button>
+  </div>
+  <div id="search-panel" hidden class="border-t border-zinc-100 bg-zinc-50">
+    <div class="mx-auto w-full max-w-3xl px-4 py-3">
+      <div id="search"></div>
+      <noscript><p class="text-sm text-zinc-500">Search needs JavaScript enabled.</p></noscript>
+    </div>
+  </div>
+</header>
+
+<!-- Pagefind UI is loaded lazily on first open: zero search JS on page load. -->
+<script is:inline>
+  (function () {
+    var loaded = false;
+    var btn = document.getElementById('search-toggle');
+    var panel = document.getElementById('search-panel');
+    if (!btn || !panel) return;
+    btn.addEventListener('click', function () {
+      panel.hidden = !panel.hidden;
+      btn.setAttribute('aria-expanded', String(!panel.hidden));
+      if (loaded || panel.hidden) return;
+      loaded = true;
+      var css = document.createElement('link');
+      css.rel = 'stylesheet';
+      css.href = '/pagefind/pagefind-ui.css';
+      document.head.appendChild(css);
+      var s = document.createElement('script');
+      s.src = '/pagefind/pagefind-ui.js';
+      s.onload = function () {
+        /* global PagefindUI */
+        new PagefindUI({ element: '#search', showSubResults: true, showImages: false });
+        var input = panel.querySelector('input');
+        if (input) input.focus();
+      };
+      document.body.appendChild(s);
+    });
+  })();
+</script>

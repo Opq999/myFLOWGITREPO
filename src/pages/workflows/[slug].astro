@@ -1,0 +1,94 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Badge from '../../components/Badge.astro';
+import ToolsList from '../../components/ToolsList.astro';
+import NigeriaNotes from '../../components/NigeriaNotes.astro';
+import ShareButtons from '../../components/ShareButtons.astro';
+import SourceEmbed from '../../components/SourceEmbed.astro';
+import { CATEGORY_META } from '../../lib/categories';
+import { extractSteps } from '../../lib/steps';
+import { howToJsonLd } from '../../lib/jsonld';
+
+export async function getStaticPaths() {
+  const workflows = await getCollection('workflows', (e) => e.data.published);
+  return workflows.map((w) => ({ params: { slug: w.id }, props: { workflow: w } }));
+}
+
+const { workflow } = Astro.props;
+const d = workflow.data;
+const { Content } = await render(workflow);
+
+const pageUrl = new URL(`/workflows/${workflow.id}/`, Astro.site).toString();
+const steps = extractSteps(workflow.body ?? '');
+const jsonLd = howToJsonLd(d, steps, pageUrl);
+const category = CATEGORY_META[d.category];
+---
+
+<Base title={d.title} description={d.description}>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} slot="head" />
+
+  <article data-pagefind-body>
+    <div class="mb-3 flex flex-wrap items-center gap-2 text-sm text-zinc-500">
+      <Badge badge={d.badge} />
+      <span class="capitalize">{d.difficulty}</span>
+      <span>·</span>
+      <span>⏱ {d.timeMinutes} min</span>
+      <span>·</span>
+      <a href={`/categories/${d.category}/`} class="text-brand-700 hover:underline">
+        {category.emoji}
+        {category.label}
+      </a>
+    </div>
+
+    <h1 class="text-2xl font-extrabold leading-tight">{d.title}</h1>
+    <p class="mt-2 text-zinc-600">
+      <strong class="text-zinc-800">Job to be done:</strong>
+      {d.jobToBeDone}
+    </p>
+
+    <div class="mt-4">
+      <ToolsList tools={d.tools} />
+    </div>
+
+    {d.nigeriaNotes && <div class="mt-4"><NigeriaNotes notes={d.nigeriaNotes} /></div>}
+
+    <div class="workflow-body mt-6">
+      <Content />
+    </div>
+
+    <div class="mt-8">
+      <SourceEmbed source={d.source} />
+    </div>
+
+    <div class="mt-8 border-t border-zinc-200 pt-6">
+      <ShareButtons title={d.title} url={pageUrl} />
+    </div>
+  </article>
+</Base>
+
+<!-- Adds a copy button to every prompt code block (PRD must-have). -->
+<script is:inline>
+  document.querySelectorAll('.workflow-body pre').forEach(function (pre) {
+    var wrap = document.createElement('div');
+    wrap.className = 'pre-wrap';
+    pre.parentNode.insertBefore(wrap, pre);
+    wrap.appendChild(pre);
+
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', function () {
+      var code = pre.querySelector('code');
+      var text = code ? code.innerText : pre.innerText;
+      navigator.clipboard.writeText(text).then(function () {
+        btn.textContent = 'Copied ✓';
+        setTimeout(function () {
+          btn.textContent = 'Copy';
+        }, 2000);
+      });
+    });
+    wrap.appendChild(btn);
+  });
+</script>

@@ -1,0 +1,89 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import WorkflowCard from '../../components/WorkflowCard.astro';
+import { CATEGORY_META } from '../../lib/categories';
+import { CATEGORIES, BADGES, DIFFICULTIES } from '../../lib/workflow-schema';
+
+const workflows = (await getCollection('workflows', (e) => e.data.published)).sort(
+  (a, b) => b.data.ingestedAt.valueOf() - a.data.ingestedAt.valueOf()
+);
+---
+
+<Base title="All workflows" description="Browse every AI workflow: filter by category, difficulty, badge, or free tools only.">
+  <h1 class="text-2xl font-extrabold">All workflows</h1>
+  <p class="mt-1 text-zinc-600">{workflows.length} reproducible AI workflows, newest first.</p>
+
+  <form class="mt-4 flex flex-wrap items-center gap-2" id="filters">
+    <select data-filter="category" class="rounded-lg border border-zinc-300 px-2 py-2 text-sm" aria-label="Category">
+      <option value="">All categories</option>
+      {CATEGORIES.map((c) => <option value={c}>{CATEGORY_META[c].label}</option>)}
+    </select>
+    <select data-filter="difficulty" class="rounded-lg border border-zinc-300 px-2 py-2 text-sm" aria-label="Difficulty">
+      <option value="">Any difficulty</option>
+      {DIFFICULTIES.map((d) => <option value={d} class="capitalize">{d}</option>)}
+    </select>
+    <select data-filter="badge" class="rounded-lg border border-zinc-300 px-2 py-2 text-sm" aria-label="Badge">
+      <option value="">Any badge</option>
+      {BADGES.map((b) => <option value={b}>{b}</option>)}
+    </select>
+    <label class="flex cursor-pointer items-center gap-2 rounded-lg border border-zinc-300 px-3 py-2 text-sm font-semibold">
+      <input type="checkbox" id="free-only" class="accent-brand-600" />
+      Free tools only
+    </label>
+  </form>
+
+  <div class="mt-5 grid gap-3" id="workflow-list">
+    {workflows.map((w) => <WorkflowCard workflow={w} />)}
+  </div>
+  <p id="no-results" hidden class="mt-6 text-center text-zinc-500">
+    No workflows match these filters yet. The library grows daily — check back tomorrow.
+  </p>
+</Base>
+
+<!-- Client-side filtering on data attributes; state synced to URL params. -->
+<script is:inline>
+  (function () {
+    var selects = Array.prototype.slice.call(document.querySelectorAll('#filters [data-filter]'));
+    var freeToggle = document.getElementById('free-only');
+    var cards = Array.prototype.slice.call(document.querySelectorAll('.workflow-card'));
+    var noResults = document.getElementById('no-results');
+
+    function apply() {
+      var active = {};
+      selects.forEach(function (s) {
+        active[s.dataset.filter] = s.value;
+      });
+      var freeOnly = freeToggle.checked;
+      var visible = 0;
+      cards.forEach(function (card) {
+        var show =
+          (!active.category || card.dataset.category === active.category) &&
+          (!active.difficulty || card.dataset.difficulty === active.difficulty) &&
+          (!active.badge || card.dataset.badge === active.badge) &&
+          (!freeOnly || card.dataset.free === '1');
+        card.hidden = !show;
+        if (show) visible++;
+      });
+      noResults.hidden = visible > 0;
+
+      var params = new URLSearchParams();
+      Object.keys(active).forEach(function (k) {
+        if (active[k]) params.set(k, active[k]);
+      });
+      if (freeOnly) params.set('free', '1');
+      var qs = params.toString();
+      history.replaceState(null, '', qs ? '?' + qs : location.pathname);
+    }
+
+    var params = new URLSearchParams(location.search);
+    selects.forEach(function (s) {
+      var v = params.get(s.dataset.filter);
+      if (v) s.value = v;
+      s.addEventListener('change', apply);
+    });
+    if (params.get('free') === '1') freeToggle.checked = true;
+    freeToggle.addEventListener('change', apply);
+    apply();
+  })();
+</script>

@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+@theme {
+  /* System font stack only — zero web-font bytes, fast on 3G. */
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, "Noto Sans", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* Brand: deep green (a quiet nod to the beachhead audience). */
+  --color-brand-50: #f0fdf4;
+  --color-brand-100: #dcfce7;
+  --color-brand-200: #bbf7d0;
+  --color-brand-600: #16a34a;
+  --color-brand-700: #15803d;
+  --color-brand-800: #166534;
+  --color-brand-900: #14532d;
+}
+
+/* Prose defaults for MDX workflow bodies — no typography plugin needed. */
+.workflow-body {
+  line-height: 1.7;
+}
+.workflow-body h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 1.75rem 0 0.75rem;
+}
+.workflow-body h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 1.25rem 0 0.5rem;
+}
+.workflow-body p {
+  margin: 0.75rem 0;
+}
+.workflow-body ul,
+.workflow-body ol {
+  margin: 0.75rem 0;
+  padding-left: 1.5rem;
+}
+.workflow-body ol {
+  list-style: decimal;
+}
+.workflow-body ul {
+  list-style: disc;
+}
+.workflow-body li {
+  margin: 0.5rem 0;
+}
+.workflow-body a {
+  color: var(--color-brand-700);
+  text-decoration: underline;
+}
+.workflow-body code {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  background: #f4f4f5;
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+}
+.workflow-body pre {
+  background: #18181b;
+  color: #fafafa;
+  padding: 1rem;
+  padding-top: 2.25rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  font-size: 0.85rem;
+  margin: 1rem 0;
+}
+.workflow-body pre code {
+  background: none;
+  padding: 0;
+  color: inherit;
+  font-size: inherit;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* Copy-button wrapper added by the detail-page script. */
+.pre-wrap {
+  position: relative;
+}
+.copy-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #fafafa;
+  background: #3f3f46;
+  border-radius: 0.375rem;
+  padding: 0.25rem 0.625rem;
+  cursor: pointer;
+}
+.copy-btn:active {
+  background: var(--color-brand-700);
+}

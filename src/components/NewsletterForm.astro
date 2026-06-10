@@ -1,0 +1,29 @@
+---
+import { SITE } from '../site.config';
+---
+
+{
+  SITE.buttondownUsername && (
+    <section class="rounded-xl border border-zinc-200 bg-zinc-50 p-5">
+      <h2 class="text-lg font-bold">Get new workflows weekly</h2>
+      <p class="mt-1 text-sm text-zinc-600">One email a week. Free workflows only. Unsubscribe anytime.</p>
+      <form
+        action={`https://buttondown.com/api/emails/embed-subscribe/${SITE.buttondownUsername}`}
+        method="post"
+        target="_blank"
+        class="mt-3 flex flex-wrap gap-2"
+      >
+        <input
+          type="email"
+          name="email"
+          required
+          placeholder="you@example.com"
+          class="min-w-0 flex-1 rounded-lg border border-zinc-300 px-3 py-2 text-sm"
+        />
+        <button type="submit" class="rounded-lg bg-brand-600 px-4 py-2 text-sm font-bold text-white hover:bg-brand-700">
+          Subscribe
+        </button>
+      </form>
+    </section>
+  )
+}

@@ -1,0 +1,46 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../site.config';
+---
+
+<Base title="About" description="What this library is, how curation works, and who is behind it.">
+  <h1 class="text-2xl font-extrabold">About {SITE.name}</h1>
+
+  <div class="workflow-body mt-4 max-w-xl">
+    <p>
+      <strong>{SITE.name} is a workflow library, not a tool directory.</strong> Tool lists tell you
+      what exists; they don't tell you how real people get real work done. Every entry here is a
+      reproducible recipe: a job to be done, the exact steps, the exact prompts, the tools used —
+      and a link to the original human source as proof.
+    </p>
+
+    <h2>How curation works</h2>
+    <p>
+      A daily automated pipeline scans Reddit, Hacker News, Dev.to, YouTube, GitHub and selected
+      newsletters for workflows people actually used. Each candidate is scored against a strict
+      quality rubric — vague hype and tool announcements are discarded; only clear, reproducible
+      workflows are published. Every workflow links back to its original source and credits the
+      author.
+    </p>
+
+    <h2>What the badges mean</h2>
+    <ul>
+      <li><strong>Sourced</strong> — found in the wild; the original post is embedded as proof.</li>
+      <li><strong>Tested</strong> — personally reproduced by us, step by step.</li>
+      <li><strong>Community-verified</strong> — confirmed by readers (coming later).</li>
+    </ul>
+
+    <h2>Built for Nigeria first</h2>
+    <p>
+      This library is built mobile-first and data-light, with a "free tools only" filter and
+      Nigeria-specific notes on workflows (free-tier viability, data usage, local payment
+      compatibility). Global users are welcome — useful is useful everywhere.
+    </p>
+
+    <h2>Who's behind it</h2>
+    <p>
+      {SITE.name} is built and run by Opq. Found a workflow that should be here?
+      <a href="/submit/">Submit it</a>.
+    </p>
+  </div>
+</Base>

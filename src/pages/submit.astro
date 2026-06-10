@@ -1,0 +1,37 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../site.config';
+---
+
+<Base title="Submit a workflow" description="Share an AI workflow that worked for you — we'll review it and publish it with credit.">
+  <h1 class="text-2xl font-extrabold">Submit a workflow</h1>
+  <p class="mt-2 max-w-xl text-zinc-600">
+    Used AI to get something real done? Share the steps and prompts — we'll review it, and if it's
+    reproducible we'll publish it with full credit to you.
+  </p>
+
+  {
+    SITE.tallyFormId ? (
+      <iframe
+        src={`https://tally.so/embed/${SITE.tallyFormId}?alignLeft=1&hideTitle=1&transparentBackground=1`}
+        loading="lazy"
+        width="100%"
+        height="600"
+        style="border:0"
+        title="Submit a workflow"
+        class="mt-6"
+      />
+    ) : (
+      <div class="mt-6 rounded-xl border border-zinc-200 bg-zinc-50 p-5">
+        <p class="font-semibold">Submissions are opening soon.</p>
+        <p class="mt-1 text-sm text-zinc-600">
+          In the meantime, email your workflow (steps + prompts + a link to where you shared it) to{' '}
+          <a href="mailto:opeyemiolowosoke@gmail.com" class="text-brand-700 underline">
+            opeyemiolowosoke@gmail.com
+          </a>
+          .
+        </p>
+      </div>
+    )
+  }
+</Base>

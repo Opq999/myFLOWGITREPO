@@ -1,0 +1,21 @@
+---
+interface Props {
+  badge: 'sourced' | 'tested' | 'community-verified';
+}
+const { badge } = Astro.props;
+
+const styles: Record<Props['badge'], string> = {
+  sourced: 'bg-zinc-100 text-zinc-700',
+  tested: 'bg-brand-100 text-brand-800',
+  'community-verified': 'bg-blue-100 text-blue-800',
+};
+const labels: Record<Props['badge'], string> = {
+  sourced: 'Sourced',
+  tested: 'Tested ✓',
+  'community-verified': 'Community-verified',
+};
+---
+
+<span class={`inline-block rounded-full px-2.5 py-0.5 text-xs font-semibold ${styles[badge]}`}>
+  {labels[badge]}
+</span>

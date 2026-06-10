@@ -1,0 +1,86 @@
+---
+title: "Fix a bug and ship the pull request with Claude Code"
+description: "Go from error message to pull request with Claude Code: reproduce the bug, get fix suggestions, apply them, run the tests, and open the PR from your terminal."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 30
+jobToBeDone: "Fix a software bug and open a pull request without leaving the terminal"
+tools:
+  - name: "Claude Code"
+    url: "https://code.claude.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Git"
+    url: "https://git-scm.com"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://code.claude.com/docs/en/common-workflows"
+  platform: "blog"
+  author: "Anthropic"
+  postedAt: 2026-06-10
+score: 8
+ingestedAt: 2026-06-10
+nigeriaNotes: "Claude Code needs a paid Claude plan or API credits (card payment). Free alternative: Gemini CLI has a generous free tier and follows the same workflow. Terminal usage is text-only, so data use is minimal."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+
+A repeatable loop for fixing bugs with an AI coding agent: you hand it the error, it finds the cause, proposes fixes, applies the one you pick, verifies with tests, and opens the pull request. The whole cycle happens in your terminal.
+
+## Tools you need
+
+- **Claude Code** — Anthropic's terminal coding agent. Requires a Claude Pro/Max plan or API credits (paid).
+- **Git** — free; the PR step assumes your project is on GitHub.
+
+## Steps
+
+1. Open your project and start the agent:
+
+```
+cd /path/to/project
+claude
+```
+
+2. Share the error exactly as you see it. Tell it the command that reproduces the issue so it can get a stack trace itself:
+
+```
+I'm seeing an error when I run npm test
+```
+
+3. Ask for options before letting it edit anything:
+
+```
+suggest a few ways to fix the @ts-ignore in user.ts
+```
+
+4. Apply the fix you prefer:
+
+```
+update user.ts to add the null check you suggested
+```
+
+5. Verify — make the agent prove the fix:
+
+```
+run the new tests and fix any failures
+```
+
+6. Ship it:
+
+```
+create a pr
+```
+
+## Original source
+
+This workflow comes straight from Anthropic's official "Common workflows" documentation for Claude Code (living document, accessed June 2026). The source covers more recipes: understanding new codebases, refactoring, writing tests, and generating docs.
+
+## Notes & variations
+
+- Mention whether the error is intermittent or consistent — it changes how the agent investigates.
+- **Free-tier variation:** Gemini CLI (free) and other open-source agents accept the same prompt pattern: reproduce, suggest fixes, apply, verify, PR.
+- For changes you want to review before they touch disk, run in plan mode first (`claude --permission-mode plan`).

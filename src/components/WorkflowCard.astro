@@ -1,0 +1,34 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Badge from './Badge.astro';
+import { CATEGORY_META } from '../lib/categories';
+
+interface Props {
+  workflow: CollectionEntry<'workflows'>;
+}
+const { workflow } = Astro.props;
+const d = workflow.data;
+const isFree = d.tools.every((t) => t.pricing !== 'paid');
+---
+
+<article
+  class="workflow-card rounded-xl border border-zinc-200 p-4 transition-colors hover:border-brand-600"
+  data-category={d.category}
+  data-badge={d.badge}
+  data-difficulty={d.difficulty}
+  data-free={isFree ? '1' : '0'}
+>
+  <a href={`/workflows/${workflow.id}/`} class="block">
+    <div class="mb-2 flex flex-wrap items-center gap-2 text-xs text-zinc-500">
+      <Badge badge={d.badge} />
+      <span class="capitalize">{d.difficulty}</span>
+      <span>·</span>
+      <span>{d.timeMinutes} min</span>
+      <span>·</span>
+      <span>{CATEGORY_META[d.category].emoji} {CATEGORY_META[d.category].label}</span>
+      {isFree && <span class="font-semibold text-brand-700">Free tools</span>}
+    </div>
+    <h3 class="text-base font-bold leading-snug text-zinc-900">{d.title}</h3>
+    <p class="mt-1 line-clamp-2 text-sm text-zinc-600">{d.description}</p>
+  </a>
+</article>

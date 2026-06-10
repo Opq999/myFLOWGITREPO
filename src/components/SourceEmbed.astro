@@ -1,0 +1,101 @@
+---
+import type { Workflow } from '../lib/workflow-schema';
+
+interface Props {
+  source: Workflow['source'];
+}
+const { source } = Astro.props;
+
+const platformLabels: Record<string, string> = {
+  reddit: 'Reddit',
+  hackernews: 'Hacker News',
+  youtube: 'YouTube',
+  github: 'GitHub',
+  blog: 'Blog',
+  twitter: 'X (Twitter)',
+  other: 'Web',
+};
+
+// Embeds exist for these platforms; everything else gets the link card only.
+const embeddable = ['youtube', 'reddit', 'twitter'].includes(source.platform);
+const postedAt = source.postedAt.toISOString().slice(0, 10);
+---
+
+<div
+  class="source-embed rounded-xl border border-zinc-200 bg-zinc-50 p-4"
+  data-platform={source.platform}
+  data-url={source.url}
+>
+  <p class="text-xs font-semibold uppercase tracking-wide text-zinc-500">
+    Original source · {platformLabels[source.platform]}
+  </p>
+  <p class="mt-1 text-sm">
+    <a href={source.url} target="_blank" rel="noopener" class="font-semibold text-brand-700 underline">
+      {source.url}
+    </a>
+  </p>
+  <p class="mt-1 text-sm text-zinc-600">By {source.author} · {postedAt}</p>
+  {
+    embeddable && (
+      <button
+        type="button"
+        class="load-embed-btn mt-3 rounded-lg border border-zinc-300 bg-white px-4 py-2 text-sm font-semibold text-zinc-700 hover:border-brand-600"
+      >
+        Load original post (uses more data)
+      </button>
+    )
+  }
+  <div class="embed-slot mt-3"></div>
+</div>
+
+<!-- Embeds are click-to-load only: no third-party JS or iframes until asked. -->
+<script is:inline>
+  document.querySelectorAll('.source-embed').forEach(function (box) {
+    var btn = box.querySelector('.load-embed-btn');
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+      var slot = box.querySelector('.embed-slot');
+      var url = box.dataset.url;
+      var platform = box.dataset.platform;
+      btn.remove();
+      if (platform === 'youtube') {
+        var id = '';
+        var m = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/shorts\/)([\w-]{6,})/);
+        if (m) id = m[1];
+        if (!id) return;
+        var iframe = document.createElement('iframe');
+        iframe.src = 'https://www.youtube-nocookie.com/embed/' + id;
+        iframe.width = '100%';
+        iframe.height = '315';
+        iframe.allowFullscreen = true;
+        iframe.loading = 'lazy';
+        iframe.title = 'YouTube video';
+        slot.appendChild(iframe);
+      } else if (platform === 'reddit') {
+        var bq = document.createElement('blockquote');
+        bq.className = 'reddit-embed-bq';
+        var a = document.createElement('a');
+        a.href = url;
+        a.textContent = url;
+        bq.appendChild(a);
+        slot.appendChild(bq);
+        var s = document.createElement('script');
+        s.src = 'https://embed.reddit.com/widgets.js';
+        s.async = true;
+        slot.appendChild(s);
+      } else if (platform === 'twitter') {
+        var tbq = document.createElement('blockquote');
+        tbq.className = 'twitter-tweet';
+        var ta = document.createElement('a');
+        ta.href = url;
+        ta.textContent = url;
+        tbq.appendChild(ta);
+        slot.appendChild(tbq);
+        var ts = document.createElement('script');
+        ts.src = 'https://platform.twitter.com/widgets.js';
+        ts.async = true;
+        slot.appendChild(ts);
+      }
+    });
+  });
+</script>

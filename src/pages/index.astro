@@ -1,0 +1,95 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import WorkflowCard from '../components/WorkflowCard.astro';
+import NewsletterForm from '../components/NewsletterForm.astro';
+import { CATEGORY_META } from '../lib/categories';
+import { CATEGORIES } from '../lib/workflow-schema';
+import { SITE } from '../site.config';
+
+const workflows = (await getCollection('workflows', (e) => e.data.published)).sort(
+  (a, b) => b.data.ingestedAt.valueOf() - a.data.ingestedAt.valueOf()
+);
+const latest = workflows.slice(0, 6);
+
+const fourteenDaysAgo = Date.now() - 14 * 24 * 60 * 60 * 1000;
+const trending = workflows
+  .filter((w) => w.data.ingestedAt.valueOf() >= fourteenDaysAgo)
+  .sort((a, b) => b.data.score - a.data.score)
+  .slice(0, 6);
+
+const counts = Object.fromEntries(
+  CATEGORIES.map((c) => [c, workflows.filter((w) => w.data.category === c).length])
+);
+---
+
+<Base title={SITE.name}>
+  <section class="py-6 text-center sm:py-10">
+    <h1 class="mx-auto max-w-xl text-3xl font-extrabold leading-tight sm:text-4xl">
+      Proven AI workflows for real work
+    </h1>
+    <p class="mx-auto mt-3 max-w-lg text-zinc-600">
+      Exact steps. Copy-paste prompts. Real human sources. A free library of reproducible AI
+      recipes — built for students, freelancers and small businesses.
+    </p>
+    <div class="mt-5 flex justify-center gap-3">
+      <a
+        href="/workflows/"
+        class="rounded-lg bg-brand-600 px-5 py-2.5 font-bold text-white hover:bg-brand-700"
+      >
+        Browse workflows
+      </a>
+      <a
+        href="/workflows/?free=1"
+        class="rounded-lg border border-zinc-300 px-5 py-2.5 font-bold text-zinc-700 hover:border-brand-600"
+      >
+        Free tools only
+      </a>
+    </div>
+  </section>
+
+  {
+    trending.length > 0 && (
+      <section class="mt-6">
+        <h2 class="text-xl font-bold">🔥 Trending</h2>
+        <div class="mt-3 grid gap-3">
+          {trending.map((w) => (
+            <WorkflowCard workflow={w} />
+          ))}
+        </div>
+      </section>
+    )
+  }
+
+  <section class="mt-8">
+    <h2 class="text-xl font-bold">Latest workflows</h2>
+    <div class="mt-3 grid gap-3">
+      {latest.map((w) => <WorkflowCard workflow={w} />)}
+    </div>
+    <a href="/workflows/" class="mt-4 inline-block font-semibold text-brand-700 hover:underline">
+      See all {workflows.length} workflows →
+    </a>
+  </section>
+
+  <section class="mt-10">
+    <h2 class="text-xl font-bold">Browse by job</h2>
+    <div class="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-3">
+      {
+        CATEGORIES.map((c) => (
+          <a
+            href={`/categories/${c}/`}
+            class="rounded-xl border border-zinc-200 p-4 hover:border-brand-600"
+          >
+            <span class="text-2xl">{CATEGORY_META[c].emoji}</span>
+            <p class="mt-1 font-bold leading-snug">{CATEGORY_META[c].label}</p>
+            <p class="text-sm text-zinc-500">{counts[c]} workflows</p>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  <div class="mt-10">
+    <NewsletterForm />
+  </div>
+</Base>
