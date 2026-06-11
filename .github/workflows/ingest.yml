@@ -63,7 +63,8 @@ jobs:
 
       - name: Build and deploy to Cloudflare Pages
         env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          # Accepts the common misspelling CLOUDFARE_API_TOKEN as a fallback.
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN || secrets.CLOUDFARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: cdd1130f0f80aa74d5fdea5759eb9c29
         run: |
           if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
