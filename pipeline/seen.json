@@ -188,6 +188,18 @@
     "32faae70661994ba1796ad95e82528ca1b7110cfa13cf530cd8b2ca150fb181d": {
       "url": "https://github.com/Comfy-Org/ComfyUI",
       "date": "2026-06-11"
+    },
+    "37e41bb20812d9c5f8ca77498e939854e06df6d2db617b3aaa5118a448dd2d99": {
+      "url": "https://news.ycombinator.com/item?id=48192383",
+      "date": "2026-06-11"
+    },
+    "5993291ffde72c48a6410ea7ce65670f0fd6615fd2a6691935be508888409b0d": {
+      "url": "https://dev.to/sylwia-lask/every-developer-is-lying-about-something-and-ai-wont-fix-it-4im0",
+      "date": "2026-06-11"
+    },
+    "62d632eaf0dada2ed60604abbbaddd42c8c40b5f89da27e9d439b61d8061cd48": {
+      "url": "https://github.com/microsoft/generative-ai-for-beginners",
+      "date": "2026-06-11"
     }
   }
 }
