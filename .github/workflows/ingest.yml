@@ -25,7 +25,7 @@ concurrency:
 jobs:
   ingest:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
 
@@ -41,6 +41,8 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
+          REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
         run: >
           npx tsx pipeline/run.ts
           ${{ inputs.dry_run == true && '--dry-run' || '' }}
@@ -57,3 +59,15 @@ jobs:
             git commit -m "content: daily ingest $(date -u +%F)"
             git push
           fi
+
+      - name: Build and deploy to Cloudflare Pages
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: cdd1130f0f80aa74d5fdea5759eb9c29
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
+            echo "CLOUDFLARE_API_TOKEN secret not set — skipping auto-deploy."
+            exit 0
+          fi
+          npm run build
+          npx wrangler pages deploy dist --project-name opqai --branch main

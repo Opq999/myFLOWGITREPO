@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { normalizeDevto } from './devto';
 import { normalizeGithub } from './github';
 import { normalizeHn } from './hn';
-import { normalizeRedditFeed } from './reddit';
+import { normalizeRedditFeed, normalizeRedditJson } from './reddit';
 import { normalizeFeed } from './rss';
 import { normalizeYoutube } from './youtube';
 
@@ -29,6 +29,43 @@ describe('normalizeHn', () => {
       stats: { points: 142, comments: 37 },
     });
     expect(out[0].excerpt).toContain('https://example.com/blog');
+  });
+});
+
+describe('normalizeRedditJson', () => {
+  it('skips stickied/NSFW, prefixes author, converts epoch date', () => {
+    const out = normalizeRedditJson([
+      {
+        data: {
+          title: 'How I automated my CV with Claude',
+          permalink: '/r/ClaudeAI/comments/abc/how_i/',
+          author: 'opq',
+          created_utc: 1780000000,
+          selftext: 'Step 1...',
+          ups: 99,
+          num_comments: 12,
+          stickied: false,
+          over_18: false,
+        },
+      },
+      {
+        data: {
+          title: 'STICKY: rules',
+          permalink: '/r/x/1/',
+          author: 'mod',
+          created_utc: 1780000000,
+          selftext: '',
+          ups: 1,
+          num_comments: 0,
+          stickied: true,
+          over_18: false,
+        },
+      },
+    ]);
+    expect(out).toHaveLength(1);
+    expect(out[0].author).toBe('u/opq');
+    expect(out[0].url).toBe('https://www.reddit.com/r/ClaudeAI/comments/abc/how_i/');
+    expect(out[0].stats.points).toBe(99);
   });
 });
 

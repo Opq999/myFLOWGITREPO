@@ -8,11 +8,26 @@ export const SUBREDDITS = [
   'SideProject',
   'automation',
   'artificial',
+  'ChatGPTPro',
+  'ChatGPTPromptGenius',
+  'OpenAI',
+  'LocalLLaMA',
+  'productivity',
+  'freelance',
+  'smallbusiness',
 ];
 
-export const HN_QUERIES = ['AI workflow', 'Show HN AI', 'ChatGPT workflow', 'Claude workflow'];
+export const HN_QUERIES = [
+  'AI workflow',
+  'Show HN AI',
+  'ChatGPT workflow',
+  'Claude workflow',
+  'AI agent workflow',
+  'automated with AI',
+  'prompt engineering',
+];
 
-export const DEVTO_TAGS = ['ai', 'productivity'];
+export const DEVTO_TAGS = ['ai', 'productivity', 'chatgpt', 'automation'];
 
 export const RSS_FEEDS = [
   'https://simonwillison.net/atom/everything/',
@@ -24,10 +39,10 @@ export const GITHUB_QUERIES = ['ai workflow guide', 'prompt engineering workflow
 
 export const YOUTUBE_QUERIES = ['AI workflow tutorial step by step', 'ChatGPT workflow real example'];
 
-/** Daily caps (quality + free-tier safety). */
+/** Daily caps (quality + free-tier safety). Publishes = candidates scoring ≥ 7, up to the cap. */
 export const CAPS = {
-  scorePerRun: 40,
-  publishPerRun: 5,
+  scorePerRun: 120,
+  publishPerRun: 20,
 };
 
 /** Candidates older than this are dropped before scoring. */
