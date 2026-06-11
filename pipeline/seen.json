@@ -1,4 +1,85 @@
 {
   "version": 1,
-  "seen": {}
+  "seen": {
+    "6c4b7f55328d7ff7b36c786e7d6fd7f3113212d38eca808c50a303328379d3ee": {
+      "url": "https://news.ycombinator.com/item?id=44189329",
+      "date": "2026-06-11"
+    },
+    "ad93fbfe7b09469226d31b012bced15265a70f91160329958a032d924dfb0265": {
+      "url": "https://dev.to/sylwia-lask/the-code-works-what-could-possibly-go-wrong-5hbm",
+      "date": "2026-06-11"
+    },
+    "aac597fc68a65138d5a08ef64ea33c3ca1744c71fb971545b2e7cd23aaa73f4a": {
+      "url": "https://github.com/sindresorhus/awesome",
+      "date": "2026-06-11"
+    },
+    "6fe073e77d3c01c9d57b55ec25f63d098b3ed7f13f19992d82ab61d227ef6aac": {
+      "url": "https://news.ycombinator.com/item?id=46294144",
+      "date": "2026-06-11"
+    },
+    "415cb257596604331c1c917eed8899962efca1a1adad702e68703b4287457c38": {
+      "url": "https://github.com/public-apis/public-apis",
+      "date": "2026-06-11"
+    },
+    "2711eb4b6a7da63ee2f52129f4735bb3997de71991c5abfbe5f321cb4637f5da": {
+      "url": "https://news.ycombinator.com/item?id=48311705",
+      "date": "2026-06-11"
+    },
+    "3ed3f794a896432245569e73f23c5107ddcd1af9c3202f0d6faf216658b38071": {
+      "url": "https://dev.to/ingosteinke/css-only-a-nerdy-hobby-17hf",
+      "date": "2026-06-11"
+    },
+    "7932f64c0fdba3a75d9fa8f4a837f91e1efded616cd46736d0d7585a4c446ef7": {
+      "url": "https://github.com/vinta/awesome-python",
+      "date": "2026-06-11"
+    },
+    "95e60fe94c7f0d2932d4cf4ff8011424380b529aa734e62173c7f0681839721a": {
+      "url": "https://news.ycombinator.com/item?id=43879282",
+      "date": "2026-06-11"
+    },
+    "742e90492e9b4bdd428afff84deff15af50100ecfe424391cfc2eed6ba8a1c60": {
+      "url": "https://dev.to/googleai/how-we-built-aiventure-an-ai-powered-retro-dungeon-2f54",
+      "date": "2026-06-11"
+    },
+    "afac539bd2a8ee2720b3f2a7571a9cd76ae73971d52f82eb6cf7cc51235ccc80": {
+      "url": "https://github.com/awesome-selfhosted/awesome-selfhosted",
+      "date": "2026-06-11"
+    },
+    "1c89752be5e1d5f03d59c82ee00f0a59a01d7f2d417f0b92c06216f12e313573": {
+      "url": "https://news.ycombinator.com/item?id=44896489",
+      "date": "2026-06-11"
+    },
+    "2a4b276532c4391c29db3b7e68061b3e37d4e0bbe787fd43f910d9607bc4dc80": {
+      "url": "https://dev.to/ahikmah/when-prompt-batching-made-my-llm-app-more-expensive-5gf5",
+      "date": "2026-06-11"
+    },
+    "8c6014a36ca90e3fbda99713be2f876778d503c5bbb1e29cfa51436eb2d12035": {
+      "url": "https://github.com/obra/superpowers",
+      "date": "2026-06-11"
+    },
+    "2d25799fa9f5329e71892c68a912a837ad8b7f127a00831a2c3cf77f1f188f95": {
+      "url": "https://news.ycombinator.com/item?id=46549444",
+      "date": "2026-06-11"
+    },
+    "cf2b1ffdd42178e9866e1b69e23eeb9e9042bae5cf1ea5f54510373264f112ab": {
+      "url": "https://dev.to/maximsaplin/cli-over-mcp-a-small-chrome-devtools-experiment-in-copilot-cli-5gpi",
+      "date": "2026-06-11"
+    },
+    "edb3a626875732de5c9b688182f4894ed4000b4d02a17f4760af648fa8f73f53": {
+      "url": "https://github.com/affaan-m/ECC",
+      "date": "2026-06-11"
+    },
+    "2dbf07e8119012239ca769d0927e86d6e43bb4ae9868860d0bb7fcd8334418ca": {
+      "url": "https://news.ycombinator.com/item?id=45734865",
+      "date": "2026-06-11"
+    },
+    "db04178cf391e57d97d8eb9ed5d16d87a295f5a834f0241b88cf1ccc64f1eca6": {
+      "url": "https://dev.to/entire/how-to-make-coding-agents-remember-past-solutions-4a71",
+      "date": "2026-06-11"
+    },
+    "c37165a31cd3fc399e84bf50c1720aef60a6fc1164dcb970f893b635ea76b508": {
+      "url": "https://github.com/n8n-io/n8n",
+      "date": "2026-06-11"
+    }
+  }
 }

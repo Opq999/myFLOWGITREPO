@@ -16,9 +16,23 @@ export const { getStaticPaths, GET } = await OGImageRoute({
     ],
     border: { color: [22, 163, 74], width: 14, side: 'inline-start' },
     padding: 56,
+    // Bundled fonts: no network fetch at build time (CI-safe, offline-safe).
+    fonts: ['./src/fonts/noto-sans-400.ttf', './src/fonts/noto-sans-700.ttf'],
     font: {
-      title: { size: 60, weight: 'Bold', color: [255, 255, 255], lineHeight: 1.2 },
-      description: { size: 30, weight: 'Normal', color: [187, 247, 208], lineHeight: 1.4 },
+      title: {
+        size: 60,
+        weight: 'Bold',
+        color: [255, 255, 255],
+        lineHeight: 1.2,
+        families: ['Noto Sans'],
+      },
+      description: {
+        size: 30,
+        weight: 'Normal',
+        color: [187, 247, 208],
+        lineHeight: 1.4,
+        families: ['Noto Sans'],
+      },
     },
     format: 'PNG',
   }),
