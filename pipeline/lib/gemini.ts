@@ -35,6 +35,20 @@ const RATE_LIMITED = Symbol('rate-limited');
 
 let lastCallAt = 0;
 
+/** Retries connection-level failures (DNS, timeouts, flaky links) with backoff. */
+async function fetchWithRetry(url: string, init: RequestInit): Promise<Response> {
+  const delaysMs = [5_000, 20_000, 60_000];
+  for (let attempt = 0; ; attempt++) {
+    try {
+      return await fetch(url, init);
+    } catch (err) {
+      if (attempt >= delaysMs.length) throw err;
+      console.warn(`[gemini] network error, retrying in ${delaysMs[attempt] / 1000}s…`);
+      await sleep(delaysMs[attempt]);
+    }
+  }
+}
+
 async function callModel(model: string, body: string, apiKey: string): Promise<string | typeof RATE_LIMITED> {
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
   // 429 backoff schedule within a single model before declaring it exhausted.
@@ -44,7 +58,7 @@ async function callModel(model: string, body: string, apiKey: string): Promise<s
     if (wait > 0) await sleep(wait);
     lastCallAt = Date.now();
 
-    const res = await fetch(url, {
+    const res = await fetchWithRetry(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body,
