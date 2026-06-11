@@ -12,42 +12,49 @@ export function extractJson(text: string): string {
   return cleaned.slice(start, end + 1);
 }
 
-let lastCallAt = 0;
+/** Thrown when every fallback model is rate-limited — callers should stop the run gracefully. */
+export class GeminiQuotaError extends Error {
+  constructor() {
+    super('All Gemini models are rate-limited (free-tier quota likely exhausted for today).');
+    this.name = 'GeminiQuotaError';
+  }
+}
 
 /**
- * Calls Gemini (free tier) and parses a strict-JSON response.
- * Throttled to free-tier RPM; one retry after 60s on 429.
+ * Each model has its own free-tier quota pool; when one is exhausted (429
+ * persisting after backoff) we move to the next and stay there for the run.
  */
-export async function geminiJson<T>(prompt: string): Promise<T> {
-  const apiKey = process.env.GEMINI_API_KEY;
-  if (!apiKey) {
-    throw new Error(
-      'GEMINI_API_KEY not set. Create a free key at https://aistudio.google.com and export it (or add it as a GitHub secret).'
-    );
-  }
+const FALLBACK_MODELS = [...new Set([GEMINI_MODEL, 'gemini-2.5-flash-lite', 'gemini-2.0-flash'])];
+let modelIndex = 0;
 
-  const wait = lastCallAt + GEMINI_MS_BETWEEN_CALLS - Date.now();
-  if (wait > 0) await sleep(wait);
+export function currentModel(): string {
+  return FALLBACK_MODELS[modelIndex];
+}
 
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${apiKey}`;
-  const body = JSON.stringify({
-    contents: [{ parts: [{ text: prompt }] }],
-    generationConfig: { responseMimeType: 'application/json', temperature: 0.2 },
-  });
+const RATE_LIMITED = Symbol('rate-limited');
 
-  for (let attempt = 0; attempt < 2; attempt++) {
+let lastCallAt = 0;
+
+async function callModel(model: string, body: string, apiKey: string): Promise<string | typeof RATE_LIMITED> {
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
+  // 429 backoff schedule within a single model before declaring it exhausted.
+  const backoffsMs = [30_000, 60_000];
+  for (let attempt = 0; ; attempt++) {
+    const wait = lastCallAt + GEMINI_MS_BETWEEN_CALLS - Date.now();
+    if (wait > 0) await sleep(wait);
     lastCallAt = Date.now();
+
     const res = await fetch(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body,
     });
-    if (res.status === 429) {
-      if (attempt === 0) {
-        await sleep(60_000);
+    if (res.status === 429 || res.status === 503) {
+      if (attempt < backoffsMs.length) {
+        await sleep(backoffsMs[attempt]);
         continue;
       }
-      throw new Error('Gemini rate limit (429) persisted after retry — reduce caps or spacing.');
+      return RATE_LIMITED;
     }
     if (!res.ok) {
       throw new Error(`Gemini API error ${res.status}: ${(await res.text()).slice(0, 300)}`);
@@ -57,7 +64,38 @@ export async function geminiJson<T>(prompt: string): Promise<T> {
     };
     const text = data.candidates?.[0]?.content?.parts?.map((p) => p.text ?? '').join('') ?? '';
     if (!text) throw new Error('Gemini returned an empty response.');
-    return JSON.parse(extractJson(text)) as T;
+    return text;
   }
-  throw new Error('unreachable');
+}
+
+/**
+ * Calls Gemini (free tier) and parses a strict-JSON response. Throttled to
+ * free-tier RPM; falls back across models on persistent rate limits.
+ */
+export async function geminiJson<T>(prompt: string): Promise<T> {
+  const apiKey = process.env.GEMINI_API_KEY;
+  if (!apiKey) {
+    throw new Error(
+      'GEMINI_API_KEY not set. Create a free key at https://aistudio.google.com and export it (or add it as a GitHub secret).'
+    );
+  }
+
+  const body = JSON.stringify({
+    contents: [{ parts: [{ text: prompt }] }],
+    generationConfig: { responseMimeType: 'application/json', temperature: 0.2 },
+  });
+
+  while (modelIndex < FALLBACK_MODELS.length) {
+    const model = FALLBACK_MODELS[modelIndex];
+    const result = await callModel(model, body, apiKey);
+    if (result === RATE_LIMITED) {
+      modelIndex++;
+      if (modelIndex < FALLBACK_MODELS.length) {
+        console.warn(`[gemini] ${model} rate-limited — switching to ${FALLBACK_MODELS[modelIndex]}`);
+      }
+      continue;
+    }
+    return JSON.parse(extractJson(result)) as T;
+  }
+  throw new GeminiQuotaError();
 }

@@ -15,6 +15,7 @@ import type { Candidate, RunOptions } from './types';
 import { fetchAll } from './fetchers';
 import { dedupe, getExistingTitles, loadSeen, markSeen, saveSeen } from './lib/dedupe';
 import { draftWorkflow } from './lib/draft';
+import { GeminiQuotaError } from './lib/gemini';
 import { scoreCandidate } from './lib/score';
 
 const ROOT = process.cwd();
@@ -147,6 +148,12 @@ async function main(): Promise<void> {
         logEvent({ stage: 'to-drafts', url: candidate.url, slug: result.slug, score: score.score });
       }
     } catch (err) {
+      // All free-tier quotas spent: stop scoring, keep everything done so far.
+      if (err instanceof GeminiQuotaError) {
+        info(`[quota] ${err.message} Stopping this run; the next run picks up fresh quota.`);
+        logEvent({ stage: 'quota', msg: err.message });
+        break;
+      }
       counts.failed++;
       const message = err instanceof Error ? err.message : String(err);
       info(`[error] skipping "${candidate.title}": ${message.slice(0, 200)}`);
