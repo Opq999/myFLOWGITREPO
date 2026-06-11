@@ -50,16 +50,26 @@ jobs:
           ${{ inputs.backfill == true && '--backfill' || '' }}
 
       - name: Commit new content
+        id: commit
         run: |
           git config user.name "opqai-pipeline"
           git config user.email "actions@users.noreply.github.com"
           git add src/content pipeline/seen.json
+          published=$(git diff --cached --name-only --diff-filter=A -- 'src/content/workflows/*.mdx' | wc -l)
+          titles=$(git diff --cached --name-only --diff-filter=A -- 'src/content/workflows/*.mdx' | sed 's|src/content/workflows/||; s|\.mdx||' | head -25)
           if git diff --cached --quiet; then
             echo "No new content today."
+            published=0
           else
             git commit -m "content: daily ingest $(date -u +%F)"
             git push
           fi
+          echo "published=$published" >> "$GITHUB_OUTPUT"
+          {
+            echo "titles<<EOF"
+            echo "$titles"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
 
       - name: Build and deploy to Cloudflare Pages
         env:
@@ -73,3 +83,30 @@ jobs:
           fi
           npm run build
           npx wrangler pages deploy dist --project-name opqai --branch main
+
+      - name: Check email config
+        id: emailcfg
+        env:
+          PW: ${{ secrets.EMAIL_APP_PASSWORD }}
+        run: |
+          if [ -n "$PW" ]; then echo "enabled=true" >> "$GITHUB_OUTPUT"; else echo "enabled=false" >> "$GITHUB_OUTPUT"; fi
+
+      - name: Email update notification
+        if: steps.emailcfg.outputs.enabled == 'true' && steps.commit.outputs.published != '0'
+        uses: dawidd6/action-send-mail@v4
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: opeyemiolowosoke@gmail.com
+          password: ${{ secrets.EMAIL_APP_PASSWORD }}
+          to: opeyemiolowosoke@gmail.com
+          from: OPQAI Pipeline <opeyemiolowosoke@gmail.com>
+          subject: "OPQAI published ${{ steps.commit.outputs.published }} new workflow(s) today"
+          body: |
+            Your workflow library just grew.
+
+            New workflows published today:
+            ${{ steps.commit.outputs.titles }}
+
+            See them live: https://opqai.pages.dev/workflows/
+            Run details: https://github.com/Opq999/myFLOWGITREPO/actions
