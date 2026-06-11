@@ -15,8 +15,12 @@ import type { Candidate, RunOptions } from './types';
 import { fetchAll } from './fetchers';
 import { dedupe, getExistingTitles, loadSeen, markSeen, saveSeen } from './lib/dedupe';
 import { draftWorkflow } from './lib/draft';
+import { enrichCandidate } from './lib/enrich';
 import { GeminiQuotaError } from './lib/gemini';
 import { scoreCandidate } from './lib/score';
+
+/** Obvious non-workflows dropped before scoring — saves Gemini quota. */
+const JUNK_TITLE = /awesome[- ]|a curated list|curated list of|list of (free|awesome)/i;
 
 const ROOT = process.cwd();
 const SEEN_PATH = join(ROOT, 'pipeline', 'seen.json');
@@ -67,8 +71,17 @@ async function main(): Promise<void> {
   // Stage 2 — dedupe
   const ledger = loadSeen(SEEN_PATH);
   const existingTitles = getExistingTitles([WORKFLOWS_DIR, DRAFTS_DIR]);
-  const fresh = dedupe(fetched, ledger, existingTitles);
-  info(`[dedupe] ${fresh.length} new candidates (${fetched.length - fresh.length} dropped)`);
+  const deduped = dedupe(fetched, ledger, existingTitles);
+  info(`[dedupe] ${deduped.length} new candidates (${fetched.length - deduped.length} dropped)`);
+
+  const fresh = deduped.filter((c) => {
+    if (!JUNK_TITLE.test(c.title)) return true;
+    markSeen(ledger, c.url); // never rescore obvious junk
+    return false;
+  });
+  if (fresh.length < deduped.length) {
+    info(`[prefilter] ${deduped.length - fresh.length} obvious non-workflows dropped before scoring`);
+  }
 
   // Round-robin across platforms (each already sorted by engagement) so
   // sources without vote counts (e.g. Reddit RSS) aren't starved by the cap.
@@ -114,7 +127,8 @@ async function main(): Promise<void> {
   mkdirSync(WORKFLOWS_DIR, { recursive: true });
   mkdirSync(DRAFTS_DIR, { recursive: true });
 
-  for (const candidate of toScore) {
+  for (const rawCandidate of toScore) {
+    const candidate = await enrichCandidate(rawCandidate);
     try {
       const score = await scoreCandidate(candidate);
       counts.scored++;

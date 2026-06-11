@@ -2,8 +2,9 @@ name: Daily ingest
 
 on:
   schedule:
-    # 05:30 UTC = 06:30 WAT, daily (PRD section 7)
-    - cron: '30 5 * * *'
+    # 08:30 UTC = 09:30 WAT, daily — after the Gemini free-tier daily quota
+    # reset (midnight US-Pacific), so the run always starts with fresh quota.
+    - cron: '30 8 * * *'
   workflow_dispatch:
     inputs:
       dry_run:

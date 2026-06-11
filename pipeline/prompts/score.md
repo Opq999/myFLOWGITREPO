@@ -9,8 +9,8 @@ A real human describing how they actually got a job done with AI tools, with ste
 ## Scoring rubric
 
 - 0-4: tool announcements, hype, opinion, news — no reproducible steps
-- 5-6: real workflow but vague steps or missing prompts
-- 7-8: clear reproducible steps, named tools, prompts present or directly inferable
+- 5-6: real workflow but vague steps or missing prompts. If the steps are only described at a high level ("configure the model", "set it up") and a stranger would have to guess the specifics, the score is AT MOST 6.
+- 7-8: clear reproducible steps, named tools, prompts present or directly inferable. A stranger could follow them today without guessing.
 - 9-10: exceptional — author shows results, free-tier friendly, broadly applicable
 
 Penalties: paid-only tool stack (-2) · single-tool self-promo by the tool's maker (-2) · older than 12 months (-1)
