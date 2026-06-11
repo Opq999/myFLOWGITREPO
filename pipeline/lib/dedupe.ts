@@ -7,6 +7,8 @@ export interface SeenLedger {
   version: 1;
   /** hash of normalized URL → metadata for debuggability */
   seen: Record<string, { url: string; date: string }>;
+  /** advances with each backfill run so paginated sources dig deeper */
+  backfillPage?: number;
 }
 
 export function loadSeen(path: string): SeenLedger {

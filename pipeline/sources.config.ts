@@ -43,6 +43,8 @@ export const YOUTUBE_QUERIES = ['AI workflow tutorial step by step', 'ChatGPT wo
 export const CAPS = {
   scorePerRun: 120,
   publishPerRun: 20,
+  /** Backfill runs become no-ops once this many workflows are published. */
+  backfillTarget: 75,
 };
 
 /** Candidates older than this are dropped before scoring. */

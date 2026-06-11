@@ -61,16 +61,33 @@ async function main(): Promise<void> {
   };
   info(`Pipeline run — dryRun=${opts.dryRun} backfill=${opts.backfill}`);
 
-  // Stage 1 — fetch
-  const fetched = await fetchAll({ backfill: opts.backfill }, (m) => {
+  const ledger = loadSeen(SEEN_PATH);
+  const existingTitles = getExistingTitles([WORKFLOWS_DIR, DRAFTS_DIR]);
+
+  // Backfill stops itself once the launch corpus target is reached.
+  if (opts.backfill) {
+    const publishedCount = getExistingTitles([WORKFLOWS_DIR]).length;
+    if (publishedCount >= CAPS.backfillTarget) {
+      info(`Corpus target reached (${publishedCount} published workflows). Backfill done — nothing to do.`);
+      return;
+    }
+  }
+
+  // Stage 1 — fetch (backfill paginates deeper each run)
+  const page = opts.backfill ? (ledger.backfillPage ?? 0) : 0;
+  if (opts.backfill) info(`[backfill] page ${page}`);
+  const fetched = await fetchAll({ backfill: opts.backfill, page }, (m) => {
     info(m);
     logEvent({ stage: 'fetch', msg: m });
   });
   info(`[fetch] total: ${fetched.length} candidates`);
 
+  if (opts.backfill) {
+    ledger.backfillPage = page + 1;
+    saveSeen(SEEN_PATH, ledger);
+  }
+
   // Stage 2 — dedupe
-  const ledger = loadSeen(SEEN_PATH);
-  const existingTitles = getExistingTitles([WORKFLOWS_DIR, DRAFTS_DIR]);
   const deduped = dedupe(fetched, ledger, existingTitles);
   info(`[dedupe] ${deduped.length} new candidates (${fetched.length - deduped.length} dropped)`);
 

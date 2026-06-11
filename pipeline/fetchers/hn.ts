@@ -31,13 +31,14 @@ export function normalizeHn(hits: HnHit[]): Candidate[] {
     }));
 }
 
-export async function fetchHn(opts: { backfill: boolean }): Promise<Candidate[]> {
+export async function fetchHn(opts: { backfill: boolean; page?: number }): Promise<Candidate[]> {
   const results: Candidate[] = [];
+  const page = opts.page ?? 0;
   for (const query of HN_QUERIES) {
     const numericFilters = opts.backfill
       ? `points>50,created_at_i>${Math.floor(Date.now() / 1000) - 365 * 86400}`
       : 'points>20';
-    const url = `https://hn.algolia.com/api/v1/search?query=${encodeURIComponent(query)}&tags=story&numericFilters=${encodeURIComponent(numericFilters)}&hitsPerPage=${opts.backfill ? 30 : 10}`;
+    const url = `https://hn.algolia.com/api/v1/search?query=${encodeURIComponent(query)}&tags=story&numericFilters=${encodeURIComponent(numericFilters)}&hitsPerPage=${opts.backfill ? 30 : 10}&page=${opts.backfill ? page : 0}`;
     const res = await fetch(url, { headers: { 'User-Agent': USER_AGENT } });
     if (!res.ok) throw new Error(`HN API ${res.status}`);
     const data = (await res.json()) as { hits: HnHit[] };

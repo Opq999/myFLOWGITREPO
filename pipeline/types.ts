@@ -27,3 +27,9 @@ export interface RunOptions {
   dryRun: boolean;
   backfill: boolean;
 }
+
+export interface FetchOpts {
+  backfill: boolean;
+  /** 0-based pagination for sources that support it (backfill depth). */
+  page?: number;
+}

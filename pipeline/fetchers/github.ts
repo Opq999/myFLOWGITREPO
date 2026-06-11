@@ -32,9 +32,10 @@ export async function fetchGithub(opts: { backfill: boolean }): Promise<Candidat
     Accept: 'application/vnd.github+json',
   };
   if (process.env.GITHUB_TOKEN) headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
+  const page = opts.backfill ? ((opts as { page?: number }).page ?? 0) + 1 : 1;
   for (const query of GITHUB_QUERIES) {
     const q = `${query} in:name,description,readme stars:>${opts.backfill ? 100 : 20}`;
-    const url = `https://api.github.com/search/repositories?q=${encodeURIComponent(q)}&sort=stars&per_page=${opts.backfill ? 20 : 8}`;
+    const url = `https://api.github.com/search/repositories?q=${encodeURIComponent(q)}&sort=stars&per_page=${opts.backfill ? 20 : 8}&page=${page}`;
     const res = await fetch(url, { headers });
     if (!res.ok) throw new Error(`GitHub search ${res.status}`);
     const data = (await res.json()) as { items: GithubRepo[] };

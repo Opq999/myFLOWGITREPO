@@ -8,7 +8,7 @@ import { fetchReddit } from './reddit';
 import { fetchRss } from './rss';
 import { fetchYoutube } from './youtube';
 
-const SOURCES: [string, (opts: { backfill: boolean }) => Promise<Candidate[]>][] = [
+const SOURCES: [string, (opts: { backfill: boolean; page?: number }) => Promise<Candidate[]>][] = [
   ['hackernews', fetchHn],
   ['reddit', fetchReddit],
   ['devto', fetchDevto],
@@ -22,7 +22,7 @@ const SOURCES: [string, (opts: { backfill: boolean }) => Promise<Candidate[]>][]
  * warning and contributes nothing — it never blocks the run (PRD Stage 5).
  */
 export async function fetchAll(
-  opts: { backfill: boolean },
+  opts: { backfill: boolean; page?: number },
   log: (msg: string) => void = console.warn
 ): Promise<Candidate[]> {
   const all: Candidate[] = [];

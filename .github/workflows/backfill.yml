@@ -1,0 +1,104 @@
+name: Backfill corpus
+
+# Builds the launch corpus: mines the past year's top posts, one page deeper
+# each day. Becomes a no-op automatically once 75 workflows are published
+# (CAPS.backfillTarget) — safe to leave enabled forever.
+on:
+  schedule:
+    # 11:30 UTC = 12:30 WAT, daily — well after the morning ingest run.
+    - cron: '30 11 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ingest
+  cancel-in-progress: false
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Run pipeline (backfill)
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
+          REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
+        run: npx tsx pipeline/run.ts --backfill
+
+      - name: Commit new content
+        id: commit
+        run: |
+          git config user.name "opqai-pipeline"
+          git config user.email "actions@users.noreply.github.com"
+          git add src/content pipeline/seen.json
+          published=$(git diff --cached --name-only --diff-filter=A -- 'src/content/workflows/*.mdx' | wc -l)
+          titles=$(git diff --cached --name-only --diff-filter=A -- 'src/content/workflows/*.mdx' | sed 's|src/content/workflows/||; s|\.mdx||' | head -25)
+          if git diff --cached --quiet; then
+            echo "No new content from this backfill pass."
+            published=0
+          else
+            git commit -m "content: backfill $(date -u +%F)"
+            git push
+          fi
+          echo "published=$published" >> "$GITHUB_OUTPUT"
+          {
+            echo "titles<<EOF"
+            echo "$titles"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Build and deploy to Cloudflare Pages
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN || secrets.CLOUDFARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: cdd1130f0f80aa74d5fdea5759eb9c29
+        run: |
+          if [ "${{ steps.commit.outputs.published }}" = "0" ]; then
+            echo "Nothing published — skipping deploy."
+            exit 0
+          fi
+          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
+            echo "CLOUDFLARE_API_TOKEN secret not set — skipping auto-deploy."
+            exit 0
+          fi
+          npm run build
+          npx wrangler pages deploy dist --project-name opqai --branch main
+
+      - name: Check email config
+        id: emailcfg
+        env:
+          PW: ${{ secrets.EMAIL_APP_PASSWORD }}
+        run: |
+          if [ -n "$PW" ]; then echo "enabled=true" >> "$GITHUB_OUTPUT"; else echo "enabled=false" >> "$GITHUB_OUTPUT"; fi
+
+      - name: Email update notification
+        if: steps.emailcfg.outputs.enabled == 'true' && steps.commit.outputs.published != '0'
+        uses: dawidd6/action-send-mail@v4
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: opeyemiolowosoke@gmail.com
+          password: ${{ secrets.EMAIL_APP_PASSWORD }}
+          to: opeyemiolowosoke@gmail.com
+          from: OPQAI Pipeline <opeyemiolowosoke@gmail.com>
+          subject: "OPQAI backfill published ${{ steps.commit.outputs.published }} new workflow(s)"
+          body: |
+            The backfill pass just grew your library.
+
+            New workflows:
+            ${{ steps.commit.outputs.titles }}
+
+            See them live: https://opqai.pages.dev/workflows/
