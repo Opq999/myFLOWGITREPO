@@ -22,26 +22,26 @@ const postedAt = source.postedAt.toISOString().slice(0, 10);
 ---
 
 <div
-  class="source-embed rounded-xl border border-zinc-200 bg-zinc-50 p-4"
+  class="source-embed rounded-xl border border-ink-800 bg-ink-900 p-4"
   data-platform={source.platform}
   data-url={source.url}
 >
-  <p class="text-xs font-semibold uppercase tracking-wide text-zinc-500">
-    Original source · {platformLabels[source.platform]}
+  <p class="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-500">
+    ⛓ Proof · original source · {platformLabels[source.platform]}
   </p>
-  <p class="mt-1 text-sm">
-    <a href={source.url} target="_blank" rel="noopener" class="font-semibold text-brand-700 underline">
+  <p class="mt-2 break-all text-sm">
+    <a href={source.url} target="_blank" rel="noopener" class="font-semibold text-volt-300 underline underline-offset-2">
       {source.url}
     </a>
   </p>
-  <p class="mt-1 text-sm text-zinc-600">By {source.author} · {postedAt}</p>
+  <p class="mt-1.5 text-sm text-zinc-400">By <span class="text-zinc-200">{source.author}</span> · {postedAt}</p>
   {
     embeddable && (
       <button
         type="button"
-        class="load-embed-btn mt-3 rounded-lg border border-zinc-300 bg-white px-4 py-2 text-sm font-semibold text-zinc-700 hover:border-brand-600"
+        class="load-embed-btn mt-3 rounded-lg border border-ink-700 bg-ink-850 px-4 py-2 font-mono text-[11px] font-bold uppercase tracking-[0.1em] text-zinc-300 transition-colors hover:border-volt-400 hover:text-volt-300"
       >
-        Load original post (uses more data)
+        ▶ Load original post (uses more data)
       </button>
     )
   }
@@ -70,6 +70,7 @@ const postedAt = source.postedAt.toISOString().slice(0, 10);
         iframe.allowFullscreen = true;
         iframe.loading = 'lazy';
         iframe.title = 'YouTube video';
+        iframe.style.borderRadius = '12px';
         slot.appendChild(iframe);
       } else if (platform === 'reddit') {
         var bq = document.createElement('blockquote');
@@ -86,6 +87,7 @@ const postedAt = source.postedAt.toISOString().slice(0, 10);
       } else if (platform === 'twitter') {
         var tbq = document.createElement('blockquote');
         tbq.className = 'twitter-tweet';
+        tbq.setAttribute('data-theme', 'dark');
         var ta = document.createElement('a');
         ta.href = url;
         ta.textContent = url;

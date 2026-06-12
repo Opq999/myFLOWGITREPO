@@ -5,7 +5,9 @@ interface Props {
 const { notes } = Astro.props;
 ---
 
-<aside class="rounded-xl border border-brand-200 bg-brand-50 p-4">
-  <p class="mb-1 text-sm font-bold text-brand-900">🇳🇬 Nigeria notes</p>
-  <p class="text-sm text-brand-900">{notes}</p>
+<aside class="rounded-xl border border-volt-400/30 bg-volt-400/[0.06] p-4">
+  <p class="mb-1 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-volt-300">
+    🇳🇬 Nigeria notes — data &amp; free-tier check
+  </p>
+  <p class="text-sm leading-relaxed text-zinc-200">{notes}</p>
 </aside>

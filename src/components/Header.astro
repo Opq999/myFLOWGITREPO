@@ -2,26 +2,30 @@
 import { SITE } from '../site.config';
 ---
 
-<header class="border-b border-zinc-200">
-  <div class="mx-auto flex w-full max-w-3xl flex-wrap items-center gap-x-4 gap-y-2 px-4 py-3">
-    <a href="/" class="text-lg font-extrabold tracking-tight text-brand-800">{SITE.name}</a>
-    <nav class="order-3 flex w-full gap-4 text-sm font-medium text-zinc-700 sm:order-2 sm:w-auto">
-      <a href="/workflows/" class="py-1 hover:text-brand-700">Workflows</a>
-      <a href="/about/" class="py-1 hover:text-brand-700">About</a>
-      <a href="/submit/" class="py-1 hover:text-brand-700">Submit</a>
+<header class="sticky top-0 z-40 border-b border-ink-800 bg-ink-950/80 backdrop-blur-md">
+  <div class="mx-auto flex w-full max-w-6xl flex-wrap items-center gap-x-5 gap-y-2 px-4 py-3 sm:px-6">
+    <a href="/" class="font-display text-xl font-bold tracking-tight text-white">
+      {SITE.name}<span class="text-volt-400">.</span>
+    </a>
+    <nav
+      class="order-3 flex w-full gap-5 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-zinc-400 sm:order-2 sm:w-auto"
+    >
+      <a href="/workflows/" class="py-1 transition-colors hover:text-volt-300">Workflows</a>
+      <a href="/about/" class="py-1 transition-colors hover:text-volt-300">About</a>
+      <a href="/submit/" class="py-1 transition-colors hover:text-volt-300">Submit</a>
     </nav>
     <button
       id="search-toggle"
       type="button"
-      class="order-2 ml-auto rounded-lg border border-zinc-300 px-3 py-1.5 text-sm text-zinc-600 hover:border-brand-600 hover:text-brand-700 sm:order-3"
+      class="order-2 ml-auto rounded-lg border border-ink-700 bg-ink-900 px-3 py-1.5 font-mono text-[11px] font-semibold uppercase tracking-[0.15em] text-zinc-400 transition-colors hover:border-volt-400 hover:text-volt-300 sm:order-3"
       aria-expanded="false"
       aria-controls="search-panel"
     >
-      🔍 Search
+      ⌕ Search
     </button>
   </div>
-  <div id="search-panel" hidden class="border-t border-zinc-100 bg-zinc-50">
-    <div class="mx-auto w-full max-w-3xl px-4 py-3">
+  <div id="search-panel" hidden class="border-t border-ink-800 bg-ink-900/95">
+    <div class="mx-auto w-full max-w-6xl px-4 py-4 sm:px-6">
       <div id="search"></div>
       <noscript><p class="text-sm text-zinc-500">Search needs JavaScript enabled.</p></noscript>
     </div>

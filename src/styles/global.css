@@ -1,72 +1,244 @@
 @import "tailwindcss";
 
+/* ——— Display font: one self-hosted variable file (22KB), body stays on
+   system fonts — fast on 3G, distinctive where it counts. ——— */
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url("/fonts/space-grotesk-var.woff2") format("woff2-variations");
+}
+
 @theme {
-  /* System font stack only — zero web-font bytes, fast on 3G. */
   --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
     Arial, "Noto Sans", sans-serif;
+  --font-display: "Space Grotesk", system-ui, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
-  /* Brand: deep green (a quiet nod to the beachhead audience). */
-  --color-brand-50: #f0fdf4;
-  --color-brand-100: #dcfce7;
-  --color-brand-200: #bbf7d0;
-  --color-brand-600: #16a34a;
-  --color-brand-700: #15803d;
-  --color-brand-800: #166534;
-  --color-brand-900: #14532d;
+  /* Ink: the dark canvas */
+  --color-ink-950: #09090b;
+  --color-ink-900: #101012;
+  --color-ink-850: #141417;
+  --color-ink-800: #1c1c21;
+  --color-ink-700: #2a2a32;
+
+  /* Volt: the electric accent */
+  --color-volt-300: #d3f867;
+  --color-volt-400: #b8ef3f;
+  --color-volt-500: #9ade1a;
+
+  /* Category accents */
+  --color-cat-content: #f472b6;
+  --color-cat-freelance: #fbbf24;
+  --color-cat-academic: #60a5fa;
+  --color-cat-jobs: #34d399;
+  --color-cat-sme: #fb923c;
+  --color-cat-coding: #a78bfa;
 }
 
-/* Prose defaults for MDX workflow bodies — no typography plugin needed. */
+/* ——— Canvas: dotted grid + film grain ——— */
+body {
+  background-color: var(--color-ink-950);
+  background-image: radial-gradient(circle, #1d1d22 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+  opacity: 0.5;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ——— Per-category accent variable ——— */
+[data-category="content-creation"] { --cat: var(--color-cat-content); }
+[data-category="freelancing"] { --cat: var(--color-cat-freelance); }
+[data-category="academic-research"] { --cat: var(--color-cat-academic); }
+[data-category="job-hunting"] { --cat: var(--color-cat-jobs); }
+[data-category="sme-operations"] { --cat: var(--color-cat-sme); }
+[data-category="coding"] { --cat: var(--color-cat-coding); }
+
+/* ——— Marquee ticker (pure CSS) ——— */
+.ticker {
+  overflow: hidden;
+  white-space: nowrap;
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.ticker__track {
+  display: inline-block;
+  animation: ticker 28s linear infinite;
+}
+@keyframes ticker {
+  to { transform: translateX(-50%); }
+}
+
+/* ——— Hero glow blobs ——— */
+.glow {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(90px);
+  pointer-events: none;
+}
+
+/* ——— Outlined display text ——— */
+.text-outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--color-volt-400);
+}
+
+/* ——— Workflow cards ——— */
+.workflow-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--color-ink-800);
+  background: linear-gradient(180deg, var(--color-ink-900), var(--color-ink-850));
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.workflow-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--cat, var(--color-volt-400));
+  opacity: 0.85;
+}
+.workflow-card:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--cat, var(--color-volt-400)) 60%, transparent);
+  box-shadow: 0 12px 40px -12px color-mix(in srgb, var(--cat, var(--color-volt-400)) 35%, transparent);
+}
+
+/* ——— Bento category tiles ——— */
+.bento-tile {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--color-ink-800);
+  background: var(--color-ink-900);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.bento-tile::after {
+  content: "";
+  position: absolute;
+  inset: auto -30% -55% -30%;
+  height: 70%;
+  background: radial-gradient(ellipse at center, color-mix(in srgb, var(--cat) 22%, transparent), transparent 70%);
+  pointer-events: none;
+}
+.bento-tile:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--cat) 55%, transparent);
+  box-shadow: 0 16px 50px -16px color-mix(in srgb, var(--cat) 40%, transparent);
+}
+
+/* ——— Workflow body (MDX prose) ——— */
 .workflow-body {
-  line-height: 1.7;
+  line-height: 1.75;
+  color: #c9c9d1;
 }
 .workflow-body h2 {
-  font-size: 1.25rem;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
   font-weight: 700;
-  margin: 1.75rem 0 0.75rem;
+  letter-spacing: -0.01em;
+  color: #fafafa;
+  margin: 2.25rem 0 0.875rem;
+}
+.workflow-body h2::before {
+  content: "/ ";
+  color: var(--color-volt-400);
 }
 .workflow-body h3 {
+  font-family: var(--font-display);
   font-size: 1.05rem;
   font-weight: 600;
-  margin: 1.25rem 0 0.5rem;
+  color: #fafafa;
+  margin: 1.5rem 0 0.5rem;
 }
-.workflow-body p {
-  margin: 0.75rem 0;
-}
-.workflow-body ul,
-.workflow-body ol {
-  margin: 0.75rem 0;
-  padding-left: 1.5rem;
-}
-.workflow-body ol {
-  list-style: decimal;
-}
-.workflow-body ul {
-  list-style: disc;
-}
-.workflow-body li {
-  margin: 0.5rem 0;
-}
+.workflow-body p { margin: 0.875rem 0; }
 .workflow-body a {
-  color: var(--color-brand-700);
+  color: var(--color-volt-300);
   text-decoration: underline;
+  text-underline-offset: 3px;
 }
+.workflow-body strong { color: #fafafa; }
+.workflow-body ul {
+  margin: 0.875rem 0;
+  padding-left: 1.4rem;
+  list-style: square;
+}
+.workflow-body ul ::marker { color: var(--color-volt-400); }
+.workflow-body li { margin: 0.6rem 0; }
+
+/* Numbered steps: oversized counter chips */
+.workflow-body ol {
+  margin: 1.25rem 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: step;
+}
+.workflow-body ol > li {
+  position: relative;
+  margin: 0 0 1.5rem;
+  padding: 0 0 0 3.4rem;
+  counter-increment: step;
+}
+.workflow-body ol > li::before {
+  content: counter(step, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 0.05rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--color-volt-400);
+  border: 1px solid color-mix(in srgb, var(--color-volt-400) 45%, transparent);
+  background: color-mix(in srgb, var(--color-volt-400) 8%, transparent);
+  border-radius: 0.5rem;
+  padding: 0.3rem 0.45rem;
+}
+
+/* Inline code */
 .workflow-body code {
   font-family: var(--font-mono);
-  font-size: 0.875em;
-  background: #f4f4f5;
-  padding: 0.125rem 0.375rem;
-  border-radius: 0.25rem;
+  font-size: 0.85em;
+  color: #e4e4e7;
+  background: var(--color-ink-800);
+  padding: 0.125rem 0.4rem;
+  border-radius: 0.3rem;
 }
+
+/* Prompt blocks: terminal windows */
 .workflow-body pre {
-  background: #18181b;
-  color: #fafafa;
-  padding: 1rem;
-  padding-top: 2.25rem;
-  border-radius: 0.5rem;
+  position: relative;
+  background: #0c0c0f;
+  border: 1px solid var(--color-ink-700);
+  color: #e8e8ec;
+  padding: 3rem 1.1rem 1.1rem;
+  border-radius: 0.75rem;
   overflow-x: auto;
   font-size: 0.85rem;
-  margin: 1rem 0;
+  margin: 1.1rem 0;
+}
+.workflow-body pre::before {
+  content: "● ● ●   PROMPT — tap copy, paste into your AI tool";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0.55rem 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8b8b96;
+  background: var(--color-ink-850);
+  border-bottom: 1px solid var(--color-ink-700);
 }
 .workflow-body pre code {
   background: none;
@@ -77,22 +249,65 @@
   word-break: break-word;
 }
 
-/* Copy-button wrapper added by the detail-page script. */
-.pre-wrap {
-  position: relative;
-}
+/* Copy button (injected by detail-page script) */
+.pre-wrap { position: relative; }
 .copy-btn {
   position: absolute;
-  top: 0.5rem;
+  top: 0.4rem;
   right: 0.5rem;
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: #fafafa;
-  background: #3f3f46;
-  border-radius: 0.375rem;
-  padding: 0.25rem 0.625rem;
+  z-index: 1;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #09090b;
+  background: var(--color-volt-400);
+  border-radius: 0.4rem;
+  padding: 0.3rem 0.7rem;
   cursor: pointer;
+  transition: background 0.15s ease, transform 0.15s ease;
 }
-.copy-btn:active {
-  background: var(--color-brand-700);
+.copy-btn:hover { background: var(--color-volt-300); transform: scale(1.04); }
+
+/* ——— Reading progress bar (CSS scroll timeline, zero JS) ——— */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  z-index: 60;
+  background: var(--color-volt-400);
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+  animation: progress linear;
+  animation-timeline: scroll(root);
+}
+@keyframes progress {
+  to { transform: scaleX(1); }
+}
+
+/* ——— Pagefind dark theme ——— */
+#search {
+  --pagefind-ui-scale: 0.9;
+  --pagefind-ui-primary: var(--color-volt-400);
+  --pagefind-ui-text: #e4e4e7;
+  --pagefind-ui-background: var(--color-ink-900);
+  --pagefind-ui-border: var(--color-ink-700);
+  --pagefind-ui-tag: var(--color-ink-800);
+  --pagefind-ui-border-radius: 10px;
+  --pagefind-ui-font: var(--font-sans);
+}
+
+/* ——— Form controls on dark ——— */
+select, input[type="email"], input[type="text"] {
+  color-scheme: dark;
+}
+
+/* ——— Motion respect ——— */
+@media (prefers-reduced-motion: reduce) {
+  .ticker__track { animation: none; }
+  .progress-bar { display: none; }
+  .workflow-card, .bento-tile { transition: none; }
 }

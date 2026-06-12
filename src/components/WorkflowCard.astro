@@ -12,23 +12,28 @@ const isFree = d.tools.every((t) => t.pricing !== 'paid');
 ---
 
 <article
-  class="workflow-card rounded-xl border border-zinc-200 p-4 transition-colors hover:border-brand-600"
+  class="workflow-card rounded-xl"
   data-category={d.category}
   data-badge={d.badge}
   data-difficulty={d.difficulty}
   data-free={isFree ? '1' : '0'}
 >
-  <a href={`/workflows/${workflow.id}/`} class="block">
-    <div class="mb-2 flex flex-wrap items-center gap-2 text-xs text-zinc-500">
+  <a href={`/workflows/${workflow.id}/`} class="block p-4 pl-5">
+    <div class="mb-2 flex flex-wrap items-center gap-x-2.5 gap-y-1.5 font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-500">
       <Badge badge={d.badge} />
-      <span class="capitalize">{d.difficulty}</span>
-      <span>·</span>
-      <span>{d.timeMinutes} min</span>
-      <span>·</span>
-      <span>{CATEGORY_META[d.category].emoji} {CATEGORY_META[d.category].label}</span>
-      {isFree && <span class="font-semibold text-brand-700">Free tools</span>}
+      <span>{d.difficulty}</span>
+      <span class="text-ink-700">/</span>
+      <span>⏱ {d.timeMinutes}min</span>
+      <span class="text-ink-700">/</span>
+      <span style="color: var(--cat)">{CATEGORY_META[d.category].label}</span>
+      {isFree && <span class="rounded-full border border-volt-400/40 bg-volt-400/10 px-2 py-0.5 text-volt-300">Free tools</span>}
     </div>
-    <h3 class="text-base font-bold leading-snug text-zinc-900">{d.title}</h3>
-    <p class="mt-1 line-clamp-2 text-sm text-zinc-600">{d.description}</p>
+    <h3 class="font-display text-[1.05rem] font-bold leading-snug text-white">
+      {d.title}
+    </h3>
+    <p class="mt-1.5 line-clamp-2 text-sm leading-relaxed text-zinc-400">{d.description}</p>
+    <p class="mt-2.5 font-mono text-[10px] font-bold uppercase tracking-[0.15em] text-volt-400">
+      Open workflow →
+    </p>
   </a>
 </article>
