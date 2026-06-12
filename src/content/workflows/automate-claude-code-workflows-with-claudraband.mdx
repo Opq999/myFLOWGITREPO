@@ -1,0 +1,83 @@
+---
+title: "Automate Claude Code Workflows with Claudraband"
+description: "Learn to automate and extend Claude Code workflows using Claudraband, a terminal wrapper for controlled sessions and remote control."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 30
+jobToBeDone: "Automate and extend Claude Code workflows using a terminal wrapper"
+tools:
+  - name: "Claude Code"
+    url: "https://claude.ai"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Claudraband"
+    url: "https://github.com/halfwhey/claudraband"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "tmux"
+    url: "https://github.com/tmux/tmux"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "xterm.js"
+    url: "https://xtermjs.org"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=47741889"
+  platform: "hackernews"
+  author: "halfwhey"
+  postedAt: 2026-04-12
+score: 7
+ingestedAt: 2026-06-12
+nigeriaNotes: "Claude Code has a free tier. Claudraband, tmux, and xterm.js are free and open-source. Data usage will depend on the length and frequency of interactions with Claude Code, but terminal-based interactions are generally data-light."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+
+This workflow allows you to automate and extend your interactions with Claude Code through a controlled terminal interface. You can create resumable, non-interactive workflows, remotely control Claude Code sessions via an HTTP server, or integrate Claude Code into other applications using a TypeScript library.
+
+## Tools you need
+
+* Claude Code (freemium)
+* Claudraband (free)
+* tmux (free)
+* xterm.js (free)
+
+## Steps
+
+1. **Install Claudraband:** Follow the installation instructions provided in the Claudraband GitHub repository.
+
+2. **Set up a controlled terminal session:** Use `tmux` for visible sessions or `xterm.js` for headless sessions, as mediated by Claudraband.
+
+3. **Run a resumable, non-interactive workflow:** Use the `cband continue <session-id> '<prompt>'` command. For example, to ask about a previous research decision:
+
+   bash
+   cband continue <session-id> 'what was the result of the research?'
+   
+
+4. **Start an HTTP server for remote control:** Use the `cband serve --port <port-number>` command. The author doesn't specify a default port, so choose one that is available.
+
+   bash
+   cband serve --port 8123
+   
+
+5. **Configure an ACP server for alternative frontends:** Use the `cband acp --model <model-name>` command. The author provides an example using the 'haiku' model:
+
+   bash
+   cband acp --model haiku
+   
+
+6. **Integrate into your own application (optional):** Utilize the provided TypeScript library to build custom applications that leverage these Claude Code workflows.
+
+## Original source
+
+This workflow is based on the Claudraband project by halfwhey, shared on Hacker News. Claudraband is a terminal wrapper designed to enable extended and controlled workflows with Claude Code, streamlining interactions that previously relied on manual commands.
+
+## Notes & variations
+
+* **Free Tier Viability:** Claude Code offers a free tier, making this workflow accessible. Claudraband, tmux, and xterm.js are all free and open-source.
+* **Data Usage:** Terminal-based interactions with AI models are generally data-light. The primary data consumption will come from the text exchanged with Claude Code, which depends on the length and complexity of your prompts and the model's responses.
+* **Alternative Frontends:** The ACP server functionality allows integration with other frontends like Zed or Toad, offering flexibility in how you interact with Claude Code.

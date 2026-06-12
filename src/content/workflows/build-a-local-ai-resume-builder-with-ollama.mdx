@@ -1,0 +1,75 @@
+---
+title: "Build a Local AI Resume Builder with Ollama"
+description: "Learn to set up a free, offline AI-powered resume builder on your own machine using Ollama and Persona. No subscriptions or cloud costs."
+category: "freelancing"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 30
+jobToBeDone: "Build a local, free AI-powered resume builder"
+tools:
+  - name: "Ollama"
+    url: "https://ollama.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Persona"
+    url: "https://github.com/nithiin7/persona"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "ResumeLM"
+    url: "https://github.com/danieltomasz/resume-lm"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/nithiin7/i-built-a-free-fully-local-ai-resume-builder-no-subscriptions-no-cloud-no-catch-m1h"
+  platform: "blog"
+  author: "nithiin7"
+  postedAt: 2026-06-11
+score: 8
+ingestedAt: 2026-06-12
+nigeriaNotes: "Ollama and Persona are free to use and run locally, making them ideal for users with limited data or internet access. Data usage is minimal after initial model download."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to set up a completely free and local AI-powered resume builder on your own computer. This workflow bypasses subscription fees and cloud processing, ensuring your data remains private and accessible offline.
+
+## Tools you need
+*   Ollama (free)
+*   Persona (free)
+*   Git (free)
+*   A code editor (e.g., VS Code, free)
+
+## Steps
+1.  **Install Ollama:** Download and install Ollama from their official website to run AI models locally.
+2.  **Download an AI Model:** Open your terminal or command prompt and pull a language model. For example, to download Llama 3:
+
+    
+    ollama pull llama3
+    
+
+3.  **Clone the Persona Repository:** Use Git to download the Persona project files to your computer.
+
+    
+    git clone https://github.com/nithiin7/persona.git
+    
+
+4.  **Navigate to the Project Directory:** Change your current directory to the cloned Persona folder.
+
+    
+    cd persona
+    
+
+5.  **Install Dependencies:** Follow the project's instructions to install any necessary software packages (the author does not specify exact commands, refer to the project's README).
+
+6.  **Configure Persona to Use Local Ollama:** Open Persona's settings. The author indicates you should point the application to your local Ollama URL (e.g., `http://localhost:11434`).
+
+7.  **Run Persona:** Start the Persona application. The AI features will now use your locally running Ollama model.
+
+## Original source
+This workflow is based on a project by nithiin7, shared on their blog and GitHub. The author developed Persona as a fork of ResumeLM, focusing on enabling users to run AI resume building entirely offline using tools like Ollama, eliminating subscription costs and ensuring data privacy.
+
+## Notes & variations
+*   **Cloud Models:** While the primary benefit is local AI, Persona also supports cloud-based models like GPT-5 and Claude via OpenRouter if you prefer. This would incur costs and require API keys.
+*   **Model Choice:** You can pull and use different models with Ollama (e.g., `ollama pull mistral`) and configure Persona to use them, provided they are compatible.
+*   **ResumeLM:** Persona is a fork of ResumeLM. You could also explore the original ResumeLM project for its features, though it may have different setup requirements or monetization aspects removed in Persona.
