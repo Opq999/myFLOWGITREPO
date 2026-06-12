@@ -280,6 +280,43 @@
     "43591c8eb7785ce973c3fbabeaa0a0c14ae0a33d07d42dcbef19584fa47c25cb": {
       "url": "https://news.ycombinator.com/item?id=47741889",
       "date": "2026-06-12"
+    },
+    "acb3d5a860591040944a5b9f9a6176bf1d765903de226b82b957e0a5b23605c5": {
+      "url": "https://news.ycombinator.com/item?id=47400868",
+      "date": "2026-06-12"
+    },
+    "9ffb876d0f16ab5626fb757c0fb2dc5dcb50abf4f6f7653c4546dda79bbc75fd": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1nhg1lv/elon_continues_to_openly_try_and_fail_to",
+      "date": "2026-06-12"
+    },
+    "9b85a208cce561a1c6eaa96ef5e284d94a2cde8894b6f54fdbf2b0b19744fe53": {
+      "url": "https://dev.to/varshithvhegde/the-great-claude-code-leak-of-2026-accident-incompetence-or-the-best-pr-stunt-in-ai-history-3igm",
+      "date": "2026-06-12"
+    },
+    "f4e0adf84666b0c986e73ecd014507f8272b73a8f70ec02ba2be2a9423ebe5c7": {
+      "url": "https://github.com/github/spec-kit",
+      "date": "2026-06-12"
+    },
+    "6f5b4901bafc20423a75c13b8f1c0da48af4ad21701c77c298c45b64791da73a": {
+      "url": "https://news.ycombinator.com/item?id=47864393",
+      "date": "2026-06-12"
+    },
+    "b55620b9e1497b08d03ce35143ccc0f5af7ef57c2ee7a2e5ec9aaa54c4ecca02": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1sdnrmh/but_yeah_deepseek_is_censored",
+      "date": "2026-06-12"
+    },
+    "b4550b790747a41a8bf3d6887eeea198e88b0cfbd0f98860d0b7a1e15bb9525e": {
+      "url": "https://dev.to/sylwia-lask/if-ai-existed-in-2011-would-we-still-have-the-modern-web-408g",
+      "date": "2026-06-12"
+    },
+    "b321d228efd2bc14fda49902aab098d98dd1d57d17a873ce52fc2d8c738b27b4": {
+      "url": "https://github.com/garrytan/gstack",
+      "date": "2026-06-12"
+    },
+    "dc3b7e02b7139ea8a9d1429043bc613dbfb0459fc7d4d2e21733ad75c0e5dfb8": {
+      "url": "https://news.ycombinator.com/item?id=44463967",
+      "date": "2026-06-12"
     }
-  }
+  },
+  "backfillPage": 1
 }
