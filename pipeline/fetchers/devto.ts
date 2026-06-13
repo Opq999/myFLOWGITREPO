@@ -1,4 +1,4 @@
-import { DEVTO_TAGS, USER_AGENT } from '../sources.config';
+import { DAILY, DEVTO_TAGS, USER_AGENT } from '../sources.config';
 import type { Candidate } from '../types';
 import { truncate } from '../lib/utils';
 
@@ -26,10 +26,12 @@ export function normalizeDevto(articles: DevtoArticle[]): Candidate[] {
 
 export async function fetchDevto(opts: { backfill: boolean; page?: number }): Promise<Candidate[]> {
   const results: Candidate[] = [];
-  const page = opts.backfill ? (opts.page ?? 0) + 1 : 1;
+  // Dev.to pages are 1-indexed; the rotating daily/backfill offset starts at 0.
+  const page = (opts.page ?? 0) + 1;
   for (const tag of DEVTO_TAGS) {
-    const top = opts.backfill ? 365 : 2;
-    const url = `https://dev.to/api/articles?tag=${tag}&top=${top}&per_page=${opts.backfill ? 30 : 10}&page=${page}`;
+    const top = opts.backfill ? 365 : DAILY.devtoTopDays;
+    const perPage = opts.backfill ? 30 : DAILY.devtoPerPage;
+    const url = `https://dev.to/api/articles?tag=${tag}&top=${top}&per_page=${perPage}&page=${page}`;
     const res = await fetch(url, { headers: { 'User-Agent': USER_AGENT } });
     if (!res.ok) throw new Error(`Dev.to ${res.status}`);
     const data = (await res.json()) as DevtoArticle[];

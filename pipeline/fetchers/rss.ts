@@ -65,7 +65,7 @@ export function normalizeFeed(xml: string): Candidate[] {
 
 export async function fetchRss(opts: { backfill: boolean }): Promise<Candidate[]> {
   const results: Candidate[] = [];
-  const maxAgeMonths = opts.backfill ? 12 : 0.1; // ~3 days on daily runs
+  const maxAgeMonths = opts.backfill ? 12 : 0.5; // ~2 weeks on daily runs
   for (const feedUrl of RSS_FEEDS) {
     try {
       const res = await fetch(feedUrl, { headers: { 'User-Agent': USER_AGENT } });

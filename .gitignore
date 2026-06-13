@@ -22,3 +22,8 @@ pipeline/logs/*.jsonl
 
 # jetbrains setting folder
 .idea/
+
+# playwright MCP screenshots / local visual checks
+.playwright-mcp/
+*-desktop-home.png
+*-mobile-home.png

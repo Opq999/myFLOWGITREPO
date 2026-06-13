@@ -10,7 +10,7 @@
  */
 import { appendFileSync, existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { CAPS } from './sources.config';
+import { CAPS, DAILY } from './sources.config';
 import type { Candidate, RunOptions } from './types';
 import { fetchAll } from './fetchers';
 import { dedupe, getExistingTitles, loadSeen, markSeen, saveSeen } from './lib/dedupe';
@@ -73,9 +73,11 @@ async function main(): Promise<void> {
     }
   }
 
-  // Stage 1 — fetch (backfill paginates deeper each run)
-  const page = opts.backfill ? (ledger.backfillPage ?? 0) : 0;
-  if (opts.backfill) info(`[backfill] page ${page}`);
+  // Stage 1 — fetch. Backfill paginates ever deeper; daily runs rotate a page
+  // offset (0..pageCycle-1) so each day reaches NEW posts instead of re-scanning
+  // the same page-0 "top of today" results that just dedupe away.
+  const page = opts.backfill ? (ledger.backfillPage ?? 0) : (ledger.dailyPage ?? 0);
+  info(`[fetch] ${opts.backfill ? 'backfill' : 'daily'} page ${page}`);
   const fetched = await fetchAll({ backfill: opts.backfill, page }, (m) => {
     info(m);
     logEvent({ stage: 'fetch', msg: m });
@@ -84,8 +86,10 @@ async function main(): Promise<void> {
 
   if (opts.backfill) {
     ledger.backfillPage = page + 1;
-    saveSeen(SEEN_PATH, ledger);
+  } else {
+    ledger.dailyPage = (page + 1) % DAILY.pageCycle;
   }
+  saveSeen(SEEN_PATH, ledger);
 
   // Stage 2 — dedupe
   const deduped = dedupe(fetched, ledger, existingTitles);

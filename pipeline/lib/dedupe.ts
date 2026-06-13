@@ -9,6 +9,8 @@ export interface SeenLedger {
   seen: Record<string, { url: string; date: string }>;
   /** advances with each backfill run so paginated sources dig deeper */
   backfillPage?: number;
+  /** rotates 0..pageCycle-1 each daily run so daily fetches reach new posts */
+  dailyPage?: number;
 }
 
 export function loadSeen(path: string): SeenLedger {

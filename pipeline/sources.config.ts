@@ -1,20 +1,37 @@
 /** All tunable pipeline knobs in one place (PRD section 7). */
 
+// Subreddits chosen to cover all six categories (coding, content-creation,
+// freelancing, academic-research, job-hunting, sme-operations) — breadth is the
+// cheapest lever on fresh-candidate supply.
 export const SUBREDDITS = [
+  // AI / prompting
   'ChatGPT',
   'ClaudeAI',
+  'GeminiAI',
   'ArtificialInteligence',
   'PromptEngineering',
-  'SideProject',
-  'automation',
-  'artificial',
   'ChatGPTPro',
   'ChatGPTPromptGenius',
   'OpenAI',
   'LocalLLaMA',
-  'productivity',
+  'aipromptprogramming',
+  // building / coding
+  'SideProject',
+  'automation',
+  'webdev',
+  'learnprogramming',
+  // work / money
   'freelance',
   'smallbusiness',
+  'Entrepreneur',
+  'marketing',
+  'copywriting',
+  'productivity',
+  // study / job hunting
+  'studytips',
+  'resumes',
+  'jobsearchhacks',
+  'Notion',
 ];
 
 export const HN_QUERIES = [
@@ -25,26 +42,68 @@ export const HN_QUERIES = [
   'AI agent workflow',
   'automated with AI',
   'prompt engineering',
+  'LLM workflow',
+  'AI coding workflow',
+  'building with LLMs',
+  'RAG tutorial',
+  'AI for business',
 ];
 
-export const DEVTO_TAGS = ['ai', 'productivity', 'chatgpt', 'automation'];
+export const DEVTO_TAGS = [
+  'ai',
+  'productivity',
+  'chatgpt',
+  'automation',
+  'machinelearning',
+  'tutorial',
+  'llm',
+  'beginners',
+];
 
 export const RSS_FEEDS = [
   'https://simonwillison.net/atom/everything/',
   'https://www.latent.space/feed',
   'https://www.bensbites.com/feed',
+  'https://www.oneusefulthing.org/feed',
 ];
 
-export const GITHUB_QUERIES = ['ai workflow guide', 'prompt engineering workflow'];
+export const GITHUB_QUERIES = [
+  'ai workflow guide',
+  'prompt engineering workflow',
+  'chatgpt prompts guide',
+  'llm application tutorial',
+];
 
-export const YOUTUBE_QUERIES = ['AI workflow tutorial step by step', 'ChatGPT workflow real example'];
+export const YOUTUBE_QUERIES = [
+  'AI workflow tutorial step by step',
+  'ChatGPT workflow real example',
+  'Claude AI workflow tutorial',
+];
 
 /** Daily caps (quality + free-tier safety). Publishes = candidates scoring ≥ 7, up to the cap. */
 export const CAPS = {
-  scorePerRun: 120,
-  publishPerRun: 20,
+  scorePerRun: 150,
+  publishPerRun: 25,
   /** Backfill runs become no-ops once this many workflows are published. */
-  backfillTarget: 75,
+  backfillTarget: 150,
+};
+
+/**
+ * Daily-run fetch windows. Wider than "top of today" so we keep surfacing
+ * genuinely new posts instead of re-scanning the same evergreen page-0 results
+ * (which then all dedupe away). Combined with dailyPage rotation in run.ts.
+ */
+export const DAILY = {
+  redditWindow: 'week' as const, // top of the week, not just today
+  redditLimit: 25,
+  hnMinPoints: 10,
+  hnPerPage: 20,
+  devtoTopDays: 7,
+  devtoPerPage: 20,
+  githubMinStars: 15,
+  githubPerPage: 12,
+  /** Daily page offset cycles 0..pageCycle-1 across runs to reach new posts. */
+  pageCycle: 6,
 };
 
 /** Candidates older than this are dropped before scoring. */

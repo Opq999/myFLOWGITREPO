@@ -1,4 +1,4 @@
-import { HN_QUERIES, USER_AGENT } from '../sources.config';
+import { DAILY, HN_QUERIES, USER_AGENT } from '../sources.config';
 import type { Candidate } from '../types';
 import { truncate } from '../lib/utils';
 
@@ -37,8 +37,9 @@ export async function fetchHn(opts: { backfill: boolean; page?: number }): Promi
   for (const query of HN_QUERIES) {
     const numericFilters = opts.backfill
       ? `points>50,created_at_i>${Math.floor(Date.now() / 1000) - 365 * 86400}`
-      : 'points>20';
-    const url = `https://hn.algolia.com/api/v1/search?query=${encodeURIComponent(query)}&tags=story&numericFilters=${encodeURIComponent(numericFilters)}&hitsPerPage=${opts.backfill ? 30 : 10}&page=${opts.backfill ? page : 0}`;
+      : `points>${DAILY.hnMinPoints}`;
+    const hitsPerPage = opts.backfill ? 30 : DAILY.hnPerPage;
+    const url = `https://hn.algolia.com/api/v1/search?query=${encodeURIComponent(query)}&tags=story&numericFilters=${encodeURIComponent(numericFilters)}&hitsPerPage=${hitsPerPage}&page=${page}`;
     const res = await fetch(url, { headers: { 'User-Agent': USER_AGENT } });
     if (!res.ok) throw new Error(`HN API ${res.status}`);
     const data = (await res.json()) as { hits: HnHit[] };

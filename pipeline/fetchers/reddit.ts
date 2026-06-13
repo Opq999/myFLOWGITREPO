@@ -1,5 +1,5 @@
 import { XMLParser } from 'fast-xml-parser';
-import { SUBREDDITS, USER_AGENT } from '../sources.config';
+import { DAILY, SUBREDDITS, USER_AGENT } from '../sources.config';
 import type { Candidate } from '../types';
 import { sleep, truncate } from '../lib/utils';
 
@@ -72,8 +72,8 @@ async function fetchSubJson(
   token: string,
   opts: { backfill: boolean }
 ): Promise<Candidate[]> {
-  const t = opts.backfill ? 'year' : 'day';
-  const limit = opts.backfill ? 50 : 15;
+  const t = opts.backfill ? 'year' : DAILY.redditWindow;
+  const limit = opts.backfill ? 50 : DAILY.redditLimit;
   const url = `https://oauth.reddit.com/r/${sub}/top?t=${t}&limit=${limit}&raw_json=1`;
   const res = await fetch(url, {
     headers: { Authorization: `Bearer ${token}`, 'User-Agent': USER_AGENT },
@@ -127,8 +127,9 @@ export function normalizeRedditFeed(xml: string): Candidate[] {
 }
 
 async function fetchSubRss(sub: string, opts: { backfill: boolean }): Promise<Candidate[]> {
-  const t = opts.backfill ? 'year' : 'day';
-  const url = `https://www.reddit.com/r/${sub}/top.rss?t=${t}&limit=${opts.backfill ? 50 : 15}`;
+  const t = opts.backfill ? 'year' : DAILY.redditWindow;
+  const limit = opts.backfill ? 50 : DAILY.redditLimit;
+  const url = `https://www.reddit.com/r/${sub}/top.rss?t=${t}&limit=${limit}`;
   const res = await fetch(url, { headers: { 'User-Agent': USER_AGENT } });
   if (!res.ok) throw new Error(`status ${res.status}`);
   return normalizeRedditFeed(await res.text());
@@ -145,8 +146,8 @@ export async function fetchReddit(opts: { backfill: boolean }): Promise<Candidat
     } catch (err) {
       console.warn(`[fetch] reddit r/${sub} skipped: ${err instanceof Error ? err.message : err}`);
     }
-    // Politeness: keep request volume low (PRD free-tier guardrails).
-    await sleep(1500);
+    // Politeness + anonymous-rate-limit avoidance (the OAuth path lifts this).
+    await sleep(2500);
   }
   return results;
 }

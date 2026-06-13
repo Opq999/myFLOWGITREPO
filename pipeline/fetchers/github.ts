@@ -1,4 +1,4 @@
-import { GITHUB_QUERIES, USER_AGENT } from '../sources.config';
+import { DAILY, GITHUB_QUERIES, USER_AGENT } from '../sources.config';
 import type { Candidate } from '../types';
 import { truncate } from '../lib/utils';
 
@@ -25,17 +25,20 @@ export function normalizeGithub(repos: GithubRepo[]): Candidate[] {
     }));
 }
 
-export async function fetchGithub(opts: { backfill: boolean }): Promise<Candidate[]> {
+export async function fetchGithub(opts: { backfill: boolean; page?: number }): Promise<Candidate[]> {
   const results: Candidate[] = [];
   const headers: Record<string, string> = {
     'User-Agent': USER_AGENT,
     Accept: 'application/vnd.github+json',
   };
   if (process.env.GITHUB_TOKEN) headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
-  const page = opts.backfill ? ((opts as { page?: number }).page ?? 0) + 1 : 1;
+  // GitHub search pages are 1-indexed; the rotating offset starts at 0.
+  const page = (opts.page ?? 0) + 1;
   for (const query of GITHUB_QUERIES) {
-    const q = `${query} in:name,description,readme stars:>${opts.backfill ? 100 : 20}`;
-    const url = `https://api.github.com/search/repositories?q=${encodeURIComponent(q)}&sort=stars&per_page=${opts.backfill ? 20 : 8}&page=${page}`;
+    const minStars = opts.backfill ? 100 : DAILY.githubMinStars;
+    const perPage = opts.backfill ? 20 : DAILY.githubPerPage;
+    const q = `${query} in:name,description,readme stars:>${minStars}`;
+    const url = `https://api.github.com/search/repositories?q=${encodeURIComponent(q)}&sort=stars&per_page=${perPage}&page=${page}`;
     const res = await fetch(url, { headers });
     if (!res.ok) throw new Error(`GitHub search ${res.status}`);
     const data = (await res.json()) as { items: GithubRepo[] };
