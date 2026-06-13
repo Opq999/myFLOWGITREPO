@@ -11,14 +11,14 @@ const workflows = (await getCollection('workflows', (e) => e.data.published)).so
 ---
 
 <Base title="All workflows" description="Browse every AI workflow: filter by category, difficulty, badge, or free tools only.">
-  <p class="font-mono text-[11px] font-bold uppercase tracking-[0.3em] text-volt-400">The library</p>
-  <h1 class="mt-2 font-display text-4xl font-bold tracking-tight text-white">All workflows</h1>
-  <p class="mt-2 text-zinc-400">{workflows.length} reproducible AI workflows, newest first.</p>
+  <p class="font-mono text-[11px] font-bold uppercase tracking-[0.3em] text-accent">The library</p>
+  <h1 class="mt-2 font-display text-4xl font-medium tracking-[-0.02em] text-ink-900 sm:text-5xl">All workflows</h1>
+  <p class="mt-2 text-ink-500">{workflows.length} reproducible AI workflows, newest first.</p>
 
   <form class="mt-6 flex flex-wrap items-center gap-2" id="filters">
     <select
       data-filter="category"
-      class="rounded-lg border border-ink-700 bg-ink-900 px-3 py-2.5 text-sm font-semibold text-zinc-200 focus:border-volt-400 focus:outline-none"
+      class="rounded-full border border-line-strong bg-surface px-4 py-2.5 text-sm font-semibold text-ink-800 focus:border-accent focus:outline-none"
       aria-label="Category"
     >
       <option value="">All categories</option>
@@ -26,7 +26,7 @@ const workflows = (await getCollection('workflows', (e) => e.data.published)).so
     </select>
     <select
       data-filter="difficulty"
-      class="rounded-lg border border-ink-700 bg-ink-900 px-3 py-2.5 text-sm font-semibold text-zinc-200 focus:border-volt-400 focus:outline-none"
+      class="rounded-full border border-line-strong bg-surface px-4 py-2.5 text-sm font-semibold text-ink-800 focus:border-accent focus:outline-none"
       aria-label="Difficulty"
     >
       <option value="">Any difficulty</option>
@@ -34,24 +34,24 @@ const workflows = (await getCollection('workflows', (e) => e.data.published)).so
     </select>
     <select
       data-filter="badge"
-      class="rounded-lg border border-ink-700 bg-ink-900 px-3 py-2.5 text-sm font-semibold text-zinc-200 focus:border-volt-400 focus:outline-none"
+      class="rounded-full border border-line-strong bg-surface px-4 py-2.5 text-sm font-semibold text-ink-800 focus:border-accent focus:outline-none"
       aria-label="Badge"
     >
       <option value="">Any badge</option>
       {BADGES.map((b) => <option value={b}>{b}</option>)}
     </select>
     <label
-      class="flex cursor-pointer items-center gap-2 rounded-lg border border-ink-700 bg-ink-900 px-3.5 py-2.5 font-mono text-[11px] font-bold uppercase tracking-[0.1em] text-zinc-300 transition-colors has-checked:border-volt-400 has-checked:text-volt-300"
+      class="flex cursor-pointer items-center gap-2 rounded-full border border-line-strong bg-surface px-4 py-2.5 font-mono text-[11px] font-bold uppercase tracking-[0.1em] text-ink-700 transition-colors has-checked:border-accent has-checked:text-accent"
     >
-      <input type="checkbox" id="free-only" class="accent-[#b8ef3f]" />
+      <input type="checkbox" id="free-only" class="accent-[#ff4d2e]" />
       Free tools only
     </label>
   </form>
 
-  <div class="mt-6 grid gap-3 md:grid-cols-2" id="workflow-list">
+  <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3" id="workflow-list">
     {workflows.map((w) => <WorkflowCard workflow={w} />)}
   </div>
-  <p id="no-results" hidden class="mt-10 text-center text-zinc-500">
+  <p id="no-results" hidden class="mt-10 text-center text-ink-400">
     No workflows match these filters yet. The library grows daily — check back tomorrow.
   </p>
 </Base>

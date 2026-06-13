@@ -22,24 +22,24 @@ const postedAt = source.postedAt.toISOString().slice(0, 10);
 ---
 
 <div
-  class="source-embed rounded-xl border border-ink-800 bg-ink-900 p-4"
+  class="source-embed rounded-xl border border-line bg-surface p-4"
   data-platform={source.platform}
   data-url={source.url}
 >
-  <p class="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-500">
+  <p class="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-ink-400">
     ⛓ Proof · original source · {platformLabels[source.platform]}
   </p>
   <p class="mt-2 break-all text-sm">
-    <a href={source.url} target="_blank" rel="noopener" class="font-semibold text-volt-300 underline underline-offset-2">
+    <a href={source.url} target="_blank" rel="noopener" class="font-semibold text-accent underline underline-offset-2">
       {source.url}
     </a>
   </p>
-  <p class="mt-1.5 text-sm text-zinc-400">By <span class="text-zinc-200">{source.author}</span> · {postedAt}</p>
+  <p class="mt-1.5 text-sm text-ink-500">By <span class="text-ink-900 font-semibold">{source.author}</span> · {postedAt}</p>
   {
     embeddable && (
       <button
         type="button"
-        class="load-embed-btn mt-3 rounded-lg border border-ink-700 bg-ink-850 px-4 py-2 font-mono text-[11px] font-bold uppercase tracking-[0.1em] text-zinc-300 transition-colors hover:border-volt-400 hover:text-volt-300"
+        class="load-embed-btn mt-3 rounded-lg border border-line-strong bg-paper-2 px-4 py-2 font-mono text-[11px] font-bold uppercase tracking-[0.1em] text-ink-700 transition-colors hover:border-accent hover:text-accent"
       >
         ▶ Load original post (uses more data)
       </button>
@@ -87,7 +87,7 @@ const postedAt = source.postedAt.toISOString().slice(0, 10);
       } else if (platform === 'twitter') {
         var tbq = document.createElement('blockquote');
         tbq.className = 'twitter-tweet';
-        tbq.setAttribute('data-theme', 'dark');
+        tbq.setAttribute('data-theme', 'light');
         var ta = document.createElement('a');
         ta.href = url;
         ta.textContent = url;

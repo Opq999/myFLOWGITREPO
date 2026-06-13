@@ -2,32 +2,32 @@
 import { SITE } from '../site.config';
 ---
 
-<header class="sticky top-0 z-40 border-b border-ink-800 bg-ink-950/80 backdrop-blur-md">
+<header class="sticky top-0 z-40 border-b border-line bg-paper/80 backdrop-blur-md">
   <div class="mx-auto flex w-full max-w-6xl flex-wrap items-center gap-x-5 gap-y-2 px-4 py-3 sm:px-6">
-    <a href="/" class="font-display text-xl font-bold tracking-tight text-white">
-      {SITE.name}<span class="text-volt-400">.</span>
+    <a href="/" class="font-display text-2xl font-semibold tracking-[-0.02em] text-ink-900">
+      {SITE.name}<span class="text-accent">.</span>
     </a>
     <nav
-      class="order-3 flex w-full gap-5 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-zinc-400 sm:order-2 sm:w-auto"
+      class="order-3 flex w-full gap-5 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-ink-500 sm:order-2 sm:w-auto"
     >
-      <a href="/workflows/" class="py-1 transition-colors hover:text-volt-300">Workflows</a>
-      <a href="/about/" class="py-1 transition-colors hover:text-volt-300">About</a>
-      <a href="/submit/" class="py-1 transition-colors hover:text-volt-300">Submit</a>
+      <a href="/workflows/" class="py-1 transition-colors hover:text-accent">Workflows</a>
+      <a href="/about/" class="py-1 transition-colors hover:text-accent">About</a>
+      <a href="/submit/" class="py-1 transition-colors hover:text-accent">Submit</a>
     </nav>
     <button
       id="search-toggle"
       type="button"
-      class="order-2 ml-auto rounded-lg border border-ink-700 bg-ink-900 px-3 py-1.5 font-mono text-[11px] font-semibold uppercase tracking-[0.15em] text-zinc-400 transition-colors hover:border-volt-400 hover:text-volt-300 sm:order-3"
+      class="order-2 ml-auto rounded-lg border border-line-strong bg-surface px-3 py-1.5 font-mono text-[11px] font-semibold uppercase tracking-[0.15em] text-ink-600 transition-colors hover:border-accent hover:text-accent sm:order-3"
       aria-expanded="false"
       aria-controls="search-panel"
     >
       ⌕ Search
     </button>
   </div>
-  <div id="search-panel" hidden class="border-t border-ink-800 bg-ink-900/95">
+  <div id="search-panel" hidden class="border-t border-line bg-surface/95">
     <div class="mx-auto w-full max-w-6xl px-4 py-4 sm:px-6">
       <div id="search"></div>
-      <noscript><p class="text-sm text-zinc-500">Search needs JavaScript enabled.</p></noscript>
+      <noscript><p class="text-sm text-ink-400">Search needs JavaScript enabled.</p></noscript>
     </div>
   </div>
 </header>

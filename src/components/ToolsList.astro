@@ -7,9 +7,9 @@ interface Props {
 const { tools } = Astro.props;
 
 const pricingStyles: Record<Tool['pricing'], string> = {
-  free: 'border-volt-400/40 bg-volt-400/10 text-volt-300',
-  freemium: 'border-amber-400/40 bg-amber-400/10 text-amber-300',
-  paid: 'border-red-400/40 bg-red-400/10 text-red-300',
+  free: 'border-cat-jobs/40 bg-cat-jobs/10 text-cat-jobs',
+  freemium: 'border-cat-freelance/40 bg-cat-freelance/10 text-cat-freelance',
+  paid: 'border-red-500/40 bg-red-500/10 text-red-600',
 };
 ---
 
@@ -24,7 +24,7 @@ const pricingStyles: Record<Tool['pricing'], string> = {
             href={href}
             rel={rel}
             target="_blank"
-            class="inline-flex items-center gap-2 rounded-lg border border-ink-700 bg-ink-900 px-3 py-1.5 text-sm font-semibold text-zinc-200 transition-colors hover:border-volt-400"
+            class="inline-flex items-center gap-2 rounded-lg border border-line-strong bg-surface px-3 py-1.5 text-sm font-semibold text-ink-800 transition-colors hover:border-accent"
           >
             {tool.name}
             <span

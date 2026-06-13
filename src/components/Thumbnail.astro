@@ -1,0 +1,48 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { CATEGORY_META } from '../lib/categories';
+
+interface Props {
+  workflow: CollectionEntry<'workflows'>;
+}
+const { workflow } = Astro.props;
+const d = workflow.data;
+const meta = CATEGORY_META[d.category];
+
+// Derive favicon chips from the tools we already store — real logos, no
+// scraping pipeline. De-dupe by host, cap at 3, fall back gracefully on 404.
+const hosts: string[] = [];
+for (const tool of d.tools) {
+  try {
+    const host = new URL(tool.url).hostname.replace(/^www\./, '');
+    if (host && !hosts.includes(host)) hosts.push(host);
+  } catch {
+    /* skip malformed tool urls */
+  }
+}
+const chips = hosts.slice(0, 3);
+---
+
+<div class="wf-thumb" data-category={d.category}>
+  <div class="wf-thumb__noise" aria-hidden="true"></div>
+  <span class="wf-thumb__tag">{meta.label}</span>
+  <span class="wf-thumb__glyph" aria-hidden="true">{meta.emoji}</span>
+  {
+    chips.length > 0 && (
+      <div class="wf-thumb__chips">
+        {chips.map((host) => (
+          <img
+            class="wf-thumb__chip"
+            src={`https://www.google.com/s2/favicons?domain=${host}&sz=64`}
+            alt=""
+            loading="lazy"
+            decoding="async"
+            width="26"
+            height="26"
+            onerror="this.remove()"
+          />
+        ))}
+      </div>
+    )
+  }
+</div>

@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import Badge from './Badge.astro';
+import Thumbnail from './Thumbnail.astro';
 import { CATEGORY_META } from '../lib/categories';
 
 interface Props {
@@ -12,28 +13,30 @@ const isFree = d.tools.every((t) => t.pricing !== 'paid');
 ---
 
 <article
-  class="workflow-card rounded-xl"
+  class="workflow-card group rounded-2xl"
   data-category={d.category}
   data-badge={d.badge}
   data-difficulty={d.difficulty}
   data-free={isFree ? '1' : '0'}
 >
-  <a href={`/workflows/${workflow.id}/`} class="block p-4 pl-5">
-    <div class="mb-2 flex flex-wrap items-center gap-x-2.5 gap-y-1.5 font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-500">
-      <Badge badge={d.badge} />
-      <span>{d.difficulty}</span>
-      <span class="text-ink-700">/</span>
-      <span>⏱ {d.timeMinutes}min</span>
-      <span class="text-ink-700">/</span>
-      <span style="color: var(--cat)">{CATEGORY_META[d.category].label}</span>
-      {isFree && <span class="rounded-full border border-volt-400/40 bg-volt-400/10 px-2 py-0.5 text-volt-300">Free tools</span>}
+  <a href={`/workflows/${workflow.id}/`} class="block">
+    <Thumbnail workflow={workflow} />
+    <div class="p-4 pt-3.5">
+      <div class="mb-2 flex flex-wrap items-center gap-x-2.5 gap-y-1.5 font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-ink-400">
+        <Badge badge={d.badge} />
+        <span>{d.difficulty}</span>
+        <span class="text-ink-300">/</span>
+        <span>⏱ {d.timeMinutes}min</span>
+        {isFree && <span class="rounded-full border border-volt-400/40 bg-volt-400/10 px-2 py-0.5 text-volt-500">Free tools</span>}
+      </div>
+      <h3 class="font-display text-[1.2rem] font-semibold leading-snug tracking-[-0.01em] text-ink-900">
+        {d.title}
+      </h3>
+      <p class="mt-1.5 line-clamp-2 text-sm leading-relaxed text-ink-500">{d.description}</p>
+      <p class="mt-3 inline-flex items-center gap-1 font-mono text-[10px] font-bold uppercase tracking-[0.15em] text-accent">
+        Open workflow
+        <span class="transition-transform duration-200 group-hover:translate-x-1">→</span>
+      </p>
     </div>
-    <h3 class="font-display text-[1.05rem] font-bold leading-snug text-white">
-      {d.title}
-    </h3>
-    <p class="mt-1.5 line-clamp-2 text-sm leading-relaxed text-zinc-400">{d.description}</p>
-    <p class="mt-2.5 font-mono text-[10px] font-bold uppercase tracking-[0.15em] text-volt-400">
-      Open workflow →
-    </p>
   </a>
 </article>

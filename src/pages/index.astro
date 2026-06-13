@@ -27,31 +27,31 @@ const freeCount = workflows.filter((w) => w.data.tools.every((t) => t.pricing !=
 <Base title={SITE.name}>
   <!-- HERO -->
   <section class="relative overflow-hidden py-12 sm:py-16 lg:py-24">
-    <div class="glow h-72 w-72 bg-volt-400/15 lg:h-96 lg:w-96" style="top:-6rem; left:-6rem;" aria-hidden="true"></div>
-    <div class="glow h-72 w-72 bg-cat-coding/10 lg:h-96 lg:w-96" style="bottom:-8rem; right:-5rem;" aria-hidden="true"></div>
+    <div class="glow h-72 w-72 bg-volt-400/20 lg:h-[26rem] lg:w-[26rem]" style="top:-7rem; left:-7rem;" aria-hidden="true"></div>
+    <div class="glow h-72 w-72 bg-cat-coding/15 lg:h-96 lg:w-96" style="bottom:-9rem; right:-5rem;" aria-hidden="true"></div>
 
-    <p class="font-mono text-[11px] font-bold uppercase tracking-[0.3em] text-volt-400">
+    <p class="inline-flex items-center gap-2 rounded-full border border-line-strong bg-surface px-3 py-1 font-mono text-[11px] font-bold uppercase tracking-[0.22em] text-accent">
       ⚡ A living library · refreshed daily by machine, proven by humans
     </p>
-    <h1 class="mt-4 font-display text-[2.6rem] font-bold leading-[1.02] tracking-tight text-white sm:text-6xl lg:text-[5.5rem]">
+    <h1 class="mt-5 font-display text-[2.9rem] font-medium leading-[0.98] tracking-[-0.025em] text-ink-900 sm:text-6xl lg:text-[5.4rem]">
       AI workflows<br />
-      that actually<br />
+      that <em class="font-semibold italic text-accent">actually</em><br />
       <span class="text-outline">get work done</span>
     </h1>
-    <p class="mt-5 max-w-md text-base leading-relaxed text-zinc-400 lg:max-w-lg lg:text-lg">
+    <p class="mt-6 max-w-md text-base leading-relaxed text-ink-600 lg:max-w-lg lg:text-lg">
       Not another tool list. Every entry is a reproducible recipe — the exact steps and
       copy-paste prompts a real person used, with the original source as proof.
     </p>
-    <div class="mt-7 flex flex-wrap gap-3">
+    <div class="mt-8 flex flex-wrap gap-3">
       <a
         href="/workflows/"
-        class="rounded-xl bg-volt-400 px-6 py-3 font-display text-base font-bold text-ink-950 transition-transform hover:scale-[1.03] hover:bg-volt-300"
+        class="rounded-full bg-ink-900 px-6 py-3 font-sans text-base font-semibold text-paper transition-transform hover:scale-[1.03]"
       >
         Browse the library →
       </a>
       <a
         href="/workflows/?free=1"
-        class="rounded-xl border border-ink-700 bg-ink-900/70 px-6 py-3 font-display text-base font-bold text-zinc-200 transition-colors hover:border-volt-400 hover:text-volt-300"
+        class="rounded-full border border-line-strong bg-surface px-6 py-3 font-sans text-base font-semibold text-ink-800 transition-colors hover:border-accent hover:text-accent"
       >
         Free tools only
       </a>
@@ -59,7 +59,7 @@ const freeCount = workflows.filter((w) => w.data.tools.every((t) => t.pricing !=
   </section>
 
   <!-- STAT STRIP -->
-  <section class="grid grid-cols-3 divide-x divide-ink-800 rounded-2xl border border-ink-800 bg-ink-900/60">
+  <section class="grid grid-cols-3 divide-x divide-line rounded-2xl border border-line bg-surface shadow-[0_1px_2px_rgba(28,23,19,0.04)]">
     {
       [
         [String(workflows.length), 'workflows & growing daily'],
@@ -67,8 +67,8 @@ const freeCount = workflows.filter((w) => w.data.tools.every((t) => t.pricing !=
         ['₦0', 'to read. forever.'],
       ].map(([num, label]) => (
         <div class="px-4 py-5 text-center">
-          <p class="font-display text-2xl font-bold text-volt-400 sm:text-3xl">{num}</p>
-          <p class="mt-1 font-mono text-[9px] font-semibold uppercase tracking-[0.15em] text-zinc-500 sm:text-[10px]">
+          <p class="font-display text-3xl font-semibold text-ink-900 sm:text-4xl">{num}</p>
+          <p class="mt-1 font-mono text-[9px] font-semibold uppercase tracking-[0.15em] text-ink-400 sm:text-[10px]">
             {label}
           </p>
         </div>
@@ -79,16 +79,14 @@ const freeCount = workflows.filter((w) => w.data.tools.every((t) => t.pricing !=
   <!-- TRENDING -->
   {
     trending.length > 0 && (
-      <section class="mt-12">
-        <div class="mb-4 flex items-baseline justify-between">
-          <h2 class="font-display text-2xl font-bold text-white">
-            <span class="text-volt-400">/</span> Trending
-          </h2>
-          <p class="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-600">
-            top scores · last 14 days
-          </p>
+      <section class="mt-14">
+        <div class="mb-5 flex items-end justify-between">
+          <div>
+            <p class="font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-accent">Top scores · last 14 days</p>
+            <h2 class="mt-1 font-display text-3xl font-medium tracking-[-0.02em] text-ink-900">Trending now</h2>
+          </div>
         </div>
-        <div class="grid gap-3 md:grid-cols-2">
+        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {trending.map((w) => (
             <WorkflowCard workflow={w} />
           ))}
@@ -98,25 +96,25 @@ const freeCount = workflows.filter((w) => w.data.tools.every((t) => t.pricing !=
   }
 
   <!-- LATEST -->
-  <section class="mt-12">
-    <div class="mb-4 flex items-baseline justify-between">
-      <h2 class="font-display text-2xl font-bold text-white">
-        <span class="text-volt-400">/</span> Fresh from the pipeline
-      </h2>
-      <a href="/workflows/" class="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-volt-400 hover:text-volt-300">
+  <section class="mt-16">
+    <div class="mb-5 flex items-end justify-between">
+      <div>
+        <p class="font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-accent">Fresh from the pipeline</p>
+        <h2 class="mt-1 font-display text-3xl font-medium tracking-[-0.02em] text-ink-900">Latest workflows</h2>
+      </div>
+      <a href="/workflows/" class="shrink-0 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-accent hover:text-volt-500">
         all {workflows.length} →
       </a>
     </div>
-    <div class="grid gap-3 md:grid-cols-2">
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {latest.map((w) => <WorkflowCard workflow={w} />)}
     </div>
   </section>
 
   <!-- BENTO CATEGORY GRID -->
-  <section class="mt-14">
-    <h2 class="mb-4 font-display text-2xl font-bold text-white">
-      <span class="text-volt-400">/</span> Pick your job
-    </h2>
+  <section class="mt-16">
+    <p class="font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-accent">Browse by goal</p>
+    <h2 class="mt-1 mb-5 font-display text-3xl font-medium tracking-[-0.02em] text-ink-900">Pick your job</h2>
     <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:gap-4">
       {
         CATEGORIES.map((c, i) => (
@@ -126,7 +124,7 @@ const freeCount = workflows.filter((w) => w.data.tools.every((t) => t.pricing !=
             data-category={c}
           >
             <span class="text-3xl">{CATEGORY_META[c].emoji}</span>
-            <p class="mt-3 font-display text-base font-bold leading-tight text-white">
+            <p class="mt-3 font-display text-lg font-semibold leading-tight text-ink-900">
               {CATEGORY_META[c].label}
             </p>
             <p class="mt-1 font-mono text-[10px] font-bold uppercase tracking-[0.15em]" style="color: var(--cat)">
@@ -139,11 +137,9 @@ const freeCount = workflows.filter((w) => w.data.tools.every((t) => t.pricing !=
   </section>
 
   <!-- HOW IT WORKS -->
-  <section class="mt-14 rounded-2xl border border-ink-800 bg-ink-900/60 p-6">
-    <h2 class="font-display text-xl font-bold text-white">
-      <span class="text-volt-400">/</span> How this library stays honest
-    </h2>
-    <div class="mt-4 grid gap-4 sm:grid-cols-3">
+  <section class="mt-16 rounded-2xl border border-line bg-surface p-6 sm:p-8 shadow-[0_1px_2px_rgba(28,23,19,0.04)]">
+    <h2 class="font-display text-2xl font-medium tracking-[-0.02em] text-ink-900">How this library stays honest</h2>
+    <div class="mt-5 grid gap-5 sm:grid-cols-3">
       {
         [
           ['01', 'Found in the wild', 'A pipeline scans Reddit, Hacker News, Dev.to and more for workflows real people actually used.'],
@@ -151,9 +147,9 @@ const freeCount = workflows.filter((w) => w.data.tools.every((t) => t.pricing !=
           ['03', 'Proof attached', 'Every workflow links its original human source. No source, no entry.'],
         ].map(([n, title, body]) => (
           <div>
-            <p class="font-mono text-[11px] font-bold text-volt-400">{n}</p>
-            <p class="mt-1 font-display text-sm font-bold text-white">{title}</p>
-            <p class="mt-1 text-[13px] leading-relaxed text-zinc-400">{body}</p>
+            <p class="font-display text-2xl font-semibold text-accent">{n}</p>
+            <p class="mt-1 font-display text-base font-semibold text-ink-900">{title}</p>
+            <p class="mt-1 text-[13px] leading-relaxed text-ink-500">{body}</p>
           </div>
         ))
       }

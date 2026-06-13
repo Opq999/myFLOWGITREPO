@@ -3,9 +3,9 @@ import { SITE } from '../site.config';
 const year = new Date().getFullYear();
 ---
 
-<footer class="mt-16 border-t border-ink-800">
-  <div class="ticker border-b border-ink-800 py-2.5" aria-hidden="true">
-    <div class="ticker__track font-mono text-[10px] font-semibold uppercase tracking-[0.25em] text-zinc-600">
+<footer class="mt-16 border-t border-line bg-paper-2/50">
+  <div class="ticker border-b border-line py-2.5" aria-hidden="true">
+    <div class="ticker__track font-mono text-[10px] font-semibold uppercase tracking-[0.25em] text-ink-400">
       {
         Array.from({ length: 2 }).map(() => (
           <span>
@@ -18,15 +18,15 @@ const year = new Date().getFullYear();
   </div>
   <div class="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-4 px-4 py-8 sm:px-6">
     <div>
-      <p class="font-display text-lg font-bold text-white">
-        {SITE.name}<span class="text-volt-400">.</span>
+      <p class="font-display text-xl font-semibold text-ink-900">
+        {SITE.name}<span class="text-accent">.</span>
       </p>
-      <p class="mt-1 text-sm text-zinc-500">© {year} · Reproducible AI workflows, refreshed daily.</p>
+      <p class="mt-1 text-sm text-ink-500">© {year} · Reproducible AI workflows, refreshed daily.</p>
     </div>
-    <nav class="flex gap-5 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-zinc-400">
-      <a href="/about/" class="hover:text-volt-300">About</a>
-      <a href="/submit/" class="hover:text-volt-300">Submit</a>
-      <a href="/rss.xml" class="hover:text-volt-300">RSS</a>
+    <nav class="flex gap-5 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-ink-500">
+      <a href="/about/" class="hover:text-accent">About</a>
+      <a href="/submit/" class="hover:text-accent">Submit</a>
+      <a href="/rss.xml" class="hover:text-accent">RSS</a>
     </nav>
   </div>
 </footer>

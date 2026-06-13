@@ -10,12 +10,12 @@ const x = `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&ur
 ---
 
 <div class="flex flex-wrap items-center gap-2.5">
-  <span class="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-500">Share</span>
+  <span class="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-ink-400">Share</span>
   <a
     href={whatsapp}
     target="_blank"
     rel="noopener"
-    class="rounded-lg bg-volt-400 px-5 py-2.5 font-display text-sm font-bold text-ink-950 transition-transform hover:scale-[1.03] hover:bg-volt-300"
+    class="rounded-full bg-volt-400 px-5 py-2.5 font-sans text-sm font-semibold text-ink-950 transition-transform hover:scale-[1.03] hover:bg-volt-300"
   >
     WhatsApp ↗
   </a>
@@ -23,13 +23,13 @@ const x = `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&ur
     href={x}
     target="_blank"
     rel="noopener"
-    class="rounded-lg border border-ink-700 bg-ink-900 px-5 py-2.5 font-display text-sm font-bold text-white transition-colors hover:border-zinc-400"
+    class="rounded-full border border-line-strong bg-surface px-5 py-2.5 font-sans text-sm font-semibold text-ink-900 transition-colors hover:border-ink-400"
   >
     X ↗
   </a>
   <button
     type="button"
-    class="copy-link-btn rounded-lg border border-ink-700 bg-ink-900 px-5 py-2.5 font-display text-sm font-bold text-zinc-300 transition-colors hover:border-volt-400 hover:text-volt-300"
+    class="copy-link-btn rounded-full border border-line-strong bg-surface px-5 py-2.5 font-sans text-sm font-semibold text-ink-700 transition-colors hover:border-accent hover:text-accent"
     data-url={url}
   >
     Copy link
