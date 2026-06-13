@@ -1,0 +1,108 @@
+---
+title: "Implement Agentic Engineering Best Practices with Claude for Coding"
+description: "Learn to implement agentic engineering best practices for coding with Claude, improving code quality and development workflows. This guide focuses on structured AI-assisted coding."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 45
+jobToBeDone: "Implement agentic engineering best practices for coding with Claude"
+tools:
+  - name: "Claude"
+    url: "https://claude.ai"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "GitHub"
+    url: "https://github.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Web Browser"
+    url: "https://www.google.com/chrome/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Slack"
+    url: "https://slack.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://github.com/shanraisshan/claude-code-best-practice"
+  platform: "github"
+  author: "shanraisshan"
+  postedAt: 2026-06-13
+score: 9
+ingestedAt: 2026-06-13
+nigeriaNotes: "Claude and GitHub offer robust free tiers suitable for this workflow. Data usage is generally light, primarily text-based interactions and code file transfers."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You'll learn to structure your AI-assisted coding workflows using agentic engineering principles with Claude. This involves defining subagents, commands, and skills to create more reliable and reproducible code. This approach moves beyond simple 'vibe coding' to a more systematic method, improving code quality, consistency, and maintainability, especially for complex projects.
+
+## Tools you need
+*   **Claude** (freemium) — Your AI assistant for generating and refining code.
+*   **GitHub** (free / freemium) — For version control, hosting your code, and potentially automating workflows.
+*   **Web Browser (e.g., Chrome)** (free) — To access Claude's web interface and GitHub.
+*   **Slack** (freemium) — (Optional) For integrating Claude into team communication for code reviews or notifications.
+
+## Steps
+1.  **Understand Agentic Engineering Concepts** — Familiarize yourself with the core components of agentic engineering as applied to coding:
+    *   **Subagents**: Specialized AI entities responsible for specific tasks (e.g., a 'Python Function Generator' subagent).
+    *   **Skills**: Reusable capabilities or actions that subagents can perform (e.g., a 'code generation' skill).
+    *   **Commands**: Instructions that orchestrate subagents and skills to achieve a larger goal (e.g., a 'generate feature' command).
+    You should have a basic understanding of how these components work together to structure an AI workflow.
+
+2.  **Set up your project for agentic workflows** — Create a dedicated directory structure within your coding project to house your agentic definitions. This helps keep your AI configurations organized and version-controlled.
+    *   **What to do**: In your project's root directory, create a new folder named `.claude`. Inside `.claude`, create three subfolders: `agents`, `skills`, and `commands`.
+    *   **What you should see**: Your project now has a `.claude` directory containing `agents/`, `skills/`, and `commands/` subdirectories.
+
+3.  **Define a Subagent's Role** — Use Claude to help you draft the definition for a specific subagent. This definition will outline its purpose, responsibilities, and how it interacts with other components.
+    *   **What to do**: Open Claude in your web browser. Paste the following prompt, replacing the bracketed text with details relevant to your project:
+
+    ```
+    The author doesn't share their exact prompt for defining a subagent; a starting point:
+    Help me define a subagent for my coding project. This subagent should be responsible for [specific task, e.g., 'generating Python functions']. What key responsibilities, inputs, and outputs should it have? Format this as a markdown file suitable for a .claude/agents/ directory.
+    ```
+
+    *   **What you should see**: Claude will generate a markdown draft outlining the subagent's role. Save this output as a `.md` file (e.g., `python_generator.md`) inside your `.claude/agents/` directory.
+
+4.  **Outline a Skill** — Next, define a specific skill that your subagent can utilize. This skill describes a concrete action or capability.
+    *   **What to do**: In Claude, use a prompt like this, adapting it to your needs:
+
+    ```
+    The author doesn't share their exact prompt for defining a skill; a starting point:
+    I need to define a 'code generation' skill for my subagent. This skill should take [input, e.g., 'a function signature and description'] and produce [output, e.g., 'the complete Python function code']. What steps or logic should this skill encapsulate? Format this as a markdown file suitable for a .claude/skills/ directory.
+    ```
+
+    *   **What you should see**: Claude will provide a markdown draft for the skill. Create a new folder for this skill (e.g., `code_generation`) inside `.claude/skills/`, and save the output as `SKILL.md` within that new folder.
+
+5.  **Create an Orchestration Command** — Define a command that orchestrates your subagents and skills to perform a more complex task. This command acts as the entry point for your structured workflow.
+    *   **What to do**: In Claude, provide a prompt to define your command:
+
+    ```
+    The author doesn't share their exact prompt for defining a command; a starting point:
+    I want to create a command called 'generate_feature' that uses my 'code generation' subagent and 'code generation' skill. This command should take [high-level input, e.g., 'a user story'] and orchestrate the subagent and skill to produce the necessary code. How would you define this command in a markdown file for a .claude/commands/ directory, including the flow of information between the agent and skill?
+    ```
+
+    *   **What you should see**: Claude will generate a markdown definition for your command. Save this as a `.md` file (e.g., `generate_feature.md`) inside your `.claude/commands/` directory.
+
+6.  **Integrate and Execute (Conceptual)** — With your subagents, skills, and commands defined, you would conceptually use Claude to execute these structured workflows. While the exact execution method isn't detailed for a beginner in the source, the idea is to invoke your defined commands.
+    *   **What to do**: The author's specific execution method for these structured definitions isn't detailed for a beginner. Conceptually, you would use Claude's interface (e.g., `claude.ai/code` or a CLI if set up) to invoke your defined commands, allowing it to orchestrate the agents and skills you've outlined.
+    *   **What you should see**: Claude processing your request based on your structured definitions, potentially generating code or performing other actions as defined by your command.
+
+7.  **Review Code with Ultrareview** — Leverage Claude's advanced review capabilities to ensure the quality of any generated or written code.
+    *   **What to do**: Once you have code (either generated by Claude or written by you), paste it into Claude and ask for a thorough review. The author mentions 'Ultrareview' for this purpose.
+
+    ```
+    Perform an ultra-thorough code review of the following Python code. Identify potential bugs, suggest improvements for readability and performance, and check for adherence to best practices:
+    [paste your code here]
+    ```
+
+    *   **What you should see**: Detailed feedback, suggestions for improvements, and potential bug identifications from Claude, helping you refine your code.
+
+## Original source
+This workflow is inspired by the `claude-code-best-practice` GitHub repository by shanraisshan. The repository outlines a comprehensive approach to agentic engineering, moving from unstructured 'vibe coding' to a more systematic, AI-assisted development process.
+
+## Notes & variations
+*   **Free-tier alternatives**: Claude offers a free tier that is sufficient for experimenting with these concepts. GitHub is free for public repositories, making it ideal for hosting your project and its `.claude` definitions.
+*   **Common mistake**: A common pitfall is treating Claude like a simple chatbot for every task. Agentic engineering requires you to define clear roles, inputs, and outputs for your agents and skills. Without this structure, you'll likely get inconsistent or less reliable results.
+*   **Tip for better results**: Start small. Define one agent and one skill for a very specific, manageable task. Iterate on these definitions, refining their responsibilities and interactions, before attempting to build more complex orchestration commands. Always use version control (like Git) for your `.claude` definitions, just as you would for your code.

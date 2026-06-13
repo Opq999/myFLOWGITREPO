@@ -764,8 +764,120 @@
     "cddc9a2d075a51037ba44e9147d87bac14f8ecee6231b07be5d63984cf63ee77": {
       "url": "https://github.com/mem0ai/mem0",
       "date": "2026-06-13"
+    },
+    "568b1d0bba5de0228657653cf368b3d86192834b4db4a1412ed08b9c7263c339": {
+      "url": "https://github.com/akullpp/awesome-java",
+      "date": "2026-06-13"
+    },
+    "2cf9a1c7abc1aae9d0cf2899c9d6a9d8f2137515654c6616f72251ace9456db1": {
+      "url": "https://news.ycombinator.com/item?id=43331582",
+      "date": "2026-06-13"
+    },
+    "84b17f778272a22d8cd8f0a7adc26c94b5a0563a15a17e2101a45f150d2127f8": {
+      "url": "https://simonwillison.net/2026/Jun/2/micropython-wasm",
+      "date": "2026-06-13"
+    },
+    "e8a6ea38f92e425fb6b626b97cb8c97da0a06b406644ff43dfd75c3a3d1e884a": {
+      "url": "https://github.com/microsoft/playwright",
+      "date": "2026-06-13"
+    },
+    "ce8ab60809112fe4f9515d89c2bc825f62f230dd09fc3916d66fd9eea7d23c9c": {
+      "url": "https://news.ycombinator.com/item?id=43103073",
+      "date": "2026-06-13"
+    },
+    "e947689f8ff66d1dbd35731ac6ff90fc0ea3c9abab6424252de32f8493ad6760": {
+      "url": "https://www.latent.space/p/ainews-open-models-model-labs-vs",
+      "date": "2026-06-13"
+    },
+    "9c719f0779240935d58c5fd5b0cfef5c76013289c102866ce41960d82a01216c": {
+      "url": "https://github.com/laravel/laravel",
+      "date": "2026-06-13"
+    },
+    "db0fc62f4243a65eaff100b4731cc6ed15fe54cdb58fdf230d171aa926c73886": {
+      "url": "https://news.ycombinator.com/item?id=45771870",
+      "date": "2026-06-13"
+    },
+    "d232148f3de4820cbbd8a70aa665e3343ef2cbe2c4a14ef95c20fd276e4099b3": {
+      "url": "https://www.latent.space/p/ainews-anthropic-claude-fable-5-mythos",
+      "date": "2026-06-13"
+    },
+    "b28e5f05a47b38cbe6585097c99a43cf0640c39460c576bf3844f7f879a614f6": {
+      "url": "https://github.com/ByteByteGoHq/system-design-101",
+      "date": "2026-06-13"
+    },
+    "4d7e0986182d1ad6344f7322979848e14ae1271b2c0bc295e220c57923ab1f47": {
+      "url": "https://news.ycombinator.com/item?id=47663147",
+      "date": "2026-06-13"
+    },
+    "d8e2054a3dff06857cc9a84c0817fb0cb18602e219b2f4f4b19c5c317cd448b2": {
+      "url": "https://www.latent.space/p/ainews-frontiercode-benchmarking",
+      "date": "2026-06-13"
+    },
+    "5ff4bf30ae94874f6dd34cdbfd6d6d721fcfa8614f9e8c9f0f98f815f87e82c5": {
+      "url": "https://github.com/infiniflow/ragflow",
+      "date": "2026-06-13"
+    },
+    "05d0e765d7723505369a87be72493485d89a0d8e66bb5b7ea55470bae5d79425": {
+      "url": "https://news.ycombinator.com/item?id=44523409",
+      "date": "2026-06-13"
+    },
+    "fa9a146bd397c66b4e46cc7721bba0ee2b9a2aae05240a50b76c899d372d07e7": {
+      "url": "https://www.latent.space/p/ainews-not-much-happened-today-6b8",
+      "date": "2026-06-13"
+    },
+    "853c63f738f0cecf3b918959597f2fe6b45198d548e4fb968b54eebfaeac3990": {
+      "url": "https://github.com/thedotmack/claude-mem",
+      "date": "2026-06-13"
+    },
+    "358082b02ad372450dfa2378038a7722057768ed3b805012893db0d2ead9c1b2": {
+      "url": "https://news.ycombinator.com/item?id=46602324",
+      "date": "2026-06-13"
+    },
+    "f4f3c01802834127e50032708d94ee98f24a81d6f32a5bbd796088ad1fb11cb7": {
+      "url": "https://www.latent.space/p/bad-envs",
+      "date": "2026-06-13"
+    },
+    "137ebc899af74dcede9b84f6ad9ed4c177f50376f9d47a412f6533a14cd44c60": {
+      "url": "https://github.com/PaddlePaddle/PaddleOCR",
+      "date": "2026-06-13"
+    },
+    "2afdec756c603f1ec429120b96b7faf8b3ebf0e61a79951c57afd59f8f91ffb4": {
+      "url": "https://news.ycombinator.com/item?id=43243893",
+      "date": "2026-06-13"
+    },
+    "a5c65144aba8b31dd7cfc7024d95fab1119ee2777f972872312d95bc1cd21f5c": {
+      "url": "https://www.latent.space/p/andon",
+      "date": "2026-06-13"
+    },
+    "beef7674765325310c6f5556e5e6f2a27db47f2f64793f0b26b11d160128efb6": {
+      "url": "https://github.com/shanraisshan/claude-code-best-practice",
+      "date": "2026-06-13"
+    },
+    "48910e3702ca6cfdff97ad0bbdbd8e0a4d2b11197d947c3cedb31bf077730cd7": {
+      "url": "https://news.ycombinator.com/item?id=47140322",
+      "date": "2026-06-13"
+    },
+    "29ce4419035044ef19a16aa7546d7a9a2017ce37c0dd476909029a6a435d4607": {
+      "url": "https://www.latent.space/p/ainews-reve-2-and-ideogram-4-layouts",
+      "date": "2026-06-13"
+    },
+    "40cbca31f01e6a2c3d9678514cf3c77d2ccf1fa35d126f1bcbd5a2aee3658cef": {
+      "url": "https://github.com/charlax/professional-programming",
+      "date": "2026-06-13"
+    },
+    "949c7a5043d23b055933c7d0ce888a494a939b4acfaff9e6b426f68a9c7db058": {
+      "url": "https://news.ycombinator.com/item?id=47079718",
+      "date": "2026-06-13"
+    },
+    "485af16b145c3db203bdb961a2f3f8b528f0e348671e9326fb78ab9d567e18bf": {
+      "url": "https://www.latent.space/p/axiom",
+      "date": "2026-06-13"
+    },
+    "dab892839df45099e3fcb3b9ab5f57259cdaa9acbb6ab085549b51f85f4b4635": {
+      "url": "https://github.com/BerriAI/litellm",
+      "date": "2026-06-13"
     }
   },
   "backfillPage": 2,
-  "dailyPage": 2
+  "dailyPage": 3
 }
