@@ -16,7 +16,7 @@ import { fetchAll } from './fetchers';
 import { dedupe, getExistingTitles, loadSeen, markSeen, saveSeen } from './lib/dedupe';
 import { draftWorkflow } from './lib/draft';
 import { enrichCandidate } from './lib/enrich';
-import { GeminiQuotaError } from './lib/gemini';
+import { GeminiQuotaError, getApiKeys } from './lib/gemini';
 import { scoreCandidate } from './lib/score';
 
 /** Obvious non-workflows dropped before scoring — saves Gemini quota. */
@@ -133,12 +133,13 @@ async function main(): Promise<void> {
     return;
   }
 
-  if (!process.env.GEMINI_API_KEY) {
+  if (getApiKeys().length === 0) {
     info(
-      `\nFetch + dedupe OK (${toScore.length} candidates ready), but GEMINI_API_KEY is not set.\n` +
+      `\nFetch + dedupe OK (${toScore.length} candidates ready), but no Gemini key is set.\n` +
         'Create a free key at https://aistudio.google.com, then either:\n' +
         '  - locally: set it in .env / your shell, or\n' +
-        '  - CI: add it as a GitHub Actions secret named GEMINI_API_KEY.'
+        '  - CI: add it as a GitHub Actions secret named GEMINI_API_KEY.\n' +
+        '  - add more keys (GEMINI_API_KEY_2, _3, …) to raise the free daily quota.'
     );
     process.exit(1);
   }

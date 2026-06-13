@@ -1,5 +1,5 @@
-import { describe, expect, it } from 'vitest';
-import { extractJson } from './gemini';
+import { afterEach, beforeEach, describe, expect, it } from 'vitest';
+import { extractJson, getApiKeys } from './gemini';
 
 describe('extractJson', () => {
   it('parses plain JSON', () => {
@@ -30,5 +30,46 @@ describe('extractJson', () => {
     const parsed = JSON.parse(extractJson(text)) as { body: string };
     expect(parsed.body).toContain('```bash');
     expect(parsed.body).toContain('cband continue <id>');
+  });
+});
+
+describe('getApiKeys', () => {
+  const KEY_VARS = [
+    'GEMINI_API_KEYS',
+    'GEMINI_API_KEY',
+    'GEMINI_API_KEY_2',
+    'GEMINI_API_KEY_3',
+    'GEMINI_API_KEY_4',
+    'GEMINI_API_KEY_5',
+    'GEMINI_API_KEY_6',
+  ];
+  let saved: Record<string, string | undefined>;
+
+  beforeEach(() => {
+    saved = Object.fromEntries(KEY_VARS.map((k) => [k, process.env[k]]));
+    for (const k of KEY_VARS) delete process.env[k];
+  });
+  afterEach(() => {
+    for (const k of KEY_VARS) {
+      if (saved[k] === undefined) delete process.env[k];
+      else process.env[k] = saved[k];
+    }
+  });
+
+  it('returns [] when no key is set', () => {
+    expect(getApiKeys()).toEqual([]);
+  });
+
+  it('collects the primary key plus numbered keys', () => {
+    process.env.GEMINI_API_KEY = 'a';
+    process.env.GEMINI_API_KEY_2 = 'b';
+    process.env.GEMINI_API_KEY_3 = 'c';
+    expect(getApiKeys()).toEqual(['a', 'b', 'c']);
+  });
+
+  it('parses the comma-separated GEMINI_API_KEYS and de-duplicates', () => {
+    process.env.GEMINI_API_KEYS = 'a, b ,c';
+    process.env.GEMINI_API_KEY = 'a'; // duplicate of one already collected
+    expect(getApiKeys()).toEqual(['a', 'b', 'c']);
   });
 });

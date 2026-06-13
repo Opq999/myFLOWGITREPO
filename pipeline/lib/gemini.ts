@@ -25,15 +25,56 @@ export class GeminiQuotaError extends Error {
   }
 }
 
-/**
- * Each model has its own free-tier quota pool; when one is exhausted (429
- * persisting after backoff) we move to the next and stay there for the run.
- */
 const FALLBACK_MODELS = [...new Set([GEMINI_MODEL, 'gemini-2.5-flash-lite', 'gemini-2.0-flash'])];
-let modelIndex = 0;
+
+/**
+ * Every free-tier API key carries its own independent daily + per-minute quota,
+ * so rotating across several keys multiplies the effective free ceiling at $0.
+ * Supply them via GEMINI_API_KEY plus optional GEMINI_API_KEY_2..6, and/or a
+ * comma-separated GEMINI_API_KEYS. Duplicates are ignored.
+ */
+export function getApiKeys(): string[] {
+  const keys: string[] = [];
+  const add = (v?: string) => {
+    if (!v) return;
+    for (const k of v.split(',').map((s) => s.trim()).filter(Boolean)) {
+      if (!keys.includes(k)) keys.push(k);
+    }
+  };
+  add(process.env.GEMINI_API_KEYS);
+  for (const name of [
+    'GEMINI_API_KEY',
+    'GEMINI_API_KEY_2',
+    'GEMINI_API_KEY_3',
+    'GEMINI_API_KEY_4',
+    'GEMINI_API_KEY_5',
+    'GEMINI_API_KEY_6',
+  ]) {
+    add(process.env[name]);
+  }
+  return keys;
+}
+
+/**
+ * Attempt order is model-major: exhaust the best model across EVERY key before
+ * downgrading to the next model — so quality stays high as long as any key has
+ * quota. A persistent cursor means a (model, key) pair spent for the run isn't
+ * retried on every subsequent call.
+ */
+let attempts: { model: string; keyIndex: number }[] | null = null;
+let cursor = 0;
+
+function buildAttempts(keyCount: number): { model: string; keyIndex: number }[] {
+  const list: { model: string; keyIndex: number }[] = [];
+  for (const model of FALLBACK_MODELS) {
+    for (let k = 0; k < keyCount; k++) list.push({ model, keyIndex: k });
+  }
+  return list;
+}
 
 export function currentModel(): string {
-  return FALLBACK_MODELS[modelIndex];
+  if (!attempts || attempts.length === 0) return FALLBACK_MODELS[0];
+  return attempts[Math.min(cursor, attempts.length - 1)].model;
 }
 
 const RATE_LIMITED = Symbol('rate-limited');
@@ -56,8 +97,10 @@ async function fetchWithRetry(url: string, init: RequestInit): Promise<Response>
 
 async function callModel(model: string, body: string, apiKey: string): Promise<string | typeof RATE_LIMITED> {
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
-  // 429 backoff schedule within a single model before declaring it exhausted.
-  const backoffsMs = [30_000, 60_000];
+  // One short retry clears a transient per-minute spike; a persisting 429 means
+  // this key/model is daily-exhausted, so rotate quickly to the next pair
+  // instead of burning minutes backing off (cheap now that we have many pairs).
+  const backoffsMs = [12_000];
   for (let attempt = 0; ; attempt++) {
     const wait = lastCallAt + GEMINI_MS_BETWEEN_CALLS - Date.now();
     if (wait > 0) await sleep(wait);
@@ -89,32 +132,41 @@ async function callModel(model: string, body: string, apiKey: string): Promise<s
 
 /**
  * Calls Gemini (free tier) and parses a strict-JSON response. Throttled to
- * free-tier RPM; falls back across models on persistent rate limits.
+ * free-tier RPM; rotates across the (model × key) matrix on persistent rate
+ * limits or bad keys, and only gives up when every pair is exhausted.
  */
 export async function geminiJson<T>(prompt: string): Promise<T> {
-  const apiKey = process.env.GEMINI_API_KEY;
-  if (!apiKey) {
+  const keys = getApiKeys();
+  if (keys.length === 0) {
     throw new Error(
-      'GEMINI_API_KEY not set. Create a free key at https://aistudio.google.com and export it (or add it as a GitHub secret).'
+      'GEMINI_API_KEY not set. Create a free key at https://aistudio.google.com and export it (or add it as a GitHub secret). Add more as GEMINI_API_KEY_2, _3, … to raise the free quota.'
     );
   }
+  if (attempts === null) attempts = buildAttempts(keys.length);
 
   const body = JSON.stringify({
     contents: [{ parts: [{ text: prompt }] }],
     generationConfig: { responseMimeType: 'application/json', temperature: 0.2 },
   });
 
-  while (modelIndex < FALLBACK_MODELS.length) {
-    const model = FALLBACK_MODELS[modelIndex];
-    const result = await callModel(model, body, apiKey);
-    if (result === RATE_LIMITED) {
-      modelIndex++;
-      if (modelIndex < FALLBACK_MODELS.length) {
-        console.warn(`[gemini] ${model} rate-limited — switching to ${FALLBACK_MODELS[modelIndex]}`);
-      }
-      continue;
+  while (cursor < attempts.length) {
+    const { model, keyIndex } = attempts[cursor];
+    try {
+      const result = await callModel(model, body, keys[keyIndex]);
+      if (result !== RATE_LIMITED) return JSON.parse(extractJson(result)) as T;
+    } catch (err) {
+      // A bad/invalid key (4xx) shouldn't kill the run — skip it and rotate on.
+      const msg = err instanceof Error ? err.message : String(err);
+      if (!/Gemini API error 4/.test(msg)) throw err;
+      console.warn(`[gemini] key ${keyIndex + 1} on ${model} errored (${msg.slice(0, 80)}) — skipping`);
     }
-    return JSON.parse(extractJson(result)) as T;
+    cursor++;
+    if (cursor < attempts.length) {
+      const next = attempts[cursor];
+      console.warn(
+        `[gemini] ${model} (key ${keyIndex + 1}) unavailable — switching to ${next.model} (key ${next.keyIndex + 1} of ${keys.length})`
+      );
+    }
   }
   throw new GeminiQuotaError();
 }
