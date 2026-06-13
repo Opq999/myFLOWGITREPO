@@ -1,0 +1,70 @@
+---
+title: "Set a Custom Price for a New AI Model in AgentsView"
+description: "Learn how to add and set a custom pricing for a new AI model, like Claude Fable 5, within AgentsView to accurately track your token usage."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 15
+jobToBeDone: "Set a custom price for a new AI model in AgentsView"
+tools:
+  - name: "AgentsView"
+    url: "https://github.com/wesm/agentsview"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Claude Fable 5"
+    url: "https://claude.ai"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://simonwillison.net/2026/Jun/9/agentsview-custom-model-price/#atom-everything"
+  platform: "blog"
+  author: "Simon Willison"
+  postedAt: 2026-06-09
+score: 7
+ingestedAt: 2026-06-13
+nigeriaNotes: "AgentsView is a local tool, so data usage is minimal. Claude has free tiers, but Fable 5 might be a paid model; check current pricing for the specific model you intend to use."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You'll be able to accurately track your token usage and associated costs for new AI models, such as Claude Fable 5, within AgentsView. This approach works by manually updating AgentsView's internal pricing database, ensuring your cost tracking remains precise even for models not yet officially supported.
+
+## Tools you need
+*   **AgentsView** (free) — A local tool for exploring and visualizing your token usage across different AI agents.
+*   **Claude Fable 5** (freemium) — An AI model (or any other new model whose pricing you want to add).
+*   **Text Editor** (free) — Any basic text editor like Notepad (Windows), TextEdit (Mac), or VS Code for editing configuration files.
+
+## Steps
+1.  **Understand AgentsView's pricing mechanism** — AgentsView tracks your AI model usage and costs by referring to a database or configuration file that stores the pricing for various models. To add a new model, you'll need to update this underlying data.
+    *   You should understand that AgentsView needs to know the cost per token for both input (what you send to the model) and output (what the model generates) to calculate usage accurately.
+2.  **Locate AgentsView's pricing configuration** — The author doesn't specify the exact location or name of the pricing configuration file within AgentsView. You will need to find this file on your system. It's typically a file that stores data in a structured format like JSON, YAML, or a Python script, and might be named something like `pricing.json`, `models.yaml`, or similar. Look within the AgentsView installation directory or in your user application data folders (e.g., `~/.agentsview` on Linux/macOS, or `AppData/Roaming/AgentsView` on Windows).
+    *   You should find a file that appears to contain pricing information for existing AI models.
+3.  **Open the configuration file** — Once you've located the pricing configuration file, open it using your preferred text editor.
+    *   You should see a structured list of existing AI models and their associated pricing details (e.g., `input_cost_per_token`, `output_cost_per_token`).
+4.  **Add the new model's pricing details** — You will need to add a new entry for your model (e.g., Claude Fable 5) following the existing format. The author doesn't provide the exact format or specific pricing values for Claude Fable 5. You'll need to research the current token costs for your specific model (e.g., from the model provider's official documentation) and add them to the file.
+    *   For example, if the file uses JSON, you might add an object like this (adjusting `model_name`, `input_cost`, and `output_cost` to match your model and its actual prices):
+
+    ```json
+    {
+      "model_name": "claude-fable-5",
+      "input_cost_per_token": 0.000003,
+      "output_cost_per_token": 0.000015
+    }
+    ```
+
+    *   You should have a new entry in the configuration file that mirrors the structure of existing entries, but with your new model's name and its specific input and output token costs.
+5.  **Save and close the file** — After adding the new pricing entry, save the changes to the configuration file and close your text editor.
+    *   The file should now contain your updated pricing information.
+6.  **Restart AgentsView** — Close and then reopen AgentsView to ensure it loads the updated pricing configuration.
+    *   AgentsView should launch normally, now incorporating your custom pricing data.
+7.  **Verify custom pricing** — Use the new model in your agents and then check AgentsView's reports or visualizations. It should now correctly track and display the token usage and estimated costs for your newly added model based on the custom prices you entered.
+    *   You should see Claude Fable 5 (or your chosen model) appearing in AgentsView's usage reports with accurate cost calculations.
+
+## Original source
+This workflow is inspired by a blog post by Simon Willison, where he shared his discovery of how to set custom prices for new AI models like Claude Fable 5 in AgentsView after reverse-engineering the tool to understand its pricing mechanism.
+
+## Notes & variations
+*   **Free-tier alternatives**: AgentsView itself is a free, open-source tool. For the AI models, always check the provider's website for their latest pricing and any available free tiers or credits.
+*   **Common mistake**: A frequent error is introducing syntax mistakes (like missing commas, brackets, or incorrect data types) when editing the configuration file. This can prevent AgentsView from starting or correctly loading the pricing data. Always make a backup copy of the original configuration file before making any changes.
+*   **Tip for better results**: Carefully examine the existing model entries in the configuration file. Pay close attention to the exact keys (e.g., `input_cost_per_token` vs. `inputCostPerToken`) and data types (e.g., numbers, strings) used. Replicating this format precisely will help avoid errors and ensure AgentsView correctly interprets your new entry.

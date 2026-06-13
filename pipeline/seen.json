@@ -552,8 +552,220 @@
     "fec9c58d816b2b18c1ffbb5b206ca3c689e542b27eae58e6490996064db6e177": {
       "url": "https://news.ycombinator.com/item?id=43094006",
       "date": "2026-06-13"
+    },
+    "5497607e1dff98b10d963f8793e7b9695f47505748c594de6874d50c81707f6a": {
+      "url": "https://github.com/bradtraversy/design-resources-for-developers",
+      "date": "2026-06-13"
+    },
+    "2484735bf76c1cbd5234a4d1c0227928aa683cbdae959fd6791cc178132a2d16": {
+      "url": "https://github.com/vsouza/awesome-ios",
+      "date": "2026-06-13"
+    },
+    "77a76883aaf97162b4fb8cf4bd6a3265d4e935cb6159671c05d0d6e43a20c844": {
+      "url": "https://news.ycombinator.com/item?id=43699271",
+      "date": "2026-06-13"
+    },
+    "1a99af0c8b8f127e1b0371cff96b1772230e2afae6c7fcebd81eeb412777f7b5": {
+      "url": "https://simonwillison.net/2026/Jun/9/claude-fable-5",
+      "date": "2026-06-13"
+    },
+    "24684c1ecca249c03e58e0d0192c9742b89e48498c3a1fac970d4d5c34874232": {
+      "url": "https://github.com/google-gemini/gemini-cli",
+      "date": "2026-06-13"
+    },
+    "4e85b948088a453a5c8630c82a0fb9b46b41c7aec9d9c3e5eff90a462a31c5f3": {
+      "url": "https://news.ycombinator.com/item?id=47822940",
+      "date": "2026-06-13"
+    },
+    "ac9388216e273c7d2908a706bf66876d0c1a816b74a13875ec3c00ae33340ee1": {
+      "url": "https://simonwillison.net/2026/Jun/9/llm",
+      "date": "2026-06-13"
+    },
+    "52d44a68888243ff3319cbc045896f7d51f19c4c9ff55555c3fcd962ade0c8c5": {
+      "url": "https://github.com/farion1231/cc-switch",
+      "date": "2026-06-13"
+    },
+    "20649d023d17b5524cb63e8841e80a752dd1c1d826b781ec30da6cfe6d418650": {
+      "url": "https://news.ycombinator.com/item?id=46045987",
+      "date": "2026-06-13"
+    },
+    "bbf7a95c1cbf467940016ea899facba04ecb170c101ae994bbdd86c9bc3d828d": {
+      "url": "https://simonwillison.net/2026/Jun/9/agentsview-custom-model-price",
+      "date": "2026-06-13"
+    },
+    "5a96c700b9513f65bb0a58ce61c4002decbce25100bffa3ae38b7d59ce05658b": {
+      "url": "https://github.com/ChatGPTNextWeb/NextChat",
+      "date": "2026-06-13"
+    },
+    "8b585d34ce99c46b1cdbebd257fe633df425377e10cb020b6c59acec455a64cb": {
+      "url": "https://news.ycombinator.com/item?id=43988381",
+      "date": "2026-06-13"
+    },
+    "9ee0d42b65cf5eda446704dcd2c52dd1bcde09004ae295be6584c8c3df49e709": {
+      "url": "https://simonwillison.net/2026/Jun/9/andrej-karpathy",
+      "date": "2026-06-13"
+    },
+    "0abcb8d6878db0f0e92da53e6699c272c1d1e1717aa18c7b3bbcd6737aa388c2": {
+      "url": "https://github.com/mlabonne/llm-course",
+      "date": "2026-06-13"
+    },
+    "00c4de2335b78e15c4b07166eda8a4d49b85194c0185d0d9746c7126b75c7e5c": {
+      "url": "https://news.ycombinator.com/item?id=43692476",
+      "date": "2026-06-13"
+    },
+    "20349293944938c10ccfc366d91f8ff549215b351191588874d40e16fe814f7f": {
+      "url": "https://simonwillison.net/2026/Jun/8/wwdc",
+      "date": "2026-06-13"
+    },
+    "51d6155061d60774c495a56223e09a0ada08a6cfa6b7428fe29da0365e2daa0b": {
+      "url": "https://github.com/lobehub/lobehub",
+      "date": "2026-06-13"
+    },
+    "5247d3759612d1e3ba41b8a6cb77597e14e39d330a3f155e0cbc2ece2f72bf39": {
+      "url": "https://news.ycombinator.com/item?id=46946593",
+      "date": "2026-06-13"
+    },
+    "639f8fe143f5777a6350d6aee62e2276aa7514af266c4881d6d1183f9aa2e0a7": {
+      "url": "https://simonwillison.net/2026/Jun/7/datasette-agent-edit",
+      "date": "2026-06-13"
+    },
+    "a07e757a43c43dfed67192a122a8dd0428cd876190d0fcd2fb8c7d9bf634230d": {
+      "url": "https://github.com/nomic-ai/gpt4all",
+      "date": "2026-06-13"
+    },
+    "952fc829862f9a9ef3234a4971240fafdc7f7bad3d896794fe3d29ee130b8c84": {
+      "url": "https://news.ycombinator.com/item?id=42441258",
+      "date": "2026-06-13"
+    },
+    "d33196c5b67a34527e42c2db6fd81cbf6dd53b35021a67e5caa9c567abec224f": {
+      "url": "https://simonwillison.net/2026/Jun/6/micropython-wasm",
+      "date": "2026-06-13"
+    },
+    "ecccdc934bfc828f407935386c35530128658eea011f32788356986ff037da49": {
+      "url": "https://github.com/dair-ai/Prompt-Engineering-Guide",
+      "date": "2026-06-13"
+    },
+    "7ec35453524874a4e3709d751ee441d10daae331291b7b4ccd761ca57c06d7c0": {
+      "url": "https://news.ycombinator.com/item?id=46611348",
+      "date": "2026-06-13"
+    },
+    "3865c72a7d66bda216188e5a10c012abc6d18b8d8eb0f546ba7c2f3230cea2d7": {
+      "url": "https://simonwillison.net/2026/Jun/6/micropython-in-a-sandbox",
+      "date": "2026-06-13"
+    },
+    "b303b1e4141446e667c0ef752ea0f20da83b33efd027cae4738af9aba74f7af4": {
+      "url": "https://github.com/ruvnet/RuView",
+      "date": "2026-06-13"
+    },
+    "280f722f6d3f04b69e3e1b624cd6a22df8d5cb5b0d9168ccb252fa38b5a995ee": {
+      "url": "https://news.ycombinator.com/item?id=44174190",
+      "date": "2026-06-13"
+    },
+    "d67ce569ca01fcb1fb7cdb10f58915dad459bb5e6e7c302f8fe6b9a865d9847d": {
+      "url": "https://simonwillison.net/2026/Jun/5/openai-help-lockdown-mode",
+      "date": "2026-06-13"
+    },
+    "56e7a87ac2df016caa930321b7d873ba45e6813bff2299ebe265797c3e50b74c": {
+      "url": "https://github.com/hiyouga/LlamaFactory",
+      "date": "2026-06-13"
+    },
+    "aa48a9b70dd9da9509b64e061a56d2e234128a7df1fb54c2dff739c02b99f751": {
+      "url": "https://news.ycombinator.com/item?id=46962641",
+      "date": "2026-06-13"
+    },
+    "2936eadec4d820f41ab6f2bbbbee1f5e3e2da192d0941dc3a7908ca61d90ea34": {
+      "url": "https://simonwillison.net/2026/Jun/5/andreas-kling",
+      "date": "2026-06-13"
+    },
+    "16389f32495280ea98c7dc97d94e58609236d0b9919875016bc9d018f60ef5bf": {
+      "url": "https://github.com/bytedance/deer-flow",
+      "date": "2026-06-13"
+    },
+    "84cd250902647df832545835075d7f421f80fafffc105f325596f249ff2630e0": {
+      "url": "https://news.ycombinator.com/item?id=43071934",
+      "date": "2026-06-13"
+    },
+    "f213aa7a2d66997258a6b2a052ec38fddb2caf5043466859bc5c2fca5700d26b": {
+      "url": "https://simonwillison.net/2026/Jun/4/ai-enthusiasts-ai-skeptics",
+      "date": "2026-06-13"
+    },
+    "9b8fb32d5892ba24a300635ab841190e98dd0c1878367761c8d505def607d4e9": {
+      "url": "https://github.com/shareAI-lab/learn-claude-code",
+      "date": "2026-06-13"
+    },
+    "4c24e8e75ae8c6e961ba50ee5ef2541378b5c621e7ee2f681c6643b1c98e5a5c": {
+      "url": "https://news.ycombinator.com/item?id=43823096",
+      "date": "2026-06-13"
+    },
+    "08a52fe223d39ba5a83c8686b1841da451fa69463afd6b31dbeb3f3ffb2704cf": {
+      "url": "https://simonwillison.net/2026/Jun/4/a-slightly-different-version",
+      "date": "2026-06-13"
+    },
+    "80ae26cd647df6d365dda5f57e1ab7fac7642116aa6ac9c9c6c184077d7dca14": {
+      "url": "https://github.com/xtekky/gpt4free",
+      "date": "2026-06-13"
+    },
+    "a4c252952dd43d905dec0ae8a1c8306bf2c9196503eae17c107fea6c6772d07c": {
+      "url": "https://news.ycombinator.com/item?id=46591100",
+      "date": "2026-06-13"
+    },
+    "d17eb873e80c9a8ff1b6b6abe6944e3699ef652ab6c7d1fcc9028ea86e743543": {
+      "url": "https://simonwillison.net/2026/Jun/3/uber-caps-usage",
+      "date": "2026-06-13"
+    },
+    "d8ff876dfb1eadf08a100b53f794ef54a69e7b476b1a3a841ca2e4b21264a13d": {
+      "url": "https://github.com/nexu-io/open-design",
+      "date": "2026-06-13"
+    },
+    "7961ee0e286d72a8cbdc45033d098dfdcb1df5fe6e3c25df89d930022cc71115": {
+      "url": "https://news.ycombinator.com/item?id=43762409",
+      "date": "2026-06-13"
+    },
+    "2c522d157d95d786484826d74177504364344fb18c9459613c3482105babf8f0": {
+      "url": "https://simonwillison.net/2026/Jun/2/microsofts-new-models",
+      "date": "2026-06-13"
+    },
+    "a90e1fa2514daead7766b3e7e33bd63cc5ad30c0b371a00e37b3633e76dfca22": {
+      "url": "https://github.com/code-yeongyu/oh-my-openagent",
+      "date": "2026-06-13"
+    },
+    "c7772690956d988a87a2c12f40269d33138a56677926a2cc2d44f4b0d4403bc3": {
+      "url": "https://news.ycombinator.com/item?id=43964201",
+      "date": "2026-06-13"
+    },
+    "438a421d3375fa4dc117ae0c5108ed67481796b29fdbd27e8ff6848ee0799dac": {
+      "url": "https://simonwillison.net/2026/Jun/2/datasette-agent-micropython",
+      "date": "2026-06-13"
+    },
+    "ae19178305e34908edee6deed2e6f8f856450b16b5b643aeddfd0d0d0dba6fe2": {
+      "url": "https://github.com/sansan0/TrendRadar",
+      "date": "2026-06-13"
+    },
+    "dbb25567a35c9f1aa7a6ee90a0c14f39799cfd9c427606bcb909546b7bd3c3ec": {
+      "url": "https://news.ycombinator.com/item?id=43830193",
+      "date": "2026-06-13"
+    },
+    "ea90b5ea6a5556ab7acd7096864196da5defaecee5cf2451fac48d0946c36d27": {
+      "url": "https://simonwillison.net/2026/Jun/2/sighting-367841339",
+      "date": "2026-06-13"
+    },
+    "d807807ac58742dd264bf1e90085cab2dcab2882313d506f74fcd17dca632abd": {
+      "url": "https://github.com/microsoft/autogen",
+      "date": "2026-06-13"
+    },
+    "1468e2c049c3081a9bd7b9191427a888f450080502754ee5f4899f4ed64bd7db": {
+      "url": "https://news.ycombinator.com/item?id=44960594",
+      "date": "2026-06-13"
+    },
+    "6bac223509890d867ede24b4806bb149d162d66bda43d57cd0ed5476279b66cf": {
+      "url": "https://simonwillison.net/2026/Jun/2/pasted-file-editor",
+      "date": "2026-06-13"
+    },
+    "cddc9a2d075a51037ba44e9147d87bac14f8ecee6231b07be5d63984cf63ee77": {
+      "url": "https://github.com/mem0ai/mem0",
+      "date": "2026-06-13"
     }
   },
   "backfillPage": 2,
-  "dailyPage": 1
+  "dailyPage": 2
 }
