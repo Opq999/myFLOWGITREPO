@@ -1,0 +1,61 @@
+---
+title: "Generate Greenfield Code with LLMs: Spec, Plan, Execute"
+description: "Learn to generate software code for new projects using LLMs. This workflow guides you through idea honing, detailed planning, and iterative code generation."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 30
+jobToBeDone: "Generate software code using LLMs for greenfield projects"
+tools:
+  - name: "ChatGPT 4o"
+    url: "https://chatgpt.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=43094006"
+  platform: "hackernews"
+  author: "lolptdr"
+  postedAt: 2025-02-18
+score: 6
+ingestedAt: 2026-06-13
+nigeriaNotes: "ChatGPT 4o has a free tier. Data usage is minimal for text-based interactions, making it suitable for mobile and limited data plans."
+tiktokUrl: ""
+published: false
+---
+
+## What you'll get
+You will generate a detailed specification for a new software idea and then break it down into an actionable plan for development. This approach ensures a robust planning and documentation process, allowing for easy execution in small, manageable steps.
+
+## Tools you need
+*   **ChatGPT 4o** (freemium) - A conversational AI model used for brainstorming ideas and generating detailed specifications and development plans.
+
+## Steps
+1.  **Hone your idea with the LLM** — Start a conversation with the LLM to refine your software concept into a detailed specification. The author uses a prompt that asks the LLM to ask one question at a time to thoroughly develop the spec.
+
+    ```
+    Ask me one question at a time so we can develop a thorough, step-by-step spec for this idea. Each question should build on my previous answers, and our end goal is to have a detailed specification I can hand off to a developer. Let’s do this iteratively and dig into every relevant detail. Remember, only one question at a time.
+    Here’s the idea: [Describe your software idea here]
+    ```
+    You should see the LLM ask you a clarifying question about your idea.
+
+2.  **Compile the specification** — Once the brainstorming naturally concludes, ask the LLM to compile all the gathered information into a developer-ready specification. The author suggests a prompt to ensure all key aspects are covered.
+
+    ```
+    Now that we’ve wrapped up the brainstorming process, can you compile our findings into a comprehensive, developer-ready specification? Include all relevant requirements, architecture choices, data handling details, error handling strategies, and a testing plan so a developer can immediately begin implementation.
+    ```
+    You should receive a comprehensive document that can be saved as `spec.md`.
+
+3.  **Create a development plan** — Take the generated specification and use it to prompt a reasoning model (like ChatGPT 4o) to create a detailed, step-by-step blueprint for building the project. The author emphasizes breaking the plan into small, iterative chunks.
+
+    ```
+    Draft a detailed, step-by-step blueprint for building this project. Then, once you have a solid plan, break it down into small, iterative chunks that build on each other. Look at these chunks and then go another round to break it into small steps. Review the results and make sure that the steps are small enough to be implemented safely with strong testing, but big enough to move the project forward. Iterate until you feel that the steps are right sized for this project. From here you should have the foundation to provide a series of prompts for a code-generation LLM that will implement each step in a test-driven manner. Prioritize best practices, incremental progress, and early testing, ensuring no big jumps in complexity at any stage. Make sure that each prompt builds on the previous prompts, and ends with wiring things together. There should be no hanging or orphaned code that isn't integrated into a previous…
+    ```
+    You should get a plan broken down into manageable, testable steps.
+
+## Original source
+This workflow is adapted from Harper Reed's blog post, "My LLM codegen workflow atm," shared on February 18, 2025. The author details a process for using Large Language Models (LLMs) to build software, focusing on idea refinement and step-by-step planning.
+
+## Notes & variations
+*   **Free Tier Viability**: ChatGPT 4o is available with a free tier, making this workflow accessible. Text-based interactions are generally low on data consumption.
+*   **Common Pitfall**: Avoid vague descriptions when starting the brainstorming phase. The more specific you are about your initial idea, the better the LLM can assist in refining it.
+*   **Tip for Better Results**: For the planning step, explicitly ask the LLM to consider potential edge cases and error handling within each small chunk. This proactive approach can save significant debugging time later.

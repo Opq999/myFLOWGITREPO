@@ -540,7 +540,20 @@
     "056d08237be2797696a47b7e1a51f3eacd24c069b11209ba36bc3a41728b6d58": {
       "url": "https://news.ycombinator.com/item?id=46513961",
       "date": "2026-06-13"
+    },
+    "1643157b768c76e76ecc5855f9a23772fc5b4697369d72ccad6aec4ae82a2a43": {
+      "url": "https://github.com/f/prompts.chat",
+      "date": "2026-06-13"
+    },
+    "b96e7676a436e07780949c2521a3c64a21d48af19a80ba9c24bf5393126d525d": {
+      "url": "https://github.com/Hack-with-Github/Awesome-Hacking",
+      "date": "2026-06-13"
+    },
+    "fec9c58d816b2b18c1ffbb5b206ca3c689e542b27eae58e6490996064db6e177": {
+      "url": "https://news.ycombinator.com/item?id=43094006",
+      "date": "2026-06-13"
     }
   },
-  "backfillPage": 2
+  "backfillPage": 2,
+  "dailyPage": 1
 }
