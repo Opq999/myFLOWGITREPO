@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import type { Candidate, ScoreResult } from '../types';
-import { toMdx, validateDraft } from './mdx';
+import { escapeMdxBody, toMdx, validateDraft } from './mdx';
 
 const candidate: Candidate = {
   title: 'How I do invoices with AI',
@@ -94,5 +94,28 @@ describe('toMdx', () => {
     );
     const mdx = toMdx(workflow, body);
     expect(mdx).toContain('title: "Use \\"smart quotes\\" safely in invoice workflows"');
+  });
+});
+
+describe('escapeMdxBody', () => {
+  it('escapes bare angle-bracket placeholders in prose (the crash that took the site down)', () => {
+    expect(escapeMdxBody('Use the <session-id> here.')).toBe('Use the \\<session-id> here.');
+  });
+
+  it('escapes bare braces in prose', () => {
+    expect(escapeMdxBody('Replace {name} with yours.')).toBe('Replace \\{name} with yours.');
+  });
+
+  it('leaves inline-code spans untouched', () => {
+    expect(escapeMdxBody('Run `cband <id>` now.')).toBe('Run `cband <id>` now.');
+  });
+
+  it('leaves fenced code blocks untouched', () => {
+    const body = '```bash\ncband continue <session-id>\n```';
+    expect(escapeMdxBody(body)).toBe(body);
+  });
+
+  it('does not escape comparisons / less-than between spaces', () => {
+    expect(escapeMdxBody('use a < b in math')).toBe('use a < b in math');
   });
 });

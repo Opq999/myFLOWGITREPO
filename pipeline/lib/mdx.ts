@@ -56,6 +56,35 @@ function yDate(d: Date): string {
   return d.toISOString().slice(0, 10);
 }
 
+/**
+ * LLM prose sometimes contains bare `<placeholder>` tags or `{tokens}` that MDX
+ * parses as JSX and crashes the whole build on. We escape `<` and `{` in prose
+ * only, leaving fenced code blocks and inline-code spans untouched (angle
+ * brackets and braces are valid and wanted there). Defense in depth so a single
+ * bad draft can never take down the deploy again.
+ */
+export function escapeMdxBody(body: string): string {
+  let inFence = false;
+  return body
+    .split('\n')
+    .map((line) => {
+      if (/^\s*(```|~~~)/.test(line)) {
+        inFence = !inFence;
+        return line;
+      }
+      if (inFence) return line;
+      return line
+        .split(/(`[^`]*`)/) // keep inline-code spans verbatim
+        .map((part) =>
+          part.startsWith('`')
+            ? part
+            : part.replace(/<(?=[a-zA-Z/])/g, '\\<').replace(/\{/g, '\\{')
+        )
+        .join('');
+    })
+    .join('\n');
+}
+
 /** Serializes a validated workflow to an MDX file with YAML frontmatter. */
 export function toMdx(w: Workflow, body: string): string {
   const lines = [
@@ -86,7 +115,7 @@ export function toMdx(w: Workflow, body: string): string {
     `published: ${w.published}`,
     '---',
     '',
-    body.trim(),
+    escapeMdxBody(body).trim(),
     '',
   ];
   return lines.join('\n');

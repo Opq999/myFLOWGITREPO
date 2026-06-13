@@ -24,4 +24,11 @@ describe('extractJson', () => {
   it('throws on output with no JSON object', () => {
     expect(() => extractJson('sorry, I cannot do that')).toThrow(/No JSON object/);
   });
+
+  it('preserves code fences inside string values (regression: stripped fences broke MDX)', () => {
+    const text = '{"body": "Run this:\\n```bash\\ncband continue <id>\\n```"}';
+    const parsed = JSON.parse(extractJson(text)) as { body: string };
+    expect(parsed.body).toContain('```bash');
+    expect(parsed.body).toContain('cband continue <id>');
+  });
 });

@@ -1,15 +1,20 @@
 import { GEMINI_MODEL, GEMINI_MS_BETWEEN_CALLS } from '../sources.config';
 import { sleep } from './utils';
 
-/** Strips markdown fences / surrounding prose and returns the first JSON object. */
+/**
+ * Returns the first JSON object in the model output by slicing from the first
+ * `{` to the last `}`. This tolerates a ```` ```json ```` wrapper without a
+ * global fence strip — stripping all fences would also destroy the code blocks
+ * inside the drafted body string (the bug that left workflows with bare `bash`
+ * lines and crashed MDX on placeholders like `<session-id>`).
+ */
 export function extractJson(text: string): string {
-  const cleaned = text.replace(/```(?:json)?/g, '');
-  const start = cleaned.indexOf('{');
-  const end = cleaned.lastIndexOf('}');
+  const start = text.indexOf('{');
+  const end = text.lastIndexOf('}');
   if (start === -1 || end === -1 || end <= start) {
     throw new Error(`No JSON object found in model output: ${text.slice(0, 200)}`);
   }
-  return cleaned.slice(start, end + 1);
+  return text.slice(start, end + 1);
 }
 
 /** Thrown when every fallback model is rate-limited — callers should stop the run gracefully. */
