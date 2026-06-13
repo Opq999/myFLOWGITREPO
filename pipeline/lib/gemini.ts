@@ -56,25 +56,28 @@ export function getApiKeys(): string[] {
 }
 
 /**
- * Attempt order is model-major: exhaust the best model across EVERY key before
- * downgrading to the next model — so quality stays high as long as any key has
- * quota. A persistent cursor means a (model, key) pair spent for the run isn't
- * retried on every subsequent call.
+ * A 429 is almost always a per-MINUTE limit (free tier is ~10-15 RPM per key),
+ * not the daily cap. So we don't retire a (model, key) pair on a 429 — we put it
+ * on a short cooldown and round-robin to the next key. With several keys, while
+ * one cools the others keep working, so we use each key's full DAILY quota
+ * instead of throwing ~240 calls/key away on the first per-minute spike.
  */
-let attempts: { model: string; keyIndex: number }[] | null = null;
-let cursor = 0;
+const RPM_COOLDOWN_MS = 65_000;
+const cooldownUntil = new Map<string, number>(); // `${model}:${keyIndex}` -> ts
+let rrPointer = 0; // round-robin start, advanced after each success to spread load
 
-function buildAttempts(keyCount: number): { model: string; keyIndex: number }[] {
-  const list: { model: string; keyIndex: number }[] = [];
-  for (const model of FALLBACK_MODELS) {
-    for (let k = 0; k < keyCount; k++) list.push({ model, keyIndex: k });
-  }
-  return list;
+function pairKey(model: string, k: number): string {
+  return `${model}:${k}`;
+}
+function available(model: string, k: number): boolean {
+  return Date.now() >= (cooldownUntil.get(pairKey(model, k)) ?? 0);
+}
+function cool(model: string, k: number, ms: number): void {
+  cooldownUntil.set(pairKey(model, k), Date.now() + ms);
 }
 
 export function currentModel(): string {
-  if (!attempts || attempts.length === 0) return FALLBACK_MODELS[0];
-  return attempts[Math.min(cursor, attempts.length - 1)].model;
+  return FALLBACK_MODELS[0];
 }
 
 const RATE_LIMITED = Symbol('rate-limited');
@@ -97,10 +100,6 @@ async function fetchWithRetry(url: string, init: RequestInit): Promise<Response>
 
 async function callModel(model: string, body: string, apiKey: string): Promise<string | typeof RATE_LIMITED> {
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
-  // One short retry clears a transient per-minute spike; a persisting 429 means
-  // this key/model is daily-exhausted, so rotate quickly to the next pair
-  // instead of burning minutes backing off (cheap now that we have many pairs).
-  const backoffsMs = [12_000];
   for (let attempt = 0; ; attempt++) {
     const wait = lastCallAt + GEMINI_MS_BETWEEN_CALLS - Date.now();
     if (wait > 0) await sleep(wait);
@@ -111,9 +110,13 @@ async function callModel(model: string, body: string, apiKey: string): Promise<s
       headers: { 'Content-Type': 'application/json' },
       body,
     });
-    if (res.status === 429 || res.status === 503) {
-      if (attempt < backoffsMs.length) {
-        await sleep(backoffsMs[attempt]);
+    // 429 = rate limit (usually per-minute): the caller cools this key and
+    // rotates to the next one immediately — no point sleeping here.
+    if (res.status === 429) return RATE_LIMITED;
+    // 503 = transient overload: one quick retry, then rotate.
+    if (res.status === 503) {
+      if (attempt === 0) {
+        await sleep(8_000);
         continue;
       }
       return RATE_LIMITED;
@@ -131,9 +134,11 @@ async function callModel(model: string, body: string, apiKey: string): Promise<s
 }
 
 /**
- * Calls Gemini (free tier) and parses a strict-JSON response. Throttled to
- * free-tier RPM; rotates across the (model × key) matrix on persistent rate
- * limits or bad keys, and only gives up when every pair is exhausted.
+ * Calls Gemini (free tier) and parses a strict-JSON response. Round-robins
+ * across all keys (best model first) so no single key bunches against its
+ * per-minute limit; a 429 just cools that key briefly. Only when EVERY
+ * (model, key) pair is cooling — and a wait-and-retry still gets nothing — do
+ * we conclude the daily quota is truly spent.
  */
 export async function geminiJson<T>(prompt: string): Promise<T> {
   const keys = getApiKeys();
@@ -142,31 +147,45 @@ export async function geminiJson<T>(prompt: string): Promise<T> {
       'GEMINI_API_KEY not set. Create a free key at https://aistudio.google.com and export it (or add it as a GitHub secret). Add more as GEMINI_API_KEY_2, _3, … to raise the free quota.'
     );
   }
-  if (attempts === null) attempts = buildAttempts(keys.length);
 
   const body = JSON.stringify({
     contents: [{ parts: [{ text: prompt }] }],
     generationConfig: { responseMimeType: 'application/json', temperature: 0.2 },
   });
 
-  while (cursor < attempts.length) {
-    const { model, keyIndex } = attempts[cursor];
-    try {
-      const result = await callModel(model, body, keys[keyIndex]);
-      if (result !== RATE_LIMITED) return JSON.parse(extractJson(result)) as T;
-    } catch (err) {
-      // A bad/invalid key (4xx) shouldn't kill the run — skip it and rotate on.
-      const msg = err instanceof Error ? err.message : String(err);
-      if (!/Gemini API error 4/.test(msg)) throw err;
-      console.warn(`[gemini] key ${keyIndex + 1} on ${model} errored (${msg.slice(0, 80)}) — skipping`);
+  // `stall` counts forced waits with zero progress; two in a row ⇒ give up.
+  for (let stall = 0; stall <= 1; ) {
+    for (const model of FALLBACK_MODELS) {
+      for (let i = 0; i < keys.length; i++) {
+        const k = (rrPointer + i) % keys.length;
+        if (!available(model, k)) continue;
+        try {
+          const result = await callModel(model, body, keys[k]);
+          if (result !== RATE_LIMITED) {
+            rrPointer = (k + 1) % keys.length; // spread the next call onto another key
+            return JSON.parse(extractJson(result)) as T;
+          }
+          cool(model, k, RPM_COOLDOWN_MS);
+        } catch (err) {
+          // A bad/invalid key (4xx) shouldn't kill the run — sideline it for the run.
+          const msg = err instanceof Error ? err.message : String(err);
+          if (!/Gemini API error 4/.test(msg)) throw err;
+          console.warn(`[gemini] key ${k + 1} on ${model} errored (${msg.slice(0, 80)}) — sidelining`);
+          cool(model, k, 24 * 60 * 60 * 1000);
+        }
+      }
     }
-    cursor++;
-    if (cursor < attempts.length) {
-      const next = attempts[cursor];
-      console.warn(
-        `[gemini] ${model} (key ${keyIndex + 1}) unavailable — switching to ${next.model} (key ${next.keyIndex + 1} of ${keys.length})`
-      );
+    // Every pair is cooling. If a cooldown expires soon, wait it out once and
+    // retry — that's a per-minute spike clearing. If not, the day is done.
+    const soonest = Math.min(...cooldownUntil.values());
+    const waitMs = soonest - Date.now();
+    if (waitMs > 0 && waitMs <= RPM_COOLDOWN_MS + 5_000) {
+      console.warn(`[gemini] all keys cooling — waiting ${Math.ceil(waitMs / 1000)}s for the per-minute window to clear`);
+      await sleep(waitMs + 1_000);
+      stall++;
+      continue;
     }
+    break;
   }
   throw new GeminiQuotaError();
 }
