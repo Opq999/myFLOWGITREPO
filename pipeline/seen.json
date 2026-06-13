@@ -464,7 +464,67 @@
     "63714141807badd2e7193f51634d18cbd7bf3299023ea6feec04554ca0ff01e5": {
       "url": "https://news.ycombinator.com/item?id=46722285",
       "date": "2026-06-13"
+    },
+    "28fba7b218680c0f2491ac6fc6a2c2aba6e9627460683366f89289bd2a9a24d4": {
+      "url": "https://github.com/jaywcjlove/awesome-mac",
+      "date": "2026-06-13"
+    },
+    "05996a8428228743687c3c4fabab94b30b94413fe7c0e9900d8a467119ce0d25": {
+      "url": "https://github.com/MunGell/awesome-for-beginners",
+      "date": "2026-06-13"
+    },
+    "5765168ebb93e8ba939040485a5934166546c2a8fd1c8343bc378dc78f2a0956": {
+      "url": "https://github.com/fffaraz/awesome-cpp",
+      "date": "2026-06-13"
+    },
+    "0ff622777ccc540cf644211b6a9e701e05ec99894db2531005056c4d93d4adc7": {
+      "url": "https://github.com/binhnguyennus/awesome-scalability",
+      "date": "2026-06-13"
+    },
+    "4a26b1c239fb0e4f97ccc3551aaf60aa88e395f1f2f75b723a10f0e0631f75de": {
+      "url": "https://github.com/rust-unofficial/awesome-rust",
+      "date": "2026-06-13"
+    },
+    "ce7a336e4c6d8cb5842c8c1f3bf43a2a8513ab3d063c19dbfd81f03d636d0a72": {
+      "url": "https://github.com/VoltAgent/awesome-openclaw-skills",
+      "date": "2026-06-13"
+    },
+    "6cd4819319482513dd29726f15b54f9e60dd678b6d000c64f42b3d9dbb2a4306": {
+      "url": "https://github.com/sickn33/antigravity-awesome-skills",
+      "date": "2026-06-13"
+    },
+    "9a8d77faf49520a944bcab15e527522da79b7add2627fa850ef750b873891225": {
+      "url": "https://github.com/deepseek-ai/awesome-deepseek-integration",
+      "date": "2026-06-13"
+    },
+    "ad6788349702e10b2317a27f761e2aea0afab4b8a782d602b87d1278fedaff9e": {
+      "url": "https://github.com/veggiemonk/awesome-docker",
+      "date": "2026-06-13"
+    },
+    "a9d1304d7ed8cf3169d843216320bb8d0d8527657f6f3532970b6d5e65fa665d": {
+      "url": "https://github.com/academic/awesome-datascience",
+      "date": "2026-06-13"
+    },
+    "ca2f031e4f2477b1c736dabac17841b2e57f07d78e8ee7fcfb5407d426ade5aa": {
+      "url": "https://github.com/e2b-dev/awesome-ai-agents",
+      "date": "2026-06-13"
+    },
+    "ce3b6303f8643bdf17b1159245a289e9dddce459d4accdbe9d5b2b225e222ade": {
+      "url": "https://news.ycombinator.com/item?id=46721802",
+      "date": "2026-06-13"
+    },
+    "1257de46a5cfdf8f12097058ee713106fb6eb6701e77adb676f7b98004ed544a": {
+      "url": "https://simonwillison.net/2026/Jun/10/if-claude-fable-stops-helping-you",
+      "date": "2026-06-13"
+    },
+    "ee40d88ea29e0b09519765bac5172c4d29d5eec55f1797b8028a50d2e4c12313": {
+      "url": "https://github.com/axios/axios",
+      "date": "2026-06-13"
+    },
+    "b57a06f41f2f63eabba9e390266039e7d486dad1eba7b281e11bc693d9178b4e": {
+      "url": "https://news.ycombinator.com/item?id=47624645",
+      "date": "2026-06-13"
     }
   },
-  "backfillPage": 1
+  "backfillPage": 2
 }
