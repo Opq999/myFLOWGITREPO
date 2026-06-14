@@ -1,0 +1,63 @@
+---
+title: "Rank News Significance with GPT-4"
+description: "Learn to use AI to rank news articles by their significance, filtering out less important stories. A guide for academic research."
+category: "academic-research"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 15
+jobToBeDone: "Rank news articles by significance using AI"
+tools:
+  - name: "GPT-4"
+    url: "https://openai.com/gpt-4"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=42716557"
+  platform: "hackernews"
+  author: "yakhinvadim"
+  postedAt: 2025-01-15
+score: 7
+ingestedAt: 2026-06-14
+nigeriaNotes: "GPT-4 access might be limited or require payment. Free alternatives like GPT-3.5 can be used but may yield less accurate results for this specific task."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+
+You will learn how to use an AI model to assess the significance of news articles, helping you filter out trivial information and focus on major events. This approach is useful when you need to quickly identify and prioritize news with long-term impact or historical importance.
+
+## Tools you need
+
+*   **GPT-4** (freemium) - A powerful AI language model capable of understanding and evaluating the significance of text.
+
+## Steps
+
+1.  **Understand the goal** — The aim is to get an AI to score news articles on a scale of 0-10 for their significance, focusing on major events rather than everyday news.
+2.  **Prepare your news article** — Have the text of a news article ready to input into the AI. For this workflow, we'll assume you have a single article.
+3.  **Craft your AI prompt** — The author found that GPT-4 was necessary for good results, as GPT-3 struggled with the concept of 'significance'. The prompt needs to clearly define what 'significance' means in this context.
+
+    The author doesn't share their exact prompt; a starting point, based on their description, is:
+
+    ```
+    Please read the following news article and assign it a significance score from 0 to 10, where 0 is not significant at all and 10 is of major historical importance to humanity. Focus on events with long-term impact, major societal shifts, or significant scientific/political milestones. Avoid ranking based on popularity, sensationalism, or personal tragedy unless it directly leads to a major historical event.
+
+    Article:
+    [Paste the full text of the news article here]
+
+    Significance Score (0-10):
+    ```
+
+    You should see a numerical score between 0 and 10, along with potentially a brief explanation if the model provides one.
+4.  **Evaluate the AI's score** — Review the score provided by the AI. The author found that GPT-4's scores were much more aligned with the intended meaning of 'significance' compared to earlier models.
+5.  **Iterate if necessary** — If the score doesn't seem right, you may need to refine your prompt. For example, you could add more specific examples of what constitutes high or low significance, or ask the AI to justify its score.
+
+## Original source
+
+This workflow is based on the insights shared by yakhinvadim in a Hacker News post titled "Show HN: News Minimalist – News ranked by significance". The author developed a news aggregator that uses AI to rank articles by their significance, a concept they found lacking in other news platforms.
+
+## Notes & variations
+
+*   **Free-tier alternative:** While the author specifically mentions GPT-4's effectiveness, you could try using GPT-3.5 (available on free tiers of some platforms) as a starting point. Be aware that the results might be less accurate, as noted by the author.
+*   **Common pitfall:** Relying on older or less capable AI models (like GPT-3) for this task can lead to poor results, as they may misinterpret 'significance' and focus on sensationalism or personal stories instead of historical impact.
+*   **Tip for better results:** To improve accuracy, clearly define what 'significance' means to you in the prompt. Provide examples of high-significance news (e.g., a major scientific breakthrough, a significant geopolitical event) and low-significance news (e.g., a celebrity endorsement, a minor product update) to guide the AI.

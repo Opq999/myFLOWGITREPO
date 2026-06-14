@@ -1,0 +1,82 @@
+---
+title: "Migrate GitHub Actions Workflows to Ubuntu-slim with gh-slimify"
+description: "Automate the migration of GitHub Actions workflows to cheaper Ubuntu-slim runners, identifying and fixing compatible jobs safely."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 15
+jobToBeDone: "Safely migrate GitHub Actions workflows to Ubuntu-slim runners"
+tools:
+  - name: "gh-slimify"
+    url: "https://github.com/fchimpan/gh-slimify"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "GitHub CLI"
+    url: "https://cli.github.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "LLM agent"
+    url: "https://gemini.google.com/"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=45936564"
+  platform: "hackernews"
+  author: "r4mimu"
+  postedAt: 2025-11-15
+score: 7
+ingestedAt: 2026-06-14
+nigeriaNotes: "gh-slimify and GitHub CLI are free and command-line based, making them data-light and suitable for mobile use. LLM agents often have free tiers for basic usage."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will get an automated analysis of your GitHub Actions workflows to determine which can be safely migrated to the more cost-effective `ubuntu-slim` runner. This approach works by scanning your repository for common incompatibilities like Docker usage, services, or missing packages, allowing you to reduce your CI/CD costs without breaking your builds.
+
+## Tools you need
+*   **gh-slimify** (free) - A GitHub CLI extension to analyze and update GitHub Actions workflows.
+*   **GitHub CLI** (free) - A command-line interface for GitHub, used to install and run gh-slimify.
+*   **LLM agent** (freemium) - An AI model that can be prompted to perform similar analysis, useful for understanding the logic or for integration into other AI workflows.
+
+## Steps
+1.  **Install GitHub CLI** — If you don't have it already, download and install the GitHub CLI from its official website. Follow the installation instructions for your operating system.
+    You should see confirmation that the CLI is installed, and you can run `gh --version` to check.
+2.  **Install gh-slimify extension** — Open your terminal or command prompt and run the following command to install the gh-slimify extension for GitHub CLI:
+
+    ```
+    gh extension install fchimpan/gh-slimify
+    ```
+
+    You should see output indicating that the extension was successfully installed.
+3.  **Analyze your workflows** — Navigate to your GitHub repository's directory in your terminal. Then, run the following command to analyze your existing GitHub Actions workflows:
+
+    ```
+    gh slimify
+    ```
+
+    The tool will scan your `.github/workflows` directory. You should see output detailing which jobs are safe to migrate, which have potential issues, and which are incompatible with `ubuntu-slim` runners.
+4.  **Update safe workflows (optional)** — If you want gh-slimify to automatically update the workflows that are identified as safe to migrate, run:
+
+    ```
+    gh slimify fix
+    ```
+
+    This command will modify your workflow files in place, changing `ubuntu-latest` to `ubuntu-slim` for the safe jobs. Review the changes carefully before committing them.
+5.  **Analyze with an LLM agent (alternative)** — As an alternative or supplement, you can use an LLM agent. The author provides a prompt in the README. A starting point for such a prompt, based on the tool's description, would be:
+
+    ```
+    Analyze the following GitHub Actions workflow file content to determine if it is safe to migrate from 'ubuntu-latest' to 'ubuntu-slim'. Consider potential issues such as Docker usage, reliance on services, containers, specific package dependencies not present in the slim image, or step failures due to missing commands. List any detected incompatibilities or risks.
+
+    [Paste your workflow YAML content here]
+    ```
+
+    You should receive a textual analysis from the LLM agent outlining potential migration risks.
+
+## Original source
+This workflow is based on a tool called `gh-slimify`, created by r4mimu and shared on Hacker News. The tool is designed to help developers safely migrate their GitHub Actions workflows to the more economical `ubuntu-slim` runner by automating the detection of compatibility issues.
+
+## Notes & variations
+*   **Free Tier Viability**: `gh-slimify` and `GitHub CLI` are entirely free and open-source. LLM agents often have generous free tiers suitable for this kind of analysis.
+*   **Common Pitfall**: Running `gh slimify fix` without first reviewing the output of `gh slimify` can lead to unexpected build failures if the tool incorrectly identifies a workflow as safe. Always inspect the changes before committing.
+*   **Better Results**: For more complex workflows, consider manually reviewing the output of `gh slimify` and cross-referencing with the official `ubuntu-slim` runner documentation to understand exactly why certain jobs are flagged as incompatible.

@@ -1,0 +1,73 @@
+---
+title: "Integrate AI Task Management into Cursor with Claude"
+description: "Learn to integrate an AI-powered task management system into your Cursor code editor using Claude, enhancing your development workflow."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 15
+jobToBeDone: "Integrate an AI-powered task management system into code editors"
+tools:
+  - name: "Claude"
+    url: "https://claude.ai"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Cursor"
+    url: "https://cursor.sh"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Anthropic API"
+    url: "https://www.anthropic.com/api"
+    pricing: "paid"
+    affiliateUrl: ""
+source:
+  url: "https://github.com/eyaltoledano/claude-task-master"
+  platform: "github"
+  author: "eyaltoledano"
+  postedAt: 2026-04-28
+score: 7
+ingestedAt: 2026-06-14
+nigeriaNotes: "Free tier of Claude is available. Anthropic API usage will incur costs, but initial free credits may be available. Data usage is minimal for setup."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will integrate an AI-powered task management system called Taskmaster into your Cursor code editor. This system leverages AI, specifically Claude, to help manage development tasks, making your workflow more efficient.
+
+This approach is useful for developers who want to streamline task management directly within their coding environment.
+
+## Tools you need
+*   **Claude** (freemium) - An AI assistant for generating text and code.
+*   **Cursor** (freemium) - An AI-first code editor that integrates with AI models.
+*   **Anthropic API** (paid) - Required to connect AI models like Claude to the Taskmaster system.
+
+## Steps
+1.  **Install Taskmaster in Cursor** - Open your Cursor editor and use the provided command to install the Taskmaster AI plugin. The excerpt mentions a "Quick Install for Cursor 1.0+" with a "one-click" link, but also notes that you will still need to add API keys. The command provided is:
+
+    ```bash
+    npx -y task-master-ai
+    ```
+
+    You should see output indicating the installation process is starting or completing within your terminal or Cursor's integrated terminal.
+
+2.  **Configure API Keys** - Taskmaster requires API keys to function. You need to add your Anthropic API key (for Claude) to your project's configuration. The excerpt states this can be done in the root `.env` file of your project or within the `env` section of your `mcp` config for `taskmaster-ai`.
+
+    The author does not provide the exact format for the `.env` file, but a common format is:
+
+    ```
+    ANTHROPIC_API_KEY=your_anthropic_api_key_here
+    ```
+
+    You should see confirmation that the API key has been accepted or no errors related to API key configuration after saving the file.
+
+3.  **Verify Installation** - After installation and API key configuration, you can verify that Taskmaster is running correctly. The excerpt doesn't detail a specific verification command, but typically, you would check for any new commands or UI elements introduced by the plugin within Cursor.
+
+    You should be able to use Taskmaster commands within Cursor without encountering errors related to missing configurations or API keys.
+
+## Original source
+This workflow is based on the `claude-task-master` project by eyaltoledano, shared on GitHub. The project aims to provide an AI-powered task management system that can be integrated into various AI-first code editors, including Cursor.
+
+## Notes & variations
+*   **Free Tier Viability**: While Claude has a free tier for direct use, integrating it via the Anthropic API will incur costs. Ensure you check Anthropic's pricing and consider any free API credits they might offer.
+*   **Common Pitfall**: Forgetting to replace placeholder API keys with your actual Anthropic API key is a common mistake. This will prevent Taskmaster from communicating with the AI models.
+*   **Better Results**: To get the most out of Taskmaster, ensure you understand the task structure and dependencies it supports. Referencing the project's documentation for specific command usage and configuration options will yield better results.

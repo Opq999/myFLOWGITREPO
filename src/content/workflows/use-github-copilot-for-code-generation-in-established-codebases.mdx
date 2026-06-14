@@ -1,0 +1,58 @@
+---
+title: "Use GitHub Copilot for Code Generation in Established Codebases"
+description: "Learn how to integrate LLM assistance like GitHub Copilot into your existing codebase to speed up development and improve code quality."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 15
+jobToBeDone: "Integrate LLM assistance into an established codebase for a small engineering team"
+tools:
+  - name: "GitHub"
+    url: "https://github.com/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "GitHub Copilot"
+    url: "https://github.com/features/copilot"
+    pricing: "paid"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=46292682"
+  platform: "hackernews"
+  author: "adam_gyroscope"
+  postedAt: 2025-12-16
+score: 7
+ingestedAt: 2026-06-14
+nigeriaNotes: "GitHub offers a free tier. GitHub Copilot is a paid service, but its efficiency gains can justify the cost for businesses. Data usage is generally low for code suggestions."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+
+You'll learn how to leverage GitHub Copilot to automatically generate code suggestions and pull requests for issues within an established codebase. This approach helps small teams accelerate development by offloading routine coding tasks to an AI assistant.
+
+## Tools you need
+
+*   **GitHub** (freemium) - For version control, issue tracking, and CI/CD.
+*   **GitHub Copilot** (paid) - An AI pair programmer that suggests code and entire functions in real-time, right inside your editor.
+
+## Steps
+
+1.  **Ensure GitHub is set up** - Verify your project is hosted on GitHub and you have access to the repository. This workflow assumes you are using GitHub for source control.
+2.  **Install GitHub Copilot** - If you haven't already, install the GitHub Copilot extension in your code editor (e.g., VS Code, JetBrains IDEs). Follow the extension's prompts to authenticate with your GitHub account.
+3.  **Create a GitHub Issue** - Navigate to your GitHub repository and create a new issue that describes a task or bug you want to address. Be as specific as possible in the issue description.
+4.  **Assign the Issue to Copilot** - In the issue details on GitHub, find the 'Assignees' section. Assign the issue to 'Copilot'. This is a convention described in the source material to trigger Copilot's automated PR generation.
+5.  **Observe Copilot's Action** - GitHub Copilot, when assigned an issue in this manner, will automatically attempt to generate code to address the issue. It will then open a pull request (PR) with the proposed changes.
+6.  **Review the Pull Request** - Once Copilot has created the PR, navigate to the 'Pull requests' tab in your GitHub repository. You should see a new PR with code changes suggested by Copilot.
+7.  **Examine the Code Changes** - Carefully review the code changes within the PR. Check for correctness, adherence to your project's coding standards, and potential bugs. The source mentions that complex typing might still require manual intervention.
+8.  **Approve or Discard** - Based on your review, you can either approve the PR and merge the changes, or discard it if the suggestions are not suitable. The source notes that there is no stigma around creating many PRs, and unused ones are frequently deleted.
+
+## Original source
+
+This workflow is inspired by a discussion on Hacker News titled 'Ask HN: How are you LLM-coding in an established code base?' by user adam_gyroscope. The author shares their startup's practices for integrating LLMs into their development process, focusing on tools like GitHub Enterprise and Copilot for issue resolution.
+
+## Notes & variations
+
+*   **Free Tier Alternative**: While GitHub Copilot is a paid tool, GitHub itself offers robust free-tier features for version control and issue tracking, which are essential prerequisites.
+*   **Common Pitfall**: Relying solely on Copilot's output without thorough code review can lead to introducing bugs or non-compliant code. Always review AI-generated code.
+*   **Tip for Better Results**: Ensure your GitHub issues are very clearly and precisely described. The more context and specific requirements you provide in the issue, the better Copilot will be able to generate relevant code.

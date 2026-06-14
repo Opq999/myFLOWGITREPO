@@ -1,0 +1,161 @@
+---
+title: "Set up and run a multi-model AI coding agent CLI with OpenClaude"
+description: "Learn to install and configure OpenClaude, a command-line interface for AI coding agents. Connect to various cloud and local AI models to streamline your coding workflows."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 25
+jobToBeDone: "Set up and run a multi-model AI coding agent CLI"
+tools:
+  - name: "OpenClaude"
+    url: "https://github.com/Gitlawb/openclaude"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "npm"
+    url: "https://www.npmjs.com"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Node.js"
+    url: "https://nodejs.org"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "OpenAI"
+    url: "https://openai.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Gemini"
+    url: "https://gemini.google.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "GitHub Models"
+    url: "https://github.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Codex"
+    url: "https://openai.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Ollama"
+    url: "https://ollama.ai"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Atomic Chat"
+    url: "https://atomic.chat"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "VS Code"
+    url: "https://code.visualstudio.com"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "paru"
+    url: "https://archlinux.org"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://github.com/Gitlawb/openclaude"
+  platform: "github"
+  author: "Gitlawb"
+  postedAt: 2026-06-14
+score: 5
+ingestedAt: 2026-06-14
+nigeriaNotes: "OpenClaude itself is free and open-source. For cloud AI models like OpenAI or Gemini, free tiers are often available but have usage limits; continued use will incur costs. Local models via Ollama are free to run after an initial, potentially large, model download (gigabytes), which will consume mobile data. Once downloaded, local usage is data-light."
+tiktokUrl: ""
+published: false
+---
+
+## What you'll get
+You'll set up OpenClaude, a powerful command-line interface (CLI) that allows you to interact with various AI coding models, both cloud-based and local, from a single terminal. This approach streamlines your coding workflows by providing a unified environment to leverage different AI assistants for tasks like code generation, debugging, and more.
+
+## Tools you need
+*   **OpenClaude** (free) — An open-source coding-agent CLI that connects to various AI models.
+*   **npm** (free) — The Node.js package manager, used to install OpenClaude.
+*   **Node.js** (free) — A JavaScript runtime environment, required for npm.
+*   **OpenAI** (paid) — A cloud-based AI model provider (e.g., GPT-4o), used as an example for cloud integration.
+*   **Gemini** (freemium) — Another cloud-based AI model provider, supported by OpenClaude.
+*   **GitHub Models** (freemium) — AI models provided by GitHub, supported by OpenClaude.
+*   **Codex** (paid) — An AI model from OpenAI, supported by OpenClaude.
+*   **Ollama** (free) — A tool for running large language models locally, used as an example for local integration.
+*   **Atomic Chat** (freemium) — An AI model provider, supported by OpenClaude.
+*   **VS Code** (free) — A popular code editor, which has an OpenClaude extension for integration.
+*   **paru** (free) — An AUR helper for Arch Linux, an alternative installation method for OpenClaude.
+
+## Steps
+1.  **Install Node.js and npm** — Before installing OpenClaude, you need Node.js and its package manager, npm. If you don't have them, download and install Node.js from its official website. npm is included with Node.js.
+
+    You should see Node.js and npm installed on your system, verifiable by running `node -v` and `npm -v` in your terminal.
+
+2.  **Install OpenClaude CLI** — Open your terminal or command prompt and run the following command to install OpenClaude globally using npm. If you are on Arch Linux, you can use `paru -S openclaude` instead.
+
+    ```bash
+npm install -g @gitlawb/openclaude@latest
+    ```
+
+    You should see installation progress and a success message, indicating OpenClaude is installed.
+
+3.  **Verify OpenClaude installation** — After installation, confirm that OpenClaude is correctly installed and accessible by checking its version.
+
+    ```bash
+openclaude --version
+    ```
+
+    You should see the installed version number of OpenClaude printed in your terminal.
+
+4.  **Set up a cloud AI provider (e.g., OpenAI)** — To use OpenClaude with cloud models like OpenAI, you need to set environment variables with your API key and desired model. Replace `sk-your-key-here` with your actual OpenAI API key and `gpt-4o` with your preferred model.
+
+    *   **For macOS / Linux:**
+
+        ```bash
+export CLAUDE_CODE_USE_OPENAI=1
+export OPENAI_API_KEY=sk-your-key-here
+export OPENAI_MODEL=gpt-4o
+openclaude
+        ```
+
+    *   **For Windows PowerShell:**
+
+        ```powershell
+$env:CLAUDE_CODE_USE_OPENAI = "1"
+$env:OPENAI_API_KEY = "sk-your-key-here"
+$env:OPENAI_MODEL = "gpt-4o"
+openclaude
+        ```
+
+    You should see OpenClaude start, ready to use the configured OpenAI model. If you encounter errors, double-check your API key and model name.
+
+5.  **Set up a local AI provider (e.g., Ollama)** — To use OpenClaude with local models via Ollama, you first need to have Ollama installed and a model running (e.g., `ollama run qwen2.5-coder:7b`). Then, set the environment variables to point OpenClaude to your local Ollama instance. Replace `qwen2.5-coder:7b` with your desired local model.
+
+    *   **For macOS / Linux:**
+
+        ```bash
+export CLAUDE_CODE_USE_OPENAI=1
+export OPENAI_BASE_URL=http://localhost:11434/v1
+export OPENAI_MODEL=qwen2.5-coder:7b
+openclaude
+        ```
+
+    *   **For Windows PowerShell:**
+
+        ```powershell
+$env:CLAUDE_CODE_USE_OPENAI = "1"
+$env:OPENAI_BASE_URL = "http://localhost:11434/v1"
+$env:OPENAI_MODEL = "qwen2.5-coder:7b"
+openclaude
+        ```
+
+    You should see OpenClaude start, connected to your local Ollama model. Ensure Ollama is running and the specified model is available.
+
+6.  **Start OpenClaude and explore interactive setup** — If you didn't start OpenClaude in the previous steps by setting environment variables, you can simply type `openclaude` in your terminal to launch it. Once inside OpenClaude, you can use slash commands for guided setup.
+
+    ```bash
+openclaude
+    ```
+
+    You should see the OpenClaude prompt. From here, you can type `/provider` to access a guided setup for various AI providers or `/onboard-github` to configure GitHub Models.
+
+## Original source
+This workflow is based on the OpenClaude project by Gitlawb, an open-source coding agent CLI available on GitHub. The project aims to provide a unified terminal-first workflow for interacting with various cloud and local AI model providers.
+
+## Notes & variations
+*   **Free-tier viability:** OpenClaude itself is free. For cloud models, look for providers with generous free tiers (e.g., some Gemini tiers) to minimize costs. For local models, Ollama is completely free to run once the models are downloaded, making it a great data-light option for ongoing use.
+*   **Common mistake:** Forgetting to install `ripgrep` system-wide if you encounter a "ripgrep not found" error. Ensure `rg --version` works in your terminal before starting OpenClaude. Also, double-check your API keys and environment variable syntax, as a small typo can prevent connection to AI models.
+*   **Tip for better results:** Use the `/provider` command inside OpenClaude for an interactive, guided setup experience. This helps ensure all necessary configurations are correctly saved. Also, explore the bundled VS Code extension for a more integrated development experience with theme support and launch integration.
