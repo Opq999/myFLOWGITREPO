@@ -1,0 +1,111 @@
+---
+title: "Automate Developer Tasks and Generate Code with Google Gemini CLI"
+description: "Learn to install and use Google Gemini CLI to automate developer tasks, generate code, and analyze projects directly from your terminal. Leverage AI for coding workflows."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 20
+jobToBeDone: "Automate developer tasks and generate code using Gemini CLI"
+tools:
+  - name: "Gemini CLI"
+    url: "https://github.com/google-gemini/gemini-cli"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Node.js"
+    url: "https://nodejs.org"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "npm"
+    url: "https://www.npmjs.com"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "VSCode"
+    url: "https://code.visualstudio.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/auden/google-gemini-cli-tutorial-how-to-install-and-use-it-with-images-4phb"
+  platform: "blog"
+  author: "auden"
+  postedAt: 2025-06-26
+score: 9
+ingestedAt: 2026-06-14
+nigeriaNotes: "The Gemini CLI offers a generous free tier with up to 60 requests/minute and 1,000 requests/day when logging in with a Google account. Data usage for text-based CLI interactions is generally light, making it suitable for mobile-first users and limited data plans."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You'll learn how to install and use the Google Gemini Command Line Interface (CLI) to automate developer tasks, generate code, and interact with Gemini's AI capabilities directly from your terminal. This approach is powerful for developers, DevOps engineers, and data analysts who want to streamline code analysis, automate workflows, and generate creative content using natural language instructions.
+
+## Tools you need
+*   **Node.js** (free) — A JavaScript runtime environment required to run the Gemini CLI.
+*   **npm** (free) — The Node.js package manager, used to install the Gemini CLI. It comes bundled with Node.js.
+*   **Gemini CLI** (free) — An open-source command-line AI tool from Google Gemini for developers.
+*   **VSCode** (freemium) — A popular code editor with an integrated terminal, useful for running the CLI alongside your code.
+
+## Steps
+
+1.  **Check Node.js installation** — Open your terminal (on Android, you might use Termux; on desktop, any terminal application like Command Prompt, PowerShell, or macOS Terminal works) and type the following command to check if Node.js is installed and meets the version requirement:
+
+    ```
+    node -v
+    ```
+
+    You should see a version number like `v18.x.x` or higher. If you don't have Node.js installed, or if it's an older version, you'll need to install or update it from the official Node.js website before proceeding.
+
+2.  **Install Gemini CLI globally** — In your terminal, run the following command to install the Gemini CLI globally on your system. This makes the `gemini` command available from any directory. You may be prompted to enter your system password.
+
+    ```
+    sudo npm install -g @google/gemini-cli
+    ```
+
+    You should see output indicating that the package has been installed successfully, possibly with some warnings that can usually be ignored for this setup.
+
+3.  **Launch Gemini CLI for the first time** — Once installed, simply type `gemini` in your terminal and press Enter to launch the interactive CLI.
+
+    ```
+    gemini
+    ```
+
+    On its first run, the CLI will guide you through a setup process, starting with theme selection.
+
+4.  **Choose a theme** — The CLI will present you with options to select a preferred theme style. Use your arrow keys to navigate through the options and hit Enter to confirm your choice.
+
+    You should see the CLI move to the next setup step after you confirm your theme.
+
+5.  **Select sign-in method** — You'll be asked to choose a login method. The author recommends "Login with Google" for ease of use and generous free-tier limits. Use your arrow keys to select "Login with Google" and hit Enter.
+
+    You should see a message indicating that a browser window will open for authentication.
+
+6.  **Authenticate in your browser** — After selecting "Login with Google," a new browser window or tab will automatically open. Follow the prompts to log in with your Google account.
+
+    Once authenticated, return to your terminal. You should see a confirmation message in the CLI, indicating that you are successfully logged in and ready to use Gemini.
+
+7.  **Start prompting the AI** — You can now enter prompts directly into the CLI. Try asking it to generate some code.
+
+    ```
+    Help me write a simple calculator
+    ```
+
+    The CLI might request "write access" during the process; simply confirm to proceed. You should see the Gemini CLI generate code or text based on your prompt.
+
+8.  **Reference local files (optional)** — To upload and reference local files in your prompts, type `@` in the CLI. This will trigger a file selection interface.
+
+    ```
+    @
+    ```
+
+    You should see a file browser or prompt to select a file from your local system, which you can then reference in your conversation with Gemini.
+
+9.  **Use Gemini CLI in VSCode (optional)** — If you use VSCode, you can run `gemini` directly in its integrated terminal. Open VSCode, then open the terminal (usually `View > Terminal` or `Ctrl+` `). Then, type `gemini` and press Enter to launch it. You can also use the `@` command to select files as described in the previous step.
+
+    You should be able to interact with Gemini CLI within your VSCode environment, making it convenient for coding tasks.
+
+## Original source
+This workflow is adapted from a detailed tutorial by auden, published on a blog platform. The original guide provides step-by-step instructions with images on how to install and use the Google Gemini CLI, highlighting its features and benefits for developers.
+
+## Notes & variations
+*   **Free-tier alternative**: If you want to try Gemini CLI without a global installation, you can run it directly using `npx`. In your terminal, type `npx https://github.com/google-gemini/gemini-cli`. This will execute the CLI without installing it permanently.
+*   **Common mistake**: Ensure you have Node.js version 18 or later installed. Older versions might cause installation failures or unexpected behavior. If `sudo npm install` gives permission errors, try running your terminal as an administrator (Windows) or ensuring your user has appropriate permissions.
+*   **Tip for better results**: For discovering available commands and usage tips within the CLI, simply type `/` and press Enter. The CLI is also designed to automatically fall back to faster models like `gemini-2.5-flash` if your connection is unstable, ensuring a smoother experience.

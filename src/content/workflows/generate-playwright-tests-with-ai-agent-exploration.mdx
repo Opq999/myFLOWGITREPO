@@ -1,0 +1,102 @@
+---
+title: "Generate Playwright Tests with AI Agent Exploration"
+description: "Automatically generate Playwright tests for web applications by having an AI agent explore the site and write test code."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 30
+jobToBeDone: "Automatically generate Playwright tests by having an AI agent explore a web application"
+tools:
+  - name: "Playwright MCP"
+    url: "https://playwright.dev"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "VS Code"
+    url: "https://code.visualstudio.com"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/debs_obrien/letting-playwright-mcp-explore-your-site-and-write-your-tests-mf1"
+  platform: "blog"
+  author: "debs_obrien"
+  postedAt: 2025-06-18
+score: 8
+ingestedAt: 2026-06-14
+nigeriaNotes: "This workflow primarily uses free, open-source tools that run locally on your computer. Data usage is minimal, mainly for initial setup and downloading packages, making it highly suitable for limited data plans."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You'll get automatically generated Playwright tests that explore your web application like a real user, uncovering functionality and potential bugs. This approach leverages an AI agent (Playwright MCP) to autonomously navigate your site, discover key features, and write robust, runnable tests without manual scripting.
+
+## Tools you need
+*   **Playwright MCP** (free) — An AI agent that can explore web applications and generate Playwright tests.
+*   **VS Code** (free) — A popular code editor used to set up and run the Playwright MCP agent.
+
+## Steps
+1.  **Set up your VS Code project** — Create a new folder for your project and open it in VS Code. This will be where your test files and configuration live.
+
+    You should see an empty folder open in VS Code.
+
+2.  **Configure Playwright MCP server** — Create a file named `mcp.json` in your project's root folder and add the server configuration. This tells VS Code how to run the Playwright MCP (Model Context Protocol).
+
+    ```json
+    {
+      "servers" : {
+        "playwright" : {
+          "command" : "npx" ,
+          "args" : [ "@playwright/mcp@latest" ]
+        }
+      }
+    }
+    ```
+
+    You should see the `mcp.json` file saved in your project root.
+
+3.  **Create the agent prompt file** — In your project, create a folder named `.github` (if it doesn't exist) and inside it, create a file named `generate_tests.prompt.md`. This file contains instructions for the AI agent.
+
+    ```
+    ---
+tools : [ ' playwright' ]
+mode : ' agent'
+---
+- You are a playwright test generator.
+- You are given a scenario and you need to generate a playwright test for it.
+- DO NOT generate test code based on the scenario alone.
+- DO run steps one by one using the tools provided by the Playwright MCP.
+- When asked to explore a website:
+1. Navigate to the specified URL
+2. Explore 1 key functionality of the site and when finished close the browser.
+3. Implement a Playwright TypeScript test that uses @playwright/test based on message history using Playwright's best practices including role based locators, auto retrying assertions and with no added timeouts unless necessary as Playwright has built in retries and autowaiting if the correct locators and assertions are used.
+- Save generated test file in the tests directory
+- Execute the test file and iterate until the test passes
+- Include appropriate assertions to verify the expected behavior
+- Structure tests properly with descriptive test titles and comments
+    ```
+
+    You should see the `generate_tests.prompt.md` file saved in the `.github` folder.
+
+4.  **Launch VS Code Agent Mode** — Open the VS Code command palette (usually `Ctrl+Shift+P` or `Cmd+Shift+P`), type "Agent Mode", and select "Start Agent Mode". The author notes that the prompt file should be added to the agent's context; typically, this means having the file open or explicitly referencing it within the agent's interface.
+
+    You should see VS Code's Agent Mode interface active, ready for your command.
+
+5.  **Instruct the agent to explore your site** — In the Agent Mode input field, type the command to start the exploration, replacing the example URL with your target web application.
+
+    ```
+    Explore https://debs-obrien.github.io/playwright-movies-app
+    ```
+
+    The agent will start a browser, navigate to the specified URL, and begin interacting with the site, reporting its actions and findings in the Agent Mode panel. You might see a browser window open and close as it explores.
+
+6.  **Review generated tests and findings** — After exploration, the agent will summarize its findings (e.g., "Homepage", "Search functionality", "Theme toggle") and then generate a Playwright test file in your `tests` directory based on its interactions and the prompt's instructions.
+
+    You should find a new test file (e.g., `tests/search.spec.ts`) in your project, containing Playwright test code. The agent will also report whether the test passed or failed.
+
+## Original source
+This workflow is adapted from a blog post by debs_obrien on the DEV Community platform. The author demonstrates how the Playwright MCP in Agent Mode can autonomously navigate a web application, discover key functionality, and generate runnable tests, even uncovering bugs missed by manual testing.
+
+## Notes & variations
+*   **Free-tier alternatives**: Playwright itself is a free and open-source framework, and the MCP is a package within its ecosystem. No direct paid alternatives are required for this workflow, making it highly accessible.
+*   **Common mistake**: Not providing a clear and specific prompt. If the prompt is too vague, the agent might not focus on the desired functionality or generate irrelevant tests. Ensure your prompt clearly defines the agent's role, the exploration goal, and the desired test characteristics.
+*   **Tip for better results**: Experiment with the `Explore` command. You can specify how many key functionalities to explore or how many tests to generate (e.g., "Explore 3 key functionalities of the site and generate 2 tests"). This allows you to control the scope of the agent's work. Also, ensure your target application is accessible and stable for reliable exploration.

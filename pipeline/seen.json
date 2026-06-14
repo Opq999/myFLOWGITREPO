@@ -1408,8 +1408,100 @@
     "533d51d9d3dea76fea8f38c7c4188ed836e7a2c7bf3e5eecbce4faf7a9860e2c": {
       "url": "https://github.com/cline/cline",
       "date": "2026-06-14"
+    },
+    "7c3ca0532108fb694489b76464d78b3e6e6e6690966f6542b095dd9c0312d6bf": {
+      "url": "https://github.com/lukasz-madon/awesome-remote-job",
+      "date": "2026-06-14"
+    },
+    "f39ce9b3533ca1c414984e16c14cbf5e07359503031af011db48f49ae47321e4": {
+      "url": "https://github.com/mahmoud/awesome-python-applications",
+      "date": "2026-06-14"
+    },
+    "fa2affa90372fc5bffca30fea9b102d1ecac9dd07ea364de4cf1ab829a74da18": {
+      "url": "https://github.com/EvoLinkAI/awesome-gpt-image-2-API-and-Prompts",
+      "date": "2026-06-14"
+    },
+    "5e1ee79efea29547ef025165a60bed8f8b12f6e9df7637fd3e1cdecdf9964690": {
+      "url": "https://github.com/birobirobiro/awesome-shadcn-ui",
+      "date": "2026-06-14"
+    },
+    "46fdf315dbc845a17b8ba30f8499a4e4e9ec722dd99391d747dd0f0a83714d34": {
+      "url": "https://github.com/agarrharr/awesome-cli-apps",
+      "date": "2026-06-14"
+    },
+    "6037e70fc8e0f40d461649324ca2c4bbb12d3434031f1302d66a5e3e4016b217": {
+      "url": "https://github.com/keon/awesome-nlp",
+      "date": "2026-06-14"
+    },
+    "982823bf41e99a000b10ef0e35e7f10f58b6a8c601bc6db6e64f158e6b8f6db3": {
+      "url": "https://github.com/BradyFU/Awesome-Multimodal-Large-Language-Models",
+      "date": "2026-06-14"
+    },
+    "94a48ea55fb66d0e64b8e9e1a4a806038161853800de7dbddc5d49ef9a464793": {
+      "url": "https://github.com/unixorn/awesome-zsh-plugins",
+      "date": "2026-06-14"
+    },
+    "35f1c8907e2fde3e2cd6adaff2f9bd2e78d965e2c1a8f4d4c3e1a195f5c4ebde": {
+      "url": "https://github.com/Wechat-ggGitHub/Awesome-GitHub-Repo",
+      "date": "2026-06-14"
+    },
+    "af2240d83791b606d742868e045cf7fc403802145a5d508f66d2b49a4e3b2e9d": {
+      "url": "https://github.com/AiHubCN/Awesome-Chinese-LLM",
+      "date": "2026-06-14"
+    },
+    "19e883f46a442ab18c18bbfdf4e476cf40d317b83a05482274262b835eb5b5c9": {
+      "url": "https://github.com/rothgar/awesome-tuis",
+      "date": "2026-06-14"
+    },
+    "68e7b16f3740ba7ab01c700db561c323f453095bceab81491d127967e17fe8fc": {
+      "url": "https://news.ycombinator.com/item?id=45154609",
+      "date": "2026-06-14"
+    },
+    "4811e63cf8588964d6f2c9fc3bc418e8dbc86fa72e60bfbbcee4caa30944e151": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1m6zzwd/try_this_prompt_and_share_your_results_below",
+      "date": "2026-06-14"
+    },
+    "781755e7eb3785a69002512a61cb631c20b299185c2cd1f7d25a963fc658a930": {
+      "url": "https://dev.to/auden/google-gemini-cli-tutorial-how-to-install-and-use-it-with-images-4phb",
+      "date": "2026-06-14"
+    },
+    "240824a1b2221438265fd045f68f45dd90790aaba4a030c738f547e25e96e5a8": {
+      "url": "https://github.com/meilisearch/meilisearch",
+      "date": "2026-06-14"
+    },
+    "23de38b838b97b67c0834508fc43c7518f688686ef069a67fc344a7b859dce2d": {
+      "url": "https://news.ycombinator.com/item?id=44716106",
+      "date": "2026-06-14"
+    },
+    "fb55e3983838aa3933219b3567b56d28bb51a170a11a00ca14687e738e0c9c59": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1moe1yj/grok_has_called_elon_musk_a_hypocrite_in_latest",
+      "date": "2026-06-14"
+    },
+    "ca9379ec8f24c38bc46240c4ee6113c52e9630dc3c1a85905c39379fc0665fa1": {
+      "url": "https://dev.to/copilotkit/heres-how-to-build-fullstack-agent-apps-gemini-copilotkit-langgraph-15jb",
+      "date": "2026-06-14"
+    },
+    "0c3f080e4a4e435db437c32ce837a3c43d1700643143a4d421919254e4bf603d": {
+      "url": "https://github.com/ultralytics/yolov5",
+      "date": "2026-06-14"
+    },
+    "3e07d7a2669b7f2c64e377bfecad245f287a57e8b8eac06d9f7a4273510ddde1": {
+      "url": "https://news.ycombinator.com/item?id=47625952",
+      "date": "2026-06-14"
+    },
+    "e467a45d1e37c3ff6d79ffdb7fc92f8b7e00bbbdfd8805c45e8243c1263604ee": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1ltv9g7/i_tricked_chatgpt_into_believing_i_surgically",
+      "date": "2026-06-14"
+    },
+    "ec4d12e1eefe547c0a6aeb1c9ad434b4158fc142cb357e48d4f1b81dc91448b4": {
+      "url": "https://dev.to/debs_obrien/letting-playwright-mcp-explore-your-site-and-write-your-tests-mf1",
+      "date": "2026-06-14"
+    },
+    "2a6b3f9a952be90726266cd25a2ee32f9b8cdec0bcad1114d6d8509bcfd4765c": {
+      "url": "https://github.com/zylon-ai/private-gpt",
+      "date": "2026-06-14"
     }
   },
-  "backfillPage": 3,
+  "backfillPage": 4,
   "dailyPage": 4
 }
