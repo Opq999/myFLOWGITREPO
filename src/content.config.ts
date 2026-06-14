@@ -1,6 +1,5 @@
 import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
-import { z } from 'astro/zod';
 import { workflowSchema } from './lib/workflow-schema';
 
 const workflows = defineCollection({
@@ -8,10 +7,10 @@ const workflows = defineCollection({
   schema: workflowSchema,
 });
 
-/** Score 5–6 pipeline output: kept out of the published site, optional human glance. */
-const drafts = defineCollection({
-  loader: glob({ pattern: '**/*.mdx', base: './src/content/drafts' }),
-  schema: workflowSchema.extend({ published: z.boolean().default(false) }),
-});
-
-export const collections = { workflows, drafts };
+// Score 5–6 pipeline output lives in ./src/content/drafts for an optional human
+// glance and for dedupe (read directly from disk in pipeline/lib/dedupe.ts).
+// It is deliberately NOT a built collection: drafts are never rendered, and a
+// single malformed LLM-generated draft would otherwise crash the whole site
+// build (and block the Cloudflare deploy). Keeping it off the build means bad
+// drafts can never take production down.
+export const collections = { workflows };
