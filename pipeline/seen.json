@@ -1364,8 +1364,52 @@
     "6a85f187219a18c6b51daccabee536563db989bb13212288f63323adc412c4ae": {
       "url": "https://news.ycombinator.com/item?id=45982346",
       "date": "2026-06-14"
+    },
+    "c0b2ac8da5266ccc079709fd695266cae93e5fe1246b0d25025852a5c0443977": {
+      "url": "https://github.com/sindresorhus/awesome-nodejs",
+      "date": "2026-06-14"
+    },
+    "51b02c86a6555aaa0b6d42379a12766a02ca2b046f25e19345e01418ffc68432": {
+      "url": "https://github.com/lukasmasuch/best-of-ml-python",
+      "date": "2026-06-14"
+    },
+    "1357710ea06e8ad07ddba78bd91e92b7ed432a41207d08334a46a62236aa2fa2": {
+      "url": "https://github.com/enescingoz/awesome-n8n-templates",
+      "date": "2026-06-14"
+    },
+    "b938734641c939e747c43edb33b4a44cca22f8f3a5f7c317d483af8370d6aeeb": {
+      "url": "https://github.com/VoltAgent/awesome-claude-code-subagents",
+      "date": "2026-06-14"
+    },
+    "bfbaa951a8a02a1154ac61cccfa7a24f2039a5a607909710acdc877fed244ede": {
+      "url": "https://github.com/rockerBOO/awesome-neovim",
+      "date": "2026-06-14"
+    },
+    "82333581d3482e91aaf5a04af66cd38ec0c3ddc90bb8e7264626913c15237029": {
+      "url": "https://github.com/dipakkr/A-to-Z-Resources-for-Students",
+      "date": "2026-06-14"
+    },
+    "85d70e2b0331622950a31565d3ab50b3385d48627ab12e9f3957f01aeb1a64fb": {
+      "url": "https://github.com/EthicalML/awesome-production-machine-learning",
+      "date": "2026-06-14"
+    },
+    "4ea92d815d5bbfea709a6caa6d3734d654f82c94b6912e75068113963f10f14d": {
+      "url": "https://github.com/wilsonfreitas/awesome-quant",
+      "date": "2026-06-14"
+    },
+    "6ae634c3d6b6507769fab9051f18e07604cdd1d87055d91f4f5fce42bf91e5f0": {
+      "url": "https://news.ycombinator.com/item?id=46417815",
+      "date": "2026-06-14"
+    },
+    "ccd75c50dafebfb0ea2701f2266ab4ac13dc40a5b1ecbdfa3f02c3b28f4c0bc1": {
+      "url": "https://www.latent.space/p/ainews-founders-and-forward-deployed",
+      "date": "2026-06-14"
+    },
+    "533d51d9d3dea76fea8f38c7c4188ed836e7a2c7bf3e5eecbce4faf7a9860e2c": {
+      "url": "https://github.com/cline/cline",
+      "date": "2026-06-14"
     }
   },
-  "backfillPage": 2,
+  "backfillPage": 3,
   "dailyPage": 4
 }
