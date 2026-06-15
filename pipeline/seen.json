@@ -1964,8 +1964,100 @@
     "0796ef396898ba35976df30944d7d95c69da49fc51909dbea4f7ac30d44568c3": {
       "url": "https://news.ycombinator.com/item?id=48357190",
       "date": "2026-06-15"
+    },
+    "ae02ec2a05cc1811b5befa0e6eaa6861aa1959cc914c915abcfe4c24ab08b372": {
+      "url": "https://github.com/PatrickJS/awesome-cursorrules",
+      "date": "2026-06-15"
+    },
+    "26e5f93b15551e878e871057b8732c058aa99a35848cbf8943acd458debf8367": {
+      "url": "https://github.com/mfornos/awesome-microservices",
+      "date": "2026-06-15"
+    },
+    "46ab5302c4be2116ac153365cd7ae8323fd9a85a2355404aeef28bb1a5ac259e": {
+      "url": "https://github.com/owainlewis/awesome-artificial-intelligence",
+      "date": "2026-06-15"
+    },
+    "c5e68e5be319b1f8b86acd15d62a17ce37f3db57998d2a7fb89f3b4d1eabf887": {
+      "url": "https://github.com/ComposioHQ/awesome-codex-skills",
+      "date": "2026-06-15"
+    },
+    "b86139830171753db313fd907994ec444118aae96d9a04fea9a14ac8b3bbeca2": {
+      "url": "https://github.com/qazbnm456/awesome-web-security",
+      "date": "2026-06-15"
+    },
+    "9d1ddd1a7f4f7fef95a7ab564d4edd35475e15e8e355aa79f836ecc71f7de382": {
+      "url": "https://github.com/travisvn/awesome-claude-skills",
+      "date": "2026-06-15"
+    },
+    "07ffdfa9aaf19ea2c0feddbd00d08ee7db439e8feaf34f4fe42de8a589e7a836": {
+      "url": "https://github.com/h4cc/awesome-elixir",
+      "date": "2026-06-15"
+    },
+    "8ffd62c8aa789ede4ee4d21dabf6a8128b5d880e60657c7375bff2af9cae83fb": {
+      "url": "https://github.com/steven2358/awesome-generative-ai",
+      "date": "2026-06-15"
+    },
+    "5a9af1eb024c643610575ec0087e5aa72cbc17a6ed4e80f8c89d5e3cdc745a30": {
+      "url": "https://github.com/KalyanKS-NLP/llm-engineer-toolkit",
+      "date": "2026-06-15"
+    },
+    "05b0fcbb0355b48a745e57ec61e601bb1122137d77eff922867ed7428c3aef00": {
+      "url": "https://github.com/Mooler0410/LLMsPracticalGuide",
+      "date": "2026-06-15"
+    },
+    "a30468b91ba1c46d38e85735b0e53485a0e5eaacd9ec84c0d9d39fc738f6b83f": {
+      "url": "https://github.com/vitalysim/Awesome-Hacking-Resources",
+      "date": "2026-06-15"
+    },
+    "33640641b3cefcb460e92f651eca51b065ac665ac50d4c6bf194156682e2e1ea": {
+      "url": "https://news.ycombinator.com/item?id=44412207",
+      "date": "2026-06-15"
+    },
+    "3034bbbd34b09cf5d9c37cc015f23703123a1a88175b8094505aadf740d32105": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1mm1etg/pretty_much_sums_it_up",
+      "date": "2026-06-15"
+    },
+    "621f1c1ecf6918f6105110bf5740a48ae1d4b45c2dfb74b6a0230babf6494718": {
+      "url": "https://dev.to/abubakersiddique771/7-habits-that-quietly-made-me-a-10x-developer-no-not-chatgpt-13c4",
+      "date": "2026-06-15"
+    },
+    "27b0817e8f7295c2725cd6a9c6a39cc844a6b9ca9c65185055224feb1693063f": {
+      "url": "https://github.com/Aider-AI/aider",
+      "date": "2026-06-15"
+    },
+    "1727b37e7e7782dafff82a4c654eccb50ab71de9512721bf3d70a274c670b3d8": {
+      "url": "https://news.ycombinator.com/item?id=44901683",
+      "date": "2026-06-15"
+    },
+    "5862129497ea26fee42e573bd75c0d5c8ba13c89446d9d1c2080741147beb905": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1m36rtn/unseen_angle_from_coldplay_concert",
+      "date": "2026-06-15"
+    },
+    "265984be526b3100295c509f54cd0547e6a19c93b88d7ce9eb6b7ccedeac3b7f": {
+      "url": "https://dev.to/entelligenceai/5-tools-that-helped-me-catch-70-more-bugs-in-the-codebase-important-3phk",
+      "date": "2026-06-15"
+    },
+    "88c3606113f4102a3acb27e4b29c713466732ac55e32b16d384ae6a059592fbf": {
+      "url": "https://github.com/apache/airflow",
+      "date": "2026-06-15"
+    },
+    "48444855fa1ec8219ef2957648b7f9ee587656e9f3773c5ab43f41eaf3f02937": {
+      "url": "https://news.ycombinator.com/item?id=44682465",
+      "date": "2026-06-15"
+    },
+    "877e2b7006d514894434c3b0b271902971a1284d7994be0d9be5539d54b7bc4c": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1n504ps/just_applied_to_be_the_ceo_of_openai_got_rejected",
+      "date": "2026-06-15"
+    },
+    "2498d4f953bf83639b09ae49bdfcbbf1855596d13a5dee9c8702d8dd8c52a113": {
+      "url": "https://dev.to/he4rt/engenharia-de-prompt-por-que-a-forma-como-voce-pergunta-muda-tudoum-guia-introdutorio-3hb0",
+      "date": "2026-06-15"
+    },
+    "7bb6849c4208c7d983581f7d324a7171e1490c1c572f0a9726dc63f77c9db0ac": {
+      "url": "https://github.com/zhayujie/CowAgent",
+      "date": "2026-06-15"
     }
   },
-  "backfillPage": 4,
+  "backfillPage": 5,
   "dailyPage": 5
 }
