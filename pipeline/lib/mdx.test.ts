@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import type { Candidate, ScoreResult } from '../types';
-import { escapeMdxBody, toMdx, validateDraft } from './mdx';
+import { bodyCompiles, escapeMdxBody, toMdx, validateDraft } from './mdx';
 
 const candidate: Candidate = {
   title: 'How I do invoices with AI',
@@ -117,5 +117,32 @@ describe('escapeMdxBody', () => {
 
   it('does not escape comparisons / less-than between spaces', () => {
     expect(escapeMdxBody('use a < b in math')).toBe('use a < b in math');
+  });
+});
+
+describe('bodyCompiles', () => {
+  it('accepts a normal body', async () => {
+    const result = await bodyCompiles("## Steps\n\n1. Do the thing.\n\n```bash\necho hi\n```");
+    expect(result.ok).toBe(true);
+  });
+
+  it('accepts bare placeholders in prose (escapeMdxBody rescues them)', async () => {
+    const result = await bodyCompiles('Run the command with your <session-id> value.');
+    expect(result.ok).toBe(true);
+  });
+
+  it('rejects a stray top-level export leaking from a mis-indented code fence', async () => {
+    // The exact shape that broke the build: fence indented under a list item but
+    // its `export` line dedented to column 0, so MDX parses it as ESM.
+    const body = '1. Set the variables:\n\n        ```bash\nexport KEY=1\n        ```\n';
+    const result = await bodyCompiles(body);
+    expect(result.ok).toBe(false);
+  });
+
+  it('accepts a properly indented code fence inside a list with angle brackets', async () => {
+    const body =
+      "3. Run a session:\n\n   ```bash\n   cband continue <session-id> 'prompt'\n   ```\n";
+    const result = await bodyCompiles(body);
+    expect(result.ok).toBe(true);
   });
 });

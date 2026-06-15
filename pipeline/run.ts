@@ -17,6 +17,7 @@ import { dedupe, getExistingTitles, loadSeen, markSeen, saveSeen } from './lib/d
 import { draftWorkflow } from './lib/draft';
 import { enrichCandidate } from './lib/enrich';
 import { GeminiQuotaError, getApiKeys } from './lib/gemini';
+import { bodyCompiles } from './lib/mdx';
 import { scoreCandidate } from './lib/score';
 
 /** Obvious non-workflows dropped before scoring — saves Gemini quota. */
@@ -171,7 +172,20 @@ async function main(): Promise<void> {
         continue;
       }
 
-      const publishable = score.score >= 7 && !opts.dryRun && counts.published < CAPS.publishPerRun;
+      // The workflows/ collection is built and deployed; drafts/ is not. Before
+      // publishing, confirm the MDX actually compiles — a draft that would crash
+      // `astro build` is diverted to drafts/ (kept for human review) so a single
+      // malformed file can never break the build or freeze the live deploy.
+      const compileCheck = await bodyCompiles(result.body);
+      const publishable =
+        compileCheck.ok &&
+        score.score >= 7 &&
+        !opts.dryRun &&
+        counts.published < CAPS.publishPerRun;
+      if (!compileCheck.ok) {
+        info(`[mdx] would not build, diverting to drafts — ${result.slug}: ${compileCheck.error.slice(0, 160)}`);
+        logEvent({ stage: 'mdx-divert', url: candidate.url, slug: result.slug, error: compileCheck.error.slice(0, 500) });
+      }
       if (publishable) {
         writeFileSync(uniqueSlugPath(WORKFLOWS_DIR, result.slug), result.mdx, 'utf8');
         counts.published++;

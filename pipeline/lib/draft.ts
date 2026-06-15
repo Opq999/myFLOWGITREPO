@@ -30,14 +30,14 @@ export async function draftWorkflow(
   c: Candidate,
   s: ScoreResult,
   log: (msg: string) => void = console.warn
-): Promise<{ slug: string; mdx: string } | null> {
+): Promise<{ slug: string; mdx: string; body: string } | null> {
   const basePrompt = buildDraftPrompt(c, s);
   let prompt = basePrompt;
   for (let attempt = 0; attempt < 2; attempt++) {
     try {
       const raw = await geminiJson<unknown>(prompt);
       const { workflow, body } = validateDraft(raw, c, s);
-      return { slug: slugify(workflow.title), mdx: toMdx(workflow, body) };
+      return { slug: slugify(workflow.title), mdx: toMdx(workflow, body), body };
     } catch (err) {
       const message = err instanceof Error ? err.message : String(err);
       log(`[draft] attempt ${attempt + 1} failed for "${c.title}": ${message.slice(0, 300)}`);

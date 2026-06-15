@@ -1,3 +1,5 @@
+import { compile } from '@mdx-js/mdx';
+import remarkGfm from 'remark-gfm';
 import { z } from 'astro/zod';
 import { PRICING, workflowSchema, type Workflow } from '../../src/lib/workflow-schema';
 import type { Candidate, ScoreResult } from '../types';
@@ -83,6 +85,29 @@ export function escapeMdxBody(body: string): string {
         .join('');
     })
     .join('\n');
+}
+
+/**
+ * Compiles the prose body through the same MDX core (`@mdx-js/mdx` + remark-gfm)
+ * that Astro's build uses, so we catch build-breaking content — bare JSX-looking
+ * `<tags>` and stray `export`/`import` lines leaking out of mis-indented code
+ * fences — BEFORE a file is published into the built `workflows/` collection.
+ *
+ * `escapeMdxBody` is a best-effort, line-based pass and can't perfectly model how
+ * the real parser decides where code blocks start and end (indented fences inside
+ * lists, mismatched fence indentation). This actually parses the content, so it
+ * is the authoritative guard: anything it rejects would also fail `astro build`.
+ * Frontmatter is YAML handled separately by Astro, so only the body is compiled.
+ */
+export async function bodyCompiles(
+  body: string
+): Promise<{ ok: true } | { ok: false; error: string }> {
+  try {
+    await compile(escapeMdxBody(body), { remarkPlugins: [remarkGfm] });
+    return { ok: true };
+  } catch (err) {
+    return { ok: false, error: err instanceof Error ? err.message : String(err) };
+  }
 }
 
 /** Serializes a validated workflow to an MDX file with YAML frontmatter. */

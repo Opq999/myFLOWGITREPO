@@ -55,6 +55,14 @@ jobs:
           ${{ inputs.dry_run == true && '--dry-run' || '' }}
           ${{ inputs.backfill == true && '--backfill' || '' }}
 
+      # Build BEFORE committing. The generated content is only ever committed,
+      # pushed and deployed if it actually builds, so a single malformed draft
+      # can never land on main or freeze the live site — the run just fails and
+      # the next one starts clean. (Layer 2 backstop; the pipeline already
+      # diverts non-compiling drafts away from the built collection.)
+      - name: Build site
+        run: npm run build
+
       - name: Commit new content
         id: commit
         run: |
@@ -77,7 +85,7 @@ jobs:
             echo "EOF"
           } >> "$GITHUB_OUTPUT"
 
-      - name: Build and deploy to Cloudflare Pages
+      - name: Deploy to Cloudflare Pages
         env:
           # Accepts the common misspelling CLOUDFARE_API_TOKEN as a fallback.
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN || secrets.CLOUDFARE_API_TOKEN }}
@@ -87,7 +95,6 @@ jobs:
             echo "CLOUDFLARE_API_TOKEN secret not set — skipping auto-deploy."
             exit 0
           fi
-          npm run build
           npx wrangler pages deploy dist --project-name opqai --branch main
 
       - name: Check email config
