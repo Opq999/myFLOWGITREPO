@@ -1,0 +1,91 @@
+---
+title: "Automate SDLC with Gemini API and Vector Search"
+description: "Streamline software development by using Gemini API for documentation and Azure AI Search for context-aware task generation."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 60
+jobToBeDone: "Automate software development lifecycle (SDLC) tasks using vector search and AI"
+tools:
+  - name: "Gemini API"
+    url: "https://ai.google.dev/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Azure OpenAI"
+    url: "https://azure.microsoft.com/en-us/products/ai-services/openai-service/"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Azure AI Search"
+    url: "https://azure.microsoft.com/en-us/products/search/"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Power Automate"
+    url: "https://powerautomate.microsoft.com/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Azure DevOps"
+    url: "https://azure.microsoft.com/en-us/products/devops/"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=45103205"
+  platform: "hackernews"
+  author: "antonybrahin"
+  postedAt: 2025-09-02
+score: 7
+ingestedAt: 2026-06-15
+nigeriaNotes: "Gemini API has a generous free tier. Azure services (OpenAI, AI Search, DevOps) are paid, which might be a barrier. Power Automate's free tier is limited but usable for testing. Data usage depends heavily on codebase size and API call frequency."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+
+This workflow uses AI to transform user stories into detailed documentation, technical specifications, and actionable tasks, directly referencing your codebase for context. This approach automates a critical part of the software development lifecycle, reducing manual effort and improving consistency by grounding AI outputs in your actual code.
+
+## Tools you need
+
+*   **Gemini API** (freemium) - For core AI generation tasks like creating requirements and test strategies.
+*   **Azure OpenAI** (paid) - To create vector embeddings of your codebase.
+*   **Azure AI Search** (paid) - To store and query your codebase's vector embeddings for Retrieval-Augmented Generation (RAG).
+*   **Power Automate** (freemium) - To orchestrate the sequence of API calls and automate the workflow.
+*   **Azure DevOps** (freemium) - To interact with the REST API for creating tasks and documentation.
+
+## Steps
+
+1.  **Set up Azure AI Search** — Create an Azure AI Search service instance. This service will store the vector representations of your codebase, allowing the AI to retrieve relevant code snippets for context.
+    *   You should see a confirmation of your service creation and be able to access its management portal.
+2.  **Generate Codebase Embeddings** — Use Azure OpenAI to convert your codebase into vector embeddings. This process transforms your code into a numerical format that AI can understand and search.
+    *   The author doesn't share the exact process, but typically this involves writing a script that reads your code files, sends them to an Azure OpenAI model (like `text-embedding-ada-002`), and stores the resulting embeddings along with their corresponding code snippets in Azure AI Search.
+3.  **Ingest Embeddings into Azure AI Search** — Load the generated vector embeddings into your Azure AI Search index. This makes your codebase searchable by semantic meaning.
+    *   You should see your code embeddings successfully indexed and ready for querying.
+4.  **Orchestrate with Power Automate** — Create a new flow in Power Automate. This will act as the central hub for your automation, triggering the AI calls in sequence.
+    *   You should see the Power Automate flow designer interface.
+5.  **Call Gemini API for Core Generation** — Within Power Automate, add actions to call the Gemini API. Use it to generate initial documentation based on a user story.
+    *   The author mentions five calls to Gemini for different generation steps (requirements, tech spec, etc.). You'll need to configure each call with appropriate prompts.
+    *   Example prompt structure for requirements:
+    ```
+    Given the following user story, generate a detailed set of requirements:
+    [Paste User Story Here]
+    ```
+    *   You should receive structured text output from the Gemini API for each generation step.
+6.  **Integrate RAG with Gemini API** — Enhance the Gemini API calls by incorporating Retrieval-Augmented Generation (RAG). This involves querying your Azure AI Search index for relevant code snippets based on the current generation task and feeding these snippets to Gemini as context.
+    *   The author doesn't specify the exact RAG implementation, but it typically involves: 
+        1.  Taking the output or input of a generation step (e.g., a requirement).
+        2.  Generating a vector embedding for this query.
+        3.  Using Azure AI Search to find the most similar code embeddings.
+        4.  Including the retrieved code snippets in the prompt to Gemini.
+    *   This step ensures that generated documentation and tasks are contextually relevant to your actual codebase.
+7.  **Automate Task Creation in Azure DevOps** — Add actions in Power Automate to call the Azure DevOps REST API. Use the generated technical specifications and tasks to create work items (e.g., user stories, tasks, bugs) in your Azure DevOps project.
+    *   You will need to authenticate with Azure DevOps using a Personal Access Token (PAT).
+    *   You should see new work items appearing in your Azure DevOps board after the flow runs.
+
+## Original source
+
+This workflow is inspired by a post on Hacker News by Antony Brahin, detailing how they transformed their software development lifecycle automation by implementing vector search on their codebase. The original post was shared on September 2, 2025.
+
+## Notes & variations
+
+*   **Free Tier Alternatives:** For the paid Azure services, consider exploring open-source alternatives for vector databases (like ChromaDB or Weaviate) and self-hosting embedding models if budget is a constraint. However, this significantly increases complexity.
+*   **Common Pitfall:** Ensure your prompts to Gemini are specific and include clear instructions on the desired output format. Vague prompts can lead to generic or unhelpful AI responses.
+*   **Better Results:** Experiment with different embedding models in Azure OpenAI and tune the similarity search parameters in Azure AI Search to find the optimal balance between retrieval accuracy and performance for your specific codebase.

@@ -1,0 +1,57 @@
+---
+title: "Query PDFs with Trieve CLI and LLM Agent"
+description: "Learn to use Trieve CLI and an LLM agent to query PDF documents directly from your terminal, retrieving information efficiently."
+category: "academic-research"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 15
+jobToBeDone: "Querying and retrieving information from PDF documents using an LLM agent in the terminal"
+tools:
+  - name: "Trieve CLI"
+    url: "https://github.com/devflowinc/trieve/tree/main/clients/cli"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "LLM"
+    url: "https://gemini.google.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=44309891"
+  platform: "hackernews"
+  author: "skeptrune"
+  postedAt: 2025-06-18
+score: 7
+ingestedAt: 2026-06-15
+nigeriaNotes: "Trieve CLI is free for up to 1000 document chunks. LLM access via free tiers is widely available. Data usage is minimal for CLI operations."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to upload a PDF document to Trieve CLI and then query it using an LLM agent directly from your terminal. This approach uses a search tool, allowing the LLM to iteratively find and reason about information, which is more effective for knowledge retrieval than simply injecting all text into the context.
+
+## Tools you need
+*   **Trieve CLI** (freemium) — A command-line interface tool for uploading documents and interacting with LLM agents.
+*   **LLM** (freemium) — A large language model, such as Gemini, Claude, or ChatGPT, to process your queries.
+
+## Steps
+1.  **Install Trieve CLI** — Follow the installation instructions provided in the Trieve CLI GitHub repository. The excerpt mentions it's available via npm, so you would typically use `npm install -g trieve_cli` after installing Node.js and npm.
+    You should see confirmation that the `trieve` command is installed and available in your terminal.
+2.  **Upload your PDF document** — Navigate to the directory containing your PDF file in your terminal. Then, run the upload command, replacing `./document.pdf` with the actual path to your file.
+    ```bash
+    trieve upload ./document.pdf
+    ```
+    You should see output indicating the document is being processed and uploaded. The tool will process the PDF into smaller chunks for the LLM to reference.
+3.  **Ask a question about the document** — Once the upload is complete, you can ask your LLM agent a question about the document's content. Use the `ask` command followed by your query in quotes.
+    ```bash
+    trieve ask "What are the key findings?"
+    ```
+    The LLM agent will process your query, use its search tools to find relevant information within the uploaded document chunks, and then provide an answer. Responses stream back with expandable source references.
+
+## Original source
+This workflow is based on a Show HN post on Hacker News by user skeptrune, introducing Trieve CLI, a terminal-based LLM agent loop with search capabilities for PDFs. The author shared the project to gather feedback on the approach and CLI design.
+
+## Notes & variations
+*   **Free Tier:** Trieve CLI offers a free tier for up to 1,000 document chunks, which is suitable for many small documents or research papers.
+*   **Common Pitfall:** Ensure your PDF is text-based and not an image scan. If it's an image, you'll need to use Optical Character Recognition (OCR) software first to convert it into a text-searchable format before uploading.
+*   **Better Results:** For more complex queries, try breaking them down into smaller, more specific questions. You can also experiment with different phrasing to see how the agent's search and reasoning capabilities adapt.

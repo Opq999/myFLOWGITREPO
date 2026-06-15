@@ -1,0 +1,81 @@
+---
+title: "Build and Deploy Production-Grade AI Agents with Docker and FastAPI"
+description: "Learn to build and deploy robust, scalable AI agents from prototype to enterprise-grade production using code-first tutorials."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 480
+jobToBeDone: "Build and deploy production-grade GenAI agents"
+tools:
+  - name: "Docker"
+    url: "https://www.docker.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "FastAPI"
+    url: "https://fastapi.tiangolo.com"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Kotlin AI Agent Framework"
+    url: "https://github.com/NirDiamant/agents-towards-production"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://github.com/NirDiamant/agents-towards-production"
+  platform: "github"
+  author: "NirDiamant"
+  postedAt: 2026-06-11
+score: 6
+ingestedAt: 2026-06-15
+nigeriaNotes: "Initial development and prototyping using these tools can often leverage free tiers (e.g., Docker Desktop for personal use) and local compute, keeping data usage low. However, scaling to 'production-grade' and 'enterprise deployment' as described in the tutorials will likely involve cloud services, potentially incurring costs for GPU compute and higher data transfer for real-time APIs."
+tiktokUrl: ""
+published: false
+---
+
+## What you'll get
+You'll gain a foundational understanding and practical experience in building and deploying robust, scalable AI agents. This workflow helps you move an agent from a basic prototype to a production-ready system, covering essential aspects like memory, deployment, and security. This approach provides comprehensive, code-first tutorials, making it ideal for developers who want to build real-world AI agent products.
+
+## Tools you need
+*   **Docker** (freemium) — For containerizing your AI agent applications for consistent deployment.
+*   **FastAPI** (free) — An open-source Python web framework for building fast, production-ready API endpoints for your agents.
+*   **Kotlin AI Agent Framework** (free) — An open-source framework, part of the tutorial library, for developing AI agents.
+
+## Steps
+This workflow describes how to leverage a library of tutorials to build and deploy production-grade AI agents. Each tutorial in the library provides specific, ready-to-run code examples.
+
+1.  **Access the tutorial repository** — Open your web browser and navigate to the GitHub repository containing the tutorials.
+    You should see the main page of the `NirDiamant/agents-towards-production` GitHub repository, displaying its README and file structure.
+
+2.  **Clone the repository to your computer** — On the GitHub page, locate the 'Code' button (usually green), click it, and copy the HTTPS or SSH URL. Then, open your terminal or command prompt and use the `git clone` command to download all the tutorial files to your local machine.
+    ```bash
+    git clone [PASTE_THE_COPIED_URL_HERE]
+    ```
+    You should see a new folder named `agents-towards-production` created in your current directory, containing all the project files.
+
+3.  **Navigate to a specific tutorial** — Inside the cloned repository, locate the `tutorials` folder. Browse through the subfolders to find a tutorial that matches your interest (e.g., 'stateful workflows', 'vector memory', 'Docker deployment'). Use your terminal to change into that tutorial's directory.
+    ```bash
+    cd agents-towards-production/tutorials/[TUTORIAL_NAME]
+    ```
+    Your terminal's current directory should now be inside the chosen tutorial's folder.
+
+4.  **Set up the tutorial environment** — Each tutorial will have its own specific setup instructions, typically in a `README.md` file or within a notebook. This usually involves installing Python dependencies (e.g., using `pip install -r requirements.txt`) and potentially Docker images. Follow these instructions carefully.
+    You should have all necessary software and libraries installed, ready to run the tutorial's code.
+
+5.  **Run the tutorial code** — Execute the provided code files or Jupyter notebooks within the tutorial's folder. This might involve running Python scripts (`python main.py`) or opening and running cells in a Jupyter Notebook (`jupyter notebook`).
+    You should see the agent's code executing, potentially printing output to the console, or demonstrating its functionality as described in the tutorial.
+
+6.  **Review and understand the agent's components** — Carefully read through the tutorial's explanations and the code itself. Pay attention to how different components (like memory, tool integration, or orchestration) are implemented and interact.
+    You should gain a clear understanding of the architectural patterns and coding practices used to build the agent.
+
+7.  **Experiment and customize** — Once you understand the basic functionality, try modifying the code. Change prompts, adjust parameters, or integrate new tools to see how the agent's behavior changes. This hands-on experimentation deepens your learning.
+    You should observe different outputs or behaviors from the agent based on your modifications, helping you grasp the impact of various changes.
+
+8.  **Explore deployment options** — For tutorials focusing on deployment (e.g., Docker deployment, FastAPI endpoints), follow those specific steps to containerize your agent and expose it via an API. This moves your agent from a local script to a deployable service.
+    You should have a containerized agent running, accessible via a web API, demonstrating readiness for production environments.
+
+## Original source
+This workflow is based on the `agents-towards-production` GitHub repository by Nir Diamant. This open-source project provides a comprehensive playbook of code-first tutorials for building and deploying production-grade Generative AI agents.
+
+## Notes & variations
+*   **Common mistake**: A common pitfall is rushing straight to complex multi-agent systems or enterprise deployment without first mastering the foundational concepts of single-agent design, memory, and tool integration. Start with simpler tutorials to build a solid understanding.
+*   **Tip for better results**: Actively engage with the code. Don't just run it; modify it, break it, and fix it. This iterative process is crucial for truly understanding how AI agents work and how to adapt them to your specific needs.
+*   **Free-tier alternatives**: While the core tools are free or freemium, for advanced features like GPU scaling or large-scale deployment, you might explore cloud providers like Google Cloud Platform (GCP), Amazon Web Services (AWS), or Microsoft Azure, which often offer free tiers for basic services, but will charge for more intensive compute resources.

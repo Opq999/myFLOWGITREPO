@@ -1,0 +1,67 @@
+---
+title: "Automate Papal Election Smoke Detection with Playwright and AI"
+description: "Use Playwright and Google Gemini Flash to automatically check for white smoke from the Sistine Chapel chimney during a papal election."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 30
+jobToBeDone: "Automate checking for white smoke from the Sistine Chapel chimney during a papal election"
+tools:
+  - name: "Playwright"
+    url: "https://playwright.dev/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Google Gemini Flash 2.0"
+    url: "https://gemini.google.com/"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=43927649"
+  platform: "hackernews"
+  author: "vasusen"
+  postedAt: 2025-05-08
+score: 7
+ingestedAt: 2026-06-15
+nigeriaNotes: "Playwright and Gemini Flash are free to use. The workflow requires setting up a GitHub Actions environment, which has a generous free tier suitable for this task. Data usage is minimal, primarily for API calls to Gemini."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+
+You will have a script that automatically checks for smoke signals from the Sistine Chapel chimney during a papal election. This workflow uses AI to verify if the smoke is white, indicating a successful election, and alerts you accordingly. It's a novel application of web automation and AI for a specific, real-world event.
+
+## Tools you need
+
+*   **Playwright** (freemium) - A tool for reliable end-to-end testing of modern web applications. Used here to interact with a hypothetical or real-time source of election information.
+*   **Google Gemini Flash 2.0** (freemium) - A fast and efficient large language model from Google, used here to analyze images or text descriptions of the smoke.
+*   **GitHub Actions** (freemium) - A CI/CD platform to automate workflows, used here to schedule and run the smoke detection script.
+
+## Steps
+
+1.  **Set up your project environment** - Clone the provided GitHub repository to your local machine. This repository contains the pre-written Playwright test script.
+2.  **Install dependencies** - Navigate to the project directory in your terminal and install the necessary Node.js packages using npm or yarn. The repository's README file will guide you on the exact commands.
+3.  **Configure AI model access** - The script is set to use Google Gemini Flash 2.0. You will need to obtain an API key for Gemini and set it as an environment variable in your GitHub Actions workflow file (`.github/workflows/tests.yaml`). The exact method for setting environment variables in GitHub Actions is detailed in their documentation.
+    *   The author doesn't share their exact prompt for the AI; a starting point for analyzing an image of smoke could be:
+
+    ```
+    Analyze this image of smoke coming from a chimney. Is the smoke white? Respond with only 'yes' or 'no'.
+    [Image data or URL here]
+    ```
+
+    You should see a confirmation in your GitHub Actions logs that the AI model is configured and ready.
+4.  **Define the test target** - The script needs a way to access information about the papal election smoke. This might involve monitoring a specific website, an API, or a live video feed. The provided script likely has a placeholder or a specific method for this, which you may need to adapt based on how election smoke information is made available.
+    *   The author doesn't specify the exact source of the smoke information; you will need to determine this and potentially update the script to point to it.
+5.  **Run the smoke test** - Execute the Playwright test script. This can be done locally for testing or, more effectively, by committing your changes to GitHub and letting GitHub Actions run the scheduled test.
+    *   The script is designed to run every minute during papal conclave election times. You should see the test results in your GitHub Actions run history. A successful run indicates white smoke was detected.
+6.  **Interpret the results** - The test passes only if the smoke detected is white. You will see a 'pass' status in your GitHub Actions logs if the conditions are met. A 'fail' status would indicate no smoke, or smoke of a different color.
+
+## Original source
+
+This workflow is based on a project shared by user 'vasusen' on Hacker News, presented as a 'Show HN' post. The project demonstrates using Playwright and Google Gemini Flash to automate the checking of papal election smoke signals, with the test passing only if the smoke is white.
+
+## Notes & variations
+
+*   **Free Tier Viability**: GitHub Actions offers a free tier with a generous amount of minutes per month, making this workflow accessible without cost for personal use. Google Gemini Flash also has a free tier for its API.
+*   **Common Pitfall**: Ensure your API keys are kept secure and are not hardcoded directly into your script. Use environment variables, especially within CI/CD platforms like GitHub Actions.
+*   **Tip for Better Results**: If the AI struggles to accurately identify smoke color from images, consider if there's a text-based status update available from a reliable source that the script could parse instead, or provide the AI with more context about what 'white smoke' signifies in this specific event.

@@ -1,0 +1,139 @@
+---
+title: "Reduce LLM Token Costs for Dev Commands with rtk CLI Proxy"
+description: "Optimize your AI coding sessions by reducing LLM token consumption for common developer commands using the rtk CLI proxy. Save on API costs."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 20
+jobToBeDone: "Reduce LLM token consumption for developer commands"
+tools:
+  - name: "rtk"
+    url: "https://github.com/rtk-ai/rtk"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Homebrew"
+    url: "https://brew.sh"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "curl"
+    url: "https://curl.se"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "sh"
+    url: "https://www.gnu.org/software/bash/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Cargo"
+    url: "https://doc.rust-lang.org/cargo/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Claude AI"
+    url: "https://claude.ai"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "GitHub Copilot"
+    url: "https://github.com/features/copilot"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Google Gemini"
+    url: "https://gemini.google.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "OpenAI"
+    url: "https://openai.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Cursor"
+    url: "https://cursor.sh"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://github.com/rtk-ai/rtk"
+  platform: "github"
+  author: "rtk-ai"
+  postedAt: 2026-06-14
+score: 8
+ingestedAt: 2026-06-15
+nigeriaNotes: "The `rtk` tool is free and runs locally, minimizing data use. It reduces token costs for various LLMs, some of which offer free tiers."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You'll get a command-line proxy that automatically filters and compresses the output of common developer commands (like `ls`, `git status`, `cargo test`) before sending them to your AI coding assistant. This significantly reduces the number of tokens consumed by your Large Language Model (LLM) by 60-90%, leading to lower API costs and potentially faster responses. This approach works by intelligently reducing verbosity, making your AI interactions more efficient.
+
+## Tools you need
+*   **rtk** (free) — The core CLI proxy tool that optimizes LLM token usage.
+*   **Homebrew** (free) — A package manager for macOS and Linux, recommended for easy installation of `rtk`.
+*   **curl** (free) — A command-line tool for downloading files, used for quick installation on Linux/macOS.
+*   **sh** (free) — A command-line interpreter (shell) used to execute installation scripts.
+*   **Cargo** (free) — Rust's package manager, an alternative installation method for `rtk`.
+*   **Claude AI** (freemium) — An AI assistant that `rtk` can proxy for, offering coding help.
+*   **GitHub Copilot** (paid) — An AI pair programmer that `rtk` can proxy for, enhancing coding efficiency.
+*   **Google Gemini** (freemium) — Google's AI assistant that `rtk` can proxy for, useful for coding tasks.
+*   **OpenAI** (paid) — Provides powerful AI models (like GPT-4) that `rtk` can proxy for, used in various AI coding tools.
+*   **Cursor** (freemium) — An AI-powered code editor that `rtk` can integrate with.
+
+## Steps
+
+1.  **Open your terminal** — On macOS, find "Terminal" in Applications > Utilities. On Linux, it's usually called "Terminal" or "Konsole". On Windows, use WSL (Windows Subsystem for Linux) for the best experience, or Command Prompt/PowerShell.
+
+2.  **Install rtk using Homebrew (macOS/Linux)** — If you have Homebrew installed, this is the easiest way. If not, proceed to the next step for a quick install.
+    ```bash
+    brew install rtk
+    ```
+    You should see output indicating `rtk` is being downloaded and installed. If Homebrew isn't installed, you'll get an error; in that case, use the `curl` method below.
+
+3.  **Alternatively, quick install rtk (Linux/macOS)** — If you don't use Homebrew or prefer a direct install, use this command. It downloads and runs an installation script.
+    ```bash
+    curl -fsSL https://raw.githubusercontent.com/rtk-ai/rtk/refs/heads/master/install.sh | sh
+    ```
+    You'll see messages about `rtk` being installed, typically to `~/.local/bin`.
+
+4.  **Add rtk to your system PATH (if needed)** — If the quick install placed `rtk` in `~/.local/bin` and your system doesn't automatically find commands there, you need to add it to your PATH.
+    ```bash
+    echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc # For Bash users
+    # OR
+    echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc  # For Zsh users
+    ```
+    After running this, close and reopen your terminal, or run `source ~/.bashrc` (or `~/.zshrc`) to apply the change immediately. You won't see direct output, but the command will be added to your shell's configuration file.
+
+5.  **Verify rtk installation** — Check that `rtk` is correctly installed and working.
+    ```bash
+    rtk --version
+    ```
+    You should see the installed `rtk` version (e.g., "rtk 0.28.2").
+    Then, check its token savings capabilities:
+    ```bash
+    rtk gain
+    ```
+    You should see a table or summary of estimated token savings. If you get an error like "command not found", revisit step 4. If it shows stats, `rtk` is ready.
+
+6.  **Initialize rtk for your AI coding assistant** — `rtk` needs to know which AI tool it should proxy for. The default is for Claude Code/Copilot.
+    ```bash
+    rtk init -g
+    ```
+    If you use a different tool, specify it:
+    ```bash
+    rtk init -g --gemini # For Google Gemini CLI
+    # OR
+    rtk init -g --codex # For OpenAI Codex (or other OpenAI-based tools)
+    # OR
+    rtk init -g --agent cursor # For Cursor editor
+    # OR
+    rtk init -g --agent windsurf # For Windsurf
+    ```
+    You should see a confirmation message indicating that `rtk` has been initialized for your chosen agent. This sets up the global proxy.
+
+7.  **Use your AI coding assistant as usual** — Once `rtk` is initialized, it works in the background. Continue using your preferred AI coding assistant (e.g., Claude Code, GitHub Copilot, Gemini CLI) for your development tasks.
+    You won't see `rtk` directly, but it will automatically intercept and optimize the output of common commands (like `ls`, `git status`, `cargo test`) before they reach your AI's context, reducing token usage. The expected result is that your AI assistant will receive more concise information, potentially leading to faster and more cost-effective interactions.
+
+## Original source
+This workflow is based on the `rtk-ai/rtk` project, an open-source CLI proxy designed to optimize Large Language Model token consumption for developers. The project is hosted on GitHub by `rtk-ai`.
+
+## Notes & variations
+*   **Free-tier viability:** The `rtk` tool itself is completely free and open-source, running locally on your device. However, it acts as a proxy for various AI coding assistants (like Claude AI, GitHub Copilot, Google Gemini, OpenAI), many of which operate on a freemium or paid model. While `rtk` significantly reduces the token consumption (and thus potential cost and data for API calls) of these LLMs, you will still need to consider the pricing and data plans of the specific AI assistant you choose to use with `rtk`. Some LLMs offer free tiers or credits that can be leveraged.
+*   **Common mistake:** Be aware of a name collision with "Rust Type Kit" if you're installing via `cargo install`. If `rtk gain` fails, you might have installed the wrong package. In that case, use `cargo install --git https://github.com/rtk-ai/rtk` instead.
+*   **Installation alternatives:** Besides Homebrew and the quick install script, you can also install `rtk` using `cargo install --git https://github.com/rtk-ai/rtk` if you have Rust and Cargo installed, or by downloading pre-built binaries directly from the GitHub releases page for your operating system (macOS, Linux, Windows).
+*   **Windows users:** For the best experience and full functionality of `rtk`'s hook system, it is highly recommended to use Windows Subsystem for Linux (WSL). If running natively on Windows, extract the `rtk.exe` from the zip and place it in your PATH (e.g., `C:\Users\your_username\.local\bin`). Run `rtk` from Command Prompt, PowerShell, or Windows Terminal; do not double-click the `.exe` file.
+*   **Tip for better results:** Regularly check `rtk gain` to monitor your token savings and ensure `rtk` is actively optimizing your LLM interactions. The savings vary by project size and command frequency, but consistent use will lead to significant reductions over time.

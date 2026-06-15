@@ -1,0 +1,143 @@
+---
+title: "Automate Git Commit Message Generation with GAC and LLMs"
+description: "Generate contextual Git commit messages automatically from your code changes using GAC, saving time and improving the quality of your commit history."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 10
+jobToBeDone: "Automate Git commit message generation using LLMs"
+tools:
+  - name: "Git Auto Commit (GAC)"
+    url: "https://github.com/cellwebb/gac"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "uvx"
+    url: "https://github.com/astral-sh/uv"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Git"
+    url: "https://git-scm.com"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Ollama"
+    url: "https://ollama.com"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "LM Studio"
+    url: "https://lmstudio.ai"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "OpenAI"
+    url: "https://openai.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Anthropic"
+    url: "https://claude.ai"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Gemini"
+    url: "https://gemini.google.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "OpenRouter"
+    url: "https://openrouter.ai"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Groq"
+    url: "https://groq.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Fireworks"
+    url: "https://fireworks.ai"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Together AI"
+    url: "https://www.together.ai"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=45723533"
+  platform: "hackernews"
+  author: "merge-conflict"
+  postedAt: 2025-10-27
+score: 6
+ingestedAt: 2026-06-15
+nigeriaNotes: "This workflow is viable on free tiers with cloud LLM providers, though data usage will vary depending on the model and frequency of use. For local LLMs like Ollama or LM Studio, the tools themselves are free, but they require significant device resources and an initial large data download for the models, which can be a barrier for mobile-first users or those with limited data plans."
+tiktokUrl: ""
+published: false
+---
+
+## What you'll get
+You'll get automatically generated, contextual Git commit messages that accurately summarize your code changes. This approach leverages Large Language Models (LLMs) to understand your modifications, saving you time on writing commit messages and improving the clarity and consistency of your project's version history.
+
+## Tools you need
+*   **Git Auto Commit (GAC)** (freemium) — A command-line tool that uses LLMs to generate Git commit messages from your code changes.
+*   **uvx** (free) — A lightweight tool for running Python packages without needing a full Python environment setup.
+*   **Git** (free) — The essential version control system for tracking changes in your code projects.
+*   **An LLM Provider** (free / freemium / paid) — A service or local application that provides access to Large Language Models, such as OpenAI, Anthropic, Gemini, Ollama, or LM Studio.
+
+## Steps
+
+1.  **Install uvx and initialize GAC** — Open your terminal or command prompt and run the `uvx gac init` command. This will launch a configuration wizard.
+
+    ```
+    uvx gac init
+    ```
+
+    You should see a series of prompts asking you to choose your preferred LLM provider (e.g., OpenAI, Ollama, Gemini) and to enter any necessary API keys. GAC will create a `.gac.env` file in your home directory to store these settings.
+
+2.  **Configure your LLM provider** — During the `gac init` wizard, select your desired LLM provider. If you choose a cloud provider like OpenAI or Anthropic, you'll need to paste your API key when prompted. If you opt for a local provider like Ollama or LM Studio, ensure you have it installed and running on your machine.
+
+    You should see a confirmation that your `.gac.env` file has been created and configured successfully.
+
+3.  **Make changes to your code** — Work on your project as usual, modifying files, adding new features, or fixing bugs. Ensure these changes are staged for a commit using `git add .` or `git add [file_name]`.
+
+    You should have uncommitted changes in your Git repository, visible with `git status`.
+
+4.  **Generate a commit message** — Once your changes are staged, run the `uvx gac` command in your terminal. GAC will analyze your staged changes and generate a commit message using the configured LLM.
+
+    ```
+    uvx gac
+    ```
+
+    You should see a generated commit message displayed in your terminal, similar to this example from the author:
+
+    ```
+      feat(auth): add OAuth2 integration with GitHub and Google
+
+      - Implement OAuth2 authentication flow
+
+      - Add provider configuration for GitHub and Google
+
+      - Create callback handler for token exchange
+
+      - Update login UI with social auth buttons
+    ```
+
+5.  **Reroll or refine the message (optional)** — If you don't like the initial message, you can type `r` and press Enter to generate a new one. To provide specific feedback for a reroll, type `r "focus on xyz"` (e.g., `r "focus on bug fix"`).
+
+    You should see a new commit message generated based on your feedback or a completely new one if you just typed `r`.
+
+6.  **Review and commit** — GAC will present the generated message and prompt you to confirm. Review the message carefully to ensure it accurately reflects your changes. If satisfied, confirm the commit (usually by pressing Enter or `y`).
+
+    Your changes will be committed to your Git repository with the AI-generated message. You can verify this with `git log`.
+
+7.  **Explore verbosity modes (optional)** — GAC supports different levels of detail for commit messages. To get a one-liner message, use `uvx gac -o`. For a verbose message with detailed Motivation, Architecture, and Impact sections, use `uvx gac -v`.
+
+    ```
+    uvx gac -o
+    ```
+    or
+    ```
+    uvx gac -v
+    ```
+
+    You should see a commit message generated with the specified verbosity level.
+
+## Original source
+This workflow is based on Git Auto Commit (GAC), a command-line tool developed by merge-conflict and shared on Hackernews. The author created GAC to help developers save time by automating the generation of contextual Git commit messages using Large Language Models.
+
+## Notes & variations
+*   **Free-tier alternatives**: For completely free usage, consider setting up local LLMs with **Ollama** (https://ollama.com) or **LM Studio** (https://lmstudio.ai). These run models directly on your computer, avoiding API costs, but require a powerful device and a significant initial download for the models. Many cloud LLM providers like OpenAI, Anthropic, and Gemini also offer free tiers or credits for new users. GAC supports 14 providers, including local options and cloud services like OpenAI, Anthropic, Gemini, OpenRouter, Groq, Cerebras, Chutes, Fireworks, StreamLake, Synthetic, Together AI, and Z.ai.
+*   **Common mistake**: A frequent pitfall is forgetting to review the AI-generated commit message. While GAC is powerful, always double-check the message for accuracy and clarity before confirming the commit. An incorrect or vague commit message can hinder future debugging and collaboration.
+*   **Tip for better results**: When rerolling a commit message, provide specific feedback. Instead of just `r`, try `r "emphasize the performance improvements"` or `r "make it clear this is a hotfix"`. This guides the LLM to generate a more tailored and useful message.
