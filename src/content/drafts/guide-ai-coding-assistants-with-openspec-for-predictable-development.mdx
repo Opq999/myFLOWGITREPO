@@ -1,0 +1,89 @@
+---
+title: "Guide AI Coding Assistants with OpenSpec for Predictable Development"
+description: "Use OpenSpec to create clear specifications for AI coding assistants, ensuring predictable and aligned software development outcomes. Streamline your coding workflow."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 20
+jobToBeDone: "Guide AI coding assistants with specifications for predictable development"
+tools:
+  - name: "OpenSpec"
+    url: "https://github.com/Fission-AI/OpenSpec"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Node.js"
+    url: "https://nodejs.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "npm"
+    url: "https://www.npmjs.com/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://github.com/Fission-AI/OpenSpec"
+  platform: "github"
+  author: "Fission-AI"
+  postedAt: 2026-06-13
+score: 6
+ingestedAt: 2026-06-16
+nigeriaNotes: "All core tools (OpenSpec, Node.js, npm) are free and open-source, making this workflow highly accessible. Data usage is minimal as it primarily involves command-line operations."
+tiktokUrl: ""
+published: false
+---
+
+## What you'll get
+You'll get a structured, predictable way to work with AI coding assistants. Instead of vague instructions, you'll use clear specifications to guide the AI, ensuring it builds exactly what you intend. This approach helps align human and AI efforts, leading to more reliable and consistent software development.
+
+## Tools you need
+*   **OpenSpec** (free) — A spec-driven development framework that helps guide AI coding assistants.
+*   **Node.js** (free) — A JavaScript runtime environment required to install and run OpenSpec.
+*   **npm** (free) — The Node.js package manager, used to install OpenSpec.
+
+## Steps
+
+1.  **Install Node.js** — Download and install Node.js version 20.19.0 or higher from its official website.
+    *   **What to do:** Go to `https://nodejs.org/`, download the recommended LTS (Long Term Support) version, and follow the installation instructions for your operating system.
+    *   **What you should see:** Node.js and npm (Node Package Manager) will be installed on your system. You can verify by opening your terminal or command prompt and typing `node -v` and `npm -v`. You should see version numbers displayed.
+
+2.  **Install OpenSpec globally** — Use npm to install the OpenSpec command-line interface (CLI) tool globally on your system.
+    *   **What to do:** Open your terminal or command prompt and paste the following command:
+        ```
+npm install -g @fission-ai/openspec@latest
+        ```
+    *   **What you should see:** npm will download and install OpenSpec. You'll see progress messages, and upon completion, the command prompt will return. You can test it by typing `openspec --version`.
+
+3.  **Initialize OpenSpec in your project** — Navigate to your software project's directory and set up OpenSpec.
+    *   **What to do:** In your terminal, use the `cd` command to go into the root directory of your existing or new coding project (e.g., `cd my-awesome-app`). Then, run the OpenSpec initialization command:
+        ```
+openspec init
+        ```
+    *   **What you should see:** OpenSpec will create necessary configuration files and folders (like `openspec/`) within your project. You'll see a confirmation message indicating successful initialization.
+
+4.  **Propose a new feature to your AI** — Use the `/opsx:propose` command to tell your AI coding assistant what you want to build.
+    *   **What to do:** Assuming your AI coding assistant is integrated and listening for OpenSpec commands (the author doesn't share exact integration steps; consult your AI assistant's documentation), type the following command into your AI assistant's interface (e.g., a chat window or command palette):
+        ```
+/opsx:propose add-dark-mode
+        ```
+    *   **What you should see:** The AI will respond by creating a new directory (e.g., `openspec/changes/add-dark-mode/`) containing several files: `proposal.md` (explaining the "why" and "what"), `specs/` (requirements and scenarios), `design.md` (technical approach), and `tasks.md` (an implementation checklist). The AI will confirm it's "Ready for implementation!".
+
+5.  **Apply the proposed changes** — Instruct your AI to implement the tasks outlined in the specifications.
+    *   **What to do:** Once you've reviewed the generated specification files and are ready, tell your AI assistant to proceed:
+        ```
+/opsx:apply
+        ```
+    *   **What you should see:** The AI will start implementing the tasks listed in `tasks.md`. You'll see progress updates, such as "Implementing tasks...", followed by a list of completed tasks (e.g., "✓ 1.1 Add theme context provider", "✓ 2.2 Wire up localStorage"). The AI will confirm "All tasks complete!".
+
+6.  **Archive the completed feature** — Move the completed feature's specifications to an archive.
+    *   **What to do:** After the AI has finished implementation, tell it to archive the feature:
+        ```
+/opsx:archive
+        ```
+    *   **What you should see:** The AI will move the feature's files to an archive directory (e.g., `openspec/changes/archive/2025-01-23-add-dark-mode/`) and confirm that "Specs updated. Ready for the next feature."
+
+## Original source
+This workflow is inspired by the OpenSpec project by Fission-AI, found on GitHub. It introduces Spec-driven development (SDD) to bring predictability and structure to working with AI coding assistants.
+
+## Notes & variations
+*   **Free-tier viability:** OpenSpec, Node.js, and npm are all free and open-source, making the core setup of this workflow completely free. The cost will come from your chosen AI coding assistant, many of which offer free tiers for students or open-source projects (e.g., GitHub Copilot).
+*   **Common mistake:** Forgetting to navigate into your project directory before running `openspec init`. This will create the OpenSpec files in the wrong location. Always `cd` into your project first.
+*   **Tip for better results:** Before running `/opsx:apply`, carefully review the `proposal.md`, `specs/`, `design.md`, and `tasks.md` files generated by `/opsx:propose`. This is your chance to refine the requirements and ensure the AI builds exactly what you need, preventing costly rework later. The source also mentions an "expanded workflow" (`/opsx:new`, `/opsx:continue`, etc.) which you can enable with `openspec config profile` for more complex projects.

@@ -1,0 +1,68 @@
+---
+title: "Build an AI Customer Service Agent with DeepSeek-R3 and Netlify"
+description: "Create an AI-powered customer service agent to answer FAQs and handle complex queries using a free-tier friendly stack."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 60
+jobToBeDone: "Build an AI-powered customer service agent to answer FAQs and handle complex queries"
+tools:
+  - name: "Netlify"
+    url: "https://www.netlify.com/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "DeepSeek-R3"
+    url: "https://platform.deepseek.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Web Speech API"
+    url: "https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=47441587"
+  platform: "hackernews"
+  author: "axotopia"
+  postedAt: 2026-03-19
+score: 7
+ingestedAt: 2026-06-16
+nigeriaNotes: "Netlify offers a generous free tier suitable for small projects. DeepSeek-R3 is free to use. Web Speech API is a browser feature. Data usage will depend on the volume of interactions but is generally light for text-based FAQs."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will build a foundational AI customer service agent capable of answering frequently asked questions and handling more complex inquiries. This approach leverages AI to automate responses, saving time and resources typically spent on repetitive customer interactions.
+
+## Tools you need
+*   **Netlify** (freemium) — A platform for hosting web applications and serverless functions, useful for deploying the AI agent's components.
+*   **DeepSeek-R3** (free) — A powerful AI model that will serve as the 'brain' of your customer service agent, processing queries and generating responses.
+*   **Web Speech API** (free) — A browser-based API that enables voice input and output, allowing for a more interactive user experience.
+
+## Steps
+1.  **Set up the AI Agent's 'Brain' (DeepSeek-R3)** — The author used DeepSeek-R3 as the core AI. You will need to integrate this model into your application. The exact integration method isn't detailed, but typically involves using their API. You'll need to sign up for an API key.
+    *   **What to do:** Sign up for DeepSeek-R3 and obtain an API key. Consult their documentation for how to make API calls to send user queries and receive AI-generated responses.
+    *   **What you should see:** Successful API calls returning text responses from the AI model.
+2.  **Develop the 'Hands' (Browser Component)** — This part of the agent runs in the user's browser. It handles user input (text or voice) and displays the AI's responses. The author mentions using the Web Speech API for voice.
+    *   **What to do:** Implement JavaScript code in your web application to capture user input. If using voice, integrate the Web Speech API for speech-to-text conversion. Display the AI's text responses to the user.
+    *   **What you should see:** A functional interface where users can type or speak their questions, and see text responses appear.
+3.  **Implement the 'Voice' (Edge Component)** — This component likely handles the processing of voice input and output, potentially including language detection and conversion, and interacts with the 'Brain'. The author notes issues with the Web Speech API and non-English languages.
+    *   **What to do:** Set up serverless functions on Netlify to handle voice processing. This might involve sending audio data to an AI service for transcription and then converting the AI's text response back to speech using the Web Speech API or a similar service.
+    *   **What you should see:** The agent can understand spoken queries and respond verbally.
+4.  **Connect the Components with Netlify** — Netlify's serverless functions will act as the glue between the 'Brain', 'Hands', and 'Voice' components, especially given Netlify's 10-second serverless timeout constraint which forced the author to split the agent.
+    *   **What to do:** Deploy your frontend (the 'Hands') to Netlify. Create Netlify serverless functions (the 'Edge' components) to handle API calls to DeepSeek-R3 and manage the voice processing logic.
+    *   **What you should see:** Your deployed application is live on Netlify, with all components communicating correctly.
+5.  **Test with Complex Queries** — The author successfully defended their business model against a licensed architect. This indicates the AI can handle detailed and potentially adversarial questions.
+    *   **What to do:** Prepare a list of challenging questions related to your business or services. Interact with your AI agent and evaluate the quality and accuracy of its responses.
+    *   **What you should see:** The AI agent provides coherent, accurate, and well-reasoned answers, even to difficult questions.
+6.  **Publish Audit Logs** — To ensure transparency and system integrity, the author publishes audit logs.
+    *   **What to do:** Set up a system to log all interactions with the AI agent. Make these logs accessible, perhaps via a separate page on your Netlify site.
+    *   **What you should see:** A public log of AI interactions, demonstrating accountability.
+
+## Original source
+This workflow is inspired by a post on Hacker News titled "Show HN: Dumped Wix for an AI Edge agent so I never have to hire junior staff" by user axotopia. The author shares their experience building a custom AI agent to handle customer service inquiries for their building design consultancy.
+
+## Notes & variations
+*   **Free-tier alternatives:** While DeepSeek-R3 is free, other free or low-cost LLMs can be explored if needed. For hosting, Vercel offers a similar free tier to Netlify.
+*   **Common mistake:** Relying solely on the Web Speech API without robust error handling, especially for different languages or accents, can lead to poor user experience as noted by the author.
+*   **Tip for better results:** Clearly define the scope of your AI agent's knowledge base. Providing the AI with specific, curated information about your business or services will significantly improve the accuracy and relevance of its answers, reducing the risk of hallucinations.

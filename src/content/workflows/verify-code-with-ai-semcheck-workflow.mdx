@@ -1,0 +1,65 @@
+---
+title: "Verify Code with AI: Semcheck Workflow"
+description: "Use AI to check if your code implementation matches its specification. Learn how to leverage LLMs for semantic code verification."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 15
+jobToBeDone: "Verify software implementation against specifications using AI"
+tools:
+  - name: "Claude"
+    url: "https://claude.ai"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Semcheck"
+    url: "https://github.com/rejot-dev/semcheck"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=44432215"
+  platform: "hackernews"
+  author: "duckerduck"
+  postedAt: 2025-07-01
+score: 7
+ingestedAt: 2026-06-16
+nigeriaNotes: "Claude offers a free tier with usage limits. Semcheck is a free, open-source CLI tool. Data usage is minimal, primarily text-based."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to use an AI tool called Semcheck to verify if your code implementation aligns with a given specification. This approach is useful for ensuring code quality and adherence to requirements, especially when working with AI-generated code or complex standards.
+
+## Tools you need
+*   **Claude** (freemium) - An AI assistant for generating and checking code.
+*   **Semcheck** (free) - A command-line interface (CLI) tool that uses LLMs to check code against specifications.
+
+## Steps
+1.  **Install Semcheck** - Follow the installation instructions provided in the Semcheck GitHub repository. This typically involves downloading the tool or installing it via a package manager.
+    You should see confirmation that Semcheck is installed and accessible from your terminal.
+2.  **Prepare your Specification** - Write down the requirements or specifications for your code. This could be a formal document, a set of rules, or even a description of a data structure.
+    You will have a clear text document outlining what your code should do.
+3.  **Prepare your Code Implementation** - Have the code you want to check ready. This is the actual code that you believe implements your specification.
+    You will have a code file (e.g., `.py`, `.js`) containing your implementation.
+4.  **Run Semcheck** - Open your terminal or command prompt. Navigate to the directory containing your code and specification. Execute the Semcheck command, providing your specification and implementation as inputs. The exact command will depend on how Semcheck is designed to be used, but it will likely involve referencing your spec and code files.
+    The author doesn't share their exact command; a starting point might look like:
+    ```
+    semcheck --spec path/to/your/specification.txt --code path/to/your/implementation.py
+    ```
+    You should see output from Semcheck indicating whether your code matches the specification, or highlighting any discrepancies.
+5.  **Review the Results** - Carefully read the output from Semcheck. It will tell you if the implementation adheres to the spec or point out areas where it deviates.
+    You will have a clear understanding of your code's compliance with the defined specification.
+6.  **Iterate with AI (Optional)** - If Semcheck identifies issues, you can use an AI like Claude to help you understand the problem or suggest corrections. You might paste the error message and relevant code snippets into Claude and ask for assistance.
+    The author mentions using Claude to refine implementations after initial AI generation. A prompt could be:
+    ```
+    My code implementation has the following issue according to Semcheck: [paste Semcheck's error message here]. Here is the relevant code snippet: [paste code snippet here]. Can you help me understand why this is happening and suggest a fix?
+    ```
+    You should receive guidance from Claude on how to adjust your code.
+
+## Original source
+This workflow is based on a Show HN post on Hacker News by duckerduck, who developed Semcheck as a tool to explore the intersection of AI and software engineering practices like spec-driven development.
+
+## Notes & variations
+*   **Free Tier Viability**: Claude's free tier has usage limits, so be mindful of how many checks you perform. Semcheck itself is free and open-source.
+*   **Common Pitfall**: Ensure your specification is clear, unambiguous, and detailed enough for the AI to effectively check against. Vague specifications will lead to unreliable results.
+*   **Tip for Better Results**: Experiment with different ways of phrasing your specification. Sometimes rephrasing a requirement can help the AI understand it better and perform a more accurate check.

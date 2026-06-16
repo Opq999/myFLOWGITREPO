@@ -1,0 +1,72 @@
+---
+title: "Automate Your Business with Gemini AI Agents"
+description: "Build AI agents to handle content creation, sales, security, and operations for your business using Gemini's free tier."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 30
+jobToBeDone: "Automate content creation, sales lead generation, security scanning, and operational tasks for a one-person tech agency using AI agents."
+tools:
+  - name: "Gemini 2.5 Flash"
+    url: "https://gemini.google.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "OpenClaw"
+    url: "https://github.com/open-claw/open-claw"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "WSL2"
+    url: "https://learn.microsoft.com/en-us/windows/wsl/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=47296664"
+  platform: "hackernews"
+  author: "ppcvote"
+  postedAt: 2026-03-08
+score: 8
+ingestedAt: 2026-06-16
+nigeriaNotes: "Gemini's free tier offers 1,500 requests/day, which is generous for many small businesses. OpenClaw and WSL2 are free and open-source. Data usage will depend on the volume of content and interactions, but the core LLM interactions are token-optimized."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to set up multiple AI agents to automate key business functions like content creation, lead generation, and operational monitoring. This approach leverages a free-tier AI model to significantly reduce manual work and operational costs for a small business.
+
+## Tools you need
+*   **Gemini 2.5 Flash** (freemium) — A powerful AI model for generating text, analyzing information, and performing creative tasks.
+*   **OpenClaw** (free) — An open-source framework for building and managing AI agents.
+*   **WSL2 (Windows Subsystem for Linux)** (free) — Allows you to run Linux environments directly on Windows, providing a robust platform for running agent scripts.
+*   **RSS Reader** (free) — To subscribe to and process information from various online sources.
+*   **HN API** (free) — To access data from Hacker News for community engagement and research.
+*   **Jina Reader** (free) — A tool for efficient document understanding and information extraction.
+*   **UltraProbe** (free) — An AI-powered security scanner for lead generation.
+*   **Discord** (freemium) — A communication platform for receiving notifications and posting updates.
+*   **Vercel Hobby** (freemium) — A platform for deploying web applications and services.
+*   **Firebase** (freemium) — A backend platform for managing data and services.
+
+## Steps
+1.  **Set up your AI agent framework** — Install OpenClaw and configure it to run within your WSL2 environment. This provides the foundation for managing multiple AI agents.
+2.  **Configure the content creation agent** — Set up an agent to generate social media posts. The author uses a quality-gating mechanism: the AI generates a post, then reviews its own quality. If the score is below 7/10, it rewrites the post.
+    *   *Example prompt structure (author doesn't share exact prompt):* 
+    ```
+    Generate a social media post about [topic].
+    Review the post for clarity, engagement, and relevance. Assign a quality score from 1 to 10.
+    If the score is less than 7, rewrite the post to improve it.
+    ```
+    You should see a generated social media post, potentially with a self-review score and a rewritten version.
+3.  **Implement community engagement** — Configure an agent to engage with community posts and auto-reply to comments. This agent should be context-aware and limit replies to a maximum of two rounds to avoid lengthy, costly conversations.
+4.  **Build the research pipeline** — Set up agents to gather intelligence from RSS feeds, the HN API, and Jina Reader. This information should be fed back into the content creation process. The author notes this pipeline costs 0 LLM tokens, relying on HTTP requests and Jina Reader.
+5.  **Integrate lead generation** — Deploy the UltraProbe AI security scanner as an agent to identify potential leads. This agent will scan for security vulnerabilities, which can be used to approach potential clients.
+6.  **Automate operational monitoring** — Create an agent to monitor 7 key endpoints. This agent should flag stale leads and sync customer data, ensuring your operational tasks are up-to-date.
+7.  **Set up blog post automation** — Configure an agent to automatically post blog articles to Discord. This is triggered by a `git push` and uses the commit message directly, costing 0 LLM tokens.
+8.  **Optimize LLM token usage** — Implement a strategy where agents read pre-computed intelligence files (local markdown) and receive focused prompts with all necessary context injected in a single request. This minimizes the number of tokens used per interaction.
+
+## Original source
+This workflow is inspired by a "Show HN" post on Hacker News by user ppcvote, detailing how they built and deployed four AI agents to manage their one-person tech company using the free tier of Gemini 2.5 Flash.
+
+## Notes & variations
+*   **Free Tier Viability:** Gemini's free tier offers 1,500 requests per day, which is substantial. The author's strategy of optimizing token usage by relying on local files and single-request prompts is key to staying within this limit.
+*   **Common Pitfall:** Avoid long, multi-turn conversations with the AI agents. Each interaction should be concise and focused to conserve tokens and stay within free-tier limits.
+*   **Better Results:** For content generation, experiment with providing the AI with a small set of high-performing past posts as examples within the prompt to guide its style and tone.

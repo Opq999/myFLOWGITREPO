@@ -2056,8 +2056,436 @@
     "7bb6849c4208c7d983581f7d324a7171e1490c1c572f0a9726dc63f77c9db0ac": {
       "url": "https://github.com/zhayujie/CowAgent",
       "date": "2026-06-15"
+    },
+    "568699777b297d6abd7d88e91c3532bd6c7ef6a0dcd2f38c751a921f9c78ea78": {
+      "url": "https://news.ycombinator.com/item?id=45706792",
+      "date": "2026-06-16"
+    },
+    "7190708a33ed9cc3fb2cfcb5e2b2eb718ab0099ea5c9826721dda7150818f7d9": {
+      "url": "https://simonwillison.net/2026/Jun/16/fable-5-export-controls",
+      "date": "2026-06-16"
+    },
+    "112ba4283cccf5b1465f8a2f24dd8e8210ff8d2aad49aa04acdae5ac93ebe6cb": {
+      "url": "https://github.com/ultralytics/ultralytics",
+      "date": "2026-06-16"
+    },
+    "b615d43184e93984e77289bbe57f059da51790bf986888bf445ee53a6abe51f5": {
+      "url": "https://news.ycombinator.com/item?id=47589856",
+      "date": "2026-06-16"
+    },
+    "e6c00280d343d116558e6226bd89d44559c82d427a0cd33e7a95193ed476a853": {
+      "url": "https://simonwillison.net/2026/Jun/16/matteo-wong-the-atlantic",
+      "date": "2026-06-16"
+    },
+    "47eb66bdec7fa3fd454ac3f40379e853c0f9c3d8f764efba2abf57c1cb4f4465": {
+      "url": "https://github.com/termux/termux-app",
+      "date": "2026-06-16"
+    },
+    "3adaf15c8bdd1a80b01dbc063ace76d4b7a97a50ba8c63458b20dcfd0d0244bd": {
+      "url": "https://news.ycombinator.com/item?id=44943986",
+      "date": "2026-06-16"
+    },
+    "528d855b556c22f998608cab82d684436c6a3ba00d6a0d019cacc7f039c1475a": {
+      "url": "https://simonwillison.net/2026/Jun/16/captcha-on-at-least-one-ampersand",
+      "date": "2026-06-16"
+    },
+    "6968183a54d9012013f1c4c4aafd6830b6190e2ecba81e35827bc3978850a6f1": {
+      "url": "https://github.com/appwrite/appwrite",
+      "date": "2026-06-16"
+    },
+    "1a064ff6d8e2194e8253e0d6b627897e644f905bea183c92f4a027f4111be368": {
+      "url": "https://news.ycombinator.com/item?id=43780176",
+      "date": "2026-06-16"
+    },
+    "55c272003aada916c2030c3901894e78fd37920595068de6d502d690b8c1ef34": {
+      "url": "https://simonwillison.net/2026/Jun/15/datasette-agent",
+      "date": "2026-06-16"
+    },
+    "ed2f687a3182c848b31f4c26d3fbd0b56082fce91466d63ea6f72233c538c38d": {
+      "url": "https://github.com/Fission-AI/OpenSpec",
+      "date": "2026-06-16"
+    },
+    "c1f3a720b9f3042ade710c2127c917e651d543f2d02e0434b1fb8a1962cd2ed9": {
+      "url": "https://news.ycombinator.com/item?id=47116026",
+      "date": "2026-06-16"
+    },
+    "f2451ffeaab5cf3357f84cc81b1852236bcb55c05ce3acd9c575e250346a9187": {
+      "url": "https://simonwillison.net/2026/Jun/15/axios-clashes-anthropics",
+      "date": "2026-06-16"
+    },
+    "6bbd89da1a951eab70cbe4fc5894b31bf3621c6ca0e7ac130d1e0816e6345c81": {
+      "url": "https://github.com/makeplane/plane",
+      "date": "2026-06-16"
+    },
+    "7057fb4f9841dc89135e45d2bbaaf464f9b13af4b29d290f769eb14cdc3b6db9": {
+      "url": "https://news.ycombinator.com/item?id=43906346",
+      "date": "2026-06-16"
+    },
+    "d682a304bd82efd4e49e161d69fea9bc21603323b3b91a3b5214552e574de196": {
+      "url": "https://www.latent.space/p/ainews-satya-on-loopcraft-building",
+      "date": "2026-06-16"
+    },
+    "b374b53bbe7e022f6a24d2fe78e5ecff720e73ad7a9510fda08de0425254008e": {
+      "url": "https://github.com/Tencent/ncnn",
+      "date": "2026-06-16"
+    },
+    "9d5ac93551e61fe1604c8c0d570d500fb8311c140366fce92907b323150dba3d": {
+      "url": "https://news.ycombinator.com/item?id=43794120",
+      "date": "2026-06-16"
+    },
+    "dc467729963e2b9a18deedd0757bb1b876da805921159343c2fe671325368095": {
+      "url": "https://www.bensbites.com/p/bye-bye-fable",
+      "date": "2026-06-16"
+    },
+    "4b81f8b487be2d9cba6816e20ef991e1cc07d0a9e4ac25a754ad5082456e37f2": {
+      "url": "https://github.com/spmallick/learnopencv",
+      "date": "2026-06-16"
+    },
+    "2fe8d08b98e25e1a8fdec53b35806bd6e94c7f63a92b85f377bce7c704f86cfa": {
+      "url": "https://news.ycombinator.com/item?id=44915206",
+      "date": "2026-06-16"
+    },
+    "fa0e72b8e05b2bcbd20adbeeaa8bbf908b78550d68034ce26b0ac4220186e275": {
+      "url": "https://github.com/coleam00/Archon",
+      "date": "2026-06-16"
+    },
+    "41bb602549cf600f62ada2af4f7aadd1d9c97872db0fefff60c9b6f243e2661e": {
+      "url": "https://news.ycombinator.com/item?id=48356312",
+      "date": "2026-06-16"
+    },
+    "abb91b5bf9da156ac07866895f51dfe138383dfdfa0f711f572e02e068d57491": {
+      "url": "https://github.com/airbytehq/airbyte",
+      "date": "2026-06-16"
+    },
+    "e0828e0cf1a5e7e76d510a29035cefceb482b43842cba4f34b04a35f8da6fd05": {
+      "url": "https://news.ycombinator.com/item?id=45362914",
+      "date": "2026-06-16"
+    },
+    "e4d7a94c01b197e9bdf76da5391880e14059b006e3e3c64405f6d2606d617624": {
+      "url": "https://github.com/huggingface/peft",
+      "date": "2026-06-16"
+    },
+    "eda97fd49bd3506bc7f806aba60a8b5b5c48222f9d67ebc6f8cff7566158da78": {
+      "url": "https://news.ycombinator.com/item?id=45877517",
+      "date": "2026-06-16"
+    },
+    "c998e04bd4bf84f3b599f4f057e65595871562639d153a5a91d20a9bf1de0661": {
+      "url": "https://github.com/AI4Finance-Foundation/FinGPT",
+      "date": "2026-06-16"
+    },
+    "1ca971d5d35efcaa25876f72cb8d29f206fce8d6ccbb0f263875fbb72abc81a9": {
+      "url": "https://news.ycombinator.com/item?id=44098706",
+      "date": "2026-06-16"
+    },
+    "c71d3f28e4bfaba6b46d078aee9d853bb4af584fa2c8fc4b60e660aab62ece97": {
+      "url": "https://github.com/Yuan1z0825/nature-skills",
+      "date": "2026-06-16"
+    },
+    "089d602578b8b3d20ba1fabdd923ec704eba3c37e5577376797b72947ab5639d": {
+      "url": "https://news.ycombinator.com/item?id=47324296",
+      "date": "2026-06-16"
+    },
+    "12d6cf689ec8de35682f658eb57f7f6f75337608daf3959293072b2aa24fc0c6": {
+      "url": "https://github.com/Kilo-Org/kilocode",
+      "date": "2026-06-16"
+    },
+    "653889fe5cbe6e8bd769c913afd0f34c35e2c88f28a4a7aa0abaf0ad282acdcc": {
+      "url": "https://news.ycombinator.com/item?id=45265831",
+      "date": "2026-06-16"
+    },
+    "b92602274d6abd3d8afe54c8c810a6143e6b43cbdbd313eb2addb35b3e7b2c04": {
+      "url": "https://github.com/phuryn/pm-skills",
+      "date": "2026-06-16"
+    },
+    "8e5713d741ab995ded1a7820ec8f4cd6244604ed87c9d43c31f50b38f3dccb04": {
+      "url": "https://news.ycombinator.com/item?id=44303538",
+      "date": "2026-06-16"
+    },
+    "f5282c4f71e585da8e2105e01c3fac2301d4e1e0acfe9ad6cab656de8741841c": {
+      "url": "https://github.com/Nagi-ovo/gemini-voyager",
+      "date": "2026-06-16"
+    },
+    "acf74c110b211f9bfb5dde735d6bbd56181980cdf379ebcfb1191bf6b8a469f3": {
+      "url": "https://news.ycombinator.com/item?id=48449430",
+      "date": "2026-06-16"
+    },
+    "3cb7ff1cdcf97c6b5a45fe4f2e397338a47189848710f0823ad9505a8652e8d5": {
+      "url": "https://github.com/alirezarezvani/claude-skills",
+      "date": "2026-06-16"
+    },
+    "5969b9022fbbbab16e459a5cf0ba6908c12a40731e00a5338cf64bb078098236": {
+      "url": "https://news.ycombinator.com/item?id=48453002",
+      "date": "2026-06-16"
+    },
+    "37f1c6adade5cb687816524977cd9d65b1c9ac814edae2af0160f7eaf8b475ac": {
+      "url": "https://github.com/emcie-co/parlant",
+      "date": "2026-06-16"
+    },
+    "397f26397c046fd21281ad8e00c12890160dfd56da19f261f7c45c7a4d5d2797": {
+      "url": "https://news.ycombinator.com/item?id=43374505",
+      "date": "2026-06-16"
+    },
+    "575bee33f072c6738deb03eeba843611a71cf35e86a7800cd906783ab79fda99": {
+      "url": "https://github.com/agent0ai/agent-zero",
+      "date": "2026-06-16"
+    },
+    "a8eddb186bb17ac7cb323ec7652ce678676bed30c88ac1293bce07f1d4625504": {
+      "url": "https://news.ycombinator.com/item?id=45580771",
+      "date": "2026-06-16"
+    },
+    "480c229a100adaef2e8ecfd60926984aba687702d45def242e713b4ae36bf7b8": {
+      "url": "https://github.com/yetone/avante.nvim",
+      "date": "2026-06-16"
+    },
+    "837d275147111322b3b224429b5cc882ab83cfc6166ba3f4d400898930ac5e6a": {
+      "url": "https://news.ycombinator.com/item?id=47984614",
+      "date": "2026-06-16"
+    },
+    "b0d327628dfb442e4ac39b7d4d31937a275e806e602db472e3e88fa8d384c0e1": {
+      "url": "https://github.com/vxcontrol/pentagi",
+      "date": "2026-06-16"
+    },
+    "f8181e5f6ea0696dd97d204ae83966c3c4e971cc65b428a50da922137dd82906": {
+      "url": "https://news.ycombinator.com/item?id=46990733",
+      "date": "2026-06-16"
+    },
+    "ae05babd8ff3098faf9171791f63a9269a96e3760c8e165e6d40ff2b19efc6b7": {
+      "url": "https://github.com/allenai/olmocr",
+      "date": "2026-06-16"
+    },
+    "24d361df8199b67ce753ae96e66443a7db9277663bedb394cc7102a862f5d304": {
+      "url": "https://news.ycombinator.com/item?id=46368379",
+      "date": "2026-06-16"
+    },
+    "4060c1f6b53f05b6d321ce4b6d46812bcc087a015b9db6e4f53e5f5e1954349e": {
+      "url": "https://news.ycombinator.com/item?id=46301865",
+      "date": "2026-06-16"
+    },
+    "c25a45a91f134bdddc1bad6b2ce29d056871ffa3503bd6099b91c9aab1ac3b2d": {
+      "url": "https://news.ycombinator.com/item?id=46288453",
+      "date": "2026-06-16"
+    },
+    "5621089e4d6fd91641453ed90121b2546502e13527c106b6c11d8bff870dd7e6": {
+      "url": "https://news.ycombinator.com/item?id=46616562",
+      "date": "2026-06-16"
+    },
+    "a54497f47b0bfe9c05a85b15932368cd8466223a6424b3413884977b04925922": {
+      "url": "https://news.ycombinator.com/item?id=47153941",
+      "date": "2026-06-16"
+    },
+    "1333006ab81bc3ced331b91c1cf904d96eb422fdc53fa1b0f08968d1e6e550c9": {
+      "url": "https://news.ycombinator.com/item?id=44078100",
+      "date": "2026-06-16"
+    },
+    "1cc68ae78979408b9a90600f2dd041ed1abd7a7c61d6a42e60bdbde285db34ed": {
+      "url": "https://news.ycombinator.com/item?id=44453377",
+      "date": "2026-06-16"
+    },
+    "95ea8e64c98d87129496ad9e2b85288cafe9080b4f84d0a06a8947075a29d845": {
+      "url": "https://news.ycombinator.com/item?id=43497081",
+      "date": "2026-06-16"
+    },
+    "fc015417945c992d9d256714b0ac97aad85fa345f151319e64c1300c57688c51": {
+      "url": "https://news.ycombinator.com/item?id=43716616",
+      "date": "2026-06-16"
+    },
+    "de6ce041ad47b066835c8d2e150aec719b500321bd9f83f613a1baf20e6cd079": {
+      "url": "https://news.ycombinator.com/item?id=44043446",
+      "date": "2026-06-16"
+    },
+    "014393dfcbd0121e331c99b2e43aa08b25901c8d4b3ffdf8df75e54f8d80710a": {
+      "url": "https://news.ycombinator.com/item?id=45052421",
+      "date": "2026-06-16"
+    },
+    "5ba3a0cea4dd60ea5000b72618547304f0992a5a9b9eef215c17364138b9622e": {
+      "url": "https://news.ycombinator.com/item?id=43924702",
+      "date": "2026-06-16"
+    },
+    "c16d89c8afc2d29402e55a60d15347f205f047f6b5bcc2e2a055af18c8b08274": {
+      "url": "https://news.ycombinator.com/item?id=46031208",
+      "date": "2026-06-16"
+    },
+    "ce38c95b0a09d87d10741a471707b09fb5e6f34956a45a31c2faff95f58161c4": {
+      "url": "https://news.ycombinator.com/item?id=47526813",
+      "date": "2026-06-16"
+    },
+    "ca6200b9d02979470f88253cc80861deb5a5da90512a61fae695e73759a53f90": {
+      "url": "https://news.ycombinator.com/item?id=44386882",
+      "date": "2026-06-16"
+    },
+    "5b7bb1476fb339356b81580b3c8c304392080a0452488c941f9d105454f80203": {
+      "url": "https://news.ycombinator.com/item?id=47441587",
+      "date": "2026-06-16"
+    },
+    "3f8475830e8763257827d1ce1ac8701a067d3ef525a220f117bbde9b836f2718": {
+      "url": "https://news.ycombinator.com/item?id=44432215",
+      "date": "2026-06-16"
+    },
+    "313a884ea79191ffd1b3846d6a7badcb167141dc6beb9657929ac714894e6dfd": {
+      "url": "https://news.ycombinator.com/item?id=46776468",
+      "date": "2026-06-16"
+    },
+    "c03c3e873e9d16d6b6e4e75cc68099a546d2a2aa176ee242e4915099a78585cd": {
+      "url": "https://news.ycombinator.com/item?id=44189289",
+      "date": "2026-06-16"
+    },
+    "fe0f3fc167c4726fb86a81e42b1dcd158dfda1683c14827d47758677ebbab634": {
+      "url": "https://news.ycombinator.com/item?id=45491675",
+      "date": "2026-06-16"
+    },
+    "572971a79a3223d1e246b859f4c2558a244e6e1446406a92ef042203f2e8b65a": {
+      "url": "https://news.ycombinator.com/item?id=45338653",
+      "date": "2026-06-16"
+    },
+    "df7c9b47fc8e17e0abc9e2408dfef0c06887c4c012798bb2b12372a418ea4cc4": {
+      "url": "https://news.ycombinator.com/item?id=47742437",
+      "date": "2026-06-16"
+    },
+    "3b74ddf1f524e7d8335fbff7f61ee9ff700a0fe6d46ede86cc3ccebe71f0f4d2": {
+      "url": "https://news.ycombinator.com/item?id=43259771",
+      "date": "2026-06-16"
+    },
+    "bfddf0aa737a21bbf7008dde337d87e5b318a2d99935acfcea358065e15a01b9": {
+      "url": "https://news.ycombinator.com/item?id=43758459",
+      "date": "2026-06-16"
+    },
+    "a2b6ed71beff1a253e2009b7bd579df7f2dd5133fd208280c58c584e8d5ff2a7": {
+      "url": "https://news.ycombinator.com/item?id=46603044",
+      "date": "2026-06-16"
+    },
+    "992a663db37c92daf1cbabf2fcd61f792c5ed425b8b01b0c04088c1942481b3c": {
+      "url": "https://news.ycombinator.com/item?id=47296664",
+      "date": "2026-06-16"
+    },
+    "4fc25719e660d08886ce3c887d5ffdbaf63a1b1646d10e7b1fbddf4f86e17711": {
+      "url": "https://news.ycombinator.com/item?id=44837130",
+      "date": "2026-06-16"
+    },
+    "fea33587b4d1a6150ea2980e7bd491f5783779a34900fe82be4c1fbb2c312754": {
+      "url": "https://news.ycombinator.com/item?id=44051718",
+      "date": "2026-06-16"
+    },
+    "44080d70f2bbc3165603f61c9257f862ccd32ab103591114e0b87de43ed119d2": {
+      "url": "https://news.ycombinator.com/item?id=44899249",
+      "date": "2026-06-16"
+    },
+    "dded897ea798d13900121458b267e1dc8ebb6d39df9d67de72709c99360a619c": {
+      "url": "https://news.ycombinator.com/item?id=44557169",
+      "date": "2026-06-16"
+    },
+    "ade76594082b29942380f502da24b5d2f9023b6f4d8c60d876f1f2ce086eac3b": {
+      "url": "https://news.ycombinator.com/item?id=43682614",
+      "date": "2026-06-16"
+    },
+    "b2a5606870ac34c17f4fd7bd4ca24d4e82928d723ce76f102af1c093305c9426": {
+      "url": "https://news.ycombinator.com/item?id=44494189",
+      "date": "2026-06-16"
+    },
+    "a61809d84237e50c25591a6dffbe7ddd6587c718f416329041dc30943e2f6060": {
+      "url": "https://news.ycombinator.com/item?id=46932505",
+      "date": "2026-06-16"
+    },
+    "534407307f80d73fb64eca4e7c529bed3b16b4ead21f7b5aa122256d23efd9d7": {
+      "url": "https://news.ycombinator.com/item?id=42808043",
+      "date": "2026-06-16"
+    },
+    "994e03fd5090fd0d26625feea19d6b90077fbd62db9afc74d9cb310a4bff7ce3": {
+      "url": "https://news.ycombinator.com/item?id=44955424",
+      "date": "2026-06-16"
+    },
+    "b416c1a626724f027c18de7e42ad6aa6321f2719a13552355bf4b313c8ff3f01": {
+      "url": "https://news.ycombinator.com/item?id=46428699",
+      "date": "2026-06-16"
+    },
+    "1afb3c270ebae7baca8f61866e0860735ef07e831eb1b572afe7248f202d8925": {
+      "url": "https://news.ycombinator.com/item?id=47256208",
+      "date": "2026-06-16"
+    },
+    "be9f87af88d782e70588eff014309fa1fe323fe6b8cf4f67fef7c7f60d94cf9f": {
+      "url": "https://news.ycombinator.com/item?id=44507743",
+      "date": "2026-06-16"
+    },
+    "a008ae9195b4b852dd2a8901c31702291bd09048eac0f6077413058f863e5d5a": {
+      "url": "https://news.ycombinator.com/item?id=45468145",
+      "date": "2026-06-16"
+    },
+    "565e4d6b633e55889ff2a0e4f47b08f76cbdf3d535c133831b717ad969998b31": {
+      "url": "https://news.ycombinator.com/item?id=47847918",
+      "date": "2026-06-16"
+    },
+    "eab1c4b865a67535ef269d9dbd29688ba2218f6384028ad2af7660b1447d6a07": {
+      "url": "https://news.ycombinator.com/item?id=45165897",
+      "date": "2026-06-16"
+    },
+    "86bb25e0fa337f43aea6b79e0e3decb75b5bf3f908a2b34b418581a6860aa4ce": {
+      "url": "https://news.ycombinator.com/item?id=45651469",
+      "date": "2026-06-16"
+    },
+    "1512fc4aecef1c5f1a674408a04a05380f58f3e8c2bf35254758e677e606133d": {
+      "url": "https://news.ycombinator.com/item?id=44502366",
+      "date": "2026-06-16"
+    },
+    "16a63b0349c0902161d6260b9419a55bb320562388f05f8bb798e5a861d7e3a6": {
+      "url": "https://news.ycombinator.com/item?id=48347043",
+      "date": "2026-06-16"
+    },
+    "a3c44ad7b1f45f1cd6666d44e64fd1c067de1fa8062f45bcdb9e6373809ce7b8": {
+      "url": "https://news.ycombinator.com/item?id=44749564",
+      "date": "2026-06-16"
+    },
+    "60e6f8558def083aaba634a6d637a9b13749220124faef64d25f622507c2cb08": {
+      "url": "https://news.ycombinator.com/item?id=43192491",
+      "date": "2026-06-16"
+    },
+    "a7ddacc6951699c6e56c6b0d01b3632f56af45a4052e52411a8e44dd9eac5b9d": {
+      "url": "https://news.ycombinator.com/item?id=42550760",
+      "date": "2026-06-16"
+    },
+    "953807c516369628f7bc3550e33eae2d6e9e04f549998865c5f51c01071860a8": {
+      "url": "https://news.ycombinator.com/item?id=44225186",
+      "date": "2026-06-16"
+    },
+    "f84501dc7b825bb8da60901ef11597c64a2ff080a2a13f99bf3293ccdd950a1e": {
+      "url": "https://news.ycombinator.com/item?id=44443920",
+      "date": "2026-06-16"
+    },
+    "24b3af3b033b585847603093f1b1f6e69969f360f3232cf4ab9fbf9efba2376e": {
+      "url": "https://news.ycombinator.com/item?id=44987221",
+      "date": "2026-06-16"
+    },
+    "a10a815bcf05158b903e8954e9efabc3e4e863d4479c5af792b0629341cb70fd": {
+      "url": "https://news.ycombinator.com/item?id=44495265",
+      "date": "2026-06-16"
+    },
+    "bd47e4ce3c0e690a88f0225595cb1680ad36f31b72ce1cee76d1cad02ecf2eab": {
+      "url": "https://news.ycombinator.com/item?id=47759065",
+      "date": "2026-06-16"
+    },
+    "789a70bfa7d25e8e5081d9ab5c3a51a3598d24a0a2e813c46d767750186b52fa": {
+      "url": "https://news.ycombinator.com/item?id=47573483",
+      "date": "2026-06-16"
+    },
+    "91d59a82f0204fa96850e6b71ac68b4e82a56aa17763e544f8964f6eb9cf2a91": {
+      "url": "https://news.ycombinator.com/item?id=45867678",
+      "date": "2026-06-16"
+    },
+    "1357c06c2c00f7637a266aae51542409b304f70b234f742aae51daad319e03a5": {
+      "url": "https://news.ycombinator.com/item?id=45851102",
+      "date": "2026-06-16"
+    },
+    "6f3cd7d1ac2e5d81c8655e354c20db42f6e86ca571348425bd53d4f2ce2b98c8": {
+      "url": "https://news.ycombinator.com/item?id=44160270",
+      "date": "2026-06-16"
+    },
+    "658282f54938bbdd487b16f28e2422fc58657b36cd7174db432fe67274d841b5": {
+      "url": "https://news.ycombinator.com/item?id=42639114",
+      "date": "2026-06-16"
+    },
+    "923aae9b7640c5dcbceebdd1fb49d4c2b85b70aece13b650bc88cace38c763c2": {
+      "url": "https://news.ycombinator.com/item?id=44358763",
+      "date": "2026-06-16"
     }
   },
   "backfillPage": 5,
-  "dailyPage": 5
+  "dailyPage": 0
 }

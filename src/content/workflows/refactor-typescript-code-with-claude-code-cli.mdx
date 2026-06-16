@@ -1,0 +1,58 @@
+---
+title: "Refactor TypeScript Code with Claude Code CLI"
+description: "Learn to refactor your TypeScript codebase to use a new JobDefinition.create method and remove vestigial logging using AI."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 15
+jobToBeDone: "Refactor TypeScript codebase to use a new JobDefinition.create method and remove vestigial logging."
+tools:
+  - name: "Claude Code CLI"
+    url: "https://www.anthropic.com/claude"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "VSCode"
+    url: "https://code.visualstudio.com/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=45338653"
+  platform: "hackernews"
+  author: "tlonny"
+  postedAt: 2025-09-22
+score: 7
+ingestedAt: 2026-06-16
+nigeriaNotes: "Claude offers a free tier. Data usage will depend on the size of your codebase and the length of the interaction. VSCode is a desktop application and does not consume mobile data."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will refactor your TypeScript codebase to adopt a new `JobDefinition.create` method and remove outdated logging statements. This approach leverages AI to automate repetitive code updates, saving you time and reducing the risk of manual errors.
+
+## Tools you need
+*   **Claude Code CLI** (freemium) - An AI assistant for code understanding and modification.
+*   **VSCode** (free) - A popular code editor where you can run the Claude Code CLI and view your code.
+
+## Steps
+1.  **Prepare your environment** - Ensure you have VSCode installed and the Claude Code CLI set up according to its documentation. Open your TypeScript project in VSCode.
+2.  **Initiate the refactoring prompt** - Use the Claude Code CLI to interact with the AI. Paste the following prompt, replacing the bracketed text with your specific details:
+
+    ```
+    I have modified the type signature and behaviour of how jobs are created. Previously, job definition create took a batch argument (created from a queue). Now it takes the queue directly, is async, requires the databaseClient to be passed in at creation (vs. when the batch is executed). It no longer returns anything - which is fine because the result was only being used for logging - which is now done for us so we don't have to worry. Can we refactor the codebase to make use of the new JobDefinition.create? Remove the vestigial "Job created" log please.
+
+    Perform this task and this task only. If you see something unrelated that you believe needs to be refactored - DO NOT MODIFY IT. ONLY PERFORM ACTIONS DIRECTLY RELEVANT TO THIS TASK
+    ```
+
+    You should see the Claude Code CLI begin to process your request, potentially listing files it intends to modify.
+3.  **Review the proposed changes** - After the AI has analyzed your codebase and identified the necessary changes, carefully review the modifications. VSCode's diff viewer will highlight additions, deletions, and changes. Pay close attention to ensure only the intended refactoring is occurring.
+4.  **Accept or reject changes** - Based on your review, accept the changes if they align with your requirements. If the AI has made unintended modifications (like reordering object keys or altering unrelated logs), you may need to reject those specific changes or refine your prompt for a subsequent attempt.
+5.  **Verify the refactored code** - Once you have accepted the relevant changes, run your project's tests or manually inspect the affected areas of the code to confirm that the `JobDefinition.create` method is being used correctly and that the vestigial logging has been removed.
+
+## Original source
+This workflow is based on a question and discussion posted on Hacker News by user tlonny, seeking advice on issues encountered while using AI agents for code refactoring tasks.
+
+## Notes & variations
+*   **Free tier viability**: Claude's free tier is generally sufficient for this task, especially for smaller codebases. Monitor your usage if you are on a strict free tier limit.
+*   **Common pitfall**: Be wary of AI agents making unintended changes, such as reordering code elements or modifying unrelated sections. The prompt includes a specific instruction to prevent this, but vigilant review is still crucial.
+*   **Tip for better results**: If the AI struggles to understand the context or makes errors, try breaking down the refactoring into smaller, more specific requests. You can also provide more context about the `JobDefinition.create` method's new signature and expected behavior.

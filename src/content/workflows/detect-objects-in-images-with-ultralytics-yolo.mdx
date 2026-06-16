@@ -1,0 +1,85 @@
+---
+title: "Detect Objects in Images with Ultralytics YOLO"
+description: "Learn to use Ultralytics YOLO for object detection and image classification. Quickly analyze images and videos with state-of-the-art computer vision models on your device."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 20
+jobToBeDone: "Perform various computer vision tasks like object detection and image classification"
+tools:
+  - name: "Ultralytics YOLO"
+    url: "https://ultralytics.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Python"
+    url: "https://python.org"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "PyTorch"
+    url: "https://pytorch.org"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://github.com/ultralytics/ultralytics"
+  platform: "github"
+  author: "ultralytics"
+  postedAt: 2026-06-16
+score: 7
+ingestedAt: 2026-06-16
+nigeriaNotes: "Running computer vision models can consume significant data for downloading models and processing images/videos. Start with smaller models (e.g., `yolo26n.pt`) and local files to manage data usage. All core tools have free tiers."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You'll learn how to use Ultralytics YOLO to perform computer vision tasks like object detection on images. This workflow allows you to quickly apply powerful, pre-trained AI models to analyze visual content, identifying objects within them.
+
+## Tools you need
+*   **Python** (free) — The programming language required to run Ultralytics YOLO.
+*   **PyTorch** (free) — An open-source machine learning framework that Ultralytics YOLO is built upon.
+*   **Ultralytics YOLO** (freemium) — A library providing state-of-the-art YOLO models for various computer vision tasks.
+
+## Steps
+
+1.  **Install Python and PyTorch** — Ensure you have Python (version 3.8 or higher) and PyTorch (version 1.8 or higher) installed on your computer.
+    *   *How to do*: If you don't have Python, download it from `python.org`. For PyTorch, visit `pytorch.org/get-started/locally/` and follow the installation instructions for your operating system and preferred package manager (e.g., `pip install torch torchvision torchaudio`).
+    *   *What you should see*: After installation, opening your command line or terminal and typing `python --version` should show your Python version, and `pip show torch` should show PyTorch details.
+
+2.  **Install Ultralytics YOLO** — Install the Ultralytics package, which includes all necessary requirements.
+    *   *How to do*: Open your command line or terminal and type:
+        ```
+pip install ultralytics
+        ```
+    *   *What you should see*: The command line will show packages being downloaded and installed. Once complete, you should see a message indicating successful installation.
+
+3.  **Perform object detection using the Command Line Interface (CLI)** — Use a pre-trained YOLO model to detect objects in an image directly from your terminal.
+    *   *How to do*: In your command line or terminal, paste and run this command:
+        ```
+yolo predict model=yolo26n.pt source='https://ultralytics.com/images/bus.jpg'
+        ```
+    *   *What you should see*: The command will download the `yolo26n.pt` model (if not already present), process the image, and display output in the terminal, likely including a path to where the processed image with detected objects is saved. You can then open this image to see the results (e.g., a bus with bounding boxes around people, the bus itself, etc.).
+
+4.  **Perform object detection using Python code** — Integrate Ultralytics YOLO into a Python script for more control.
+    *   *How to do*: Open a text editor, paste the following code, and save it as a `.py` file (e.g., `detect_objects.py`). Then, run it from your terminal using `python detect_objects.py`.
+        ```python
+from ultralytics import YOLO
+
+# Load a pretrained YOLO26n model
+model = YOLO("yolo26n.pt")
+
+# Perform object detection on an image
+# You can replace 'https://ultralytics.com/images/bus.jpg' with a path to your local image
+results = model("https://ultralytics.com/images/bus.jpg")
+
+# Display results (this will open a window showing the image with detections)
+results[0].show()
+        ```
+    *   *What you should see*: A new window will pop up displaying the `bus.jpg` image with bounding boxes and labels around the detected objects. The terminal might also show some processing logs.
+
+## Original source
+This workflow is adapted from the official Ultralytics YOLO GitHub repository, maintained by Ultralytics. The repository provides comprehensive documentation and examples for using their state-of-the-art computer vision models.
+
+## Notes & variations
+*   **Free-tier alternatives**: While Ultralytics YOLO itself is open-source and free for most uses, running it on a powerful machine can be costly. For those without strong local hardware, consider using cloud-based Jupyter notebooks like **Google Colab** (freemium) to run your Python code. This shifts the computational burden to Google's servers, though data transfer costs and session limits still apply.
+*   **Common mistake**: Not having enough RAM or a compatible GPU can lead to slow performance or errors, especially with larger models or high-resolution images/videos. Ensure your environment meets the basic requirements for PyTorch and Ultralytics.
+*   **Tip for better results**: Start with smaller models like `yolo26n.pt` for quick experiments and to conserve data and processing power. Once comfortable, you can explore larger models (e.g., `yolo26s.pt`, `yolo26m.pt`) for potentially higher accuracy, but be aware of increased resource demands. For local images, replace the URL in the `source` or `model()` arguments with your image file path (e.g., `source='my_image.jpg'`).

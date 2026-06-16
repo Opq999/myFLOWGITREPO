@@ -1,0 +1,70 @@
+---
+title: "Add REST APIs to Legacy Desktop Software with legacy-use and AI Agents"
+description: "Transform old desktop applications into modern services. Use AI agents to control legacy software, automate tasks like data extraction, and expose critical data via REST APIs."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 240
+jobToBeDone: "Add REST APIs to legacy desktop software using AI agents"
+tools:
+  - name: "legacy-use"
+    url: "https://www.legacy-use.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "GPT"
+    url: "https://chatgpt.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=44557169"
+  platform: "hackernews"
+  author: "schuon"
+  postedAt: 2025-07-14
+score: 7
+ingestedAt: 2026-06-16
+nigeriaNotes: "This workflow involves self-hosting `legacy-use` which requires technical setup and potentially server costs. While AI models like GPT offer free tiers, the visual feedback and data extraction aspects might consume significant data, especially over remote desktop connections."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+This workflow enables you to add modern REST API capabilities to old desktop software that lacks native APIs. You'll be able to automate tasks like data extraction and compliance reporting by having AI agents control the legacy application's graphical user interface (GUI). This approach works by using AI to emulate human mouse and keyboard input, transforming mission-critical but outdated applications into automatable services.
+
+## Tools you need
+*   **legacy-use** (free) — An open-source agentic API layer that lets AI agents control desktop software through emulated mouse and keyboard input.
+*   **GPT** (freemium) — An AI model (like ChatGPT) used to generate prompts and interact with the `legacy-use` agent.
+
+## Steps
+1.  **Set up legacy-use infrastructure** — The author mentions building infrastructure to connect to legacy systems (like RDP/VNC + VPNs) and handling queuing. This likely involves deploying the open-source `legacy-use` project on a server and configuring it to access your target legacy software. Consult the `legacy-use` documentation for specific setup instructions.
+
+    You should see `legacy-use` running and successfully connected to your legacy application.
+
+2.  **Connect an AI agent** — Integrate an AI model like GPT with your `legacy-use` setup. This typically involves configuring API keys and defining how the AI agent will interact with `legacy-use` to control the legacy software. The author doesn't share exact integration steps; refer to `legacy-use` documentation for details.
+
+    You should have your chosen AI model successfully sending commands to `legacy-use`.
+
+3.  **Define agent prompts for tasks** — Craft prompts that instruct the AI agent on what actions to perform within the legacy software. The agent will use `legacy-use` to emulate mouse and keyboard inputs based on these prompts. The author doesn't share example prompts; a starting point:
+
+    ```
+    Navigate to the 'Customer Records' section in the legacy application.
+    Search for customer ID '12345'.
+    Extract the customer's full name and email address.
+    ```
+
+    You should see the AI agent starting to interact with the legacy application as instructed by your prompt.
+
+4.  **Extract data and expose as REST API** — Configure `legacy-use` to extract specific data points from the legacy application's GUI and expose this data as a REST API endpoint. This allows other applications to programmatically access information from your legacy system. The author doesn't provide specific configuration steps for this; consult `legacy-use` documentation.
+
+    You should have a new REST API endpoint available, providing data extracted from the legacy software.
+
+5.  **Implement guardrails** — Set up guardrails within `legacy-use` to monitor agent actions and intervene if something goes wrong. This ensures human oversight and prevents unintended consequences in mission-critical legacy systems. The author doesn't detail how to set up guardrails; refer to `legacy-use` documentation.
+
+    You should have the system configured to alert a human operator if the AI agent encounters an unexpected situation or error.
+
+## Original source
+This workflow is inspired by Sebastian Schuon's project `legacy-use`, which he open-sourced and shared on Hackernews. The project aims to bring modern automation and API capabilities to legacy desktop software using AI agents, enabling control over applications that haven't changed since Windows XP.
+
+## Notes & variations
+*   **Free-tier viability:** `legacy-use` is open-source and free to use if self-hosted, though self-hosting incurs server costs. AI models like GPT often have free tiers, but extensive use of visual feedback and data extraction might lead to higher data consumption.
+*   **Common pitfall:** Underestimating the complexity of legacy systems and not implementing robust guardrails. The author emphasizes the importance of human oversight. Always thoroughly test agent actions in a non-production environment before deploying to critical systems to prevent errors or data corruption.
+*   **Tip for better results:** Start with simple, well-defined tasks for the AI agent before moving to complex workflows. Ensure the legacy application's user interface is as consistent as possible, as visual automation can be sensitive to changes. Leverage secure connections like VPNs, as mentioned by the author, especially when dealing with sensitive data.
