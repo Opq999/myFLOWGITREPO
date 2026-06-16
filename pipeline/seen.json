@@ -2484,8 +2484,132 @@
     "923aae9b7640c5dcbceebdd1fb49d4c2b85b70aece13b650bc88cace38c763c2": {
       "url": "https://news.ycombinator.com/item?id=44358763",
       "date": "2026-06-16"
+    },
+    "f2c662a213abb1869f18f2cf46d6c5298f998b7e62b8d8366c98567940a39354": {
+      "url": "https://github.com/github/awesome-copilot",
+      "date": "2026-06-16"
+    },
+    "02b8efe75cda23a71f5608de8746dcbfcdf07b8540df004944bd7c292fe44e7e": {
+      "url": "https://github.com/hslatman/awesome-threat-intelligence",
+      "date": "2026-06-16"
+    },
+    "ea51d172ae4af170dc43bb9d4156122055651574f9c07bb335494788784e4632": {
+      "url": "https://github.com/PatrickJS/awesome-angular",
+      "date": "2026-06-16"
+    },
+    "2151e27ba58a89146aaf0807880b256d51ac6dd9cf32d3f99883fe22c23af837": {
+      "url": "https://github.com/BehiSecc/awesome-claude-skills",
+      "date": "2026-06-16"
+    },
+    "16f434dc3ebead524261262148a7a1ebcc70a7581c4c556a0152cdb821a0b6fa": {
+      "url": "https://github.com/kyrolabs/awesome-langchain",
+      "date": "2026-06-16"
+    },
+    "2189aa470720117955239e43381e5c6ee5cfe1a6068f5e827ca89e31519fbd39": {
+      "url": "https://github.com/CVHub520/X-AnyLabeling",
+      "date": "2026-06-16"
+    },
+    "1101629a029c74d6e58540cbda4ac45357743c27cb148e898743a6d94c6f4b3b": {
+      "url": "https://github.com/emacs-tw/awesome-emacs",
+      "date": "2026-06-16"
+    },
+    "9e3563d58ecc4bfc5cc706d6bd4c6759da97248f7474dfba3bedd215eaa50ecc": {
+      "url": "https://github.com/ai-collection/ai-collection",
+      "date": "2026-06-16"
+    },
+    "3a6e66948edf5c4a6f8006abda84e51a9b6961f9728403779087783d41f7e303": {
+      "url": "https://github.com/WangRongsheng/awesome-LLM-resources",
+      "date": "2026-06-16"
+    },
+    "24705ba72d18e9974f493bd7dfa9e0c53f5668b010b4f640d5333167f70079bb": {
+      "url": "https://github.com/oxnr/awesome-bigdata",
+      "date": "2026-06-16"
+    },
+    "e9f2fa9b871e466e9fb3174c25f88ab406255559e8931564957a226e2ac69eb8": {
+      "url": "https://github.com/markets/awesome-ruby",
+      "date": "2026-06-16"
+    },
+    "51b5f7ac72205f5ab252ca170404e3d5a6980a2a28b6d9346577e3da5a6d1869": {
+      "url": "https://github.com/nestjs/awesome-nestjs",
+      "date": "2026-06-16"
+    },
+    "de860f714a7fd4d23ef8556f6f0d66d4f1637b1ba3db08eee60d45fb24d06397": {
+      "url": "https://github.com/Arindam200/awesome-ai-apps",
+      "date": "2026-06-16"
+    },
+    "c7c02afc3cffa1bb398898f727f415a1b767c983f068ee24a4305540050971e2": {
+      "url": "https://github.com/ritchieng/the-incredible-pytorch",
+      "date": "2026-06-16"
+    },
+    "0a3f33503261129d37adf825ede84091920a1da50f14c0e8050656851146de05": {
+      "url": "https://news.ycombinator.com/item?id=46365105",
+      "date": "2026-06-16"
+    },
+    "a030df20838890c58e5d6e3b82b3eeb8d81c6816f77f02e59b803bcc1f8bd5f4": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1sv23b9/when_you_trust_the_process_too_much",
+      "date": "2026-06-16"
+    },
+    "10d47cfebd7e799ca0c049164d31105f2e66f0557c021b612d4134f49c2ad460": {
+      "url": "https://dev.to/copilotkit/how-to-make-agents-talk-to-each-other-and-your-app-using-a2a-ag-ui-4amo",
+      "date": "2026-06-16"
+    },
+    "98a99d0df7599b357282334fef2c2714222462abb951037c73621ec7923ceb5b": {
+      "url": "https://github.com/luongnv89/claude-howto",
+      "date": "2026-06-16"
+    },
+    "4e51f625b26296bab020603c5bea66793680df116f1cf2c94d7709ca60deb486": {
+      "url": "https://news.ycombinator.com/item?id=46006104",
+      "date": "2026-06-16"
+    },
+    "fa4060b83e042d717f90a1555aec82c19324e68b74dd42913f4450eed8dc5db9": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1rgseae/youre_now_training_a_war_machine_lets_see_proof",
+      "date": "2026-06-16"
+    },
+    "0783d0326f8d7ff06771b8d3b19873cc3702c1d41a7ebae1734ecfcb69606247": {
+      "url": "https://dev.to/copilotkit/ai-agent-protocols-every-developer-should-know-in-2025-39m3",
+      "date": "2026-06-16"
+    },
+    "0e8704838f621e59d725feb313b7cd2a922c21457f265ca307b7e7be8a9a52a0": {
+      "url": "https://github.com/google/langextract",
+      "date": "2026-06-16"
+    },
+    "ec79a8b78269f64525fed51eb2d5f83f66d943c120505595fcd5c377b0ba4b3e": {
+      "url": "https://news.ycombinator.com/item?id=47113567",
+      "date": "2026-06-16"
+    },
+    "3dcd04af182ba13e7f88d218b8d0cd496c5243a8112e8578fdb93382e0f23139": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1mxr081/chatgpt_asked_if_i_wanted_a_diagram_of_whats",
+      "date": "2026-06-16"
+    },
+    "cf18767c5c49e03942ac1e205dfd7e0fa843e83e7b98060fddc46d2175fe0689": {
+      "url": "https://dev.to/therealmrmumba/10-best-open-source-chatgpt-alternative-that-runs-100-locally-jdc",
+      "date": "2026-06-16"
+    },
+    "1c299b0df37a055a049dcdb1eedf3ea882af0cc69dfb78dd35b6790e3019b4de": {
+      "url": "https://github.com/multica-ai/multica",
+      "date": "2026-06-16"
+    },
+    "a6624679c789263c413f21fd4c782861dada3691ab7e53e84638695211c5866c": {
+      "url": "https://news.ycombinator.com/item?id=47381382",
+      "date": "2026-06-16"
+    },
+    "aa7c1d9786deccbfdad5d32f892b36d555007b1992846d6d7a048c6b2aaf0e84": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1r9zx2t/stop_just_stop",
+      "date": "2026-06-16"
+    },
+    "66689ed64c62ed94af6954892c0b70033cbb2efa0816ba33efc2ace446e3d2ba": {
+      "url": "https://dev.to/extinctsion/the-art-of-talking-to-ai-prompts-that-actually-work-for-coding-4fpe",
+      "date": "2026-06-16"
+    },
+    "31661aae5fd34dec93b27281e47f630e64f252a43f71a8572aab477b47f5fde2": {
+      "url": "https://github.com/wshobson/agents",
+      "date": "2026-06-16"
+    },
+    "ce9e7b54587c1aaef82e643abdeb67e942b383ef8fecaad936a6b2af2212a8f9": {
+      "url": "https://news.ycombinator.com/item?id=48481400",
+      "date": "2026-06-16"
     }
   },
-  "backfillPage": 5,
+  "backfillPage": 6,
   "dailyPage": 0
 }
