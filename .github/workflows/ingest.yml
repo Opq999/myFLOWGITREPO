@@ -72,25 +72,11 @@ jobs:
 
       - name: Commit new content
         id: commit
+        # Rebase-and-retry push lives in one shared script so ingest + backfill
+        # can never drift, and a concurrent push to main can never silently
+        # drop a run's content again (see pipeline/commit-content.sh).
         run: |
-          git config user.name "opqai-pipeline"
-          git config user.email "actions@users.noreply.github.com"
-          git add src/content pipeline/seen.json
-          published=$(git diff --cached --name-only --diff-filter=A -- 'src/content/workflows/*.mdx' | wc -l)
-          titles=$(git diff --cached --name-only --diff-filter=A -- 'src/content/workflows/*.mdx' | sed 's|src/content/workflows/||; s|\.mdx||' | head -25)
-          if git diff --cached --quiet; then
-            echo "No new content today."
-            published=0
-          else
-            git commit -m "content: daily ingest $(date -u +%F)"
-            git push
-          fi
-          echo "published=$published" >> "$GITHUB_OUTPUT"
-          {
-            echo "titles<<EOF"
-            echo "$titles"
-            echo "EOF"
-          } >> "$GITHUB_OUTPUT"
+          bash pipeline/commit-content.sh "content: daily ingest $(date -u +%F)"
 
       - name: Build and deploy to Cloudflare Pages
         env:
