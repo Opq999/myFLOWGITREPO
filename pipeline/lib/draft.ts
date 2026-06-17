@@ -3,6 +3,7 @@ import { join } from 'node:path';
 import type { Candidate, ScoreResult } from '../types';
 import { geminiJson } from './gemini';
 import { toMdx, validateDraft } from './mdx';
+import { generateUseCases } from './usecases';
 import { slugify } from './utils';
 
 let template: string | null = null;
@@ -37,6 +38,15 @@ export async function draftWorkflow(
     try {
       const raw = await geminiJson<unknown>(prompt);
       const { workflow, body } = validateDraft(raw, c, s);
+      // Only publish-worthy candidates earn the extra use-case call. Non-fatal:
+      // generateUseCases swallows its own errors and returns [] (the backfill
+      // top-up fills any gaps later), so this never blocks or retries a draft.
+      if (s.score >= 7) {
+        workflow.nigeriaUseCases = await generateUseCases(
+          { title: workflow.title, category: workflow.category, jobToBeDone: workflow.jobToBeDone, body },
+          { log }
+        );
+      }
       return { slug: slugify(workflow.title), mdx: toMdx(workflow, body) };
     } catch (err) {
       const message = err instanceof Error ? err.message : String(err);

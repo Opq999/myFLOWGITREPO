@@ -1,0 +1,33 @@
+---
+import { PERSONA_META } from '../lib/personas';
+import type { UseCase } from '../lib/workflow-schema';
+
+interface Props {
+  cases: UseCase[];
+}
+const { cases } = Astro.props;
+---
+
+<section class="rounded-2xl border border-line bg-surface p-5 shadow-[0_1px_2px_rgba(28,23,19,0.04)]">
+  <p class="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-accent">
+    🇳🇬 Ways to use this in Nigeria
+  </p>
+  <p class="mt-1 text-xs text-ink-400">Ideas to get you started — adapt to your situation.</p>
+
+  <ul class="mt-4 space-y-3.5">
+    {
+      cases.map((c) => {
+        const meta = PERSONA_META[c.persona];
+        return (
+          <li class="flex flex-col gap-1.5 sm:flex-row sm:gap-3">
+            <span class="inline-flex h-fit w-fit shrink-0 items-center gap-1 rounded-full border border-line-strong bg-paper-2 px-2.5 py-0.5 font-mono text-[10px] font-bold uppercase tracking-[0.12em] text-ink-600">
+              <span aria-hidden="true">{meta.emoji}</span>
+              {meta.label}
+            </span>
+            <p class="text-sm leading-relaxed text-ink-700">{c.scenario}</p>
+          </li>
+        );
+      })
+    }
+  </ul>
+</section>

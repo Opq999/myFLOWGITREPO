@@ -18,6 +18,7 @@ const isFree = d.tools.every((t) => t.pricing !== 'paid');
   data-badge={d.badge}
   data-difficulty={d.difficulty}
   data-free={isFree ? '1' : '0'}
+  data-personas={[...new Set((d.nigeriaUseCases ?? []).map((u) => u.persona))].join(' ')}
 >
   <a href={`/workflows/${workflow.id}/`} class="block">
     <Thumbnail workflow={workflow} />

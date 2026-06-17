@@ -1,0 +1,19 @@
+---
+import { PERSONA_META } from '../lib/personas';
+import { PERSONAS } from '../lib/workflow-schema';
+
+const chip =
+  'persona-chip rounded-full border border-line-strong bg-surface px-3.5 py-2 font-mono text-[11px] font-bold uppercase tracking-[0.1em] text-ink-700 transition-colors hover:border-accent/60 aria-pressed:border-accent aria-pressed:bg-accent/5 aria-pressed:text-accent';
+---
+
+<div class="persona-filter mt-3 flex flex-wrap items-center gap-2" role="group" aria-label="Filter by who it's for in Nigeria">
+  <span class="mr-1 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-ink-400">For you in 🇳🇬</span>
+  <button type="button" class={chip} data-persona="" aria-pressed="true">Everyone</button>
+  {
+    PERSONAS.map((p) => (
+      <button type="button" class={chip} data-persona={p} aria-pressed="false">
+        <span aria-hidden="true">{PERSONA_META[p].emoji}</span> {PERSONA_META[p].label}
+      </button>
+    ))
+  }
+</div>

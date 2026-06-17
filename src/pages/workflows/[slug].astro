@@ -4,6 +4,7 @@ import Base from '../../layouts/Base.astro';
 import Badge from '../../components/Badge.astro';
 import ToolsList from '../../components/ToolsList.astro';
 import NigeriaNotes from '../../components/NigeriaNotes.astro';
+import UseCases from '../../components/UseCases.astro';
 import ShareButtons from '../../components/ShareButtons.astro';
 import SourceEmbed from '../../components/SourceEmbed.astro';
 import { CATEGORY_META } from '../../lib/categories';
@@ -61,6 +62,7 @@ const isFree = d.tools.every((t) => t.pricing !== 'paid');
     <div class="lg:grid lg:grid-cols-[minmax(0,1fr)_330px] lg:items-start lg:gap-10">
       <div class="min-w-0 lg:max-w-[70ch]">
         {d.nigeriaNotes && <div class="mt-5"><NigeriaNotes notes={d.nigeriaNotes} /></div>}
+        {(d.nigeriaUseCases ?? []).length > 0 && <div class="mt-5"><UseCases cases={d.nigeriaUseCases} /></div>}
         <div class="workflow-body mt-8">
           <Content />
         </div>

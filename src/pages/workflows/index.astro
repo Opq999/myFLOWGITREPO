@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import WorkflowCard from '../../components/WorkflowCard.astro';
+import PersonaFilter from '../../components/PersonaFilter.astro';
 import { CATEGORY_META } from '../../lib/categories';
 import { CATEGORIES, BADGES, DIFFICULTIES } from '../../lib/workflow-schema';
 
@@ -48,6 +49,8 @@ const workflows = (await getCollection('workflows', (e) => e.data.published)).so
     </label>
   </form>
 
+  <PersonaFilter />
+
   <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3" id="workflow-list">
     {workflows.map((w) => <WorkflowCard workflow={w} />)}
   </div>
@@ -61,8 +64,17 @@ const workflows = (await getCollection('workflows', (e) => e.data.published)).so
   (function () {
     var selects = Array.prototype.slice.call(document.querySelectorAll('#filters [data-filter]'));
     var freeToggle = document.getElementById('free-only');
+    var personaChips = Array.prototype.slice.call(document.querySelectorAll('.persona-chip'));
     var cards = Array.prototype.slice.call(document.querySelectorAll('.workflow-card'));
     var noResults = document.getElementById('no-results');
+    var activePersona = '';
+
+    function setPersona(persona) {
+      activePersona = persona;
+      personaChips.forEach(function (c) {
+        c.setAttribute('aria-pressed', c.dataset.persona === persona ? 'true' : 'false');
+      });
+    }
 
     function apply() {
       var active = {};
@@ -72,11 +84,13 @@ const workflows = (await getCollection('workflows', (e) => e.data.published)).so
       var freeOnly = freeToggle.checked;
       var visible = 0;
       cards.forEach(function (card) {
+        var personas = (card.dataset.personas || '').split(' ');
         var show =
           (!active.category || card.dataset.category === active.category) &&
           (!active.difficulty || card.dataset.difficulty === active.difficulty) &&
           (!active.badge || card.dataset.badge === active.badge) &&
-          (!freeOnly || card.dataset.free === '1');
+          (!freeOnly || card.dataset.free === '1') &&
+          (!activePersona || personas.indexOf(activePersona) !== -1);
         card.hidden = !show;
         if (show) visible++;
       });
@@ -87,6 +101,7 @@ const workflows = (await getCollection('workflows', (e) => e.data.published)).so
         if (active[k]) params.set(k, active[k]);
       });
       if (freeOnly) params.set('free', '1');
+      if (activePersona) params.set('persona', activePersona);
       var qs = params.toString();
       history.replaceState(null, '', qs ? '?' + qs : location.pathname);
     }
@@ -99,6 +114,19 @@ const workflows = (await getCollection('workflows', (e) => e.data.published)).so
     });
     if (params.get('free') === '1') freeToggle.checked = true;
     freeToggle.addEventListener('change', apply);
+
+    personaChips.forEach(function (c) {
+      c.addEventListener('click', function () {
+        setPersona(c.dataset.persona);
+        apply();
+      });
+    });
+    var initialPersona = params.get('persona') || '';
+    var hasChip = personaChips.some(function (c) {
+      return c.dataset.persona === initialPersona;
+    });
+    setPersona(hasChip ? initialPersona : '');
+
     apply();
   })();
 </script>

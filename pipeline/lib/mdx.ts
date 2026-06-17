@@ -1,5 +1,5 @@
 import { z } from 'astro/zod';
-import { PRICING, workflowSchema, type Workflow } from '../../src/lib/workflow-schema';
+import { PRICING, workflowSchema, type UseCase, type Workflow } from '../../src/lib/workflow-schema';
 import type { Candidate, ScoreResult } from '../types';
 
 /** Shape Gemini returns from the drafting prompt. */
@@ -57,6 +57,22 @@ function yDate(d: Date): string {
 }
 
 /**
+ * Serializes the persona use cases to YAML lines (like the `tools` block).
+ * Returns [] when there are none so the key is simply omitted. Shared by
+ * `toMdx` and the backfill script so the formatting lives in exactly one place.
+ */
+export function serializeUseCases(cases: UseCase[]): string[] {
+  if (!cases.length) return [];
+  return [
+    'nigeriaUseCases:',
+    ...cases.flatMap((c) => [
+      `  - persona: "${c.persona}"`,
+      `    scenario: ${yStr(c.scenario)}`,
+    ]),
+  ];
+}
+
+/**
  * LLM prose sometimes contains bare `<placeholder>` tags or `{tokens}` that MDX
  * parses as JSX and crashes the whole build on. We escape `<` and `{` in prose
  * only, leaving fenced code blocks and inline-code spans untouched (angle
@@ -111,6 +127,7 @@ export function toMdx(w: Workflow, body: string): string {
     `score: ${w.score}`,
     `ingestedAt: ${yDate(w.ingestedAt)}`,
     ...(w.nigeriaNotes ? [`nigeriaNotes: ${yStr(w.nigeriaNotes)}`] : []),
+    ...serializeUseCases(w.nigeriaUseCases),
     `tiktokUrl: ${yStr(w.tiktokUrl)}`,
     `published: ${w.published}`,
     '---',

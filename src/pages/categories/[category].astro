@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import WorkflowCard from '../../components/WorkflowCard.astro';
+import PersonaFilter from '../../components/PersonaFilter.astro';
 import { CATEGORY_META } from '../../lib/categories';
 import { CATEGORIES, type Category } from '../../lib/workflow-schema';
 
@@ -31,9 +32,15 @@ const workflows = (
     </p>
   </header>
 
+  {workflows.length > 0 && <PersonaFilter />}
+
   <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
     {workflows.map((w) => <WorkflowCard workflow={w} />)}
   </div>
+  <p id="persona-no-results" hidden class="mt-10 text-ink-400">
+    No workflows for this persona in {meta.label} yet — try another, or{' '}
+    <a href="/workflows/" class="text-accent underline underline-offset-2">browse all workflows</a>.
+  </p>
   {
     workflows.length === 0 && (
       <p class="mt-8 text-ink-400">
@@ -45,3 +52,52 @@ const workflows = (
     )
   }
 </Base>
+
+<!-- Persona-only client-side filter (this page has no other filters). -->
+<script is:inline>
+  (function () {
+    var personaChips = Array.prototype.slice.call(document.querySelectorAll('.persona-chip'));
+    if (!personaChips.length) return;
+    var cards = Array.prototype.slice.call(document.querySelectorAll('.workflow-card'));
+    var noResults = document.getElementById('persona-no-results');
+    var activePersona = '';
+
+    function setPersona(persona) {
+      activePersona = persona;
+      personaChips.forEach(function (c) {
+        c.setAttribute('aria-pressed', c.dataset.persona === persona ? 'true' : 'false');
+      });
+    }
+
+    function apply() {
+      var visible = 0;
+      cards.forEach(function (card) {
+        var personas = (card.dataset.personas || '').split(' ');
+        var show = !activePersona || personas.indexOf(activePersona) !== -1;
+        card.hidden = !show;
+        if (show) visible++;
+      });
+      if (noResults) noResults.hidden = visible > 0;
+
+      var params = new URLSearchParams(location.search);
+      if (activePersona) params.set('persona', activePersona);
+      else params.delete('persona');
+      var qs = params.toString();
+      history.replaceState(null, '', qs ? '?' + qs : location.pathname);
+    }
+
+    personaChips.forEach(function (c) {
+      c.addEventListener('click', function () {
+        setPersona(c.dataset.persona);
+        apply();
+      });
+    });
+
+    var initial = new URLSearchParams(location.search).get('persona') || '';
+    var hasChip = personaChips.some(function (c) {
+      return c.dataset.persona === initial;
+    });
+    setPersona(hasChip ? initial : '');
+    apply();
+  })();
+</script>

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import type { Candidate, ScoreResult } from '../types';
-import { escapeMdxBody, toMdx, validateDraft } from './mdx';
+import { escapeMdxBody, serializeUseCases, toMdx, validateDraft } from './mdx';
 
 const candidate: Candidate = {
   title: 'How I do invoices with AI',
@@ -94,6 +94,36 @@ describe('toMdx', () => {
     );
     const mdx = toMdx(workflow, body);
     expect(mdx).toContain('title: "Use \\"smart quotes\\" safely in invoice workflows"');
+  });
+
+  it('omits nigeriaUseCases when empty and serializes the block before tiktokUrl when present', () => {
+    const { workflow, body } = validateDraft(goodDraft, candidate, score);
+    expect(toMdx(workflow, body)).not.toContain('nigeriaUseCases:');
+
+    workflow.nigeriaUseCases = [
+      { persona: 'student', scenario: 'Turn your lecture notes into a practice quiz.' },
+      { persona: 'small-business', scenario: 'Draft WhatsApp replies to customer complaints.' },
+    ];
+    const mdx = toMdx(workflow, body);
+    expect(mdx).toContain('nigeriaUseCases:');
+    expect(mdx).toContain('  - persona: "student"');
+    expect(mdx).toContain('    scenario: "Turn your lecture notes into a practice quiz."');
+    expect(mdx.indexOf('nigeriaUseCases:')).toBeLessThan(mdx.indexOf('tiktokUrl:'));
+  });
+});
+
+describe('serializeUseCases', () => {
+  it('returns [] for an empty list (key gets omitted)', () => {
+    expect(serializeUseCases([])).toEqual([]);
+  });
+
+  it('emits a YAML block with escaped scenarios', () => {
+    const lines = serializeUseCases([
+      { persona: 'employee', scenario: 'Summarize a "long" report.' },
+    ]);
+    expect(lines[0]).toBe('nigeriaUseCases:');
+    expect(lines).toContain('  - persona: "employee"');
+    expect(lines).toContain('    scenario: "Summarize a \\"long\\" report."');
   });
 });
 

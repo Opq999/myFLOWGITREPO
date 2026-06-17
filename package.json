@@ -14,6 +14,7 @@
     "pipeline": "tsx --env-file-if-exists=.env pipeline/run.ts",
     "pipeline:dry": "tsx --env-file-if-exists=.env pipeline/run.ts --dry-run",
     "pipeline:backfill": "tsx --env-file-if-exists=.env pipeline/run.ts --backfill",
+    "pipeline:usecases": "tsx --env-file-if-exists=.env pipeline/backfill-usecases.ts",
     "astro": "astro"
   },
   "dependencies": {

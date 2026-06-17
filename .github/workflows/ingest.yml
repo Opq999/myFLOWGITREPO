@@ -55,6 +55,21 @@ jobs:
           ${{ inputs.dry_run == true && '--dry-run' || '' }}
           ${{ inputs.backfill == true && '--backfill' || '' }}
 
+      - name: Top up missing Nigerian use cases
+        # Fills nigeriaUseCases into any published workflow still missing them
+        # (new ones already get them at draft time; this catches quota-gap
+        # stragglers). Idempotent, stops gracefully on quota, and can never break
+        # the deploy — so failure is tolerated and changes ride the next commit.
+        continue-on-error: true
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
+          GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
+          GEMINI_API_KEY_4: ${{ secrets.GEMINI_API_KEY_4 }}
+          GEMINI_API_KEY_5: ${{ secrets.GEMINI_API_KEY_5 }}
+          GEMINI_API_KEY_6: ${{ secrets.GEMINI_API_KEY_6 }}
+        run: npx tsx pipeline/backfill-usecases.ts
+
       - name: Commit new content
         id: commit
         run: |

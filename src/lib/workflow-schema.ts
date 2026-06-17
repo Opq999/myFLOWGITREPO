@@ -26,8 +26,18 @@ export const PLATFORMS = [
 ] as const;
 export const PRICING = ['free', 'freemium', 'paid'] as const;
 
+/** Who a workflow is practically useful for in Nigeria (an axis orthogonal to category). */
+export const PERSONAS = ['student', 'entrepreneur', 'small-business', 'employee'] as const;
+
 export type Category = (typeof CATEGORIES)[number];
 export type Platform = (typeof PLATFORMS)[number];
+export type Persona = (typeof PERSONAS)[number];
+
+/** One practical, persona-tagged Nigerian use case for a workflow. */
+export const useCaseSchema = z.object({
+  persona: z.enum(PERSONAS),
+  scenario: z.string().min(10).max(240),
+});
 
 export const toolSchema = z.object({
   name: z.string().min(1),
@@ -58,6 +68,8 @@ export const workflowSchema = z.object({
   ingestedAt: z.coerce.date(),
   /** Free-tier viability, data usage, local payment compatibility. */
   nigeriaNotes: z.string().optional(),
+  /** Practical Nigerian use cases tagged by persona. Empty when none generated yet. */
+  nigeriaUseCases: z.array(useCaseSchema).default([]),
   /** Filled when a paired TikTok exists. */
   tiktokUrl: z.string().default(''),
   published: z.boolean().default(true),
@@ -65,3 +77,4 @@ export const workflowSchema = z.object({
 
 export type Workflow = z.infer<typeof workflowSchema>;
 export type Tool = z.infer<typeof toolSchema>;
+export type UseCase = z.infer<typeof useCaseSchema>;
