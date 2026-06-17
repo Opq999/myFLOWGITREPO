@@ -2852,8 +2852,68 @@
     "336458be4019fe461887ab9f84a96db5fc726d9927c3301c0e998d72af8e2802": {
       "url": "https://news.ycombinator.com/item?id=44951287",
       "date": "2026-06-17"
+    },
+    "8c3a3d2cfb50a099fe6be3369addb50ceabdd696ca1bf4ef1ed779e6719025eb": {
+      "url": "https://github.com/jivoi/awesome-osint",
+      "date": "2026-06-17"
+    },
+    "03b6f0e15d59ff8a1acc09616cc4cad8e99083868d9ce8cc0735a93efc64f42f": {
+      "url": "https://github.com/enaqx/awesome-pentest",
+      "date": "2026-06-17"
+    },
+    "f274f47756b783909d445db5c6e751940bc2ae557cffb895e73f164970257c37": {
+      "url": "https://github.com/piotrkulpinski/openalternative",
+      "date": "2026-06-17"
+    },
+    "787e0a4829887f8483cd9a3c42a30a337b924944da61ef465c3b097e2100ac5d": {
+      "url": "https://github.com/tensorchord/Awesome-LLMOps",
+      "date": "2026-06-17"
+    },
+    "1103542ed1ee3ddbd1ec5add247451b46e28f68b8afa8bd7d3964fc460d1c3f5": {
+      "url": "https://github.com/heilcheng/awesome-agent-skills",
+      "date": "2026-06-17"
+    },
+    "05818251883f9848edec11aa14d3016329e3fbce467cbc1643b08ce7f0cf3c43": {
+      "url": "https://github.com/mahseema/awesome-ai-tools",
+      "date": "2026-06-17"
+    },
+    "e75c3652ef38aee764bbd1982f2c37917670f55f8d2ad034df4db512e3d02700": {
+      "url": "https://github.com/ebertti/awesome-telegram",
+      "date": "2026-06-17"
+    },
+    "8f18a6d59e38cbdfdccc8f4a4d467588291bd26b8bedfd4ac6fcb8f909b8fd00": {
+      "url": "https://github.com/xlite-dev/Awesome-LLM-Inference",
+      "date": "2026-06-17"
+    },
+    "7711201e6ccdbe09dadaebb8e8bab62e6d12facfe77e923b4689ac5e8714063f": {
+      "url": "https://github.com/langgptai/awesome-claude-prompts",
+      "date": "2026-06-17"
+    },
+    "8a0c8555e5c58204e8b42a997c4501fab613ae98e02e0f3ae26d1b392fcf49c4": {
+      "url": "https://github.com/yinggaozhen/awesome-go-cn",
+      "date": "2026-06-17"
+    },
+    "6b579cf3bffd4797effd5d3040fe0aced36b0473cfb706f1d8b2cf82f557deec": {
+      "url": "https://github.com/mlabonne/llm-datasets",
+      "date": "2026-06-17"
+    },
+    "4551eb0655daa827924bafdd01baf64a2f3d515d4ea7e31acd2201e0c8f22596": {
+      "url": "https://github.com/nhivp/Awesome-Embedded",
+      "date": "2026-06-17"
+    },
+    "e60e75c294225871d5881fa042997ab9a33b30be71442078f58b9a0c8f3f0c58": {
+      "url": "https://github.com/greatfrontend/awesome-front-end-system-design",
+      "date": "2026-06-17"
+    },
+    "85d85c56ddf99572fc3ae5581fb386d6fd57a29d157904989d1ba9ebd68a50ea": {
+      "url": "https://github.com/rust-embedded/awesome-embedded-rust",
+      "date": "2026-06-17"
+    },
+    "dc1af6bb8bee9339754625998a2f8928f79ae02cb8af97a0cdb722adf057968c": {
+      "url": "https://news.ycombinator.com/item?id=46620358",
+      "date": "2026-06-17"
     }
   },
-  "backfillPage": 8,
+  "backfillPage": 9,
   "dailyPage": 2
 }
