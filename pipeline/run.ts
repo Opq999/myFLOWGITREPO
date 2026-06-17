@@ -39,6 +39,41 @@ function info(msg: string): void {
   console.log(msg);
 }
 
+/**
+ * Writes a run health summary to the GitHub Actions step summary (visible on
+ * every run page) so a silent failure — a dead source, or 0 published — can
+ * never hide again. No-op locally where GITHUB_STEP_SUMMARY is unset.
+ */
+function writeStepSummary(
+  opts: RunOptions,
+  counts: { scored: number; published: number; drafted: number; discarded: number; failed: number },
+  fetched: number,
+  fresh: number,
+  sourceWarnings: string[]
+): void {
+  const path = process.env.GITHUB_STEP_SUMMARY;
+  if (!path) return;
+  const lines = [
+    `### ${opts.backfill ? 'Backfill' : 'Daily'} ingest`,
+    '',
+    '| fetched | fresh | scored | published | drafted | discarded | failed |',
+    '|--:|--:|--:|--:|--:|--:|--:|',
+    `| ${fetched} | ${fresh} | ${counts.scored} | **${counts.published}** | ${counts.drafted} | ${counts.discarded} | ${counts.failed} |`,
+    '',
+  ];
+  if (sourceWarnings.length) {
+    lines.push('**⚠️ Sources that failed to fetch:**', '', ...sourceWarnings.map((w) => `- ${w}`), '');
+  }
+  if (counts.published === 0) {
+    lines.push('> ⚠️ **0 new workflows published this run** — check the source warnings and score reasons above.', '');
+  }
+  try {
+    appendFileSync(path, lines.join('\n') + '\n');
+  } catch {
+    /* never let reporting break the run */
+  }
+}
+
 function uniqueSlugPath(dir: string, slug: string): string {
   let path = join(dir, `${slug}.mdx`);
   let n = 2;
@@ -78,9 +113,11 @@ async function main(): Promise<void> {
   // the same page-0 "top of today" results that just dedupe away.
   const page = opts.backfill ? (ledger.backfillPage ?? 0) : (ledger.dailyPage ?? 0);
   info(`[fetch] ${opts.backfill ? 'backfill' : 'daily'} page ${page}`);
+  const sourceWarnings: string[] = [];
   const fetched = await fetchAll({ backfill: opts.backfill, page }, (m) => {
     info(m);
     logEvent({ stage: 'fetch', msg: m });
+    if (/FAILED/i.test(m)) sourceWarnings.push(m);
   });
   info(`[fetch] total: ${fetched.length} candidates`);
 
@@ -130,6 +167,13 @@ async function main(): Promise<void> {
 
   if (toScore.length === 0) {
     info('Nothing new to score. Done.');
+    writeStepSummary(
+      opts,
+      { scored: 0, published: 0, drafted: 0, discarded: 0, failed: 0 },
+      fetched.length,
+      fresh.length,
+      sourceWarnings
+    );
     return;
   }
 
@@ -205,6 +249,7 @@ async function main(): Promise<void> {
     `\nSummary: fetched=${fetched.length} new=${fresh.length} scored=${counts.scored} ` +
       `published=${counts.published} drafted=${counts.drafted} discarded=${counts.discarded} failed=${counts.failed}`
   );
+  writeStepSummary(opts, counts, fetched.length, fresh.length, sourceWarnings);
 }
 
 main().catch((err) => {

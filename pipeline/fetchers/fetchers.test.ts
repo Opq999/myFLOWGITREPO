@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { normalizeDevto } from './devto';
 import { normalizeGithub } from './github';
-import { normalizeHn } from './hn';
+import { buildHnUrl, normalizeHn } from './hn';
 import { normalizeRedditFeed, normalizeRedditJson } from './reddit';
 import { normalizeFeed } from './rss';
 import { normalizeYoutube } from './youtube';
@@ -29,6 +29,29 @@ describe('normalizeHn', () => {
       stats: { points: 142, comments: 37 },
     });
     expect(out[0].excerpt).toContain('https://example.com/blog');
+  });
+});
+
+describe('buildHnUrl', () => {
+  // Regression: HN Algolia removed points/num_points from numericAttributesForFiltering,
+  // so `numericFilters=points>N` now returns HTTP 400 and killed the whole HN source.
+  it('never filters by points/num_points (Algolia 400s on those attributes)', () => {
+    expect(buildHnUrl('AI workflow', { backfill: false, page: 0 })).not.toMatch(/points/);
+    expect(buildHnUrl('AI workflow', { backfill: true, page: 0 })).not.toMatch(/points/);
+  });
+
+  it('builds a daily query with the story tag and encoded query, no numericFilters', () => {
+    const params = new URL(buildHnUrl('Show HN AI', { backfill: false, page: 1 })).searchParams;
+    expect(params.get('tags')).toBe('story');
+    expect(params.get('query')).toBe('Show HN AI');
+    expect(params.get('page')).toBe('1');
+    expect(params.get('numericFilters')).toBeNull();
+  });
+
+  it('backfill filters by created_at_i only (the one supported numeric attribute)', () => {
+    const url = buildHnUrl('AI workflow', { backfill: true, page: 0 });
+    expect(url).toContain('numericFilters=');
+    expect(decodeURIComponent(url)).toContain('created_at_i>');
   });
 });
 
