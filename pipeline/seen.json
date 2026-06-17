@@ -2824,8 +2824,36 @@
     "1d33fcd888f9f40f27b411651a5ea1e19bcc5ad7c845061b3c9ec9e92fb8a5c9": {
       "url": "https://github.com/iOfficeAI/AionUi",
       "date": "2026-06-17"
+    },
+    "65913d958543455f5995ce5a0536c931d1a64044bbc86798425c426a6cc5d68f": {
+      "url": "https://news.ycombinator.com/item?id=47008163",
+      "date": "2026-06-17"
+    },
+    "26697b0ee8310d3c1b1ccd94602ddba247e1a081d2964989aa16964532517d66": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1u28ryu/seriously",
+      "date": "2026-06-17"
+    },
+    "715b6bc81ab4b4ffcee5bb2150989321b00958a3da8b9307fbbd467d19cd4e11": {
+      "url": "https://github.com/crewAIInc/crewAI",
+      "date": "2026-06-17"
+    },
+    "692813404b58bbd21715b6e74e7778584140272cbd7b4a380933100116d26c24": {
+      "url": "https://news.ycombinator.com/item?id=45329322",
+      "date": "2026-06-17"
+    },
+    "cd475d52327be96f15285ec43c28d4a275eaa836d6e74da9fb0adf740dd33737": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1u76h45/i_asked_chatgpt_to_make_a_cartoon_that_will",
+      "date": "2026-06-17"
+    },
+    "6fc77bdc5b8a25da21fde350d8c40abdcba3387012d9b1928e7d7c09e29879c5": {
+      "url": "https://github.com/byoungd/English-level-up-tips",
+      "date": "2026-06-17"
+    },
+    "336458be4019fe461887ab9f84a96db5fc726d9927c3301c0e998d72af8e2802": {
+      "url": "https://news.ycombinator.com/item?id=44951287",
+      "date": "2026-06-17"
     }
   },
   "backfillPage": 8,
-  "dailyPage": 1
+  "dailyPage": 2
 }
