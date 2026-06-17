@@ -2704,8 +2704,48 @@
     "cdb706bb53cbaa8cb91960cb3c5d99fbfb52e4f408f40dd662847b61572499e6": {
       "url": "https://dev.to/divyasinghdev/grasp-articulate-refine-your-real-time-voice-coach-for-smarter-recall-academic-mastery-p95",
       "date": "2026-06-17"
+    },
+    "7faa285772f376d68b3e8fb603f3a5b452cd2d36d074821b1c5d781e2c71f60e": {
+      "url": "https://simonwillison.net/2026/Jun/17/click-to-play-component",
+      "date": "2026-06-17"
+    },
+    "bee422cc001e2185c0f841b8e1d1e177c7b4412c9afb63e58d471fbdc9ebc868": {
+      "url": "https://github.com/codecrafters-io/build-your-own-x",
+      "date": "2026-06-17"
+    },
+    "812dd492bf3e119385269843ad77f7d4858071516d1625af56bc82c7af5223c8": {
+      "url": "https://simonwillison.net/2026/Jun/17/netnewswire-status",
+      "date": "2026-06-17"
+    },
+    "0b5c4741d1c147be5fddf0c75c5c0f478ced75a3c3b71cf8751002122b8f3831": {
+      "url": "https://github.com/openclaw/openclaw",
+      "date": "2026-06-17"
+    },
+    "88ca62c84c9afedbb66978a93c8aaddd23c822e2814183057cd03a82db87c757": {
+      "url": "https://simonwillison.net/2026/Jun/16/datasette",
+      "date": "2026-06-17"
+    },
+    "8f4d2163b5e697a72c77808874cb690be318a63b853895ea6b090a0db16e00c7": {
+      "url": "https://github.com/ggml-org/llama.cpp",
+      "date": "2026-06-17"
+    },
+    "8e82258a38767db4f666be17e098dbbb677d510a3929a61bd5cc8b1902b4a0f3": {
+      "url": "https://simonwillison.net/2026/Jun/16/datasette-tailscale",
+      "date": "2026-06-17"
+    },
+    "be004936e5ecdffbe5b862fea1cd374be74200ea2dab047b389cbf4ffe59e7b1": {
+      "url": "https://github.com/Developer-Y/cs-video-courses",
+      "date": "2026-06-17"
+    },
+    "e00df5ef1c5096ea737d375786fef147dfa5d66b5c5e0dfd4574ff11aa04d361": {
+      "url": "https://simonwillison.net/2026/Jun/16/georgi-gerganov",
+      "date": "2026-06-17"
+    },
+    "ffc4c951795ec8c088f9b69454693ae1120fdb4cf94cd7079e5eb12a8e402d6a": {
+      "url": "https://www.latent.space/p/ainews-glm-52-the-top-frontend-coding",
+      "date": "2026-06-17"
     }
   },
   "backfillPage": 7,
-  "dailyPage": 0
+  "dailyPage": 1
 }
