@@ -1,0 +1,133 @@
+---
+title: "Build a Real-time Weather Data Server for AI Agents with MCP SDK"
+description: "Learn to build a Model Context Protocol (MCP) server to connect AI agents like GitHub Copilot to real-time weather data, enabling dynamic, up-to-date responses."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 60
+jobToBeDone: "Build a custom server to provide AI agents with real-time data"
+tools:
+  - name: "MCP SDK"
+    url: "https://www.modelcontextprotocol.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "TypeScript"
+    url: "https://www.typescriptlang.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Node.js"
+    url: "https://nodejs.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "VS Code"
+    url: "https://code.visualstudio.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "npm"
+    url: "https://www.npmjs.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Zod"
+    url: "https://zod.dev/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "GitHub Copilot"
+    url: "https://github.com/features/copilot/"
+    pricing: "paid"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/debs_obrien/building-your-first-mcp-server-a-beginners-tutorial-5fag"
+  platform: "blog"
+  author: "debs_obrien"
+  postedAt: 2025-07-01
+score: 6
+ingestedAt: 2026-06-17
+nigeriaNotes: "Mostly free, as the core development tools and SDKs are open source. GitHub Copilot offers a free tier for students and open-source contributors, otherwise it's paid. Initial setup and package installation require moderate data, while running the server and fetching weather data will use light data."
+tiktokUrl: ""
+published: false
+---
+
+## What you'll get
+You will have built a basic Model Context Protocol (MCP) server using TypeScript that connects AI agents like GitHub Copilot to live weather data. By the end, you'll be able to ask your AI for weather information in any city and get real, up-to-date responses. This approach provides AI agents with real-time external data, overcoming their usual limitation of not having access to live information.
+
+## Tools you need
+*   **MCP SDK** (free) — The Model Context Protocol Software Development Kit for building MCP servers.
+*   **TypeScript** (free) — A superset of JavaScript that adds static typing, used for writing the server.
+*   **Node.js** (free) — A JavaScript runtime environment required to run the server and npm.
+*   **VS Code** (free) — A popular code editor, recommended for project development.
+*   **npm** (free) — Node Package Manager, used for initializing projects and installing libraries.
+*   **Zod** (free) — A TypeScript-first schema declaration and validation library, used for ensuring valid data.
+*   **GitHub Copilot** (paid) — An AI coding assistant that will interact with your MCP server (free for students/open source).
+
+## Steps
+1.  **Initialize the Project Directory** — Create a new folder for your project and initialize it using npm. Open your terminal or command prompt and run these commands:
+
+    ```bash
+    mkdir mcp-weather-server
+    cd mcp-weather-server
+    npm init -y
+    ```
+
+    You should see a new directory named `mcp-weather-server` created, and inside it, a `package.json` file will be generated with default settings.
+
+2.  **Create the Main TypeScript File** — Create the primary TypeScript file where your server code will reside.
+
+    ```bash
+    touch main.ts
+    ```
+
+    An empty file named `main.ts` will appear in your `mcp-weather-server` directory.
+
+3.  **Configure Package.json for ES Modules** — Open your `package.json` file in VS Code (or your preferred code editor) and add the `"type": "module"` field to enable modern JavaScript modules, which the MCP SDK uses.
+
+    ```json
+    {
+      "name": "mcp-weather-server",
+      "version": "1.0.0",
+      "type": "module",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      }
+    }
+    ```
+
+    Your `package.json` file should now include the `"type": "module"` line, ensuring compatibility with the SDK.
+
+4.  **Install the MCP SDK** — Add the Model Context Protocol SDK to your project, which provides the necessary tools to build MCP servers. In your terminal, run:
+
+    ```bash
+    npm install @modelcontextprotocol/sdk
+    ```
+
+    The MCP SDK will be downloaded and installed. You can verify its installation by checking the `dependencies` section in your `package.json` file.
+
+5.  **Install Zod for Data Validation** — Install the Zod library, which helps ensure that your server receives and processes valid data from AI agents.
+
+    ```bash
+    npm install zod
+    ```
+
+    Zod will be added to your project's dependencies. Your `package.json`'s `dependencies` section should now look similar to this (version numbers may vary):
+
+    ```json
+    "dependencies": {
+      "@modelcontextprotocol/sdk": "^1.13.1",
+      "zod": "^3.25.67"
+    }
+    ```
+
+6.  **Add Required Imports to main.ts** — Open your `main.ts` file in your code editor and add the initial import statement for the `McpServer` class. Note: The original source excerpt for this import was truncated.
+
+    ```typescript
+    import { McpServer } from "@modelcontextprotocol/sdk/server/m…
+    ```
+
+    Your `main.ts` file should now contain this line, preparing it for the server's core logic.
+
+## Original source
+This workflow is adapted from a beginner's tutorial by debs_obrien titled 'Building Your First MCP Server: A Beginners Tutorial' published on the DEV Community blog. The tutorial guides users through setting up a project to create a Model Context Protocol server that connects AI agents to real-time data.
+
+## Notes & variations
+*   **Free-tier alternatives:** While GitHub Copilot has a paid tier, many other AI assistants or language models might be compatible with MCP servers, some of which offer free access or more generous free tiers. The core development tools (Node.js, VS Code, TypeScript, npm, MCP SDK, Zod) are all free and open-source.
+*   **Common mistake:** A frequent pitfall is forgetting to add `"type": "module"` to your `package.json` file, which can lead to errors when the MCP SDK tries to use modern JavaScript modules. Always double-check this configuration.
+*   **Tip for better results:** Ensure Node.js is correctly installed and accessible from your terminal before starting. You can check by typing `node -v` and `npm -v`. Keeping your Node.js and npm versions up-to-date can also prevent compatibility issues.

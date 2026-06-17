@@ -2608,8 +2608,104 @@
     "ce9e7b54587c1aaef82e643abdeb67e942b383ef8fecaad936a6b2af2212a8f9": {
       "url": "https://news.ycombinator.com/item?id=48481400",
       "date": "2026-06-16"
+    },
+    "42a1fd23819d4ce8d4795a7ed24fadd484ed2556bd55d17b484ec946b087c9d8": {
+      "url": "https://github.com/ai-boost/awesome-prompts",
+      "date": "2026-06-17"
+    },
+    "d6426e9bc1f1dd172c1d9ef5eaaa1fccee25372ced0aada62e5a71da20adb3b6": {
+      "url": "https://github.com/awesome-opencode/awesome-opencode",
+      "date": "2026-06-17"
+    },
+    "0ad7ab3d65b2ec950507a9f0849e35d8c4058f7a544c6ddb84bef225a1c2624f": {
+      "url": "https://github.com/freestylefly/awesome-gpt-image-2",
+      "date": "2026-06-17"
+    },
+    "a8c9ffd9a032d0a3d10b7e1593d6a703d28155cf998d092086c2c8969cb13e74": {
+      "url": "https://github.com/tauri-apps/awesome-tauri",
+      "date": "2026-06-17"
+    },
+    "0324644180e42841c357915a4e0cb157115767cb2955e4765db7c4ceae960168": {
+      "url": "https://github.com/YouMind-OpenLab/awesome-gpt-image-2",
+      "date": "2026-06-17"
+    },
+    "9c1976666fddeb416e9f0191da68318867fdd4907423c61fda3e32bb80c2f197": {
+      "url": "https://github.com/trungdq88/Awesome-Black-Friday-Cyber-Monday",
+      "date": "2026-06-17"
+    },
+    "b32d500fcf98230523060fa74ddfa1c9c7b4ee976b6ce898b8f9d2a1ca1c9752": {
+      "url": "https://github.com/dhamaniasad/awesome-postgres",
+      "date": "2026-06-17"
+    },
+    "18a9cd5fd206a714582a20f89f7d23ecb5576ee4a47381f1e35d7464e0d17089": {
+      "url": "https://github.com/wsvincent/awesome-django",
+      "date": "2026-06-17"
+    },
+    "a36184dbd23fd406b5004e106cd118ad8713b1a6c3af913a428da81055d2fbe9": {
+      "url": "https://github.com/edoardottt/awesome-hacker-search-engines",
+      "date": "2026-06-17"
+    },
+    "6770f201e95c78a744d8f6e42f106e35fc7dcc524fdd9ff3c5ff2af9d8989217": {
+      "url": "https://github.com/paralax/awesome-honeypots",
+      "date": "2026-06-17"
+    },
+    "65710a973258c00fda97b275cb39a148d1a4470e450266e6186386b242d4be51": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1mjdyvl/i_asked_chatgpt_to_explain_my_job_to_a_5yearold",
+      "date": "2026-06-17"
+    },
+    "00140e95fa805d296343e54af8780e36fcdb4afd795fd9e0829241f10ebd8214": {
+      "url": "https://dev.to/debs_obrien/building-your-first-mcp-server-a-beginners-tutorial-5fag",
+      "date": "2026-06-17"
+    },
+    "6d84c860baa5311d1e0fcec13e539b428a8d37d4c97126c53e09639eb31e9621": {
+      "url": "https://github.com/soxoj/maigret",
+      "date": "2026-06-17"
+    },
+    "46821aaa67fd04255b44f591ce1c2009ea8ff6f30af025f44bda96d367171b00": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1lwr2m2/how_we_treated_ai_in_2023_vs_2025",
+      "date": "2026-06-17"
+    },
+    "ed122b23d9a2462a353c5d33ec58b57f67c896379b77278cf67abc7abc06ef3b": {
+      "url": "https://dev.to/shayy/the-one-advice-id-give-my-past-self-build-boring-sht-that-sells-1209",
+      "date": "2026-06-17"
+    },
+    "0b0d95fa9836e34c24fb56ce7b137d422f2bb04d26ddafdda5297535264b3e6d": {
+      "url": "https://github.com/zeromicro/go-zero",
+      "date": "2026-06-17"
+    },
+    "0a9240d104d675b294d4086b18bea2c36362f2a039c967a5415cbfccadecf633": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1rh60py/cancel_your_chatgpt_plus_burn_their_compute_on",
+      "date": "2026-06-17"
+    },
+    "c374167135a6f32095c1dc5a50f3038ffe55ea6b6c1bb7e3ae5a9112e3a7fa9a": {
+      "url": "https://dev.to/thebitforge/skills-they-dont-teach-you-in-tutorials-but-companies-actually-pay-for-11om",
+      "date": "2026-06-17"
+    },
+    "d72362e800af675f3243c44763ddbcfca38dfdc4584f5b39afb2f198a0baeaa6": {
+      "url": "https://github.com/tinygrad/tinygrad",
+      "date": "2026-06-17"
+    },
+    "e3a626fae33c5fc2cdfb1e8bd7638b7b0594bf92719651fb9fc58d45eec19718": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1naxubm/dont_worry_our_jobs_are_safe",
+      "date": "2026-06-17"
+    },
+    "f2042a933355e0ab7e430ccb8856e80c3ed8ca697ec44bd08cbc5c3443d2d411": {
+      "url": "https://dev.to/aws/why-does-ai-forget-what-you-said-and-how-to-fix-it-52f6",
+      "date": "2026-06-17"
+    },
+    "d0d951d500e0a6ae2a0e61f3201cbd296b20de18ae9f7a5c2978a0f05911519a": {
+      "url": "https://github.com/motiondivision/motion",
+      "date": "2026-06-17"
+    },
+    "2b56db81e6e0d1ac91b9ef10472a3feaa314b774c26ba703339044cf1bb6deff": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1life5p/it_happens",
+      "date": "2026-06-17"
+    },
+    "cdb706bb53cbaa8cb91960cb3c5d99fbfb52e4f408f40dd662847b61572499e6": {
+      "url": "https://dev.to/divyasinghdev/grasp-articulate-refine-your-real-time-voice-coach-for-smarter-recall-academic-mastery-p95",
+      "date": "2026-06-17"
     }
   },
-  "backfillPage": 6,
+  "backfillPage": 7,
   "dailyPage": 0
 }
