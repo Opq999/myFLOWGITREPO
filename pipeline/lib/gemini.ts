@@ -85,11 +85,12 @@ const RATE_LIMITED = Symbol('rate-limited');
 let lastCallAt = 0;
 
 /** Retries connection-level failures (DNS, timeouts, flaky links) with backoff. */
-async function fetchWithRetry(url: string, init: RequestInit): Promise<Response> {
+async function fetchWithRetry(url: string, init: Omit<RequestInit, 'signal'>): Promise<Response> {
   const delaysMs = [5_000, 20_000, 60_000];
   for (let attempt = 0; ; attempt++) {
     try {
-      return await fetch(url, init);
+      // Fresh AbortSignal per attempt — a timed-out signal can't be reused.
+      return await fetch(url, { ...init, signal: AbortSignal.timeout(90_000) });
     } catch (err) {
       if (attempt >= delaysMs.length) throw err;
       console.warn(`[gemini] network error, retrying in ${delaysMs[attempt] / 1000}s…`);
