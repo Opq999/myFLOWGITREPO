@@ -2744,8 +2744,88 @@
     "ffc4c951795ec8c088f9b69454693ae1120fdb4cf94cd7079e5eb12a8e402d6a": {
       "url": "https://www.latent.space/p/ainews-glm-52-the-top-frontend-coding",
       "date": "2026-06-17"
+    },
+    "ff17cd51a2979e8672376773c6bcb6a4ce835044bbd6177046936c027c1de86a": {
+      "url": "https://github.com/yzfly/Awesome-MCP-ZH",
+      "date": "2026-06-17"
+    },
+    "ec77257cc0ce5b3eaaacb8d59bb6198afddb36809c158d21a029ea20145c51f3": {
+      "url": "https://github.com/hijkzzz/Awesome-LLM-Strawberry",
+      "date": "2026-06-17"
+    },
+    "e64e5e58c82a3d199a9ab57ac7f989db922363cc5d81918342233be362087329": {
+      "url": "https://github.com/punkpeye/awesome-mcp-clients",
+      "date": "2026-06-17"
+    },
+    "c87099e6d9d3c127dc0b4003d86aac5b03d497bc2140b41c6a1475446ba05745": {
+      "url": "https://github.com/hongleizhang/RSPapers",
+      "date": "2026-06-17"
+    },
+    "2e59c325a527c7388c6d18c646b92f356df2baaaeaf8ba36e735241fa8964abb": {
+      "url": "https://github.com/reorx/awesome-chatgpt-api",
+      "date": "2026-06-17"
+    },
+    "00a13632669d98d0bc72eacabc1e516d99e68512c6b91189bde15b492ef71f42": {
+      "url": "https://github.com/promptslab/Awesome-Prompt-Engineering",
+      "date": "2026-06-17"
+    },
+    "89e37030d83dd130c485be4e08fe84b1a53021bfdb2feba330740d2aaf374db4": {
+      "url": "https://github.com/ikaijua/Awesome-AITools",
+      "date": "2026-06-17"
+    },
+    "6524d0b7bbc1b98e551d6051453f3225bb99efe390938182e16bd5fb65b574f7": {
+      "url": "https://github.com/EwingYangs/awesome-open-gpt",
+      "date": "2026-06-17"
+    },
+    "925e916db5e83769ee80da1ab066ccd51ccd86949f6a7c7ccf3df9e90c6aefc4": {
+      "url": "https://github.com/dontriskit/awesome-ai-system-prompts",
+      "date": "2026-06-17"
+    },
+    "bd1dd98cbd319559e40780d2bddc64e88e92dc38934a997bc059245f708bf04f": {
+      "url": "https://github.com/godotengine/awesome-godot",
+      "date": "2026-06-17"
+    },
+    "6a3767031e349b8613eb87d76813e99ec0131e6b791943a0664f85a5b97c0e79": {
+      "url": "https://github.com/rothgar/awesome-tmux",
+      "date": "2026-06-17"
+    },
+    "51d0002439c7adc7a20880d2b12b7ee68d735d9d6d0727e2ac2f95e784464dc2": {
+      "url": "https://news.ycombinator.com/item?id=47195123",
+      "date": "2026-06-17"
+    },
+    "2acc04b0b3df3f958efb3c1ab7dc98c3ffdcd23396031a1c11a15a9a31aaf998": {
+      "url": "https://dev.to/copilotkit/google-maps-for-codebases-paste-a-github-url-ask-anything-3hk8",
+      "date": "2026-06-17"
+    },
+    "c0344b99cf81303436b4e0db0d17c9ec25990c7540831a47d0c21b2224b68735": {
+      "url": "https://github.com/simstudioai/sim",
+      "date": "2026-06-17"
+    },
+    "95b4d3646f420f33b1beacc386cf539212b3e523cefdded558445f2161edef90": {
+      "url": "https://news.ycombinator.com/item?id=46991591",
+      "date": "2026-06-17"
+    },
+    "2e0c586c3811e3f3f4c4dbb459e595371d41b6bde42ae88c2e4892fbe75a8c0f": {
+      "url": "https://dev.to/marcosomma/am-i-becoming-too-slow-for-the-ai-world-1904",
+      "date": "2026-06-17"
+    },
+    "5ce899049fafd6b381154186ebc8e82aabced29865e9d39ee1048cbac6aa58bb": {
+      "url": "https://github.com/hugohe3/ppt-master",
+      "date": "2026-06-17"
+    },
+    "5e9cdeba1efa8be8c1dafeb2aa59b798fd2359e676146c6d5ebc21c82ad3b350": {
+      "url": "https://news.ycombinator.com/item?id=45073589",
+      "date": "2026-06-17"
+    },
+    "4a15d644382b340dd91e4208a16af3db1f3cdb6f9a5a5b0b7f95abed9030cf16": {
+      "url": "https://dev.to/depapp/your-job-finder-companion-fpi",
+      "date": "2026-06-17"
+    },
+    "1d33fcd888f9f40f27b411651a5ea1e19bcc5ad7c845061b3c9ec9e92fb8a5c9": {
+      "url": "https://github.com/iOfficeAI/AionUi",
+      "date": "2026-06-17"
     }
   },
-  "backfillPage": 7,
+  "backfillPage": 8,
   "dailyPage": 1
 }

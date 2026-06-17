@@ -1,0 +1,76 @@
+---
+title: "Generate Editable PowerPoint Presentations with AI"
+description: "Transform any document into a natively editable PowerPoint presentation using AI. This workflow automates slide creation, saving you time on tedious tasks."
+category: "content-creation"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 30
+jobToBeDone: "Generate editable PowerPoint presentations from documents"
+tools:
+  - name: "ppt-master"
+    url: "https://github.com/hugohe3/ppt-master"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Claude"
+    url: "https://claude.ai"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "OpenAI"
+    url: "https://openai.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Gemini"
+    url: "https://gemini.google.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://github.com/hugohe3/ppt-master"
+  platform: "github"
+  author: "hugohe3"
+  postedAt: 2026-06-16
+score: 7
+ingestedAt: 2026-06-17
+nigeriaNotes: "The ppt-master tool is free and open-source. Free tiers of AI models like Claude, OpenAI, and Gemini can be used, though API costs might apply for extensive use. Data usage is minimal, primarily text-based for prompts and document content."
+tiktokUrl: ""
+published: false
+---
+
+## What you'll get
+You will generate a real, editable PowerPoint (.pptx) file from any document using AI. This approach automates the tedious process of creating slides, allowing you to focus on refining the content and design.
+
+## Tools you need
+*   **ppt-master** (free) - A Python-based tool that uses AI to convert documents into editable PowerPoint presentations.
+*   **Claude**, **OpenAI**, or **Gemini** (freemium) - Large Language Models (LLMs) that will process your document and generate presentation content.
+*   **Python** (free) - A programming language required to run the ppt-master tool.
+*   **PowerPoint** (paid/free viewer) - Software to open, view, and edit the generated .pptx file.
+
+## Steps
+1.  **Install Python** — If you don't have Python installed, download and install it from [python.org](https://www.python.org/). Ensure you check the box that says "Add Python to PATH" during installation.
+    You should see a confirmation message that Python has been successfully installed.
+2.  **Download ppt-master** — Navigate to the [ppt-master GitHub repository](https://github.com/hugohe3/ppt-master) and download the project files. You can do this by clicking the green "Code" button and selecting "Download ZIP". Extract the contents of the ZIP file to a folder on your computer.
+    You will have a new folder containing all the project files.
+3.  **Install Dependencies** — Open your command prompt or terminal, navigate to the extracted ppt-master folder using the `cd` command (e.g., `cd path/to/ppt-master`), and run the following command to install the necessary Python libraries:
+    ```
+    pip install -r requirements.txt
+    ```
+    You should see a list of packages being downloaded and installed.
+4.  **Prepare your document** — Have the document you want to convert into a presentation ready. This can be a text file, a markdown file, or another document format that can be easily processed.
+    Your document is ready for the next step.
+5.  **Configure AI Model Access** — The ppt-master tool requires access to an AI model. You'll need to set up API keys for Claude, OpenAI, or Gemini. The exact method for configuration is detailed in the `README.md` file within the ppt-master repository. This typically involves setting environment variables or creating a configuration file.
+    Your AI model access is configured.
+6.  **Generate the Presentation** — Run the main script from your terminal. The author doesn't specify the exact command for all document types, but a common pattern for generating a presentation from a text file would be:
+    ```
+    python ppt_master.py --input your_document.txt --output presentation.pptx
+    ```
+    Replace `your_document.txt` with your document's filename and `presentation.pptx` with your desired output filename. Refer to the `README.md` for specific commands based on your input document type and chosen AI model.
+    You should see output indicating the progress of the AI processing and file generation. Once complete, a `presentation.pptx` file will be created in the same directory.
+7.  **Review and Edit** — Open the generated `presentation.pptx` file in PowerPoint. The tool aims to create natively editable slides, so you can directly modify text, shapes, and animations.
+    You will see a PowerPoint file with slides generated from your document, ready for your edits.
+
+## Original source
+This workflow is based on the `ppt-master` project by Hugo He, available on GitHub. The project aims to leverage AI to create editable PowerPoint presentations directly from various documents, offering features like native shapes, animations, and speaker notes.
+
+## Notes & variations
+*   **Free Tier Viability**: This workflow is highly viable on free tiers. The `ppt-master` tool itself is open-source. Free tiers of AI models like Claude, OpenAI, and Gemini can be used, though be mindful of usage limits. For extensive use, consider sponsored API relay services mentioned in the project's README.
+*   **Common Pitfall**: Expecting a perfect, finished presentation immediately. The tool automates the heavy lifting, but manual refinement in PowerPoint is always necessary. The quality of the output depends on the complexity of your document and the AI model's capabilities.
+*   **Tip for Better Results**: Provide a well-structured and clear input document. The AI will perform better when it has distinct sections, headings, and clear points to extract. Experiment with different AI models (Claude, OpenAI, Gemini) to see which yields the best results for your specific document type.
