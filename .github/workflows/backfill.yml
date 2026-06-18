@@ -2,10 +2,10 @@ name: Backfill corpus
 
 # Builds the launch corpus: mines the past year's top posts, one page deeper
 # each day. Becomes a no-op automatically once 75 workflows are published
-# (CAPS.backfillTarget) — safe to leave enabled forever.
+# (CAPS.backfillTarget), safe to leave enabled forever.
 on:
   schedule:
-    # 11:30 UTC = 12:30 WAT, daily — well after the morning ingest run.
+    # 11:30 UTC = 12:30 WAT, daily, well after the morning ingest run.
     - cron: '30 11 * * *'
   workflow_dispatch: {}
 
@@ -33,7 +33,7 @@ jobs:
       - name: Run pipeline (backfill)
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          # Optional extra free-tier keys — each adds its own daily quota.
+          # Optional extra free-tier keys, each adds its own daily quota.
           GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
           GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
           GEMINI_API_KEY_4: ${{ secrets.GEMINI_API_KEY_4 }}
@@ -58,11 +58,11 @@ jobs:
           CLOUDFLARE_ACCOUNT_ID: cdd1130f0f80aa74d5fdea5759eb9c29
         run: |
           if [ "${{ steps.commit.outputs.published }}" = "0" ]; then
-            echo "Nothing published — skipping deploy."
+            echo "Nothing published, skipping deploy."
             exit 0
           fi
           if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
-            echo "CLOUDFLARE_API_TOKEN secret not set — skipping auto-deploy."
+            echo "CLOUDFLARE_API_TOKEN secret not set, skipping auto-deploy."
             exit 0
           fi
           npm run build

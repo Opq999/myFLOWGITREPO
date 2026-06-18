@@ -70,34 +70,34 @@ published: true
 You'll get a command-line proxy that automatically filters and compresses the output of common developer commands (like `ls`, `git status`, `cargo test`) before sending them to your AI coding assistant. This significantly reduces the number of tokens consumed by your Large Language Model (LLM) by 60-90%, leading to lower API costs and potentially faster responses. This approach works by intelligently reducing verbosity, making your AI interactions more efficient.
 
 ## Tools you need
-*   **rtk** (free) — The core CLI proxy tool that optimizes LLM token usage.
-*   **Homebrew** (free) — A package manager for macOS and Linux, recommended for easy installation of `rtk`.
-*   **curl** (free) — A command-line tool for downloading files, used for quick installation on Linux/macOS.
-*   **sh** (free) — A command-line interpreter (shell) used to execute installation scripts.
-*   **Cargo** (free) — Rust's package manager, an alternative installation method for `rtk`.
-*   **Claude AI** (freemium) — An AI assistant that `rtk` can proxy for, offering coding help.
-*   **GitHub Copilot** (paid) — An AI pair programmer that `rtk` can proxy for, enhancing coding efficiency.
-*   **Google Gemini** (freemium) — Google's AI assistant that `rtk` can proxy for, useful for coding tasks.
-*   **OpenAI** (paid) — Provides powerful AI models (like GPT-4) that `rtk` can proxy for, used in various AI coding tools.
-*   **Cursor** (freemium) — An AI-powered code editor that `rtk` can integrate with.
+*   **rtk** (free): The core CLI proxy tool that optimizes LLM token usage.
+*   **Homebrew** (free): A package manager for macOS and Linux, recommended for easy installation of `rtk`.
+*   **curl** (free): A command-line tool for downloading files, used for quick installation on Linux/macOS.
+*   **sh** (free): A command-line interpreter (shell) used to execute installation scripts.
+*   **Cargo** (free): Rust's package manager, an alternative installation method for `rtk`.
+*   **Claude AI** (freemium): An AI assistant that `rtk` can proxy for, offering coding help.
+*   **GitHub Copilot** (paid): An AI pair programmer that `rtk` can proxy for, enhancing coding efficiency.
+*   **Google Gemini** (freemium): Google's AI assistant that `rtk` can proxy for, useful for coding tasks.
+*   **OpenAI** (paid): Provides powerful AI models (like GPT-4) that `rtk` can proxy for, used in various AI coding tools.
+*   **Cursor** (freemium): An AI-powered code editor that `rtk` can integrate with.
 
 ## Steps
 
-1.  **Open your terminal** — On macOS, find "Terminal" in Applications > Utilities. On Linux, it's usually called "Terminal" or "Konsole". On Windows, use WSL (Windows Subsystem for Linux) for the best experience, or Command Prompt/PowerShell.
+1.  **Open your terminal**: On macOS, find "Terminal" in Applications > Utilities. On Linux, it's usually called "Terminal" or "Konsole". On Windows, use WSL (Windows Subsystem for Linux) for the best experience, or Command Prompt/PowerShell.
 
-2.  **Install rtk using Homebrew (macOS/Linux)** — If you have Homebrew installed, this is the easiest way. If not, proceed to the next step for a quick install.
+2.  **Install rtk using Homebrew (macOS/Linux)**: If you have Homebrew installed, this is the easiest way. If not, proceed to the next step for a quick install.
     ```bash
     brew install rtk
     ```
     You should see output indicating `rtk` is being downloaded and installed. If Homebrew isn't installed, you'll get an error; in that case, use the `curl` method below.
 
-3.  **Alternatively, quick install rtk (Linux/macOS)** — If you don't use Homebrew or prefer a direct install, use this command. It downloads and runs an installation script.
+3.  **Alternatively, quick install rtk (Linux/macOS)**: If you don't use Homebrew or prefer a direct install, use this command. It downloads and runs an installation script.
     ```bash
     curl -fsSL https://raw.githubusercontent.com/rtk-ai/rtk/refs/heads/master/install.sh | sh
     ```
     You'll see messages about `rtk` being installed, typically to `~/.local/bin`.
 
-4.  **Add rtk to your system PATH (if needed)** — If the quick install placed `rtk` in `~/.local/bin` and your system doesn't automatically find commands there, you need to add it to your PATH.
+4.  **Add rtk to your system PATH (if needed)**: If the quick install placed `rtk` in `~/.local/bin` and your system doesn't automatically find commands there, you need to add it to your PATH.
     ```bash
     echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc # For Bash users
     # OR
@@ -105,7 +105,7 @@ You'll get a command-line proxy that automatically filters and compresses the ou
     ```
     After running this, close and reopen your terminal, or run `source ~/.bashrc` (or `~/.zshrc`) to apply the change immediately. You won't see direct output, but the command will be added to your shell's configuration file.
 
-5.  **Verify rtk installation** — Check that `rtk` is correctly installed and working.
+5.  **Verify rtk installation**: Check that `rtk` is correctly installed and working.
     ```bash
     rtk --version
     ```
@@ -116,7 +116,7 @@ You'll get a command-line proxy that automatically filters and compresses the ou
     ```
     You should see a table or summary of estimated token savings. If you get an error like "command not found", revisit step 4. If it shows stats, `rtk` is ready.
 
-6.  **Initialize rtk for your AI coding assistant** — `rtk` needs to know which AI tool it should proxy for. The default is for Claude Code/Copilot.
+6.  **Initialize rtk for your AI coding assistant**: `rtk` needs to know which AI tool it should proxy for. The default is for Claude Code/Copilot.
     ```bash
     rtk init -g
     ```
@@ -132,7 +132,7 @@ You'll get a command-line proxy that automatically filters and compresses the ou
     ```
     You should see a confirmation message indicating that `rtk` has been initialized for your chosen agent. This sets up the global proxy.
 
-7.  **Use your AI coding assistant as usual** — Once `rtk` is initialized, it works in the background. Continue using your preferred AI coding assistant (e.g., Claude Code, GitHub Copilot, Gemini CLI) for your development tasks.
+7.  **Use your AI coding assistant as usual**: Once `rtk` is initialized, it works in the background. Continue using your preferred AI coding assistant (e.g., Claude Code, GitHub Copilot, Gemini CLI) for your development tasks.
     You won't see `rtk` directly, but it will automatically intercept and optimize the output of common commands (like `ls`, `git status`, `cargo test`) before they reach your AI's context, reducing token usage. The expected result is that your AI assistant will receive more concise information, potentially leading to faster and more cost-effective interactions.
 
 ## Original source

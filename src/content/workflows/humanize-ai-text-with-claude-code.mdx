@@ -42,17 +42,17 @@ published: true
 You'll get AI-generated text that reads more naturally and authentically, free from common "AI-isms" like repetitive phrasing, vague attributions, and overly formal language. This approach works by leveraging a specialized "skill" that analyzes and rewrites text based on a comprehensive guide of AI writing patterns, ensuring a more human-like output.
 
 ## Tools you need
-*   **Claude Code** (freemium) — A local environment for running Claude AI skills, used here to host the humanizer tool.
-*   **OpenCode** (free) — An open-source alternative environment for running Claude AI skills, compatible with Claude Code skills.
-*   **Claude** (freemium) — The underlying AI model that powers the humanization process.
+*   **Claude Code** (freemium): A local environment for running Claude AI skills, used here to host the humanizer tool.
+*   **OpenCode** (free): An open-source alternative environment for running Claude AI skills, compatible with Claude Code skills.
+*   **Claude** (freemium): The underlying AI model that powers the humanization process.
 
 ## Steps
 
-1.  **Prepare your environment** — Ensure you have either Claude Code or OpenCode installed on your computer. These are local environments that allow you to run AI skills. The author doesn't provide installation steps for these tools themselves. For OpenCode, you can find setup instructions on its official GitHub page.
+1.  **Prepare your environment**: Ensure you have either Claude Code or OpenCode installed on your computer. These are local environments that allow you to run AI skills. The author doesn't provide installation steps for these tools themselves. For OpenCode, you can find setup instructions on its official GitHub page.
 
     You should see a working Claude Code or OpenCode environment, ready to accept commands.
 
-2.  **Install the Humanizer skill** — Open your terminal or command prompt. To install the Humanizer skill into Claude Code, type or paste the following commands one by one and press Enter after each:
+2.  **Install the Humanizer skill**: Open your terminal or command prompt. To install the Humanizer skill into Claude Code, type or paste the following commands one by one and press Enter after each:
 
     ```bash
     mkdir -p ~/.claude/skills
@@ -70,7 +70,7 @@ You'll get AI-generated text that reads more naturally and authentically, free f
 
     You should see messages indicating the repository is cloning and files are being received. A new folder named `humanizer` will appear inside your `~/.claude/skills` (or `~/.config/opencode/skills`) directory.
 
-3.  **Calibrate your writing voice (optional but recommended)** — To help the skill match your personal writing style, provide a sample of your own writing. In your Claude Code or OpenCode interface, type or paste this prompt, replacing `[paste 2-3 paragraphs of your own writing here]` with your actual text:
+3.  **Calibrate your writing voice (optional but recommended)**: To help the skill match your personal writing style, provide a sample of your own writing. In your Claude Code or OpenCode interface, type or paste this prompt, replacing `[paste 2-3 paragraphs of your own writing here]` with your actual text:
 
     ```
     /humanizer Here's a sample of my writing for voice matching:
@@ -79,7 +79,7 @@ You'll get AI-generated text that reads more naturally and authentically, free f
 
     The model will process your input. While the exact response isn't specified, you can expect an acknowledgment that your writing style has been noted or that it's ready for the next step.
 
-4.  **Humanize your AI-generated text** — Now, paste the AI-generated text you want to humanize. In your Claude Code or OpenCode interface, use one of these commands:
+4.  **Humanize your AI-generated text**: Now, paste the AI-generated text you want to humanize. In your Claude Code or OpenCode interface, use one of these commands:
 
     ```
     /humanizer [paste your AI-generated text here]

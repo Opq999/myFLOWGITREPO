@@ -5,7 +5,7 @@ interface Props {
 }
 const { title, url } = Astro.props;
 
-const whatsapp = `https://wa.me/?text=${encodeURIComponent(`${title} — ${url}`)}`;
+const whatsapp = `https://wa.me/?text=${encodeURIComponent(`${title}, ${url}`)}`;
 const x = `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`;
 ---
 

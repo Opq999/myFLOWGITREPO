@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 #
-# Commits freshly-generated pipeline content and pushes it to main — safely.
+# Commits freshly-generated pipeline content and pushes it to main, safely.
 #
 # WHY THIS EXISTS: the daily-ingest and backfill workflows used to end each run
 # with a bare `git push`. If main advanced between the runner's checkout and its
-# push (a manual commit, or — before the concurrency group — the sibling
+# push (a manual commit, or, before the concurrency group, the sibling
 # workflow), the push was rejected non-fast-forward, the step failed, the deploy
 # was skipped, and a whole run's published workflows were silently dropped.
 # (Observed 2026-06-17 on Daily ingest #15.) This script makes the push
@@ -42,10 +42,10 @@ else
       pushed=true
       break
     fi
-    echo "push attempt ${attempt} rejected — rebasing onto origin/main and retrying"
+    echo "push attempt ${attempt} rejected, rebasing onto origin/main and retrying"
     if ! git pull --rebase origin main; then
       git rebase --abort 2>/dev/null || true
-      echo "rebase onto origin/main failed (conflict) — aborting without pushing"
+      echo "rebase onto origin/main failed (conflict), aborting without pushing"
       exit 1
     fi
   done

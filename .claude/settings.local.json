@@ -4,5 +4,6 @@
       "PowerShell",
       "Bash"
     ]
-  }
+  },
+  "enableAllProjectMcpServers": true
 }

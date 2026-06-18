@@ -12,7 +12,7 @@ interface Props {
 
 const { title, description = SITE.description, ogImage } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
-const fullTitle = title === SITE.name ? `${SITE.name} — ${SITE.tagline}` : `${title} · ${SITE.name}`;
+const fullTitle = title === SITE.name ? `${SITE.name}, ${SITE.tagline}` : `${title} · ${SITE.name}`;
 ---
 
 <!doctype html>

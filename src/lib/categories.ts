@@ -10,7 +10,7 @@ export const CATEGORY_META: Record<Category, CategoryMeta> = {
   'content-creation': {
     label: 'Content Creation',
     blurb:
-      'Turn one piece of content into many — videos into posts, ideas into scripts, drafts into polished work — with AI doing the heavy lifting.',
+      'Turn one piece of content into many, videos into posts, ideas into scripts, drafts into polished work, with AI doing the heavy lifting.',
     emoji: '✍️',
   },
   freelancing: {
@@ -22,7 +22,7 @@ export const CATEGORY_META: Record<Category, CategoryMeta> = {
   'academic-research': {
     label: 'Academic & Research',
     blurb:
-      'Study smarter — summarize lectures, digest papers, prepare for exams and structure research with free AI tools.',
+      'Study smarter, summarize lectures, digest papers, prepare for exams and structure research with free AI tools.',
     emoji: '🎓',
   },
   'job-hunting': {
@@ -34,13 +34,13 @@ export const CATEGORY_META: Record<Category, CategoryMeta> = {
   'sme-operations': {
     label: 'SME Operations',
     blurb:
-      'Run a leaner business — customer replies, bookkeeping, inventory, marketing and daily admin handled with AI on a budget.',
+      'Run a leaner business, customer replies, bookkeeping, inventory, marketing and daily admin handled with AI on a budget.',
     emoji: '🏪',
   },
   coding: {
     label: 'Coding',
     blurb:
-      'Ship software faster — debugging, code review, building features and learning to code with AI assistants.',
+      'Ship software faster, debugging, code review, building features and learning to code with AI assistants.',
     emoji: '💻',
   },
 };

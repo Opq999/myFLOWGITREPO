@@ -4,7 +4,7 @@ import { sleep } from './utils';
 /**
  * Returns the first JSON object in the model output by slicing from the first
  * `{` to the last `}`. This tolerates a ```` ```json ```` wrapper without a
- * global fence strip — stripping all fences would also destroy the code blocks
+ * global fence strip, stripping all fences would also destroy the code blocks
  * inside the drafted body string (the bug that left workflows with bare `bash`
  * lines and crashed MDX on placeholders like `<session-id>`).
  */
@@ -23,7 +23,7 @@ export function extractJson(text: string): string {
  * inside a long `body` string (the recurring `Expected ',' or '}'` draft
  * failure). The bare parser error only gives a character offset, which is
  * useless in a log; surfacing the ~160 chars around it shows the exact
- * malformation — both in the run log and the draft-retry prompt — so the next
+ * malformation, both in the run log and the draft-retry prompt, so the next
  * failure is diagnosable instead of a guess.
  */
 export function parseModelJson<T>(rawOutput: string): T {
@@ -36,11 +36,11 @@ export function parseModelJson<T>(rawOutput: string): T {
     const window = Number.isNaN(pos)
       ? json.slice(0, 160)
       : json.slice(Math.max(0, pos - 80), pos + 80);
-    throw new Error(`${msg} — offending JSON near: …${window}…`);
+    throw new Error(`${msg}, offending JSON near: …${window}…`);
   }
 }
 
-/** Thrown when every fallback model is rate-limited — callers should stop the run gracefully. */
+/** Thrown when every fallback model is rate-limited, callers should stop the run gracefully. */
 export class GeminiQuotaError extends Error {
   constructor() {
     super('All Gemini models are rate-limited (free-tier quota likely exhausted for today).');
@@ -80,7 +80,7 @@ export function getApiKeys(): string[] {
 
 /**
  * A 429 is almost always a per-MINUTE limit (free tier is ~10-15 RPM per key),
- * not the daily cap. So we don't retire a (model, key) pair on a 429 — we put it
+ * not the daily cap. So we don't retire a (model, key) pair on a 429, we put it
  * on a short cooldown and round-robin to the next key. With several keys, while
  * one cools the others keep working, so we use each key's full DAILY quota
  * instead of throwing ~240 calls/key away on the first per-minute spike.
@@ -112,7 +112,7 @@ async function fetchWithRetry(url: string, init: Omit<RequestInit, 'signal'>): P
   const delaysMs = [5_000, 20_000, 60_000];
   for (let attempt = 0; ; attempt++) {
     try {
-      // Fresh AbortSignal per attempt — a timed-out signal can't be reused.
+      // Fresh AbortSignal per attempt, a timed-out signal can't be reused.
       return await fetch(url, { ...init, signal: AbortSignal.timeout(90_000) });
     } catch (err) {
       if (attempt >= delaysMs.length) throw err;
@@ -135,7 +135,7 @@ async function callModel(model: string, body: string, apiKey: string): Promise<s
       body,
     });
     // 429 = rate limit (usually per-minute): the caller cools this key and
-    // rotates to the next one immediately — no point sleeping here.
+    // rotates to the next one immediately, no point sleeping here.
     if (res.status === 429) return RATE_LIMITED;
     // 503 = transient overload: one quick retry, then rotate.
     if (res.status === 503) {
@@ -161,7 +161,7 @@ async function callModel(model: string, body: string, apiKey: string): Promise<s
  * Calls Gemini (free tier) and parses a strict-JSON response. Round-robins
  * across all keys (best model first) so no single key bunches against its
  * per-minute limit; a 429 just cools that key briefly. Only when EVERY
- * (model, key) pair is cooling — and a wait-and-retry still gets nothing — do
+ * (model, key) pair is cooling, and a wait-and-retry still gets nothing, do
  * we conclude the daily quota is truly spent.
  */
 export async function geminiJson<T>(prompt: string): Promise<T> {
@@ -191,20 +191,20 @@ export async function geminiJson<T>(prompt: string): Promise<T> {
           }
           cool(model, k, RPM_COOLDOWN_MS);
         } catch (err) {
-          // A bad/invalid key (4xx) shouldn't kill the run — sideline it for the run.
+          // A bad/invalid key (4xx) shouldn't kill the run, sideline it for the run.
           const msg = err instanceof Error ? err.message : String(err);
           if (!/Gemini API error 4/.test(msg)) throw err;
-          console.warn(`[gemini] key ${k + 1} on ${model} errored (${msg.slice(0, 80)}) — sidelining`);
+          console.warn(`[gemini] key ${k + 1} on ${model} errored (${msg.slice(0, 80)}), sidelining`);
           cool(model, k, 24 * 60 * 60 * 1000);
         }
       }
     }
     // Every pair is cooling. If a cooldown expires soon, wait it out once and
-    // retry — that's a per-minute spike clearing. If not, the day is done.
+    // retry, that's a per-minute spike clearing. If not, the day is done.
     const soonest = Math.min(...cooldownUntil.values());
     const waitMs = soonest - Date.now();
     if (waitMs > 0 && waitMs <= RPM_COOLDOWN_MS + 5_000) {
-      console.warn(`[gemini] all keys cooling — waiting ${Math.ceil(waitMs / 1000)}s for the per-minute window to clear`);
+      console.warn(`[gemini] all keys cooling, waiting ${Math.ceil(waitMs / 1000)}s for the per-minute window to clear`);
       await sleep(waitMs + 1_000);
       stall++;
       continue;

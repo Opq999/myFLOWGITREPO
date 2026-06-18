@@ -38,32 +38,32 @@ published: true
 You'll learn the foundational concepts and setup for creating a Python-based AI assistant that operates completely offline, without needing internet access, API keys, or cloud services. This approach gives you full control over your data, ensures privacy, and eliminates per-message costs, making it ideal for sensitive applications or areas with unreliable internet.
 
 ## Tools you need
-*   **Python** (free) — The programming language used to build the assistant's core logic.
-*   **Ollama** (free) — An open-source tool for running large language models locally on your computer, used here as an optional component for the AI assistant.
+*   **Python** (free): The programming language used to build the assistant's core logic.
+*   **Ollama** (free): An open-source tool for running large language models locally on your computer, used here as an optional component for the AI assistant.
 
 ## Steps
 
-1.  **Prepare your Python development environment** — Install Python on your computer. This is the programming language you'll use to write your assistant.
+1.  **Prepare your Python development environment**: Install Python on your computer. This is the programming language you'll use to write your assistant.
 
     *   **To do:** Download the latest version of Python from the official website and follow the installation instructions for your operating system. Ensure you check the box to "Add Python to PATH" during installation if on Windows.
     *   **You should see:** Python successfully installed. You can verify this by opening your terminal or command prompt and typing `python --version` (or `python3 --version`), which should display the installed Python version.
 
-2.  **Install Ollama for local LLMs** — Ollama allows you to run large language models (LLMs) directly on your computer, enabling offline AI capabilities.
+2.  **Install Ollama for local LLMs**: Ollama allows you to run large language models (LLMs) directly on your computer, enabling offline AI capabilities.
 
     *   **To do:** Go to the Ollama website, download the installer for your operating system (Windows, macOS, Linux), and run it. Follow the on-screen prompts to complete the installation.
     *   **You should see:** Ollama installed and running in the background. On macOS, you'll see an icon in your menu bar. On Windows, it might run as a background service.
 
-3.  **Download a local language model** — Before your assistant can use an LLM, you need to download one using Ollama.
+3.  **Download a local language model**: Before your assistant can use an LLM, you need to download one using Ollama.
 
     *   **To do:** Open your terminal or command prompt and type `ollama run llama2`. This command will download the `llama2` model (a popular open-source LLM) if you don't have it already, and then start an interactive chat session with it. You can type `bye` to exit the chat.
     *   **You should see:** Ollama downloading the `llama2` model (this might take some time depending on your internet speed and the model size) and then a prompt where you can chat with the model. Once you type `bye`, the session will end.
 
-4.  **Start your AI assistant project** — Create a new Python file where you will write the code for your offline assistant.
+4.  **Start your AI assistant project**: Create a new Python file where you will write the code for your offline assistant.
 
     *   **To do:** Open a text editor (like VS Code, Sublime Text, or even Notepad) and create a new file named `offline_assistant.py` in a folder of your choice. Save the empty file.
     *   **You should see:** An empty Python file named `offline_assistant.py` ready for your code.
 
-5.  **Implement the core Intent Scoring logic** — The author built a custom, dependency-free intent scoring algorithm using string matching to understand user queries without heavy NLP libraries. This involves checking for exact word matches, prefix matches, and typo tolerance.
+5.  **Implement the core Intent Scoring logic**: The author built a custom, dependency-free intent scoring algorithm using string matching to understand user queries without heavy NLP libraries. This involves checking for exact word matches, prefix matches, and typo tolerance.
 
     *   **To do:** The author's example code for their `_score_intent` function is provided below. This function takes user input (tokenized words and full text) and a list of predefined patterns, then calculates a score based on how well the input matches these patterns. The author doesn't provide the full class structure or the `_edit_distance` function; you would need to define your own `patterns` (lists of keywords/phrases) and implement a simple `_edit_distance` function (e.g., Levenshtein distance) to make this runnable within a complete assistant.
 
@@ -86,14 +86,14 @@ You'll learn the foundational concepts and setup for creating a Python-based AI 
 
     *   **You should see:** You will have a Python function defined in your `offline_assistant.py` file that can score how well a user's input matches predefined intent patterns, forming the basis of your assistant's understanding.
 
-6.  **Implement the Hybrid Confidence blending** — The author's system blends confidence scores from keyword matching with an optional machine learning (ML) classifier. This allows the system to decide when to trust a highly confident ML prediction versus a strong keyword match.
+6.  **Implement the Hybrid Confidence blending**: The author's system blends confidence scores from keyword matching with an optional machine learning (ML) classifier. This allows the system to decide when to trust a highly confident ML prediction versus a strong keyword match.
 
     *   **To do:** The author's example code for their `_blend_with_ml` function is provided below. This function takes the text, the intent identified by keywords, and its confidence, then blends it with an ML classifier's prediction. The author doesn't provide the `ml_classifier` object or how to train it; this snippet illustrates the logic for combining different confidence scores.
 
     ```python
     def _blend_with_ml(self, text: str, kw_intent: str, kw_conf: float):
         ml_intent, ml_conf = ml_classifier.predict(text)
-        if ml_conf >= 0.70: # ML very confident — trust it outright
+        if ml_conf >= 0.70: # ML very confident, trust it outright
             return ml_intent, ml_conf
         if ml_conf >= 0.35:
             if ml_intent == kw_intent: # Agreement - amplify the signal
@@ -103,7 +103,7 @@ You'll learn the foundational concepts and setup for creating a Python-based AI 
 
     *   **You should see:** You will have a Python function that can combine confidence scores from different intent detection methods, allowing your assistant to make more robust decisions about user intent.
 
-7.  **Integrate local LLM for advanced queries (optional)** — The author mentions that their assistant can "optionally talk to a local LLM (Ollama) when it's available." This means if the initial keyword-based intent scoring isn't sufficient, the query can be routed to a local LLM.
+7.  **Integrate local LLM for advanced queries (optional)**: The author mentions that their assistant can "optionally talk to a local LLM (Ollama) when it's available." This means if the initial keyword-based intent scoring isn't sufficient, the query can be routed to a local LLM.
 
     *   **To do:** To implement this, you would typically use Python's `requests` library (which you might need to `pip install requests`) to send HTTP requests to the Ollama API running locally on your machine. You would send the user's query to Ollama and process the LLM's response. The specific API endpoints and data formats are documented on the Ollama website.
     *   **You should see:** Your assistant gaining the ability to send queries to a local LLM and receive responses, significantly expanding its capacity to handle complex or open-ended questions.

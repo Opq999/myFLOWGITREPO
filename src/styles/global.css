@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
-/* ——— Type: two self-hosted variable fonts. Fraunces (expressive editorial
-   serif) for display, Hanken Grotesk for body. Both subset, ~35KB each. ——— */
+/* Type: two self-hosted variable fonts. Fraunces (expressive editorial
+   serif) for display, Hanken Grotesk for body. Both subset, ~35KB each. */
 @font-face {
   font-family: "Fraunces";
   font-style: normal;
@@ -23,7 +23,7 @@
   --font-display: "Fraunces", Georgia, "Times New Roman", serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
-  /* Paper canvas + surfaces — warm, bright, editorial */
+  /* Paper canvas + surfaces, warm, bright, editorial */
   --color-paper: #fbf9f4;
   --color-paper-2: #f3eee3;
   --color-surface: #ffffff;
@@ -47,7 +47,7 @@
   --color-volt-500: #e23a1c;
   --color-accent: #ff4d2e;
 
-  /* Category accents — re-tuned for AA contrast on light paper */
+  /* Category accents, re-tuned for AA contrast on light paper */
   --color-cat-content: #db2777;
   --color-cat-freelance: #b45309;
   --color-cat-academic: #2563eb;
@@ -56,7 +56,7 @@
   --color-cat-coding: #6d28d9;
 }
 
-/* ——— Canvas: warm paper with a whisper of grain ——— */
+/* Canvas: warm paper with a whisper of grain */
 body {
   background-color: var(--color-paper);
 }
@@ -70,7 +70,7 @@ body {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.025 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-/* ——— Per-category accent variable + thumbnail gradient ——— */
+/* Per-category accent variable + thumbnail gradient */
 [data-category="content-creation"] { --cat: var(--color-cat-content); }
 [data-category="freelancing"] { --cat: var(--color-cat-freelance); }
 [data-category="academic-research"] { --cat: var(--color-cat-academic); }
@@ -78,7 +78,7 @@ body {
 [data-category="sme-operations"] { --cat: var(--color-cat-sme); }
 [data-category="coding"] { --cat: var(--color-cat-coding); }
 
-/* ——— Marquee ticker (pure CSS) ——— */
+/* Marquee ticker (pure CSS) */
 .ticker {
   overflow: hidden;
   white-space: nowrap;
@@ -92,7 +92,7 @@ body {
   to { transform: translateX(-50%); }
 }
 
-/* ——— Hero glow blobs ——— */
+/* Hero glow blobs */
 .glow {
   position: absolute;
   border-radius: 9999px;
@@ -100,13 +100,13 @@ body {
   pointer-events: none;
 }
 
-/* ——— Outlined display text ——— */
+/* Outlined display text */
 .text-outline {
   color: transparent;
   -webkit-text-stroke: 2px var(--color-accent);
 }
 
-/* ——— Generated thumbnails ——— */
+/* Generated thumbnails */
 .wf-thumb {
   position: relative;
   overflow: hidden;
@@ -167,7 +167,7 @@ body {
   border-radius: 999px;
 }
 
-/* ——— Workflow cards ——— */
+/* Workflow cards */
 .workflow-card {
   position: relative;
   overflow: hidden;
@@ -185,7 +185,7 @@ body {
   transform: rotate(-6deg) scale(1.08) translateY(-3px);
 }
 
-/* ——— Bento category tiles ——— */
+/* Bento category tiles */
 .bento-tile {
   position: relative;
   overflow: hidden;
@@ -208,7 +208,7 @@ body {
   box-shadow: 0 20px 44px -20px color-mix(in srgb, var(--cat) 42%, transparent);
 }
 
-/* ——— Workflow body (MDX prose) ——— */
+/* Workflow body (MDX prose) */
 .workflow-body {
   line-height: 1.75;
   color: var(--color-ink-700);
@@ -295,7 +295,7 @@ body {
   border-radius: 0.3rem;
 }
 
-/* Prompt blocks: dark terminal windows — deliberate high-contrast moment */
+/* Prompt blocks: dark terminal windows, deliberate high-contrast moment */
 .workflow-body pre {
   position: relative;
   background: #14110d;
@@ -309,7 +309,7 @@ body {
   box-shadow: 0 16px 40px -20px rgba(20, 16, 13, 0.5);
 }
 .workflow-body pre::before {
-  content: "● ● ●   PROMPT — tap copy, paste into your AI tool";
+  content: "● ● ●   PROMPT: tap copy, paste into your AI tool";
   position: absolute;
   top: 0;
   left: 0;
@@ -354,7 +354,7 @@ body {
 }
 .copy-btn:hover { background: var(--color-volt-500); transform: scale(1.04); }
 
-/* ——— Reading progress bar (CSS scroll timeline, zero JS) ——— */
+/* Reading progress bar (CSS scroll timeline, zero JS) */
 .progress-bar {
   position: fixed;
   top: 0;
@@ -372,7 +372,7 @@ body {
   to { transform: scaleX(1); }
 }
 
-/* ——— Pagefind light theme ——— */
+/* Pagefind light theme */
 #search {
   --pagefind-ui-scale: 0.9;
   --pagefind-ui-primary: var(--color-ink-900);
@@ -384,12 +384,12 @@ body {
   --pagefind-ui-font: var(--font-sans);
 }
 
-/* ——— Form controls on light ——— */
+/* Form controls on light */
 select, input[type="email"], input[type="text"] {
   color-scheme: light;
 }
 
-/* ——— Motion respect ——— */
+/* Motion respect */
 @media (prefers-reduced-motion: reduce) {
   .ticker__track { animation: none; }
   .progress-bar { display: none; }

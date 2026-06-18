@@ -55,7 +55,7 @@ const workflows = (await getCollection('workflows', (e) => e.data.published)).so
     {workflows.map((w) => <WorkflowCard workflow={w} />)}
   </div>
   <p id="no-results" hidden class="mt-10 text-center text-ink-400">
-    No workflows match these filters yet. The library grows daily — check back tomorrow.
+    No workflows match these filters yet. The library grows daily, check back tomorrow.
   </p>
 </Base>
 

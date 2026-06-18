@@ -3,9 +3,9 @@
  * external account lives here, so launch config is a one-file edit.
  */
 export const SITE = {
-  /** Placeholder working name — final name decided before Phase 4 launch. */
+  /** Placeholder working name, final name decided before Phase 4 launch. */
   name: 'OPQAI',
-  tagline: 'Proven AI workflows — exact steps, exact prompts, real sources',
+  tagline: 'Proven AI workflows, exact steps, exact prompts, real sources',
   description:
     'A free library of reproducible AI workflows for students, freelancers and small businesses. Every workflow has exact steps, copy-paste prompts and a real human source.',
   /** Update when the custom domain is connected (keep astro.config.mjs `site` in sync). */
@@ -14,6 +14,10 @@ export const SITE = {
   buttondownUsername: '',
   /** Fill with your Tally form ID to enable the /submit embed. */
   tallyFormId: '',
+  /** WhatsApp number for the "Work with me" CTAs, E.164 digits only (no +), e.g. '2348012345678'. Empty ⇒ CTAs fall back to email. */
+  whatsappNumber: '2348179428064',
+  /** Contact email used as the fallback for service CTAs and on /submit. */
+  contactEmail: 'opeyemiolowosoke@gmail.com',
   /** Fill with your Cloudflare Web Analytics token to enable analytics. */
   cloudflareAnalyticsToken: '',
 };

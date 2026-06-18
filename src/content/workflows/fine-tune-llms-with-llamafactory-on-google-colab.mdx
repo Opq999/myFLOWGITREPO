@@ -45,28 +45,28 @@ You will learn how to use the LlamaFactory tool to fine-tune a large language mo
 
 ## Steps
 
-1.  **Open the LlamaFactory Colab Notebook** — Click on the provided Google Colab link to open the notebook in your browser. You will see a read-only version. Click on "File" and then "Save a copy in Drive" to get an editable version.
+1.  **Open the LlamaFactory Colab Notebook**: Click on the provided Google Colab link to open the notebook in your browser. You will see a read-only version. Click on "File" and then "Save a copy in Drive" to get an editable version.
     *   **Expected result:** A new tab opens with the LlamaFactory Colab notebook, ready for you to make changes.
 
-2.  **Connect to a Runtime with GPU** — In the Colab notebook, click the "Connect" button in the top right corner. If you don't have a GPU runtime, go to "Runtime" > "Change runtime type" and select "GPU" as the hardware accelerator.
+2.  **Connect to a Runtime with GPU**: In the Colab notebook, click the "Connect" button in the top right corner. If you don't have a GPU runtime, go to "Runtime" > "Change runtime type" and select "GPU" as the hardware accelerator.
     *   **Expected result:** The button turns into a green checkmark, indicating a successful connection to a computing instance with a GPU.
 
-3.  **Install LlamaFactory** — Run the first code cell in the notebook. This cell typically installs the LlamaFactory library and its dependencies. You'll see output indicating the installation progress.
+3.  **Install LlamaFactory**: Run the first code cell in the notebook. This cell typically installs the LlamaFactory library and its dependencies. You'll see output indicating the installation progress.
     *   **Expected result:** The installation completes without errors, and you'll see messages like "Successfully installed llama-factory-..." or similar.
 
-4.  **Prepare Your Dataset** — The notebook will guide you on how to prepare your dataset. This usually involves formatting your data into a specific structure (e.g., JSON or CSV) that LlamaFactory can understand. The exact format depends on the type of fine-tuning you are doing (e.g., supervised fine-tuning for dialogue).
+4.  **Prepare Your Dataset**: The notebook will guide you on how to prepare your dataset. This usually involves formatting your data into a specific structure (e.g., JSON or CSV) that LlamaFactory can understand. The exact format depends on the type of fine-tuning you are doing (e.g., supervised fine-tuning for dialogue).
     *   **Expected result:** Your dataset is ready and accessible, either uploaded to Colab or linked from a cloud storage service.
 
-5.  **Configure Fine-Tuning Parameters** — Locate the code cell that defines the training arguments. You will need to specify parameters such as the base model to fine-tune, the path to your dataset, the output directory for the fine-tuned model, and training hyperparameters (like learning rate, batch size, and number of epochs). The author doesn't share exact parameter values; you'll need to set these based on your specific needs and the model you choose.
+5.  **Configure Fine-Tuning Parameters**: Locate the code cell that defines the training arguments. You will need to specify parameters such as the base model to fine-tune, the path to your dataset, the output directory for the fine-tuned model, and training hyperparameters (like learning rate, batch size, and number of epochs). The author doesn't share exact parameter values; you'll need to set these based on your specific needs and the model you choose.
     *   **Expected result:** The configuration cell is updated with your chosen settings.
 
-6.  **Start the Fine-Tuning Process** — Execute the code cell responsible for starting the training. This will initiate the fine-tuning process using your dataset and configuration. You will see output in the console showing the progress, including metrics like loss.
+6.  **Start the Fine-Tuning Process**: Execute the code cell responsible for starting the training. This will initiate the fine-tuning process using your dataset and configuration. You will see output in the console showing the progress, including metrics like loss.
     *   **Expected result:** The training runs, and you observe progress updates in the output, indicating the model is learning from your data.
 
-7.  **Monitor Training (Optional)** — If the notebook includes integration with tools like TensorBoard or Wandb, you can run their respective cells to visualize the training progress, loss curves, and other metrics.
+7.  **Monitor Training (Optional)**: If the notebook includes integration with tools like TensorBoard or Wandb, you can run their respective cells to visualize the training progress, loss curves, and other metrics.
     *   **Expected result:** A dashboard or log appears showing real-time or historical training performance.
 
-8.  **Save and Download Your Model** — Once training is complete, the fine-tuned model will be saved. The notebook will typically provide instructions or code snippets to download the model files to your local machine.
+8.  **Save and Download Your Model**: Once training is complete, the fine-tuned model will be saved. The notebook will typically provide instructions or code snippets to download the model files to your local machine.
     *   **Expected result:** You have the fine-tuned model files ready for use.
 
 ## Original source

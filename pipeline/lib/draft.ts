@@ -29,8 +29,8 @@ export function buildDraftPrompt(c: Candidate, s: ScoreResult, promptDir?: strin
  * Use cases are deliberately NOT generated here: they're filled by the
  * pipeline:usecases top-up step that runs after every ingest. Keeping that extra
  * Gemini call off the publish path means a tight daily quota is spent scoring and
- * drafting (i.e. publishing) candidates first — never on use cases for an
- * already-decided publish — so quota exhaustion can't quietly suppress publishes.
+ * drafting (i.e. publishing) candidates first, never on use cases for an
+ * already-decided publish, so quota exhaustion can't quietly suppress publishes.
  * New workflows ship with `nigeriaUseCases: []` and the top-up backfills them.
  */
 export async function draftWorkflow(

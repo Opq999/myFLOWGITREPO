@@ -36,35 +36,35 @@ published: true
 You will get a security and quality report for your AI agent's plugins. This approach helps you move beyond guesswork and proactively identify risks and areas for improvement in your AI agent's capabilities.
 
 ## Tools you need
-*   **tessl-audit** (free) — A command-line tool to audit AI agent plugins for security, quality, and performance.
-*   **npm** (free) — A package manager for Node.js, used here to install and run tessl-audit.
+*   **tessl-audit** (free): A command-line tool to audit AI agent plugins for security, quality, and performance.
+*   **npm** (free): A package manager for Node.js, used here to install and run tessl-audit.
 
 ## Steps
-1.  **Install Node.js and npm** — If you don't have them, download and install Node.js from its official website. npm is included with Node.js.
+1.  **Install Node.js and npm**: If you don't have them, download and install Node.js from its official website. npm is included with Node.js.
     You should see Node.js and npm installed on your system.
-2.  **Install tessl-audit globally** — Open your terminal or command prompt and run the following command to install the tool:
+2.  **Install tessl-audit globally**: Open your terminal or command prompt and run the following command to install the tool:
 
     ```
     npm install -g tessl-audit
     ```
 
     You should see output indicating that tessl-audit has been successfully installed.
-3.  **Navigate to your Tessl project** — In your terminal, change the directory to the root of your Tessl project where your `tessl.json` file is located.
+3.  **Navigate to your Tessl project**: In your terminal, change the directory to the root of your Tessl project where your `tessl.json` file is located.
     Your terminal prompt should now show your project's root directory.
-4.  **Run the audit** — Execute the tessl-audit command in your project's root directory:
+4.  **Run the audit**: Execute the tessl-audit command in your project's root directory:
 
     ```
     npx tessl-audit
     ```
 
     You should see the tool start processing and then display a report within about 30 seconds. The report will include a breakdown of your project's context, warnings, and a posture summary.
-5.  **Review the security posture summary** — The report will list flagged plugins with warning codes and direct links to full security reports on the registry. Examine these findings to understand the security status (Advisory, Risky, or Critical).
+5.  **Review the security posture summary**: The report will list flagged plugins with warning codes and direct links to full security reports on the registry. Examine these findings to understand the security status (Advisory, Risky, or Critical).
     You should see a table or list detailing security statuses and links for further investigation.
-6.  **Check quality scores** — If any plugin has a quality score below 80%, it means the guidance it provides might be incomplete or poorly structured. The report will indicate this.
+6.  **Check quality scores**: If any plugin has a quality score below 80%, it means the guidance it provides might be incomplete or poorly structured. The report will indicate this.
     You should see quality indicators for your plugins.
-7.  **Examine uplift data** — The report will show if plugins have been evaluated for their impact on agent task performance. A lack of uplift data means you don't know if the plugin is helping or hindering.
+7.  **Examine uplift data**: The report will show if plugins have been evaluated for their impact on agent task performance. A lack of uplift data means you don't know if the plugin is helping or hindering.
     You should see information about whether plugins have performance uplift data.
-8.  **Take recommended actions** — Based on the report, you may need to optimize plugins, generate test scenarios, or run evaluations. The report might suggest specific CLI commands for these actions.
+8.  **Take recommended actions**: Based on the report, you may need to optimize plugins, generate test scenarios, or run evaluations. The report might suggest specific CLI commands for these actions.
     You should see suggestions for next steps, such as running optimization or evaluation commands.
 
 ## Original source

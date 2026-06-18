@@ -26,7 +26,7 @@ const goodDraft = {
   frontmatter: {
     title: 'Generate and send invoices in minutes with ChatGPT',
     description:
-      'Use ChatGPT to draft, itemize and format client invoices in minutes — a reproducible workflow for small business owners with free tools only.',
+      'Use ChatGPT to draft, itemize and format client invoices in minutes, a reproducible workflow for small business owners with free tools only.',
     category: 'sme-operations',
     difficulty: 'beginner',
     timeMinutes: 15,

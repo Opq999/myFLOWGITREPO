@@ -36,19 +36,19 @@ published: true
 This workflow enables you to add modern REST API capabilities to old desktop software that lacks native APIs. You'll be able to automate tasks like data extraction and compliance reporting by having AI agents control the legacy application's graphical user interface (GUI). This approach works by using AI to emulate human mouse and keyboard input, transforming mission-critical but outdated applications into automatable services.
 
 ## Tools you need
-*   **legacy-use** (free) — An open-source agentic API layer that lets AI agents control desktop software through emulated mouse and keyboard input.
-*   **GPT** (freemium) — An AI model (like ChatGPT) used to generate prompts and interact with the `legacy-use` agent.
+*   **legacy-use** (free): An open-source agentic API layer that lets AI agents control desktop software through emulated mouse and keyboard input.
+*   **GPT** (freemium): An AI model (like ChatGPT) used to generate prompts and interact with the `legacy-use` agent.
 
 ## Steps
-1.  **Set up legacy-use infrastructure** — The author mentions building infrastructure to connect to legacy systems (like RDP/VNC + VPNs) and handling queuing. This likely involves deploying the open-source `legacy-use` project on a server and configuring it to access your target legacy software. Consult the `legacy-use` documentation for specific setup instructions.
+1.  **Set up legacy-use infrastructure**: The author mentions building infrastructure to connect to legacy systems (like RDP/VNC + VPNs) and handling queuing. This likely involves deploying the open-source `legacy-use` project on a server and configuring it to access your target legacy software. Consult the `legacy-use` documentation for specific setup instructions.
 
     You should see `legacy-use` running and successfully connected to your legacy application.
 
-2.  **Connect an AI agent** — Integrate an AI model like GPT with your `legacy-use` setup. This typically involves configuring API keys and defining how the AI agent will interact with `legacy-use` to control the legacy software. The author doesn't share exact integration steps; refer to `legacy-use` documentation for details.
+2.  **Connect an AI agent**: Integrate an AI model like GPT with your `legacy-use` setup. This typically involves configuring API keys and defining how the AI agent will interact with `legacy-use` to control the legacy software. The author doesn't share exact integration steps; refer to `legacy-use` documentation for details.
 
     You should have your chosen AI model successfully sending commands to `legacy-use`.
 
-3.  **Define agent prompts for tasks** — Craft prompts that instruct the AI agent on what actions to perform within the legacy software. The agent will use `legacy-use` to emulate mouse and keyboard inputs based on these prompts. The author doesn't share example prompts; a starting point:
+3.  **Define agent prompts for tasks**: Craft prompts that instruct the AI agent on what actions to perform within the legacy software. The agent will use `legacy-use` to emulate mouse and keyboard inputs based on these prompts. The author doesn't share example prompts; a starting point:
 
     ```
     Navigate to the 'Customer Records' section in the legacy application.
@@ -58,11 +58,11 @@ This workflow enables you to add modern REST API capabilities to old desktop sof
 
     You should see the AI agent starting to interact with the legacy application as instructed by your prompt.
 
-4.  **Extract data and expose as REST API** — Configure `legacy-use` to extract specific data points from the legacy application's GUI and expose this data as a REST API endpoint. This allows other applications to programmatically access information from your legacy system. The author doesn't provide specific configuration steps for this; consult `legacy-use` documentation.
+4.  **Extract data and expose as REST API**: Configure `legacy-use` to extract specific data points from the legacy application's GUI and expose this data as a REST API endpoint. This allows other applications to programmatically access information from your legacy system. The author doesn't provide specific configuration steps for this; consult `legacy-use` documentation.
 
     You should have a new REST API endpoint available, providing data extracted from the legacy software.
 
-5.  **Implement guardrails** — Set up guardrails within `legacy-use` to monitor agent actions and intervene if something goes wrong. This ensures human oversight and prevents unintended consequences in mission-critical legacy systems. The author doesn't detail how to set up guardrails; refer to `legacy-use` documentation.
+5.  **Implement guardrails**: Set up guardrails within `legacy-use` to monitor agent actions and intervene if something goes wrong. This ensures human oversight and prevents unintended consequences in mission-critical legacy systems. The author doesn't detail how to set up guardrails; refer to `legacy-use` documentation.
 
     You should have the system configured to alert a human operator if the AI agent encounters an unexpected situation or error.
 

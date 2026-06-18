@@ -1,7 +1,7 @@
 /** All tunable pipeline knobs in one place (PRD section 7). */
 
 // Subreddits chosen to cover all six categories (coding, content-creation,
-// freelancing, academic-research, job-hunting, sme-operations) — breadth is the
+// freelancing, academic-research, job-hunting, sme-operations), breadth is the
 // cheapest lever on fresh-candidate supply.
 export const SUBREDDITS = [
   // AI / prompting

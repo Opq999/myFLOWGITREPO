@@ -1,6 +1,6 @@
 /**
  * Idempotent top-up: fills `nigeriaUseCases` into any published workflow that
- * lacks it. Safe to re-run anytime — it skips files that already have use cases,
+ * lacks it. Safe to re-run anytime, it skips files that already have use cases,
  * and stops cleanly when the Gemini free-tier quota is spent (re-run later to
  * finish the rest). It splices the YAML into the frontmatter only and never
  * touches the MDX body, so it can't introduce a build-breaking body regression.
@@ -43,14 +43,14 @@ async function main(): Promise<void> {
 
     const m = content.match(FRONTMATTER_RE);
     if (!m) {
-      console.warn(`[backfill] ${file}: no frontmatter block — skipping`);
+      console.warn(`[backfill] ${file}: no frontmatter block, skipping`);
       continue;
     }
     const [, fm, body] = m;
 
     if (/^nigeriaUseCases:/m.test(fm)) {
       already++;
-      continue; // already populated — idempotent
+      continue; // already populated, idempotent
     }
 
     const input = {
@@ -60,7 +60,7 @@ async function main(): Promise<void> {
       body,
     };
     if (!input.title) {
-      console.warn(`[backfill] ${file}: could not read title — skipping`);
+      console.warn(`[backfill] ${file}: could not read title, skipping`);
       continue;
     }
 
@@ -69,7 +69,7 @@ async function main(): Promise<void> {
       cases = await generateUseCases(input, { rethrowQuota: true });
     } catch (err) {
       if (err instanceof GeminiQuotaError) {
-        console.warn('[backfill] Gemini quota exhausted — stopping. Re-run later to finish the rest.');
+        console.warn('[backfill] Gemini quota exhausted, stopping. Re-run later to finish the rest.');
         break;
       }
       throw err;
@@ -77,7 +77,7 @@ async function main(): Promise<void> {
 
     if (cases.length === 0) {
       empty++;
-      console.warn(`[backfill] ${file}: no use cases produced — leaving for a later run`);
+      console.warn(`[backfill] ${file}: no use cases produced, leaving for a later run`);
       continue;
     }
 
@@ -99,7 +99,7 @@ async function main(): Promise<void> {
   }
 
   console.log(
-    `\n[backfill] done — filled ${filled}, already had ${already}, no-output ${empty}, of ${files.length} files.`
+    `\n[backfill] done, filled ${filled}, already had ${already}, no-output ${empty}, of ${files.length} files.`
   );
 }
 

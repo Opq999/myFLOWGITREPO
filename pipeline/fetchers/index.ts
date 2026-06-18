@@ -19,7 +19,7 @@ const SOURCES: [string, (opts: { backfill: boolean; page?: number }) => Promise<
 
 /**
  * Runs all fetchers sequentially (politeness); a failing source logs a
- * warning and contributes nothing — it never blocks the run (PRD Stage 5).
+ * warning and contributes nothing, it never blocks the run (PRD Stage 5).
  */
 export async function fetchAll(
   opts: { backfill: boolean; page?: number },

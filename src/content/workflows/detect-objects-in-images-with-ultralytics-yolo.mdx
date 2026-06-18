@@ -42,31 +42,31 @@ published: true
 You'll learn how to use Ultralytics YOLO to perform computer vision tasks like object detection on images. This workflow allows you to quickly apply powerful, pre-trained AI models to analyze visual content, identifying objects within them.
 
 ## Tools you need
-*   **Python** (free) — The programming language required to run Ultralytics YOLO.
-*   **PyTorch** (free) — An open-source machine learning framework that Ultralytics YOLO is built upon.
-*   **Ultralytics YOLO** (freemium) — A library providing state-of-the-art YOLO models for various computer vision tasks.
+*   **Python** (free): The programming language required to run Ultralytics YOLO.
+*   **PyTorch** (free): An open-source machine learning framework that Ultralytics YOLO is built upon.
+*   **Ultralytics YOLO** (freemium): A library providing state-of-the-art YOLO models for various computer vision tasks.
 
 ## Steps
 
-1.  **Install Python and PyTorch** — Ensure you have Python (version 3.8 or higher) and PyTorch (version 1.8 or higher) installed on your computer.
+1.  **Install Python and PyTorch**: Ensure you have Python (version 3.8 or higher) and PyTorch (version 1.8 or higher) installed on your computer.
     *   *How to do*: If you don't have Python, download it from `python.org`. For PyTorch, visit `pytorch.org/get-started/locally/` and follow the installation instructions for your operating system and preferred package manager (e.g., `pip install torch torchvision torchaudio`).
     *   *What you should see*: After installation, opening your command line or terminal and typing `python --version` should show your Python version, and `pip show torch` should show PyTorch details.
 
-2.  **Install Ultralytics YOLO** — Install the Ultralytics package, which includes all necessary requirements.
+2.  **Install Ultralytics YOLO**: Install the Ultralytics package, which includes all necessary requirements.
     *   *How to do*: Open your command line or terminal and type:
         ```
 pip install ultralytics
         ```
     *   *What you should see*: The command line will show packages being downloaded and installed. Once complete, you should see a message indicating successful installation.
 
-3.  **Perform object detection using the Command Line Interface (CLI)** — Use a pre-trained YOLO model to detect objects in an image directly from your terminal.
+3.  **Perform object detection using the Command Line Interface (CLI)**: Use a pre-trained YOLO model to detect objects in an image directly from your terminal.
     *   *How to do*: In your command line or terminal, paste and run this command:
         ```
 yolo predict model=yolo26n.pt source='https://ultralytics.com/images/bus.jpg'
         ```
     *   *What you should see*: The command will download the `yolo26n.pt` model (if not already present), process the image, and display output in the terminal, likely including a path to where the processed image with detected objects is saved. You can then open this image to see the results (e.g., a bus with bounding boxes around people, the bus itself, etc.).
 
-4.  **Perform object detection using Python code** — Integrate Ultralytics YOLO into a Python script for more control.
+4.  **Perform object detection using Python code**: Integrate Ultralytics YOLO into a Python script for more control.
     *   *How to do*: Open a text editor, paste the following code, and save it as a `.py` file (e.g., `detect_objects.py`). Then, run it from your terminal using `python detect_objects.py`.
         ```python
 from ultralytics import YOLO

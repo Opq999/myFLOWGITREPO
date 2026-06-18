@@ -40,23 +40,23 @@ published: true
 You will generate standardized, machine-readable architecture documentation files for each service in your microservices platform. This approach transforms static analysis by providing AI tools with crucial context, enabling them to detect systemic security failures and infrastructure issues that linters might miss.
 
 ## Tools you need
-*   **Gemini 3 Flash** (free) — A powerful large language model for understanding and generating text.
-*   **Claude Sonnet 4.6** (freemium) — Another advanced large language model, useful for complex reasoning and generation tasks.
-*   **Antigravity** (free) — An open-source AI coding assistant that orchestrates multiple AI agents.
-*   **Google Cloud Platform** (paid, but with free tier options) — The cloud environment where the microservices are deployed. Specific services mentioned include Cloud Run, Google Cloud Storage, and Vertex AI.
+*   **Gemini 3 Flash** (free): A powerful large language model for understanding and generating text.
+*   **Claude Sonnet 4.6** (freemium): Another advanced large language model, useful for complex reasoning and generation tasks.
+*   **Antigravity** (free): An open-source AI coding assistant that orchestrates multiple AI agents.
+*   **Google Cloud Platform** (paid, but with free tier options), The cloud environment where the microservices are deployed. Specific services mentioned include Cloud Run, Google Cloud Storage, and Vertex AI.
 
 ## Steps
-1.  **Set up Antigravity** — Follow the installation instructions for Antigravity on your local machine. This typically involves cloning the repository and installing dependencies.
+1.  **Set up Antigravity**: Follow the installation instructions for Antigravity on your local machine. This typically involves cloning the repository and installing dependencies.
     You should see the Antigravity project files on your computer.
-2.  **Configure AI Agents** — Within Antigravity, you will configure the AI agents. The author used Gemini 3 Flash and Claude Sonnet 4.6. You'll need to set up API keys for these models if they are not already configured.
+2.  **Configure AI Agents**: Within Antigravity, you will configure the AI agents. The author used Gemini 3 Flash and Claude Sonnet 4.6. You'll need to set up API keys for these models if they are not already configured.
     The configuration files should reflect your chosen AI models and API access.
-3.  **Define Documentation Standard** — Establish a clear standard for your architecture documentation. The author created `ARCHITECTURE.md` files with specific sections for global service mesh, topology, lifecycle status, security policies, and more. Decide on the structure and content you want for your documentation.
+3.  **Define Documentation Standard**: Establish a clear standard for your architecture documentation. The author created `ARCHITECTURE.md` files with specific sections for global service mesh, topology, lifecycle status, security policies, and more. Decide on the structure and content you want for your documentation.
     You will have a clear template or set of guidelines for the documentation.
-4.  **Initiate Autonomous Generation** — Direct the AI agent within Antigravity to inspect your microservices platform. The author's prompt was not explicitly shared, but the agent's task was to autonomously inspect each service, read source code, trace dependencies, and cross-reference against the documentation standard.
+4.  **Initiate Autonomous Generation**: Direct the AI agent within Antigravity to inspect your microservices platform. The author's prompt was not explicitly shared, but the agent's task was to autonomously inspect each service, read source code, trace dependencies, and cross-reference against the documentation standard.
     The AI agent will begin analyzing your codebase and infrastructure.
-5.  **Generate Architecture Files** — The AI agent, powered by Gemini and Claude, will iteratively generate structured `ARCHITECTURE.md` files for each microservice. These files will be committed directly to your code repositories.
+5.  **Generate Architecture Files**: The AI agent, powered by Gemini and Claude, will iteratively generate structured `ARCHITECTURE.md` files for each microservice. These files will be committed directly to your code repositories.
     You should find new `ARCHITECTURE.md` files in your service directories, containing structured information about each service's role and interactions.
-6.  **Integrate with AI Quality Pipeline** — Once generated, feed these architecture documents into your AI-powered quality pipeline. This provides the AI with the necessary context to perform deeper analysis beyond just code syntax.
+6.  **Integrate with AI Quality Pipeline**: Once generated, feed these architecture documents into your AI-powered quality pipeline. This provides the AI with the necessary context to perform deeper analysis beyond just code syntax.
     Your AI quality tools will now have architectural context for analysis.
 
 ## Original source

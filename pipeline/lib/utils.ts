@@ -35,7 +35,7 @@ export function normalizeUrl(raw: string): string {
   }
 }
 
-/** Bigram Dice coefficient, 0..1 — for fuzzy near-duplicate titles. */
+/** Bigram Dice coefficient, 0..1, for fuzzy near-duplicate titles. */
 export function titleSimilarity(a: string, b: string): number {
   const clean = (s: string) =>
     s

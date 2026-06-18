@@ -9,7 +9,7 @@ const { workflow } = Astro.props;
 const d = workflow.data;
 const meta = CATEGORY_META[d.category];
 
-// Derive favicon chips from the tools we already store — real logos, no
+// Derive favicon chips from the tools we already store, real logos, no
 // scraping pipeline. De-dupe by host, cap at 3, fall back gracefully on 404.
 const hosts: string[] = [];
 for (const tool of d.tools) {

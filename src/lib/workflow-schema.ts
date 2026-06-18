@@ -49,7 +49,7 @@ export const toolSchema = z.object({
 
 export const workflowSchema = z.object({
   title: z.string().min(10).max(120),
-  /** SEO meta description; drafting prompt targets 140–160 chars. */
+  /** SEO meta description; drafting prompt targets 140-160 chars. */
   description: z.string().min(50).max(200),
   category: z.enum(CATEGORIES),
   badge: z.enum(BADGES).default('sourced'),
@@ -63,7 +63,7 @@ export const workflowSchema = z.object({
     author: z.string().min(1),
     postedAt: z.coerce.date(),
   }),
-  /** Gemini quality score 1–10. */
+  /** Gemini quality score 1-10. */
   score: z.number().min(1).max(10),
   ingestedAt: z.coerce.date(),
   /** Free-tier viability, data usage, local payment compatibility. */

@@ -71,14 +71,14 @@ published: false
 You'll get automatically generated, contextual Git commit messages that accurately summarize your code changes. This approach leverages Large Language Models (LLMs) to understand your modifications, saving you time on writing commit messages and improving the clarity and consistency of your project's version history.
 
 ## Tools you need
-*   **Git Auto Commit (GAC)** (freemium) — A command-line tool that uses LLMs to generate Git commit messages from your code changes.
-*   **uvx** (free) — A lightweight tool for running Python packages without needing a full Python environment setup.
-*   **Git** (free) — The essential version control system for tracking changes in your code projects.
-*   **An LLM Provider** (free / freemium / paid) — A service or local application that provides access to Large Language Models, such as OpenAI, Anthropic, Gemini, Ollama, or LM Studio.
+*   **Git Auto Commit (GAC)** (freemium): A command-line tool that uses LLMs to generate Git commit messages from your code changes.
+*   **uvx** (free): A lightweight tool for running Python packages without needing a full Python environment setup.
+*   **Git** (free): The essential version control system for tracking changes in your code projects.
+*   **An LLM Provider** (free / freemium / paid), A service or local application that provides access to Large Language Models, such as OpenAI, Anthropic, Gemini, Ollama, or LM Studio.
 
 ## Steps
 
-1.  **Install uvx and initialize GAC** — Open your terminal or command prompt and run the `uvx gac init` command. This will launch a configuration wizard.
+1.  **Install uvx and initialize GAC**: Open your terminal or command prompt and run the `uvx gac init` command. This will launch a configuration wizard.
 
     ```
     uvx gac init
@@ -86,15 +86,15 @@ You'll get automatically generated, contextual Git commit messages that accurate
 
     You should see a series of prompts asking you to choose your preferred LLM provider (e.g., OpenAI, Ollama, Gemini) and to enter any necessary API keys. GAC will create a `.gac.env` file in your home directory to store these settings.
 
-2.  **Configure your LLM provider** — During the `gac init` wizard, select your desired LLM provider. If you choose a cloud provider like OpenAI or Anthropic, you'll need to paste your API key when prompted. If you opt for a local provider like Ollama or LM Studio, ensure you have it installed and running on your machine.
+2.  **Configure your LLM provider**: During the `gac init` wizard, select your desired LLM provider. If you choose a cloud provider like OpenAI or Anthropic, you'll need to paste your API key when prompted. If you opt for a local provider like Ollama or LM Studio, ensure you have it installed and running on your machine.
 
     You should see a confirmation that your `.gac.env` file has been created and configured successfully.
 
-3.  **Make changes to your code** — Work on your project as usual, modifying files, adding new features, or fixing bugs. Ensure these changes are staged for a commit using `git add .` or `git add [file_name]`.
+3.  **Make changes to your code**: Work on your project as usual, modifying files, adding new features, or fixing bugs. Ensure these changes are staged for a commit using `git add .` or `git add [file_name]`.
 
     You should have uncommitted changes in your Git repository, visible with `git status`.
 
-4.  **Generate a commit message** — Once your changes are staged, run the `uvx gac` command in your terminal. GAC will analyze your staged changes and generate a commit message using the configured LLM.
+4.  **Generate a commit message**: Once your changes are staged, run the `uvx gac` command in your terminal. GAC will analyze your staged changes and generate a commit message using the configured LLM.
 
     ```
     uvx gac
@@ -114,15 +114,15 @@ You'll get automatically generated, contextual Git commit messages that accurate
       - Update login UI with social auth buttons
     ```
 
-5.  **Reroll or refine the message (optional)** — If you don't like the initial message, you can type `r` and press Enter to generate a new one. To provide specific feedback for a reroll, type `r "focus on xyz"` (e.g., `r "focus on bug fix"`).
+5.  **Reroll or refine the message (optional)**: If you don't like the initial message, you can type `r` and press Enter to generate a new one. To provide specific feedback for a reroll, type `r "focus on xyz"` (e.g., `r "focus on bug fix"`).
 
     You should see a new commit message generated based on your feedback or a completely new one if you just typed `r`.
 
-6.  **Review and commit** — GAC will present the generated message and prompt you to confirm. Review the message carefully to ensure it accurately reflects your changes. If satisfied, confirm the commit (usually by pressing Enter or `y`).
+6.  **Review and commit**: GAC will present the generated message and prompt you to confirm. Review the message carefully to ensure it accurately reflects your changes. If satisfied, confirm the commit (usually by pressing Enter or `y`).
 
     Your changes will be committed to your Git repository with the AI-generated message. You can verify this with `git log`.
 
-7.  **Explore verbosity modes (optional)** — GAC supports different levels of detail for commit messages. To get a one-liner message, use `uvx gac -o`. For a verbose message with detailed Motivation, Architecture, and Impact sections, use `uvx gac -v`.
+7.  **Explore verbosity modes (optional)**: GAC supports different levels of detail for commit messages. To get a one-liner message, use `uvx gac -o`. For a verbose message with detailed Motivation, Architecture, and Impact sections, use `uvx gac -v`.
 
     ```
     uvx gac -o

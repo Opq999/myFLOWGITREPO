@@ -58,15 +58,15 @@ This workflow uses AI to transform user stories into detailed documentation, tec
 
 ## Steps
 
-1.  **Set up Azure AI Search** — Create an Azure AI Search service instance. This service will store the vector representations of your codebase, allowing the AI to retrieve relevant code snippets for context.
+1.  **Set up Azure AI Search**: Create an Azure AI Search service instance. This service will store the vector representations of your codebase, allowing the AI to retrieve relevant code snippets for context.
     *   You should see a confirmation of your service creation and be able to access its management portal.
-2.  **Generate Codebase Embeddings** — Use Azure OpenAI to convert your codebase into vector embeddings. This process transforms your code into a numerical format that AI can understand and search.
+2.  **Generate Codebase Embeddings**: Use Azure OpenAI to convert your codebase into vector embeddings. This process transforms your code into a numerical format that AI can understand and search.
     *   The author doesn't share the exact process, but typically this involves writing a script that reads your code files, sends them to an Azure OpenAI model (like `text-embedding-ada-002`), and stores the resulting embeddings along with their corresponding code snippets in Azure AI Search.
-3.  **Ingest Embeddings into Azure AI Search** — Load the generated vector embeddings into your Azure AI Search index. This makes your codebase searchable by semantic meaning.
+3.  **Ingest Embeddings into Azure AI Search**: Load the generated vector embeddings into your Azure AI Search index. This makes your codebase searchable by semantic meaning.
     *   You should see your code embeddings successfully indexed and ready for querying.
-4.  **Orchestrate with Power Automate** — Create a new flow in Power Automate. This will act as the central hub for your automation, triggering the AI calls in sequence.
+4.  **Orchestrate with Power Automate**: Create a new flow in Power Automate. This will act as the central hub for your automation, triggering the AI calls in sequence.
     *   You should see the Power Automate flow designer interface.
-5.  **Call Gemini API for Core Generation** — Within Power Automate, add actions to call the Gemini API. Use it to generate initial documentation based on a user story.
+5.  **Call Gemini API for Core Generation**: Within Power Automate, add actions to call the Gemini API. Use it to generate initial documentation based on a user story.
     *   The author mentions five calls to Gemini for different generation steps (requirements, tech spec, etc.). You'll need to configure each call with appropriate prompts.
     *   Example prompt structure for requirements:
     ```
@@ -74,14 +74,14 @@ This workflow uses AI to transform user stories into detailed documentation, tec
     [Paste User Story Here]
     ```
     *   You should receive structured text output from the Gemini API for each generation step.
-6.  **Integrate RAG with Gemini API** — Enhance the Gemini API calls by incorporating Retrieval-Augmented Generation (RAG). This involves querying your Azure AI Search index for relevant code snippets based on the current generation task and feeding these snippets to Gemini as context.
+6.  **Integrate RAG with Gemini API**: Enhance the Gemini API calls by incorporating Retrieval-Augmented Generation (RAG). This involves querying your Azure AI Search index for relevant code snippets based on the current generation task and feeding these snippets to Gemini as context.
     *   The author doesn't specify the exact RAG implementation, but it typically involves: 
         1.  Taking the output or input of a generation step (e.g., a requirement).
         2.  Generating a vector embedding for this query.
         3.  Using Azure AI Search to find the most similar code embeddings.
         4.  Including the retrieved code snippets in the prompt to Gemini.
     *   This step ensures that generated documentation and tasks are contextually relevant to your actual codebase.
-7.  **Automate Task Creation in Azure DevOps** — Add actions in Power Automate to call the Azure DevOps REST API. Use the generated technical specifications and tasks to create work items (e.g., user stories, tasks, bugs) in your Azure DevOps project.
+7.  **Automate Task Creation in Azure DevOps**: Add actions in Power Automate to call the Azure DevOps REST API. Use the generated technical specifications and tasks to create work items (e.g., user stories, tasks, bugs) in your Azure DevOps project.
     *   You will need to authenticate with Azure DevOps using a Personal Access Token (PAT).
     *   You should see new work items appearing in your Azure DevOps board after the flow runs.
 

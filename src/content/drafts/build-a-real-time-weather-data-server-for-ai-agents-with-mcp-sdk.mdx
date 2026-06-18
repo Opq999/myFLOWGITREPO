@@ -51,16 +51,16 @@ published: false
 You will have built a basic Model Context Protocol (MCP) server using TypeScript that connects AI agents like GitHub Copilot to live weather data. By the end, you'll be able to ask your AI for weather information in any city and get real, up-to-date responses. This approach provides AI agents with real-time external data, overcoming their usual limitation of not having access to live information.
 
 ## Tools you need
-*   **MCP SDK** (free) — The Model Context Protocol Software Development Kit for building MCP servers.
-*   **TypeScript** (free) — A superset of JavaScript that adds static typing, used for writing the server.
-*   **Node.js** (free) — A JavaScript runtime environment required to run the server and npm.
-*   **VS Code** (free) — A popular code editor, recommended for project development.
-*   **npm** (free) — Node Package Manager, used for initializing projects and installing libraries.
-*   **Zod** (free) — A TypeScript-first schema declaration and validation library, used for ensuring valid data.
-*   **GitHub Copilot** (paid) — An AI coding assistant that will interact with your MCP server (free for students/open source).
+*   **MCP SDK** (free): The Model Context Protocol Software Development Kit for building MCP servers.
+*   **TypeScript** (free): A superset of JavaScript that adds static typing, used for writing the server.
+*   **Node.js** (free): A JavaScript runtime environment required to run the server and npm.
+*   **VS Code** (free): A popular code editor, recommended for project development.
+*   **npm** (free): Node Package Manager, used for initializing projects and installing libraries.
+*   **Zod** (free): A TypeScript-first schema declaration and validation library, used for ensuring valid data.
+*   **GitHub Copilot** (paid): An AI coding assistant that will interact with your MCP server (free for students/open source).
 
 ## Steps
-1.  **Initialize the Project Directory** — Create a new folder for your project and initialize it using npm. Open your terminal or command prompt and run these commands:
+1.  **Initialize the Project Directory**: Create a new folder for your project and initialize it using npm. Open your terminal or command prompt and run these commands:
 
     ```bash
     mkdir mcp-weather-server
@@ -70,7 +70,7 @@ You will have built a basic Model Context Protocol (MCP) server using TypeScript
 
     You should see a new directory named `mcp-weather-server` created, and inside it, a `package.json` file will be generated with default settings.
 
-2.  **Create the Main TypeScript File** — Create the primary TypeScript file where your server code will reside.
+2.  **Create the Main TypeScript File**: Create the primary TypeScript file where your server code will reside.
 
     ```bash
     touch main.ts
@@ -78,7 +78,7 @@ You will have built a basic Model Context Protocol (MCP) server using TypeScript
 
     An empty file named `main.ts` will appear in your `mcp-weather-server` directory.
 
-3.  **Configure Package.json for ES Modules** — Open your `package.json` file in VS Code (or your preferred code editor) and add the `"type": "module"` field to enable modern JavaScript modules, which the MCP SDK uses.
+3.  **Configure Package.json for ES Modules**: Open your `package.json` file in VS Code (or your preferred code editor) and add the `"type": "module"` field to enable modern JavaScript modules, which the MCP SDK uses.
 
     ```json
     {
@@ -93,7 +93,7 @@ You will have built a basic Model Context Protocol (MCP) server using TypeScript
 
     Your `package.json` file should now include the `"type": "module"` line, ensuring compatibility with the SDK.
 
-4.  **Install the MCP SDK** — Add the Model Context Protocol SDK to your project, which provides the necessary tools to build MCP servers. In your terminal, run:
+4.  **Install the MCP SDK**: Add the Model Context Protocol SDK to your project, which provides the necessary tools to build MCP servers. In your terminal, run:
 
     ```bash
     npm install @modelcontextprotocol/sdk
@@ -101,7 +101,7 @@ You will have built a basic Model Context Protocol (MCP) server using TypeScript
 
     The MCP SDK will be downloaded and installed. You can verify its installation by checking the `dependencies` section in your `package.json` file.
 
-5.  **Install Zod for Data Validation** — Install the Zod library, which helps ensure that your server receives and processes valid data from AI agents.
+5.  **Install Zod for Data Validation**: Install the Zod library, which helps ensure that your server receives and processes valid data from AI agents.
 
     ```bash
     npm install zod
@@ -116,7 +116,7 @@ You will have built a basic Model Context Protocol (MCP) server using TypeScript
     }
     ```
 
-6.  **Add Required Imports to main.ts** — Open your `main.ts` file in your code editor and add the initial import statement for the `McpServer` class. Note: The original source excerpt for this import was truncated.
+6.  **Add Required Imports to main.ts**: Open your `main.ts` file in your code editor and add the initial import statement for the `McpServer` class. Note: The original source excerpt for this import was truncated.
 
     ```typescript
     import { McpServer } from "@modelcontextprotocol/sdk/server/m…

@@ -50,17 +50,17 @@ published: true
 You'll learn how to define and run AI coding workflows using Archon, an open-source tool. This allows you to automate tasks like planning, implementation, testing, and code review with AI agents, ensuring consistent and repeatable results every time. This approach eliminates the 'model's mood' problem, making AI coding deterministic by structuring the development process.
 
 ## Tools you need
-*   **Archon** (free) — A workflow engine for AI coding agents to define and run development processes.
-*   **AI Agent (e.g., Claude)** (freemium) — An artificial intelligence model that performs coding tasks within the Archon workflow.
-*   **Git** (free) — A version control system essential for managing code and Archon's isolated worktrees.
-*   **Bash** (free) — A command-line shell used for executing scripts and deterministic steps in the workflow.
-*   **Bun** (free) — A fast JavaScript runtime, package manager, and bundler, used here for running validation scripts.
+*   **Archon** (free): A workflow engine for AI coding agents to define and run development processes.
+*   **AI Agent (e.g., Claude)** (freemium): An artificial intelligence model that performs coding tasks within the Archon workflow.
+*   **Git** (free): A version control system essential for managing code and Archon's isolated worktrees.
+*   **Bash** (free): A command-line shell used for executing scripts and deterministic steps in the workflow.
+*   **Bun** (free): A fast JavaScript runtime, package manager, and bundler, used here for running validation scripts.
 
 ## Steps
-1.  **Set up Archon** — The author doesn't provide exact installation steps in the excerpt. You'll need to visit the Archon GitHub repository (linked in the Tools section) and follow the instructions in its `README.md` file. This typically involves cloning the repository and running setup commands like `bun install` or using `homebrew` if you're on macOS/Linux.
+1.  **Set up Archon**: The author doesn't provide exact installation steps in the excerpt. You'll need to visit the Archon GitHub repository (linked in the Tools section) and follow the instructions in its `README.md` file. This typically involves cloning the repository and running setup commands like `bun install` or using `homebrew` if you're on macOS/Linux.
     *   *What you should see*: Archon is installed and accessible via your command line. You might verify by typing `archon --version` (or similar, depending on the actual CLI).
 
-2.  **Configure your AI Agent** — Archon integrates with AI agents like Claude. You'll need to configure your chosen AI agent's API key or access method. The excerpt mentions a `.claude` folder and `CLAUDE.md`, suggesting specific configuration files.
+2.  **Configure your AI Agent**: Archon integrates with AI agents like Claude. You'll need to configure your chosen AI agent's API key or access method. The excerpt mentions a `.claude` folder and `CLAUDE.md`, suggesting specific configuration files.
     *   *What to do*: Create a configuration file (e.g., `.env` or a specific Archon config file) in your project root or Archon's configuration directory, and add your AI agent's API key. The exact format will be in Archon's documentation.
     *   *Example (generic)*:
 
@@ -70,11 +70,11 @@ You'll learn how to define and run AI coding workflows using Archon, an open-sou
 
     *   *What you should see*: Archon can connect to your AI agent.
 
-3.  **Create your project structure** — Archon workflows are defined within your project's `.archon/workflows/` directory.
+3.  **Create your project structure**: Archon workflows are defined within your project's `.archon/workflows/` directory.
     *   *What to do*: In your project's root directory, create a folder named `.archon`, and inside it, another folder named `workflows`.
     *   *What you should see*: You have a directory structure like `your-project/.archon/workflows/`.
 
-4.  **Define your AI coding workflow** — Create a YAML file inside the `workflows` directory to define the sequence of AI and deterministic steps. The excerpt provides an example for building a feature.
+4.  **Define your AI coding workflow**: Create a YAML file inside the `workflows` directory to define the sequence of AI and deterministic steps. The excerpt provides an example for building a feature.
     *   *What to do*: Create a file named `build-feature.yaml` inside `.archon/workflows/` and paste the following content:
 
     ```yaml
@@ -98,7 +98,7 @@ You'll learn how to define and run AI coding workflows using Archon, an open-sou
 
     *   *What you should see*: Your `build-feature.yaml` file is saved, outlining the steps for your AI agent.
 
-5.  **Run the workflow** — Execute your defined Archon workflow from the command line.
+5.  **Run the workflow**: Execute your defined Archon workflow from the command line.
     *   *What to do*: Open your terminal or command prompt, navigate to your project's root directory, and run the Archon command to start the workflow. The exact command is not provided in the excerpt, but typically it would be `archon run <workflow-name>`.
     *   *Example*:
 
@@ -108,7 +108,7 @@ You'll learn how to define and run AI coding workflows using Archon, an open-sou
 
     *   *What you should see*: Archon starts executing the workflow, showing progress messages as the AI agent performs planning, implementation, testing, and review. You might see output from the `bun run validate` step.
 
-6.  **Review the output and artifacts** — Archon aims to produce a finished PR with review comments.
+6.  **Review the output and artifacts**: Archon aims to produce a finished PR with review comments.
     *   *What to do*: Once the workflow completes, check your project's Git history or the output from Archon for the generated code, test results, and any pull request descriptions or review comments.
     *   *What you should see*: You will find new code, potentially a new branch, and a summary of the AI's work, including a proposed pull request or review comments, ready for your final approval.
 

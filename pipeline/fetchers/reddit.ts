@@ -6,8 +6,8 @@ import { sleep, truncate } from '../lib/utils';
 /**
  * Reddit access, most reliable first:
  *  1. Official OAuth API (free for low volume) when REDDIT_CLIENT_ID /
- *     REDDIT_CLIENT_SECRET are set — never IP-blocked.
- *  2. Public RSS (Atom) feeds otherwise — works without auth but Reddit
+ *     REDDIT_CLIENT_SECRET are set, never IP-blocked.
+ *  2. Public RSS (Atom) feeds otherwise, works without auth but Reddit
  *     intermittently 403s anonymous clients.
  */
 

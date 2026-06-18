@@ -66,7 +66,7 @@ export async function fetchHn(opts: { backfill: boolean; page?: number }): Promi
       // Quality gate applied client-side now that the API won't filter points.
       results.push(...normalizeHn(data.hits.filter((h) => (h.points ?? 0) >= minPoints)));
     } catch (err) {
-      // One failed query must not abort the other 11 — that's how a single
+      // One failed query must not abort the other 11, that's how a single
       // transient/400 response used to silently zero out all of Hacker News.
       console.warn(`[fetch] hackernews query "${query}" failed: ${err instanceof Error ? err.message : err}`);
     }

@@ -1,0 +1,116 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../site.config';
+import { contactLink } from '../lib/whatsapp';
+
+const ctaHref = contactLink(
+  `Hi! I saw ${SITE.name} and I'd like to talk about working with you on AI.`,
+);
+const usingWhatsApp = SITE.whatsappNumber.replace(/\D/g, '').length > 0;
+---
+
+<Base
+  title="Work with me"
+  description="Short on time, or want it done right? I set up and implement AI workflows for people and businesses who'd rather delegate than DIY, starting with a free chat."
+>
+  <p class="font-mono text-[11px] font-bold uppercase tracking-[0.3em] text-accent">Work with me</p>
+  <h1 class="mt-2 font-display text-4xl font-medium tracking-[-0.02em] text-ink-900 sm:text-5xl">
+    Get the AI working for you, without the figuring-out.
+  </h1>
+  <p class="mt-4 max-w-2xl text-lg leading-relaxed text-ink-600">
+    This whole library is free, and most of it you can do yourself. But sometimes your time is worth
+    more than the learning curve, or you just want it set up right the first time. That's where I
+    come in: I build the workflow for you and hand it over ready to use.
+  </p>
+
+  <!-- Two tiers -->
+  <div class="mt-12 grid gap-5 sm:grid-cols-2">
+    <div class="flex flex-col rounded-2xl border border-line bg-surface p-6 shadow-[0_1px_2px_rgba(28,23,19,0.04)]">
+      <p class="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-accent">Done for you</p>
+      <h2 class="mt-2 font-display text-2xl font-semibold text-ink-900">A single workflow, set up</h2>
+      <p class="mt-2 text-sm leading-relaxed text-ink-600">
+        Found a workflow here you'd rather not do yourself? Send it over. I'll set it up end to end,
+        plug in the right tools, and hand it back ready to run, plus a short note so you can repeat
+        it without me next time.
+      </p>
+      <ul class="mt-4 space-y-1.5 text-sm text-ink-500">
+        <li>· Fixed, simple scope, one workflow, done</li>
+        <li>· Fast turnaround</li>
+        <li>· You keep everything, no lock-in</li>
+      </ul>
+    </div>
+
+    <div class="flex flex-col rounded-2xl border border-line bg-surface p-6 shadow-[0_1px_2px_rgba(28,23,19,0.04)]">
+      <p class="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-accent">For your business</p>
+      <h2 class="mt-2 font-display text-2xl font-semibold text-ink-900">AI, properly adopted</h2>
+      <p class="mt-2 text-sm leading-relaxed text-ink-600">
+        The bigger one. We find what's quietly eating your team's hours, build custom AI workflows
+        and automations around it, and train your people so it sticks. For founders, SMEs and teams
+        who want AI doing real work, not demos.
+      </p>
+      <ul class="mt-4 space-y-1.5 text-sm text-ink-500">
+        <li>· Audit of where AI actually saves you time</li>
+        <li>· Custom workflows &amp; automations built for you</li>
+        <li>· Hands-on training for your team</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Affordability stunt -->
+  <div class="mt-12 rounded-2xl border border-line bg-paper-2/50 p-6 shadow-[0_1px_2px_rgba(28,23,19,0.04)] sm:p-8">
+    <h2 class="font-display text-2xl font-medium tracking-[-0.01em] text-ink-900">
+      Free tools first, even when it's me.
+    </h2>
+    <p class="mt-2 max-w-2xl text-sm leading-relaxed text-ink-600">
+      This site exists to point you at the cheapest path that works, and I work the same way. If you
+      can do it yourself, I'll tell you, and show you how, free. You only bring me in when delegating
+      is genuinely worth it. No agency retainers, no bloated invoices, just the result done right.
+    </p>
+    <div class="mt-5 grid gap-4 sm:grid-cols-3">
+      <div>
+        <p class="font-display text-lg font-semibold text-ink-900">Founding rates</p>
+        <p class="mt-1 text-sm text-ink-500">
+          I'm taking on my first handful of clients early, hands-on, and priced to prove it.
+        </p>
+      </div>
+      <div>
+        <p class="font-display text-lg font-semibold text-ink-900">Starts free</p>
+        <p class="mt-1 text-sm text-ink-500">
+          A free 15-minute chat. Tell me what's eating your time; I'll tell you straight whether you
+          even need me.
+        </p>
+      </div>
+      <div>
+        <p class="font-display text-lg font-semibold text-ink-900">No lock-in</p>
+        <p class="mt-1 text-sm text-ink-500">
+          You keep every prompt, tool and step. Walk away able to do it yourself.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Proof -->
+  <p class="mt-12 max-w-2xl text-sm leading-relaxed text-ink-500">
+    Why me? You're looking at the proof. I source, test and publish reproducible AI workflows here
+    every day, exact steps, exact prompts, real sources. If I can keep this library honest and
+    working, I can get AI working for you.
+  </p>
+
+  <!-- Primary CTA -->
+  <div class="mt-8 flex flex-col items-start gap-3">
+    <a
+      href={ctaHref}
+      target="_blank"
+      rel="noopener"
+      class="inline-flex items-center gap-1.5 rounded-full bg-ink-900 px-7 py-3.5 text-lg font-semibold text-paper transition-transform hover:scale-[1.03]"
+    >
+      {usingWhatsApp ? 'Start a free chat on WhatsApp' : 'Start a free chat'} →
+    </a>
+    <p class="text-sm text-ink-400">
+      Prefer email? <a
+        href={`mailto:${SITE.contactEmail}`}
+        class="text-accent underline underline-offset-2">{SITE.contactEmail}</a
+      >
+    </p>
+  </div>
+</Base>

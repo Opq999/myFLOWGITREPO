@@ -19,7 +19,7 @@ import { enrichCandidate } from './lib/enrich';
 import { GeminiQuotaError, getApiKeys } from './lib/gemini';
 import { scoreCandidate } from './lib/score';
 
-/** Obvious non-workflows dropped before scoring — saves Gemini quota. */
+/** Obvious non-workflows dropped before scoring, saves Gemini quota. */
 const JUNK_TITLE = /awesome[- ]|a curated list|curated list of|list of (free|awesome)/i;
 
 const ROOT = process.cwd();
@@ -41,7 +41,7 @@ function info(msg: string): void {
 
 /**
  * Writes a run health summary to the GitHub Actions step summary (visible on
- * every run page) so a silent failure — a dead source, or 0 published — can
+ * every run page) so a silent failure, a dead source, or 0 published, can
  * never hide again. No-op locally where GITHUB_STEP_SUMMARY is unset.
  */
 function writeStepSummary(
@@ -65,7 +65,7 @@ function writeStepSummary(
     lines.push('**⚠️ Sources that failed to fetch:**', '', ...sourceWarnings.map((w) => `- ${w}`), '');
   }
   if (counts.published === 0) {
-    lines.push('> ⚠️ **0 new workflows published this run** — check the source warnings and score reasons above.', '');
+    lines.push('> ⚠️ **0 new workflows published this run**: check the source warnings and score reasons above.', '');
   }
   try {
     appendFileSync(path, lines.join('\n') + '\n');
@@ -94,7 +94,7 @@ async function main(): Promise<void> {
     dryRun: process.argv.includes('--dry-run'),
     backfill: process.argv.includes('--backfill'),
   };
-  info(`Pipeline run — dryRun=${opts.dryRun} backfill=${opts.backfill}`);
+  info(`Pipeline run, dryRun=${opts.dryRun} backfill=${opts.backfill}`);
 
   const ledger = loadSeen(SEEN_PATH);
   const existingTitles = getExistingTitles([WORKFLOWS_DIR, DRAFTS_DIR]);
@@ -103,12 +103,12 @@ async function main(): Promise<void> {
   if (opts.backfill) {
     const publishedCount = getExistingTitles([WORKFLOWS_DIR]).length;
     if (publishedCount >= CAPS.backfillTarget) {
-      info(`Corpus target reached (${publishedCount} published workflows). Backfill done — nothing to do.`);
+      info(`Corpus target reached (${publishedCount} published workflows). Backfill done, nothing to do.`);
       return;
     }
   }
 
-  // Stage 1 — fetch. Backfill paginates ever deeper; daily runs rotate a page
+  // Stage 1, fetch. Backfill paginates ever deeper; daily runs rotate a page
   // offset (0..pageCycle-1) so each day reaches NEW posts instead of re-scanning
   // the same page-0 "top of today" results that just dedupe away.
   const page = opts.backfill ? (ledger.backfillPage ?? 0) : (ledger.dailyPage ?? 0);
@@ -128,7 +128,7 @@ async function main(): Promise<void> {
   }
   saveSeen(SEEN_PATH, ledger);
 
-  // Stage 2 — dedupe
+  // Stage 2, dedupe
   const deduped = dedupe(fetched, ledger, existingTitles);
   info(`[dedupe] ${deduped.length} new candidates (${fetched.length - deduped.length} dropped)`);
 
@@ -188,7 +188,7 @@ async function main(): Promise<void> {
     process.exit(1);
   }
 
-  // Stage 3 + 4 — score then draft
+  // Stage 3 + 4, score then draft
   const counts = { scored: 0, published: 0, drafted: 0, discarded: 0, failed: 0 };
   mkdirSync(WORKFLOWS_DIR, { recursive: true });
   mkdirSync(DRAFTS_DIR, { recursive: true });
@@ -204,7 +204,7 @@ async function main(): Promise<void> {
 
       if (!score.isWorkflow || score.score < 5) {
         counts.discarded++;
-        info(`[discard] ${score.score}/10 — ${candidate.title}`);
+        info(`[discard] ${score.score}/10, ${candidate.title}`);
         continue;
       }
 
@@ -219,12 +219,12 @@ async function main(): Promise<void> {
       if (publishable) {
         writeFileSync(uniqueSlugPath(WORKFLOWS_DIR, result.slug), result.mdx, 'utf8');
         counts.published++;
-        info(`[publish] ${score.score}/10 — ${result.slug}`);
+        info(`[publish] ${score.score}/10, ${result.slug}`);
         logEvent({ stage: 'publish', url: candidate.url, slug: result.slug, score: score.score });
       } else {
         writeFileSync(uniqueSlugPath(DRAFTS_DIR, result.slug), asUnpublished(result.mdx), 'utf8');
         counts.drafted++;
-        info(`[draft] ${score.score}/10 — ${result.slug}`);
+        info(`[draft] ${score.score}/10, ${result.slug}`);
         logEvent({ stage: 'to-drafts', url: candidate.url, slug: result.slug, score: score.score });
       }
     } catch (err) {
@@ -238,7 +238,7 @@ async function main(): Promise<void> {
       const message = err instanceof Error ? err.message : String(err);
       info(`[error] skipping "${candidate.title}": ${message.slice(0, 200)}`);
       logEvent({ stage: 'error', url: candidate.url, error: message.slice(0, 500) });
-      // A missing/invalid API key is fatal — every candidate would fail.
+      // A missing/invalid API key is fatal, every candidate would fail.
       if (message.includes('GEMINI_API_KEY') || message.includes('Gemini API error 4')) {
         throw err;
       }

@@ -42,9 +42,9 @@ You will set up a local AI application that allows you to upload documents and t
 *   **Ollama** (free) - A tool to easily run large language models locally on your machine.
 
 ## Steps
-1.  **Install Ollama** — Download and install Ollama from its official website. Follow the on-screen instructions for your operating system.
+1.  **Install Ollama**: Download and install Ollama from its official website. Follow the on-screen instructions for your operating system.
     You should see a confirmation that Ollama has been installed.
-2.  **Download an LLM and Embeddings Model with Ollama** — Open your terminal or command prompt and run the following commands to download a large language model (LLM) and an embeddings model. The example uses 'qwen3.5:35b' for the LLM and 'mxbai-embed-large' for embeddings. Note that these models can be very large (e.g., ~24 GB for qwen3.5:35b).
+2.  **Download an LLM and Embeddings Model with Ollama**: Open your terminal or command prompt and run the following commands to download a large language model (LLM) and an embeddings model. The example uses 'qwen3.5:35b' for the LLM and 'mxbai-embed-large' for embeddings. Note that these models can be very large (e.g., ~24 GB for qwen3.5:35b).
 
     ```
     ollama pull qwen3.5:35b
@@ -52,14 +52,14 @@ You will set up a local AI application that allows you to upload documents and t
     ```
 
     You should see progress indicators as the models download. Once complete, you'll have the models ready for use.
-3.  **Start the Ollama Server** — In your terminal, run the command to start the Ollama local server. This makes the downloaded models accessible to other applications.
+3.  **Start the Ollama Server**: In your terminal, run the command to start the Ollama local server. This makes the downloaded models accessible to other applications.
 
     ```
     ollama serve
     ```
 
     You should see output indicating that the Ollama server is running, typically on a local port (e.g., `http://localhost:11434`). Keep this terminal window open.
-4.  **Install PrivateGPT** — The excerpt mentions installation via `brew` (macOS), `uv` (Linux/Windows). Choose the command appropriate for your system. For example, on Linux:
+4.  **Install PrivateGPT**: The excerpt mentions installation via `brew` (macOS), `uv` (Linux/Windows). Choose the command appropriate for your system. For example, on Linux:
 
     ```
     curl -LsSf https://astral.sh/uv/install.sh | sh
@@ -67,7 +67,7 @@ You will set up a local AI application that allows you to upload documents and t
     ```
 
     You should see output indicating that PrivateGPT and its dependencies are being installed.
-5.  **Run PrivateGPT** — Open a *new* terminal or command prompt window. You need to tell PrivateGPT where to find your local LLM server. The excerpt indicates it uses OpenAI-compatible API endpoints. Set the environment variables for the API base URLs and then run the serve command. Replace `llm-port` and `embedding-port` with the actual ports Ollama is using (default is usually 11434 for both).
+5.  **Run PrivateGPT**: Open a *new* terminal or command prompt window. You need to tell PrivateGPT where to find your local LLM server. The excerpt indicates it uses OpenAI-compatible API endpoints. Set the environment variables for the API base URLs and then run the serve command. Replace `llm-port` and `embedding-port` with the actual ports Ollama is using (default is usually 11434 for both).
 
     *   **macOS / Linux:**
         ```bash
@@ -83,9 +83,9 @@ You will set up a local AI application that allows you to upload documents and t
         ```
 
     You should see output indicating that PrivateGPT is starting up and listening on a port (default is 8080).
-6.  **Open the PrivateGPT UI** — Open your web browser and navigate to `http://localhost:8080/ui`. This is the user interface for interacting with PrivateGPT.
+6.  **Open the PrivateGPT UI**: Open your web browser and navigate to `http://localhost:8080/ui`. This is the user interface for interacting with PrivateGPT.
     You should see a web page with an input field for messages, options to upload documents, and potentially model selection.
-7.  **Upload a Document and Ask a Question** — In the PrivateGPT UI, find the option to upload a document (e.g., a PDF, TXT file). Once uploaded, use the chat interface to ask a question about the content of the document you just uploaded.
+7.  **Upload a Document and Ask a Question**: In the PrivateGPT UI, find the option to upload a document (e.g., a PDF, TXT file). Once uploaded, use the chat interface to ask a question about the content of the document you just uploaded.
     You should receive an answer from the AI that is based on the information within your document, often with citations indicating the source paragraph.
 
 ## Original source

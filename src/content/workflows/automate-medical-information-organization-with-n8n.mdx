@@ -54,26 +54,26 @@ This workflow automates the process of collecting, classifying, and organizing p
 
 ## Tools you need
 
-*   **n8n** (freemium) — An open-source workflow automation tool to build and run automated workflows.
-*   **Gmail** (free) — To act as the entry point for receiving medical information via email.
-*   **Google Docs** (free) — To store and organize reports and documents.
-*   **Google Sheets** (free) — To manage structured data like medicine information.
-*   **Bright Data** (freemium) — A web scraping tool to gather real-time data from websites.
-*   **GoodRx** (free) — A website used for fetching medicine prices and availability.
+*   **n8n** (freemium): An open-source workflow automation tool to build and run automated workflows.
+*   **Gmail** (free): To act as the entry point for receiving medical information via email.
+*   **Google Docs** (free): To store and organize reports and documents.
+*   **Google Sheets** (free): To manage structured data like medicine information.
+*   **Bright Data** (freemium): A web scraping tool to gather real-time data from websites.
+*   **GoodRx** (free): A website used for fetching medicine prices and availability.
 
 ## Steps
 
-1.  **Set up Gmail Trigger** — Configure n8n to fetch new emails with medical-related attachments from your Gmail account.
+1.  **Set up Gmail Trigger**: Configure n8n to fetch new emails with medical-related attachments from your Gmail account.
     You should see new emails with attachments appearing in your n8n workflow.
-2.  **Classify Email Content** — Use n8n's AI Text Classifier with an LLM backend to categorize email subject lines and bodies. The author uses categories like 'PET/CT/Histopathology Reports', 'Blood Tests', 'Medicines', and 'Bills/Invoices'.
+2.  **Classify Email Content**: Use n8n's AI Text Classifier with an LLM backend to categorize email subject lines and bodies. The author uses categories like 'PET/CT/Histopathology Reports', 'Blood Tests', 'Medicines', and 'Bills/Invoices'.
     The workflow should output a classification for each captured email.
-3.  **Handle Reports in Google Docs** — For reports (PET/CT, Histopathology, Blood Tests), set up a flow to either create a new Google Doc or update an existing one for that category. This uses n8n's 'Search Files Folders' and 'IF' nodes.
+3.  **Handle Reports in Google Docs**: For reports (PET/CT, Histopathology, Blood Tests), set up a flow to either create a new Google Doc or update an existing one for that category. This uses n8n's 'Search Files Folders' and 'IF' nodes.
     You should see new or updated Google Docs containing the report information.
-4.  **Manage Medicines in Google Sheets** — For medicine-related information, create or update entries in a Google Sheet. This step involves using Bright Data Scraper to get real-time prices and availability from GoodRx, and a custom code node to generate drug URLs.
+4.  **Manage Medicines in Google Sheets**: For medicine-related information, create or update entries in a Google Sheet. This step involves using Bright Data Scraper to get real-time prices and availability from GoodRx, and a custom code node to generate drug URLs.
     Your Google Sheet should be populated with structured medicine data, including prices and availability.
-5.  **Organize Bills and Invoices** — Direct bills and invoices into a Google Doc draft. This allows for manual review and edits before submission for insurance claims.
+5.  **Organize Bills and Invoices**: Direct bills and invoices into a Google Doc draft. This allows for manual review and edits before submission for insurance claims.
     A draft Google Doc should be created or updated with bill and invoice information.
-6.  **Scrape Real-Time Intelligence** — Use Bright Data and n8n's HTTP Request node for any additional web scraping needs that aren't covered by direct APIs or pre-built datasets.
+6.  **Scrape Real-Time Intelligence**: Use Bright Data and n8n's HTTP Request node for any additional web scraping needs that aren't covered by direct APIs or pre-built datasets.
     The workflow should successfully retrieve and process data from specified online sources.
 
 ## Original source

@@ -69,7 +69,7 @@ export interface GenerateOpts {
 /**
  * Generates persona use cases for a workflow. NON-FATAL by default: swallows
  * every error (including quota) and returns [] so use cases can never block a
- * publish or abort a run. Callers treat [] as "none yet" — the backfill top-up
+ * publish or abort a run. Callers treat [] as "none yet", the backfill top-up
  * retries on a later day.
  */
 export async function generateUseCases(

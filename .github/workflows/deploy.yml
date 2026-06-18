@@ -2,7 +2,7 @@ name: Deploy to Cloudflare Pages
 
 # Deploys the site whenever site-affecting files are pushed to main by a HUMAN
 # (or any push not made with the Actions GITHUB_TOKEN). This closes the gap where
-# a direct content push — e.g. promoting a workflow out of drafts — was committed
+# a direct content push, e.g. promoting a workflow out of drafts, was committed
 # but never reached the live site, because the only deploy lived inside the
 # ingest/backfill runs.
 #
@@ -52,7 +52,7 @@ jobs:
           CLOUDFLARE_ACCOUNT_ID: cdd1130f0f80aa74d5fdea5759eb9c29
         run: |
           if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
-            echo "CLOUDFLARE_API_TOKEN secret not set — skipping deploy."
+            echo "CLOUDFLARE_API_TOKEN secret not set, skipping deploy."
             exit 0
           fi
           npm run build

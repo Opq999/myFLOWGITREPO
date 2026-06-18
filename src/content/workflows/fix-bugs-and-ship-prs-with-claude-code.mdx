@@ -40,8 +40,8 @@ A repeatable loop for fixing bugs with an AI coding agent: you hand it the error
 
 ## Tools you need
 
-- **Claude Code** — Anthropic's terminal coding agent. Requires a Claude Pro/Max plan or API credits (paid).
-- **Git** — free; the PR step assumes your project is on GitHub.
+- **Claude Code**: Anthropic's terminal coding agent. Requires a Claude Pro/Max plan or API credits (paid).
+- **Git**: free; the PR step assumes your project is on GitHub.
 
 ## Steps
 
@@ -70,7 +70,7 @@ suggest a few ways to fix the @ts-ignore in user.ts
 update user.ts to add the null check you suggested
 ```
 
-5. Verify — make the agent prove the fix:
+5. Verify, make the agent prove the fix:
 
 ```
 run the new tests and fix any failures
@@ -88,6 +88,6 @@ This workflow comes straight from Anthropic's official "Common workflows" docume
 
 ## Notes & variations
 
-- Mention whether the error is intermittent or consistent — it changes how the agent investigates.
+- Mention whether the error is intermittent or consistent, it changes how the agent investigates.
 - **Free-tier variation:** Gemini CLI (free) and other open-source agents accept the same prompt pattern: reproduce, suggest fixes, apply, verify, PR.
 - For changes you want to review before they touch disk, run in plan mode first (`claude --permission-mode plan`).

@@ -30,7 +30,7 @@ You will generate a detailed specification for a new software idea and then brea
 *   **ChatGPT 4o** (freemium) - A conversational AI model used for brainstorming ideas and generating detailed specifications and development plans.
 
 ## Steps
-1.  **Hone your idea with the LLM** — Start a conversation with the LLM to refine your software concept into a detailed specification. The author uses a prompt that asks the LLM to ask one question at a time to thoroughly develop the spec.
+1.  **Hone your idea with the LLM**: Start a conversation with the LLM to refine your software concept into a detailed specification. The author uses a prompt that asks the LLM to ask one question at a time to thoroughly develop the spec.
 
     ```
     Ask me one question at a time so we can develop a thorough, step-by-step spec for this idea. Each question should build on my previous answers, and our end goal is to have a detailed specification I can hand off to a developer. Let’s do this iteratively and dig into every relevant detail. Remember, only one question at a time.
@@ -38,14 +38,14 @@ You will generate a detailed specification for a new software idea and then brea
     ```
     You should see the LLM ask you a clarifying question about your idea.
 
-2.  **Compile the specification** — Once the brainstorming naturally concludes, ask the LLM to compile all the gathered information into a developer-ready specification. The author suggests a prompt to ensure all key aspects are covered.
+2.  **Compile the specification**: Once the brainstorming naturally concludes, ask the LLM to compile all the gathered information into a developer-ready specification. The author suggests a prompt to ensure all key aspects are covered.
 
     ```
     Now that we’ve wrapped up the brainstorming process, can you compile our findings into a comprehensive, developer-ready specification? Include all relevant requirements, architecture choices, data handling details, error handling strategies, and a testing plan so a developer can immediately begin implementation.
     ```
     You should receive a comprehensive document that can be saved as `spec.md`.
 
-3.  **Create a development plan** — Take the generated specification and use it to prompt a reasoning model (like ChatGPT 4o) to create a detailed, step-by-step blueprint for building the project. The author emphasizes breaking the plan into small, iterative chunks.
+3.  **Create a development plan**: Take the generated specification and use it to prompt a reasoning model (like ChatGPT 4o) to create a detailed, step-by-step blueprint for building the project. The author emphasizes breaking the plan into small, iterative chunks.
 
     ```
     Draft a detailed, step-by-step blueprint for building this project. Then, once you have a solid plan, break it down into small, iterative chunks that build on each other. Look at these chunks and then go another round to break it into small steps. Review the results and make sure that the steps are small enough to be implemented safely with strong testing, but big enough to move the project forward. Iterate until you feel that the steps are right sized for this project. From here you should have the foundation to provide a series of prompts for a code-generation LLM that will implement each step in a test-driven manner. Prioritize best practices, incremental progress, and early testing, ensuring no big jumps in complexity at any stage. Make sure that each prompt builds on the previous prompts, and ends with wiring things together. There should be no hanging or orphaned code that isn't integrated into a previous…

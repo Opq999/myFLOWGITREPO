@@ -60,26 +60,26 @@ This workflow outlines a strategy to significantly reduce the number of bugs tha
 
 ## Tools you need
 
-*   **Entelligence AI Code Review** (freemium) — An AI reviewer that integrates with your IDE to catch bugs and suggest fixes as you code.
-*   **SonarQube** (freemium) — A static analysis tool that detects bugs, vulnerabilities, and code smells across many programming languages.
-*   **Jenkins** (free) — An open-source automation server used for building, testing, and deploying software.
-*   **GitHub Actions** (freemium) — A CI/CD platform integrated with GitHub to automate workflows, including testing and code analysis.
-*   **JUnit** (free) — A popular unit testing framework for Java applications.
-*   **Jest** (free) — A JavaScript testing framework designed for simplicity and speed.
-*   **Sentry** (freemium) — An application monitoring and error-tracking tool that captures exceptions and performance issues in real time.
+*   **Entelligence AI Code Review** (freemium): An AI reviewer that integrates with your IDE to catch bugs and suggest fixes as you code.
+*   **SonarQube** (freemium): A static analysis tool that detects bugs, vulnerabilities, and code smells across many programming languages.
+*   **Jenkins** (free): An open-source automation server used for building, testing, and deploying software.
+*   **GitHub Actions** (freemium): A CI/CD platform integrated with GitHub to automate workflows, including testing and code analysis.
+*   **JUnit** (free): A popular unit testing framework for Java applications.
+*   **Jest** (free): A JavaScript testing framework designed for simplicity and speed.
+*   **Sentry** (freemium): An application monitoring and error-tracking tool that captures exceptions and performance issues in real time.
 
 ## Steps
 
-1.  **Integrate AI Code Review** — Install and configure an AI code reviewer like Entelligence directly into your Integrated Development Environment (IDE). This tool will analyze your code in real-time as you write it.
+1.  **Integrate AI Code Review**: Install and configure an AI code reviewer like Entelligence directly into your Integrated Development Environment (IDE). This tool will analyze your code in real-time as you write it.
     You should see the AI flagging potential issues and offering suggestions directly within your code editor.
 
-2.  **Set Up Static Analysis Scans** — Configure SonarQube to scan your codebase. This is typically done as part of your build process or CI/CD pipeline.
+2.  **Set Up Static Analysis Scans**: Configure SonarQube to scan your codebase. This is typically done as part of your build process or CI/CD pipeline.
     SonarQube will provide a dashboard or reports highlighting bugs, vulnerabilities, and code smells.
 
-3.  **Automate Tests in CI/CD Pipelines** — Enhance your Continuous Integration/Continuous Deployment (CI/CD) pipelines (using Jenkins or GitHub Actions) to automatically run comprehensive test suites on every code commit or pull request.
+3.  **Automate Tests in CI/CD Pipelines**: Enhance your Continuous Integration/Continuous Deployment (CI/CD) pipelines (using Jenkins or GitHub Actions) to automatically run comprehensive test suites on every code commit or pull request.
     Your CI/CD system should indicate whether the automated tests (e.g., JUnit for Java, Jest for JavaScript) have passed or failed.
 
-4.  **Implement Error Monitoring** — Integrate Sentry into your application to capture and report errors, crashes, and performance issues in real time.
+4.  **Implement Error Monitoring**: Integrate Sentry into your application to capture and report errors, crashes, and performance issues in real time.
     You should be able to access a Sentry dashboard showing live errors, stack traces, and other diagnostic information from your running application.
 
 ## Original source

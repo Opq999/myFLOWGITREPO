@@ -38,15 +38,15 @@ published: true
 You'll get automatically generated Playwright tests that explore your web application like a real user, uncovering functionality and potential bugs. This approach leverages an AI agent (Playwright MCP) to autonomously navigate your site, discover key features, and write robust, runnable tests without manual scripting.
 
 ## Tools you need
-*   **Playwright MCP** (free) — An AI agent that can explore web applications and generate Playwright tests.
-*   **VS Code** (free) — A popular code editor used to set up and run the Playwright MCP agent.
+*   **Playwright MCP** (free): An AI agent that can explore web applications and generate Playwright tests.
+*   **VS Code** (free): A popular code editor used to set up and run the Playwright MCP agent.
 
 ## Steps
-1.  **Set up your VS Code project** — Create a new folder for your project and open it in VS Code. This will be where your test files and configuration live.
+1.  **Set up your VS Code project**: Create a new folder for your project and open it in VS Code. This will be where your test files and configuration live.
 
     You should see an empty folder open in VS Code.
 
-2.  **Configure Playwright MCP server** — Create a file named `mcp.json` in your project's root folder and add the server configuration. This tells VS Code how to run the Playwright MCP (Model Context Protocol).
+2.  **Configure Playwright MCP server**: Create a file named `mcp.json` in your project's root folder and add the server configuration. This tells VS Code how to run the Playwright MCP (Model Context Protocol).
 
     ```json
     {
@@ -61,7 +61,7 @@ You'll get automatically generated Playwright tests that explore your web applic
 
     You should see the `mcp.json` file saved in your project root.
 
-3.  **Create the agent prompt file** — In your project, create a folder named `.github` (if it doesn't exist) and inside it, create a file named `generate_tests.prompt.md`. This file contains instructions for the AI agent.
+3.  **Create the agent prompt file**: In your project, create a folder named `.github` (if it doesn't exist) and inside it, create a file named `generate_tests.prompt.md`. This file contains instructions for the AI agent.
 
     ```
     ---
@@ -84,11 +84,11 @@ mode : ' agent'
 
     You should see the `generate_tests.prompt.md` file saved in the `.github` folder.
 
-4.  **Launch VS Code Agent Mode** — Open the VS Code command palette (usually `Ctrl+Shift+P` or `Cmd+Shift+P`), type "Agent Mode", and select "Start Agent Mode". The author notes that the prompt file should be added to the agent's context; typically, this means having the file open or explicitly referencing it within the agent's interface.
+4.  **Launch VS Code Agent Mode**: Open the VS Code command palette (usually `Ctrl+Shift+P` or `Cmd+Shift+P`), type "Agent Mode", and select "Start Agent Mode". The author notes that the prompt file should be added to the agent's context; typically, this means having the file open or explicitly referencing it within the agent's interface.
 
     You should see VS Code's Agent Mode interface active, ready for your command.
 
-5.  **Instruct the agent to explore your site** — In the Agent Mode input field, type the command to start the exploration, replacing the example URL with your target web application.
+5.  **Instruct the agent to explore your site**: In the Agent Mode input field, type the command to start the exploration, replacing the example URL with your target web application.
 
     ```
     Explore https://debs-obrien.github.io/playwright-movies-app
@@ -96,7 +96,7 @@ mode : ' agent'
 
     The agent will start a browser, navigate to the specified URL, and begin interacting with the site, reporting its actions and findings in the Agent Mode panel. You might see a browser window open and close as it explores.
 
-6.  **Review generated tests and findings** — After exploration, the agent will summarize its findings (e.g., "Homepage", "Search functionality", "Theme toggle") and then generate a Playwright test file in your `tests` directory based on its interactions and the prompt's instructions.
+6.  **Review generated tests and findings**: After exploration, the agent will summarize its findings (e.g., "Homepage", "Search functionality", "Theme toggle") and then generate a Playwright test file in your `tests` directory based on its interactions and the prompt's instructions.
 
     You should find a new test file (e.g., `tests/search.spec.ts`) in your project, containing Playwright test code. The agent will also report whether the test passed or failed.
 

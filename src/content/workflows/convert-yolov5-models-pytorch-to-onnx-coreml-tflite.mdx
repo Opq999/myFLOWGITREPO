@@ -60,7 +60,7 @@ You will learn how to convert a YOLOv5 object detection model from its native Py
 
 ## Steps
 
-1.  **Clone the YOLOv5 repository** — If you haven't already, clone the official YOLOv5 repository from GitHub to your local machine. This repository contains the necessary scripts for model conversion.
+1.  **Clone the YOLOv5 repository**: If you haven't already, clone the official YOLOv5 repository from GitHub to your local machine. This repository contains the necessary scripts for model conversion.
     *   Open your terminal or command prompt.
     *   Run the following command:
 
@@ -70,7 +70,7 @@ You will learn how to convert a YOLOv5 object detection model from its native Py
 
     *   You should see output indicating the repository is being cloned, and a new `yolov5` directory will be created.
 
-2.  **Navigate to the YOLOv5 directory** — Change your current directory to the newly cloned `yolov5` folder.
+2.  **Navigate to the YOLOv5 directory**: Change your current directory to the newly cloned `yolov5` folder.
     *   In your terminal, run:
 
     ```bash
@@ -79,7 +79,7 @@ You will learn how to convert a YOLOv5 object detection model from its native Py
 
     *   Your terminal prompt should now show that you are inside the `yolov5` directory.
 
-3.  **Install dependencies** — Install all the required Python packages for YOLOv5 to function correctly. This includes PyTorch and other libraries.
+3.  **Install dependencies**: Install all the required Python packages for YOLOv5 to function correctly. This includes PyTorch and other libraries.
     *   Ensure you have Python 3.8.0 or newer and PyTorch 1.8 or newer installed.
     *   Run the following command in your terminal:
 
@@ -89,7 +89,7 @@ You will learn how to convert a YOLOv5 object detection model from its native Py
 
     *   You will see a list of packages being downloaded and installed. This might take a few minutes.
 
-4.  **Export the model to ONNX** — Use the `export.py` script to convert a pre-trained YOLOv5 model (e.g., `yolov5s.pt`) to the ONNX format. The script will automatically download the model if it's not found locally.
+4.  **Export the model to ONNX**: Use the `export.py` script to convert a pre-trained YOLOv5 model (e.g., `yolov5s.pt`) to the ONNX format. The script will automatically download the model if it's not found locally.
     *   Run the following command in your terminal (from within the `yolov5` directory):
 
     ```bash
@@ -98,7 +98,7 @@ You will learn how to convert a YOLOv5 object detection model from its native Py
 
     *   The script will output progress messages, including downloading the weights if necessary, and then indicate that the ONNX model has been exported. You should find a `yolov5s.onnx` file in the `yolov5/weights` directory.
 
-5.  **Export the model to Core ML** — Similarly, export the model to the Core ML format.
+5.  **Export the model to Core ML**: Similarly, export the model to the Core ML format.
     *   Run the following command:
 
     ```bash
@@ -107,7 +107,7 @@ You will learn how to convert a YOLOv5 object detection model from its native Py
 
     *   You should see output confirming the Core ML export, and a `yolov5s.mlmodel` file will be available in the `yolov5/weights` directory.
 
-6.  **Export the model to TFLite** — Export the model to the TensorFlow Lite format.
+6.  **Export the model to TFLite**: Export the model to the TensorFlow Lite format.
     *   Run the following command:
 
     ```bash

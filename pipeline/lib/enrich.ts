@@ -4,10 +4,9 @@ import { truncate } from './utils';
 
 /**
  * Candidates with thin excerpts (e.g. HN stories that only link out, or Reddit
- * RSS summaries) get scored on almost nothing — wasteful and inaccurate, and it
+ * RSS summaries) get scored on almost nothing, wasteful and inaccurate, and it
  * caps their score because the model can't see the actual steps/prompts. Before
- * scoring we pull richer source text: the underlying article, or — for Reddit —
- * the post body PLUS top comments, where the real recipe usually lives.
+ * scoring we pull richer source text: the underlying article, or, for Reddit, * the post body PLUS top comments, where the real recipe usually lives.
  */
 const MIN_EXCERPT_CHARS = 500;
 const MAX_EXCERPT_CHARS = 4000;

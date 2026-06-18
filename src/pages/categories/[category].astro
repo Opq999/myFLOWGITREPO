@@ -38,13 +38,13 @@ const workflows = (
     {workflows.map((w) => <WorkflowCard workflow={w} />)}
   </div>
   <p id="persona-no-results" hidden class="mt-10 text-ink-400">
-    No workflows for this persona in {meta.label} yet — try another, or{' '}
+    No workflows for this persona in {meta.label} yet, try another, or{' '}
     <a href="/workflows/" class="text-accent underline underline-offset-2">browse all workflows</a>.
   </p>
   {
     workflows.length === 0 && (
       <p class="mt-8 text-ink-400">
-        No workflows here yet — the pipeline publishes new ones daily.{' '}
+        No workflows here yet, the pipeline publishes new ones daily.{' '}
         <a href="/workflows/" class="text-accent underline underline-offset-2">
           Browse all workflows
         </a>

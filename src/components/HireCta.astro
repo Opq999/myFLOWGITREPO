@@ -1,0 +1,68 @@
+---
+import { SITE } from '../site.config';
+import { contactLink } from '../lib/whatsapp';
+
+interface Props {
+  variant: 'sidebar' | 'inline';
+  workflowTitle?: string;
+  timeMinutes?: number;
+}
+
+const { variant, workflowTitle, timeMinutes } = Astro.props;
+
+const message = workflowTitle
+  ? `Hi! I found the "${workflowTitle}" workflow on ${SITE.name} and I'd rather have it set up for me than figure it out myself. Can you help?`
+  : `Hi! I saw ${SITE.name} and I'd like to talk about working with you on AI.`;
+
+const href = contactLink(message);
+---
+
+{
+  variant === 'sidebar' ? (
+    <div class="rounded-2xl border border-line bg-surface p-5 shadow-[0_1px_2px_rgba(28,23,19,0.04)]">
+      <p class="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-accent">Rather not DIY?</p>
+      <p class="mt-2 font-display text-lg font-semibold text-ink-900">Have this done for you</p>
+      <p class="mt-1 text-sm leading-relaxed text-ink-500">
+        Short on time, or just want it set up right the first time? I'll build this workflow for you
+        and hand it over ready to use
+        {timeMinutes ? `, save yourself the ~${timeMinutes} min.` : '.'}
+      </p>
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener"
+        class="mt-4 inline-flex items-center gap-1.5 rounded-full bg-ink-900 px-5 py-2.5 text-sm font-semibold text-paper transition-transform hover:scale-[1.03]"
+      >
+        Get it done for me →
+      </a>
+    </div>
+  ) : (
+    <aside class="mt-12 rounded-2xl border border-line bg-paper-2/50 p-6 shadow-[0_1px_2px_rgba(28,23,19,0.04)] sm:p-8">
+      <p class="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-accent">Or skip the setup</p>
+      <h2 class="mt-2 font-display text-2xl font-medium tracking-[-0.01em] text-ink-900">
+        Want this done for you instead?
+      </h2>
+      <p class="mt-2 max-w-prose text-sm leading-relaxed text-ink-600">
+        You've seen the steps. If your time's worth more than the setup
+        {timeMinutes ? ` (~${timeMinutes} min)` : ''}, I'll build it for you and hand it over ready to
+        use, and point you back to the free DIY route any time you'd rather run it yourself.
+      </p>
+      <div class="mt-5 flex flex-wrap items-center gap-x-4 gap-y-3">
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener"
+          class="inline-flex items-center gap-1.5 rounded-full bg-ink-900 px-6 py-3 font-semibold text-paper transition-transform hover:scale-[1.03]"
+        >
+          Have it done for me →
+        </a>
+        <a
+          href="/services/"
+          class="text-sm font-semibold text-ink-500 underline underline-offset-4 transition-colors hover:text-accent"
+        >
+          See how I work →
+        </a>
+      </div>
+    </aside>
+  )
+}

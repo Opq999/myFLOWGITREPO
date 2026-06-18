@@ -40,27 +40,27 @@ published: true
 You will build a foundational AI customer service agent capable of answering frequently asked questions and handling more complex inquiries. This approach leverages AI to automate responses, saving time and resources typically spent on repetitive customer interactions.
 
 ## Tools you need
-*   **Netlify** (freemium) — A platform for hosting web applications and serverless functions, useful for deploying the AI agent's components.
-*   **DeepSeek-R3** (free) — A powerful AI model that will serve as the 'brain' of your customer service agent, processing queries and generating responses.
-*   **Web Speech API** (free) — A browser-based API that enables voice input and output, allowing for a more interactive user experience.
+*   **Netlify** (freemium): A platform for hosting web applications and serverless functions, useful for deploying the AI agent's components.
+*   **DeepSeek-R3** (free): A powerful AI model that will serve as the 'brain' of your customer service agent, processing queries and generating responses.
+*   **Web Speech API** (free): A browser-based API that enables voice input and output, allowing for a more interactive user experience.
 
 ## Steps
-1.  **Set up the AI Agent's 'Brain' (DeepSeek-R3)** — The author used DeepSeek-R3 as the core AI. You will need to integrate this model into your application. The exact integration method isn't detailed, but typically involves using their API. You'll need to sign up for an API key.
+1.  **Set up the AI Agent's 'Brain' (DeepSeek-R3)**: The author used DeepSeek-R3 as the core AI. You will need to integrate this model into your application. The exact integration method isn't detailed, but typically involves using their API. You'll need to sign up for an API key.
     *   **What to do:** Sign up for DeepSeek-R3 and obtain an API key. Consult their documentation for how to make API calls to send user queries and receive AI-generated responses.
     *   **What you should see:** Successful API calls returning text responses from the AI model.
-2.  **Develop the 'Hands' (Browser Component)** — This part of the agent runs in the user's browser. It handles user input (text or voice) and displays the AI's responses. The author mentions using the Web Speech API for voice.
+2.  **Develop the 'Hands' (Browser Component)**: This part of the agent runs in the user's browser. It handles user input (text or voice) and displays the AI's responses. The author mentions using the Web Speech API for voice.
     *   **What to do:** Implement JavaScript code in your web application to capture user input. If using voice, integrate the Web Speech API for speech-to-text conversion. Display the AI's text responses to the user.
     *   **What you should see:** A functional interface where users can type or speak their questions, and see text responses appear.
-3.  **Implement the 'Voice' (Edge Component)** — This component likely handles the processing of voice input and output, potentially including language detection and conversion, and interacts with the 'Brain'. The author notes issues with the Web Speech API and non-English languages.
+3.  **Implement the 'Voice' (Edge Component)**: This component likely handles the processing of voice input and output, potentially including language detection and conversion, and interacts with the 'Brain'. The author notes issues with the Web Speech API and non-English languages.
     *   **What to do:** Set up serverless functions on Netlify to handle voice processing. This might involve sending audio data to an AI service for transcription and then converting the AI's text response back to speech using the Web Speech API or a similar service.
     *   **What you should see:** The agent can understand spoken queries and respond verbally.
-4.  **Connect the Components with Netlify** — Netlify's serverless functions will act as the glue between the 'Brain', 'Hands', and 'Voice' components, especially given Netlify's 10-second serverless timeout constraint which forced the author to split the agent.
+4.  **Connect the Components with Netlify**: Netlify's serverless functions will act as the glue between the 'Brain', 'Hands', and 'Voice' components, especially given Netlify's 10-second serverless timeout constraint which forced the author to split the agent.
     *   **What to do:** Deploy your frontend (the 'Hands') to Netlify. Create Netlify serverless functions (the 'Edge' components) to handle API calls to DeepSeek-R3 and manage the voice processing logic.
     *   **What you should see:** Your deployed application is live on Netlify, with all components communicating correctly.
-5.  **Test with Complex Queries** — The author successfully defended their business model against a licensed architect. This indicates the AI can handle detailed and potentially adversarial questions.
+5.  **Test with Complex Queries**: The author successfully defended their business model against a licensed architect. This indicates the AI can handle detailed and potentially adversarial questions.
     *   **What to do:** Prepare a list of challenging questions related to your business or services. Interact with your AI agent and evaluate the quality and accuracy of its responses.
     *   **What you should see:** The AI agent provides coherent, accurate, and well-reasoned answers, even to difficult questions.
-6.  **Publish Audit Logs** — To ensure transparency and system integrity, the author publishes audit logs.
+6.  **Publish Audit Logs**: To ensure transparency and system integrity, the author publishes audit logs.
     *   **What to do:** Set up a system to log all interactions with the AI agent. Make these logs accessible, perhaps via a separate page on your Netlify site.
     *   **What you should see:** A public log of AI interactions, demonstrating accountability.
 

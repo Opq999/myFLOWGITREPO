@@ -43,7 +43,7 @@ describe('parseModelJson', () => {
   });
 
   it('quotes the offending text window when JSON is malformed', () => {
-    // Unescaped double-quote inside a string value — the recurring draft failure.
+    // Unescaped double-quote inside a string value, the recurring draft failure.
     const bad = '{"a": 1, "body": "he said "hi" to me", "c": 2}';
     let caught: Error | undefined;
     try {

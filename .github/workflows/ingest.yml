@@ -2,7 +2,7 @@ name: Daily ingest
 
 on:
   schedule:
-    # 08:30 UTC = 09:30 WAT, daily — after the Gemini free-tier daily quota
+    # 08:30 UTC = 09:30 WAT, daily, after the Gemini free-tier daily quota
     # reset (midnight US-Pacific), so the run always starts with fresh quota.
     - cron: '30 8 * * *'
   workflow_dispatch:
@@ -40,7 +40,7 @@ jobs:
       - name: Run pipeline
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          # Optional extra free-tier keys — each adds its own daily quota.
+          # Optional extra free-tier keys, each adds its own daily quota.
           GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
           GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
           GEMINI_API_KEY_4: ${{ secrets.GEMINI_API_KEY_4 }}
@@ -59,7 +59,7 @@ jobs:
         # Fills nigeriaUseCases into any published workflow still missing them
         # (new ones already get them at draft time; this catches quota-gap
         # stragglers). Idempotent, stops gracefully on quota, and can never break
-        # the deploy — so failure is tolerated and changes ride the next commit.
+        # the deploy, so failure is tolerated and changes ride the next commit.
         continue-on-error: true
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -85,7 +85,7 @@ jobs:
           CLOUDFLARE_ACCOUNT_ID: cdd1130f0f80aa74d5fdea5759eb9c29
         run: |
           if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
-            echo "CLOUDFLARE_API_TOKEN secret not set — skipping auto-deploy."
+            echo "CLOUDFLARE_API_TOKEN secret not set, skipping auto-deploy."
             exit 0
           fi
           npm run build

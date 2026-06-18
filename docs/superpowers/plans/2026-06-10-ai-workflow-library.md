@@ -2,23 +2,23 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Build the v1 AI Workflow Library per the PRD: a static, mobile-first Astro 5 site of reproducible AI workflows plus a daily GitHub Actions pipeline that fetches candidates from free APIs, scores/drafts them with Gemini Flash, and auto-publishes — at $0/month.
+**Goal:** Build the v1 AI Workflow Library per the PRD: a static, mobile-first Astro 5 site of reproducible AI workflows plus a daily GitHub Actions pipeline that fetches candidates from free APIs, scores/drafts them with Gemini Flash, and auto-publishes, at $0/month.
 
 **Architecture:** Astro 5 static site (content collections + zod, MDX, Tailwind 4, Pagefind) hosted on Cloudflare Pages. A TypeScript pipeline (run under `tsx`) in `pipeline/` fetches → dedupes → scores (Gemini) → drafts (Gemini) → commits MDX; GitHub Actions cron at 05:30 UTC runs it daily. No backend, no DB.
 
 **Tech Stack:** Astro 5, @astrojs/mdx, @astrojs/sitemap, @astrojs/rss, Tailwind CSS 4 (@tailwindcss/vite), Pagefind, TypeScript (strict), tsx, vitest, fast-xml-parser, Gemini REST API (free tier), GitHub Actions, Cloudflare Pages.
 
 **User-input gates (surface to Opq when reached, never block other work):**
-1. `GEMINI_API_KEY` (aistudio.google.com) — needed for live scoring/drafting (Phase 2 done-check, Phase 3).
-2. GitHub repo + push access (gh CLI not installed) — needed for Actions cron + Cloudflare Pages.
-3. Cloudflare account — Pages project + Web Analytics token.
-4. `YOUTUBE_API_KEY` — optional source.
-5. Final name + domain — Phase 4; until then placeholder `OPQAI` lives only in `src/site.config.ts`.
-6. Buttondown username + Tally form ID — newsletter/submit embeds render placeholders until filled in `src/site.config.ts`.
+1. `GEMINI_API_KEY` (aistudio.google.com), needed for live scoring/drafting (Phase 2 done-check, Phase 3).
+2. GitHub repo + push access (gh CLI not installed), needed for Actions cron + Cloudflare Pages.
+3. Cloudflare account, Pages project + Web Analytics token.
+4. `YOUTUBE_API_KEY`, optional source.
+5. Final name + domain, Phase 4; until then placeholder `OPQAI` lives only in `src/site.config.ts`.
+6. Buttondown username + Tally form ID, newsletter/submit embeds render placeholders until filled in `src/site.config.ts`.
 
 ---
 
-## Phase 1 — Content foundation (site)
+## Phase 1, Content foundation (site)
 
 ### Task 1: Scaffold Astro project
 
@@ -26,12 +26,12 @@
 
 - [ ] Run `npm create astro@latest . -- --template minimal --no-install --no-git --typescript strict --skip-houston -y` (adjust flags to whatever the current CLI accepts; goal: minimal template, strict TS, no git re-init).
 - [ ] `npm install` then `npx astro add mdx sitemap --yes`; `npm install tailwindcss @tailwindcss/vite @astrojs/rss`; `npm install -D pagefind tsx vitest fast-xml-parser @astrojs/check typescript`.
-- [ ] `astro.config.mjs`: integrations `mdx()`, `sitemap()`; `site: SITE.url` (import from site config not possible in .mjs cleanly — hardcode `https://opqai.pages.dev` with a comment to update with site.config.ts when domain decided); vite plugin `tailwindcss()`.
+- [ ] `astro.config.mjs`: integrations `mdx()`, `sitemap()`; `site: SITE.url` (import from site config not possible in .mjs cleanly, hardcode `https://opqai.pages.dev` with a comment to update with site.config.ts when domain decided); vite plugin `tailwindcss()`.
 - [ ] `src/styles/global.css`: `@import "tailwindcss";` plus theme tokens (system font stack, accent color, dark-on-light minimal palette).
 - [ ] `src/site.config.ts`:
 ```ts
 export const SITE = {
-  name: "OPQAI",            // placeholder — final name before Phase 4
+  name: "OPQAI",            // placeholder, final name before Phase 4
   tagline: "Proven AI workflows, step by step",
   url: "https://opqai.pages.dev", // update with custom domain in Phase 4
   buttondownUsername: "",   // fill to enable newsletter form
@@ -47,7 +47,7 @@ export const SITE = {
 
 **Files:** Create `src/lib/workflow-schema.ts`, `src/content.config.ts`, `src/lib/categories.ts`, `src/content/workflows/.gitkeep`, `src/content/drafts/.gitkeep`.
 
-- [ ] `src/lib/workflow-schema.ts` — single source of truth, imported by both Astro config and pipeline. Use `z` from `astro/zod`:
+- [ ] `src/lib/workflow-schema.ts`, single source of truth, imported by both Astro config and pipeline. Use `z` from `astro/zod`:
 ```ts
 import { z } from "astro/zod";
 
@@ -88,7 +88,7 @@ export const workflowSchema = z.object({
 export type Workflow = z.infer<typeof workflowSchema>;
 ```
 - [ ] `src/content.config.ts`: two collections via `glob` loader (`astro/loaders`): `workflows` (base `./src/content/workflows`) and `drafts` (base `./src/content/drafts`), both `pattern: "**/*.mdx"`, schema `workflowSchema` (drafts: `workflowSchema.extend({ published: z.boolean().default(false) })`).
-- [ ] `src/lib/categories.ts`: `Record<Category, { label: string; blurb: string; emoji: string }>` with real copy for all 6 categories (e.g. `"sme-operations": { label: "SME Operations", blurb: "Run a leaner business — invoices, inventory, customer replies, and marketing handled with AI.", emoji: "🏪" }` — write all six).
+- [ ] `src/lib/categories.ts`: `Record<Category, { label: string; blurb: string; emoji: string }>` with real copy for all 6 categories (e.g. `"sme-operations": { label: "SME Operations", blurb: "Run a leaner business, invoices, inventory, customer replies, and marketing handled with AI.", emoji: "🏪" }`, write all six).
 - [ ] Verify: `npm run check` passes. Commit.
 
 ### Task 3: Three hand-written sample workflows
@@ -96,7 +96,7 @@ export type Workflow = z.infer<typeof workflowSchema>;
 **Files:** Create `src/content/workflows/youtube-video-to-social-posts-claude.mdx`, `src/content/workflows/fix-github-issue-claude-code.mdx`, `src/content/workflows/tailor-cv-job-description-chatgpt.mdx`.
 
 - [ ] Each follows the PRD body structure exactly: `## What you'll get`, `## Tools you need`, `## Steps` (numbered, every prompt in a fenced code block), `## Original source`, `## Notes & variations`. Frontmatter passes `workflowSchema`. Cover 3 different categories (content-creation, coding, job-hunting) and at least one with `nigeriaNotes`.
-- [ ] Sources must be REAL canonical URLs (official docs/help-center articles describing the workflow). Verify each URL with WebFetch if network allows; if not, flag to user in final report. Never fabricate steps or attribute to invented authors — use the publishing org as author when sourcing docs.
+- [ ] Sources must be REAL canonical URLs (official docs/help-center articles describing the workflow). Verify each URL with WebFetch if network allows; if not, flag to user in final report. Never fabricate steps or attribute to invented authors, use the publishing org as author when sourcing docs.
 - [ ] Verify: `npm run build` renders 3 workflow entries. Commit.
 
 ### Task 4: Layout, header, footer
@@ -114,9 +114,9 @@ export type Workflow = z.infer<typeof workflowSchema>;
 
 - [ ] `[slug].astro`: `getStaticPaths` from `getCollection("workflows", e => e.data.published)`; render via `render(entry)`. Layout: title, meta row (Badge, difficulty, `timeMinutes` min, category link), jobToBeDone strapline, ToolsList (name + pricing chip + outbound link, `affiliateUrl || url`), NigeriaNotes callout when present, MDX `<Content />`, ShareButtons, SourceEmbed near the Original source section.
 - [ ] Copy-to-clipboard: inline `<script>` decorating every `pre` in `.workflow-body` with a "Copy" button (`navigator.clipboard.writeText`, fallback `execCommand`), "Copied ✓" feedback. Vanilla JS, no deps.
-- [ ] `ShareButtons.astro`: WhatsApp first (`https://wa.me/?text={title — url}`), then X (`https://twitter.com/intent/tweet`), then copy-link button. Large tap targets.
+- [ ] `ShareButtons.astro`: WhatsApp first (`https://wa.me/?text={title, url}`), then X (`https://twitter.com/intent/tweet`), then copy-link button. Large tap targets.
 - [ ] `SourceEmbed.astro`: data-light click-to-load. Default renders a source card (platform icon, author, link). "Load original post" button injects the official embed on click only: YouTube → iframe `youtube-nocookie.com/embed/{id}`; Reddit → `embed.reddit.com` iframe; Twitter → blockquote + widgets.js; others → card only.
-- [ ] `src/lib/steps.ts`: `extractSteps(body: string): string[]` — pull numbered-list lines from the `## Steps` section of raw MDX body (regex `/^\d+\.\s+(.+)$/gm` scoped between `## Steps` and the next `## `). `src/lib/jsonld.ts`: `howToJsonLd(workflow, steps, url)` returning schema.org HowTo (name, description, totalTime `PT{n}M`, tool array, step array). Inject via `<script type="application/ld+json" set:html={...} />`.
+- [ ] `src/lib/steps.ts`: `extractSteps(body: string): string[]`, pull numbered-list lines from the `## Steps` section of raw MDX body (regex `/^\d+\.\s+(.+)$/gm` scoped between `## Steps` and the next `## `). `src/lib/jsonld.ts`: `howToJsonLd(workflow, steps, url)` returning schema.org HowTo (name, description, totalTime `PT{n}M`, tool array, step array). Inject via `<script type="application/ld+json" set:html={...} />`.
 - [ ] Verify: build; open `dist` output of one sample to confirm copy buttons + JSON-LD exist. Commit.
 
 ### Task 6: Workflow index with filters
@@ -131,7 +131,7 @@ export type Workflow = z.infer<typeof workflowSchema>;
 
 **Files:** Modify `src/pages/index.astro`. Create `src/components/NewsletterForm.astro`.
 
-- [ ] Sections: value prop hero ("Reproducible AI workflows for real work — exact steps, exact prompts, real sources."); Latest (6 most recent by `ingestedAt`); Trending (top `score`, `ingestedAt` within last 14 days, top 6 — if none qualify, hide section); category grid from `categories.ts` with per-category counts; NewsletterForm.
+- [ ] Sections: value prop hero ("Reproducible AI workflows for real work, exact steps, exact prompts, real sources."); Latest (6 most recent by `ingestedAt`); Trending (top `score`, `ingestedAt` within last 14 days, top 6, if none qualify, hide section); category grid from `categories.ts` with per-category counts; NewsletterForm.
 - [ ] `NewsletterForm.astro`: Buttondown embed form action `https://buttondown.com/api/emails/embed-subscribe/{username}` only when `SITE.buttondownUsername` set; otherwise render nothing.
 - [ ] Verify: build. Commit.
 
@@ -155,12 +155,12 @@ export type Workflow = z.infer<typeof workflowSchema>;
 ### Task 10: Phase 1 verification
 
 - [ ] `npm run check` (0 errors), `npm run build` (Pagefind indexes pages), `npm run preview` spot check: copy buttons, filters, share links, search.
-- [ ] JS budget check: list `dist/**/*.js` total bytes on a workflow page — must be well under 100KB (expect < 10KB excluding lazy Pagefind).
-- [ ] Commit. **USER GATE:** Cloudflare Pages deploy needs Opq's account — report exact connect steps; do not block Phase 2.
+- [ ] JS budget check: list `dist/**/*.js` total bytes on a workflow page, must be well under 100KB (expect < 10KB excluding lazy Pagefind).
+- [ ] Commit. **USER GATE:** Cloudflare Pages deploy needs Opq's account, report exact connect steps; do not block Phase 2.
 
 ---
 
-## Phase 2 — Pipeline
+## Phase 2, Pipeline
 
 ### Task 11: Pipeline types, config, utils (TDD)
 
@@ -203,36 +203,36 @@ export interface ScoreResult {
 
 **Files:** Create `pipeline/lib/dedupe.ts`, `pipeline/lib/dedupe.test.ts`, `pipeline/seen.json` (`{"version":1,"seen":{}}`).
 
-- [ ] `loadSeen(path)` / `saveSeen(path, seen)`; `dedupe(candidates, seen, existingTitles): Candidate[]` — drop if `sha256(normalizeUrl(url))` in seen, or `titleSimilarity ≥ 0.85` vs any existing workflow title or earlier candidate in the same batch. `existingTitles` read by globbing `src/content/{workflows,drafts}/*.mdx` frontmatter titles (simple regex parse `^title:` line).
+- [ ] `loadSeen(path)` / `saveSeen(path, seen)`; `dedupe(candidates, seen, existingTitles): Candidate[]`, drop if `sha256(normalizeUrl(url))` in seen, or `titleSimilarity ≥ 0.85` vs any existing workflow title or earlier candidate in the same batch. `existingTitles` read by globbing `src/content/{workflows,drafts}/*.mdx` frontmatter titles (simple regex parse `^title:` line).
 - [ ] Tests: URL dup, utm-variant dup, near-title dup, batch-internal dup, clean pass-through. Green. Commit.
 
 ### Task 14: Gemini client (TDD on parsing)
 
 **Files:** Create `pipeline/lib/gemini.ts`, `pipeline/lib/gemini.test.ts`.
 
-- [ ] `geminiJson<T>(prompt: string, opts?): Promise<T>` — POST `https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent?key={GEMINI_API_KEY}`, body `{ contents: [{ parts: [{ text }]}], generationConfig: { responseMimeType: "application/json", temperature: 0.2 } }`. Built-in throttle: module-level last-call timestamp, await `sleep` to respect `GEMINI_MS_BETWEEN_CALLS`. On 429: wait 60s, retry once. Missing `GEMINI_API_KEY` → throw `new Error("GEMINI_API_KEY not set")` (orchestrator surfaces this as a user gate).
-- [ ] Pure helper `extractJson(text)` (strips markdown fences, finds first `{`…last `}`) — TDD with fenced/plain/noisy inputs. Green. Commit.
+- [ ] `geminiJson<T>(prompt: string, opts?): Promise<T>`, POST `https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent?key={GEMINI_API_KEY}`, body `{ contents: [{ parts: [{ text }]}], generationConfig: { responseMimeType: "application/json", temperature: 0.2 } }`. Built-in throttle: module-level last-call timestamp, await `sleep` to respect `GEMINI_MS_BETWEEN_CALLS`. On 429: wait 60s, retry once. Missing `GEMINI_API_KEY` → throw `new Error("GEMINI_API_KEY not set")` (orchestrator surfaces this as a user gate).
+- [ ] Pure helper `extractJson(text)` (strips markdown fences, finds first `{`…last `}`), TDD with fenced/plain/noisy inputs. Green. Commit.
 
 ### Task 15: Scoring prompt + stage
 
 **Files:** Create `pipeline/prompts/score.md`, `pipeline/lib/score.ts`, `pipeline/lib/score.test.ts`.
 
-- [ ] `score.md` — THE quality gate. Contains: role ("strict curator for a library of reproducible AI workflows"), the full PRD rubric verbatim (0–4 / 5–6 / 7–8 / 9–10, penalties −2 paid-only, −2 single-tool self-promo, −1 older than 12 months; bonuses +1 real results, +1 fully free tools), category enum with one-line definitions, beachhead note (favor free-tier, low-data workflows useful to Nigerian students/freelancers/SMEs), strict JSON output spec matching `ScoreResult`, and 3 few-shot examples (one 2, one 6, one 8) with candidate `{{TITLE}} {{PLATFORM}} {{AUTHOR}} {{POSTED_AT}} {{STATS}} {{EXCERPT}}` placeholders at the end.
-- [ ] `score.ts`: `scoreCandidate(c: Candidate): Promise<ScoreResult>` — interpolate template, call `geminiJson<ScoreResult>`, validate with a zod schema for `ScoreResult` (clamp score 0–10, category must be in enum else `isWorkflow:false`). Test: template interpolation + validation rejects bad category (mock `geminiJson`). Green. Commit.
+- [ ] `score.md`, THE quality gate. Contains: role ("strict curator for a library of reproducible AI workflows"), the full PRD rubric verbatim (0-4 / 5-6 / 7-8 / 9-10, penalties −2 paid-only, −2 single-tool self-promo, −1 older than 12 months; bonuses +1 real results, +1 fully free tools), category enum with one-line definitions, beachhead note (favor free-tier, low-data workflows useful to Nigerian students/freelancers/SMEs), strict JSON output spec matching `ScoreResult`, and 3 few-shot examples (one 2, one 6, one 8) with candidate `{{TITLE}} {{PLATFORM}} {{AUTHOR}} {{POSTED_AT}} {{STATS}} {{EXCERPT}}` placeholders at the end.
+- [ ] `score.ts`: `scoreCandidate(c: Candidate): Promise<ScoreResult>`, interpolate template, call `geminiJson<ScoreResult>`, validate with a zod schema for `ScoreResult` (clamp score 0-10, category must be in enum else `isWorkflow:false`). Test: template interpolation + validation rejects bad category (mock `geminiJson`). Green. Commit.
 
 ### Task 16: Drafting prompt + stage (TDD on serialization)
 
 **Files:** Create `pipeline/prompts/draft.md`, `pipeline/lib/draft.ts`, `pipeline/lib/mdx.ts`, `pipeline/lib/mdx.test.ts`.
 
-- [ ] `draft.md`: instructs Gemini to produce strict JSON `{ frontmatter: <object matching workflowSchema minus score/ingestedAt/source (injected by code)>, body: "<markdown>" }`; body MUST follow the 5-section structure with every prompt in a fenced code block; description 140–160 chars; **never fabricate steps/results — where the source omits detail, write the step generically and say so**; include `nigeriaNotes` when free-tier/data info is inferable, omit otherwise.
-- [ ] `mdx.ts`: `toMdx(frontmatter: Workflow, body: string): string` — YAML frontmatter serializer (hand-rolled for our flat schema: strings quoted/escaped, dates as `YYYY-MM-DD`, nested `tools`/`source` maps) + body; `validateDraft(obj): Workflow` via `workflowSchema.parse` after injecting `score`, `ingestedAt`, `source`, `badge:"sourced"`. TDD round-trip test: `toMdx` output frontmatter re-parses (regex/YAML-lite) and `validateDraft` rejects missing tools / bad enum.
-- [ ] `draft.ts`: `draftWorkflow(c: Candidate, s: ScoreResult): Promise<{ slug, mdx } | null>` — call Gemini, validate; on zod failure retry once with the validation errors appended to the prompt; second failure → return null (orchestrator demotes to drafts dir with whatever was salvageable, else skips + logs). Green tests. Commit.
+- [ ] `draft.md`: instructs Gemini to produce strict JSON `{ frontmatter: <object matching workflowSchema minus score/ingestedAt/source (injected by code)>, body: "<markdown>" }`; body MUST follow the 5-section structure with every prompt in a fenced code block; description 140-160 chars; **never fabricate steps/results, where the source omits detail, write the step generically and say so**; include `nigeriaNotes` when free-tier/data info is inferable, omit otherwise.
+- [ ] `mdx.ts`: `toMdx(frontmatter: Workflow, body: string): string`, YAML frontmatter serializer (hand-rolled for our flat schema: strings quoted/escaped, dates as `YYYY-MM-DD`, nested `tools`/`source` maps) + body; `validateDraft(obj): Workflow` via `workflowSchema.parse` after injecting `score`, `ingestedAt`, `source`, `badge:"sourced"`. TDD round-trip test: `toMdx` output frontmatter re-parses (regex/YAML-lite) and `validateDraft` rejects missing tools / bad enum.
+- [ ] `draft.ts`: `draftWorkflow(c: Candidate, s: ScoreResult): Promise<{ slug, mdx } | null>`, call Gemini, validate; on zod failure retry once with the validation errors appended to the prompt; second failure → return null (orchestrator demotes to drafts dir with whatever was salvageable, else skips + logs). Green tests. Commit.
 
 ### Task 17: Orchestrator
 
 **Files:** Create `pipeline/run.ts`, `pipeline/logs/.gitkeep`.
 
-- [ ] `run.ts` flow: parse flags (`--dry-run`, `--backfill`); `fetchAll` → `dedupe` → cap to `scorePerRun` (sorted by stats.points desc) → for each candidate (try/catch per candidate; errors log + continue): score → route: `<5` discard (log reason); `5–6` write draft MDX to `src/content/drafts/`; `≥7` draft → write to `src/content/workflows/` (or `drafts/` when `--dry-run`) until `publishPerRun` cap. Update + save `seen.json` for every scored candidate. Write JSONL run log `pipeline/logs/run-{YYYY-MM-DD}.jsonl` ({stage, url, score?, outcome, error?}). Exit non-zero only on fatal config errors (missing key), never on per-candidate failures. Print summary table (fetched/deduped/scored/published/drafted/discarded).
+- [ ] `run.ts` flow: parse flags (`--dry-run`, `--backfill`); `fetchAll` → `dedupe` → cap to `scorePerRun` (sorted by stats.points desc) → for each candidate (try/catch per candidate; errors log + continue): score → route: `<5` discard (log reason); `5-6` write draft MDX to `src/content/drafts/`; `≥7` draft → write to `src/content/workflows/` (or `drafts/` when `--dry-run`) until `publishPerRun` cap. Update + save `seen.json` for every scored candidate. Write JSONL run log `pipeline/logs/run-{YYYY-MM-DD}.jsonl` ({stage, url, score?, outcome, error?}). Exit non-zero only on fatal config errors (missing key), never on per-candidate failures. Print summary table (fetched/deduped/scored/published/drafted/discarded).
 - [ ] Backfill mode: same flow with `backfill:true` fetch windows and loop note: run repeatedly until corpus targets met (Phase 3 handles the looping; run.ts itself stays single-pass).
 - [ ] Verify: `npm run pipeline:dry` without `GEMINI_API_KEY` exits with the clear gate message after fetching+dedupe (fetch/dedupe stages proven against live APIs). Commit.
 
@@ -246,14 +246,14 @@ export interface ScoreResult {
 
 ---
 
-## Phase 3 — Backfill + tune (GATED on GEMINI_API_KEY)
+## Phase 3, Backfill + tune (GATED on GEMINI_API_KEY)
 
 ### Task 19: Live dry-run + prompt tuning + backfill
-- [ ] With key: `npm run pipeline:dry` → review ≥3 generated drafts for schema validity + honesty (no fabricated steps) → iterate `score.md`/`draft.md` → flip to publish, run `pipeline:backfill` until 60–75 published with every category ≥ 8 (respect free-tier throttle: spread over multiple runs/days if needed).
+- [ ] With key: `npm run pipeline:dry` → review ≥3 generated drafts for schema validity + honesty (no fabricated steps) → iterate `score.md`/`draft.md` → flip to publish, run `pipeline:backfill` until 60-75 published with every category ≥ 8 (respect free-tier throttle: spread over multiple runs/days if needed).
 
 ---
 
-## Phase 4 — Launch polish (partially GATED)
+## Phase 4, Launch polish (partially GATED)
 
 ### Task 20: OG images + final SEO
 - [ ] Auto OG images: `astro-og-canvas` (or satori) endpoint `src/pages/og/[...slug].png.ts` over workflows collection; wire `og:image` in Base.astro. HowTo JSON-LD + sitemap + RSS already done (Tasks 5/9).
@@ -263,6 +263,6 @@ export interface ScoreResult {
 ---
 
 ## Self-review notes
-- Spec coverage checked against PRD sections 4–9 and 12: all pages, schema fields, pipeline stages, caps, throttles, action cron, badges, monetization-ready `affiliateUrl`, no-backend constraint — covered. Non-goals respected (no auth/comments/X API).
+- Spec coverage checked against PRD sections 4-9 and 12: all pages, schema fields, pipeline stages, caps, throttles, action cron, badges, monetization-ready `affiliateUrl`, no-backend constraint, covered. Non-goals respected (no auth/comments/X API).
 - Lighthouse target is verified at Phase 1 end and Phase 4; JS budget enforced by avoiding frameworks (only inline vanilla scripts + lazy Pagefind).
 - Types consistent: `Candidate`/`ScoreResult` defined once in `pipeline/types.ts`; schema single-sourced in `src/lib/workflow-schema.ts`.

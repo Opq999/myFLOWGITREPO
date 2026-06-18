@@ -7,7 +7,7 @@ const workflows = defineCollection({
   schema: workflowSchema,
 });
 
-// Score 5–6 pipeline output lives in ./src/content/drafts for an optional human
+// Score 5-6 pipeline output lives in ./src/content/drafts for an optional human
 // glance and for dedupe (read directly from disk in pipeline/lib/dedupe.ts).
 // It is deliberately NOT a built collection: drafts are never rendered, and a
 // single malformed LLM-generated draft would otherwise crash the whole site
