@@ -3304,8 +3304,36 @@
     "4bc3b7db2a7a8e41be6b8e738e18a2368471ea6e8240648279795c9d57cc61d8": {
       "url": "https://simonwillison.net/2026/Jun/17/charity-majors",
       "date": "2026-06-18"
+    },
+    "750a4342cd2003bfa645428baa2e1d9d31f250d2a6df094a18ae8fc3b2898d37": {
+      "url": "https://news.ycombinator.com/item?id=44225930",
+      "date": "2026-06-18"
+    },
+    "d79c0b63d5ac98ba268526e7cca11770fe676c8463f281bb6e016951b588dab7": {
+      "url": "https://www.latent.space/p/ainews-midjourney-medical-scan-your",
+      "date": "2026-06-18"
+    },
+    "f543520f0b8245524dbb96c565616be8806eebe9e620e664f4091b5327f233e2": {
+      "url": "https://github.com/pewdiepie-archdaemon/odysseus",
+      "date": "2026-06-18"
+    },
+    "8b86034a921dd8f1b6259345686f04610f90801cad4d70482d35c894c0dc5152": {
+      "url": "https://news.ycombinator.com/item?id=45084759",
+      "date": "2026-06-18"
+    },
+    "075b966bd6aaba51bac186e4837127769883e8ada8f2b1414cfe37a6aaace290": {
+      "url": "https://www.latent.space/p/radical-ai",
+      "date": "2026-06-18"
+    },
+    "a5d406dab37933d67579c1c918c0902379288f8ff41333f8bc5f56123c0e0c76": {
+      "url": "https://github.com/langfuse/langfuse",
+      "date": "2026-06-18"
+    },
+    "92cb499f3a31169d598a04aa32907218a6f0a0a7cd3b332d73f8c98b1a5c4678": {
+      "url": "https://news.ycombinator.com/item?id=48189073",
+      "date": "2026-06-18"
     }
   },
   "backfillPage": 10,
-  "dailyPage": 3
+  "dailyPage": 4
 }
