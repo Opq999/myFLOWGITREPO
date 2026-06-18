@@ -3284,8 +3284,28 @@
     "08aa872a6b49000b68c8cc563334ce379d539c97f7f1b37276d07fb714d114e6": {
       "url": "https://github.com/brianpetro/obsidian-smart-connections",
       "date": "2026-06-18"
+    },
+    "31a56617df29dfbe939b6153fd1c5d0f4b265fa734ae094da2c0572ff338e56e": {
+      "url": "https://news.ycombinator.com/item?id=47119871",
+      "date": "2026-06-18"
+    },
+    "f83f293ef0659a98e861e5ce36f3e3a8592e81a379008fa63e7b8f02f2637770": {
+      "url": "https://simonwillison.net/2026/Jun/17/glm-52",
+      "date": "2026-06-18"
+    },
+    "b5a44c85aa7745855c3c27ebaa7594c7fa33936b25ef7640bcba63dec1eb4d07": {
+      "url": "https://github.com/OpenHands/OpenHands",
+      "date": "2026-06-18"
+    },
+    "461f99d67709d37ba56bc00725fb835d2aace0a435f28747e589ec0620b3681d": {
+      "url": "https://news.ycombinator.com/item?id=44204181",
+      "date": "2026-06-18"
+    },
+    "4bc3b7db2a7a8e41be6b8e738e18a2368471ea6e8240648279795c9d57cc61d8": {
+      "url": "https://simonwillison.net/2026/Jun/17/charity-majors",
+      "date": "2026-06-18"
     }
   },
   "backfillPage": 10,
-  "dailyPage": 2
+  "dailyPage": 3
 }
