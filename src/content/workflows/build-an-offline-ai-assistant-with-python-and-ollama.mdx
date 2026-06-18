@@ -31,7 +31,7 @@ nigeriaUseCases:
   - persona: "entrepreneur"
     scenario: "An entrepreneur prototypes a basic offline chatbot for a local agricultural app, allowing farmers to get quick answers about crop diseases without needing internet access."
 tiktokUrl: ""
-published: false
+published: true
 ---
 
 ## What you'll get
@@ -68,20 +68,20 @@ You'll learn the foundational concepts and setup for creating a Python-based AI 
     *   **To do:** The author's example code for their `_score_intent` function is provided below. This function takes user input (tokenized words and full text) and a list of predefined patterns, then calculates a score based on how well the input matches these patterns. The author doesn't provide the full class structure or the `_edit_distance` function; you would need to define your own `patterns` (lists of keywords/phrases) and implement a simple `_edit_distance` function (e.g., Levenshtein distance) to make this runnable within a complete assistant.
 
     ```python
-def _score_intent(self, tokens: List[str], full_text: str, patterns: List[str]) -> float:
-    score = 0.0
-    for pattern in patterns:
-        if " " in pattern: # Multi-word phrase - bonus proportional to word count
-            if pattern in full_text:
-                score += len(pattern.split()) * 1.5 # "why is ram so high" = 5 x 1.5
-        else:
-            if pattern in tokens:
-                score += 1.0 # exact match
-            elif any(t.startswith(pattern) or pattern.startswith(t) for t in tokens if len(t) >= 3 and len(pattern) >= 3):
-                score += 0.4 # prefix match ("perfor" - "performance")
-            elif len(pattern) >= 5 and any(self._edit_distance(t, pattern) <= 1 for t in tokens if abs(len(t) - len(pattern)) <= 2 and len(t) >= 4):
-                score += 0.6 # typo tolerance: 1-char edit distance
-    return score
+    def _score_intent(self, tokens: List[str], full_text: str, patterns: List[str]) -> float:
+        score = 0.0
+        for pattern in patterns:
+            if " " in pattern: # Multi-word phrase - bonus proportional to word count
+                if pattern in full_text:
+                    score += len(pattern.split()) * 1.5 # "why is ram so high" = 5 x 1.5
+            else:
+                if pattern in tokens:
+                    score += 1.0 # exact match
+                elif any(t.startswith(pattern) or pattern.startswith(t) for t in tokens if len(t) >= 3 and len(pattern) >= 3):
+                    score += 0.4 # prefix match ("perfor" - "performance")
+                elif len(pattern) >= 5 and any(self._edit_distance(t, pattern) <= 1 for t in tokens if abs(len(t) - len(pattern)) <= 2 and len(t) >= 4):
+                    score += 0.6 # typo tolerance: 1-char edit distance
+        return score
     ```
 
     *   **You should see:** You will have a Python function defined in your `offline_assistant.py` file that can score how well a user's input matches predefined intent patterns, forming the basis of your assistant's understanding.
@@ -91,14 +91,14 @@ def _score_intent(self, tokens: List[str], full_text: str, patterns: List[str]) 
     *   **To do:** The author's example code for their `_blend_with_ml` function is provided below. This function takes the text, the intent identified by keywords, and its confidence, then blends it with an ML classifier's prediction. The author doesn't provide the `ml_classifier` object or how to train it; this snippet illustrates the logic for combining different confidence scores.
 
     ```python
-def _blend_with_ml(self, text: str, kw_intent: str, kw_conf: float):
-    ml_intent, ml_conf = ml_classifier.predict(text)
-    if ml_conf >= 0.70: # ML very confident — trust it outright
-        return ml_intent, ml_conf
-    if ml_conf >= 0.35:
-        if ml_intent == kw_intent: # Agreement - amplify the signal
-            blended = 0.65 * ml_conf + 0.35 * kw_conf
-            return ml_intent, min(1.0, blended)
+    def _blend_with_ml(self, text: str, kw_intent: str, kw_conf: float):
+        ml_intent, ml_conf = ml_classifier.predict(text)
+        if ml_conf >= 0.70: # ML very confident — trust it outright
+            return ml_intent, ml_conf
+        if ml_conf >= 0.35:
+            if ml_intent == kw_intent: # Agreement - amplify the signal
+                blended = 0.65 * ml_conf + 0.35 * kw_conf
+                return ml_intent, min(1.0, blended)
     ```
 
     *   **You should see:** You will have a Python function that can combine confidence scores from different intent detection methods, allowing your assistant to make more robust decisions about user intent.

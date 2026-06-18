@@ -35,7 +35,7 @@ nigeriaUseCases:
   - persona: "small-business"
     scenario: "Rewrite AI-drafted WhatsApp broadcast messages for your salon's new discount offer or customer replies, making them sound friendly and personal, not robotic."
 tiktokUrl: ""
-published: false
+published: true
 ---
 
 ## What you'll get
@@ -55,15 +55,15 @@ You'll get AI-generated text that reads more naturally and authentically, free f
 2.  **Install the Humanizer skill** — Open your terminal or command prompt. To install the Humanizer skill into Claude Code, type or paste the following commands one by one and press Enter after each:
 
     ```bash
-mkdir -p ~/.claude/skills
-git clone https://github.com/blader/humanizer.git ~/.claude/skills/humanizer
+    mkdir -p ~/.claude/skills
+    git clone https://github.com/blader/humanizer.git ~/.claude/skills/humanizer
     ```
 
     If you are using OpenCode, you can use the same commands, or clone into its specific directory:
 
     ```bash
-mkdir -p ~/.config/opencode/skills
-git clone https://github.com/blader/humanizer.git ~/.config/opencode/skills/humanizer
+    mkdir -p ~/.config/opencode/skills
+    git clone https://github.com/blader/humanizer.git ~/.config/opencode/skills/humanizer
     ```
 
     The author notes that cloning into `~/.claude/skills/humanizer/` is sufficient for both if you use both tools.
@@ -73,8 +73,8 @@ git clone https://github.com/blader/humanizer.git ~/.config/opencode/skills/huma
 3.  **Calibrate your writing voice (optional but recommended)** — To help the skill match your personal writing style, provide a sample of your own writing. In your Claude Code or OpenCode interface, type or paste this prompt, replacing `[paste 2-3 paragraphs of your own writing here]` with your actual text:
 
     ```
-/humanizer Here's a sample of my writing for voice matching:
-[paste 2-3 paragraphs of your own writing here]
+    /humanizer Here's a sample of my writing for voice matching:
+    [paste 2-3 paragraphs of your own writing here]
     ```
 
     The model will process your input. While the exact response isn't specified, you can expect an acknowledgment that your writing style has been noted or that it's ready for the next step.
@@ -82,13 +82,13 @@ git clone https://github.com/blader/humanizer.git ~/.config/opencode/skills/huma
 4.  **Humanize your AI-generated text** — Now, paste the AI-generated text you want to humanize. In your Claude Code or OpenCode interface, use one of these commands:
 
     ```
-/humanizer [paste your AI-generated text here]
+    /humanizer [paste your AI-generated text here]
     ```
 
     Or, if you prefer a more natural language approach:
 
     ```
-Please humanize this text: [paste your AI-generated text here]
+    Please humanize this text: [paste your AI-generated text here]
     ```
 
     The skill will process your text and return a rewritten version. This output should sound more natural, less repetitive, and free from common AI writing patterns.

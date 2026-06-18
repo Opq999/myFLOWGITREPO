@@ -1,0 +1,59 @@
+name: Deploy to Cloudflare Pages
+
+# Deploys the site whenever site-affecting files are pushed to main by a HUMAN
+# (or any push not made with the Actions GITHUB_TOKEN). This closes the gap where
+# a direct content push — e.g. promoting a workflow out of drafts — was committed
+# but never reached the live site, because the only deploy lived inside the
+# ingest/backfill runs.
+#
+# Why this does NOT double-deploy the daily pipeline: GitHub deliberately does not
+# trigger `on: push` workflows for pushes made with the default GITHUB_TOKEN, and
+# the ingest/backfill workflows push with that token. So their bot-commits keep
+# deploying via their own in-step deploy, and this workflow only fires for
+# human/direct pushes. workflow_dispatch is included as a manual fallback.
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/**'
+      - 'public/**'
+      - 'astro.config.*'
+      - 'package.json'
+      - 'package-lock.json'
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+# Only the latest commit needs to be live; cancel an in-flight deploy when a
+# newer push arrives.
+concurrency:
+  group: deploy-pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Build and deploy to Cloudflare Pages
+        env:
+          # Accepts the common misspelling CLOUDFARE_API_TOKEN as a fallback.
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN || secrets.CLOUDFARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: cdd1130f0f80aa74d5fdea5759eb9c29
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
+            echo "CLOUDFLARE_API_TOKEN secret not set — skipping deploy."
+            exit 0
+          fi
+          npm run build
+          npx wrangler pages deploy dist --project-name opqai --branch main

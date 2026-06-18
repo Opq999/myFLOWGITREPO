@@ -39,7 +39,7 @@ nigeriaUseCases:
   - persona: "small-business"
     scenario: "Set up a customer support forum for your online store where AI can help flag common complaints and suggest relevant product FAQs."
 tiktokUrl: ""
-published: false
+published: true
 ---
 
 ## What you'll get
@@ -57,25 +57,25 @@ You will learn how to build a complete forum application where Redis 8 serves as
     You should have Python and optionally Docker ready for use.
 2.  **Clone the project repository** - Download the CleanForum project code from GitHub.
     ```bash
-git clone https://github.com/premananda108/CleanForum.git
-```
+    git clone https://github.com/premananda108/CleanForum.git
+    ```
     You should see the CleanForum project files downloaded to your local machine.
 3.  **Navigate to the project directory** - Open your terminal or command prompt and go into the cloned project folder.
     ```bash
-cd CleanForum
-```
+    cd CleanForum
+    ```
     Your terminal prompt should now indicate you are inside the CleanForum directory.
 4.  **Install Python dependencies** - Install all the necessary Python libraries required for the project.
     ```bash
-pip install -r requirements.txt
-```
+    pip install -r requirements.txt
+    ```
     You should see a list of packages being installed, indicating successful dependency management.
 5.  **Configure Redis** - Ensure you have Redis 8.0+ installed and running with Vector Search support enabled. The project relies on Redis for all data storage and AI functionalities.
     Your Redis instance should be accessible by the application.
 6.  **Run the FastAPI application** - Start the backend server using the provided Python script.
     ```bash
-python main.py
-```
+    python main.py
+    ```
     You should see output indicating the FastAPI server is running, typically on a local address like `http://127.0.0.1:8000`.
 7.  **Access the forum** - Open your web browser and navigate to the address where the FastAPI application is running (e.g., `http://127.0.0.1:8000`) to see the CleanForum application.
     You should see the CleanForum homepage, allowing you to create posts and interact with the forum.
