@@ -1,0 +1,70 @@
+---
+title: "Manage LLM Code Output for Large Projects with Claude, Copilot, and Gemini"
+description: "Learn to manage LLM code output for large projects by using patch file techniques with Claude, Copilot, and Gemini to avoid errors and maintain logic."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 15
+jobToBeDone: "Manage LLM output for large codebases when coding as a non-developer"
+tools:
+  - name: "Claude"
+    url: "https://claude.ai"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Copilot"
+    url: "https://github.com/features/copilot"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Gemini"
+    url: "https://gemini.google.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=47338091"
+  platform: "hackernews"
+  author: "fuelingcurious"
+  postedAt: 2026-03-11
+score: 6
+ingestedAt: 2026-06-18
+nigeriaNotes: "Free tiers of Claude and Gemini are available. Copilot is a paid tool. Managing LLM output can be data-light if done carefully, focusing on text-based interactions."
+tiktokUrl: ""
+published: false
+---
+
+## What you'll get
+
+You will learn a method to manage large code outputs from AI models, preventing common issues like truncations and hallucinations. This approach is crucial when working with extensive codebases as a non-developer, ensuring that AI-generated code integrates smoothly without breaking existing logic.
+
+## Tools you need
+
+*   **Claude** (freemium) - An AI assistant for generating and refining code.
+*   **Copilot** (paid) - An AI pair programmer that suggests code and entire functions in real-time.
+*   **Gemini** (freemium) - Google's AI model for various tasks, including code generation.
+
+## Steps
+
+1.  **Identify the code block to modify** — Before asking the LLM to make changes, pinpoint the exact section of your code that needs updating. This could be a specific function, a class, or a block of HTML.
+2.  **Formulate a precise instruction** — Tell the LLM to act as a patch tool. Instead of asking for a full file rewrite, instruct it to find a specific block of text and replace it with new code. The author's method was to ask the LLM to output "Find this exact block" and "Replace with this exact block."
+3.  **Provide the existing code block** — Paste the exact code block you identified in step 1 into your prompt. This gives the LLM the precise context it needs.
+4.  **Provide the new code** — Clearly present the new code you want the LLM to insert. Ensure it's well-formatted and distinct from the existing block.
+5.  **Construct the patch prompt** — Combine the instructions and code snippets into a single prompt. For example:
+
+    ```
+    Find this exact block:
+    [Paste the exact existing code block here]
+    Replace with this exact block:
+    [Paste the new code block here]
+    ```
+
+    You should receive a response from the LLM that clearly indicates it has understood the find-and-replace operation, and it will provide the modified code.
+6.  **Integrate the changes** — Carefully copy the LLM's output and replace the original code block in your project with the new one. Always test thoroughly after making changes.
+
+## Original source
+
+This workflow is inspired by a post on Hacker News by user fuelingcurious, a chemical engineer who built a browser game to explain refinery operations. They shared their experience using LLMs like Claude, Copilot, and Gemini to help write the game's 9,000 lines of JavaScript code, detailing a specific technique for managing AI-generated code in large projects.
+
+## Notes & variations
+
+*   **Free tier alternative:** While Copilot is paid, you can achieve similar results using the free tiers of Claude or Gemini by carefully crafting your prompts to request specific code modifications.
+*   **Common pitfall:** Avoid asking LLMs to rewrite entire files or large sections of code at once. This increases the risk of unexpected errors, truncations, or subtle changes (like incorrect quote replacements) that can break your project.
+*   **Tip for better results:** Always keep a version control system (like Git) active. This allows you to easily revert to a previous working state if an AI-generated code change introduces bugs.

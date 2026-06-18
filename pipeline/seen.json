@@ -3332,8 +3332,100 @@
     "92cb499f3a31169d598a04aa32907218a6f0a0a7cd3b332d73f8c98b1a5c4678": {
       "url": "https://news.ycombinator.com/item?id=48189073",
       "date": "2026-06-18"
+    },
+    "3dd39a01b3c00ab185f9dc76fc0019f9d75e268ddb72fda2c2aed1ab155889fa": {
+      "url": "https://github.com/filipecalegario/awesome-vibe-coding",
+      "date": "2026-06-18"
+    },
+    "2261aa59312880b815ecbd10c17c957d26fc07eb2e99ac0d546ebf056a55f7ba": {
+      "url": "https://github.com/nibzard/awesome-agentic-patterns",
+      "date": "2026-06-18"
+    },
+    "93148e9b1e9bd5259fe1b4c43ba6f0f40959c4f9dd81b3770a16f9b9359ec583": {
+      "url": "https://github.com/lukasmasuch/best-of-python",
+      "date": "2026-06-18"
+    },
+    "7250a05a0d6f559ce27d026bdfe2e0ffaff4062b0b5b1eeffb747d3b3d390004": {
+      "url": "https://github.com/clawdbot-ai/awesome-openclaw-skills-zh",
+      "date": "2026-06-18"
+    },
+    "c41c4788bbe793702269b1a793db6175a4ceefc1625408f945980090c178a661": {
+      "url": "https://github.com/alvinreal/awesome-opensource-ai",
+      "date": "2026-06-18"
+    },
+    "8adae4e9f18921632a3ab78e8400b120d1119d420ccfce080a9486e060bc2b6c": {
+      "url": "https://github.com/jekil/awesome-hacking",
+      "date": "2026-06-18"
+    },
+    "e734fe2b8774b48c676685f02d464c152bf0d8d4fcbc3ff4339a666d92c86185": {
+      "url": "https://github.com/jamesmurdza/awesome-ai-devtools",
+      "date": "2026-06-18"
+    },
+    "aa2402787cd3212cf9b296c8163e0b0ab8364a9782a091acaf5cb68666febb05": {
+      "url": "https://github.com/mergisi/awesome-openclaw-agents",
+      "date": "2026-06-18"
+    },
+    "8a27da2ba6f874978d29aeb413af7e6b39190f8eb1bc22cbdd3a57e9209962fb": {
+      "url": "https://github.com/eosphoros-ai/Awesome-Text2SQL",
+      "date": "2026-06-18"
+    },
+    "944b229095ee527085bc03cf5a31a29269a36aa334ef955e1ea8cb747119843b": {
+      "url": "https://github.com/yvoronoy/awesome-english",
+      "date": "2026-06-18"
+    },
+    "13b6390c999fd0974901f7efbbb58ab9f19d1450f6d39dd80591e8823057081e": {
+      "url": "https://github.com/georgezouq/awesome-ai-in-finance",
+      "date": "2026-06-18"
+    },
+    "5201d1cce67a7f1072e1b2c4500fd8dce9f71708b2370e496aa26a117a55b38b": {
+      "url": "https://github.com/sshuair/awesome-gis",
+      "date": "2026-06-18"
+    },
+    "73c3ee6c25f0275be6499adc37f2c438e261a306b86b44c9567b8fc34f62ac22": {
+      "url": "https://github.com/qmonnet/awesome-ebpf",
+      "date": "2026-06-18"
+    },
+    "41241e27191f326194ee57677fc8dd07c41290e822861c77f437bcb66378e197": {
+      "url": "https://github.com/sacridini/Awesome-Geospatial",
+      "date": "2026-06-18"
+    },
+    "1a45cb3b62ea61b414bc0d446a4f78ed7382fcfb0314dbcfd7a6acf25ba67733": {
+      "url": "https://news.ycombinator.com/item?id=44329457",
+      "date": "2026-06-18"
+    },
+    "b8eadc59014e7d7b7d6030a984f41ac1c5bba229dc54a8bf832bd7f310173b8a": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1ojh5qm/chat_gpt_just_giving_away_the_password_i_set_up",
+      "date": "2026-06-18"
+    },
+    "e004b9bd309a9295438f4a6e387c932de981267e513887583cfe684af85524a9": {
+      "url": "https://www.bensbites.com/p/the-first-big-exit-in-ai",
+      "date": "2026-06-18"
+    },
+    "5e051ef34a6d633508301e7a61036f174aa9b50b28aafbd2c7a7467a2d68a694": {
+      "url": "https://github.com/browserbase/stagehand",
+      "date": "2026-06-18"
+    },
+    "332fb391302624629f9207538884c1c14945edb38a9e8db4273a2b63bcaabb58": {
+      "url": "https://news.ycombinator.com/item?id=47338091",
+      "date": "2026-06-18"
+    },
+    "998cde291178d0f968506599eba7905116131c0ac33fb7fa535ad39e286dd354": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1o3yoka/man_stole_reddits_homework_and_got_800m_users",
+      "date": "2026-06-18"
+    },
+    "305dab9f9a24616601e04d259afad3919caee0329749dab88841a5528c761cb7": {
+      "url": "https://www.bensbites.com/p/i-signed-up-for-another-saas",
+      "date": "2026-06-18"
+    },
+    "b5590ec052a4f7711c96c56e27a0a366ef5267d48970ca0f03d193a4f6371559": {
+      "url": "https://github.com/esengine/DeepSeek-Reasonix",
+      "date": "2026-06-18"
+    },
+    "687b1dd7b82dd890afb0fdcc2d12f23e87714dc05aae813a9d4cb5f1fd95ed8d": {
+      "url": "https://news.ycombinator.com/item?id=47949066",
+      "date": "2026-06-18"
     }
   },
-  "backfillPage": 10,
+  "backfillPage": 11,
   "dailyPage": 4
 }
