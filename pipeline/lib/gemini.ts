@@ -17,6 +17,29 @@ export function extractJson(text: string): string {
   return text.slice(start, end + 1);
 }
 
+/**
+ * Parses the model's JSON and, on failure, throws an error that quotes the
+ * offending text window. Gemini occasionally emits an unescaped quote/newline
+ * inside a long `body` string (the recurring `Expected ',' or '}'` draft
+ * failure). The bare parser error only gives a character offset, which is
+ * useless in a log; surfacing the ~160 chars around it shows the exact
+ * malformation — both in the run log and the draft-retry prompt — so the next
+ * failure is diagnosable instead of a guess.
+ */
+export function parseModelJson<T>(rawOutput: string): T {
+  const json = extractJson(rawOutput);
+  try {
+    return JSON.parse(json) as T;
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err);
+    const pos = Number(/position (\d+)/.exec(msg)?.[1] ?? NaN);
+    const window = Number.isNaN(pos)
+      ? json.slice(0, 160)
+      : json.slice(Math.max(0, pos - 80), pos + 80);
+    throw new Error(`${msg} — offending JSON near: …${window}…`);
+  }
+}
+
 /** Thrown when every fallback model is rate-limited — callers should stop the run gracefully. */
 export class GeminiQuotaError extends Error {
   constructor() {
@@ -164,7 +187,7 @@ export async function geminiJson<T>(prompt: string): Promise<T> {
           const result = await callModel(model, body, keys[k]);
           if (result !== RATE_LIMITED) {
             rrPointer = (k + 1) % keys.length; // spread the next call onto another key
-            return JSON.parse(extractJson(result)) as T;
+            return parseModelJson<T>(result);
           }
           cool(model, k, RPM_COOLDOWN_MS);
         } catch (err) {

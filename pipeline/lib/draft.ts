@@ -3,7 +3,6 @@ import { join } from 'node:path';
 import type { Candidate, ScoreResult } from '../types';
 import { geminiJson } from './gemini';
 import { toMdx, validateDraft } from './mdx';
-import { generateUseCases } from './usecases';
 import { slugify } from './utils';
 
 let template: string | null = null;
@@ -26,6 +25,13 @@ export function buildDraftPrompt(c: Candidate, s: ScoreResult, promptDir?: strin
 /**
  * Drafts the full MDX for a scored candidate. One retry with the validation
  * errors appended (PRD Stage 4); null when both attempts fail.
+ *
+ * Use cases are deliberately NOT generated here: they're filled by the
+ * pipeline:usecases top-up step that runs after every ingest. Keeping that extra
+ * Gemini call off the publish path means a tight daily quota is spent scoring and
+ * drafting (i.e. publishing) candidates first — never on use cases for an
+ * already-decided publish — so quota exhaustion can't quietly suppress publishes.
+ * New workflows ship with `nigeriaUseCases: []` and the top-up backfills them.
  */
 export async function draftWorkflow(
   c: Candidate,
@@ -38,15 +44,6 @@ export async function draftWorkflow(
     try {
       const raw = await geminiJson<unknown>(prompt);
       const { workflow, body } = validateDraft(raw, c, s);
-      // Only publish-worthy candidates earn the extra use-case call. Non-fatal:
-      // generateUseCases swallows its own errors and returns [] (the backfill
-      // top-up fills any gaps later), so this never blocks or retries a draft.
-      if (s.score >= 7) {
-        workflow.nigeriaUseCases = await generateUseCases(
-          { title: workflow.title, category: workflow.category, jobToBeDone: workflow.jobToBeDone, body },
-          { log }
-        );
-      }
       return { slug: slugify(workflow.title), mdx: toMdx(workflow, body) };
     } catch (err) {
       const message = err instanceof Error ? err.message : String(err);

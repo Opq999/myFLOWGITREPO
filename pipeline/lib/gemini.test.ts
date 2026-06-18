@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
-import { extractJson, getApiKeys } from './gemini';
+import { extractJson, getApiKeys, parseModelJson } from './gemini';
 
 describe('extractJson', () => {
   it('parses plain JSON', () => {
@@ -30,6 +30,31 @@ describe('extractJson', () => {
     const parsed = JSON.parse(extractJson(text)) as { body: string };
     expect(parsed.body).toContain('```bash');
     expect(parsed.body).toContain('cband continue <id>');
+  });
+});
+
+describe('parseModelJson', () => {
+  it('parses a valid object the same as JSON.parse', () => {
+    expect(parseModelJson('{"score": 8, "body": "ok"}')).toEqual({ score: 8, body: 'ok' });
+  });
+
+  it('tolerates fences/prose around the object', () => {
+    expect(parseModelJson('```json\n{"ok": true}\n```')).toEqual({ ok: true });
+  });
+
+  it('quotes the offending text window when JSON is malformed', () => {
+    // Unescaped double-quote inside a string value — the recurring draft failure.
+    const bad = '{"a": 1, "body": "he said "hi" to me", "c": 2}';
+    let caught: Error | undefined;
+    try {
+      parseModelJson(bad);
+    } catch (e) {
+      caught = e as Error;
+    }
+    expect(caught).toBeDefined();
+    // Error must point at the malformation, not just an opaque char offset.
+    expect(caught!.message).toMatch(/offending JSON near:/);
+    expect(caught!.message).toContain('hi');
   });
 });
 
