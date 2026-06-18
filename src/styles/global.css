@@ -54,6 +54,19 @@
   --color-cat-jobs: #047857;
   --color-cat-sme: #c2410c;
   --color-cat-coding: #6d28d9;
+
+  /* Gallery-tunable radii (defaults match current look: rounded-2xl / rounded-full).
+     Only the /gallery demos consume these for now; the live site is unchanged. */
+  --radius-card: 1rem;
+  --radius-control: 999px;
+  --radius-badge: 999px;
+}
+
+/* Gallery-tunable presentational tokens that are NOT Tailwind namespaces, so
+   they live in :root (no utilities generated). Defaults are inert site-wide. */
+:root {
+  --shadow-card: 1px;          /* depth scalar (px) used by gallery demo cards */
+  --border-width: 1px;
 }
 
 /* Canvas: warm paper with a whisper of grain */
