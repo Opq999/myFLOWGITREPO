@@ -1,0 +1,156 @@
+---
+import { getCollection } from 'astro:content';
+import Badge from '../Badge.astro';
+import WorkflowCard from '../WorkflowCard.astro';
+import HireCta from '../HireCta.astro';
+import ShareButtons from '../ShareButtons.astro';
+import PersonaFilter from '../PersonaFilter.astro';
+import { CATEGORY_META } from '../../lib/categories';
+import { TOKEN_GROUPS } from '../../lib/gallery-tokens';
+
+const published = await getCollection('workflows', (e) => e.data.published);
+const sample = published[0];
+const swatches = TOKEN_GROUPS.filter((g) => g.id === 'colors' || g.id === 'categories').flatMap(
+  (g) => g.controls
+);
+const categories = Object.entries(CATEGORY_META);
+---
+
+<div class="gallery-bands">
+  <!-- Band 1: tunable primitives -->
+  <section class="gallery-section">
+    <h2 class="gallery-section__title">Primitives (tunable)</h2>
+    <div class="gallery-row">
+      <button type="button" class="demo-btn-primary">Primary</button>
+      <button type="button" class="demo-btn-secondary">Secondary</button>
+      <button type="button" class="demo-btn-primary" disabled>Disabled</button>
+    </div>
+    <div class="gallery-row">
+      <input class="demo-input" type="email" placeholder="you@example.com" />
+      <select class="demo-input">
+        <option>Choose a category</option>
+        <option>Content creation</option>
+        <option>Coding</option>
+      </select>
+    </div>
+    <div class="gallery-row">
+      <span class="demo-badge demo-badge--sourced">Sourced</span>
+      <span class="demo-badge demo-badge--tested">Tested ✓</span>
+      <span class="demo-badge demo-badge--verified">Verified</span>
+    </div>
+    <div class="gallery-row">
+      <div class="demo-card">
+        <p class="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-accent">Surface</p>
+        <p class="mt-1 font-display text-lg font-semibold text-ink-900">Card / surface</p>
+        <p class="mt-1 text-sm text-ink-500">Border, radius and shadow all follow the sliders.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Band 2: real components -->
+  <section class="gallery-section">
+    <h2 class="gallery-section__title">Real components</h2>
+    <div class="gallery-row">
+      <Badge badge="sourced" />
+      <Badge badge="tested" />
+      <Badge badge="community-verified" />
+    </div>
+    {
+      sample && (
+        <div class="gallery-row" style="max-width: 22rem;">
+          <WorkflowCard workflow={sample} />
+        </div>
+      )
+    }
+    <div class="gallery-row gallery-row--cards">
+      {
+        categories.map(([slug, meta]) => (
+          <div class="bento-tile rounded-2xl p-5" data-category={slug}>
+            <span class="text-2xl">{meta.emoji}</span>
+            <p class="mt-2 font-display text-lg font-semibold text-ink-900">{meta.label}</p>
+          </div>
+        ))
+      }
+    </div>
+    <div class="workflow-body">
+      <h2>Workflow body sample</h2>
+      <p>
+        This exercises the MDX prose styles: <a href="#">links</a>, <strong>strong</strong>, lists
+        and the dark prompt block below.
+      </p>
+      <ul>
+        <li>First point</li>
+        <li>Second point</li>
+      </ul>
+      <ol>
+        <li>Step one</li>
+        <li>Step two</li>
+      </ol>
+      <pre><code>Write a 200-word product description for: [PRODUCT]</code></pre>
+    </div>
+    <HireCta variant="inline" workflowTitle="Sample workflow" timeMinutes={20} />
+    <div class="gallery-row" style="max-width: 22rem;">
+      <HireCta variant="sidebar" workflowTitle="Sample workflow" timeMinutes={20} />
+    </div>
+    {/* Newsletter form is config-gated (SITE.buttondownUsername is empty), so this
+        is a faithful static replica of NewsletterForm.astro for preview only. */}
+    <section
+      class="relative overflow-hidden rounded-2xl border border-line bg-surface p-6 shadow-[0_1px_2px_rgba(28,23,19,0.04)]"
+    >
+      <p class="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-accent">Newsletter</p>
+      <h2 class="mt-1 font-display text-2xl font-medium tracking-[-0.02em] text-ink-900">
+        Get new workflows weekly
+      </h2>
+      <p class="mt-1 text-sm text-ink-500">One email a week. Free workflows only.</p>
+      <form class="mt-4 flex flex-wrap gap-2" onsubmit="return false">
+        <input
+          type="email"
+          placeholder="you@example.com"
+          class="min-w-0 flex-1 rounded-full border border-line-strong bg-paper px-4 py-2.5 text-sm text-ink-900 placeholder:text-ink-400 focus:border-accent focus:outline-none"
+        />
+        <button
+          type="submit"
+          class="rounded-full bg-ink-900 px-5 py-2.5 font-sans text-sm font-semibold text-paper transition-transform hover:scale-[1.03]"
+        >
+          Subscribe
+        </button>
+      </form>
+    </section>
+    <ShareButtons title="Sample workflow" url="https://opqai.pages.dev/" />
+    <PersonaFilter />
+  </section>
+
+  <!-- Band 3: foundations -->
+  <section class="gallery-section">
+    <h2 class="gallery-section__title">Foundations</h2>
+    <div class="demo-specimen">
+      <p class="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-accent">
+        Eyebrow label
+      </p>
+      <span
+        class="font-display"
+        style="font-size:2.5em; font-weight:var(--gallery-heading-weight); color:var(--color-ink-900); line-height:1.1;"
+        >Display heading</span
+      >
+      <span
+        class="font-display"
+        style="font-size:1.6em; font-weight:var(--gallery-heading-weight); color:var(--color-ink-900);"
+        >Section heading</span
+      >
+      <span style="color:var(--color-ink-700)"
+        >Body copy in Hanken Grotesk. The quick brown fox jumps over the lazy dog.</span
+      >
+      <span class="font-mono" style="color:var(--color-ink-500)">Mono: const x = 42;</span>
+    </div>
+    <div class="gallery-swatches">
+      {
+        swatches.map((c) => (
+          <div class="gallery-swatch">
+            <span class="gallery-swatch__chip" style={`background:var(${c.var})`} />
+            <span class="gallery-swatch__label">{c.label}</span>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+</div>

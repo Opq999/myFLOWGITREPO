@@ -1,0 +1,32 @@
+---
+import Base from '../layouts/Base.astro';
+import ControlPanel from '../components/gallery/ControlPanel.astro';
+import Showcase from '../components/gallery/Showcase.astro';
+import '../components/gallery/gallery.css';
+---
+
+<Base title="Gallery">
+  <meta slot="head" name="robots" content="noindex,nofollow" />
+  <div class="gallery-layout">
+    <div class="gallery-sidebar">
+      <div class="gallery-toolbar">
+        <h1 class="font-display text-xl font-semibold text-ink-900">Gallery</h1>
+        <div class="gallery-toolbar__actions">
+          <button id="gallery-reset" type="button" class="gallery-btn">Reset</button>
+          <button id="gallery-copy" type="button" class="gallery-btn gallery-btn--primary">
+            Copy @theme
+          </button>
+        </div>
+      </div>
+      <ControlPanel />
+      <pre id="gallery-export" class="gallery-export" aria-label="Exported @theme block"></pre>
+    </div>
+    <div id="gallery-stage" data-pagefind-ignore class="gallery-stage">
+      <Showcase />
+    </div>
+  </div>
+</Base>
+
+<script>
+  import '../scripts/gallery.ts';
+</script>

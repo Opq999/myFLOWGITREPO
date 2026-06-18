@@ -1,0 +1,43 @@
+---
+import { TOKEN_GROUPS } from '../../lib/gallery-tokens';
+---
+
+<aside class="gallery-panel" aria-label="Design token controls">
+  {
+    TOKEN_GROUPS.map((group) => (
+      <details class="gallery-group" open>
+        <summary>{group.label}</summary>
+        <div class="gallery-group__body">
+          {group.controls.map((c) => (
+            <label class="gallery-control">
+              <span class="gallery-control__label">{c.label}</span>
+              {c.kind === 'color' && (
+                <input type="color" data-token-var={c.var} value={c.default} />
+              )}
+              {c.kind === 'slider' && (
+                <input
+                  type="range"
+                  data-token-var={c.var}
+                  data-unit={c.unit}
+                  min={c.min}
+                  max={c.max}
+                  step={c.step}
+                  value={c.default}
+                />
+              )}
+              {c.kind === 'select' && (
+                <select data-token-var={c.var}>
+                  {c.options.map((o) => (
+                    <option value={o.value} selected={o.value === c.default}>
+                      {o.label}
+                    </option>
+                  ))}
+                </select>
+              )}
+            </label>
+          ))}
+        </div>
+      </details>
+    ))
+  }
+</aside>

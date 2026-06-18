@@ -9,7 +9,7 @@ export default defineConfig({
   // Placeholder Cloudflare Pages URL, update when the final name + custom
   // domain are decided (Phase 4). Keep in sync with SITE.url in src/site.config.ts.
   site: 'https://opqai.pages.dev',
-  integrations: [mdx(), sitemap()],
+  integrations: [mdx(), sitemap({ filter: (page) => !page.includes('/gallery') })],
   vite: {
     plugins: [tailwindcss()],
   },

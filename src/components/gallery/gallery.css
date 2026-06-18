@@ -1,0 +1,240 @@
+/* Gallery playground styles. Loaded only by src/pages/gallery.astro. */
+
+/* Gallery-only specimen defaults live on the stage so they exist before JS. */
+#gallery-stage {
+  --gallery-base: 16px;
+  --gallery-heading-weight: 600;
+  min-width: 0;
+}
+
+.gallery-layout {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+@media (max-width: 860px) {
+  .gallery-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.gallery-sidebar {
+  position: sticky;
+  top: 1rem;
+  align-self: start;
+  max-height: calc(100vh - 2rem);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+@media (max-width: 860px) {
+  .gallery-sidebar {
+    position: static;
+    max-height: none;
+  }
+}
+
+.gallery-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.gallery-toolbar__actions {
+  display: flex;
+  gap: 0.5rem;
+}
+.gallery-btn {
+  border-radius: 999px;
+  border: 1px solid var(--color-line-strong);
+  background: var(--color-surface);
+  color: var(--color-ink-800);
+  padding: 0.4rem 0.9rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.gallery-btn--primary {
+  background: var(--color-ink-900);
+  color: var(--color-paper);
+  border-color: var(--color-ink-900);
+}
+
+.gallery-group {
+  border: 1px solid var(--color-line);
+  border-radius: 0.75rem;
+  background: var(--color-surface);
+}
+.gallery-group > summary {
+  cursor: pointer;
+  padding: 0.6rem 0.85rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--color-ink-900);
+}
+.gallery-group__body {
+  padding: 0.25rem 0.85rem 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.gallery-control {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  color: var(--color-ink-600);
+}
+.gallery-control input[type='color'] {
+  width: 2.2rem;
+  height: 1.6rem;
+  padding: 0;
+  border: 1px solid var(--color-line);
+  border-radius: 0.3rem;
+  background: none;
+}
+.gallery-control input[type='range'] {
+  width: 9rem;
+}
+.gallery-control select {
+  max-width: 9rem;
+  font-size: 0.75rem;
+}
+
+.gallery-export {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  line-height: 1.5;
+  background: #14110d;
+  color: #ede8e1;
+  border-radius: 0.6rem;
+  padding: 0.75rem;
+  overflow: auto;
+  max-height: 16rem;
+  white-space: pre;
+  margin: 0;
+}
+
+.gallery-bands {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+.gallery-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.gallery-section__title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-ink-900);
+  border-bottom: 1px solid var(--color-line);
+  padding-bottom: 0.4rem;
+}
+.gallery-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+.gallery-row--cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+}
+
+/* Tunable demo primitives: consume the new semantic tokens so sliders work. */
+.demo-btn-primary {
+  border-radius: var(--radius-control);
+  background: var(--color-ink-900);
+  color: var(--color-paper);
+  padding: 0.625rem 1.25rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+.demo-btn-primary[disabled] {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.demo-btn-secondary {
+  border-radius: var(--radius-control);
+  border: var(--border-width) solid var(--color-line-strong);
+  background: var(--color-surface);
+  color: var(--color-ink-900);
+  padding: 0.625rem 1.25rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.demo-input {
+  border-radius: var(--radius-control);
+  border: var(--border-width) solid var(--color-line-strong);
+  background: var(--color-paper);
+  color: var(--color-ink-900);
+  padding: 0.625rem 1rem;
+  font-size: 0.9rem;
+}
+.demo-badge {
+  border-radius: var(--radius-badge);
+  border: 1px solid;
+  padding: 0.15rem 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+.demo-badge--sourced {
+  border-color: var(--color-line-strong);
+  background: var(--color-paper-2);
+  color: var(--color-ink-600);
+}
+.demo-badge--tested {
+  border-color: color-mix(in srgb, var(--color-accent) 50%, transparent);
+  background: color-mix(in srgb, var(--color-accent) 10%, transparent);
+  color: var(--color-accent);
+}
+.demo-badge--verified {
+  border-color: rgba(59, 130, 246, 0.4);
+  background: rgba(59, 130, 246, 0.1);
+  color: #1d4ed8;
+}
+.demo-card {
+  background: var(--color-surface);
+  border: var(--border-width) solid var(--color-line);
+  border-radius: var(--radius-card);
+  box-shadow: 0 var(--shadow-card) calc(var(--shadow-card) * 2.4)
+    calc(var(--shadow-card) * -0.4) rgba(28, 23, 19, 0.18);
+  padding: 1.25rem;
+  max-width: 22rem;
+}
+
+.demo-specimen {
+  font-size: var(--gallery-base);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.gallery-swatches {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 0.6rem;
+}
+.gallery-swatch {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--color-ink-600);
+}
+.gallery-swatch__chip {
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 0.4rem;
+  border: 1px solid var(--color-line);
+}
