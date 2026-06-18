@@ -1,0 +1,91 @@
+---
+title: "Build a Forum with Redis as Database and AI Engine"
+description: "Learn to build a full-featured forum using Redis 8 as both the primary database and AI engine for spam moderation and recommendations."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 60
+jobToBeDone: "Build a full-featured forum application using Redis as the primary database and AI engine for spam moderation and content recommendations."
+tools:
+  - name: "Redis 8"
+    url: "https://redis.io/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "FastAPI"
+    url: "https://fastapi.tiangolo.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Python"
+    url: "https://www.python.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "SentenceTransformer"
+    url: "https://www.sbert.net/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/prema_ananda/beyond-caching-how-redis-8-became-our-forums-primary-database-and-ai-engine-1m5"
+  platform: "blog"
+  author: "prema_ananda"
+  postedAt: 2025-08-05
+score: 7
+ingestedAt: 2026-06-18
+nigeriaNotes: "Redis offers a free tier. Python and FastAPI are free and open-source. SentenceTransformer is a free library. Data usage for AI features can be moderate, but the core forum functionality is data-light. This workflow is suitable for users with reliable internet access for initial setup and potential updates."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "Build a private forum for your study group to share notes, ask questions, and get AI-powered recommendations for related topics."
+  - persona: "entrepreneur"
+    scenario: "Create a community forum for your app users to discuss features, report bugs, and get AI-suggested solutions to common problems."
+  - persona: "small-business"
+    scenario: "Set up a customer support forum for your online store where AI can help flag common complaints and suggest relevant product FAQs."
+tiktokUrl: ""
+published: false
+---
+
+## What you'll get
+You will learn how to build a complete forum application where Redis 8 serves as both the primary database and the AI engine. This approach consolidates your technology stack, reducing complexity and costs, and enables features like AI-powered spam protection and content recommendations.
+
+## Tools you need
+*   **Redis 8** (freemium) - A powerful in-memory data structure store used here as the primary database and AI engine.
+*   **FastAPI** (free) - A modern, fast web framework for building APIs with Python.
+*   **Python** (free) - A versatile programming language used for the backend logic.
+*   **SentenceTransformer** (free) - A Python framework for state-of-the-art sentence, text and image embeddings, used for AI features.
+*   **Docker** (free) - An optional tool for containerizing applications, simplifying installation and deployment.
+
+## Steps
+1.  **Set up your development environment** - Ensure you have Python 3.8+ installed. If you plan to use Docker, ensure it is also installed.
+    You should have Python and optionally Docker ready for use.
+2.  **Clone the project repository** - Download the CleanForum project code from GitHub.
+    ```bash
+git clone https://github.com/premananda108/CleanForum.git
+```
+    You should see the CleanForum project files downloaded to your local machine.
+3.  **Navigate to the project directory** - Open your terminal or command prompt and go into the cloned project folder.
+    ```bash
+cd CleanForum
+```
+    Your terminal prompt should now indicate you are inside the CleanForum directory.
+4.  **Install Python dependencies** - Install all the necessary Python libraries required for the project.
+    ```bash
+pip install -r requirements.txt
+```
+    You should see a list of packages being installed, indicating successful dependency management.
+5.  **Configure Redis** - Ensure you have Redis 8.0+ installed and running with Vector Search support enabled. The project relies on Redis for all data storage and AI functionalities.
+    Your Redis instance should be accessible by the application.
+6.  **Run the FastAPI application** - Start the backend server using the provided Python script.
+    ```bash
+python main.py
+```
+    You should see output indicating the FastAPI server is running, typically on a local address like `http://127.0.0.1:8000`.
+7.  **Access the forum** - Open your web browser and navigate to the address where the FastAPI application is running (e.g., `http://127.0.0.1:8000`) to see the CleanForum application.
+    You should see the CleanForum homepage, allowing you to create posts and interact with the forum.
+8.  **Explore AI features** - Test the spam protection by attempting to post spam-like content. Observe the "Similar Posts" feature on post pages to see content recommendations in action.
+    You should notice that spam is flagged or blocked, and relevant posts are suggested.
+
+## Original source
+This workflow is based on a submission by prema_ananda for the Redis AI Challenge, originally posted on DEV Community. The author details how they built CleanForum, a comprehensive forum application that leverages Redis 8 as its central data and AI engine, moving beyond its traditional role as a cache.
+
+## Notes & variations
+*   **Free Tier Viability**: Redis offers a free tier that should be sufficient for development and small-scale deployments. FastAPI, Python, and SentenceTransformer are all free and open-source.
+*   **Common Pitfall**: Ensure your Redis instance is correctly configured with the Vector Search module enabled, as this is crucial for the AI features to function. Incorrect configuration here will lead to errors in spam detection and content recommendations.
+*   **Better Results**: For improved AI accuracy, consider fine-tuning the SentenceTransformer model on your specific forum's content, or experiment with different embedding models available within the SentenceTransformer library.

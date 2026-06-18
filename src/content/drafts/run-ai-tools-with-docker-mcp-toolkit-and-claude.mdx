@@ -1,0 +1,96 @@
+---
+title: "Run AI Tools with Docker MCP Toolkit and Claude"
+description: "Quickly set up and connect AI clients like Claude to various tools using Docker's Model Context Protocol (MCP) Toolkit for enhanced AI agent capabilities."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 25
+jobToBeDone: "Run and connect AI clients to tools using Docker MCP Toolkit"
+tools:
+  - name: "Docker Desktop"
+    url: "https://www.docker.com/products/docker-desktop/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Claude"
+    url: "https://claude.ai"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/pradumnasaraf/run-mcp-servers-in-seconds-with-docker-1ik5"
+  platform: "blog"
+  author: "pradumnasaraf"
+  postedAt: 2025-06-23
+score: 9
+ingestedAt: 2026-06-18
+nigeriaNotes: "Docker Desktop has a free tier for personal use, but can be resource-intensive for older or less powerful devices. Claude also offers a free tier. Data usage for running servers and connecting clients is moderate."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "Configure Claude with Docker MCP to access Wikipedia, allowing it to summarize complex topics for a university research paper or project."
+  - persona: "entrepreneur"
+    scenario: "Connect Claude to `curl` via Docker MCP to automate gathering competitor pricing or product details from public websites for market analysis."
+  - persona: "employee"
+    scenario: "Integrate Claude with `curl` via Docker MCP to automate fetching daily operational metrics from an internal API for a data analyst's report."
+tiktokUrl: ""
+published: false
+---
+
+## What you'll get
+You will learn how to quickly set up and run Model Context Protocol (MCP) servers for various tools like `curl` and `Wikipedia` using Docker Desktop. You'll then connect an AI client, specifically Claude, to these tools, allowing your AI agent to interact with external services. This approach simplifies the process of extending your AI's capabilities by providing a standardized, easy-to-manage way for it to access and utilize external tools and data.
+
+## Tools you need
+*   **Docker Desktop** (freemium) — A desktop application that helps you build, share, and run containerized applications. It includes the MCP Toolkit for easy server setup.
+*   **Claude** (freemium) — An AI assistant that can connect to and use external tools via the Model Context Protocol (MCP).
+*   **Docker MCP Toolkit** (free, included with Docker Desktop) — A feature within Docker Desktop that simplifies spinning up and managing Model Context Protocol (MCP) servers for various tools.
+*   **curl** (free) — A command-line tool for transferring data with URLs, used here as an example tool to be exposed via MCP.
+*   **Wikipedia** (free) — An online encyclopedia, used here as an example tool to be exposed via MCP.
+
+## Steps
+
+1.  **Install Docker Desktop** — Ensure you have the latest version of Docker Desktop installed on your computer.
+    *   **What to do:** Download and install Docker Desktop from the official Docker website (docker.com). Follow the installation instructions for your operating system (Windows, macOS, or Linux).
+    *   **What you should see:** Docker Desktop running, usually indicated by an icon in your system tray (Windows) or menu bar (macOS). You might need to sign in or create a Docker ID.
+
+2.  **Open Docker MCP Toolkit** — Locate and open the MCP Toolkit within Docker Desktop.
+    *   **What to do:** Open the Docker Desktop application. On the sidebar, look for and click the "MCP Toolkit" button. The author notes it was initially an extension but is now baked into Docker Desktop.
+    *   **What you should see:** The Docker MCP Toolkit interface, where you can browse and manage available MCP servers.
+
+3.  **Install MCP Servers** — Add `curl` and `Wikipedia` as MCP servers.
+    *   **What to do:** In the MCP Toolkit interface, use the search bar to find "curl" and "Wikipedia". Click the appropriate button (e.g., "Install" or "Add") to add these tools as MCP servers.
+    *   **What you should see:** `curl` and `Wikipedia` listed within your installed MCP servers, indicating they are ready to be used.
+
+4.  **Connect to Claude** — Automatically configure Claude to use the Docker MCP Gateway.
+    *   **What to do:** Within the Docker MCP Toolkit, locate a "Connect" button or similar option that allows you to link your MCP servers to an AI client. The author specifically mentions connecting to Claude. Click this button.
+    *   **What you should see:** A confirmation message indicating that the Docker configuration has been automatically added to Claude Desktop's `claude_desktop_config.json` file.
+
+5.  **Verify Claude Configuration** — Check Claude's settings to confirm the connection.
+    *   **What to do:** Open your Claude application. Navigate to `Settings` > `Developer` > `MCP_DOCKER`.
+    *   **What you should see:** `MCP_DOCKER` listed and showing as "running," which confirms that Claude is correctly configured to use the Docker MCP Gateway. You can optionally click "Edit Config" to view the JSON configuration:
+    ```json
+    {
+      "mcpServers" :{
+        "MCP_DOCKER" :{
+          "command" : "docker" ,
+          "args" :[ "mcp" , "gateway" , "run" ]
+        }
+      }
+    }
+    ```
+
+6.  **Access Tools in Claude** — See the newly available tools within Claude's chat interface.
+    *   **What to do:** Close the settings screen and open a new chat in Claude. Look for a "Search and Tools" option. If you don't see it, completely close and re-open the Claude application.
+    *   **What you should see:** `MCP_DOCKER` listed under "Search and Tools," showing the number of available tools (e.g., "10 tools"). Click the arrow next to it to expand and view the individual tools like `curl` and `Wikipedia`.
+
+7.  **Test a Tool (curl)** — Ask Claude to use the `curl` tool.
+    *   **What to do:** In Claude's chat, enter a prompt that instructs it to use the `curl` tool.
+    ```
+    Use the curl tool to check if the website example.com is up.
+    ```
+    *   **What you should see:** Claude processing your request and using the `curl` tool to check the website. It will then provide a response based on the tool's output. The author doesn't share their exact result, but you should see Claude interacting with the tool.
+
+## Original source
+This workflow is adapted from a blog post by pradumnasaraf titled "Run MCP Servers In Seconds With Docker" on the DEV Community platform. The author demonstrates how Docker's MCP Toolkit simplifies the process of setting up and connecting AI clients to various tools.
+
+## Notes & variations
+*   **Free-tier alternatives:** Docker Desktop offers a free tier for personal use, which is sufficient for this workflow. Claude also provides a free tier with daily usage limits. The author mentions other MCP clients like Cursor, Windsurf, and Docker AI Agent, which may also have free options.
+*   **Common mistake:** If the tools don't appear in Claude after connecting, completely close and restart the Claude application. Sometimes, the client needs a full restart to refresh its tool configurations. Also, ensure your Docker Desktop is updated to the latest version, as the MCP Toolkit is actively developed.
+*   **Tip for better results:** Explore the Docker MCP Catalog for a wider range of verified tools. You can add and remove tools as needed, making it easy to customize your AI agent's capabilities without complex manual configuration. Understanding the `claude_desktop_config.json` file can also help with advanced troubleshooting or custom setups.

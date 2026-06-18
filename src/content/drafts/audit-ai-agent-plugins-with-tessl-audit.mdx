@@ -1,0 +1,76 @@
+---
+title: "Audit AI Agent Plugins with tessl-audit"
+description: "Secure your AI agent by auditing its plugins for security risks, quality issues, and performance uplift using the free tessl-audit tool."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 5
+jobToBeDone: "Audit AI agent plugins for security, quality, and performance uplift"
+tools:
+  - name: "tessl-audit"
+    url: "https://github.com/tessl-io/tessl-audit"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "npm"
+    url: "https://www.npmjs.com/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/tessl/stop-trusting-your-agent-skills-with-vibes-eliminate-the-context-security-risk-1jld"
+  platform: "blog"
+  author: "tessl-io"
+  postedAt: 2026-05-15
+score: 7
+ingestedAt: 2026-06-18
+nigeriaNotes: "This workflow is free to use and requires minimal data. npm is a package manager for JavaScript, commonly used for installing development tools. Ensure you have Node.js installed, which includes npm."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "Audit your AI agent's plugins for security risks and quality issues before submitting your final year project."
+  - persona: "employee"
+    scenario: "Check your company's AI agent plugins for security vulnerabilities and performance bottlenecks before deployment."
+tiktokUrl: ""
+published: false
+---
+
+## What you'll get
+You will get a security and quality report for your AI agent's plugins. This approach helps you move beyond guesswork and proactively identify risks and areas for improvement in your AI agent's capabilities.
+
+## Tools you need
+*   **tessl-audit** (free) — A command-line tool to audit AI agent plugins for security, quality, and performance.
+*   **npm** (free) — A package manager for Node.js, used here to install and run tessl-audit.
+
+## Steps
+1.  **Install Node.js and npm** — If you don't have them, download and install Node.js from its official website. npm is included with Node.js.
+    You should see Node.js and npm installed on your system.
+2.  **Install tessl-audit globally** — Open your terminal or command prompt and run the following command to install the tool:
+
+    ```
+    npm install -g tessl-audit
+    ```
+
+    You should see output indicating that tessl-audit has been successfully installed.
+3.  **Navigate to your Tessl project** — In your terminal, change the directory to the root of your Tessl project where your `tessl.json` file is located.
+    Your terminal prompt should now show your project's root directory.
+4.  **Run the audit** — Execute the tessl-audit command in your project's root directory:
+
+    ```
+    npx tessl-audit
+    ```
+
+    You should see the tool start processing and then display a report within about 30 seconds. The report will include a breakdown of your project's context, warnings, and a posture summary.
+5.  **Review the security posture summary** — The report will list flagged plugins with warning codes and direct links to full security reports on the registry. Examine these findings to understand the security status (Advisory, Risky, or Critical).
+    You should see a table or list detailing security statuses and links for further investigation.
+6.  **Check quality scores** — If any plugin has a quality score below 80%, it means the guidance it provides might be incomplete or poorly structured. The report will indicate this.
+    You should see quality indicators for your plugins.
+7.  **Examine uplift data** — The report will show if plugins have been evaluated for their impact on agent task performance. A lack of uplift data means you don't know if the plugin is helping or hindering.
+    You should see information about whether plugins have performance uplift data.
+8.  **Take recommended actions** — Based on the report, you may need to optimize plugins, generate test scenarios, or run evaluations. The report might suggest specific CLI commands for these actions.
+    You should see suggestions for next steps, such as running optimization or evaluation commands.
+
+## Original source
+This workflow is based on insights shared by tessl-io on their blog, highlighting the importance of auditing AI agent plugins for security and performance.
+
+## Notes & variations
+*   **Free Tier Viability**: This entire workflow uses free, open-source tools and requires minimal data, making it highly accessible.
+*   **Common Pitfall**: Forgetting to navigate to your project's root directory before running `npx tessl-audit` can lead to the tool not finding your `tessl.json` file and failing to generate a report.
+*   **Tip for Better Results**: If a plugin has no uplift data, use the suggested `tessl scenario generate` and `tessl eval run` commands to create test scenarios and measure its actual impact on agent performance. This provides concrete evidence of its value.

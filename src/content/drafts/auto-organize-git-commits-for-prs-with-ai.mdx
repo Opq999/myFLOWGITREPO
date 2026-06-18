@@ -1,0 +1,73 @@
+---
+title: "Auto-Organize Git Commits for PRs with AI"
+description: "Automatically create organized Git commits for Pull Requests using AI. Organize code changes into smaller, clearer commits for easier review."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 15
+jobToBeDone: "Automatically create organized Git commits for Pull Requests using AI"
+tools:
+  - name: "Ollama"
+    url: "https://ollama.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Git"
+    url: "https://git-scm.com/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=44324457"
+  platform: "hackernews"
+  author: "edverma2"
+  postedAt: 2025-06-20
+score: 7
+ingestedAt: 2026-06-18
+nigeriaNotes: "Ollama can be run locally, making it free and data-light. Git is a standard tool for developers. This workflow is highly viable."
+nigeriaUseCases:
+  - persona: "employee"
+    scenario: "For a software developer at a Nigerian tech startup, use AI to re-organize your feature branch commits into clear, digestible chunks, speeding up code reviews from your team lead."
+  - persona: "entrepreneur"
+    scenario: "As a solo founder building your startup's MVP, automatically organize your code changes into logical commits, making it easier to onboard future developers or debug issues later."
+  - persona: "student"
+    scenario: "Turn a messy series of commits for your CSC401 group project into a clean, readable history before submitting your final code to your lecturer or project lead."
+tiktokUrl: ""
+published: false
+---
+
+## What you'll get
+You'll get a rewritten Git commit history for your branch, with each commit logically organized and featuring a clear message. This approach helps PR reviewers by presenting changes in smaller, digestible chunks, making the review process more efficient.
+
+## Tools you need
+*   **Ollama** (free) - A tool to run large language models locally on your machine, enabling AI processing without sending data to the cloud.
+*   **Git** (free) - The standard version control system for tracking changes in code.
+
+## Steps
+1.  **Install Ollama and a local LLM** - Download and install Ollama from its official website. Then, use the Ollama command line to download a suitable language model (e.g., `ollama pull llama3`). The author doesn't specify which model to use, so choose one that fits your system's capabilities.
+2.  **Install git-smart-squash** - Follow the installation instructions provided in the tool's GitHub repository to set up `git-smart-squash` on your local machine. The author links to `https://github.com/edverma/git-smart-squash`.
+3.  **Navigate to your Git repository** - Open your terminal or command prompt and change the directory to your local Git project folder.
+4.  **Run git-smart-squash** - Execute the `git-smart-squash` command. The tool will automatically detect the diff of your current branch against the base branch (e.g., `main` or `master`). The author mentions that the default AI provider is a locally running Ollama server, so no explicit configuration is needed if Ollama is set up correctly.
+
+    ```bash
+    git smart-squash
+    ```
+
+    You should see output indicating that the tool is processing your diff and sending it to the local LLM. The tool will then present a set of suggested commits, including messages and change groupings.
+5.  **Review and accept suggested commits** - Carefully review the proposed commit structure and messages. If you agree with the suggestions, follow the prompts to explicitly accept them. The tool will then rewrite your commit history based on your acceptance.
+
+    You should see confirmation that your commit history has been updated. The tool also creates a backup branch automatically.
+6.  **Force push your changes** - Since you've rewritten commit history, you'll need to force push your branch to your remote repository. Be aware that this overwrites the existing history on the remote. Ensure your team or organization is comfortable with this practice.
+
+    ```bash
+    git push --force-with-lease origin <your-branch-name>
+    ```
+
+    You should see the output of the force push command, indicating that your branch has been updated on the remote.
+
+## Original source
+This workflow is based on a tool called `git-smart-squash`, created by edverma2 and shared on Hacker News. The tool leverages AI to automatically organize Git commits for pull requests, aiming to improve the code review process by creating clearer, smaller, and more logical commit messages.
+
+## Notes & variations
+*   **Free tier viability**: This workflow is entirely free, relying on locally run Ollama and the Git version control system.
+*   **Data usage**: Running Ollama locally means your code diffs are processed on your machine, protecting your data. Data usage is minimal, primarily for downloading the LLM model initially.
+*   **Common pitfall**: Forgetting to back up your branch or not communicating with your team before force pushing can lead to lost work or conflicts. Always ensure you have a backup and that your team is aware of force pushes.
+*   **Tip for better results**: Experiment with different local LLMs available through Ollama. Some models might be better at understanding code context and generating more accurate commit messages than others.

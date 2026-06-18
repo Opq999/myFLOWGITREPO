@@ -2912,8 +2912,380 @@
     "dc1af6bb8bee9339754625998a2f8928f79ae02cb8af97a0cdb722adf057968c": {
       "url": "https://news.ycombinator.com/item?id=46620358",
       "date": "2026-06-17"
+    },
+    "da1545992e924cbd42ed7b1fd258ba5651b548e9cf46e97bba9828538bd987e4": {
+      "url": "https://github.com/VoltAgent/awesome-codex-subagents",
+      "date": "2026-06-18"
+    },
+    "04452a499b95b6b931b1c8b05f2d2d92c70e942a761a6be30a9da48d0acc7e18": {
+      "url": "https://github.com/dzharii/awesome-typescript",
+      "date": "2026-06-18"
+    },
+    "aa0b9d7859e8e81b5f562897d367a04a6a7f1c30e6b69aa5f77b8b109c9ad919": {
+      "url": "https://github.com/SylphAI-Inc/LLM-engineer-handbook",
+      "date": "2026-06-18"
+    },
+    "9b6b8c579db235c1e2dc8c138470cbe42f940a59dc954d878a6b29e116e9bf01": {
+      "url": "https://github.com/GT-RIPL/Awesome-LLM-Robotics",
+      "date": "2026-06-18"
+    },
+    "145318604320fbfdcae34d0d185f32927e28a6200ff6b98d8263daee0d8641ef": {
+      "url": "https://github.com/opendilab/awesome-RLHF",
+      "date": "2026-06-18"
+    },
+    "131c6958203d774925894c13fc82e5f8ae5b112666a66ff137a5985a75c94c77": {
+      "url": "https://github.com/wong2/awesome-mcp-servers",
+      "date": "2026-06-18"
+    },
+    "c0286dca5797c0591518dfd1132dae5cbdadeb970ecc6af664f603dd33c2b015": {
+      "url": "https://github.com/eseckel/ai-for-grant-writing",
+      "date": "2026-06-18"
+    },
+    "0770af901dcb20dd565c5a56e8fa0f02c78b8208e54959a94655a4471db15a16": {
+      "url": "https://github.com/liuchong/awesome-roadmaps",
+      "date": "2026-06-18"
+    },
+    "f68a0184e3502d76b898b61f98ac69d55f7ce475e4b7021df87e850755e61965": {
+      "url": "https://github.com/zhaochenyang20/Awesome-ML-SYS-Tutorial",
+      "date": "2026-06-18"
+    },
+    "accaf55249f54f7af7b46d49eceeeb25c3cc77be16b424cd332d4fcb18bf0b97": {
+      "url": "https://news.ycombinator.com/item?id=48433756",
+      "date": "2026-06-18"
+    },
+    "e49447d0ff4593edcdef599ee25ae321cb145812f53d4253739103b1064a2f69": {
+      "url": "https://dev.to/forgecode/claude-4-opus-vs-grok-4-which-model-dominates-complex-coding-tasks-2h74",
+      "date": "2026-06-18"
+    },
+    "c597b1a88f392da5207ae956e3bafe8a63a0a93814e3aef9c3e51a9521c75e05": {
+      "url": "https://github.com/mastra-ai/mastra",
+      "date": "2026-06-18"
+    },
+    "2a2137e91ac4f2b829e8c0c3bd0b450516b6d656e62fa458d94c9b98271bd4f0": {
+      "url": "https://news.ycombinator.com/item?id=46336104",
+      "date": "2026-06-18"
+    },
+    "62d5ab3caa126c3fee612268328976e614ebd6a3e072f1a21a411c7bd8eb2170": {
+      "url": "https://dev.to/_vjk/i-made-claude-code-think-before-it-codes-heres-the-prompt-bf",
+      "date": "2026-06-18"
+    },
+    "ae8093d115f92a3dc1cdafd1f07c8d54c4f2c2a62623a4a9fae3fcc557592f5a": {
+      "url": "https://github.com/taosdata/TDengine",
+      "date": "2026-06-18"
+    },
+    "224515c2981dbf3eee4b89c40412936f7c93b1c5bf7d7d75cba9209687a88050": {
+      "url": "https://news.ycombinator.com/item?id=44725306",
+      "date": "2026-06-18"
+    },
+    "011f673426120c1ada837371d5f285de5bc0dd0779fd968ce474edb45d17bdf7": {
+      "url": "https://dev.to/pradumnasaraf/run-mcp-servers-in-seconds-with-docker-1ik5",
+      "date": "2026-06-18"
+    },
+    "b65b686fa6247bb23006954d3ea674ca6440f77047b430c1388dddbb6c5df0d9": {
+      "url": "https://github.com/leereilly/games",
+      "date": "2026-06-18"
+    },
+    "a8e7f17d073677e9b8d035ab3a70b903e6e1dcbccaff99184de6cc6cbcbf54b1": {
+      "url": "https://news.ycombinator.com/item?id=48521236",
+      "date": "2026-06-18"
+    },
+    "98d615f91c0585ce1efe2577184f52af902957f04247cd3b6aac43ac65d4ffa6": {
+      "url": "https://dev.to/dev_kiran/the-background-remove-api-devs-actually-ship-lbe",
+      "date": "2026-06-18"
+    },
+    "2db4f7d2d7de0ea292a7b64c56d98bdfb63f65a4983bba42f4a77aff19c0445c": {
+      "url": "https://github.com/blader/humanizer",
+      "date": "2026-06-18"
+    },
+    "1dd67c4967a281dde8a279d8674c7f5b265e66e328fd0842e8d75424fd9e5200": {
+      "url": "https://news.ycombinator.com/item?id=44969622",
+      "date": "2026-06-18"
+    },
+    "ed1090c89dd2507c7172a87a7c180601fc13c917425011717a236408975b2ba5": {
+      "url": "https://dev.to/madsendev/i-use-ai-when-i-code-and-sometimes-it-makes-me-feel-like-im-cheating-4lja",
+      "date": "2026-06-18"
+    },
+    "56c6edad431851b2d6dcbe4d6b70d8adfbe2a11b09d141bd93c5d1d4eab83d07": {
+      "url": "https://github.com/gastownhall/beads",
+      "date": "2026-06-18"
+    },
+    "f535c8f0d64c4099efb1e83107e2b95cabeab64a915dd1b57029b5f026e8e4e2": {
+      "url": "https://news.ycombinator.com/item?id=46069556",
+      "date": "2026-06-18"
+    },
+    "6a9a006a886d59fddf689fb987fce6b9c51c1a41579f0775f90c751526b644fa": {
+      "url": "https://dev.to/francistrdev/unpopular-opinion-do-not-use-openclawnot-yet-5foe",
+      "date": "2026-06-18"
+    },
+    "79c78ff00570e0db8290491f4313ac26cd8768a61db76e111e991e9c9118da31": {
+      "url": "https://github.com/a2aproject/A2A",
+      "date": "2026-06-18"
+    },
+    "58fd51319c8ebb37b52ca0a96e13911bbba4463d0bd0cc10dd721546e7589945": {
+      "url": "https://news.ycombinator.com/item?id=46993587",
+      "date": "2026-06-18"
+    },
+    "34b0473121501be3f4946696494f9c5edab6ddc3d40790fbdb4987f8f57c718f": {
+      "url": "https://dev.to/webdeveloperhyper/how-to-reduce-stress-for-free-mega-bazooka-with-react-three-fiber-ai-4n50",
+      "date": "2026-06-18"
+    },
+    "9bbfe82e38f00d2a4333aceb3cbfcb3dad62d630e0bdaa5ace7346d63d1ebb68": {
+      "url": "https://github.com/RooCodeInc/Roo-Code",
+      "date": "2026-06-18"
+    },
+    "beee859bfb079214c8b9b50932a4d289b73f57ecd09a8317dde5833fab054b1f": {
+      "url": "https://news.ycombinator.com/item?id=44848058",
+      "date": "2026-06-18"
+    },
+    "5456be6071a6abc48de5502e18d91eedf705572d0638089c9c97b4d299d55fd0": {
+      "url": "https://dev.to/tyaga001/5-must-know-open-source-repositories-to-build-cool-ai-apps-3pn7",
+      "date": "2026-06-18"
+    },
+    "93157aa3b5fc5cf2d3fad233b93d08aa09f2923513ca769abd295fffe63b4120": {
+      "url": "https://github.com/PaddlePaddle/Paddle",
+      "date": "2026-06-18"
+    },
+    "8766556cf8743e248e7241ce2d563bb6728d786bbcdfe9c66ee5a1810763eadc": {
+      "url": "https://news.ycombinator.com/item?id=47364116",
+      "date": "2026-06-18"
+    },
+    "edea61f9a5cdac2ea3a89ae99f20d199c20addb2a1b97bc739c191de382c230d": {
+      "url": "https://dev.to/maame-codes/the-hidden-gem-in-the-google-ai-challenge-20jh",
+      "date": "2026-06-18"
+    },
+    "f9593f1f67353de2f728dd5c595da22f9155dfd8d38b1eef10f476519b7fafdb": {
+      "url": "https://github.com/nautechsystems/nautilus_trader",
+      "date": "2026-06-18"
+    },
+    "b9ad08f4e0e6a11ae67c985b19748d3c4ae01a8e04128c791ea0a73503be1ae1": {
+      "url": "https://news.ycombinator.com/item?id=48280729",
+      "date": "2026-06-18"
+    },
+    "63e8a047c0910288c5594a29f8628d8ba179304accfc3313b49094fe5f6d745d": {
+      "url": "https://dev.to/sholajegede/how-to-scope-permissions-per-tenant-in-a-multi-tenant-app-27dj",
+      "date": "2026-06-18"
+    },
+    "2c2cdf04f708d25bc6c3a317552e548007fc0c07160ec07fcb3a01e4c9539b31": {
+      "url": "https://github.com/n0shake/Public-APIs",
+      "date": "2026-06-18"
+    },
+    "50d9afcefbff321488970f6f1b66429b40490064619de21e5812707e4f28cf55": {
+      "url": "https://news.ycombinator.com/item?id=47794514",
+      "date": "2026-06-18"
+    },
+    "162be841bd5c09e6c92c6457b2cd309c0f97e2b6e0ce2af7cd3ea4a772497e35": {
+      "url": "https://dev.to/alifar/is-chatgpt-thinking-while-you-type-a-glitch-a-feature-or-something-more-18i",
+      "date": "2026-06-18"
+    },
+    "8afe11c2ec824a60907b7a51c3c96fd25cf24f703da475a48891a499285c4cd2": {
+      "url": "https://github.com/SuperClaude-Org/SuperClaude_Framework",
+      "date": "2026-06-18"
+    },
+    "825923fae4b5c7b97b11915096a82aa2f70444c1e4830cb183091da6c3167f03": {
+      "url": "https://news.ycombinator.com/item?id=47039051",
+      "date": "2026-06-18"
+    },
+    "1b95af90888de78c2493680e15a843c872b5d373836e37e6f1a438aa5d4e98f8": {
+      "url": "https://dev.to/techstratos/how-i-actually-use-ai-as-a-developer-and-where-it-still-breaks-5aih",
+      "date": "2026-06-18"
+    },
+    "5144b86653f3007b5cfe929a3c2e293c0577db7a8e4c91a17aaf6511328a3b04": {
+      "url": "https://github.com/NirDiamant/Prompt_Engineering",
+      "date": "2026-06-18"
+    },
+    "25718d6597ecd7858c258ce4473a5a081206db5803b6a2f2808c924d97728121": {
+      "url": "https://news.ycombinator.com/item?id=44501076",
+      "date": "2026-06-18"
+    },
+    "e22274000dfd75ed5af831065bf5deb19c23cd34435847f30f42eb9da99a1315": {
+      "url": "https://dev.to/huckler/how-i-built-an-offline-ai-assistant-in-python-no-openai-no-langchain-no-dependencies-4523",
+      "date": "2026-06-18"
+    },
+    "6bb5b6dcfd8049574cd97c8b07261e14538d762e32a20a218cf4c40a18647d0d": {
+      "url": "https://github.com/tailcallhq/forgecode",
+      "date": "2026-06-18"
+    },
+    "e1a2e20cd94c08ec0b40fc577ca74a2b8c544ab242c30ddeb50c14b81ea53188": {
+      "url": "https://news.ycombinator.com/item?id=46721474",
+      "date": "2026-06-18"
+    },
+    "e408854234617a08a9da6b551302470e9dfdf3398717b88d5ca1ddd579ff6d96": {
+      "url": "https://dev.to/the-foundation/welcome-to-the-foundation-preserving-developer-knowledge-in-public-3842",
+      "date": "2026-06-18"
+    },
+    "8cf13597e808f080a2870c00d95eea9bfd690d21764869adf3ba7b9f59a4cc52": {
+      "url": "https://github.com/refly-ai/refly",
+      "date": "2026-06-18"
+    },
+    "5f95d733356eabb092e2f9784696abb726a0654f9db198a2971761836c5c6745": {
+      "url": "https://news.ycombinator.com/item?id=45405584",
+      "date": "2026-06-18"
+    },
+    "e5c5789addd0ee2d5e3afd31b402b364707f1cdff6f82fff6340bc7738a868e1": {
+      "url": "https://dev.to/dumebii/i-vibe-coded-an-internal-tool-that-slashed-my-content-workflow-by-4-hours-310f",
+      "date": "2026-06-18"
+    },
+    "438adb2525358f7f94c73bb56482eaeb477643509438c1842d8b3169b45f5ddb": {
+      "url": "https://github.com/AI4Finance-Foundation/FinRobot",
+      "date": "2026-06-18"
+    },
+    "ce2ead7363bc72de386ab1b4a85f23276d7aed538eadffba577838613aa0d2e2": {
+      "url": "https://news.ycombinator.com/item?id=45291618",
+      "date": "2026-06-18"
+    },
+    "28be1542ad2d91dd95207c10ad194e8614f4845ffb9f48189807e549ff86988e": {
+      "url": "https://dev.to/teamcamp/top-remote-work-disadvantages-how-to-overcome-them-2ana",
+      "date": "2026-06-18"
+    },
+    "6eb73169f84ce43f98c75fcf0a5b59a0b6373d3829a3919151941cd320d6c61f": {
+      "url": "https://github.com/NVIDIA/OpenShell",
+      "date": "2026-06-18"
+    },
+    "f8e366364afebfc0bd0d17d10d51258d6f40f953b1b388e29bfd4bee586dfda6": {
+      "url": "https://news.ycombinator.com/item?id=44324457",
+      "date": "2026-06-18"
+    },
+    "f8e8683f2602fb316729737037c42bb8781a1fcf8e74d2faa3ec63cd58775c81": {
+      "url": "https://dev.to/gdg/architecture-documentation-as-a-first-class-engineering-asset-4a1j",
+      "date": "2026-06-18"
+    },
+    "b0b8f22db3dcb4becdd11d1586c10d4822fc13c789560cd9fe2290600848a2af": {
+      "url": "https://github.com/PrismarineJS/mineflayer",
+      "date": "2026-06-18"
+    },
+    "86ee0d1088f4f85ca5044178e0e5717bc1b73ffb7b2f848e67d90042cb43237b": {
+      "url": "https://news.ycombinator.com/item?id=47850907",
+      "date": "2026-06-18"
+    },
+    "a9d28cbe8bf0be7f4314701c2fbd9dc6b5d48e33776500aaa8cda21e7c6bbee3": {
+      "url": "https://dev.to/arunkant/why-im-building-saas-in-2026-55hn",
+      "date": "2026-06-18"
+    },
+    "c028be1aaa99c3de1b6690419144e11e79404bd77fef9c2a8429a6f27735297d": {
+      "url": "https://github.com/apple/corenet",
+      "date": "2026-06-18"
+    },
+    "3a90e31c4b916fdca21efbe9221b2998d48755f98599fe9d74e74f931424d697": {
+      "url": "https://news.ycombinator.com/item?id=44780249",
+      "date": "2026-06-18"
+    },
+    "8bccf8b0136e124114f8f79740ac74458224c60deb78ac6028854fae4583768f": {
+      "url": "https://dev.to/raghavyuva/the-art-of-vibe-coding-with-actual-discipline-lo",
+      "date": "2026-06-18"
+    },
+    "1b937400cf22e7cc1072073f2a123249450f771b47f9c8d81f8a9407fc0d97ba": {
+      "url": "https://github.com/AnswerDotAI/fasthtml",
+      "date": "2026-06-18"
+    },
+    "aedb58826dc08f0ad71d820ece6a9ece385875eb3276f18d30b34360168064f2": {
+      "url": "https://news.ycombinator.com/item?id=48110593",
+      "date": "2026-06-18"
+    },
+    "cbbc8a894ff4a813aad4b8542401c423c6a8a40282d80ad2718c6c9b84bf6a4f": {
+      "url": "https://dev.to/georgekobaidze/noterunway-because-your-notion-workspace-deserves-an-elite-crew-53bk",
+      "date": "2026-06-18"
+    },
+    "b56563e2d1b03c0e72ac6980c3463db22e8e844612c7f60c549d4759e43cc85b": {
+      "url": "https://github.com/amitness/learning",
+      "date": "2026-06-18"
+    },
+    "11cfe50a4d4b14e36028d74b287068cc9dc61be3afb59dbeb3746dd1bd3cefb7": {
+      "url": "https://news.ycombinator.com/item?id=45865546",
+      "date": "2026-06-18"
+    },
+    "4175a8ea67dda9b70cec1da5947fca99abfe1ffc44cc7785999c52e0ab093824": {
+      "url": "https://dev.to/asafaeirad/why-css-is-so-hard-for-generative-ais-to-understand-17fo",
+      "date": "2026-06-18"
+    },
+    "5487cb4260100fe867c36cbfc3952384016eeb78bf0be88f808f2f52ed21f4b3": {
+      "url": "https://github.com/kyegomez/swarms",
+      "date": "2026-06-18"
+    },
+    "69265abb3627e1930c04b1a72e8640985d6096f81d9882073cacf1b88f540034": {
+      "url": "https://news.ycombinator.com/item?id=44973758",
+      "date": "2026-06-18"
+    },
+    "e88ffc7a38550338b33dcf58c26c473b0c9e938bd9c1516939e3be6b4d4939c3": {
+      "url": "https://dev.to/javz/autonomous-ai-research-does-not-need-a-giant-framework-32el",
+      "date": "2026-06-18"
+    },
+    "42462a42aaf4afce85911c04df7b6cfcccc9e695afbf691cd03a1789af2e5640": {
+      "url": "https://github.com/julep-ai/julep",
+      "date": "2026-06-18"
+    },
+    "aa3b3e769fe71bd59726b83d41ade6f221f793dfabd71d7f05c85d454fc1c055": {
+      "url": "https://dev.to/samchon/vr-coding-for-the-ai-coding-era-watching-5-ai-agents-at-once-53gj",
+      "date": "2026-06-18"
+    },
+    "7713770f38e01ba63215bf40747302818accb633a5e1eff85c50a26e948ea7f8": {
+      "url": "https://github.com/katanemo/plano",
+      "date": "2026-06-18"
+    },
+    "ef0b981771763c9f8c89c12874d0b8be51ecad35cb5211a437e79e6f9d2ecc8b": {
+      "url": "https://dev.to/anchildress1/everything-i-know-about-github-copilot-instructions-from-zero-to-onboarded-for-real-4nb0",
+      "date": "2026-06-18"
+    },
+    "205e73ca5341a6854d243ca8a347666056af9355a756f9335c979e79c054bb3a": {
+      "url": "https://github.com/CodebuffAI/codebuff",
+      "date": "2026-06-18"
+    },
+    "31f67a4dbf0d0e552d1483c6e45394bdfc4c2f6fe70a3f5ea65cdb0d3474c7ba": {
+      "url": "https://dev.to/dev_99718084404de/personalized-ai-blueprint-unleash-your-true-potential-2bjk",
+      "date": "2026-06-18"
+    },
+    "6616448dd965316d426ba4578ee115301f500a5bb1325054ada7a79225606165": {
+      "url": "https://github.com/swyxio/ai-notes",
+      "date": "2026-06-18"
+    },
+    "7bf0c410dc9e6f7a7d34da36a3bdc77b5fa6b0dc46b223060f7294146f422f22": {
+      "url": "https://dev.to/tessl/stop-trusting-your-agent-skills-with-vibes-eliminate-the-context-security-risk-1jld",
+      "date": "2026-06-18"
+    },
+    "86ddb1d9dd890d71d7f3d7b0b001e1a1913b93bcc876713659ac55909ddad165": {
+      "url": "https://github.com/volcengine/MineContext",
+      "date": "2026-06-18"
+    },
+    "9d937104cc469dbcaa093456deba089c854b491215d342e7b87d9c74400ed3f6": {
+      "url": "https://dev.to/thegdsks/i-built-a-self-hosted-ai-agent-that-runs-on-a-raspberry-pi-161e",
+      "date": "2026-06-18"
+    },
+    "77b345f744ed136508ce360113d647ab961c8bdde21109725f694ce740e02c22": {
+      "url": "https://github.com/HKUDS/ClawTeam",
+      "date": "2026-06-18"
+    },
+    "cf4779cb7fc6f2aa2125913e676d0694948b0aded7ebb49d9ed7ecbc26000d31": {
+      "url": "https://dev.to/hargunkaur/automating-healthcare-workflows-onco-assist-phe",
+      "date": "2026-06-18"
+    },
+    "0e774723c18e6ce58206e199aa9d4ceef7c60dd996b6c39b67743ef7a80b9739": {
+      "url": "https://github.com/ashleve/lightning-hydra-template",
+      "date": "2026-06-18"
+    },
+    "77009996d2e61b28dec83cc6f4c0c3671ddbdaa0be69c59bb0ffb6485b1ec371": {
+      "url": "https://dev.to/dmtrkovalenko/benchmark-oriented-development-is-a-road-to-nowhere-1518",
+      "date": "2026-06-18"
+    },
+    "c60d0694dd28298708f3d1a8e5f79f7bb9b536199f91056eddc0672b7f0d2a14": {
+      "url": "https://github.com/SWE-agent/mini-swe-agent",
+      "date": "2026-06-18"
+    },
+    "f9f039a9bd4db10f00c2a67716d9932b88e00b3af0c7f12151e65ea0b1e0dac4": {
+      "url": "https://dev.to/xwero/to-ai-or-not-to-ai-249h",
+      "date": "2026-06-18"
+    },
+    "f342551b95f66c8027752ea5948bf109dbdd961c91c9a9ac83307044d112e243": {
+      "url": "https://github.com/deanpeters/Product-Manager-Skills",
+      "date": "2026-06-18"
+    },
+    "ae12c66d9f54796ab3a2717014722120a95e64975034aa1ac98d78de1dd21e59": {
+      "url": "https://dev.to/prema_ananda/beyond-caching-how-redis-8-became-our-forums-primary-database-and-ai-engine-1m5",
+      "date": "2026-06-18"
+    },
+    "08aa872a6b49000b68c8cc563334ce379d539c97f7f1b37276d07fb714d114e6": {
+      "url": "https://github.com/brianpetro/obsidian-smart-connections",
+      "date": "2026-06-18"
     }
   },
-  "backfillPage": 9,
+  "backfillPage": 10,
   "dailyPage": 2
 }

@@ -1,0 +1,80 @@
+---
+title: "Automate Content Generation with Pipeflow-PHP and Generative AI"
+description: "Learn to automate content generation and WordPress publishing using Pipeflow-PHP, a visual pipeline engine, and generative AI."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 30
+jobToBeDone: "Automate content generation and publishing workflows using a PHP pipeline engine"
+tools:
+  - name: "Pipeflow-PHP"
+    url: "https://github.com/marcosiino/pipeflow-php"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Generative AI"
+    url: "https://gemini.google.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "WordPress"
+    url: "https://wordpress.org"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=45865546"
+  platform: "hackernews"
+  author: "marcosiino"
+  postedAt: 2025-11-09
+score: 7
+ingestedAt: 2026-06-18
+nigeriaNotes: "Pipeflow-PHP is a self-hosted PHP script, requiring a web server. Generative AI tools often have free tiers suitable for testing. WordPress is free to use but requires hosting."
+nigeriaUseCases:
+  - persona: "entrepreneur"
+    scenario: "Automate daily blog post creation for your startup's website using AI prompts and publish directly to WordPress."
+  - persona: "small-business"
+    scenario: "Generate product descriptions and social media captions for your online store, then schedule them for automatic posting."
+  - persona: "student"
+    scenario: "Create practice quiz questions from lecture notes and automatically publish them as blog posts for revision."
+tiktokUrl: ""
+published: false
+---
+
+## What you'll get
+
+You will learn how to set up a basic automated content generation and publishing workflow. This approach uses a pipeline engine to orchestrate tasks, making complex processes understandable and editable even for non-developers. It's ideal for automating repetitive content creation tasks for websites.
+
+## Tools you need
+
+*   **Pipeflow-PHP** (free) - A PHP pipeline engine to define and automate workflows.
+*   **Generative AI** (freemium) - To create content like text or images.
+*   **WordPress** (freemium) - A content management system to publish your generated content.
+*   **A web server with PHP** (free/paid) - To run Pipeflow-PHP and WordPress.
+
+## Steps
+
+1.  **Set up Pipeflow-PHP** - Download the Pipeflow-PHP project from its GitHub repository and set it up on your web server. The author does not provide specific installation instructions in the excerpt, so follow the general setup guide for PHP projects.
+    You should have the Pipeflow-PHP files accessible on your server.
+
+2.  **Define a basic pipeline** - Create an XML file to define your content generation pipeline. This file will outline the stages of your workflow. The author mentions using XML for pipeline logic, which is designed to be easy to read and edit.
+    You should have a basic XML structure for your pipeline.
+
+3.  **Integrate Generative AI** - Configure a stage within your pipeline to interact with a generative AI service. This stage will be responsible for creating content based on prompts. The author doesn't specify which generative AI or how to integrate it, so you'll need to research and implement an API call to your chosen AI service (e.g., via a custom PHP script).
+    The pipeline should be able to send requests to a generative AI.
+
+4.  **Generate content prompts** - Add logic to your pipeline to determine the categories and prompts for content generation. This could involve predefined rules or dynamic selection based on certain criteria.
+    Your pipeline should be able to output specific prompts for the AI.
+
+5.  **Create and publish WordPress posts** - Add a stage to your pipeline that takes the generated content and publishes it as a WordPress post. This will likely involve using the WordPress REST API or a similar method to create new posts programmatically.
+    You should see new posts appearing in your WordPress site.
+
+6.  **Schedule the workflow** - Use a cron job or a similar scheduler on your web server to run the Pipeflow-PHP pipeline automatically at your desired frequency (e.g., daily).
+    The workflow should run automatically without manual intervention.
+
+## Original source
+
+This workflow is based on a project called Pipeflow-PHP, shared by user marcosiino on Hacker News. The author developed it to automate tasks like content generation and publishing for their websites, emphasizing its ease of use for non-developers through an XML-defined pipeline structure.
+
+## Notes & variations
+
+*   **Free Tier Viability**: Pipeflow-PHP itself is free. Generative AI services often have free tiers or trial periods, but check usage limits. WordPress is free, but you'll need to pay for web hosting.
+*   **Common Pitfall**: Ensure your PHP environment is correctly configured to make external API calls for the generative AI and WordPress integration. Firewall rules or missing PHP extensions can prevent this.
+*   **Better Results**: Experiment with more complex pipeline logic for prompt generation. Instead of simple keywords, try having the AI suggest prompts based on trending topics or user engagement data if you have access to it.
