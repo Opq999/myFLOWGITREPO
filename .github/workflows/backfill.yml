@@ -45,6 +45,24 @@ jobs:
           REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
         run: npx tsx pipeline/run.ts --backfill
 
+      - name: Top up missing Nigerian use cases
+        # Backfill publishes workflows the same way the daily ingest does, but
+        # used to skip this step, so every backfill-published workflow shipped
+        # without nigeriaUseCases until a later daily run happened to top it up
+        # (and only as far as that run's leftover quota allowed). Running the
+        # same idempotent top-up here fills them in the same run. It skips files
+        # that already have use cases, stops gracefully on quota, and can never
+        # break the deploy, so failure is tolerated and changes ride the commit.
+        continue-on-error: true
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
+          GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
+          GEMINI_API_KEY_4: ${{ secrets.GEMINI_API_KEY_4 }}
+          GEMINI_API_KEY_5: ${{ secrets.GEMINI_API_KEY_5 }}
+          GEMINI_API_KEY_6: ${{ secrets.GEMINI_API_KEY_6 }}
+        run: npx tsx pipeline/backfill-usecases.ts
+
       - name: Commit new content
         id: commit
         # Shared rebase-and-retry push (see pipeline/commit-content.sh) so a
