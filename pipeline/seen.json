@@ -3460,8 +3460,24 @@
     "9f91978957cdccc84de0089240072a09f8bf00553369fb9b4d64811ed1089420": {
       "url": "https://www.latent.space/p/anj",
       "date": "2026-06-19"
+    },
+    "d81dab0a58b8a7680dcf058ee8658f88d0bfdacc71e97b3e5051f4bc3dbb96a9": {
+      "url": "https://news.ycombinator.com/item?id=45903161",
+      "date": "2026-06-19"
+    },
+    "674cfdce42ff10df023d660e6b2c4885216fb8484e4a2a356111fb48586bffcc": {
+      "url": "https://simonwillison.net/2026/Jun/15/datasette-apps",
+      "date": "2026-06-19"
+    },
+    "c0d89037ef055659fa243985cb05025f444bff8153ca7c94d66632c6757ae5dc": {
+      "url": "https://github.com/SimplifyJobs/New-Grad-Positions",
+      "date": "2026-06-19"
+    },
+    "1aeb2c6c061948a01ea8f43563cd7578ec9165f564d5199f7c68a128a2dafe1f": {
+      "url": "https://news.ycombinator.com/item?id=45998644",
+      "date": "2026-06-19"
     }
   },
   "backfillPage": 11,
-  "dailyPage": 5
+  "dailyPage": 0
 }
