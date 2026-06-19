@@ -3424,8 +3424,44 @@
     "687b1dd7b82dd890afb0fdcc2d12f23e87714dc05aae813a9d4cb5f1fd95ed8d": {
       "url": "https://news.ycombinator.com/item?id=47949066",
       "date": "2026-06-18"
+    },
+    "102f974cbc243995c88c080ab938912aa19f5c369ab55d189c1343854f3027b0": {
+      "url": "https://news.ycombinator.com/item?id=44454305",
+      "date": "2026-06-19"
+    },
+    "5de808e16934fe2bafd2308a88e34c9022e91ed5f8bda7f8dd9238e05d34cf84": {
+      "url": "https://simonwillison.net/2026/Jun/18/datasette-apps",
+      "date": "2026-06-19"
+    },
+    "4db8dd4706ca4167680f2fd119309d3edd7e2ae101e41302d801ac73f90d8e7c": {
+      "url": "https://news.ycombinator.com/item?id=47209315",
+      "date": "2026-06-19"
+    },
+    "9feb65da2135b8167c4564a4cceadd1e77b8aa28269f2e24a71d68940918a195": {
+      "url": "https://simonwillison.net/2026/Jun/18/datasette-acl",
+      "date": "2026-06-19"
+    },
+    "c11c163f6427e6a37646951bc2a5d4dbb6af3cbc47e2e4afb6e3eb6f4a4e73e8": {
+      "url": "https://news.ycombinator.com/item?id=44259989",
+      "date": "2026-06-19"
+    },
+    "324d82b758c8f2fd52ce075a8d9b24fd3a394550af667ab9d4ca4688131569ed": {
+      "url": "https://simonwillison.net/2026/Jun/15/datasette-apps-2",
+      "date": "2026-06-19"
+    },
+    "dfff39261ad9d3543afcbc3fba935f99367249d7262a828a75a9351bea43af13": {
+      "url": "https://news.ycombinator.com/item?id=47609425",
+      "date": "2026-06-19"
+    },
+    "6d24eda6f485d0be87e275bd2c8fdae0df81704d3b294b4581e3057244b8560e": {
+      "url": "https://www.latent.space/p/ainews-glm-gpt-glm-52-passes-vibe",
+      "date": "2026-06-19"
+    },
+    "9f91978957cdccc84de0089240072a09f8bf00553369fb9b4d64811ed1089420": {
+      "url": "https://www.latent.space/p/anj",
+      "date": "2026-06-19"
     }
   },
   "backfillPage": 11,
-  "dailyPage": 4
+  "dailyPage": 5
 }
