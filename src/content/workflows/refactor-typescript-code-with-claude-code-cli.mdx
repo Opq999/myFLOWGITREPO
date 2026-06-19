@@ -8,8 +8,8 @@ timeMinutes: 15
 jobToBeDone: "Refactor TypeScript codebase to use a new JobDefinition.create method and remove vestigial logging."
 tools:
   - name: "Claude Code CLI"
-    url: "https://www.anthropic.com/claude"
-    pricing: "freemium"
+    url: "https://code.claude.com"
+    pricing: "paid"
     affiliateUrl: ""
   - name: "VSCode"
     url: "https://code.visualstudio.com/"
@@ -22,7 +22,7 @@ source:
   postedAt: 2025-09-22
 score: 7
 ingestedAt: 2026-06-16
-nigeriaNotes: "Claude offers a free tier. Data usage will depend on the size of your codebase and the length of the interaction. VSCode is a desktop application and does not consume mobile data."
+nigeriaNotes: "Claude Code needs a paid Claude plan or API credits (card payment). Free alternative: the Gemini CLI has a generous free tier and handles the same kind of refactoring. Data usage depends on the size of your codebase and the length of the interaction. VSCode is a desktop application and does not consume mobile data."
 nigeriaUseCases:
   - persona: "employee"
     scenario: "As a software engineer, refactor a legacy internal tool's TypeScript codebase to adopt a new authentication service's API, cleaning up old logging statements."
@@ -38,7 +38,7 @@ published: true
 You will refactor your TypeScript codebase to adopt a new `JobDefinition.create` method and remove outdated logging statements. This approach leverages AI to automate repetitive code updates, saving you time and reducing the risk of manual errors.
 
 ## Tools you need
-*   **Claude Code CLI** (freemium) - An AI assistant for code understanding and modification.
+*   **Claude Code CLI** (paid) - An AI assistant for code understanding and modification.
 *   **VSCode** (free) - A popular code editor where you can run the Claude Code CLI and view your code.
 
 ## Steps
@@ -60,6 +60,6 @@ You will refactor your TypeScript codebase to adopt a new `JobDefinition.create`
 This workflow is based on a question and discussion posted on Hacker News by user tlonny, seeking advice on issues encountered while using AI agents for code refactoring tasks.
 
 ## Notes & variations
-*   **Free tier viability**: Claude's free tier is generally sufficient for this task, especially for smaller codebases. Monitor your usage if you are on a strict free tier limit.
+*   **Cost and free alternative**: Claude Code requires a paid Claude plan or API credits. If you need a free option, the Gemini CLI has a generous free tier and handles the same refactoring task.
 *   **Common pitfall**: Be wary of AI agents making unintended changes, such as reordering code elements or modifying unrelated sections. The prompt includes a specific instruction to prevent this, but vigilant review is still crucial.
 *   **Tip for better results**: If the AI struggles to understand the context or makes errors, try breaking down the refactoring into smaller, more specific requests. You can also provide more context about the `JobDefinition.create` method's new signature and expected behavior.
