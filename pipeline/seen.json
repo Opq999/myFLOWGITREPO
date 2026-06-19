@@ -3896,8 +3896,88 @@
     "203e4ea7d72f57df2efe1db312e8800e3cb221bdf5cedf7536267089b0f4ebce": {
       "url": "https://news.ycombinator.com/item?id=44993297",
       "date": "2026-06-19"
+    },
+    "161d7e9249afed809cb02cf54f489985002d2d104603be3eaaaec33b33a68859": {
+      "url": "https://github.com/pluja/awesome-privacy",
+      "date": "2026-06-19"
+    },
+    "67a4075bedacce591a4c5216ac25ed2ace713784c8bdd22ba5ceb04f716d36ec": {
+      "url": "https://github.com/collabnix/kubetools",
+      "date": "2026-06-19"
+    },
+    "6a6e782d5bc6e8f621e6ec8f55c77c9077d43e7a23b62d2cadf3ed1eecb2e6b1": {
+      "url": "https://github.com/walkinglabs/awesome-harness-engineering",
+      "date": "2026-06-19"
+    },
+    "7cee42426f1afa7f822d8454cf67c4260b66319fb6b72e28abf17232cc51ee42": {
+      "url": "https://github.com/hyperai/awesome-ai4s",
+      "date": "2026-06-19"
+    },
+    "78bd3b334e3d57378460dbb2e4bfb186333f6429c4a5873db61f848caeeded19": {
+      "url": "https://github.com/Sumanth077/ai-engineering-toolkit",
+      "date": "2026-06-19"
+    },
+    "bb2606ae25a75600b73d6761e5c661f22863343e86f90310ce5ad085c8e583f2": {
+      "url": "https://github.com/taishi-i/awesome-ChatGPT-repositories",
+      "date": "2026-06-19"
+    },
+    "938bed5f3dacff7b9fac7ca8a20c0cab322e218a32af295926488f6eaf47916c": {
+      "url": "https://github.com/lirantal/awesome-nodejs-security",
+      "date": "2026-06-19"
+    },
+    "121c04ea62506b6df8aa11cd6ca8023a1151e50543a4c2355eff97c7a4c74642": {
+      "url": "https://github.com/gmh5225/awesome-game-security",
+      "date": "2026-06-19"
+    },
+    "3bb844ba1fd62c09616ccd1ec4821d6d51c8c1b7483dd6490d1efefc53d227aa": {
+      "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh",
+      "date": "2026-06-19"
+    },
+    "f34b3b41c8b8998e1b6ef5135ec816732a321d3190e26dc152bbd50b36082361": {
+      "url": "https://github.com/fluttergems/awesome-open-source-flutter-apps",
+      "date": "2026-06-19"
+    },
+    "d206f4fe9e4ec8d39549e7b8b4a890536555d82537b9f9eac5b59ca01eadc06b": {
+      "url": "https://github.com/luo-junyu/Awesome-Agent-Papers",
+      "date": "2026-06-19"
+    },
+    "8d1b33598ec91e677a66ab16e3a82368186542adfceaa06be5f3d59ceb80eadb": {
+      "url": "https://github.com/wangzhe3224/awesome-systematic-trading",
+      "date": "2026-06-19"
+    },
+    "7d65aa2b4ab3981f245a7d27e6e043da2dc3c1caffcc1d628849d0752ca0b1eb": {
+      "url": "https://github.com/0xNyk/awesome-hermes-agent",
+      "date": "2026-06-19"
+    },
+    "c36fe4643f54e7320094093c24696f3ca898a328d136543bef71dd12214931e6": {
+      "url": "https://news.ycombinator.com/item?id=47350516",
+      "date": "2026-06-19"
+    },
+    "a43102df5b541ec5f9568a7ca2eb4904a1e27bdbeda62f55c2a3a8196aa60370": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1mk6u08/these_gpt5_numbers_are_insane",
+      "date": "2026-06-19"
+    },
+    "ad8e26168b6ca9679083786bc91fb95914382c778cdf3b09bdfd7a591f8b5167": {
+      "url": "https://www.bensbites.com/p/is-saas-dead",
+      "date": "2026-06-19"
+    },
+    "a0c8173eec246a77c854fe79486a9fab578d04e7d0e11c88d387f7231378e818": {
+      "url": "https://github.com/titanwings/colleague-skill",
+      "date": "2026-06-19"
+    },
+    "bd836cb412635b4c04eda7f9b1cf40c25c78741135f14fce5be40b2e0783a18d": {
+      "url": "https://news.ycombinator.com/item?id=44390005",
+      "date": "2026-06-19"
+    },
+    "b76d06c1deacfec02f95b95aa6cd5ef28898649f319a7db91763acf5e3beb6d1": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1lxx2pf/asked_chatgpt_to_make_me_white",
+      "date": "2026-06-19"
+    },
+    "b60eabf0d9170bbaea81177be14c1b2d33368cb8f4ab25abc522b23dacc27ff5": {
+      "url": "https://www.bensbites.com/p/googles-take-on-openclaw",
+      "date": "2026-06-19"
     }
   },
-  "backfillPage": 12,
+  "backfillPage": 13,
   "dailyPage": 1
 }
