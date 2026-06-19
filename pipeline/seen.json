@@ -3476,8 +3476,396 @@
     "1aeb2c6c061948a01ea8f43563cd7578ec9165f564d5199f7c68a128a2dafe1f": {
       "url": "https://news.ycombinator.com/item?id=45998644",
       "date": "2026-06-19"
+    },
+    "05ffc80681d744e0e31d2707be185f6639123fbeba2873c3e505cfaefbdd69d9": {
+      "url": "https://github.com/quozd/awesome-dotnet",
+      "date": "2026-06-19"
+    },
+    "f5a82bc0e33224d2dc9f797421ef3b653d9410cb4de8b3dfa9aca7766bc283aa": {
+      "url": "https://github.com/thangchung/awesome-dotnet-core",
+      "date": "2026-06-19"
+    },
+    "894fafe8ed361f50e0cb0f740b63ba9f4f32818b7498d09cf83e79504ae7354f": {
+      "url": "https://github.com/matiassingers/awesome-readme",
+      "date": "2026-06-19"
+    },
+    "c6eec7b17526c599d18af01c668595be154bb0b379a6c1f9244b937ff432b416": {
+      "url": "https://github.com/serenakeyitan/awesome-notebookLM-prompts",
+      "date": "2026-06-19"
+    },
+    "3e46e37e4cfa4879e0e14d7a81617a78d960b75cc2b8ce880d5a0b362f92016d": {
+      "url": "https://github.com/dreamingechoes/awesome-mental-health",
+      "date": "2026-06-19"
+    },
+    "9bc7d6c364678ef322f19b7fc6422176410123c1a8baba2f99941a4dc43ce2a5": {
+      "url": "https://github.com/filipecalegario/awesome-generative-ai",
+      "date": "2026-06-19"
+    },
+    "d4296af1a97fe98ced4066cd2d66fd5048771737ef2ac3996c14fb3e7e449c8a": {
+      "url": "https://github.com/homeassistant-ai/ha-mcp",
+      "date": "2026-06-19"
+    },
+    "abbe3c907f946732f1a04b8e64dcee428e0896c7e938f0710b1dea5c64873273": {
+      "url": "https://github.com/Astrosp/Awesome-OSINT-List",
+      "date": "2026-06-19"
+    },
+    "c02f552589c89719200775616a2331d288af375d523ecdd69843cee903856a2e": {
+      "url": "https://github.com/codefuse-ai/Awesome-Code-LLM",
+      "date": "2026-06-19"
+    },
+    "adfc684c243f9186d64f777d22fed22c87f2a2fc1483b33e3c68bbcc839e0d21": {
+      "url": "https://github.com/yunlong10/Awesome-LLMs-for-Video-Understanding",
+      "date": "2026-06-19"
+    },
+    "c14e5638304d543f463cfa15898f58359a6e9c07cd0022b39a2edf82a4e726b8": {
+      "url": "https://github.com/Meirtz/Awesome-Context-Engineering",
+      "date": "2026-06-19"
+    },
+    "5d90a7dc4bb215bf77649c16a9eac4bb6def00528ff75fa6b8f398dfe491ca4f": {
+      "url": "https://github.com/phodal/awesome-iot",
+      "date": "2026-06-19"
+    },
+    "efb1341e845d468c5e06c58d38d14876225a1e787556d5e5a378288e8a489dbc": {
+      "url": "https://news.ycombinator.com/item?id=46779922",
+      "date": "2026-06-19"
+    },
+    "91f74527ea3f87a0563896c922f51ad3cf03c0e129e40df96e1476dfbcf71665": {
+      "url": "https://dev.to/javz/the-4-cognitive-archetypes-of-developers-using-ai-382n",
+      "date": "2026-06-19"
+    },
+    "fe23770a2b760b52ec0c5f58dc4903945a014b7eea12981a2a04cb6b766d8179": {
+      "url": "https://github.com/wavetermdev/waveterm",
+      "date": "2026-06-19"
+    },
+    "f814b1dad62723bfeb4209b64022629acecd7c7f62a9553370cb23d625f7cc95": {
+      "url": "https://news.ycombinator.com/item?id=47814832",
+      "date": "2026-06-19"
+    },
+    "9ec9ce16e0ef5066d8862a8d33249a5e117a965c10066c155513b20f37be0447": {
+      "url": "https://dev.to/zenstack/how-to-save-bloated-mcp-with-code-mode-33e3",
+      "date": "2026-06-19"
+    },
+    "15aba1d4f867dec09392426b5a8d7d694df95ecd55e6b4bfee12322c8f821eb2": {
+      "url": "https://github.com/NVIDIA/NemoClaw",
+      "date": "2026-06-19"
+    },
+    "dc45422becc61d8adb0c91b46690c79a9b092e8aeaa359a88128bfbd490c9dc8": {
+      "url": "https://dev.to/wasp/claude-code-for-fullstack-development-the-3-things-you-actually-need-1p6p",
+      "date": "2026-06-19"
+    },
+    "18ef54dab1deb1eda28c7d0c661aa0986ac15e898b678a2a31d165deaec181dd": {
+      "url": "https://github.com/RasaHQ/rasa",
+      "date": "2026-06-19"
+    },
+    "161bfa88be09667c7d6570bc49861190cac333c9752f424776c2356c79fdd32f": {
+      "url": "https://dev.to/thegiansorianodev/i-deleted-half-my-codebase-and-nobody-noticed-549",
+      "date": "2026-06-19"
+    },
+    "46981ed75ce90edec6043fab06a9c86297922e7641efc510d8cb7329207e9668": {
+      "url": "https://github.com/coze-dev/coze-studio",
+      "date": "2026-06-19"
+    },
+    "c3e9043bcdd750a5d47ca33c8393b7ad0bde3b4430d65f96017bc8489f56d67c": {
+      "url": "https://dev.to/sholajegede/how-to-add-free-trials-to-your-saas-without-friction-a-step-by-step-guide-with-kinde-23ce",
+      "date": "2026-06-19"
+    },
+    "48dbbdd8fd0d302995a78e829a00f132701eb7b8486d5cb9fbdaf1a3f8828a23": {
+      "url": "https://github.com/agentskills/agentskills",
+      "date": "2026-06-19"
+    },
+    "0e55713896d3f5b77b010f80916608d9c4395dd9d857718e869aa1093f9fd604": {
+      "url": "https://dev.to/divyasinghdev/fluentmate-your-smart-fluency-friend-24x7-mentor-40f5",
+      "date": "2026-06-19"
+    },
+    "223477599275542e1e66828a082166a612bb46d2adf07f250fb83333837ac029": {
+      "url": "https://github.com/gravitational/teleport",
+      "date": "2026-06-19"
+    },
+    "aa1d92a30a686da0716a5655f908cc3cbd1cde69e48a45134c71c57fb7cff134": {
+      "url": "https://dev.to/trojanmocx/i-thought-ai-would-make-me-code-faster-then-i-spent-6-hours-debugging-one-line-3ffh",
+      "date": "2026-06-19"
+    },
+    "b8e883efcced3c2a253ec716997b39baf6576bb1fbe9022968585e6c60f2104e": {
+      "url": "https://github.com/Anil-matcha/Open-Generative-AI",
+      "date": "2026-06-19"
+    },
+    "c6acacde8d3928a46a00d769023d1d1ab1a0bfc8965713435108ba12cdea6bb4": {
+      "url": "https://dev.to/entelligenceai/introducing-entelligence-engineering-leaderboard-a-real-time-scoreboard-for-developers-1f5e",
+      "date": "2026-06-19"
+    },
+    "6fb00c7ac55ed663e314422a4fb116bd3be3d881f2580362fdfd68c2f43b100a": {
+      "url": "https://github.com/HKUDS/AI-Trader",
+      "date": "2026-06-19"
+    },
+    "f460f9c531cf66cc49c7e2574c98ca0a8b5eaa61607c2fd2193937761854596b": {
+      "url": "https://dev.to/teamcamp/what-is-remote-work-a-devs-guide-to-meaning-models-modern-realities-1bmp",
+      "date": "2026-06-19"
+    },
+    "e22d6bb871974ebceac861e7bd932037688e3384eb684e13d7d41a4370f89297": {
+      "url": "https://github.com/rrweb-io/rrweb",
+      "date": "2026-06-19"
+    },
+    "108b388be0eee6838d95e3628338083b37a0c6f9ab91318c82a767ef8d28c52b": {
+      "url": "https://dev.to/javz/the-increasing-need-for-human-connection-in-the-age-of-ai-43cd",
+      "date": "2026-06-19"
+    },
+    "580ca860ba1f4d76c3a31343eb4dd6c89d994708492d5a7552b82f6049dcf5ab": {
+      "url": "https://github.com/comet-ml/opik",
+      "date": "2026-06-19"
+    },
+    "3e2bee40f54270032f4f00ebfa4a9b87b2041374695692fce5b8bc33e50672c7": {
+      "url": "https://dev.to/depapp/building-real-time-collaborative-workflows-with-12-redis-features-a51",
+      "date": "2026-06-19"
+    },
+    "bcd431aebc6bbefd2799af70081b8e16a4163ef61b1dc586f49a5e6f55f5f1d9": {
+      "url": "https://github.com/CapSoftware/Cap",
+      "date": "2026-06-19"
+    },
+    "70e42ac4d7a57fb814acc70a74e3d667172bda8ae91a600ef4d8d4780d331529": {
+      "url": "https://dev.to/agastya_khati_f72c89077c8/medhack-4pdl",
+      "date": "2026-06-19"
+    },
+    "2a6d55c269710ac07d442ca97be74b31ad5208c56a4c77cb967157084a704614": {
+      "url": "https://github.com/developersdigest/llm-answer-engine",
+      "date": "2026-06-19"
+    },
+    "928163426589d97bb05b37aeb36eb2adb4d48173c877169bc99b32aa1e5ea325": {
+      "url": "https://dev.to/webdeveloperhyper/how-to-use-ai-more-efficiently-for-free-serena-mcp-5gj6",
+      "date": "2026-06-19"
+    },
+    "21c423e1577f11a02593a5f61568f9bed317d44b65c200456508e4ad7899764f": {
+      "url": "https://github.com/hiyouga/EasyR1",
+      "date": "2026-06-19"
+    },
+    "8a4dce99311cc32d8ff04610cf24580b3fb7843731a4af132255705c6ec8c8fa": {
+      "url": "https://dev.to/manuartero/about-wizards-warlocks-programmers-vibe-coders-4p6n",
+      "date": "2026-06-19"
+    },
+    "98a4ca8e31490ba18226cc3c21ae855a6434450c35740021143a5cf73d2cc0e5": {
+      "url": "https://github.com/SolaceLabs/solace-agent-mesh",
+      "date": "2026-06-19"
+    },
+    "f6d9efae307e6e807d472d8c69bb5b8d96681ff6a10aab9cf60be4f870fe4720": {
+      "url": "https://dev.to/anchildress1/all-ive-learned-about-github-copilot-instructions-so-far-5bm7",
+      "date": "2026-06-19"
+    },
+    "9ea70b276fdfc62699fd1b10037c4b32530f5dcb1f3515163e309aaa24f696a5": {
+      "url": "https://github.com/LantaoYu/MARL-Papers",
+      "date": "2026-06-19"
+    },
+    "c826f454b8648ea476c453a93b87c36d40430161bab0621be5fcd5cb59e20a6f": {
+      "url": "https://dev.to/sarahokolo/your-next-idea-86n",
+      "date": "2026-06-19"
+    },
+    "df85a69b7d248635c3e7145a934e0945547096afc038ed04b8618a2ea3c10753": {
+      "url": "https://github.com/eastlondoner/vibe-tools",
+      "date": "2026-06-19"
+    },
+    "0f4a13d9fa6c60a406256ad93223293ab5718401f6b7fc8308db5c289fd8dd79": {
+      "url": "https://dev.to/depapp/pagemind-real-time-collaborative-web-summarization-powered-by-redis-8s-lightning-fast-cache-2a6h",
+      "date": "2026-06-19"
+    },
+    "36c246286792ad472a879e0e85babf470a986a1799b37ff122e395b25c9361f1": {
+      "url": "https://github.com/ThePrimeagen/99",
+      "date": "2026-06-19"
+    },
+    "ea945ff065d689853831e7db0dcc9b0728f71fade8befc05aff654982e3cc679": {
+      "url": "https://dev.to/hemapriya_kanagala/frameworks-are-no-longer-being-designed-only-for-humans-13de",
+      "date": "2026-06-19"
+    },
+    "1014e46575879b74ede7147ae28d096569a0d849001a618228af82a897d7347c": {
+      "url": "https://github.com/cheatsnake/backend-cheats",
+      "date": "2026-06-19"
+    },
+    "438214a5dff0deb4ebb9146f3d9a927e7450446365213e263c219b17a13c45e1": {
+      "url": "https://dev.to/koladev/i-think-you-should-let-ai-write-your-code-2jgj",
+      "date": "2026-06-19"
+    },
+    "d93dae27bd35ed87888aafd543f298f830e8b0e2b2cc563250c711c2db369cc9": {
+      "url": "https://github.com/Q00/ouroboros",
+      "date": "2026-06-19"
+    },
+    "17a8f3db72d71d0d588a4e8e00e69d67d175b44a450396514678da882d7aeeb8": {
+      "url": "https://dev.to/harshil1712/migrating-from-astro-5-to-astro-6-a-real-world-breakdown-2d0c",
+      "date": "2026-06-19"
+    },
+    "084da3f43141a92908d8dfeaf2c746f24c515b473c9d1a2c94c36d10d936a70c": {
+      "url": "https://github.com/exa-labs/exa-mcp-server",
+      "date": "2026-06-19"
+    },
+    "ec56a9a762a855041e9d20a5660f0999246a05776474c7f312899a560b69e30c": {
+      "url": "https://dev.to/jaideepparashar/the-hidden-power-of-chatgpt-prompts-nobody-talks-about-558f",
+      "date": "2026-06-19"
+    },
+    "ef88f65831604871860f109a55e69097ba3cea7d61ba079202b19a72266ba548": {
+      "url": "https://github.com/riramar/Web-Attack-Cheat-Sheet",
+      "date": "2026-06-19"
+    },
+    "94f497fa43f8845d1e2beeb050217c49f2af8155736437a01a5a040447d9595e": {
+      "url": "https://dev.to/aws/software-31-ai-functions-5acn",
+      "date": "2026-06-19"
+    },
+    "50268e7a2bee55762b33cf0df5335a982c81e42b0c11ed4157e7d7c9a8e8d38e": {
+      "url": "https://github.com/zjunlp/DeepKE",
+      "date": "2026-06-19"
+    },
+    "35d33cc2b3c94476e15c4317bc0b0bd68c35b1fea10011a12eff54e5faa99efb": {
+      "url": "https://dev.to/shiva_shanker_k/githubs-august-2025-ai-updates-what-every-developer-needs-to-know-4aam",
+      "date": "2026-06-19"
+    },
+    "b11e0cbbff7b14b2d2c1982f3edc2d3590783e0f2884a72b8cc54fa3930fabd7": {
+      "url": "https://github.com/npubird/KnowledgeGraphCourse",
+      "date": "2026-06-19"
+    },
+    "739216e973cd4cf98bbaf6e0871d26db63aa905a98e2e93104767b126d5546e7": {
+      "url": "https://dev.to/googleai/building-sweets-vault-a-multimodal-gemini-agent-with-physical-hardware-integration-1nmh",
+      "date": "2026-06-19"
+    },
+    "d4af370c521f41ce7bddaed02db790e011e9d117cf511c5d46021d40bdfa6259": {
+      "url": "https://github.com/fspecii/ace-step-ui",
+      "date": "2026-06-19"
+    },
+    "acf231a4010a5d94872e68d10cbb5a342e25e88d35fbfbd7096329e191812e8a": {
+      "url": "https://dev.to/goose_oss/jack-dorseys-vibe-coding-tips-48ok",
+      "date": "2026-06-19"
+    },
+    "a6740c507e9139ae09fcfdd1c6a5a987dd7be23c6262ee87b843778f9f698eab": {
+      "url": "https://github.com/NVIDIA/GenerativeAIExamples",
+      "date": "2026-06-19"
+    },
+    "ca4b200160b9cf2423ca6906737de5da4adb3e57c660d50b78549f79493515e4": {
+      "url": "https://dev.to/owaspblt/why-owasp-blt-contribution-from-5-to-50-prs--1j7o",
+      "date": "2026-06-19"
+    },
+    "679689ae314655fb105f7637df995d6157ab71450aec24d4fe6cf39d63544057": {
+      "url": "https://github.com/deusyu/harness-engineering",
+      "date": "2026-06-19"
+    },
+    "c50f5e61430c3a2ccf323683bf34902ed057ec61e7850924113e167ab1ccc48f": {
+      "url": "https://dev.to/fdocr/clawshier-openclaw-skill-l1n",
+      "date": "2026-06-19"
+    },
+    "1ffb2d8ea9f1d7a2136ec54513bfbffc9e335395feab8837837cbb528fc65975": {
+      "url": "https://github.com/datawhalechina/Agent-Learning-Hub",
+      "date": "2026-06-19"
+    },
+    "53b27e8cd42879212dc2bc83b6f086e111b26aa6448e44d69d977ab45a336590": {
+      "url": "https://dev.to/battyterm/how-to-supervise-ai-coding-agents-without-losing-your-mind-53m4",
+      "date": "2026-06-19"
+    },
+    "4e9ead417e3bfacf9da3c345d56216dccc4c9d814cd01402293e6c98a2b43441": {
+      "url": "https://github.com/LazyAGI/LazyLLM",
+      "date": "2026-06-19"
+    },
+    "b02d614df276c6d7e8745563835bd5b60b1b56432c6a57e2869d3787de4090d6": {
+      "url": "https://dev.to/trojanmocx/i-updated-my-github-auto-commit-desktop-app-318o",
+      "date": "2026-06-19"
+    },
+    "a72feb6bab84e096e28ee7bbb232d9323f6f32c073d7bb755c74e4718d8d464e": {
+      "url": "https://github.com/parcadei/Continuous-Claude-v3",
+      "date": "2026-06-19"
+    },
+    "f27043c95ea7131e65457ecc9af6948f997d9287cca33ef903593b82492bd040": {
+      "url": "https://dev.to/jagostoni/dumbquestionai-self-awareness-prompt-injection-search-intent-and-darkness-3pd",
+      "date": "2026-06-19"
+    },
+    "a14e6caea97a4b0248dd0372706fa8c25984521b8f8db9b736bac9e7ec4eda1e": {
+      "url": "https://github.com/Minidoracat/mcp-feedback-enhanced",
+      "date": "2026-06-19"
+    },
+    "2ba4fa94343d15e8fedaad233e1feeb755c7ef074be8756b1895c9aafca62a4b": {
+      "url": "https://dev.to/goose_oss/how-to-stop-your-ai-agent-from-making-unwanted-code-changes-5g85",
+      "date": "2026-06-19"
+    },
+    "88433fb48691f2760adc8c7d2329c2042b84c3f8d3241479451f72ad54b276c6": {
+      "url": "https://github.com/disler/claude-code-hooks-mastery",
+      "date": "2026-06-19"
+    },
+    "c4900359a11944110c2495c2c6ab5a0dc5dc1d47069e7fbb563a264334cd8c3e": {
+      "url": "https://dev.to/evanlausier/every-tool-eventually-becomes-tuesday-47ak",
+      "date": "2026-06-19"
+    },
+    "a1fe4fe2c98e9407130f5391c7e3e96e6c036c502f0bce031e8c0fe4a7116fcb": {
+      "url": "https://github.com/golutra/golutra",
+      "date": "2026-06-19"
+    },
+    "0bc420e446f3522e3820f7a06a866d49d855de0f7929309a09cc1d8343bf0e23": {
+      "url": "https://dev.to/lightningdev123/how-to-set-up-a-self-hosted-obsidian-sync-server-hcn",
+      "date": "2026-06-19"
+    },
+    "b623c993851cdee6600a9f1b06effb574b23c43b8a0695173fbd50cc41668f19": {
+      "url": "https://github.com/Deepractice/PromptX",
+      "date": "2026-06-19"
+    },
+    "2bf1c6dcc85cb8f3753fd7ad83e0fc9a3c317356de8a6e9ca2f4be00e766ba6b": {
+      "url": "https://dev.to/fallon_jimmy/insomnia-vs-postman-which-tool-excels-in-api-documentation-and-workflow-29jd",
+      "date": "2026-06-19"
+    },
+    "ac7abb35b59cf183dd66cf57aea2a87a521283e8d882a9829f52d0338551597c": {
+      "url": "https://github.com/nyldn/claude-octopus",
+      "date": "2026-06-19"
+    },
+    "58ddbf2ab4419e34b158655411f40ddc4cfd88e8ad250984b47366e783fc6a5f": {
+      "url": "https://dev.to/lingodotdev/how-to-create-a-chatgpt-app-with-openais-apps-sdk-1213",
+      "date": "2026-06-19"
+    },
+    "711738386d7859ae6b8144806b712824c71a04c78a37df42dcbdf3bb7f66dfce": {
+      "url": "https://github.com/cporter202/scraping-apis-for-devs",
+      "date": "2026-06-19"
+    },
+    "ee9344d1136d7f6141acde23438dc01e82f1cf4fa2c68d5ed64472094b50485d": {
+      "url": "https://dev.to/sahil_sahu/i-learned-react-wrong-for-3-months-heres-what-i-wish-i-knew-on-day-1-hcp",
+      "date": "2026-06-19"
+    },
+    "588831483651168781b69b2f14d5479464ef80aa2b68015e24689b0300b18c35": {
+      "url": "https://github.com/mvanhorn/cli-printing-press",
+      "date": "2026-06-19"
+    },
+    "19c44a24be4f6c2718ef0c8bc8194609993c034597858fb034a5a9b5533deb13": {
+      "url": "https://dev.to/auyeungdavid_2847435260/will-reasoning-become-the-new-turing-test-lets-play-a-sherlock-holmes-game-37cm",
+      "date": "2026-06-19"
+    },
+    "c55bc16a1d621c07f7200bf2019dbe114e5d3a6c73f16c4fca0c5dfe996fce12": {
+      "url": "https://github.com/LuNiZz/siber-guvenlik-sss",
+      "date": "2026-06-19"
+    },
+    "ce67fba91f95523a3d36163169aa62ff2007c99fd61da9b893de81268fb33f00": {
+      "url": "https://dev.to/yuridevat/10xa11y-dev-with-algolia-search-4fj9",
+      "date": "2026-06-19"
+    },
+    "ba28cf8980c41a0f6c5eafd1709dc183874cfa4a7e9d80bc7060c0f19affb99c": {
+      "url": "https://github.com/dagucloud/dagu",
+      "date": "2026-06-19"
+    },
+    "322b70668cd3b0cb05a6e896c129be3d13b933c9ae3948b3ef7b695df6b9aeda": {
+      "url": "https://dev.to/lewisawe/spooky-smart-ai-that-designs-your-halloween-look-2dil",
+      "date": "2026-06-19"
+    },
+    "29a614df6e694eae1d0ba0cbcc85d31b93bcdba84c1d9151e95c9aaafb9f9844": {
+      "url": "https://github.com/n3d1117/chatgpt-telegram-bot",
+      "date": "2026-06-19"
+    },
+    "c0255a4b2a3cc10c403a0882b543d9dc9a74a5d786d6d287f68cd25f903faf6c": {
+      "url": "https://dev.to/saurabh_ssk/curioshorts-3o09",
+      "date": "2026-06-19"
+    },
+    "001034dde652118cd3ce9277ba3e1f990dddfcf93943304c597b1b041f0e2d32": {
+      "url": "https://github.com/DSXiangLi/DecryptPrompt",
+      "date": "2026-06-19"
+    },
+    "dbd628df1508c7ceb727fa9825066852c73baf7a9256d7f1b6ee7eacb670d8b1": {
+      "url": "https://dev.to/firevibe/selfsprite-maze-game-take-a-selfie-and-become-an-animated-playable-character-in-the-game-3h2h",
+      "date": "2026-06-19"
+    },
+    "f922b8ec6fefd6251eec6f4297a786aef8607ca9596161899fb5c51e3c3cfdb7": {
+      "url": "https://github.com/guokaigdg/animal-island-ui",
+      "date": "2026-06-19"
+    },
+    "4ea5e0ac7a9f4cbd0ab16964aad8e6deeffc45f7a2a419a2b3b66f99b2af12e5": {
+      "url": "https://dev.to/freepalestine/comic-ai-2ogb",
+      "date": "2026-06-19"
     }
   },
-  "backfillPage": 11,
+  "backfillPage": 12,
   "dailyPage": 0
 }

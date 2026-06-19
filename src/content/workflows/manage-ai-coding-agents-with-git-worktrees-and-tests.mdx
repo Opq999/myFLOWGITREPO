@@ -1,0 +1,104 @@
+---
+title: "Manage AI Coding Agents with Git Worktrees and Tests"
+description: "Learn to supervise multiple AI coding agents on the same repository, preventing conflicts and ensuring code quality using Git worktrees and automated tests."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 15
+jobToBeDone: "Manage multiple AI coding agents working on the same repository to prevent conflicts and ensure code quality"
+tools:
+  - name: "Git"
+    url: "https://git-scm.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Claude Code"
+    url: "https://claude.ai/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Codex"
+    url: "https://openai.com/codex/"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Aider"
+    url: "https://aider.dev/"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/battyterm/how-to-supervise-ai-coding-agents-without-losing-your-mind-53m4"
+  platform: "blog"
+  author: "battyterm"
+  postedAt: 2026-04-04
+score: 7
+ingestedAt: 2026-06-19
+nigeriaNotes: "Git is free and widely used. AI coding agents like Claude Code and Aider offer free tiers. Data usage depends on the complexity of coding tasks and the amount of code processed, but is generally manageable for mobile users with reasonable data plans. Codex is a paid tool."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn a pattern to manage multiple AI coding agents working on the same project without them interfering with each other. This method uses Git worktrees to isolate each agent's work and automated tests as a quality gate, preventing conflicts and ensuring code reliability.
+
+This approach is crucial when scaling AI-assisted development beyond a single agent, turning potential chaos into an organized workflow.
+
+## Tools you need
+*   **Git** (free): A version control system to manage code changes and isolate agent workspaces.
+*   **Claude Code** (freemium): An AI coding assistant that can generate and modify code.
+*   **Codex** (paid): Another AI model for code generation and understanding.
+*   **Aider** (freemium): An AI pair programmer that can help with coding tasks.
+*   **Your Project's Test Suite** (free): Existing automated tests (e.g., using pytest, Jest, cargo test) to verify code correctness.
+
+## Steps
+1.  **Create isolated workspaces for each AI agent**:
+    For each AI agent you plan to run in parallel, create a separate Git worktree. This ensures each agent has its own directory and branch to work on, preventing file conflicts.
+    Open your terminal in your project's root directory and run the following commands, replacing `agent-1`, `agent-2`, etc., with unique names for each agent and their task:
+
+    ```bash
+    git worktree add .worktrees/agent-1 -b agent-1/task-1
+    git worktree add .worktrees/agent-2 -b agent-2/task-2
+    git worktree add .worktrees/agent-3 -b agent-3/task-3
+    ```
+
+    You should see output confirming the creation of new worktrees and branches. Each agent will now have its own isolated directory (e.g., `.worktrees/agent-1`) within your project, operating on its own branch.
+
+2.  **Assign tasks to agents within their worktrees**:
+    Navigate into an agent's worktree directory and have the AI agent work on its assigned task. For example, to work with `agent-1`:
+
+    ```bash
+    cd .worktrees/agent-1
+    # Now, instruct your AI agent (e.g., Claude Code, Codex, Aider) to perform a specific coding task here.
+    # The AI will modify files within this .worktrees/agent-1 directory.
+    ```
+
+    The AI agent will generate or modify code files only within its designated worktree directory. You will see files being created or changed within `.worktrees/agent-1`.
+
+3.  **Run automated tests to gate code quality**:
+    After an AI agent has completed its task within its worktree, immediately run your project's test suite to verify the changes. Navigate back to the agent's worktree directory if you are not already there.
+
+    ```bash
+    cd .worktrees/agent-1
+    # Replace 'cargo test' with your project's test command (e.g., npm test, pytest)
+    cargo test
+    echo $?
+    ```
+
+    You should see the output of your test suite. If the command `echo $?` outputs `0`, it means all tests passed. If it outputs any other number, tests have failed.
+
+4.  **Merge or iterate based on test results**:
+    If the tests pass (exit code `0`), you can merge the agent's branch back into your main branch. If tests fail (non-zero exit code), send the failure output back to the AI agent and have it attempt to fix the code. The author doesn't specify the exact command for sending failure output back, but you would typically provide the error messages to the AI and ask it to correct the code within its worktree.
+
+    To merge a successful branch:
+    ```bash
+    cd ../..
+    git checkout main
+    git merge agent-1/task-1
+    ```
+
+    If tests fail, you would re-prompt the AI with the errors. Once corrected and tests pass, you would then perform the merge as described above. You should see the code changes integrated into your main branch if tests pass, or the AI attempting to fix issues if they fail.
+
+## Original source
+This workflow is based on the pattern described by author battyterm in their blog post "How to Supervise AI Coding Agents Without Losing Your Mind". The author shares practical solutions for managing multiple AI coding agents on a single project, drawing from their experience using tools like Claude Code, Codex, and Aider.
+
+## Notes & variations
+*   **Free-tier alternatives**: While Codex is paid, Claude Code and Aider offer capable free tiers. For Git, the free command-line tool is standard. Your project's existing test suite is also free to use.
+*   **Common pitfall**: A frequent mistake is to skip running the test suite after an AI agent completes a task. This can lead to merging broken code, causing significant debugging later.
+*   **Tip for better results**: Clearly define the scope of each task given to an AI agent. Smaller, well-defined tasks are easier for agents to complete successfully and for tests to validate.

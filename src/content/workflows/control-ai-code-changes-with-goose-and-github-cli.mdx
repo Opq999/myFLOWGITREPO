@@ -1,0 +1,59 @@
+---
+title: "Control AI Code Changes with Goose and GitHub CLI"
+description: "Learn to prevent AI agents from making unwanted code changes by enforcing commit discipline using Goose and GitHub CLI."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 15
+jobToBeDone: "Prevent AI agents from making unwanted code changes by enforcing commit discipline."
+tools:
+  - name: "Goose"
+    url: "https://goose.ai/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "GitHub CLI"
+    url: "https://cli.github.com/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/goose_oss/how-to-stop-your-ai-agent-from-making-unwanted-code-changes-5g85"
+  platform: "blog"
+  author: "blackgirlbytes"
+  postedAt: 2025-12-10
+score: 7
+ingestedAt: 2026-06-19
+nigeriaNotes: "Goose has a free tier. GitHub CLI is free. This workflow is data-light and suitable for mobile users with limited data."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to set up a system to prevent AI agents from making unintended code modifications by enforcing strict commit discipline. This workflow ensures that every change made by an AI agent is a deliberate, reviewable snapshot, turning your git history into a reliable undo stack.
+## Tools you need
+* **Goose** (freemium): An AI agent tool that can interact with your codebase.
+* **GitHub CLI** (free): A command-line interface for interacting with GitHub, used here for version control.
+## Steps
+1. **Set up version control**: Install the GitHub CLI (gh) on your system. The author notes that Goose interacts well with it. A good alternative mentioned is the GitHub MCP Server.
+2. **Create a new branch**: Before starting any work with the AI agent, always create a new feature branch. Never allow the AI agent to commit directly to your main branch. This ensures that any experimental changes are isolated.
+3. **Create a context file for rules**: Create a file named `.goosehints` or `AGENTS.md` in your project directory. This file will contain instructions for the AI agent. The author's critical instruction is: "Every time you make a change, make a commit with a clear message."
+   This instruction automates checkpointing and ensures that the AI agent creates clear, version-controlled snapshots of the codebase.
+4. **Prompt the AI agent**: Now you can confidently prompt Goose to build, fix, or refactor your code. For example, you might say:
+
+```
+Build the user authentication module based on the provided requirements.
+```
+
+As the agent makes changes, it should automatically create commits with clear messages, as instructed in the context file.
+5. **Review and revert if necessary**: If the AI agent makes an undesirable change or a design choice you dislike, you can easily review the git log. If needed, you can revert to a previous stable commit by using a command like:
+
+```
+git revert -n abc1234567890abcdef1234567890abcdef
+```
+
+(Replace `abc1234567890abcdef1234567890abcdef` with the actual commit hash you want to revert to.)
+## Original source
+This workflow is adapted from a post by blackgirlbytes on the DEV Community platform. The author shares a practical method to maintain control over AI agent code modifications by integrating standard software development practices like early and frequent commits.
+## Notes & variations
+* **Free tier viability**: Goose offers a freemium model, and GitHub CLI is completely free, making this workflow accessible. Ensure you check Goose's current free tier limitations.
+* **Common pitfall**: A common mistake is allowing the AI agent to commit directly to the main branch. Always work on a separate feature branch to prevent accidental disruption of your stable codebase.
+* **Tip for better results**: Be very specific in your commit messages when you manually commit, and ensure the instructions in your `.goosehints` or `AGENTS.md` file are clear and unambiguous. This helps the AI agent understand the desired level of detail for its own commit messages.

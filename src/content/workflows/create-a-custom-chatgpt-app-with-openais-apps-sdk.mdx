@@ -1,0 +1,102 @@
+---
+title: "Create a Custom ChatGPT App with OpenAI's Apps SDK"
+description: "Learn to build a custom ChatGPT app using the OpenAI Apps SDK. This guide covers setup, development servers, public URL exposure, and app creation."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 30
+jobToBeDone: "Create a custom ChatGPT app using the OpenAI Apps SDK"
+tools:
+  - name: "OpenAI Apps SDK"
+    url: "https://github.com/openai/openai-apps-sdk-examples"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "git"
+    url: "https://git-scm.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "pnpm"
+    url: "https://pnpm.io/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "ngrok"
+    url: "https://ngrok.com/"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/lingodotdev/how-to-create-a-chatgpt-app-with-openais-apps-sdk-1213"
+  platform: "blog"
+  author: "davidturnbull"
+  postedAt: 2025-10-07
+score: 7
+ingestedAt: 2026-06-19
+nigeriaNotes: "All core tools are free. ngrok has a free tier sufficient for development. Data usage is minimal, primarily for code execution and API calls."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will create a custom application that can be integrated with ChatGPT, allowing for richer and more interactive user experiences. This approach works by leveraging OpenAI's Apps SDK and the Model Context Protocol (MCP) to define custom tools and interfaces for ChatGPT.
+
+## Tools you need
+*   **OpenAI Apps SDK** (free): Provides example code and the necessary framework to build ChatGPT apps.
+*   **git** (free): A version control system used here to download the example code.
+*   **pnpm** (free): A package manager for installing project dependencies.
+*   **ngrok** (freemium): A tool to expose your local development server to the internet, making it accessible to ChatGPT.
+
+## Steps
+1.  **Clone the example repository**: Open your terminal or command prompt and use git to download the official OpenAI app examples.
+
+    ```
+    git clone https://github.com/openai/openai-apps-sdk-examples.git
+    ```
+
+    You should see a new directory named `openai-apps-sdk-examples` created in your current location.
+
+2.  **Install project dependencies**: Navigate into the cloned directory and install the necessary packages using pnpm.
+
+    ```
+    cd openai-apps-sdk-examples
+    pnpm install
+    ```
+
+    This command will download and install all the required libraries for the project. You will see a list of packages being installed.
+
+3.  **Start the frontend development server**: In your terminal, run the command to start the frontend part of the app.
+
+    ```
+    pnpm run dev
+    ```
+
+    This will start a local server for the user interface. You should see output indicating the server is running, often with a local URL like `http://localhost:XXXX`.
+
+4.  **Start the backend development server**: Open a new terminal window. Navigate to the server code directory and start the backend.
+
+    ```
+    cd pizzaz_server_node
+    pnpm start
+    ```
+
+    This starts the backend service, which defines the app's tools and resources. The output will show the server is running, typically at `http://localhost:8000`.
+
+5.  **Expose your local server with ngrok**: Sign up for an ngrok account if you haven't already. Install ngrok and configure your authtoken. Then, run the following command in a terminal to create a public URL for your local server running on port 8000.
+
+    ```
+    ngrok http 8000
+    ```
+
+    You will get a public URL (e.g., `https://your-subdomain.ngrok-free.app`). Copy this URL; it's needed for ChatGPT to connect to your app.
+
+6.  **Enable Developer Mode in ChatGPT**: Go to ChatGPT's settings. In the sidebar, select "Apps Connectors", scroll down to "Advanced settings", and enable "Developer mode". This allows you to test your custom app.
+
+7.  **Create your app in ChatGPT**: In ChatGPT settings, go to "Apps Connectors" and click "Create". Fill in the "Name" field (e.g., "My Custom App"). For the "MCP Server URL", paste the public URL provided by ngrok, ensuring it points to the `/mcp` endpoint (e.g., `https://your-subdomain.ngrok-free.app/mcp`). Select "No authentication" and check "I trust this application". Click "Create".
+
+8.  **Use your app in a chat**: Start a new chat in ChatGPT. Click the '+' icon, select your newly created app from the "More" menu, and submit a prompt that explicitly invokes it, such as "Using the 'My Custom App', give me..." (the exact prompt depends on what your app is designed to do).
+
+## Original source
+This workflow is based on a guide by davidturnbull, originally posted on a blog platform. It details how to create a custom application for ChatGPT using the OpenAI Apps SDK, covering the setup and integration process.
+
+## Notes & variations
+*   **Free tier alternatives**: For exposing your local server, besides ngrok, consider alternatives like `localtunnel` or `serveo` which might offer different free tier limitations.
+*   **Common pitfall**: Ensure the MCP Server URL you provide to ChatGPT ends with `/mcp`. If it points to the root of your ngrok URL, the connection will fail.
+*   **Better results**: For more complex apps, explore the `openai-apps-sdk-examples` repository thoroughly. Understanding the structure of the `pizzaz_server_node` directory and how tools are defined is key to building functional and interactive apps.

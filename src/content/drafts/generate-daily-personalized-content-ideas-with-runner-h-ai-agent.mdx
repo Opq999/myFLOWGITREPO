@@ -1,0 +1,103 @@
+---
+title: "Generate Daily Personalized Content Ideas with Runner H AI Agent"
+description: "Set up an AI agent to automatically generate personalized, SEO-optimized content ideas daily, delivered straight to your inbox and saved in Notion."
+category: "content-creation"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 25
+jobToBeDone: "Generate daily personalized content ideas using an AI agent"
+tools:
+  - name: "Runner H"
+    url: "https://runnerh.ai"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Notion"
+    url: "https://www.notion.so"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Gmail"
+    url: "https://mail.google.com"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Google Calendar"
+    url: "https://calendar.google.com"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/sarahokolo/your-next-idea-86n"
+  platform: "blog"
+  author: "sarahokolo"
+  postedAt: 2025-07-06
+score: 6
+ingestedAt: 2026-06-19
+nigeriaNotes: "This workflow is highly viable on free tiers of all mentioned tools. Data usage is minimal, primarily text-based for prompts and content ideas, making it suitable for mobile-first users with limited data."
+tiktokUrl: ""
+published: false
+---
+
+## What you'll get
+You will get a daily, personalized, SEO-optimized, and well-researched content idea delivered directly to your email inbox and saved in your Notion workspace. Each idea is tailored to your specific niche and brand style.
+
+This approach works by automating the content ideation and initial research process, saving you significant time and ensuring a consistent stream of fresh, relevant ideas aligned with your content goals.
+
+## Tools you need
+*   **Runner H** (freemium): An AI agent platform used to automate the content idea generation, integrate with other tools, and manage files.
+*   **Notion** (freemium): A workspace tool used here to store and organize your generated content ideas.
+*   **Gmail** (free): Google's email service, used to receive daily content ideas from the AI agent.
+*   **Google Calendar** (free): Google's scheduling service, used by the AI agent to set a daily trigger for content generation.
+
+## Steps
+
+1.  **Sign up for Runner H and connect integrations**: Go to the Runner H website and sign up for an account. Once logged in, navigate to the 'Integrations' or 'Connections' section (the exact location may vary, look for a settings or profile icon). Connect your Notion and Gmail accounts by following the on-screen prompts to authorize access.
+
+    You should see both Notion and Gmail listed as connected services within Runner H.
+
+2.  **Create and upload your content style file**: Open a plain text editor (like Notepad on Windows, TextEdit on Mac, or a simple notes app on your phone) and create a new file. In this file, write down all your personal content preferences, including:
+    *   Your niche (e.g., 'sustainable fashion tips', 'tech reviews for beginners')
+    *   Your brand tone (e.g., 'friendly and informative', 'witty and sarcastic')
+    *   Your content goals (e.g., 'increase website traffic', 'build community engagement')
+    *   Preferred content formats (e.g., 'blog posts', 'short-form videos', 'infographics')
+    *   Platforms you publish on (e.g., 'Instagram', 'YouTube', 'LinkedIn')
+    *   Your target audience (e.g., 'Gen Z entrepreneurs', 'small business owners in Nigeria')
+    *   Topics to avoid (e.g., 'politics', 'controversial health advice')
+
+    Save this file as `my-content-style.txt`. Then, in Runner H, find the 'Files Library' or 'Assets' section and upload your `my-content-style.txt` file.
+
+    You should see `my-content-style.txt` listed in your Runner H files library.
+
+3.  **Create a new AI agent**: In Runner H, look for an option to 'Create New Agent' or 'New Workflow'. Click on it to start setting up your content ideation service.
+
+    You should see a blank canvas or a prompt input area for your new agent.
+
+4.  **Paste the full agent prompt**: Copy the entire prompt below and paste it into the main prompt or instruction area for your new AI agent in Runner H. This prompt tells the agent exactly what to do, including setting up its own daily trigger and how to format the output.
+
+    ```
+    You're my expert creative strategist and content researcher. Each day at 8:00 am, your job is to help me stay ahead by generating one fresh, original, and highly personalized content idea based on my preferences and brand style. Here’s what I need you to do:
+    If this is the first time the agent is running, do the following:
+    - Use @tool:Google Calendar to create a recurring daily event titled **"Generate Daily Content Idea"** at **8:00 AM**, starting today.
+    - Set the event to repeat **every day indefinitely**.
+    - Make sure the event is visible on my primary calendar.
+    - This event will serve as the daily trigger for this agent. (Important! Only set this event if it is not already present in the calendar.)
+    1. Reference the file @file:my-content-style.txt. This file contains all my personal info — my niche, brand tone, content goals, preferred formats, platforms, target audience, and topics to avoid. Use that as your only reference.
+    2. Based on that, come up with one content idea that’s completely unique and aligned with everything I’ve described in that file.
+    3. The idea must be well-researched, timely, and relevant — and it must **not** be too common or similar to any idea listed under my previous ideas.
+    4. Save the generated idea to my Notion page @tool:Notion.
+    5. Email this idea to me @tool:Gmail Send me an email with:
+    - Subject: ✨ Your Next Content Idea – [Idea title] - [Today's date]
+    - Body: Include the full formatted idea and a clickable link to the saved Notion entry.
+    ## Output Format **Today's Content Idea** Title: [Engaging and creative title] **Idea Summary** Brief overview in 2–3 sentences explaining the core concept. **Why This Works** Explain why this idea is timely, trending, or audience-relevant. Include seasonal, cultural, or platform-specific reasoning where relevant. **Suggested Content Format** Pick one from my preferred list and explain how to use it effectively for this idea. **Execution Plan** List the key steps I need to follow to bring this idea to life (e.g., research, scripting, production, editing, publishing). **Platform Fit** Tell me how to adapt or optimize this content across each of my listed platforms. **Engagement Hook** Give me a compelling hook or intro to grab attention immediately. **Call to Action (CTA)** Write a short CTA that aligns with my listed goals. **Hashtag/SEO Suggestions** List 3–5 relevant and unique hashtags or keywords for discovery. **Plagiarism Safety** Verify that this idea is fresh and hasn’t been reused from my previous ideas. Avoid generic content that’s overdone. **Tone Check** Match the tone listed in `my-content-style.tx…`
+    ```
+
+    You should see the prompt saved as the core instruction for your AI agent.
+
+5.  **Activate and monitor the agent**: Save your new agent in Runner H and activate it. The first time the agent runs (which should be shortly after activation, or at the next scheduled 8:00 AM if you activate it later in the day), it will create the recurring 'Generate Daily Content Idea' event in your Google Calendar.
+
+    You should see the agent status as 'Active' or 'Running'. Check your Google Calendar for the newly created daily event. The next day, check your Gmail inbox for an email with the subject '✨ Your Next Content Idea' and your Notion workspace for the saved idea.
+
+## Original source
+This workflow was originally shared by sarahokolo on the DEV Community platform, showcasing an innovative use of AI agents for content ideation as part of the Runner H "AI Agent Prompting" Challenge.
+
+## Notes & variations
+*   **Free-tier alternatives**: If Runner H's free tier becomes limiting, you can manually replicate parts of this workflow using free large language models like ChatGPT, Claude, or Gemini. You would need to manually paste your `my-content-style.txt` content and the prompt into these tools daily, then copy-paste the output to Notion and email it yourself.
+*   **Common mistake**: A common pitfall is not providing enough specific detail in your `my-content-style.txt` file. If your niche, tone, or goals are too generic, the AI agent will struggle to generate truly personalized and unique ideas. Be as precise as possible.
+*   **Tip for better results**: Regularly review the content ideas generated by the agent. If you notice repetition or ideas that don't quite fit, update your `my-content-style.txt` file with more specific instructions, new topics to explore, or topics to explicitly avoid. You can also add a section to your `my-content-style.txt` to list 'previous ideas' so the agent can reference it and avoid duplication, as implied by the prompt.

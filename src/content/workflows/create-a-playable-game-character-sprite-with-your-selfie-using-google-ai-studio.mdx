@@ -1,0 +1,72 @@
+---
+title: "Create a Playable Game Character Sprite with Your Selfie using Google AI Studio"
+description: "Learn to transform your selfie into an animated 8-bit game character sprite using Google AI Studio and Gemini models. Create custom game assets."
+category: "content-creation"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 30
+jobToBeDone: "Create a playable character sprite for a maze game using a selfie and AI"
+tools:
+  - name: "Google AI Studio"
+    url: "https://aistudio.google.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Gemini Nano"
+    url: "https://ai.google.dev/models/gemini-nano"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Gemini 2.5 Flash"
+    url: "https://ai.google.dev/models/gemini"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/firevibe/selfsprite-maze-game-take-a-selfie-and-become-an-animated-playable-character-in-the-game-3h2h"
+  platform: "blog"
+  author: "firevibe"
+  postedAt: 2025-09-14
+score: 7
+ingestedAt: 2026-06-19
+nigeriaNotes: "Google AI Studio and Gemini models have free tiers. The workflow is data-light, primarily using image uploads and text prompts, making it suitable for mobile users with limited data. API usage is not required for basic sprite sheet generation."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will create a custom, animated 8-bit sprite sheet of yourself, ready to be used as a playable character in a retro-style game. This approach works by leveraging multimodal AI to combine your photo with stylistic instructions, enabling rapid creation of unique game assets.
+
+## Tools you need
+*   **Google AI Studio** (free): A web-based tool for prototyping and building AI-powered applications with Google's generative models.
+*   **Gemini Nano** (free): A powerful, on-device model capable of multimodal generation, used here to create the sprite sheet from an image and text.
+*   **Gemini 2.5 Flash** (free): A fast and efficient model used for analyzing the generated sprite sheet, specifically to determine its dimensions.
+
+## Steps
+1.  **Access Google AI Studio**: Open your web browser and go to the Google AI Studio website. You will need a Google account to use it.
+2.  **Start a New Project**: Click on the option to create a new project or start a new chat. This will be your workspace for interacting with the AI models.
+3.  **Prepare Your Selfie**: Take a clear selfie. Ensure good lighting and that your face is centered. This image will be the base for your character sprite.
+4.  **Create Your Hero Sprite**: Use the multimodal capabilities of Gemini Nano. The author doesn't share their exact prompt; a starting point could be:
+
+    ```
+    Create an 8-bit animated sprite sheet based on this selfie. The character should be a [e.g., 'Wizard', 'Cyberpunk', 'Knight']. Ensure the output is a sprite sheet with distinct frames for animation.
+    [Upload your selfie here]
+    ```
+
+    You should see a generated sprite sheet appear, showing your face in the chosen style and ready for animation.
+5.  **Analyze the Sprite Sheet Dimensions**: Use Gemini 2.5 Flash to determine the grid layout of the generated sprite sheet. The author used `responseSchema` to get a JSON output. A possible prompt is:
+
+    ```
+    Analyze this sprite sheet and provide its dimensions in a JSON format with 'columns' and 'rows' keys.
+    [Upload the generated sprite sheet here]
+    ```
+
+    You should receive a JSON output like `{"columns": 8, "rows": 4}` indicating the grid size.
+6.  **Slice the Sprite Sheet**: Using the dimensions obtained in the previous step, you will need to programmatically slice the sprite sheet into individual animation frames. The author does not detail this slicing process, but standard image processing libraries can be used for this. You should end up with a set of individual image files, each representing a frame of your character's animation.
+7.  **Generate Enemy Sprites (Optional)**: Repeat steps 3-6, but this time, use a selfie or image of someone else (or a different style) to create enemy characters for your game. This allows for player-vs-enemy gameplay.
+8.  **Download Your Assets**: Once you have your hero sprite sheet and individual frames, you can download them as PNG files. The author also mentions a ZIP file download for the GIF and frames upon completing a level in their demo, but for asset creation, individual frame downloads are the primary outcome.
+
+## Original source
+This workflow is inspired by a submission to the Google AI Studio Multimodal Challenge by firevibe, posted on DEV Community. The author aimed to fix the disconnect between players and game characters by using generative AI to create personalized, animated sprites from selfies.
+
+## Notes & variations
+*   **Free Tier Viability**: This workflow is highly viable on free tiers. Google AI Studio and the mentioned Gemini models are free to use for prototyping and development. No paid APIs are strictly necessary for generating sprite sheets.
+*   **Common Pitfall**: Ensure your selfie is well-lit and clear. Blurry or poorly lit images can lead to AI models struggling to accurately capture your features, resulting in less recognizable sprites.
+*   **Better Results**: Experiment with different class descriptions (e.g., 'Sci-fi soldier', 'Fantasy elf') in your prompt to achieve a wider variety of character styles. Providing more specific details about the desired animation poses can also improve the output.

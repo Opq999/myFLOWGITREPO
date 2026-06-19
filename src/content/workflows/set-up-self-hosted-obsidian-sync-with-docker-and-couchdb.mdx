@@ -1,0 +1,107 @@
+---
+title: "Set Up Self-Hosted Obsidian Sync with Docker and CouchDB"
+description: "Learn to set up a free, self-hosted real-time sync server for Obsidian notes using Docker and CouchDB. Maintain full data ownership."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 60
+jobToBeDone: "Set up a self-hosted, real-time sync server for Obsidian notes using Docker and CouchDB"
+tools:
+  - name: "Obsidian"
+    url: "https://obsidian.md/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Docker"
+    url: "https://www.docker.com/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "CouchDB"
+    url: "https://couchdb.apache.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Pinggy"
+    url: "https://pinggy.io/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Obsidian LiveSync plugin"
+    url: "https://github.com/rxliuli/obsidian-livesync"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/lightningdev123/how-to-set-up-a-self-hosted-obsidian-sync-server-hcn"
+  platform: "blog"
+  author: "lightningdev123"
+  postedAt: 2025-09-25
+score: 8
+ingestedAt: 2026-06-19
+nigeriaNotes: "This workflow relies on self-hosting and free tiers of tools. Data usage for sync is generally low unless large files are frequently changed. The primary cost is your time and electricity for running the server. Pinggy offers a free tier for remote access."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will build a private, real-time synchronization server for your Obsidian notes using Docker and CouchDB. This setup provides full data ownership and avoids monthly subscription fees, making it a cost-effective and reliable solution for managing notes across multiple devices.
+
+This approach is ideal for users who prioritize privacy, want to avoid recurring costs, and desire more control over their data synchronization.
+
+## Tools you need
+*   **Obsidian** (freemium): A powerful knowledge base and note-taking application.
+*   **Docker** (freemium): A platform for developing, shipping, and running applications in containers, ensuring consistent environments.
+*   **CouchDB** (free): A NoSQL database that enables real-time synchronization of data.
+*   **Pinggy** (free): A tool that provides secure remote access to your local server without requiring complex network configurations like port forwarding.
+*   **Obsidian LiveSync plugin** (free): A plugin for Obsidian that facilitates real-time synchronization with compatible databases like CouchDB.
+
+## Steps
+1.  **Install Docker**: Follow the official installation guide for your operating system (Windows, macOS, or Linux). The author provides specific commands for verification on each platform. You should see the Docker and Docker Compose versions printed in your terminal after successful installation.
+2.  **Create Project Directory**: Open your terminal or command prompt, navigate to where you want to store your project, and create a new directory. Then, change into that directory. For example:
+
+    ```bash
+mkdir obsidian-sync
+cd obsidian-sync
+```
+
+    You should now be inside the `obsidian-sync` directory.
+3.  **Create Docker Compose File**: Inside your project directory, create a file named `docker-compose.yml`. This file will define the services for your CouchDB server.
+
+    ```bash
+touch docker-compose.yml
+```
+
+    You should now have an empty `docker-compose.yml` file in your `obsidian-sync` directory.
+4.  **Configure CouchDB Service**: Open the `docker-compose.yml` file in a text editor and add the following configuration. Replace `your-secure-password-here` with a strong, unique password.
+
+    ```yaml
+    version: '3.8'
+    services:
+      couchdb:
+        image: couchdb:latest
+        container_name: couchdb-for-ols
+        user: 5984:5984
+        environment:
+          - COUCHDB_USER=admin
+          - COUCHDB_PASSWORD=your-secure-password-here
+        volumes:
+          - ./couchdb-data:/opt/couchdb/data
+    ```
+
+    This configuration sets up CouchDB using the latest official Docker image, names the container, sets up an administrator user and password, and maps a local directory (`./couchdb-data`) to store CouchDB's data persistently.
+5.  **Start CouchDB Container**: Run the following command in your terminal from within the `obsidian-sync` directory to start the CouchDB service in the background.
+
+    ```bash
+docker compose up -d
+```
+
+    You should see output indicating that the CouchDB container is being created and started. You can verify it's running by checking `docker ps`.
+6.  **Access CouchDB**: Open your web browser and navigate to `http://localhost:5984/_utils/`. You should see the CouchDB Futon web interface. Log in using the username `admin` and the password you set in the `docker-compose.yml` file.
+7.  **Set up Pinggy Tunnel**: The author mentions using Pinggy for secure remote access. You will need to sign up for a Pinggy account and follow their instructions to create a tunnel to your local CouchDB instance (running on port 5984). The exact command will depend on Pinggy's setup, but it will likely involve running a Pinggy client that forwards a public URL to your local CouchDB.
+8.  **Configure Obsidian LiveSync Plugin**: In Obsidian, install the LiveSync plugin. Go to Settings > Community plugins > Browse and search for "LiveSync". Install and enable it. Configure the plugin by entering the URL of your Pinggy-tunneled CouchDB instance, along with the admin username and password you created.
+
+    The author does not provide the exact configuration steps within Obsidian for the LiveSync plugin, but typically this involves specifying the CouchDB URL, database name, username, and password.
+
+## Original source
+This workflow is based on a guide by lightningdev123, originally posted on the DEV Community platform. The author shares their experience using Obsidian for over two years and details how they built a cost-effective, secure, and fast self-hosted sync solution.
+
+## Notes & variations
+*   **Free-tier alternative**: While Pinggy offers a free tier, if you need more robust or permanent remote access, consider exploring other tunneling services or setting up your own VPN if you have a static IP address.
+*   **Common pitfall**: Ensure your CouchDB password is strong and kept secret. If you expose your CouchDB instance without proper security, your notes could be compromised. Always use the secure tunnel provided by Pinggy or a similar service.
+*   **Tip for better results**: For very large vaults or frequent changes, monitor your server's resource usage (CPU, RAM, disk space). CouchDB is generally efficient, but performance can depend on your hardware and network.

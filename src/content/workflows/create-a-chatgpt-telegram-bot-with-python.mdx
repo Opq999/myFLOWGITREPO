@@ -1,0 +1,99 @@
+---
+title: "Create a ChatGPT Telegram Bot with Python"
+description: "Build a custom Telegram bot that uses OpenAI's ChatGPT API to answer questions. Integrate AI into your messaging."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 60
+jobToBeDone: "Create a custom Telegram bot that integrates with OpenAI's ChatGPT API for answering questions"
+tools:
+  - name: "Telegram"
+    url: "https://telegram.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "OpenAI API"
+    url: "https://platform.openai.com/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Python"
+    url: "https://www.python.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Docker"
+    url: "https://www.docker.com/"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://github.com/n3d1117/chatgpt-telegram-bot"
+  platform: "github"
+  author: "n3d1117"
+  postedAt: 2025-06-03
+score: 7
+ingestedAt: 2026-06-19
+nigeriaNotes: "Telegram and Python are free and widely accessible. The OpenAI API has a free tier, but usage beyond that incurs costs. Docker is free for individual use. Data usage is minimal for bot operation."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will create a Telegram bot that can answer questions using OpenAI's ChatGPT. This workflow allows you to integrate powerful AI language capabilities directly into your Telegram chats, making it a versatile tool for information retrieval or automated responses.
+
+## Tools you need
+*   **Telegram** (free): A messaging app to interact with your bot.
+*   **OpenAI API** (freemium): Provides access to ChatGPT models for generating responses.
+*   **Python** (free): A programming language used to build the bot's logic.
+*   **Docker** (freemium): A platform to package and run your bot in a consistent environment.
+
+## Steps
+1.  **Set up your Telegram Bot**: 
+    Open Telegram and search for 'BotFather'. Start a chat and use the `/newbot` command to create a new bot. Follow BotFather's instructions to name your bot and get your unique **TELEGRAM_BOT_TOKEN**. Save this token securely.
+    You should see a confirmation message from BotFather with your bot's username and token.
+
+2.  **Get your OpenAI API Key**: 
+    Go to the OpenAI website and sign up or log in. Navigate to the API keys section in your account settings. Create a new secret key and save it securely. This is your **OPENAI_API_KEY**.
+    You should see your generated API key, which you can copy.
+
+3.  **Clone the ChatGPT Telegram Bot repository**: 
+    On your computer, open a terminal or command prompt. Use Git to clone the project from GitHub. If you don't have Git installed, you can download it from the official Git website.
+    ```bash
+    git clone https://github.com/n3d1117/chatgpt-telegram-bot.git
+    cd chatgpt-telegram-bot
+    ```
+    You should now be inside the project directory in your terminal.
+
+4.  **Configure your bot's environment**: 
+    Find the `.env.example` file in the project directory. Copy this file and rename the copy to `.env`. Open the `.env` file with a text editor.
+    Replace the placeholder values for `TELEGRAM_BOT_TOKEN` and `OPENAI_API_KEY` with the tokens you obtained in steps 1 and 2. You can also add your Telegram User ID to `ADMIN_USER_IDS` and allowed user IDs to `ALLOWED_TELEGRAM_USER_IDS` if you wish to restrict access.
+    The `.env` file should contain your API keys and bot token, for example:
+    ```
+    TELEGRAM_BOT_TOKEN=YOUR_TELEGRAM_BOT_TOKEN
+    OPENAI_API_KEY=YOUR_OPENAI_API_KEY
+    ADMIN_USER_IDS=YOUR_TELEGRAM_USER_ID
+    ALLOWED_TELEGRAM_USER_IDS=YOUR_TELEGRAM_USER_ID
+    ```
+
+5.  **Install Python dependencies**: 
+    Ensure you have Python 3.9 or newer installed. Open your terminal in the project directory and install the required Python packages listed in `requirements.txt` using pip.
+    ```bash
+    pip install -r requirements.txt
+    ```
+    You should see a list of packages being installed without errors.
+
+6.  **Run the bot using Docker**: 
+    Docker provides an easy way to run the bot. Make sure Docker is installed and running on your system. Open your terminal in the project directory and run the following command:
+    ```bash
+    docker-compose up
+    ```
+    Docker will build the necessary image and start the bot. You should see log messages indicating the bot is running and connected.
+
+7.  **Interact with your bot on Telegram**: 
+    Open Telegram, find your newly created bot by its username, and start a chat. Send it a message, and it should respond using ChatGPT.
+    You should receive a reply from your bot in the Telegram chat window.
+
+## Original source
+This workflow is based on the `chatgpt-telegram-bot` project by author `n3d1117` on GitHub. The project provides a Python-based Telegram bot that connects to OpenAI's ChatGPT APIs to offer AI-powered responses within Telegram conversations.
+
+## Notes & variations
+*   **Free Tier Viability**: Telegram is free. OpenAI API offers a free trial or a small free tier, after which costs apply. Docker Desktop has a free tier for individual use. 
+*   **Common Pitfall**: Forgetting to rename `.env.example` to `.env` or not filling in the correct API keys and tokens will prevent the bot from starting. Double-check these values.
+*   **Better Results**: To use more advanced models like GPT-4, you may need to adjust the `OPENAI_MODEL` parameter in your `.env` file (if supported by your OpenAI API plan) and ensure you have access to those models.
