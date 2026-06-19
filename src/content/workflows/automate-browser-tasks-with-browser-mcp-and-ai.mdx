@@ -1,0 +1,66 @@
+---
+title: "Automate Browser Tasks with Browser MCP and AI"
+description: "Connect AI applications like Claude to your browser using Browser MCP to automate repetitive web tasks and testing. Save time and reduce errors."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 15
+jobToBeDone: "Automate browser-based tasks and testing by connecting AI applications to a web browser"
+tools:
+  - name: "Browser MCP"
+    url: "https://browsermcp.io/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Claude"
+    url: "https://claude.ai/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "VS Code"
+    url: "https://code.visualstudio.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Cursor"
+    url: "https://cursor.sh/"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=43613194"
+  platform: "hackernews"
+  author: "namuorg"
+  postedAt: 2025-04-07
+score: 7
+ingestedAt: 2026-06-19
+nigeriaNotes: "Browser MCP is a browser extension, so it's free to install and use. Claude has a generous free tier. VS Code is free. This workflow is very data-light and mobile-friendly if using a mobile browser extension."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "Use Claude to automatically fill out your NYSC registration forms on the portal, ensuring all personal and academic details are correctly entered without manual repetition."
+  - persona: "small-business"
+    scenario: "Automate updating product prices and stock levels across your Jumia and Konga seller accounts by having Claude navigate and input data on each platform."
+  - persona: "employee"
+    scenario: "Automate the monthly submission of your travel expense claims on your company's internal portal, ensuring all fields are correctly filled from a spreadsheet."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to connect AI applications, like Claude, to your web browser to automate repetitive online tasks. This approach works by enabling AI models to directly interact with web pages, allowing for automated testing and task execution.
+
+## Tools you need
+*   **Browser MCP** (freemium): A browser extension that connects AI applications to your web browser.
+*   **Claude** (freemium): An AI assistant that can be connected to Browser MCP to perform automated tasks.
+*   **VS Code** (free): A code editor where you can set up the MCP server.
+*   **Cursor** (freemium): An AI-first code editor that can also be used to set up the MCP server.
+
+## Steps
+1.  **Install the Browser MCP Extension**: Open your web browser (like Chrome or Firefox) and search for the Browser MCP extension. Click 'Add to browser' or 'Install'. You should see the Browser MCP icon appear in your browser's toolbar.
+2.  **Set up the MCP Server**: The author mentions setting up the MCP server within your AI application. This typically involves downloading and running a server application on your computer. The exact steps depend on whether you use VS Code or Cursor. For VS Code, you would likely install an extension and follow its setup guide. For Cursor, it might be integrated directly. The author does not provide specific commands or configuration files, so consult the Browser MCP documentation for detailed instructions on running the server locally.
+3.  **Connect AI to Browser**: Once the MCP server is running and the browser extension is installed, they should connect automatically. You can verify this connection by checking the Browser MCP extension's status or the MCP server's logs. You should see a confirmation that the server is listening and the extension is connected.
+4.  **Start Automating Tasks**: With the connection established, you can now instruct your AI assistant (like Claude) to perform actions in your browser. For example, you could ask Claude to navigate to a specific website, fill out a form, or click a button. The author provides a list of available browser tools, such as 'Type Text', 'Click', and 'Navigate'. You would typically interact with Claude through its chat interface, providing a prompt that includes the desired action and the target element on the web page.
+
+## Original source
+This workflow is based on the Browser MCP project, shared by author namuorg on Hacker News. Browser MCP aims to bridge the gap between AI applications and web browsers, enabling users to automate browser-based tasks and testing.
+
+## Notes & variations
+*   **Free Tier Viability**: Browser MCP itself is freemium, and Claude offers a free tier, making this workflow accessible. Ensure you are using the free tier limits of Claude effectively.
+*   **Common Pitfall**: A common mistake is not correctly setting up the MCP server locally. Ensure the server is running before attempting to automate tasks, and check the server logs for any error messages.
+*   **Better Results**: To get better results, be very specific in your prompts to Claude. Instead of saying 'fill out the form', specify the form fields and the exact text to enter. For example: 'Type "John Doe" into the first name field and "john.doe@example.com" into the email field on the page.'
