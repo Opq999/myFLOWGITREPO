@@ -9,17 +9,29 @@ export const SUBREDDITS = [
   'ClaudeAI',
   'GeminiAI',
   'ArtificialInteligence',
+  'ArtificialIntelligence',
   'PromptEngineering',
   'ChatGPTPro',
   'ChatGPTPromptGenius',
   'OpenAI',
   'LocalLLaMA',
   'aipromptprogramming',
+  'MachineLearning',
+  'learnmachinelearning',
+  'LLMDevs',
+  'AI_Agents',
+  'StableDiffusion',
+  'LangChain',
+  'datascience',
   // building / coding
   'SideProject',
   'automation',
   'webdev',
   'learnprogramming',
+  'Python',
+  'programming',
+  'NoCode',
+  'SaaS',
   // work / money
   'freelance',
   'smallbusiness',
@@ -27,11 +39,16 @@ export const SUBREDDITS = [
   'marketing',
   'copywriting',
   'productivity',
+  'startups',
+  'digital_marketing',
+  'Upwork',
   // study / job hunting
   'studytips',
   'resumes',
   'jobsearchhacks',
   'Notion',
+  'GetStudying',
+  'cscareerquestions',
 ];
 
 export const HN_QUERIES = [
@@ -47,6 +64,14 @@ export const HN_QUERIES = [
   'building with LLMs',
   'RAG tutorial',
   'AI for business',
+  'AI automation',
+  'Claude Code',
+  'vibe coding',
+  'AI agent tutorial',
+  'local LLM',
+  'AI productivity',
+  'building AI agents',
+  'MCP server',
 ];
 
 export const DEVTO_TAGS = [
@@ -58,6 +83,13 @@ export const DEVTO_TAGS = [
   'tutorial',
   'llm',
   'beginners',
+  'webdev',
+  'python',
+  'opensource',
+  'aiagents',
+  'react',
+  'career',
+  'coding',
 ];
 
 export const RSS_FEEDS = [
@@ -65,6 +97,10 @@ export const RSS_FEEDS = [
   'https://www.latent.space/feed',
   'https://www.bensbites.com/feed',
   'https://www.oneusefulthing.org/feed',
+  'https://huggingface.co/blog/feed.xml',
+  'https://magazine.sebastianraschka.com/feed',
+  'https://www.interconnects.ai/feed',
+  'https://newsletter.pragmaticengineer.com/feed',
 ];
 
 export const GITHUB_QUERIES = [
@@ -72,6 +108,9 @@ export const GITHUB_QUERIES = [
   'prompt engineering workflow',
   'chatgpt prompts guide',
   'llm application tutorial',
+  'awesome ai agents',
+  'ai automation workflow',
+  'llm prompts collection',
 ];
 
 export const YOUTUBE_QUERIES = [
@@ -92,13 +131,23 @@ export const CAPS = {
  * Daily-run fetch windows. Wider than "top of today" so we keep surfacing
  * genuinely new posts instead of re-scanning the same evergreen page-0 results
  * (which then all dedupe away). Combined with dailyPage rotation in run.ts.
+ *
+ * Reddit previously fetched a single fixed top-of-week page and ignored the
+ * rotation, so it returned the SAME ~25 posts every run and starved after one.
+ * It now pulls a wider top-of-month window (up to the API max) and the fetcher
+ * slices a different `redditPageSize` block per run via the page offset, the
+ * same way HN/dev.to/GitHub already paginate. Windows are deliberately wider
+ * here than before so a single day of sources yields more publishable supply.
  */
 export const DAILY = {
-  redditWindow: 'week' as const, // top of the week, not just today
-  redditLimit: 25,
+  redditWindow: 'month' as const, // top of the month, sliced per run (was 'week')
+  /** Reddit posts fetched per subreddit per run (API max is 100), then sliced. */
+  redditFetch: 100,
+  /** Reddit posts kept per run from the fetched window (one rotating slice). */
+  redditPageSize: 25,
   hnMinPoints: 10,
   hnPerPage: 20,
-  devtoTopDays: 7,
+  devtoTopDays: 30, // last month, not just the last week (was 7)
   devtoPerPage: 20,
   githubMinStars: 15,
   githubPerPage: 12,

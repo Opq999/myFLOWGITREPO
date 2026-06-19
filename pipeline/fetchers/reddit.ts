@@ -4,6 +4,29 @@ import type { Candidate } from '../types';
 import { sleep, truncate } from '../lib/utils';
 
 /**
+ * Reddit time-window + fetch size for a run. Daily pulls a wide top-of-month
+ * window so the per-run slice (below) keeps reaching new posts across runs;
+ * backfill widens to top-of-year. Both fetch up to the API max, then slice.
+ */
+export function redditWindow(opts: { backfill: boolean }): { t: 'month' | 'year'; limit: number } {
+  return { t: opts.backfill ? 'year' : DAILY.redditWindow, limit: DAILY.redditFetch };
+}
+
+/**
+ * Returns the `page`-th contiguous block of `size` items, wrapping the page
+ * index within however many blocks the list holds. This is what lets Reddit
+ * reach genuinely new posts each run from one wide fetch: Reddit has no cheap
+ * cursor pagination like the other sources, so without this it re-returned the
+ * same fixed top slice every run, which then just deduped away to zero.
+ */
+export function pageSlice<T>(items: T[], page: number, size: number): T[] {
+  if (items.length <= size) return items;
+  const blocks = Math.ceil(items.length / size);
+  const p = ((page % blocks) + blocks) % blocks;
+  return items.slice(p * size, p * size + size);
+}
+
+/**
  * Reddit access, most reliable first:
  *  1. Official OAuth API (free for low volume) when REDDIT_CLIENT_ID /
  *     REDDIT_CLIENT_SECRET are set, never IP-blocked.
@@ -70,17 +93,16 @@ async function getOauthToken(): Promise<string | null> {
 async function fetchSubJson(
   sub: string,
   token: string,
-  opts: { backfill: boolean }
+  opts: { backfill: boolean; page?: number }
 ): Promise<Candidate[]> {
-  const t = opts.backfill ? 'year' : DAILY.redditWindow;
-  const limit = opts.backfill ? 50 : DAILY.redditLimit;
+  const { t, limit } = redditWindow(opts);
   const url = `https://oauth.reddit.com/r/${sub}/top?t=${t}&limit=${limit}&raw_json=1`;
   const res = await fetch(url, {
     headers: { Authorization: `Bearer ${token}`, 'User-Agent': USER_AGENT },
   });
   if (!res.ok) throw new Error(`status ${res.status}`);
   const data = (await res.json()) as { data: { children: RedditChild[] } };
-  return normalizeRedditJson(data.data.children);
+  return pageSlice(normalizeRedditJson(data.data.children), opts.page ?? 0, DAILY.redditPageSize);
 }
 
 // ---------- RSS fallback path ----------
@@ -126,18 +148,17 @@ export function normalizeRedditFeed(xml: string): Candidate[] {
   return candidates;
 }
 
-async function fetchSubRss(sub: string, opts: { backfill: boolean }): Promise<Candidate[]> {
-  const t = opts.backfill ? 'year' : DAILY.redditWindow;
-  const limit = opts.backfill ? 50 : DAILY.redditLimit;
+async function fetchSubRss(sub: string, opts: { backfill: boolean; page?: number }): Promise<Candidate[]> {
+  const { t, limit } = redditWindow(opts);
   const url = `https://www.reddit.com/r/${sub}/top.rss?t=${t}&limit=${limit}`;
   const res = await fetch(url, { headers: { 'User-Agent': USER_AGENT } });
   if (!res.ok) throw new Error(`status ${res.status}`);
-  return normalizeRedditFeed(await res.text());
+  return pageSlice(normalizeRedditFeed(await res.text()), opts.page ?? 0, DAILY.redditPageSize);
 }
 
 // ---------- public fetcher ----------
 
-export async function fetchReddit(opts: { backfill: boolean }): Promise<Candidate[]> {
+export async function fetchReddit(opts: { backfill: boolean; page?: number }): Promise<Candidate[]> {
   const token = await getOauthToken();
   const results: Candidate[] = [];
   for (const sub of SUBREDDITS) {

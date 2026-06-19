@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { normalizeDevto } from './devto';
 import { normalizeGithub } from './github';
 import { buildHnUrl, normalizeHn } from './hn';
-import { normalizeRedditFeed, normalizeRedditJson } from './reddit';
+import { normalizeRedditFeed, normalizeRedditJson, pageSlice, redditWindow } from './reddit';
 import { normalizeFeed } from './rss';
 import { normalizeYoutube } from './youtube';
 
@@ -116,6 +116,35 @@ describe('normalizeRedditFeed', () => {
     });
     expect(out[0].excerpt).toContain('Step 1: paste your CV');
     expect(out[0].excerpt).not.toContain('<p>');
+  });
+});
+
+describe('redditWindow', () => {
+  it('daily pulls a wide top-of-month window (was a fixed top-of-week page)', () => {
+    expect(redditWindow({ backfill: false })).toEqual({ t: 'month', limit: 100 });
+  });
+  it('backfill widens to top-of-year', () => {
+    expect(redditWindow({ backfill: true })).toEqual({ t: 'year', limit: 100 });
+  });
+});
+
+describe('pageSlice', () => {
+  const items = Array.from({ length: 100 }, (_, i) => i);
+
+  it('returns a different block per page so each run reaches new posts', () => {
+    expect(pageSlice(items, 0, 25)).toEqual(items.slice(0, 25));
+    expect(pageSlice(items, 1, 25)).toEqual(items.slice(25, 50));
+    expect(pageSlice(items, 3, 25)).toEqual(items.slice(75, 100));
+  });
+
+  it('wraps the page index within the available blocks', () => {
+    // 100/25 = 4 blocks, so page 4 wraps back to block 0, page 5 to block 1.
+    expect(pageSlice(items, 4, 25)).toEqual(pageSlice(items, 0, 25));
+    expect(pageSlice(items, 5, 25)).toEqual(pageSlice(items, 1, 25));
+  });
+
+  it('returns everything when the list is no larger than one block', () => {
+    expect(pageSlice([1, 2, 3], 2, 25)).toEqual([1, 2, 3]);
   });
 });
 
