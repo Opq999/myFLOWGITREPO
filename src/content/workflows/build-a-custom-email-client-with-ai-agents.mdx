@@ -1,0 +1,122 @@
+---
+title: "Build a Custom Email Client with AI Agents"
+description: "Learn to build a personalized email client with features like split inboxes and rules using AI agents. This workflow focuses on local development and integrating with Gmail."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 60
+jobToBeDone: "Build a custom email client with specific features using AI agents."
+tools:
+  - name: "Codex"
+    url: "https://openai.com/codex"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Factory"
+    url: "https://factory.ai"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Opus"
+    url: "https://opus.ai"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "GPT 5.5"
+    url: "https://openai.com/gpt-5.5"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Gmail"
+    url: "https://mail.google.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Google Workspace CLI"
+    url: "https://developers.google.com/workspace/cli"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Superhuman"
+    url: "https://superhuman.com"
+    pricing: "paid"
+    affiliateUrl: ""
+source:
+  url: "https://www.bensbites.com/p/bens-builds-3-an-email-app"
+  platform: "blog"
+  author: "Ben's Bites"
+  postedAt: 2026-05-09
+score: 7
+ingestedAt: 2026-06-20
+nigeriaNotes: "The core AI agents (Codex, Factory, Opus, GPT 5.5) are paid services, which may be a barrier. Gmail has a robust free tier. The Google Workspace CLI is free and open-source. Data usage will depend on the volume of emails processed and the complexity of agent interactions, but local execution on a MacBook minimizes data transfer for the core application logic."
+nigeriaUseCases:
+  - persona: "employee"
+    scenario: "As a software developer, build a custom email client to automatically sort urgent client bug reports into a 'High Priority' inbox, streamlining issue tracking for your team."
+  - persona: "entrepreneur"
+    scenario: "As an e-commerce founder, build a custom email client to automatically flag customer service inquiries from WhatsApp/Instagram orders, ensuring quick replies and reducing abandoned carts."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to build a custom email client tailored to your specific needs, including features like split inboxes, custom rules, and quick actions. This approach leverages AI agents to handle complex tasks, allowing for a personalized and efficient email management system that integrates directly with your existing Gmail account.
+
+## Tools you need
+*   **Codex** (paid): An AI model used for initial code generation and understanding programming tasks.
+*   **Factory** (paid): An AI agent platform used for polishing code, handling user interface (UI) and user experience (UX) improvements, testing, and refining the application.
+*   **Opus** (paid): An AI model that can be used for complex reasoning and code generation tasks.
+*   **GPT 5.5** (paid): A powerful AI model for advanced code generation and problem-solving.
+*   **Gmail** (freemium): Your primary email service, which will serve as the source of truth for your emails.
+*   **Google Workspace CLI** (free): A command-line tool to authenticate, fetch emails, and manage labels within Google Workspace.
+*   **Superhuman** (paid): Mentioned as a point of comparison for desired email client features.
+
+## Steps
+1.  **Define the core idea with Codex**: Instruct Codex to build an email client that runs locally on your MacBook, using Gmail as the data source. Specify desired features such as split inboxes, shortcuts, a command palette, reply/compose functionality, a 20-second undo send, one-click unsubscribe, search, rules, filter sync, and email rendering. The initial output may be unpolished.
+
+    ```
+    I want you to build me an email client so I can have things exactly how I want them. I’ll only be using it on my MacBook. It can run locally to start. Gmail should stay the source of truth. The end product has split inboxes, shortcuts, command palette, reply/compose, 20 second undo send, one-click unsubscribe, search, rules, filter sync, email rendering (mostly 😬) and built in a way that an agent can use it natively.
+    ```
+
+    You should receive initial code for an email client. Expect that the UI/UX might need significant improvement.
+
+2.  **Refine UI/UX with Factory**: Move to Factory to polish the user interface and user experience. This step involves addressing issues found by Codex and improving the overall usability of the application. You can optionally use Opus or GPT 5.5 for more complex tasks during this phase.
+
+    You should see improvements in the application's look and feel, making it more user-friendly.
+
+3.  **Investigate and resolve lag**: Use Factory to investigate and fix performance issues, specifically lag. The goal is to make all actions feel instantaneous. This involves optimizing how the app interacts with Gmail.
+
+    ```
+    Investigate why there is a delay with anything in this app. I want everything to feel instant.
+    ```
+
+    The application should become significantly faster, with actions feeling immediate.
+
+4.  **Implement caching and optimistic updates**: Based on the lag investigation, implement strategies such as showing cached data immediately, refreshing in the background, prefetching thread details, and updating the UI optimistically when archiving or labeling emails. This is a key step enabled by using agents.
+
+    You should observe that actions like archiving or labeling emails update the UI instantly, even if the background processes are still completing.
+
+5.  **Synchronize Gmail labels and rules**: Ensure that local labels and rules created within your application are correctly synced with Gmail. Initially, the agent might default to a local rule file; Factory should help correct this to use Gmail's filtering system.
+
+    When you apply a label or set a rule in your app, it should be reflected in your Gmail settings, and vice-versa.
+
+6.  **Enhance rule creation**: Make the rule creation process more robust. Allow users to define rules that apply to specific email addresses or all domains. This might involve refining the UI for adding labels and rules.
+
+    You should be able to create more granular rules for email organization directly within the application.
+
+7.  **Add agent-friendly features**: Integrate hidden selectors, state information, or debug endpoints that will help AI agents interact with the application more effectively, without altering the visual user interface.
+
+    The application's underlying structure should be more accessible to AI agents for automation or control.
+
+8.  **Build full reply functionality**: Implement the ability to reply to emails, including default reply-all, editable to/cc/bcc fields, attachments, and a send-and-archive action that includes a 20-second delay for undo.
+
+    ```
+    Build full reply functionality. Default reply-all, editable to/cc/bcc, attachments. Cmd+Enter sends and archives, but waits 20 seconds before actually sending so Cmd+Z can undo.
+    ```
+
+    You should be able to compose, reply to, and send emails with an undo option.
+
+9.  **Improve email rendering**: Address the complexities of displaying various email formats, including plain text, HTML from Gmail, newsletters, receipts, calendar invites, inline images, and signatures.
+
+    Emails should render correctly within your custom client, handling different formats as gracefully as possible.
+
+## Original source
+This workflow is based on a blog post titled "Ben's Builds #3 - an email app" by Ben's Bites, published on May 9, 2026. The author details their process of building a personalized email client using various AI agents and tools to achieve specific functionalities beyond standard email applications.
+
+## Notes & variations
+*   **Free tier alternative**: While the core AI agents mentioned are paid, you could explore open-source code generation models run locally (e.g., using Ollama or LM Studio) for initial code drafts, though this would require more technical setup and potentially yield less polished results. The Google Workspace CLI is a free and excellent tool for interacting with Gmail.
+*   **Common pitfall**: Relying too heavily on one AI agent without iteration. The author's process shows a progression from Codex to Factory for refinement, highlighting the need for multiple tools or iterative prompting to achieve a polished product.
+*   **Tip for better results**: Clearly define your desired features and constraints upfront. The author's detailed list of requirements (split inboxes, undo send, etc.) guided the AI agents effectively. Be prepared to iterate and refine the prompts and the generated code based on the results.

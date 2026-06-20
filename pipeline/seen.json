@@ -4568,8 +4568,108 @@
     "ded73ee70fd6f5d75d49635804c32e818267f04168aaa859e17c56ca3bfbe18a": {
       "url": "https://news.ycombinator.com/item?id=43519938",
       "date": "2026-06-20"
+    },
+    "48bcb00eba242b857eb6834e3c4288d0222c340743126d33ee460e1ef8a45991": {
+      "url": "https://github.com/CodyReichert/awesome-cl",
+      "date": "2026-06-20"
+    },
+    "5d530081fcb4814b5d0e347f49f10b94bdb4556b86583640dd86a387a22db4b7": {
+      "url": "https://github.com/mbzuai-oryx/Awesome-LLM-Post-training",
+      "date": "2026-06-20"
+    },
+    "8023f285701af4680403b29d04ba44597a6f5cf32f263b567ce3a407b2777bb4": {
+      "url": "https://github.com/XiaoxinHe/Awesome-Graph-LLM",
+      "date": "2026-06-20"
+    },
+    "fe2e7d02e240a6f29d70021ce2bb6f4c9742712e3687149f205251886eaf12d4": {
+      "url": "https://github.com/Yutong-Zhou-cv/Awesome-Text-to-Image",
+      "date": "2026-06-20"
+    },
+    "21d1b3b6594b5fbb00e3190b44ca911a89f7558bc7cfc04a49af05e07cce724f": {
+      "url": "https://github.com/eon01/awesome-chatgpt",
+      "date": "2026-06-20"
+    },
+    "c4c8e56064bae56a4d3d3c6d2cd185ef4a7d22e4da349d9b63609dee241684c0": {
+      "url": "https://github.com/HQarroum/awesome-iot",
+      "date": "2026-06-20"
+    },
+    "a710a073dc2a5eb9dba65af97c6b4ab1f749ee2ec6cc21762baf92c488a161dc": {
+      "url": "https://github.com/0xor0ne/awesome-list",
+      "date": "2026-06-20"
+    },
+    "2eea5e425c9a81fbe879583e67eabea119cfc1ff318b6f3a15c055beaa97b5a6": {
+      "url": "https://github.com/seandavi/awesome-single-cell",
+      "date": "2026-06-20"
+    },
+    "b750e224c16f98a3d677becf7f65393e130cad3fd1ff92e9168165dfdd3d9ee6": {
+      "url": "https://github.com/cugu/awesome-forensics",
+      "date": "2026-06-20"
+    },
+    "dee61892095ca75b906932421cea272474cd22705b05ca1389b76be5927bf38d": {
+      "url": "https://github.com/sindresorhus/awesome-scifi",
+      "date": "2026-06-20"
+    },
+    "26969d525f343ddbca5ae857b763fde5e22edf448ec98ab0071ce83e4dc3b734": {
+      "url": "https://github.com/libukai/awesome-agent-skills",
+      "date": "2026-06-20"
+    },
+    "8e7fecafb9aec160853b030f41f3144e9705108daa55254c380c300467ad64cf": {
+      "url": "https://github.com/0x4D31/awesome-threat-detection",
+      "date": "2026-06-20"
+    },
+    "18e181882c69f982810d7f1f23102094249b0793fba721aacefe283334f191de": {
+      "url": "https://github.com/anaibol/awesome-serverless",
+      "date": "2026-06-20"
+    },
+    "675cf2d2f9f27ad037aaba983673372c700ec11e80e1077d66a46cc6a476f760": {
+      "url": "https://github.com/JoseDeFreitas/awesome-youtubers",
+      "date": "2026-06-20"
+    },
+    "76bca35416f4f41829399d523f6f436fdb29c28bf28adb9f2f8f92bd03684dad": {
+      "url": "https://github.com/jonyzhang2023/awesome-embodied-vla-va-vln",
+      "date": "2026-06-20"
+    },
+    "d1315240ef63396d0c10f0bdae91be30b1852a783a51a422e1844dc2db1eca53": {
+      "url": "https://news.ycombinator.com/item?id=48478148",
+      "date": "2026-06-20"
+    },
+    "b32071ac63f2449a191054bb5cab2c234f0bb417f3d6aea3cee5e55483b89f71": {
+      "url": "https://www.bensbites.com/p/can-i-get-my-agents-on-the-phone",
+      "date": "2026-06-20"
+    },
+    "cebb6abe12abb6c1fb07c7a9d69475f5c73ed4da4ba649d3074e616382206098": {
+      "url": "https://github.com/RightNow-AI/openfang",
+      "date": "2026-06-20"
+    },
+    "329727b6b3553aacdf9298b4f74da1852aa4eb7da4812a138e3fc3e7cc7b7676": {
+      "url": "https://news.ycombinator.com/item?id=44828568",
+      "date": "2026-06-20"
+    },
+    "c9da73665f4592d1f10f4ce36378958b83a1061bd83132c4e3afc4d7f3c4d173": {
+      "url": "https://www.bensbites.com/p/agents-feedback-tip",
+      "date": "2026-06-20"
+    },
+    "cfe6b1639c3c3094f26f16ce33a12201e1de8303ca0f8e068c4b18b2c6ec2483": {
+      "url": "https://github.com/mksglu/context-mode",
+      "date": "2026-06-20"
+    },
+    "03eed7f43e7dc12c966083414ef5df0362ff866335d7e3f2120d875d7d4a30ad": {
+      "url": "https://news.ycombinator.com/item?id=47401042",
+      "date": "2026-06-20"
+    },
+    "27a3bfb6168d09d50e7d99e388072b20038c71f7996040dc1acaf68bd50a3725": {
+      "url": "https://www.bensbites.com/p/learn-the-system",
+      "date": "2026-06-20"
+    },
+    "f067dc17dc02626fc2fbc3000c76dc6c967fecabd0892c8345d750de82f99d2c": {
+      "url": "https://github.com/gnachman/iTerm2",
+      "date": "2026-06-20"
+    },
+    "ca9b1073daf61e9fa77ffc2f06265ff75009d79d8c48a7fd7616a832eabfc061": {
+      "url": "https://www.bensbites.com/p/bens-builds-3-an-email-app",
+      "date": "2026-06-20"
     }
   },
-  "backfillPage": 13,
+  "backfillPage": 14,
   "dailyPage": 3
 }
