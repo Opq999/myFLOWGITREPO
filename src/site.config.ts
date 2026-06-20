@@ -18,6 +18,8 @@ export const SITE = {
   whatsappNumber: '2348179428064',
   /** Contact email used as the fallback for service CTAs and on /submit. */
   contactEmail: 'opeyemiolowosoke@gmail.com',
+  /** Twitter/X handle incl. leading '@' (e.g. '@opqai'). Empty ⇒ no twitter:site/creator tags. */
+  twitterHandle: '',
   /** Fill with your Cloudflare Web Analytics token to enable analytics. */
   cloudflareAnalyticsToken: '',
 };
