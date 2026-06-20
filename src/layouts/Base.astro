@@ -10,7 +10,7 @@ interface Props {
   ogImage?: string;
 }
 
-const { title, description = SITE.description, ogImage } = Astro.props;
+const { title, description = SITE.description, ogImage = '/og-default.png' } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const fullTitle = title === SITE.name ? `${SITE.name}, ${SITE.tagline}` : `${title} · ${SITE.name}`;
 ---
@@ -20,7 +20,12 @@ const fullTitle = title === SITE.name ? `${SITE.name}, ${SITE.tagline}` : `${tit
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <meta name="generator" content={Astro.generator} />
     <meta name="theme-color" content="#fbf9f4" />
     <title>{fullTitle}</title>
@@ -47,8 +52,11 @@ const fullTitle = title === SITE.name ? `${SITE.name}, ${SITE.tagline}` : `${tit
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
-    {ogImage && <meta property="og:image" content={new URL(ogImage, Astro.site)} />}
-    <meta name="twitter:card" content={ogImage ? 'summary_large_image' : 'summary'} />
+    <meta property="og:image" content={new URL(ogImage, Astro.site)} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={title} />
+    <meta name="twitter:card" content="summary_large_image" />
     <slot name="head" />
   </head>
   <body class="flex min-h-screen flex-col font-sans text-ink-700 antialiased">

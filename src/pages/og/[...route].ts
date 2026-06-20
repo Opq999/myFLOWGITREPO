@@ -1,9 +1,18 @@
+import { existsSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import { OGImageRoute } from 'astro-og-canvas';
 import { getCollection } from 'astro:content';
 
-const workflows = await getCollection('workflows', (e) => e.data.published);
+// Workflows with a committed certificate card (public/og/<id>.png, made by
+// `npm run og`) are served as static files. This route only generates a plain
+// canvas fallback for the rest, e.g. brand-new daily workflows not yet
+// re-rendered, which also avoids a static-file vs generated-route collision.
+const ogDir = new URL('../../../public/og/', import.meta.url);
+const workflows = (await getCollection('workflows', (e) => e.data.published)).filter(
+  (w) => !existsSync(fileURLToPath(new URL(`${w.id}.png`, ogDir)))
+);
 
-/** One generated PNG per workflow: /og/{slug}.png */
+/** One generated PNG per workflow without a committed card: /og/{slug}.png */
 export const { getStaticPaths, GET } = await OGImageRoute({
   param: 'route',
   pages: Object.fromEntries(workflows.map((w) => [w.id, w.data])),

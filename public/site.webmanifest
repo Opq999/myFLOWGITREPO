@@ -1,0 +1,13 @@
+{
+  "name": "OPQAI",
+  "short_name": "OPQAI",
+  "description": "A free library of reproducible AI workflows with exact steps, copy-paste prompts and a real human source.",
+  "icons": [
+    { "src": "/icon-192.png", "type": "image/png", "sizes": "192x192", "purpose": "any maskable" },
+    { "src": "/icon-512.png", "type": "image/png", "sizes": "512x512", "purpose": "any maskable" }
+  ],
+  "theme_color": "#fbf9f4",
+  "background_color": "#fbf9f4",
+  "display": "standalone",
+  "start_url": "/"
+}

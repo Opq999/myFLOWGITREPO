@@ -15,6 +15,7 @@
     "pipeline:dry": "tsx --env-file-if-exists=.env pipeline/run.ts --dry-run",
     "pipeline:backfill": "tsx --env-file-if-exists=.env pipeline/run.ts --backfill",
     "pipeline:usecases": "tsx --env-file-if-exists=.env pipeline/backfill-usecases.ts",
+    "og": "tsx scripts/gen-og-cards.ts",
     "astro": "astro"
   },
   "dependencies": {
@@ -30,8 +31,10 @@
     "@astrojs/check": "^0.9.9",
     "fast-xml-parser": "^5.8.0",
     "pagefind": "^1.5.2",
+    "playwright-core": "^1.61.0",
     "tsx": "^4.22.4",
     "typescript": "^5.9.3",
-    "vitest": "^4.1.8"
+    "vitest": "^4.1.8",
+    "yaml": "^2.9.0"
   }
 }
