@@ -1,0 +1,65 @@
+---
+title: "Migrate GitHub CI to Hugging Face Jobs for Faster, GPU-Enabled Builds"
+description: "Learn to migrate your GitHub Actions CI workflows to Hugging Face Jobs for improved performance and the ability to run tests on GPU hardware."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 45
+jobToBeDone: "Migrate GitHub CI to Hugging Face Jobs for faster, GPU-enabled builds"
+tools:
+  - name: "GitHub Actions"
+    url: "https://github.com/features/actions"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Hugging Face Jobs"
+    url: "https://huggingface.co/docs/hub/spaces-jobs"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Docker"
+    url: "https://www.docker.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Hugging Face Spaces"
+    url: "https://huggingface.co/spaces"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://huggingface.co/blog/github-ci-hf-jobs"
+  platform: "blog"
+  author: "Hugging Face - Blog"
+  postedAt: 2026-06-09
+score: 5
+ingestedAt: 2026-06-20
+nigeriaNotes: "All tools offer free tiers suitable for initial setup and small CPU-based jobs. Access to GPU hardware on Hugging Face Jobs will likely incur costs. Data usage for configuration is minimal, with job execution data handled server-side."
+tiktokUrl: ""
+published: false
+---
+
+## What you'll get
+This workflow shows you how to integrate Hugging Face Jobs with your GitHub Actions CI setup. The concrete outcome is a CI pipeline that can run jobs on Hugging Face's serverless infrastructure, potentially cutting CPU job times by about 30% and enabling new test suites that require GPU machines. This approach works by using Hugging Face Jobs as ephemeral, self-hosted GitHub Actions runners, offering more flexible hardware options than standard GitHub-hosted runners.
+
+## Tools you need
+*   **GitHub Actions** (freemium): Automates software workflows directly within your GitHub repositories, handling tasks like testing and deployment.
+*   **Hugging Face Jobs** (freemium): A service that lets you run commands or scripts on Hugging Face's serverless infrastructure, offering various hardware options including GPUs.
+*   **Docker** (freemium): A platform for developing, shipping, and running applications in containers. It is used here to define the environment for your CI jobs.
+*   **Hugging Face Spaces** (freemium): A platform for hosting machine learning demos and applications. In this workflow, it hosts the 'dispatcher' that connects GitHub to Hugging Face Jobs.
+
+## Steps
+This guide is based on an article that explains the architecture and the first step of the migration process. The author provides detailed instructions for this initial setup, but the subsequent steps for full integration are not included in the provided excerpt.
+
+1.  **Duplicate the dispatcher Space**: The first component you need is the dispatcher, a small Docker Space that receives GitHub webhook events and launches Hugging Face Jobs in response. This Space will provide the webhook URL needed for your GitHub App.
+    *   Go to the Hugging Face Space: `huggingface/jobs-actions-dispatcher`.
+    *   Click the "Duplicate this Space" button (usually found near the top right of the Space page).
+    *   In the duplication dialog, set the "Owner" to your Hugging Face user account or an organization you have write access to.
+    *   Choose a "Name" for your new Space (the author doesn't specify an exact name, so pick a descriptive one like "my-ci-dispatcher").
+    *   Click "Duplicate Space" to create your copy.
+
+    You should see a new Hugging Face Space created under your account with the dispatcher code. This Space will have its own URL, which you will need for configuring the GitHub App in later steps (not covered in this excerpt).
+
+## Original source
+This workflow is adapted from an article titled "Migrating Your GitHub CI to Hugging Face Jobs" published on the Hugging Face Blog. The author, Abubakar Abid (abidlabs), details how to set up a system where GitHub Actions orchestrates CI jobs that are executed on Hugging Face's infrastructure.
+
+## Notes & variations
+*   **Free-tier viability**: Hugging Face Jobs and Spaces offer free CPU tiers, which are sufficient for testing the basic setup and running lightweight CI jobs. However, accessing GPU hardware, which is a key benefit of this migration, typically requires a paid tier on Hugging Face. GitHub Actions also provides free minutes for public repositories and a limited amount for private ones.
+*   **Common mistake**: A frequent pitfall is incorrectly configuring the GitHub App or its webhook URL. Ensure the URL from your duplicated Hugging Face dispatcher Space is correctly entered into the GitHub App settings, and that the app has the necessary permissions to receive `workflow_job.queued` webhooks. Any misconfiguration here will prevent GitHub from triggering your Hugging Face Jobs.
+*   **Tip for better results**: Start by migrating only your CPU-bound CI jobs first. This allows you to verify the integration and performance benefits without the added complexity and cost of GPU instances. Once the CPU setup is stable, you can then gradually introduce GPU-dependent tests, ensuring a smoother transition.

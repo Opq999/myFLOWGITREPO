@@ -1,0 +1,72 @@
+---
+title: "Discover MIT Courses with AI and GitHub Copilot"
+description: "Learn how to use AI-assisted development with GitHub Copilot to navigate and discover courses from the MIT catalog."
+category: "academic-research"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 30
+jobToBeDone: "Discover relevant MIT courses using AI-assisted development and a custom framework."
+tools:
+  - name: "GitHub Copilot"
+    url: "https://github.com/features/copilot"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "OpenAI Tokenizer"
+    url: "https://platform.openai.com/tokenizer"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=44815718"
+  platform: "hackernews"
+  author: "low_tech_punk"
+  postedAt: 2025-08-06
+score: 7
+ingestedAt: 2026-06-20
+nigeriaNotes: "GitHub Copilot offers a free trial, which can be sufficient for initial exploration. The OpenAI Tokenizer is free and has minimal data usage. Accessing the full MIT course catalog data might require a stable internet connection for scraping."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to use AI-assisted development to explore and discover courses from a large catalog, specifically the MIT course catalog. This approach is useful for finding courses that might reshape your thinking, going beyond what you already know you want to learn.
+
+## Tools you need
+*   **GitHub Copilot** (freemium): An AI pair programmer that suggests code and entire functions in real time, right inside your editor.
+*   **OpenAI Tokenizer** (free): A tool to count the number of tokens in a piece of text, useful for understanding the size of data you're feeding to an AI model.
+
+## Steps
+1.  **Scrape the MIT Course Catalog**: The author used a simple JavaScript snippet in the browser console to extract course data. You can adapt this by opening your browser's developer console on the MIT Course Picker page and pasting the following code:
+
+    ```javascript
+    [... document . querySelectorAll ( ".course-name" )] . map (( e ) => e . closest ( ".course-lens" )) . map (( d ) => ({
+      title: d . querySelector ( ".course-name" )?. textContent ,
+      description: d . querySelector ( ".course-description" )?. textContent ,
+      semester: d . querySelector ( ".course-semester" )?. textContent ,
+      prereq: d . querySelector ( `[data-ex-content=".prereqs"]` )?. textContent ,
+      instructor: d . querySelector ( ".course-instructor" )?. textContent ,
+      units: d . querySelector ( `[data-ex-content=".units"]` )?. textContent ,
+      level: d . querySelector ( `[data-ex-content=".level"]` )?. textContent ,
+    }));
+    ```
+
+    You should see a JSON array printed in the console, containing details for each course.
+
+2.  **Copy the scraped data**: Select and copy the entire JSON array output from your browser's console. This is the raw data of the course catalog.
+
+3.  **Count the tokens**: Navigate to the OpenAI Tokenizer website. Paste the copied JSON data into the tokenizer tool.
+
+    You should see a token count displayed. The author found their catalog was around 343k tokens, noting this is an upper bound as JSON is verbose.
+
+4.  **Prepare for AI analysis**: Since modern LLMs can handle large contexts (over a million tokens), you can feed this entire dataset to an AI model. The author's goal was to use this data to guide course discovery.
+
+5.  **Use GitHub Copilot for AI-assisted development**: The author mentions using GitHub Copilot for "vibe-coding" and testing an AI "(Un)framework". While the exact implementation isn't detailed, the principle is to leverage Copilot within your development environment to help process and analyze the course data, potentially by asking it to help write scripts or queries to sift through the catalog based on your interests.
+
+    The author doesn't share their exact prompt for using Copilot to analyze the data; a starting point could be to ask Copilot to help you write a script to filter courses based on keywords or desired topics after loading the JSON data into your development environment.
+
+## Original source
+This workflow is inspired by a post on Hacker News by user low_tech_punk, who explored "vibe coding" the MIT course catalog using AI-assisted development tools to overcome the limitations of traditional course browsing interfaces.
+
+## Notes & variations
+*   **Free Tier Viability**: GitHub Copilot has a free trial period. For continued use, it becomes a paid service. The OpenAI Tokenizer is free and has no usage limitations for this purpose.
+*   **Common Pitfall**: Directly pasting extremely large amounts of text into AI chat interfaces can sometimes lead to errors or incomplete processing due to context window limits or interface restrictions. Using dedicated tools or APIs for large datasets is often more reliable.
+*   **Tip for Better Results**: To get more targeted course recommendations, consider pre-filtering the scraped JSON data for specific departments or keywords before feeding it to the AI, or include these preferences directly in your prompts to GitHub Copilot or another LLM.

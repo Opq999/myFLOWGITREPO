@@ -1,0 +1,134 @@
+---
+title: "Improve Code Generation and Quality with Claude Code"
+description: "Learn how to use Claude Code to generate higher quality code, improve development speed, and ensure robust testing for your projects."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 45
+jobToBeDone: "Improve code generation and quality using an AI coding agent"
+tools:
+  - name: "Claude"
+    url: "https://claude.ai"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=44836879"
+  platform: "hackernews"
+  author: "ingve"
+  postedAt: 2025-08-08
+score: 10
+ingestedAt: 2026-06-20
+nigeriaNotes: "Claude offers a free tier, which is suitable for getting started. Data usage is light, primarily text-based interactions."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+By following these steps, you will learn to guide an AI coding agent to produce higher quality code, accelerate your development process, and ensure your projects are well-tested. This approach works by providing the AI with clear specifications, project context, and a set of best practices, leading to more accurate and maintainable code.
+
+## Tools you need
+*   **Claude** (freemium): An AI assistant for code generation and review.
+
+## Steps
+
+1.  **Open Claude**: Navigate to the Claude AI website in your browser.
+
+    You should see the chat interface ready for your input.
+
+2.  **Provide Development Guidelines**: Paste the following comprehensive development guidelines into the chat. These guidelines, adapted from the author's personal "global" agent guide, establish a consistent approach for Claude to follow.
+
+    ```
+Here are my development guidelines. Please read them carefully and confirm you understand them and will adhere to them for all future coding tasks in this conversation:
+
+# Development Guidelines
+## Philosophy
+### Core Beliefs
+- **Incremental progress over big bangs**
+- Small changes that compile and pass tests
+- **Learning from existing code**
+- Study and plan before implementing
+- **Pragmatic over dogmatic**
+- Adapt to project reality
+- **Clear intent over clever code**
+- Be boring and obvious
+### Simplicity Means
+- Single responsibility per function/class
+- Avoid premature abstractions
+- No clever tricks - choose the boring solution
+- If you need to explain it, it's too complex
+## Process
+### 1. Planning Staging
+Break complex work into 3-5 stages. Document in `IMPLEMENTATION_PLAN.md`:
+```markdown
+## Stage N: [Name]
+**Goal**: [Specific deliverable]
+**Success Criteria**: [Testable outcomes]
+**Tests**: [Specific test cases]
+**Status**: [Not Started|In Progress|Complete]
+```
+- Update status as you progress
+- Remove file when all stages are done
+### 2. Implementation Flow
+1. **Understand** - Study existing patterns in codebase
+2. **Test** - Write test first (red)
+3. **Implement** - Minimal code to pass (green)
+4. **Refactor** - Clean up with tests passing
+5. **Commit** - With clear message linking to plan
+### 3. When Stuck (After 3 Attempts)
+**CRITICAL**: Maximum 3 attempts per issue, then STOP.
+1. **Document what failed**:
+- What you tried
+- Specific error messages
+- Why you think it failed
+2. **Research alternatives**:
+- Find 2-3 similar implementations
+- Note different approaches used
+3. **Question fundamentals**:
+- Is this the right abstr…
+    ```
+
+    Claude will confirm it has received the guidelines and understands them. This establishes a "personality" for the AI agent.
+
+3.  **Define the Project Specification**: Clearly describe the program you want Claude to create. A detailed specification helps the AI understand your exact requirements.
+
+    ```
+I need you to develop a [type of program, e.g., Python script, web component] that [describe the core functionality clearly and concisely]. Be as specific as possible about inputs, outputs, and desired behavior.
+    ```
+
+    Claude should ask clarifying questions or outline an initial approach based on your specification.
+
+4.  **Outline Project Structure and Tools**: Provide details about how the project should be organized and any specific development tools you'll be using.
+
+    ```
+The project structure should follow these guidelines: [describe folder structure, naming conventions]. We will be using [mention specific tools like build systems, linters, testing frameworks]. Here's how to run them: [provide commands or instructions].
+    ```
+
+    Claude should acknowledge the structure and tools, perhaps suggesting how it will integrate them into its development process.
+
+5.  **Generate the Code**: Instruct Claude to begin writing the code, referencing the previously provided specification and guidelines.
+
+    ```
+Based on the specification and project structure, please begin implementing the code. Start with [mention a specific component or stage, e.g., the first stage of the IMPLEMENTATION_PLAN.md].
+    ```
+
+    Claude will start generating code, potentially asking for further clarification or presenting its initial implementation plan.
+
+6.  **Request a Code Review**: Ask Claude to review its own generated code. This leverages the AI's ability to identify potential issues against the established guidelines.
+
+    ```
+Please perform a code review on the code you just generated. Identify any potential bugs, inefficiencies, or areas for improvement based on our development guidelines.
+    ```
+
+    Claude will provide feedback, suggestions for improvement, or refactored code based on its review.
+
+7.  **Manually Verify and Test**: Critically, manually review all AI-generated code and test cases. The author emphasizes that you are ultimately responsible for the code.
+
+    You should carefully read through the code, run any tests, and add additional tests if necessary, either manually or by asking Claude to generate them (and then reviewing those too). Ensure the code behaves as expected and meets all requirements.
+
+## Original source
+This workflow is inspired by insights shared by Chris Dzombak on his blog, dzombak.com, regarding getting good results from Claude Code. The post was featured on Hacker News by ingve.
+
+## Notes & variations
+*   **Free-tier alternatives**: If Claude's free tier limitations are a concern, you can explore the free tiers of other AI assistants like Google Gemini (gemini.google.com) or ChatGPT (chatgpt.com) for similar code generation tasks.
+*   **Common mistake**: A significant pitfall is over-reliance on the AI without manual verification. Always remember that AI-generated code can be incorrect or inefficient. Thorough manual review and testing are essential, especially in professional contexts.
+*   **Tip for better results**: Break down complex coding tasks into smaller, manageable stages. This aligns with the "Incremental progress over big bangs" philosophy in the guidelines and allows for more focused AI interaction and easier debugging.

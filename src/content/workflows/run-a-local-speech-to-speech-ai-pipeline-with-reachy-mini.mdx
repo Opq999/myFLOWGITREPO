@@ -1,0 +1,90 @@
+---
+title: "Run a Local Speech-to-Speech AI Pipeline with Reachy Mini"
+description: "Deploy a local speech-to-speech AI pipeline for your Reachy Mini robot using llama.cpp and Hugging Face models. Keep your data private and avoid API costs."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 30
+jobToBeDone: "Deploy a local speech-to-speech AI pipeline for a robot."
+tools:
+  - name: "llama.cpp"
+    url: "https://github.com/ggerganov/llama.cpp"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Gemma 4"
+    url: "https://gemini.google.com/app"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Silero VAD"
+    url: "https://github.com/snakers4/silero-vad"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Parakeet-TDT 0.6B v3 STT"
+    url: "https://github.com/descriptinc/parakeet-stt"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Qwen3-TTS"
+    url: "https://github.com/QwenLM/Qwen-TTS"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "speech-to-speech library"
+    url: "https://github.com/huggingface/speech-to-speech"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://huggingface.co/blog/local-reachy-mini-conversation"
+  platform: "blog"
+  author: "Hugging Face - Blog"
+  postedAt: 2026-05-27
+score: 7
+ingestedAt: 2026-06-20
+nigeriaNotes: "This workflow is highly suitable for Nigeria due to its completely offline nature, eliminating reliance on stable internet for API calls. All mentioned tools are free and open-source. Data usage is minimal after initial model downloads, making it data-light."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will set up a complete speech-to-speech AI system that runs entirely on your local machine. This means your robot can understand and respond to you without sending any audio data to external servers, ensuring privacy and eliminating API costs. This approach is ideal for applications where data privacy is paramount or internet connectivity is unreliable.
+
+## Tools you need
+*   **llama.cpp** (free): A library for running large language models efficiently on your own hardware.
+*   **Gemma 4** (free): A specific language model recommended for this workflow.
+*   **Silero VAD** (free): A Voice Activity Detector that identifies speech in audio.
+*   **Parakeet-TDT 0.6B v3 STT** (free): A Speech-to-Text model to convert spoken words into text.
+*   **Qwen3-TTS** (free): A Text-to-Speech model to convert text responses back into spoken audio.
+*   **speech-to-speech library** (free): A Python library that orchestrates the different AI models into a speech-to-speech pipeline.
+
+## Steps
+1.  **Install llama.cpp**: If you don't have it, install it using your system's package manager. For example, on macOS use `brew install llama.cpp` or on Windows use `winget install llama.cpp`. Refer to the official llama.cpp documentation for detailed installation instructions.
+2.  **Start the LLM server**: Open a terminal and run the following command to serve the Gemma 4 model locally. The first time you run this, it will download the model files.
+
+    ```
+    llama-server -hf ggml-org/gemma-4-E4B-it-GGUF -np 2 -c 65536 -fa on --swa-full
+    ```
+
+    You should see output indicating the server has started and is ready to accept requests. Subsequent launches will be faster as the model is cached.
+3.  **Install the speech-to-speech library**: Open another terminal and install the library using pip.
+
+    ```
+    pip install speech-to-speech
+    ```
+
+    You should see messages indicating successful installation.
+4.  **Run the speech-to-speech pipeline locally**: With the LLM server running in the background, execute this command in the new terminal. This will download the necessary speech models (Parakeet-TDT and Qwen3-TTS) on the first run.
+
+    ```
+    speech-to-speech --responses_api_base_url "http://127.0.0.1:8080" --responses_api_api_key "" --mode local
+    ```
+
+    You should see output confirming the pipeline is running in local mode. You can now interact with the AI through your terminal by speaking.
+5.  **Connect to your robot (if applicable)**: If you are using this with a Reachy Mini robot, launch the robot's desktop app and the conversation app. In the conversation app's UI, navigate to "edit connection" and select the local HF backend to connect it to your locally running speech-to-speech service.
+
+    You should now be able to talk to your robot, with all audio processing happening on your machine.
+
+## Original source
+This workflow is based on a blog post titled "Reachy Mini goes fully local" by Amir Mahla and Andres Marafioti, published on the Hugging Face blog. It details how to run an entire speech-to-speech AI pipeline locally, eliminating the need for cloud services.
+
+## Notes & variations
+*   **Free-tier viability**: This entire workflow is free and open-source, making it perfectly suited for users with limited budgets.
+*   **Common pitfall**: Ensure that the `llama-server` is running in one terminal *before* you start the `speech-to-speech` command in another. If the LLM server is not accessible, the speech pipeline will fail.
+*   **Better results**: For improved performance or different language needs, you can experiment with swapping out the STT, TTS, or LLM models. The speech-to-speech library is designed to be modular, allowing you to easily integrate newer or more specialized models as they become available.

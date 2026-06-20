@@ -1,0 +1,140 @@
+---
+title: "Train a 64M-parameter LLM from scratch in 2 hours with PyTorch"
+description: "Learn to train a small 64M-parameter Large Language Model (LLM) from scratch, covering pretraining, fine-tuning, and advanced techniques."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 120
+jobToBeDone: "Train a 64M-parameter LLM from scratch in 2 hours"
+tools:
+  - name: "Python"
+    url: "https://www.python.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "PyTorch"
+    url: "https://pytorch.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "GitHub"
+    url: "https://github.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "transformers"
+    url: "https://huggingface.co/docs/transformers/index"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "trl"
+    url: "https://huggingface.co/docs/trl/index"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "peft"
+    url: "https://huggingface.co/docs/peft/index"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Weights & Biases (wandb)"
+    url: "https://wandb.ai/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "SwanLab"
+    url: "https://swanlab.cn/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Streamlit"
+    url: "https://streamlit.io/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://github.com/jingyaogong/minimind"
+  platform: "github"
+  author: "jingyaogong"
+  postedAt: 2026-06-01
+score: 9
+ingestedAt: 2026-06-20
+nigeriaNotes: "This workflow involves significant computational resources (GPU) which may incur costs for cloud rental. The author states a cost of approximately ₦3,000 (3 CNY) for 2 hours on an NVIDIA 3090 GPU. Data usage will be moderate for downloading datasets and model weights."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+This workflow guides you through training a 64-million parameter Large Language Model (LLM) called MiniMind, from scratch. You will get a functional, small-scale language model capable of basic language tasks, trained using native PyTorch implementations.
+This approach is designed to demystify LLM training by providing a complete, transparent implementation, making it accessible for individuals with personal GPUs and helping to reduce the typical high costs associated with large model training.
+
+## Tools you need
+*   **Python** (free): The programming language required to run the project's scripts.
+*   **PyTorch** (free): The deep learning framework used for the model's native implementation.
+*   **GitHub** (free): To access and download the project's source code repository.
+*   **transformers** (free): A library for state-of-the-art machine learning models, compatible with this project.
+*   **trl** (free): A library for training transformer models with reinforcement learning, compatible with this project.
+*   **peft** (free): A library for parameter-efficient fine-tuning, compatible with this project.
+*   **Weights & Biases (wandb)** (freemium): For experiment tracking and visualization during training.
+*   **SwanLab** (freemium): An alternative experiment tracking and visualization tool, also supported by the project.
+*   **Streamlit** (free): For creating a simple web-based chat interface to interact with your trained model.
+
+## Steps
+1.  **Access the project code**: Start by cloning the MiniMind project repository from GitHub to your local machine or cloud environment.
+
+    ```bash
+    git clone https://github.com/jingyaogong/minimind.git
+    cd minimind
+    ```
+
+    You should see a new folder named `minimind` containing the project files.
+
+2.  **Set up your Python environment**: Install all the necessary Python libraries and dependencies listed in the project's `requirements.txt` file. It is recommended to use a virtual environment.
+
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+    pip install -r requirements.txt
+    ```
+
+    All required packages should install successfully, preparing your environment for training.
+
+3.  **Review project structure and data**: Familiarize yourself with the project's folders, especially `dataset` (where training data is stored), `model` (for model definitions), `scripts` (for utility scripts), and `trainer` (for training logic). The author provides pre-processed datasets for various training stages.
+
+    You should see files like `pretrain_t2t(_mini).jsonl` and `sft_t2t(_mini).jsonl` within the `dataset` directory, indicating available data.
+
+4.  **Configure training parameters**: The project allows for various training stages like pre-training (Pretrain) and supervised fine-tuning (SFT). While the author doesn't provide exact configuration commands in the excerpt, you will typically modify configuration files or command-line arguments to specify your desired model size (e.g., 64M parameters), dataset, and training duration.
+
+    You should ensure your chosen configuration aligns with your available GPU resources and the desired training objective.
+
+5.  **Initiate Supervised Fine-Tuning (SFT)**: The core 2-hour training time mentioned by the author refers to the SFT stage. You will run a Python script to start this process. The author doesn't share the exact command; a starting point would be to look for a `train.py` or similar script in the project's root or `scripts` directory.
+
+    ```bash
+    # The author doesn't share their exact command; a starting point:
+    # python train.py --config_path configs/sft_minimind_3.yaml
+    # Or, if a specific SFT script is provided:
+    # python scripts/train_sft.py
+    ```
+
+    You should see training logs appearing in your terminal, indicating the model is being trained, and potentially a link to your Weights & Biases or SwanLab dashboard if configured.
+
+6.  **Monitor training progress**: Use Weights & Biases (wandb) or SwanLab to track metrics like loss, accuracy, and GPU utilization in real-time. This helps you understand how well your model is learning and identify any issues.
+
+    You should be able to access a web dashboard (e.g., `wandb.ai/your-username/project-name`) showing live graphs and logs of your training run.
+
+7.  **Evaluate the trained model**: After training, evaluate your MiniMind model's performance using the provided evaluation scripts. The project mentions `eval_llm.py` and compatibility with benchmarks like C-Eval.
+
+    ```bash
+    # The author doesn't share their exact command; a starting point:
+    # python eval_llm.py --model_path ./output/minimind-3 --dataset c_eval
+    ```
+
+    You should see evaluation results, such as scores on various benchmarks, indicating your model's capabilities.
+
+8.  **Deploy a chat interface**: The project includes a simple web-based chat UI built with Streamlit. You can launch this interface to interact with your newly trained MiniMind model.
+
+    ```bash
+    # The author doesn't share their exact command; a starting point:
+    # streamlit run scripts/chat_webui.py
+    ```
+
+    You should see a local URL in your terminal (e.g., `http://localhost:8501`) which, when opened in a browser, displays a chat interface where you can type prompts and receive responses from your MiniMind model.
+
+## Original source
+This workflow is based on the MiniMind open-source project by jingyaogong, hosted on GitHub. The project aims to make Large Language Model training accessible by providing a complete, from-scratch implementation of a small 64M-parameter LLM, trainable in approximately 2 hours on a single NVIDIA 3090 GPU.
+
+## Notes & variations
+*   **Free-tier alternatives**: While the author mentions a low cost for GPU rental, running this on free-tier cloud GPUs like Google Colab (if a powerful enough GPU is available) might be challenging for the full 2-hour SFT stage due to session limits. Consider using a paid tier or a local GPU for a smoother experience.
+*   **Common mistake**: A common pitfall is not having sufficient GPU memory (VRAM) for the chosen model size and batch size. Even for a 64M model, ensure your GPU meets the minimum requirements, or adjust batch sizes and other parameters accordingly. Check your GPU's VRAM before starting.
+*   **Tip for better results**: The project offers various training stages (Pretrain, SFT, LoRA, RLHF, RLAIF). For initial success, focus on completing the Supervised Fine-Tuning (SFT) stage with the provided `sft_t2t(_mini).jsonl` dataset. Once comfortable, explore the more advanced techniques like RLHF (Reinforcement Learning from Human Feedback) or Agentic RL for enhanced model capabilities.
