@@ -13,7 +13,7 @@ tools:
     affiliateUrl: ""
   - name: "OpenAI API"
     url: "https://platform.openai.com/"
-    pricing: "freemium"
+    pricing: "paid"
     affiliateUrl: ""
   - name: "Python"
     url: "https://www.python.org/"
@@ -30,7 +30,7 @@ source:
   postedAt: 2025-06-03
 score: 7
 ingestedAt: 2026-06-19
-nigeriaNotes: "Telegram and Python are free and widely accessible. The OpenAI API has a free tier, but usage beyond that incurs costs. Docker is free for individual use. Data usage is minimal for bot operation."
+nigeriaNotes: "Telegram and Python are free and widely accessible. The OpenAI API is pay-as-you-go (API credits, card payment required). Docker is free for individual use. Data usage is minimal for bot operation."
 nigeriaUseCases:
   - persona: "student"
     scenario: "Build a private Telegram bot to quickly get explanations for complex programming concepts or research topics for your CSC301 assignments, without needing to open a browser."
@@ -47,7 +47,7 @@ You will create a Telegram bot that can answer questions using OpenAI's ChatGPT.
 
 ## Tools you need
 *   **Telegram** (free): A messaging app to interact with your bot.
-*   **OpenAI API** (freemium): Provides access to ChatGPT models for generating responses.
+*   **OpenAI API** (paid): Provides access to ChatGPT models for generating responses.
 *   **Python** (free): A programming language used to build the bot's logic.
 *   **Docker** (freemium): A platform to package and run your bot in a consistent environment.
 
@@ -101,6 +101,6 @@ You will create a Telegram bot that can answer questions using OpenAI's ChatGPT.
 This workflow is based on the `chatgpt-telegram-bot` project by author `n3d1117` on GitHub. The project provides a Python-based Telegram bot that connects to OpenAI's ChatGPT APIs to offer AI-powered responses within Telegram conversations.
 
 ## Notes & variations
-*   **Free Tier Viability**: Telegram is free. OpenAI API offers a free trial or a small free tier, after which costs apply. Docker Desktop has a free tier for individual use. 
+*   **Cost**: Telegram is free. The OpenAI API is pay-as-you-go; new accounts may get limited trial credits, but you must add billing to use it. Docker Desktop has a free tier for individual use. 
 *   **Common Pitfall**: Forgetting to rename `.env.example` to `.env` or not filling in the correct API keys and tokens will prevent the bot from starting. Double-check these values.
 *   **Better Results**: To use more advanced models like GPT-4, you may need to adjust the `OPENAI_MODEL` parameter in your `.env` file (if supported by your OpenAI API plan) and ensure you have access to those models.

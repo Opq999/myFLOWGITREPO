@@ -32,6 +32,21 @@ The reader has never done this before and is following on a phone. Be concrete a
 
 Markdown constraints: no HTML tags, no curly braces { } outside fenced code blocks, no headings other than the five above.
 
+## Pricing labels: be accurate
+
+The `pricing` value for each tool (and the "(free / freemium / paid)" tag in the Tools section) must reflect how the reader actually pays to use that tool in THIS workflow. Misclassifying a paid developer tool as free or freemium is a serious accuracy error, not a harmless simplification.
+
+- `free`: genuinely free, no payment ever. Open-source software and local runtimes (e.g. Ollama, LM Studio, VSCode, Git, Python, most GitHub repos).
+- `freemium`: a real, usable free tier exists, with paid upgrades. This is for CONSUMER apps: the chat apps at chatgpt.com, claude.ai, and gemini.google.com, plus tools like Canva, Notion, GitHub, Cursor, Slack.
+- `paid`: no usable free tier; you must pay (a subscription or credits) to use it at all.
+
+Critical distinction: a consumer chat app and the developer product that shares its brand are NOT the same tool.
+- The claude.ai / chatgpt.com / gemini.google.com chat apps are `freemium`.
+- Developer and API products are `paid`: Claude Code, the OpenAI API, the Anthropic API, GitHub Copilot, ChatGPT Plus. There is no free tier for these.
+- If the workflow has the reader paste an API key, run a coding CLI or agent, or otherwise use a developer product, label it `paid` unless that specific product genuinely has a free tier. Notable exceptions that DO have real free tiers: the Gemini API, the Gemini CLI, Google AI Studio, Groq, and OpenRouter (free models).
+
+Use the correct homepage URL too: Claude Code is https://code.claude.com, NOT claude.ai (which is the chat app).
+
 ## Output
 
 Return ONLY a JSON object, no prose:

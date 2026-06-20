@@ -13,7 +13,7 @@ tools:
     affiliateUrl: ""
   - name: "OpenAI"
     url: "https://openai.com/"
-    pricing: "freemium"
+    pricing: "paid"
     affiliateUrl: ""
   - name: "GitHub"
     url: "https://github.com/"
@@ -26,7 +26,7 @@ source:
   postedAt: 2026-04-08
 score: 7
 ingestedAt: 2026-06-19
-nigeriaNotes: "Clawshier is open source. OpenAI has a freemium tier, but costs can accrue with frequent use. Data usage for image uploads to OpenAI is moderate. Local models like Ollama are an alternative for data privacy and cost savings, but require more technical setup and potentially higher RAM."
+nigeriaNotes: "Clawshier is open source. The OpenAI API is pay-as-you-go (API credits, card payment required), and costs accrue with frequent use. Data usage for image uploads to OpenAI is moderate. Local models like Ollama are a free alternative for data privacy and cost savings, but require more technical setup and potentially higher RAM."
 nigeriaUseCases:
   - persona: "small-business"
     scenario: "Log daily sales receipts from your shop into an expense spreadsheet automatically using Clawshier and OpenAI."
@@ -43,7 +43,7 @@ You will create an automated system that takes a picture of a receipt and logs i
 
 ## Tools you need
 *   **Clawshier** (free): An open-source tool designed to automate receipt processing.
-*   **OpenAI API** (freemium): A service that provides AI models for tasks like image recognition and text extraction.
+*   **OpenAI API** (paid): A service that provides AI models for tasks like image recognition and text extraction.
 *   **GitHub** (free): A platform for hosting and collaborating on code, where Clawshier is available.
 
 ## Steps
@@ -64,6 +64,6 @@ You will create an automated system that takes a picture of a receipt and logs i
 This workflow is based on a blog post by fdocr, shared on the DEV Community platform. The author details their experience building and testing Clawshier, an open-source skill for automating receipt data extraction using AI models.
 
 ## Notes & variations
-*   **Free Tier Viability**: Clawshier is free and open-source. OpenAI offers a freemium tier, which may be sufficient for light use, but costs can increase with higher volumes. Consider local AI models (like Ollama with Llama 3.2 Vision) for cost savings and data privacy, though they require more setup and potentially more RAM.
+*   **Cost**: Clawshier is free and open-source. The OpenAI API is pay-as-you-go (no free tier); light use is inexpensive but costs increase with higher volumes. Consider local AI models (like Ollama with Llama 3.2 Vision) for free processing and data privacy, though they require more setup and potentially more RAM.
 *   **Common Pitfall**: Inconsistent date formats on receipts can lead to errors in date extraction. The author suggests manually specifying the date as a workaround if you encounter this issue.
 *   **Better Results**: For improved image recognition accuracy, especially with thermal receipts or cryptic text, ensure your receipt photos are as clear and well-lit as possible. Experimenting with different image preprocessing techniques or alternative OCR engines like PaddleOCR or Tesseract could also enhance results.

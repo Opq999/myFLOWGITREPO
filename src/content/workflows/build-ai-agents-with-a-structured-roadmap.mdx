@@ -8,12 +8,12 @@ timeMinutes: 60
 jobToBeDone: "Learn to build AI agents by following a structured roadmap and curated resources"
 tools:
   - name: "Claude Code"
-    url: "https://www.anthropic.com/index/claude-code"
-    pricing: "freemium"
+    url: "https://code.claude.com"
+    pricing: "paid"
     affiliateUrl: ""
   - name: "OpenAI"
     url: "https://openai.com/"
-    pricing: "freemium"
+    pricing: "paid"
     affiliateUrl: ""
   - name: "Gemini API"
     url: "https://ai.google.dev/"
@@ -29,7 +29,7 @@ tools:
     affiliateUrl: ""
   - name: "Claude Tool Use"
     url: "https://docs.anthropic.com/claude/docs/tool-use"
-    pricing: "freemium"
+    pricing: "paid"
     affiliateUrl: ""
 source:
   url: "https://github.com/datawhalechina/Agent-Learning-Hub"
@@ -38,7 +38,7 @@ source:
   postedAt: 2026-06-05
 score: 7
 ingestedAt: 2026-06-19
-nigeriaNotes: "Most tools offer free tiers suitable for learning. Data usage can be moderate depending on the complexity of agents built and the amount of data processed. Focus on free tiers of APIs and libraries to manage costs."
+nigeriaNotes: "LlamaIndex and LangChain are free, and the Gemini API has a free tier. Claude Code, the OpenAI API, and the Anthropic API (Claude tool use) are paid: they need API credits or a subscription (card payment required). Data usage can be moderate depending on the complexity of agents built. Lean on the free libraries and the Gemini free tier to manage costs."
 nigeriaUseCases:
   - persona: "student"
     scenario: "As a computer science student, build a custom research agent using LlamaIndex to quickly summarize academic papers for your final year project on AI ethics."
@@ -58,12 +58,12 @@ This approach works by breaking down the complex topic of AI agents into managea
 
 ## Tools you need
 
-*   **Claude Code** (freemium): A coding assistant that can help with generating and understanding code for agent development.
-*   **OpenAI** (freemium): Provides access to powerful language models and APIs essential for agent functionality.
+*   **Claude Code** (paid): A coding assistant that can help with generating and understanding code for agent development.
+*   **OpenAI** (paid): Provides access to powerful language models and APIs essential for agent functionality.
 *   **Gemini API** (freemium): Google's API for accessing their large language models, useful for agent development.
 *   **LlamaIndex** (free): A data framework for LLM applications, helpful for building agents that interact with data.
 *   **LangChain** (free): A framework for developing applications powered by language models, widely used for building agents.
-*   **Claude Tool Use** (freemium): Documentation and examples for enabling Claude models to use external tools.
+*   **Claude Tool Use** (paid): Documentation and examples for enabling Claude models to use external tools, via the paid Anthropic API.
 
 ## Steps
 
@@ -88,6 +88,6 @@ This workflow is based on the "Agent Learning Hub" repository by datawhalechina,
 
 ## Notes & variations
 
-*   **Free Tier Viability**: Most of the mentioned tools and APIs have generous free tiers suitable for learning and experimentation. Focus on utilizing these free tiers to minimize costs.
+*   **Cost**: LlamaIndex and LangChain are free, and the Gemini API has a free tier you can learn on. Claude Code, the OpenAI API, and the Anthropic API are paid. Lean on the free options to minimize costs.
 *   **Common Pitfall**: A common mistake is getting lost in the vast number of frameworks and tools. It's crucial to follow the structured learning path provided and focus on understanding the core concepts before diving deep into every available option.
 *   **Tip for Better Results**: Start by building the "minimal agent loop" as described in Stage 1. Successfully implementing this core functionality will provide a strong foundation and boost confidence for tackling more advanced stages.

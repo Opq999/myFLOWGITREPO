@@ -12,8 +12,8 @@ tools:
     pricing: "free"
     affiliateUrl: ""
   - name: "Claude Code"
-    url: "https://claude.ai/"
-    pricing: "freemium"
+    url: "https://code.claude.com"
+    pricing: "paid"
     affiliateUrl: ""
   - name: "Codex"
     url: "https://openai.com/codex/"
@@ -30,7 +30,7 @@ source:
   postedAt: 2026-04-04
 score: 7
 ingestedAt: 2026-06-19
-nigeriaNotes: "Git is free and widely used. AI coding agents like Claude Code and Aider offer free tiers. Data usage depends on the complexity of coding tasks and the amount of code processed, but is generally manageable for mobile users with reasonable data plans. Codex is a paid tool."
+nigeriaNotes: "Git is free and widely used. Aider is a free, open-source CLI (you supply your own model API key); Claude Code and Codex are paid (Claude Code needs a paid Claude plan or API credits, card payment required). Data usage depends on the complexity of coding tasks and the amount of code processed, but is generally manageable for mobile users with reasonable data plans."
 nigeriaUseCases:
   - persona: "entrepreneur"
     scenario: "As a solo founder building a new e-commerce platform, use this to have one AI agent develop the product catalog feature and another build the shopping cart, ensuring both pass tests before merging."
@@ -49,7 +49,7 @@ This approach is crucial when scaling AI-assisted development beyond a single ag
 
 ## Tools you need
 *   **Git** (free): A version control system to manage code changes and isolate agent workspaces.
-*   **Claude Code** (freemium): An AI coding assistant that can generate and modify code.
+*   **Claude Code** (paid): An AI coding assistant that can generate and modify code.
 *   **Codex** (paid): Another AI model for code generation and understanding.
 *   **Aider** (freemium): An AI pair programmer that can help with coding tasks.
 *   **Your Project's Test Suite** (free): Existing automated tests (e.g., using pytest, Jest, cargo test) to verify code correctness.
@@ -106,6 +106,6 @@ This approach is crucial when scaling AI-assisted development beyond a single ag
 This workflow is based on the pattern described by author battyterm in their blog post "How to Supervise AI Coding Agents Without Losing Your Mind". The author shares practical solutions for managing multiple AI coding agents on a single project, drawing from their experience using tools like Claude Code, Codex, and Aider.
 
 ## Notes & variations
-*   **Free-tier alternatives**: While Codex is paid, Claude Code and Aider offer capable free tiers. For Git, the free command-line tool is standard. Your project's existing test suite is also free to use.
+*   **Free and paid tools**: Codex and Claude Code are paid (Claude Code needs a paid Claude plan or API credits). Aider is a free, open-source CLI, though you supply your own model API key. Git and your project's existing test suite are free to use.
 *   **Common pitfall**: A frequent mistake is to skip running the test suite after an AI agent completes a task. This can lead to merging broken code, causing significant debugging later.
 *   **Tip for better results**: Clearly define the scope of each task given to an AI agent. Smaller, well-defined tasks are easier for agents to complete successfully and for tests to validate.

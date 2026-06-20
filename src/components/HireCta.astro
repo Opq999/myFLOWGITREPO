@@ -5,10 +5,9 @@ import { contactLink } from '../lib/whatsapp';
 interface Props {
   variant: 'sidebar' | 'inline';
   workflowTitle?: string;
-  timeMinutes?: number;
 }
 
-const { variant, workflowTitle, timeMinutes } = Astro.props;
+const { variant, workflowTitle } = Astro.props;
 
 const message = workflowTitle
   ? `Hi! I found the "${workflowTitle}" workflow on ${SITE.name} and I'd rather have it set up for me than figure it out myself. Can you help?`
@@ -24,8 +23,7 @@ const href = contactLink(message);
       <p class="mt-2 font-display text-lg font-semibold text-ink-900">Have this done for you</p>
       <p class="mt-1 text-sm leading-relaxed text-ink-500">
         Short on time, or just want it set up right the first time? I'll build this workflow for you
-        and hand it over ready to use
-        {timeMinutes ? `, save yourself the ~${timeMinutes} min.` : '.'}
+        and hand it over ready to use.
       </p>
       <a
         href={href}
@@ -43,9 +41,9 @@ const href = contactLink(message);
         Want this done for you instead?
       </h2>
       <p class="mt-2 max-w-prose text-sm leading-relaxed text-ink-600">
-        You've seen the steps. If your time's worth more than the setup
-        {timeMinutes ? ` (~${timeMinutes} min)` : ''}, I'll build it for you and hand it over ready to
-        use, and point you back to the free DIY route any time you'd rather run it yourself.
+        You've seen the steps. If your time's worth more than the setup, I'll build it for you and
+        hand it over ready to use, and point you back to the free DIY route any time you'd rather run
+        it yourself.
       </p>
       <div class="mt-5 flex flex-wrap items-center gap-x-4 gap-y-3">
         <a

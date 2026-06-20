@@ -26,8 +26,6 @@ const isFree = d.tools.every((t) => t.pricing !== 'paid');
       <div class="mb-2 flex flex-wrap items-center gap-x-2.5 gap-y-1.5 font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-ink-400">
         <Badge badge={d.badge} />
         <span>{d.difficulty}</span>
-        <span class="text-ink-300">/</span>
-        <span>⏱ {d.timeMinutes}min</span>
         {isFree && <span class="rounded-full border border-volt-400/40 bg-volt-400/10 px-2 py-0.5 text-volt-500">Free tools</span>}
       </div>
       <h3 class="font-display text-[1.2rem] font-semibold leading-snug tracking-[-0.01em] text-ink-900">

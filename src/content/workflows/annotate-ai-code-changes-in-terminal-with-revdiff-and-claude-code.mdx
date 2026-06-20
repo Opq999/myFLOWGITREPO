@@ -12,8 +12,8 @@ tools:
     pricing: "free"
     affiliateUrl: ""
   - name: "Claude Code"
-    url: "https://claude.ai"
-    pricing: "freemium"
+    url: "https://code.claude.com"
+    pricing: "paid"
     affiliateUrl: ""
 source:
   url: "https://news.ycombinator.com/item?id=47742437"
@@ -22,7 +22,7 @@ source:
   postedAt: 2026-04-12
 score: 7
 ingestedAt: 2026-06-16
-nigeriaNotes: "Both tools are free to use. Claude Code has a generous free tier. Revdiff is a command-line tool, so data usage is minimal and suitable for mobile-first users with limited data."
+nigeriaNotes: "Revdiff is free and open-source. Claude Code needs a paid Claude plan or API credits (card payment). Both are command-line tools, so data usage is minimal and suitable for mobile-first users with limited data."
 nigeriaUseCases:
   - persona: "student"
     scenario: "Review AI-generated Python code for your CSC401 e-commerce project, using Revdiff in the terminal to correct logic errors or add specific features before submitting your assignment."
@@ -39,7 +39,7 @@ You will learn how to use Revdiff, a terminal-based tool, to review and annotate
 
 ## Tools you need
 *   **Revdiff** (free): A terminal UI (TUI) diff viewer designed for reviewing AI-generated code and plans with inline annotations.
-*   **Claude Code** (freemium): An AI coding assistant that runs within your terminal, which Revdiff integrates with for seamless annotation feedback.
+*   **Claude Code** (paid): An AI coding assistant that runs within your terminal, which Revdiff integrates with for seamless annotation feedback.
 
 ## Steps
 1.  **Install Revdiff**: Follow the installation instructions provided in the Revdiff GitHub repository to set up the tool on your system. The author does not specify exact installation commands, so refer to the project's README for the most current method.
@@ -67,6 +67,6 @@ You will learn how to use Revdiff, a terminal-based tool, to review and annotate
 This workflow is based on a Show HN post on Hacker News by user bumpa, who developed Revdiff as a solution to review AI-generated code changes and plans directly within their terminal session, integrating seamlessly with AI agents like Claude Code.
 
 ## Notes & variations
-*   **Free Tier Viability**: Both Revdiff and Claude Code are free, making this workflow accessible. Claude Code's free tier is generally sufficient for many tasks.
+*   **Cost**: Revdiff is free and open-source. Claude Code requires a paid Claude plan or API credits, so factor that in before starting.
 *   **Common Pitfall**: Ensure Revdiff is correctly installed and configured to integrate with your Claude Code session. Incorrect setup might prevent annotations from being sent back to the agent.
 *   **Tip for Better Results**: Clearly articulate your feedback in the annotations. Instead of just saying "change this," explain *why* it needs to change or *what* you expect the change to achieve for more effective AI revisions.

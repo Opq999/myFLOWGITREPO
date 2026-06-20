@@ -29,11 +29,11 @@ tools:
     affiliateUrl: ""
   - name: "OpenAI"
     url: "https://openai.com"
-    pricing: "freemium"
+    pricing: "paid"
     affiliateUrl: ""
   - name: "Anthropic"
-    url: "https://claude.ai"
-    pricing: "freemium"
+    url: "https://www.anthropic.com/api"
+    pricing: "paid"
     affiliateUrl: ""
   - name: "Gemini"
     url: "https://gemini.google.com"
@@ -138,6 +138,6 @@ You'll get automatically generated, contextual Git commit messages that accurate
 This workflow is based on Git Auto Commit (GAC), a command-line tool developed by merge-conflict and shared on Hackernews. The author created GAC to help developers save time by automating the generation of contextual Git commit messages using Large Language Models.
 
 ## Notes & variations
-*   **Free-tier alternatives**: For completely free usage, consider setting up local LLMs with **Ollama** (https://ollama.com) or **LM Studio** (https://lmstudio.ai). These run models directly on your computer, avoiding API costs, but require a powerful device and a significant initial download for the models. Many cloud LLM providers like OpenAI, Anthropic, and Gemini also offer free tiers or credits for new users. GAC supports 14 providers, including local options and cloud services like OpenAI, Anthropic, Gemini, OpenRouter, Groq, Cerebras, Chutes, Fireworks, StreamLake, Synthetic, Together AI, and Z.ai.
+*   **Free-tier alternatives**: For completely free usage, consider setting up local LLMs with **Ollama** (https://ollama.com) or **LM Studio** (https://lmstudio.ai). These run models directly on your computer, avoiding API costs, but require a powerful device and a significant initial download for the models. Some cloud providers like Gemini, Groq, and OpenRouter offer free tiers; OpenAI and Anthropic are pay-as-you-go and require API credits (card payment). GAC supports 14 providers, including local options and cloud services like OpenAI, Anthropic, Gemini, OpenRouter, Groq, Cerebras, Chutes, Fireworks, StreamLake, Synthetic, Together AI, and Z.ai.
 *   **Common mistake**: A frequent pitfall is forgetting to review the AI-generated commit message. While GAC is powerful, always double-check the message for accuracy and clarity before confirming the commit. An incorrect or vague commit message can hinder future debugging and collaboration.
 *   **Tip for better results**: When rerolling a commit message, provide specific feedback. Instead of just `r`, try `r "emphasize the performance improvements"` or `r "make it clear this is a hotfix"`. This guides the LLM to generate a more tailored and useful message.

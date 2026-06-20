@@ -41,8 +41,6 @@ const isFree = d.tools.every((t) => t.pricing !== 'paid');
         <Badge badge={d.badge} />
         <span>{d.difficulty}</span>
         <span class="text-ink-300">/</span>
-        <span>⏱ {d.timeMinutes} min</span>
-        <span class="text-ink-300">/</span>
         <a href={`/categories/${d.category}/`} class="hover:underline" style="color: var(--cat)">
           {category.emoji} {category.label}
         </a>
@@ -67,7 +65,7 @@ const isFree = d.tools.every((t) => t.pricing !== 'paid');
         <div class="workflow-body mt-8">
           <Content />
         </div>
-        <HireCta variant="inline" workflowTitle={d.title} timeMinutes={d.timeMinutes} />
+        <HireCta variant="inline" workflowTitle={d.title} />
       </div>
 
       <aside class="mt-10 space-y-5 lg:sticky lg:top-20 lg:mt-8">
@@ -76,7 +74,7 @@ const isFree = d.tools.every((t) => t.pricing !== 'paid');
           <p class="mb-3 font-display text-lg font-semibold text-ink-900">Someone needs this workflow.</p>
           <ShareButtons title={d.title} url={pageUrl} />
         </div>
-        <HireCta variant="sidebar" workflowTitle={d.title} timeMinutes={d.timeMinutes} />
+        <HireCta variant="sidebar" workflowTitle={d.title} />
       </aside>
     </div>
   </article>

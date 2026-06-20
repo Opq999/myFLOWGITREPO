@@ -13,11 +13,11 @@ tools:
     affiliateUrl: ""
   - name: "Claude"
     url: "https://claude.ai"
-    pricing: "freemium"
+    pricing: "paid"
     affiliateUrl: ""
   - name: "OpenAI"
     url: "https://openai.com"
-    pricing: "freemium"
+    pricing: "paid"
     affiliateUrl: ""
   - name: "Gemini"
     url: "https://gemini.google.com"
@@ -30,7 +30,7 @@ source:
   postedAt: 2026-06-16
 score: 7
 ingestedAt: 2026-06-17
-nigeriaNotes: "The ppt-master tool is free and open-source. Free tiers of AI models like Claude, OpenAI, and Gemini can be used, though API costs might apply for extensive use. Data usage is minimal, primarily text-based for prompts and document content."
+nigeriaNotes: "The ppt-master tool is free and open-source, but it needs a model API key. OpenAI and Claude are pay-as-you-go (API credits, card payment required); Gemini offers a free API tier. Data usage is minimal, primarily text-based for prompts and document content."
 nigeriaUseCases:
   - persona: "student"
     scenario: "Turn your 50-page research paper draft into a 15-slide PowerPoint presentation for your seminar."
@@ -47,7 +47,7 @@ You will generate a real, editable PowerPoint (.pptx) file from any document usi
 
 ## Tools you need
 *   **ppt-master** (free) - A Python-based tool that uses AI to convert documents into editable PowerPoint presentations.
-*   **Claude**, **OpenAI**, or **Gemini** (freemium) - Large Language Models (LLMs) that will process your document and generate presentation content.
+*   **Claude**, **OpenAI**, or **Gemini** (API access) - Large Language Models that process your document and generate presentation content. OpenAI and Claude require paid API credits; Gemini has a free tier.
 *   **Python** (free) - A programming language required to run the ppt-master tool.
 *   **PowerPoint** (paid/free viewer) - Software to open, view, and edit the generated .pptx file.
 
@@ -78,6 +78,6 @@ You will generate a real, editable PowerPoint (.pptx) file from any document usi
 This workflow is based on the `ppt-master` project by Hugo He, available on GitHub. The project aims to leverage AI to create editable PowerPoint presentations directly from various documents, offering features like native shapes, animations, and speaker notes.
 
 ## Notes & variations
-*   **Free Tier Viability**: This workflow is highly viable on free tiers. The `ppt-master` tool itself is open-source. Free tiers of AI models like Claude, OpenAI, and Gemini can be used, though be mindful of usage limits. For extensive use, consider sponsored API relay services mentioned in the project's README.
+*   **Cost**: The `ppt-master` tool itself is free and open-source, but it needs a model API key. Gemini has a free API tier; OpenAI and Claude are pay-as-you-go and require API credits. For extensive use, consider the sponsored API relay services mentioned in the project's README.
 *   **Common Pitfall**: Expecting a perfect, finished presentation immediately. The tool automates the heavy lifting, but manual refinement in PowerPoint is always necessary. The quality of the output depends on the complexity of your document and the AI model's capabilities.
 *   **Tip for Better Results**: Provide a well-structured and clear input document. The AI will perform better when it has distinct sections, headings, and clear points to extract. Experiment with different AI models (Claude, OpenAI, Gemini) to see which yields the best results for your specific document type.
