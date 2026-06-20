@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import type { Candidate, ScoreResult } from '../types';
-import { escapeMdxBody, serializeUseCases, toMdx, validateDraft } from './mdx';
+import { escapeMdxBody, findMdxCompileError, serializeUseCases, toMdx, validateDraft } from './mdx';
 
 const candidate: Candidate = {
   title: 'How I do invoices with AI',
@@ -147,5 +147,18 @@ describe('escapeMdxBody', () => {
 
   it('does not escape comparisons / less-than between spaces', () => {
     expect(escapeMdxBody('use a < b in math')).toBe('use a < b in math');
+  });
+});
+
+describe('findMdxCompileError', () => {
+  it('returns null for a body that compiles cleanly', async () => {
+    const { workflow, body } = validateDraft(goodDraft, candidate, score);
+    const mdx = toMdx(workflow, body);
+    expect(await findMdxCompileError(mdx)).toBeNull();
+  });
+
+  it('flags a body that would crash the build (unclosed JSX)', async () => {
+    const mdx = '---\ntitle: "x"\n---\n\n## Broken\n\nDangling element: <div>\n\nno closing tag\n';
+    expect(await findMdxCompileError(mdx)).toBeTruthy();
   });
 });

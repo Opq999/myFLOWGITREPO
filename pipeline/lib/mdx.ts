@@ -101,6 +101,39 @@ export function escapeMdxBody(body: string): string {
     .join('\n');
 }
 
+/** Drops the leading `--- ... ---` YAML frontmatter block from an MDX file string. */
+function stripFrontmatter(mdx: string): string {
+  const m = mdx.match(/^---\r?\n[\s\S]*?\r?\n---\r?\n?/);
+  return m ? mdx.slice(m[0].length) : mdx;
+}
+
+/**
+ * Best-effort guard against the one failure that can take the whole site down:
+ * an LLM body that Astro can't compile. Astro compiles every published body at
+ * build time with @mdx-js/mdx, so we run the same compiler on the body here,
+ * BEFORE publishing, and route a non-compiling draft to drafts/ instead. The
+ * regex escaping above prevents the common cases; this catches the rest
+ * (unbalanced fences, HTML comments, stray JSX) without a full Astro build.
+ *
+ * Returns the compiler's error message on failure, or null when the body is
+ * fine. If the compiler itself can't be loaded, returns null, the checker must
+ * never be what stops the pipeline.
+ */
+export async function findMdxCompileError(mdxFile: string): Promise<string | null> {
+  let compile: (typeof import('@mdx-js/mdx'))['compile'];
+  try {
+    ({ compile } = await import('@mdx-js/mdx'));
+  } catch {
+    return null; // compiler unavailable: don't block publishing on the checker
+  }
+  try {
+    await compile(stripFrontmatter(mdxFile), { development: false });
+    return null;
+  } catch (err) {
+    return err instanceof Error ? err.message : String(err);
+  }
+}
+
 /** Serializes a validated workflow to an MDX file with YAML frontmatter. */
 export function toMdx(w: Workflow, body: string): string {
   const lines = [

@@ -79,6 +79,50 @@ export function getApiKeys(): string[] {
 }
 
 /**
+ * Quota-free liveness probe run once at the start of a pipeline run. Hits the
+ * ListModels endpoint (metadata, not counted against generateContent quota) for
+ * each key so a revoked or mistyped key surfaces immediately with a clear
+ * message, instead of being discovered only after fetch + dedupe + the first
+ * scoring call. Auth rejections (400/401/403) mean a dead key; a 429 or a
+ * network blip is treated as "unknown" so a transient hiccup never blocks a run
+ * whose keys are actually fine.
+ */
+export async function verifyApiKeys(): Promise<{
+  live: number;
+  dead: number;
+  unknown: number;
+  total: number;
+  firstError?: string;
+}> {
+  const keys = getApiKeys();
+  let live = 0;
+  let dead = 0;
+  let unknown = 0;
+  let firstError: string | undefined;
+  for (const key of keys) {
+    try {
+      const res = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models?pageSize=1&key=${key}`,
+        { signal: AbortSignal.timeout(30_000) }
+      );
+      if (res.ok || res.status === 429) {
+        live++;
+      } else if (res.status === 400 || res.status === 401 || res.status === 403) {
+        dead++;
+        if (!firstError) firstError = `HTTP ${res.status}: ${(await res.text()).slice(0, 160)}`;
+      } else {
+        unknown++;
+        if (!firstError) firstError = `HTTP ${res.status}`;
+      }
+    } catch (err) {
+      unknown++;
+      if (!firstError) firstError = err instanceof Error ? err.message : String(err);
+    }
+  }
+  return { live, dead, unknown, total: keys.length, firstError };
+}
+
+/**
  * A 429 is almost always a per-MINUTE limit (free tier is ~10-15 RPM per key),
  * not the daily cap. So we don't retire a (model, key) pair on a 429, we put it
  * on a short cooldown and round-robin to the next key. With several keys, while

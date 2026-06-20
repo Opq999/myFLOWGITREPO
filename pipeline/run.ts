@@ -16,7 +16,8 @@ import { fetchAll } from './fetchers';
 import { dedupe, getExistingTitles, loadSeen, markSeen, saveSeen } from './lib/dedupe';
 import { draftWorkflow } from './lib/draft';
 import { enrichCandidate } from './lib/enrich';
-import { GeminiQuotaError, getApiKeys } from './lib/gemini';
+import { GeminiQuotaError, getApiKeys, verifyApiKeys } from './lib/gemini';
+import { findMdxCompileError } from './lib/mdx';
 import { scoreCandidate } from './lib/score';
 
 /** Obvious non-workflows dropped before scoring, saves Gemini quota. */
@@ -188,6 +189,21 @@ async function main(): Promise<void> {
     process.exit(1);
   }
 
+  // Fail fast on dead keys: a quota-free probe so a revoked/mistyped key is
+  // caught here, not after fetch + dedupe + the first scoring call.
+  const probe = await verifyApiKeys();
+  if (probe.live === 0 && probe.unknown === 0 && probe.dead > 0) {
+    info(
+      `\nAll ${probe.total} Gemini key(s) were rejected as invalid (first error: ${probe.firstError ?? 'unknown'}).\n` +
+        'Check the key value and any API restrictions at https://aistudio.google.com, then update your\n' +
+        '.env or the GEMINI_API_KEY* GitHub secrets. Stopping before scoring so no work is wasted.'
+    );
+    process.exit(1);
+  }
+  if (probe.dead > 0) {
+    info(`[gemini] ${probe.live + probe.unknown}/${probe.total} keys usable; ${probe.dead} rejected and will be skipped.`);
+  }
+
   // Stage 3 + 4, score then draft
   const counts = { scored: 0, published: 0, drafted: 0, discarded: 0, failed: 0 };
   mkdirSync(WORKFLOWS_DIR, { recursive: true });
@@ -216,7 +232,15 @@ async function main(): Promise<void> {
       }
 
       const publishable = score.score >= 7 && !opts.dryRun && counts.published < CAPS.publishPerRun;
-      if (publishable) {
+      // Last line of defense: a body that won't compile would break the whole
+      // build, so it's diverted to drafts rather than published.
+      const mdxError = publishable ? await findMdxCompileError(result.mdx) : null;
+      if (publishable && mdxError) {
+        writeFileSync(uniqueSlugPath(DRAFTS_DIR, result.slug), asUnpublished(result.mdx), 'utf8');
+        counts.drafted++;
+        info(`[draft] MDX would not compile, routed to drafts: ${result.slug}`);
+        logEvent({ stage: 'mdx-invalid', url: candidate.url, slug: result.slug, error: mdxError.slice(0, 300) });
+      } else if (publishable) {
         writeFileSync(uniqueSlugPath(WORKFLOWS_DIR, result.slug), result.mdx, 'utf8');
         counts.published++;
         info(`[publish] ${score.score}/10, ${result.slug}`);
