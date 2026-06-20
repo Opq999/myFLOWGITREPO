@@ -122,20 +122,26 @@ function readWorkflows(): Card[] {
 const cards = readWorkflows();
 mkdirSync(join(ROOT, 'public', 'og'), { recursive: true });
 
+// `--missing` only renders cards that don't exist yet (top up new workflows
+// without rewriting the existing committed PNGs).
+const onlyMissing = process.argv.includes('--missing');
+
 const browser = await chromium.launch({ executablePath: findChromium(), headless: true });
 const page = await browser.newPage({ viewport: { width: 1200, height: 630 }, deviceScaleFactor: 1 });
 
 async function render(html: string, out: string) {
+  if (onlyMissing && existsSync(out)) return false;
   await page.setContent(html, { waitUntil: 'load' });
   await page.evaluate(() => (document as any).fonts.ready);
   await page.screenshot({ path: out, clip: { x: 0, y: 0, width: 1200, height: 630 } });
+  return true;
 }
 
 await render(defaultHtml, join(ROOT, 'public', 'og-default.png'));
-let i = 0;
+let rendered = 0;
 for (const c of cards) {
-  await render(cardHtml(c), join(ROOT, 'public', 'og', `${c.id}.png`));
-  if (++i % 20 === 0) console.log(`  ${i}/${cards.length}`);
+  if (await render(cardHtml(c), join(ROOT, 'public', 'og', `${c.id}.png`))) rendered++;
+  if (rendered && rendered % 20 === 0) console.log(`  ${rendered}`);
 }
 await browser.close();
-console.log(`Rendered default + ${cards.length} workflow cards into public/og/.`);
+console.log(`Rendered ${rendered} card(s)${onlyMissing ? ' (missing only)' : ''} of ${cards.length}.`);
