@@ -21,5 +21,5 @@ export const SITE = {
   /** Twitter/X handle incl. leading '@' (e.g. '@opqai'). Empty ⇒ no twitter:site/creator tags. */
   twitterHandle: '',
   /** Fill with your Cloudflare Web Analytics token to enable analytics. */
-  cloudflareAnalyticsToken: '',
+  cloudflareAnalyticsToken: '050bb38fc66d4caa896908a4ef25fd39',
 };
