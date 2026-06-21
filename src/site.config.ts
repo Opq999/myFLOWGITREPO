@@ -11,7 +11,7 @@ export const SITE = {
   /** Update when the custom domain is connected (keep astro.config.mjs `site` in sync). */
   url: 'https://opqai.pages.dev',
   /** Fill with your Buttondown username to enable the newsletter form. */
-  buttondownUsername: '',
+  buttondownUsername: 'opq',
   /** Fill with your Tally form ID to enable the /submit embed. */
   tallyFormId: '',
   /** WhatsApp number for the "Work with me" CTAs, E.164 digits only (no +), e.g. '2348012345678'. Empty ⇒ CTAs fall back to email. */
