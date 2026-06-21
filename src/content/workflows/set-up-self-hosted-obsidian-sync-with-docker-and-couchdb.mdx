@@ -63,15 +63,15 @@ This approach is ideal for users who prioritize privacy, want to avoid recurring
 2.  **Create Project Directory**: Open your terminal or command prompt, navigate to where you want to store your project, and create a new directory. Then, change into that directory. For example:
 
     ```bash
-mkdir obsidian-sync
-cd obsidian-sync
+    mkdir obsidian-sync
+    cd obsidian-sync
 ```
 
     You should now be inside the `obsidian-sync` directory.
 3.  **Create Docker Compose File**: Inside your project directory, create a file named `docker-compose.yml`. This file will define the services for your CouchDB server.
 
     ```bash
-touch docker-compose.yml
+    touch docker-compose.yml
 ```
 
     You should now have an empty `docker-compose.yml` file in your `obsidian-sync` directory.
@@ -95,7 +95,7 @@ touch docker-compose.yml
 5.  **Start CouchDB Container**: Run the following command in your terminal from within the `obsidian-sync` directory to start the CouchDB service in the background.
 
     ```bash
-docker compose up -d
+    docker compose up -d
 ```
 
     You should see output indicating that the CouchDB container is being created and started. You can verify it's running by checking `docker ps`.

@@ -86,8 +86,8 @@ You will get a secure, isolated virtual machine (VM) environment where you can r
 3.  **Create your project directory**: Open your terminal or command prompt and create a new directory for your project. Navigate into it.
 
     ```bash
-mkdir my-project
-cd my-project
+    mkdir my-project
+    cd my-project
     ```
 
     You should now be inside the `my-project` directory in your terminal.
@@ -95,28 +95,28 @@ cd my-project
 4.  **Create the Vagrantfile**: This file tells Vagrant how to set up your virtual machine. Create a new file named `Vagrantfile` (no file extension) in your `my-project` directory. Open it with a text editor (like Notepad on Windows, TextEdit on macOS, or VS Code) and paste the following content:
 
     ```ruby
-vm_name = File . basename( Dir . getwd)
-Vagrant . configure( 2 ) do | config |
-  config . vm . box = "bento/ubuntu-24.04"
-  #config.vm.network forwarded_port , guest: 3000, host: 3000, auto_correct: true
-  config . vm . synced_folder "." , "/agent-workspace" , type : "virtualbox"
-  config . vm . provider "virtualbox" do | vb |
-    vb . memory = 4096
-    vb . cpus = 2
-    vb . gui = false
-    vb . name = vm_name
-    vb . customize [ "modifyvm" , :id , "--audio" , "none" ]
-    vb . customize [ "modifyvm" , :id , "--usb" , "off" ]
-  end
-  config . vm . provision "shell" , inline : <<-SHELL
-    export DEBIAN_FRONTEND = noninteractive
-    apt - get update
-    apt - get install - y docker . io nodejs npm git unzip
-    npm install - g @anthropic - ai / claude - code -- no - audit
-    usermod - aG docker vagrant
-    chown - R vagrant :vagrant /agent-workspace
-  SHELL
-end
+    vm_name = File . basename( Dir . getwd)
+    Vagrant . configure( 2 ) do | config |
+      config . vm . box = "bento/ubuntu-24.04"
+      #config.vm.network forwarded_port , guest: 3000, host: 3000, auto_correct: true
+      config . vm . synced_folder "." , "/agent-workspace" , type : "virtualbox"
+      config . vm . provider "virtualbox" do | vb |
+        vb . memory = 4096
+        vb . cpus = 2
+        vb . gui = false
+        vb . name = vm_name
+        vb . customize [ "modifyvm" , :id , "--audio" , "none" ]
+        vb . customize [ "modifyvm" , :id , "--usb" , "off" ]
+      end
+      config . vm . provision "shell" , inline : <<-SHELL
+        export DEBIAN_FRONTEND = noninteractive
+        apt - get update
+        apt - get install - y docker . io nodejs npm git unzip
+        npm install - g @anthropic - ai / claude - code -- no - audit
+        usermod - aG docker vagrant
+        chown - R vagrant :vagrant /agent-workspace
+      SHELL
+    end
     ```
 
     This `Vagrantfile` specifies an Ubuntu 24.04 VM, allocates 4GB RAM and 2 CPUs, and sets up a shared folder (`/agent-workspace`) that mirrors your `my-project` directory. It also includes a shell script to install necessary tools like Docker, Node.js, npm, git, and Claude Code itself within the VM.
@@ -126,7 +126,7 @@ end
 5.  **Start the virtual machine**: In your terminal, still within the `my-project` directory, run the `vagrant up` command. This will download the Ubuntu VM image (if you don't have it already), create the VM, and run the provisioning script defined in your `Vagrantfile`.
 
     ```bash
-vagrant up
+    vagrant up
     ```
 
     This step will take some time, especially the first time, as it downloads the VM image and installs all the software. You should see output indicating the VM is booting, software is being installed, and eventually, a message that the machine is up and running.
@@ -134,7 +134,7 @@ vagrant up
 6.  **Connect to the VM**: Once the VM is running, connect to it via SSH using Vagrant.
 
     ```bash
-vagrant ssh
+    vagrant ssh
     ```
 
     Your terminal prompt should change, typically to something like `vagrant@ubuntu-2404:~$`, indicating you are now inside the virtual machine.
@@ -142,8 +142,8 @@ vagrant ssh
 7.  **Run Claude Code dangerously (safely)**: Inside the VM, navigate to the shared workspace and start Claude Code with the `--dangerously-skip-permissions` flag. This flag tells Claude Code to execute commands without asking for confirmation, which is safe because it's contained within the VM.
 
     ```bash
-cd /agent-workspace
-claude-code --dangerously-skip-permissions
+    cd /agent-workspace
+    claude-code --dangerously-skip-permissions
     ```
 
     You should see Claude Code start up, ready to receive your instructions, and it will execute tasks without pausing to ask for permissions.
@@ -151,13 +151,13 @@ claude-code --dangerously-skip-permissions
 8.  **Exit and clean up (optional)**: When you are done, you can exit the Claude Code session by typing `exit` or `Ctrl+C`. Then, exit the VM and optionally destroy it to free up resources.
 
     ```bash
-exit
+    exit
     ```
 
     (You are now back on your host machine's terminal, in the `my-project` directory)
 
     ```bash
-vagrant destroy -f
+    vagrant destroy -f
     ```
 
     You should be back to your host machine's terminal prompt. If you ran `vagrant destroy -f`, the VM will be completely removed, freeing up disk space and memory.

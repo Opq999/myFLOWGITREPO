@@ -55,7 +55,7 @@ You will set up an AI-powered system that monitors public opinion and trends acr
 ## Steps
 1.  **Clone the TrendRadar repository** - Navigate to the GitHub page for TrendRadar and click the 'Code' button to copy the repository URL. Then, open your terminal or command prompt and use the `git clone` command followed by the URL.
     ```bash
-git clone https://github.com/sansan0/TrendRadar.git
+    git clone https://github.com/sansan0/TrendRadar.git
 ```
     You should see the TrendRadar project files downloaded to your local machine.
 
@@ -64,19 +64,19 @@ git clone https://github.com/sansan0/TrendRadar.git
 
 3.  **Navigate to the TrendRadar directory** - In your terminal, change your directory to the newly cloned TrendRadar folder.
     ```bash
-cd TrendRadar
+    cd TrendRadar
 ```
     Your terminal prompt should now show you are inside the TrendRadar directory.
 
 4.  **Build the Docker image** - Use Docker to build the application image. The exact command might vary slightly based on the project's setup, but a common command is:
     ```bash
-docker build -t trendradar .
+    docker build -t trendradar .
 ```
     You should see Docker compiling the image, which may take a few minutes. Look for a message indicating the build was successful.
 
 5.  **Start the TrendRadar service** - Run the Docker container to start the TrendRadar application. The `docker run` command will start the service.
     ```bash
-docker run -d --name trendradar_container trendradar
+    docker run -d --name trendradar_container trendradar
 ```
     You should see a container ID printed, and the application will start running in the background.
 

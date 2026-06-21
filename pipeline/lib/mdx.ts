@@ -101,6 +101,52 @@ export function escapeMdxBody(body: string): string {
     .join('\n');
 }
 
+/**
+ * Gemini sometimes emits a fenced code block that is *meant* to sit inside a
+ * numbered step: it indents the ``` fences to the list level but leaves the code
+ * itself at column 0. That still compiles, so `findMdxCompileError` waves it
+ * through, but it renders disastrously: the unindented lines break out of the
+ * list item, so the code box shows up empty, the code leaks out as plain
+ * paragraphs, and the step numbering restarts mid-list.
+ *
+ * This shifts the body of any such block right to match its opening fence
+ * (relative indentation inside the block is preserved, so nested structure like
+ * JSON survives). Blocks that are already correctly indented, and top-level
+ * column-0 fences, are left untouched. A block that itself nests a same-length
+ * ``` fence is left as written: those are too ambiguous to realign mechanically.
+ */
+export function normalizeFenceIndent(body: string): string {
+  const fence = /^(\s*)(```+|~~~+)/;
+  const lines = body.split('\n');
+  const out: string[] = [];
+  let i = 0;
+  while (i < lines.length) {
+    const open = lines[i].match(fence);
+    if (!open) {
+      out.push(lines[i++]);
+      continue;
+    }
+    const indent = open[1].length;
+    const block: string[] = [];
+    let j = i + 1;
+    while (j < lines.length && !fence.test(lines[j])) block.push(lines[j++]);
+    if (j >= lines.length) {
+      // unterminated fence: don't touch anything past it
+      out.push(lines[i++]);
+      continue;
+    }
+    const escaped =
+      indent > 0 &&
+      block.some((l) => l.trim() !== '' && /^\s*/.exec(l)![0].length < indent);
+    const pad = ' '.repeat(indent);
+    out.push(lines[i]); // opening fence, unchanged
+    for (const l of block) out.push(escaped && l.trim() !== '' ? pad + l : l);
+    out.push(lines[j]); // closing fence, unchanged
+    i = j + 1;
+  }
+  return out.join('\n');
+}
+
 /** Drops the leading `--- ... ---` YAML frontmatter block from an MDX file string. */
 function stripFrontmatter(mdx: string): string {
   const m = mdx.match(/^---\r?\n[\s\S]*?\r?\n---\r?\n?/);
@@ -165,7 +211,7 @@ export function toMdx(w: Workflow, body: string): string {
     `published: ${w.published}`,
     '---',
     '',
-    escapeMdxBody(body).trim(),
+    escapeMdxBody(normalizeFenceIndent(body)).trim(),
     '',
   ];
   return lines.join('\n');

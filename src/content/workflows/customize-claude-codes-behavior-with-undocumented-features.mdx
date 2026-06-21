@@ -56,7 +56,7 @@ This approach leverages insights from Claude Code's source code, revealing inter
     *What to do*: Open your terminal or command prompt and type:
 
     ```bash
-mkdir -p ~/.claude/hooks/
+    mkdir -p ~/.claude/hooks/
     ```
 
     *What you should see*: A new directory named `hooks` will be created inside your personal Claude Code configuration folder (`.claude`). The `-p` flag ensures that parent directories are created if they don't already exist.
@@ -66,15 +66,15 @@ mkdir -p ~/.claude/hooks/
     *What to do*: Open a text editor (like VS Code, Notepad, or Nano in the terminal), paste the following script, and save it as `~/.claude/hooks/dry-run-pushes.sh`:
 
     ```bash
-#!/bin/bash
-INPUT=$(jq -r '.tool_input.command' /dev/stdin)
-
-if echo "$INPUT" | grep -q 'git push'; then
-    jq -n --arg cmd "$INPUT" '{ updatedInput: { command: ($cmd + " --dry-run") } }'
-else
-    # If not a git push command, pass the original input through
-    jq -n --arg cmd "$INPUT" '{ updatedInput: { command: $cmd } }'
-fi
+    #!/bin/bash
+    INPUT=$(jq -r '.tool_input.command' /dev/stdin)
+    
+    if echo "$INPUT" | grep -q 'git push'; then
+        jq -n --arg cmd "$INPUT" '{ updatedInput: { command: ($cmd + " --dry-run") } }'
+    else
+        # If not a git push command, pass the original input through
+        jq -n --arg cmd "$INPUT" '{ updatedInput: { command: $cmd } }'
+    fi
     ```
 
     *What you should see*: A new file named `dry-run-pushes.sh` containing the script in your `~/.claude/hooks/` directory.
@@ -84,7 +84,7 @@ fi
     *What to do*: In your terminal, type:
 
     ```bash
-chmod +x ~/.claude/hooks/dry-run-pushes.sh
+    chmod +x ~/.claude/hooks/dry-run-pushes.sh
     ```
 
     *What you should see*: No output if successful. The script now has the necessary permissions to be run by Claude Code.
@@ -94,21 +94,21 @@ chmod +x ~/.claude/hooks/dry-run-pushes.sh
     *What to do*: Open or create the file `~/.claude/settings.json` in your text editor. Add the following JSON snippet. If the file already exists, merge this `hooks` section into your existing configuration:
 
     ```json
-{
-  "hooks": {
-    "PreToolUse": [
-      {
-        "matcher": "Bash",
-        "hooks": [
+    {
+      "hooks": {
+        "PreToolUse": [
           {
-            "type": "command",
-            "command": "~/.claude/hooks/dry-run-pushes.sh"
+            "matcher": "Bash",
+            "hooks": [
+              {
+                "type": "command",
+                "command": "~/.claude/hooks/dry-run-pushes.sh"
+              }
+            ]
           }
         ]
       }
-    ]
-  }
-}
+    }
     ```
 
     *What you should see*: Your `settings.json` file updated with the `hooks` definition, instructing Claude Code to run your script before any Bash tool command.

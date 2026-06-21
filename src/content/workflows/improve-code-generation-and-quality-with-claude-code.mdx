@@ -44,62 +44,62 @@ By following these steps, you will learn to guide an AI coding agent to produce 
 
 2.  **Provide Development Guidelines**: Paste the following comprehensive development guidelines into the chat. These guidelines, adapted from the author's personal "global" agent guide, establish a consistent approach for Claude to follow.
 
-    ```
-Here are my development guidelines. Please read them carefully and confirm you understand them and will adhere to them for all future coding tasks in this conversation:
+    ````
+    Here are my development guidelines. Please read them carefully and confirm you understand them and will adhere to them for all future coding tasks in this conversation:
 
-# Development Guidelines
-## Philosophy
-### Core Beliefs
-- **Incremental progress over big bangs**
-- Small changes that compile and pass tests
-- **Learning from existing code**
-- Study and plan before implementing
-- **Pragmatic over dogmatic**
-- Adapt to project reality
-- **Clear intent over clever code**
-- Be boring and obvious
-### Simplicity Means
-- Single responsibility per function/class
-- Avoid premature abstractions
-- No clever tricks - choose the boring solution
-- If you need to explain it, it's too complex
-## Process
-### 1. Planning Staging
-Break complex work into 3-5 stages. Document in `IMPLEMENTATION_PLAN.md`:
-```markdown
-## Stage N: [Name]
-**Goal**: [Specific deliverable]
-**Success Criteria**: [Testable outcomes]
-**Tests**: [Specific test cases]
-**Status**: [Not Started|In Progress|Complete]
-```
-- Update status as you progress
-- Remove file when all stages are done
-### 2. Implementation Flow
-1. **Understand** - Study existing patterns in codebase
-2. **Test** - Write test first (red)
-3. **Implement** - Minimal code to pass (green)
-4. **Refactor** - Clean up with tests passing
-5. **Commit** - With clear message linking to plan
-### 3. When Stuck (After 3 Attempts)
-**CRITICAL**: Maximum 3 attempts per issue, then STOP.
-1. **Document what failed**:
-- What you tried
-- Specific error messages
-- Why you think it failed
-2. **Research alternatives**:
-- Find 2-3 similar implementations
-- Note different approaches used
-3. **Question fundamentals**:
-- Is this the right abstraction?
+    # Development Guidelines
+    ## Philosophy
+    ### Core Beliefs
+    - **Incremental progress over big bangs**
+    - Small changes that compile and pass tests
+    - **Learning from existing code**
+    - Study and plan before implementing
+    - **Pragmatic over dogmatic**
+    - Adapt to project reality
+    - **Clear intent over clever code**
+    - Be boring and obvious
+    ### Simplicity Means
+    - Single responsibility per function/class
+    - Avoid premature abstractions
+    - No clever tricks - choose the boring solution
+    - If you need to explain it, it's too complex
+    ## Process
+    ### 1. Planning Staging
+    Break complex work into 3-5 stages. Document in `IMPLEMENTATION_PLAN.md`:
+    ```markdown
+    ## Stage N: [Name]
+    **Goal**: [Specific deliverable]
+    **Success Criteria**: [Testable outcomes]
+    **Tests**: [Specific test cases]
+    **Status**: [Not Started|In Progress|Complete]
     ```
+    - Update status as you progress
+    - Remove file when all stages are done
+    ### 2. Implementation Flow
+    1. **Understand** - Study existing patterns in codebase
+    2. **Test** - Write test first (red)
+    3. **Implement** - Minimal code to pass (green)
+    4. **Refactor** - Clean up with tests passing
+    5. **Commit** - With clear message linking to plan
+    ### 3. When Stuck (After 3 Attempts)
+    **CRITICAL**: Maximum 3 attempts per issue, then STOP.
+    1. **Document what failed**:
+    - What you tried
+    - Specific error messages
+    - Why you think it failed
+    2. **Research alternatives**:
+    - Find 2-3 similar implementations
+    - Note different approaches used
+    3. **Question fundamentals**:
+    - Is this the right abstraction?
+    ````
 
     Claude will confirm it has received the guidelines and understands them. This establishes a "personality" for the AI agent.
 
 3.  **Define the Project Specification**: Clearly describe the program you want Claude to create. A detailed specification helps the AI understand your exact requirements.
 
     ```
-I need you to develop a [type of program, e.g., Python script, web component] that [describe the core functionality clearly and concisely]. Be as specific as possible about inputs, outputs, and desired behavior.
+    I need you to develop a [type of program, e.g., Python script, web component] that [describe the core functionality clearly and concisely]. Be as specific as possible about inputs, outputs, and desired behavior.
     ```
 
     Claude should ask clarifying questions or outline an initial approach based on your specification.
@@ -107,7 +107,7 @@ I need you to develop a [type of program, e.g., Python script, web component] th
 4.  **Outline Project Structure and Tools**: Provide details about how the project should be organized and any specific development tools you'll be using.
 
     ```
-The project structure should follow these guidelines: [describe folder structure, naming conventions]. We will be using [mention specific tools like build systems, linters, testing frameworks]. Here's how to run them: [provide commands or instructions].
+    The project structure should follow these guidelines: [describe folder structure, naming conventions]. We will be using [mention specific tools like build systems, linters, testing frameworks]. Here's how to run them: [provide commands or instructions].
     ```
 
     Claude should acknowledge the structure and tools, perhaps suggesting how it will integrate them into its development process.
@@ -115,7 +115,7 @@ The project structure should follow these guidelines: [describe folder structure
 5.  **Generate the Code**: Instruct Claude to begin writing the code, referencing the previously provided specification and guidelines.
 
     ```
-Based on the specification and project structure, please begin implementing the code. Start with [mention a specific component or stage, e.g., the first stage of the IMPLEMENTATION_PLAN.md].
+    Based on the specification and project structure, please begin implementing the code. Start with [mention a specific component or stage, e.g., the first stage of the IMPLEMENTATION_PLAN.md].
     ```
 
     Claude will start generating code, potentially asking for further clarification or presenting its initial implementation plan.
@@ -123,7 +123,7 @@ Based on the specification and project structure, please begin implementing the 
 6.  **Request a Code Review**: Ask Claude to review its own generated code. This leverages the AI's ability to identify potential issues against the established guidelines.
 
     ```
-Please perform a code review on the code you just generated. Identify any potential bugs, inefficiencies, or areas for improvement based on our development guidelines.
+    Please perform a code review on the code you just generated. Identify any potential bugs, inefficiencies, or areas for improvement based on our development guidelines.
     ```
 
     Claude will provide feedback, suggestions for improvement, or refactored code based on its review.

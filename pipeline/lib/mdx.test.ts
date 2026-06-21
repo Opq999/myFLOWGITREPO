@@ -1,6 +1,13 @@
 import { describe, expect, it } from 'vitest';
 import type { Candidate, ScoreResult } from '../types';
-import { escapeMdxBody, findMdxCompileError, serializeUseCases, toMdx, validateDraft } from './mdx';
+import {
+  escapeMdxBody,
+  findMdxCompileError,
+  normalizeFenceIndent,
+  serializeUseCases,
+  toMdx,
+  validateDraft,
+} from './mdx';
 
 const candidate: Candidate = {
   title: 'How I do invoices with AI',
@@ -147,6 +154,37 @@ describe('escapeMdxBody', () => {
 
   it('does not escape comparisons / less-than between spaces', () => {
     expect(escapeMdxBody('use a < b in math')).toBe('use a < b in math');
+  });
+});
+
+describe('normalizeFenceIndent', () => {
+  it('re-indents code that escaped to column 0 inside a list step', () => {
+    const body = '1.  **Run it**:\n\n    ```\nnpm install\n    ```\n';
+    expect(normalizeFenceIndent(body)).toBe(
+      '1.  **Run it**:\n\n    ```\n    npm install\n    ```\n'
+    );
+  });
+
+  it('preserves relative indentation inside the block (e.g. JSON)', () => {
+    const body = '1.  **Config**:\n\n    ```json\n{\n  "a": 1\n}\n    ```\n';
+    expect(normalizeFenceIndent(body)).toBe(
+      '1.  **Config**:\n\n    ```json\n    {\n      "a": 1\n    }\n    ```\n'
+    );
+  });
+
+  it('leaves already-correct indented blocks untouched', () => {
+    const body = '1.  **Run it**:\n\n    ```\n    npm install\n    ```\n';
+    expect(normalizeFenceIndent(body)).toBe(body);
+  });
+
+  it('leaves top-level (column-0) fences untouched', () => {
+    const body = '```bash\nnpm install\n```\n';
+    expect(normalizeFenceIndent(body)).toBe(body);
+  });
+
+  it('does not pad blank lines inside the block', () => {
+    const body = '1.  x:\n\n    ```\na\n\nb\n    ```\n';
+    expect(normalizeFenceIndent(body)).toBe('1.  x:\n\n    ```\n    a\n\n    b\n    ```\n');
   });
 });
 
