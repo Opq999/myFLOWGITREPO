@@ -1,0 +1,119 @@
+---
+title: "Continue AI Coding with Local Models When Claude Code Quota Runs Out"
+description: "Learn to switch from Claude Code to local open-source models using LM Studio when your cloud LLM quota is exhausted. Maintain your coding flow without interruption."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 45
+jobToBeDone: "Continue AI coding when cloud LLM quotas are exhausted by switching to local models"
+tools:
+  - name: "Claude Code"
+    url: "https://code.claude.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "LM Studio"
+    url: "https://lmstudio.ai"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Llama.CPP"
+    url: "https://github.com/ggerganov/llama.cpp"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Ollama"
+    url: "https://ollama.com"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=46845845"
+  platform: "hackernews"
+  author: "fugu2"
+  postedAt: 2026-02-01
+score: 9
+ingestedAt: 2026-06-21
+nigeriaNotes: "This workflow relies on local models (LM Studio, Llama.CPP, Ollama) which are free to use after initial download. Model downloads can be large (several GBs), requiring significant data and storage. Claude Code itself is a paid service, but this workflow helps you bypass its quota limits by using free local alternatives."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "Continue coding assignments using a local AI model when Claude Code quota runs out, avoiding data costs."
+  - persona: "employee"
+    scenario: "Keep writing code for work projects without interruption by switching to a local AI model after hitting cloud LLM limits."
+  - persona: "entrepreneur"
+    scenario: "Develop product features using a local AI coder when paid cloud services exceed budget or quota."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+This workflow shows you how to continue using AI for coding even after you've hit your daily or weekly quota limits on cloud-based LLMs like Claude Code. By switching to a local open-source model, you can keep working without interruption, saving on cloud costs and making the most of your machine's capabilities.
+
+## Tools you need
+*   **Claude Code** (paid): The AI coding client you'll be using, which normally connects to Anthropic's cloud models.
+*   **LM Studio** (free): A user-friendly desktop application for finding, downloading, and running open-source large language models (LLMs) locally on your computer.
+*   **Llama.CPP** (free): An open-source project that allows you to run LLMs locally, often used as a backend for tools like LM Studio. It's an alternative if you prefer not to use LM Studio.
+*   **Ollama** (free): Another free, open-source tool for running large language models locally, mentioned as an alternative in the original discussion.
+
+## Steps
+
+1.  **Monitor your Claude Code quota**: Before you run out, you can check your current usage within Claude Code.
+
+    Type the following command in your Claude Code terminal:
+
+    ```
+    /usage
+    ```
+
+    You should see a report of your current quota usage, helping you anticipate when you might hit your limit.
+
+2.  **Install and run LM Studio**: Download the LM Studio application for your operating system (Windows, macOS, Linux) from its official website and install it. Once installed, launch the application.
+
+    You should see the LM Studio interface, ready for you to search for models.
+
+3.  **Find and download a local model**: In LM Studio, use the model search feature to find an open-source LLM suitable for coding. The author recommends models like GLM-4.7-Flash from Z.AI or Qwen3-Coder-Next (or later versions like Qwen3.6-27B and Gemma 4).
+
+    *   **Tip**: To save disk space and GPU memory, look for "quantized" versions of models. These are smaller and run quicker, though they might have a slight quality reduction.
+
+    Select a model and click the download button. You should see the model downloading, and once complete, it will be available in your local library.
+
+4.  **Start the LM Studio server**: Open a new terminal session on your computer (e.g., Command Prompt on Windows, Terminal on macOS/Linux). Navigate to the directory where LM Studio is installed if necessary, or ensure `lms` is in your system's PATH. Then, start the local server:
+
+    ```
+    lms server start --port 1234
+    ```
+
+    You should see messages indicating that the LM Studio server has started and is listening on port 1234.
+
+5.  **Configure Claude Code environment variables**: In the *same terminal session* where you started the LM Studio server, set environment variables that tell Claude Code to connect to your local server instead of Anthropic's cloud service. These variables redirect Claude Code's API calls.
+
+    ```
+    export ANTHROPIC_BASE_URL=http://localhost:1234
+    export ANTHROPIC_AUTH_TOKEN=lmstudio
+    ```
+
+    (Note: On Windows, you might use `set ANTHROPIC_BASE_URL=http://localhost:1234` instead of `export`.)
+
+    There won't be a visible output, but these variables are now set for this terminal session.
+
+6.  **Start Claude Code pointing to your local server**: In the *same terminal session* where you set the environment variables, launch Claude Code. The `--model` argument here is a placeholder as the actual model is served by LM Studio.
+
+    ```
+    claude --model openai/gpt-oss-20b
+    ```
+
+    Claude Code should launch, now configured to use the local LLM server provided by LM Studio. You might notice a difference in speed or performance compared to the cloud version.
+
+7.  **Confirm or switch models**: To verify which model Claude Code is currently using, or to switch back to the cloud model (once your quota resets), use the `/model` command.
+
+    Type the following command in your Claude Code terminal:
+
+    ```
+    /model
+    ```
+
+    You should see information about the currently active model, allowing you to confirm you're using your local setup or to switch back to the default Claude service.
+
+## Original source
+This workflow is based on a blog post by Tim Plaisted, shared by fugu2 on Hacker News. The original post details how to connect Claude Code to local open-source models when cloud quotas are exhausted, providing a practical solution for continuous AI-assisted coding.
+
+## Notes & variations
+*   **Free-tier alternatives**: Instead of LM Studio, you can connect Claude Code directly to **Llama.CPP** if you prefer a more direct setup, though LM Studio is generally quicker for beginners. Another excellent free alternative for running local models is **Ollama**, which is often simpler to set up, especially on macOS.
+*   **Common mistake**: Do not expect the same speed or code quality from local open-source models as you would from powerful cloud-based LLMs like Anthropic's Claude. Local models, especially smaller or quantized versions, will likely be slower and may produce less refined code. Adjust your expectations accordingly.
+*   **Tip for better results**: The "best" open-source model changes frequently. Regularly check communities and forums (like Hugging Face or Reddit's r/LocalLLaMA) for the latest recommendations on coding-specific models that perform well on local hardware. Experiment with different models and quantized versions to find what works best for your machine and tasks.

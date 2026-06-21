@@ -1,0 +1,108 @@
+---
+title: "Define Requirements First for Better AI Code Generation with Cursor"
+description: "Learn to guide AI code generation by first creating a detailed requirements specification. This workflow helps prevent wasted effort and ensures the AI builds exactly what you need."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 15
+jobToBeDone: "Improve AI-assisted code generation by defining requirements first"
+tools:
+  - name: "Cursor"
+    url: "https://cursor.sh"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=44437682"
+  platform: "hackernews"
+  author: "marviel"
+  postedAt: 2025-07-01
+score: 6
+ingestedAt: 2026-06-21
+nigeriaNotes: "This workflow primarily uses a freemium AI IDE, making it accessible. Data usage is minimal, mainly text-based interactions, which is light on mobile data."
+tiktokUrl: ""
+published: false
+---
+
+## What you'll get
+You will get a clear, user-approved requirements document (a "Spec") before any code is written. This ensures the AI understands exactly what you need, leading to more accurate and useful code generation. This approach works by preventing the AI from generating irrelevant or incorrect code, saving hours of rework and confusion.
+
+## Tools you need
+*   **Cursor** (freemium): An AI-first Integrated Development Environment (IDE) that integrates AI capabilities directly into your coding workflow.
+
+## Steps
+
+1.  **Copy the workflow rules**: Open your Cursor settings (or the settings for your AI IDE of choice) and paste the entire block of instructions below into the AI configuration area. These instructions guide the AI on how to approach new coding tasks.
+
+    ```
+    ## Development Workflow: Spec → Code
+    THESE INSTRUCTIONS ARE CRITICAL! They dramatically improve the quality of the work you create.
+
+    ### Phase 1: Requirements First
+    When asked to implement any feature or make changes, ALWAYS start by asking:
+    Should I create a Spec for this task first?
+    IFF user agrees:
+    - Create a markdown file in `.cursor/scopes/FeatureName.md`
+    - Interview the user to clarify:
+    - Purpose user problem
+    - Success criteria
+    - Scope constraints
+    - Technical considerations
+    - Out of scope items
+
+    ### Phase 2: Review Refine
+    After drafting the Spec:
+    - Present it to the user
+    - Ask: Does this capture your intent? Any changes needed?
+    - Iterate until user approves
+    - End with: Spec looks good? Type GO! when ready to implement
+
+    ### Phase 3: Implementation
+    ONLY after user types GO! or explicitly approves:
+    - Begin coding based on the Spec
+    - Reference the Spec for decisions
+    - Update Spec if scope changes, but ask user first.
+
+    ### File Organization
+    ```
+    .cursor/
+    ├── scopes/
+    │   ├── FeatureName.md # Shared/committed Specs
+    │   └── .local/ # Git-ignored experimental Specs
+    │       └── Experiment.md
+    ```
+    ** Remember: Think first, ask clarifying questions, _ then _ code. The Spec is your north star. **
+    ```
+
+    You should see the rules saved in your AI IDE's configuration.
+
+2.  **Set rules to "Always Attached"**: After pasting the rules, ensure they are configured to be "Always Attached" or "Always Active" for your AI chats. This setting ensures that the AI applies these instructions to every new conversation.
+
+    You should see a confirmation or indicator that the rules are persistently active.
+
+3.  **Start a new AI chat**: Open a new AI chat window or tab in Cursor and type your initial request for a feature.
+
+    ```
+    Help me add user authentication to my app
+    ```
+
+    The AI should respond by asking if it should create a "Spec" (requirements document) first, as per the rules you just set.
+
+4.  **Follow the AI through Spec creation**: Agree to create the Spec. The AI will then ask clarifying questions, such as "Will users log in with email or username?" or "Do you need password reset functionality?". Answer these questions, refining the Spec until you are satisfied.
+
+    The AI will generate a markdown file (e.g., `.cursor/scopes/FeatureName.md`) outlining the purpose, success criteria, scope, and technical considerations for your feature.
+
+5.  **Authorize code generation**: Once you have reviewed and approved the Spec, give the AI permission to start coding.
+
+    ```
+    GO!
+    ```
+
+    The AI will begin generating code based exactly on the approved Spec, referencing it for all implementation decisions.
+
+## Original source
+This workflow is inspired by Luke Bechtel's blog post, "Vibe Specs: Vibe Coding That Actually Works," which was originally shared on Hacker News by marviel. The core idea is to make AI write requirements before generating code.
+
+## Notes & variations
+*   **Free-tier alternatives**: The core idea of a "Spec first" approach can be applied to any freemium AI chat tool (like ChatGPT, Claude, or Gemini). You would manually paste the "Development Workflow" instructions at the start of each new chat to guide the AI.
+*   **Common mistake**: Rushing the Spec phase. If you don't thoroughly clarify requirements with the AI, you risk the same "wrong implementation" issues you're trying to avoid. Take your time to answer the AI's questions and refine the Spec until it perfectly captures your intent.
+*   **Tip for better results**: Treat the AI as a junior developer. Ask it to explain its reasoning for certain design choices in the Spec, and don't hesitate to challenge or refine its suggestions. The more detailed and precise your Spec, the better the generated code will be.

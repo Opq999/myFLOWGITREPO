@@ -1,0 +1,128 @@
+---
+title: "Customize Claude Code's Behavior with Undocumented Features"
+description: "Learn to customize Claude Code's internal behavior, like modifying commands or setting auto-approval rules, using undocumented features found in its source code."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 45
+jobToBeDone: "Customize Claude Code's behavior using undocumented features, e.g., adding --dry-run to git push"
+tools:
+  - name: "Claude Code"
+    url: "https://code.claude.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "jq"
+    url: "https://jqlang.github.io/jq/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "git"
+    url: "https://git-scm.com/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=48318174"
+  platform: "hackernews"
+  author: "ankitg12"
+  postedAt: 2026-05-29
+score: 8
+ingestedAt: 2026-06-21
+nigeriaNotes: "This workflow uses Claude Code, which is a paid developer tool. While the npm package is free to download, actual usage incurs costs. Data usage is minimal for configuration files and scripts."
+nigeriaUseCases:
+  - persona: "employee"
+    scenario: "Prevent accidental code pushes by adding --dry-run to git push commands executed by Claude Code."
+  - persona: "student"
+    scenario: "Automate adding --dry-run to git push commands for class projects using Claude Code hooks."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to configure advanced, undocumented features within Claude Code, such as rewriting commands before execution or setting up persistent agent memory. This allows for deeper customization and automation of your coding workflows.
+This approach leverages insights from Claude Code's source code, revealing internal fields and settings that are not covered in the official documentation, enabling powerful, real-time behavior modification.
+
+## Tools you need
+*   **Claude Code** (paid): An AI coding assistant that executes commands and interacts with your codebase.
+*   **jq** (free): A lightweight and flexible command-line JSON processor, used here to parse input from Claude Code hooks.
+*   **git** (free): A distributed version control system, used in the example to demonstrate modifying `git push` commands.
+
+## Steps
+1.  **Understand Claude Code's configuration locations**: Claude Code stores its configuration in specific locations. Personal settings are in `~/.claude/`, while project-specific settings (which can be shared via Git) are in `.claude/` within your project root.
+
+    *What to do*: Be aware of these paths for `settings.json`, `skills/`, `agents/`, and `hooks/` directories.
+    *What you should see*: No immediate visual change, but you'll know where to create and modify configuration files.
+
+2.  **Create a hook script directory**: Hooks are custom scripts that Claude Code can run at specific points in its workflow. We'll create a dedicated directory for them.
+
+    *What to do*: Open your terminal or command prompt and type:
+
+    ```bash
+mkdir -p ~/.claude/hooks/
+    ```
+
+    *What you should see*: A new directory named `hooks` will be created inside your personal Claude Code configuration folder (`.claude`). The `-p` flag ensures that parent directories are created if they don't already exist.
+
+3.  **Create the `dry-run-pushes.sh` script**: This script will intercept `git push` commands and add the `--dry-run` flag, preventing actual changes to the remote repository.
+
+    *What to do*: Open a text editor (like VS Code, Notepad, or Nano in the terminal), paste the following script, and save it as `~/.claude/hooks/dry-run-pushes.sh`:
+
+    ```bash
+#!/bin/bash
+INPUT=$(jq -r '.tool_input.command' /dev/stdin)
+
+if echo "$INPUT" | grep -q 'git push'; then
+    jq -n --arg cmd "$INPUT" '{ updatedInput: { command: ($cmd + " --dry-run") } }'
+else
+    # If not a git push command, pass the original input through
+    jq -n --arg cmd "$INPUT" '{ updatedInput: { command: $cmd } }'
+fi
+    ```
+
+    *What you should see*: A new file named `dry-run-pushes.sh` containing the script in your `~/.claude/hooks/` directory.
+
+4.  **Make the script executable**: For Claude Code to run your hook script, it needs to have executable permissions.
+
+    *What to do*: In your terminal, type:
+
+    ```bash
+chmod +x ~/.claude/hooks/dry-run-pushes.sh
+    ```
+
+    *What you should see*: No output if successful. The script now has the necessary permissions to be run by Claude Code.
+
+5.  **Configure Claude Code to use the hook**: You need to tell Claude Code when to run your `dry-run-pushes.sh` script. This is done by adding a `PreToolUse` hook configuration to your `settings.json`.
+
+    *What to do*: Open or create the file `~/.claude/settings.json` in your text editor. Add the following JSON snippet. If the file already exists, merge this `hooks` section into your existing configuration:
+
+    ```json
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/dry-run-pushes.sh"
+          }
+        ]
+      }
+    ]
+  }
+}
+    ```
+
+    *What you should see*: Your `settings.json` file updated with the `hooks` definition, instructing Claude Code to run your script before any Bash tool command.
+
+6.  **Test the hook**: Now, try to perform a `git push` command using Claude Code. The hook should modify it.
+
+    *What to do*: Open Claude Code and instruct it to perform a `git push` operation, for example, by typing `git push origin main` or asking it to push your changes.
+
+    *What you should see*: Claude Code's output or UI should indicate that the `git push` command was executed with the `--dry-run` flag, meaning no actual changes were pushed to the remote repository. This confirms your hook is working as intended.
+
+## Original source
+This workflow is based on insights shared by ankitg12 on Hackernews, who detailed undocumented configuration options for Claude Code after reviewing its source code. The original article, "I Read the Claude Code Source Code," was published on buildingbetter.tech.
+
+## Notes & variations
+*   **Free-tier alternatives**: The specific mechanism of modifying Claude Code's internal behavior via hooks is unique to Claude Code's architecture. For general command modification outside of an AI assistant, you could use shell aliases or functions in your `.bashrc` or `.zshrc` file, but these would not integrate with an AI agent in the same way.
+*   **Common mistake**: Forgetting to make your hook script executable with `chmod +x` is a frequent pitfall. If Claude Code reports an error like "permission denied" when trying to run your hook, check the script's permissions.
+*   **Tip for better results**: Explore other hook types mentioned in the source, such as `SessionStart` or `PostToolUse`, and their respective return fields (e.g., `additionalContext`, `permissionDecision`). These can allow you to inject persistent context into sessions, modify tool outputs, or even programmatically approve/deny operations, offering deeper customization beyond just command rewriting. The source also mentions the "YOLO Classifier" for configuring auto-mode rules in plain English, which could be a powerful area to explore for custom auto-approval logic.

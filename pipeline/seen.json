@@ -4668,8 +4668,332 @@
     "ca9b1073daf61e9fa77ffc2f06265ff75009d79d8c48a7fd7616a832eabfc061": {
       "url": "https://www.bensbites.com/p/bens-builds-3-an-email-app",
       "date": "2026-06-20"
+    },
+    "05f32a68c330b398b9cbfc8240d2fc0378a98e54de1e48a4015f89b06331a6ca": {
+      "url": "https://github.com/sorrycc/awesome-javascript",
+      "date": "2026-06-21"
+    },
+    "a1cf0d9771c9811a09450514bb1679ae0b8e56db0c872dc04ca85d0ff1db1ddf": {
+      "url": "https://news.ycombinator.com/item?id=46902368",
+      "date": "2026-06-21"
+    },
+    "e216fd32da33ddabe4c17a66cc99156590b7491db379ab8c07166020a345d3ef": {
+      "url": "https://newsletter.pragmaticengineer.com/p/the-job-market-in-2026-part-2",
+      "date": "2026-06-21"
+    },
+    "c0d4875dd605f77caf57f78d8bddc9a839734be99e675ce27c3151e4fab59d43": {
+      "url": "https://github.com/penpot/penpot",
+      "date": "2026-06-21"
+    },
+    "2c3b2957058bcbefcf55881f8da0c0d6d81b5b4790e9efb23bd76aadef9ea13d": {
+      "url": "https://news.ycombinator.com/item?id=44596472",
+      "date": "2026-06-21"
+    },
+    "f5f666cf185f081c299bc91c91a63043af71bfb407570543bdb55cd74a417de9": {
+      "url": "https://newsletter.pragmaticengineer.com/p/kubernetes-and-retiring-at-the-top",
+      "date": "2026-06-21"
+    },
+    "8782e21ebeda898af4b784c95ffa978c6904bdd5b8eee54a7a78a39cd697ef1c": {
+      "url": "https://github.com/aaif-goose/goose",
+      "date": "2026-06-21"
+    },
+    "bb3d7a2fa38f94916e2ed949c3e3580d689a296ddc09d14788b8d96c841b8148": {
+      "url": "https://news.ycombinator.com/item?id=46845845",
+      "date": "2026-06-21"
+    },
+    "f3378d0967518f632d53545222f73fb4e528714383eb64161a72d56b0f036d58": {
+      "url": "https://newsletter.pragmaticengineer.com/p/ideas-slow-down-to-speed-up-when",
+      "date": "2026-06-21"
+    },
+    "f1ad73af9bd21cc57b4f2dbb34b52dcb0db42983eda96ce57533e118f08d0fe7": {
+      "url": "https://github.com/tldraw/tldraw",
+      "date": "2026-06-21"
+    },
+    "163903316c75ae3ba90df460aecdaff8cdbe8c78b608ec56ebb5b2291be967ec": {
+      "url": "https://news.ycombinator.com/item?id=44429225",
+      "date": "2026-06-21"
+    },
+    "acef504a4e9b82e7aa5cca46712c203eeb319ccee656702f82164540c1af2584": {
+      "url": "https://newsletter.pragmaticengineer.com/p/the-pulse-a-trend-of-trying-to-cut",
+      "date": "2026-06-21"
+    },
+    "72d897f262273c2f4ae57cc7c9d4a133ba1a78e67d6018ca9a2a9e94fb0d86b8": {
+      "url": "https://github.com/vadimdemedes/ink",
+      "date": "2026-06-21"
+    },
+    "26df1d5443672c20ee2e1d4ab4f60289d591a521c962d3959bbf457e49f71109": {
+      "url": "https://news.ycombinator.com/item?id=46690907",
+      "date": "2026-06-21"
+    },
+    "a7da35c1d56db61c09670c4351eaf36bb6e91fec011bc3d904627e7f95165fc8": {
+      "url": "https://newsletter.pragmaticengineer.com/p/opencode",
+      "date": "2026-06-21"
+    },
+    "79dd24c198dba6c9ebbf0ef68c31425f5c3d538478ec351cfc1befcb81c31168": {
+      "url": "https://github.com/TriliumNext/Trilium",
+      "date": "2026-06-21"
+    },
+    "985736584d67a8e3b0fb07396f5204d414bf587278e548d9aefd8904960e6a96": {
+      "url": "https://news.ycombinator.com/item?id=47700972",
+      "date": "2026-06-21"
+    },
+    "59c6ac3cb3b9ab92c97b028ace84ed998145b36f985c639a6c563d6f7a26a7af": {
+      "url": "https://github.com/khoj-ai/khoj",
+      "date": "2026-06-21"
+    },
+    "171d58e2ef3de7499074a2700fdab89b283abe6aa892f5e087bbe3c332c4ef34": {
+      "url": "https://news.ycombinator.com/item?id=44288377",
+      "date": "2026-06-21"
+    },
+    "d14c5e41309cc6b370b886e19a38ddd11ead30255068c5a11d4c4e603477716f": {
+      "url": "https://github.com/stanford-oval/storm",
+      "date": "2026-06-21"
+    },
+    "69d024463c8adb4fb386e9b36e3aba7f3307ce244e7cf0886674692742f996e5": {
+      "url": "https://news.ycombinator.com/item?id=47586176",
+      "date": "2026-06-21"
+    },
+    "cce197194374b868aaf4070c8a523203192ec07e76da7d1cbfb2cb5d47b884f0": {
+      "url": "https://github.com/huggingface/smolagents",
+      "date": "2026-06-21"
+    },
+    "465d3f2cdc694efe0b7007b0460314bba41cc3e15dcad58c179e689c51f85ca6": {
+      "url": "https://news.ycombinator.com/item?id=48318174",
+      "date": "2026-06-21"
+    },
+    "ec7c36c51fe700259a2b4770e9a77fb64f9e05fddc6d595f6a0b96bb52fe752b": {
+      "url": "https://github.com/getzep/graphiti",
+      "date": "2026-06-21"
+    },
+    "cd917e5037f8afa4b6a94c3222e20e94bcdda3ddce6d8b43aab8859b879b55b2": {
+      "url": "https://news.ycombinator.com/item?id=46578701",
+      "date": "2026-06-21"
+    },
+    "28b22aa6ebfde8edcf22954a6d25f21b465ab3107649f8a8ff81659af7f60c58": {
+      "url": "https://github.com/QwenLM/Qwen3",
+      "date": "2026-06-21"
+    },
+    "29e494a7b46d9d34aba2fe0b69205c561b7fb1f59e649be5869c79e000458708": {
+      "url": "https://news.ycombinator.com/item?id=47434024",
+      "date": "2026-06-21"
+    },
+    "ad17eeb3abb67e29bbf3b3aca1c7220f0f409a2a5a5fa67bf2cf96a66e8c816c": {
+      "url": "https://news.ycombinator.com/item?id=45181577",
+      "date": "2026-06-21"
+    },
+    "e46564b60e5b89679514537c02adb47c1cefbbbcef4c043d2b42d7da263f2cb7": {
+      "url": "https://news.ycombinator.com/item?id=44678535",
+      "date": "2026-06-21"
+    },
+    "0ff399b762ffe0bb359dfeab679723ec1e74063a5448cde12cb71440983b5385": {
+      "url": "https://news.ycombinator.com/item?id=46420453",
+      "date": "2026-06-21"
+    },
+    "a59410314391d9156cc22b2da17d5a48be2d7a7844f1af9a5288f2663160c483": {
+      "url": "https://news.ycombinator.com/item?id=47494890",
+      "date": "2026-06-21"
+    },
+    "36b4aff8d4b29bb1bccebfbb9e0b5e965dd7cf46b5cc5d4915ee26839c07f1c9": {
+      "url": "https://news.ycombinator.com/item?id=47704881",
+      "date": "2026-06-21"
+    },
+    "2c5d07475aea4b22cc2b2e457dc2fdb3bf6831f5d86fb920326e61cca815c338": {
+      "url": "https://news.ycombinator.com/item?id=47579229",
+      "date": "2026-06-21"
+    },
+    "b9f0d1f578c4e5985db994947d5d9456665f22a33ee0a4444cae7132d090a601": {
+      "url": "https://news.ycombinator.com/item?id=46889703",
+      "date": "2026-06-21"
+    },
+    "b8f689275e7b802541e87eb290f59915df623964739466e9ba246cef3fb03281": {
+      "url": "https://news.ycombinator.com/item?id=46065997",
+      "date": "2026-06-21"
+    },
+    "9b45479b384028772e85db685af0a91082a80c11f13fb384c4176e0652fc79f7": {
+      "url": "https://news.ycombinator.com/item?id=45642527",
+      "date": "2026-06-21"
+    },
+    "6b5ca5a71c097ffc5b99b0d889bb106b08fa5bd445d1f78f315bbe6b13b33f8a": {
+      "url": "https://news.ycombinator.com/item?id=43555814",
+      "date": "2026-06-21"
+    },
+    "0cad824a8183806209843d171560aede3db48e0392832483da86df50aee9b929": {
+      "url": "https://news.ycombinator.com/item?id=44959069",
+      "date": "2026-06-21"
+    },
+    "cb09d1307c9b9c25e2fce2b2b003ff982ae7ae89049ab2ea3b4b4eced8c8cefc": {
+      "url": "https://news.ycombinator.com/item?id=46120728",
+      "date": "2026-06-21"
+    },
+    "b8875835ca39e2fb8f45b8216f93b88a8d94d00548416f087fa4cce845802691": {
+      "url": "https://news.ycombinator.com/item?id=44754631",
+      "date": "2026-06-21"
+    },
+    "6698de548c760e73c9cb59e2c8df252f5f8da4b1d0e815333df50e160bd19cb2": {
+      "url": "https://news.ycombinator.com/item?id=46465513",
+      "date": "2026-06-21"
+    },
+    "4dd06e76b9fd1b99a3c282a84d51f80f6bce2b7d6616a0150e47905a6422a7d2": {
+      "url": "https://news.ycombinator.com/item?id=44952225",
+      "date": "2026-06-21"
+    },
+    "02c425ba2d348a68c749a3b6edeabebc3c9bea3d7d66447098a0beacca3e4bdd": {
+      "url": "https://news.ycombinator.com/item?id=45842175",
+      "date": "2026-06-21"
+    },
+    "fc27b66d40adf0d8fd6b7c86bda1459ba104e52d4fe58271cda962eadfb5ad86": {
+      "url": "https://news.ycombinator.com/item?id=42913909",
+      "date": "2026-06-21"
+    },
+    "93de60c6a932badd5cc42561129988b3dfa982403abbadf102f085410b5786c7": {
+      "url": "https://news.ycombinator.com/item?id=48335640",
+      "date": "2026-06-21"
+    },
+    "2b8fe93f78dc32bff7655f543d40ddf6f5737ba62729cf401fff03c20feae9ae": {
+      "url": "https://news.ycombinator.com/item?id=43878930",
+      "date": "2026-06-21"
+    },
+    "60fc4d1a357e9f2f6c6754d08e4f2365c7ed9f277087ab6f4a44672af8720e91": {
+      "url": "https://news.ycombinator.com/item?id=44267060",
+      "date": "2026-06-21"
+    },
+    "faa55dda9879407f738126dd2c0bef7d6735ef1347697ed6fb5c2e27c6ee19e4": {
+      "url": "https://news.ycombinator.com/item?id=45245425",
+      "date": "2026-06-21"
+    },
+    "420f2fd13b763bef1c4aa44095755fe3521905b41994e07e61001cd8e21bd521": {
+      "url": "https://news.ycombinator.com/item?id=47420767",
+      "date": "2026-06-21"
+    },
+    "b6ec86917f5a66b4e8060c0024e1ac2de982f92e961ecd12e45427b4b71f0daf": {
+      "url": "https://news.ycombinator.com/item?id=44437682",
+      "date": "2026-06-21"
+    },
+    "f02f32a6cf9aad4275d087eeebf1b0a6ac5dfacd1029585bf10c82ededbb93a7": {
+      "url": "https://news.ycombinator.com/item?id=43830198",
+      "date": "2026-06-21"
+    },
+    "64cb1a02aa0ffaf655ea30b88b159a8a67dcf209f76ba02aaaf0292358868d48": {
+      "url": "https://news.ycombinator.com/item?id=45189260",
+      "date": "2026-06-21"
+    },
+    "af77d15c52d5a61ec6f706e68cce926bd3665f715becf1b35bf463d8b27539e9": {
+      "url": "https://news.ycombinator.com/item?id=48148601",
+      "date": "2026-06-21"
+    },
+    "129f9111011b39f93eae2c2f81d064a4b5431b518db4ab8b4f5081fc98d6fbd4": {
+      "url": "https://news.ycombinator.com/item?id=47797632",
+      "date": "2026-06-21"
+    },
+    "16fe9c7eac2e6b4cec85c7cc781afd27ca60d54e0520906fd8b206d54320932f": {
+      "url": "https://news.ycombinator.com/item?id=44113789",
+      "date": "2026-06-21"
+    },
+    "38735229e0d4cc85f85e25ee564e4e81028543f495f9eb7f227b63394c9793e7": {
+      "url": "https://news.ycombinator.com/item?id=44273982",
+      "date": "2026-06-21"
+    },
+    "aa87619a63f69b8526cebba8ee4e467367def6429c2e6ea1b26c710761717ea9": {
+      "url": "https://news.ycombinator.com/item?id=46621786",
+      "date": "2026-06-21"
+    },
+    "a50adb5ef79406946db6083a8e0db91e6c0457de5adb6a4f3dfbe2b167ff30e9": {
+      "url": "https://news.ycombinator.com/item?id=45294107",
+      "date": "2026-06-21"
+    },
+    "580fb6b6e2a00d28ef8910456c429b591f32bd30506221c57efdecea7f62b484": {
+      "url": "https://news.ycombinator.com/item?id=45310276",
+      "date": "2026-06-21"
+    },
+    "06daa8bc5ad48115342937b33822bff3ef1b8178febea6e4414ba70add4e7300": {
+      "url": "https://news.ycombinator.com/item?id=45250200",
+      "date": "2026-06-21"
+    },
+    "22a60b8e3c71c2a03afdb58cb400e472e4259e5d78f3f5178f40ee9e8263800e": {
+      "url": "https://news.ycombinator.com/item?id=46900771",
+      "date": "2026-06-21"
+    },
+    "1ee8528e7cb168d9a7506bcb19885b442a7f56b4a26bb3d5f981764b876baf25": {
+      "url": "https://news.ycombinator.com/item?id=44727782",
+      "date": "2026-06-21"
+    },
+    "020ba828eb4e14338bdade8a064db89584ca58f9aaff3e903619f2b2c9aade2c": {
+      "url": "https://news.ycombinator.com/item?id=47658617",
+      "date": "2026-06-21"
+    },
+    "ab207ff106b968053b5520c51585e4ba9aa04c1b472ee5a74f6a3919aaf492b6": {
+      "url": "https://news.ycombinator.com/item?id=45183612",
+      "date": "2026-06-21"
+    },
+    "fdb4983ceb58aa758f657699e1fcc86f298f3e921225bcd14d36a72b7584c69d": {
+      "url": "https://news.ycombinator.com/item?id=45200990",
+      "date": "2026-06-21"
+    },
+    "c8789ff014126238f35da496137dad8f166493b0470981d17323f5cdda278be5": {
+      "url": "https://news.ycombinator.com/item?id=45280980",
+      "date": "2026-06-21"
+    },
+    "2312ffadbdc48cf8d0462163439041ad628b276313c40f979254cff26b7f17a3": {
+      "url": "https://news.ycombinator.com/item?id=43385304",
+      "date": "2026-06-21"
+    },
+    "d6f14be717b1848b7090de8d4c1f2528758e9d93c5009dd0481d358ce2bca510": {
+      "url": "https://news.ycombinator.com/item?id=45362038",
+      "date": "2026-06-21"
+    },
+    "cf0553d04a0f63cf2e0a0fc62e89a0a6043bd019000cbf26c5c985f4cc5dbf3a": {
+      "url": "https://news.ycombinator.com/item?id=44446239",
+      "date": "2026-06-21"
+    },
+    "8cd8e8ed93e0444a2c6a85097340209ac4c1117cc5ab5388267bdc4593d9fe19": {
+      "url": "https://news.ycombinator.com/item?id=43321544",
+      "date": "2026-06-21"
+    },
+    "5f4ab975a6682006cd7f04ac6cd03696bb4ba3b23537bf2f9da9f1524a288969": {
+      "url": "https://news.ycombinator.com/item?id=44588660",
+      "date": "2026-06-21"
+    },
+    "64baf5907a130ea5b4e8b64abaca140b0482b1d58c5294525b93c1b457c3b979": {
+      "url": "https://news.ycombinator.com/item?id=46151579",
+      "date": "2026-06-21"
+    },
+    "b4d9e52d4158241c1ed2ea6af1ff76c1850c098961842e69ce6953557b57e036": {
+      "url": "https://news.ycombinator.com/item?id=44195399",
+      "date": "2026-06-21"
+    },
+    "e371b21d06e234c87abff59de015d7b5185abdda29b0511660eb05827db5c6eb": {
+      "url": "https://news.ycombinator.com/item?id=44106059",
+      "date": "2026-06-21"
+    },
+    "1cb1a28081ff412bc0e35e30e2bd508196ea4755c715c4035a11b8edb9308b40": {
+      "url": "https://news.ycombinator.com/item?id=47566687",
+      "date": "2026-06-21"
+    },
+    "67a03fe2e9ae1d03d4304ae255bfdadebfbe452c24f66f773863fbe3b65bd6e7": {
+      "url": "https://news.ycombinator.com/item?id=46136222",
+      "date": "2026-06-21"
+    },
+    "0fad6720a81bbac3e8db2e01d804bc6641fa387629e1650cc8515a0d904843c4": {
+      "url": "https://news.ycombinator.com/item?id=48050350",
+      "date": "2026-06-21"
+    },
+    "7099792556c26d5f85ecb0defbe57428d9d6cbd0348abd101ea6cf2783e4cb5b": {
+      "url": "https://news.ycombinator.com/item?id=43125486",
+      "date": "2026-06-21"
+    },
+    "026a81633f36f0571b6f7bd539057f1f7aebfbfd8a6cdd387b8c8d68d75f23c1": {
+      "url": "https://news.ycombinator.com/item?id=44860900",
+      "date": "2026-06-21"
+    },
+    "37dd958b24968b42d9585edf7ba63731505e99645aa1d3fa581266637a3b3231": {
+      "url": "https://news.ycombinator.com/item?id=45581582",
+      "date": "2026-06-21"
+    },
+    "89ef1122bb08cd3f9f8033815410daa90400ed6b09c6b1f734acfa35f434c873": {
+      "url": "https://news.ycombinator.com/item?id=44560921",
+      "date": "2026-06-21"
     }
   },
   "backfillPage": 14,
-  "dailyPage": 3
+  "dailyPage": 4
 }

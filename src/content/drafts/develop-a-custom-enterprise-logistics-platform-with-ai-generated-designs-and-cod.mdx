@@ -1,0 +1,94 @@
+---
+title: "Develop a Custom Enterprise Logistics Platform with AI-Generated Designs and Code using Claude"
+description: "Learn to develop a custom enterprise logistics platform by generating designs and code with AI. Replace existing software with a tailored solution for order management and shipping."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 180
+jobToBeDone: "Develop a custom enterprise logistics platform using AI-generated designs and code"
+tools:
+  - name: "Claude"
+    url: "https://claude.ai"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Claude CLI"
+    url: "https://www.anthropic.com/api"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Superpowers skill"
+    url: "https://github.com/anthropics/superpowers"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=48148601"
+  platform: "hackernews"
+  author: "ryanckulp"
+  postedAt: 2026-05-15
+score: 5
+ingestedAt: 2026-06-21
+nigeriaNotes: "Not fully free due to the paid Claude CLI. Data usage for image uploads and code generation can be moderate, requiring a stable internet connection."
+tiktokUrl: ""
+published: false
+---
+
+## What you'll get
+You will get a custom-built enterprise logistics platform, including interfaces for order management and shipping, designed and coded with the help of AI. This approach allows you to quickly replace existing, unsatisfactory software with a tailored solution that meets your specific operational needs and user experience preferences, saving significant development time and cost.
+
+## Tools you need
+*   **Claude** (freemium): For generating high-fidelity mockups from screenshots and understanding user experience (UX) patterns.
+*   **Claude CLI** (paid): A command-line interface for interacting with Claude's API, used for generating code, especially complex API integrations.
+*   **Superpowers skill** (free): A GitHub repository providing tools or examples that can enhance Claude's code generation capabilities.
+
+## Steps
+
+1.  **Identify core functions**: Determine the essential functions your new platform needs to replicate or improve from your existing system. The author focused on "adding holds + notes to orders" and "shipping packages."
+
+    You should have a clear list of the primary features your custom platform must support.
+
+2.  **Capture existing interfaces**: Take screenshots of the current order management and shipping portals you intend to replace.
+
+    You should have clear, high-resolution images of each interface, showing all relevant elements and workflows.
+
+3.  **Generate high-fidelity mockups**: Upload your screenshots to Claude and ask it to generate high-fidelity mockups for your new platform. Emphasize any specific UX patterns you want to retain for user familiarity.
+
+    ```
+    Based on these screenshots of our existing order management and shipping portals, generate high-fidelity mockups for a new, improved interface. Ensure the 'click item on left, item moves to the right' shipping portal UX is maintained for familiarity.
+    ```
+
+    You should get detailed UI mockups that reflect the desired functionality and user experience, ready for development.
+
+4.  **Plan API integrations**: Outline all necessary external API integrations, such as those for shipping carriers (e.g., UPS, FedEx, DHL, USPS). Detail the specific data points and complex requirements for each integration (e.g., hazardous materials status, international shipping destinations).
+
+    You should have a clear list of required APIs and their integration specifications, including any complex data structures.
+
+5.  **Generate API integration code**: Use Claude CLI, potentially leveraging the Superpowers skill, to generate the code for your identified API integrations. Provide the relevant API documentation or schema.
+
+    The author doesn't share their exact prompt; a starting point:
+
+    ```
+    Generate Python code for integrating with the [Courier Name] shipping API. The integration needs to handle [specific requirements, e.g., hazardous materials status, international shipping to multiple countries]. Here is the API documentation/schema: [paste relevant documentation or schema].
+    ```
+
+    You should get functional code snippets or modules for integrating with each specified courier API.
+
+6.  **Develop the platform code**: Using the generated mockups and API integration code, instruct Claude CLI to write the full-stack application code for your order management and shipping platform.
+
+    The author doesn't share their exact prompt; a starting point:
+
+    ```
+    Based on these high-fidelity mockups and the generated API integration code, write the full-stack application code for the enterprise logistics platform. Focus on creating a user-friendly interface for order management and shipping, incorporating the 'click item on left, item moves to the right' UX for shipping.
+    ```
+
+    You should receive a complete codebase for your logistics platform, including both front-end and back-end components.
+
+7.  **Deploy and test**: Deploy the generated code to a staging environment. Connect to sandbox API endpoints for thorough testing of all functionalities (order holds, notes, package shipping, postage rates). Once confident, deploy to production using live API keys to ensure seamless operation.
+
+    You should have a fully functional logistics platform handling real-world operations without downtime.
+
+## Original source
+This workflow is inspired by ryanckulp's post on Hackernews, where they detailed their experience using AI to "vibe code" an enterprise logistics platform, replacing an existing system with a custom solution.
+
+## Notes & variations
+*   **Free-tier alternatives**: For code generation, you could explore the Gemini API, which offers a free tier, or Groq, which provides access to some models for free. These can be used as alternatives to Claude CLI for parts of the code generation process.
+*   **Common mistake**: A common pitfall is not thoroughly testing API integrations in a sandbox environment before deploying to production. This is especially critical for financial or operational systems like shipping, where errors can lead to significant costs or service disruptions. Always verify functionality with test data first.
+*   **Tip for better results**: When generating complex code or designs, break down the task into smaller, manageable components. Provide Claude with very specific requirements, clear examples, and relevant documentation for each part. This iterative approach helps the AI produce more accurate and usable outputs.
