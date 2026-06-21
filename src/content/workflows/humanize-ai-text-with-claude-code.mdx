@@ -52,21 +52,37 @@ You'll get AI-generated text that reads more naturally and authentically, free f
 
     You should see a working Claude Code or OpenCode environment, ready to accept commands.
 
-2.  **Install the Humanizer skill**: Open your terminal or command prompt. To install the Humanizer skill into Claude Code, type or paste the following commands one by one and press Enter after each:
+2.  **Install the Humanizer skill**: Open your terminal and paste the commands for your operating system, pressing Enter after each one.
+
+    On macOS or Linux (bash or zsh):
 
     ```bash
     mkdir -p ~/.claude/skills
     git clone https://github.com/blader/humanizer.git ~/.claude/skills/humanizer
     ```
 
-    If you are using OpenCode, you can use the same commands, or clone into its specific directory:
+    On Windows, use PowerShell (the older Command Prompt rejects these commands with "The syntax of the command is incorrect"):
+
+    ```powershell
+    New-Item -ItemType Directory -Force "$HOME\.claude\skills" | Out-Null
+    git clone https://github.com/blader/humanizer.git "$HOME\.claude\skills\humanizer"
+    ```
+
+    If you use OpenCode instead, clone into its skills directory:
 
     ```bash
+    # macOS or Linux
     mkdir -p ~/.config/opencode/skills
     git clone https://github.com/blader/humanizer.git ~/.config/opencode/skills/humanizer
     ```
 
-    The author notes that cloning into `~/.claude/skills/humanizer/` is sufficient for both if you use both tools.
+    ```powershell
+    # Windows (PowerShell)
+    New-Item -ItemType Directory -Force "$HOME\.config\opencode\skills" | Out-Null
+    git clone https://github.com/blader/humanizer.git "$HOME\.config\opencode\skills\humanizer"
+    ```
+
+    The author notes that cloning into the Claude Code skills folder is enough for both tools if you use both.
 
     You should see messages indicating the repository is cloning and files are being received. A new folder named `humanizer` will appear inside your `~/.claude/skills` (or `~/.config/opencode/skills`) directory.
 

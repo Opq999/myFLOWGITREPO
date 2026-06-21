@@ -61,10 +61,18 @@ You'll learn how to install and use the Google Gemini Command Line Interface (CL
 
     You should see a version number like `v18.x.x` or higher. If you don't have Node.js installed, or if it's an older version, you'll need to install or update it from the official Node.js website before proceeding.
 
-2.  **Install Gemini CLI globally**: In your terminal, run the following command to install the Gemini CLI globally on your system. This makes the `gemini` command available from any directory. You may be prompted to enter your system password.
+2.  **Install Gemini CLI globally**: In your terminal, run the command to install the Gemini CLI globally on your system. This makes the `gemini` command available from any directory.
 
-    ```
+    On macOS or Linux (you may be prompted for your system password):
+
+    ```bash
     sudo npm install -g @google/gemini-cli
+    ```
+
+    On Windows, open PowerShell as Administrator and run the same command without `sudo`:
+
+    ```powershell
+    npm install -g @google/gemini-cli
     ```
 
     You should see output indicating that the package has been installed successfully, possibly with some warnings that can usually be ignored for this setup.

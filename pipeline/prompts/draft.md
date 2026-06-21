@@ -27,6 +27,10 @@ The reader has never done this before and is following on a phone. Be concrete a
    ```
 
    You should get a clean list you can reuse in the next step.
+
+   Terminal commands must run as pasted. Two hard rules:
+   - **Cross-platform**: many readers are on Windows. If a command is macOS/Linux only (it uses `mkdir -p`, a `~/` home path, `sudo`, `curl ... | sh`, `export`, or edits `~/.bashrc` or `~/.zshrc`), either add a second fenced block with the Windows PowerShell equivalent (e.g. `New-Item -ItemType Directory -Force "$HOME\.config\app"` and `$HOME` paths in double quotes), or, when the whole tool is Unix only, tell Windows users to run the steps inside WSL (Windows Subsystem for Linux). Label each block by OS with a first-line comment, e.g. `# macOS or Linux` and `# Windows (PowerShell)`. The plain Windows Command Prompt rejects bash commands with "The syntax of the command is incorrect", so never present bash as the only option for an install or setup command.
+   - **Never truncate code**: do not output a partial command, import, or code line that trails off with an ellipsis (`…` or `...`). If the source excerpt cuts the code off, write the complete correct line from standard knowledge of that tool, or describe in words what to add. A reader must be able to copy any code block and have it work as-is.
 4. `## Original source`: one short paragraph crediting the author and platform, in your own words. Do not include the raw URL (the site renders it separately).
 5. `## Notes & variations`: free-tier alternatives, at least one common mistake or pitfall to avoid, and one tip to get better results.
 
