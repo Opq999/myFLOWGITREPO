@@ -2,6 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import Badge from '../../components/Badge.astro';
+import WorkflowCard from '../../components/WorkflowCard.astro';
 import ToolsList from '../../components/ToolsList.astro';
 import NigeriaNotes from '../../components/NigeriaNotes.astro';
 import UseCases from '../../components/UseCases.astro';
@@ -10,7 +11,7 @@ import SourceEmbed from '../../components/SourceEmbed.astro';
 import HireCta from '../../components/HireCta.astro';
 import { CATEGORY_META } from '../../lib/categories';
 import { extractSteps } from '../../lib/steps';
-import { howToJsonLd } from '../../lib/jsonld';
+import { howToJsonLd, breadcrumbJsonLd } from '../../lib/jsonld';
 
 export async function getStaticPaths() {
   const workflows = await getCollection('workflows', (e) => e.data.published);
@@ -19,17 +20,33 @@ export async function getStaticPaths() {
 
 const { workflow } = Astro.props;
 const d = workflow.data;
-const { Content } = await render(workflow);
+const { Content, headings } = await render(workflow);
+// Section headings drive an "On this page" table of contents for longer reads.
+const toc = headings.filter((h) => h.depth === 2);
+
+// Same-category siblings (best-scored first) so a read never dead-ends.
+const related = (
+  await getCollection(
+    'workflows',
+    (e) => e.data.published && e.data.category === d.category && e.id !== workflow.id,
+  )
+)
+  .sort((a, b) => b.data.score - a.data.score)
+  .slice(0, 3);
 
 const pageUrl = new URL(`/workflows/${workflow.id}/`, Astro.site).toString();
 const steps = extractSteps(workflow.body ?? '');
 const jsonLd = howToJsonLd(d, steps, pageUrl);
+const breadcrumbLd = breadcrumbJsonLd(d, pageUrl);
 const category = CATEGORY_META[d.category];
 const isFree = d.tools.every((t) => t.pricing !== 'paid');
 ---
 
-<Base title={d.title} description={d.description} ogImage={`/og/${workflow.id}.png`}>
+<Base title={d.title} description={d.description} ogImage={`/og/${workflow.id}.png`} ogType="article">
   <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} slot="head" />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} slot="head" />
+  <meta property="article:published_time" content={d.ingestedAt.toISOString()} slot="head" />
+  <meta property="article:section" content={category.label} slot="head" />
 
   <div class="progress-bar" aria-hidden="true"></div>
 
@@ -69,6 +86,25 @@ const isFree = d.tools.every((t) => t.pricing !== 'paid');
       </div>
 
       <aside class="mt-10 space-y-5 lg:sticky lg:top-20 lg:mt-8">
+        {toc.length >= 3 && (
+          <nav
+            aria-label="On this page"
+            class="hidden rounded-2xl border border-line bg-surface p-5 shadow-[0_1px_2px_rgba(28,23,19,0.04)] lg:block"
+          >
+            <p class="mb-3 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-ink-400">
+              On this page
+            </p>
+            <ol class="space-y-2 text-sm">
+              {toc.map((h) => (
+                <li>
+                  <a href={`#${h.slug}`} class="text-ink-600 transition-colors hover:text-accent">
+                    {h.text}
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </nav>
+        )}
         <SourceEmbed source={d.source} />
         <div class="rounded-2xl border border-line bg-surface p-5 shadow-[0_1px_2px_rgba(28,23,19,0.04)]">
           <p class="mb-3 font-display text-lg font-semibold text-ink-900">Someone needs this workflow.</p>
@@ -78,6 +114,22 @@ const isFree = d.tools.every((t) => t.pricing !== 'paid');
       </aside>
     </div>
   </article>
+
+  {
+    related.length > 0 && (
+      <section class="mt-14">
+        <p class="font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-accent">Keep going</p>
+        <h2 class="mb-5 mt-1 font-display text-2xl font-medium tracking-[-0.02em] text-ink-900">
+          More {category.label} workflows
+        </h2>
+        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {related.map((w) => (
+            <WorkflowCard workflow={w} />
+          ))}
+        </div>
+      </section>
+    )
+  }
 </Base>
 
 <!-- Adds a copy button to every prompt code block (PRD must-have). -->

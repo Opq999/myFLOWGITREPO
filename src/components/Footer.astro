@@ -1,5 +1,6 @@
 ---
 import { SITE } from '../site.config';
+import NewsletterForm from './NewsletterForm.astro';
 const year = new Date().getFullYear();
 ---
 
@@ -16,6 +17,14 @@ const year = new Date().getFullYear();
       }
     </div>
   </div>
+  {/* Second newsletter capture point (site-wide). Renders nothing until Buttondown is configured. */}
+  {
+    SITE.buttondownUsername && (
+      <div class="mx-auto w-full max-w-6xl border-b border-line px-4 py-8 sm:px-6">
+        <NewsletterForm compact />
+      </div>
+    )
+  }
   <div class="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-4 px-4 py-8 sm:px-6">
     <div>
       <p class="font-display text-xl font-semibold text-ink-900">
@@ -24,9 +33,9 @@ const year = new Date().getFullYear();
       <p class="mt-1 text-sm text-ink-500">© {year} · Reproducible AI workflows, refreshed daily.</p>
     </div>
     <nav class="flex gap-5 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-ink-500">
-      <a href="/about/" class="hover:text-accent">About</a>
-      <a href="/submit/" class="hover:text-accent">Submit</a>
-      <a href="/services/" class="hover:text-accent">Work with me</a>
+      <a href="/about/" class="py-2 hover:text-accent">About</a>
+      <a href="/submit/" class="py-2 hover:text-accent">Submit</a>
+      <a href="/services/" class="py-2 hover:text-accent">Work with me</a>
     </nav>
   </div>
 </footer>

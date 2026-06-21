@@ -1,0 +1,15 @@
+# Security headers for Cloudflare Pages. Applied to every response.
+# CSP notes:
+#  - 'unsafe-inline' on script/style is required by Astro's is:inline scripts and
+#    Tailwind's inline styles (no user-reflected input is rendered, so XSS surface is low).
+#  - 'wasm-unsafe-eval' is required by Pagefind search (WebAssembly); omitting it breaks search.
+#  - The reddit/twitter/youtube/tally hosts power the opt-in "Load original post" embeds and
+#    the /submit form; static.cloudflareinsights.com is the analytics beacon; buttondown is the
+#    newsletter POST target. If an embed ever fails to load, widen the matching directive here.
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+  Cross-Origin-Opener-Policy: same-origin
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; img-src 'self' data: https:; font-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https://static.cloudflareinsights.com https://embed.reddit.com https://www.redditstatic.com https://platform.twitter.com; connect-src 'self' https:; frame-src https://www.youtube-nocookie.com https://www.youtube.com https://tally.so https://www.reddit.com https://platform.twitter.com https://syndication.twitter.com; form-action 'self' https://buttondown.com; upgrade-insecure-requests

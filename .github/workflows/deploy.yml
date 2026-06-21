@@ -45,11 +45,14 @@ jobs:
 
       - run: npm ci
 
+      - name: Audit dependencies (non-blocking)
+        run: npm audit --audit-level=high || true
+
       - name: Build and deploy to Cloudflare Pages
         env:
           # Accepts the common misspelling CLOUDFARE_API_TOKEN as a fallback.
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN || secrets.CLOUDFARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: cdd1130f0f80aa74d5fdea5759eb9c29
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || 'cdd1130f0f80aa74d5fdea5759eb9c29' }}
         run: |
           if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
             echo "CLOUDFLARE_API_TOKEN secret not set, skipping deploy."

@@ -11,13 +11,15 @@ export const SITE = {
   /** Update when the custom domain is connected (keep astro.config.mjs `site` in sync). */
   url: 'https://opqai.pages.dev',
   /** Fill with your Buttondown username to enable the newsletter form. */
-  buttondownUsername: '',
+  buttondownUsername: 'opq',
   /** Fill with your Tally form ID to enable the /submit embed. */
   tallyFormId: '',
   /** WhatsApp number for the "Work with me" CTAs, E.164 digits only (no +), e.g. '2348012345678'. Empty ⇒ CTAs fall back to email. */
   whatsappNumber: '2348179428064',
   /** Contact email used as the fallback for service CTAs and on /submit. */
   contactEmail: 'opeyemiolowosoke@gmail.com',
+  /** Twitter/X handle incl. leading '@' (e.g. '@opqai'). Empty ⇒ no twitter:site/creator tags. */
+  twitterHandle: '',
   /** Fill with your Cloudflare Web Analytics token to enable analytics. */
-  cloudflareAnalyticsToken: '',
+  cloudflareAnalyticsToken: '050bb38fc66d4caa896908a4ef25fd39',
 };

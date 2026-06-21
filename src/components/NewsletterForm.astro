@@ -1,34 +1,61 @@
 ---
 import { SITE } from '../site.config';
+
+interface Props {
+  /** Slim, self-contained version for the footer (heading + form, or nothing). */
+  compact?: boolean;
+}
+const { compact = false } = Astro.props;
+const action = `https://buttondown.com/api/emails/embed-subscribe/${SITE.buttondownUsername}`;
 ---
 
 {
-  SITE.buttondownUsername && (
-    <section class="relative overflow-hidden rounded-2xl border border-line bg-surface p-6 sm:p-8 shadow-[0_1px_2px_rgba(28,23,19,0.04)]">
-      <div class="glow h-40 w-40 bg-volt-400/20" style="top:-3rem; right:-3rem;" aria-hidden="true" />
-      <p class="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-accent">Newsletter</p>
-      <h2 class="mt-1 font-display text-2xl font-medium tracking-[-0.02em] text-ink-900">Get new workflows weekly</h2>
-      <p class="mt-1 text-sm text-ink-500">One email a week. Free workflows only. Unsubscribe anytime.</p>
-      <form
-        action={`https://buttondown.com/api/emails/embed-subscribe/${SITE.buttondownUsername}`}
-        method="post"
-        target="_blank"
-        class="mt-4 flex flex-wrap gap-2"
-      >
-        <input
-          type="email"
-          name="email"
-          required
-          placeholder="you@example.com"
-          class="min-w-0 flex-1 rounded-full border border-line-strong bg-paper px-4 py-2.5 text-sm text-ink-900 placeholder:text-ink-400 focus:border-accent focus:outline-none"
-        />
-        <button
-          type="submit"
-          class="rounded-full bg-ink-900 px-5 py-2.5 font-sans text-sm font-semibold text-paper transition-transform hover:scale-[1.03]"
-        >
-          Subscribe
-        </button>
-      </form>
-    </section>
-  )
+  SITE.buttondownUsername &&
+    (compact ? (
+      <div class="w-full max-w-sm">
+        <p class="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-accent">Newsletter</p>
+        <p class="mb-2 mt-1 text-sm text-ink-500">New workflows weekly. Free tools only.</p>
+        <form action={action} method="post" target="_blank" class="flex flex-wrap gap-2">
+          <label for="nl-email-compact" class="sr-only">Email address</label>
+          <input
+            id="nl-email-compact"
+            type="email"
+            name="email"
+            required
+            placeholder="you@example.com"
+            class="min-w-0 flex-1 rounded-full border border-line-strong bg-paper px-4 py-2.5 text-sm text-ink-900 placeholder:text-ink-400 focus:border-accent"
+          />
+          <button
+            type="submit"
+            class="rounded-full bg-ink-900 px-5 py-2.5 font-sans text-sm font-semibold text-paper transition-transform hover:scale-[1.03]"
+          >
+            Subscribe
+          </button>
+        </form>
+      </div>
+    ) : (
+      <section class="relative overflow-hidden rounded-2xl border border-line bg-surface p-6 shadow-[0_1px_2px_rgba(28,23,19,0.04)] sm:p-8">
+        <div class="glow h-40 w-40 bg-volt-400/20" style="top:-3rem; right:-3rem;" aria-hidden="true" />
+        <p class="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-accent">Newsletter</p>
+        <h2 class="mt-1 font-display text-2xl font-medium tracking-[-0.02em] text-ink-900">Get new workflows weekly</h2>
+        <p class="mt-1 text-sm text-ink-500">One email a week. Free workflows only. Unsubscribe anytime.</p>
+        <form action={action} method="post" target="_blank" class="mt-4 flex flex-wrap gap-2">
+          <label for="nl-email" class="sr-only">Email address</label>
+          <input
+            id="nl-email"
+            type="email"
+            name="email"
+            required
+            placeholder="you@example.com"
+            class="min-w-0 flex-1 rounded-full border border-line-strong bg-paper px-4 py-2.5 text-sm text-ink-900 placeholder:text-ink-400 focus:border-accent"
+          />
+          <button
+            type="submit"
+            class="rounded-full bg-ink-900 px-5 py-2.5 font-sans text-sm font-semibold text-paper transition-transform hover:scale-[1.03]"
+          >
+            Subscribe
+          </button>
+        </form>
+      </section>
+    ))
 }

@@ -1,4 +1,5 @@
 ---
+import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import { SITE } from '../site.config';
 import { contactLink } from '../lib/whatsapp';
@@ -7,6 +8,7 @@ const ctaHref = contactLink(
   `Hi! I saw ${SITE.name} and I'd like to talk about working with you on AI.`,
 );
 const usingWhatsApp = SITE.whatsappNumber.replace(/\D/g, '').length > 0;
+const publishedCount = (await getCollection('workflows', (e) => e.data.published)).length;
 ---
 
 <Base
@@ -83,11 +85,31 @@ const usingWhatsApp = SITE.whatsappNumber.replace(/\D/g, '').length > 0;
   </div>
 
   <!-- Proof -->
-  <p class="mt-12 max-w-2xl text-sm leading-relaxed text-ink-500">
+  <p class="mt-12 max-w-2xl text-sm leading-relaxed text-ink-600">
     Why me? You're looking at the proof. I source, test and publish reproducible AI workflows here
     every day, exact steps, exact prompts, real sources. If I can keep this library honest and
     working, I can get AI working for you.
   </p>
+  <dl class="mt-5 flex flex-wrap gap-x-10 gap-y-4">
+    <div>
+      <dt class="font-display text-3xl font-semibold text-ink-900">{publishedCount}</dt>
+      <dd class="mt-0.5 font-mono text-[10px] font-bold uppercase tracking-[0.15em] text-ink-500">
+        workflows published, and counting
+      </dd>
+    </div>
+    <div>
+      <dt class="font-display text-3xl font-semibold text-ink-900">Daily</dt>
+      <dd class="mt-0.5 font-mono text-[10px] font-bold uppercase tracking-[0.15em] text-ink-500">
+        new workflows shipped
+      </dd>
+    </div>
+    <div>
+      <dt class="font-display text-3xl font-semibold text-ink-900">100%</dt>
+      <dd class="mt-0.5 font-mono text-[10px] font-bold uppercase tracking-[0.15em] text-ink-500">
+        with a real, linked source
+      </dd>
+    </div>
+  </dl>
 
   <!-- Primary CTA -->
   <div class="mt-8 flex flex-col items-start gap-3">

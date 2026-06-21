@@ -252,6 +252,8 @@ body {
   color: var(--color-ink-900);
   margin: 1.6rem 0 0.5rem;
 }
+/* Keep in-page anchor targets clear of the sticky header */
+.workflow-body h2, .workflow-body h3 { scroll-margin-top: 5rem; }
 .workflow-body p { margin: 0.9rem 0; }
 .workflow-body a {
   color: var(--color-accent);
@@ -400,6 +402,14 @@ body {
 /* Form controls on light */
 select, input[type="email"], input[type="text"] {
   color-scheme: light;
+}
+
+/* Visible keyboard focus, site-wide. Previously no :focus-visible style existed,
+   so keyboard and switch users had no indication of where focus was. The outline
+   follows each element's own border-radius automatically in modern browsers. */
+:where(a, button, input, select, textarea, summary):focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
 }
 
 /* Motion respect */

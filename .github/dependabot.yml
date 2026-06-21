@@ -1,0 +1,19 @@
+version: 2
+updates:
+  # Keep npm dependencies patched (security + minor) with a small weekly PR batch.
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    groups:
+      minor-and-patch:
+        update-types:
+          - minor
+          - patch
+  # Keep third-party GitHub Actions pinned-but-current.
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5

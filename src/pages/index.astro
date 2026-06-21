@@ -5,7 +5,10 @@ import WorkflowCard from '../components/WorkflowCard.astro';
 import NewsletterForm from '../components/NewsletterForm.astro';
 import { CATEGORY_META } from '../lib/categories';
 import { CATEGORIES } from '../lib/workflow-schema';
+import { siteJsonLd } from '../lib/jsonld';
 import { SITE } from '../site.config';
+
+const siteLd = siteJsonLd(Astro.site ?? SITE.url);
 
 const workflows = (await getCollection('workflows', (e) => e.data.published)).sort(
   (a, b) => b.data.ingestedAt.valueOf() - a.data.ingestedAt.valueOf()
@@ -25,6 +28,8 @@ const freeCount = workflows.filter((w) => w.data.tools.every((t) => t.pricing !=
 ---
 
 <Base title={SITE.name}>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(siteLd)} slot="head" />
+
   <!-- HERO -->
   <section class="relative overflow-hidden py-12 sm:py-16 lg:py-24">
     <div class="glow h-72 w-72 bg-volt-400/20 lg:h-[26rem] lg:w-[26rem]" style="top:-7rem; left:-7rem;" aria-hidden="true"></div>
@@ -149,7 +154,7 @@ const freeCount = workflows.filter((w) => w.data.tools.every((t) => t.pricing !=
           <div>
             <p class="font-display text-2xl font-semibold text-accent">{n}</p>
             <p class="mt-1 font-display text-base font-semibold text-ink-900">{title}</p>
-            <p class="mt-1 text-[13px] leading-relaxed text-ink-500">{body}</p>
+            <p class="mt-1 text-[13px] leading-relaxed text-ink-600">{body}</p>
           </div>
         ))
       }

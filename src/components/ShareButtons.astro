@@ -15,17 +15,19 @@ const x = `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&ur
     href={whatsapp}
     target="_blank"
     rel="noopener"
+    aria-label="Share on WhatsApp (opens in a new tab)"
     class="rounded-full bg-volt-400 px-5 py-2.5 font-sans text-sm font-semibold text-ink-950 transition-transform hover:scale-[1.03] hover:bg-volt-300"
   >
-    WhatsApp ↗
+    WhatsApp <span aria-hidden="true">↗</span>
   </a>
   <a
     href={x}
     target="_blank"
     rel="noopener"
+    aria-label="Share on X (opens in a new tab)"
     class="rounded-full border border-line-strong bg-surface px-5 py-2.5 font-sans text-sm font-semibold text-ink-900 transition-colors hover:border-ink-400"
   >
-    X ↗
+    X <span aria-hidden="true">↗</span>
   </a>
   <button
     type="button"
