@@ -8,7 +8,9 @@ export const SITE = {
   tagline: 'Proven AI workflows, exact steps, exact prompts, real sources',
   description:
     'A free library of reproducible AI workflows for students, freelancers and small businesses. Every workflow has exact steps, copy-paste prompts and a real human source.',
-  /** Update when the custom domain is connected (keep astro.config.mjs `site` in sync). */
+  /** The ONE place the site URL lives. astro.config.mjs reads this, and canonical
+   *  tags, sitemap, robots.txt, OG image URLs and JSON-LD all derive from it.
+   *  Changing this single line is the whole "switch to my custom domain" step. */
   url: 'https://opqai.pages.dev',
   /** Fill with your Buttondown username to enable the newsletter form. */
   buttondownUsername: 'opq',
