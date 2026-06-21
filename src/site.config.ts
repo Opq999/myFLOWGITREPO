@@ -11,7 +11,7 @@ export const SITE = {
   /** The ONE place the site URL lives. astro.config.mjs reads this, and canonical
    *  tags, sitemap, robots.txt, OG image URLs and JSON-LD all derive from it.
    *  Changing this single line is the whole "switch to my custom domain" step. */
-  url: 'https://opqai.pages.dev',
+  url: 'https://opqai.solutions',
   /** Fill with your Buttondown username to enable the newsletter form. */
   buttondownUsername: 'opq',
   /** Fill with your Tally form ID to enable the /submit embed. */

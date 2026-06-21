@@ -115,7 +115,7 @@ jobs:
             New workflows published today:
             ${{ steps.commit.outputs.titles }}
 
-            See them live: https://opqai.pages.dev/workflows/
+            See them live: https://opqai.solutions/workflows/
             Run details: https://github.com/Opq999/myFLOWGITREPO/actions
 
       # No-publish days are no longer silent: this alert fires so a broken source
@@ -140,4 +140,4 @@ jobs:
 
             https://github.com/Opq999/myFLOWGITREPO/actions/workflows/ingest.yml
 
-            Library: https://opqai.pages.dev/workflows/
+            Library: https://opqai.solutions/workflows/

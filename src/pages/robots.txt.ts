@@ -5,7 +5,7 @@ import type { APIRoute } from 'astro';
  * tracks the `site` value in astro.config.mjs, even after the custom domain lands.
  */
 export const GET: APIRoute = ({ site }) => {
-  const base = site ?? new URL('https://opqai.pages.dev/');
+  const base = site ?? new URL('https://opqai.solutions/');
   const body = `User-agent: *
 Allow: /
 Disallow: /gallery/

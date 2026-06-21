@@ -110,4 +110,4 @@ jobs:
             New workflows:
             ${{ steps.commit.outputs.titles }}
 
-            See them live: https://opqai.pages.dev/workflows/
+            See them live: https://opqai.solutions/workflows/
