@@ -4992,8 +4992,148 @@
     "89ef1122bb08cd3f9f8033815410daa90400ed6b09c6b1f734acfa35f434c873": {
       "url": "https://news.ycombinator.com/item?id=44560921",
       "date": "2026-06-21"
+    },
+    "ff9d37a25c8f19f15ddc44e529fc2a244be6d5b1e8cd72b4bb8bd305aac39e4c": {
+      "url": "https://github.com/toolleeo/awesome-cli-apps-in-a-csv",
+      "date": "2026-06-21"
+    },
+    "4e172fa17ec05b854a3f9ac090a92744c622a26ed7d32d872613559e27a8945c": {
+      "url": "https://github.com/rafska/awesome-local-llm",
+      "date": "2026-06-21"
+    },
+    "7f4e457d5664c7b56b9f0540f6d9769ef193c4c5952396ce05e50120a9e7a57e": {
+      "url": "https://github.com/WLiK/LLM4Rec-Awesome-Papers",
+      "date": "2026-06-21"
+    },
+    "e3ed4f18464c6846e66f16571adbdb03054f43284b2f1394e368c698515aee94": {
+      "url": "https://github.com/BolajiAyodeji/awesome-technical-writing",
+      "date": "2026-06-21"
+    },
+    "222a4db837cca802e54d938e75ce4147215332d9e5947964ce28be321f6d4ca8": {
+      "url": "https://github.com/hyp1231/awesome-llm-powered-agent",
+      "date": "2026-06-21"
+    },
+    "ab21fb07b69a4126aa8b63ae4a0848e083b7eb144e4225eb17b8679798266872": {
+      "url": "https://github.com/EgoAlpha/prompt-in-context-learning",
+      "date": "2026-06-21"
+    },
+    "3deaf58780c6b39f52770be6f86ae06a778159a3035e7db4b60012895fb08d79": {
+      "url": "https://github.com/auctors/free-lunch",
+      "date": "2026-06-21"
+    },
+    "d5daf3f74d5733329c17b8d06b2065e1b758eddb88999663639f267fd4cd1e39": {
+      "url": "https://github.com/wangkai930418/awesome-diffusion-categorized",
+      "date": "2026-06-21"
+    },
+    "2c5db7d00e5cf6cd070b3f574fa27de821526ca2383c93ac687dcfe10e25b251": {
+      "url": "https://github.com/imaurer/awesome-llm-json",
+      "date": "2026-06-21"
+    },
+    "07127356e4365f0c3ae5c148ad84af80e575ea792aa94a88b70f82031c7a5f6b": {
+      "url": "https://github.com/FoundationAgents/awesome-foundation-agents",
+      "date": "2026-06-21"
+    },
+    "314d86fb071fe608b4195c47dac99e91864a2a8a814be30bcf26e0d1416fa0a8": {
+      "url": "https://github.com/M-3LAB/awesome-industrial-anomaly-detection",
+      "date": "2026-06-21"
+    },
+    "20ce71df6186bc283a93f22f6432077072def021d4405ce53ae4994aeecbc017": {
+      "url": "https://github.com/krzjoa/awesome-python-data-science",
+      "date": "2026-06-21"
+    },
+    "56e63dbb572e654779bcaf6aa28c204084d57a78d84af95b717ae646916dc0df": {
+      "url": "https://github.com/awesome-android-root/awesome-android-root",
+      "date": "2026-06-21"
+    },
+    "9cbf33b18564e8a3f4585ef90220e1110e757ac17bbc349ebdaca0633470d896": {
+      "url": "https://github.com/xianyu110/awesome-openclaw-tutorial",
+      "date": "2026-06-21"
+    },
+    "fa90a6da52984833839c44aaa18b8a5b27479425f5e9ba68344971d010bbb7f2": {
+      "url": "https://github.com/xialeiliu/Awesome-Incremental-Learning",
+      "date": "2026-06-21"
+    },
+    "e9f21e031d7e04f5a19e147b9edeffc88d15f0449fd4ee2cbd1d3c9a2a65e471": {
+      "url": "https://github.com/xixu-me/awesome-persona-distill-skills",
+      "date": "2026-06-21"
+    },
+    "04d8ec080f18710fee0eede9bcc1bfcacdbbd106c52956fbe86b1d429ef7ce0d": {
+      "url": "https://github.com/denolib/awesome-deno",
+      "date": "2026-06-21"
+    },
+    "8044e100b026216c0ea258f81d3e47aa042a9e0df977d7b6129c44464b6ad387": {
+      "url": "https://github.com/zudochkin/awesome-newsletters",
+      "date": "2026-06-21"
+    },
+    "ee193ae91af523c34eff6315565533ba36b7446f30ee46cbd5d6503fef9c5c61": {
+      "url": "https://github.com/AlexAnys/awesome-openclaw-usecases-zh",
+      "date": "2026-06-21"
+    },
+    "4464504d634de49da145028cde4fb601390f4349f008b4d170f6632d7a95a954": {
+      "url": "https://github.com/vijaythecoder/awesome-claude-agents",
+      "date": "2026-06-21"
+    },
+    "b1305c45680fa8298cf97576a413dcbe60abf9a447dc82569539968afe25f4a5": {
+      "url": "https://github.com/ChromeDevTools/awesome-chrome-devtools",
+      "date": "2026-06-21"
+    },
+    "4c6997ad8b652fe67e7efd43d72f62ba13accc7d6c01a92ad727daa3b58d83cf": {
+      "url": "https://github.com/Axorax/awesome-free-apps",
+      "date": "2026-06-21"
+    },
+    "4d07984cdce66e8aa463a4c0985b09c4897ddd11c5e001a7529264b66e3cfe0c": {
+      "url": "https://github.com/shuaibiyy/awesome-tf",
+      "date": "2026-06-21"
+    },
+    "63516b947f71777e0f1fd473e997dc6bac985ba89a7e42463163e21987101984": {
+      "url": "https://github.com/jingyi0000/VLM_survey",
+      "date": "2026-06-21"
+    },
+    "48c1b505013bdd69a5621117275de533b790a93353df4de1a151e3c1e4565c65": {
+      "url": "https://github.com/knightnemo/Awesome-World-Models",
+      "date": "2026-06-21"
+    },
+    "2b3f3dd3611b5105cc03f0bb13afba160bb98e5a1d90c4805c8b4c8c51ae70ca": {
+      "url": "https://news.ycombinator.com/item?id=48463024",
+      "date": "2026-06-21"
+    },
+    "86ef601cfba8a24d90eb947b4df8d719c9f4e4c1f5e6ce70c44495005b0da91a": {
+      "url": "https://dev.to/omkar598/medivision-assistant-13go",
+      "date": "2026-06-21"
+    },
+    "87f6288e77b4fb622cdc760b26b42c6ec1215e825a0b6f5f50f178556631e77f": {
+      "url": "https://github.com/windmill-labs/windmill",
+      "date": "2026-06-21"
+    },
+    "5a9dc44bdf25fdfaee068f86fc92c835c0a1b6dbe80366c4f27c43fbc04e1b43": {
+      "url": "https://news.ycombinator.com/item?id=46909037",
+      "date": "2026-06-21"
+    },
+    "47a1a3ab242f5abb2898735123f363956a4a156833a1925f2ef71c02730dd1f0": {
+      "url": "https://dev.to/forgecode/when-google-sneezes-the-whole-world-catches-a-coldthe-full-story-inside-3ep",
+      "date": "2026-06-21"
+    },
+    "ef1d62b18b98cdd0e33916389230631750b2d64017d12c6f3569729f48d72ccc": {
+      "url": "https://github.com/vectorize-io/hindsight",
+      "date": "2026-06-21"
+    },
+    "6f10d33370f45181b0bc46fa63157c7f17d32dc64434f576e7b9f989edc9cdcd": {
+      "url": "https://news.ycombinator.com/item?id=44755654",
+      "date": "2026-06-21"
+    },
+    "f8dd19f4ab5a5aef5e68ce21bafe30a33299e4b3f56955139421104e3f90d37d": {
+      "url": "https://dev.to/forgecode/10-ai-tools-that-took-my-saas-website-from-zero-to-launch-45d0",
+      "date": "2026-06-21"
+    },
+    "9e0892762e0531969260cc0f24bdc835c1d4b3a2b483f12fc941557f6c2deefb": {
+      "url": "https://github.com/teng-lin/notebooklm-py",
+      "date": "2026-06-21"
+    },
+    "e43c8dac7cd91ae620e42930a5443c5c5d6d3711864ddf61307be8365ce2d899": {
+      "url": "https://news.ycombinator.com/item?id=46719423",
+      "date": "2026-06-21"
     }
   },
-  "backfillPage": 14,
+  "backfillPage": 15,
   "dailyPage": 4
 }
