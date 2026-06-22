@@ -5336,8 +5336,112 @@
     "5623eb7715f0b77f2a3f3cb595da2a3229c4a3fb9d464e45e09b7734ce49ac90": {
       "url": "https://news.ycombinator.com/item?id=45528422",
       "date": "2026-06-22"
+    },
+    "d121374c480874f21891e92320eaee3a43c985b3b0ea9c0f62ce2dc66be35e86": {
+      "url": "https://github.com/chentsulin/awesome-graphql",
+      "date": "2026-06-22"
+    },
+    "4ad130c80a9adf97084c21ee11a39a2ab702bf878294f19c0ac6dfc8b1172bdd": {
+      "url": "https://github.com/public-api-lists/public-api-lists",
+      "date": "2026-06-22"
+    },
+    "0db4662cf44db852b3c948f9af64c4be8c0ec9111e458ad17f193120323c0e98": {
+      "url": "https://github.com/analysis-tools-dev/static-analysis",
+      "date": "2026-06-22"
+    },
+    "a88249a52dad3c1ecc9ab6dccdbcefaf1149f2c8a652454e12d44ddca47c75c1": {
+      "url": "https://github.com/kyrolabs/awesome-agents",
+      "date": "2026-06-22"
+    },
+    "a1dda077946e08a35d8addb336328bdc40d99cb54286362a5834b4aa73807805": {
+      "url": "https://github.com/TsinghuaC3I/Awesome-RL-for-LRMs",
+      "date": "2026-06-22"
+    },
+    "5049966970f70fbdb12996f4b4a6d69767f010fca7e27a33e365e8822eccd3db": {
+      "url": "https://github.com/rootsongjc/awesome-cloud-native",
+      "date": "2026-06-22"
+    },
+    "c2f9f5fe6fb463479136c9904ff415e23e5289d9de0bc6dc06dd15fc0a19a26a": {
+      "url": "https://github.com/Jason2Brownlee/awesome-llm-books",
+      "date": "2026-06-22"
+    },
+    "4791137e9522ca1f2e0614b82cc7103660e3e2419bdc639b23d1b5de5124de94": {
+      "url": "https://github.com/AI-in-Health/MedLLMsPracticalGuide",
+      "date": "2026-06-22"
+    },
+    "abe0a33dd7d7d2cb3e5101a01eb2aacacaae8a7311cd4c23743e8ee9c8422240": {
+      "url": "https://github.com/AvaloniaCommunity/awesome-avalonia",
+      "date": "2026-06-22"
+    },
+    "0a0eebbfaa15cf86642fb96e0d296ff2461a21ecf99ee80494cb35c44db12888": {
+      "url": "https://github.com/aljazceru/awesome-nostr",
+      "date": "2026-06-22"
+    },
+    "d602d5287ff0406b1a2d7d20bfc0804354c36e24904f0ca54914ce6bacb0e8e9": {
+      "url": "https://github.com/InQuest/awesome-yara",
+      "date": "2026-06-22"
+    },
+    "6fc4fbb0604b27d0f4228bb9b779778f12093d8590ded347f74da55f109cbdcc": {
+      "url": "https://github.com/dalinvip/Awesome-ChatGPT",
+      "date": "2026-06-22"
+    },
+    "cbd0e12ad4710ae2314c794abc0780de8c3918bdac5fc2b3d27eff5b2ff4bbc1": {
+      "url": "https://github.com/wmariuss/awesome-devops",
+      "date": "2026-06-22"
+    },
+    "be87e018b3a6918061b677f47447e2ff6db57916153a5c96dd6cf49b42981023": {
+      "url": "https://github.com/tomhuang12/awesome-k8s-resources",
+      "date": "2026-06-22"
+    },
+    "f1305d64ac82127b5b247f5369083dd964e795ea74cda3e292a16d50c2262af5": {
+      "url": "https://github.com/ligurio/awesome-ci",
+      "date": "2026-06-22"
+    },
+    "c4d4b86c6827071621d05c413a277639b0cb28997aad531558948f6e23c9d1f2": {
+      "url": "https://github.com/semlinker/awesome-typescript",
+      "date": "2026-06-22"
+    },
+    "d80a51f9de27dfd3faa902c3d1e52db94348312f57ad0a4315e5b3f03b28f0b7": {
+      "url": "https://github.com/sirredbeard/awesome-wsl",
+      "date": "2026-06-22"
+    },
+    "2da07e4a26038032a597395c0c362621555b22ccad1d8829c2d10dc024fb7b9d": {
+      "url": "https://github.com/sindresorhus/awesome-chatgpt",
+      "date": "2026-06-22"
+    },
+    "4a327b7896fde00004e813b5490dbca64007df252da20fb73903a319e7c616e1": {
+      "url": "https://github.com/VoltAgent/awesome-claude-design",
+      "date": "2026-06-22"
+    },
+    "11b0b8f8d60f69ba82443fecc863090645ef104d59abb6fff2960a69b28ecd8d": {
+      "url": "https://github.com/RManLuo/Awesome-LLM-KG",
+      "date": "2026-06-22"
+    },
+    "4fc6fa7d8247b3d67f755dc53d84fd17485068772c696b4b13347e37855d2ac9": {
+      "url": "https://news.ycombinator.com/item?id=47431237",
+      "date": "2026-06-22"
+    },
+    "19e3bd2c62258696a601296336791e42217a90b29d41756c30fd89d290b269e4": {
+      "url": "https://www.bensbites.com/p/elon-doubled-limits",
+      "date": "2026-06-22"
+    },
+    "26795b8d8c6fd2542eabe6721ba10fe7a5d7fbc59a2a0c5b470e09d6c819a337": {
+      "url": "https://github.com/spree/spree",
+      "date": "2026-06-22"
+    },
+    "35aeeab58bb69f2a032fda45538d39a204b5a71cd73bab63df3be11b0257da9f": {
+      "url": "https://news.ycombinator.com/item?id=45361268",
+      "date": "2026-06-22"
+    },
+    "d75d19543950be1c0b6dc7bc27192594ec588ebca2e68987e737d4f2f19dcedc": {
+      "url": "https://www.bensbites.com/p/codex-is-gaining-steam",
+      "date": "2026-06-22"
+    },
+    "2cabb463740b26d7e343bb27704883359086b1ae42aa10e8f707f9d361904d94": {
+      "url": "https://github.com/tracel-ai/burn",
+      "date": "2026-06-22"
     }
   },
-  "backfillPage": 15,
+  "backfillPage": 16,
   "dailyPage": 5
 }
