@@ -1,0 +1,216 @@
+---
+title: "Port 100k Lines from TypeScript to Rust Using Claude Code and Automation"
+description: "Learn to port large TypeScript codebases to Rust by combining AI assistance with custom automation scripts for continuous, hands-free execution."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 360
+jobToBeDone: "Port large TypeScript codebases to Rust using AI and automation"
+tools:
+  - name: "Claude Code"
+    url: "https://code.claude.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Node.js"
+    url: "https://nodejs.org"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Docker"
+    url: "https://www.docker.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "AppleScript"
+    url: "https://developer.apple.com/applescript/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "AutoHotkey"
+    url: "https://www.autohotkey.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Auto Clicker by MurGaa"
+    url: "https://www.murguu.com/auto-clicker-mac/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Git"
+    url: "https://git-scm.com"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=46765694"
+  platform: "hackernews"
+  author: "ibobev"
+  postedAt: 2026-01-26
+score: 9
+ingestedAt: 2026-06-22
+nigeriaNotes: "This workflow relies on a paid AI service (Claude Code), which may be a barrier for users on free tiers. While other tools like Node.js, Docker (freemium), and automation scripts are free or have free tiers, the core AI component requires payment. Data usage for code processing is generally light, but continuous AI interaction over a month could accumulate costs."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "Automate porting your complex TypeScript assignment code to Rust for a performance boost, using AI and custom scripts."
+  - persona: "employee"
+    scenario: "Port a large legacy TypeScript codebase to Rust for your company, using AI and automation to speed up the migration."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to set up an automated environment to port large TypeScript codebases to Rust using an AI assistant like Claude Code. This approach allows for continuous, hands-free code migration, significantly speeding up the process for substantial projects.
+
+This method works by bypassing AI sandbox limitations and automating user interactions, enabling the AI to work uninterrupted on complex, long-running tasks.
+
+## Tools you need
+*   **Claude Code** (paid): An AI coding assistant that can generate and refactor code.
+*   **Node.js** (free): A JavaScript runtime environment used to create a local HTTP server.
+*   **Docker** (freemium): A platform for developing, shipping, and running applications in containers, used here to isolate the Rust compilation environment.
+*   **AppleScript** (free): A scripting language for macOS, used to automate keyboard inputs.
+*   **AutoHotkey** (free): A scripting language for Windows, used as an alternative to AppleScript for automating keyboard inputs.
+*   **Auto Clicker by MurGaa** (freemium): A utility to simulate mouse clicks, used to maintain focus on the terminal window.
+*   **Git** (free): A version control system, used for managing code changes and pushing to repositories.
+
+## Steps
+
+1.  **Understand the Goal and Challenges**: The author's goal was to port the 100,000-line "Pokemon Showdown" project from JavaScript (TypeScript) to Rust for performance reasons, inspired by Microsoft's goal of porting C++ to Rust. The main challenges were Claude's sandbox limitations (no SSH for Git), antivirus interference with new binaries (Rust compilation), and Claude's tendency to pause or ask for permissions, requiring human intervention.
+
+    You should understand that this workflow is designed to overcome these specific hurdles for a large-scale, long-running AI-assisted coding project.
+
+2.  **Set up a Local Git Server (Node.js)**: Claude's sandbox prevents direct SSH access for `git push`. To bypass this, the author created a local Node.js HTTP server that executes `git` commands (like `git add .`, `git commit -m "AI commit"`, `git push`) based on the URL parameters or POST body. This server needs to run in a separate terminal tab.
+
+    First, ensure Node.js is installed. Then, create a file named `git-server.js` and add the following code. This is a generic example, as the author didn't share their exact script. You will need to install `express` first.
+
+    ```bash
+    # macOS or Linux
+    npm install express
+    ```
+    ```powershell
+    # Windows (PowerShell)
+    npm install express
+    ```
+
+    Then, create the server file:
+
+    ```javascript
+    // git-server.js
+    const express = require('express');
+    const { exec } = require('child_process');
+    const app = express();
+    const port = 3000;
+
+    app.use(express.json()); // For parsing application/json
+    app.use(express.urlencoded({ extended: true })); // For parsing application/x-www-form-urlencoded
+
+    app.post('/git', (req, res) => {
+      const command = req.body.cmd; // Expecting command in POST body, e.g., { "cmd": "git add ." }
+      if (!command || !command.startsWith('git')) {
+        return res.status(400).send('Invalid or missing git command');
+      }
+      console.log(`Executing: ${command}`);
+      exec(command, (error, stdout, stderr) => {
+        if (error) {
+          console.error(`exec error: ${error}`);
+          return res.status(500).send(`Error: ${stderr}`);
+        }
+        res.send(`Output: ${stdout}`);
+      });
+    });
+
+    app.listen(port, () => {
+      console.log(`Git server listening at http://localhost:${port}`);
+      console.log('WARNING: This server executes arbitrary git commands. Use with extreme caution and only on a trusted local network.');
+    });
+    ```
+
+    Run the server in a dedicated terminal tab:
+
+    ```bash
+    node git-server.js
+    ```
+
+    You should see a message indicating the server is running, for example: `Git server listening at http://localhost:3000`.
+
+3.  **Configure Docker for Rust Compilation**: To avoid antivirus prompts every time a new Rust binary was compiled, the author used Docker. You will need to install Docker Desktop for your operating system. Once installed, you can ask Claude Code to generate the necessary Dockerfile and commands to compile and run your Rust code inside a Docker container.
+
+    The author doesn't share their exact prompt; a starting point:
+
+    ```
+    I need to compile and run Rust code without triggering antivirus prompts. Please provide a Dockerfile and instructions to build and run a Rust project inside a Docker container. The project structure is standard, with a Cargo.toml and src/main.rs.
+    ```
+
+    You should get a Dockerfile and commands like `docker build -t my-rust-app .` and `docker run my-rust-app`.
+
+4.  **Automate Claude's Permissions with AppleScript/AutoHotkey**: Claude often asks for permission to perform actions. To allow it to run for hours without intervention, the author used a script to automatically press Enter every few seconds. This assumes Claude's prompt for permission is a simple confirmation.
+
+    *   **For macOS users (AppleScript)**: Open the Script Editor application, paste the following script, and run it in a separate tab. This script will continuously press the Enter key.
+
+        ```bash
+        #!/bin/bash
+        osascript -e \
+        'tell application "System Events" repeat delay 5 key code 36 end repeat end tell'
+        ```
+
+        You should see the script running, and if you switch to a terminal where Claude is asking for input, it will automatically press Enter.
+
+    *   **For Windows users (AutoHotkey)**: Download and install AutoHotkey. Create a new `.ahk` file (e.g., `auto_enter.ahk`), paste the following script, and run it. This script will continuously press the Enter key.
+
+        ```autohotkey
+        ; auto_enter.ahk
+        #Persistent
+        SetTimer, PressEnter, 5000
+        return
+
+        PressEnter:
+        Send, {Enter}
+        return
+        ```
+
+        You should see the AutoHotkey script running in your system tray, and it will send Enter key presses to the active window.
+
+5.  **Prevent Claude from Stopping/Recapping**: Claude tends to pause and recap its progress. To keep it focused on the task, the author modified the automation script to paste the current task from the clipboard after pressing Enter. This ensures the task is re-queued if Claude finishes a sub-task or gets stuck.
+
+    *   **For macOS users (AppleScript)**: Modify the previous AppleScript. Before running, copy the main task description (e.g., "Port the next 100 lines of TypeScript code from file X to Rust, ensuring all tests pass") to your clipboard.
+
+        ```bash
+        #!/bin/bash
+        osascript -e \
+        'tell application "System Events" repeat delay 5 key code 36 keystroke "v" using {command down} end repeat end tell'
+        ```
+
+        You should see the script pressing Enter and then pasting the clipboard content every 5 seconds.
+
+    *   **For Windows users (AutoHotkey)**: Modify the previous AutoHotkey script. Before running, copy the main task description to your clipboard.
+
+        ```autohotkey
+        ; auto_enter_paste.ahk
+        #Persistent
+        SetTimer, PressKeys, 5000
+        return
+
+        PressKeys:
+        Send, {Enter}
+        Send, ^v ; ^ means Ctrl
+        return
+        ```
+
+        You should see the AutoHotkey script pressing Enter and then pasting the clipboard content every 5 seconds.
+
+6.  **Maintain Focus with an Auto Clicker**: Sometimes, other programs (like software updaters) can steal focus from the terminal window, stopping the automation scripts. The author used an Auto Clicker to simulate a left click every few seconds, ensuring the terminal window remains active. The author used "Auto Clicker by MurGaa" from their Minecraft days.
+
+    Download and install an Auto Clicker tool (e.g., Auto Clicker by MurGaa). Configure it to click every few seconds (e.g., 5 seconds) and position your terminal window where the click will keep it active without interfering with other elements.
+
+    You should see the Auto Clicker periodically clicking, preventing other applications from taking focus from your terminal.
+
+7.  **Initiate the Porting Process**: With all the automation in place, you can now start Claude Code and provide it with the initial instructions for porting your TypeScript codebase to Rust. Ensure your local Git server and Docker environment are ready, and the automation scripts are running in their respective tabs.
+
+    The author doesn't share their exact prompt; a starting point:
+
+    ```
+    You are an expert Rust developer. Your task is to port the 'Pokemon Showdown' codebase from TypeScript to Rust. Start with the file 'src/battle.ts'. For each section, first write the Rust equivalent, then ensure it compiles using the Docker setup, and finally commit the changes using the local git server at http://localhost:3000/git. Report any issues encountered.
+    ```
+
+    You should see Claude Code begin to process the files, generating Rust code, and interacting with your local services, with minimal human intervention.
+
+## Original source
+This workflow is inspired by a blog post by vjeux, shared by ibobev on Hackernews. The post details the author's personal project to port a 100,000-line TypeScript codebase to Rust using Claude Code and various automation techniques over a month.
+
+## Notes & variations
+*   **Free-tier alternatives**: While Claude Code is a paid service, for smaller, less complex porting tasks, you might experiment with freemium AI chat models like `chatgpt.com`, `claude.ai`, or `gemini.google.com`. However, these typically have stricter rate limits and less robust code execution environments, making them unsuitable for a 100,000-line project. For local execution, tools like Ollama or LM Studio can run open-source models on your machine, but they require significant local computing resources.
+*   **Common mistake**: A major pitfall is the security risk of the local Node.js Git server. The provided example executes arbitrary `git` commands based on URL parameters. In a real-world scenario, you should implement robust authentication, authorization, and input validation to prevent malicious commands from being executed, especially if the server is accessible beyond your local machine. The author explicitly warns about the dangers of allowing AI to run arbitrary code.
+*   **Tip for better results**: Start with a small, self-contained module or file from your codebase. This allows you to refine your prompts, test your automation setup, and identify common translation patterns or issues before scaling up to the entire project. Continuously monitor the AI's output and intervene if it goes off track, adjusting your prompts or automation scripts as needed.

@@ -1,0 +1,83 @@
+---
+title: "Train a Custom AI Coding Partner with JAX and TPUs"
+description: "Learn to train your own AI coding assistant using JAX and TPUs, inspired by Anthropic's Claude. Follow steps for pretraining, SFT, and RLHF."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 600
+jobToBeDone: "Train a custom AI model for code generation using JAX and TPUs"
+tools:
+  - name: "Claude Code"
+    url: "https://code.claude.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "JAX"
+    url: "https://github.com/google/jax"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "TPUs"
+    url: "https://cloud.google.com/tpu"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "nanochat"
+    url: "https://github.com/karpathy/nanochat"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "The Stack-V2"
+    url: "https://huggingface.co/datasets/bigcode/the-stack-dedup"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Fineweb-edu"
+    url: "https://huggingface.co/datasets/HuggingFaceFW/fineweb-edu"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=47649742"
+  platform: "hackernews"
+  author: "desideratum"
+  postedAt: 2026-04-05
+score: 7
+ingestedAt: 2026-06-22
+nigeriaNotes: "TPUs can be accessed via Google Cloud's TRC program for free credits, making this workflow accessible. Data usage for pre-training can be significant, so a stable internet connection is recommended."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "Train a custom AI coding partner using JAX and TPUs to help debug Python assignments and generate boilerplate code for projects."
+  - persona: "employee"
+    scenario: "Fine-tune an AI coding assistant with JAX and TPUs to generate specific code snippets for internal company tools or legacy systems."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to train your own AI coding assistant from scratch, inspired by Anthropic's Claude models. This workflow covers the end-to-end process including pretraining, supervised fine-tuning (SFT), and reinforcement learning from human feedback (RLHF) using Direct Preference Optimization (DPO).
+This approach is useful for creating specialized coding partners when you need fine-grained control over the model's behavior and capabilities.
+## Tools you need
+*   **Claude Code** (paid): A powerful AI model for code generation and understanding, used here as a reference and potentially for generating synthetic data.
+*   **JAX** (free): A Python library for high-performance numerical computation, particularly suited for machine learning research and development on accelerators like TPUs.
+*   **TPUs** (paid): Tensor Processing Units are specialized hardware developed by Google for accelerating machine learning workloads. Free access may be available through programs like Google TRC.
+*   **nanochat** (free): An open-source project providing a reference implementation for training chat models, adapted here for coding tasks.
+*   **The Stack-V2** (free): A large dataset of permissively licensed code, useful for pre-training coding models.
+*   **Fineweb-edu** (free): A dataset containing educational web content, also used for pre-training.
+## Steps
+1.  **Set up your environment variables**: Before running any commands, you need to set up directories and model tags. The author uses a hidden directory in the home folder for caching.
+    ```bash
+    export NANOCODE_BASE_DIR="$HOME/.cache/nanocode"
+    export MODEL_TAG=d24
+    ```
+    You should see these variables set in your current terminal session. If you are on Windows, you can use PowerShell: `$env:NANOCODE_BASE_DIR = "$HOME\.cache\nanocode"` and `$env:MODEL_TAG = "d24"`.
+2.  **Download and prepare pre-training data**: This step involves downloading and sharding datasets. The author uses `fineweb-edu` and `the-stack-v2-dedup`. The command below starts the process for `fineweb-edu`.
+    ```bash
+    python -m data.pretrain -d fineweb-edu -n 300
+    ```
+    This command will run a Python script to process the `fineweb-edu` dataset, creating 300 shards. You should observe output indicating data download and processing progress.
+3.  **Download and prepare The Stack-V2 data**: Similar to the previous step, this command prepares the `the-stack-v2-dedup` dataset.
+    ```bash
+    python -m data.pretrain -d the-stack-v2-dedup -n 60
+    ```
+    This will process `the-stack-v2-dedup`, creating 60 shards. The output will show the progress of this data preparation.
+## Original source
+This workflow is based on a discussion post by 'desideratum' on Hacker News, introducing 'nanocode'. The author shares their library for training a Claude Code-like model end-to-end using JAX and TPUs, adapting techniques from Karpathy's nanochat project.
+## Notes & variations
+*   **Free Tier Tip**: Google's TRC (Test for Research Cloud) program or new Google Cloud accounts can provide free TPU access and credits, making the expensive hardware training more accessible.
+*   **Common Pitfall**: Ensure your JAX installation is compatible with your hardware (TPUs or GPUs). Incorrect configurations can lead to errors during training.
+*   **Better Results**: Incorporating additional coding data, such as from The Stack-V2 at a specific ratio (1:5 mentioned by the author), during pre-training can significantly improve the model's coding capabilities and tokenization efficiency.

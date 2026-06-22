@@ -1,0 +1,92 @@
+---
+title: "Collaborate with AI to design and plan software features using Claude Code"
+description: "Learn to use Claude Code as a design partner for software features. Start by generating a detailed plan document to ensure alignment and efficient development."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 60
+jobToBeDone: "Collaborate with AI to design and plan software features"
+tools:
+  - name: "Claude Code"
+    url: "https://code.claude.com"
+    pricing: "paid"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=45002315"
+  platform: "hackernews"
+  author: "scastiel"
+  postedAt: 2025-08-24
+score: 9
+ingestedAt: 2026-06-22
+nigeriaNotes: "Claude Code is a paid developer tool. Consider using freemium alternatives like Google AI Studio or the Gemini API (which has a free tier) for similar planning tasks, though they may require more manual prompting."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "Draft a detailed plan for your final year project app, including requirements and pseudocode, before coding."
+  - persona: "employee"
+    scenario: "Generate a feature plan for a new internal tool, complete with implementation details and QA commands."
+  - persona: "entrepreneur"
+    scenario: "Outline the technical plan for your startup's MVP features, getting AI feedback on implementation."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will get a detailed software feature plan document, including a rephrasing of requirements, proposed implementation details (often with code or pseudocode), and quality assurance commands. This approach establishes a clear "source of truth" early in the development process, preventing context loss and making the design phase more efficient and collaborative, much like discussing a plan with a colleague.
+
+## Tools you need
+*   **Claude Code** (paid): An AI agent specifically designed for coding tasks, used here to generate and refine software design plans.
+
+## Steps
+
+1.  **Access Claude Code**: Open your web browser and go to `https://code.claude.com`. Log in to your account. You should see the main chat interface for interacting with the AI agent.
+
+2.  **Describe your feature**: Start a new conversation. Provide a detailed description of the software feature you want to design. The author advises against giving too many implementation details at this stage, as you want the AI to contribute to the design process. For example:
+
+    ```
+    I want to implement a query builder. The page will be displayed as two columns. In the first one, a first box will let the user select a view (for now only one view: Volume Metrics), a second box to select fields (field 1, field 2, field 3), and a third one to add filters (don't fill it yet). The right column will display first the query as human readable, then a table with the query results.
+    ```
+
+    You should see Claude Code acknowledge your request, possibly asking clarifying questions or starting to formulate an initial response.
+
+3.  **Reference existing context (optional)**: If you have existing design plans or architectural details that Claude Code should consider, reference them in your prompt. This helps the AI understand the project's context. For example, after your feature description, you could add:
+
+    ```
+    Check out the previous plan in @plans/chat-playground.md to know about routing and architecture details.
+    ```
+
+    Claude Code will incorporate this context into its understanding of the task.
+
+4.  **Instruct for plan generation**: Now, ask Claude Code to write a detailed plan document based on your description and any provided context. Crucially, ask it to wait for your validation before proceeding to implementation. Use a prompt like this:
+
+    ```
+    Write a plan in @plans/query-builder.md, and let me validate it before starting the implementation.
+    ```
+
+    You should receive a markdown-formatted plan document from Claude Code, outlining its proposed approach.
+
+5.  **Review the generated plan**: Carefully read through the plan document Claude Code provides. Look for three key elements:
+    *   A rephrasing of your initial feature description, ensuring alignment on requirements.
+    *   Details on how the feature will be implemented, often including code or pseudocode snippets.
+    *   Commands for quality assurance, such as type checking, linting, and tests.
+
+    You should see a comprehensive document that serves as a 'source of truth' for the feature.
+
+6.  **Refine the plan collaboratively**: If you're not satisfied with the suggested implementation, provide specific feedback explaining *why* it's wrong or what needs to change. The author suggests treating this like a discussion with a colleague. For example:
+
+    ```
+    The page should be a subroute of /explore, not /review. Also, it should be accessible only to users with the admin role.
+    ```
+
+    Claude Code will then revise the plan based on your feedback. Continue this back-and-forth until you are satisfied with the plan.
+
+7.  **Clear conversation and proceed**: Once you have a solid plan document, the author recommends clearing the conversation history. This helps prevent the AI from getting confused by older, potentially overridden instructions and ensures the plan document remains the single source of truth. After clearing, you can start a new conversation with just the final plan as context to begin implementation, or save the plan for later.
+
+    You should have a validated, detailed plan ready for development.
+
+## Original source
+This workflow is inspired by an article titled "Turning Claude Code Into My Best Design Partner" by scastiel, originally published on Between the Prompts and shared on hackernews.
+
+## Notes & variations
+*   **Free-tier alternatives**: While Claude Code is a paid service, you could adapt this planning approach using freemium tools like Google AI Studio or the Gemini API (which has a free tier). However, these might require more explicit and detailed prompting to achieve a similar level of structured planning.
+*   **Common mistake**: A common pitfall is to give too many specific implementation instructions in the initial prompt. This limits the AI's ability to contribute to the design process and suggest alternative, potentially better, approaches. Let the AI propose solutions first.
+*   **Tip for better results**: Treat the AI as a junior colleague. Instead of just telling it what to change, explain *why* a suggestion is incorrect or why a different approach is preferred. This helps the AI learn your preferences and project context, leading to better future suggestions.

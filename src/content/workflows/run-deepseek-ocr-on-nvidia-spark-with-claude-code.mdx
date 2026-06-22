@@ -1,0 +1,102 @@
+---
+title: "Run DeepSeek-OCR on Nvidia Spark with Claude Code"
+description: "Learn to set up and run the DeepSeek-OCR model on an Nvidia Spark device using Claude Code, a powerful AI coding assistant."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 45
+jobToBeDone: "Set up and run the DeepSeek-OCR AI model on specialized hardware."
+tools:
+  - name: "Claude Code"
+    url: "https://code.claude.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Docker"
+    url: "https://www.docker.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Nvidia Spark"
+    url: "https://www.nvidia.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "DeepSeek-OCR"
+    url: "https://huggingface.co/deepseek-ai"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=45646559"
+  platform: "hackernews"
+  author: "simonw"
+  postedAt: 2025-10-20
+score: 8
+ingestedAt: 2026-06-22
+nigeriaNotes: "Free tier access to Claude Code is not available. Running AI models locally can require significant data for downloads. Ensure stable internet for initial setup and model downloads."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "Convert scanned lecture notes or textbook pages into searchable text for easier revision and assignment research."
+  - persona: "employee"
+    scenario: "Extract text from scanned reports or documents to quickly find specific information or create editable versions."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to set up and run the DeepSeek-OCR model on an Nvidia Spark device using an AI coding assistant. This workflow demonstrates how to leverage AI to overcome hardware and software compatibility challenges for specialized AI models.
+
+## Tools you need
+*   **Claude Code** (paid): An AI coding assistant that helps write, debug, and run code.
+*   **Docker** (freemium): A platform for building, shipping, and running applications in containers, useful for creating isolated development environments.
+*   **Nvidia Spark** (paid): Specialized hardware for running AI and machine learning workloads.
+*   **DeepSeek-OCR** (free): An open-source AI model specifically fine-tuned for Optical Character Recognition (OCR).
+
+## Steps
+1.  **Connect to your Nvidia Spark**: Establish an SSH connection to your Nvidia Spark device from your local machine (e.g., Mac).
+    *   You should see a command prompt for your Nvidia Spark device.
+2.  **Start a Docker container**: Launch a new Docker container with GPU access and mount the CUDA toolkit. The author used a specific Nvidia CUDA image. You may need to adapt the image name based on your available CUDA versions.
+
+    ```bash
+    docker run -it --gpus=all \
+    -v /usr/local/cuda:/usr/local/cuda:ro \
+    nvcr.io/nvidia/cuda:13.0.1-devel-ubuntu24.04 \
+    bash
+```
+    *   You should be inside the Docker container's bash shell, indicated by a new command prompt.
+3.  **Install npm**: Update the package list and install Node Package Manager (npm) within the Docker container. The author specified non-interactive installation.
+
+    ```bash
+    apt-get update
+    DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get install -y npm
+```
+    *   You should see output indicating that npm has been installed.
+4.  **Install Claude Code**: Use npm to install the Claude Code command-line interface globally.
+
+    ```bash
+    npm install -g @anthropic-ai/claude-code
+```
+    *   You should see output confirming the successful installation of the package.
+5.  **Start Claude Code**: Launch Claude Code, indicating that it's running within a sandbox environment. This allows it to run with elevated permissions safely.
+
+    ```bash
+    IS_SANDBOX=1 claude --dangerously-skip-permissions
+```
+    *   Claude Code will provide a URL for you to click in your browser to authenticate with your Anthropic account. After authentication, it will be ready to receive prompts.
+6.  **Initiate the OCR setup**: Provide Claude Code with the initial instructions. This includes creating a dedicated folder, cloning the DeepSeek-OCR GitHub repository and model weights from Hugging Face, and researching the environment for compatibility. The author also specified using a particular image for OCR testing and requested extensive notes.
+
+    ```
+    Create a folder deepseek-ocr and do everything else in that folder
+
+    Your task is to get this working: https://github.com/deepseek-ai/DeepSeek-OCR —it uses Hugging Face Transformers and models from https://huggingface.co/deepseek-ai/DeepSeek-OCR —you are running in a Docker container on an NVIDIA ARM device, first research your environment to check it will be possible to do this. Git clone both of those—you may need to enable LFS first. Make extensive notes as you go in a notes.md file which you should only ever append new notes to. At the end of this you should have scripts in the folder which can be run to both setup and then run the model against an example—use https://static.simonwillison.net/static/2025/ft.jpeg as the example image that you OCR. As a final step create a detailed README.md file explaining the project and what you learned and how to run your code.
+```
+    *   Claude Code will begin processing these instructions, potentially taking several minutes. You should see output indicating its progress and any discoveries it makes.
+7.  **Address follow-up issues**: The initial attempt may encounter errors, such as CUDA compatibility issues or missing kernel images. You will need to provide Claude Code with follow-up prompts to resolve these errors. The author's excerpt indicates a specific error related to compute capability and PyTorch version.
+    *   Claude Code will attempt to fix the issues based on your prompts and the error messages it encounters. You will see updated output as it tries different solutions.
+8.  **Finalize and run OCR**: Once Claude Code has successfully resolved the setup issues, it should provide scripts to run the model. Execute these scripts to perform OCR on the specified example image and generate the output.
+    *   You should see the OCR results for the image, along with any notes or README files generated by Claude Code.
+
+## Original source
+This workflow is based on a blog post by Simon Willison, shared on his personal website. He details his experience using Claude Code to overcome technical hurdles in setting up a new AI model, DeepSeek-OCR, on specialized Nvidia hardware.
+
+## Notes & variations
+*   **Free tier alternative**: While Claude Code is a paid tool, similar tasks could be attempted with other AI coding assistants that offer free tiers, though results may vary. For local model execution without a paid assistant, you would need to manually research and implement the setup steps.
+*   **Common pitfall**: Ensure your Docker image has the correct CUDA version compatible with both PyTorch and the Nvidia Spark's compute capability. Mismatched versions are a frequent cause of errors.
+*   **Tip for better results**: Be very specific in your prompts to Claude Code. If it encounters an error, provide the full error message and suggest potential solutions or libraries to investigate. Clearly state the target hardware and software environment.

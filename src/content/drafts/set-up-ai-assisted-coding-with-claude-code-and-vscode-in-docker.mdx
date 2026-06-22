@@ -1,0 +1,108 @@
+---
+title: "Set up AI-Assisted Coding with Claude Code and VSCode in Docker"
+description: "Create a secure, isolated coding environment using Claude Code within Docker and VSCode. Get fast AI assistance and manage token spending effectively."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 45
+jobToBeDone: "Set up an AI-assisted coding environment with Claude and VSCode in Docker"
+tools:
+  - name: "Docker Desktop"
+    url: "https://www.docker.com/products/docker-desktop/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "VSCode"
+    url: "https://code.visualstudio.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "VSCode Dev Containers extension"
+    url: "https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "GitHub"
+    url: "https://github.com/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Claude Code"
+    url: "https://code.claude.com"
+    pricing: "paid"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=44533044"
+  platform: "hackernews"
+  author: "timsh"
+  postedAt: 2025-07-11
+score: 6
+ingestedAt: 2026-06-22
+nigeriaNotes: "This workflow uses a paid AI service (Claude Code) and requires a stable internet connection for initial Docker image downloads, which can be data-intensive. Consider using public Wi-Fi or a data plan with sufficient allowance for setup. Subsequent usage is lighter."
+tiktokUrl: ""
+published: false
+---
+
+## What you'll get
+You will set up a secure, AI-assisted coding environment that runs Claude Code inside a Docker container, integrated with VSCode. This approach provides faster responses from Claude, clear visibility into your token spending, and enhances security by isolating the AI agent from your main file system, preventing it from accessing your entire computer.
+
+## Tools you need
+*   **Docker Desktop** (freemium): Runs software in isolated containers on your computer.
+*   **VSCode** (free): A popular code editor.
+*   **VSCode Dev Containers extension** (free): Allows you to open any folder inside a Docker container as a full-featured development environment.
+*   **GitHub** (freemium): A platform for hosting code, used here to get the workflow's setup files.
+*   **Claude Code** (paid): An AI coding assistant by Anthropic, accessed via its API.
+
+## Steps
+1.  **Install Docker Desktop**: Go to `https://www.docker.com/products/docker-desktop/` and download the installer for your operating system. Run the installer and follow the on-screen instructions. You might need to restart your computer.
+    *   **Expected result**: Docker Desktop is installed and running. You should see the Docker whale icon in your system tray (Windows) or menu bar (macOS).
+
+2.  **Install VSCode**: Go to `https://code.visualstudio.com/` and download the installer for your operating system. Run the installer and follow the on-screen instructions.
+    *   **Expected result**: VSCode is installed and opens successfully.
+
+3.  **Install VSCode Dev Containers extension**: Open VSCode. Click on the Extensions icon in the Activity Bar on the side (it looks like four squares, one detached). In the search bar, type `Dev Containers`. Find the `Dev Containers` extension by Microsoft and click `Install`.
+    *   **Expected result**: The Dev Containers extension is installed. You might see a new "Remote Explorer" icon in the Activity Bar.
+
+4.  **Clone the setup repository**: Open your terminal or command prompt. Navigate to a directory where you want to store your projects. Run the following command to clone the repository containing the Docker setup files:
+
+    ```bash
+    # macOS or Linux
+    git clone https://github.com/tim-sha256/claude-in-docker.git
+    ```
+
+    ```powershell
+    # Windows (PowerShell)
+    git clone https://github.com/tim-sha256/claude-in-docker.git
+    ```
+
+    *   **Expected result**: A new folder named `claude-in-docker` is created in your current directory, containing the setup files.
+
+5.  **Open the project in VSCode**: In VSCode, go to `File` > `Open Folder...`. Navigate to and select the `claude-in-docker` folder you just cloned. Click `Select Folder`.
+    *   **Expected result**: The `claude-in-docker` folder is opened in VSCode. You might see a pop-up asking if you trust the authors of the files. Click `Yes, I trust the authors`.
+
+6.  **Reopen in Dev Container**: After opening the folder, VSCode should detect the `.devcontainer` configuration files and prompt you to "Reopen in Container". Click this button. If you don't see the prompt, open the Command Palette (Ctrl+Shift+P on Windows/Linux, Cmd+Shift+P on macOS) and type `Dev Containers: Reopen in Container`. Select this option. VSCode will now build the Docker image (this might take a few minutes the first time) and then open the project inside the container.
+    *   **Expected result**: VSCode reloads, and in the bottom-left corner, you should see `Dev Container: claude-in-docker` (or similar), indicating you are now working inside the Docker container.
+
+7.  **Set your Claude API Key**: You need an `ANTHROPIC_API_KEY` from Anthropic (which requires a paid Claude Code subscription). Open your local terminal or command prompt (NOT the VSCode terminal, unless you want to set it only for the current session). Set the environment variable `ANTHROPIC_API_KEY` with your actual key. This key will be picked up by the Dev Container.
+
+    ```bash
+    # macOS or Linux (add to ~/.bashrc or ~/.zshrc for persistence)
+    export ANTHROPIC_API_KEY="your_anthropic_api_key_here"
+    ```
+
+    ```powershell
+    # Windows (PowerShell, for persistence across sessions)
+    [System.Environment]::SetEnvironmentVariable('ANTHROPIC_API_KEY', 'your_anthropic_api_key_here', 'User')
+    # Then restart PowerShell or your system for it to take effect.
+    # For current session only: $env:ANTHROPIC_API_KEY="your_anthropic_api_key_here"
+    ```
+
+    *   **Important**: Replace `"your_anthropic_api_key_here"` with your actual key. After setting the environment variable locally, you might need to close and reopen VSCode, and then "Reopen in Container" again (Step 6) for the Dev Container to pick up the new local environment variable.
+    *   **Expected result**: The `ANTHROPIC_API_KEY` is set in your local environment and accessible within the Dev Container.
+
+8.  **Start using Claude Code**: Inside VSCode, with the Dev Container running, open a Python file (e.g., `main.py` if you create one). The `anthropic.claude-code` extension should be active. You can usually interact with it via a chat panel or by selecting code and using context menu options (e.g., "Ask Claude").
+    *   **Expected result**: You can send prompts to Claude Code and receive AI-generated code suggestions or explanations directly within your isolated VSCode environment.
+
+## Original source
+This workflow is based on a guide by timsh, shared on Hacker News, detailing his transition to using Claude Code within a Dockerized VSCode environment. The original post links to a GitHub repository containing the setup files.
+
+## Notes & variations
+*   **Free-tier alternatives**: While Claude Code is a paid service, you can explore free-tier AI models through platforms like Groq (groq.com) or the Gemini API (ai.google.com/gemini-api) for coding assistance. However, integrating them into a similar Dev Container setup would require modifying the `devcontainer.json` and installing different VSCode extensions.
+*   **Common mistake**: Forgetting to set the `ANTHROPIC_API_KEY` environment variable correctly, or not restarting VSCode/reopening the container after setting it locally. Without the key, Claude Code will not function.
+*   **Tip for better results**: Leverage the security benefits. Since the AI agent is isolated, you can be more confident in allowing it to interact with your project files without fear of broader system access. Experiment with detailed prompts, providing context about your project structure and specific coding goals to get more accurate and helpful responses from Claude.
