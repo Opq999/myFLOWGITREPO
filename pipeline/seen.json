@@ -5544,8 +5544,72 @@
     "679de192c8dd6b90c7456546a3f00bfeef690b12f257074d2c275730ea6f6c84": {
       "url": "https://www.reddit.com/r/ChatGPT/comments/1u7bup6/when_youre_one_fix_away_from_finishing_the",
       "date": "2026-06-23"
+    },
+    "b9205efc1e85bb6f9125c93afa1591a3f29c3631ac388a38085524bea451ad40": {
+      "url": "https://github.com/zhuima/awesome-cloudflare",
+      "date": "2026-06-23"
+    },
+    "2d6480e36010248d5be6bf3c80a6d767f4b1b0de0829ee95de3ade94b760307e": {
+      "url": "https://github.com/TheJambo/awesome-testing",
+      "date": "2026-06-23"
+    },
+    "323f768231b517b29e406fb0a11e473008ea103c888a21a0df42439df4a2a118": {
+      "url": "https://github.com/EvoAgentX/Awesome-Self-Evolving-Agents",
+      "date": "2026-06-23"
+    },
+    "4054423bee03d28982005916e428a73ff8940b7bfa27b3194c520650d2e7e5be": {
+      "url": "https://github.com/webfuse-com/awesome-autoresearch",
+      "date": "2026-06-23"
+    },
+    "d06c976cfc0a997ca5435cd926c2ccd5648003d0660d8bd86a95b5e5491a460f": {
+      "url": "https://github.com/vonzosten/awesome-LangGraph",
+      "date": "2026-06-23"
+    },
+    "69db7411700b4677d540cc662a53bbbc69ed23561a77421a7a8f00967231a7c0": {
+      "url": "https://github.com/docsifyjs/awesome-docsify",
+      "date": "2026-06-23"
+    },
+    "fd490471175527a4bc31f86e6c84e090bbdf18cd3c073cb82261fe057ce5ad53": {
+      "url": "https://github.com/arainho/awesome-api-security",
+      "date": "2026-06-23"
+    },
+    "1c8d8e803999a35c3b7375406f8fbb6a1339a1e8177bc880e02926949edbdad7": {
+      "url": "https://github.com/nightrome/really-awesome-gan",
+      "date": "2026-06-23"
+    },
+    "8b56d5ed5d17209a8dea719dc7c3d18501a01258a645125fd8e2df45355d73d1": {
+      "url": "https://github.com/grananqvist/Awesome-Quant-Machine-Learning-Trading",
+      "date": "2026-06-23"
+    },
+    "e018cb34b4a7163f90311398b129f956a66ea25f515b3e5fb6b98b0d03d3eac2": {
+      "url": "https://github.com/ivbeg/awesome-status-pages",
+      "date": "2026-06-23"
+    },
+    "949e41f3ab617b6ba6b77ce9dc6dd5902972452759e53ab5f6442385026216c4": {
+      "url": "https://github.com/atfortes/Awesome-LLM-Reasoning",
+      "date": "2026-06-23"
+    },
+    "3bcdb1738bc6e9781a620944749cd500de9d3a006fa4c1a5817a62750258cb8c": {
+      "url": "https://github.com/vavkamil/awesome-bugbounty-tools",
+      "date": "2026-06-23"
+    },
+    "5456eeec6eb8c821863f76a4d0d531dbfa4368145172c27bc4f340674bad6f2d": {
+      "url": "https://github.com/YanjieZe/awesome-humanoid-robot-learning",
+      "date": "2026-06-23"
+    },
+    "06738581a0e66b748576f507d9aac2fc34c677ac3af98a48fdb4c630c290200e": {
+      "url": "https://github.com/zigcc/awesome-zig",
+      "date": "2026-06-23"
+    },
+    "77f7ffd0028f8fe9678835cdb1e86a154b721a647c5a3fc5b6a358ad8a8dd55d": {
+      "url": "https://news.ycombinator.com/item?id=44962059",
+      "date": "2026-06-23"
+    },
+    "930b1d2cab2d8a8e87485325813a688e5d7a5824dceac36d512098ca69bf2f72": {
+      "url": "https://dev.to/anthonymax/10-open-source-gems-to-become-the-ultimate-developer-dkk",
+      "date": "2026-06-23"
     }
   },
-  "backfillPage": 16,
+  "backfillPage": 17,
   "dailyPage": 0
 }
