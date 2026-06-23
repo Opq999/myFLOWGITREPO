@@ -1,0 +1,62 @@
+---
+title: "Transpile C Code to Z/80 Assembly for Retro Systems with an LLM"
+description: "Learn how to transpile C code into Z/80 assembly for retro systems like the ZX Spectrum. This workflow demonstrates converting applications for vintage hardware."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 45
+jobToBeDone: "Transpile code from one language to another, including to assembly for retro systems"
+tools:
+  - name: "Claude.ai"
+    url: "https://claude.ai"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=43217357"
+  platform: "hackernews"
+  author: "ghuntley"
+  postedAt: 2025-03-01
+score: 7
+ingestedAt: 2026-06-23
+nigeriaNotes: "Claude.ai offers a robust free tier, making this workflow accessible without upfront costs. Data usage is minimal, primarily text-based prompts and responses, which is light on mobile data."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+This workflow shows you how to convert C programming code into Z/80 assembly language, specifically for retro systems like the ZX Spectrum. You will learn to leverage an AI assistant to transpile existing applications, making them compatible with vintage hardware. This approach works because large language models (LLMs) excel at understanding code structure, deobfuscation, and converting code between different programming languages and architectures.
+
+## Tools you need
+*   **Claude.ai** (freemium): An AI assistant for generating and transforming text, including code.
+
+## Steps
+
+1.  **Prepare your C code**: Identify and copy the C code you wish to transpile. For a beginner, start with a small, simple C program (e.g., a "Hello, World!" equivalent or a basic calculation) to make it easier to verify the output.
+    You should have your C code ready to paste into the AI assistant.
+
+2.  **Open Claude.ai**: Navigate to the Claude.ai website in your web browser. If you don't have an account, you will need to sign up or log in.
+    You should see the chat interface, ready for your input.
+
+3.  **Prompt for transpilation**: Ask Claude.ai to convert your C code to Z/80 assembly. The author doesn't share their exact prompt; a starting point:
+
+    ```
+    Transpile the following C code into Z/80 assembly language, suitable for a ZX Spectrum. Provide the assembly code with comments explaining each section.
+
+    [Paste your C code here]
+    ```
+
+    You should receive a response containing Z/80 assembly code, often with explanations for different parts of the code.
+
+4.  **Review the assembly code**: Carefully read through the generated Z/80 assembly code. Check for logical consistency, correct syntax, and whether it accurately reflects the functionality of your original C code. You may need to ask follow-up questions or request revisions from Claude.ai if parts of the code are unclear or incorrect.
+    You should have a version of the Z/80 assembly code that you believe is accurate and functional.
+
+5.  **Further steps (not detailed by author)**: The original author mentions converting to a "working Z/80 Speccy tape." This final step would typically involve using a Z/80 assembler to compile the assembly code into machine code, and then using specific tools to create a tape image or ROM file compatible with a ZX Spectrum emulator or actual hardware. These tools and processes are beyond the scope of the original excerpt and this workflow.
+    You will have the Z/80 assembly code, ready for further compilation and testing with appropriate retro development tools.
+
+## Original source
+This workflow is inspired by Geoffrey Huntley's post on Hacker News, where he discusses the surprising capability of large language models to decompile and transpile code, referencing his own blog for more details on the technique.
+
+## Notes & variations
+*   **Free-tier alternatives**: Other freemium LLMs like Gemini (gemini.google.com) or ChatGPT (chatgpt.com) can also perform code transpilation tasks. Their free tiers offer similar capabilities for text-based code transformations.
+*   **Common mistake**: A frequent error is not specifying the target architecture and system clearly. Simply asking to "convert to assembly" might result in x86 or ARM assembly, not Z/80. Always include details like "Z/80 assembly," "ZX Spectrum," or "CP/M" to guide the LLM.
+*   **Tip for better results**: For complex C programs, consider breaking them down into smaller functions or modules. Transpile each part separately, then combine and refine the assembly code. This modular approach helps the LLM focus and reduces the chance of errors in large code blocks. Always ask the LLM to explain its reasoning or specific code sections if you are unsure.

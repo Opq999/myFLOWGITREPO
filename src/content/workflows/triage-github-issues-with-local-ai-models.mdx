@@ -1,0 +1,77 @@
+---
+title: "Triage GitHub Issues with Local AI Models"
+description: "Learn how to use local AI models like Gemma and Qwen to automatically triage GitHub issues and pull requests for your projects."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 60
+jobToBeDone: "Triage GitHub issues and pull requests using local AI models"
+tools:
+  - name: "Gemma"
+    url: "https://ai.google.dev/gemma"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Qwen"
+    url: "https://huggingface.co/Qwen"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Pi"
+    url: "https://pi.ai"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "OpenClaw"
+    url: "https://github.com/OpenClaw"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://huggingface.co/blog/local-models-pr-triage"
+  platform: "blog"
+  author: "Hugging Face - Blog"
+  postedAt: 2026-06-22
+score: 7
+ingestedAt: 2026-06-23
+nigeriaNotes: "Running local models requires significant hardware resources (RAM, GPU) which may not be readily available on typical consumer devices. Free tiers of cloud-based AI services can be an alternative, but data usage and costs need careful monitoring. Pi.ai offers a freemium model, which could be suitable for initial testing."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+
+You will set up a system to automatically categorize incoming GitHub issues and pull requests using locally run AI models. This approach allows for real-time, cost-free (excluding electricity) processing of project contributions, especially useful when building on AI infrastructure.
+
+## Tools you need
+
+*   **Gemma** (free): A family of lightweight, state-of-the-art open models developed by Google, suitable for local deployment.
+*   **Qwen** (free): A series of large language models developed by Alibaba Cloud, also available for local use.
+*   **Pi** (freemium): An agent harness that can orchestrate local models and tools for complex tasks like classification.
+*   **OpenClaw** (free): An open-source project used as a case study for issue and pull request triage.
+
+## Steps
+
+1.  **Set up your local AI model environment**: The author uses local models like Gemma and Qwen. You will need to install and configure a framework that can run these models on your hardware. The exact steps depend on your operating system and chosen model runner (e.g., Ollama, LM Studio, or direct library usage). Ensure your chosen model (e.g., `gemma-4-26b-a4b` or `qwen3.6-35b-a3b`) is downloaded and accessible.
+    *   **What to see**: Your local model inference server is running and ready to accept requests.
+
+2.  **Integrate a local model with an agent harness**: The author uses Pi as an agent harness. This involves configuring Pi to communicate with your local model endpoint. The author does not share the exact configuration for Pi, but generally, you would point Pi to your local model's API address (e.g., `http://localhost:11434` if using Ollama).
+    *   **What to see**: The agent harness can successfully send prompts to your local model and receive responses.
+
+3.  **Define classification labels**: Create a finite set of labels that represent the categories you want to use for triaging issues and pull requests. Examples from the source include `local_models`, `self_hosted_inference`, `acp`, `agent_runtime`, `codex`, `ui_tui`.
+    *   **What to see**: A clear list of labels ready to be used for classification.
+
+4.  **Configure the agent for classification**: Set up the agent harness (Pi) to receive new GitHub issues or pull requests. The agent should be prompted to classify the incoming item using the defined labels. The author's prompt is not fully detailed but would involve providing the issue/PR title, body, and a diff excerpt to the model.
+    *   **What to see**: The agent is ready to process new GitHub events.
+
+5.  **Implement structured output for classification**: Instruct the agent to output the classification result in a structured format, such as JSON. The author mentions using a `final_json` tool for this purpose. The prompt should guide the model to select one or more labels from your defined set.
+    *   **What to see**: The agent can output a JSON object containing the predicted labels for an issue or PR.
+
+6.  **(Optional) Grant limited bash access for context**: For more complex analysis, the agent can be given read-only access to bash commands to inspect the codebase. This is a sensitive step; ensure the agent only has permissions for necessary read operations to prevent security risks.
+    *   **What to see**: The agent can execute specific, safe bash commands if needed for classification context.
+
+## Original source
+
+This workflow is based on a blog post by Onur Solmaz and Ben Burtenshaw published on the Hugging Face blog in June 2026. They share their experience using local, open-weight AI models like Gemma and Qwen within an agent harness to automate the triaging of GitHub issues and pull requests for the OpenClaw repository.
+
+## Notes & variations
+
+*   **Free tier alternative**: If running models locally is not feasible due to hardware constraints, consider using free tiers of cloud-based AI services for classification tasks. However, be mindful of API rate limits and data transfer costs.
+*   **Common pitfall**: Granting broad system access (like full bash commands) to an agent processing external inputs can be a security risk. Always restrict permissions to the minimum necessary for the task.
+*   **Tip for better results**: Experiment with different prompt engineering techniques to guide the local model more effectively. Providing clear examples of correctly classified issues and PRs within the prompt can significantly improve accuracy.

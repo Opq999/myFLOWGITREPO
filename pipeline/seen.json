@@ -5440,8 +5440,112 @@
     "2cabb463740b26d7e343bb27704883359086b1ae42aa10e8f707f9d361904d94": {
       "url": "https://github.com/tracel-ai/burn",
       "date": "2026-06-22"
+    },
+    "b801ce71fb6bb40c8905fe072f47e69420b23494947c9a9bb3526a290b60cbcb": {
+      "url": "https://news.ycombinator.com/item?id=47609294",
+      "date": "2026-06-23"
+    },
+    "1c2615191f4913a50683cb1381b3b8ec692ca9fa6d065808059bb7089d889d50": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1ua44eu/hmmmm",
+      "date": "2026-06-23"
+    },
+    "04a005e238223881f715b881b17d07ed532538f49f08be2af9b8186689f310c0": {
+      "url": "https://simonwillison.net/2026/Jun/22/prompt-injection-as-role-confusion",
+      "date": "2026-06-23"
+    },
+    "6a0cb73a1c1b72d2a8d6bffd898bf0da54d33d9618426c030bac780e3dc5179f": {
+      "url": "https://github.com/musistudio/claude-code-router",
+      "date": "2026-06-23"
+    },
+    "ba6e9cc288bd76367a08703015d8daeb9f9f305d7d620170cacbbe5d225188eb": {
+      "url": "https://news.ycombinator.com/item?id=44312363",
+      "date": "2026-06-23"
+    },
+    "0357cd3ac61237b53a2b36f98061706dd7e52feb29542801f9eb4e3530321282": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1u08gd4/people_have_started_sounding_like_chatgpt_now_and",
+      "date": "2026-06-23"
+    },
+    "562cd43a3e0cd7256ae0452b79ef7be54569248c1a9faf9f49582b2d40cbf542": {
+      "url": "https://simonwillison.net/2026/Jun/22/porting-moebius",
+      "date": "2026-06-23"
+    },
+    "78a5846a75cc0fbb0baa14fc2ab38956d1cfc5cce6f1df79a6cab2a6765db4a3": {
+      "url": "https://github.com/AstrBotDevs/AstrBot",
+      "date": "2026-06-23"
+    },
+    "db8285f936730483ac68bd8dcb0f096a5522acbcd119dc5f5f1dc69c970cf214": {
+      "url": "https://news.ycombinator.com/item?id=46699072",
+      "date": "2026-06-23"
+    },
+    "aac1cf5984b9e2b57b527ea2b62b47e37083719781170cb6670a9f6ab42374ee": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1tmzwcr/figure_ai_had_a_livestream_of_their_robots",
+      "date": "2026-06-23"
+    },
+    "1e0d2465783ff443926dbfdcc7f89f130b60be2a4f068bd0e5d016effea91f03": {
+      "url": "https://www.latent.space/p/ainews-spacex-is-already-a-28byr",
+      "date": "2026-06-23"
+    },
+    "ba31bde2dfc28f63582ffedfebd302c295c4fa8569b2cac0bae2351abfd01b4c": {
+      "url": "https://github.com/microsoft/playwright-mcp",
+      "date": "2026-06-23"
+    },
+    "357122d58343255541fa2064b40d8ccfcc1f376542d0ed62b000e686c9e030c6": {
+      "url": "https://news.ycombinator.com/item?id=47749674",
+      "date": "2026-06-23"
+    },
+    "6bd78e4c58a87b326ce98fd8bcc20efed22d1ba9897aff1e638f31190f7ea0c9": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1uaz9wt/senates_acting_real_weird",
+      "date": "2026-06-23"
+    },
+    "0ef52ef7cd8a9e75a87fd9503bf1f6a03d0e8acfe34c8ecd55596593849c45d8": {
+      "url": "https://www.latent.space/p/gray-swan",
+      "date": "2026-06-23"
+    },
+    "6ea562cffa653c96a8f0b64d15744a03e64c4f109eea624889a3b21f3a2b5c4a": {
+      "url": "https://github.com/chatwoot/chatwoot",
+      "date": "2026-06-23"
+    },
+    "7d4cacc3066ed060534b798212fd9e9ccd8312eff876969cd9186885b253bc4f": {
+      "url": "https://news.ycombinator.com/item?id=43927914",
+      "date": "2026-06-23"
+    },
+    "f9ee7fcb57db3b0f5875dc16111a487f9fad5e74ccdec83c22aca8568d5db6c7": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1u0eoyq/_",
+      "date": "2026-06-23"
+    },
+    "b0d7df1028b033f7621e6bf43c594e27073283830cecd83ffe5ef5dd95718ca1": {
+      "url": "https://huggingface.co/blog/huggingface-hub-release-ci",
+      "date": "2026-06-23"
+    },
+    "4a4e1b20d1ed2ee1d20e5417ff369e528e72f36271c2d2ea9d708b8c47573374": {
+      "url": "https://github.com/lfnovo/open-notebook",
+      "date": "2026-06-23"
+    },
+    "ac04748bc5e2fdb8582e144f8073dbe0ae08b5a518dac95e756f6a181075a5b0": {
+      "url": "https://news.ycombinator.com/item?id=45642911",
+      "date": "2026-06-23"
+    },
+    "cc01e6b7e10a71c58f8437042268c77fa83b49cf786d09462e3bebe9929359f5": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1u6766q/why_did_my_char_gpt_do_this",
+      "date": "2026-06-23"
+    },
+    "965bb4d2ca17efb52646368499697187514a283128ef7cb68becd4063758e477": {
+      "url": "https://huggingface.co/blog/local-models-pr-triage",
+      "date": "2026-06-23"
+    },
+    "f73265b67bc3e6e90cfe3aaa9c1e76cd4228eb099e26c8bc50ea796b1af16c8a": {
+      "url": "https://github.com/lissy93/dashy",
+      "date": "2026-06-23"
+    },
+    "b59b1507de92812fa98b3d9f574ecd9a0949ba9a436390987ae69ba0dcb61a04": {
+      "url": "https://news.ycombinator.com/item?id=43217357",
+      "date": "2026-06-23"
+    },
+    "679de192c8dd6b90c7456546a3f00bfeef690b12f257074d2c275730ea6f6c84": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1u7bup6/when_youre_one_fix_away_from_finishing_the",
+      "date": "2026-06-23"
     }
   },
   "backfillPage": 16,
-  "dailyPage": 5
+  "dailyPage": 0
 }

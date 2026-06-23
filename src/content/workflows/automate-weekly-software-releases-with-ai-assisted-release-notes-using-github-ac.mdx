@@ -1,0 +1,128 @@
+---
+title: "Automate Weekly Software Releases with AI-Assisted Release Notes using GitHub Actions"
+description: "Streamline your software release process by automating mechanical steps and using AI to draft release notes, ensuring consistent weekly updates."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 240
+jobToBeDone: "Automate weekly software releases with AI-assisted release notes generation"
+tools:
+  - name: "GitHub Actions"
+    url: "https://github.com/features/actions"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Hugging Face Inference Endpoints"
+    url: "https://huggingface.co/inference-endpoints"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "PyPI"
+    url: "https://pypi.org/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://huggingface.co/blog/huggingface-hub-release-ci"
+  platform: "blog"
+  author: "Hugging Face - Blog"
+  postedAt: 2026-06-23
+score: 8
+ingestedAt: 2026-06-23
+nigeriaNotes: "GitHub Actions offers a robust free tier for public repositories, making it highly accessible. For private projects, the free minutes might be sufficient for small teams. Hugging Face Inference Endpoints are a paid service, which could be a cost consideration; however, the data usage for generating release notes is generally light, as it primarily involves text processing. PyPI is completely free for publishing packages."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "Generate a 20-question quiz from your lecture slides to prepare for an upcoming exam."
+  - persona: "employee"
+    scenario: "Draft weekly software release notes by summarizing merged pull request descriptions for your team."
+  - persona: "entrepreneur"
+    scenario: "Create a draft announcement for your app's new features based on recent code changes."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+This workflow helps you achieve consistent weekly software releases by automating the repetitive, mechanical tasks and leveraging AI to draft comprehensive release notes. You'll get a streamlined process that reduces manual effort from hours to minutes, ensuring fixes and features reach users faster. This approach works by separating mechanical automation from creative drafting, allowing a human to focus on critical review and judgment.
+
+## Tools you need
+*   **GitHub Actions** (freemium): Orchestrates your entire release workflow, running automated tasks on code changes.
+*   **Hugging Face Inference Endpoints** (paid): Serves open-weights AI models (like GLM-5.2) for generating text, such as release notes and announcements.
+*   **PyPI** (free): The Python Package Index, used for publishing your Python library or application.
+*   **An open-weights Large Language Model** (e.g., GLM-5.2): The specific AI model used for drafting, served via Hugging Face Inference Endpoints.
+
+## Steps
+This workflow outlines how to set up an automated release pipeline with AI assistance. The author describes the architecture and principles but does not provide the exact code for the GitHub Actions workflow or the AI agent script. Therefore, the steps below describe the necessary components and their integration conceptually.
+
+1.  **Prepare your repository for GitHub Actions**: If you haven't already, create a `.github/workflows` directory in the root of your project. This is where your GitHub Actions workflow files will live.
+
+    *You should see a new folder structure: `your-project/.github/workflows/`.* 
+
+2.  **Define the main release workflow**: Create a YAML file (e.g., `release.yml`) inside the `.github/workflows` directory. This file will contain the instructions for your automated release process.
+
+    *You should have an empty `release.yml` file ready for editing.* 
+
+3.  **Automate mechanical release tasks**: Within your `release.yml` file, add steps to handle the purely mechanical parts of the release. The author mentions these include: bumping the version in `__init__.py`, committing the version bump, tagging the release, pushing the commit and tag, opening test branches in downstream libraries with the release candidate pinned, and opening a post-release PR to bump `main` to the next development version.
+
+    The author does not share the exact scripts or commands for these steps. A starting point for version bumping might involve a Python script or a `sed` command, for example:
+
+    ```yaml
+    # Example step for version bumping (replace with your actual logic)
+    - name: Bump version
+      run: | 
+        python -c "import re; with open('your_package/__init__.py', 'r+') as f: content = f.read(); new_version = '1.2.3'; content = re.sub(r'__version__ = ".*"', f'__version__ = "{new_version}"', content); f.seek(0); f.write(content)"
+    ```
+
+    *You should have placeholder steps in your `release.yml` for automating version management and Git operations.* 
+
+4.  **Integrate AI for drafting release notes**: This is where an AI model, served by Hugging Face Inference Endpoints, generates the first draft of your release notes. The author uses an "OpenCode Agent runtime" to drive the model. This agent would typically fetch merged Pull Request (PR) titles and descriptions since the last release, then send them to the AI model with a prompt to generate structured release notes.
+
+    The author doesn't share their exact prompt or agent code. A starting point for the prompt to an LLM could be:
+
+    ```
+    You are an expert technical writer. Generate concise and clear release notes from the following list of merged Pull Request titles and descriptions. Group related changes by theme (e.g., 'New Features', 'Bug Fixes', 'Improvements'). Provide context where necessary and ensure the tone is professional and user-friendly. Do not include internal development details.
+
+    Merged Pull Requests:
+    - PR #123: Add new 'dark mode' theme option
+    - PR #124: Fix critical bug in user authentication flow
+    - PR #125: Improve performance of data loading
+    - PR #126: Update dependency X to version Y
+    ```
+
+    *You should have a mechanism (e.g., a script in your workflow) that calls the Hugging Face Inference Endpoint with relevant PR data and a prompt, receiving a draft of release notes.* 
+
+5.  **Implement a human review loop**: The AI-generated release notes should never be published blindly. The workflow must include a step where a human reviews, edits, and approves the draft. This can be achieved by having the workflow create a draft GitHub Release or a Pull Request with the AI-generated notes, which then requires manual approval before proceeding.
+
+    *Your workflow should pause or create a reviewable artifact (like a draft release) that requires human intervention before the final publication steps.* 
+
+6.  **Publish the package to PyPI**: Once the release notes are approved, the workflow should proceed to publish your package. The author mentions using PyPI Trusted Publishing, which securely links your GitHub repository to PyPI for automated uploads without needing to manage API keys directly.
+
+    The author does not provide the exact configuration. A common approach involves using the `pypa/gh-action-pypi-publish` action:
+
+    ```yaml
+    # Example step for PyPI Trusted Publishing (add after human approval)
+    - name: Publish package to PyPI
+      uses: pypa/gh-action-pypi-publish@release/v1
+      with:
+        # Ensure your PyPI project is configured for Trusted Publishing
+        # No API token needed if Trusted Publishing is set up correctly
+    ```
+
+    *Your workflow should successfully publish your package to PyPI after human approval.* 
+
+7.  **Draft internal and social announcements**: As a final step, use the AI model to draft announcements for internal communication (e.g., Slack) and social media, based on the approved release notes. This saves time on crafting these messages manually.
+
+    A starting point for the prompt could be:
+
+    ```
+    Based on the following release notes, draft a concise and engaging social media post (e.g., for X/Twitter) and a slightly more detailed internal Slack announcement. Highlight the key new features and bug fixes. Use a positive and enthusiastic tone.
+
+    Release Notes:
+    [Paste the approved release notes here]
+    ```
+
+    *You should receive AI-generated drafts for your announcements, ready for final review and posting.* 
+
+## Original source
+This workflow is inspired by a blog post from the Hugging Face Blog, authored by Lucain Pouget Wauplin and Célina Hanouti. The post details how Hugging Face ships its `huggingface_hub` Python client weekly using AI, open tools, and a human in the loop.
+
+## Notes & variations
+*   **Free-tier alternatives**: If Hugging Face Inference Endpoints' paid tier is a concern, consider running an open-weights LLM locally using tools like Ollama or LM Studio. This requires more powerful local hardware but eliminates inference costs. You would then need to adapt your GitHub Actions workflow to trigger a local script or use a self-hosted runner.
+*   **Common mistake**: A significant pitfall is blindly trusting the AI-generated content. Always maintain a human-in-the-loop review process for release notes and announcements. AI models can confidently generate incorrect or misleading information, especially when summarizing complex technical changes.
+*   **Tip for better results**: When prompting the AI for release notes, provide as much context as possible. Instead of just PR titles, include full PR descriptions, linked issues, and even snippets of code changes if relevant. Experiment with different open-weights models and prompt engineering techniques to find what works best for your specific project and desired tone.

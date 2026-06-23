@@ -1,0 +1,124 @@
+---
+title: "Fix Claude Code's Terminal Flicker with claude-chill"
+description: "Improve your Claude Code terminal experience by eliminating flicker and lag. This workflow uses claude-chill to optimize output rendering for smoother interaction."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 15
+jobToBeDone: "Improve Claude Code's terminal output performance by reducing flicker and lag"
+tools:
+  - name: "Claude Code"
+    url: "https://code.claude.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "claude-chill"
+    url: "https://github.com/davidbeesley/claude-chill"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Rust / Cargo"
+    url: "https://www.rust-lang.org/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=46699072"
+  platform: "hackernews"
+  author: "behnamoh"
+  postedAt: 2026-01-20
+score: 7
+ingestedAt: 2026-06-23
+nigeriaNotes: "This workflow relies on Claude Code, which is a paid developer tool and does not offer a free tier for its core AI functionality. While `claude-chill` itself is free and runs locally, using Claude Code will incur costs and data usage for API calls."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+This workflow will help you eliminate the flickering and lag often experienced when using Claude Code in your terminal. You'll get a much smoother, more responsive coding experience, making it easier to focus on your work.
+
+This approach works by having `claude-chill` act as a proxy, intercepting Claude Code's large terminal updates and intelligently rendering only the necessary changes, rather than redrawing the entire screen each time.
+
+## Tools you need
+*   **Claude Code** (paid): An AI coding assistant that integrates with your terminal.
+*   **claude-chill** (free): A command-line utility that optimizes Claude Code's terminal output by reducing flicker and lag.
+*   **Rust / Cargo** (free): The Rust programming language and its package manager, required to install `claude-chill`.
+
+## Steps
+
+1.  **Install Rust and Cargo**: `claude-chill` is written in Rust, so you need the Rust toolchain, which includes Cargo (the Rust package manager).
+
+    # macOS or Linux
+    ```bash
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+    ```
+    Follow the on-screen instructions. When prompted, choose option `1` for default installation. After installation, you might need to restart your terminal or run `source $HOME/.cargo/env` to ensure Cargo is in your PATH.
+
+    # Windows (PowerShell)
+    ```powershell
+    # Download the Rust installer
+    Invoke-WebRequest -Uri "https://static.rust-lang.org/rustup/dist/x86_64-pc-windows-msvc/rustup-init.exe" -OutFile "$HOME\rustup-init.exe"
+    
+    # Run the installer (this will open a new window)
+    Start-Process -FilePath "$HOME\rustup-init.exe" -Wait
+    
+    # Clean up the installer
+    Remove-Item -Path "$HOME\rustup-init.exe"
+    ```
+    Follow the prompts in the installer window, choosing the default installation option. After installation, restart your PowerShell terminal to ensure Cargo is correctly added to your system's PATH.
+
+    You should see a message confirming Rust and Cargo are installed, and running `cargo --version` should display the version number.
+
+2.  **Install claude-chill**: Once Rust and Cargo are set up, you can install `claude-chill` directly from its GitHub repository.
+
+    ```bash
+    cargo install --git https://github.com/davidbeesley/claude-chill
+    ```
+
+    You should see compilation progress, followed by a message indicating `claude-chill` was successfully installed. Running `claude-chill --version` should display its version.
+
+3.  **Run Claude Code with claude-chill**: Instead of running `claude` directly, you'll now run it through `claude-chill`.
+
+    ```bash
+    claude-chill claude
+    ```
+
+    You should see Claude Code start as usual, but its output will now be processed by `claude-chill`, resulting in a much smoother, flicker-free display. If you pass arguments to Claude Code, use `--` to separate them, for example: `claude-chill -- claude --verbose`.
+
+4.  **Use Lookback Mode**: `claude-chill` includes a lookback feature that allows you to pause Claude Code's output and scroll through the full history buffer.
+
+    Press `Ctrl+6` (or `Ctrl+Shift+6` on some macOS terminals) while Claude Code is running.
+
+    You should see Claude Code's output pause, and the full history buffer will be dumped to your terminal, allowing you to scroll freely. Press `Ctrl+6` again (or `Ctrl+C`) to exit lookback mode and resume Claude Code's live output.
+
+5.  **Customize the Lookback Key (Optional)**: If `Ctrl+6` is inconvenient or doesn't work well on your system, you can change the key.
+
+    ```bash
+    claude-chill -k "[f12]" claude
+    ```
+
+    Replace `[f12]` with your desired key. Remember to quote the key to prevent shell glob expansion. You should now be able to toggle lookback mode using your chosen key.
+
+6.  **Adjust History Buffer Size (Optional)**: By default, `claude-chill` stores 100,000 lines for lookback. You can adjust this limit.
+
+    ```bash
+    claude-chill -H 50000 claude
+    ```
+
+    Replace `50000` with your preferred maximum number of history lines. You should notice that the lookback buffer now respects your new size limit.
+
+7.  **Disable Auto-Lookback (Optional)**: `claude-chill` automatically enters lookback mode after 15 seconds of inactivity. You can disable this feature.
+
+    ```bash
+    claude-chill -a 0 claude
+    ```
+
+    You should observe that the terminal no longer automatically dumps the history buffer after a period of inactivity.
+
+## Original source
+This workflow is based on a discussion by behnamoh on Hacker News, where they shared the `claude-chill` tool as a solution to Claude Code's terminal flickering issues. The tool itself is developed by davidbeesley.
+
+## Notes & variations
+*   **Common Mistake**: Forgetting to install Rust and Cargo first will lead to `cargo` commands not being found. Ensure you've completed Step 1 and restarted your terminal if necessary.
+*   **macOS Lookback Key**: If `Ctrl+6` doesn't work on macOS, try `Ctrl+Shift+6` or customize the key using the `-k` flag. For example:
+    ```bash
+    claude-chill -k "[f12]" claude
+    ```
+*   **Tip for Better Results**: Experiment with the history line limit (`-H`) to find a balance between memory usage and the amount of scrollback you need. A lower number might be better for older devices or if you rarely need to review extensive history.
