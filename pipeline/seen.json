@@ -5712,8 +5712,88 @@
     "74807beb62b168cfdccb2d0c17309e33afa187d166aff6fea3135e145f63b923": {
       "url": "https://news.ycombinator.com/item?id=45163362",
       "date": "2026-06-24"
+    },
+    "4919bf7e67ede943b0652a83fcbe09470df5c839093ade06e4df6a8292c26c7a": {
+      "url": "https://github.com/rohitg00/awesome-claude-code-toolkit",
+      "date": "2026-06-24"
+    },
+    "4b4277d9d1b26f42eaab830fe88ad157cec1e364944dc89ee954f789d508ce0f": {
+      "url": "https://github.com/Xnhyacinth/Awesome-LLM-Long-Context-Modeling",
+      "date": "2026-06-24"
+    },
+    "bdfe9ec4650e2fe1f23b9fc8a53f256486550d22027e50f9fbceae44cf59c2a7": {
+      "url": "https://github.com/uhub/awesome-go",
+      "date": "2026-06-24"
+    },
+    "51ab84720e1cb8ba2220a0f55c01c475b6b14b6d5f32865a98357714c2ac243e": {
+      "url": "https://github.com/ZeroLu/awesome-gpt-image",
+      "date": "2026-06-24"
+    },
+    "c530c6abfa42a9220db39f4af96377643024231c75b1d8f1cf91633a3d1e63ba": {
+      "url": "https://github.com/lizhe2004/Awesome-LLM-RAG-Application",
+      "date": "2026-06-24"
+    },
+    "11bbc485f559c69c006a5696cc321f787dd373cd06ee3cc7a6c664464b5c630f": {
+      "url": "https://github.com/snwfdhmp/awesome-gpt-prompt-engineering",
+      "date": "2026-06-24"
+    },
+    "297fcf9caea54bc891aa3c3e877476f922c857f1b8d66b106a23fa7326501398": {
+      "url": "https://github.com/business-science/awesome-generative-ai-data-scientist",
+      "date": "2026-06-24"
+    },
+    "02755f542419a22eb05c6d2842d0e05c5b968ddf6fc87bd942650c7b7c367cad": {
+      "url": "https://github.com/CHIANGEL/Awesome-LLM-for-RecSys",
+      "date": "2026-06-24"
+    },
+    "2c71b9bafcf64e9b71a4cc2701dbe2f1de11af7d44268b6051a37443fade46ec": {
+      "url": "https://github.com/slavakurilyak/awesome-ai-agents",
+      "date": "2026-06-24"
+    },
+    "baa41a05829cc5ad2e5d798bc42ec92fbddabb9a349b1f669c610d63dc7c46ff": {
+      "url": "https://github.com/akuity/awesome-argo",
+      "date": "2026-06-24"
+    },
+    "4e382ec532af4dc62257ce3538d35192666ae5074380c3d12172299d77a62194": {
+      "url": "https://github.com/davidgasquez/awesome-duckdb",
+      "date": "2026-06-24"
+    },
+    "3ba3eb368b613f023af7fa323225f6375706cf686bd8ab135121702baf2cb412": {
+      "url": "https://github.com/xyflow/awesome-node-based-uis",
+      "date": "2026-06-24"
+    },
+    "81e581bc113b03346886b714081f6917704adc3041f5982a99fb376ab49f627c": {
+      "url": "https://github.com/web-padawan/awesome-web-components",
+      "date": "2026-06-24"
+    },
+    "54f430176812d43fc8292e2d9854704028a1f509774c6b86f9eab800db4f8010": {
+      "url": "https://github.com/snoopysecurity/awesome-burp-extensions",
+      "date": "2026-06-24"
+    },
+    "aae5371cdc85851bdfef68062150cc6a8dee481d4c31e6a7247948b81054fc76": {
+      "url": "https://github.com/appcypher/awesome-mcp-servers",
+      "date": "2026-06-24"
+    },
+    "528c844c686ba25ddb1c88dc97b3691258723c0d972a3fd0f03d009f68407d53": {
+      "url": "https://github.com/wesbos/awesome-uses",
+      "date": "2026-06-24"
+    },
+    "7e85c2a895a9c9b166c4d611a24d6144a018f51dbcb3cd564ae31ddb44937f46": {
+      "url": "https://github.com/wenhwu/awesome-remote-sensing-change-detection",
+      "date": "2026-06-24"
+    },
+    "935a04eaad6f36db2cb3f49cfca2ef7a0d4716383ffe1deda079df9a78ea5056": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1m61hpw/why_does_chatgpt_keep_doing_this_ive_tried",
+      "date": "2026-06-24"
+    },
+    "f63036e03e295c934e2fd44e3a055dd5010f5f951e889c3c9c8430e068422469": {
+      "url": "https://www.bensbites.com/p/building-gets-easier",
+      "date": "2026-06-24"
+    },
+    "b8565aff9938938bdd04fb4c19b30bcdb9982cfa2b83c76ef2ab041b0914af84": {
+      "url": "https://github.com/coleam00/context-engineering-intro",
+      "date": "2026-06-24"
     }
   },
-  "backfillPage": 17,
+  "backfillPage": 18,
   "dailyPage": 1
 }
