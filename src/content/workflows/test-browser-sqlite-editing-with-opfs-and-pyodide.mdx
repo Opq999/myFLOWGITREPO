@@ -3,7 +3,7 @@ title: "Test Browser SQLite Editing with OPFS and Pyodide"
 description: "Learn to test browser-based SQLite file editing using OPFS and Pyodide. Build a playground UI to experiment with persistent file storage in web applications."
 category: "coding"
 badge: "sourced"
-difficulty: "beginner"
+difficulty: "intermediate"
 timeMinutes: 30
 jobToBeDone: "Test browser-based SQLite file editing using OPFS and Pyodide."
 tools:
@@ -12,7 +12,7 @@ tools:
     pricing: "paid"
     affiliateUrl: ""
   - name: "OPFS"
-    url: "https://developer.mozilla.org/en-US/docs/Web/API/OriginPrivateFileSyste"
+    url: "https://developer.mozilla.org/en-US/docs/Web/API/File_System_API/Origin_private_file_system"
     pricing: "free"
     affiliateUrl: ""
   - name: "Pyodide"
@@ -31,6 +31,7 @@ source:
 score: 7
 ingestedAt: 2026-06-24
 nigeriaNotes: "Claude Code is a paid tool. Free alternatives for generating UI code include using online code editors with AI assistants or manually writing HTML/CSS/JavaScript. OPFS, Pyodide, and Datasette Lite are free and run in the browser, making them data-light and suitable for mobile use."
+revisedAt: 2026-06-24
 tiktokUrl: ""
 published: true
 ---
@@ -60,8 +61,7 @@ You will create a web-based playground to test editing persistent SQLite files d
         cd opfs-pyodide-test
         # Create placeholder files (replace with your generated code later)
         touch index.html style.css script.js
-        # Install and run a simple Python HTTP server
-        pip install http.server
+        # Run Python's built-in HTTP server (no install needed)
         python -m http.server 8000
         ```
     *   **Windows (PowerShell)**:
