@@ -3,7 +3,7 @@ title: "Generate AI Insights with MineContext and ChatGPT"
 description: "Learn to use MineContext to proactively gather digital context and leverage ChatGPT for generating insights and summaries."
 category: "sme-operations"
 badge: "sourced"
-difficulty: "beginner"
+difficulty: "intermediate"
 timeMinutes: 30
 jobToBeDone: "Proactively generate insights and summaries from user's digital context."
 tools:
@@ -30,47 +30,56 @@ nigeriaUseCases:
     scenario: "Generate daily work summaries and identify productivity bottlenecks to impress your boss."
   - persona: "entrepreneur"
     scenario: "Track your daily progress and identify recurring patterns in your startup activities for better strategic decisions."
+revisedAt: 2026-06-23
 tiktokUrl: ""
 published: true
 ---
 
 ## What you'll get
-You will set up MineContext to proactively gather information from your digital activities and then use ChatGPT to generate summaries and insights from this collected context. This approach helps you gain clarity and efficiency by automatically surfacing key information from your work and study.
+
+A setup where an app quietly records what you do on your computer (mainly by taking periodic screenshots of your activity), and then an AI turns that record into a daily summary and useful insights, like where your time goes and what keeps tripping you up. MineContext does the capturing; ChatGPT does the summarizing. It is intermediate: you install an app, connect an AI key, and grant screen-capture permission.
 
 ## Tools you need
-*   **MineContext** (free) - An open-source AI partner that collects and understands your digital context.
-*   **ChatGPT** (freemium) - A powerful AI chatbot for generating text, summaries, and insights.
+
+- **MineContext** (free): an open-source app that captures your "digital context" (your on-screen activity) on your own machine.
+- **ChatGPT** (freemium): turns that captured context into summaries and insights. You connect an AI model key inside MineContext.
 
 ## Steps
-1.  **Download and Install MineContext** - Visit the MineContext GitHub repository and download the appropriate version for your operating system (Windows or Mac). Follow the installation instructions provided in the repository.
-    You should see the MineContext application installed on your device.
-2.  **Configure API Key** - Open MineContext. Navigate to the settings or configuration section. You will need to enter your API key for a language model. The excerpt mentions ChatGPT, so you would typically use your OpenAI API key here. The author doesn't specify the exact input field, but look for an 'API Key' or 'OpenAI Key' setting.
-    You should see a confirmation that your API key has been accepted or saved.
-3.  **Start Recording Context** - In MineContext, find and click the option to 'Start Recording' or 'Begin Monitoring'. This will allow MineContext to start capturing your digital activities, such as screenshots and potentially other data sources as described in its features.
-    You should see an indicator that MineContext is actively recording your context.
-4.  **Generate a Summary Prompt** - Once MineContext has collected some context over a period (e.g., a day or a week), you will need to export or access this data. The excerpt states MineContext delivers summaries proactively, but for this workflow, we'll manually prompt ChatGPT. Open ChatGPT and use a prompt to ask for a summary of your activities. The author doesn't provide an exact prompt, but a good starting point is:
 
-```
-Based on the following information about my digital activities, please provide a concise daily summary highlighting key tasks completed, important decisions made, and any notable outcomes. 
+1. **Install MineContext**: on its GitHub page, download the version for your system (Windows or Mac) and follow the install instructions. You should end up with the MineContext app installed.
 
-[Paste your collected context data here]
-```
+2. **Add your AI key**: open MineContext's settings and enter an AI model API key (for example your OpenAI key). An API key is the secret that lets the app use the AI. You should see it saved or confirmed.
 
-    You should receive a summarized overview of your activities from ChatGPT.
-5.  **Generate Insights Prompt** - After getting a summary, you can ask ChatGPT for deeper insights. Use a follow-up prompt. The author doesn't provide specific prompts for insights, so here’s a general approach:
+3. **Start recording**: click Start Recording (or Begin Monitoring). Grant the screen-capture permission your system asks for. You should see an indicator that it is now capturing your activity.
 
-```
-From the daily summary provided, what are 3 potential areas for improvement in my workflow or productivity? Also, identify any recurring themes or patterns in my activities.
+4. **Get a daily summary**: after it has gathered a day (or week) of context, open ChatGPT and ask it to summarize. Paste in the context MineContext collected:
 
-[Paste the daily summary generated in the previous step here]
-```
+   ```
+   Based on the following record of my digital activities, write a concise daily summary:
+   the key tasks I completed, important decisions, and any notable outcomes.
 
-    You should receive a list of potential improvements and identified patterns.
+   [paste your collected context here]
+   ```
+
+   You should get a clear overview of your day.
+
+5. **Ask for insights**: follow up to dig deeper:
+
+   ```
+   From that summary, what are three areas I could improve in my workflow or productivity?
+   Also point out any recurring themes or patterns in my activities.
+
+   [paste the summary from the previous step]
+   ```
+
+   You should get specific suggestions and patterns you might not have noticed.
 
 ## Original source
-This workflow is based on the MineContext project by volcengine, shared on GitHub. MineContext is presented as a proactive, context-aware AI partner designed to bring clarity and efficiency to users' digital lives through context engineering and AI.
+
+Based on the MineContext project by volcengine on GitHub, a local-first, context-aware AI tool designed to surface useful summaries and insights from your day-to-day digital activity.
 
 ## Notes & variations
-*   **Free Tier Tip:** Ensure you are using the free tier of ChatGPT if you have not subscribed. Be mindful of usage limits.
-*   **Common Pitfall:** If MineContext is not collecting data, check your system permissions to ensure it has access to take screenshots or monitor application activity. Also, verify your API key is correctly entered and active.
-*   **Better Results:** Experiment with different prompts for ChatGPT. For instance, ask for specific types of insights relevant to your work, such as identifying potential time-saving opportunities or areas where you might be getting stuck.
+
+- **Free-tier tip**: use ChatGPT's free tier and watch its usage limits if you paste in a lot of context.
+- **Common pitfall**: if MineContext is not capturing anything, check your system permissions (it needs screen-capture access) and confirm your API key is entered and active.
+- **Tip for better results**: tailor your insight prompts to what you care about, for example "where am I losing time?" or "which tasks did I keep putting off?".

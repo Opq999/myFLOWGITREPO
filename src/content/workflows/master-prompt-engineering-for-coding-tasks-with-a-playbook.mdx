@@ -26,28 +26,67 @@ nigeriaUseCases:
     scenario: "A tech entrepreneur building an MVP for their e-commerce startup uses prompt engineering to generate more functional Python backend code or React components from ChatGPT, accelerating their product development."
   - persona: "employee"
     scenario: "A junior developer at a Lagos tech firm applies prompt engineering to generate precise SQL queries for database tasks or debug complex JavaScript errors in their project using Copilot, improving their daily workflow."
+revisedAt: 2026-06-23
 tiktokUrl: ""
 published: true
 ---
 
 ## What you'll get
 
-You will gain a foundational understanding of prompt engineering principles specifically tailored for programming tasks. This will enable you to craft more effective prompts, leading to better and more relevant outputs from AI models for your coding needs.
+A short, practical "playbook" of prompting habits that get noticeably better code out of any AI. The difference between a vague request and a well-shaped one is the difference between code you fight with and code that just works. These are the core, widely-proven techniques (inspired by vinhnx's programmer's prompt-engineering playbook), with ready-to-use prompt patterns.
 
 ## Tools you need
 
-*   **Any Large Language Model (LLM)**: freemium (e.g., ChatGPT, Gemini, Claude. The original source does not specify a particular LLM, so any general-purpose model will work.)
+- **Any AI chatbot** (freemium): ChatGPT, Gemini, Claude, or Copilot. Free tiers handle all of this.
 
 ## Steps
 
-1.  Access the "Prompt engineering playbook for programmers" as referenced by the source. The original source links to a Substack article which contains the playbook.
-2.  Read through the playbook to understand the prompt engineering principles and techniques it outlines for coding tasks. The excerpt does not provide specific details on these principles.
-3.  Apply the learned prompt engineering techniques when interacting with a Large Language Model (LLM) for your programming needs, such as generating code, debugging, or refactoring. The author does not share specific prompts or examples within the provided excerpt.
+1. **Give context before the request**: tell the AI what you are building and the constraints, not just "write a function". Context steers everything.
+
+   ```
+   I'm building a simple to-do list web app for beginners, plain HTML, CSS, and JavaScript,
+   no frameworks. Write a function that adds a task to a list on the page and explain it.
+   ```
+
+2. **State your level**: ask for the explanation depth you actually want, so the code matches your understanding.
+
+   ```
+   I'm new to JavaScript. Write a function that adds two numbers, and explain each line so I can learn.
+   ```
+
+3. **Name the exact languages and tools**: stop the AI guessing or using something you do not have.
+
+   ```
+   Using Python 3 and the FastAPI framework, write an API endpoint that returns a list of users as JSON.
+   ```
+
+4. **Show an example of what you want**: a tiny sample of the input and the desired output beats a long description.
+
+   ```
+   Write a function that turns a date like "2026-06-24" into "24 June 2026".
+   Example: format_date("2026-01-05") should return "5 January 2026".
+   ```
+
+5. **Always ask for an explanation and how to test it**: this catches mistakes and teaches you at the same time.
+
+   ```
+   Write a function that checks if a password is at least 8 characters and has a number.
+   Explain how it works, and show me how to test it with a few example passwords.
+   ```
+
+6. **Iterate with the error, not "it broke"**: when something fails, paste the exact error and the relevant code.
+
+   ```
+   I got this error running the function: [paste the full error]. Here is the code: [paste it].
+   What is wrong and how do I fix it?
+   ```
 
 ## Original source
 
-This workflow is inspired by a post titled "Prompt engineering playbook for programmers" by vinhnx, shared on Hackernews. The post highlights the importance of structured prompting for developers.
+Inspired by "Prompt engineering playbook for programmers" by vinhnx, shared on Hacker News, on writing structured prompts that get better results for coding tasks. The techniques above are the common, proven principles; see the original playbook for the author's full version.
 
 ## Notes & variations
 
-Since the core of this workflow is learning a playbook, the primary variation involves which Large Language Model you choose to apply the techniques with. Most major LLMs offer robust free tiers suitable for experimentation. Consider exploring models like Google Gemini (gemini.google.com), Anthropic Claude (claude.ai), or Microsoft Copilot (copilot.microsoft.com) as free-tier alternatives to ChatGPT.
+- **Any model works**: these habits transfer across ChatGPT, Gemini, Claude, and Copilot. Their free tiers are fine for practicing.
+- **Common pitfall**: trusting AI code without reading it. Always review and test what it gives you; treat it as a strong draft.
+- **Tip for better results**: stack the techniques, context plus exact language plus an example plus "explain and test it" in one prompt gets the best first answer.

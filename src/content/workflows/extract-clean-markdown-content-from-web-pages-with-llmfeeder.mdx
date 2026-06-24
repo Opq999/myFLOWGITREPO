@@ -34,30 +34,38 @@ nigeriaUseCases:
     scenario: "Pull a complex internal wiki page about a new HR system into an AI assistant to get a quick summary or ask specific questions for your team's onboarding."
   - persona: "entrepreneur"
     scenario: "Grab the API documentation for a payment gateway like Paystack from their website, then paste it into an AI to help you integrate it into your new e-commerce app."
+revisedAt: 2026-06-23
 tiktokUrl: ""
 published: true
 ---
 
 ## What you'll get
-You will be able to extract the main content from any web page as clean markdown, ready to be pasted into AI coding assistants. This approach works by stripping away website clutter like ads and navigation, ensuring your AI receives only the relevant text for better context and responses.
+
+A one-shortcut way to grab the real content of any web page (the article or documentation, minus the ads, menus, and clutter) as clean "markdown" and copy it to your clipboard, ready to paste into an AI. Markdown is simple formatted text (headings, lists, links) that AI models read especially well, so this gives your assistant exactly the context it needs and nothing it does not. The extension does this on your own device, so the page never goes to a cloud service.
 
 ## Tools you need
-*   **LLMFeeder** (free): A browser extension that extracts and converts web page content to markdown.
-*   **Mozilla Readability.js** (free, included in LLMFeeder), The underlying technology that identifies and extracts the main content of a web page.
-*   **Turndown.js** (free, included in LLMFeeder), A library that converts HTML to markdown.
-*   **AI Coding Assistant** (freemium, e.g., ChatGPT, Cursor), A tool where you will paste the extracted markdown content.
+
+- **LLMFeeder** (free): a browser extension that turns the current page into clean markdown and copies it. (Under the hood it uses Mozilla's Readability to find the main content and Turndown to convert it; you do not install those separately.)
+- **An AI assistant** (freemium): ChatGPT, Cursor, Gemini, or Claude, wherever you paste the result.
 
 ## Steps
-1.  **Install LLMFeeder**: Go to your browser's extension store (Chrome Web Store or Firefox Add-ons) and search for "LLMFeeder". Click "Add to [Browser]" and confirm the installation. You should see the LLMFeeder icon appear in your browser's toolbar.
-2.  **Navigate to a web page**: Open any web page containing documentation or article content you want to extract. For example, visit a technical blog post or a software documentation page.
-3.  **Activate LLMFeeder**: On the web page, press the keyboard shortcut `Alt+Shift+M` (on Windows/Linux) or `Option+Shift+M` (on macOS). You should hear a subtle sound or see a brief visual confirmation indicating that the content has been copied to your clipboard.
-4.  **Paste into your AI assistant**: Switch to your AI coding assistant (like ChatGPT or Cursor). Create a new chat or prompt and paste the content directly using `Ctrl+V` (Windows/Linux) or `Cmd+V` (macOS). The pasted text should be well-formatted markdown, free of ads and navigation elements.
-5.  **Use the context**: You can now ask your AI assistant questions about the pasted content, request summaries, or ask it to perform tasks based on the provided documentation.
+
+1. **Install LLMFeeder**: open your browser's extension store (Chrome Web Store or Firefox Add-ons), search "LLMFeeder", and add it. You should see its icon appear in your toolbar.
+
+2. **Open the page you want**: go to the article or documentation page whose content you need.
+
+3. **Grab the content**: press the shortcut, `Alt+Shift+M` on Windows or Linux, or `Option+Shift+M` on macOS. A brief confirmation tells you the clean markdown is now on your clipboard.
+
+4. **Paste it into your AI**: switch to ChatGPT, Cursor, or another assistant, start a chat, and paste with `Ctrl+V` (Windows/Linux) or `Cmd+V` (macOS). You should see neat markdown, no ads or navigation.
+
+5. **Ask away**: now ask the AI to summarize the page, answer questions about it, or use it as reference while it helps you code.
 
 ## Original source
-This workflow is based on the LLMFeeder browser extension, created by jatinkrmalik. It was shared on Hacker News as a "Show HN" post, highlighting its utility for developers and anyone needing to feed clean web content into AI models.
+
+Based on the LLMFeeder browser extension by jatinkrmalik, shared as a Show HN post, for feeding clean web content into AI models.
 
 ## Notes & variations
-*   **Free-tier alternative**: LLMFeeder itself is free and open-source. For AI assistants, free tiers of tools like ChatGPT or Gemini can be used, though they may have usage limits.
-*   **Common pitfall**: Ensure you are on the actual content page and not a link aggregation page or a page with complex dynamic content that might confuse the extractor. Sometimes, refreshing the page before using the shortcut can help.
-*   **Tip for better results**: If the extracted markdown isn't perfect, you can configure LLMFeeder's settings (accessible via its extension icon) for content scope and formatting options. Experimenting with these settings can yield cleaner results for specific websites.
+
+- **Free-tier alternative**: LLMFeeder is free and open-source. Any AI assistant's free tier works for the pasting step, within its usage limits.
+- **Common pitfall**: using it on a link-list or a heavily dynamic page can confuse the extractor. Make sure you are on the actual content page, and refreshing before the shortcut sometimes helps.
+- **Tip for better results**: if the markdown is not clean enough for a particular site, open LLMFeeder's settings (via its icon) and adjust the content scope and formatting options.

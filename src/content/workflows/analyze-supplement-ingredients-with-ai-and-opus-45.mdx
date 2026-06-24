@@ -7,9 +7,9 @@ difficulty: "beginner"
 timeMinutes: 30
 jobToBeDone: "Analyze and rank supplement ingredients based on scientific research using AI"
 tools:
-  - name: "Opus 4.5"
-    url: "https://opus.ai/"
-    pricing: "paid"
+  - name: "Claude (Opus 4.5)"
+    url: "https://claude.ai"
+    pricing: "freemium"
     affiliateUrl: ""
 source:
   url: "https://news.ycombinator.com/item?id=46719423"
@@ -18,7 +18,7 @@ source:
   postedAt: 2026-01-22
 score: 7
 ingestedAt: 2026-06-21
-nigeriaNotes: "Opus 4.5 is a paid tool. Free alternatives like Claude.ai or Gemini.google.com can be used for analysis, but may require more careful prompt engineering and fact-checking due to potential for hallucinations. Data usage will be light, suitable for mobile."
+nigeriaNotes: "Opus 4.5 is one of Claude's most capable models and sits on paid plans, but Claude's free tier, ChatGPT, or Gemini can do this analysis with careful prompting and fact-checking. Data usage is light and fine on mobile."
 nigeriaUseCases:
   - persona: "student"
     scenario: "For a Human Nutrition assignment, analyze the ingredients of a popular Nigerian herbal supplement to identify scientifically supported claims versus marketing hype."
@@ -26,36 +26,56 @@ nigeriaUseCases:
     scenario: "As a wellness content creator, verify the scientific backing for ingredients in trending health supplements before recommending them to your audience on Instagram or YouTube."
   - persona: "small-business"
     scenario: "Before stocking a new batch of imported vitamins for your pharmacy, use AI to analyze the ingredient list and verify scientific claims against research, ensuring you offer credible products to customers."
+revisedAt: 2026-06-23
 tiktokUrl: ""
 published: true
 ---
 
 ## What you'll get
-You will learn how to use an AI model to analyze supplement ingredients and cross-reference them with scientific research. This workflow helps you distinguish between scientifically-backed supplements and those with less evidence, empowering informed purchasing decisions.
+
+A clear, evidence-weighted breakdown of what is actually in a supplement: for each ingredient, what it claims to do and how strong the science behind that claim really is. This helps you tell a scientifically backed product from one selling mostly marketing, so you spend money (or stock your shelves) wisely.
 
 ## Tools you need
-*   **Opus 4.5** (paid): An AI model used here for analyzing and interpreting research data.
-*   **Web Browser**: To access AI tools and research papers.
+
+- **Claude (Opus 4.5)** (freemium): an AI chat app. Opus 4.5 is one of Claude's most capable models and is on paid plans, but the free tier of Claude, ChatGPT, or Gemini works too. You will paste ingredients and research text and ask it to analyze them.
 
 ## Steps
-1.  **Access the AI model**: Navigate to the Opus 4.5 interface. The author does not specify the exact steps for accessing Opus 4.5, but typically this involves logging into their platform.
-2.  **Prepare your data**: Gather the list of ingredients from a supplement you want to analyze. You will also need access to research papers or summaries related to supplementation. The author mentions indexing research papers and ranking claims by effect type and size, but does not provide specific data sources or formats. You will need to find relevant research papers yourself.
-3.  **Prompt the AI for ingredient analysis**: The author does not share their exact prompt for analyzing ingredients. A starting point could be:
-    ```
-    Analyze the following supplement ingredients: [List of ingredients here]. For each ingredient, identify its primary claimed benefits and the scientific evidence supporting those claims. Please also note any potential side effects or interactions mentioned in research.
-    ```
-    You should receive a breakdown of each ingredient, its purported uses, and a summary of supporting scientific evidence.
-4.  **Prompt the AI for research paper analysis**: The author describes indexing research papers and ranking claims. You can adapt this by asking the AI to summarize and rank research.
-    ```
-    Review the following research paper abstract/summary: [Paste research paper text here]. Rank the claims made about supplementation based on effect size and type of evidence. Identify the strongest scientific claims.
-    ```
-    You should get a ranked list of claims from the research, highlighting the most scientifically supported ones.
-5.  **Link supplement data to research**: The author's third step is to link supplement data with research papers. This requires comparing the AI's analysis of the supplement ingredients with its analysis of the research papers. You will need to manually compare the outputs from steps 3 and 4 to see if the supplement's ingredients are supported by the scientific evidence you've analyzed.
+
+1. **Open the AI chat app**: go to claude.ai (or chatgpt.com or gemini.google.com) in your browser and sign in. You should see a message box ready for your first prompt.
+
+2. **Gather your inputs**: copy the ingredient list off the supplement's label (or its online product page). If you have access to any research, such as a paper's abstract (the short summary at the top of a study), keep that handy too. You do not need to be a scientist; you just need the text.
+
+3. **Ask the AI to analyze the ingredients**: paste the list into this prompt:
+
+   ```
+   Analyze the following supplement ingredients: [paste the ingredient list here].
+   For each ingredient, give me: its main claimed benefit, how strong the
+   scientific evidence for that claim is (strong, mixed, weak, or none), and any
+   known side effects or interactions. Flag any ingredient where the evidence is
+   weak or the dose is too low to matter.
+   ```
+
+   You should get a per-ingredient breakdown that separates well-supported claims from shaky ones.
+
+4. **Rank the claims by strength of evidence** (optional): if you have a research paper's abstract, paste it in to have the AI weigh it:
+
+   ```
+   Here is a research abstract: [paste the abstract here]. Rank the claims it makes
+   by effect size (how big the benefit is) and quality of evidence (was it a large
+   human trial, a small one, or just animal or lab work?). Tell me which claims are
+   the most trustworthy.
+   ```
+
+   You should get a ranked list, with large, well-tested effects at the top.
+
+5. **Cross-check, then decide**: compare the two answers. Does the research actually back up the benefits claimed on the label? Ask the AI directly: "Based on the research above, which of this product's claims hold up and which do not?" Treat the result as a strong starting point, not gospel, and verify anything important against the original study.
 
 ## Original source
-This workflow is inspired by a project shared by user lilouartz on Hacker News. The author detailed their multi-year effort to analyze supplements by indexing products and scientific research, using AI to bridge the gap between them. They discussed challenges faced, including legal issues and the evolving capabilities of AI models like Opus 4.5.
+
+Based on a Hacker News post by lilouartz describing a multi-year effort to analyze supplements by indexing products alongside scientific research and using AI to connect the two. The author discussed the challenges involved, including legal questions and the changing capabilities of AI models like Opus 4.5.
 
 ## Notes & variations
-*   **Free Tier Alternative**: If Opus 4.5 is not accessible, you can use free AI chat tools like Claude.ai, ChatGPT (free tier), or Gemini.google.com. Be aware that free models may be more prone to 'hallucinations' (generating incorrect information), so cross-referencing their output with original research is crucial.
-*   **Common Pitfall**: Do not blindly trust the AI's output. Always verify the AI's summaries and rankings against the original research papers, especially when dealing with health-related information.
-*   **Tip for Better Results**: When prompting the AI, be as specific as possible about the type of information you need. For example, instead of asking for 'benefits', ask for 'clinically proven benefits' or 'anecdotal evidence'.
+
+- **Free-tier alternative**: no need for a paid plan. Claude's free tier, ChatGPT, or Gemini can all do this. Just be extra careful to fact-check, since any model can "hallucinate" (state made-up information as if it were true).
+- **Common pitfall**: trusting the AI blindly on a health topic. Always check its summaries against the original research, and never treat this as medical advice.
+- **Tip for better results**: be specific about the evidence you want. Ask for "claims proven in human clinical trials" rather than just "benefits", so the AI does not lump strong and weak evidence together.

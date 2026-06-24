@@ -11,7 +11,7 @@ tools:
     url: "https://claude.ai"
     pricing: "freemium"
     affiliateUrl: ""
-  - name: "Codex"
+  - name: "Product Manager Skills"
     url: "https://github.com/deanpeters/Product-Manager-Skills"
     pricing: "free"
     affiliateUrl: ""
@@ -22,7 +22,7 @@ source:
   postedAt: 2026-05-20
 score: 7
 ingestedAt: 2026-06-18
-nigeriaNotes: "Claude offers a free tier with usage limits. Codex is open-source and free to use if you have the technical means to set it up. Data usage depends on interaction length."
+nigeriaNotes: "Claude offers a free tier with usage limits. The Product Manager Skills framework is open-source and free. Data usage depends on interaction length."
 nigeriaUseCases:
   - persona: "student"
     scenario: "Build a structured framework for your final year project proposal using AI-powered product management skills."
@@ -30,39 +30,47 @@ nigeriaUseCases:
     scenario: "Develop a product idea validation strategy and user story framework for your startup using AI agents."
   - persona: "employee"
     scenario: "Create a product requirements document outline for a new feature using an AI-driven PM skills framework."
+revisedAt: 2026-06-23
 tiktokUrl: ""
 published: true
 ---
 
 ## What you'll get
-You will obtain a structured product management skills framework, designed to enhance your ability to frame problems, identify opportunities, and validate product ideas. This approach leverages battle-tested methods, enabling both you and AI agents to perform product management tasks at a professional level.
+
+A ready-made, professional product-management toolkit loaded into Claude, so the AI can help you do real product work: frame a problem properly, spot opportunities, and check whether an idea is worth building ("validate" it). The toolkit (an open-source pack of "skills") is built on established PM methods, so you get a structured approach even with no product-management background. No coding needed for the main path.
 
 ## Tools you need
-*   **Claude** (freemium) - An AI assistant that can process and generate text, used here for understanding and applying PM frameworks.
-*   **Codex** (free) - A tool mentioned for its integration with AI agents, implying a potential for programmatic application of the skills framework.
-*   **GitHub** (free) - A platform to access and download the open-source product management skills framework.
+
+- **Claude** (freemium): the AI you load the skills into and chat with. Free tier works, with usage limits.
+- **Product Manager Skills** (free): the open-source framework by deanpeters on GitHub. You download it and add it to Claude.
 
 ## Steps
-1.  **Access the Product Manager Skills Framework** - Navigate to the GitHub repository and locate the "Fastest Path" download link for the "pm-skills-starter-pack.zip". Download this file.
-    You should see a ZIP file downloaded to your device.
-2.  **Unzip the Starter Pack** - Extract the contents of the "pm-skills-starter-pack.zip" file.
-    You will see multiple individual ZIP files, each representing a specific skill or set of skills.
-3.  **Upload Skills to Claude** - Open Claude (web or desktop) and upload the individual skill ZIP files you extracted in the previous step. The exact method for uploading skills may vary depending on your Claude interface; refer to the `INSTALL-CLAUDE-DESKTOP.md` or similar documentation within the downloaded files if needed.
-    The skills should now be available for use within Claude.
-4.  **Initiate a Product Management Task** - In Claude, use a prompt to begin framing a product problem. The author suggests a starting point:
-    ```
-    Use the Product Manager Skills to help me frame this product problem.
-    ```
-    You should receive a response from Claude that begins to apply the framework to your problem.
-5.  **Explore Framework Components** - Browse the other downloadable ZIP files (e.g., "discovery-pack.zip", "strategy-pack.zip", "delivery-pack.zip", "ai-pm-pack.zip") from the GitHub Releases page. Unzip and upload these to Claude to expand the framework's capabilities.
-    You will have access to a wider range of product management tools and workflows within Claude.
-6.  **Integrate with AI Agents (Advanced)** - For users with technical expertise, explore the "pm-skills-codex.zip" package and installation guides for Codex. This allows for programmatic use of the skills framework with AI agents.
-    You will be able to automate product management tasks using AI agents trained on this framework.
+
+1. **Download the starter pack**: on the GitHub repository, find the "Fastest Path" download link and get `pm-skills-starter-pack.zip`. You should have a ZIP file on your device.
+
+2. **Unzip it**: extract the pack. Inside you will find several individual skill ZIPs grouped by area (for example discovery, strategy, delivery, and AI-PM).
+
+3. **Add the skills to Claude**: open Claude (web or desktop) and upload the individual skill ZIPs. (Claude "skills" are add-on capabilities you give it.) Important: upload the individual skill files, not the whole starter-pack ZIP. The download includes an install guide (like `INSTALL-CLAUDE-DESKTOP.md`) if you need the exact clicks.
+
+4. **Start a product task**: prompt Claude to apply the framework to a real problem of yours:
+
+   ```
+   Use the Product Manager Skills to help me frame this product problem: [describe your
+   product, who it is for, and the challenge you are facing].
+   ```
+
+   You should get a structured, method-based response rather than generic advice.
+
+5. **Add more packs as you go**: upload the other skill ZIPs (discovery, strategy, delivery) when you need those capabilities.
+
+6. **Optional, programmatic use (advanced)**: the repo also includes a package for use with OpenAI's Codex coding agent, for people who want to run the framework in code rather than in Claude's chat. This needs technical setup.
 
 ## Original source
-This workflow is derived from the GitHub repository "Product-Manager-Skills" by deanpeters. The project provides a comprehensive product management skills framework built on established methodologies, intended for use with AI tools like Claude and Codex to enhance professional product management practices.
+
+Based on the "Product-Manager-Skills" repository by deanpeters on GitHub, a product-management skills framework built on established methods and designed to be used with AI tools like Claude.
 
 ## Notes & variations
-*   **Free Tier Viability**: Claude's free tier has usage limits. For extensive use, consider upgrading or exploring other free AI models. The Codex package is free but requires technical setup.
-*   **Common Pitfall**: Ensure you are uploading the *individual skill ZIPs* to Claude, not the entire starter pack ZIP. Incorrectly uploading the main pack may not make the skills available.
-*   **Tip for Better Results**: When framing problems, be as specific as possible in your initial prompt to Claude. Provide context about the product, target audience, and the specific challenge you are facing to get more tailored and actionable advice from the AI.
+
+- **Free-tier viability**: Claude's free tier works but has usage limits. The framework itself is free.
+- **Common pitfall**: uploading the whole starter-pack ZIP instead of the individual skill ZIPs inside it. Claude needs the individual ones to use the skills.
+- **Tip for better results**: give Claude real context in your first prompt, the product, the audience, and the specific challenge, so its advice is tailored and actionable.

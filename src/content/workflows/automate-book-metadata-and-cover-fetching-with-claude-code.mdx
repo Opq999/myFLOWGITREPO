@@ -3,7 +3,7 @@ title: "Automate Book Metadata and Cover Fetching with Claude Code"
 description: "Learn to automate extracting book titles, authors, and publishers from photos, then fetch high-quality covers using AI and APIs. Create a digital catalog of your personal library."
 category: "coding"
 badge: "sourced"
-difficulty: "beginner"
+difficulty: "advanced"
 timeMinutes: 90
 jobToBeDone: "Automate book metadata extraction and cover fetching for a personal library"
 tools:
@@ -42,90 +42,80 @@ nigeriaUseCases:
     scenario: "As an entrepreneur running an online book club, automate the creation of a digital catalog for your personal collection of reviewed books, fetching covers and metadata to enrich your website content."
   - persona: "employee"
     scenario: "As an employee managing a small departmental reference library, digitize its physical book catalog by extracting titles, authors, and covers, creating a searchable JSON for colleagues to quickly find resources."
+revisedAt: 2026-06-23
 tiktokUrl: ""
 published: true
 ---
 
 ## What you'll get
-You will get a structured JSON file containing metadata (title, author, publisher) for your books, along with a collection of high-quality cover images. This approach automates the tedious parts of cataloging a large book collection, leveraging AI to process images and fetch data, while allowing for targeted manual fixes where AI struggles.
+
+A tidy digital catalog of your physical books: a structured data file listing each book's title, author, and publisher, plus a folder of high-quality cover images. The AI does the boring bulk work (reading hundreds of covers and fetching images), and you step in to fix the small percentage it gets wrong. This is an advanced workflow: you will run Python scripts and use several paid services, so some technical comfort and a budget are needed.
 
 ## Tools you need
-*   **Claude Code** (paid): Used to write and run Python scripts for image processing and data fetching.
-*   **OpenAI Vision API** (paid): Processes book cover images to extract text metadata like title, author, and publisher.
-*   **Open Library API** (free): Fetches book cover images and additional metadata based on extracted information.
-*   **SerpAPI** (paid): Provides a fallback for fetching book covers from Google Images when Open Library API fails.
-*   **Photoshop** (paid): Used for manual touch-ups of book covers that AI couldn't process or find.
+
+- **Claude Code** (paid): an AI coding assistant that writes and runs the Python scripts for you. Needs a paid Claude plan or credits.
+- **OpenAI Vision API** (paid): an AI service that "reads" text off your cover photos. ("API" means a service your script talks to over the internet; you pay per use.)
+- **Open Library API** (free): a free book database, used to fetch covers and extra details.
+- **SerpAPI** (paid): a paid search service, used as a backup to find covers Open Library misses.
+- **Photoshop** (paid): for hand-fixing the few covers nothing finds. The free tool GIMP works just as well.
 
 ## Steps
-1.  **Prepare your book photos**: Take photos of all your book spines or covers, then convert them to JPG.
-    *   *What to do*: Photograph every book you own, focusing on spines and covers. Ensure good lighting for clear text. Transfer these images to your computer. If your phone saves images in HEIC format (common for iPhones), convert them all to JPG files. Many online tools or desktop apps can do this.
-    *   *What you should see*: A dedicated folder on your computer containing 400-500 JPG images of your books, ready for processing.
 
-2.  **Access Claude Code**: Open the Claude Code environment in your web browser.
-    *   *What to do*: Go to `https://code.claude.com` and log in with your account. You will need an active subscription or credits.
-    *   *What you should see*: The Claude Code interface, a chat-like environment where you can interact with Claude and run code.
+1. **Photograph and prepare your books**: take a clear, well-lit photo of every book's cover or spine and move them to a folder on your computer. If your phone saves photos as HEIC (Apple's format), convert them to JPG first (any free online converter does this). You should end up with one folder of JPG images.
 
-3.  **Request the initial processing script**: Ask Claude to write a Python script for image processing and metadata extraction.
-    *   *What to do*: Paste the following prompt into Claude Code:
+2. **Open Claude Code**: go to code.claude.com and sign in (you need an active plan or credits). You should see a chat-like coding environment where Claude can write and run code.
 
-    ```
-    Write a Python script that does the following:
-    1. Takes a directory of book cover images (JPG format).
-    2. For each image, sends it to OpenAI's Vision API to extract the author, title, and publisher.
-    3. Normalizes names (e.g., removes extra spaces, standardizes casing).
-    4. Resizes images before sending to the API to save tokens (e.g., max 1024 pixels on the longest side).
-    5. Writes the extracted metadata (id, title, author, publisher, source image filename) to a JSON file.
-    6. Include robust error handling for API calls and image processing.
-    7. Ensure the script can be easily run from the command line, taking the image directory and output JSON file path as arguments.
-    ```
+3. **Ask Claude to write the metadata script**: paste this prompt:
 
-    *   *What you should see*: Claude Code will generate a Python script. Review it for clarity and completeness, and ensure it includes instructions on how to set up your OpenAI API key.
+   ```
+   Write a Python script that does the following:
+   1. Takes a directory of book cover images (JPG format).
+   2. For each image, sends it to OpenAI's Vision API to extract the author, title, and publisher.
+   3. Normalizes names (e.g., removes extra spaces, standardizes casing).
+   4. Resizes images before sending to the API to save tokens (e.g., max 1024 pixels on the longest side).
+   5. Writes the extracted metadata (id, title, author, publisher, source image filename) to a JSON file.
+   6. Include robust error handling for API calls and image processing.
+   7. Ensure the script can be easily run from the command line, taking the image directory and output JSON file path as arguments.
+   ```
 
-4.  **Run the metadata extraction script**: Execute the script generated by Claude to process your images.
-    *   *What to do*: Follow Claude's instructions to run the generated Python script. You will need to provide your OpenAI API key (ensure it's securely stored, e.g., as an environment variable) and specify the path to your folder of book images and the desired output JSON file.
-    *   *What you should see*: A JSON file will be created in your specified location. It will contain entries for most of your books, each with an ID, title, author, publisher, and the original image filename. For example:
+   Claude returns a Python script plus instructions for setting your OpenAI key. (A "JSON file" is just a structured text file of data; an "API key" is a secret password that proves the request is yours and bills you.)
 
-    ```json
-    {
-        "id": "ZfEPBCMZDaCKm6k0NVJ8F",
-        "title": "Simulacre și simulare",
-        "author": "Jean Baudrillard",
-        "publisher": "Colectia Panopticon",
-        "source": "/dataset/83.jpg"
-    }
-    ```
+4. **Run the metadata script**: follow Claude's instructions to run it, supplying your OpenAI API key (store it as an environment variable, a setting on your computer, rather than pasting it into the file) and your image folder. You should get a JSON file with an entry per book, like:
 
-5.  **Review and manually correct metadata**: Check the generated JSON file for any inaccuracies.
-    *   *What to do*: Open the JSON file using a text editor or a JSON viewer. Carefully review the extracted data for each book. Identify any incorrect titles, authors, or publishers (e.g., a novel identified as an agricultural manual). Manually edit these entries directly in the JSON file. The author found about 90 percent accuracy, so expect to fix some entries.
-    *   *What you should see*: A corrected JSON file where the metadata for your books is largely accurate and reliable.
+   ```json
+   {
+       "id": "ZfEPBCMZDaCKm6k0NVJ8F",
+       "title": "Simulacre si simulare",
+       "author": "Jean Baudrillard",
+       "publisher": "Colectia Panopticon",
+       "source": "/dataset/83.jpg"
+   }
+   ```
 
-6.  **Request the cover fetching script**: Ask Claude to write a second script to fetch high-quality cover images.
-    *   *What to do*: Paste the following prompt into Claude Code:
+5. **Review and fix the metadata**: open the JSON in any text editor and skim it. The author found roughly 90 percent accuracy, so expect a few wrong titles or authors (a novel labelled as a manual, say). Correct those entries by hand. Aim for "mostly right", not perfect.
 
-    ```
-    Write a Python script that does the following:
-    1. Reads the book metadata from the JSON file generated in the previous step.
-    2. For each book, attempts to fetch a high-quality cover image using the Open Library API, prioritizing good resolution.
-    3. If the Open Library API provides a low-quality or incorrect cover, or no cover is found, use SerpAPI to search Google Images for a better cover based on the book's title and author.
-    4. Implement a simple scoring mechanism to evaluate cover quality (e.g., resolution, relevance) and flag potentially bad matches.
-    5. Save the best found cover image for each book to a designated output folder, named clearly (e.g., by book ID or title).
-    6. Ensure the script can be easily run from the command line, taking the metadata JSON file and output image directory as arguments.
-    ```
+6. **Ask Claude for the cover-fetching script**: paste this prompt:
 
-    *   *What you should see*: Claude Code will generate a second Python script. Review it and note any instructions for API keys.
+   ```
+   Write a Python script that does the following:
+   1. Reads the book metadata from the JSON file generated in the previous step.
+   2. For each book, attempts to fetch a high-quality cover image using the Open Library API, prioritizing good resolution.
+   3. If the Open Library API provides a low-quality or incorrect cover, or no cover is found, use SerpAPI to search Google Images for a better cover based on the book's title and author.
+   4. Implement a simple scoring mechanism to evaluate cover quality (e.g., resolution, relevance) and flag potentially bad matches.
+   5. Save the best found cover image for each book to a designated output folder, named clearly (e.g., by book ID or title).
+   6. Ensure the script can be easily run from the command line, taking the metadata JSON file and output image directory as arguments.
+   ```
 
-7.  **Run the cover fetching script**: Execute the second script to download cover images.
-    *   *What to do*: Follow Claude's instructions to run the generated Python script. You will need to provide your SerpAPI key (and potentially an Open Library API key, though it's often public) and specify the path to your metadata JSON file and the desired output folder for the cover images.
-    *   *What you should see*: A folder populated with cover images for most of your books. Some images might still be missing or of low quality.
+7. **Run the cover-fetching script**: follow Claude's instructions, supplying your SerpAPI key and the metadata file. You should get a folder of cover images, with a handful missing or low quality.
 
-8.  **Manually fix remaining covers**: Use an image editor for any covers that couldn't be found or are still low quality.
-    *   *What to do*: Review the fetched cover images. For any missing or poor-quality covers, open Photoshop (or a free alternative like GIMP). Search for the correct cover online and manually create, edit, or replace the image in your cover folder. The author found that fixing about 10 covers out of 460 was a manageable task.
-    *   *What you should see*: A complete collection of high-quality cover images for all your books, complementing your metadata JSON file.
+8. **Hand-fix the leftover covers**: for the few that failed, find the right cover online and drop it into the folder, touching it up in Photoshop or free GIMP if needed. The author fixed about 10 covers out of 460, a small, manageable job.
 
 ## Original source
-This workflow was inspired by balajmarius's project, "Vibe coding a bookshelf with Claude Code," originally shared on Hacker News. The author documented their process of automating book cataloging using AI agents to overcome the tedious aspects of managing a large personal library.
+
+Based on balajmarius's project "Vibe coding a bookshelf with Claude Code", shared on Hacker News, documenting how they automated cataloging a large personal library with AI and stepped in only for the parts AI got wrong.
 
 ## Notes & variations
-*   **Free-tier alternatives**: For image editing, GIMP is a powerful, free, and open-source alternative to Photoshop. While the author used paid APIs, for very small batches, you might explore free tiers of other vision APIs (e.g., Google AI Studio with Gemini Vision) or use free LLMs like `claude.ai` or `gemini.google.com` to help write parts of the script, though they won't offer the integrated coding environment of Claude Code.
-*   **Common mistake**: A common pitfall is to chase 100 percent accuracy with AI. The author wisely accepted 90 percent accuracy from the AI and manually fixed the remaining 10 percent, recognizing that the effort to automate those edge cases would outweigh the value. Don't be afraid to step in and manually correct the AI's output.
-*   **Tip for better results**: Start with a small batch of 10-20 books to refine your prompts and scripts. This allows you to test the process, identify common errors, and optimize your API calls before processing your entire collection, potentially saving time and API credits.
+
+- **Free-tier alternatives**: GIMP replaces Photoshop for free. For tiny batches you could try a free vision model (like Gemini in Google AI Studio) to read covers, though you lose Claude Code's integrated run-the-script convenience.
+- **Common mistake**: chasing 100 percent accuracy. The author accepted 90 percent from the AI and fixed the rest by hand, because automating the last few oddballs costs more effort than it saves.
+- **Tip for better results**: test on 10 to 20 books first to refine the prompts and confirm your API keys work, before unleashing it on the whole shelf and spending credits.

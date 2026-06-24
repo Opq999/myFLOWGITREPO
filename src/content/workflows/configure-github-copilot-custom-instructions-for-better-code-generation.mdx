@@ -3,7 +3,7 @@ title: "Configure GitHub Copilot Custom Instructions for Better Code Generation"
 description: "Learn how to write and test GitHub Copilot custom instructions to guide its code generation based on your project's specific patterns and requirements."
 category: "coding"
 badge: "sourced"
-difficulty: "beginner"
+difficulty: "intermediate"
 timeMinutes: 15
 jobToBeDone: "Configure GitHub Copilot custom instructions to guide its code generation based on project specifics"
 tools:
@@ -15,10 +15,6 @@ tools:
     url: "https://chatgpt.com"
     pricing: "freemium"
     affiliateUrl: ""
-  - name: "Leonardo"
-    url: "https://leonardo.ai/"
-    pricing: "freemium"
-    affiliateUrl: ""
 source:
   url: "https://dev.to/anchildress1/everything-i-know-about-github-copilot-instructions-from-zero-to-onboarded-for-real-4nb0"
   platform: "blog"
@@ -26,7 +22,7 @@ source:
   postedAt: 2025-08-13
 score: 7
 ingestedAt: 2026-06-18
-nigeriaNotes: "GitHub Copilot has a free trial, after which it is paid. ChatGPT and Leonardo offer robust free tiers suitable for generating and refining instructions."
+nigeriaNotes: "GitHub Copilot has a free tier with monthly limits, with paid plans for heavier use. ChatGPT offers a robust free tier suitable for generating and refining instructions."
 nigeriaUseCases:
   - persona: "entrepreneur"
     scenario: "Set up Copilot to generate React components for your startup's MVP that follow your design system's naming conventions and use Tailwind CSS, ensuring consistent UI development as you build."
@@ -34,41 +30,48 @@ nigeriaUseCases:
     scenario: "As a new developer, configure Copilot to generate code that adheres to your company's internal API standards and uses the approved logging framework, speeding up onboarding and reducing code review comments."
   - persona: "student"
     scenario: "Configure Copilot to generate Python code for your final year project that strictly follows PEP 8 and uses the Django REST Framework, ensuring your project adheres to academic coding standards."
+revisedAt: 2026-06-23
 tiktokUrl: ""
 published: true
 ---
 
 ## What you'll get
-You will learn how to set up custom instructions for GitHub Copilot to ensure it generates code that aligns with your project's specific patterns and standards. This approach helps prevent Copilot from adopting outdated or undesirable coding practices found in your codebase, leading to more consistent and higher-quality code generation.
+
+A short setup that makes GitHub Copilot follow your project's standards instead of blindly copying whatever patterns (including the bad ones) already exist in your code. You write a small "custom instructions" file once, and from then on Copilot's suggestions match your style, conventions, and architecture. Think of it as onboarding a new teammate: tell it the rules up front and it stops guessing.
 
 ## Tools you need
-*   **GitHub Copilot** (freemium): An AI pair programmer that suggests code and entire functions in real-time, right inside your editor.
-*   **ChatGPT** (freemium): A versatile AI chatbot that can help draft and refine your Copilot instructions.
-*   **Leonardo** (freemium): An AI image generation tool, mentioned by the author for potential future use in creating custom banners or visuals.
+
+- **GitHub Copilot** (freemium): the AI "pair programmer" that suggests code as you type in your editor. It has a free tier with monthly limits; heavier use is paid.
+- **ChatGPT** (freemium): used here to help you draft and refine the instructions.
 
 ## Steps
-1.  **Understand the Goal of Repo Instructions**: Recognize that just like a new senior developer needs guidance, GitHub Copilot benefits from clear instructions about your project's conventions, architecture, and potential pitfalls. Without them, it might default to your repo's worst patterns.
-2.  **Plan for Instruction Setup**: Allocate about 15 minutes to write, test, and refine your custom instructions. This proactive step is crucial for effective AI collaboration.
-3.  **Draft Initial Instructions (using ChatGPT)**: The author doesn't share their exact prompt for drafting instructions, but a starting point could be: 
-    ```
-    I need to write custom instructions for GitHub Copilot for a [describe your project type, e.g., Python web application using Flask]. The goal is to guide Copilot to follow specific coding standards, avoid certain legacy patterns, and adhere to our project's architecture. Please help me draft a set of clear, concise instructions that cover:
-    - Preferred coding style (e.g., PEP 8 for Python)
-    - Key architectural patterns to follow
-    - Any specific libraries or frameworks to prioritize or avoid
-    - Common pitfalls or anti-patterns in our existing codebase that Copilot should steer clear of
-    - Examples of desired code snippets or structures
-    ```
-    You should receive a draft of instructions that you can then refine.
-4.  **Refine Instructions Based on Project Specifics**: Review the drafted instructions. Add details about your project's unique requirements, such as specific naming conventions, error handling strategies, or preferred ways to interact with your database. The author emphasizes that the goal is to keep Copilot "coloring inside your lines."
-5.  **Implement Instructions in GitHub Copilot**: Navigate to your GitHub Copilot settings within your IDE (e.g., VS Code). Locate the section for custom instructions or configuration and paste your refined instructions. The exact location may vary slightly depending on your IDE and Copilot version.
-    You should see a text area where you can input your custom instructions.
-6.  **Test and Iterate**: After implementing the instructions, start coding as you normally would. Observe Copilot's suggestions. Do they align with your instructions? If not, revisit your instructions, tweak the wording, add more specific examples, or clarify any ambiguities. The author stresses a "build them, repeat" cycle.
-    You should see Copilot's suggestions becoming more aligned with your project's needs over time.
+
+1. **Understand the goal**: without guidance, Copilot copies your repository's existing habits, good and bad. Custom instructions tell it your conventions, your architecture, and the patterns to avoid, so it "colors inside your lines."
+
+2. **Draft the instructions with ChatGPT**: get a first version by describing your project:
+
+   ```
+   Help me write custom instructions for GitHub Copilot for a [your project type, e.g.
+   a Python web app using Flask]. Cover: preferred coding style (e.g. PEP 8), key
+   architectural patterns to follow, libraries to prefer or avoid, common anti-patterns
+   in our codebase to steer clear of, and one or two examples of the code structure I want.
+   Keep it clear and concise.
+   ```
+
+   You should get a solid draft to refine. ("Anti-patterns" means common but bad ways of doing something.)
+
+3. **Refine for your project**: add your specifics, naming conventions, how you handle errors, how you talk to your database, anything that makes your codebase yours.
+
+4. **Add the instructions to Copilot**: the standard place is a file named `.github/copilot-instructions.md` in your repository. Create it and paste your instructions there; Copilot reads it automatically. (You can also set instructions in your editor's Copilot settings.)
+
+5. **Test and iterate**: code as normal and watch Copilot's suggestions. Do they match your rules? If not, tighten the wording or add a concrete example, and try again. It is a "write, test, refine" cycle.
 
 ## Original source
-This workflow is based on the insights shared by anchildress1 in their blog post, "Everything I Know About GitHub Copilot Instructions, From Zero to Onboarded (For Real) ⚡," published on DEV Community. The author shares their experience and methodology for creating effective custom instructions for GitHub Copilot.
+
+Based on anchildress1's DEV Community post "Everything I Know About GitHub Copilot Instructions, From Zero to Onboarded (For Real)", sharing a method for writing effective Copilot instructions.
 
 ## Notes & variations
-*   **Free Tier Viability:** GitHub Copilot itself is a paid tool after a trial period. However, the process of drafting and refining instructions can be done using free tools like ChatGPT. For users in Nigeria, consider the cost of Copilot if you plan to use it long-term.
-*   **Common Pitfall:** A common mistake is writing instructions that are too vague or too long. Copilot may struggle to interpret overly complex or ambiguous directives. Be specific and focus on the most critical aspects of your project's coding standards.
-*   **Tip for Better Results:** Provide concrete examples of code within your instructions. Showing Copilot exactly what you want (e.g., a specific function signature, a class structure, or an error message format) is often more effective than just describing it.
+
+- **Free-tier viability**: Copilot's free tier (with monthly limits) is enough to try this, and drafting the instructions with ChatGPT is free. Weigh the paid plan only if you use Copilot heavily.
+- **Common pitfall**: instructions that are too vague or too long. Copilot struggles with rambling, ambiguous directives. Be specific and focus on the rules that matter most.
+- **Tip for better results**: show, don't just tell. A concrete example (a function signature, a class layout, your error-message format) guides Copilot far better than a description alone.

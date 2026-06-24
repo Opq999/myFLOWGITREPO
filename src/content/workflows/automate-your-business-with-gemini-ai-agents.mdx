@@ -3,7 +3,7 @@ title: "Automate Your Business with Gemini AI Agents"
 description: "Build AI agents to handle content creation, sales, security, and operations for your business using Gemini's free tier."
 category: "sme-operations"
 badge: "sourced"
-difficulty: "beginner"
+difficulty: "advanced"
 timeMinutes: 30
 jobToBeDone: "Automate content creation, sales lead generation, security scanning, and operational tasks for a one-person tech agency using AI agents."
 tools:
@@ -34,46 +34,69 @@ nigeriaUseCases:
     scenario: "As a computer science student with a freelance web development side hustle, automate generating social media posts for your brand, with an AI agent drafting and reviewing content before you publish."
   - persona: "employee"
     scenario: "As a technical marketing specialist in a startup, set up an AI agent to gather market intelligence from tech blogs and Hacker News, informing your content strategy and product insights."
+revisedAt: 2026-06-23
 tiktokUrl: ""
 published: true
 ---
 
-## What you'll get
-You will learn how to set up multiple AI agents to automate key business functions like content creation, lead generation, and operational monitoring. This approach leverages a free-tier AI model to significantly reduce manual work and operational costs for a small business.
+## What this is, in plain English
+
+A developer ran a one-person tech agency mostly on autopilot by building four "AI agents", small programs that do a job on their own and call an AI when they need to think. They handle content, community replies, research, finding sales leads, and keeping an eye on operations, all on the free tier of Gemini. The agents run through OpenClaw (a free framework for building AI agents) on WSL2 (a way to run Linux inside Windows).
+
+Be honest about the level: this is an advanced, custom build, and the author did not publish every line of their setup. You cannot copy it exactly. What is genuinely valuable, and very copyable, is the set of ideas: which jobs to hand to an agent, how to keep quality up, and clever tricks to stay inside a free AI quota. This page lays those out and walks the realistic shape of building your own version.
+
+## What you can use it for
+
+These are the agent patterns from the original, each useful on its own:
+
+- **A self-checking content agent.** It writes a post, scores its own quality from 1 to 10, and rewrites anything under 7 before you ever see it.
+- **A capped community-reply agent.** It answers comments in context but stops after two rounds, so conversations never spiral into wasted cost.
+- **A near-free research pipeline.** It gathers intelligence from RSS feeds, Hacker News, and a page-reader, using plain web requests so it spends almost no AI quota.
+- **A lead-finding agent.** It scans public sites for security weaknesses and turns the findings into a list of potential clients to pitch.
+- **An operations monitor.** It watches key services, flags stale leads, and keeps customer data in sync.
+- **A publish-to-Discord agent.** Triggered by a code push, it posts blog updates using the commit message, spending zero AI quota.
 
 ## Tools you need
-*   **Gemini 2.5 Flash** (freemium): A powerful AI model for generating text, analyzing information, and performing creative tasks.
-*   **OpenClaw** (free): An open-source framework for building and managing AI agents.
-*   **WSL2 (Windows Subsystem for Linux)** (free): Allows you to run Linux environments directly on Windows, providing a robust platform for running agent scripts.
-*   **RSS Reader** (free): To subscribe to and process information from various online sources.
-*   **HN API** (free): To access data from Hacker News for community engagement and research.
-*   **Jina Reader** (free): A tool for efficient document understanding and information extraction.
-*   **UltraProbe** (free): An AI-powered security scanner for lead generation.
-*   **Discord** (freemium): A communication platform for receiving notifications and posting updates.
-*   **Vercel Hobby** (freemium): A platform for deploying web applications and services.
-*   **Firebase** (freemium): A backend platform for managing data and services.
 
-## Steps
-1.  **Set up your AI agent framework**: Install OpenClaw and configure it to run within your WSL2 environment. This provides the foundation for managing multiple AI agents.
-2.  **Configure the content creation agent**: Set up an agent to generate social media posts. The author uses a quality-gating mechanism: the AI generates a post, then reviews its own quality. If the score is below 7/10, it rewrites the post.
-    *   *Example prompt structure (author doesn't share exact prompt):* 
-    ```
-    Generate a social media post about [topic].
-    Review the post for clarity, engagement, and relevance. Assign a quality score from 1 to 10.
-    If the score is less than 7, rewrite the post to improve it.
-    ```
-    You should see a generated social media post, potentially with a self-review score and a rewritten version.
-3.  **Implement community engagement**: Configure an agent to engage with community posts and auto-reply to comments. This agent should be context-aware and limit replies to a maximum of two rounds to avoid lengthy, costly conversations.
-4.  **Build the research pipeline**: Set up agents to gather intelligence from RSS feeds, the HN API, and Jina Reader. This information should be fed back into the content creation process. The author notes this pipeline costs 0 LLM tokens, relying on HTTP requests and Jina Reader.
-5.  **Integrate lead generation**: Deploy the UltraProbe AI security scanner as an agent to identify potential leads. This agent will scan for security vulnerabilities, which can be used to approach potential clients.
-6.  **Automate operational monitoring**: Create an agent to monitor 7 key endpoints. This agent should flag stale leads and sync customer data, ensuring your operational tasks are up-to-date.
-7.  **Set up blog post automation**: Configure an agent to automatically post blog articles to Discord. This is triggered by a `git push` and uses the commit message directly, costing 0 LLM tokens.
-8.  **Optimize LLM token usage**: Implement a strategy where agents read pre-computed intelligence files (local markdown) and receive focused prompts with all necessary context injected in a single request. This minimizes the number of tokens used per interaction.
+- **Gemini 2.5 Flash** (freemium): the AI brain of the agents. The free tier allows around 1,500 requests a day, which is the whole point.
+- **OpenClaw** (free): the open-source framework you build and run the agents in.
+- **WSL2** (free): runs a Linux environment on Windows, where the agents live. (Mac and Linux users can skip this.)
+- **Supporting free services**: RSS feeds, the Hacker News API, and a page-reader like Jina Reader for the research pipeline; Discord, Vercel, or Firebase (free tiers) for notifications and hosting if you want them.
+
+## How it actually works
+
+You build agents one at a time inside the framework. The realistic shape:
+
+1. **Set up OpenClaw on WSL2.** Install WSL2 (if on Windows), then install OpenClaw following its README. This is the home for your agents.
+2. **Connect Gemini's free tier.** Add your Gemini API key so the agents can call the model.
+3. **Build the first agent with a focused prompt.** Start with the content agent. Give it one clear, self-contained instruction, including the self-scoring rule, for example:
+
+   ```
+   Generate a social media post about [topic].
+   Then review it for clarity, engagement, and relevance and give it a score from 1 to 10.
+   If the score is below 7, rewrite the post to improve it, and return the better version.
+   ```
+
+4. **Keep research off the AI quota.** Pull from RSS, the Hacker News API, and a page-reader with ordinary web requests, and save the results to local files. The agents read those files instead of asking the AI to browse.
+5. **Add the other agents as needed.** Community replies (capped at two rounds), lead scanning, ops monitoring, and the push-to-Discord poster.
+6. **Optimize tokens.** Feed each agent a single, fully-loaded prompt (all the context it needs at once) rather than long back-and-forth chats. That is how the whole thing fits in the free quota.
+
+## Words you'll see, explained
+
+- **AI agent:** a small program that performs a task on its own and calls an AI when it needs to reason or write.
+- **OpenClaw:** an open-source framework for building and running such agents.
+- **WSL2:** Windows Subsystem for Linux, which runs Linux inside Windows.
+- **Token:** the unit AI usage is measured in; fewer tokens per task means more tasks fit in a free quota.
+- **Quality gating:** having the AI score its own output and redo it if it falls short.
+- **Endpoint:** a single service or address the ops agent checks to confirm things are working.
 
 ## Original source
-This workflow is inspired by a "Show HN" post on Hacker News by user ppcvote, detailing how they built and deployed four AI agents to manage their one-person tech company using the free tier of Gemini 2.5 Flash.
+
+Based on a Show HN post by ppcvote describing four AI agents built to run a one-person tech company on the free tier of Gemini 2.5 Flash, with heavy attention to keeping token usage low.
 
 ## Notes & variations
-*   **Free Tier Viability:** Gemini's free tier offers 1,500 requests per day, which is substantial. The author's strategy of optimizing token usage by relying on local files and single-request prompts is key to staying within this limit.
-*   **Common Pitfall:** Avoid long, multi-turn conversations with the AI agents. Each interaction should be concise and focused to conserve tokens and stay within free-tier limits.
-*   **Better Results:** For content generation, experiment with providing the AI with a small set of high-performing past posts as examples within the prompt to guide its style and tone.
+
+- **Do you even need four agents?** No. Start with the one that saves you the most time (usually content), get it solid, then add others. The ideas stack; you do not need all of them at once.
+- **Free-tier viability**: 1,500 Gemini requests a day is plenty if you follow the token discipline, local files for data, single focused prompts, short conversations.
+- **Common pitfall**: long, chatty exchanges with an agent burn through your quota fast. Keep each interaction concise and self-contained.
+- **Tip for better results**: give the content agent a few of your best past posts as examples in the prompt, so its writing matches your voice.

@@ -70,6 +70,8 @@ export const workflowSchema = z.object({
   nigeriaNotes: z.string().optional(),
   /** Practical Nigerian use cases tagged by persona. Empty when none generated yet. */
   nigeriaUseCases: z.array(useCaseSchema).default([]),
+  /** Set by the clarity backfill once an entry has been rewritten for beginners; also its idempotency marker. */
+  revisedAt: z.coerce.date().optional(),
   /** Filled when a paired TikTok exists. */
   tiktokUrl: z.string().default(''),
   published: z.boolean().default(true),

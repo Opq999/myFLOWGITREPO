@@ -3,7 +3,7 @@ title: "Convert YOLOv5 Models: PyTorch to ONNX, CoreML, TFLite"
 description: "Learn to convert YOLOv5 object detection models between PyTorch, ONNX, CoreML, and TFLite formats using the Ultralytics export tool."
 category: "coding"
 badge: "sourced"
-difficulty: "beginner"
+difficulty: "intermediate"
 timeMinutes: 15
 jobToBeDone: "Convert YOLOv5 object detection models between different formats."
 tools:
@@ -42,86 +42,81 @@ nigeriaUseCases:
     scenario: "If building a mobile app to identify counterfeit products, convert your custom YOLOv5 model to TFLite or CoreML for seamless integration into Android or iOS apps."
   - persona: "employee"
     scenario: "As an ML engineer, convert a YOLOv5 model trained to detect faulty products on an assembly line into ONNX for deployment on an edge device for real-time quality checks."
+revisedAt: 2026-06-23
 tiktokUrl: ""
 published: true
 ---
 
 ## What you'll get
 
-You will learn how to convert a YOLOv5 object detection model from its native PyTorch format into ONNX, CoreML, and TensorFlow Lite (TFLite) formats. This is crucial for deploying your trained models on various platforms and devices, from web applications to mobile apps.
+A trained YOLOv5 model (a popular AI that spots objects in images, "object detection") converted from its original PyTorch form into other formats so it can run where you need it: ONNX for general portability, CoreML for iPhone apps, and TFLite for Android and small devices. A model only runs on a platform that understands its format, so converting is what lets you actually ship it. This is intermediate: you run a few Python commands in a terminal, but the tool does the hard part.
 
 ## Tools you need
 
-*   **Ultralytics YOLOv5** (freemium) - The object detection model framework. You'll use its `export.py` script.
-*   **PyTorch** (free) - The deep learning framework YOLOv5 is built upon.
-*   **ONNX** (free) - An open format to represent machine learning models, enabling interoperability.
-*   **Core ML** (free) - Apple's framework for integrating machine learning models into applications.
-*   **TensorFlow Lite (TFLite)** (free) - A framework for deploying TensorFlow models on mobile, embedded, and IoT devices.
+- **Ultralytics YOLOv5** (freemium): the object-detection project. You will run its `export.py` script. Free to use; commercial use may need a licence.
+- **PyTorch** (free): the AI framework YOLOv5 is built on; its native model files end in `.pt`.
+- **ONNX** (free): a universal model format that many tools and devices can read.
+- **Core ML** (free): Apple's format for running models in iPhone and Mac apps.
+- **TensorFlow Lite / TFLite** (free): a format for running models on Android phones and small ("edge") devices.
 
 ## Steps
 
-1.  **Clone the YOLOv5 repository**: If you haven't already, clone the official YOLOv5 repository from GitHub to your local machine. This repository contains the necessary scripts for model conversion.
-    *   Open your terminal or command prompt.
-    *   Run the following command:
+1. **Download the YOLOv5 code**: clone the official repository, which contains the export script:
 
-    ```bash
-    git clone https://github.com/ultralytics/yolov5
-    ```
+   ```bash
+   git clone https://github.com/ultralytics/yolov5
+   ```
 
-    *   You should see output indicating the repository is being cloned, and a new `yolov5` directory will be created.
+   You should see a new `yolov5` folder appear.
 
-2.  **Navigate to the YOLOv5 directory**: Change your current directory to the newly cloned `yolov5` folder.
-    *   In your terminal, run:
+2. **Open the folder**:
 
-    ```bash
-    cd yolov5
-    ```
+   ```bash
+   cd yolov5
+   ```
 
-    *   Your terminal prompt should now show that you are inside the `yolov5` directory.
+3. **Install the requirements**: this pulls in PyTorch and the other Python packages (you need Python 3.8+ first):
 
-3.  **Install dependencies**: Install all the required Python packages for YOLOv5 to function correctly. This includes PyTorch and other libraries.
-    *   Ensure you have Python 3.8.0 or newer and PyTorch 1.8 or newer installed.
-    *   Run the following command in your terminal:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-    ```bash
-    pip install -r requirements.txt
-    ```
+   You should see packages download; this can take a few minutes.
 
-    *   You will see a list of packages being downloaded and installed. This might take a few minutes.
+4. **Export to ONNX**: run the export script on a model. (`yolov5s.pt` is a small pre-trained model; the `--weights` flag points to the model file, and `--include` chooses the output format. The script downloads `yolov5s.pt` automatically if you do not have it.)
 
-4.  **Export the model to ONNX**: Use the `export.py` script to convert a pre-trained YOLOv5 model (e.g., `yolov5s.pt`) to the ONNX format. The script will automatically download the model if it's not found locally.
-    *   Run the following command in your terminal (from within the `yolov5` directory):
+   ```bash
+   python export.py --weights yolov5s.pt --include onnx
+   ```
 
-    ```bash
-    python export.py --weights yolov5s.pt --include onnx
-    ```
+   You should get a `yolov5s.onnx` file in the `yolov5` weights folder.
 
-    *   The script will output progress messages, including downloading the weights if necessary, and then indicate that the ONNX model has been exported. You should find a `yolov5s.onnx` file in the `yolov5/weights` directory.
+5. **Export to Core ML** (for Apple devices):
 
-5.  **Export the model to Core ML**: Similarly, export the model to the Core ML format.
-    *   Run the following command:
+   ```bash
+   python export.py --weights yolov5s.pt --include coreml
+   ```
 
-    ```bash
-    python export.py --weights yolov5s.pt --include coreml
-    ```
+   You should get a `yolov5s.mlmodel` file.
 
-    *   You should see output confirming the Core ML export, and a `yolov5s.mlmodel` file will be available in the `yolov5/weights` directory.
+6. **Export to TFLite** (for Android and small devices):
 
-6.  **Export the model to TFLite**: Export the model to the TensorFlow Lite format.
-    *   Run the following command:
+   ```bash
+   python export.py --weights yolov5s.pt --include tflite
+   ```
 
-    ```bash
-    python export.py --weights yolov5s.pt --include tflite
-    ```
-
-    *   The script will confirm the TFLite export, and you will find a `yolov5s.tflite` file in the `yolov5/weights` directory.
+   You should get a `yolov5s.tflite` file.
 
 ## Original source
 
-This workflow is based on the documentation provided by Ultralytics, the developers of the YOLOv5 model. The information comes from their GitHub repository, which serves as a central hub for the project's code, documentation, and community interaction.
+Based on the Ultralytics YOLOv5 documentation on GitHub, the official home of the model's code, export tools, and guides.
 
 ## Notes & variations
 
-*   **Free Tier Viability**: All the core tools mentioned (PyTorch, ONNX, Core ML, TFLite) are free and open-source. The YOLOv5 framework itself is also free to use for most purposes. The primary cost is your time and potentially data for downloading.
-*   **Common Pitfall**: Ensure you have the correct versions of PyTorch and Python installed as specified in the `requirements.txt` file. Incompatibilities can lead to errors during the export process.
-*   **Tip for Better Results**: You can export to multiple formats simultaneously by listing them with the `--include` argument, for example: `python export.py --weights yolov5s.pt --include onnx coreml tflite`. This saves you from running the export command multiple times for different formats.
+- **Free-tier viability**: PyTorch, ONNX, Core ML, and TFLite are all free and open-source, and YOLOv5 is free for most uses. The main cost is your time and the data to download packages and models.
+- **Common pitfall**: version mismatches. Make sure your Python and PyTorch versions match what `requirements.txt` expects, or the export can fail.
+- **Tip for better results**: export several formats at once by listing them together, which saves running the command repeatedly:
+
+   ```bash
+   python export.py --weights yolov5s.pt --include onnx coreml tflite
+   ```

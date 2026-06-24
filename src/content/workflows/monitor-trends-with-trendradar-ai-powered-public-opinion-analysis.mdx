@@ -3,7 +3,7 @@ title: "Monitor Trends with TrendRadar: AI-Powered Public Opinion Analysis"
 description: "Use TrendRadar to aggregate news from multiple platforms, filter by keywords, and receive AI-driven analysis and alerts. Stay informed on public opinion and trends."
 category: "sme-operations"
 badge: "sourced"
-difficulty: "beginner"
+difficulty: "intermediate"
 timeMinutes: 30
 jobToBeDone: "Monitor public opinion and trends across multiple platforms with AI-driven alerts and analysis"
 tools:
@@ -40,59 +40,67 @@ nigeriaUseCases:
     scenario: "Track public sentiment on 'Made-in-Nigeria' products for your fashion brand, identifying market shifts or new opportunities to target customers."
   - persona: "employee"
     scenario: "As a PR manager, monitor news and social media mentions of your bank's new mobile app, quickly identifying any negative feedback or emerging trends."
+revisedAt: 2026-06-23
 tiktokUrl: ""
 published: true
 ---
 
 ## What you'll get
-You will set up an AI-powered system that monitors public opinion and trends across various online platforms. This tool aggregates news, filters it based on your keywords, and provides AI-driven analysis and smart alerts, helping you stay informed without information overload.
+
+An always-on system that watches news and social platforms for the topics you care about, filters by your keywords, and sends you AI-summarized alerts (to Telegram, email, or Slack), so you track public opinion and trends without drowning in feeds. TrendRadar is an open-source tool you run on your own computer or server with Docker. It is intermediate: you use a terminal and Docker, but you are running an existing app, not building one.
 
 ## Tools you need
-*   **TrendRadar** (free) - The core AI tool for monitoring and analyzing public opinion and trends.
-*   **Docker** (freemium) - A platform to easily deploy and run applications like TrendRadar.
-*   **Telegram, Email, or Slack** (free/freemium) - Notification channels to receive smart alerts and analysis directly.
+
+- **TrendRadar** (free): the open-source tool that gathers, filters, and analyzes trends.
+- **Docker** (freemium): packages and runs TrendRadar so you do not set up its dependencies by hand. ("Docker" runs an app in a self-contained box called a "container".)
+- **Telegram, email, or Slack** (free): where you receive the alerts. Pick one.
 
 ## Steps
-1.  **Clone the TrendRadar repository** - Navigate to the GitHub page for TrendRadar and click the 'Code' button to copy the repository URL. Then, open your terminal or command prompt and use the `git clone` command followed by the URL.
-    ```bash
-    git clone https://github.com/sansan0/TrendRadar.git
-```
-    You should see the TrendRadar project files downloaded to your local machine.
 
-2.  **Install Docker** - If you don't have Docker installed, download and install it from the official Docker website. Follow the on-screen instructions for your operating system.
-    You will have Docker Desktop or Docker Engine running on your system.
+1. **Download TrendRadar**: clone the repository:
 
-3.  **Navigate to the TrendRadar directory** - In your terminal, change your directory to the newly cloned TrendRadar folder.
-    ```bash
-    cd TrendRadar
-```
-    Your terminal prompt should now show you are inside the TrendRadar directory.
+   ```bash
+   git clone https://github.com/sansan0/TrendRadar.git
+   ```
 
-4.  **Build the Docker image** - Use Docker to build the application image. The exact command might vary slightly based on the project's setup, but a common command is:
-    ```bash
-    docker build -t trendradar .
-```
-    You should see Docker compiling the image, which may take a few minutes. Look for a message indicating the build was successful.
+   You should see the project files appear.
 
-5.  **Start the TrendRadar service** - Run the Docker container to start the TrendRadar application. The `docker run` command will start the service.
-    ```bash
-    docker run -d --name trendradar_container trendradar
-```
-    You should see a container ID printed, and the application will start running in the background.
+2. **Install Docker**: get Docker Desktop from its official site and install it for your system. Make sure it is running.
 
-6.  **Configure your alert channels** - Access the TrendRadar configuration files (details are in the project's README) to set up your preferred notification channels like Telegram, Email, or Slack. This typically involves adding API keys or webhook URLs for your chosen service.
-    The configuration files will be updated with your specific channel details.
+3. **Open the project folder**:
 
-7.  **Set up keywords for monitoring** - Within the TrendRadar configuration, specify the keywords or topics you want to monitor. This tells the AI what public opinion and trends to focus on.
-    Your chosen keywords will be saved in the configuration, and the monitoring will begin.
+   ```bash
+   cd TrendRadar
+   ```
 
-8.  **Receive AI-generated alerts and analysis** - Once configured, TrendRadar will start aggregating news, filtering it, and sending summarized analysis and alerts to your chosen channels.
-    You will begin receiving notifications on your Telegram, Email, or Slack with insights on the trends you are monitoring.
+4. **Build the app's Docker image**: this packages TrendRadar into a runnable "image":
+
+   ```bash
+   docker build -t trendradar .
+   ```
+
+   It may take a few minutes; look for a "successfully built" message. (Check the project README in case it uses a different build command.)
+
+5. **Start it running**: launch the container in the background:
+
+   ```bash
+   docker run -d --name trendradar_container trendradar
+   ```
+
+   You should see a container ID printed; the app is now running.
+
+6. **Set up your alert channel**: in TrendRadar's config files (the README shows where), add the details for Telegram, email, or Slack, usually an API key or a "webhook" URL (a web address the app posts alerts to).
+
+7. **Set your keywords**: still in the config, list the topics or keywords you want watched. This tells the AI what to track.
+
+8. **Receive alerts**: TrendRadar now gathers and filters news and sends you AI-summarized updates on your chosen channel.
 
 ## Original source
-This workflow is based on the TrendRadar project developed by sansan0, available on GitHub. The project aims to provide an AI-driven tool for monitoring public opinion and trends, aggregating information from multiple platforms and delivering smart alerts.
+
+Based on the TrendRadar project by sansan0 on GitHub, an open-source tool that aggregates news across platforms and delivers AI-driven trend analysis and smart alerts.
 
 ## Notes & variations
-*   **Free Tier Viability**: TrendRadar itself is free and open-source. The primary cost consideration would be any associated API usage fees for data sources if not using the default ones, and the notification services (Telegram, Email, Slack) generally have generous free tiers suitable for individual or small business use.
-*   **Common Pitfall**: Ensure your Docker installation is correct and that you have sufficient system resources (RAM, disk space) to run the Docker container. Incorrect Docker commands or insufficient resources can prevent the application from starting.
-*   **Tip for Better Results**: Experiment with different keyword combinations and monitor frequencies. The AI's analysis quality can be significantly improved by providing precise keywords and adjusting how often the system scans for new information.
+
+- **Free-tier viability**: TrendRadar is free and open-source; Telegram, email, and Slack have free tiers that cover personal and small-business use.
+- **Common pitfall**: Docker not running, or too little memory or disk for the container. If the app will not start, check Docker is up and your system has resources free.
+- **Tip for better results**: tune your keywords and how often it scans. Precise keywords and a sensible scan frequency give sharper, less noisy alerts.

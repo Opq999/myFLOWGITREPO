@@ -43,7 +43,9 @@ const isFree = d.tools.every((t) => t.pricing !== 'paid');
 ---
 
 <Base title={d.title} description={d.description} ogImage={`/og/${workflow.id}.png`} ogType="article">
-  <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} slot="head" />
+  {steps.length > 0 && (
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} slot="head" />
+  )}
   <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} slot="head" />
   <meta property="article:published_time" content={d.ingestedAt.toISOString()} slot="head" />
   <meta property="article:section" content={category.label} slot="head" />

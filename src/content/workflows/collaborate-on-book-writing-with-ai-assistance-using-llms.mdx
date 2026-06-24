@@ -34,48 +34,66 @@ nigeriaUseCases:
     scenario: "As a student, create an e-book guide for JAMB success using AI to brainstorm chapter outlines, draft explanations for difficult topics, and polish your writing for a clear, engaging tone."
   - persona: "employee"
     scenario: "As an employee, collaborate with AI to write a comprehensive training manual for new hires, brainstorming modules, drafting explanations, and polishing the language for clarity and impact."
+revisedAt: 2026-06-23
 tiktokUrl: ""
 published: true
 ---
 
 ## What you'll get
 
-You'll learn a practical workflow for collaborating with AI language models (LLMs) to write a book. This approach uses LLMs as a sounding board, drafting partner, and editor, helping overcome writer's block and refine content.
+A practical loop for co-writing a book (or e-book, manual, or guide) with free AI chatbots. You use the AI as a sounding board, a drafting partner, and an editor: it helps you push past writer's block, while you stay in charge of the ideas, the facts, and your voice. ("LLM" just means large language model, the AI behind chatbots like ChatGPT.)
 
 ## Tools you need
 
-*   **ChatGPT** (freemium): A versatile AI chatbot for brainstorming, drafting, and refining text.
-*   **Claude** (freemium): Another powerful AI chatbot, useful for conversational brainstorming and text generation.
-*   **Gemini** (freemium): Google's AI chatbot, suitable for similar tasks as ChatGPT and Claude.
+- **ChatGPT, Claude, or Gemini** (freemium): any one works on its free tier. Some people switch between them, since each has slightly different strengths in tone and structure.
 
 ## Steps
 
-1.  **Capture raw ideas immediately**: Use your preferred LLM's mobile app (or website) to quickly record ideas as they come. You can use voice dictation or type them out. The goal is to get your thoughts down without worrying about perfection.
-    *   **What to do:** Open your chosen LLM (e.g., ChatGPT) and start a new chat. If using voice, activate the dictation feature on your phone. Speak your ideas clearly.
-    *   **What you should see:** Raw, potentially rambling text that captures your initial thoughts. This is the "spark" to be refined later.
+1. **Capture raw ideas the moment they hit**: open your chatbot's app and dump the thought in, by voice or typing, without worrying about polish. You should end up with rough, rambling text, the raw spark you will shape later.
 
-2.  **Brainstorm and explore ideas conversationally**: Treat the AI as a partner to "talk" through your ideas. Ask it for analogies, different perspectives, or potential structures for your book.
-    *   **What to do:** Paste your raw ideas or a summary into the chat. Ask open-ended questions like: "What are some analogies for [concept]?" or "Can you help me brainstorm different ways to structure a chapter on [topic]?"
-    *   **What you should see:** A list of suggestions, counterarguments, or structural ideas that can help you develop your initial thoughts further.
+2. **Brainstorm structure as a conversation**: paste your rough idea and talk it through:
 
-3.  **Generate first drafts when stuck**: If you're facing writer's block, ask the AI to generate a first pass of a section. Be specific about the target audience and the desired tone.
-    *   **What to do:** Provide a clear instruction, such as: `Explain [concept] simply for a beginner audience.` or `Write a draft introduction for a chapter about [topic].`
-    *   **What you should see:** A block of text that serves as a starting point. Remember, this is raw material and will require significant human editing.
+   ```
+   Here are my rough notes for a book about [topic]: [paste your notes].
+   Suggest three different ways to structure it into chapters, and give me a few
+   analogies I could use to explain [key concept] to a beginner.
+   ```
 
-4.  **Write first, then have AI polish**: Alternatively, write a section yourself and then ask the AI to improve it.
-    *   **What to do:** Paste your written text into the chat and ask for specific improvements, e.g., `Can you polish this paragraph for clarity and conciseness?` or `Make this section sound more engaging.`
-    *   **What you should see:** An improved version of your text, with enhanced flow, grammar, or style.
+   You should get options and angles that help you shape the outline.
 
-5.  **Engage in iterative refinement**: This is the core loop of the process. Paste your draft text and ask for specific feedback, then integrate the AI's suggestions selectively.
-    *   **What to do:** Paste a section of your draft and ask a precise question: `Is the logic in this paragraph clear?` or `Does this explanation of [term] make sense?` Review the AI's feedback and decide which suggestions to incorporate.
-    *   **What you should see:** Specific feedback on your text, followed by an updated version of your draft after you've integrated the useful suggestions.
+3. **Draft when you are stuck**: if a section will not come, ask for a first pass, being clear about audience and tone:
+
+   ```
+   Write a draft introduction for a chapter about [topic], aimed at complete beginners,
+   in a warm, plain-spoken tone. Keep it under 300 words.
+   ```
+
+   Treat the result as raw material to heavily edit, not a finished section.
+
+4. **Or write first, then have the AI polish**: when you have written something yourself, paste it for a tidy-up:
+
+   ```
+   Polish this paragraph for clarity and flow without changing my meaning or my voice:
+   [paste your paragraph]
+   ```
+
+   You should get a cleaner version you can accept or adjust.
+
+5. **Refine in a loop (the core of it)**: paste a draft and ask one precise question at a time, then keep only the suggestions you agree with:
+
+   ```
+   Is the logic in this paragraph clear, and does my explanation of [term] make sense?
+   Point out anything confusing: [paste your draft]
+   ```
+
+   You should get specific feedback you can fold in, then repeat on the next section.
 
 ## Original source
 
-This workflow is based on lessons learned shared by scottfalconer on Hacker News, detailing a months-long project of writing a book collaboratively with AI language models like ChatGPT, Claude, and Gemini.
+Based on lessons shared by scottfalconer on Hacker News, from a months-long project of writing a book together with AI models like ChatGPT, Claude, and Gemini.
 
 ## Notes & variations
 
-*   **Free-tier viability:** All mentioned LLMs (ChatGPT, Claude, Gemini) have generous free tiers that are perfectly adequate for this workflow. You can switch between them to leverage their different strengths.
-*   **Common pitfall:** Avoid vague prompts. Asking the AI to "write something" will yield generic results. Always provide context, specify the audience, desired tone, and the exact task.
-*   **Tip for better results:** Treat the AI as a partner, not a replacement for your own thinking. Use its output as raw material, always fact-checking and editing heavily to ensure accuracy and maintain your unique voice.
+- **Free-tier viability**: ChatGPT, Claude, and Gemini all have free tiers that comfortably cover this. Switching between them lets you play to each one's strengths.
+- **Common pitfall**: vague prompts. "Write something about X" gives generic mush. Always give context, the audience, the tone, and the exact task.
+- **Tip for better results**: treat the AI as a partner, not a ghostwriter. Use its output as raw material, fact-check everything, and edit heavily so the book keeps your voice.

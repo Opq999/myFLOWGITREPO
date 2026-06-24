@@ -38,56 +38,72 @@ nigeriaUseCases:
     scenario: "Ask your company's PostgreSQL database for the total sales figures for Q3 last year without writing any SQL code."
   - persona: "small-business"
     scenario: "Find out how many customers ordered product X last month from your sales database using a simple question instead of SQL."
+revisedAt: 2026-06-23
 tiktokUrl: ""
 published: true
 ---
 
 ## What you'll get
-You will set up Pgmcp to query your PostgreSQL database using natural language. This allows AI assistants to interact with your data without writing SQL, making data exploration more accessible. This approach is useful for quickly getting insights from databases without needing deep SQL knowledge.
+
+The ability to ask your database questions in plain English ("how many customers ordered product X last month?") and get answers, with no SQL required. Pgmcp is a small server that sits between an AI and your PostgreSQL database (a popular free database): it turns your question into the right SQL query, runs it, and returns the result. It is intermediate: you set a couple of environment variables and run a server in your terminal.
 
 ## Tools you need
-*   **Pgmcp** (free): A server that translates natural language questions into SQL queries for PostgreSQL.
-*   **PostgreSQL** (free): A powerful, open-source relational database system.
-*   **OpenAI API** (paid): An API for accessing advanced AI models, used here for natural language to SQL conversion. A free alternative is available using local LLMs.
-*   **Ollama** (free): A tool to run large language models locally on your machine, offering a free way to handle natural language processing.
+
+- **Pgmcp** (free): the server that translates your plain-English question into SQL and runs it.
+- **PostgreSQL** (free): the database you are querying. You need an existing one.
+- **An AI model**: either the **OpenAI API** (paid) or a local model via **Ollama** (free) does the English-to-SQL translation. ("API key" = the secret that lets the tool use the AI.)
 
 ## Steps
-1.  **Install Pgmcp**: Download the pre-compiled Pgmcp server binary from the GitHub repository. The author does not specify a particular release or installation method beyond running the binary, so you will need to find the latest release on the project's GitHub page.
-2.  **Set up environment variables**: Before running Pgmcp, you need to configure your database connection and optionally your AI API key. Open your terminal or command prompt and set the following environment variables. Replace the placeholder values with your actual database credentials and OpenAI API key (if using).
 
-    ```bash
-    export DATABASE_URL="postgres://user:password@localhost:5432/your-existing-db"
-    export OPENAI_API_KEY="your-api-key"
-    ```
+1. **Get Pgmcp**: download the pre-built Pgmcp server (and client) for your system from the project's GitHub Releases page.
 
-    You should see confirmation that the variables have been set, or you can verify by echoing them (e.g., `echo $DATABASE_URL`).
-3.  **Run the Pgmcp server**: Navigate to the directory where you downloaded the Pgmcp binary in your terminal and start the server. The author provides the command `./pgmcp-server`.
+2. **Set your connection details**: tell Pgmcp how to reach your database (and your AI key if using OpenAI) with environment variables (settings for this terminal session):
 
-    ```bash
-    ./pgmcp-server
-    ```
+   ```bash
+   # macOS or Linux
+   export DATABASE_URL="postgres://user:password@localhost:5432/your-db"
+   export OPENAI_API_KEY="your-api-key"
+   ```
 
-    You should see output indicating the server has started, likely including messages about listening on a specific port and initializing its connection to the database.
-4.  **Test with the Pgmcp client**: Open a new terminal window. Use the Pgmcp client to send a natural language query to the running server. The author suggests the following commands:
+   ```powershell
+   # Windows (PowerShell)
+   $env:DATABASE_URL = "postgres://user:password@localhost:5432/your-db"
+   $env:OPENAI_API_KEY = "your-api-key"
+   ```
 
-    ```bash
-    ./pgmcp-client -ask "What tables do I have?" -format table
-    ```
+3. **Start the server**: run the Pgmcp server from the folder you downloaded it to:
 
-    You should receive a table in your terminal listing the tables in your PostgreSQL database.
-5.  **Ask a more complex question**: Try another query to see Pgmcp's capabilities. For example, to find a customer by name:
+   ```bash
+   # macOS or Linux
+   ./pgmcp-server
+   ```
 
-    ```bash
-    ./pgmcp-client -search "john" -format table
-    ```
+   On Windows, run `.\pgmcp-server.exe`. You should see it report that it is listening and connected to your database.
 
-    This should return a table of results related to 'john' from your database.
-6.  **Use a local LLM (Optional)**: If you prefer not to use the OpenAI API, you can configure Pgmcp to use a local LLM via Ollama. The author mentions this as a possibility but does not provide specific configuration steps. You would typically need to set an environment variable to point Pgmcp to your local Ollama endpoint.
+4. **Ask a question**: in a new terminal, use the client to ask in plain English:
+
+   ```bash
+   ./pgmcp-client -ask "What tables do I have?" -format table
+   ```
+
+   You should get a neatly formatted table of your database's tables.
+
+5. **Try a real query**: for example, search for a customer:
+
+   ```bash
+   ./pgmcp-client -search "john" -format table
+   ```
+
+   You should get matching rows back.
+
+6. **Go free with a local model (optional)**: to avoid OpenAI costs, point Pgmcp at a local model run by Ollama instead (set the relevant environment variable per the README). The whole workflow then costs nothing.
 
 ## Original source
-This workflow is based on a Show HN post on Hacker News by user `fosk`, introducing Pgmcp, a project by `subnetmarco`. Pgmcp is an MCP server designed to allow AI assistants to query any PostgreSQL database using natural language.
+
+Based on a Show HN post by fosk introducing Pgmcp (by subnetmarco), an MCP server that lets AI assistants query any PostgreSQL database in natural language.
 
 ## Notes & variations
-*   **Free tier alternative**: Instead of the paid OpenAI API, you can use Ollama to run a local language model for natural language processing. This makes the entire workflow free.
-*   **Common pitfall**: Ensure your `DATABASE_URL` is correctly formatted and includes the correct username, password, host, port, and database name. An incorrect URL will prevent Pgmcp from connecting to your database.
-*   **Better results**: For more accurate SQL generation, ensure your PostgreSQL database has clear table and column names that are descriptive of their content. Pgmcp relies on the schema's clarity to interpret your natural language queries effectively.
+
+- **Free-tier alternative**: swap the paid OpenAI API for a local model via Ollama to make the whole thing free.
+- **Common pitfall**: a malformed `DATABASE_URL`. Double-check the username, password, host, port, and database name; a wrong one stops Pgmcp connecting.
+- **Tip for better results**: clear, descriptive table and column names help a lot. Pgmcp reads your database's structure to interpret questions, so a tidy schema gives more accurate SQL.

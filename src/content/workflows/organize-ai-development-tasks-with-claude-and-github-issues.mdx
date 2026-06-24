@@ -3,7 +3,7 @@ title: "Organize AI Development Tasks with Claude and GitHub Issues"
 description: "Learn to manage AI-driven development projects by using GitHub Issues as a database with Claude and bash scripts. Keep track of specs and progress."
 category: "coding"
 badge: "sourced"
-difficulty: "beginner"
+difficulty: "intermediate"
 timeMinutes: 30
 jobToBeDone: "Organize AI-driven development tasks using GitHub Issues as a database"
 tools:
@@ -29,71 +29,58 @@ ingestedAt: 2026-06-13
 nigeriaNotes: "Claude offers a free tier. GitHub is free. Bash is pre-installed on most Linux/macOS systems and available for Windows. Data usage is minimal, primarily text-based."
 nigeriaUseCases:
   - persona: "entrepreneur"
-    scenario: "As an entrepreneur building an AI-powered customer support chatbot for your e-commerce store, use Claude to decompose the 'Automated FAQ Response' feature into tasks like 'Train on past customer queries,' 'Integrate with WhatsApp API,' and "
+    scenario: "Building an AI customer-support chatbot for your store, use Claude to break the 'Automated FAQ Response' feature into tracked GitHub Issues like 'train on past queries' and 'integrate WhatsApp API'."
   - persona: "student"
-    scenario: "For your final year project on building an AI-powered inventory system, use Claude to break down the 'Predictive Stocking' feature into tasks like 'Data Collection Script,' 'Model Training,' and 'Deployment to Azure,' tracking each as a Git"
+    scenario: "For your final-year AI inventory project, use Claude to break the 'Predictive Stocking' feature into tasks (data collection, model training, deployment), tracking each as its own GitHub Issue."
   - persona: "employee"
-    scenario: "If you're a software engineer at a fintech company building an AI fraud detection system, use Claude to break down the 'Transaction Anomaly Detection' module into tasks like 'Feature Engineering,' 'Model Selection,' and 'API Endpoint Creati"
+    scenario: "As a fintech engineer building AI fraud detection, use Claude to split the 'Transaction Anomaly Detection' module into tasks (feature engineering, model selection, API endpoint), each a tracked GitHub Issue."
+revisedAt: 2026-06-23
 tiktokUrl: ""
 published: true
 ---
 
 ## What you'll get
 
-You will set up a system to manage AI development tasks by treating GitHub Issues as a central database. This approach helps maintain context and traceability for AI-generated development work, especially when running multiple AI agents in parallel.
+A simple system for keeping AI-driven development organized by using GitHub Issues as your task database. AI agents lose track of context between tasks; this fixes that by writing every feature and sub-task down as a GitHub Issue, with Claude doing the planning and breakdown. You get a clear, traceable record of what needs doing and what is done, which matters even more when several AI agents work in parallel. It is intermediate: you use GitHub and run a few scripts.
 
 ## Tools you need
 
-*   **Claude** (freemium) - An AI assistant for brainstorming, generating tasks, and writing specifications.
-*   **GitHub Issues** (free) - Used as a structured database to track tasks, dependencies, and progress.
-*   **bash** (free) - A command-line interpreter used to run scripts that automate the workflow.
+- **Claude** (freemium): plans the project, writes the spec, and breaks features into tasks.
+- **GitHub Issues** (free): your task "database", each task is an issue, linked to its parent feature.
+- **bash** (free): runs small scripts that create and link the issues automatically.
 
 ## Steps
 
-1.  **Brainstorm Project Requirements** - Use Claude to help define your project and create a Product Requirements Document (PRD).
-    The author doesn't share their exact prompt; a starting point:
+1. **Plan the project with Claude**: have it draft a Product Requirements Document (a "PRD", a written description of what you are building and why):
 
-    ```
-    I need to build a project management system for AI-driven development. Help me brainstorm the core features and structure for a Product Requirements Document (PRD). The goal is to keep context from disappearing between tasks and manage multiple AI agents.
-    ```
+   ```
+   Help me write a Product Requirements Document for an AI-driven [your project]. Focus on
+   keeping context from getting lost between tasks and coordinating multiple AI agents.
+   ```
 
-    You should receive a detailed outline for your PRD, covering key aspects of your AI development project.
+2. **Create a GitHub repository**: make a new repo to hold the project and its issues. You should see an empty repo on your dashboard.
 
-2.  **Create a GitHub Repository** - If you don't have one already, create a new repository on GitHub to host your project. This will serve as the central hub for your issues.
+3. **Open an "epic" issue**: create a GitHub Issue for a big feature (an "epic", a large chunk of work that holds smaller tasks). Title it "Epic: [feature name]".
 
-    You should see a new, empty repository listed on your GitHub dashboard.
+4. **Break the epic into tasks with Claude**: feed it the PRD and the epic:
 
-3.  **Spin Up an Epic in GitHub** - Use the system's scripts (or manually create) a GitHub Issue to represent a major feature or "epic" for your project. This epic will be the parent for smaller tasks.
+   ```
+   Based on the PRD and the epic "[feature name]", break the work into small, actionable
+   tasks. For each, give a clear title and a one-line description. These become GitHub Issues.
+   ```
 
-    You should see a new issue created in your GitHub repository, titled something like "Epic: [Your Epic Name]".
+5. **Create an issue per task**: turn each task into a GitHub Issue, linked back to the parent epic (the author's bash scripts automate this creating-and-linking; you can also do it by hand).
 
-4.  **Decompose Epic into Tasks** - Use Claude, guided by the PRD and the epic, to break down the epic into smaller, actionable tasks. These tasks will also be represented as GitHub Issues.
-    The author doesn't share their exact prompt; a starting point:
+6. **Track progress on the issues**: as a task gets done (by you or an AI agent), update its issue, comment, change labels, or close it. The issues always show current status.
 
-    ```
-    Based on the PRD section for '[Your Epic Name]' and the main epic issue, break down the work into smaller, actionable tasks. For each task, suggest a clear title and a brief description. These will become individual GitHub Issues.
-    ```
-
-    You should get a list of task descriptions that can be used to create new GitHub Issues.
-
-5.  **Sync Tasks with GitHub Issues** - Create new GitHub Issues for each of the decomposed tasks. The system's bash scripts are designed to automate this, linking them back to the parent epic.
-
-    You should see multiple new issues created in your GitHub repository, each representing a distinct task, and potentially linked to the parent epic.
-
-6.  **Track Progress** - As work progresses on each task (e.g., AI agent completes a sub-task), update the corresponding GitHub Issue. This could involve adding comments, changing labels, or closing the issue.
-
-    Your GitHub Issues will reflect the current status of each development task.
-
-7.  **Maintain Traceability** - Ensure all new issues and updates clearly reference the original specifications or parent tasks. This keeps the development process traceable back to the initial requirements.
-
-    All issues and their history in GitHub should provide a clear lineage of development decisions and progress.
+7. **Keep it traceable**: make every issue reference its spec or parent epic, so you can always trace a piece of work back to the requirement it came from.
 
 ## Original source
 
-This workflow is based on a project shared by user aroussi on Hacker News, presented as a "Show HN" post. The author developed a lightweight project management system using bash scripts and GitHub Issues to address the challenge of maintaining context in AI-driven development.
+Based on a Show HN post by aroussi, a lightweight project-management system using bash scripts and GitHub Issues to stop AI-driven development from losing context.
 
 ## Notes & variations
 
-*   **Free Tier Viability**: Claude's free tier is suitable for generating text and brainstorming. GitHub Issues are entirely free. Bash is a standard command-line tool.
-*   **Common Pitfall**: Ensure your prompts to Claude are specific enough to generate well-defined tasks. Vague prompts can lead to tasks that are difficult to track or implement.
-*   **Better Results**: Experiment with different ways to structure your GitHub Issues (e.g., using labels for status, milestones for epics) to further enhance organization and reporting within the bash scripts to automate more of the issue creation and linking process.
+- **Free-tier viability**: Claude's free tier covers the planning, GitHub Issues are free, and bash is standard.
+- **Common pitfall**: vague prompts produce vague tasks that are hard to track. Ask Claude for specific, single-purpose tasks.
+- **Tip for better results**: use GitHub's own features, labels for status, milestones for epics, to organize further, and let the bash scripts automate the repetitive issue creation.

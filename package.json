@@ -15,6 +15,7 @@
     "pipeline:dry": "tsx --env-file-if-exists=.env pipeline/run.ts --dry-run",
     "pipeline:backfill": "tsx --env-file-if-exists=.env pipeline/run.ts --backfill",
     "pipeline:usecases": "tsx --env-file-if-exists=.env pipeline/backfill-usecases.ts",
+    "pipeline:rewrite": "tsx --env-file-if-exists=.env pipeline/rewrite-clarity.ts",
     "og": "tsx scripts/gen-og-cards.ts",
     "astro": "astro"
   },

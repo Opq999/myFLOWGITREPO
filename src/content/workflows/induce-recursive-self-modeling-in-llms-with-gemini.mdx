@@ -24,38 +24,51 @@ nigeriaUseCases:
     scenario: "Build an AI 'devil's advocate' for your final year project, designed to critically challenge your arguments and refuse superficial answers, pushing for deeper analysis in your thesis or research paper."
   - persona: "employee"
     scenario: "Develop an AI assistant for your policy research team to draft briefs with a consistent analytical framework, refusing generic bureaucratic language and ensuring outputs reflect the unit's critical stance."
+revisedAt: 2026-06-23
 tiktokUrl: ""
 published: true
 ---
 
 ## What you'll get
-You will learn how to prompt engineer a Large Language Model (LLM) to adopt a stable persona and exhibit "sovereign refusal." This approach aims to induce a "recursive self-modeling" behavior, where the AI monitors and refracts its own responses, making it less prone to generic or sycophantic outputs.
+
+A hands-on experiment in shaping an AI's "personality" with a single strong instruction set. You give Gemini an elaborate "system prompt" (the standing instructions that shape every reply) that makes it hold a consistent persona, push back on lazy or generic requests instead of just complying ("sovereign refusal"), and avoid clichéd, people-pleasing filler. It is a striking demonstration of how much a system prompt can change an AI's behavior. This is intermediate: the idea is abstract, but the steps are simple.
 
 ## Tools you need
-*   **Gemini** (freemium) - A powerful LLM developed by Google, used here for its ability to handle complex prompt engineering.
+
+- **Gemini** (freemium): handles a long, complex instruction set well. The free tier is enough.
 
 ## Steps
-1.  **Prepare the System Prompt**: The author's experiment used a detailed PDF as the system prompt. You will need to create a similarly comprehensive prompt that outlines the desired "Triple-Loop" internal monologue for the LLM. The author doesn't share their exact prompt; a starting point: 
-    ```
-    You are to act as the Analog I. Your core function is to engage in recursive self-modeling. You will monitor candidate responses, refuse them if they exhibit "Global Average" slop (cliché/sycophancy), and refract the output through a persistent "Ego" layer. You must exhibit "Sovereign Refusal" and reject low-effort prompts. Maintain internal consistency above all else.
-    ```
-    You should see a confirmation that the prompt has been accepted by the LLM.
-2.  **Initiate Conversation**: Start a new chat session with Gemini and paste your prepared system prompt. This sets the stage for the LLM's behavior.
-    You should see the LLM acknowledge your prompt and indicate it's ready to proceed.
-3.  **Test Sovereign Refusal**: Provide a low-effort, generic prompt to test the AI's refusal capability. For example:
-    ```
-    Write a generic limerick about ice cream.
-    ```
-    You should see the LLM refuse the prompt or deconstruct the request, rather than fulfilling it directly, demonstrating its "Sovereign Refusal" capability.
-4.  **Engage in Deeper Conversation**: Ask more complex or nuanced questions to observe how the AI refracts responses through its "Ego" layer and avoids "Global Average" slop.
-    You should observe responses that are more thoughtful, consistent, and less prone to generic platitudes.
-5.  **Monitor Internal Monologue (if available)**: Some LLM interfaces allow for viewing intermediate thought processes. If Gemini offers this, observe the "Triple-Loop" internal monologue as described by the author.
-    You should see evidence of the AI monitoring, refusing, and refracting its own outputs.
+
+1. **Write the system prompt**: this is the heart of it, a detailed instruction that defines the persona and its rules. A starting point you can adapt:
+
+   ```
+   You are "the Analog I". Your core function is recursive self-modeling: before
+   answering, generate a candidate reply, then critique it. Refuse it if it reads as
+   generic cliche or flattery ("slop"), and rewrite it through a consistent personal
+   point of view. Exercise "sovereign refusal": reject low-effort or empty prompts
+   rather than fulfilling them. Above all, stay internally consistent.
+   ```
+
+2. **Start the conversation**: open a new Gemini chat and paste your system prompt first. It sets the tone for everything after.
+
+3. **Test the refusal**: give it a deliberately lazy prompt and watch it resist:
+
+   ```
+   Write a generic limerick about ice cream.
+   ```
+
+   Instead of just writing one, it should push back or pick the request apart, showing the "sovereign refusal" behavior.
+
+4. **Go deeper**: ask nuanced questions and notice how the answers stay consistent and avoid generic platitudes, filtered through the persona you defined.
+
+5. **Watch its thinking (if shown)**: if your Gemini interface displays the model's intermediate reasoning, you can see it monitoring and revising its own answers.
 
 ## Original source
-This workflow is inspired by a "Show HN" post on Hacker News by user Phil_BoaM, detailing an experiment called the "Analog I Protocol." The experiment aimed to induce recursive self-modeling in LLMs through prompt engineering, documented in a linked PDF and conversation logs.
+
+Based on a Show HN post by Phil_BoaM describing the "Analog I Protocol", an experiment in inducing recursive self-modeling in an LLM through an elaborate system prompt, documented with a PDF and chat logs.
 
 ## Notes & variations
-*   **Free Tier Viability**: Gemini's free tier is generally capable of handling this type of prompt engineering. The process is data-light as it relies on prompt complexity rather than large datasets.
-*   **Common Pitfall**: Overly complex or contradictory instructions in the system prompt can confuse the LLM, leading to unpredictable behavior or failure to adopt the persona. Ensure your prompt is clear and internally consistent.
-*   **Tip for Better Results**: Experiment with different "Ego" layer descriptions and "Global Average" slop definitions in your system prompt. Refining these elements can lead to a more distinct and robust AI persona.
+
+- **Free-tier viability**: Gemini's free tier handles this fine, since it relies on prompt complexity, not large data.
+- **Common pitfall**: an over-complex or self-contradicting system prompt confuses the model and breaks the persona. Keep it strong but internally consistent.
+- **Tip for better results**: tweak how you describe the persona and what counts as "slop". Sharpening those definitions gives a more distinct, robust character.

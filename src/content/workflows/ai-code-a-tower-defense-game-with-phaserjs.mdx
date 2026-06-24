@@ -3,13 +3,13 @@ title: "AI-Code a Tower Defense Game with Phaser.js"
 description: "Learn to develop a browser-based tower defense game using AI coding assistance and the Phaser.js engine, documenting the entire process."
 category: "coding"
 badge: "sourced"
-difficulty: "intermediate"
+difficulty: "advanced"
 timeMinutes: 1500
 jobToBeDone: "Develop a game using AI coding assistance and document the process"
 tools:
   - name: "Phaser.js"
     url: "https://phaser.io/"
-    pricing: "freemium"
+    pricing: "free"
     affiliateUrl: ""
   - name: "AI coding agents"
     url: "https://openai.com/"
@@ -36,33 +36,61 @@ nigeriaUseCases:
     scenario: "Build a simple tower defense game as your final year project or a portfolio piece to showcase coding skills to potential employers."
   - persona: "employee"
     scenario: "Enhance your coding skills by building a personal game project with AI, adding a unique item to your professional portfolio for career growth."
+revisedAt: 2026-06-23
 tiktokUrl: ""
 published: true
 ---
 
-## What you'll get
-You will learn how to leverage AI coding agents to assist in developing a browser-based tower defense game using the Phaser.js engine. This workflow provides insights into the entire development process, from initial coding to asset integration and submission.
+## What this is, in plain English
+
+A tower defense game is the kind where enemies walk along a path and you place towers to stop them. Phaser.js is a free, open-source toolkit (a "game engine", the software that handles drawing, movement, and collisions for you) for building games that run in any web browser. An AI coding agent is a chat tool like ChatGPT, Gemini, or Claude that writes code for you when you describe what you want in plain English.
+
+Be honest about the size of this: this is not a one-afternoon, copy-paste recipe. The developer who inspired this spent roughly 25 hours building their game ("Tower of Time"), feature by feature, going back and forth with the AI hundreds of times. There is no single magic prompt. What this page gives you is the realistic approach (so you know what you are signing up for and how to work with the AI without getting stuck), plus the things this skill is genuinely good for.
+
+You do need to be comfortable saving files, opening a code editor, and running a project in your browser. You do not need to already know how to write a game.
+
+## What you can use it for
+
+- **A standout portfolio piece.** A finished, playable browser game is far more memorable to an employer than another to-do list app.
+- **Actually learning to code.** Building something you care about, with the AI explaining each piece, teaches JavaScript faster than tutorials you forget.
+- **Prototyping a game idea cheaply.** Test whether a mechanic is fun in a few hours before investing weeks in it.
+- **Small games you can publish (and sell).** itch.io lets you put a browser game online for free, with an optional "pay what you want" price.
+- **Teaching or class projects.** A visual, interactive result keeps students engaged more than a console program.
 
 ## Tools you need
-* Phaser.js (freemium)
-* AI coding agents (freemium)
-* itch.io (freemium)
-* freesound.org (free)
 
-## Steps
-1. Learn the basics of Phaser.js, a Javascript-based game engine.
-2. Utilize AI coding agents to assist in programming the game.
-3. Source art assets from platforms like itch.io, ensuring free usage rights.
-4. Find sound effects from freesound.org.
-5. Integrate art and sound assets into the Phaser.js game.
-6. Document the entire development process, including code and prompts used.
-7. Submit the completed game to a platform like itch.io.
+- **Phaser.js** (free): an open-source engine for 2D browser games. Nothing to buy; you include it in your project.
+- **An AI coding agent** (freemium): ChatGPT, Gemini, or Claude. The free tiers work; you will just hit usage limits on long sessions.
+- **itch.io** (freemium): free to host and publish your finished browser game.
+- **freesound.org** (free): a library of free sound effects you can use with credit.
+
+## How it actually works
+
+You build in small pieces and let the AI write each piece while you test it in the browser. The realistic path:
+
+1. **Start a Phaser project.** Ask your AI agent: "Give me the smallest possible Phaser.js project that shows a green rectangle moving across the screen, with the exact files and where to put them." Save the files it gives you and open the main HTML file in your browser. Seeing the rectangle move proves your setup works before you build anything real.
+2. **Build one feature at a time.** Describe a single mechanic and ask for just that: "Add a path that an enemy sprite walks along from left to right." Test it. Then the next: "Let me click empty tiles to place a tower." Small steps keep the AI accurate; big requests make it invent broken code.
+3. **Feed errors straight back to the AI.** When something breaks, copy the red error text from the browser's developer console (press F12 to open it) and paste it back: "I got this error, here is the code, what is wrong?" This loop is where most of the work happens.
+4. **Add art and sound.** Get free game art from itch.io (check each asset's licence allows your use) and free sound effects from freesound.org. Ask the AI exactly how to load each file into your Phaser scene.
+5. **Keep notes and save often.** The original author documented their code and prompts publicly. Save your project frequently (and use Git if you know it) so a bad AI edit never costs you hours.
+6. **Publish to itch.io.** When it is playable, follow itch.io's "upload a HTML game" steps to put it online and share the link.
+
+## Words you'll see, explained
+
+- **Game engine:** software that handles the hard parts of a game (drawing, movement, collisions) so you focus on the gameplay. Phaser.js is one.
+- **AI coding agent:** a chat tool that writes and fixes code from your plain-English description.
+- **Sprite:** a single moving image in a game, like an enemy or a tower.
+- **Asset:** any art or sound file your game uses.
+- **Developer console:** a panel in your browser (press F12) that shows errors, the first place to look when something breaks.
+- **Creative Commons:** a type of free licence; it tells you whether you may use an asset and whether you must credit the creator.
 
 ## Original source
-This workflow is inspired by a software developer with over 20 years of experience who documented their journey of creating a tower defense game called "Tower of Time" using AI coding agents and the Phaser.js engine. The process, including code and prompts, was shared on GitHub, with art assets sourced from itch.io and sounds from freesound.org.
+
+Based on a Hacker News post by M4v3R sharing a software developer's account of building a tower defense game called "Tower of Time" with AI coding agents and Phaser.js. The developer, who has over 20 years of experience, documented the whole process including code and prompts, sourced art from itch.io and sound from freesound.org, and streamed parts of the build.
 
 ## Notes & variations
-* For AI coding assistance, consider free tiers of models like ChatGPT or Gemini. Be mindful of usage limits.
-* Explore other free JavaScript game engines if Phaser.js does not meet your needs.
-* For art assets, look for open-source or Creative Commons licensed resources.
-* The author streamed parts of their development process, which could be a valuable resource for visual learners.
+
+- **Do you even need a game engine?** For a tiny, static game you could ask the AI for plain HTML and JavaScript. Reach for Phaser once you want real movement, collisions, and many objects on screen.
+- **Free-tier limits:** long AI sessions will hit the free message caps. Switching between ChatGPT, Gemini, and Claude (all have free tiers) stretches your free usage across the day.
+- **Common pitfall:** asking the AI for too much at once. "Build me the whole game" produces a broken mess. One small feature per request is the difference between progress and frustration.
+- **Tip for better results:** when the AI's code works, tell it so and ask it to keep that version as the base before the next change. That stops it quietly rewriting working parts.

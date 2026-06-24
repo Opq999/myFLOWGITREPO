@@ -3,16 +3,20 @@ title: "Automate Papal Election Smoke Detection with Playwright and AI"
 description: "Use Playwright and Google Gemini Flash to automatically check for white smoke from the Sistine Chapel chimney during a papal election."
 category: "coding"
 badge: "sourced"
-difficulty: "beginner"
+difficulty: "advanced"
 timeMinutes: 30
 jobToBeDone: "Automate checking for white smoke from the Sistine Chapel chimney during a papal election"
 tools:
   - name: "Playwright"
     url: "https://playwright.dev/"
-    pricing: "freemium"
+    pricing: "free"
     affiliateUrl: ""
   - name: "Google Gemini Flash 2.0"
     url: "https://gemini.google.com/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "GitHub Actions"
+    url: "https://github.com/features/actions"
     pricing: "freemium"
     affiliateUrl: ""
 source:
@@ -26,45 +30,66 @@ nigeriaNotes: "Playwright and Gemini Flash are free to use. The workflow require
 nigeriaUseCases:
   - persona: "student"
     scenario: "Automate checking for white smoke from the Sistine Chapel chimney during a papal election using Playwright and AI."
+revisedAt: 2026-06-23
 tiktokUrl: ""
 published: true
 ---
 
-## What you'll get
+## What this is, in plain English
 
-You will have a script that automatically checks for smoke signals from the Sistine Chapel chimney during a papal election. This workflow uses AI to verify if the smoke is white, indicating a successful election, and alerts you accordingly. It's a novel application of web automation and AI for a specific, real-world event.
+When the Catholic Church elects a pope, the cardinals meet in secret (a "conclave") and burn their ballots after each vote. The chimney smoke is black if there is no decision yet and white once a new pope is chosen. This project automates watching for that: a web-automation tool (Playwright) grabs the live video of the chimney every minute, and an AI that can look at images (Google Gemini Flash) is asked "is this smoke white?". When it is, the script flags it.
+
+Be honest about two things. First, the pope-watching is the fun demo; the real, reusable value is the pattern underneath, point a camera or web page at an AI on a schedule and have it judge a visual condition for you. Second, this is a developer project, not a one-click app: you clone a code repository, add an AI key, and set up a scheduled job. That is why it is marked advanced. This page shows what it does, where the pattern is genuinely useful, and the realistic shape of running it.
+
+## What you can use it for
+
+The same "watch a feed, let AI judge it, then alert" recipe applies far beyond a chimney:
+
+- **Watch a webcam for an event.** Check a shop, car park, or gate camera and get notified when something specific happens (a space opens, a queue forms, a shutter rolls up).
+- **Monitor a web page for a visual change.** Catch when a dashboard turns red, a "sold out" label appears, or a status light changes.
+- **Spot deliveries or arrivals.** Flag when a van pulls up or a package is left at a door.
+- **Quality or safety checks on a schedule.** Have AI glance at a live view periodically and raise a flag when it looks wrong.
+- **Any "is this picture showing X right now?" question** you would otherwise have to sit and watch for.
 
 ## Tools you need
 
-*   **Playwright** (freemium) - A tool for reliable end-to-end testing of modern web applications. Used here to interact with a hypothetical or real-time source of election information.
-*   **Google Gemini Flash 2.0** (freemium) - A fast and efficient large language model from Google, used here to analyze images or text descriptions of the smoke.
-*   **GitHub Actions** (freemium) - A CI/CD platform to automate workflows, used here to schedule and run the smoke detection script.
+- **Playwright** (free): an open-source tool that controls a web browser automatically, used here to load the live feed and capture an image.
+- **Google Gemini Flash 2.0** (freemium): a fast AI model that can look at an image and answer questions about it. It has a free API tier.
+- **GitHub Actions** (freemium): GitHub's built-in scheduler, used to run the check automatically every minute. It has a free monthly allowance.
 
-## Steps
+## How it actually works
 
-1.  **Set up your project environment** - Clone the provided GitHub repository to your local machine. This repository contains the pre-written Playwright test script.
-2.  **Install dependencies** - Navigate to the project directory in your terminal and install the necessary Node.js packages using npm or yarn. The repository's README file will guide you on the exact commands.
-3.  **Configure AI model access** - The script is set to use Google Gemini Flash 2.0. You will need to obtain an API key for Gemini and set it as an environment variable in your GitHub Actions workflow file (`.github/workflows/tests.yaml`). The exact method for setting environment variables in GitHub Actions is detailed in their documentation.
-    *   The author doesn't share their exact prompt for the AI; a starting point for analyzing an image of smoke could be:
+You are adapting an existing project, not writing it from scratch. The realistic path:
 
-    ```
-    Analyze this image of smoke coming from a chimney. Is the smoke white? Respond with only 'yes' or 'no'.
-    [Image data or URL here]
-    ```
+1. **Clone the repository.** Copy the project's code to your machine (or fork it on GitHub). It already contains the Playwright script.
+2. **Install the dependencies.** In the project folder, install the Node.js packages it needs (the README lists the exact command, usually `npm install`).
+3. **Get a Gemini API key and store it safely.** Create a free key in Google AI Studio, then add it as a GitHub Actions "secret" (an encrypted setting), not as plain text in the code. The workflow file reads it from there.
+4. **Point the script at your feed.** Set the image or live-feed URL you want watched. For the original, that is the chimney camera; for your own use, swap in your camera or page.
+5. **Let the schedule run it.** GitHub Actions runs the script on a timer (every minute in the original). Each run captures an image and asks the AI. A starting prompt:
 
-    You should see a confirmation in your GitHub Actions logs that the AI model is configured and ready.
-4.  **Define the test target** - The script needs a way to access information about the papal election smoke. This might involve monitoring a specific website, an API, or a live video feed. The provided script likely has a placeholder or a specific method for this, which you may need to adapt based on how election smoke information is made available.
-    *   The author doesn't specify the exact source of the smoke information; you will need to determine this and potentially update the script to point to it.
-5.  **Run the smoke test** - Execute the Playwright test script. This can be done locally for testing or, more effectively, by committing your changes to GitHub and letting GitHub Actions run the scheduled test.
-    *   The script is designed to run every minute during papal conclave election times. You should see the test results in your GitHub Actions run history. A successful run indicates white smoke was detected.
-6.  **Interpret the results** - The test passes only if the smoke detected is white. You will see a 'pass' status in your GitHub Actions logs if the conditions are met. A 'fail' status would indicate no smoke, or smoke of a different color.
+   ```
+   Analyze this image of smoke coming from a chimney. Is the smoke white?
+   Respond with only 'yes' or 'no'.
+   ```
+
+6. **Read the result.** The run passes (or sends your alert) only when the AI answers yes. You can see each run's outcome in the GitHub Actions history.
+
+## Words you'll see, explained
+
+- **Playwright:** a tool that drives a web browser automatically, for loading pages and taking screenshots.
+- **Gemini Flash:** a fast AI model that can read and answer questions about images.
+- **GitHub Actions:** a service that runs your code on a schedule or when you push changes.
+- **API key:** a secret key that lets your script use an online service (here, Gemini) and bills it to you.
+- **Secret:** an encrypted setting (for example in GitHub Actions) where you store keys so they never appear in your code.
+- **Conclave:** the closed-door meeting where cardinals elect a pope.
 
 ## Original source
 
-This workflow is based on a project shared by user 'vasusen' on Hacker News, presented as a 'Show HN' post. The project demonstrates using Playwright and Google Gemini Flash to automate the checking of papal election smoke signals, with the test passing only if the smoke is white.
+Based on a Show HN post by vasusen on Hacker News, demonstrating Playwright plus Google Gemini Flash to automatically check the Sistine Chapel chimney during a papal conclave, with the scheduled check passing only when the smoke is white.
 
 ## Notes & variations
 
-*   **Free Tier Viability**: GitHub Actions offers a free tier with a generous amount of minutes per month, making this workflow accessible without cost for personal use. Google Gemini Flash also has a free tier for its API.
-*   **Common Pitfall**: Ensure your API keys are kept secure and are not hardcoded directly into your script. Use environment variables, especially within CI/CD platforms like GitHub Actions.
-*   **Tip for Better Results**: If the AI struggles to accurately identify smoke color from images, consider if there's a text-based status update available from a reliable source that the script could parse instead, or provide the AI with more context about what 'white smoke' signifies in this specific event.
+- **Do you even need this?** For a single rare event, a person glancing at the live feed is simpler. The automation earns its place when you want a feed watched continuously or repeatedly, which is where the general pattern shines.
+- **Free-tier viability:** Playwright is free, GitHub Actions has a generous free allowance, and Gemini Flash has a free API tier, so personal use costs nothing.
+- **Common pitfall:** never paste an API key directly into your code, especially in a public repository. Always use a secret, as in step 3.
+- **Tip for better results:** swap the prompt to detect whatever you care about ("Is a delivery van visible?", "Is the status light red?"). If the AI struggles with a blurry image, a clearer feed or a text status source can be more reliable.

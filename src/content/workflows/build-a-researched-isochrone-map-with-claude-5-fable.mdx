@@ -24,50 +24,64 @@ nigeriaUseCases:
     scenario: "Create a visually appealing isochrone map of travel times between Nigerian cities for a geography project, factoring in flights, trains, and driving."
   - persona: "employee"
     scenario: "Generate an isochrone map showing travel times from Lagos to major Nigerian cities by car and air for a business expansion feasibility study."
+revisedAt: 2026-06-23
 tiktokUrl: ""
 published: true
 ---
 
-## What you'll get
-You will get a fully researched and beautiful isochrone map that allows you to select various cities and visualize real travel time lines based on real-world data. This approach is powerful because it leverages advanced AI to research thousands of potential trip distances and make complex judgment calls that previous models struggled with.
+## What this is, in plain English
+
+An isochrone map shows how far you can travel from a place in a given time: lines connect all the points you can reach in, say, two hours, four hours, and so on. This workflow is a real example of handing one big, well-described task to a top-tier AI (Claude's Fable model, one of its most advanced) inside Claude Code, and letting it research the data and build the whole interactive map over several hours, mostly on its own.
+
+Be honest about what this is: it is more a demonstration of what a frontier AI can do than a step-by-step recipe with a guaranteed result. It needs access to a very capable model (the author had early access), it runs for hours, and the output is a one-off creative project that will differ each time. The reusable lesson, which anyone can apply, is the technique: how to brief a powerful AI on an ambitious build and steer it with light feedback.
+
+## What you can use it for
+
+The "give a frontier model one ambitious, well-specified project and let it run" approach suits any rich, research-heavy build:
+
+- **Data visualizations.** Interactive maps, charts, or dashboards that need both real research and good design.
+- **Self-contained mini-apps.** A calculator, explorer, or tool built from a single detailed brief.
+- **Research-then-build tasks.** Anything where the AI must gather many real facts first, then turn them into something usable.
+- **Design exploration.** Ask for a distinctive visual style (the author's map borrowed the look of an 1881 isochrone map) and let the model run with it.
+- **Seeing the ceiling.** A way to feel what the most capable models can do before you commit to a bigger project.
 
 ## Tools you need
-*   **Claude** (freemium): The AI platform hosting the advanced Fable model and the Claude Code environment for execution.
 
-## Steps
+- **Claude** (freemium): you work inside Claude Code (the coding environment) and, ideally, use the most advanced model you can access. The author used the Fable model in early access; the free and standard tiers can still attempt this, with less depth.
 
-1.  **Access Claude Code with Fable**: Open your web browser and navigate to the Claude AI platform. The author had early access to Claude 5 Fable, a Mythos-class AI model. If available, select Claude 5 Fable within the Claude Code environment. Otherwise, use the most advanced Claude model available to you, understanding that results may vary.
+## How it actually works
 
-    You should see the Claude Code interface ready for your input.
+The whole thing is really one big prompt plus gentle steering. The realistic shape:
 
-2.  **Define your isochrone map project**: Paste the following detailed prompt into the Claude Code interface to instruct the AI on building your map. An isochrone map shows areas reachable within a specific travel time.
+1. **Open Claude Code with the strongest model you have.** Choose the most capable Claude model available to you. Results scale with the model.
+2. **Give it the full brief in one prompt.** Be detailed about data, travel modes, and design:
 
-    ```
-    i want you to build a fully researched and beautiful isochronic map that lets me pick various cities and see real isochronic lines based on real data. I want the design to be unique. You should take into account airports (and travel time to and from airports) trains, walking, driving. The data does not need to be live but should be real based on your research and data. You can start with a few cities but more general is better, this should be an entirely new project.
-    ```
+   ```
+   I want you to build a fully researched and beautiful isochrone map that lets me pick various cities and see real isochrone lines based on real data. I want the design to be unique. Take into account airports (and travel time to and from airports), trains, walking, and driving. The data does not need to be live but should be real, based on your research. You can start with a few cities but more general is better. This should be an entirely new project.
+   ```
 
-    The AI will begin processing your request and may ask clarifying questions or suggest an approach.
+3. **Agree on a style and let it run.** The model may propose a design direction (the author's suggested the 1881 isochrone style). Approve it and let it work through its multi-hour build.
+4. **Steer with light feedback.** A nudge or two is usually enough, for example:
 
-3.  **Agree to the design style**: The author's AI suggested creating the map in the style of the original 1881 isochrone map. If your AI makes a similar suggestion, agree to it to proceed.
+   ```
+   Make it better by refining the visual clarity of the travel lines.
+   ```
 
-    You should see the AI acknowledge your agreement and begin its multi-hour building session.
+5. **Review the result.** Examine the finished map, check the travel times look sensible, and ask for specific fixes where needed.
 
-4.  **Iterate and refine the map**: The author used a couple of additional prompts with minor encouragement or feedback to improve the output. As the AI works, review its progress and provide prompts like "make it better" or specific feedback on elements you'd like adjusted or enhanced.
+## Words you'll see, explained
 
-    ```
-    Make it better by refining the visual clarity of the travel lines.
-    ```
-
-    You should see the AI incorporate your feedback, continuously improving the map's research and design.
-
-5.  **Review the final isochrone map**: After the AI completes its extensive work, carefully examine the generated isochrone map. The author found the output to be impressive, capable of producing sophisticated results.
-
-    You should have a fully researched and beautifully designed isochrone map, reflecting real travel data and unique design choices.
+- **Isochrone map:** a map whose lines join all the places reachable within the same travel time.
+- **Claude Code:** Claude's coding environment, where the model can build and run a project, not just chat.
+- **Frontier model:** one of the most advanced AI models available (the Fable line here); these handle long, complex jobs better than smaller ones.
+- **Iterate:** improve something in rounds, giving feedback and letting the AI refine, rather than expecting it perfect first try.
 
 ## Original source
-This workflow is inspired by Ethan Mollick's blog post, "What it feels like to work with Mythos," where he shares his early access experience with Claude 5 Fable and its ability to tackle complex tasks like building an isochrone map.
+
+Based on Ethan Mollick's post "What it feels like to work with Mythos", sharing his early-access experience using Claude's Fable model to build a researched isochrone map.
 
 ## Notes & variations
-*   **Free-tier alternatives**: Claude 5 Fable is an advanced model that may not be available on free tiers. If you don't have access, try using the most capable free or freemium Claude model (e.g., Claude 3 Sonnet or Opus if available) or other advanced LLMs like Google Gemini Advanced or GPT-4. Be aware that these alternatives might not achieve the same level of sophistication or research depth as Fable.
-*   **Common mistake**: Expecting a perfect, fully formed map from a single prompt. This workflow, especially for complex tasks, requires iteration and feedback. The author explicitly mentioned using "a couple of additional prompts" to refine the output.
-*   **Tip for better results**: Be as specific as possible in your initial prompt, as the author was, detailing all requirements (cities, travel modes, data type, design goals). Then, be prepared to engage in a dialogue with the AI, providing clear, actionable feedback to guide its development process.
+
+- **Do you even need the top model?** The depth of research and polish here came from a frontier model. On a free or standard tier you can still build a simpler version; just expect less sophistication.
+- **Common mistake**: expecting a finished result from a single prompt. Even here it took a detailed brief plus a couple of follow-ups. Plan to iterate.
+- **Tip for better results**: front-load detail (cities, travel modes, data sources, the look you want), then steer with short, specific feedback rather than vague "make it nicer".

@@ -8,8 +8,8 @@ timeMinutes: 30
 jobToBeDone: "Debug low-level Go cryptography code with AI"
 tools:
   - name: "Claude Code"
-    url: "https://claude.ai"
-    pricing: "freemium"
+    url: "https://code.claude.com"
+    pricing: "paid"
     affiliateUrl: ""
   - name: "Go"
     url: "https://go.dev"
@@ -22,52 +22,60 @@ source:
   postedAt: 2025-11-01
 score: 7
 ingestedAt: 2026-06-20
-nigeriaNotes: "Claude offers a free tier, but the advanced 'Opus' model used here might be part of a paid subscription. Data usage is light, as it involves pasting code snippets."
+nigeriaNotes: "Claude Code is a paid developer tool (subscription or API credits, card payment). The free Claude, ChatGPT, or Gemini chat apps can do a lighter version where you paste the code. Data usage is light: it is mostly text."
 nigeriaUseCases:
   - persona: "student"
     scenario: "Debug your Go programming assignment code with Claude Code to fix failing tests before submission."
   - persona: "employee"
     scenario: "Fix a complex bug in your company's Go backend service using Claude Code and passing tests."
+revisedAt: 2026-06-23
 tiktokUrl: ""
 published: true
 ---
 
 ## What you'll get
-You will get a working Go cryptography implementation with a complex, low-level bug identified and fixed. This approach leverages AI's ability to quickly analyze large codebases and pinpoint subtle logical errors, especially in well-scoped problems with failing tests.
+
+A reliable method for getting an AI to find and fix a hard, low-level bug fast, the kind that can eat a whole day. The key is giving it three things: a failing test it can run, the code, and your best hunch. The worked example is real: the author fixed a subtle Go cryptography bug (signatures that always failed to verify) in minutes. The same method works for any bug you can pin down with a failing test. It is intermediate: you use a terminal and a test command.
 
 ## Tools you need
-*   **Claude Code** (freemium): An AI assistant for coding tasks, used here to debug Go code.
-*   **Go** (free): The programming language used for the cryptography implementation.
+
+- **Claude Code** (paid): an AI coding assistant that runs in your terminal and can read your files and run your tests itself. Needs a paid plan or credits. (The free Claude, ChatGPT, or Gemini chat apps can do a lighter version where you paste in the code yourself.)
+- **Go** (free): the language in the example. The method is the same in any language.
 
 ## Steps
-1.  **Prepare your Go project**: Ensure your Go project is set up and the failing tests are reproducible.
-    *   What to do: Have your Go project directory open in your terminal or IDE. Make sure the `go test` command for your specific module is ready to run and consistently shows failures.
-    *   What you should see: When you run `bin/go test crypto/internal/fips140/mldsa` (or your equivalent test command), you should see output indicating `FAIL` for your tests, similar to `FAIL: TestVector (0.00s) mldsa_test.go:47: Verify: mldsa: invalid signature`.
-2.  **Open Claude Code**: Access the Claude Code interface.
-    *   What to do: Go to `https://claude.ai` in your web browser. Log in or sign up if prompted. The author used Claude Code v2.0.28 with Opus 4.1, which is a specific model. If you have access to different models, choose the most capable one available to you.
-    *   What you should see: The Claude chat interface, ready for you to enter a prompt.
-3.  **Craft your debugging prompt**: Provide Claude with context about the bug and where to find the code.
-    *   What to do: Copy the following prompt and paste it into Claude. Replace `[your Go module path]` with the actual path to your module (e.g., `crypto/internal/fips140/mldsa`) and `[your code directory]` with the path to your source code (e.g., `src/crypto/internal/fips140/mldsa`).
 
-    ```
-    I implemented ML-DSA in the Go standard library, and it all works except that verification always rejects the signatures. I know the signatures are right because they match the test vector. You can run the tests with bin/go test [your Go module path] You can find the code in [your code directory] Look for potential reasons the signatures don't verify. ultrathink I spot-checked and w1 is different from the signing one.
-    ```
+1. **Reproduce the failing test**: make sure your test fails reliably first, so the AI has a clear target. Run your test command and confirm the failure, for example:
 
-    *   What you should see: Claude will start processing your request.
-4.  **Wait for Claude's analysis and fix**: Claude will analyze your code and identify the bug.
-    *   What to do: Allow Claude a few minutes to process. The author noted that Claude "pinged me a few minutes later with a complete fix."
-    *   What you should see: Claude should return an explanation of the bug and a proposed fix. In the author's case, Claude identified that `w1Encode` was being reused in `Verify` where `UseHint` already produced the high bits, effectively taking the high bits of `w1` twice.
-5.  **Review and apply the fix**: Understand Claude's proposed solution and integrate it into your code.
-    *   What to do: Carefully read Claude's explanation and the suggested code changes. The author refined Claude's "mediocre fix" by refactoring `w1Encode` to take high bits as input, which was clearer and more efficient. Apply the fix to your Go source code.
-    *   What you should see: Your Go code editor will show the changes you've made based on Claude's suggestions.
-6.  **Run tests to confirm the fix**: Verify that the bug is resolved.
-    *   What to do: Go back to your terminal or IDE and run your Go tests again using the command from Step 1 (e.g., `bin/go test crypto/internal/fips140/mldsa`).
-    *   What you should see: Your tests should now pass, indicating that the signature verification issue has been resolved. The output should no longer show `FAIL`.
+   ```
+   FAIL: TestVector (0.00s) mldsa_test.go:47: Verify: mldsa: invalid signature
+   ```
+
+2. **Open Claude Code in your project**: launch it in the project folder so it can read your code and run the test command for you. (Use the most capable model you have access to; the author used Opus.)
+
+3. **Give it a focused debugging prompt**: describe the bug, tell it the exact test command and where the code is, and add any hunch you have. The author's prompt (adapt the paths to yours):
+
+   ```
+   I implemented ML-DSA in the Go standard library, and it all works except that
+   verification always rejects the signatures. I know the signatures are right because
+   they match the test vector. Run the tests with: bin/go test [your module path].
+   The code is in [your code directory]. Find why the signatures do not verify.
+   ultrathink. I spot-checked and w1 is different from the signing one.
+   ```
+
+   ("ultrathink" is a keyword that tells Claude to reason harder before answering.)
+
+4. **Let it analyze and propose a fix**: give it a few minutes. It runs the test, reads the code, and comes back with an explanation and a fix. (In the example, it found a value was effectively being processed twice.)
+
+5. **Review and refine, do not accept blindly**: read its explanation and check the change makes sense. The author improved on the AI's first "mediocre fix" to make it cleaner. Apply the version you understand.
+
+6. **Re-run the test to confirm**: run the same command from step 1. It should now pass, with no more `FAIL`.
 
 ## Original source
-This workflow is inspired by Bogdanp's experience, shared on Hacker News and his personal blog on November 1, 2025. He detailed how Claude Code rapidly identified a complex, low-level bug in his new Go implementation of the ML-DSA post-quantum signature algorithm, saving significant debugging time.
+
+Based on Bogdanp's account, shared on Hacker News and his blog, of how Claude Code rapidly pinpointed a complex low-level bug in his new Go implementation of the ML-DSA signature algorithm.
 
 ## Notes & variations
-*   **Free-tier alternatives**: While the author used a free Claude Max subscription, a free tier of Claude is generally available at `https://claude.ai`. Other AI models like ChatGPT (`https://chatgpt.com`) or Gemini (`https://gemini.google.com`) could also be tried, though their effectiveness with low-level cryptography might vary.
-*   **Common mistake**: Not providing enough context or the actual code. AI models need the full code snippets or clear instructions on where to find them (if they have web browsing capabilities) to effectively debug. Simply describing the problem without the code will lead to generic, unhelpful suggestions.
-*   **Tip for better results**: For complex bugs, break down the problem into smaller, more manageable parts if the AI struggles with the whole. Also, explicitly tell the AI what you've already tried or what you suspect, as the author did with "ultrathink I spot-checked and w1 is different from the signing one." This guides the AI's focus.
+
+- **Free-tier alternative**: no Claude Code? Paste the failing test output and the relevant code into the free Claude, ChatGPT, or Gemini chat and ask the same question. You lose the "it runs your tests itself" convenience but the approach holds.
+- **Common mistake**: describing the problem without giving the actual code or test. Without them, the AI can only guess and gives generic, unhelpful advice.
+- **Tip for better results**: state your hypothesis and what you have already checked (as the author did with the `w1` hint). It focuses the AI on the right area instead of re-investigating everything.

@@ -3,7 +3,7 @@ title: "Annotate AI Code Changes in Terminal with Revdiff and Claude Code"
 description: "Learn to review and annotate AI-generated code changes and plans directly within your terminal using Revdiff, a TUI diff viewer."
 category: "coding"
 badge: "sourced"
-difficulty: "beginner"
+difficulty: "intermediate"
 timeMinutes: 15
 jobToBeDone: "Review and annotate AI-generated code changes and plans within a terminal session"
 tools:
@@ -30,43 +30,58 @@ nigeriaUseCases:
     scenario: "As a software engineer, use Revdiff to review AI-generated code for a new feature in your company's customer relationship management (CRM) system, ensuring it integrates correctly with existing modules before code review."
   - persona: "entrepreneur"
     scenario: "As a technical founder, use Revdiff to review AI-generated code for new features in your startup's mobile app backend, ensuring it meets your product's security standards before pushing to production."
+revisedAt: 2026-06-23
 tiktokUrl: ""
 published: true
 ---
 
 ## What you'll get
-You will learn how to use Revdiff, a terminal-based tool, to review and annotate AI-generated code changes and plans without leaving your terminal session. This workflow is particularly useful for iterating on AI-assisted coding tasks, allowing for quick feedback loops directly within your development environment.
+
+A fast way to review the code an AI wrote for you without leaving your terminal. Revdiff shows you the AI's changes as a "diff" (a side-by-side view of what was added and removed), you scribble notes on the lines you want changed, and those notes go straight back to the AI so it can revise. It tightens the back-and-forth of AI-assisted coding into one quick loop.
 
 ## Tools you need
-*   **Revdiff** (free): A terminal UI (TUI) diff viewer designed for reviewing AI-generated code and plans with inline annotations.
-*   **Claude Code** (paid): An AI coding assistant that runs within your terminal, which Revdiff integrates with for seamless annotation feedback.
+
+- **Revdiff** (free): a terminal app (a "TUI", a text-based user interface that runs in your terminal instead of a separate window) that shows AI code changes and lets you annotate them.
+- **Claude Code** (paid): the AI coding assistant that runs in your terminal and writes the code. It needs a paid Claude plan or API credits. Revdiff plugs into it to send your notes back.
 
 ## Steps
-1.  **Install Revdiff**: Follow the installation instructions provided in the Revdiff GitHub repository to set up the tool on your system. The author does not specify exact installation commands, so refer to the project's README for the most current method.
-2.  **Initiate a Review with Claude Code**: Within your Claude Code session, trigger the diff review process. The author provides example commands:
 
-    ```
-    /revdiff main
-    ```
-    
-    Alternatively, you can use a natural language prompt like:
+1. **Install Revdiff**: it is an open-source command-line tool. The simplest way is to download the prebuilt file for your system (Windows, macOS, or Linux) from the project's Releases page on GitHub. If you have the Go programming language installed, you can instead run:
 
-    ```
-    review diff for last 3 commits
-    ```
-    
-    You should see Revdiff open as a terminal overlay, displaying the code changes.
-3.  **Annotate Code Changes**: Read through the diff presented in Revdiff. To add an annotation, you can drop it on any line, hunk (a block of related changes), or file. The author does not detail the exact annotation command, so experiment within the Revdiff interface or consult its documentation for specific instructions.
-4.  **Exit Revdiff and Send Annotations**: Once you have finished annotating, quit Revdiff. Your annotations will be automatically sent back to the Claude Code agent.
-5.  **Agent Revises Based on Annotations**: Claude Code will receive your annotations and begin working on the suggested changes. Revdiff will then reopen automatically on the new set of changes for your review.
-6.  **Review AI-Generated Plans**: For AI-generated plans, use the `revdiff-planning` plugin. When the agent finishes a plan and calls `ExitPlanMode`, Revdiff will automatically open on the plan text.
-7.  **Annotate the Plan**: Review the plan presented in Revdiff. Add annotations to any parts you disagree with or want the AI to expand upon.
-8.  **Exit Revdiff for Plan Revision**: Quit Revdiff after annotating the plan. The agent will then revise the plan based on your feedback before generating any code.
+   ```
+   go install github.com/umputun/revdiff@latest
+   ```
+
+   You should be able to type `revdiff` in your terminal afterwards without an error.
+
+2. **Start a review from Claude Code**: inside a Claude Code session, ask it to open the diff. The author shows a slash command:
+
+   ```
+   /revdiff main
+   ```
+
+   Or just ask in plain words:
+
+   ```
+   review diff for last 3 commits
+   ```
+
+   Revdiff should open as an overlay in your terminal, showing the code changes.
+
+3. **Annotate the changes**: read through the diff. Drop a note on any line, any "hunk" (a connected block of changed lines), or a whole file, explaining what you want different. Press `?` inside Revdiff if you are unsure of the keys; it lists them.
+
+4. **Exit to send your notes**: quit Revdiff when done. Your annotations are sent back to Claude Code automatically. You should see the agent acknowledge them and start revising.
+
+5. **Review the next version**: Claude Code makes the changes and Revdiff reopens on the new diff, so you can keep refining in a loop until you are happy.
+
+6. **Review plans too, not just code**: with the `revdiff-planning` plugin, when the agent finishes a plan (it calls something named `ExitPlanMode`, which just means "I have a plan, here it is"), Revdiff opens on the plan text. Annotate the parts you disagree with, exit, and the agent revises the plan before writing any code, which is the cheapest time to catch a wrong approach.
 
 ## Original source
-This workflow is based on a Show HN post on Hacker News by user bumpa, who developed Revdiff as a solution to review AI-generated code changes and plans directly within their terminal session, integrating seamlessly with AI agents like Claude Code.
+
+Based on a Show HN post by the developer bumpa, who built Revdiff to review AI-generated code changes and plans directly inside a terminal session, integrating with AI agents like Claude Code.
 
 ## Notes & variations
-*   **Cost**: Revdiff is free and open-source. Claude Code requires a paid Claude plan or API credits, so factor that in before starting.
-*   **Common Pitfall**: Ensure Revdiff is correctly installed and configured to integrate with your Claude Code session. Incorrect setup might prevent annotations from being sent back to the agent.
-*   **Tip for Better Results**: Clearly articulate your feedback in the annotations. Instead of just saying "change this," explain *why* it needs to change or *what* you expect the change to achieve for more effective AI revisions.
+
+- **Cost**: Revdiff itself is free and open-source, but it is only useful alongside Claude Code, which needs a paid plan or API credits. Factor that in.
+- **Common pitfall**: if your annotations never reach the agent, Revdiff is probably not wired into your Claude Code session correctly. Recheck the setup steps in the project README.
+- **Tip for better results**: write annotations that say why, not just what. "Rename this for clarity" works far better than "change this", because the AI then understands the goal and applies it consistently.

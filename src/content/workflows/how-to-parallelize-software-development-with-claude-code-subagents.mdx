@@ -3,7 +3,7 @@ title: "How to Parallelize Software Development with Claude Code Subagents"
 description: "Learn to parallelize software development tasks like feature planning and implementation using AI subagents. Generate tickets and code concurrently for faster delivery."
 category: "coding"
 badge: "sourced"
-difficulty: "beginner"
+difficulty: "advanced"
 timeMinutes: 45
 jobToBeDone: "Parallelize software development tasks using AI subagents for planning and implementation"
 tools:
@@ -30,56 +30,68 @@ nigeriaUseCases:
     scenario: "Create project tickets and generate initial code for a new feature request, speeding up your development cycle."
   - persona: "entrepreneur"
     scenario: "Rapidly prototype a new app feature by having AI agents generate project tickets and code concurrently."
+revisedAt: 2026-06-23
 tiktokUrl: ""
 published: true
 ---
 
-## What you'll get
-You'll learn to use AI subagents to parallelize software development tasks, from planning to implementation. This includes generating detailed project tickets and scaffolding new features concurrently.
-This approach breaks down complex tasks into smaller, independent parts, allowing specialist AI agents to work on them simultaneously, significantly speeding up development time.
+## What this is, in plain English
+
+Normally you build a software feature in sequence: plan it, then write the backend, then the frontend, then tests. This workflow splits the work among several AI "subagents" (specialist helpers, like a planner, a senior engineer, a code reviewer) that run at the same time, so a feature goes from idea to draft code much faster. The author drives the whole thing from Claude Code with custom commands, turning a one-line request into a planned ticket and then parallel implementation.
+
+Be honest about the level: this is an advanced setup. It needs Claude Code (paid), your own custom commands and subagent definitions, and a project tool like Linear, and the author shares the approach rather than exact commands. This page explains what it does, where it helps, and the realistic shape of doing it.
+
+## What you can use it for
+
+- **Faster feature delivery.** Plan and build a feature with several agents working in parallel instead of one at a time.
+- **Auto-generated tickets.** Turn a one-line idea into a detailed, well-scoped ticket in your tracker.
+- **Scaffolding new features.** Get a first draft of backend, frontend, tests, and docs to refine, rather than a blank page.
+- **Cheap experimentation.** Because a failed run costs little, you can try several approaches and keep the best.
+- **The reusable idea**: splitting a task into independent parts for specialist agents applies well beyond this exact toolset.
 
 ## Tools you need
-*   **Claude Code** (paid): An AI development environment or API for orchestrating specialist AI agents to generate code, plans, and documentation.
-*   **Linear** (freemium): A project management tool used to create and track development tickets.
 
-## Steps
+- **Claude Code** (paid): the AI coding environment that runs and coordinates the subagents. Needs a paid plan or credits.
+- **Linear** (freemium): the project tracker where the planned tickets are created and tracked.
 
-1.  **Identify a development task**: Pinpoint a new feature or fix needed in your project, such as a missing page or an API integration.
+## How it actually works
 
-    You should see: A clear idea of the development task you want to address.
+You set up custom commands that invoke specialist subagents, then run plan-then-build. The realistic shape:
 
-2.  **Generate a project ticket with planning agents**: Use your Claude Code environment to run a custom command that invokes planning sub-agents. These agents will collaborate to define requirements, UI, and API needs for your task. The author doesn't share their exact command; a starting point might look like this:
+1. **Pick a task.** A clear, self-contained feature or fix (a missing page, an API integration).
+2. **Plan it with planning subagents.** Run a custom command that has planning agents work out the requirements, UI, and API needs, and create a ticket (often straight into Linear). For example:
 
-    ```
-    /generate-ticket "Create 'View All Insights' page to show all AI-generated analyses for a pull request."
-    ```
+   ```
+   /generate-ticket "Create a 'View All Insights' page showing every AI analysis for a pull request."
+   ```
 
-    You should see: A fully-formed development ticket, potentially created directly in Linear, detailing the requirements for the new feature.
+3. **Review the ticket.** Check the agents captured the requirements correctly, and adjust by hand if needed.
+4. **Build it with coding subagents in parallel.** Run another command that feeds the ticket to specialist agents (a senior engineer, a code reviewer, and so on) that build the backend, frontend, tests, and docs at the same time:
 
-3.  **Review the generated ticket**: Examine the ticket generated by the planning agents. Check if the requirements, UI considerations, and API needs are accurately captured and complete.
+   ```
+   /implement-feature --ticket-id [your Linear ticket ID]
+   ```
 
-    You should see: A clear understanding of the proposed plan. You can make manual adjustments if needed.
+   You may see them working across multiple terminals (and you can hit API rate limits on big runs).
+5. **Monitor and re-run cheaply.** If the output is off, fire another run with refined instructions. The author's point: a failed run costs little, so iterate freely.
+6. **Integrate and test.** Pull the generated code into your project, run it and your tests, and refine the parts that need a human touch.
 
-4.  **Kick off implementation with coding agents**: Once the plan is defined in the ticket, use another custom command in Claude Code to initiate the implementation phase. This command will feed the ticket details to specialist coding agents (e.g., `senior-software-engineer`, `code-reviewer`) that will work in parallel to build the backend, frontend, tests, and documentation. The author doesn't share their exact command; a starting point might be:
+## Words you'll see, explained
 
-    ```
-    /implement-feature --ticket-id [ID of the Linear ticket]
-    ```
-
-    You should see: The agents actively working in the background, potentially across multiple terminals, generating code, tests, and documentation for the feature. The author notes they "started hitting API rate limits."
-
-5.  **Monitor and iterate**: Keep an eye on the progress of the implementation agents. If the initial output isn't quite right, you can fire off another run with refined instructions or adjustments to the ticket.
-
-    You should see: Code artifacts (e.g., backend endpoints, UI components, test suites, documentation) being generated and refined. The author emphasizes the low cost of failure, encouraging multiple runs.
-
-6.  **Integrate and test the generated code**: Once the agents have completed their work, integrate the generated code into your project. Run your application and tests to verify the new feature.
-
-    You should see: The new feature working as expected, or clear indications of areas that need further human refinement.
+- **Subagent:** a specialized AI helper focused on one role (planning, coding, reviewing).
+- **Parallelize:** run independent parts of the work at the same time instead of one after another.
+- **Custom command:** a slash command you define in Claude Code to trigger a specific multi-agent task.
+- **Ticket:** a tracked unit of work in a tool like Linear, with the requirements written down.
+- **Scaffold:** the first draft of code structure you then refine.
+- **Rate limit:** a cap on how many AI requests you can make in a window; heavy parallel runs can hit it.
 
 ## Original source
-This workflow is adapted from a post by Zach Wills on his personal blog, where he details how he used Claude Code and specialist sub-agents to parallelize software development tasks, from generating project tickets to implementing new features.
+
+Based on a post by Zach Wills describing how he used Claude Code with specialist subagents to parallelize development, from generating tickets to implementing features.
 
 ## Notes & variations
-*   **Free-tier alternatives**: The core tool, Claude Code, is a paid service. For similar agentic workflows, you might explore open-source agent frameworks like AutoGen or CrewAI, which can be run locally or on free-tier cloud services, though they require significant setup and coding knowledge. For simpler code generation, freemium chat apps like ChatGPT, Claude.ai, or Gemini can assist with individual code snippets, but lack the orchestration capabilities.
-*   **Common mistake**: Expecting perfect code on the first try. The author explicitly states, "If the agents get it wrong, I don't really care—I'll just fire off another run." Treat agent output as a starting point, not a final solution, and be prepared to iterate.
-*   **Tip for better results**: Clearly define the task and provide as much context as possible in the initial prompt or ticket. For API integrations, providing the full API documentation to the orchestrating agent, as mentioned in the Stripe example, is crucial for accurate and complete code generation.
+
+- **Do you even need this?** For a single small change, one AI in a normal chat is simpler. This pays off when a feature splits cleanly into parts that can be built at once.
+- **Free-tier alternatives**: Claude Code is paid. Open-source agent frameworks like AutoGen or CrewAI can do similar orchestration on free or local setups, with more work. For one-off snippets, a free chat AI is enough.
+- **Common mistake**: expecting perfect code first try. Treat agent output as a starting point and iterate; the author happily re-runs when it misses.
+- **Tip for better results**: give the agents rich context up front. For an API integration, handing the orchestrating agent the full API documentation makes the generated code far more accurate.

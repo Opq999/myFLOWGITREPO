@@ -3,7 +3,7 @@ title: "Fine-tune LLMs with LlamaFactory on Google Colab"
 description: "Learn to efficiently fine-tune over 100 large language and vision-language models using the LlamaFactory tool on Google Colab."
 category: "coding"
 badge: "sourced"
-difficulty: "beginner"
+difficulty: "advanced"
 timeMinutes: 60
 jobToBeDone: "Fine-tune large language models and vision-language models efficiently"
 tools:
@@ -30,51 +30,64 @@ nigeriaUseCases:
     scenario: "Fine-tune an open-source LLM with customer service chats from your Instagram business to build a more accurate and context-aware chatbot for handling common inquiries and product recommendations."
   - persona: "employee"
     scenario: "Fine-tune an LLM on your company's internal policy documents and FAQs to create an AI assistant that helps new hires quickly find answers and understand procedures without bothering senior staff."
+revisedAt: 2026-06-23
 tiktokUrl: ""
 published: true
 ---
 
-## What you'll get
+## What this is, in plain English
 
-You will learn how to use the LlamaFactory tool to fine-tune a large language model (LLM) or a vision-language model (VLM) using a free tier of Google Colab. This approach allows you to adapt pre-trained models to specific tasks or datasets without needing extensive hardware.
+Every chatbot you've used (ChatGPT, Gemini, Claude) is a "large language model," or LLM: software that read enormous amounts of text and learned to predict what words come next. "Fine-tuning" means taking one of these models and training it a little further on your own examples, so it gets reliably good at one narrow job, in your wording, your format, your domain.
+
+LlamaFactory is a free, open-source tool that runs that training for you across 100+ different models, so you never write the training code yourself. Google Colab is a free Google website that lends you a powerful computer in the cloud, including a GPU (the specialised chip AI training needs and most laptops don't have).
+
+Be honest with yourself first: this is an advanced workflow. You don't need a computer-science degree, but you do need to be comfortable running code cells you don't fully understand and occasionally reading an error message. There is no single magic prompt to paste. The exact, up-to-date instructions live inside the Colab notebook itself and shift as the tool updates, so this page does two jobs: it shows you what fine-tuning is genuinely good for (so you can decide if it's worth your time), and it walks you to the right notebook and through the parts that trip people up.
+
+## What you can use it for
+
+Fine-tuning earns its keep when a plain prompt keeps giving inconsistent results and you have examples of what "right" looks like. Common uses:
+
+- **A support bot that sounds like your business.** Train a model on your past customer chats so it answers in your tone and knows your products, instead of generic replies.
+- **A specialist Q&A model.** Feed it a body of material (course notes, a manual, legal or medical guidelines) so it answers in that narrow area more accurately than a general chatbot.
+- **Consistent formatting at scale.** When you need output always in the same shape (a fixed JSON structure, a set report layout), a fine-tuned model obeys far more reliably than one nudged by prompt alone.
+- **A private, offline model.** Fine-tune a small open model you can later run on your own machine, so sensitive data never leaves your device.
+- **Classification and tagging.** Sort tickets, messages, or documents into your own categories with your own labels.
 
 ## Tools you need
 
-*   **LlamaFactory** (free) - A unified framework for efficient fine-tuning of LLMs and VLMs.
-*   **Google Colab** (free) - A cloud-based platform that provides free access to computing resources, including GPUs, for running Python code.
+- **LlamaFactory** (free): the open-source tool that runs the fine-tuning. Nothing to install locally; it runs inside the notebook.
+- **Google Colab** (free): the cloud computer that supplies the GPU. A free Google account is all you need to start.
+- **Your examples** (free): a set of example inputs and the ideal outputs you want the model to learn from. A few hundred good examples can already make a difference; quality matters more than quantity.
 
-## Steps
+## How it actually works
 
-1.  **Open the LlamaFactory Colab Notebook**: Click on the provided Google Colab link to open the notebook in your browser. You will see a read-only version. Click on "File" and then "Save a copy in Drive" to get an editable version.
-    *   **Expected result:** A new tab opens with the LlamaFactory Colab notebook, ready for you to make changes.
+You are not writing code from scratch. You are running an existing notebook cell by cell and changing a few settings. The realistic path:
 
-2.  **Connect to a Runtime with GPU**: In the Colab notebook, click the "Connect" button in the top right corner. If you don't have a GPU runtime, go to "Runtime" > "Change runtime type" and select "GPU" as the hardware accelerator.
-    *   **Expected result:** The button turns into a green checkmark, indicating a successful connection to a computing instance with a GPU.
+1. **Open the official LlamaFactory Colab notebook** (linked from the project's GitHub page) and click File, then "Save a copy in Drive" so you have your own editable version. You should now be editing a copy titled "Copy of...".
+2. **Switch on the free GPU.** Go to Runtime, then "Change runtime type," choose a GPU, and save. Without this, training is painfully slow or fails outright.
+3. **Run the setup cell.** The first cell installs LlamaFactory. Click the play button to its left and wait for the green check. You'll see install logs; "Successfully installed" near the end means it worked.
+4. **Point it at your examples.** The notebook shows the exact data format it expects (usually a simple file of input and ideal-output pairs). Match your data to that format and upload it. The notebook, not this page, is the source of truth for the precise format, so follow it.
+5. **Pick your model and method.** You'll choose a base model and, almost always, a method called LoRA or QLoRA (explained below), because it's the only kind of fine-tuning that fits in a free Colab's memory.
+6. **Start training and watch the "loss."** Run the training cell. A number called the loss should trend downward over time; that's the model improving. Exact settings depend on your data, so start with the notebook's defaults before changing anything.
+7. **Save and download the result.** When training finishes, the notebook gives you cells to save the fine-tuned model and download it. Do this before closing the tab, or you lose it.
 
-3.  **Install LlamaFactory**: Run the first code cell in the notebook. This cell typically installs the LlamaFactory library and its dependencies. You'll see output indicating the installation progress.
-    *   **Expected result:** The installation completes without errors, and you'll see messages like "Successfully installed llama-factory-..." or similar.
+Where exact values aren't given here, that's deliberate: they depend on your data and chosen model, and the notebook's defaults are a safe starting point.
 
-4.  **Prepare Your Dataset**: The notebook will guide you on how to prepare your dataset. This usually involves formatting your data into a specific structure (e.g., JSON or CSV) that LlamaFactory can understand. The exact format depends on the type of fine-tuning you are doing (e.g., supervised fine-tuning for dialogue).
-    *   **Expected result:** Your dataset is ready and accessible, either uploaded to Colab or linked from a cloud storage service.
+## Words you'll see, explained
 
-5.  **Configure Fine-Tuning Parameters**: Locate the code cell that defines the training arguments. You will need to specify parameters such as the base model to fine-tune, the path to your dataset, the output directory for the fine-tuned model, and training hyperparameters (like learning rate, batch size, and number of epochs). The author doesn't share exact parameter values; you'll need to set these based on your specific needs and the model you choose.
-    *   **Expected result:** The configuration cell is updated with your chosen settings.
-
-6.  **Start the Fine-Tuning Process**: Execute the code cell responsible for starting the training. This will initiate the fine-tuning process using your dataset and configuration. You will see output in the console showing the progress, including metrics like loss.
-    *   **Expected result:** The training runs, and you observe progress updates in the output, indicating the model is learning from your data.
-
-7.  **Monitor Training (Optional)**: If the notebook includes integration with tools like TensorBoard or Wandb, you can run their respective cells to visualize the training progress, loss curves, and other metrics.
-    *   **Expected result:** A dashboard or log appears showing real-time or historical training performance.
-
-8.  **Save and Download Your Model**: Once training is complete, the fine-tuned model will be saved. The notebook will typically provide instructions or code snippets to download the model files to your local machine.
-    *   **Expected result:** You have the fine-tuned model files ready for use.
+- **LLM / VLM:** a large language model handles text; a vision-language model (VLM) also handles images.
+- **Fine-tuning:** extra training on your own examples to specialise a model.
+- **GPU:** the chip that makes AI training fast. Colab lends you one free.
+- **LoRA / QLoRA:** lightweight fine-tuning methods that train a small add-on instead of the whole model, so it fits on free hardware. QLoRA is the even lighter version. Pick these unless you have a reason not to.
+- **Epoch:** one full pass through all your examples. More epochs means more learning, but too many makes the model memorise instead of generalise.
+- **Loss:** a score for how wrong the model currently is. Lower is better; you want it falling during training.
 
 ## Original source
 
-This workflow is based on the LlamaFactory project by hiyouga, a unified framework for efficiently fine-tuning over 100 large language and vision-language models. The project is hosted on GitHub and was presented at ACL 2024, highlighting its academic and practical significance in the field of AI model customization.
+Based on the LlamaFactory project by hiyouga, an open-source framework for fine-tuning over 100 language and vision-language models, presented at ACL 2024. The project and its ready-to-run Colab notebook are hosted on GitHub.
 
 ## Notes & variations
 
-*   **Free Tier Viability:** Google Colab's free tier is excellent for getting started, but GPU availability and session limits can be a constraint for very long training runs. Consider paid Colab tiers or other cloud platforms if you need more consistent resources.
-*   **Common Pitfall:** Forgetting to save a copy of the Colab notebook to your Google Drive before making changes. If you don't, your modifications will be lost when you close the tab.
-*   **Tip for Better Results:** Experiment with different fine-tuning methods offered by LlamaFactory (e.g., LoRA, QLoRA) and adjust hyperparameters like learning rate and batch size. Smaller, well-curated datasets often yield better results than large, noisy ones.
+- **Do you even need this?** If you only need the model to follow instructions for an occasional task, you probably don't need fine-tuning at all. A well-written prompt, or feeding the model your documents at question time (a method called "RAG"), is cheaper and faster. Reach for fine-tuning when prompting alone keeps falling short and you have real examples.
+- **Free-tier limits:** Colab's free GPU has time and memory caps and can disconnect on long runs. Keep datasets and models small to start, and stick to QLoRA. If you outgrow it, paid Colab or another cloud GPU lifts the limits.
+- **Common pitfall:** forgetting to save a copy of the notebook to your Drive first, or closing the tab before downloading the trained model. Either one loses your work.

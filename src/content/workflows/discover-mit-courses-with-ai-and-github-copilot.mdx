@@ -3,7 +3,7 @@ title: "Discover MIT Courses with AI and GitHub Copilot"
 description: "Learn how to use AI-assisted development with GitHub Copilot to navigate and discover courses from the MIT catalog."
 category: "academic-research"
 badge: "sourced"
-difficulty: "beginner"
+difficulty: "intermediate"
 timeMinutes: 30
 jobToBeDone: "Discover relevant MIT courses using AI-assisted development and a custom framework."
 tools:
@@ -28,50 +28,63 @@ nigeriaUseCases:
     scenario: "Scrape MIT course catalog, count tokens, and use GitHub Copilot to find niche courses for your thesis research."
   - persona: "employee"
     scenario: "Extract company training course data, analyze token count, and use Copilot to identify skill gaps for your team."
+revisedAt: 2026-06-23
 tiktokUrl: ""
 published: true
 ---
 
 ## What you'll get
-You will learn how to use AI-assisted development to explore and discover courses from a large catalog, specifically the MIT course catalog. This approach is useful for finding courses that might reshape your thinking, going beyond what you already know you want to learn.
+
+A way to explore a huge course catalog by turning it into data and letting an AI recommend courses you would never stumble on by clicking through pages. You "scrape" the catalog (pull its content into structured data) with a single paste into your browser, check the data is small enough for an AI to read, then ask the AI to surface courses that match your interests. The example uses MIT's catalog, but the same trick works on any large list. It is intermediate: you paste one snippet into the browser console.
 
 ## Tools you need
-*   **GitHub Copilot** (freemium): An AI pair programmer that suggests code and entire functions in real time, right inside your editor.
-*   **OpenAI Tokenizer** (free): A tool to count the number of tokens in a piece of text, useful for understanding the size of data you're feeding to an AI model.
+
+- **A web browser** (free): you run the scraper in its built-in developer console.
+- **OpenAI Tokenizer** (free): counts the "tokens" (the chunks AI measures text in) so you know the data fits an AI's limit.
+- **A long-context AI chat** (freemium): ChatGPT, Gemini, or Claude, to read the catalog and recommend courses.
+- **GitHub Copilot** (freemium, optional): if you would rather write a small script to filter the data.
 
 ## Steps
-1.  **Scrape the MIT Course Catalog**: The author used a simple JavaScript snippet in the browser console to extract course data. You can adapt this by opening your browser's developer console on the MIT Course Picker page and pasting the following code:
 
-    ```javascript
-    [... document . querySelectorAll ( ".course-name" )] . map (( e ) => e . closest ( ".course-lens" )) . map (( d ) => ({
-      title: d . querySelector ( ".course-name" )?. textContent ,
-      description: d . querySelector ( ".course-description" )?. textContent ,
-      semester: d . querySelector ( ".course-semester" )?. textContent ,
-      prereq: d . querySelector ( `[data-ex-content=".prereqs"]` )?. textContent ,
-      instructor: d . querySelector ( ".course-instructor" )?. textContent ,
-      units: d . querySelector ( `[data-ex-content=".units"]` )?. textContent ,
-      level: d . querySelector ( `[data-ex-content=".level"]` )?. textContent ,
-    }));
-    ```
+1. **Scrape the catalog**: open the MIT Course Picker page, open your browser's developer console (press F12, then the Console tab), paste this in, and run it. It pulls each course into a tidy list and copies it to your clipboard as JSON (a structured text format):
 
-    You should see a JSON array printed in the console, containing details for each course.
+   ```javascript
+   const courses = [...document.querySelectorAll(".course-name")]
+     .map((e) => e.closest(".course-lens"))
+     .map((d) => ({
+       title: d.querySelector(".course-name")?.textContent,
+       description: d.querySelector(".course-description")?.textContent,
+       semester: d.querySelector(".course-semester")?.textContent,
+       instructor: d.querySelector(".course-instructor")?.textContent,
+     }));
+   copy(JSON.stringify(courses));
+   ```
 
-2.  **Copy the scraped data**: Select and copy the entire JSON array output from your browser's console. This is the raw data of the course catalog.
+   You should see no error, and your clipboard now holds the whole catalog as JSON. (`copy()` is a console helper that puts its argument on your clipboard.)
 
-3.  **Count the tokens**: Navigate to the OpenAI Tokenizer website. Paste the copied JSON data into the tokenizer tool.
+2. **Check the size**: go to the OpenAI Tokenizer site and paste the JSON in. It shows a token count (the author's catalog was around 343,000 tokens). This tells you whether it fits the AI you plan to use.
 
-    You should see a token count displayed. The author found their catalog was around 343k tokens, noting this is an upper bound as JSON is verbose.
+3. **Make sure it fits your AI**: modern models accept very large inputs (some over a million tokens), so a few hundred thousand is usually fine. If it is too big, scrape fewer fields or one department at a time.
 
-4.  **Prepare for AI analysis**: Since modern LLMs can handle large contexts (over a million tokens), you can feed this entire dataset to an AI model. The author's goal was to use this data to guide course discovery.
+4. **Ask the AI for recommendations**: paste the JSON into a long-context chat AI and ask it to play matchmaker:
 
-5.  **Use GitHub Copilot for AI-assisted development**: The author mentions using GitHub Copilot for "vibe-coding" and testing an AI "(Un)framework". While the exact implementation isn't detailed, the principle is to leverage Copilot within your development environment to help process and analyze the course data, potentially by asking it to help write scripts or queries to sift through the catalog based on your interests.
+   ```
+   Here is a JSON list of courses: [paste the catalog].
+   I am interested in [your topics, e.g. AI ethics and complex systems] and want courses
+   that might reshape how I think, not just the obvious ones. Recommend 10, with a sentence
+   each on why, and note any prerequisites.
+   ```
 
-    The author doesn't share their exact prompt for using Copilot to analyze the data; a starting point could be to ask Copilot to help you write a script to filter courses based on keywords or desired topics after loading the JSON data into your development environment.
+   You should get a tailored shortlist you would never have found by browsing.
+
+5. **Optional, filter with code**: if you prefer, have GitHub Copilot help you write a short script to pre-filter the JSON by keyword or department before handing it to the AI.
 
 ## Original source
-This workflow is inspired by a post on Hacker News by user low_tech_punk, who explored "vibe coding" the MIT course catalog using AI-assisted development tools to overcome the limitations of traditional course browsing interfaces.
+
+Based on a Hacker News post by low_tech_punk, who "vibe-coded" the MIT course catalog into data and used AI to explore it, getting past the limits of the normal browsing interface.
 
 ## Notes & variations
-*   **Free Tier Viability**: GitHub Copilot has a free trial period. For continued use, it becomes a paid service. The OpenAI Tokenizer is free and has no usage limitations for this purpose.
-*   **Common Pitfall**: Directly pasting extremely large amounts of text into AI chat interfaces can sometimes lead to errors or incomplete processing due to context window limits or interface restrictions. Using dedicated tools or APIs for large datasets is often more reliable.
-*   **Tip for Better Results**: To get more targeted course recommendations, consider pre-filtering the scraped JSON data for specific departments or keywords before feeding it to the AI, or include these preferences directly in your prompts to GitHub Copilot or another LLM.
+
+- **Do you even need to scrape?** If the catalog offers a download or export, use that instead of scraping. Scraping is for sites that do not.
+- **Common pitfall**: pasting enormous text into a chat box can hit interface limits. If it chokes, trim the data (fewer fields, one department) or use the model's API.
+- **Tip for better results**: pre-filter by department or keyword, and put your specific interests in the prompt, to get sharper recommendations.

@@ -32,40 +32,45 @@ nigeriaUseCases:
     scenario: "Convert your handwritten MAT201 calculus lecture notes into clean LaTeX code to easily include complex equations in your final project report or assignment."
   - persona: "employee"
     scenario: "Digitize handwritten mathematical derivations from a technical meeting into LaTeX for an internal engineering report or a research proposal."
+revisedAt: 2026-06-23
 tiktokUrl: ""
 published: true
 ---
 
 ## What you'll get
-You will convert an image of handwritten math formulas or academic notes into clean LaTeX code or plain text. This workflow is useful for students and researchers who need to quickly digitize complex mathematical content without manual retyping, saving time and reducing errors.
+
+A fast way to turn a photo of handwritten maths into clean, typed equations, no retyping by hand. Math2Tex reads your image and gives you the formula as LaTeX (the standard text format for writing maths in academic documents, where, for example, `x^2` means x squared) or as plain text you can paste anywhere. It saves students and researchers the slow, error-prone job of copying complex equations by hand.
 
 ## Tools you need
-*   **Math2Tex** (free): A web application designed to convert images of academic content, especially math, into LaTeX or plain text.
-*   **GPT** (freemium): A large language model that can be used as an alternative or for refining the output.
-*   **Claude** (freemium): Another large language model that can be used for similar purposes as GPT.
+
+- **Math2Tex** (free): a website that converts a photo of maths or notes into LaTeX or plain text. Nothing to install.
+- **GPT or Claude** (freemium): optional, for tidying up or reformatting the result. Free tiers are plenty for occasional use.
 
 ## Steps
-1.  **Open Math2Tex**: Navigate to the Math2Tex website in your web browser. You can access it at https://math2tex.com.
-    You should see a single-page web application with an upload area and a preview pane.
-2.  **Upload your image**: Click the upload button or drag and drop your image file (e.g., a photo of your notebook, a PDF screenshot) into the designated area.
-    The tool will process the image, and you should see a preview of the detected content.
-3.  **View the conversion**: Math2Tex will automatically convert the academic content from your image into LaTeX code and/or plain text. This appears in a real-time preview pane.
-    You should see the converted text and/or LaTeX code displayed.
-4.  **Copy the result**: Use the one-click copy button provided next to the converted text or LaTeX code.
-    The converted content will be copied to your device's clipboard, ready to be pasted elsewhere.
-5.  **Optional: Refine with an AI model**: If the output needs further refinement or if you want to convert the text to a different format, you can paste the copied content into a tool like GPT or Claude. The author doesn't share their exact prompt for this; a starting point:
 
-    ```
-    Please review and correct the following LaTeX code, ensuring mathematical accuracy and proper formatting:
-    [Paste the copied LaTeX code here]
-    ```
+1. **Open Math2Tex**: go to math2tex.com in your browser. You should see a single-page app with an upload area and a preview pane.
 
-    You should receive a refined or alternative version of your text.
+2. **Upload your image**: click upload, or drag in a photo of your notebook (or a screenshot of a PDF). The tool starts reading it, and you should see a preview of what it detected.
+
+3. **Read the conversion**: Math2Tex turns the maths into LaTeX code and/or plain text in the preview pane, automatically. You should see the converted result appear.
+
+4. **Copy the result**: use the one-click copy button next to the output. It goes to your clipboard, ready to paste into your document.
+
+5. **Optional, tidy it up with AI**: if the output needs a fix or a different format, paste it into GPT or Claude:
+
+   ```
+   Review and correct this LaTeX, making sure the maths is accurate and the formatting is clean:
+   [paste the copied LaTeX here]
+   ```
+
+   You should get a corrected or reformatted version back.
 
 ## Original source
-This workflow is based on a "Show HN" post on Hacker News by leoyixing, the creator of Math2Tex. The post introduces the tool as a solution to the tedious process of manually typing mathematical formulas from handwritten notes or textbooks into LaTeX.
+
+Based on a Show HN post by leoyixing, the creator of Math2Tex, introducing it as a fix for the tedious job of typing mathematical formulas from handwritten notes or textbooks into LaTeX.
 
 ## Notes & variations
-*   **Free Tier Viability**: Math2Tex is entirely free and web-based, making it highly accessible. GPT and Claude also have free tiers, which are generally sufficient for occasional use or refining outputs.
-*   **Common Pitfall**: Ensure your uploaded image is clear, well-lit, and the handwriting is legible. Blurry or complex backgrounds can lead to conversion errors.
-*   **Tip for Better Results**: For very complex or multi-line equations, try to take a photo that is as straight-on and close-up as possible. If using AI models for refinement, be specific in your prompts about the type of corrections or formatting you need.
+
+- **Free-tier viability**: Math2Tex is entirely free and runs in the browser. GPT and Claude's free tiers cover the occasional clean-up.
+- **Common pitfall**: a blurry or shadowed photo. Clear, well-lit images with legible handwriting convert far more accurately.
+- **Tip for better results**: for long or multi-line equations, photograph them straight-on and close-up. If you refine with AI, say exactly what you want fixed or reformatted.

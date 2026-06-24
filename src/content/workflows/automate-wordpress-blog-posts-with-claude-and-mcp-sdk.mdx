@@ -3,7 +3,7 @@ title: "Automate WordPress Blog Posts with Claude and MCP SDK"
 description: "Connect Claude AI to your WordPress site to automatically create, categorize, and publish blog posts. Streamline your content creation workflow."
 category: "content-creation"
 badge: "sourced"
-difficulty: "intermediate"
+difficulty: "advanced"
 timeMinutes: 120
 jobToBeDone: "Automate blog post creation by connecting an AI model to a WordPress site"
 tools:
@@ -15,8 +15,8 @@ tools:
     url: "https://wordpress.org"
     pricing: "freemium"
     affiliateUrl: ""
-  - name: "MCP SDK"
-    url: "https://github.com/humanloop/mcp-sdk"
+  - name: "MCP SDK (TypeScript)"
+    url: "https://github.com/modelcontextprotocol/typescript-sdk"
     pricing: "free"
     affiliateUrl: ""
   - name: "TypeScript"
@@ -38,49 +38,91 @@ nigeriaUseCases:
     scenario: "Generate weekly summary posts for your personal WordPress blog about course topics using Claude."
   - persona: "employee"
     scenario: "Automatically publish company news summaries to your internal WordPress site using Claude and MCP SDK."
+revisedAt: 2026-06-23
 tiktokUrl: ""
 published: true
 ---
 
 ## What you'll get
-You will build a custom server that connects Claude AI directly to your WordPress blog. This allows you to automate the creation, categorization, and publishing of blog posts, saving you time and effort in your content creation process. This approach is ideal for streamlining repetitive content generation tasks while maintaining control over your blog's output.
+
+A small custom "server" that connects Claude directly to your WordPress blog, so you can tell Claude "write this post and publish it" and it appears on your site, with categories and tags set. This is an advanced, build-it-yourself workflow: you will run a terminal, write a little TypeScript, and use Claude itself to generate most of the code. It is best for someone comfortable with developer tools.
 
 ## Tools you need
-*   **Claude** (freemium): An AI assistant for generating text and code. You will use its conversational abilities to instruct it to write blog posts.
-*   **WordPress** (freemium): A popular website content management system. You will connect the AI to your WordPress site to publish posts.
-*   **MCP SDK** (free): A software development kit that helps integrate AI models with various applications. You will use this to build the server that bridges Claude and WordPress.
-*   **TypeScript** (free): A programming language that builds on JavaScript. You will use this to write the custom server code.
+
+- **Claude** (freemium): the AI that writes the posts and, with help, the server code. Free tier works for trying it.
+- **WordPress** (freemium): your blog. You connect to it through its built-in REST API (the way programs create posts).
+- **MCP SDK (TypeScript)** (free): the official Model Context Protocol toolkit. MCP is the standard way to give an AI new abilities (here, "create a WordPress post"). The package is `@modelcontextprotocol/sdk`.
+- **TypeScript** (free): a safer version of JavaScript, used to write the server.
 
 ## Steps
-1.  **Set up your WordPress site**: Ensure you have a WordPress site ready. You will need to generate an Application Password for secure authentication. The author does not detail the exact steps for generating an Application Password, but typically this is found within your WordPress user profile settings under 'Application Passwords'. You should see a new password generated that you can copy.
-2.  **Install Node.js and npm**: If you do not have them installed, download and install Node.js from its official website. npm (Node Package Manager) is included with Node.js. This is necessary to run TypeScript and the MCP SDK.
-3.  **Create a new project directory**: Open your terminal or command prompt, navigate to where you want to store your project, and create a new folder for it. For example: `mkdir wordpress-mcp-server && cd wordpress-mcp-server`.
-4.  **Initialize your TypeScript project**: Inside your project directory, run `npm init -y` to create a `package.json` file. Then, install the necessary TypeScript dependencies by running `npm install typescript @types/node --save-dev`.
-5.  **Install the MCP SDK**: Add the MCP SDK to your project dependencies by running `npm install @humanloop/mcp-sdk`.
-6.  **Write the MCP server code**: Create a new file (e.g., `index.ts`) and paste the server code. The author does not provide the exact code, but it will involve using the MCP SDK to define functions for creating posts, managing categories, and retrieving blog information. You will need to configure this code with your WordPress site URL and the Application Password you generated.
-    A starting prompt for Claude to help write this code might look like this:
-    ```
-    I am building a server using TypeScript and the MCP SDK to connect to my WordPress site. I need to create functions that can:
-    1. Create a new WordPress post with HTML content, title, categories, and tags.
-    2. Automatically create new categories or tags if they don't exist.
-    3. Retrieve existing categories, tags, and recent posts from my WordPress site.
-    4. Update an existing post and change its publication status.
-    
-    Please provide example TypeScript code using the @humanloop/mcp-sdk to implement these functionalities. I will handle WordPress REST API authentication separately using an Application Password.
-    ```
-7.  **Configure WordPress API access**: Within your server code, you will need to set up the connection to your WordPress site's REST API. This typically involves specifying your WordPress site's URL and using the Application Password for authentication. The author mentions using WordPress's REST API with secure authentication.
-8.  **Build and run the server**: Compile your TypeScript code by running `npx tsc`. Then, run your server using `node dist/index.js` (assuming your compiled output is in a `dist` folder). You should see output indicating the server is running and ready to accept commands.
-9.  **Interact with Claude**: Open a chat with Claude.ai. You will need to instruct Claude to use the MCP server to create a blog post. The author's example involves asking Claude to write a post about the experience of building the tool itself. You would then provide Claude with a topic or prompt, and it would use the connected server to publish the post to your WordPress site.
-    An example prompt to Claude might be:
-    ```
-    Write a blog post about the benefits of using AI for content creation. Include at least two categories and three tags. Publish it directly to my WordPress blog using the MCP server.
-    ```
-    You should see Claude generate the post and then receive confirmation from the server (or observe the new post on your WordPress site) that it has been created and published.
+
+1. **Create a WordPress Application Password**: in your WordPress dashboard, open your user profile and find "Application Passwords". Generate one and copy it. (An Application Password is a special password for programs, so you never expose your real login.) You should see a one-time string you can copy.
+
+2. **Install Node.js**: download it from nodejs.org and install. This gives you `node` and `npm` (the tool that installs code packages), which you need to run TypeScript.
+
+3. **Create a project folder**: in your terminal, make and enter a new folder:
+
+   ```
+   mkdir wordpress-mcp-server
+   cd wordpress-mcp-server
+   ```
+
+4. **Start the project and add TypeScript**:
+
+   ```
+   npm init -y
+   npm install typescript @types/node --save-dev
+   ```
+
+   You should see a `package.json` file appear and the packages download.
+
+5. **Install the MCP SDK**:
+
+   ```
+   npm install @modelcontextprotocol/sdk
+   ```
+
+6. **Have Claude write the server code**: create a file named `index.ts`, then ask Claude to write the server for you. Paste this prompt:
+
+   ```
+   I am building a server using TypeScript and the official MCP SDK
+   (@modelcontextprotocol/sdk) to connect to my WordPress site. I need functions that can:
+   1. Create a new WordPress post with HTML content, title, categories, and tags.
+   2. Automatically create new categories or tags if they don't exist.
+   3. Retrieve existing categories, tags, and recent posts from my WordPress site.
+   4. Update an existing post and change its publication status.
+
+   Please provide example TypeScript code using @modelcontextprotocol/sdk. I will handle
+   WordPress REST API authentication separately using an Application Password.
+   ```
+
+   Paste Claude's code into `index.ts` and fill in your WordPress site URL and Application Password where it asks.
+
+7. **Compile and run the server**: turn the TypeScript into runnable JavaScript and start it:
+
+   ```
+   npx tsc
+   node dist/index.js
+   ```
+
+   You should see a message that the server is running and ready.
+
+8. **Tell Claude to publish a post**: connect Claude to your running MCP server (in the Claude desktop app's connector settings), then prompt it:
+
+   ```
+   Write a blog post about the benefits of using AI for content creation. Include at
+   least two categories and three tags. Publish it directly to my WordPress blog using
+   the MCP server.
+   ```
+
+   You should see the new post appear on your WordPress site, or a confirmation from the server.
 
 ## Original source
-This workflow is based on a blog post by MaysonL, shared on Hacker News. The author details their experiment in building a custom Model Context Protocol (MCP) server to connect Claude AI directly with a WordPress blog for automated content creation.
+
+Based on a Hacker News post by MaysonL describing an experiment to build a custom Model Context Protocol (MCP) server that connects Claude directly to a WordPress blog for automated posting.
 
 ## Notes & variations
-*   **Free tier alternative**: While Claude.ai offers a free tier, heavy usage might hit rate limits. Consider exploring other AI models with generous free tiers or API credits if available, though direct WordPress integration might require custom development for each.
-*   **Common pitfall**: Ensure your WordPress Application Password is kept secure and is correctly formatted. Incorrect authentication is a common reason for the server connection to fail.
-*   **Tip for better results**: Before asking Claude to publish directly, have it generate the post content first. Review and edit the content yourself, then use a separate prompt to have Claude (or you) publish the finalized version. This maintains editorial control and ensures quality.
+
+- **Free-tier alternative**: Claude's free tier works, but heavy use hits rate limits. You can have Claude draft posts and publish less often to stay within them.
+- **Common pitfall**: a wrong or mis-pasted Application Password is the usual reason the connection to WordPress fails. Copy it exactly, including spaces if shown.
+- **Tip for better results**: keep editorial control. Have Claude draft the post first, review and edit it yourself, then publish the finalized version rather than auto-publishing unread.

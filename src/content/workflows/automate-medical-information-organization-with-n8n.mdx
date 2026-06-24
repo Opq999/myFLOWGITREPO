@@ -3,7 +3,7 @@ title: "Automate Medical Information Organization with n8n"
 description: "Learn to automate the collection, classification, and organization of personal medical information from emails and online sources using n8n."
 category: "sme-operations"
 badge: "sourced"
-difficulty: "beginner"
+difficulty: "intermediate"
 timeMinutes: 30
 jobToBeDone: "Automate the collection, classification, and organization of personal medical information from emails and online sources."
 tools:
@@ -44,44 +44,60 @@ nigeriaUseCases:
     scenario: "Organize medical reports and medicine info from emails into Google Docs and Sheets automatically."
   - persona: "employee"
     scenario: "Automate sorting of medical bills and reports from emails into Google Docs for easier expense tracking."
+revisedAt: 2026-06-23
 tiktokUrl: ""
 published: true
 ---
 
-## What you'll get
+## What this is, in plain English
 
-This workflow automates the process of collecting, classifying, and organizing personal medical information from emails and online sources. It leverages AI to sort different types of documents and store them in structured formats, saving significant manual effort and reducing errors. This approach is ideal for individuals or small businesses needing to manage a high volume of sensitive information efficiently.
+n8n is a free-tier automation tool where you connect building blocks ("nodes") into a pipeline that runs by itself, like a visual version of writing a script. This particular pipeline watches your Gmail for medical documents (lab reports, bills, medicine details), uses AI to sort each one by type, and files it automatically into the right Google Doc or Sheet, even fetching medicine prices from GoodRx along the way.
+
+Be honest about the level: although n8n is "no-code" on the surface, building this pipeline is involved. It wires together Gmail, an AI classifier, Google Docs and Sheets, and a web scraper, needs API keys, and includes a custom code step. The author shares the design, not a one-click import, so this is intermediate. This page explains what it does, what it is good for, and the realistic shape of building it.
+
+## What you can use it for
+
+- **A tidy personal medical archive.** Auto-file reports, bills, and prescriptions so nothing gets lost in your inbox.
+- **Insurance claim prep.** Collect bills and invoices into one place, ready to submit.
+- **Small clinic or pharmacy admin.** Sort incoming documents and track medicine prices automatically.
+- **The reusable pattern**: "watch an inbox, let AI sort each message, file it in the right place" works for invoices, receipts, or any document stream, not just medical ones.
 
 ## Tools you need
 
-*   **n8n** (freemium): An open-source workflow automation tool to build and run automated workflows.
-*   **Gmail** (free): To act as the entry point for receiving medical information via email.
-*   **Google Docs** (free): To store and organize reports and documents.
-*   **Google Sheets** (free): To manage structured data like medicine information.
-*   **Bright Data** (freemium): A web scraping tool to gather real-time data from websites.
-*   **GoodRx** (free): A website used for fetching medicine prices and availability.
+- **n8n** (freemium): the automation tool you build the pipeline in. Generous free tier.
+- **Gmail** (free): the inbox the pipeline watches for incoming documents.
+- **Google Docs** and **Google Sheets** (free): where sorted documents and data are filed.
+- **An AI model** (key needed): powers the classifier that decides what each email is. n8n connects to one via an API key.
+- **Bright Data** (freemium) and **GoodRx** (free): used to scrape live medicine prices.
 
-## Steps
+## How it actually works
 
-1.  **Set up Gmail Trigger**: Configure n8n to fetch new emails with medical-related attachments from your Gmail account.
-    You should see new emails with attachments appearing in your n8n workflow.
-2.  **Classify Email Content**: Use n8n's AI Text Classifier with an LLM backend to categorize email subject lines and bodies. The author uses categories like 'PET/CT/Histopathology Reports', 'Blood Tests', 'Medicines', and 'Bills/Invoices'.
-    The workflow should output a classification for each captured email.
-3.  **Handle Reports in Google Docs**: For reports (PET/CT, Histopathology, Blood Tests), set up a flow to either create a new Google Doc or update an existing one for that category. This uses n8n's 'Search Files Folders' and 'IF' nodes.
-    You should see new or updated Google Docs containing the report information.
-4.  **Manage Medicines in Google Sheets**: For medicine-related information, create or update entries in a Google Sheet. This step involves using Bright Data Scraper to get real-time prices and availability from GoodRx, and a custom code node to generate drug URLs.
-    Your Google Sheet should be populated with structured medicine data, including prices and availability.
-5.  **Organize Bills and Invoices**: Direct bills and invoices into a Google Doc draft. This allows for manual review and edits before submission for insurance claims.
-    A draft Google Doc should be created or updated with bill and invoice information.
-6.  **Scrape Real-Time Intelligence**: Use Bright Data and n8n's HTTP Request node for any additional web scraping needs that aren't covered by direct APIs or pre-built datasets.
-    The workflow should successfully retrieve and process data from specified online sources.
+You build a pipeline of nodes that triggers on new mail and routes by type. The realistic shape:
+
+1. **Trigger on new Gmail.** Add a Gmail node that fires when a medical email with an attachment arrives. (Your Gmail needs IMAP enabled so n8n can read it.)
+2. **Classify each email with AI.** An AI Text Classifier node reads the subject and body and labels it (reports, blood tests, medicines, bills).
+3. **Route reports to Google Docs.** For lab and imaging reports, create or update a Google Doc for that category.
+4. **Route medicines to Google Sheets.** For medicine info, add a row to a Sheet, and use Bright Data to scrape current prices from GoodRx.
+5. **Route bills to a Docs draft.** Put invoices into a draft Doc you review by hand before any insurance claim.
+6. **Scrape extras as needed.** Use Bright Data with an HTTP Request node for any other data the pipeline needs.
+
+## Words you'll see, explained
+
+- **n8n:** a tool for building automations by connecting nodes, instead of writing a full program.
+- **Node:** one building block in the pipeline (a Gmail step, an AI step, a Google Sheets step).
+- **Trigger:** the event that starts the pipeline (here, a new email arriving).
+- **AI classifier:** an AI step that sorts each item into a category.
+- **Web scraping / Bright Data:** automatically pulling data off websites (here, medicine prices).
+- **IMAP:** the email setting that lets another program read your Gmail.
 
 ## Original source
 
-This workflow was developed by hargunkaur as a submission for the AI Agents Challenge, powered by n8n and Bright Data. It was shared on the DEV Community platform, detailing a personal motivation to automate the management of medical information.
+Based on hargunkaur's submission to the n8n and Bright Data AI Agents Challenge, on the DEV Community blog, automating the collection and sorting of personal medical information.
 
 ## Notes & variations
 
-*   **Free Tier Tip:** n8n's free tier is quite capable for personal use. Ensure your LLM backend for classification is also on a free or low-cost tier. For Bright Data, utilize their free trial or limited free tier for initial setup.
-*   **Common Pitfall:** Ensure your Gmail account has IMAP enabled for n8n to access emails. Also, be mindful of API rate limits for both Gmail and any LLM services you connect.
-*   **Better Results:** Refine your AI Text Classifier prompts to be more specific about the types of medical documents you receive. This will improve the accuracy of the classification step, leading to better organization.
+- **Do you even need this?** For a handful of documents, filing them by hand is simpler. This pays off with a steady stream of medical mail.
+- **Privacy first**: medical information is sensitive. Make sure you are comfortable with where it is stored (your own Google account) and who can see it before automating.
+- **Free-tier tip**: n8n's free tier and Google's services cover personal use; use Bright Data's free trial or limited tier to start.
+- **Common pitfall**: forgetting to enable IMAP on Gmail (so n8n cannot read mail), and hitting API rate limits on the AI or Gmail.
+- **Tip for better results**: make your classifier prompt specific about the exact document types you receive, so sorting is accurate.

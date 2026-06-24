@@ -7,12 +7,12 @@ difficulty: "beginner"
 timeMinutes: 15
 jobToBeDone: "Query large datasets of public commons sites using natural language prompts"
 tools:
-  - name: "Claude Code"
+  - name: "Claude"
     url: "https://claude.ai"
     pricing: "freemium"
     affiliateUrl: ""
   - name: "SQL"
-    url: "https://www.wikipedia.org/wiki/SQL"
+    url: "https://en.wikipedia.org/wiki/SQL"
     pricing: "free"
     affiliateUrl: ""
   - name: "Voyage-3.5-lite"
@@ -29,41 +29,52 @@ ingestedAt: 2026-06-20
 nigeriaNotes: "Claude.ai has a free tier. SQL is free. Voyage-3.5-lite is a paid embedding model, but the workflow focuses on using Claude to generate SQL queries, which is accessible. Data usage is minimal for query generation."
 nigeriaUseCases:
   - persona: "student"
-    scenario: "Generate SQL queries for research papers on arXiv using natural language prompts in Claude Code."
+    scenario: "Generate SQL queries for research papers on arXiv using natural language prompts in Claude."
   - persona: "employee"
-    scenario: "Create SQL queries to analyze sales data from a company database using Claude Code, without writing SQL."
+    scenario: "Create SQL queries to analyze sales data from a company database using Claude, without writing SQL by hand."
+revisedAt: 2026-06-23
 tiktokUrl: ""
 published: true
 ---
 
 ## What you'll get
-You will learn how to use Claude Code to translate natural language questions into SQL queries for large public datasets. This approach allows you to explore vast amounts of information from sources like Hacker News and arXiv without needing to write complex SQL yourself.
 
-This method is ideal for researchers or anyone needing to extract specific insights from large, publicly available data archives.
+A way to dig through huge public datasets (like all of Hacker News or arXiv) by asking questions in plain English and letting Claude write the SQL for you. SQL is the standard language for querying databases; this lets you skip learning it. The reproducible, free part is "describe what you want, get a correct query"; actually running it needs access to a database holding the data.
 
 ## Tools you need
-*   **Claude Code** (freemium): A large language model capable of understanding natural language and generating code, including SQL.
-*   **SQL** (free): A standard language for managing and querying relational databases.
-*   **Voyage-3.5-lite** (paid): An embedding model used to create vector representations of data, enabling advanced search capabilities. (Note: While mentioned, this workflow focuses on the SQL generation aspect accessible via Claude's free tier).
+
+- **Claude** (freemium): writes the SQL from your plain-English question. The free tier handles this.
+- **SQL** (free): the query language Claude generates. You do not need to know it, but you do need somewhere to run the query if you want results.
+- **Voyage-3.5-lite** (paid, optional): an embedding model the original author used for advanced semantic search. Not needed just to generate SQL.
 
 ## Steps
-1.  **Access Claude Code**: Navigate to the Claude.ai website and select the Claude Code model. You will need to have an account, which has a free tier.
-2.  **Formulate your question**: Think about the specific information you want to retrieve from the public datasets. For example, you might want to find posts about a particular topic or identify trends.
-3.  **Prompt Claude Code**: Paste your question into Claude Code, clearly stating that you want an SQL query. The author mentions embedding an API key for their database, but for general use, you will ask Claude to generate the query structure. The author doesn't share their exact prompt; a starting point:
 
-    ```
-    Generate an SQL query to find posts related to "AI ethics" published on Hacker News in the last year. Assume the table is named "posts" and has columns like "title", "url", "created_at", and "score".
-    ```
+1. **Open Claude**: go to claude.ai and start a chat (a free account is enough).
 
-    You should see Claude generate a SQL query in response.
-4.  **Review the SQL query**: Claude will provide an SQL query based on your prompt. Carefully read through it to ensure it accurately reflects your question and uses appropriate table and column names (you may need to adjust these based on the actual database schema if you have access).
-5.  **Execute the query (if applicable)**: If you have access to a SQL database containing the public data (like the author's setup), you would then run this query against that database. For this workflow, the key outcome is generating the query itself.
-6.  **Refine your prompt**: If the generated query isn't quite right, adjust your natural language prompt to be more specific and try again. For instance, you could specify date ranges, keywords, or desired output columns.
+2. **Decide what you want to find**: be concrete, a topic, a time range, what columns you want back.
+
+3. **Ask Claude for the SQL**: tell it you want a query, and give it the table and column names you expect (its "schema"):
+
+   ```
+   Write an SQL query to find Hacker News posts about "AI ethics" from the last year.
+   Assume a table named "posts" with columns: title, url, created_at, and score.
+   Return the title, url, and score, sorted by score.
+   ```
+
+   You should get a ready-to-use SQL query.
+
+4. **Check the query**: read it over. Make sure the table and column names match your actual data, and that it asks for what you meant.
+
+5. **Run it (if you have the data)**: if you have a database with these public datasets loaded, run the query there to get results. If not, you have still learned the exact query to use.
+
+6. **Refine the prompt**: if the query is off, make your request more specific (exact dates, extra filters, the columns you want) and ask again.
 
 ## Original source
-This workflow is inspired by a post by Xyra on Hacker News, shared on December 31, 2025. Xyra demonstrated how Claude Code can be used to query large datasets, including Hacker News and arXiv, by generating SQL queries. The author highlighted the potential for advanced research and alert functionalities.
+
+Based on a Hacker News post by Xyra showing how Claude can query large datasets like Hacker News and arXiv by generating SQL from natural-language requests.
 
 ## Notes & variations
-*   **Free-tier alternative**: While the author uses a specific setup with an API key and a large database, you can use Claude.ai's free tier to practice generating SQL queries for hypothetical datasets or publicly available SQL examples online.
-*   **Common mistake**: A common pitfall is not being specific enough in your natural language prompt. Vague requests will lead to generic or incorrect SQL queries. Ensure you clearly define the topic, time frame, and any specific criteria.
-*   **Tip for better results**: To get more accurate SQL, try to provide Claude with context about the database schema if you know it. For example, mention the table names and column names you expect to be used in the query.
+
+- **Free-tier alternative**: no database of your own? Use Claude's free tier just to practice turning questions into SQL against example schemas, a genuinely useful skill on its own.
+- **Common mistake**: a vague request gives generic or wrong SQL. State the topic, the time frame, and the exact columns you want.
+- **Tip for better results**: give Claude the real table and column names if you know them. The more it knows about your data's structure, the more accurate the query.

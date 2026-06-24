@@ -3,7 +3,7 @@ title: "Transform Dance Videos into AI-Enhanced Audiovisual Pieces with Uisato S
 description: "Learn to transform an iPhone dance performance video into a multi-angle, AI-enhanced audiovisual piece with a unique aesthetic using Uisato Studio."
 category: "content-creation"
 badge: "sourced"
-difficulty: "beginner"
+difficulty: "intermediate"
 timeMinutes: 90
 jobToBeDone: "Transform a dance performance video into a multi-angle audiovisual piece with a specific aesthetic using AI"
 tools:
@@ -38,45 +38,54 @@ nigeriaUseCases:
     scenario: "Transform your dance group's performance video into an AI-enhanced piece with a futuristic 'bio-tech' look for your university's talent show or a viral TikTok challenge, making your entry unforgettable."
   - persona: "small-business"
     scenario: "Create engaging, AI-stylized promotional videos of your dance studio's student performances or class routines for social media, attracting new students with a modern, unique visual appeal."
+revisedAt: 2026-06-23
 tiktokUrl: ""
 published: true
 ---
 
 ## What you'll get
-You will transform an ordinary iPhone recording of a dance performance into a multi-angle, AI-enhanced audiovisual piece. This workflow allows you to apply a unique aesthetic, such as a robot or bio-tech look, without expensive equipment or a large production budget.
+
+Turn an ordinary phone recording of a dance into a stylized, multi-angle AI video, for example your dancer reimagined as a sleek robot or a bio-tech creature, without expensive gear or a studio. The trick is "motion control": the AI copies the real movement from your video but applies a brand-new look you choose. It is intermediate: a few moving parts (clips, reference images, a prompt, editing), but no coding.
 
 ## Tools you need
-*   iPhone (paid)
-*   Uisato Studio (freemium)
-*   Gemini (freemium)
-*   Editing software (freemium)
+
+- **A phone camera** (iPhone or any): to record the original dance.
+- **Uisato Studio** (freemium): the AI tool that does the motion-control transformation.
+- **Gemini** (freemium): optional, to tweak a reference frame into the look you want.
+- **Editing software** (freemium): CapCut or DaVinci Resolve (both have free versions) to assemble the final clips.
 
 ## Steps
-1.  Record your original dance performance video using an iPhone.
-2.  Split the original dance/performance video into clips. Use 3-10 second clips if you want to use a new camera angle from a reference image, or up to 30 seconds if you want to preserve the original camera angle from the video source.
-3.  Open Uisato Studio and select the Kling Motion Control mode.
-4.  For each clip, provide the original performance video as the reference video input.
-5.  For each section, provide a target image with the desired aesthetic (e.g., robot/bio-tech) as the reference image.
-    *   You can use Uisato Studio's "capture frame" function to intervene one of the input video's frames using Gemini.
-    *   Alternatively, you can bring your own pre-intervened reference images. This is where you can introduce different points-of-view for the intervened scene.
-6.  Craft a brief, balanced prompt describing what you want beyond the motion transfer. The author doesn't share their exact prompt; a starting point:
 
-    
-an avant-garde humanoid android performer dancing (...)
-    
+1. **Record the dance**: film the performance on your phone. Good light and a steady frame help.
 
-    Another example prompt:
+2. **Split it into clips**: cut the video into pieces. Use 3 to 10 second clips if you want to introduce a new camera angle (via a reference image), or up to 30 seconds if you want to keep the original camera angle.
 
-    
-you might introduce subtle robotic precision while still following the original dance (...)
-    
+3. **Open Uisato Studio and pick Kling Motion Control**: this mode copies movement from one video onto a new look.
 
-7.  Select the Kling-3 model. The author notes that while the "std" Kling-3 model performs really well, they went with "pr..." (the rest of the model name is not provided in the source).
-8.  Generate the interventions using Uisato Studio.
-9.  Use editing software to assemble the generated clips into a complete multi-angle audiovisual piece.
+4. **Set the reference video**: for each clip, give your original dance clip as the reference video, this is the motion the AI will follow.
+
+5. **Set the reference image (the look)**: give a target image showing the aesthetic you want (robot, bio-tech, and so on) as the reference image. Either use Uisato's "capture frame" feature to restyle one of your video's frames with Gemini, or bring your own styled images (this is also how you introduce new camera viewpoints).
+
+6. **Write a short style prompt**: describe the look you want, beyond just the motion. A starting point:
+
+   ```
+   An avant-garde humanoid android performer dancing, following the original choreography
+   exactly, with subtle robotic precision. Sleek metallic finish, cinematic lighting.
+   ```
+
+   Keep it balanced: enough detail to set the style, but let the motion control do the movement.
+
+7. **Choose the Kling-3 model and generate**: the standard ("std") Kling-3 model works well; a premium variant gives higher quality. Generate the styled version of each clip.
+
+8. **Assemble the final piece**: bring all the generated clips into your editing software and cut them together into the finished multi-angle video.
 
 ## Original source
-This workflow is adapted from a Reddit post by user /u/uisato, who shared their process for transforming an iPhone dance recording into an AI-enhanced audiovisual piece using Uisato Studio. The original post, titled 'Talk Show Host' [ft. Jibaro's Sara Silkin ] - Is this the future of motion capture? + Breakdown, was posted on June 12, 2026.
+
+Based on a Reddit post by /u/uisato sharing how they turned an iPhone dance recording into an AI-enhanced, multi-angle audiovisual piece with Uisato Studio's motion-control workflow.
 
 ## Notes & variations
-Uisato Studio likely offers a free tier for basic use, but extensive video generation may require a paid plan. Gemini has a robust free tier. For editing software, free alternatives like DaVinci Resolve (desktop) or CapCut (mobile/desktop) can be used instead of paid options. Video processing, especially with AI, can consume significant data. Consider using Wi-Fi for generation and uploads/downloads.
+
+- **Free editing**: CapCut (mobile and desktop) or DaVinci Resolve (desktop) replace paid editors at no cost.
+- **Use Wi-Fi**: AI video generation and uploads use a lot of data, so do the heavy steps on Wi-Fi.
+- **Common pitfall**: clips that are too long when changing camera angle. Keep those to 3 to 10 seconds so the motion transfer stays clean.
+- **Tip for better results**: prepare your reference images carefully. A clear, well-styled target image is what gives the AI a strong, consistent look to apply.

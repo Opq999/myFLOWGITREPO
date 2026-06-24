@@ -34,52 +34,51 @@ nigeriaNotes: "Both Claude and Gemini offer robust free tiers, making this workf
 nigeriaUseCases:
   - persona: "student"
     scenario: "For your university history assignment, use AI to extract names of ordinary people, freedmen, or slaves from a Latin inscription to analyze their social roles in the Roman Empire."
+revisedAt: 2026-06-23
 tiktokUrl: ""
 published: true
 ---
 
 ## What you'll get
-You'll learn how to identify and extract names of individuals from ancient Roman inscriptions using AI. This process helps uncover details about ordinary people, freedmen, and slaves from the Roman era, going beyond just officials. This approach leverages large language models to quickly process historical texts that would otherwise require extensive manual research by classicists.
+
+A fast way to pull the names of real people out of ancient Roman inscriptions (the Latin text carved on tombs, altars, and monuments, what historians call "epigraphy"). AI can read this text and list the individuals named, including ordinary people, freed slaves, and slaves, not just emperors and officials. That is work that would normally take a classicist hours of manual reading per inscription.
 
 ## Tools you need
-*   **Claude** (freemium): An AI assistant for processing text and extracting information.
-*   **Gemini** (freemium): Another AI assistant for text analysis and information extraction.
-*   **Epigraphic Database Clauss-Slaby (EDCS)** (free): A database of Latin inscriptions to find source texts.
-*   **Latin Inscriptions of the Roman Empire (LIRE)** (free): Another database for Roman inscriptions.
+
+- **Claude or Gemini** (freemium): the AI that reads the Latin and pulls out the names. Free tiers are plenty for this.
+- **EDCS** and **LIRE** (free): two open databases of Latin inscriptions where you find the source texts.
 
 ## Steps
-1.  **Access an inscription database**: Open a web browser on your phone or computer and navigate to the Epigraphic Database Clauss-Slaby (EDCS) at `https://edcs.hist.uzh.ch/en/` or Latin Inscriptions of the Roman Empire (LIRE) at `https://pure.au.dk/portal/en/publications/latin-inscriptions-of-the-roman-empire-lire/`.
 
-    You should see the homepage of the chosen database, ready for you to search or browse inscriptions.
+1. **Open an inscription database**: go to the Epigraphic Database Clauss-Slaby (edcs.hist.uzh.ch/en) or Latin Inscriptions of the Roman Empire (LIRE). You should see a homepage where you can search or browse inscriptions.
 
-2.  **Select an inscription**: Browse the database or use its search function to find an inscription. Copy the full Latin text of an inscription you want to analyze.
+2. **Pick an inscription**: search or browse, then copy the full Latin text of the one you want to study.
 
-    You should have the Latin text of an inscription copied to your clipboard.
+3. **Open your AI**: go to claude.ai or gemini.google.com and sign in. You should see the chat box.
 
-3.  **Open your AI tool**: Open your web browser and go to `https://claude.ai` or `https://gemini.google.com`. Log in or sign up if prompted.
+4. **Ask it to extract the names**: paste the Latin text into this prompt:
 
-    You should see the chat interface of Claude or Gemini, ready for your input.
+   ```
+   Here is an ancient Latin inscription. Extract every proper name of a person mentioned,
+   including ordinary people, freedmen, and slaves where identifiable. List each name
+   clearly, and note for each whether it looks like a personal name, a family name, or a
+   place name.
 
-4.  **Prompt the AI to extract names**: Paste the copied inscription text into the AI chat window and use a prompt to ask for names. The author doesn't share their exact prompt; a starting point:
+   [paste the Latin inscription here]
+   ```
 
-    ```
-    I have an ancient Latin inscription. Please extract all proper names of people mentioned in this text, including ordinary people, freedmen, and slaves, if identifiable. List each name clearly.
+   You should get a clear list of the people named in the text.
 
-    [PASTE LATIN INSCRIPTION HERE]
-    ```
+5. **Review and refine**: read the list. If a name looks wrong or one seems missing, ask a follow-up, for example "Are there other names that could refer to a person?" or "Why did you classify X as a name?".
 
-    You should see the AI process the text and provide a list of names it has identified.
-
-5.  **Review and refine results**: Read through the list of names provided by the AI. If some names seem incorrect or missed, you can ask follow-up questions or provide more context. For example, "Are there any other names in the text that could refer to individuals?" or "Can you explain why you identified [X] as a name?"
-
-    You should have a refined or confirmed list of names from the inscription.
-
-6.  **Optional: Research the names**: Use the extracted names to search other historical databases like Trismegistos (`https://www.trismegistos.org/`) or general search engines to find more information about the individuals or their context.
-
-    You should find additional historical context or related information about the identified names.
+6. **Optional, dig deeper**: search the extracted names in another historical database like Trismegistos (trismegistos.org), or a general search, to learn more about those individuals.
 
 ## Original source
-This workflow is inspired by a project shared by 'metiscus' on Hackernews, where they detailed their journey of building a map of people who lived in the Roman Empire. Unable to find comprehensive lists of ordinary Roman citizens, they leveraged AI tools like Claude and Gemini to process over 500,000 Latin inscriptions from databases like the Epigraphic Database Clauss-Slaby.
+
+Based on a Hacker News post by metiscus, who set out to map the ordinary people of the Roman Empire and, lacking ready-made lists, used Claude and Gemini to process over 500,000 Latin inscriptions from databases like EDCS.
 
 ## Notes & variations
-If you have basic Latin knowledge, even a little, it helps immensely to guide the AI and verify its output. You can also specify the type of names you're looking for (e.g., 'only personal names, not place names') or break down very long inscriptions into smaller chunks for the AI. A common mistake is expecting the AI to be perfectly accurate with ancient languages without any human review; always cross-check the results, especially for critical research.
+
+- **A little Latin helps**: even basic Latin lets you guide the AI and spot mistakes. You can also tell it exactly what you want ("only personal names, not place names").
+- **Common pitfall**: trusting the AI blindly on an ancient language. Always cross-check the names, especially for real research.
+- **Tip for better results**: break very long inscriptions into smaller chunks so the AI handles each carefully, and specify the kind of names you are after.

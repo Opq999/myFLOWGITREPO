@@ -3,7 +3,7 @@ title: "Run Autonomous AI Research Locally with autoresearch"
 description: "Learn to conduct autonomous AI research experiments on your MacBook using CPU with the autoresearch tool. No cloud GPUs needed."
 category: "academic-research"
 badge: "sourced"
-difficulty: "beginner"
+difficulty: "advanced"
 timeMinutes: 60
 jobToBeDone: "Conduct autonomous AI research experiments locally on a MacBook using CPU"
 tools:
@@ -28,37 +28,57 @@ nigeriaUseCases:
     scenario: "Explore AI research topics for your final year project by running autonomous experiments locally on your laptop."
   - persona: "employee"
     scenario: "Test novel AI approaches for internal process automation by running local, CPU-based research experiments on your work machine."
+revisedAt: 2026-06-23
 tiktokUrl: ""
 published: true
 ---
 
-## What you'll get
-You will set up and run a local, autonomous AI research experiment on your own machine using CPU. This approach bypasses complex frameworks, focusing on a tight feedback loop for efficient, self-contained AI development.
+## What this is, in plain English
+
+This is an experiment in "autonomous AI research": a small setup where an AI agent runs its own tiny machine-learning experiments in a loop, on your laptop's ordinary processor (CPU), with no expensive cloud GPU. You hand it a research question, and it edits the training code, runs a short experiment, looks at the result, and decides what to try next, over and over, on its own.
+
+Be honest about the level: this is for people comfortable with code and machine learning. The point of the source is that you do not need a giant framework, just a tight loop, but you still fork a repository, define an experiment, and lean on a capable coding assistant. So it is advanced. This page explains what it is, what it is good for, and the realistic shape of running it.
+
+## What you can use it for
+
+- **Explore a research question cheaply.** Test whether an idea has legs on a CPU before spending on big GPU runs.
+- **Learn how agentic research works.** Watch an AI plan, change code, run, evaluate, and iterate, the core loop of automated research.
+- **A self-contained project.** A final-year or side experiment that runs entirely on your own machine.
+- **Rapid, small iterations.** Many tiny experiments quickly, rather than one slow expensive one.
 
 ## Tools you need
-*   **autoresearch** (free): An open-source repository for running autonomous AI research experiments.
-*   **Codex 5.3** (paid): A coding assistant used here for planning, checking dependencies, and refining the execution environment.
-*   **GitHub** (free tier available), For forking and cloning the autoresearch repository.
-*   **A code editor** (e.g., VS Code, free), To open and work with the cloned repository files.
 
-## Steps
-1.  **Fork and clone the repository**: Go to the autoresearch GitHub repository and fork it to your own account. Then, clone your forked repository to your local machine.
-    You should have a local copy of the autoresearch project files on your computer.
-2.  **Open the project in your coding assistant**: Load the cloned repository into your preferred code editor. The author used Codex 5.3 for its planning and dependency checking capabilities.
-    Your coding environment should now be set up to analyze and modify the project files.
-3.  **Prepare the experiment environment**: Use your coding assistant to verify that all necessary dependencies are installed and that the prerequisite training steps are ready. This ensures your local setup is correct.
-    You should see confirmation that dependencies are met and the environment is prepared for training.
-4.  **Define the experiment in `program.md`**: Create a new, standalone experiment definition file. Combine this with the base repository rules to preserve essential constraints from the original setup. The author's experiment focused on whether a structured self-reflection step improves an agent's model improvement decisions.
-    You will have a `program.md` file that clearly outlines your specific research experiment.
-5.  **Optimize the execution environment**: With your experiment defined, ask your coding assistant (e.g., Codex 5.3) to help refine the setup. The goal is to optimize the environment for running the experiment without altering the core experiment design itself.
-    The execution environment should be configured for efficient local runs.
-6.  **Run the autonomous research loop**: The autoresearch tool will now read your `program.md` instructions, modify the `train.py` file as needed, run short training experiments, evaluate the results, and decide on the next steps, all within your local machine using CPU.
-    You should observe the agent iterating through its defined research loop, making changes, and reporting metrics.
+- **autoresearch** (free): the open-source repository that runs the autonomous experiment loop.
+- **A coding assistant** (mixed): the author used Codex (paid) for planning and dependency checks; a free assistant works too, with less reasoning depth.
+- **GitHub and a code editor** (free): to fork, clone, and edit the project.
+
+## How it actually works
+
+You define the experiment, then let the loop run it. The realistic shape:
+
+1. **Fork and clone the repo.** Get your own copy of autoresearch on your machine.
+2. **Open it in a coding assistant.** Load the project so the assistant can read and help modify it.
+3. **Check the prerequisites.** Have the assistant confirm Python and the needed libraries are installed and the base training steps are ready. (Missing dependencies are the usual reason setup fails.)
+4. **Define your experiment in `program.md`.** Write a standalone file describing exactly what to investigate (the author's tested whether adding a self-reflection step improved the agent's decisions), and keep the base repo rules so the original constraints hold.
+5. **Tune the run environment.** Ask the assistant to optimize the setup for local runs without changing the experiment's design.
+6. **Run the loop.** autoresearch reads your `program.md`, edits the training script (`train.py`) as needed, runs short experiments, evaluates the results, and decides the next step, reporting metrics as it goes.
+
+## Words you'll see, explained
+
+- **Autonomous agent:** a program that plans and acts on its own toward a goal, here, running research experiments.
+- **Training loop:** the repeated cycle of training a model a little, checking it, and adjusting.
+- **`train.py`:** the script that trains the model; the agent edits this between experiments.
+- **`program.md`:** the file where you write what the experiment should investigate.
+- **CPU vs GPU:** the CPU is your computer's general processor; a GPU is the faster chip usually needed for big AI training. This runs on CPU to stay free.
+- **Dependencies:** the libraries the project needs installed to run.
 
 ## Original source
-This workflow is based on insights shared by javz on their blog, discussing how to conduct autonomous AI research locally without relying on large frameworks. The author highlights the autoresearch open-source repository as a key tool for this purpose.
+
+Based on a blog post by javz arguing that autonomous AI research does not need a giant framework, using the open-source autoresearch repository to run experiments locally in a tight loop.
 
 ## Notes & variations
-*   **Free-tier alternative for coding assistant**: While the author used Codex 5.3, consider using free tools like GitHub Copilot (which has a free tier for students and verified educators) or other open-source code completion tools for planning and dependency checks. However, their reasoning depth might differ.
-*   **Common pitfall**: Ensure you have Python and the necessary libraries installed *before* attempting to run the experiment. Dependency issues are a common reason for setup failures.
-*   **Tip for better results**: Clearly define your experiment's objective in `program.md`. The more specific your instructions and desired outcomes, the more focused and effective the autonomous agent's research loop will be.
+
+- **Do you even need this?** For a one-off test, running experiments by hand is simpler. The autonomous loop pays off when you want many small iterations explored automatically.
+- **Free-tier alternative**: swap the paid Codex for a free assistant (like Copilot's free tier) for the planning and dependency work.
+- **Common pitfall**: missing Python libraries. Install and verify dependencies before running, or the loop fails at the start.
+- **Tip for better results**: write a specific, focused `program.md`. The clearer the question and the success criteria, the more useful the agent's research loop.

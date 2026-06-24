@@ -3,7 +3,7 @@ title: "Generate Cover Letters with Local AI and Ollama"
 description: "Create personalized cover letters quickly using your resume and job description with local AI models. No data leaves your machine."
 category: "job-hunting"
 badge: "sourced"
-difficulty: "beginner"
+difficulty: "intermediate"
 timeMinutes: 10
 jobToBeDone: "Generate personalized cover letters using local AI models"
 tools:
@@ -34,33 +34,46 @@ nigeriaUseCases:
     scenario: "Create a personalized cover letter for your NYSC PPA application or a graduate trainee position, ensuring it matches the company's requirements without online API costs."
   - persona: "entrepreneur"
     scenario: "Craft a custom cover letter for a remote contract role to fund your startup, matching your skills to the client's project description using your local AI setup."
+revisedAt: 2026-06-23
 tiktokUrl: ""
 published: true
 ---
 
 ## What you'll get
-You will generate a personalized cover letter ready to copy and paste, based on your resume and a specific job description. This approach works by using a local AI model to process your documents, ensuring privacy and avoiding API costs, making it ideal for frequent job applications.
+
+A personalized cover letter, written from your resume and a specific job description, by an AI running entirely on your own computer. Because the AI is local, your resume never leaves your machine and there are no per-use fees, ideal when you are firing off many applications. It is intermediate: you set up a local AI once, then it is point-and-click.
 
 ## Tools you need
-*   **Ollama** (free) - To run large language models locally on your computer.
-*   **Cover Letter Maker (Web App)** (free) - A web application that connects to local LLMs to generate cover letters.
-*   **LM Studio** (free) - An alternative tool to Ollama for running LLMs locally.
+
+- **Ollama** (free): runs an AI model locally on your computer. (LM Studio is an equally good alternative.)
+- **Cover Letter Maker** (free): the open-source web app that takes your resume and the job description and asks your local AI to write the letter.
 
 ## Steps
-1.  **Set up a local LLM** - Download and install Ollama or LM Studio. Follow their respective instructions to download a model like Llama 3.2. Ensure your local LLM server is running.
-2.  **Access the Cover Letter Maker web app** - Open the Cover Letter Maker web application. The author mentions it can be run locally or self-hosted, but for ease of use, you can likely access a hosted version or follow their GitHub instructions to run it on your machine.
-3.  **Upload your resume** - On the web app, find the option to upload your resume. Select your resume file (it should be a PDF). The app will parse and cache your resume data in your browser.
-    You should see a confirmation that your resume has been processed.
-4.  **Paste the job description** - Locate the text area for the job description. Copy the full text of the job description you are applying for and paste it into this area.
-    The text area should now contain the job description.
-5.  **Generate the cover letter** - The application automatically connects to your running local LLM (like Ollama). Click the button to generate the cover letter. The author states this takes approximately 5 seconds.
-    You should see a complete, personalized cover letter appear in an output box, ready to be copied.
-6.  **Copy and use the cover letter** - Click the one-click copy button provided by the web app to copy the generated cover letter to your clipboard. You can then paste it into your job application or email.
+
+1. **Set up a local AI**: install Ollama (or LM Studio) and download a model, for example:
+
+   ```
+   ollama pull llama3.2
+   ```
+
+   Make sure the Ollama app is running in the background; the web app will talk to it.
+
+2. **Open the Cover Letter Maker**: run the web app. It is open-source, so follow the GitHub README to run it on your machine (or use a hosted version if one is offered). You should see its page in your browser.
+
+3. **Upload your resume**: choose your resume file (a PDF). The app reads it and keeps the details in your browser. You should see a confirmation that it was processed.
+
+4. **Paste the job description**: copy the full job posting text and paste it into the job-description box.
+
+5. **Generate**: click the generate button. The app sends everything to your local AI, which writes the letter (the author says about 5 seconds). You should see a finished, personalized cover letter appear.
+
+6. **Copy and use it**: use the one-click copy button and paste the letter into your application or email.
 
 ## Original source
-This workflow is based on a web application created by stanyy, shared on Hacker News. The tool aims to provide a private and efficient way to generate cover letters using locally run AI models, addressing the author's frustration with placeholder-filled templates and API costs.
+
+Based on a free, privacy-focused cover-letter web app by stanyy, shared on Hacker News, built to generate tailored letters with a locally-run AI instead of paid online services.
 
 ## Notes & variations
-*   **Free-tier alternatives**: If you prefer not to set up local LLMs, you could use free tiers of online AI writing tools, but be mindful of their privacy policies and usage limits. However, this workflow's core benefit is local, private generation.
-*   **Common pitfall**: Ensure your local LLM (Ollama, LM Studio) is running and accessible before attempting to generate the cover letter. If the web app cannot connect, it won't be able to generate text.
-*   **Tip for better results**: While the tool parses your resume, reviewing the generated cover letter for tone and specific keywords from the job description before sending can further improve its effectiveness.
+
+- **Free-tier alternative**: you could use a free online AI writing tool instead of a local one, but you lose the privacy and the no-cost, unlimited generation that are the whole point here.
+- **Common pitfall**: the web app cannot generate anything if your local AI is not running. Start Ollama (or LM Studio) and confirm its model is downloaded first.
+- **Tip for better results**: skim the generated letter for tone and make sure it picked up the key words from the job description before you send it.

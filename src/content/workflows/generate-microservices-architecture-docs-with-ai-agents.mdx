@@ -3,7 +3,7 @@ title: "Generate Microservices Architecture Docs with AI Agents"
 description: "Learn to use AI agents like Gemini and Claude to automatically generate architecture documentation for your microservices platform."
 category: "coding"
 badge: "sourced"
-difficulty: "beginner"
+difficulty: "advanced"
 timeMinutes: 30
 jobToBeDone: "Generate architecture documentation for a microservices platform using AI agents."
 tools:
@@ -32,37 +32,58 @@ nigeriaUseCases:
     scenario: "Generate up-to-date `ARCHITECTURE.md` files for each service in your company's payment gateway microservices, helping new engineers quickly understand the system and identify potential security gaps."
   - persona: "entrepreneur"
     scenario: "Automatically create detailed architecture documentation for your new e-commerce platform's backend services, making it easier to onboard new developers or prepare for a technical audit for investors."
+revisedAt: 2026-06-23
 tiktokUrl: ""
 published: true
 ---
 
-## What you'll get
-You will generate standardized, machine-readable architecture documentation files for each service in your microservices platform. This approach transforms static analysis by providing AI tools with crucial context, enabling them to detect systemic security failures and infrastructure issues that linters might miss.
+## What this is, in plain English
+
+Big software is often built as "microservices": dozens of small, separate programs that talk to each other. Keeping written documentation of how they all fit together is valuable but tedious, so it rarely gets done. This workflow has AI agents do it: they read each service's code, trace how it connects to the others, and write a standard `ARCHITECTURE.md` file for each one. With that documentation in place, your other AI tools can spot system-wide problems (like security gaps) that a plain code checker would miss.
+
+Be honest about the level: this is an advanced, developer-only setup. It needs a real microservices codebase, an agent framework (Antigravity) wired up with AI model keys, and access to your cloud infrastructure, and the author shares the approach rather than copy-paste commands. This page explains what it does, where it helps, and the realistic shape of running it.
+
+## What you can use it for
+
+- **Onboarding documentation.** Give new engineers an accurate map of every service so they get productive faster.
+- **Security and audit context.** Documented architecture lets AI tools (and humans) catch systemic risks across services, not just bugs in one file.
+- **Keeping docs alive.** Re-run it so the documentation updates as the system changes, instead of rotting.
+- **Investor or compliance readiness.** Produce a clear technical picture of your backend on demand.
+- **The reusable idea**: pointing autonomous agents at a codebase to produce structured, standardized docs works for more than microservices.
 
 ## Tools you need
-*   **Gemini 3 Flash** (free): A powerful large language model for understanding and generating text.
-*   **Claude Sonnet 4.6** (freemium): Another advanced large language model, useful for complex reasoning and generation tasks.
-*   **Antigravity** (free): An open-source AI coding assistant that orchestrates multiple AI agents.
-*   **Google Cloud Platform** (paid, but with free tier options), The cloud environment where the microservices are deployed. Specific services mentioned include Cloud Run, Google Cloud Storage, and Vertex AI.
 
-## Steps
-1.  **Set up Antigravity**: Follow the installation instructions for Antigravity on your local machine. This typically involves cloning the repository and installing dependencies.
-    You should see the Antigravity project files on your computer.
-2.  **Configure AI Agents**: Within Antigravity, you will configure the AI agents. The author used Gemini 3 Flash and Claude Sonnet 4.6. You'll need to set up API keys for these models if they are not already configured.
-    The configuration files should reflect your chosen AI models and API access.
-3.  **Define Documentation Standard**: Establish a clear standard for your architecture documentation. The author created `ARCHITECTURE.md` files with specific sections for global service mesh, topology, lifecycle status, security policies, and more. Decide on the structure and content you want for your documentation.
-    You will have a clear template or set of guidelines for the documentation.
-4.  **Initiate Autonomous Generation**: Direct the AI agent within Antigravity to inspect your microservices platform. The author's prompt was not explicitly shared, but the agent's task was to autonomously inspect each service, read source code, trace dependencies, and cross-reference against the documentation standard.
-    The AI agent will begin analyzing your codebase and infrastructure.
-5.  **Generate Architecture Files**: The AI agent, powered by Gemini and Claude, will iteratively generate structured `ARCHITECTURE.md` files for each microservice. These files will be committed directly to your code repositories.
-    You should find new `ARCHITECTURE.md` files in your service directories, containing structured information about each service's role and interactions.
-6.  **Integrate with AI Quality Pipeline**: Once generated, feed these architecture documents into your AI-powered quality pipeline. This provides the AI with the necessary context to perform deeper analysis beyond just code syntax.
-    Your AI quality tools will now have architectural context for analysis.
+- **Antigravity** (free): an open-source framework that coordinates ("orchestrates") several AI agents to do the work.
+- **Gemini 3 Flash** (free) and **Claude Sonnet 4.6** (freemium): the AI models that read the code and write the docs. You give Antigravity their API keys.
+- **Google Cloud Platform** (paid, free tier available): where the example's services run (using Cloud Run, Cloud Storage, and Vertex AI). The agents inspect this infrastructure too.
+
+## How it actually works
+
+You set up the agents, define the doc format, then let them loose. The realistic shape:
+
+1. **Install Antigravity.** Clone its repository and install it, following the README. This is the framework that drives the agents.
+2. **Connect your AI models.** Configure Antigravity with API keys for Gemini and Claude (the models that do the reading and writing).
+3. **Define a documentation standard.** Decide exactly what each `ARCHITECTURE.md` should contain (for example service role, dependencies, security policies, lifecycle status). A clear template is what makes the output consistent.
+4. **Point the agents at your platform.** Instruct the agent to inspect each service: read its source, trace its dependencies, and check it against your standard.
+5. **Let it generate the files.** The agents write a structured `ARCHITECTURE.md` for each service and commit them into your repositories.
+6. **Feed the docs to your quality tools.** Now your AI code-quality pipeline has architectural context, so it can reason about the whole system, not just isolated code.
+
+## Words you'll see, explained
+
+- **Microservices:** an app built as many small, separate programs that work together.
+- **Architecture documentation:** written description of how a system's parts fit and interact.
+- **AI agent:** a program that uses an AI to carry out a multi-step task on its own.
+- **Orchestrate:** coordinate several agents or steps to run in the right order (Antigravity's job).
+- **ARCHITECTURE.md:** a Markdown file documenting one service, the output here.
+- **Static analysis / linter:** a tool that checks code for issues without running it; useful but blind to cross-service context.
 
 ## Original source
-This workflow is based on an experiment detailed in the blog post "Architecture Documentation as a First-Class Engineering Asset" by alexandertyutin, originally published on the DEV Community platform. The author shares their experience using autonomous AI agents to generate architecture documentation for a Google Cloud-based microservices platform.
+
+Based on "Architecture Documentation as a First-Class Engineering Asset" by alexandertyutin on the DEV Community blog, an experiment using autonomous AI agents to document a Google Cloud microservices platform.
 
 ## Notes & variations
-*   **Free Tier Viability:** Gemini 3 Flash is entirely free. Claude Sonnet 4.6 offers a generous free tier. Antigravity is open-source and free to use. This makes the core AI generation process accessible without cost.
-*   **Common Pitfall:** Ensure your AI agents have sufficient context. If the agents cannot access or properly interpret your codebase or cloud configurations, the generated documentation may be incomplete or inaccurate. Double-check permissions and access.
-*   **Tip for Better Results:** Clearly define your documentation standard *before* starting the generation process. A well-defined structure and set of required information will lead to more consistent and useful output from the AI agents.
+
+- **Do you even need this?** For a single small service, writing the doc by hand (or asking one AI to) is simpler. This pays off across many services where keeping docs current is the real problem.
+- **Free-tier viability**: Gemini 3 Flash, Claude's free tier, and Antigravity are free; only the cloud infrastructure costs money.
+- **Common pitfall**: agents without enough access. If they cannot read your code or cloud config, the docs come out incomplete. Check permissions first.
+- **Tip for better results**: nail down your documentation standard before you start. A precise template gives consistent, useful output.

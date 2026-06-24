@@ -3,12 +3,12 @@ title: "Safely Run AI Agent Code with Claude Code in a Virtual Machine"
 description: "Learn to safely run AI agent code with dangerous permissions using Claude Code in an isolated virtual machine environment, protecting your local system."
 category: "coding"
 badge: "sourced"
-difficulty: "intermediate"
+difficulty: "advanced"
 timeMinutes: 45
 jobToBeDone: "Safely run AI agent code with dangerous permissions in an isolated environment"
 tools:
   - name: "Claude Code"
-    url: "https://www.anthropic.com/api"
+    url: "https://code.claude.com"
     pricing: "paid"
     affiliateUrl: ""
   - name: "Vagrant"
@@ -54,120 +54,110 @@ nigeriaUseCases:
     scenario: "Safely test a new AI agent script that needs elevated permissions on your work computer."
   - persona: "entrepreneur"
     scenario: "Develop and test an AI agent that interacts with system-level tools in a secure, reproducible sandbox environment."
+revisedAt: 2026-06-23
 tiktokUrl: ""
 published: true
 ---
 
 ## What you'll get
 
-You will get a secure, isolated virtual machine (VM) environment where you can run Claude Code with the `--dangerously-skip-permissions` flag without risking your host operating system. This approach uses Vagrant and VirtualBox to create a disposable VM, providing full system isolation and reproducibility, allowing the AI agent to operate freely within its sandbox.
+A safe, throwaway "sandbox" (an isolated virtual machine, a whole computer running inside your computer) where you can let Claude Code run with permission checks turned off, without any risk to your real system. The `--dangerously-skip-permissions` flag lets the AI agent run commands without stopping to ask you each time, which is fast but risky on your real machine, and perfectly safe inside a disposable VM. It is advanced: you set up virtual-machine tooling and a config file, but every command and file is given.
 
 ## Tools you need
 
-*   **VirtualBox** (free): Software that allows you to run virtual machines on your computer.
-*   **Vagrant** (free): A tool for building and managing virtual machine environments in a single workflow.
-*   **Claude Code** (paid): An AI agent from Anthropic, used here in its command-line interface (CLI) form.
-*   **Ubuntu** (free): A popular Linux operating system that will run inside your virtual machine.
-*   **Node.js** (free): A JavaScript runtime environment, required for running `npm` and Claude Code.
-*   **npm** (free): Node.js package manager, used to install Claude Code.
-*   **git** (free): A version control system, installed in the VM for general development tasks.
-*   **docker.io** (free): The Docker Engine, installed in the VM to allow Claude Code to build and run containers.
+- **VirtualBox** (free): runs the virtual machine on your computer.
+- **Vagrant** (free): sets up and manages that VM from a single config file, so it is reproducible.
+- **Claude Code** (paid): the AI agent you run inside the VM. Needs a paid plan or credits.
+- **Ubuntu, Node.js, npm, git, Docker** (free): the Linux system and tools installed inside the VM (Vagrant installs these for you).
 
 ## Steps
 
-1.  **Install VirtualBox**: Download and install VirtualBox for your operating system from the official website. Follow the on-screen instructions for a standard installation.
+1. **Install VirtualBox**: download and install it from its official site.
 
-    You should see the VirtualBox application installed and accessible on your computer.
+2. **Install Vagrant**: install it from its site, then confirm with:
 
-2.  **Install Vagrant**: Download and install Vagrant for your operating system from the official website. Follow the installation prompts.
+   ```bash
+   vagrant --version
+   ```
 
-    You should be able to open your terminal or command prompt and run `vagrant --version` to see the installed version, confirming it's working.
+3. **Make a project folder**:
 
-3.  **Create your project directory**: Open your terminal or command prompt and create a new directory for your project. Navigate into it.
+   ```bash
+   mkdir my-project
+   cd my-project
+   ```
 
-    ```bash
-    mkdir my-project
-    cd my-project
-    ```
+4. **Create the Vagrantfile**: this single file describes the whole VM. Create a file named `Vagrantfile` (no extension) in the folder and paste this in exactly:
 
-    You should now be inside the `my-project` directory in your terminal.
+   ```ruby
+   vm_name = File.basename(Dir.getwd)
+   Vagrant.configure(2) do |config|
+     config.vm.box = "bento/ubuntu-24.04"
+     config.vm.synced_folder ".", "/agent-workspace", type: "virtualbox"
+     config.vm.provider "virtualbox" do |vb|
+       vb.memory = 4096
+       vb.cpus = 2
+       vb.gui = false
+       vb.name = vm_name
+     end
+     config.vm.provision "shell", inline: <<-SHELL
+       export DEBIAN_FRONTEND=noninteractive
+       apt-get update
+       apt-get install -y docker.io nodejs npm git unzip
+       npm install -g @anthropic-ai/claude-code --no-audit
+       usermod -aG docker vagrant
+       chown -R vagrant:vagrant /agent-workspace
+     SHELL
+   end
+   ```
 
-4.  **Create the Vagrantfile**: This file tells Vagrant how to set up your virtual machine. Create a new file named `Vagrantfile` (no file extension) in your `my-project` directory. Open it with a text editor (like Notepad on Windows, TextEdit on macOS, or VS Code) and paste the following content:
+   This sets up an Ubuntu VM with 4GB of memory and 2 CPUs, shares your project folder into the VM as `/agent-workspace`, and installs Docker, Node.js, git, and Claude Code inside it.
 
-    ```ruby
-    vm_name = File . basename( Dir . getwd)
-    Vagrant . configure( 2 ) do | config |
-      config . vm . box = "bento/ubuntu-24.04"
-      #config.vm.network forwarded_port , guest: 3000, host: 3000, auto_correct: true
-      config . vm . synced_folder "." , "/agent-workspace" , type : "virtualbox"
-      config . vm . provider "virtualbox" do | vb |
-        vb . memory = 4096
-        vb . cpus = 2
-        vb . gui = false
-        vb . name = vm_name
-        vb . customize [ "modifyvm" , :id , "--audio" , "none" ]
-        vb . customize [ "modifyvm" , :id , "--usb" , "off" ]
-      end
-      config . vm . provision "shell" , inline : <<-SHELL
-        export DEBIAN_FRONTEND = noninteractive
-        apt - get update
-        apt - get install - y docker . io nodejs npm git unzip
-        npm install - g @anthropic - ai / claude - code -- no - audit
-        usermod - aG docker vagrant
-        chown - R vagrant :vagrant /agent-workspace
-      SHELL
-    end
-    ```
+5. **Start the VM**: this downloads the Ubuntu image (first time only) and installs everything:
 
-    This `Vagrantfile` specifies an Ubuntu 24.04 VM, allocates 4GB RAM and 2 CPUs, and sets up a shared folder (`/agent-workspace`) that mirrors your `my-project` directory. It also includes a shell script to install necessary tools like Docker, Node.js, npm, git, and Claude Code itself within the VM.
+   ```bash
+   vagrant up
+   ```
 
-    You should have a `Vagrantfile` saved in your `my-project` directory.
+   It takes a while the first time. Wait for the "machine is up" message.
 
-5.  **Start the virtual machine**: In your terminal, still within the `my-project` directory, run the `vagrant up` command. This will download the Ubuntu VM image (if you don't have it already), create the VM, and run the provisioning script defined in your `Vagrantfile`.
+6. **Enter the VM**: connect to it:
 
-    ```bash
-    vagrant up
-    ```
+   ```bash
+   vagrant ssh
+   ```
 
-    This step will take some time, especially the first time, as it downloads the VM image and installs all the software. You should see output indicating the VM is booting, software is being installed, and eventually, a message that the machine is up and running.
+   Your prompt changes to something like `vagrant@ubuntu-2404:~$`, you are now inside the VM.
 
-6.  **Connect to the VM**: Once the VM is running, connect to it via SSH using Vagrant.
+7. **Run Claude Code with permissions off (safely)**: move into the shared workspace and start it:
 
-    ```bash
-    vagrant ssh
-    ```
+   ```bash
+   cd /agent-workspace
+   claude --dangerously-skip-permissions
+   ```
 
-    Your terminal prompt should change, typically to something like `vagrant@ubuntu-2404:~$`, indicating you are now inside the virtual machine.
+   Claude Code now runs commands without pausing to ask, contained entirely within the VM. Your files are visible because the folder is shared.
 
-7.  **Run Claude Code dangerously (safely)**: Inside the VM, navigate to the shared workspace and start Claude Code with the `--dangerously-skip-permissions` flag. This flag tells Claude Code to execute commands without asking for confirmation, which is safe because it's contained within the VM.
+8. **Clean up when done**: leave Claude Code, exit the VM, and optionally delete it:
 
-    ```bash
-    cd /agent-workspace
-    claude-code --dangerously-skip-permissions
-    ```
+   ```bash
+   exit
+   ```
 
-    You should see Claude Code start up, ready to receive your instructions, and it will execute tasks without pausing to ask for permissions.
+   Then, back on your own machine:
 
-8.  **Exit and clean up (optional)**: When you are done, you can exit the Claude Code session by typing `exit` or `Ctrl+C`. Then, exit the VM and optionally destroy it to free up resources.
+   ```bash
+   vagrant destroy -f
+   ```
 
-    ```bash
-    exit
-    ```
-
-    (You are now back on your host machine's terminal, in the `my-project` directory)
-
-    ```bash
-    vagrant destroy -f
-    ```
-
-    You should be back to your host machine's terminal prompt. If you ran `vagrant destroy -f`, the VM will be completely removed, freeing up disk space and memory.
+   That removes the VM completely, freeing the disk and memory.
 
 ## Original source
 
-This workflow is adapted from a blog post by Emil Burzo titled "Running Claude Code dangerously (safely)", shared on Hackernews. The author describes their method for using Claude Code with elevated permissions in a secure, isolated environment.
+Based on "Running Claude Code dangerously (safely)" by Emil Burzo, shared on Hacker News, on using an isolated VM to run an AI agent with elevated permissions without risking your real system.
 
 ## Notes & variations
 
-*   **Free-tier alternatives**: While VirtualBox and Vagrant are free, if you prefer other virtualization solutions, Vagrant supports providers like KVM (for Linux hosts) or Hyper-V (for Windows Pro/Enterprise). However, the author specifically chose Vagrant/VirtualBox to avoid the complexities and costs of other options.
-*   **Common mistake**: Forgetting to `cd /agent-workspace` after `vagrant ssh`. If you try to run `claude-code` directly after SSHing into the VM, it might not find your project files, or you might not be in the expected directory for the agent to work on. Always navigate to the shared folder.
-*   **Tip for better results**: The author encountered a bug with VirtualBox 7.2.4 causing high CPU usage. If you experience similar issues, check the VirtualBox GitHub issues or community forums for known regressions and potential workarounds or updates. Keeping your virtualization software updated can prevent such problems.
+- **Free-tier alternatives**: VirtualBox and Vagrant are free. Vagrant also supports other VM backends like Hyper-V (Windows Pro) or KVM (Linux) if you prefer.
+- **Common mistake**: forgetting to `cd /agent-workspace` after `vagrant ssh`. Run it there, or Claude Code will not see your project files.
+- **Tip for better results**: keep your virtualization software updated. The author hit a high-CPU bug on one VirtualBox version; updating, or checking the project's issues for a workaround, usually fixes such regressions.
