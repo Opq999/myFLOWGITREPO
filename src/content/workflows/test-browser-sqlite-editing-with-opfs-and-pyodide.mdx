@@ -1,0 +1,108 @@
+---
+title: "Test Browser SQLite Editing with OPFS and Pyodide"
+description: "Learn to test browser-based SQLite file editing using OPFS and Pyodide. Build a playground UI to experiment with persistent file storage in web applications."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 30
+jobToBeDone: "Test browser-based SQLite file editing using OPFS and Pyodide."
+tools:
+  - name: "Claude Code"
+    url: "https://code.claude.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "OPFS"
+    url: "https://developer.mozilla.org/en-US/docs/Web/API/OriginPrivateFileSyste"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Pyodide"
+    url: "https://pyodide.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Datasette Lite"
+    url: "https://lite.datasette.io/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://simonwillison.net/2026/Jun/23/opfs-pyodide/#atom-everything"
+  platform: "blog"
+  author: "Simon Willison"
+  postedAt: 2026-06-23
+score: 7
+ingestedAt: 2026-06-24
+nigeriaNotes: "Claude Code is a paid tool. Free alternatives for generating UI code include using online code editors with AI assistants or manually writing HTML/CSS/JavaScript. OPFS, Pyodide, and Datasette Lite are free and run in the browser, making them data-light and suitable for mobile use."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will create a web-based playground to test editing persistent SQLite files directly in your browser using the Origin Private File System (OPFS) and Pyodide. This approach allows web applications like Datasette Lite to interact with local files, enabling offline data editing.
+
+## Tools you need
+*   **Claude Code** (paid): A tool to help generate code, used here to build the playground UI.
+*   **OPFS** (free): Origin Private File System, a browser API for storing files persistently on the user's computer.
+*   **Pyodide** (free): A project that brings Python and NumPy to the browser using WebAssembly.
+*   **Datasette Lite** (free): A Python-based data explorer that runs entirely in the browser.
+
+## Steps
+1.  **Request the playground UI code**: Use an AI coding assistant to generate the HTML, CSS, and JavaScript for a playground UI. The author used Claude Code for this. The prompt should specify the need to integrate with OPFS and Pyodide for SQLite file editing.
+    The author doesn't share their exact prompt; a starting point:
+    ```
+    Create an HTML, CSS, and JavaScript playground UI that allows users to interact with a SQLite database stored using the Origin Private File System (OPFS). The UI should leverage Pyodide to run Python code for database operations. Include buttons for initializing the database, executing SQL queries, and viewing results. Ensure it's designed for testing persistent file editing in the browser.
+    ```
+    You should receive a set of code files (HTML, CSS, JavaScript) that form the basis of the test harness.
+
+2.  **Set up the local development environment**: Save the generated HTML, CSS, and JavaScript files into a new folder on your computer. You will need a simple way to serve these files locally so your browser can access them. A basic local web server is sufficient.
+    *   **macOS or Linux**:
+        ```bash
+        # Create a directory for your project
+        mkdir opfs-pyodide-test
+        cd opfs-pyodide-test
+        # Create placeholder files (replace with your generated code later)
+        touch index.html style.css script.js
+        # Install and run a simple Python HTTP server
+        pip install http.server
+        python -m http.server 8000
+        ```
+    *   **Windows (PowerShell)**:
+        ```powershell
+        # Create a directory for your project
+        New-Item -ItemType Directory -Name opfs-pyodide-test
+        Set-Location opfs-pyodide-test
+        # Create placeholder files (replace with your generated code later)
+        New-Item -ItemType File -Name index.html
+        New-Item -ItemType File -Name style.css
+        New-Item -ItemType File -Name script.js
+        # Install and run a simple Python HTTP server (ensure Python is installed and in PATH)
+        python -m http.server 8000
+        ```
+    You should see a message indicating the server is running, typically on `http://localhost:8000`.
+
+3.  **Integrate Pyodide and OPFS**: Open the `index.html` file in a text editor. You will need to add script tags to load Pyodide and configure it to use OPFS. The generated JavaScript (`script.js`) will contain the logic for database interactions.
+    The author does not provide the exact code for this integration. You will need to adapt the generated code to include Pyodide initialization and OPFS setup. This typically involves loading the Pyodide script and then initializing it, making the OPFS available to your Python environment.
+    You should see Pyodide loading in your browser's developer console, and the application should be ready to interact with the file system.
+
+4.  **Test database initialization**: In the playground UI, find and click the button or execute the command to initialize the SQLite database. This action should create a new SQLite file within the OPFS.
+    The author doesn't share the exact UI elements or commands. A common starting point for initialization might be a button labeled "Initialize Database" or a command like `CREATE TABLE IF NOT EXISTS test (id INTEGER PRIMARY KEY);`.
+    You should see a confirmation that the database has been initialized, and potentially a success message in the browser's developer console.
+
+5.  **Perform SQL operations**: Use the playground's interface to execute SQL commands against the initialized database. For example, try inserting data, querying it, and updating records.
+    The author doesn't specify the exact SQL commands used in their test. A typical sequence might be:
+    ```sql
+    INSERT INTO test (id) VALUES (1);
+    SELECT * FROM test;
+    UPDATE test SET id = 2 WHERE id = 1;
+    SELECT * FROM test;
+    ```
+    You should see the results of your SQL queries displayed in the playground's output area, confirming that data is being read from and written to the persistent file.
+
+6.  **Verify persistence**: Close the browser tab and reopen the playground. Re-initialize or query the database to ensure that the data you previously saved is still present. This step confirms that OPFS is correctly storing the SQLite file.
+    There are no specific results to see here other than the data persisting across sessions. If the data is still there after reopening, the test is successful.
+
+## Original source
+This workflow is based on an exploration by Simon Willison, posted on his blog on June 23rd, 2026. He was investigating the possibility of using Datasette Lite, a browser-based Python application, to edit persistent SQLite files stored locally using the Origin Private File System (OPFS). To test this, he had Claude Code generate a playground UI for experimentation across different browsers.
+
+## Notes & variations
+*   **Free tier alternative**: Since Claude Code is a paid tool, you can use free AI coding assistants like GitHub Copilot (which has a free tier for students and verified open-source contributors) or explore open-source LLMs that can generate code. Alternatively, you can manually write the HTML, CSS, and JavaScript for the playground UI, referring to OPFS and Pyodide documentation.
+*   **Common pitfall**: Ensure your browser supports OPFS. Not all browsers have full support, and older versions might not work. Check browser compatibility tables for OPFS before starting.
+*   **Tip for better results**: When writing the JavaScript logic, consider adding error handling for file operations and database queries. This will make debugging easier and provide clearer feedback to the user if something goes wrong.

@@ -5608,8 +5608,112 @@
     "930b1d2cab2d8a8e87485325813a688e5d7a5824dceac36d512098ca69bf2f72": {
       "url": "https://dev.to/anthonymax/10-open-source-gems-to-become-the-ultimate-developer-dkk",
       "date": "2026-06-23"
+    },
+    "f9df08c201fdc4c723f480f6be32ab5f9f8d9424ca4d0a3f86318a749c9680b2": {
+      "url": "https://github.com/VoltAgent/awesome-design-md",
+      "date": "2026-06-24"
+    },
+    "c1fcffb8145feb2f9d6cca6f2e3d5ce4331d8368a675095c401b1651e0047bc6": {
+      "url": "https://news.ycombinator.com/item?id=43163011",
+      "date": "2026-06-24"
+    },
+    "c58f2de5b5960aa421fcfff1d98f6958d576006f7297768b92022c3730b19025": {
+      "url": "https://simonwillison.net/2026/Jun/23/datasette",
+      "date": "2026-06-24"
+    },
+    "82a901da1b9bedec6f38670bb587455ddbcbae1f72df25bcb5a6b8c95709a39b": {
+      "url": "https://github.com/anthropics/skills",
+      "date": "2026-06-24"
+    },
+    "43002910ac237dcdc88199c855de2c82644cd9b23497435bd5790831dffe37b8": {
+      "url": "https://news.ycombinator.com/item?id=47584540",
+      "date": "2026-06-24"
+    },
+    "d077e3d7e457a1c8f5f3479f1abedb490e8e6fd08221ef5d83c855a84bddce45": {
+      "url": "https://simonwillison.net/2026/Jun/23/opfs-pyodide",
+      "date": "2026-06-24"
+    },
+    "cb8f252ccaaf10b0bb76c2c8d6cb27e6e223131ebe31d789e5f17437e73b4207": {
+      "url": "https://github.com/modelcontextprotocol/servers",
+      "date": "2026-06-24"
+    },
+    "b934689b736088fc4684c14632c9805bf5e2614fda21ec7a4dce4481750ce3e8": {
+      "url": "https://news.ycombinator.com/item?id=47586778",
+      "date": "2026-06-24"
+    },
+    "c601534806e65ec309b4b2ad2572a147fca1c669213eada1c15a484c836f7c8f": {
+      "url": "https://www.latent.space/p/ainews-claude-tag-multiplayer-proactive",
+      "date": "2026-06-24"
+    },
+    "629c9a510676dde4ed9b51279b75ad8744d848cbfbb925b61d541d08f3e88024": {
+      "url": "https://news.ycombinator.com/item?id=47660925",
+      "date": "2026-06-24"
+    },
+    "88fb6a39dda7d77bd4e6f61a114c19633378bd542a21df7b61465fe03c1e1248": {
+      "url": "https://www.bensbites.com/p/record-a-skill",
+      "date": "2026-06-24"
+    },
+    "b4a4cad8214afad6468b5a0df586d37eb4e217bde9f7ab68e61f91ab205b4dc4": {
+      "url": "https://news.ycombinator.com/item?id=47963204",
+      "date": "2026-06-24"
+    },
+    "0b690c5df303dfe7e095d5b343e487a8485c7d059bb9563ff4bd7fdd0f7dd056": {
+      "url": "https://huggingface.co/blog/ibm-research/cuga-apps",
+      "date": "2026-06-24"
+    },
+    "68d79f2afaca34c5b2da4c96f8c0f24a6f3281003505f35f0b493f7d92dbd200": {
+      "url": "https://news.ycombinator.com/item?id=46593022",
+      "date": "2026-06-24"
+    },
+    "2e297cf400e7d42e20feb31fc2281917e65c50f0836a4469d905d343ea72d7f7": {
+      "url": "https://huggingface.co/blog/cross-origin-storage",
+      "date": "2026-06-24"
+    },
+    "3800db2ef25b4cc39b2e21186a62651dfe7f8dc15d52999e8fa17dd1339a592f": {
+      "url": "https://news.ycombinator.com/item?id=47597085",
+      "date": "2026-06-24"
+    },
+    "8236adbe38ea1e9bcad20ab92b5311e94014976daf33c9e01f37212cef06ad1c": {
+      "url": "https://www.interconnects.ai/p/glm-52-is-the-step-change-for-open",
+      "date": "2026-06-24"
+    },
+    "210a5b2750b141b0ecfec53feeba420f155dad6f4aa7209d5bb67220f2f1e3a7": {
+      "url": "https://news.ycombinator.com/item?id=43905942",
+      "date": "2026-06-24"
+    },
+    "c03442ebc7a5aa7dd8e2f67b9aa4647c4e8b9c2260619c90be9298b6d3815791": {
+      "url": "https://newsletter.pragmaticengineer.com/p/slow-down-to-speed-up",
+      "date": "2026-06-24"
+    },
+    "6d26b37e8e88167f045517e955d2dba73ac6e23b60c5a226df6a7afcd0a28320": {
+      "url": "https://news.ycombinator.com/item?id=47633396",
+      "date": "2026-06-24"
+    },
+    "24288a242182412a2c095ed767e7811680e134cf6f6798312583d3377cb57104": {
+      "url": "https://news.ycombinator.com/item?id=47282777",
+      "date": "2026-06-24"
+    },
+    "fdd56414f452f2069c2c4a0a0d2adee624e67c434fc42075c4b91d8cc66a9e3f": {
+      "url": "https://news.ycombinator.com/item?id=46978710",
+      "date": "2026-06-24"
+    },
+    "57e5f92ee9d2c65e55d7620261bc7bcfa656aba6e1bea9e8844382fc6e4985c8": {
+      "url": "https://news.ycombinator.com/item?id=46985151",
+      "date": "2026-06-24"
+    },
+    "4236c9ce1bad1dafcc3f5c1ef2b63b86b64c48e44e1bc3acb724320e9d58225a": {
+      "url": "https://news.ycombinator.com/item?id=47106686",
+      "date": "2026-06-24"
+    },
+    "5f63a4d6875ea2cde8e3de780dea6a6dfcd72cacc00db3ef6a5dd82f68953725": {
+      "url": "https://news.ycombinator.com/item?id=47878905",
+      "date": "2026-06-24"
+    },
+    "74807beb62b168cfdccb2d0c17309e33afa187d166aff6fea3135e145f63b923": {
+      "url": "https://news.ycombinator.com/item?id=45163362",
+      "date": "2026-06-24"
     }
   },
   "backfillPage": 17,
-  "dailyPage": 0
+  "dailyPage": 1
 }
