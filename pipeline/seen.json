@@ -5792,8 +5792,140 @@
     "b8565aff9938938bdd04fb4c19b30bcdb9982cfa2b83c76ef2ab041b0914af84": {
       "url": "https://github.com/coleam00/context-engineering-intro",
       "date": "2026-06-24"
+    },
+    "a60159fe07b8d2a2ac1933ff7e1290166bda00225936db8630f552615faac523": {
+      "url": "https://news.ycombinator.com/item?id=44746621",
+      "date": "2026-06-25"
+    },
+    "934bf90f773e69cdf5f173d172f0db1ce72af4b64d96ed31cb5633bb16a11b85": {
+      "url": "https://simonwillison.net/2026/Jun/24/browser-compat-db",
+      "date": "2026-06-25"
+    },
+    "4c1e47067bc69b845449b30247fbe572fadc991571d1ab17225006aa2bb9f9fd": {
+      "url": "https://news.ycombinator.com/item?id=45647166",
+      "date": "2026-06-25"
+    },
+    "4258600efcc402b13b81308559da45da779e43ddf0a7bba232f7309e344e41d6": {
+      "url": "https://simonwillison.net/2026/Jun/24/tom-macwright",
+      "date": "2026-06-25"
+    },
+    "e4a1da63fdccc0be954523a81e41f9258be9e2952d955e846f9f1e3a6da3d849": {
+      "url": "https://news.ycombinator.com/item?id=47193064",
+      "date": "2026-06-25"
+    },
+    "3686b7612b8de7b20445a27016e37d1834d9320ed2fe3942c22ea78da5826e87": {
+      "url": "https://www.latent.space/p/ainews-its-meta-harness-summer",
+      "date": "2026-06-25"
+    },
+    "9e8d63ae6a6c25da78cb1445d087aae338f29e448b1a7547351cb330f1f9049c": {
+      "url": "https://news.ycombinator.com/item?id=46470017",
+      "date": "2026-06-25"
+    },
+    "c2fbf4cef86ee53cd28daf543a690eb07a14f34747b935e19787fac046e48031": {
+      "url": "https://www.latent.space/p/databricks",
+      "date": "2026-06-25"
+    },
+    "76c5ed60a02cecb4cdde0515993d4c1a416b29e10153d4d365e20031cc6fb8a0": {
+      "url": "https://news.ycombinator.com/item?id=47932937",
+      "date": "2026-06-25"
+    },
+    "ad312ce435987076fb9f67d2e3f08bb8e7669fa7c7575e47764d9336c89dafa9": {
+      "url": "https://huggingface.co/blog/nvidia/accelerating-fine-tuning-nvidia-nemo-automodel",
+      "date": "2026-06-25"
+    },
+    "f074e5a85dc83598fa452e8785130bf921ecb1f692111b2cd7cad6bee8b449ec": {
+      "url": "https://news.ycombinator.com/item?id=45107962",
+      "date": "2026-06-25"
+    },
+    "bb6dca4045d63cf1125428b6e13245c4a09112682ecfdeae4c995a3b51f8b48a": {
+      "url": "https://huggingface.co/blog/ffasr-leaderboard",
+      "date": "2026-06-25"
+    },
+    "fa98147d3e4c9d2b304693214e829dcef37b0dd9b5d6a3cfed16650e3361ddf7": {
+      "url": "https://news.ycombinator.com/item?id=47148454",
+      "date": "2026-06-25"
+    },
+    "08a56f6574d6757439dbc00c11f9bd6254c70e34f71bdc1025ac6b4c4b3eb5f0": {
+      "url": "https://newsletter.pragmaticengineer.com/p/tech-interviews-with-neetcode",
+      "date": "2026-06-25"
+    },
+    "6d0fffc9a5c7349f7c967e1f1f7125439290809ce7396712cab4529b573030f1": {
+      "url": "https://news.ycombinator.com/item?id=46491486",
+      "date": "2026-06-25"
+    },
+    "83efccfe9c45193239c68e1e72224842b517ed4860125b8c8381c79bce955f9a": {
+      "url": "https://news.ycombinator.com/item?id=45786738",
+      "date": "2026-06-25"
+    },
+    "d885d4a4cc8c053bed91d6dff55abefc0665ad61df874b0fd487f421c788d2ee": {
+      "url": "https://news.ycombinator.com/item?id=48071940",
+      "date": "2026-06-25"
+    },
+    "82d15694ab26b4f35edca830166d2346ce4251558c78bd995dd90e9e0cfe74b7": {
+      "url": "https://news.ycombinator.com/item?id=46588972",
+      "date": "2026-06-25"
+    },
+    "a7f28525cd2a011d457fa9b9b693b2cbfe9a5aa67797afdd3fcafbf2b8d3bf8c": {
+      "url": "https://news.ycombinator.com/item?id=43988315",
+      "date": "2026-06-25"
+    },
+    "8daa965280a7709f2e9f4285d5461b6dd4e49e9aea73a82136caf0b12e0921e9": {
+      "url": "https://news.ycombinator.com/item?id=47240736",
+      "date": "2026-06-25"
+    },
+    "f2e13478e986a889ea6b1f86c9f97c889e389de1036b42e71457134613070dc3": {
+      "url": "https://news.ycombinator.com/item?id=45053764",
+      "date": "2026-06-25"
+    },
+    "b0895e6d604c5f39783908074483fe5f699ed9a8ee8c8971efa94050c5b25b91": {
+      "url": "https://news.ycombinator.com/item?id=47622436",
+      "date": "2026-06-25"
+    },
+    "106d0dd76c114685244c98c7697b022f88b1e61ea1657dde7f742512f11d3a79": {
+      "url": "https://news.ycombinator.com/item?id=46292365",
+      "date": "2026-06-25"
+    },
+    "03b5ddd99eca5a9bf0f18c438d908d2918751b18c94f885bfd459b79dd9c7a81": {
+      "url": "https://news.ycombinator.com/item?id=44542880",
+      "date": "2026-06-25"
+    },
+    "7a940ca551fd086b884dc89adb60fbbd6ca446108a01f58994d744a297a094b7": {
+      "url": "https://news.ycombinator.com/item?id=44580567",
+      "date": "2026-06-25"
+    },
+    "76f89c645dd176c94fdbc482cfd300241c6212166a97ff802e52f40231c0789d": {
+      "url": "https://news.ycombinator.com/item?id=46704943",
+      "date": "2026-06-25"
+    },
+    "7ce8929b25decc06d9388c8f97c3e85d3bf13224ffd3d9ebc98a15d3d14c1506": {
+      "url": "https://news.ycombinator.com/item?id=44512368",
+      "date": "2026-06-25"
+    },
+    "8fcd937484c1197d964659312aa01cba07ffc5d7023533194d7cb1d107a9eb86": {
+      "url": "https://news.ycombinator.com/item?id=44767775",
+      "date": "2026-06-25"
+    },
+    "f2a8d7daee63ba2c7ce58450ee9e022e499e37d8f7d00d191f9cd650a8e9e838": {
+      "url": "https://news.ycombinator.com/item?id=46318852",
+      "date": "2026-06-25"
+    },
+    "21691288b9e3f8710188272a09893b57c15045c98b174d611e4a2f9fc95b9190": {
+      "url": "https://news.ycombinator.com/item?id=43773977",
+      "date": "2026-06-25"
+    },
+    "20827e5c140540a55f7524a10e8233592ab4bc66acb2ba8ca4389bcf1232def9": {
+      "url": "https://news.ycombinator.com/item?id=43687767",
+      "date": "2026-06-25"
+    },
+    "42cc5725f8a5346bf7e96845ecb4ba18b2e7cf8ee5a46bdc40ecfc01c367dfea": {
+      "url": "https://news.ycombinator.com/item?id=47566491",
+      "date": "2026-06-25"
+    },
+    "151a2a07a7e9c70a347a9e09425920d75108d9f2975ab69745f66036b727f3fc": {
+      "url": "https://news.ycombinator.com/item?id=47482760",
+      "date": "2026-06-25"
     }
   },
   "backfillPage": 18,
-  "dailyPage": 1
+  "dailyPage": 2
 }

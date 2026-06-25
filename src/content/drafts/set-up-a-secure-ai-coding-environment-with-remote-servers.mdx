@@ -1,0 +1,150 @@
+---
+title: "Set up a Secure AI Coding Environment with Remote Servers"
+description: "Learn how to set up a secure remote development environment for AI coding agents, reducing risks from supply-chain attacks and prompt injection."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 120
+jobToBeDone: "Set up a secure development environment for AI coding agents"
+tools:
+  - name: "Rented Server / VM"
+    url: "https://aws.amazon.com/ec2/"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "SSH"
+    url: "https://www.openssh.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "screen"
+    url: "https://www.gnu.org/software/screen/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "tmux"
+    url: "https://github.com/tmux/tmux/wiki"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Vim"
+    url: "https://www.vim.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Claude Code"
+    url: "https://code.claude.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "GitHub"
+    url: "https://github.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=47622436"
+  platform: "hackernews"
+  author: "transpute"
+  postedAt: 2026-04-03
+score: 5
+ingestedAt: 2026-06-25
+nigeriaNotes: "Setting up a remote server incurs costs, which can be a barrier. Consider free cloud credits if available, but data usage for continuous AI agent work can still be significant."
+tiktokUrl: ""
+published: false
+---
+
+## What this is, in plain English
+This workflow describes a secure way to develop software, especially when using AI coding agents, by doing all your work on a remote server instead of your personal computer. You connect to this server using a secure connection called SSH, and you use tools like `screen` or `tmux` to keep your work running even if you disconnect.
+
+The main idea is to isolate your development environment. If something goes wrong (like a malicious piece of code getting into your project, known as a supply-chain attack, or an AI agent being tricked by a prompt injection), only the remote server is affected, not your main computer. This setup is considered advanced because it requires comfort with command-line tools, server administration, and understanding of security concepts.
+
+There isn't a single copy-paste recipe because the exact steps depend on your chosen server provider (e.g., AWS, Google Cloud, DigitalOcean) and your specific project needs. However, understanding the concept allows you to build a more secure and robust development setup.
+
+## What you can use it for
+*   **Secure AI coding**: Develop with AI agents without risking your main computer's security from potential software vulnerabilities or prompt injection attacks.
+*   **Long-running tasks**: Let AI agents work on complex problems for extended periods on the remote server, even if you close your laptop or lose internet connection.
+*   **Access powerful compute**: Use a remote server's stronger processors (CPUs or GPUs) for AI tasks that your local machine might not handle well.
+*   **Travel-friendly development**: Access your consistent development environment from any device, anywhere, without needing to carry a powerful laptop.
+*   **Isolate projects**: Keep different projects completely separate on different virtual machines (VMs) to prevent issues from one project affecting another.
+
+## Tools you need
+*   **Rented Server / VM** (paid): A virtual computer you rent from a cloud provider (like AWS, Google Cloud, DigitalOcean) where your development work will happen.
+*   **SSH** (free): A secure way to connect to and control your remote server from your local computer.
+*   **screen** (free): A command-line tool that lets you keep programs running on a remote server even after you disconnect from it.
+*   **tmux** (free): Similar to `screen`, it's another command-line tool for managing multiple terminal sessions on a remote server.
+*   **Vim** (free): A powerful, keyboard-focused text editor often used in command-line environments.
+*   **Claude Code** (paid): An AI coding agent that helps you write and debug code. The author uses this as an example of an AI agent.
+*   **GitHub** (freemium): A platform for storing and managing your code projects, allowing you to collaborate and track changes.
+
+## How it actually works
+This setup involves several technical steps, primarily using command-line tools. The exact commands and configurations will vary based on your chosen server provider and operating system.
+
+1.  **Get a rented server or VM**: Choose a cloud provider (e.g., AWS, Google Cloud, DigitalOcean) and set up a virtual machine (VM). This will be your remote development environment. You'll typically get an IP address and login credentials.
+
+2.  **Install an SSH client on your local machine**: Most macOS and Linux systems have SSH pre-installed. For Windows, you can use PowerShell or install a client like PuTTY, or use Windows Subsystem for Linux (WSL).
+
+3.  **Connect to your server via SSH and set up key forwarding**: Use the `ssh` command to connect to your server. The author recommends setting up SSH key forwarding for your GitHub keys. This allows you to use your local GitHub credentials on the remote server without storing them there, which is more secure.
+
+    # macOS or Linux
+    ```bash
+    ssh -A user@your_server_ip
+    ```
+
+    # Windows (PowerShell, requires OpenSSH client)
+    ```powershell
+    ssh -A user@your_server_ip
+    ```
+    Replace `user` with your server username and `your_server_ip` with your server's IP address.
+
+4.  **Install `screen` or `tmux` on the server**: Once connected, install one of these tools. They allow you to create persistent terminal sessions.
+
+    # Example for Debian/Ubuntu
+    ```bash
+    sudo apt update
+    sudo apt install screen tmux
+    ```
+
+5.  **Start a `screen` or `tmux` session and install development tools**: Inside your session, install your preferred text editor (like Vim) and any AI coding agents (like Claude Code) or other development tools you need.
+
+    # Start a screen session
+    ```bash
+    screen
+    ```
+
+    # Start a tmux session
+    ```bash
+    tmux
+    ```
+
+6.  **Clone a *forked* GitHub repository**: Instead of cloning your main project repository directly, the author suggests forking it on GitHub first. Then, clone your personal fork onto the remote server. This adds another layer of security, as any compromise on the development VM would only affect your fork, not the main project.
+
+    ```bash
+    git clone git@github.com:your_username/your_forked_repo.git
+    ```
+
+7.  **Perform development, detach, and reattach**: Do your coding work within the `screen` or `tmux` session. When you need to disconnect, you can detach from the session (e.g., `Ctrl+A D` for `screen`, `Ctrl+B D` for `tmux`). Your programs will continue running on the server. Later, you can reattach to the same session to resume your work.
+
+    # Reattach to screen
+    ```bash
+    screen -r
+    ```
+
+    # Reattach to tmux
+    ```bash
+    tmux attach
+    ```
+
+8.  **Issue cross-repository pull requests**: Once your development on the forked repository is complete, create a pull request (PR) from your fork back to the original main repository. This allows for human review before changes are merged into the main project.
+
+## Words you'll see, explained
+*   **SSH (Secure Shell)**: A network protocol that allows you to securely access and control a remote computer over an unsecured network.
+*   **VM (Virtual Machine)**: A software-based emulation of a physical computer system, running on a server. It acts like a separate computer.
+*   **Key forwarding**: A feature of SSH that allows your local SSH keys (like those used for GitHub) to be used on a remote server without actually copying the private key to the server. This enhances security.
+*   **screen / tmux**: Command-line tools that create persistent terminal sessions. This means you can start a program, detach from the session, disconnect from the server, and the program will continue running. You can then reattach to the session later.
+*   **Supply-chain attack**: A type of cyberattack where malicious code is secretly inserted into a legitimate software component or update, which then gets distributed to users.
+*   **Prompt injection**: A security vulnerability where malicious input (a "prompt") can trick an AI model into performing unintended actions or revealing sensitive information.
+*   **Fork**: In version control systems like Git, a fork is a personal copy of a repository (a project's code) that you can modify without affecting the original project.
+*   **Pull request (PR)**: A feature in Git platforms (like GitHub) that allows developers to propose changes from one branch or forked repository to another, typically for review before merging.
+
+## Original source
+This concept is based on a blog post by `transpute` (also known as `halvar.flake`) titled "Slightly safer vibecoding by adopting old hacker habits," originally posted on `hackernews` and detailed on `addxorrol.blogspot.com`.
+
+## Notes & variations
+*   **Do you even need this?** For simple coding tasks or learning, a local setup is often sufficient. This remote, secure environment is most beneficial for professional developers, teams working on sensitive projects, or those using AI agents for long-running or potentially risky tasks.
+*   **Free-tier limits**: While some cloud providers offer free tiers for basic virtual machines, these might not be powerful enough for intensive AI agent work. Be mindful of costs, as running a powerful server can quickly become expensive.
+*   **Common pitfall**: Forgetting to manage your SSH keys securely or leaving sensitive information (like API keys) directly on the remote VM. Always use environment variables or secure secret management tools for credentials.
+*   **Tip for better results**: Regularly review your GitHub key forwarding setup and ensure your SSH keys are protected with strong passphrases. Also, consider using different VMs for different projects to further isolate potential risks.

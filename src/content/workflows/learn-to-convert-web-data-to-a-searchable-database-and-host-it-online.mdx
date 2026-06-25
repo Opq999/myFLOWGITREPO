@@ -1,0 +1,101 @@
+---
+title: "Learn to Convert Web Data to a Searchable Database and Host it Online"
+description: "Discover how to transform complex web browser compatibility information into a simple SQLite database. Learn about using AI tools and GitHub Actions to host and explore this data online."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 20
+jobToBeDone: "Convert browser compatibility data into a SQLite database and host it with open CORS headers"
+tools:
+  - name: "Claude Code"
+    url: "https://code.claude.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "sqlite-utils"
+    url: "https://sqlite-utils.datasette.io/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "AI Code Assistant (e.g., ChatGPT Plus)"
+    url: "https://chatgpt.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "GitHub Actions"
+    url: "https://github.com/features/actions"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Datasette Lite"
+    url: "https://lite.datasette.io/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "GitHub"
+    url: "https://github.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://simonwillison.net/2026/Jun/24/browser-compat-db/#atom-everything"
+  platform: "blog"
+  author: "Simon Willison"
+  postedAt: 2026-06-24
+score: 7
+ingestedAt: 2026-06-25
+nigeriaNotes: "This workflow relies on paid AI tools for code generation (Claude Code, AI Code Assistant). GitHub Actions has a free tier for public repositories, but heavy usage or private repositories may incur costs. The resulting database is small (~66MB) and Datasette Lite runs entirely in the browser, using minimal data, making it mobile-friendly for exploration."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "Convert JAMB syllabus data into a searchable SQLite database for quick topic lookup."
+  - persona: "entrepreneur"
+    scenario: "Build a searchable database of competitor product features from web data for market analysis."
+  - persona: "employee"
+    scenario: "Automate the creation of a searchable company policy database from internal documents."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+This workflow shows how to take a large, complex collection of web browser compatibility data (information about which web features work in which browsers) and turn it into a simple, searchable database file called SQLite. This database can then be hosted online and explored directly in your web browser.
+
+This is an advanced workflow because it involves using AI tools to write custom code, setting up automated tasks on GitHub (called GitHub Actions), and working with code repositories. It's not a simple copy-paste process for beginners.
+
+The main idea is to automate the process of converting raw data into a usable database and then making that database easily accessible online for anyone to use or explore.
+
+## What you can use it for
+*   **Create custom searchable databases**: Turn any structured data you have (like product catalogs, research papers, or local business listings) into a database you can easily search and query.
+*   **Automate data processing**: Learn how to set up automated tasks (GitHub Actions) to regularly update your data or perform other operations without needing to do it manually every time.
+*   **Host data for web applications**: Make your data easily accessible to web applications or other tools by hosting it with open CORS headers, which allows different websites to fetch and use your data.
+*   **Explore data in the browser**: Use tools like Datasette Lite to view and query your custom databases directly in a web browser, without needing to install special software on your computer or phone.
+
+## Tools you need
+*   **Claude Code** (paid): An AI tool for generating code, used here to create a script for data conversion.
+*   **sqlite-utils** (free): A Python tool that makes it easy to work with SQLite databases, especially for importing and exporting data.
+*   **AI Code Assistant (e.g., ChatGPT Plus)** (paid): A general AI tool for generating code and workflows, used here to build a GitHub Actions script. The author used a specific tool called "Codex Desktop (GPT-5.5)", which is not publicly available; a general AI code assistant can perform similar tasks.
+*   **GitHub Actions** (freemium): An automated service on GitHub that lets you run custom tasks (like building a database) whenever certain events happen in your code repository.
+*   **Datasette Lite** (free): A tool that runs entirely in your web browser, allowing you to explore and query SQLite database files directly.
+*   **GitHub** (freemium): A platform for hosting code repositories and managing projects, used here to store the data, the scripts, and host the final database file.
+
+## How it actually works
+This workflow involves several advanced steps, often requiring comfort with coding and GitHub's developer features. Here's the general path the author took:
+
+1.  **Get the source data**: The author started with the `mdn/browser-compat-data` repository on GitHub, which contains comprehensive browser compatibility information in a structured format.
+2.  **Generate a data conversion script**: The author used Claude Code (Opus 4.8) to generate a Python script. This script uses the `sqlite-utils` library to read the browser compatibility data and convert it into a SQLite database file.
+    *   The author doesn't share their exact prompt; a starting point: `Write a Python script using sqlite-utils to convert the data from the mdn/browser-compat-data repository into a SQLite database. The script should handle the nested JSON structure and create appropriate tables.`
+3.  **Set up a GitHub repository**: A new GitHub repository was created to host the conversion script, the GitHub Actions workflow, and the final SQLite database.
+4.  **Generate a GitHub Actions workflow**: The author used Codex Desktop (GPT-5.5) to create a GitHub Actions workflow. This workflow automates the process of running the Python script to build the SQLite database.
+    *   The author doesn't share their exact prompt; a starting point: `Create a GitHub Actions workflow that runs a Python script to build a SQLite database, then force-pushes the resulting database file to an "orphan" branch named 'db' in the same repository.`
+5.  **Host the database**: The GitHub Actions workflow is configured to push the generated SQLite database file to a special "orphan" branch (a branch that doesn't share history with your main code) within the same GitHub repository. This makes the database file available via GitHub's content delivery network (CDN) with open CORS headers, meaning other websites can access it.
+6.  **Explore the database**: Once hosted, the database can be explored using Datasette Lite, which runs in your web browser and can open the database file directly from its GitHub CDN link.
+
+## Words you'll see, explained
+*   **SQLite database**: A small, self-contained database file that can store structured information, often used for local storage or simple web applications.
+*   **CORS headers (Cross-Origin Resource Sharing)**: Security settings that allow a website to access resources (like your database file) hosted on a different website. "Open CORS headers" means the file is accessible from anywhere.
+*   **GitHub Actions**: An automated service on GitHub that lets you run custom tasks (like building a database or deploying code) whenever certain events happen in your code repository.
+*   **`sqlite-utils`**: A Python tool that makes it easy to work with SQLite databases, especially for importing and exporting data from various sources.
+*   **Orphan branch**: A special type of branch in a Git repository that starts without any history from other branches. It's useful for storing generated files (like a database) separately from your main code history.
+*   **Datasette Lite**: A tool that runs entirely in your web browser, allowing you to explore and query SQLite database files directly without needing to install any software.
+
+## Original source
+This workflow was inspired by Simon Willison's blog post, where he detailed his process of converting Mozilla's browser compatibility data into a SQLite database. He shared his approach, including the use of AI tools and GitHub Actions, on his personal blog.
+
+## Notes & variations
+*   **Do you even need this?**: For simple data exploration or small datasets, you might not need to build a full database or use GitHub Actions. Tools like Google Sheets, Microsoft Excel, or local CSV viewers might be sufficient for your needs.
+*   **Free-tier limits**: While GitHub offers a free tier for public repositories, GitHub Actions has limits on free usage (e.g., build minutes). For very large datasets or frequent updates, you might exceed these limits and incur costs.
+*   **Common pitfall**: Force-pushing to an orphan branch, as described in this workflow, can be risky if not done carefully. It overwrites the branch's history, so ensure your workflow is thoroughly tested and correct before using it in a production environment.
+*   **Tip for better results**: Start with smaller, simpler datasets to understand the process of data conversion and GitHub Actions before attempting to tackle very large or complex repositories. This helps you debug and refine your scripts more easily.

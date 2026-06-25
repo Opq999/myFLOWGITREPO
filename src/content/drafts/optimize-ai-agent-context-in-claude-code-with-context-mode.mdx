@@ -1,0 +1,95 @@
+---
+title: "Optimize AI Agent Context in Claude Code with Context Mode"
+description: "Learn how Context Mode helps AI agents in Claude Code process large tool outputs efficiently, reducing context window usage by up to 98% for more complex and cost-effective operations."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 15
+jobToBeDone: "Optimize Claude Code context window usage for AI agent development"
+tools:
+  - name: "Claude Code"
+    url: "https://code.claude.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Context Mode"
+    url: "https://mksg.lu/blog/context-mode"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=47193064"
+  platform: "hackernews"
+  author: "mksglu"
+  postedAt: 2026-02-28
+score: 5
+ingestedAt: 2026-06-25
+nigeriaNotes: "Claude Code is a paid developer tool, so a free tier for the core environment is not available. Context Mode itself is free and open-source, and its primary benefit is reducing data consumption within Claude Code, which can help manage costs associated with AI model usage."
+tiktokUrl: ""
+published: false
+---
+
+## What this is, in plain English
+This entry describes Context Mode, a specialized tool designed for developers who build AI agents using Claude Code. Claude Code is an online environment where you can create and run AI programs (called 'agents') that can interact with other tools, like web browsers or code repositories.
+
+The main challenge with building complex AI agents is that they have a 'context window' (the amount of information they can remember and process at one time). When an AI agent uses external tools, the raw results from those tools (like a screenshot, a list of issues, or a log file) can quickly fill up this context window. This makes the agent 'forget' earlier parts of the conversation, slows it down, and increases costs because more 'tokens' (pieces of text the AI processes) are used.
+
+Context Mode acts like a smart filter. It sits between your AI agent in Claude Code and the outputs from the tools your agent uses. Instead of dumping all the raw, bulky data into the agent's context window, Context Mode compresses and summarizes it, reducing the data size by up to 98%. This means your AI agent can handle much more information, run for longer, and perform more complex tasks without hitting its memory limits.
+
+This workflow is considered advanced because it requires you to be comfortable with developing AI agents and using developer tools like Claude Code. It's not a simple copy-paste solution for a beginner, but rather an optimization for existing AI agent development workflows.
+
+## What you can use it for
+*   **Build more complex AI agents:** By saving context, your AI agents can 'remember' more information and handle longer, more intricate tasks.
+*   **Reduce AI costs:** Less context means fewer tokens are processed by the AI model, potentially leading to lower API costs over time.
+*   **Speed up agent development:** Agents can run for longer sessions without hitting context limits, making the development and testing process more efficient.
+*   **Process large data outputs:** Efficiently handle big log files, extensive API responses, or large codebases without overwhelming the AI's context window.
+
+## Tools you need
+*   **Claude Code** (paid): An online development environment for building and running AI agents.
+*   **Context Mode** (free): An open-source server that optimizes tool outputs for AI agents within Claude Code.
+
+## How it actually works
+Context Mode is an optimization for developers already building AI agents in Claude Code. The core idea is to install Context Mode into your Claude Code environment, and it will then automatically handle the compression of tool outputs.
+
+1.  **Access Claude Code**: You will need access to Claude Code, which is a paid developer environment provided by Anthropic. This is where you will develop and run your AI agents.
+
+2.  **Install Context Mode**: Once inside Claude Code, you can install Context Mode using one of two methods. These commands tell Claude Code to add Context Mode as a plugin or as a direct tool.
+
+    *   **Using the Plugin Marketplace (recommended for auto-routing)**:
+
+        ```
+        /plugin marketplace add mksglu/claude-context-mode
+        ```
+
+        Then, install the plugin:
+
+        ```
+        /plugin install context-mode@claude-context-mode
+        ```
+
+    *   **Using MCP-only (if you only need the tools without auto-routing hooks)**:
+
+        ```
+        claude mcp add context-mode -- npx -y context-mode
+        ```
+
+    After running either set of commands, you will need to restart your Claude Code session for the changes to take effect. You should see a confirmation that Context Mode has been added.
+
+3.  **Develop AI agents**: With Context Mode installed, you continue developing your AI agents as usual. Context Mode includes a 'PreToolUse hook' that automatically intercepts and processes tool outputs before they enter your agent's conversation context. This means you generally don't need to change how you write your agent's code to benefit from the context reduction. For advanced agent development, subagents (smaller, specialized agents) can learn to use `batch_execute` as their primary tool, and Bash subagents get upgraded to access all MCP tools, further enhancing efficiency.
+
+4.  **Monitor context usage**: The practical result is that your AI agent's context window will fill up much slower. For example, a Playwright snapshot that might normally consume 56 KB could be reduced to just 299 B. This allows your agents to run for much longer (e.g., from 30 minutes to 3 hours before slowdown) and handle more information within a single session.
+
+## Words you'll see, explained
+*   **AI agent:** A computer program that uses artificial intelligence to perform tasks autonomously, often by interacting with other tools or systems.
+*   **Context window:** The limited amount of text or information an AI model can process or 'remember' at any given time during a conversation or task.
+*   **MCP (Multi-tool Conversation Protocol):** A standard or framework that allows AI agents to effectively use and interact with various external tools.
+*   **Sandbox:** An isolated and secure environment where code can be run without affecting the main system, often used for testing or executing untrusted code.
+*   **Stdout (Standard Output):** The default stream where a program writes its output, typically text that appears in a terminal or console.
+*   **Subagent:** A smaller, specialized AI agent that works as part of a larger, more complex AI agent system, handling specific tasks.
+*   **Token:** A basic unit of text (like a word, part of a word, or punctuation mark) that AI models use to process and understand language.
+
+## Original source
+This concept was introduced by mksglu on Hackernews, detailing their creation of Context Mode. The full explanation and technical details are available on their blog, mksg.lu.
+
+## Notes & variations
+*   **Do you even need this?**: Context Mode is specifically for developers building complex AI agents within Claude Code who are encountering context window limitations. If you are simply using a chat AI for general tasks, or if your AI agent workflows are not hitting context limits, you likely do not need this advanced optimization.
+*   **Free-tier limits**: While Context Mode itself is open-source and free to use, the core environment it optimizes, Claude Code, is a paid developer product. There is no free tier for Claude Code itself.
+*   **Common pitfall**: Expecting Context Mode to simplify the process of building AI agents. It optimizes the *efficiency* of existing agents by managing context, but it does not reduce the technical skill required to develop the agents themselves.

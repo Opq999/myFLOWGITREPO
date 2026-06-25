@@ -1,0 +1,79 @@
+---
+title: "Experiment with ChatGPT to Write Atari BASIC Programs for an Emulator"
+description: "Learn to use ChatGPT to generate simple Atari BASIC programs and run them in an emulator. Explore the challenges of AI-generated code for retro computing."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 20
+jobToBeDone: "Experimenting with an LLM to generate BASIC code for retro computing"
+tools:
+  - name: "ChatGPT"
+    url: "https://chatgpt.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Atari800MacX"
+    url: "https://atari800macx.sourceforge.io/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=44580567"
+  platform: "hackernews"
+  author: "ibobev"
+  postedAt: 2025-07-16
+score: 10
+ingestedAt: 2026-06-25
+nigeriaNotes: "This workflow uses the free tier of ChatGPT and a free, local emulator, making it very data-light and accessible."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "For a university computer science assignment, use ChatGPT to generate Atari BASIC programs, demonstrating AI's capability with legacy programming languages."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will generate simple Atari BASIC programs using ChatGPT and run them in a retro computer emulator. This approach helps you explore how modern AI tools handle older, less common programming languages, and lets you experiment with retro computing without needing physical hardware.
+
+## Tools you need
+*   **ChatGPT** (freemium): An AI chatbot to generate the BASIC code.
+*   **Atari800MacX** (free): A software program (emulator) that lets your computer act like an old Atari 8-bit computer, where you can run the BASIC code.
+
+## Steps
+1.  **Install and open the emulator**: Download and install Atari800MacX from its official website. Once installed, open the application.
+    You should see a window that looks like an old Atari computer screen, ready for commands.
+2.  **Open ChatGPT**: Go to chatgpt.com in your web browser and log in or sign up.
+    You should see the chat interface, ready for you to type a prompt.
+3.  **Generate a "Hello, World" program**: Paste the following prompt into ChatGPT and press Enter:
+
+    ```
+    Please write me a simple program in Atari BASIC that repeatedly prints “Hello, World” to the screen.
+    ```
+
+    ChatGPT will provide a BASIC program, likely with a `GOTO 10` line.
+4.  **Run the "Hello, World" code in the emulator**: Copy the BASIC code from ChatGPT. In the Atari800MacX emulator, use the "Paste Text" feature (usually found in the emulator's menu, e.g., "File" or "Edit") to paste the code directly into the Atari BASIC prompt. Then type `RUN` and press Enter.
+    The emulator screen should repeatedly display "Hello, World".
+5.  **Ask for a circle drawing program**: In ChatGPT, paste this prompt and press Enter:
+
+    ```
+    Write me an Atari BASIC program that draws a blue circle in graphics mode 7.
+    ```
+
+    ChatGPT will generate another BASIC program. The author notes this program ran perfectly but drew a rough, dotted circle.
+6.  **Run the circle drawing code**: Copy the new BASIC code from ChatGPT. In the emulator, clear the previous program (often by typing `NEW` and pressing Enter, then `RUN` to confirm it's empty, or simply pasting over it). Paste the new code and type `RUN`.
+    A rough, dotted blue circle should appear on the Atari emulator screen.
+7.  **Request a solid circle outline**: In ChatGPT, ask for a solid outline instead of a dotted one. The author doesn't share their exact prompt; a starting point:
+
+    ```
+    Can you modify the previous program to draw a solid outline for the circle instead of a dotted one?
+    ```
+
+    ChatGPT will provide updated BASIC code, which the author notes used `DRAWTO`.
+8.  **Run the solid circle code**: Copy the latest BASIC code from ChatGPT. In the emulator, clear the previous program, paste the new code, and type `RUN`.
+    A solid blue circle outline should appear. The author notes it might not set the starting position correctly at first, but the AI was able to fix it.
+
+## Original source
+This workflow is based on an experiment by ibobev, shared on Hackernews, where they explored the effectiveness of "vibe coding" with ChatGPT to generate Atari BASIC programs. The original article was published on the Goto 10: Retro Computing Gaming newsletter.
+
+## Notes & variations
+*   **Free-tier alternatives**: If you prefer, you can try other freemium AI chatbots like Anthropic Claude (claude.ai) or Google Gemini (gemini.google.com) for generating the code.
+*   **Common mistake**: A common pitfall is not clearing the emulator's memory (using the `NEW` command) before pasting new code. This can lead to unexpected errors or mixing of programs. Also, don't expect perfect code from the AI, especially for niche or older languages.
+*   **Tip for better results**: When asking for code, be very specific about the exact BASIC dialect (e.g., "Atari BASIC") and the desired output or behavior. If the code doesn't work, describe the error message or what you see (or don't see) on the screen to the AI.

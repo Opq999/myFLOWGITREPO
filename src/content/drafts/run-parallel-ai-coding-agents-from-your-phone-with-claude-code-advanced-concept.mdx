@@ -1,0 +1,119 @@
+---
+title: "Run Parallel AI Coding Agents from Your Phone with Claude Code (Advanced Concept)"
+description: "Learn how to set up a powerful mobile development environment to run multiple AI coding agents in parallel from your phone, getting push notifications for input."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 240
+jobToBeDone: "Run parallel AI coding agents from a mobile phone"
+tools:
+  - name: "Vultr"
+    url: "https://www.vultr.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Tailscale"
+    url: "https://tailscale.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Termius"
+    url: "https://www.termius.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "mosh"
+    url: "https://mosh.org"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "tmux"
+    url: "https://github.com/tmux/tmux/wiki"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Poke"
+    url: "https://poke.app"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Claude Code"
+    url: "https://code.claude.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "jq"
+    url: "https://jqlang.github.io/jq/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "curl"
+    url: "https://curl.se"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "GitHub"
+    url: "https://github.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=46491486"
+  platform: "hackernews"
+  author: "todsacerdoti"
+  postedAt: 2026-01-04
+score: 6
+ingestedAt: 2026-06-25
+nigeriaNotes: "This workflow relies heavily on paid services (Vultr for the VM, Claude Code for the AI agent, and Poke for notifications). While data usage for terminal sessions is generally low, the continuous operation of a cloud VM incurs hourly costs. A stable internet connection is essential for reliable mobile access."
+tiktokUrl: ""
+published: false
+---
+
+## What this is, in plain English
+This workflow describes an advanced setup for running multiple AI coding agents on a remote cloud server, which you can control entirely from your mobile phone. The core idea is to offload heavy computing tasks to a powerful server (a VM, or Virtual Machine) and interact with it using a mobile terminal app that stays connected even if your phone loses signal. When an AI agent needs your input, you get a push notification on your phone, allowing you to respond and continue working without needing a laptop or desktop.
+
+This is an advanced concept, not a simple copy-paste recipe. It requires significant technical skill and comfort with cloud infrastructure, networking, command-line tools, and scripting. The exact steps involve setting up a virtual server, configuring secure network access, installing various command-line utilities, and writing custom scripts to manage the server and integrate push notifications.
+
+Because the setup involves many moving parts (a cloud VM, a VPN, a mobile terminal, a session manager, an AI API, and custom scripting), there isn't a single set of instructions that a beginner can follow. The author's specific configuration details live across various configuration files and scripts that are not fully provided here.
+
+## What you can use it for
+*   **Review code from anywhere**: Check pull requests (PRs) or code changes while you are away from your desk, like waiting for coffee.
+*   **Start complex tasks on the go**: Kick off a large code refactoring or a new feature development while commuting on a train.
+*   **Fix bugs remotely**: Address urgent issues or fix bugs from your couch while watching TV.
+*   **Fit development into small gaps**: Use short breaks throughout your day to make progress on coding tasks, rather than needing dedicated long blocks of desk time.
+*   **Run multiple projects at once**: Manage several coding projects or features simultaneously, each with its own AI agent, from a single mobile interface.
+
+## Tools you need
+*   **Vultr** (paid): A cloud provider that offers virtual machines (VMs) for rent by the hour.
+*   **Tailscale** (freemium): A virtual private network (VPN) service that creates a secure, private network for your devices, making it safe to access your VM.
+*   **Termius** (freemium): A mobile app for iOS and Android that acts as an SSH client, allowing you to connect to and control remote servers.
+*   **mosh** (free): A network-resilient shell that keeps your terminal session alive even if your internet connection drops or you switch networks.
+*   **tmux** (free): A terminal multiplexer that lets you run multiple terminal sessions within a single window and keeps them running even if you disconnect from the server.
+*   **Poke** (paid): A service that allows you to send push notifications to your phone via webhooks.
+*   **Claude Code** (paid): An AI tool from Anthropic designed to assist with coding tasks, accessed via its API.
+*   **jq** (free): A command-line tool for processing and manipulating JSON data.
+*   **curl** (free): A command-line tool used for transferring data with URLs, often used to send requests to web services or APIs.
+*   **GitHub** (freemium): A platform for hosting and collaborating on code, used here for version control and managing code repositories.
+
+## How it actually works
+This setup involves several advanced components working together. Here's a high-level overview of the steps an advanced user would take:
+
+1.  **Set up a cloud Virtual Machine (VM)**: You would provision a server from a cloud provider like Vultr. This VM will host your AI agents and development environment. You'd configure it for secure access, typically by blocking public SSH and routing all connections through a private network like Tailscale.
+2.  **Install mobile terminal and tools**: On your mobile phone, you'd install Termius to connect to the VM. On the VM itself, you'd install `mosh` for resilient connections, `tmux` for session persistence, and command-line tools like `jq` and `curl`.
+3.  **Configure Claude Code**: You would set up Claude Code on the VM. The author configures a `PreToolUse` hook in Claude Code's settings. This hook is a special instruction that tells Claude Code to run a custom script whenever it needs input from the user (e.g., when it asks a question).
+4.  **Implement push notifications**: The custom script triggered by Claude Code's hook extracts the question the AI agent needs answered. It then uses `curl` to send this question as a message to a push notification service's webhook (like Poke), which then delivers the notification to your phone.
+5.  **Manage VM lifecycle**: To control costs, the author uses scripts or an iOS Shortcut that calls the Vultr API to start and stop the VM only when needed. This ensures you only pay for the server when you are actively using it.
+6.  **Enable parallel development**: The author uses `tmux` to create multiple independent terminal windows on the VM, each running a separate Claude Code agent. They also leverage Git worktrees, a Git feature that allows multiple working directories for the same repository, to work on different features or branches simultaneously.
+
+Exact commands and configuration values for firewall rules, API keys, and specific script contents are not provided in the source and would need to be developed by the user based on their specific setup and security requirements.
+
+## Words you'll see, explained
+*   **VM (Virtual Machine)**: A virtual computer that runs on a physical server in the cloud, acting like a separate computer with its own operating system.
+*   **Tailscale**: A secure network service that creates a private network between your devices, allowing them to communicate securely over the internet.
+*   **Termius**: A mobile application that lets you connect to and control remote servers using protocols like SSH and Mosh.
+*   **mosh**: A command-line tool that provides a more robust and responsive remote shell connection than SSH, especially useful on mobile networks.
+*   **tmux**: A terminal multiplexer that allows you to run multiple terminal sessions within a single window and keep them active even if you disconnect.
+*   **Claude Code**: An AI assistant developed by Anthropic, specifically designed to help with coding tasks and development workflows.
+*   **Webhook**: A mechanism where one application can send real-time information to another application when a specific event occurs, often used for notifications.
+*   **jq**: A lightweight and flexible command-line JSON processor, used for extracting and manipulating data from JSON files or streams.
+*   **curl**: A command-line tool for making requests to web servers and transferring data using various network protocols, commonly used for interacting with APIs.
+*   **Git worktree**: A feature in the Git version control system that allows you to have multiple working directories associated with a single repository, each on a different branch.
+*   **API (Application Programming Interface)**: A set of rules and protocols that allows different software applications to communicate with each other.
+
+## Original source
+This advanced workflow was shared by todsacerdoti on Hackernews, detailing their method for running Claude Code agents from a mobile phone. The original article, titled "Claude Code On-The-Go," was published on granda.org.
+
+## Notes & variations
+*   **Do you even need this?** For most users, this complex setup is overkill. If you only need occasional AI coding assistance, simpler alternatives include using web-based AI chat applications (like claude.ai or chatgpt.com) directly on your phone or laptop, or running local large language models (LLMs) on a powerful computer. This workflow is specifically for advanced users who require continuous, parallel AI agent operation and deep integration into a mobile-first development routine.
+*   **Free-tier limits**: While Tailscale and Termius offer useful free tiers, the core components of this workflow (Vultr for the VM, Claude Code for the AI agent, and Poke for notifications) are paid services. Be mindful of hourly VM costs and API usage fees, as these can add up quickly if not managed carefully.
+*   **Common pitfall**: A major challenge is managing security and cost. Forgetting to stop your VM can lead to unexpected charges. Additionally, improperly securing your VM or exposing API keys can create significant security risks. Always follow best practices for cloud security, including strong passwords, multi-factor authentication, and strict firewall rules.
