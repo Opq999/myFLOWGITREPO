@@ -5924,8 +5924,84 @@
     "151a2a07a7e9c70a347a9e09425920d75108d9f2975ab69745f66036b727f3fc": {
       "url": "https://news.ycombinator.com/item?id=47482760",
       "date": "2026-06-25"
+    },
+    "ded9740ac21957fcd9bc8233294f416228cdd7af467574a004faf6e926b62936": {
+      "url": "https://github.com/madd86/awesome-system-design",
+      "date": "2026-06-25"
+    },
+    "57cfd693be5c74238a1e9acb1ed302aadaf6a5ff42505016c417cb82c0ae84fc": {
+      "url": "https://github.com/m3y54m/Embedded-Engineering-Roadmap",
+      "date": "2026-06-25"
+    },
+    "ea347747fe8850a020a091e2df974206c2d738e5c06c59b3fde1898d8484397c": {
+      "url": "https://github.com/3D-Vision-World/awesome-NeRF-and-3DGS-SLAM",
+      "date": "2026-06-25"
+    },
+    "95e2f11879a290a0db8789be23fb2843cc6d8adcf2e0c2e9da8208ea59ace5a2": {
+      "url": "https://github.com/ai-boost/awesome-harness-engineering",
+      "date": "2026-06-25"
+    },
+    "33fa61b21d9aa45562d1bb291b7cdd506958f5f1b415a7f7980e396346727623": {
+      "url": "https://github.com/kaushikb11/awesome-llm-agents",
+      "date": "2026-06-25"
+    },
+    "74039da5d8e0df10b3eda39ba413cb32e5154adbc751a46874012117613221de": {
+      "url": "https://github.com/yueliu1999/Awesome-Jailbreak-on-LLMs",
+      "date": "2026-06-25"
+    },
+    "edc9721c0252cb887144110d958244461467c6d2992f290717abe4105b0ee179": {
+      "url": "https://github.com/PavelGrigoryevDS/awesome-data-analysis",
+      "date": "2026-06-25"
+    },
+    "5b73c40672c0947c3b924ef5814d03f5219bc8fc97e7f235b9a178f984fd40f5": {
+      "url": "https://github.com/jiep/offensive-ai-compilation",
+      "date": "2026-06-25"
+    },
+    "49ec6ec471801c55bc0a8f0c6a0c23de408a5b5559dbf15d04fc670148eecfee": {
+      "url": "https://github.com/bst04/CyberSources",
+      "date": "2026-06-25"
+    },
+    "f5e07b10d9460ad81dd3e26076b2c7873427b3367e990d859a6c6d582103246e": {
+      "url": "https://github.com/rguo12/awesome-causality-algorithms",
+      "date": "2026-06-25"
+    },
+    "0d2ce7bf40cea4f9f725ca33789da51e8dfd6f94774364ed03e0720aba2b384f": {
+      "url": "https://github.com/google-labs-code/jules-awesome-list",
+      "date": "2026-06-25"
+    },
+    "300a6762ac6a327d9e321a7fdf6bf25224db4c3b4ed30400058b4ce7b83df3d9": {
+      "url": "https://github.com/mgramin/awesome-db-tools",
+      "date": "2026-06-25"
+    },
+    "c3a2fccc02a7420d53d6ca3da5943e9e6ecf9524ef8b0b0fbf69dec28688012f": {
+      "url": "https://github.com/kelvins/awesome-mlops",
+      "date": "2026-06-25"
+    },
+    "659d4daa1ff23fae37788fdbcf067cc37aad4c61b308f8cc9f5f3791625ac47e": {
+      "url": "https://news.ycombinator.com/item?id=46707708",
+      "date": "2026-06-25"
+    },
+    "f429dc7eeb13cc3a5e7d67a6a29a54af3613394c372a53770141f8c335af0a09": {
+      "url": "https://www.bensbites.com/p/claude-code-in-slack",
+      "date": "2026-06-25"
+    },
+    "5b7319262b5111db7185ab5e5cb5ee226184a0743beea382b8e0a3b0ffd0bf8e": {
+      "url": "https://github.com/fathah/hermes-desktop",
+      "date": "2026-06-25"
+    },
+    "1d106069c3dfa5cb2d9ab97d6163da1168be6fe7b63dfa1228d0ddabf774fdc9": {
+      "url": "https://www.bensbites.com/p/builders",
+      "date": "2026-06-25"
+    },
+    "0cd067b75907534120d3668d799ace9f740d503ba8e144e9a8a0f06d1c8c75c9": {
+      "url": "https://github.com/neuml/txtai",
+      "date": "2026-06-25"
+    },
+    "e9ee9eec9922685574a77e29b3481e758defc7d6224d81a8083d6ad49084b9fe": {
+      "url": "https://www.bensbites.com/p/chatgpts-nano-banana",
+      "date": "2026-06-25"
     }
   },
-  "backfillPage": 18,
+  "backfillPage": 19,
   "dailyPage": 2
 }
