@@ -6192,8 +6192,136 @@
     "96681b07f88ef220e084b76952723be3ca5f2f74f835da8c2c877347a6aa9a45": {
       "url": "https://www.reddit.com/r/MachineLearning/comments/1tyq81n/sources_for_ml_news_d",
       "date": "2026-06-26"
+    },
+    "1ef93105d3d5e7e9f187b10a0c51487b894e6e4d65b3ff8542b864a2ac13a141": {
+      "url": "https://github.com/krzemienski/awesome-video",
+      "date": "2026-06-26"
+    },
+    "46ebd9e965f1688cab8eda97d6d9feea1cda09dab81ab1c55997132606c22e7d": {
+      "url": "https://github.com/ai-for-developers/awesome-ai-coding-tools",
+      "date": "2026-06-26"
+    },
+    "8955c2730ed4ada6378602aee234f17715c06ecff3f7e3b237e2d6ea70e8ef70": {
+      "url": "https://github.com/Thinklab-SJTU/Awesome-LLM4AD",
+      "date": "2026-06-26"
+    },
+    "1281db086db452b74de4e3989731b6143f4f4520cdaa1709f7c7fea6c15ed8a0": {
+      "url": "https://github.com/taielab/awesome-hacking-lists",
+      "date": "2026-06-26"
+    },
+    "73ebc21e6a040a72d7be932f91d4503ed94cd6fbd26194c87859604ff047bb5c": {
+      "url": "https://github.com/Picrew/awesome-agent-harness",
+      "date": "2026-06-26"
+    },
+    "03a3d60fec0f4baaa5db09318b4bdaf349f904aec05896b479b4d1217bc6da81": {
+      "url": "https://github.com/DEEP-PolyU/Awesome-LLM-based-Text2SQL",
+      "date": "2026-06-26"
+    },
+    "399b6812686f17b27668ce8251ae959a7622a96c32f11139da67491a8bf23d33": {
+      "url": "https://github.com/wagtail/awesome-wagtail",
+      "date": "2026-06-26"
+    },
+    "a6185894a9c7e912713a97584ee473e72617a1ca66171a357f5007e2592837ec": {
+      "url": "https://github.com/stax76/awesome-mpv",
+      "date": "2026-06-26"
+    },
+    "b4e483146a2c98a528280f8d2bb9f703e928d81ecf57c0c2fc2f8d0ca3ea21c4": {
+      "url": "https://github.com/n2cholas/awesome-jax",
+      "date": "2026-06-26"
+    },
+    "1a2568b358206d7782b5346fcdfb355fcf1d37938cf5db22987aa99b8e9fb950": {
+      "url": "https://github.com/TheComputerM/awesome-svelte",
+      "date": "2026-06-26"
+    },
+    "bb09a1e800d90086b887349b25d1d75a8764dd936dfc21f3efb6ae47ba28a6f5": {
+      "url": "https://github.com/vlang/awesome-v",
+      "date": "2026-06-26"
+    },
+    "de4d3616978a2d293e2173121e6f39fc4f80de8ee3deb8dd09b60ee8c151582e": {
+      "url": "https://github.com/xcomptek/awesome-saas-boilerplates",
+      "date": "2026-06-26"
+    },
+    "7c036e317adbf5ea74e33c2c286208a075cca0502239c5ea0b208f920fb85250": {
+      "url": "https://github.com/cirosantilli/china-dictatorship",
+      "date": "2026-06-26"
+    },
+    "92692b9f86f6e52a3b30ff1db8a6ba54d7a0964fa36a4e815a500d59b139d59d": {
+      "url": "https://github.com/tmstack/awesome-persona-skills",
+      "date": "2026-06-26"
+    },
+    "66ad62dae7e9e048208e97143c52e721f5e3db5353e466c8ff2ba8c16789aaec": {
+      "url": "https://github.com/olilarkin/awesome-musicdsp",
+      "date": "2026-06-26"
+    },
+    "52b149048d42b26e6ec15b7ad92c5a9715649f3b9f4f2d69128e37a3739678d0": {
+      "url": "https://github.com/315386775/DeepLearing-Interview-Awesome-2024",
+      "date": "2026-06-26"
+    },
+    "5e92c11ed7c9501976e05bef64d3ec4f4f561b79b0d80ada65830a1f6ff242f6": {
+      "url": "https://github.com/michelpereira/awesome-open-source-games",
+      "date": "2026-06-26"
+    },
+    "ff28d0650bbdc37fdafa301eccfb5bc6dc0759a4518c91a7a7cf60a4c1f6cdcf": {
+      "url": "https://github.com/cdleon/awesome-terminals",
+      "date": "2026-06-26"
+    },
+    "9d652fc92cc1cba74c3cdf941d1e3854a66fc7130c8b376db4f326e30f8aa797": {
+      "url": "https://github.com/amirhossein-kz/Awesome-Diffusion-Models-in-Medical-Imaging",
+      "date": "2026-06-26"
+    },
+    "118bdf82a7b6f2d5850312169665b7e37fa0a7c79e66848b4d7eb1bc35405bed": {
+      "url": "https://dev.to/tensorlake/gemini-3-vs-gpt-52-detailed-coding-comparison-idg",
+      "date": "2026-06-26"
+    },
+    "6af6109a2666dba515f17aab0e00397e4f8b38dd2750141f64758ab2bf40c16b": {
+      "url": "https://github.com/kubeshark/kubeshark",
+      "date": "2026-06-26"
+    },
+    "e7e5c0542485d99dbfa73cd1d37ef5fbd43459283f8056259abe75ae2c23c032": {
+      "url": "https://dev.to/sholajegede/one-small-ux-fix-that-actually-helps-5551",
+      "date": "2026-06-26"
+    },
+    "58d13c3aada8dc86e065cdd7de6ae08eb95b78142916ec127fbfa6e6fb5b6fec": {
+      "url": "https://github.com/creativetimofficial/ui",
+      "date": "2026-06-26"
+    },
+    "6fa6693f061cb72f992f9815a0e04efee11db8ef17bf00dfb335a5dd3a755edf": {
+      "url": "https://dev.to/copilotkit/build-your-own-ai-stock-portfolio-agent-with-llamaindex-ag-ui-62",
+      "date": "2026-06-26"
+    },
+    "19c1fb556084b78651bb83375132db531264f8ab7bcd80d13f5716f31bd8632f": {
+      "url": "https://github.com/The-PR-Agent/pr-agent",
+      "date": "2026-06-26"
+    },
+    "7c3ef96cddb2925b275d9acda8a03d5c816e9715e8b6924b13084b196d7bea3f": {
+      "url": "https://dev.to/alifar/exposed-google-is-indexing-private-ai-conversations-heres-what-you-should-know-37m5",
+      "date": "2026-06-26"
+    },
+    "b6a803a2c827c895d288913bd91bb7dc69b5014ab31d2cb86a2b439b6cb96be4": {
+      "url": "https://github.com/microsoft/agent-framework",
+      "date": "2026-06-26"
+    },
+    "21a5e93d05c9f1d8b82dc0460969b5d8485de884714d296255628725d61f36f5": {
+      "url": "https://dev.to/moni121189/s3cret-agent-build-an-ai-that-generates-aws-presigned-urls-on-command-31l8",
+      "date": "2026-06-26"
+    },
+    "85770dc561132e9d0a57736fc0cb81168c1ca16fca4d811b06aac333da96f718": {
+      "url": "https://github.com/opensandbox-group/OpenSandbox",
+      "date": "2026-06-26"
+    },
+    "ba8e52d6011e83a93742679f90f33cc2fbdb53cf1edd36180103eb1fbedac4a3": {
+      "url": "https://dev.to/anthonymax/what-is-hateoas-a-complete-guide-build-your-own-app-using-hypermedia-k56",
+      "date": "2026-06-26"
+    },
+    "ae1b8461caeba44b4a15fcdac520fa53b7becb4c3c3f1bed7c8d37dcc1013a37": {
+      "url": "https://github.com/tensorzero/tensorzero",
+      "date": "2026-06-26"
+    },
+    "3f306769720ab73763769681939715e61753202410e40ae010e4482f6da726ba": {
+      "url": "https://dev.to/maame-codes/why-i-stopped-watching-tutorials-and-started-breaking-things-3dik",
+      "date": "2026-06-26"
     }
   },
-  "backfillPage": 19,
+  "backfillPage": 20,
   "dailyPage": 3
 }

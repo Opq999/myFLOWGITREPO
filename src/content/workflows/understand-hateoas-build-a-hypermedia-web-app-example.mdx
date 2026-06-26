@@ -1,0 +1,84 @@
+---
+title: "Understand HATEOAS: Build a Hypermedia Web App Example"
+description: "Learn HATEOAS (Hypermedia As The Engine Of Application State) by exploring a simple web application that demonstrates how dynamic links guide user interaction."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 20
+jobToBeDone: "Explain and demonstrate HATEOAS by building a simple web application"
+tools:
+  - name: "Web Browser"
+    url: "https://www.google.com/chrome/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Text Editor"
+    url: "https://code.visualstudio.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "hmpl-js"
+    url: "https://github.com/anthonymax/hmpl-js"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "hmpl-dom"
+    url: "https://github.com/anthonymax/hmpl-js"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/anthonymax/what-is-hateoas-a-complete-guide-build-your-own-app-using-hypermedia-k56"
+  platform: "blog"
+  author: "anthonymax"
+  postedAt: 2025-11-27
+score: 7
+ingestedAt: 2026-06-26
+nigeriaNotes: "This workflow runs entirely on your computer using free, open-source tools, so it uses minimal data and does not rely on paid services."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+HATEOAS stands for Hypermedia As The Engine Of Application State. It's an architectural principle for designing web APIs (Application Programming Interfaces) where the server tells the client what actions are possible next, by including links and forms directly within the data it sends back. Instead of the client (like a web browser or mobile app) knowing all the possible routes and actions in advance, the server guides it through the application's flow.
+
+This approach is different from typical web applications where the client often has hardcoded URLs for different parts of the app. With HATEOAS, if a server changes a URL or adds a new feature, the client can adapt automatically because the server's response will include the updated links. This makes applications more flexible and easier to maintain over time.
+
+This is an advanced concept because it requires a solid understanding of web development, API design, and how clients and servers interact. The example provided involves writing and running JavaScript and HTML code, which goes beyond simple copy-paste steps for a non-technical beginner.
+
+## What you can use it for
+*   **Building flexible web applications**: Create apps where the client doesn't need to be updated every time a backend route changes.
+*   **Decoupling client and server**: Allow the server to evolve its API without breaking older client applications, as the server always provides the current valid actions.
+*   **Improving API discoverability**: Clients can discover available actions by inspecting the hypermedia links in the server's response.
+*   **Creating self-documenting APIs**: The API responses themselves guide how to interact with the system, making it easier for developers to understand and use.
+
+## Tools you need
+*   **Web Browser** (free): To open and view the HTML file that runs the application (e.g., Chrome, Firefox, Edge).
+*   **Text Editor** (free): To create and save the HTML file containing the application code (e.g., VS Code, Notepad++).
+*   **hmpl-js** (free): A JavaScript library for working with hypermedia, used in the example to process links and update content.
+*   **hmpl-dom** (free): An extension for `hmpl-js` that helps integrate hypermedia functionality directly into HTML documents.
+
+## How it actually works
+1.  **Understand the core idea**: The author explains HATEOAS by showing how a traditional SPA (Single Page Application) might break if an API route changes (for example, if a `reviews/{id}` route is deleted).
+2.  **See the HATEOAS solution**: Instead of the client knowing all API routes in advance, the server sends back data that includes *links* to related actions. For example, a product page might return product details *and* a link to its reviews, so the client doesn't hardcode the review URL.
+3.  **Examine the example application**: The author provides an HTML file with embedded JavaScript to demonstrate this. This file simulates a backend API that returns HTML fragments with `div` elements containing `data-id` attributes.
+4.  **How the example demonstrates HATEOAS**: When you click on a product, the `hmpl-js` library intercepts the click, fetches new content based on the `data-id` from the simulated API, and updates the page. The "API" (simulated in JavaScript) returns the *next state* of the application, including a "Back" link, showing how the application's flow is driven by hypermedia.
+5.  **To run the example (requires full code from source)**:
+    *   The provided excerpt cuts off the full JavaScript code for the example application. To run it, you would need to find the complete HTML file from the original blog post.
+    *   Once you have the complete code, create a new file on your computer, for example, `index.html`.
+    *   Paste the entire HTML code into this file.
+    *   Save the file.
+    *   Open the `index.html` file using any web browser (like Chrome, Firefox, or Edge).
+    *   Interact with the "products" displayed on the page to see how clicking them changes the content based on the simulated API responses, demonstrating HATEOAS.
+
+## Words you'll see, explained
+*   **HATEOAS (Hypermedia As The Engine Of Application State)**: An architectural style for web APIs where the server guides the client through available actions by including links and forms in its responses.
+*   **API (Application Programming Interface)**: A set of rules that allows different software applications to communicate with each other.
+*   **SPA (Single Page Application)**: A web application that loads a single HTML page and dynamically updates content as the user interacts with it, without reloading the entire page.
+*   **Hypermedia**: Content that includes links to other content, allowing users or applications to navigate through information. In HATEOAS, this means the API response contains links to related actions or resources.
+*   **Client**: The part of a system (like a web browser or mobile app) that requests and consumes data or services from a server.
+*   **Server**: The part of a system that provides data or services to clients, often by responding to requests from an API.
+
+## Original source
+This concept entry is based on a blog post by anthonymax titled 'What Is HATEOAS? A Complete Guide + Build Your Own App Using Hypermedia 🔥' published on the DEV Community platform.
+
+## Notes & variations
+*   **Do you even need this?**: For very simple applications with stable APIs, HATEOAS might be overkill. It adds complexity. It's most valuable for large, evolving systems where client and server need to be highly decoupled. For a small personal project, a traditional REST API might be simpler.
+*   **Free-tier limits**: The example uses free, open-source JavaScript libraries and runs locally in a browser, so there are no direct free-tier limits.
+*   **Common pitfall**: Over-engineering. Applying HATEOAS when it's not truly necessary can make your API and client code more complex than needed. Ensure the benefits of decoupling and discoverability outweigh the added complexity for your specific project.

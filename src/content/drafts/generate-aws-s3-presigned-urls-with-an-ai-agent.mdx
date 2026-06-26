@@ -1,0 +1,112 @@
+---
+title: "Generate AWS S3 Presigned URLs with an AI Agent"
+description: "Learn to build an AI agent that generates secure, time-limited AWS S3 download or upload links from simple text commands."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 30
+jobToBeDone: "Build an AI agent to generate AWS S3 Presigned URLs from natural language"
+tools:
+  - name: "LangChain"
+    url: "https://www.langchain.com/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "AWS S3"
+    url: "https://aws.amazon.com/s3/"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Boto3"
+    url: "https://boto3.amazonaws.com/v1/documentation/api/latest/index.html"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "FastAPI"
+    url: "https://fastapi.tiangolo.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Docker"
+    url: "https://www.docker.com/"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/moni121189/s3cret-agent-build-an-ai-that-generates-aws-presigned-urls-on-command-31l8"
+  platform: "blog"
+  author: "moni121189"
+  postedAt: 2025-07-08
+score: 6
+ingestedAt: 2026-06-26
+nigeriaNotes: "This workflow requires setting up AWS credentials and running local servers, which can consume moderate data. Free tiers for LangChain and Docker are sufficient for development. AWS S3 usage incurs costs based on storage and data transfer, but generating presigned URLs themselves is typically free. Ensure you have a stable internet connection for cloning repositories and installing packages."
+tiktokUrl: ""
+published: false
+---
+
+## What you'll get
+You will build an AI agent that can create secure, temporary links for uploading files to or downloading files from Amazon Web Services (AWS) S3 storage. You can ask it to generate these links using plain English commands, and it will respond with the generated URL. This approach works by using an AI model to understand your request and then a specialized tool to create the secure link.
+
+## Tools you need
+*   **LangChain** (freemium): A framework to build applications powered by language models. It helps connect AI models to your data and actions.
+*   **AWS S3** (paid): A cloud storage service where you can store and retrieve any amount of data. You will need an AWS account.
+*   **Boto3** (free): The Amazon Web Services (AWS) SDK for Python. It allows Python applications to communicate with AWS services like S3.
+*   **FastAPI** (free): A modern, fast web framework for building APIs with Python. It will make your AI agent accessible over the internet.
+*   **Docker** (freemium): A platform to develop, ship, and run applications in containers. It helps package your application and its dependencies so it runs consistently everywhere.
+
+## Steps
+1.  **Set up your project folder**: Create a new folder for your project and navigate into it using your terminal or command prompt.
+
+    ```bash
+    mkdir s3cret-agent
+    cd s3cret-agent
+    ```
+
+    You should now be inside the new `s3cret-agent` folder.
+
+2.  **Clone the project repository**: Download the code for the AI agent from its online source.
+
+    ```bash
+    git clone https://github.com/your-repo/langchain-s3-agent.git .
+    ```
+
+    The command `git clone` downloads the project files. The `.` at the end tells it to put the files in the current folder.
+
+3.  **Install necessary software**: Install all the Python tools required for the agent to run.
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+    This command reads the `requirements.txt` file and installs all listed Python packages.
+
+4.  **Configure AWS credentials**: Create a file named `.env` in your project folder and add your AWS access keys and region. **Never share this file publicly.**
+
+    ```env
+    AWS_ACCESS_KEY_ID=your_access_key_id
+    AWS_SECRET_ACCESS_KEY=your_secret_access_key
+    AWS_REGION=your_aws_region
+    ```
+
+    Replace `your_access_key_id`, `your_secret_access_key`, and `your_aws_region` with your actual AWS credentials. You can get these from your AWS account security settings.
+
+5.  **Start the AI agent server**: Run the FastAPI application that hosts your AI agent.
+
+    ```bash
+    uvicorn main:app --reload
+    ```
+
+    This command starts a local web server. You should see messages indicating the server is running, usually on `http://localhost:8000`.
+
+6.  **Send a request to generate a URL**: Use a tool like `curl` or a web API client to send a request to your running agent. This example asks for a download link.
+
+    ```bash
+    curl -X POST http://localhost:8000/query \
+    -H "Content-Type: application/json" \
+    -d '{"query": "Generate download link bucket=my-bucket key=path/to/file.txt"}'
+    ```
+
+    Replace `my-bucket` and `path/to/file.txt` with your actual AWS S3 bucket name and the file's path. You should receive a JSON response containing the generated presigned URL.
+
+## Original source
+This workflow is based on a project by moni121189, shared on the DEV Community platform. It demonstrates how to build an AI agent using LangChain and FastAPI to generate AWS S3 presigned URLs from natural language commands.
+
+## Notes & variations
+*   **Free tier alternative**: While AWS S3 itself is a paid service, you can explore free tiers or credits offered by cloud providers for learning purposes, though they may have limitations. For local testing without AWS, you could mock the Boto3 calls, but this wouldn't generate real URLs.
+*   **Common mistake**: Forgetting to set up your AWS credentials correctly in the `.env` file will cause the agent to fail when trying to access S3. Ensure your keys are valid and the region is correct.
+*   **Tip for better results**: To make the agent more robust, you can experiment with different prompts in LangChain or add more specific instructions for handling errors or different types of S3 operations (like uploading or deleting files).
