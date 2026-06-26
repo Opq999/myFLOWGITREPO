@@ -1,0 +1,182 @@
+---
+title: "Deploy a Private AI Model Endpoint with Hugging Face Jobs"
+description: "Quickly deploy a private, OpenAI-compatible AI model endpoint using Hugging Face Jobs. Get a secure URL to query your model for testing or batch generation."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 20
+jobToBeDone: "Deploy a private, OpenAI-compatible LLM endpoint on Hugging Face Jobs"
+tools:
+  - name: "Hugging Face Jobs"
+    url: "https://huggingface.co/docs/hub/spaces-jobs"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Python"
+    url: "https://www.python.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "huggingface_hub"
+    url: "https://huggingface.co/docs/huggingface_hub/en/index"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "curl"
+    url: "https://curl.se/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "OpenAI Python client"
+    url: "https://github.com/openai/openai-python"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://huggingface.co/blog/vllm-jobs"
+  platform: "blog"
+  author: "Hugging Face - Blog"
+  postedAt: 2026-06-26
+score: 5
+ingestedAt: 2026-06-26
+nigeriaNotes: "Hugging Face Jobs bills per minute for hardware usage. The 'a10g-large' GPU used in this example costs about $1.50 per hour, which can be expensive. Always cancel jobs immediately after use and choose the smallest possible GPU 'flavor' to save costs. Initial model download will use several gigabytes of data; subsequent queries are light."
+tiktokUrl: ""
+published: false
+---
+
+## What you'll get
+You will get a private, secure web address (URL) for an AI model that acts just like OpenAI's API. This allows you to send requests to the model and receive responses from your own applications or scripts. This approach lets you quickly deploy a powerful AI model without managing servers, paying only for the exact time you use it, making it ideal for testing or generating many responses.
+
+## Tools you need
+*   **Hugging Face Jobs** (paid): A service that runs computing tasks, like deploying AI models, on Hugging Face's infrastructure. You pay per minute for the hardware used.
+*   **Python** (free): A popular programming language. You'll use its package installer, `pip`, to add necessary libraries.
+*   **huggingface_hub** (free): A Python library that helps you interact with Hugging Face services, including logging in and getting your authentication token.
+*   **curl** (free): A command-line tool used to send and receive data over the internet. It's often pre-installed on many operating systems.
+*   **OpenAI Python client** (free): A Python library that makes it easy to interact with AI models that use the OpenAI API format, even if they're not from OpenAI.
+
+## Steps
+
+1.  **Set up your environment**: First, you need to install the `huggingface_hub` library and log in to Hugging Face from your computer's command line (also called a terminal).
+    *   Open your terminal (on Windows, you can use PowerShell or WSL; on macOS/Linux, use Terminal).
+    *   Install the `huggingface_hub` library:
+
+    ```
+    pip install -U "huggingface_hub==1.20.0"
+    ```
+
+    You should see messages about the package being installed or updated.
+    *   Log in to Hugging Face. This will ask you for a "token," which is like a password for programs. You can create one on the Hugging Face website under your profile settings (usually "Access Tokens"). Make sure it has "write" permissions if you plan to upload anything, though "read" is enough for this workflow.
+
+    ```
+    hf auth login
+    ```
+
+    Follow the prompts. You should see a message confirming you are logged in.
+
+2.  **Launch the AI model server**: Now, you'll use a single command to tell Hugging Face Jobs to start a server running the AI model. This command specifies the type of computing power (GPU) and which model to use.
+    *   Paste the following command into your terminal and press Enter. This command uses `vLLM`, a fast serving engine, with the `Qwen/Qwen3-4B` model. `a10g-large` is the type of GPU (Graphics Processing Unit, a chip that makes AI training fast) requested. `2h` sets a 2-hour timeout as a safety net.
+
+    ```
+    hf jobs run --flavor a10g-large --expose 8000 --timeout 2h \
+    vllm/vllm-openai:latest \
+    vllm serve Qwen/Qwen3-4B --host 0.0.0.0 --port 8000
+    ```
+
+    You should see output similar to this, including a `url` and an `id`:
+
+    ```
+    ✓ Job started id: 6a381ca1953ed90bfb947332 url: https://huggingface.co/jobs/qgallouedec/6a381ca1953ed90bfb947332
+    Hint: Exposed ports are reachable at (requires an HF token with read access to the job): https://6a381ca1953ed90bfb947332--8000.hf.jobs
+    ```
+
+    *   **Important**: Copy the job ID (e.g., `6a381ca1953ed90bfb947332`) and the exposed URL (e.g., `https://6a381ca1953ed90bfb947332--8000.hf.jobs`). You will need these in the next steps. We will use `job_id` as a placeholder for your actual job ID.
+    *   Wait a few minutes for the model to download and start. You can check the job's logs on the Hugging Face website (using the `url` provided) until you see "Application startup complete".
+
+3.  **Check the server's health**: Before sending a full request, you can quickly check if the model is running and accessible.
+    *   Replace `job_id` with your actual job ID in the command below.
+    *   **For macOS or Linux (Bash/Zsh)**:
+
+    ```bash
+    curl https://job_id--8000.hf.jobs/v1/models -H "Authorization: Bearer $(hf auth token)"
+    ```
+
+    *   **For Windows (PowerShell)**:
+
+    ```powershell
+    curl https://job_id--8000.hf.jobs/v1/models -H "Authorization: Bearer (hf auth token)"
+    ```
+
+    You should see a JSON output listing the `Qwen/Qwen3-4B` model, confirming the server is active.
+
+4.  **Query the AI model (using `curl`)**: You can send a request to your deployed model using `curl` from your terminal. This model understands the same format as the OpenAI API.
+    *   Replace `job_id` with your actual job ID.
+    *   **For macOS or Linux (Bash/Zsh)**:
+
+    ```bash
+    curl https://job_id--8000.hf.jobs/v1/chat/completions \
+    -H "Authorization: Bearer $(hf auth token)" \
+    -H "Content-Type: application/json" \
+    -d '{ "model": "Qwen/Qwen3-4B", "messages": [{"role": "user", "content": "Hello!"}], "chat_template_kwargs": {"enable_thinking": false} }'
+    ```
+
+    *   **For Windows (PowerShell)**:
+
+    ```powershell
+    curl https://job_id--8000.hf.jobs/v1/chat/completions `
+    -H "Authorization: Bearer (hf auth token)" `
+    -H "Content-Type: application/json" `
+    -d '{ "model": "Qwen/Qwen3-4B", "messages": [{"role": "user", "content": "Hello!"}], "chat_template_kwargs": {"enable_thinking": false} }'
+    ```
+
+    You should receive a JSON response, and inside `choices[0].message.content`, you should see the model's reply, such as "Hello! How can I assist you today? 😊".
+
+5.  **Query the AI model (using Python)**: For more complex interactions, you can use the OpenAI Python client library.
+    *   First, install the OpenAI Python client if you haven't already:
+
+    ```
+    pip install openai
+    ```
+
+    *   Create a new Python file (e.g., `query_model.py`) and paste the following code into it. Remember to replace `job_id` with your actual job ID.
+
+    ```python
+    from huggingface_hub import get_token
+    from openai import OpenAI
+
+    # Replace 'job_id' with your actual job ID from Step 2
+    job_id = "YOUR_JOB_ID_HERE" # e.g., "6a381ca1953ed90bfb947332"
+
+    client = OpenAI(
+        base_url=f"https://{job_id}--8000.hf.jobs/v1",
+        api_key=get_token(),
+    )
+
+    resp = client.chat.completions.create(
+        model="Qwen/Qwen3-4B",
+        messages=[{"role": "user", "content": "Hello!"}],
+        extra_body={"chat_template_kwargs": {"enable_thinking": False}},
+    )
+
+    print(resp.choices[0].message.content)
+    ```
+
+    *   Save the file and run it from your terminal:
+
+    ```
+    python query_model.py
+    ```
+
+    You should see the model's response printed, like "Hello! How can I assist you today? 😊".
+
+6.  **Clean up and stop the server**: Hugging Face Jobs bills per second, so it's important to stop your server when you are done to avoid unnecessary costs.
+    *   Replace `job_id` with your actual job ID.
+
+    ```
+    hf jobs cancel job_id
+    ```
+
+    You should see a confirmation that the job has been cancelled. The `timeout` you set in Step 2 is a safety net, but manually cancelling is always cheaper.
+
+## Original source
+This workflow is based on a blog post by Quentin Gallouédec on the Hugging Face Blog. The post demonstrates how to quickly set up a private, OpenAI-compatible AI model endpoint using Hugging Face Jobs.
+
+## Notes & variations
+*   **Cost-saving tip**: The `a10g-large` GPU used in this example costs about $1.50 per hour. Hugging Face Jobs offers different "flavors" (GPU types) with varying costs. To save money, check the `hf jobs hardware` command for a full price list and choose the smallest `flavor` that can still run your chosen model. For example, `a10g-small` might be cheaper if the model fits.
+*   **Common mistake**: Forgetting to cancel your job is the most common way to incur unexpected costs. Always remember to run `hf jobs cancel job_id` when you are finished, even if you set a `timeout`.
+*   **Free alternative**: If you want to experiment with AI models without any cost, consider running models locally on your own computer using tools like Ollama or LM Studio. This works best for smaller models that fit your computer's memory and doesn't require an internet connection for inference after the initial download.
+*   **Data usage**: The initial launch of the job will download the model weights, which can be several gigabytes (e.g., Qwen3-4B is 4 billion parameters, so it's a few GBs). Subsequent queries will use very little data. Be mindful of your internet data plan during the initial setup.

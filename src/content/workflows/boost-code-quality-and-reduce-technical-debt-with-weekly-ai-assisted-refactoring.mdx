@@ -1,0 +1,108 @@
+---
+title: "Boost Code Quality and Reduce Technical Debt with Weekly AI-Assisted Refactoring using Repomix"
+description: "Learn a simple, weekly routine to improve your code quality and reduce technical debt using an AI language model and the Repomix tool. Make your codebase cleaner and more stable."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 20
+jobToBeDone: "Improve code quality and reduce technical debt through weekly AI-assisted refactoring"
+tools:
+  - name: "Integrated Development Environment (IDE)"
+    url: "https://code.visualstudio.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Repomix"
+    url: "https://github.com/dawidmakowski/repomix"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Large Language Model (LLM) Chatbot"
+    url: "https://chatgpt.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=43904664"
+  platform: "hackernews"
+  author: "makowskid"
+  postedAt: 2025-05-06
+score: 9
+ingestedAt: 2026-06-26
+nigeriaNotes: "This workflow requires a computer with an Integrated Development Environment (IDE) and the Repomix tool, which are typically desktop applications and not mobile-first. However, the LLM chat part can be done on a phone. Repomix is free and open-source, and popular LLM chatbots offer free tiers, making the workflow accessible for those with a computer. Data usage for Repomix is minimal as it processes local code."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "Use Repomix and an LLM to simplify complex Python code snippets for your CSC301 assignment, reducing errors."
+  - persona: "employee"
+    scenario: "Refactor tricky functions in your company's codebase weekly using Repomix and ChatGPT to prevent bugs."
+  - persona: "entrepreneur"
+    scenario: "Improve your startup's backend code quality weekly by using Repomix and Gemini to identify and fix technical debt."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You'll establish a simple, weekly routine to improve your code quality and reduce technical debt. This approach, called 'vibe refactoring,' uses short, focused sessions with an AI assistant to make small, consistent improvements that add up over time, making your codebase more stable and easier to manage.
+
+## Tools you need
+*   **Integrated Development Environment (IDE)** (free): A software application that provides comprehensive facilities to computer programmers for software development. For example, VS Code.
+*   **Repomix** (free): A tool that bundles your project's code context, making it easier for Large Language Models (LLMs) to understand your codebase and provide relevant suggestions.
+*   **Large Language Model (LLM) Chatbot** (freemium): An AI tool you can chat with to get suggestions, explanations, and help with coding tasks. For example, ChatGPT, Claude, or Gemini.
+
+## Steps
+1.  **Block out time**: Schedule a short, regular session (15-20 minutes) each week. The author suggests no formal goals, just a promise to explore your code.
+    You should see a recurring event in your calendar.
+
+2.  **Open your IDE and explore**: Open your preferred Integrated Development Environment (IDE), like VS Code, and browse your project's code. Pretend you just cloned the project and look for warnings, `TODO` comments, or areas that feel messy.
+    You should see your code open in the IDE, and you'll start noticing areas that could be improved.
+
+3.  **Address IDE suggestions**: Pay attention to the warnings and suggestions your IDE provides (often shown as yellow squiggles or underlines). Fix simple issues like unused imports, overly long methods, or poorly named variables.
+    You should see your IDE show fewer warnings, and your code will look a bit cleaner.
+
+4.  **Prepare code context with Repomix**: First, install Repomix if you haven't already. Open your terminal or command prompt, navigate to your project's main folder, and run the installation command. Then, run Repomix to generate a context file that helps the AI understand your project.
+
+    ```bash
+    # macOS or Linux
+    pip install repomix
+    ```
+
+    ```powershell
+    # Windows (PowerShell)
+    pip install repomix
+    ```
+
+    After installation, run Repomix in your project directory:
+
+    ```bash
+    # macOS or Linux
+    repomix
+    ```
+
+    ```powershell
+    # Windows (PowerShell)
+    repomix
+    ```
+    You should see Repomix generate a file (typically `repomix_context.txt`) containing a summary of your project's code, ready to be used with an LLM.
+
+5.  **Get AI suggestions for a tricky function**: Copy a function or a code snippet that you find complex or hard to understand from your IDE. Open your chosen LLM chatbot (e.g., ChatGPT). Paste the code, and then paste the content of the `repomix_context.txt` file to give the AI more context. Then, ask for specific improvements.
+
+    ```
+    Here is a function from my project:
+
+    [paste your knotty function here]
+
+    Here is some context about my project's structure and dependencies, generated by Repomix:
+
+    [paste content of repomix_context.txt here]
+
+    Can you suggest any cleaner ways to handle this function? Are there any potential N+1 query issues or indexing tips for the database operations within it?
+    ```
+    You should see the LLM provide suggestions for refactoring, potential performance issues, or ways to simplify your code.
+
+6.  **Implement and explore**: Review the AI's suggestions. Implement the ones that make sense, or use them as a starting point to explore further improvements in your codebase. Don't be afraid if a small fix leads to discovering more areas for improvement.
+    You should see your code become incrementally cleaner and more robust, and you'll gain a deeper understanding of your project.
+
+## Original source
+This workflow for 'vibe refactoring' was shared by Dawid Makowski on Hackernews, based on his blog post. It emphasizes a consistent, low-pressure approach to improving code quality with AI assistance.
+
+## Notes & variations
+*   **Free-tier alternatives**: Instead of ChatGPT, you can use other freemium LLM chatbots like Claude (claude.ai) or Gemini (gemini.google.com) for the AI chat step.
+*   **Common mistake**: Don't blindly accept AI suggestions; always understand *why* a change is recommended before applying it. Also, remember this is about small, weekly improvements, not a complete rewrite of your project.
+*   **Tip for better results**: Use the Repomix context file to give the AI a better understanding of your project, preventing 'hallucinations' (where the AI invents non-existent parts of your code). Also, consider rotating with a 'refactor buddy' to get fresh eyes on your code, as suggested by the author.

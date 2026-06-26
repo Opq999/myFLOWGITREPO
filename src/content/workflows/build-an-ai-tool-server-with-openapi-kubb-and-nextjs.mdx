@@ -1,0 +1,93 @@
+---
+title: "Build an AI Tool Server with OpenAPI, Kubb, and Next.js"
+description: "Learn how to build a Model Context Protocol (MCP) server that lets AI models interact with your APIs, using an OpenAPI specification, Kubb for code generation, and Next.js."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 240
+jobToBeDone: "Build an OpenAPI-driven Model Context Protocol (MCP) server"
+tools:
+  - name: "Kubb"
+    url: "https://kubb.dev/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Next.js"
+    url: "https://nextjs.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "OpenAPI"
+    url: "https://swagger.io/specification/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Vercel"
+    url: "https://vercel.com/"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=44086456"
+  platform: "hackernews"
+  author: "tudorg"
+  postedAt: 2025-05-25
+score: 7
+ingestedAt: 2026-06-26
+nigeriaNotes: "This workflow requires significant technical skill and a development environment. While the core tools are free, deploying a production server may incur hosting costs on platforms like Vercel, though a free tier is available for small projects."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "Build a custom AI assistant to answer questions about your university's course catalog using your OpenAPI spec."
+  - persona: "employee"
+    scenario: "Create an AI tool server for your company's internal API, letting AI agents fetch data securely."
+  - persona: "entrepreneur"
+    scenario: "Develop an AI-powered backend for your app, enabling AI models to interact with your service APIs."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+Model Context Protocol (MCP) is a new standard that allows AI models to securely use external tools and APIs (Application Programming Interfaces) in real time. This approach shows how to build an MCP server, which is like a translator that helps an AI model understand and use your existing API to perform tasks, such as fetching data or triggering actions.
+
+This is an advanced workflow because it involves writing code, setting up a web server, and understanding how to connect different technical components. It's not a simple copy-paste recipe because the exact steps depend on your specific API and require coding knowledge.
+
+The main idea is to automatically create the basic structure of this server from your API's OpenAPI specification, saving time and keeping your API and AI tools consistent. This helps avoid duplicate work and ensures that the AI's understanding of your API stays up-to-date.
+
+## What you can use it for
+*   **Enable AI agents to interact with your services**: Allow AI models (like chatbots or automated assistants) to perform actions through your existing backend systems, such as booking appointments or retrieving customer information.
+*   **Automate tool creation for AI**: Automatically generate the definitions for tools that AI models can use, directly from your existing API documentation (OpenAPI specification).
+*   **Keep AI tools updated with your API**: Ensure that the tools available to AI models stay in sync with any changes you make to your API, reducing manual effort and errors.
+*   **Build custom AI integrations**: Create tailored integrations where AI models can call specific functions or retrieve data from your applications in a structured and secure way.
+
+## Tools you need
+*   **Kubb** (free): A code generation tool for TypeScript projects that can create API clients, types, and even MCP integration code from an OpenAPI specification.
+*   **Next.js** (free): A popular open-source framework for building web applications, used here to create the server that hosts the MCP tools.
+*   **OpenAPI** (free): A standard, language-agnostic description format for REST APIs, used as the blueprint for generating the MCP server.
+*   **Vercel** (freemium): A cloud platform for deploying web applications, mentioned for its Next.js MCP adapter and hosting the server.
+
+## How it actually works
+This workflow involves several technical steps, and the full details are in the original blog post and its associated code repository. Here's a realistic path:
+
+1.  **Prepare your OpenAPI specification**: Ensure you have a well-defined OpenAPI specification (a YAML or JSON file) that accurately describes your API's endpoints, data structures, and operations. This will be the foundation for generating your MCP server.
+2.  **Set up a Next.js project**: Start a new Next.js project, which will serve as the framework for your MCP server. You'll need Node.js and npm/yarn installed on your computer.
+3.  **Integrate Kubb for code generation**: Install Kubb and configure it in your Next.js project. You'll create a `kubb.config.ts` file that points to your OpenAPI specification and tells Kubb which plugins and generators to use. The author doesn't share the full configuration, but it would involve plugins like `@kubb/plugin-oas` and custom generators.
+4.  **Develop custom Kubb generators**: Write custom code generators within Kubb to specifically produce the MCP tool definitions and client calls from your OpenAPI spec. This is where you tailor the output to create AI-accessible functions.
+5.  **Implement the MCP server with Next.js**: Use Next.js route handlers to expose your MCP tools. This involves wiring up the generated tool definitions and client calls, potentially using Vercel's MCP adapter for easier integration. You'll also need to add authentication middleware to secure your server.
+6.  **Deploy the server**: Once developed, deploy your Next.js MCP server to a platform like Vercel.
+
+The exact code for custom generators, route handlers, and authentication middleware is specific to your project and is detailed in the author's full guide, which you would need to consult for implementation.
+
+## Words you'll see, explained
+*   **API (Application Programming Interface)**: A set of rules that allows different software applications to communicate with each other.
+*   **OpenAPI specification**: A standard way to describe a REST API, detailing its available endpoints, operations, input parameters, and output responses.
+*   **Model Context Protocol (MCP)**: An emerging standard that enables AI models to securely interact with external tools and APIs in real time.
+*   **LLM (Large Language Model)**: An AI model trained on vast amounts of text data, capable of understanding and generating human-like text.
+*   **Kubb**: A flexible code generation tool for TypeScript projects that can create various outputs (like API clients or types) from an OpenAPI specification.
+*   **Next.js**: A popular open-source framework built on React for creating server-rendered web applications and APIs.
+*   **Code generation (Codegen)**: The process of automatically creating source code based on a model or specification, like an OpenAPI spec.
+*   **Route handler**: A function in a web server (like Next.js) that processes requests for a specific URL path.
+*   **Authentication middleware**: Software that sits between a request and a route handler, checking if a user or system is authorized to access a resource.
+
+## Original source
+This concept is based on a blog post by Alexis Rico on the Xata blog, shared by tudorg on Hacker News. The post details how Xata built their OpenAPI-driven Model Context Protocol (MCP) server using Kubb and Next.js.
+
+## Notes & variations
+*   **Do you even need this?**: If your API is small or you only need a few AI-accessible tools, manually writing the tool definitions might be simpler than setting up a full code generation pipeline. This approach is most beneficial for large, evolving APIs where consistency and automation are key.
+*   **Free-tier limits**: While Kubb and Next.js are free, deploying your MCP server to a cloud platform like Vercel might have free-tier limits on usage (e.g., build minutes, serverless function invocations, bandwidth). For production use, you might need a paid plan.
+*   **Common pitfall**: A common mistake is to automatically expose *every* API endpoint as an AI tool. This can overwhelm the LLM, making it difficult for the AI to choose the correct action. It's better to curate the generated tools, trimming or augmenting them to align with real-world AI usage.
