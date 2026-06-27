@@ -1,0 +1,78 @@
+---
+title: "Automate Unity Editor Tasks with AI (MCP for Unity)"
+description: "Learn how to connect AI assistants like Claude or local LLMs to your Unity Editor to manage assets, control scenes, and automate tasks."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 20
+jobToBeDone: "Automate Unity Editor tasks using AI assistants"
+tools:
+  - name: "Unity"
+    url: "https://unity.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "MCP for Unity"
+    url: "https://github.com/CoplayDev/unity-mcp"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "AI Assistant (e.g., Claude)"
+    url: "https://claude.ai/"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://github.com/CoplayDev/unity-mcp"
+  platform: "github"
+  author: "CoplayDev"
+  postedAt: 2026-06-15
+score: 7
+ingestedAt: 2026-06-27
+nigeriaNotes: "This workflow requires downloading and installing Unity, which can be a large file. Using a local LLM will consume significant device resources and data for initial setup, but then runs offline. Freemium AI assistants like Claude offer free tiers but require internet access for every use."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "Generate Unity game assets like trees or characters from text prompts for your game dev project."
+  - persona: "entrepreneur"
+    scenario: "Quickly prototype game mechanics in Unity by commanding AI to create objects and edit scripts."
+  - persona: "employee"
+    scenario: "Automate repetitive Unity Editor tasks like scene setup or asset placement with AI commands."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You'll learn how to connect an AI assistant directly to your Unity game development environment. This allows you to use simple text commands to make the AI manage assets, control scenes, edit scripts, and automate various tasks within Unity.
+This approach works by using MCP for Unity, a special tool that acts as a translator, letting your AI assistant understand and interact with Unity's features.
+
+## Tools you need
+*   **Unity** (free): The game development platform where you will automate tasks.
+*   **MCP for Unity** (free): The open-source tool that connects your AI assistant to Unity.
+*   **AI Assistant (e.g., Claude)** (freemium): A large language model (LLM) that will receive your commands and send instructions to Unity.
+
+## Steps
+1.  **Install Unity**: If you don't have Unity installed, download and install the Unity Hub, then install a Unity Editor version (e.g., the latest LTS version). Create a new 3D project or open an existing one.
+    You should have a Unity project open in the Unity Editor.
+2.  **Add MCP for Unity to your project**: Inside the Unity Editor, go to `Window` in the top menu, then select `Package Manager`. In the Package Manager window, click the `+` icon in the top-left corner, and choose `Add package from git URL...`. Paste the following URL into the text field and click `Add`:
+
+    ```
+    https://github.com/CoplayDev/unity-mcp.git?path=/MCPForUnity#main
+    ```
+
+    Unity will download and import the MCP for Unity package into your project. You might see a progress bar.
+3.  **Configure MCP for Unity**: Once the package is installed, go to `Window` again in the top menu. You should now see a new option: `MCP for Unity`. Click on it, then select `Configure All Detected Clients`.
+    MCP for Unity will set up the necessary connections for your AI assistant. You might see a confirmation message or a new window related to client configuration.
+4.  **Connect your AI Assistant**: The author mentions Claude, Codex, VS Code, and local LLMs. The exact steps to connect your chosen AI assistant will depend on the assistant itself. For a web-based assistant like Claude, you would typically use its interface to send prompts to MCP for Unity. For local LLMs or VS Code, you might need to follow specific setup instructions provided by MCP for Unity's documentation.
+    Your chosen AI assistant is now ready to send commands to your Unity Editor through MCP for Unity.
+5.  **Send your first command**: Open your AI assistant (e.g., Claude.ai in your web browser). Type a command to create objects in your Unity scene. The author provides this example:
+
+    ```
+    Create a red, blue, and yellow cube in the current scene.
+    ```
+
+    After sending the prompt, you should see three new cubes (red, blue, and yellow) appear in your active Unity scene.
+
+## Original source
+This workflow is based on the `unity-mcp` project by CoplayDev, found on GitHub. It introduces MCP for Unity, a tool designed to connect AI assistants with the Unity Editor, enabling automation of various development tasks.
+
+## Notes & variations
+*   **Free-tier alternatives**: Instead of a freemium AI assistant, you can use a local large language model (LLM) like Llama 3 or Mistral, run with tools like Ollama or LM Studio. This requires a powerful computer but can then run offline without internet data usage.
+*   **Common mistake**: Forgetting to `Configure All Detected Clients` after installing MCP for Unity. If your AI assistant isn't responding, double-check this step.
+*   **Tip for better results**: Be specific in your prompts. Instead of 'make a tree', try 'create a green pine tree model with a brown trunk at position (0, 0, 0) and scale it to 2 units tall'.

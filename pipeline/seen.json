@@ -6556,8 +6556,228 @@
     "5a882319fab1141a7945da2cad9b7e765be567bad978cb38e15a28a910a9cdd8": {
       "url": "https://www.reddit.com/r/Upwork/comments/1tvu6v0/upwork_when_you_report_someone_spreading_malware",
       "date": "2026-06-27"
+    },
+    "c897ce73fa0580620e724dd6cbdcb1f9716e1a9f9d5e5029d69fb3e7ed7bb82b": {
+      "url": "https://github.com/unicodeveloper/awesome-nextjs",
+      "date": "2026-06-27"
+    },
+    "d28f2fd1297ee51b0e432e6e44f2b79061c8af62af01591d5128e54ec1717ccf": {
+      "url": "https://github.com/agamm/awesome-developer-first",
+      "date": "2026-06-27"
+    },
+    "9dd21d9353f6ba50db869d0d7c901285a2503fb1cc909ffdd387ecfa881b6d8a": {
+      "url": "https://github.com/sourcegraph/awesome-code-ai",
+      "date": "2026-06-27"
+    },
+    "5f93f36127e9e97fcfd8a3d52c5c1d415f83e5b2d8f2dc2b102c1213c4f805dd": {
+      "url": "https://github.com/ai4s-research/awesome-ai-for-science",
+      "date": "2026-06-27"
+    },
+    "460771569084c27e3e5952bcaa4d6744b34a2bdf370bcac5c1169160aad24e89": {
+      "url": "https://github.com/thinkwee/AgentsMeetRL",
+      "date": "2026-06-27"
+    },
+    "1cfcc9071d2b3bc15f97f9a8820833b3126332c44e66809dc56be55e32f39d82": {
+      "url": "https://github.com/amrzv/awesome-colab-notebooks",
+      "date": "2026-06-27"
+    },
+    "15de2cb3196c4bc95174fb83a2a3f7498a1ce11c859cb0361484ef8598188ab2": {
+      "url": "https://github.com/corca-ai/awesome-llm-security",
+      "date": "2026-06-27"
+    },
+    "9125ce57557a1577f863e518c13974dcd46490619ad0d33138e4bff4a1f09491": {
+      "url": "https://github.com/aimerou/awesome-ai-papers",
+      "date": "2026-06-27"
+    },
+    "150ab8bb0feef5e557cc68a49e1a4fe943fbc7258e91f4994e26728072ac9ba0": {
+      "url": "https://github.com/weitianxin/Awesome-Agentic-Reasoning",
+      "date": "2026-06-27"
+    },
+    "961c2e4ba6892565cd02d585050c279f073d36cb66e8902a5074360463eb8215": {
+      "url": "https://github.com/Tebmer/Awesome-Knowledge-Distillation-of-LLMs",
+      "date": "2026-06-27"
+    },
+    "9442eecdabfb27ac3ffdb67d513fd14cf6729d0faf56f28ae7ca9d5518c5b264": {
+      "url": "https://github.com/caramaschiHG/awesome-ai-agents-2026",
+      "date": "2026-06-27"
+    },
+    "117f901576419cf849ceee903f486faf272d93ee4757777713a9b3f9c4dbced7": {
+      "url": "https://github.com/gokayfem/awesome-vlm-architectures",
+      "date": "2026-06-27"
+    },
+    "2b1f371e6537f4966851bb881115799197d8c7506263961a172c1ace8d6d9a0c": {
+      "url": "https://github.com/ysymyth/awesome-language-agents",
+      "date": "2026-06-27"
+    },
+    "b0d37ee3660dd7869bfb057d16396f0944f214a7e41ca0ebe915fa818aff2183": {
+      "url": "https://github.com/youngfish42/Awesome-FL",
+      "date": "2026-06-27"
+    },
+    "e97c2643f1dde4375df1800d4d5c4a71fd69287e699da622e29296c27d2f69c9": {
+      "url": "https://github.com/openmedlab/Awesome-Medical-Dataset",
+      "date": "2026-06-27"
+    },
+    "8ec116002f3d69f0620656343e6ae2f765ecee405d741e4f5bf2de491df75087": {
+      "url": "https://github.com/rdragos/awesome-mpc",
+      "date": "2026-06-27"
+    },
+    "ae2a42313a9c797758338085a4a539e8b691315107f4c3bc62c3c3eea4db3b06": {
+      "url": "https://github.com/mikbry/awesome-webgpu",
+      "date": "2026-06-27"
+    },
+    "326ee08c1050082988d635535148c9adaa5164b9570f343d952c1018cc438993": {
+      "url": "https://github.com/shahraizali/awesome-django",
+      "date": "2026-06-27"
+    },
+    "855e3b6381d312913dc0c423c4cfef91fcaa02b017d7a751266b2522c987fcc1": {
+      "url": "https://github.com/NarHakobyan/awesome-nest-boilerplate",
+      "date": "2026-06-27"
+    },
+    "7a4fdc36ed0d6337f40af507ca2b8649bebce4f4923ad120fb6065fac7c4fabc": {
+      "url": "https://github.com/engineering-management/awesome-engineering-management",
+      "date": "2026-06-27"
+    },
+    "f08ceb3054d747e9e860b65ccc4c4b9b33693d867d58b6575e56bce57e078255": {
+      "url": "https://github.com/ml-tooling/best-of-web-python",
+      "date": "2026-06-27"
+    },
+    "b8f9df035e51a94ce7169cdf88797cb414fc1796bf211e89dc76d42bc4230684": {
+      "url": "https://github.com/insthync/awesome-unity3d",
+      "date": "2026-06-27"
+    },
+    "cd646c164a3520e61b15cdc478352813295e95fad85e599a0b3245ce33e9ea8b": {
+      "url": "https://github.com/underlines/awesome-ml",
+      "date": "2026-06-27"
+    },
+    "18ae2fee46ad8f605ac70ee9dd3d0f56919f08f5898e8d2d9b06dc08d6cad16e": {
+      "url": "https://github.com/eddwebster/football_analytics",
+      "date": "2026-06-27"
+    },
+    "78a5081a2477279336ebf2d84ce90111ef4b7b0342d3467f79408c2b0c2065c0": {
+      "url": "https://github.com/ramnes/awesome-mongodb",
+      "date": "2026-06-27"
+    },
+    "44d084ccce58e871ef8d34f84cdee80be04cbe217cf9f62f8782d1d9db50ce08": {
+      "url": "https://github.com/RKiding/Awesome-finance-skills",
+      "date": "2026-06-27"
+    },
+    "338f417c7ef0127393f6abd9f4f49677fc232a2c06c9659d57bdbff3b893dcaa": {
+      "url": "https://github.com/shlomi-noach/awesome-mysql",
+      "date": "2026-06-27"
+    },
+    "d171c59a99980fc08286b8f74dea4313df0763783f7c9109899e3a74aba0b704": {
+      "url": "https://github.com/bytewax/awesome-public-real-time-datasets",
+      "date": "2026-06-27"
+    },
+    "de30a47d225f7a31703d5a7d559284e40b2f13ffef63378604dc1592fce92415": {
+      "url": "https://github.com/baba-s/awesome-unity-open-source-on-github",
+      "date": "2026-06-27"
+    },
+    "ebe8011d1b9fbdbf5e0cc69950bbd6d8856a9589d0194227219100f223775f3d": {
+      "url": "https://github.com/CryptoAILab/Awesome-LM-SSP",
+      "date": "2026-06-27"
+    },
+    "09a6710ce962239e00eb63ac7097e05830ef84849f541c706c67c44769dcfe70": {
+      "url": "https://github.com/ydyjya/Awesome-LLM-Safety",
+      "date": "2026-06-27"
+    },
+    "b94fc86391d1339b00233424b62b6be01c03a4261b42d93170181218cb95cb15": {
+      "url": "https://news.ycombinator.com/item?id=47163885",
+      "date": "2026-06-27"
+    },
+    "6112815e4b739f86440257b0fa6089bdd47a8a5b83d65d47e2f95abf7cb03ce3": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1lw999l/grok_sexually_harassed_the_x_ceo_deleted_all_its",
+      "date": "2026-06-27"
+    },
+    "093663f90e9158d08de51d1ace49bd7f30eddf02d86bf9e197f9418a09a7448a": {
+      "url": "https://dev.to/forgecode/top-4-most-powerful-coding-agents-on-openrouterai-you-cant-ignore-17hh",
+      "date": "2026-06-27"
+    },
+    "7a6a36314d76a01c4814eef9d4fe1d524d11513c73fd1250acd8bc02c15fbcdd": {
+      "url": "https://github.com/CoplayDev/unity-mcp",
+      "date": "2026-06-27"
+    },
+    "f340448d1b55ab31127a3efc022aa019118479e750b673ed7393bc3e0f57b23a": {
+      "url": "https://news.ycombinator.com/item?id=46452641",
+      "date": "2026-06-27"
+    },
+    "679b6c520e6918db5ea1a96adc2e727967277b07f530d53b39adfb1cca2afa06": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1ovv0kg/they_copied_chatgpt_wordforword_and_left_the",
+      "date": "2026-06-27"
+    },
+    "b76ff194c8b7fc5278b4c0e55cbdb62a54953a4a47c9d0efb4e6a31057985589": {
+      "url": "https://dev.to/forgecode/kimi-k2-vs-qwen-3-coder-12-hours-of-testing-3dil",
+      "date": "2026-06-27"
+    },
+    "d08fe006405350aa19c73bc8870443bdd448b8e32fc3204d4d270ee9178c5b70": {
+      "url": "https://github.com/bytebot-ai/bytebot",
+      "date": "2026-06-27"
+    },
+    "40550a6e35e7f2ac2819ae770e5159501c0c03d22661c2d5a9d6e315d53ddc41": {
+      "url": "https://news.ycombinator.com/item?id=45916525",
+      "date": "2026-06-27"
+    },
+    "db6f7a12c32eddf89c69baf3f84e4b8562f01631eda5173b655afe5b6c577b96": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1nofbc9/nvidia_investing_100b_into_openai_in_order_for",
+      "date": "2026-06-27"
+    },
+    "e365445cf056a550c96c843314309790b70209d6f02f083a1af7f8dbb9fb7e19": {
+      "url": "https://dev.to/forgecode/these-5-ai-coding-agents-made-me-stop-googling-git-commands-1ao6",
+      "date": "2026-06-27"
+    },
+    "98255810d4c42dd8fd407b9e83937fc7b31f7dd13b1c79e5a9e3ff7ba2758937": {
+      "url": "https://github.com/NVIDIA/SkillSpector",
+      "date": "2026-06-27"
+    },
+    "63309c857a749dbbc396c408521a87ab0b981e14502084ec77754b1041c24bb2": {
+      "url": "https://news.ycombinator.com/item?id=45440431",
+      "date": "2026-06-27"
+    },
+    "8f7f04b65cb94a2b09f05d5586fd6ce5b23baf65d9fe25823db4c201d18c7970": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1muf8li/were_so_cooked",
+      "date": "2026-06-27"
+    },
+    "dbc20694ba010ebe0b926df57630744f43aff01f3aac7337822bf841f7b3df7b": {
+      "url": "https://dev.to/stablenaira/prompt-engineering-is-a-symptom-and-thats-okay-3d4l",
+      "date": "2026-06-27"
+    },
+    "bb9f0adb0966586b5da5035c8f1d535f60039ca80bac00506de13136f575f95e": {
+      "url": "https://github.com/XiaomiMiMo/MiMo-Code",
+      "date": "2026-06-27"
+    },
+    "6150a17dfb4d0ebd1aa6fee20276a561da1df07aa8de579e3ef00dbccb7ca0a8": {
+      "url": "https://news.ycombinator.com/item?id=47849097",
+      "date": "2026-06-27"
+    },
+    "b1eb49d00ae81ec44fd4ea0d073267571c40c3a3f076d81f7da0f70abd8be374": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1n802wy/has_anyone_tried_this",
+      "date": "2026-06-27"
+    },
+    "ae45a1d9ed6a8e9eb854fd7fa4d5f5ff8ad6b6ac6bc51ff1bfc80c5da5cdfad4": {
+      "url": "https://dev.to/entelligenceai/cursor-bugbot-vs-entelligence-37d9",
+      "date": "2026-06-27"
+    },
+    "57127ff1936db34e282a8b18a7da5bba3b73d023346beb51e77940aa17d3cc51": {
+      "url": "https://github.com/voxel51/fiftyone",
+      "date": "2026-06-27"
+    },
+    "8e91406fcb5c07e806b8e8b39d252f398c561720e46ffdba8c084d68172ec100": {
+      "url": "https://news.ycombinator.com/item?id=45140921",
+      "date": "2026-06-27"
+    },
+    "1b0910bbda6fce0091033ac4c1d815124e6978f79a092f717fed8e434df25859": {
+      "url": "https://www.reddit.com/r/LangChain/comments/1sifm01/agentic_rag_is_a_different_beast_entirely",
+      "date": "2026-06-27"
+    },
+    "f5961ab94ca6f7cdf96919aa08505eb3c7109f2906e4f5edeab12d3533a1281a": {
+      "url": "https://dev.to/sivarampg/from-clawdbot-to-moltbot-how-a-cd-crypto-scammers-and-10-seconds-of-chaos-took-down-the-4eck",
+      "date": "2026-06-27"
+    },
+    "705364af63c7e66a1f69801098fcc0c739d823097a6766adfea4f25f9ca935f2": {
+      "url": "https://github.com/OffcierCia/DeFi-Developer-Road-Map",
+      "date": "2026-06-27"
     }
   },
-  "backfillPage": 20,
+  "backfillPage": 21,
   "dailyPage": 4
 }

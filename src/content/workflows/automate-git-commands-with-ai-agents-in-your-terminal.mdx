@@ -1,0 +1,155 @@
+---
+title: "Automate Git Commands with AI Agents in Your Terminal"
+description: "Learn how to use AI coding agents like Forge Code, Aider, and Claude Code directly in your terminal to automate common Git commands and tasks, skipping manual searches."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 25
+jobToBeDone: "Automate Git commands using AI coding agents in the terminal"
+tools:
+  - name: "Forge Code"
+    url: "https://forge.sh"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Aider"
+    url: "https://aider.chat/"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Claude Code"
+    url: "https://code.claude.com/"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Gemini CLI"
+    url: "https://ai.google.dev/gemini-api/docs/cli"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Node.js"
+    url: "https://nodejs.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Python"
+    url: "https://www.python.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Git"
+    url: "https://git-scm.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Terminal"
+    url: "https://en.wikipedia.org/wiki/Terminal_emulator"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/forgecode/these-5-ai-coding-agents-made-me-stop-googling-git-commands-1ao6"
+  platform: "blog"
+  author: "pankaj_singh_1022ee93e755"
+  postedAt: 2025-07-15
+score: 7
+ingestedAt: 2026-06-27
+nigeriaNotes: "This workflow requires using the terminal and potentially paid API keys for AI models. While some tools like Gemini CLI offer a free tier, others like Forge Code, Aider, and Claude Code will incur costs for their underlying AI models. Data usage is minimal as it's text-based."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "Automate committing your code for a university project by asking the AI to 'commit my changes with a message about the new feature'."
+  - persona: "employee"
+    scenario: "Quickly create a Git commit for your work by telling the AI 'commit my bug fixes for ticket XYZ with a clear message'."
+  - persona: "entrepreneur"
+    scenario: "Generate Git commands to branch and merge for your startup's MVP by asking the AI 'create a new feature branch and merge it back'."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You'll learn to use AI coding agents directly in your computer's terminal to automate common Git commands. Instead of manually typing complex Git commands or searching online, these agents understand natural language requests like "commit my changes" and execute the correct Git actions for you. This approach saves time and reduces errors, especially for repetitive or complex Git tasks.
+
+## Tools you need
+*   **Forge Code** (paid): An AI "pair programmer" that understands your code and Git history to automate Git commands, requiring a paid LLM API.
+*   **Aider** (paid): A Python-based AI "pair programmer" CLI that integrates with Git, auto-commits changes, and lets you chat about Git tasks, requiring a paid LLM API.
+*   **Claude Code** (paid): An AI coding agent from Anthropic that lives in your terminal, automates Git tasks, and can edit files and create commits.
+*   **Gemini CLI** (freemium): A command-line interface for Google's Gemini AI models, which can be used to generate Git commands or explanations, offering a free tier for its API.
+*   **Node.js** (free): A software platform that allows you to run JavaScript code outside of a web browser, needed to install Forge Code and Claude Code.
+*   **Python** (free): A popular programming language, needed to install Aider.
+*   **Git** (free): A version control system that tracks changes in computer files and coordinates work among multiple people.
+*   **Terminal** (free): A text-based interface for interacting with your computer's operating system (e.g., Command Prompt or PowerShell on Windows, Terminal on macOS/Linux).
+
+## Steps
+1.  **Install Node.js (for Forge Code and Claude Code)**: If you don't have Node.js installed, download and install it from the official Node.js website. This will also install `npm` (Node Package Manager).
+    *   Expected: Node.js and `npm` will be available in your terminal. You can check by typing `node -v` and `npm -v`.
+2.  **Install Python (for Aider)**: If you don't have Python installed, download and install it from the official Python website. This will also install `pip` (Python's package installer).
+    *   Expected: Python and `pip` will be available in your terminal. You can check by typing `python --version` and `pip --version`.
+3.  **Install Git**: If you don't have Git installed, download and install it from the official Git website.
+    *   Expected: Git commands will work in your terminal. You can check by typing `git --version`.
+4.  **Open your project folder in the Terminal**: Navigate to the folder of your software project where you use Git. Replace `/path/to/your/project` with the actual path to your project folder.
+    ```
+    # macOS or Linux
+    cd /path/to/your/project
+
+    # Windows (PowerShell)
+    Set-Location -Path "C:\path\to\your\project"
+    ```
+    *   Expected: Your terminal's current directory will be your project folder, and you should see the folder name in your terminal prompt.
+
+### Using Forge Code
+5.  **Install and launch Forge Code**: Run this command in your project's terminal. Forge Code will launch in interactive mode.
+    ```
+    # macOS or Linux
+    npx forgecode@latest
+
+    # Windows (PowerShell)
+    npx forgecode@latest
+    ```
+    *   Expected: Forge Code will start an interactive session. If you encounter issues, refer to the Forge Code documentation online.
+6.  **Ask Forge Code a Git question**: Type your request in natural language within the Forge Code session.
+    ```
+    commit my changes with a descriptive message
+    ```
+    *   Expected: Forge Code will generate and execute the appropriate Git command, then show you the result, such as a new commit being created.
+
+### Using Aider
+7.  **Install Aider**: Run this command in your terminal.
+    ```
+    python -m pip install aider-install
+    ```
+    *   Expected: Aider will be installed. You should see messages indicating successful installation.
+8.  **Launch Aider**: Navigate to your project directory (if not already there) and launch Aider. You will need to replace `model` and `key` with your chosen LLM provider (e.g., `openai/gpt-4o`) and your corresponding API key.
+    ```
+    # macOS or Linux
+    aider --model model --api-key key
+
+    # Windows (PowerShell)
+    aider --model model --api-key key
+    ```
+    *   Expected: Aider will scan your codebase and start an interactive chat session in your terminal.
+9.  **Chat with Aider about Git**: Type your request in the Aider session.
+    ```
+    show me the Git diff
+    ```
+    *   Expected: Aider will execute the `git diff` command and display the changes in your terminal.
+
+### Using Claude Code
+10. **Install Claude Code**: Run this command in your terminal.
+    ```
+    npm install -g @anthropic-ai/claude-code
+    ```
+    *   Expected: Claude Code will be installed globally on your system. You should see messages indicating successful installation.
+11. **Launch Claude Code**: Navigate to your project directory (if not already there) and launch Claude Code.
+    ```
+    # macOS or Linux
+    claude
+
+    # Windows (PowerShell)
+    claude
+    ```
+    *   Expected: Claude Code will start its interactive REPL (Read-Eval-Print Loop) in your terminal.
+12. **Prompt Claude Code for Git actions**: Type your request in natural language within the Claude Code session.
+    ```
+    show me the last 5 commits
+    ```
+    *   Expected: Claude Code will perform the `git log` command and display the last 5 commits from your repository.
+
+## Original source
+This workflow is inspired by a blog post titled 'These 5 AI Coding Agents Made Me Stop Googling #Git Commands!' by pankaj_singh_1022ee93e755, published on the DEV Community platform.
+
+## Notes & variations
+*   **Free-tier alternatives**: The Gemini CLI offers a free tier for its API, making it a good option to start without immediate costs. For other agents like Forge Code, Aider, and Claude Code, you will need to provide an API key for a large language model (LLM) like OpenAI's GPT or Anthropic's Claude, which typically incur costs after a small free trial.
+*   **Common mistake**: Forgetting to navigate to your project directory before launching the AI agent. Always use `cd /path/to/your/project` (or `Set-Location` on Windows) first, otherwise the agent won't have the correct context of your Git repository.
+*   **Tip for better results**: Be specific with your prompts. Instead of "fix this," try "fix the merge conflict in `src/main.js` by accepting the incoming changes." The more context you give, the better the agent can assist.
