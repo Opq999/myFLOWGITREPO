@@ -1,0 +1,145 @@
+---
+title: "Run AI Models Locally on Linux with GPU: Ollama & Open WebUI"
+description: "Set up your Linux machine to run AI models like Gemma and Phi-3 locally using Ollama and Open WebUI, leveraging your GPU for faster performance."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 30
+jobToBeDone: "Set up a local AI environment on Linux with GPU acceleration for running LLMs"
+tools:
+  - name: "Ollama"
+    url: "https://ollama.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Open WebUI"
+    url: "https://github.com/open-webui/open-webui"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Docker"
+    url: "https://www.docker.com/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "NVIDIA Container Toolkit"
+    url: "https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Gemma 2B"
+    url: "https://ai.google.dev/gemma"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Phi-3"
+    url: "https://azure.microsoft.com/en-us/blog/introducing-phi-3-tiny-your-next-small-language-model/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/lovestaco/running-local-ai-on-linux-with-gpu-ollama-open-webui-gemma-546h"
+  platform: "blog"
+  author: "lovestaco"
+  postedAt: 2025-11-17
+score: 8
+ingestedAt: 2026-06-28
+nigeriaNotes: "This workflow requires a Linux system with a compatible NVIDIA GPU. Data usage for downloading models can be significant (several GBs per model). Free tier viability is high as all core tools are free."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will set up your Linux computer to run AI language models directly on your machine, using your graphics card (GPU) to make them run much faster. This allows you to experiment with AI without needing an internet connection or paying for cloud services.
+
+This approach is useful because it gives you privacy and control over your AI models, and can be more cost-effective for frequent use.
+
+## Tools you need
+*   **Ollama** (free): A tool that makes it easy to download and run large language models (like AI chatbots) on your computer.
+*   **Open WebUI** (free): A web-based interface that lets you chat with the AI models you download using Ollama, similar to using ChatGPT's website.
+*   **Docker** (freemium): A system for packaging applications and their dependencies into containers, making them easy to run anywhere. You'll use it to install and run Open WebUI.
+*   **NVIDIA Container Toolkit** (free): Software that allows Docker containers to access and use your NVIDIA GPU.
+*   **Gemma 2B** (free): A specific AI language model developed by Google, known for good quality outputs.
+*   **Phi-3** (free): Another AI language model, developed by Microsoft, known for being fast and good for its size.
+
+## Steps
+1.  **Install Ollama**: This tool helps you download and manage AI models.
+    *   Open your terminal (a text-based interface for your computer).
+    *   Run the following command to download and install Ollama:
+
+    ```bash
+    curl -fsSL https://ollama.com/install.sh | sh
+    ```
+    *   You should see messages indicating Ollama is downloading and installing.
+
+2.  **Download AI Models**: Get the AI models you want to use.
+    *   In your terminal, pull the Gemma model:
+
+    ```bash
+    ollama pull gemma2:2b
+    ```
+    *   You should see progress bars as the model downloads. This can take some time depending on your internet speed.
+    *   Next, pull the Phi-3 model:
+
+    ```bash
+    ollama pull phi3:latest
+    ```
+    *   You should see similar download progress.
+
+3.  **List downloaded models**: Check that the models were downloaded correctly.
+    *   In your terminal, run:
+
+    ```bash
+    ollama list
+    ```
+    *   You should see a list of models you have downloaded, including `gemma2:2b` and `phi3`.
+
+4.  **Install NVIDIA Container Toolkit**: This lets Docker use your GPU.
+    *   First, remove any old configurations:
+
+    ```bash
+    sudo rm /etc/apt/sources.list.d/nvidia-container-toolkit.list
+    sudo rm /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg
+    ```
+    *   Add the new, clean source for the toolkit:
+
+    ```bash
+    curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/libnvidia-container.gpg
+    curl -s -L https://nvidia.github.io/libnvidia-container/stable/deb/nvidia-container-toolkit.list | sed 's#signed-by=.*#signed-by=/usr/share/keyrings/libnvidia-container.gpg#' | sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
+    ```
+    *   Install the toolkit:
+
+    ```bash
+    sudo apt update
+    sudo apt install -y nvidia-container-toolkit
+    ```
+    *   Configure Docker to use the GPU runtime:
+
+    ```bash
+    sudo nvidia-ctk runtime configure --runtime=docker
+    sudo systemctl restart docker
+    ```
+    *   Test if Docker can see your GPU:
+
+    ```bash
+    docker run --rm --gpus all nvidia/cuda:12.3.0-base-ubuntu22.04 nvidia-smi
+    ```
+    *   You should see information about your NVIDIA GPU displayed, confirming it's accessible from within Docker.
+
+5.  **Install Open WebUI**: This is the chat interface for your AI models.
+    *   You will use Docker to install Open WebUI. The exact command to run it can vary slightly, but a common way is:
+
+    ```bash
+    docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
+    ```
+    *   This command downloads the Open WebUI image and starts it in the background. You should see a long string of characters, which is the container ID, confirming it started.
+
+6.  **Access Open WebUI**: Open the chat interface in your web browser.
+    *   Open your web browser and go to `http://localhost:3000`.
+    *   You should see the Open WebUI login page. You can create an account to start using it.
+
+7.  **Connect Open WebUI to Ollama**: Make sure Open WebUI can talk to your downloaded models.
+    *   In Open WebUI, look for a settings or connection area. You might need to add Ollama as a backend. The default address for Ollama is usually `http://localhost:11434`.
+    *   The interface should show that Ollama is connected, and you should be able to select and chat with the models you downloaded (like Gemma or Phi-3) from within the web UI.
+
+## Original source
+This guide is based on a blog post by Maneshwar on the DEV Community platform. Maneshwar shares practical, real-world setups for developers, focusing on making tools like AI accessible and usable.
+
+## Notes & variations
+*   **Free tier alternative**: If you don't have a Linux machine with a compatible NVIDIA GPU, you can still use Ollama on your computer (without GPU acceleration) or use free online services that host models, though these may have usage limits.
+*   **Common mistake**: Forgetting to restart the Docker service after installing the NVIDIA Container Toolkit can prevent Docker from seeing your GPU. Always restart Docker after the toolkit installation.
+*   **Tip for better results**: For a 4GB GPU, models like Phi-3 and Gemma 2B are good choices. Larger models will be too slow or won't fit in your GPU's memory. Experiment with different models to see which performs best for your needs.

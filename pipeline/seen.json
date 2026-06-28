@@ -6892,8 +6892,372 @@
     "f9c244dad5754b37611cffe7893d5f49cb9e5c1c8d174a62688adb420ff6a45c": {
       "url": "https://news.ycombinator.com/item?id=46733905",
       "date": "2026-06-28"
+    },
+    "fb0dbdbb45be1abd11c7fae44f27360759ce56058b119a0ebccf13da018fc6a8": {
+      "url": "https://github.com/kyegomez/awesome-multi-agent-papers",
+      "date": "2026-06-28"
+    },
+    "d21c476d2d3e183c6af5b9de3fbd9f6825ee9a032750554c64cadce284ba6431": {
+      "url": "https://github.com/webfuse-com/awesome-claude",
+      "date": "2026-06-28"
+    },
+    "21b4aa8f39a6fff737e34ce0a178071dc177b74e3f834ebbec3d08902b4c03d0": {
+      "url": "https://github.com/ottosulin/awesome-ai-security",
+      "date": "2026-06-28"
+    },
+    "b84c089c0077d35e4a6ed094b2b02023f8a21024fe60b14d3eb7e36ee56f2bb8": {
+      "url": "https://github.com/atakanaltok/awesome-useful-websites",
+      "date": "2026-06-28"
+    },
+    "6013bb468a502f505d756d76447c1be0a0881b2f53470e7efc3f08bc00a99966": {
+      "url": "https://github.com/uhub/awesome-python",
+      "date": "2026-06-28"
+    },
+    "bcbb49baab79483ca35c6eccd74b3948ba2ae720472256e602495ed8af265eef": {
+      "url": "https://github.com/freeCodeCamp/awesome-quincy-larson-emails",
+      "date": "2026-06-28"
+    },
+    "c3a58350ec17dca672ba2472fadf060e8c5cdf3ba894e04e3945b12288788af7": {
+      "url": "https://github.com/uncbiag/Awesome-Foundation-Models",
+      "date": "2026-06-28"
+    },
+    "42e8369eecbb021f247be96c2ea8d5e81bfa274c0ccbdf1e41252a15614969d1": {
+      "url": "https://github.com/12britz/awesome-free-models",
+      "date": "2026-06-28"
+    },
+    "01396a848a24c44247ec541aa7ef3b07802da829dcfb120e721c734ddc260c49": {
+      "url": "https://github.com/mundimark/awesome-markdown",
+      "date": "2026-06-28"
+    },
+    "ccc410da6af03e354e5c9b788a1c5043a4507b43fb1fb26fe408832dc74eb374": {
+      "url": "https://github.com/wq2012/awesome-diarization",
+      "date": "2026-06-28"
+    },
+    "0f5bc1e0c0ee72313d10fccbc8e093bd73593191f7dc88ec6585c82b6c3a6008": {
+      "url": "https://github.com/safe-graph/graph-fraud-detection-papers",
+      "date": "2026-06-28"
+    },
+    "fd2695ca6f01fca6c283cb1884a272e42e407ebbb4db135c3958424efcff5b9a": {
+      "url": "https://github.com/HuangOwen/Awesome-LLM-Compression",
+      "date": "2026-06-28"
+    },
+    "22528a452df06307082ee2ea53a30e2acda4fc1c445398f793c34e07e37f3517": {
+      "url": "https://github.com/leofan90/Awesome-World-Models",
+      "date": "2026-06-28"
+    },
+    "7e399dd309da55b63b4ed46f9bc2f9fc1835acac7e978b6b08ae1f7065b1ba3d": {
+      "url": "https://github.com/MobilityData/awesome-transit",
+      "date": "2026-06-28"
+    },
+    "3fe24201335efaba381a43eebe43f81c506826ac85dd5cc4151b3e29cbcb7ae9": {
+      "url": "https://github.com/SamurAIGPT/awesome-hermes-agent",
+      "date": "2026-06-28"
+    },
+    "38f784e060eb001119f1064835a2bedee22e10ddaae0ad3980c508d4e9573b90": {
+      "url": "https://github.com/0PandaDEV/awesome-windows",
+      "date": "2026-06-28"
+    },
+    "a3e2363052836e286cff5de3ebfee90520d679f6c55b2d2edfb7dcbbf9b47ac2": {
+      "url": "https://github.com/DEEP-PolyU/Awesome-GraphRAG",
+      "date": "2026-06-28"
+    },
+    "099d955705fd593ba0896de57493843ab4e072fdde7478ff9f8d9de1043f3f57": {
+      "url": "https://github.com/kakoni/awesome-healthcare",
+      "date": "2026-06-28"
+    },
+    "21a7c7f9e9dfc2707d810807cd0191443fe00baa8912a91f5aeb8ca7d14ed299": {
+      "url": "https://github.com/zchoi/Awesome-Embodied-Robotics-and-Agent",
+      "date": "2026-06-28"
+    },
+    "32d76f4963f376cfbea901ff3f482e60eead43031da53b9cec529181ca8a1c1f": {
+      "url": "https://news.ycombinator.com/item?id=46812608",
+      "date": "2026-06-28"
+    },
+    "dd6acc75b4854df67a1b0fae13e3daa1fb88ad6c9f65d3f2e3eee0b9d4654051": {
+      "url": "https://dev.to/stablenaira/missing-my-coworker-jason-today-23h3",
+      "date": "2026-06-28"
+    },
+    "f8ccb64edbe074fb076eb1c083d973db39c89a1c67498a48434e96e21baac3a0": {
+      "url": "https://github.com/unicity-astrid/astrid",
+      "date": "2026-06-28"
+    },
+    "4c6f02c7282e34d3848fb863f7ff9125860699db669146a54766cdcf9b0e0f4c": {
+      "url": "https://news.ycombinator.com/item?id=46616481",
+      "date": "2026-06-28"
+    },
+    "a032fb1be7862161a3f56ef67b8a73a6baa1e75d769d6b88a8465d9fb0e95adc": {
+      "url": "https://dev.to/supabase/create-a-supabase-backend-using-figma-make-334o",
+      "date": "2026-06-28"
+    },
+    "df2c22e2bf1660344df01f01888e18403c2afd516088d5b4b0323762ac78ee1f": {
+      "url": "https://github.com/RunanywhereAI/runanywhere-sdks",
+      "date": "2026-06-28"
+    },
+    "17735baba7db94fd62f57b4c761adf6d53eeec83aaec793c94dd743d9f35528a": {
+      "url": "https://news.ycombinator.com/item?id=48445171",
+      "date": "2026-06-28"
+    },
+    "96f6658b821b4e36907faf6baa8c1cc3c56a95c01603509a0ae8c6c6ee5f1099": {
+      "url": "https://dev.to/lovestaco/error-handling-in-go-stop-panicking-start-wrapping-351d",
+      "date": "2026-06-28"
+    },
+    "1db29eb9ab4f9cb8733fb063e5315c33f8d74dcf7145225995c9a30df820041b": {
+      "url": "https://github.com/Arize-ai/phoenix",
+      "date": "2026-06-28"
+    },
+    "7f8dcf69dd68ef58252e477de06b80a92aaa124e24e9c41c8da24599fceed418": {
+      "url": "https://news.ycombinator.com/item?id=44891090",
+      "date": "2026-06-28"
+    },
+    "531869173a5da59630fc3270403409b2326899c67121f15c1383821896f12660": {
+      "url": "https://dev.to/webdeveloperhyper/how-to-create-a-crazy-roller-coaster-builder-rollercoasterjs-react-three-fiber-ai-5c5e",
+      "date": "2026-06-28"
+    },
+    "b30a4685308372204352af0b7fb171ee36433da2670bec0144e186c2d1c2b65c": {
+      "url": "https://github.com/Acly/krita-ai-diffusion",
+      "date": "2026-06-28"
+    },
+    "92bbcd2932712ad04bc838d2d544007405932f4881554e9cb9c4b8ee55acc398": {
+      "url": "https://news.ycombinator.com/item?id=45920156",
+      "date": "2026-06-28"
+    },
+    "724e880688e4c85926a5150195f70a65b6a018e40bfc7807cb4b28ef8d3d551b": {
+      "url": "https://dev.to/dannwaneri/what-building-my-own-ai-bot-taught-me-about-generative-ai-57il",
+      "date": "2026-06-28"
+    },
+    "36de069eae99a61e71ca34909f18c54224e2a0491db8b66711ce92ef1f8019af": {
+      "url": "https://github.com/rmyndharis/OpenWA",
+      "date": "2026-06-28"
+    },
+    "54bacf6eefe4741202b4c2e7a9a35fc26eebc59adb3cffaae18505f4fd1ca782": {
+      "url": "https://news.ycombinator.com/item?id=48225596",
+      "date": "2026-06-28"
+    },
+    "b0970dbbf6089ddcca8e361ae5910de14f4794472ccbff2e3d0fc8bb7259aef4": {
+      "url": "https://dev.to/dannwaneri/your-agent-is-making-decisions-nobody-authorized-2bc7",
+      "date": "2026-06-28"
+    },
+    "bc255cd9a9b787f87ca79d4c5a56e5ac47da4e9ebd3c00dd85d97b7ba360fa9e": {
+      "url": "https://github.com/1N3/Sn1per",
+      "date": "2026-06-28"
+    },
+    "ebf7c656db5953f9c8140030b702411faeb781e263e110cfccd63c022cb2fbc6": {
+      "url": "https://news.ycombinator.com/item?id=48124436",
+      "date": "2026-06-28"
+    },
+    "902c193cc698d0e2c9aa8ffac2397bd2cb2f4ffaa6db1442f2919ea0cc9e0fe4": {
+      "url": "https://dev.to/taqui/this-portfolio-isnt-perfect-but-its-100-mine-3hi5",
+      "date": "2026-06-28"
+    },
+    "42917a4e557536834cbef90ec64d1273512079de7ab24f3c02eb01a878ef937b": {
+      "url": "https://github.com/satellite-image-deep-learning/techniques",
+      "date": "2026-06-28"
+    },
+    "8fc7d95036f933c8f183cdc58ee66ec867a69b16051ad34279b2bef81ead214f": {
+      "url": "https://news.ycombinator.com/item?id=45015230",
+      "date": "2026-06-28"
+    },
+    "db411cf37076b0ee62648b07480a81f4155b9bb61bc35a0e80ea660721514b22": {
+      "url": "https://dev.to/alifar/ghost-6-is-really-something-else-46jj",
+      "date": "2026-06-28"
+    },
+    "05edb7698952c73e8ef370fd625bd2a0e472fc6a7faeaf6a77649da555213423": {
+      "url": "https://github.com/sigoden/aichat",
+      "date": "2026-06-28"
+    },
+    "8316e0b849b56bfcceee82c2778721459279878074aa0b90924f76d303ce17dd": {
+      "url": "https://news.ycombinator.com/item?id=46675740",
+      "date": "2026-06-28"
+    },
+    "1cb13cbc459292861de379e4f0f17ec4e983d142c5d2b20879d8e592f28d77bc": {
+      "url": "https://dev.to/liquidcode/week-3-from-0-to-30-developers-building-in-public-2ng9",
+      "date": "2026-06-28"
+    },
+    "988c4a4daa84812882d1a2b664b0ea0495d693baa24f0be18328d30e26fac691": {
+      "url": "https://github.com/Orchestra-Research/AI-Research-SKILLs",
+      "date": "2026-06-28"
+    },
+    "84aabaf180e250efdf2ce68734e2cfb78b7697b9874714467553023b8982037c": {
+      "url": "https://news.ycombinator.com/item?id=46515777",
+      "date": "2026-06-28"
+    },
+    "4e5983beb66169f57fce60b13dd4651cbf3f90e1e589502577ae53ea420c4e88": {
+      "url": "https://dev.to/astha_jhawar_f1891a37e168/i-built-a-linkedin-job-scraper-because-manual-job-hunting-is-pain-49j6",
+      "date": "2026-06-28"
+    },
+    "d4ddf33cea9e35f16f4c06f44d0b0806fab483f3125cbb3399016f13d127fe9c": {
+      "url": "https://github.com/Netflix/metaflow",
+      "date": "2026-06-28"
+    },
+    "385cc3fb7cae892ae5882f768ea6213303d606d769b04c00a26c5a9a9fac4cb3": {
+      "url": "https://news.ycombinator.com/item?id=48387095",
+      "date": "2026-06-28"
+    },
+    "c492f8c79a668bbe23e1cbfe6f335b1045d15bc409ae51c61ab10a694f13c1fa": {
+      "url": "https://dev.to/jasmin/streaming-an-llm-response-in-4-gifs-16dh",
+      "date": "2026-06-28"
+    },
+    "16a9c46afa1620949e96d72171e49b1bbf21abb7e222aaf08aca813bee55bb42": {
+      "url": "https://github.com/alibaba/spring-ai-alibaba",
+      "date": "2026-06-28"
+    },
+    "108d894aa378dc2f44c8cf95db3390835a209ebf673f27cecee8aa05e49d2198": {
+      "url": "https://news.ycombinator.com/item?id=47985077",
+      "date": "2026-06-28"
+    },
+    "063da9692a76666cbbbc05ae760c52c0f0a3e9b9b850cb0821b848677bfcb778": {
+      "url": "https://dev.to/hydraide/how-i-made-europe-searchable-from-a-single-server-the-story-of-hydraide-432h",
+      "date": "2026-06-28"
+    },
+    "1099fbfa03c21eea0d08140f7045c9f0d7c3844fc21978d1392c931054e1a7e8": {
+      "url": "https://github.com/pymupdf/PyMuPDF",
+      "date": "2026-06-28"
+    },
+    "0a7efa1077b3073c49936bd3c96e1878e3087df87d67b8dae8418c431ce31c72": {
+      "url": "https://news.ycombinator.com/item?id=46963177",
+      "date": "2026-06-28"
+    },
+    "e8abb14820def591d99b72b9d5376fd79aba35b0ec9a25032518dff1f6f5ba0b": {
+      "url": "https://dev.to/olgabraginskaya/build-in-public-week-1-o8a",
+      "date": "2026-06-28"
+    },
+    "1dbbd80bcea9bd4ac720761f72bc267d2be36ce0983d5ae6f34592a12e1089f3": {
+      "url": "https://github.com/langchain-ai/open-swe",
+      "date": "2026-06-28"
+    },
+    "e702235efc1fce850584b1bd5fb27dd1ae996cdfe3a15bb80b9ba996c90ac2d2": {
+      "url": "https://news.ycombinator.com/item?id=46238354",
+      "date": "2026-06-28"
+    },
+    "76f1f52009ac8b0538777c3125e2ff8afb2a662764c41cf57f600574068d24d7": {
+      "url": "https://dev.to/googleai/fine-tuning-gemma-3-with-cloud-run-jobs-serverless-gpus-nvidia-rtx-6000-pro-for-pet-breed-248b",
+      "date": "2026-06-28"
+    },
+    "f6f3765d8f9bcff2b92a67c58f43920816e13a258ec09f562a65a07d9e0ad7ed": {
+      "url": "https://github.com/MemTensor/MemOS",
+      "date": "2026-06-28"
+    },
+    "e71b79b9af47325bac8e81f6b98c9cba9366db9d6514cc59c125551f429cdfe8": {
+      "url": "https://news.ycombinator.com/item?id=47201816",
+      "date": "2026-06-28"
+    },
+    "8e96819ecbbef4d4bf453d1119d5aaa255d385d5ea594f852569bba84a794de8": {
+      "url": "https://dev.to/composiodev/top-5-secure-openclaw-alternatives-you-should-consider-172p",
+      "date": "2026-06-28"
+    },
+    "4f795faf4eede06c1c10e4b020745939666bbd8dbebf456508ab0195cb48ee59": {
+      "url": "https://github.com/AgriciDaniel/claude-seo",
+      "date": "2026-06-28"
+    },
+    "801f4e08cedf3bca42bd5b7f4f1b69564900a8ff362ed5f26b266f9bdf27a2e0": {
+      "url": "https://news.ycombinator.com/item?id=45887536",
+      "date": "2026-06-28"
+    },
+    "e506ceb3bfd07a9df894e376df18bba51805202049039429a1f681d391b27ae5": {
+      "url": "https://dev.to/anchildress1/copilot-premium-requests-more-than-asked-exactly-what-you-need-8ph",
+      "date": "2026-06-28"
+    },
+    "0159e9e3e498433bcfea49d260c1689a16294ccb4421f502f3272f6a8249fb56": {
+      "url": "https://github.com/0x4m4/hexstrike-ai",
+      "date": "2026-06-28"
+    },
+    "05fb8348a4abb7e9575a2882517065f3c0da33625a087cddb2c8bea47fd6d89e": {
+      "url": "https://dev.to/arbythecoder/the-night-kubernetes-almost-made-me-quit-devops-forever-4248",
+      "date": "2026-06-28"
+    },
+    "0255a0a616a8ce51e0dcd91c0885e01e1434cc9a0efcb844d1960603198ecd47": {
+      "url": "https://github.com/unoplatform/uno",
+      "date": "2026-06-28"
+    },
+    "0883556fd331490ae21cd70766300d852338eb0198dafdc935ff07b423fb1f37": {
+      "url": "https://dev.to/lovestaco/running-local-ai-on-linux-with-gpu-ollama-open-webui-gemma-546h",
+      "date": "2026-06-28"
+    },
+    "1004521f78a1c452adb7242e2d01931543169d6b391a0377a6c70214eb21d092": {
+      "url": "https://github.com/microsoft/magentic-ui",
+      "date": "2026-06-28"
+    },
+    "210d3dae57ad32407e06fcd71fc47da3ecebb096b567cb2a10b263c6a5ac6608": {
+      "url": "https://dev.to/_boweii/they-were-wrong-3-best-practices-i-followed-that-almost-ruined-my-project-26pe",
+      "date": "2026-06-28"
+    },
+    "d4a6e05c877a8cff65e296daa7a81d510f4306994347eced2a3289c15f775957": {
+      "url": "https://github.com/agentscope-ai/agentscope-java",
+      "date": "2026-06-28"
+    },
+    "6786a0d00d6019bccf63754b28061a9ecebe6666dd4a5d0f52354f8203f9fcc8": {
+      "url": "https://dev.to/awjudd/the-ocr-rabbit-hole-3h7",
+      "date": "2026-06-28"
+    },
+    "c0cead22407ff8bd076ff8b7a31ea206b99c0f805318c5cb27d9ba835b5799c3": {
+      "url": "https://github.com/abhi1693/openclaw-mission-control",
+      "date": "2026-06-28"
+    },
+    "db691afa1391c046645a818e37ec84bf877e66629862a348286b5e9f2270417f": {
+      "url": "https://dev.to/jaideepparashar/myth-vs-reality-ai-will-replace-devs-2a7m",
+      "date": "2026-06-28"
+    },
+    "b76c5e80178da9020264868e8993ac6db023734e99878b10b712ec8b4291e806": {
+      "url": "https://github.com/flypythoncom/python",
+      "date": "2026-06-28"
+    },
+    "2aab194e7161b1cf7458ff26193e89851194386e775c7c52b628fd7d7d5efaf8": {
+      "url": "https://dev.to/jaideepparashar/the-hidden-cost-of-ai-hype-in-developer-communities-34dm",
+      "date": "2026-06-28"
+    },
+    "eda52afc2779cedff28d965a9231be71276d0f939d43f9ba55a8147b6355b329": {
+      "url": "https://github.com/tradesdontlie/tradingview-mcp",
+      "date": "2026-06-28"
+    },
+    "ace29f9fffaf1d2d092148253157ff0fa9ec1b9830c8cdef3e5e73d29803f209": {
+      "url": "https://dev.to/sfundomhlungu/how-to-synchronize-threads-in-go-1elo",
+      "date": "2026-06-28"
+    },
+    "7cd533df53b445fee14baa34343a2459047e16a7218ad87ee218efd83d533a45": {
+      "url": "https://github.com/erxes/erxes",
+      "date": "2026-06-28"
+    },
+    "12199780ac0cc5f18341f5afc294ee8404e04b94e035728dfb06145c987a4899": {
+      "url": "https://dev.to/klement_gunndu/the-ai-engineering-stack-in-2026-what-to-learn-first-1nhj",
+      "date": "2026-06-28"
+    },
+    "2c24d124a7f510a213447a07e59869e28b7a48e566d0658358273dfb19923cc0": {
+      "url": "https://github.com/junhoyeo/tokscale",
+      "date": "2026-06-28"
+    },
+    "c5e9e8373e9c9af5495bb1d3026f1e2e6db34164c33dc9fe28d1433835a682ba": {
+      "url": "https://dev.to/yuktisays/that-cors-error-isnt-a-bug-its-actually-protecting-your-web-app-378",
+      "date": "2026-06-28"
+    },
+    "e549921e56d68da91cc7948fc7fa2721fef9ed97fb31d525fe280eb16e225986": {
+      "url": "https://github.com/knownsec/aipyapp",
+      "date": "2026-06-28"
+    },
+    "9720098112be6fa2bb50c2d8b3cd1f5eee698b1503e266ca565f6a2b79ed1d4d": {
+      "url": "https://dev.to/lovestaco/when-static-sites-stop-scaling-migrating-freedevtools-125k-pages-from-static-astro-to-ssr-1hf5",
+      "date": "2026-06-28"
+    },
+    "07a4aa5d0b2f8f3d9111283b3d41e94cd5f9448e3d02b64fba59ba139fe76840": {
+      "url": "https://github.com/kirodotdev/Kiro",
+      "date": "2026-06-28"
+    },
+    "a40d07193fb3ddffd6817b7dd31f14f64300e48ced3d0642da8e01388c46647f": {
+      "url": "https://dev.to/pravesh_sudha_3c2b0c2b5e0/how-i-built-philosophy-ai-agent-for-wlh-project-43ci",
+      "date": "2026-06-28"
+    },
+    "66fee06da6953d74a8a4a8368e07d645f5c2e950e328a6ee9a693c9f27281265": {
+      "url": "https://github.com/BrowserBox/BrowserBox",
+      "date": "2026-06-28"
+    },
+    "65c155345af7d1c9efc541088ef4a8a48371d6ee39741976fd82e2654f85c33e": {
+      "url": "https://dev.to/ddebajyati/a-case-study-in-solving-the-riddle-of-francistrdev-2c1i",
+      "date": "2026-06-28"
+    },
+    "aeab913064feb92032ef4fcfbd2cd9646170c0e395ec2729d6f5698c9add7dcf": {
+      "url": "https://github.com/OneRedOak/claude-code-workflows",
+      "date": "2026-06-28"
     }
   },
-  "backfillPage": 21,
+  "backfillPage": 22,
   "dailyPage": 5
 }

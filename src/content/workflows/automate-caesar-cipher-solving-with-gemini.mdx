@@ -1,0 +1,84 @@
+---
+title: "Automate Caesar Cipher Solving with Gemini"
+description: "Learn how to use Gemini to automatically solve mixed-shift Caesar cipher riddles by analyzing text perplexity."
+category: "academic-research"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 30
+jobToBeDone: "Automate solving a mixed-shift Caesar cipher riddle using LLMs"
+tools:
+  - name: "Gemini"
+    url: "https://gemini.google.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/ddebajyati/a-case-study-in-solving-the-riddle-of-francistrdev-2c1i"
+  platform: "blog"
+  author: "ddebajyati"
+  postedAt: 2026-04-04
+score: 7
+ingestedAt: 2026-06-28
+nigeriaNotes: "Gemini is accessible via web browser, making it suitable for mobile. Data usage is minimal for text-based interactions. Free tier is sufficient for this task."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to use an AI model like Gemini to automatically decipher a text that has been encoded using a Caesar cipher, where different parts of the text might use different shift values. This approach works by having the AI score how likely each possible deciphered version of a text segment is to be real English, and then using that scoring to find the correct shifts.
+
+## Tools you need
+*   **Gemini** (freemium): A powerful AI chatbot that can understand and generate text, used here to score the likelihood of different deciphered texts being correct English.
+
+## Steps
+1.  **Understand the riddle's structure**: The author explains that the riddle uses a "Mixed-Shift" Caesar cipher, meaning different lines or sections of the text are shifted by different amounts. Traditional methods of finding a single shift value for the whole text won't work.
+2.  **Prepare the text**: Copy the riddle text you want to solve. The author provides an example riddle:
+
+    ```
+    Not all rewards glitter the same,
+    Vrxvi tcztbj fwkve jgfzc kyv tcrzd.
+    Exfb jan vjmn R anodbn cx kanjt,
+    Every promise real—no fake.
+    Remaining patient tells you when,
+    Pjvnb xo cadbc knprw jpjrw.
+    Fetv pfl tyffjv kf wfccfn kyiflxy,
+    Nothing’s lost—except maybe you.
+    Numbers, years, a felt‑known tune,
+    R dvdfip yldj r jzcmvi jgffe.
+    Pnwcun fxamb, ojvrurja ouxf,
+    If it’s wrong… why does it glow?
+    Very few walk away untouched,
+    Vmve wvnvi jljgvtk rj dlty.
+    Pzvcu kf rejnvij, ufe’k xzmv lg--
+    Fcu ivgczvj wzcc kyv tlg.
+    Leuvijkreu nyrk cvu pfl yviv,
+    Lecvjj... pfl rcivrup yvri zk.
+    Gcrp zk.
+    Nyrk rd Z yvrizex?
+    ```
+3.  **Ask Gemini to find the best shift for each line**: The core idea is to ask Gemini to try all 25 possible Caesar shifts for a given line and tell you which shift makes the line sound most like natural English. You will need to do this for each line of the riddle. The author doesn't share their exact prompt for this, but a starting point could be:
+
+    ```
+    For the following line of text, try all 25 possible Caesar cipher shifts (shifting 'a' to 'z' and wrapping around). For each shift, tell me how likely the resulting text is to be correct English. Then, tell me which shift value (from 1 to 25) resulted in the most natural-sounding English sentence.
+
+    Line: [Paste one line of the riddle here]
+    ```
+    You should get a response from Gemini indicating which shift value it thinks is best for that specific line.
+4.  **Repeat for all lines**: Perform Step 3 for every line in the riddle. Keep track of the best shift value found for each line. You will likely end up with a list of shift values, one for each line.
+5.  **Identify the pattern (Consensus Mode)**: The author found that even with different shifts per line, there's often a pattern. Look at the list of best shift values you collected. The most frequent shift value (the "mode" or "majority") is likely the "Global Master Key" that applies to most of the text, or at least a significant portion of it. The author also suggests identifying a "Candidate Pool" of shifts that scored well for individual lines.
+6.  **Decrypt the riddle**: Once you have identified the most common shift value(s), use them to decrypt the lines of the riddle. You can do this manually or by asking Gemini again, providing the line and the identified shift value.
+
+    For example, if Gemini identified Shift +9 as the most common, you would ask:
+
+    ```
+    Decrypt the following line using a Caesar cipher with a shift of +9:
+    [Paste one line of the riddle here]
+    ```
+    You should see the lines start to make sense as they are decrypted.
+
+## Original source
+This workflow is based on a case study by ddebajyati, shared on the DEV Community platform. The author documented their process of building an AI-based solver for a "Mixed-Shift" Caesar cipher riddle, detailing their iterative journey and the "Contextual Consensus" architecture that achieved high accuracy.
+
+## Notes & variations
+*   **Free tier alternative**: While Gemini is used here, other advanced AI chatbots that can perform text analysis and scoring might also work, provided they have a sufficiently good free tier.
+*   **Common mistake**: Relying on a single shift value for the entire riddle will fail because the riddle explicitly uses different shifts for different lines. Ensure you are analyzing each line individually first.
+*   **Tip for better results**: If Gemini struggles to identify the most natural-sounding English, try rephrasing your prompt to be more specific about what constitutes "natural English" (e.g., "grammatically correct and semantically coherent"). You might also experiment with different AI models if one seems to perform better than another on this task.

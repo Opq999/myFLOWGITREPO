@@ -1,0 +1,82 @@
+---
+title: "Automate Code Reviews with Claude Code and GitHub Actions"
+description: "Learn how to automate code reviews, security checks, and design reviews using AI agents with Claude Code and GitHub Actions."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 30
+jobToBeDone: "Automate code reviews, security checks, and design reviews using AI agents"
+tools:
+  - name: "Claude Code"
+    url: "https://code.claude.com/"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "GitHub Actions"
+    url: "https://github.com/features/actions"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Playwright MCP"
+    url: "https://github.com/microsoft/playwright-chrome-automation"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://github.com/OneRedOak/claude-code-workflows"
+  platform: "github"
+  author: "OneRedOak"
+  postedAt: 2025-09-14
+score: 7
+ingestedAt: 2026-06-28
+nigeriaNotes: "Claude Code is a paid service. GitHub Actions has a generous free tier for public repositories and a limited free tier for private repositories. Data usage will depend on the size of codebases being reviewed."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+
+This entry describes a set of advanced workflows for automating code reviews, security checks, and design reviews using AI agents. The core tool is Claude Code, a specialized AI designed for understanding and interacting with code. These workflows leverage Claude Code in conjunction with GitHub Actions, a platform for automating software development tasks directly within GitHub, and Playwright MCP, a tool for browser automation.
+
+Because these workflows are integrated into a GitHub repository and rely on specific configurations and potentially evolving AI agent setups, they cannot be reduced to a simple copy-paste recipe for a beginner. The exact steps and configurations are detailed within the provided GitHub repository and associated tutorials, requiring some technical understanding to implement and adapt.
+
+These are not standalone tools you download and run. Instead, they are pre-built systems designed to be integrated into your software development process on GitHub. They aim to free up human developers from routine checks so they can focus on more complex, strategic tasks.
+
+## What you can use it for
+
+*   **Automated Code Reviews**: Automatically check pull requests for syntax errors, style guide adherence, completeness, and potential bugs before human review.
+*   **Proactive Security Checks**: Scan your codebase for vulnerabilities, exposed secrets, and common attack vectors, providing severity ratings and remediation advice.
+*   **Consistent Design Feedback**: Ensure front-end code changes maintain UI/UX consistency, accessibility standards, and overall design quality.
+*   **Faster Development Cycles**: Reduce the time spent on repetitive review tasks, allowing teams to merge code changes more quickly and efficiently.
+*   **Focus on Higher-Level Tasks**: Free up developers to concentrate on architectural decisions and complex problem-solving rather than manual checks.
+
+## Tools you need
+
+*   **Claude Code** (paid): An AI assistant specifically designed for coding tasks, used here to analyze code and provide feedback.
+*   **GitHub Actions** (freemium): A service that automates workflows within GitHub repositories, used to trigger AI reviews on code changes.
+*   **Playwright MCP** (free): A tool for browser automation, used in the design review workflow to check front-end code.
+
+## How it actually works
+
+1.  **Access the GitHub Repository**: Navigate to the `OneRedOak/claude-code-workflows` repository on GitHub.
+2.  **Explore Workflow Folders**: Inside the repository, you will find folders like `code-review`, `security-review`, and `design-review`. Each folder contains the specific configurations and scripts for that workflow.
+3.  **Set up Claude Code**: You will need an account with Claude Code and potentially an API key or integration setup as described in the repository's documentation or linked tutorials.
+4.  **Configure GitHub Actions**: Follow the instructions within the repository to set up GitHub Actions in your own repository. This typically involves creating or modifying workflow files (usually in a `.github/workflows` directory) that define when and how the AI reviews are triggered (e.g., on pull requests).
+5.  **Integrate Playwright MCP (for Design Reviews)**: If using the design review workflow, you will need to set up Playwright MCP according to its documentation and integrate it into the GitHub Actions workflow as specified.
+6.  **Consult Tutorials**: The author strongly recommends watching the tutorials linked in the repository's README for detailed demonstrations and setup guides.
+
+## Words you'll see, explained
+
+*   **AI Agents**: Computer programs that use artificial intelligence to perform tasks autonomously, like reviewing code.
+*   **Dual-loop architecture**: A system design where tasks are handled in two interconnected cycles, often for more robust processing or feedback.
+*   **Slash commands**: Special commands typed into chat interfaces (like Slack or GitHub comments) that start with a forward slash (/) to trigger actions.
+*   **Pull Request (PR)**: A request to merge code changes from one branch into another in a version control system like Git.
+*   **OWASP Top 10**: A widely recognized list of the most critical security risks to web applications.
+*   **Browser automation**: Using software to control a web browser programmatically, often for testing or data extraction.
+
+## Original source
+
+This workflow collection was developed by OneRedOak, who has extensive experience using Claude Code since its release. The workflows are based on practical learnings from their AI-native startup and are shared on GitHub to help others automate code reviews, security checks, and design reviews.
+
+## Notes & variations
+
+*   **Do you even need this?**: These workflows are for teams already using GitHub and looking to automate significant parts of their review process. For simpler, individual code checks, using Claude Code directly in its chat interface might suffice.
+*   **Free-tier limits**: GitHub Actions offers a free tier, but usage limits apply, especially for private repositories. Claude Code is a paid service, so costs will be a factor.
+*   **Common pitfall**: Ensure your Claude Code API keys and any sensitive configurations are securely managed and not exposed directly in your GitHub repository files. Use GitHub's secret management features.

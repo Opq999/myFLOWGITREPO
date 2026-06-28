@@ -1,0 +1,67 @@
+---
+title: "Automate LinkedIn Job Search with n8n and Bright Data"
+description: "Learn how to automate your LinkedIn job search and organize results in Google Sheets using n8n and Bright Data. Save hours of manual work."
+category: "job-hunting"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 15
+jobToBeDone: "Automate LinkedIn job searching and organize results into a Google Sheet"
+tools:
+  - name: "n8n"
+    url: "https://n8n.io/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Bright Data"
+    url: "https://brightdata.com/"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Google Sheets"
+    url: "https://sheets.google.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "LinkedIn"
+    url: "https://www.linkedin.com/"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/astha_jhawar_f1891a37e168/i-built-a-linkedin-job-scraper-because-manual-job-hunting-is-pain-49j6"
+  platform: "blog"
+  author: "astha_jhawar_f1891a37e168"
+  postedAt: 2025-08-22
+score: 7
+ingestedAt: 2026-06-28
+nigeriaNotes: "n8n has a generous free tier for self-hosting or their cloud service. Bright Data is a paid service, which might be a barrier. Data usage for scraping is generally low, but depends on the number of jobs scraped."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will build an automated workflow that finds job postings on LinkedIn based on your search criteria and organizes them into a Google Sheet. This saves you hours of manual searching and helps you find relevant jobs faster.
+
+This approach works by connecting different online tools together to perform a task automatically, without needing to manually copy and paste information.
+
+## Tools you need
+*   **n8n** (freemium): A tool that lets you connect different apps and automate workflows without coding.
+*   **Bright Data** (paid): A service that helps you collect data from websites, like LinkedIn, by handling technical challenges like bot detection.
+*   **Google Sheets** (free): A spreadsheet tool from Google where your job results will be stored.
+*   **LinkedIn** (freemium): The social network where you will search for jobs.
+
+## Steps
+1.  **Set up your n8n workflow**: The author used n8n to build the automation. You will need to create a new workflow in n8n. The author mentions a "Form Trigger Node" which is where you'll input your job search details. They also mention a "Snapshot ID Generator" and a "Status Polling Loop" to manage the data collection from Bright Data, and a "Data Extraction" node to pull out job details. Finally, a "Google Sheets Integration" node will send the data to your spreadsheet.
+    *   The author does not provide the exact n8n workflow setup, but you can start by adding a "Form Trigger" node, a "Google Sheets" node, and search for a "Bright Data" node or a general "HTTP Request" node if a dedicated Bright Data node isn't available in your n8n version.
+2.  **Configure the input form**: In the "Form Trigger" node, set up the fields for your job search. The author used: City, Job Title, Country, and Job Type.
+    *   You should see fields appear in your n8n workflow that allow you to input these details.
+3.  **Connect to Bright Data**: Use Bright Data's service to scrape LinkedIn. The author highlights that Bright Data's "Verified Node" handles authentication and request formatting automatically. You will need to set up an account with Bright Data and get the necessary credentials or API key to use their service within n8n.
+    *   The author does not share the exact prompt or configuration for the Bright Data node. A starting point would be to configure the node with your Bright Data API key and specify that you want to scrape LinkedIn job search results, providing the parameters from your form input (city, job title, etc.).
+4.  **Filter and extract job details**: Once Bright Data has collected the job information, you need to process it. The author mentions a "Smart Filtering" step to clean up the messy raw data from LinkedIn. You will then extract specific details like job titles, companies, locations, descriptions, and apply links.
+    *   The author does not share the exact filtering or extraction logic. In n8n, you might use "Edit Fields" nodes or "JavaScript" nodes to clean and select the data you want.
+5.  **Send data to Google Sheets**: Connect the output of your filtering and extraction steps to a "Google Sheets" node. Configure this node to add a new row to your spreadsheet for each job found.
+    *   You should see a new row appear in your Google Sheet for each job that the workflow finds and processes.
+
+## Original source
+This workflow was created by astha_jhawar_f1891a37e168 as part of the AI Agents Challenge, powered by n8n and Bright Data. It was shared on DEV Community to show how to automate job hunting on LinkedIn.
+
+## Notes & variations
+*   **Free tier alternative**: While Bright Data is a paid service, you could explore other web scraping tools or services that might offer a limited free tier, though they may be less reliable for complex sites like LinkedIn. Alternatively, n8n itself can be self-hosted for free if you have a server.
+*   **Common mistake**: Be careful not to set the polling interval too fast in the "Status Polling Loop" node. The author learned this the hard way and got blocked by LinkedIn's anti-bot measures. A delay of at least a minute between checks is recommended.
+*   **Tip for better results**: Ensure your search terms in the input form are specific. Broader terms might return too many irrelevant jobs, while very specific terms might miss good opportunities. Experiment with different combinations to find what works best for you. The "Smart Filtering" step in n8n is crucial for refining the results after scraping.

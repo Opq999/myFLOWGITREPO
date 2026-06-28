@@ -1,0 +1,116 @@
+---
+title: "Stream LLM Responses for Faster User Experience with Claude API"
+description: "Learn how to implement LLM response streaming using the Claude API and fetch API to improve perceived user experience by showing results as they are generated."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 15
+jobToBeDone: "Implement LLM response streaming for perceived faster user experience"
+tools:
+  - name: "Claude API"
+    url: "https://www.anthropic.com/api"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "fetch API"
+    url: "https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/jasmin/streaming-an-llm-response-in-4-gifs-16dh"
+  platform: "blog"
+  author: "jasmin"
+  postedAt: 2026-05-31
+score: 7
+ingestedAt: 2026-06-28
+nigeriaNotes: "Requires a stable internet connection. API calls incur costs, so monitor usage carefully. Free tier availability for API access is not guaranteed and depends on Anthropic's policies."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to make AI models respond to users in real-time, showing text as it's generated rather than waiting for the entire message. This makes the AI feel much faster and more engaging, even if the total time to get the full answer is the same.
+
+## Tools you need
+*   **Claude API** (paid): This is the service that runs the AI model and sends back the text.
+*   **fetch API** (free): A standard web tool built into browsers and Node.js for making requests to servers, like the Claude API.
+
+## Steps
+1.  **Prepare your API request**: You need to tell the Claude API you want a streamed response. This is done by adding `"stream": true` to your request.
+
+    The author doesn't share their exact initial request setup, but a starting point for a Node.js environment would look like this, using the `fetch` API:
+
+    ```javascript
+    const prompt = process.argv[2] ?? "Count to 10, slowly.";
+    const response = await fetch("https://api.anthropic.com/v1/messages", {
+      method: "POST",
+      headers: {
+        "x-api-key": process.env.ANTHROPIC_API_KEY,
+        "anthropic-version": "2023-06-01",
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({
+        model: "claude-opus-4-5",
+        max_tokens: 1024,
+        stream: true, // This is the key change for streaming
+        messages: [{ role: "user", content: prompt }],
+      }),
+    });
+    ```
+
+    You should see a request being sent to the Claude API endpoint with the `stream: true` option enabled.
+
+2.  **Read the response as a stream**: Instead of getting one big answer, the API sends back small pieces of text as they are ready. You need to read these pieces continuously.
+
+    The code below shows how to read these pieces, which are sent over a persistent connection.
+
+    ```javascript
+    const decoder = new TextDecoder();
+    let buffer = "";
+    for await (const chunk of response.body) {
+      buffer += decoder.decode(chunk, { stream: true });
+      const messages = buffer.split("\n\n");
+      buffer = messages.pop() ?? "";
+      for (const message of messages) {
+        // Process each complete message here
+        // The author's full code snippet is cut off here, but the logic involves parsing JSON
+        // and extracting text from 'content_block_delta' events.
+      }
+    }
+    ```
+
+    You should see small chunks of data arriving and being processed. The `buffer` helps manage incomplete pieces of text.
+
+3.  **Process each message chunk**: Each piece of data sent is a Server-Sent Event (SSE). You need to separate these events, parse them as JSON, and extract the actual text.
+
+    The author's example code shows splitting the buffer by `\n\n` (the SSE separator) and then parsing the JSON. The important text is found within `content_block_delta` events, specifically in `delta.text`.
+
+    ```javascript
+    // Continuing from the previous step, inside the inner loop:
+    if (message.startsWith("data:")) {
+      const data = JSON.parse(message.substring(5));
+      if (data.type === "content_block_delta" && data.delta.type === "text_block") {
+        process.stdout.write(data.delta.text);
+      }
+      if (data.type === "message_delta") {
+        // Handle stop reason if needed
+      }
+    }
+    ```
+
+    You should see text appearing on your screen piece by piece, as the AI generates it, rather than all at once.
+
+4.  **Handle the end of the stream**: The API will eventually send a signal that the response is complete. You need to make sure you catch this signal and any final information, like why the AI stopped generating text.
+
+    The `stop_reason` is sent in a `message_delta` event towards the end of the stream, just before a `message_stop` event. It's important not to stop reading the stream too early, or you might miss this.
+
+    The author's complete code example, which is not fully shown here, would include logic to check for these final events after processing all text chunks.
+
+    You should see the complete response, and potentially a `stop_reason` indicating why the generation ended (e.g., `end_turn`).
+
+## Original source
+This workflow is based on a blog post by jasmin on DEV Community, explaining how to implement real-time streaming of AI responses from models like Claude. The post focuses on the technical details of Server-Sent Events and how SDKs handle the underlying data flow.
+
+## Notes & variations
+*   **Free-tier alternative**: While the Claude API itself is paid, you can experiment with streaming concepts using free tiers of other services like Groq or the Gemini API if they offer streaming capabilities. However, the exact implementation details might differ.
+*   **Common mistake**: Stopping the reading of the stream too early. If you stop processing as soon as you don't see new text, you might miss the final `message_delta` event which contains important information like the `stop_reason`.
+*   **Tip for better results**: Ensure your network connection is stable. Streaming relies on continuous data flow, and interruptions can lead to incomplete responses or a broken user experience.

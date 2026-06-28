@@ -1,0 +1,81 @@
+---
+title: "Automate TradingView Chart Analysis with Claude Code"
+description: "Connect Claude Code to TradingView Desktop for AI-assisted chart analysis and Pine Script development. Automate your trading workflow."
+category: "academic-research"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 60
+jobToBeDone: "Automate TradingView chart analysis and Pine Script development using an AI assistant"
+tools:
+  - name: "Claude Code"
+    url: "https://code.claude.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "TradingView Desktop"
+    url: "https://www.tradingview.com/desktop/"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Chrome DevTools Protocol"
+    url: "https://developer.chrome.com/docs/devtools"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://github.com/tradesdontlie/tradingview-mcp"
+  platform: "github"
+  author: "tradesdontlie"
+  postedAt: 2026-04-04
+score: 7
+ingestedAt: 2026-06-28
+nigeriaNotes: "Requires a paid TradingView subscription and access to Claude Code, which is a paid service. Data processing is local, so data usage is minimal."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+
+This project, called TradingView MCP, is a tool that lets you connect Claude Code, a powerful AI assistant, to your TradingView Desktop application. Think of it as giving your trading charts a smart assistant that can help you analyze them and even write code for them. It works by using a special communication method called the Chrome DevTools Protocol, which is a standard way for programs to talk to each other, especially those built using web technologies. This allows the AI to 'see' and 'interact' with your TradingView charts without actually sending your data to any servers.
+
+This is an advanced tool because it requires you to have both TradingView Desktop and Claude Code installed and configured. It also involves enabling a specific debugging feature in TradingView Desktop, which is not a standard user action. Because it interacts with internal parts of the TradingView application, it might break if TradingView updates its software. There isn't a simple, copy-paste recipe for everyone to use because the exact setup can be technical and might need adjustments based on your specific system and TradingView version.
+
+## What you can use it for
+
+*   **AI-assisted chart analysis**: Get insights and interpretations of your trading charts directly from an AI.
+*   **Pine Script development**: Have an AI help you write, debug, or improve custom trading indicators and strategies using TradingView's Pine Script language.
+*   **Workflow automation**: Automate repetitive tasks related to chart analysis or data extraction within your TradingView workflow.
+*   **Exploring AI-human interaction**: Understand how AI agents can work alongside human decision-making in complex financial interfaces.
+
+## Tools you need
+
+*   **Claude Code** (paid): A powerful AI assistant that can understand and generate code, and analyze complex information.
+*   **TradingView Desktop** (paid): The desktop application for TradingView, a popular platform for financial market charting and analysis. Requires a subscription.
+*   **Chrome DevTools Protocol** (free): A standard debugging interface that allows tools to inspect and control Chromium-based applications, like TradingView Desktop.
+
+## How it actually works
+
+1.  **Enable Debugging in TradingView Desktop**: You need to start your TradingView Desktop application with a specific command-line flag to enable the Chrome DevTools Protocol. The exact command will depend on your operating system, but it typically involves adding `--remote-debugging-port=9222` when launching the application. This opens a communication channel.
+2.  **Install the TradingView MCP Tool**: You will need to download and set up the `tradesdontlie/tradingview-mcp` project from GitHub. This usually involves cloning the repository and installing its dependencies using a package manager like npm or yarn.
+3.  **Connect Claude Code**: Once the TradingView MCP tool is running and connected to your TradingView Desktop, you will configure it to use Claude Code as its AI backend. This involves setting up API keys or authentication for Claude Code.
+4.  **Interact with the AI**: You can then use the interface provided by the TradingView MCP tool to send commands or questions to Claude Code, which will analyze your charts or assist with Pine Script development based on the data it receives from TradingView.
+
+*Note: The exact commands and setup steps are detailed in the project's `SETUP_GUIDE.md` file on the GitHub repository. Always refer to the original source for the most up-to-date instructions.* 
+
+## Words you'll see, explained
+
+*   **AI-assisted**: Using artificial intelligence to help with a task.
+*   **TradingView chart analysis**: Examining financial market charts to understand price movements and identify trading opportunities.
+*   **Pine Script**: A domain-specific programming language developed by TradingView for writing custom indicators and strategies.
+*   **Workflow automation**: Setting up systems to perform tasks automatically that would otherwise be done manually.
+*   **Claude Code**: An advanced AI model from Anthropic, designed for coding and complex reasoning tasks.
+*   **Chrome DevTools Protocol (CDP)**: A set of APIs used for debugging, inspecting, and controlling Chromium-based applications, including TradingView Desktop.
+*   **LLM-based agents**: Software programs that use large language models (like Claude Code) to understand instructions and perform actions.
+*   **Stateful desktop financial applications**: Desktop software for finance that remembers its current condition and data over time.
+
+## Original source
+
+This workflow is based on the GitHub repository `tradesdontlie/tradingview-mcp` by author `tradesdontlie`. It explores how AI assistants can interact with desktop trading platforms to enhance analysis and development.
+
+## Notes & variations
+
+*   **Do you even need this?**: This tool is for advanced users who want to deeply integrate AI with their TradingView workflow. For simpler AI assistance with trading ideas or general market information, using a standard AI chat interface like Claude.ai or ChatGPT might be sufficient and much easier.
+*   **Free-tier limits**: Both Claude Code and TradingView Desktop require paid subscriptions to use this tool effectively. There are no free tiers for the core components needed for this workflow.
+*   **Common pitfall**: A common mistake is forgetting to enable the `--remote-debugging-port` flag when launching TradingView Desktop. If this is not done, the MCP tool will not be able to connect to your charts, and you will receive connection errors.
