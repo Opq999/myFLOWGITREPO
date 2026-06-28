@@ -100,7 +100,7 @@ jobs:
 
       - name: Email update notification
         if: steps.emailcfg.outputs.enabled == 'true' && steps.commit.outputs.published != '0'
-        uses: dawidd6/action-send-mail@611879133a9569642c41be66f4a323286e9b8a3b # v4
+        uses: dawidd6/action-send-mail@94de994a9f6fffee200243214e17002e2920bb59 # v18
         with:
           server_address: smtp.gmail.com
           server_port: 465
@@ -122,7 +122,7 @@ jobs:
       # or a dry run surfaces immediately instead of being discovered by hand.
       - name: Alert when nothing published
         if: steps.emailcfg.outputs.enabled == 'true' && steps.commit.outputs.published == '0'
-        uses: dawidd6/action-send-mail@611879133a9569642c41be66f4a323286e9b8a3b # v4
+        uses: dawidd6/action-send-mail@94de994a9f6fffee200243214e17002e2920bb59 # v18
         with:
           server_address: smtp.gmail.com
           server_port: 465
