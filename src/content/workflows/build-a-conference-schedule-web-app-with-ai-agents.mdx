@@ -1,0 +1,92 @@
+---
+title: "Build a Conference Schedule Web App with AI Agents"
+description: "Learn how AI agents can scrape website data and generate code for a mobile-friendly conference schedule, including calendar export options."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 120
+jobToBeDone: "Build a mobile-friendly conference schedule web app by scraping a website with AI tools"
+tools:
+  - name: "OpenAI Codex"
+    url: "https://openai.com/"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "ChatGPT mobile app"
+    url: "https://chatgpt.com/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Claude app"
+    url: "https://claude.ai/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "GitHub"
+    url: "https://github.com/"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=44597405"
+  platform: "hackernews"
+  author: "simonw"
+  postedAt: 2025-07-17
+score: 7
+ingestedAt: 2026-06-28
+nigeriaNotes: "This workflow relies on advanced AI agent features and specific environment setups that may incur costs beyond free tiers. Data usage for scraping and deploying web apps can vary significantly."
+nigeriaUseCases:
+  - persona: "entrepreneur"
+    scenario: "A tech entrepreneur building an event discovery platform uses this to rapidly prototype a mobile-friendly web app that scrapes and displays schedules from various Nigerian university or industry conference websites."
+  - persona: "employee"
+    scenario: "An employee in a market research firm uses this to automate scraping competitor event schedules and speaker lists from their websites, generating a mobile-friendly internal dashboard for strategic analysis."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+This workflow demonstrates how advanced AI agents can be used to perform complex tasks like "vibe scraping" and "vibe coding." Vibe scraping means using an AI to extract data from websites based on general instructions, without needing to write specific code for each part. Vibe coding means asking an AI to generate code for a web application based on a high-level idea or "vibe" of what you want it to do.
+
+This approach is advanced because it uses AI agents, like OpenAI Codex, that can execute complex tasks autonomously. These agents can install software, run code, and interact with external systems such as GitHub. This requires a specific, often custom, technical setup and a good understanding of how these AI agent environments work.
+
+There is no simple copy-paste recipe for this workflow because the exact instructions depend heavily on your specific AI agent setup, the website you are scraping, and the evolving capabilities of these tools. The author used a dedicated environment linked to a GitHub repository, which is not a standard feature available to all users of the ChatGPT mobile app.
+
+## What you can use it for
+*   **Automate data extraction**: Use AI agents to pull structured data from complex websites that are difficult to scrape with simpler tools or manual methods.
+*   **Rapid web app prototyping**: Quickly generate functional web interfaces from high-level descriptions, especially for mobile use cases.
+*   **Create custom calendar exports**: Build tools that convert event schedules or other time-based data into standard calendar files (like ICS) for easy import into phone calendars.
+*   **Develop mobile-friendly UIs**: Transform existing, non-mobile-optimized web content into user-friendly mobile experiences with AI assistance.
+
+## Tools you need
+*   **OpenAI Codex** (paid): An advanced AI agent service from OpenAI that can perform complex tasks, including web scraping and code generation, often interacting with external systems like GitHub. Access to this tool typically requires a paid developer account or specific environment setup.
+*   **ChatGPT mobile app** (freemium): The mobile application used by the author to interact with OpenAI Codex and other OpenAI models. It offers a free tier with paid upgrades for more features.
+*   **Claude app** (freemium): A mobile AI assistant that includes features like Claude Artifacts for generating and interacting with code and text. It offers a free tier with paid upgrades.
+*   **GitHub** (freemium): A platform for hosting and managing code projects. In this workflow, it is used to receive the scraped data as a pull request from the AI agent. GitHub offers a free tier for public repositories.
+
+## How it actually works
+1.  **Set up an AI agent environment**: The author used a dedicated OpenAI Codex environment configured against a GitHub repository. This is an advanced setup step that is not detailed in the source excerpt. It involves linking the AI agent to a code repository where it can submit its work.
+2.  **Prompt the AI agent for scraping**: Using the interface for your AI agent (e.g., OpenAI Codex within the ChatGPT mobile app), provide a detailed prompt instructing it to visit a website, extract specific data, and save it in a structured format. The author's prompt was:
+
+    ```
+    Install playwright and use it to visit https://opensauce.com/agenda/ and grab the full details of all three day schedules from the tabs - Friday and Saturday and Sunday - then save and on Data in as much detail as possible in a JSON file and submit that as a PR
+    ```
+
+    The exact prompt will need to be adjusted for different websites and desired data. The AI agent will then work autonomously to fulfill the request.
+3.  **Review the AI agent's output**: The AI agent will attempt to complete the task, potentially installing necessary libraries (like Playwright) and trying various approaches. It should then submit the structured data (e.g., a JSON file) as a pull request to your linked GitHub repository. You would then review this pull request.
+4.  **Use another AI for UI generation (conceptually)**: The author then used Claude Artifacts via the Claude app to "vibe code" an alternative user interface for the schedule. The source excerpt does not provide specific steps or prompts for this part. Conceptually, this would involve feeding the scraped data and a description of the desired UI to Claude to generate the web application code.
+5.  **Deploy the web app**: Once the UI code is generated, it would need to be deployed to a web hosting service to make it accessible online. The author deployed their app to `tools.simonwillison.net/open-sauce-2025`, but the specific deployment steps are not detailed in the excerpt.
+
+## Words you'll see, explained
+*   **AI Agent**: An artificial intelligence program that can understand instructions, perform tasks autonomously, and interact with tools or systems (like web browsers or GitHub) to achieve a goal.
+*   **Scraping**: The process of automatically extracting data from websites.
+*   **Vibe scraping**: Using an AI agent to extract data from a website based on general instructions, rather than writing specific code for each element.
+*   **Vibe coding**: Using an AI agent to generate code for an application based on a general idea or "vibe" of what you want it to do, rather than providing detailed programming instructions.
+*   **OpenAI Codex**: A specialized AI model from OpenAI designed to understand and generate code, and in this context, to act as an agent to execute tasks.
+*   **Claude Artifacts**: A feature within the Claude AI environment that allows users to generate, edit, and interact with code and other content directly within the chat interface.
+*   **GitHub Pull Request (PR)**: A way for developers to propose changes to a code project hosted on GitHub. In this workflow, the AI agent submits the scraped data as a PR.
+*   **Playwright**: A software library that allows automated control of web browsers, often used for web scraping and testing.
+
+## Original source
+This workflow was shared by Simon Willison on his weblog, originally highlighted on Hacker News. He demonstrated how he built a mobile-friendly conference schedule app by scraping a website and generating a new user interface, all while working on his phone.
+
+## Notes & variations
+*   **Do you even need this?**: For simple scraping tasks, you might not need an advanced AI agent. Tools like browser extensions or simpler web scraping services can often extract data without complex setups. For building simple web UIs, no-code or low-code platforms might be a more accessible starting point if you don't need the advanced capabilities of AI agents.
+*   **Free-tier limits**: Using advanced AI agent services like OpenAI Codex typically involves paid API access or specific subscription tiers, as they consume significant computing resources. While consumer chat apps like ChatGPT and Claude have freemium tiers, the advanced agent capabilities might fall under paid plans. GitHub has a generous free tier for public repositories.
+*   **Common pitfall**: Relying on a single, complex prompt for AI agents can be risky. If the agent fails, you might need to start over. Breaking down tasks into smaller, more manageable steps and iterating with the agent can lead to better results, though the author notes Codex's "one shot" nature.
+*   **Tip for better results**: When prompting AI agents for scraping, provide clear examples of the data you want to extract and the desired output format (e.g., "extract speaker name, talk title, time, and room for each session, output as JSON array"). For UI generation, provide mockups or detailed descriptions of the layout and functionality.

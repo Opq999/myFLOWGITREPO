@@ -1,0 +1,146 @@
+---
+title: "Build an MCP Server with Flama to Expose AI Tools and Data"
+description: "Learn how to build a Model Context Protocol (MCP) server using Flama and Python. Expose custom functions, data, and prompt templates for AI agents to discover and use."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 45
+jobToBeDone: "Build an MCP server to expose custom tools, data, and prompts to AI agents"
+tools:
+  - name: "Flama"
+    url: "https://flama.dev/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Python"
+    url: "https://www.python.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "uv"
+    url: "https://astral.sh/uv"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=48671666"
+  platform: "hackernews"
+  author: "vorticotech"
+  postedAt: 2026-06-25
+score: 6
+ingestedAt: 2026-06-28
+nigeriaNotes: "This workflow requires running a server, which may incur hosting costs if deployed online. For local development, it's free. Data usage is minimal during setup and local testing."
+tiktokUrl: ""
+published: false
+---
+
+## What you'll get
+You will get a running Model Context Protocol (MCP) server built with the Flama framework in Python. This server will allow AI agents to discover and use your custom functions (called 'tools'), read specific data (called 'resources'), and reuse your prompt templates. This approach works because MCP is an open standard, providing a uniform way for AI applications to connect to external capabilities, making your custom logic interoperable with various AI assistants and agent frameworks.
+
+## Tools you need
+*   **Flama** (free): A Python framework for building web applications and MCP servers.
+*   **Python** (free): The programming language used to write the server. You will need Python 3.8 or newer.
+*   **uv** (free): A fast Python package installer and resolver, used to install Flama and its dependencies.
+
+## Steps
+1.  **Install uv and Flama**: First, install `uv`, a fast Python package manager. Then, use `uv` to install Flama with its `pydantic` extras, which are needed for data validation.
+
+    # macOS or Linux
+    ```bash
+    curl -LsSf https://astral.sh/uv/install.sh | sh
+    ```
+
+    # Windows (PowerShell)
+    ```powershell
+    irm https://astral.sh/uv/install.ps1 | iex
+    ```
+
+    After `uv` is installed, open your terminal or command prompt and run:
+
+    ```bash
+    uv pip install flama[pydantic]
+    ```
+
+    You should see messages indicating that `flama` and its dependencies are being downloaded and installed.
+
+2.  **Create your Flama application file**: Create a new Python file, for example, `app.py`, in a folder where you want to build your server. This file will contain all the code for your Flama application.
+
+    You should have an empty `app.py` file ready for editing.
+
+3.  **Initialize the Flama application**: Add the basic Flama application setup to your `app.py` file. This code creates a new Flama application instance and sets up its OpenAPI documentation, which helps other tools understand your server's capabilities.
+
+    ```python
+    import flama
+    from flama import Flama
+
+    app = Flama(
+        openapi={
+            "info": {
+                "title": "MCP Server API",
+                "version": "1.0.0",
+                "description": "A Model Context Protocol server built with Flama 🔥",
+            },
+        },
+    )
+    ```
+
+    Your `app.py` file now contains the basic structure for a Flama application.
+
+4.  **Register an MCP server**: Add the code to register an MCP server named "tools" at a specific URL path (`/mcp/tools/`). This tells Flama to set up an endpoint where AI agents can discover and interact with your defined tools, resources, and prompts.
+
+    ```python
+    app.mcp.add_server("/mcp/tools/", "tools", version="2.0.0", instructions="Flama demo MCP tools server")
+    ```
+
+    Your `app.py` file now defines an MCP server named "tools" that will be accessible at `/mcp/tools/`.
+
+5.  **Run the server**: To make your Flama application accessible, you need to run it using a web server gateway interface (WSGI) server like `uvicorn`. Open your terminal or command prompt in the same directory as your `app.py` file and run:
+
+    ```bash
+    uvicorn app:app --reload
+    ```
+
+    You should see output indicating that `uvicorn` is starting the server, typically on `http://127.0.0.1:8000`. The `--reload` flag means the server will restart automatically if you make changes to `app.py`.
+
+6.  **Expose capabilities (tools, resources, prompts)**: The author doesn't share the full code for exposing tools, resources, or prompts in this excerpt. However, Flama uses decorators on plain Python functions to achieve this. You would add these functions to your `app.py` file.
+
+    ```python
+    # The author doesn't share the exact code for exposing tools in this excerpt.
+    # A common pattern in Flama would be to use a decorator like this
+    # to expose a Python function as an MCP tool:
+
+    @app.mcp.tools.tool("/hello")
+    def say_hello(name: str) -> str:
+        """Says hello to the given name."""
+        return f"Hello, {name}!"
+
+    # You would add similar decorators for resources and prompts,
+    # using @app.mcp.tools.resource and @app.mcp.tools.prompt.
+    ```
+
+    After adding and saving this code (and with `uvicorn` running with `--reload`), your server will now advertise a custom tool named `/hello`.
+
+7.  **Test the server**: The author mentions testing with `curl` but doesn't provide the exact command. To test an MCP server, you would typically send a JSON-RPC request to its endpoint (e.g., `/mcp/tools/` in this example) using a tool like `curl` or an AI agent capable of MCP.
+
+    ```bash
+    # The author doesn't provide the exact curl command.
+    # A generic JSON-RPC request to test the '/hello' tool might look like this:
+    curl -X POST http://127.0.0.1:8000/mcp/tools/ \
+         -H "Content-Type: application/json" \
+         -d '{
+               "jsonrpc": "2.0",
+               "method": "call",
+               "params": {
+                 "tool_name": "/hello",
+                 "args": {"name": "World"}
+               },
+               "id": 1
+             }'
+    ```
+
+    You should receive a JSON response from your MCP server, confirming that the tool was called successfully. For the `/hello` tool, you might see something like `{"jsonrpc": "2.0", "result": "Hello, World!", "id": 1}`.
+
+## Original source
+This workflow is based on an article by vorticotech, shared on Hacker News, which details how to build an MCP server using the Flama framework. The original post links to a more comprehensive blog post on the Flama website.
+
+## Notes & variations
+*   **Free-tier alternatives**: Flama, Python, and `uv` are all free and open-source, so there are no direct paid alternatives needed for the core development. The primary cost consideration would be hosting if you decide to deploy your MCP server online for public access.
+*   **Common mistake**: Forgetting to include `[pydantic]` when installing Flama (`uv pip install flama[pydantic]`) can lead to errors when defining data models or tool inputs, as `pydantic` is crucial for Flama's data validation features.
+*   **Tip for better results**: Refer to the official Flama documentation and the Model Context Protocol (MCP) page for detailed examples on how to expose more complex tools, resources, and prompt templates. The excerpt only covers the basic server setup, but the documentation will show you how to fully leverage MCP's capabilities.

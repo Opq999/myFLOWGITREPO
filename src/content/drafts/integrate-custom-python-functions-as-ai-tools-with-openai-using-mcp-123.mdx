@@ -1,0 +1,140 @@
+---
+title: "Integrate Custom Python Functions as AI Tools with OpenAI using MCP-123"
+description: "Learn how to connect your own Python functions to OpenAI models, allowing them to use your custom tools to answer questions. This workflow uses MCP-123."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 30
+jobToBeDone: "Integrate custom Python functions as AI tools with OpenAI"
+tools:
+  - name: "Python"
+    url: "https://www.python.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "MCP-123"
+    url: "https://github.com/Tylersuard/MCP-123"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "OpenAI"
+    url: "https://openai.com/"
+    pricing: "paid"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=44470574"
+  platform: "hackernews"
+  author: "tylersuard"
+  postedAt: 2025-07-05
+score: 5
+ingestedAt: 2026-06-28
+nigeriaNotes: "Requires an OpenAI API key, which is a paid service. While data usage for the local server/client is low, API calls incur costs based on usage."
+tiktokUrl: ""
+published: false
+---
+
+## What you'll get
+You will set up a local server that exposes your own Python functions as "tools" that an AI model can use. You will then create a client that uses OpenAI's models to answer questions by automatically calling these custom tools when needed. This approach allows you to extend the capabilities of AI models with specific actions or access to private data defined in your Python code.
+
+## Tools you need
+*   **Python** (free): The programming language required to run the server and client applications.
+*   **MCP-123** (free): A Python library that simplifies creating a server and client for integrating custom functions as AI tools.
+*   **OpenAI** (paid): Provides the AI models that will use your custom Python functions to answer questions. This workflow requires an OpenAI API key, which is a paid service.
+
+## Steps
+1.  **Install Python**: If you don't have Python 3.11 or newer, download and install it from the official Python website. Make sure to add Python to your system's PATH during installation.
+
+2.  **Set up your project folder**: Create a new folder for your project. Open your terminal or command prompt, navigate into this new folder, and create a virtual environment (a way to keep your project's Python packages separate from others).
+
+    # macOS or Linux
+    ```bash
+    python3 -m venv .venv
+    source .venv/bin/activate
+    ```
+
+    # Windows (PowerShell)
+    ```powershell
+    python -m venv .venv
+    .\.venv\Scripts\Activate.ps1
+    ```
+
+    You should see `(.venv)` appear at the start of your terminal prompt, indicating the virtual environment is active.
+
+3.  **Install required libraries**: With your virtual environment active, install `fastmcp` and `openai` using pip, Python's package installer.
+
+    ```bash
+    pip install fastmcp openai
+    ```
+
+    You should see messages indicating that the packages and their dependencies are successfully installed.
+
+4.  **Create your custom tools file**: In your project folder, create a new file named `tools.py`. This file will contain the Python functions you want your AI model to use. For this example, we'll add a simple `add` function.
+
+    ```python
+    # tools.py
+    def add(a: int, b: int) -> int:
+        """Add two numbers."""
+        return a + b
+    ```
+
+    Save the file. You have now defined a custom tool.
+
+5.  **Start the MCP server**: Create another new file in your project folder, named `server_app.py`. This script will run the server that exposes your `tools.py` functions.
+
+    ```python
+    # server_app.py
+    from mcp123 import server
+    server.run_server("tools.py", port=9999)
+    ```
+
+    Now, run the server from your terminal (make sure your virtual environment is still active):
+
+    ```bash
+    python server_app.py
+    ```
+
+    You should see output indicating that the server is starting, likely on `http://0.0.0.0:9999` or `http://localhost:9999`. Keep this terminal window open and the server running.
+
+6.  **Set up the MCP client**: Open a *new* terminal window (and activate your virtual environment in it, as in Step 2). Create a new file named `client_app.py` in your project folder. This script will connect to your server and use OpenAI to ask questions.
+
+    You will need an OpenAI API key. You can get one from the OpenAI platform website (platform.openai.com) after signing up and setting up billing. Replace `sk-...your OpenAI key...` with your actual key.
+
+    ```python
+    # client_app.py
+    from mcp123.client import McpClient
+
+    # Replace 'sk-...your OpenAI key...' with your actual OpenAI API key
+    client = McpClient("http://localhost:9999", "sk-...your OpenAI key...")
+    ```
+
+    Save the file.
+
+7.  **Use the client to ask a question**: Add the following lines to your `client_app.py` file to ask a question that uses your `add` tool.
+
+    ```python
+    # client_app.py (continued)
+    answer = client.ask("Add 15 and 14.")
+    print("Answer:", answer)
+    client.close()
+    ```
+
+    Now, run the client from your *new* terminal window:
+
+    ```bash
+    python client_app.py
+    ```
+
+    You should see output similar to:
+
+    ```
+    Tools discovered: ['add']
+    Answer: 29
+    ```
+
+    This shows that the client successfully discovered your `add` tool, and OpenAI used it to calculate the sum.
+
+## Original source
+This workflow is based on MCP-123, a project by Tylersuard shared on Hacker News and available on GitHub. The author created MCP-123 to provide a simple, two-line setup for an MCP server and client, making it easier to integrate custom Python functions with AI models like OpenAI.
+
+## Notes & variations
+*   **Common mistake**: Ensure your server is running in one terminal window *before* you try to run the client in another. If the server isn't active, the client won't be able to connect and discover tools.
+*   **Tip for better results**: You can add more complex functions to your `tools.py` file. For example, functions that fetch data from a database, interact with external APIs, or perform specific calculations. The AI model will automatically discover and use these new tools as long as they are defined as top-level functions in `tools.py`.
+*   **Extending capabilities**: The `MCP-123` library is built on `FastMCP`, which is inspired by the Model Context Protocol (MCP). This protocol aims to standardize how AI models interact with external tools, making it easier to build powerful AI agents.
