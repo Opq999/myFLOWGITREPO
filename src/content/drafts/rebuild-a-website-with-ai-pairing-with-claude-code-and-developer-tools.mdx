@@ -1,0 +1,108 @@
+---
+title: "Rebuild a Website with AI: Pairing with Claude Code and Developer Tools"
+description: "Learn how a non-engineer founder rebuilt a startup website using AI coding agents like Claude Code, integrating designs from Figma and managing code with developer tools."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 90
+jobToBeDone: "Rebuild a startup's website by pairing with an AI coding agent"
+tools:
+  - name: "VS Code"
+    url: "https://code.visualstudio.com"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Claude Code CLI"
+    url: "https://www.anthropic.com/claude-code"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "GitHub CLI"
+    url: "https://cli.github.com"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Figma Dev Mode"
+    url: "https://www.figma.com/dev-mode/"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=45336775"
+  platform: "hackernews"
+  author: "nadis"
+  postedAt: 2025-09-22
+score: 6
+ingestedAt: 2026-06-29
+nigeriaNotes: "This workflow involves paid developer tools (Claude Code CLI) and requires a stable internet connection for API calls and GitHub operations. Data usage can be moderate to high due to code transfers and AI interactions. While VS Code and GitHub CLI are free, the core AI agent is paid. For simpler website needs, consider free or freemium no-code builders like Squarespace, Bubble, or WordPress."
+tiktokUrl: ""
+published: false
+---
+
+## What this is, in plain English
+This workflow describes how a non-engineer founder used an AI coding agent, Claude Code CLI, to rebuild their startup's website. An AI coding agent is a program that can understand, write, and modify computer code based on your instructions. The author paired with Claude Code, treating it like a co-developer, to implement new designs and manage the codebase.
+
+This approach is advanced because it requires familiarity with developer tools and concepts like command-line interfaces (CLIs), version control (Git and GitHub), and local development environments. It is not a simple copy-paste recipe, as the exact steps depend on your specific project, codebase, and the evolving nature of AI tools.
+
+The author's goal was to ship new designs without hiring more developers or spending months learning to code from scratch. By using AI to assist with coding tasks, they were able to achieve this in weeks, rather than the months or years it might have taken otherwise.
+
+## What you can use it for
+*   **Implement new designs**: Translate visual designs from tools like Figma into actual website code.
+*   **Get AI code reviews**: Have an AI agent review your code changes and suggest improvements or optimizations.
+*   **Apply code optimizations**: Ask the AI to automatically make suggested changes to improve code quality or performance.
+*   **Speed up web development**: Accelerate the process of building or updating a website, even without deep coding expertise.
+*   **Learn developer workflows**: Understand how professional developers use tools like Git, Pull Requests, and local development servers.
+
+## Tools you need
+*   **VS Code** (free): A popular code editor where you will write and manage your website's code.
+*   **Claude Code CLI** (paid): Anthropic's command-line interface for interacting with their Claude AI model, specifically for coding tasks.
+*   **GitHub CLI** (free): A command-line tool that lets you interact with GitHub directly from your terminal, used for managing code repositories.
+*   **Figma Dev Mode** (freemium): A feature within the Figma design tool that helps developers inspect designs, copy code snippets, and understand design specifications.
+*   **MCP Server**: The author mentions using an "MCP Server (Beta)" for local development. This likely refers to a local development server used to preview website changes on your computer or mobile device. The author does not provide a public link for this specific tool.
+
+## How it actually works
+This workflow involves setting up a local development environment and using AI to assist with coding tasks within that environment. The author describes a process similar to how many professional developers work:
+
+1.  **Set up your local environment**: Install VS Code, the Claude Code CLI, and the GitHub CLI on your computer. You will also need your website's codebase set up locally. The author initially worked entirely on their laptop, using a local development server (like the mentioned MCP Server) to preview changes.
+
+2.  **Make initial changes**: Start working on specific changes to your website's code in VS Code. This might involve translating designs from Figma Dev Mode into HTML, CSS, or JavaScript.
+
+3.  **Push work-in-progress**: Frequently save your work and push it to a new branch in your GitHub repository using the GitHub CLI. This creates a backup and allows for version control.
+
+4.  **Ask Claude to test and refine**: Before creating a formal Pull Request (PR), you can ask Claude Code to review your changes or help test them. The author doesn't share their exact prompt; a starting point:
+
+    ```
+    Review the code changes I've made in this branch and suggest any potential bugs or improvements. My goal is to implement [describe your design goal].
+    ```
+
+5.  **Create a Pull Request (PR)**: Once you are satisfied with the initial changes, create a Pull Request on GitHub to propose merging your new branch into the main codebase.
+
+6.  **Get AI review as a 'CTO'**: A key trick the author used was asking Claude to pretend to be a co-founder and CTO (Chief Technology Officer) to review the PR. The author doesn't share their exact prompt; a starting point:
+
+    ```
+    You are my co-founder and CTO. Review this Pull Request for code quality, potential optimizations, and overall impact on the project. Provide comments and a recommendation on whether to merge or require changes.
+    ```
+
+7.  **Apply AI-suggested optimizations**: If Claude suggests optimizations or clean-up items, ask it to apply those changes to your code. The author doesn't share their exact prompt; a starting point:
+
+    ```
+    Please apply the optimizations you suggested in your review comments to the code in this branch.
+    ```
+
+8.  **Merge and test**: After any automated CI/CD checks pass and Claude (as the reviewer) approves the changes, merge the branch into your main codebase and delete the feature branch. Finally, manually test the changes on your development site to ensure everything works as expected.
+
+## Words you'll see, explained
+*   **AI coding agent**: An artificial intelligence program that can understand, generate, and modify computer code based on human instructions.
+*   **CLI (Command Line Interface)**: A text-based way to interact with a computer program or operating system, where you type commands instead of clicking buttons.
+*   **VS Code**: A popular, free code editor developed by Microsoft, widely used by developers for writing and debugging code.
+*   **GitHub**: A web-based platform for version control and collaboration, primarily using Git, where developers host and manage their code projects.
+*   **Pull Request (PR)**: A feature in Git-based platforms like GitHub that allows developers to propose changes to a codebase and have them reviewed by others before being merged.
+*   **Development server**: A local server running on your computer that allows you to preview and test your website or application changes before deploying them live.
+*   **Figma Dev Mode**: A specialized view within the Figma design tool that provides developers with tools to inspect design elements, extract code, and understand design specifications.
+*   **CI/CD checks (Continuous Integration/Continuous Deployment)**: Automated processes that test code changes (CI) and deploy them to a server (CD) to ensure quality and efficient delivery.
+*   **Codebase**: The entire collection of source code for a software project or application.
+
+## Original source
+This workflow was shared by Nadia Eldeib on her Substack, where she documented her adventures using AI coding agents, specifically Claude Code, and MCP Servers to rebuild her startup's website, CodeYam.
+
+## Notes & variations
+*   **Do you even need this?**: For simpler websites or those that don't require highly custom designs, low-code or no-code website builders like Squarespace, Bubble, or WordPress might be a faster and easier alternative. These tools use pre-made components and often don't require any coding.
+*   **Free-tier limits**: While VS Code and GitHub CLI are free, the Claude Code CLI is a paid developer product. Figma offers a freemium model, with a usable free tier for many features, including Dev Mode.
+*   **Common pitfall**: The author noted that Claude's response quality could vary wildly, sometimes even hour to hour, leading to wasted time. AI agents can sometimes make changes to unrelated parts of the application, requiring careful oversight.
+*   **Tip for better results**: Be very specific in your prompts to the AI. Clearly define the task, the scope of changes, and the desired outcome. Giving the AI a specific role, like 'CTO' for code reviews, can also help it provide more focused and useful feedback.

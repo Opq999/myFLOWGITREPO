@@ -1,0 +1,90 @@
+---
+title: "Connect Claude Desktop to REST APIs using OpenAPI and MCP Server"
+description: "Learn how to connect Claude Desktop to any REST API using an OpenAPI specification and the MCP Server. This allows Claude to understand and interact with external services."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 20
+jobToBeDone: "Enable LLMs to interact with REST APIs via OpenAPI specifications"
+tools:
+  - name: "Node.js"
+    url: "https://nodejs.org/en"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Claude Desktop"
+    url: "https://claude.ai"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "@ivotoby/openapi-mcp-server"
+    url: "https://github.com/ivo-toby/mcp-openapi-server"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=45408237"
+  platform: "hackernews"
+  author: "mooreds"
+  postedAt: 2025-09-28
+score: 7
+ingestedAt: 2026-06-29
+nigeriaNotes: "Running the MCP server locally with Node.js uses minimal data and local processing power. The data usage will primarily come from Claude Desktop interacting with the Claude AI models and making calls to your configured external API. If using a paid external API, be mindful of potential costs. Claude Desktop's free tier (if applicable) might have usage limits."
+nigeriaUseCases:
+  - persona: "employee"
+    scenario: "An IT support specialist uses Claude Desktop to query the company's internal ticketing system API, allowing the AI to fetch ticket statuses or create new tickets based on natural language requests."
+  - persona: "entrepreneur"
+    scenario: "A tech entrepreneur building a customer service chatbot integrates Claude Desktop with their product's backend API, enabling the AI to retrieve user account details or process order updates directly from customer queries."
+  - persona: "student"
+    scenario: "A computer science student uses Claude Desktop to interact with a public data API, like a Nigerian open data portal, for a final year project, allowing the AI to fetch and analyze real-time data for their research."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will set up Claude Desktop to connect with any external REST API, allowing the AI to understand and use that API's functions. This approach works by turning an API's OpenAPI specification into a format Claude Desktop can understand, enabling the AI to interact with real-world services.
+
+## Tools you need
+*   **Node.js** (free): A software platform that runs JavaScript code outside a web browser. You need it to run the MCP Server.
+*   **Claude Desktop** (freemium): A desktop application for interacting with Claude AI models. It will use the MCP Server to connect to external APIs.
+*   **@ivotoby/openapi-mcp-server** (free): A Node.js package that creates the Model Context Protocol (MCP) server, allowing Claude Desktop to understand OpenAPI specifications.
+
+## Steps
+1.  **Install Node.js**: Download and install Node.js on your computer.
+    *   **What to do**: Go to the official Node.js website (https://nodejs.org/en) and download the installer for your operating system (Windows, macOS, or Linux). Follow the installation instructions.
+    *   **What to see**: After installation, open your terminal or command prompt and type `node -v`. You should see a version number (e.g., `v18.17.1`), confirming Node.js is installed.
+2.  **Locate or create Claude Desktop's configuration file**: Find the `claude_desktop_config.json` file.
+    *   **What to do**: On macOS, open Finder, click "Go" in the menu bar, then "Go to Folder...", and type `~/Library/Application Support/Claude/`. On Windows, this file is typically located in `%APPDATA%\Claude\` or a similar application data folder. If the file doesn't exist, create an empty JSON file named `claude_desktop_config.json` in that directory.
+    *   **What to see**: You should find or have created the `claude_desktop_config.json` file in the specified location.
+3.  **Add MCP Server configuration**: Edit the `claude_desktop_config.json` file to include the MCP server details.
+    *   **What to do**: Open the `claude_desktop_config.json` file with a text editor (like Notepad on Windows, TextEdit on macOS, or any code editor). Copy and paste the following configuration. **Remember to replace the placeholder values for `API_BASE_URL`, `OPENAPI_SPEC_PATH`, and `API_HEADERS` with your actual API details.**
+
+    ```json
+    {
+      "mcpServers" : {
+        "openapi" : {
+          "command" : "npx",
+          "args" : [
+            "-y",
+            "@ivotoby/openapi-mcp-server"
+          ],
+          "env" : {
+            "API_BASE_URL" : "https://api.example.com",
+            "OPENAPI_SPEC_PATH" : "https://api.example.com/openapi.json",
+            "API_HEADERS" : "Authorization:Bearer token123,X-API-Key:your-api-key"
+          }
+        }
+      }
+    }
+    ```
+
+    *   **What to see**: Your `claude_desktop_config.json` file should now contain the `mcpServers` block, configured with your API's base URL, OpenAPI specification path, and any necessary authentication headers. Save the file.
+4.  **Restart Claude Desktop**: Apply the new configuration.
+    *   **What to do**: Close Claude Desktop completely and then open it again.
+    *   **What to see**: Claude Desktop should now attempt to connect to the MCP server and load your API's OpenAPI specification. You might see new capabilities or tools within Claude Desktop related to the API you configured, allowing the AI to interact with it.
+
+## Original source
+This workflow is based on a guide by mooreds, shared on Hacker News, which details how to use the `ivo-toby/mcp-openapi-server` project to integrate OpenAPI specifications with Model Context Protocol (MCP) clients like Claude Desktop.
+
+## Notes & variations
+*   **Common mistake**: Forgetting to replace the placeholder values (`https://api.example.com`, `token123`, `your-api-key`) with your actual API's details. The server will not work correctly if these are generic.
+*   **Tip for better results**: Ensure your OpenAPI specification (`OPENAPI_SPEC_PATH`) is well-documented and accurate. A clear specification helps the LLM understand the API's functions better, leading to more reliable interactions.
+*   **Free-tier alternative**: While Claude Desktop is listed as freemium, the external API you connect to might be paid. Look for public APIs with free tiers or use a local API for testing if you want to avoid costs.
+*   **Other clients**: The source mentions Cursor as another MCP-compatible client. The configuration steps would be similar, but you would need to find Cursor's specific configuration file location.

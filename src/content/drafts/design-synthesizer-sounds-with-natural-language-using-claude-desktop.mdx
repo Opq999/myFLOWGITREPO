@@ -1,0 +1,101 @@
+---
+title: "Design Synthesizer Sounds with Natural Language using Claude Desktop"
+description: "Control an Elektron Digitone 2 hardware synthesizer with natural language prompts using Claude Desktop and the Elektron MCP server. Create unique sounds easily."
+category: "content-creation"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 30
+jobToBeDone: "Design sounds on a hardware synthesizer using natural language prompts"
+tools:
+  - name: "Elektron Digitone 2"
+    url: "https://www.elektron.se/us/digitone-2"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Claude API (via Claude Desktop)"
+    url: "https://www.anthropic.com/"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Python"
+    url: "https://www.python.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "uv"
+    url: "https://astral.sh/uv"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "elektron-mcp"
+    url: "https://github.com/zerubeus/elektron-mcp"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=43469735"
+  platform: "hackernews"
+  author: "serverlessmania"
+  postedAt: 2025-03-25
+score: 5
+ingestedAt: 2026-06-29
+nigeriaNotes: "This workflow requires an Elektron Digitone 2 hardware synthesizer, which is a significant upfront cost and may be difficult to acquire in Nigeria. The Claude API also requires payment. Data usage for the AI interaction itself is light."
+tiktokUrl: ""
+published: false
+---
+
+## What you'll get
+You will be able to control your Elektron Digitone 2 hardware synthesizer using natural language commands typed into Claude Desktop. This allows you to design complex sounds, like evolving pads or thick basslines, by simply describing them, making sound design more intuitive and accessible. This approach works by connecting Claude's language understanding to your synthesizer's controls via a special server.
+
+## Tools you need
+*   **Elektron Digitone 2** (paid): A hardware synthesizer that creates sounds. You will connect this to your computer via USB.
+*   **Claude API (via Claude Desktop)** (paid): An AI model that understands natural language and sends commands to your synth. You will need access to the Claude API, typically through a developer account.
+*   **Python** (free): A programming language required to run the `uv` package manager.
+*   **uv** (free): A fast Python package manager used to run the `elektron-mcp` server.
+*   **elektron-mcp** (free): The Model Context Protocol (MCP) server that translates Claude's commands into MIDI signals for your Digitone 2.
+
+## Steps
+
+1.  **Connect your Digitone 2**: Connect your Elektron Digitone 2 synthesizer to your computer using a USB cable. Ensure it is powered on.
+
+2.  **Install `uv`**: `uv` is a package manager that helps run Python tools. You need to install it on your computer.
+
+    # macOS
+    ```bash
+    brew install uv
+    ```
+
+    # Windows (PowerShell)
+    ```powershell
+    # The author doesn't provide specific Windows instructions for uv installation.
+    # For official installation instructions, visit the uv website: https://astral.sh/uv
+    # You will need to download the appropriate executable or use a package manager like Scoop or Winget.
+    # Ensure uv is added to your system's PATH after installation.
+    ```
+    You should see `uv` installed successfully in your terminal or command prompt.
+
+3.  **Open Claude Desktop settings**: Launch the Claude Desktop application on your computer. Navigate to its settings. The author states this is typically found under `Claude Settings > Developer > Edit Config`.
+
+4.  **Edit the configuration file**: Open the `claude_desktop_config.json` file. This file tells Claude Desktop about available tools. You need to add a new entry for the Digitone 2 MCP server.
+
+    ```json
+    {
+      "mcpServers" : {
+        "Digitone 2" : {
+          "command" : "uvx",
+          "args" : [ "elektron-mcp" ]
+        }
+      }
+    }
+    ```
+    Paste this JSON snippet into the `claude_desktop_config.json` file, ensuring it is correctly placed within the existing JSON structure (e.g., if `mcpServers` already exists, add "Digitone 2" inside it; if not, add the whole `mcpServers` block). Save the file. You should now see "Digitone 2" as an available MCP server within Claude Desktop.
+
+5.  **Design a sound with Claude**: In Claude Desktop, you can now use natural language prompts to control your Digitone 2.
+
+    ```
+    Use Digitone MCP to design an evolving dark pad using the Wavetone machine on track 1.
+    ```
+    You should see Claude processing your request and sending MIDI commands to your Elektron Digitone 2, changing its sound parameters in real-time. The synthesizer's display might show parameters changing, and you should hear the resulting sound.
+
+## Original source
+This workflow was created by serverlessmania and shared on Hackernews. It demonstrates an MCP server that enables natural language control of Elektron synthesizers, specifically the Digitone 2, via MIDI. The project's code is available on GitHub.
+
+## Notes & variations
+*   **Free-tier alternatives**: This workflow heavily relies on specific hardware (Elektron Digitone 2) and a paid AI API (Claude). There are no direct free-tier alternatives for this exact setup. However, if you want to experiment with AI-driven sound design without hardware, you might explore web-based synthesizers or software synthesizers that offer API access, though this would require a different setup. The author mentions `senthgenie.com` as a web-based version of an MCP server where you can ask for a free API key on Discord, which might be a way to try similar concepts without Claude Desktop or the specific hardware.
+*   **Common mistake**: Ensure your Elektron Digitone 2 is connected via USB and recognized by your computer before starting. If Claude doesn't seem to control the synth, check your computer's MIDI settings to confirm the Digitone 2 is active. Also, double-check the `claude_desktop_config.json` file for any syntax errors; even a missing comma can prevent it from working.
+*   **Tip for better results**: The author notes that only the "Wavetone machine" is currently supported. When crafting your prompts, specify the "Wavetone machine" to ensure Claude can correctly interpret and apply your sound design requests. For example, "Use Digitone MCP to design a Dark thick pad using Wavetone machine on track 1."
