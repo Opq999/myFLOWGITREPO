@@ -7456,8 +7456,136 @@
     "dcae6c2eb7b26718672c8037441f1a7cfda6f6fa54a9e029220b49acb5aa68b6": {
       "url": "https://news.ycombinator.com/item?id=45082623",
       "date": "2026-06-29"
+    },
+    "d55cdba611a7b3593c9c8cceedbb7424366cf5c18bc5ff299d3ccff319af8645": {
+      "url": "https://github.com/lissy93/awesome-privacy",
+      "date": "2026-06-29"
+    },
+    "0a6e06286c13e9b6d92c9eaa2853318bb14c52b52d1911c925b8877c13c22560": {
+      "url": "https://github.com/VoltAgent/awesome-ai-agent-papers",
+      "date": "2026-06-29"
+    },
+    "c917fdf78d0ea2cded0eb936fa3a32e96642d7ad7a3ee8843933742624d7dbc4": {
+      "url": "https://github.com/EthicalML/awesome-artificial-intelligence-regulation",
+      "date": "2026-06-29"
+    },
+    "7589cff3b3699544bf0e2d0d06439d54b66a8ec9d9df5bdf49f2bf02803eb824": {
+      "url": "https://github.com/dariubs/awesome-workflow-automation",
+      "date": "2026-06-29"
+    },
+    "e1c6235ee056e2810f60b3ebaa4e3309c90007c94084f84d8d4d1e538f552aa3": {
+      "url": "https://github.com/EdinburghNLP/awesome-hallucination-detection",
+      "date": "2026-06-29"
+    },
+    "422776fb842e34a126c9512c5201fc6b8936f277be157865abbcd35753a924bc": {
+      "url": "https://github.com/huhusmang/Awesome-LLMs-for-Vulnerability-Detection",
+      "date": "2026-06-29"
+    },
+    "68d1c5da5bee5bf378a2a920a51e9cdff94de96691ae3d8f3d92f1634b4a16dd": {
+      "url": "https://github.com/coderonion/awesome-yolo-object-detection",
+      "date": "2026-06-29"
+    },
+    "4e7a3eb060e9f0c7a195042a05831a75d70d7d680dac771101b8afb2f6cd8af0": {
+      "url": "https://github.com/Hiflylabs/awesome-dbt",
+      "date": "2026-06-29"
+    },
+    "8ab66af412d208b952369a249910dfc1a46a5d0ad7b5a26fca9222600ea1d84e": {
+      "url": "https://github.com/uhub/awesome-matlab",
+      "date": "2026-06-29"
+    },
+    "ad9ffb0b073f1a74779bdba98a29a1437c8b83fd328c5653eedced719ce37fac": {
+      "url": "https://github.com/trycua/acu",
+      "date": "2026-06-29"
+    },
+    "93ae09a3228eda4a87417e798d3e726b21ec4420ff6184b4d63d63f351d88ef6": {
+      "url": "https://github.com/Hedlen/awesome-segment-anything",
+      "date": "2026-06-29"
+    },
+    "61bc4f641ddd791a1b7cd52d33116f184a2ea84018490f3c885f68f0cb39072c": {
+      "url": "https://github.com/neomatrix369/awesome-ai-ml-dl",
+      "date": "2026-06-29"
+    },
+    "f8f4367516d040b3ca95510553d108cdbf053c0d25d8891ab02d6dcf20554363": {
+      "url": "https://github.com/Anil-matcha/awesome-generative-ai-apps",
+      "date": "2026-06-29"
+    },
+    "a2c100e99d9b5623da3f0c7d977d175017c9a16078fd2fee55e63fc67e616dca": {
+      "url": "https://github.com/mojoaxel/awesome-regression-testing",
+      "date": "2026-06-29"
+    },
+    "e5ddef846d0fc9964306491bf430528f00848ecd3c6d7c685b7814f1957a0cfd": {
+      "url": "https://github.com/yaolifeng0629/Awesome-independent-tools",
+      "date": "2026-06-29"
+    },
+    "c5adfb7563c3ad41c71142281f7621dd4cc56b9945dc7632b65eff7e6fcb3de2": {
+      "url": "https://github.com/aolofsson/awesome-opensource-hardware",
+      "date": "2026-06-29"
+    },
+    "531ffaef626c3ccd61c49c695daf11da9392348da0ab3e18c6d8f057dda91112": {
+      "url": "https://github.com/awesome-mqtt/awesome-mqtt",
+      "date": "2026-06-29"
+    },
+    "230e2210e439722422ba7ca58594910ffae095228a1acb7a47221898be54e9bb": {
+      "url": "https://github.com/opendilab/LightZero",
+      "date": "2026-06-29"
+    },
+    "47361b6d13fbe312e04cb983eb275d72d6c4338b6d12be9f3d63cbf0a98d7bf5": {
+      "url": "https://github.com/opendilab/awesome-diffusion-model-in-rl",
+      "date": "2026-06-29"
+    },
+    "ee11199f30520ebfd7d267f7d88ff7ea4db8e863d270126bc89bda6e6c828940": {
+      "url": "https://news.ycombinator.com/item?id=44719222",
+      "date": "2026-06-29"
+    },
+    "e11352021797792f83fef8a5a8f539302aae990ad36f45f9f6373a534ccfd127": {
+      "url": "https://dev.to/tensorlake/i-tried-letting-antigravity-build-an-agent-for-me-heres-what-actually-happened-54h2",
+      "date": "2026-06-29"
+    },
+    "f51ac951f49e350c3d91df0e21696144907b559fe6f33665ccb85f31464e3658": {
+      "url": "https://github.com/DevExpress/testcafe",
+      "date": "2026-06-29"
+    },
+    "93b24ade95ee7561501dfeb6c51636baf7885f14e6f429edad0938d140886671": {
+      "url": "https://news.ycombinator.com/item?id=44482965",
+      "date": "2026-06-29"
+    },
+    "789ccde40734bb5b826bddb59e12f5d014d4a6a8e3e39eb750539848251527fc": {
+      "url": "https://dev.to/forgecode/cli-vs-ide-coding-agents-choose-the-right-one-for-10x-productivity-5gkc",
+      "date": "2026-06-29"
+    },
+    "5b34ebb69691c770081d0a129ee435eba824288bd3f4d6f41f04ccb632226ade": {
+      "url": "https://github.com/yzhao062/pyod",
+      "date": "2026-06-29"
+    },
+    "2a69786e6bb0dfb12dd5c24bc80fa7eec858cbe92a4aa1de8b3526b7aaafb78d": {
+      "url": "https://news.ycombinator.com/item?id=47104667",
+      "date": "2026-06-29"
+    },
+    "814b9d364776e25c224e91a6154c985a65180551352f1dbcaf044ee17a0db715": {
+      "url": "https://dev.to/copilotkit/easily-build-a-frontend-for-your-aws-strands-agents-using-ag-ui-in-30-minutes-42ji",
+      "date": "2026-06-29"
+    },
+    "990624aa474ac422942c3cc6be596c73f9952881ab9119dee3f62d47b854da5f": {
+      "url": "https://github.com/gitkraken/vscode-gitlens",
+      "date": "2026-06-29"
+    },
+    "aa5556368847eb9e683c7f65d2f3d5bbcfd15b75924e1cded5076e5ac4de90fc": {
+      "url": "https://news.ycombinator.com/item?id=48675435",
+      "date": "2026-06-29"
+    },
+    "23ea530011be1a713d0df9131b76948c8de561d2f8c0d9de261ba93977533d18": {
+      "url": "https://dev.to/anthonymax/bifrost-the-fastest-way-to-build-ai-applications-that-never-go-down-ak9",
+      "date": "2026-06-29"
+    },
+    "4aa06da78b19a293c42986cf378f173ef0aa3d8538140388820380ea5e69f580": {
+      "url": "https://github.com/VoltAgent/voltagent",
+      "date": "2026-06-29"
+    },
+    "0c6ea2dd122723485ace00b3b7f54d2569fea0f4a2a18e0d373e6e2537a671b6": {
+      "url": "https://news.ycombinator.com/item?id=46673809",
+      "date": "2026-06-29"
     }
   },
-  "backfillPage": 22,
+  "backfillPage": 23,
   "dailyPage": 0
 }
