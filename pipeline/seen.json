@@ -7584,8 +7584,240 @@
     "0c6ea2dd122723485ace00b3b7f54d2569fea0f4a2a18e0d373e6e2537a671b6": {
       "url": "https://news.ycombinator.com/item?id=46673809",
       "date": "2026-06-29"
+    },
+    "c5ce8dc7bdf557d472afc053b6f3bbd6073b6e06eb6b7223764b9059bf68fa2e": {
+      "url": "https://news.ycombinator.com/item?id=46765460",
+      "date": "2026-06-30"
+    },
+    "1485866a0648443e0bcc57ee016b95678bcc129613666ee0906371cb98302d0c": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1ud51ey/chatgpt_cant_believe_ram_prices",
+      "date": "2026-06-30"
+    },
+    "195bf5beae341368eb22ee54cfa96017b91e08d408d6a23eb889145e7731a754": {
+      "url": "https://simonwillison.net/2026/Jun/29/html-table-extractor",
+      "date": "2026-06-30"
+    },
+    "3b33ed1e578befd80e92fb104f73a2ab52165cda42fbc06f729e2cc05350a0a7": {
+      "url": "https://news.ycombinator.com/item?id=44864185",
+      "date": "2026-06-30"
+    },
+    "1be3ce451d14b30ae2c288cd9fb3dada7d71edee86124cb917c63352ff2ac420": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1u0rlff/let_that_sink_in",
+      "date": "2026-06-30"
+    },
+    "c15b60665f2328111ec9a722dcde3494e6aadcec60892c6c48f4cd80d8bc262c": {
+      "url": "https://simonwillison.net/2026/Jun/29/safari-tab-count",
+      "date": "2026-06-30"
+    },
+    "0243f62dca56b27aa9b947bc29c96d8ad6613fb4db34c47f99f4d7672367f74b": {
+      "url": "https://news.ycombinator.com/item?id=45416228",
+      "date": "2026-06-30"
+    },
+    "48f7a8336d394dacf1841a1784aa25cc606fbd829257ed34afc477fd3852f431": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1twlqa1/generate_a_screenshot_of_a_windows_7_desktop_in",
+      "date": "2026-06-30"
+    },
+    "83b7af0b547d691dca976b6b708b59a9df06669e924506bcd17bf18c0c5f5b41": {
+      "url": "https://simonwillison.net/2026/Jun/29/ornith",
+      "date": "2026-06-30"
+    },
+    "e8032c62a77c6f9398b74387564ade8668f51d7928459c4942e0ba7aff05cb82": {
+      "url": "https://news.ycombinator.com/item?id=46545620",
+      "date": "2026-06-30"
+    },
+    "3d0666a4506cbe2a1390f4a322c0b2d7c37584e0acd2739c8527c9d88b57ccf1": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1tts29b/take_me_back",
+      "date": "2026-06-30"
+    },
+    "7fad8d12e6340bb8bfa5aae94587f6a66c7cb3161e34cfd8677892197e8d1488": {
+      "url": "https://www.latent.space/p/ainews-not-much-happened-today-07e",
+      "date": "2026-06-30"
+    },
+    "6eacce4dc5820f7987d6a0288dbe8da01c4a2ce55fea6fad39e35e214ed3e2b1": {
+      "url": "https://news.ycombinator.com/item?id=48037128",
+      "date": "2026-06-30"
+    },
+    "dedb37edd677b647b5022345a0fb760dec9fc7c604c359fab3acefe001cb339e": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1ubl0gc/the_dead_internet_theory_in_action_in_world_of",
+      "date": "2026-06-30"
+    },
+    "9cc3b14e3b9c7b80270d1a4d66b00d65f8eaf10f3058efb10d6469165b0cdaf1": {
+      "url": "https://huggingface.co/blog/allenai/discoformer",
+      "date": "2026-06-30"
+    },
+    "683c46ca37b7dca4f252ac2f1081e3d6ab7f7a1bd806ef30969aac10657c230a": {
+      "url": "https://news.ycombinator.com/item?id=44811567",
+      "date": "2026-06-30"
+    },
+    "98cb563f34e6ded3bb60006273a2b00b044c61451ed6d996460a34a5f7e15b6d": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1uce93p/specification_gaming",
+      "date": "2026-06-30"
+    },
+    "e369d393493b75b4295aaabb2071f0c193d0d28898b925336c47ca9da6fc2ff2": {
+      "url": "https://news.ycombinator.com/item?id=46810282",
+      "date": "2026-06-30"
+    },
+    "6a0197f4ea625aa1b9c76339975b320c4a748fc3e031b17119d9bcee26be555e": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1tzk94r/the_future_isnt_free_anymore",
+      "date": "2026-06-30"
+    },
+    "49f2000ae5ee36f621d1e90bfbf0c95dacbedf693d1cece0bf3dec5d683562cb": {
+      "url": "https://news.ycombinator.com/item?id=47768133",
+      "date": "2026-06-30"
+    },
+    "5ef6558b4a95fa6d117775a345e7b2005c536b06bb54494ebdf5f42bb1eb6876": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1ubesin/generate_a_insert_lego_set",
+      "date": "2026-06-30"
+    },
+    "b799ad4441a67ddb43b212b8f133e397037e4649ecdc510c9580bdf843afb509": {
+      "url": "https://news.ycombinator.com/item?id=47788385",
+      "date": "2026-06-30"
+    },
+    "308e484283902f6a3edc3cdb2b1e43996a8e1c7a7d725e6d9c10c3da9a4a3dad": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1tyhftl/didnt_see_that_coming",
+      "date": "2026-06-30"
+    },
+    "f1369c64bc7db6d8807421a38aac03dec1d4ba8cf8197cdcc2abeda411c1858e": {
+      "url": "https://news.ycombinator.com/item?id=47664912",
+      "date": "2026-06-30"
+    },
+    "c91ebe443c8e2cf833a9189e9a35fbf5352a16a642c7800bd6d2b2130d19763c": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1tvkxka/right_after_it_finally_understands_you_correctly",
+      "date": "2026-06-30"
+    },
+    "fb3ff9894c8cd72b852af999a352b9e6f284845ff819302c0ceb50d753e9322b": {
+      "url": "https://news.ycombinator.com/item?id=47612724",
+      "date": "2026-06-30"
+    },
+    "ddf14ab45cd2aee35628aafb2374529d51dfe1f5ba0531054a6748ca2a1b73d6": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1uiif6m/get_your_priorities_sorted",
+      "date": "2026-06-30"
+    },
+    "80315d59bf518a09bcb87e9e55764a77ee7cf85e3762381c36a6a50918f20b65": {
+      "url": "https://news.ycombinator.com/item?id=44301809",
+      "date": "2026-06-30"
+    },
+    "d3a2bc8cdf7e37e6593ce8b0289aaf6f4010dae014e2d567f1bc6ee5ad99e630": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1ueoc8g/chatgpt_misunderstood_fatass_dragon_in_the_worst",
+      "date": "2026-06-30"
+    },
+    "af18fec29226105fee22aa1f22d285ca334e8cc3c1cc2f4d39d0f3df9b43dc90": {
+      "url": "https://news.ycombinator.com/item?id=42806328",
+      "date": "2026-06-30"
+    },
+    "cb59f9be9e9921ce7f09691cfe74506ca78aa558089e0d9652557e998f6ba504": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1uahhpq/chatgpt_fixed_my_9_year_chronic_pain",
+      "date": "2026-06-30"
+    },
+    "8067be3b5c10c0f05b00f0f40becb258ef175edf4f1e3065246267cf0177d557": {
+      "url": "https://news.ycombinator.com/item?id=47006615",
+      "date": "2026-06-30"
+    },
+    "fa923eaa8688a65ede4ca7a14e67e8fa588200624a443f0c745af23b291c87b6": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1ud6wuy/i_aged_and_restored_a_photo_of_myself",
+      "date": "2026-06-30"
+    },
+    "9c8b805af6b84aad11400022279d55aa4ed5b611b08b86ac32b914e1b7552629": {
+      "url": "https://news.ycombinator.com/item?id=47167931",
+      "date": "2026-06-30"
+    },
+    "3f98eba683127c0d6ffb84b833063c961b766cfe73d9654ee61806e9b3bcb8ff": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1u69wu0/is_chatgpt_underpriced_for_what_it_can_do",
+      "date": "2026-06-30"
+    },
+    "0a43c70c5da3c1a6d8564feb7d010022c7068652f1c0ea12e88eb5701753d176": {
+      "url": "https://news.ycombinator.com/item?id=46734302",
+      "date": "2026-06-30"
+    },
+    "00e189dd28efcb1a6c1bf1466d53997a0d44043c79fa2ba78073f2c85a6b2002": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1u10689/my_gpt_is_scary",
+      "date": "2026-06-30"
+    },
+    "46b51bfc5d19e1b0c297ece438d77e6fb895e3c4b4033da7b2452b2bb5438b04": {
+      "url": "https://news.ycombinator.com/item?id=44112326",
+      "date": "2026-06-30"
+    },
+    "a6fb19a68b18f7207f293048470f0db68237d11c4b828d9b8572cda89f55c710": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1u6gbv3/i_asked_chatgpt_to_make_a_new_yorker_style",
+      "date": "2026-06-30"
+    },
+    "0d7cf80d2111e35ab9aa9b5d9ccee378e8bb5838911bdee41c34c0ed416ffcdf": {
+      "url": "https://news.ycombinator.com/item?id=45168953",
+      "date": "2026-06-30"
+    },
+    "ecc65c4b314ea70734cde5a4a9eace2c8446e01e09e2112506b43b96bc4e3740": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1ug0qao/quiet_moments_in_a_livedin_solar_system",
+      "date": "2026-06-30"
+    },
+    "311e66045f1680487f0b9c06f049041ddb30959c2073d5339787d16dcb6b0dc6": {
+      "url": "https://news.ycombinator.com/item?id=46977210",
+      "date": "2026-06-30"
+    },
+    "b410002715cb31acb1f60a7017b8ee6a13e6ea006387a7ca586640bf0f5aea7a": {
+      "url": "https://www.reddit.com/r/automation/comments/1ug9h20/an_accounting_team_showed_me_their_monthend",
+      "date": "2026-06-30"
+    },
+    "493e1cdf9df6b3de581f42aeb51cc2b84fe894d8f5eb33233a3b5b2d3f92a125": {
+      "url": "https://news.ycombinator.com/item?id=47516650",
+      "date": "2026-06-30"
+    },
+    "3a0ab0a10d5f240dfaec96252f684f8b7859821b2a2328ce31ded85331c77330": {
+      "url": "https://www.reddit.com/r/automation/comments/1u05ftr/ai_has_not_reduced_work_for_our_company_if",
+      "date": "2026-06-30"
+    },
+    "e78939f0b7fe73dedba7f9f444acbded50e555cba435ceb718255e646598c74c": {
+      "url": "https://news.ycombinator.com/item?id=43474490",
+      "date": "2026-06-30"
+    },
+    "874ea3148bca580565dbd892fa20808081db3e178a00a633d3eedc488c3853a3": {
+      "url": "https://www.reddit.com/r/automation/comments/1u215ci/what_boring_task_did_you_automate_and_immediately",
+      "date": "2026-06-30"
+    },
+    "51faf50673e6af5db7ca3200eff3880e0b9cbfb81d698b83ff34bbd9b809ce68": {
+      "url": "https://news.ycombinator.com/item?id=44742251",
+      "date": "2026-06-30"
+    },
+    "450ae9ac4011e7b873e9909c51528f9fa8ba96385d580afc78c7939cdc92313c": {
+      "url": "https://www.reddit.com/r/automation/comments/1u8230h/whats_one_automation_you_implemented_that_saved",
+      "date": "2026-06-30"
+    },
+    "d5103f4feb1b15db6eb52af001ea31047d820f8c6972f7906e94511a2f56fdf1": {
+      "url": "https://news.ycombinator.com/item?id=44515403",
+      "date": "2026-06-30"
+    },
+    "53bd17627dd9403d9ae48e59a9a95f2bf0288e77d5b0d2be5a806677d16c2120": {
+      "url": "https://www.reddit.com/r/automation/comments/1u4s5ez/automate_copy_paste_and_you_will_earn_money",
+      "date": "2026-06-30"
+    },
+    "f576e457ba3ee30980b60a25ca9f1aac5cb873b838dbf75bfd159ce4eb24017f": {
+      "url": "https://news.ycombinator.com/item?id=46765120",
+      "date": "2026-06-30"
+    },
+    "8a032db0facf0fe24b4ab52d5d7b7e0d96c447e548eea1da03c8e5b1b54ba0b6": {
+      "url": "https://www.reddit.com/r/automation/comments/1u1cejk/i_feel_like_people_keep_forceusing_ai_for_things",
+      "date": "2026-06-30"
+    },
+    "de5d2aeda425aa0445f86dd461fce17e2da3dd8608c769721a1590f600df149d": {
+      "url": "https://news.ycombinator.com/item?id=44617078",
+      "date": "2026-06-30"
+    },
+    "997b63f9d8d352c38aa3d5b08aa5121b3ec1594bc064c86603830c053cf11517": {
+      "url": "https://www.reddit.com/r/automation/comments/1uhwfps/i_built_an_automation_tool_to_escape_screenshot",
+      "date": "2026-06-30"
+    },
+    "3720e69e5268d634c62663524191e2a6725b3e991382b84b86aa1de1c6d1b983": {
+      "url": "https://news.ycombinator.com/item?id=46882389",
+      "date": "2026-06-30"
+    },
+    "37e0d5b6dc7f271e46f841b1271db8f3a8c94721f5b79c8cb46073801bbc68ac": {
+      "url": "https://www.reddit.com/r/automation/comments/1u8lywu/the_nightmare_of_giving_an_ai_agent_direct_access",
+      "date": "2026-06-30"
+    },
+    "6a2e0cf0d273b121530a1b278dc8c84951b1673835bf0b511277da71a9a9adf9": {
+      "url": "https://news.ycombinator.com/item?id=44302870",
+      "date": "2026-06-30"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 0
+  "dailyPage": 1
 }

@@ -1,0 +1,189 @@
+---
+title: "Get AI Code and Text Completion in Vim with Llama.vim"
+description: "Integrate a local Large Language Model (LLM) into the Vim text editor for AI-powered code and text completion and editing, running entirely on your computer."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 90
+jobToBeDone: "Integrate a local LLM for code and text completion and editing within Vim"
+tools:
+  - name: "Vim"
+    url: "https://www.vim.org"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Git"
+    url: "https://git-scm.com"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "vim-plug"
+    url: "https://github.com/junegunn/vim-plug"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "llama.vim"
+    url: "https://github.com/ggml-org/llama.vim"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "llama.cpp"
+    url: "https://github.com/ggerganov/llama.cpp"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Qwen2.5-Coder"
+    url: "https://huggingface.co/collections/Qwen/qwen2-5-coder-6693d2543232015243292497"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=42806328"
+  platform: "hackernews"
+  author: "kgwgk"
+  postedAt: 2025-01-23
+score: 8
+ingestedAt: 2026-06-30
+nigeriaNotes: "This workflow runs entirely on your computer, so it uses minimal internet data after the initial downloads of the tools and the AI model. Be aware that AI models can be large (several gigabytes), so download them over a stable connection. The tools are all free and open-source."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "A computer science student uses Vim's local AI to complete Python function definitions and debug code for their CSC301 assignment, speeding up homework completion."
+  - persona: "entrepreneur"
+    scenario: "A technical founder developing their startup's MVP uses Vim's integrated AI to quickly draft and refactor backend API code, accelerating product development offline."
+  - persona: "employee"
+    scenario: "A software engineer uses Vim's local AI to complete complex code blocks and refactor existing functions during development sprints, improving efficiency without sending proprietary code to external services."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will set up your Vim text editor to use a local AI (Large Language Model) for smart code and text suggestions, completions, and editing. This means the AI runs directly on your computer, offering privacy and speed without needing an internet connection for every suggestion. This approach is useful for developers who want AI assistance without sending their code to external services.
+
+## Tools you need
+*   **Vim** (free): A powerful text editor often used by programmers.
+*   **Git** (free): A tool for managing code versions, used here to download software.
+*   **Terminal** (free): A program on your computer where you type commands (like Command Prompt on Windows or Terminal on macOS/Linux).
+*   **vim-plug** (free): A popular tool that helps you install and manage plugins (add-ons) for Vim.
+*   **llama.vim** (free): The Vim plugin that connects Vim to a local AI model.
+*   **llama.cpp** (free): The software that runs the local AI model on your computer.
+*   **Qwen2.5-Coder** (free): An example AI model (Large Language Model) designed for coding tasks, which you will download and run locally.
+
+## Steps
+
+1.  **Install Vim and Git**: If you don't have Vim (or Neovim) and Git installed, you'll need to install them first.
+    *   **On Windows**: Download the installer for Vim from `https://www.vim.org/download.php#pc` (choose `gvim_9.x.exe`). Download the installer for Git from `https://git-scm.com/download/win`. Follow the installation prompts.
+    *   **On macOS**: Open your Terminal app (search for "Terminal" in Spotlight) and run:
+        ```bash
+        # macOS
+        brew install vim git
+        ```
+        If you don't have Homebrew, install it first by following instructions on `https://brew.sh`.
+    *   **On Linux**: Open your terminal and run:
+        ```bash
+        # Linux (Debian/Ubuntu)
+        sudo apt update && sudo apt install vim git
+        # Linux (Fedora)
+        sudo dnf install vim git
+        ```
+    You should now have Vim and Git available from your terminal. Type `vim --version` and `git --version` to check.
+
+2.  **Install a Vim Plugin Manager (vim-plug)**: This makes installing `llama.vim` much easier.
+    *   **Open your Terminal** (Command Prompt on Windows, Terminal on macOS/Linux).
+    *   **Install vim-plug**:
+        ```bash
+        # macOS or Linux
+        curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+            https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        ```
+        ```powershell
+        # Windows (PowerShell)
+        New-Item -ItemType Directory -Force "$HOME\.vim\autoload"
+        Invoke-WebRequest -Uri https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim -OutFile "$HOME\.vim\autoload\plug.vim"
+        ```
+    You should see a `plug.vim` file created in the specified directory.
+
+3.  **Configure Vim to use llama.vim**: You need to edit your Vim configuration file (`.vimrc`) to tell Vim about the plugin.
+    *   **Open your `.vimrc` file**:
+        *   **On macOS/Linux**: Open Terminal and type `vim ~/.vimrc`. If the file doesn't exist, Vim will create it.
+        *   **On Windows**: Open Command Prompt and type `notepad $HOME\_vimrc`. If the file doesn't exist, Notepad will ask if you want to create it.
+    *   **Add the following lines** to your `.vimrc` file. If you already have a `call plug#begin()` and `call plug#end()` section, add `'ggml-org/llama.vim'` inside it.
+        ```vim
+        " Add these lines to your .vimrc file
+        call plug#begin('~/.vim/plugged')
+        Plug 'ggml-org/llama.vim'
+        call plug#end()
+
+        " Optional: Configure llama.vim (example: disable auto Fill-In-the-Middle completion)
+        " let g:llama_config = { 'auto_fim': v:false }
+        ```
+    *   **Save and close** the `.vimrc` file. In Vim, type `:wq` and press Enter. In Notepad, save the file.
+    You have now told Vim to load the `llama.vim` plugin.
+
+4.  **Install llama.vim**: Now, open Vim and tell the plugin manager to install `llama.vim`.
+    *   **Open Vim**: In your Terminal, type `vim` and press Enter.
+    *   **Install plugins**: In Vim, type `:PlugInstall` and press Enter.
+    You should see a window pop up showing `llama.vim` being downloaded and installed. Once it's done, press `q` to close the window.
+
+5.  **Install llama.cpp**: This is the software that will run the AI model locally.
+    *   **Open your Terminal**.
+    *   **On macOS**:
+        ```bash
+        # macOS
+        brew install llama.cpp
+        ```
+    *   **On Windows**:
+        ```powershell
+        # Windows (PowerShell)
+        winget install llama.cpp
+        ```
+        If `winget` is not available, you might need to install it from the Microsoft Store or build `llama.cpp` from source (more advanced).
+    *   **For other OS or if `brew`/`winget` fails**: You can build `llama.cpp` from its source code. This is more technical.
+        ```bash
+        # macOS or Linux (build from source)
+        git clone https://github.com/ggerganov/llama.cpp.git
+        cd llama.cpp
+        make
+        ```
+        ```powershell
+        # Windows (PowerShell, build from source - requires Visual Studio Build Tools)
+        git clone https://github.com/ggerganov/llama.cpp.git
+        cd llama.cpp
+        cmake -B build
+        cmake --build build --config Release
+        ```
+    You should now have the `llama.cpp` tools, including `llama-server`, installed or built.
+
+6.  **Download an AI Model**: You need a "Fill-in-the-Middle (FIM)" compatible AI model. The source recommends Qwen2.5-Coder.
+    *   **Go to the Hugging Face collection**: Visit `https://huggingface.co/collections/Qwen/qwen2-5-coder-6693d2543232015243292497`.
+    *   **Choose a model**: Look for a model with a `.gguf` extension. The source mentions "Qwen2.5-Coder 1.5B Q8_0". This means a 1.5 billion parameter model, quantized to 8-bit, which is good for less powerful hardware.
+        *   Find `Qwen2.5-Coder-1.5B-Q8_0.gguf` or a similar small, quantized version.
+        *   Click on the model file, then click the "Download" button.
+    *   **Save the model**: Save the `.gguf` file to a memorable location on your computer, for example, `C:\llama_models\` on Windows or `~/llama_models/` on macOS/Linux.
+    You should have a `.gguf` file (e.g., `Qwen2.5-Coder-1.5B-Q8_0.gguf`) saved on your computer.
+
+7.  **Start the llama.cpp Server**: This runs the AI model in the background, ready for Vim to connect to it.
+    *   **Open a new Terminal window** (keep this window open as long as you want AI suggestions in Vim).
+    *   **Navigate to your `llama.cpp` directory** if you built it from source, otherwise, ensure `llama-server` is in your system's PATH.
+    *   **Run the server command**: Replace `[PATH_TO_YOUR_MODEL]` with the actual path to the `.gguf` file you downloaded. The source recommends settings based on VRAM (Video RAM, memory on your graphics card). For less than 8GB VRAM, use the 1.5B model.
+        ```bash
+        # macOS or Linux
+        llama-server -m [PATH_TO_YOUR_MODEL]/Qwen2.5-Coder-1.5B-Q8_0.gguf --fim-qwen-1.5b-default
+        ```
+        ```powershell
+        # Windows (PowerShell)
+        llama-server -m "[PATH_TO_YOUR_MODEL]\Qwen2.5-Coder-1.5B-Q8_0.gguf" --fim-qwen-1.5b-default
+        ```
+        *   **Example for 16GB+ VRAM**: If you have more VRAM, you could use a larger model and its corresponding flag, e.g., `--fim-qwen-7b-default` with a 7B model.
+    You should see the server start up, showing messages about loading the model and listening for connections. It will stay running in this terminal window.
+
+8.  **Use AI Completion in Vim**: Now, switch back to Vim and try it out.
+    *   **Open Vim** (or a file in Vim) in a separate Terminal window.
+    *   **Start typing code or text** in Insert mode (press `i`).
+    *   **Wait for suggestions**: The source says "Auto-suggest on cursor movement in Insert mode". You should see AI suggestions appear (often in a different color, like orange as shown in the source's example).
+    *   **Accept suggestions**:
+        *   Press `Tab` to accept the full suggestion.
+        *   Press `Shift+Tab` to accept only the first line of the suggestion.
+    *   **Instruction-based editing**: The source mentions `leader lli`. The `leader` key is usually `\` (backslash) by default in Vim. So, in Normal mode, type `\lli` to trigger instruction-based editing. You would then type your instruction (e.g., "refactor this function to be more concise") and press Enter.
+    You should see AI suggestions appearing as you type, and you can accept them to quickly complete code or text.
+
+## Original source
+This workflow is based on `llama.vim`, a Vim plugin developed by kgwgk and hosted on GitHub. It enables local Large Language Model (LLM) assistance for text completion and editing directly within the Vim editor.
+
+## Notes & variations
+*   **Free-tier alternatives**: All tools in this workflow are free and open-source, so there are no paid tiers to worry about. The main cost is your computer's hardware, especially VRAM for larger models.
+*   **Common mistake**: Not starting the `llama.cpp` server *before* opening Vim, or closing the server's terminal window while Vim is still running. The server must be active in the background for `llama.vim` to work. Also, ensure the model path in the `llama-server` command is correct.
+*   **Tip for better results**: Experiment with different FIM-compatible models from Hugging Face. Larger models (e.g., 7B or 30B parameters) generally provide better quality suggestions but require more VRAM. Always check the `llama.cpp` documentation or the model card on Hugging Face for recommended `llama-server` flags and model types. If you have a powerful GPU, consider building `llama.cpp` with GPU support for faster inference.

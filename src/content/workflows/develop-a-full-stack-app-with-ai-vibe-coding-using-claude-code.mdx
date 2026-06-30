@@ -1,0 +1,89 @@
+---
+title: "Develop a Full-Stack App with AI 'Vibe Coding' using Claude Code"
+description: "Learn about 'vibe coding' to develop full-stack applications by chatting with an AI. Understand how Claude Code can build apps from a simple specification."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 60
+jobToBeDone: "Develop a full-stack CRUD application from a specification using AI"
+tools:
+  - name: "Claude Code (Anthropic API)"
+    url: "https://www.anthropic.com/api"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Text Editor"
+    url: "https://code.visualstudio.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Terminal/Command Line"
+    url: "https://learn.microsoft.com/en-us/windows/terminal/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=44864185"
+  platform: "hackernews"
+  author: "sixhobbits"
+  postedAt: 2025-08-11
+score: 7
+ingestedAt: 2026-06-30
+nigeriaNotes: "This workflow uses a paid AI developer tool, which requires a subscription. Free alternatives for basic code generation might be available through freemium chat apps, but replicating this specific 'vibe coding' approach with a CLI tool would incur costs."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "A computer science student uses Claude Code to generate the backend and frontend code for their final year project, like a simple inventory management system for a local shop, based on a detailed SPEC.md file."
+  - persona: "entrepreneur"
+    scenario: "A tech entrepreneur quickly prototypes an MVP for their new online service, such as a booking platform for local artisans, by providing a SPEC.md to Claude Code to generate the initial full-stack application."
+  - persona: "employee"
+    scenario: "A software developer at a startup uses Claude Code to rapidly build an internal dashboard for tracking project metrics, generating the initial application structure from a detailed specification."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+This entry describes "vibe coding," a way to create software by chatting with an AI, letting it generate the code without you writing or editing it directly. The author uses a tool they call "Claude Code," which is a terminal-based interface that interacts with Anthropic's Claude AI models.
+
+This approach is advanced because it requires setting up a developer tool, comfort with using a computer's terminal (command line), and understanding how to write detailed instructions for an AI. The exact steps for installing and configuring "Claude Code" are not provided by the author, as it likely refers to using the Anthropic API via a custom script or CLI.
+
+The author successfully used this method to build various projects, including a SplitWise-like application. They achieved this by giving the AI a detailed `SPEC.md` file (a document outlining the project's requirements) and then running a single command to generate the entire application.
+
+## What you can use it for
+*   **Rapid Prototyping**: Quickly build basic versions of web applications or tools to test new ideas without writing much code yourself.
+*   **Automated Code Generation**: Generate complete full-stack applications (including the visible parts, backend logic, and database setup) from a high-level description.
+*   **Learning New Frameworks**: Explore how different technologies are put together by having the AI generate code in various programming languages and frameworks.
+*   **Experiment with AI Agents**: Understand how an AI can act like a software developer, interpreting your requirements and producing a complete project.
+
+## Tools you need
+*   **Claude Code (Anthropic API)** (paid): The author uses a terminal-based tool that interacts with Anthropic's Claude AI models. This requires a paid subscription to the Anthropic API to access the models.
+*   **Text Editor** (free): To write your `SPEC.md` file, which contains the detailed instructions for the AI. Examples include VS Code, Notepad (Windows), or TextEdit (macOS).
+*   **Terminal/Command Line** (free): The built-in application on your computer (like Command Prompt or PowerShell on Windows, or Terminal on macOS/Linux) where you will run the Claude Code tool.
+
+## How it actually works
+This workflow involves preparing a detailed project description and then using a command-line tool to have an AI generate the application. The author does not provide specific installation steps for "Claude Code," so these steps are general guidance.
+
+1.  **Set up Claude Code**: You would typically need to install a command-line interface (CLI) tool or set up a custom script that allows you to interact with the Anthropic API. This usually involves installing Python and an Anthropic library, then configuring your API key. The author does not share their exact setup process.
+2.  **Write your specification**: Create a detailed `SPEC.md` file. This is a text file (like the author's 500-word example) that describes the application you want to build. Include all features, user roles, how data should be stored, and any specific requirements. The more detailed and clear your specification, the better the AI's output will be.
+3.  **Run the AI command**: From your computer's terminal, use the Claude Code tool, pointing it to your `SPEC.md` file. The author used a command similar to this:
+
+    ```
+    claude -p "Read the SPEC.md file and implement it"
+    ```
+
+    This command tells the AI to read your specification and build the application described within it.
+4.  **Review and iterate**: The AI will generate the code for your application. You will need to review this code, test the application to see if it works as expected, and then refine your `SPEC.md` file or provide further instructions to the AI if the initial result isn't exactly what you wanted. The author mentions that their "one-shot" prompt was based on earlier attempts where the model did things they didn't want, implying an iterative process.
+5.  **Handle permissions (with caution)**: The author suggests using a "dangerously skip permissions" flag. This is extremely risky and should be avoided for any important or production systems. If you are experimenting, always use isolated development environments (like a virtual machine or a Docker container) to prevent potential security issues.
+
+## Words you'll see, explained
+*   **Vibe Coding**: A method of creating software by chatting with an AI, letting it generate the code without you directly writing or editing it.
+*   **Full-stack application**: A software application that includes all parts: the visible user interface (frontend), the behind-the-scenes logic (backend), and the database where information is stored.
+*   **CRUD application**: An application that allows users to perform the four basic operations on data: Create (add new data), Read (view existing data), Update (change data), and Delete (remove data).
+*   **CLI (Command Line Interface)**: A way to interact with a computer program by typing text commands, rather than clicking buttons or icons in a graphical window.
+*   **API (Application Programming Interface)**: A set of rules and tools that allows different software programs to communicate with each other. In this case, it allows the Claude Code tool to send requests to and receive responses from Anthropic's AI models.
+*   **Specification (SPEC.md)**: A detailed document, often in a plain text file, that outlines all the requirements, features, and design choices for a software project.
+
+## Original source
+This concept was shared by Gareth Dwyer, known as sixhobbits, on Hackernews. He described his experience using a terminal-based tool called "Claude Code" to develop various applications, including a SplitWise clone, by providing detailed specifications to the AI.
+
+## Notes & variations
+*   **Do you even need this?**: For simpler code generation tasks, freemium chat applications like Claude.ai, ChatGPT, or Gemini can often provide code snippets or even small, complete applications without requiring a paid developer tool or terminal setup. This "vibe coding" approach is more suited for complex, integrated development directly from a command line.
+*   **Free-tier limits**: The author quickly reached usage limits on a $20/month plan and upgraded to a $100/month plan to continue using the tool without interruption. This indicates that serious or frequent use of such a developer tool can become expensive.
+*   **Common pitfall**: The author's advice to "dangerously skip permissions" is extremely risky. Never run AI-generated code or tools with elevated permissions on production systems or your main development machine without thoroughly understanding and vetting the code. Always use isolated development environments (like virtual machines or Docker containers) for testing and experimentation.
+*   **Tip for better results**: Provide extremely detailed and clear specifications in your `SPEC.md` file. The more input and context you give the AI, the better and more accurate its output will be. Break down complex applications into smaller, manageable parts within your specification.

@@ -1,0 +1,151 @@
+---
+title: "Automate Binary Analysis with Ghidra and AI Models"
+description: "Connect Ghidra, a powerful reverse engineering tool, with AI models using GhidraMCP to automate tasks like decompiling and analyzing software binaries."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 60
+jobToBeDone: "Automate binary reverse engineering with LLMs and Ghidra"
+tools:
+  - name: "Ghidra"
+    url: "https://ghidra-sre.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "GhidraMCP"
+    url: "https://github.com/LaurieWired/GhidraMCP"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Python3"
+    url: "https://www.python.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "MCP SDK"
+    url: "https://pypi.org/project/mcp-sdk/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Claude Desktop"
+    url: "https://claude.ai/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Cline"
+    url: "https://github.com/LaurieWired/Cline"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "5ire"
+    url: "https://github.com/LaurieWired/5ire"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Maven"
+    url: "https://maven.apache.org/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=43474490"
+  platform: "hackernews"
+  author: "tanelpoder"
+  postedAt: 2025-03-25
+score: 6
+ingestedAt: 2026-06-30
+nigeriaNotes: "This workflow requires significant technical setup, including installing multiple software tools and running command-line scripts. While Ghidra and GhidraMCP are free, using AI clients like Claude Desktop might involve paid API access or have free-tier usage limits. Data usage for local tools is minimal."
+tiktokUrl: ""
+published: false
+---
+
+## What this is, in plain English
+This entry describes `GhidraMCP`, a tool that connects `Ghidra` (a free software reverse engineering tool) with large language models (LLMs), which are advanced AI programs that can understand and generate human-like text. The goal is to let AI help automate the complex process of understanding how software works, especially when you don't have the original source code.
+
+Normally, reverse engineering a program (like an app or a game) involves a lot of manual work to figure out its functions and data. GhidraMCP acts as a bridge, allowing an AI to interact with Ghidra. This means the AI can ask Ghidra to decompile parts of a program (turn machine code into more readable code), list its functions, and even suggest better names for confusing parts of the code.
+
+This is an advanced workflow because it requires comfort with installing and configuring multiple technical tools, running command-line scripts, and understanding basic concepts of software development and reverse engineering. It's not a simple copy-paste task for beginners, as the exact instructions often involve specific file paths and system configurations that vary by computer.
+
+## What you can use it for
+*   **Automate code renaming**: Let an AI suggest clearer names for functions and variables in decompiled code, making it easier to understand.
+*   **Speed up binary analysis**: Use AI to quickly identify key parts of a program, like imports, exports, and classes, reducing manual effort.
+*   **Enhance security research**: Help security analysts understand malware or vulnerabilities faster by using AI to interpret complex code structures.
+*   **Assist in software debugging**: Get AI insights into how a program works internally, even without access to its original source code.
+
+## Tools you need
+*   **Ghidra** (free): A powerful software reverse engineering framework developed by the NSA.
+*   **GhidraMCP** (free): The Model Context Protocol server and Ghidra plugin that connects Ghidra to AI clients.
+*   **Python3** (free): A popular programming language used to run the GhidraMCP server script.
+*   **MCP SDK** (free): A Python library that provides the Model Context Protocol framework for AI clients.
+*   **Claude Desktop** (freemium): A desktop application that can act as an AI client, interacting with GhidraMCP.
+*   **Cline** (free): A command-line interface (CLI) tool that can serve as an MCP client.
+*   **5ire** (free): Another MCP client application that supports multiple AI models.
+*   **Maven** (free): A software project management and comprehension tool, used if you want to build GhidraMCP from its source code.
+
+## How it actually works
+This workflow involves setting up Ghidra, installing the GhidraMCP plugin, and then configuring an AI client to communicate with it. The exact steps require careful attention to file paths and network ports.
+
+1.  **Install Ghidra**: Download and install the latest version of Ghidra from its official website. This is the main tool for reverse engineering.
+2.  **Download GhidraMCP**: Get the latest release of GhidraMCP from its GitHub repository. This package includes the Ghidra plugin and the Python client script.
+3.  **Install the GhidraMCP Plugin**: 
+    *   Open Ghidra.
+    *   Go to `File` > `Install Extensions`.
+    *   Click the `+` button and select the `GhidraMCP-1-2.zip` file (or your downloaded version) from the GhidraMCP release.
+    *   Restart Ghidra.
+    *   Verify the plugin is enabled by going to `File` > `Configure` > `Developer` and checking `GhidraMCPPlugin`.
+    *   (Optional) Configure the port for the GhidraMCP HTTP server in Ghidra via `Edit` > `Tool Options` > `GhidraMCP HTTP Server`. The default is `8080`.
+4.  **Install Python3 and MCP SDK**: Ensure you have Python3 installed on your system. Then, install the MCP SDK using pip, Python's package installer. The author doesn't specify the exact command, but typically it would be:
+
+    ```
+    # macOS or Linux
+    pip install mcp-sdk
+    ```
+
+    ```
+    # Windows (PowerShell)
+    pip install mcp-sdk
+    ```
+
+5.  **Configure an MCP Client**: This is where you connect an AI tool to GhidraMCP. The source provides examples for Claude Desktop, Cline, and 5ire. You will need to choose one and follow its specific configuration steps.
+    *   **For Claude Desktop**: You need to edit a configuration file (`claude_desktop_config.json`) to tell Claude Desktop how to connect to the GhidraMCP server. The author doesn't share the exact location for all OS, but on macOS it's `/Users/YOUR_USER/Library/Application Support/Claude/claude_desktop_config.json`. You'll add a section like this, replacing `/ABSOLUTE_PATH_TO/bridge_mcp_ghidra.py` with the actual path to the script from your GhidraMCP download:
+
+        ```json
+        {
+          "mcpServers" : {
+            "ghidra" : {
+              "command" : "python",
+              "args" : [
+                "/ABSOLUTE_PATH_TO/bridge_mcp_ghidra.py",
+                "--ghidra-server",
+                "http://127.0.0.1:8080/"
+              ]
+            }
+          }
+        }
+        ```
+
+    *   **For Cline**: You first need to manually run the GhidraMCP server script, then configure Cline to connect to it. Replace `/ABSOLUTE_PATH_TO/bridge_mcp_ghidra.py` with the actual path to the script.
+
+        ```
+        # macOS or Linux
+        python /ABSOLUTE_PATH_TO/bridge_mcp_ghidra.py --transport sse --mcp-host 127.0.0.1 --mcp-port 8081 --ghidra-server http://127.0.0.1:8080/
+        ```
+
+        ```
+        # Windows (PowerShell)
+        python /ABSOLUTE_PATH_TO/bridge_mcp_ghidra.py --transport sse --mcp-host 127.0.0.1 --mcp-port 8081 --ghidra-server http://127.0.0.1:8080/
+        ```
+
+        Then, in Cline, go to `MCP Servers` > `Remote Servers` and add a new server with `Server Name: GhidraMCP` and `Server URL: http://127.0.0.1:8081/sse`.
+    *   **For 5ire**: Open 5ire, go to `Tools` > `New`, and set the `Tool Key` to `ghidra`, `Name` to `GhidraMCP`, and `Command` to `python /ABSOLUTE_PATH_TO/bridge_mcp_ghidra.py`.
+
+## Words you'll see, explained
+*   **Ghidra**: A free tool used by security researchers and developers to understand how software works, especially when they don't have the original source code.
+*   **Reverse Engineering**: The process of analyzing a finished product (like a software program) to understand its design, architecture, or how it functions.
+*   **LLM (Large Language Model)**: An advanced AI program trained on vast amounts of text data, capable of understanding, generating, and summarizing human language.
+*   **Binary**: The compiled version of a software program, made up of machine code that a computer can directly execute.
+*   **Decompile**: To convert a compiled program (binary) back into a higher-level programming language that humans can read, like C or Java.
+*   **MCP (Model Context Protocol)**: A standard way for AI models to interact with tools and exchange information, allowing them to "understand" and control other software.
+*   **Plugin**: A software component that adds specific features or functions to an existing computer program.
+*   **API (Application Programming Interface)**: A set of rules and tools that allows different software applications to communicate with each other.
+
+## Original source
+This workflow is based on a project by LaurieWired, shared on GitHub, which provides the GhidraMCP server and plugin. The author, tanelpoder, highlighted this project on Hacker News.
+
+## Notes & variations
+*   **Do you even need this?**: This workflow is highly specialized for software reverse engineering. If your goal is general AI assistance for coding or text generation, simpler and more accessible AI chat tools (like ChatGPT, Claude, or Gemini) are much easier to use and likely sufficient. This setup is for those who specifically need AI to interact with Ghidra for deep binary analysis.
+*   **Free-tier limits**: While Ghidra and GhidraMCP are free, the AI clients (like Claude Desktop) might rely on paid AI model APIs. Check the specific AI client's terms for free usage limits or required subscriptions.
+*   **Common pitfall**: Incorrect file paths or network port configurations are the most common issues. Always double-check that the `ABSOLUTE_PATH_TO/bridge_mcp_ghidra.py` is correct and that the `ghidra-server` and `mcp-port` values match across your Ghidra settings and client configurations. Ensure no other programs are using the same ports.
+*   **Alternative clients**: The source mentions Claude Desktop, Cline, and 5ire. You can explore other MCP-compatible clients or even develop your own if you have programming skills, as the protocol is designed for interoperability.

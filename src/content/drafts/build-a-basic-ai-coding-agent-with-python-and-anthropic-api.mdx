@@ -1,0 +1,114 @@
+---
+title: "Build a Basic AI Coding Agent with Python and Anthropic API"
+description: "Understand the core mechanics of AI coding agents by building a basic version in Python. Learn how LLMs can interact with local tools to read, list, and edit files."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 90
+jobToBeDone: "Build a functional AI coding agent from scratch"
+tools:
+  - name: "Python"
+    url: "https://www.python.org"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Anthropic API"
+    url: "https://www.anthropic.com/api"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "OpenAI API"
+    url: "https://platform.openai.com/"
+    pricing: "paid"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=46545620"
+  platform: "hackernews"
+  author: "nutellalover"
+  postedAt: 2026-01-08
+score: 6
+ingestedAt: 2026-06-30
+nigeriaNotes: "This workflow requires a paid API key from Anthropic or OpenAI, which is a significant cost barrier. While the code itself is free, the core functionality relies on these paid services. Data usage for running the agent is generally low after initial setup."
+tiktokUrl: ""
+published: false
+---
+
+## What this is, in plain English
+AI coding assistants, like the one called Claude Code, might seem like magic. You describe what you want, and they write or edit code in your project. However, the core idea behind these tools is not magic at all. It's essentially a conversation with a powerful AI (a Large Language Model, or LLM) that has a set of tools it can use.
+
+When you tell the AI what to do (for example, "create a new file with a hello world function"), the AI decides if it needs to use one of its tools. If it does, your program executes that tool on your computer (like actually creating the file). The result of that action is then sent back to the AI, which uses this new information to continue the conversation or take the next step.
+
+This entry explains this core loop and provides the starting Python code to build such an agent from scratch. It is an advanced workflow because it requires you to write and run Python code, set up a development environment, and pay for access to an LLM's API (Application Programming Interface).
+
+## What you can use it for
+*   **Understand AI agent mechanics**: See how large language models (LLMs) can interact with your computer's files through custom tools.
+*   **Build custom development tools**: Extend this basic agent with more capabilities to automate specific coding tasks for your projects.
+*   **Learn Python for AI**: Practice integrating powerful AI models into your own Python scripts and applications.
+*   **Experiment with AI automation**: Explore how to make an AI perform actions on your local machine, rather than just generating text.
+
+## Tools you need
+*   **Python** (free): The programming language used to build the agent and its tools.
+*   **Anthropic API** (paid): Provides access to Anthropic's large language models (LLMs), which power the agent's "brain." You will need a paid account.
+*   **OpenAI API** (paid): An alternative to Anthropic API, providing access to OpenAI's LLMs. You will need a paid account.
+*   **Text editor** (free): Like VS Code or Notepad++, for writing and saving your Python code.
+*   **Terminal or Command Prompt** (free): To run Python commands and manage your project.
+
+## How it actually works
+1.  **Install Python**: Download and install Python (version 3.8 or newer) from the official website. During installation, make sure to check the box that says "Add Python to PATH" (or similar) so you can run Python commands from your terminal.
+2.  **Set up a project folder**: Create a new folder on your computer for your agent project. Open your terminal or command prompt and navigate into this new folder.
+3.  **Create a virtual environment**: This keeps your project's Python tools and libraries separate from other Python projects on your computer.
+
+    ```bash
+    # macOS or Linux
+    python3 -m venv venv
+    source venv/bin/activate
+    ```
+
+    ```powershell
+    # Windows (PowerShell)
+    python -m venv venv
+    .\venv\Scripts\Activate.ps1
+    ```
+
+4.  **Install necessary libraries**: Install the `anthropic` library (or `openai` if you prefer) and `python-dotenv`. These libraries help your Python code talk to the AI model and load your secret keys.
+
+    ```bash
+    pip install anthropic python-dotenv
+    # Or for OpenAI:
+    # pip install openai python-dotenv
+    ```
+
+5.  **Get an API key**: Sign up for an account with Anthropic (at `anthropic.com/api`) or OpenAI (at `platform.openai.com`) and generate an API key. This is a paid service, and you will be charged for using their AI models.
+6.  **Store your API key securely**: Create a new file named `.env` in your project folder (the same folder where you created your virtual environment). Add your API key to this file, replacing the placeholder text:
+
+    ```
+    ANTHROPIC_API_KEY="your_anthropic_api_key_here"
+    # Or for OpenAI:
+    # OPENAI_API_KEY="your_openai_api_key_here"
+    ```
+
+7.  **Write the agent's code**: Create a Python file (for example, `agent.py`) in your project folder. Copy the initial setup code and tool functions provided in the original article into this file. The excerpt shows:
+    *   Required `import` statements for various Python modules.
+    *   Code to load environment variables from your `.env` file.
+    *   Initialization of the Anthropic client (or OpenAI client if you choose that).
+    *   Definitions for terminal colors to make outputs easier to read.
+    *   A utility function called `resolve_abs_path` to correctly handle file paths on your computer.
+    *   The `read_file_tool` function, which takes a filename and returns its content.
+    *   The `list_files_tool` function, which lists files in a given directory.
+    *   The beginning of the `edit_file_tool` function, which handles creating new files or replacing text.
+    The author notes that the full agent is about 200 lines of Python, and this excerpt only provides parts of it. You would need to refer to the full article (linked in the original source) for the complete code, especially the full `edit_file_tool` and the main conversation loop that connects these tools to the LLM.
+8.  **Integrate tools with the LLM**: The core idea is to send your request to the LLM. When the LLM suggests using a tool (like `read_file_tool`), your Python code executes that tool function and sends the result back to the LLM. This conversation loop continues until the task is completed.
+
+## Words you'll see, explained
+*   **LLM (Large Language Model)**: An advanced artificial intelligence program that can understand, generate, and respond to human language.
+*   **API (Application Programming Interface)**: A set of rules and tools that lets different software programs communicate with each other.
+*   **Python**: A popular and easy-to-read programming language, widely used for web development, data analysis, and artificial intelligence.
+*   **Filesystem**: The way files and folders are organized and stored on your computer.
+*   **Virtual environment**: A self-contained directory that holds a specific Python installation and its libraries, keeping projects separate.
+*   **`dotenv`**: A Python library that helps you load secret keys and configuration settings from a special `.env` file into your program.
+
+## Original source
+This concept is based on an article titled "The Emperor Has No Clothes: How to Code Claude Code in 200 Lines of Code" by Mihail Eric, published on his blog in January 2026. The article demonstrates how the core functionality of AI coding assistants can be built with relatively simple Python code.
+
+## Notes & variations
+*   **Do you even need this?**: For most coding tasks, you might find it simpler and cheaper to use existing AI chat apps like ChatGPT, Claude.ai, or Gemini directly for coding help, or dedicated coding assistants like GitHub Copilot. This workflow is for those who want to understand and *build* the underlying agent technology themselves, rather than just use it.
+*   **Free-tier limits**: The Anthropic and OpenAI APIs are paid services. There is no free tier for using their developer APIs, meaning you will incur costs for every request your agent makes.
+*   **Common pitfall**: A frequent issue is not correctly setting up your API key in the `.env` file or not activating your virtual environment. Double-check these steps if your program cannot connect to the LLM. Also, ensure your tool functions have clear descriptions (docstrings) so the LLM knows when and how to use them.
