@@ -1,0 +1,84 @@
+---
+title: "Set Up Local LLMs for R and Python with Ollama"
+description: "Learn to set up and use local Large Language Models (LLMs) with R and Python code using Ollama, a free tool for running AI on your machine."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 30
+jobToBeDone: "Set up and use local Large Language Models (LLMs) with R and Python code"
+tools:
+  - name: "Ollama"
+    url: "https://ollama.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "ellmer"
+    url: "https://github.com/posit-dev/ellmer"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "chatlas"
+    url: "https://github.com/posit-dev/chatlas"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=45172376"
+  platform: "hackernews"
+  author: "ionychal"
+  postedAt: 2025-09-08
+score: 7
+ingestedAt: 2026-07-01
+nigeriaNotes: "Ollama is free and runs locally, making it ideal for users with limited or no internet access. Data usage is minimal after the initial download of the LLM. R and Python are free to install. The packages ellmer and chatlas are also free."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to install and run a Large Language Model (LLM) directly on your computer using Ollama. This allows you to use AI models with R and Python code without sending your data to external servers. This approach is great for privacy and for users with limited internet access.
+
+## Tools you need
+*   **Ollama** (free): A tool to download, install, and run LLMs on your computer.
+*   **ellmer** (free): An R package to connect your R code to LLMs.
+*   **chatlas** (free): A Python package to connect your Python code to LLMs.
+*   **R or Python**: Free programming languages to write your code in.
+
+## Steps
+1.  **Install Ollama**: Download and install Ollama on your computer. The website provides instructions for Mac, Windows, and Linux.
+    *   **For Mac users**: You can install Ollama using Homebrew. Open your Terminal application and run:
+        ```bash
+        brew install --cask ollama
+        ```
+    *   After installation, you can check if it's working by running `ollama --version` in your Terminal. You should see the Ollama version number.
+2.  **Download an LLM**: Once Ollama is installed, you need to download a language model to run. The article mentions Gemma 3 1B as an option for resource-limited devices, but notes newer models exist and Gemma 3 1B might be too small for complex coding tasks. To download a model, open your Terminal and use the `ollama run` command followed by the model name. For example, to download and run Gemma 3 1B:
+    ```bash
+    ollama run gemma:3b
+    ```
+    You should see output indicating the model is downloading and then a prompt where you can start chatting with it. Type `exit` to leave the chat.
+3.  **Install the R package (ellmer)**: If you use R, open your R console or RStudio and run:
+    ```R
+    install.packages("remotes")
+    remotes::install_github("posit-dev/ellmer")
+    ```
+    You should see messages indicating the package is being installed. Once done, you can load it with `library(ellmer)`.
+4.  **Install the Python package (chatlas)**: If you use Python, you can install chatlas using pip:
+    ```bash
+    pip install chatlas
+    ```
+    You should see messages indicating the package is being installed. Once done, you can import it in your Python script with `import chatlas`.
+5.  **Connect to your local LLM**: Now you can tell your R or Python code to use the LLM running via Ollama. The exact function to use is `chat()` in both packages. The article doesn't specify the exact arguments for connecting to a local Ollama instance, but a common way is to specify the model name. A starting point for R would be:
+    ```R
+    library(ellmer)
+    ellmer::chat(model = "gemma:3b")
+    ```
+    And for Python:
+    ```python
+    import chatlas
+    chatlas.chat(model="gemma:3b")
+    ```
+    You should be able to interact with the LLM through your code, sending prompts and receiving responses that stay on your machine.
+
+## Original source
+This guide is based on a blog post by Isabella Velásquez on the Posit blog, explaining how to set up and use local Large Language Models (LLMs) with R and Python. It introduces the free and open-source packages ellmer for R and chatlas for Python, and shows how to connect them to Ollama, a tool for running LLMs locally.
+
+## Notes & variations
+*   **Free tier alternative**: Ollama, ellmer, and chatlas are all free and open-source, so there are no free tier limitations. The main cost is your computer's processing power and storage.
+*   **Common mistake**: Trying to run very large or complex LLMs on older or less powerful computers can lead to slow performance or errors. Start with smaller models like Gemma 3 1B if you have limited hardware.
+*   **Tip for better results**: While local LLMs are great for privacy and cost, for the highest quality AI responses, consider paid services like Anthropic's Claude Sonnet 4 or OpenAI's GPT-4. You can often connect these paid services to ellmer and chatlas as well, if you have an account and API key.

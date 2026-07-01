@@ -1,0 +1,178 @@
+---
+title: "Record AI Agent Demos of Web Interactions with shot-scraper video"
+description: "Learn how shot-scraper video helps AI agents record video demonstrations of their interactions with web applications, useful for showing off automated tasks."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 90
+jobToBeDone: "Record video demonstrations of AI agent interactions with web applications"
+tools:
+  - name: "shot-scraper"
+    url: "https://shot-scraper.datasette.io/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Playwright"
+    url: "https://playwright.dev/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "uv"
+    url: "https://astral.sh/uv"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Datasette"
+    url: "https://datasette.io/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Python"
+    url: "https://www.python.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Terminal / Command Prompt"
+    url: "https://en.wikipedia.org/wiki/Command-line_interface"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Text Editor"
+    url: "https://code.visualstudio.com/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://simonwillison.net/2026/Jun/30/shot-scraper-video/#atom-everything"
+  platform: "blog"
+  author: "Simon Willison"
+  postedAt: 2026-06-30
+score: 8
+ingestedAt: 2026-07-01
+nigeriaNotes: "This workflow runs entirely on your local computer, so data usage is minimal after the initial setup and tool downloads. All core tools are free and open-source, making it accessible without recurring costs."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+`shot-scraper video` is a specialized tool that lets you record videos of automated interactions with websites. Think of it like a robot that can open a web browser, follow a set of instructions (like clicking buttons or typing text), and record everything it does as a video file.
+
+It uses a powerful underlying technology called Playwright, which is a library that allows computer programs to control web browsers. This means you can script complex actions that a human would normally do, and then capture them on video.
+
+This workflow is considered advanced because it requires comfort with the command line (typing commands into a text-based interface), setting up a programming environment (Python), and creating configuration files using a format called YAML. It's not a simple copy-paste task for someone new to these concepts.
+
+Because the exact steps depend on your specific project and require technical setup, this entry explains the concept and general approach rather than providing a step-by-step recipe that a non-technical person could easily follow on a phone.
+
+## What you can use it for
+*   **Showcase AI agent work:** Record clear video demonstrations of how an AI agent successfully completes tasks on a website, making its actions easy to understand.
+*   **Create automated tutorials:** Generate step-by-step video guides for using web applications without manually recording each time.
+*   **Document automated tests:** Visually capture the results of automated tests for web features, showing exactly what happened during the test run.
+*   **Report bugs with precision:** Record the exact sequence of actions that lead to a bug on a website, providing clear evidence for developers.
+
+## Tools you need
+*   **shot-scraper** (free): A command-line tool for taking screenshots and recording videos of websites.
+*   **Playwright** (free): A powerful library that allows programs to control web browsers, which `shot-scraper` uses behind the scenes.
+*   **uv** (free): A very fast Python package installer and project runner, used in the example to manage and run a local web server.
+*   **Datasette** (free): An open-source tool for exploring and publishing data, used in the author's example as the web application being recorded.
+*   **Python** (free): A popular programming language that `shot-scraper` and `uv` are built with. You'll need it installed on your computer.
+*   **Terminal / Command Prompt** (free): A text-based interface on your computer where you type and run commands.
+*   **Text Editor** (free): A program like VS Code or Notepad++ to create and edit configuration files (like YAML files).
+
+## How it actually works
+To use `shot-scraper video`, you generally follow these steps, which require a local development setup:
+
+1.  **Install Python and necessary tools**: You'll need Python installed on your computer. Then, you'll install `shot-scraper` and `uv` using Python's package management tools. For example, using `pipx` (a tool for installing Python applications in isolated environments):
+
+    # macOS or Linux
+    ```bash
+    python3 -m pip install --user pipx
+    python3 -m pipx ensurepath
+    pipx install shot-scraper
+    pipx install uv
+    ```
+
+    # Windows (PowerShell)
+    ```powershell
+    py -m pip install --user pipx
+    py -m pipx ensurepath
+    pipx install shot-scraper
+    pipx install uv
+    ```
+
+    You should see confirmation that `shot-scraper` and `uv` are installed and available in your command line.
+
+2.  **Create a `storyboard.yml` file**: This is a configuration file written in YAML format that tells `shot-scraper video` exactly what actions to perform on the website. It defines the website's URL, the size of the browser window, and a sequence of actions (called "scenes") like pausing, clicking, or typing. The author provides an example of such a file, but the full sequence of actions (`scenes`) is not included in the source material.
+
+    ```yaml
+    output: /tmp/datasette-bulk-insert-demo.webm
+    server:
+      - uv
+      - --directory
+      - /Users/simon/Dropbox/dev/datasette
+      - run
+      - datasette
+      - -p
+      - 6419
+      - --root
+      - --secret
+      - "1"
+      - /tmp/demo.db
+    url: http://127.0.0.1:6419/demo/tasks
+    viewport:
+      width: 1280
+      height: 720
+    cursor: true
+    wait_for: 'button[data-table-action="insert-row"]'
+    javascript: |
+      (() => {
+        let clipboardText = "";
+        Object.defineProperty(navigator, "clipboard", {
+          configurable: true,
+          get: () => ({
+            writeText: async (text) => {
+              clipboardText = String(text);
+            },
+            readText: async () => clipboardText,
+          }),
+        });
+      })();
+    scenes:
+      - name: Bulk insert existing table rows
+        do:
+          - pause: 0.8
+    ```
+
+    *   The `output` line specifies where the video file will be saved.
+    *   The `server` section shows how to automatically start a local web server (in this case, `Datasette` using `uv`) before recording. This is useful if the web application you want to record isn't publicly available online.
+    *   `url` is the starting web address for the recording.
+    *   `viewport` sets the size of the browser window.
+    *   `cursor: true` makes the mouse cursor visible in the video.
+    *   `wait_for` tells `shot-scraper` to pause until a specific element (like a button) appears on the page.
+    *   The `javascript` block allows for advanced browser modifications, like mocking the clipboard as shown in the example. This part is highly technical.
+    *   `scenes` defines the actual sequence of actions. The author's example only shows the beginning of one scene (`pause: 0.8`). You would add more actions here like `click: 'button.submit'`, `type: 'input#name', text: 'My Name'`, etc.
+
+3.  **Run the `shot-scraper video` command**: Once your `storyboard.yml` file is ready, you execute `shot-scraper video` from your terminal, pointing it to your configuration file. The author's example command is:
+
+    ```bash
+    shot-scraper video datasette-bulk-insert-storyboard.yml \
+      --auth datasette-demo-auth.json --mp4
+    ```
+
+    *   `datasette-bulk-insert-storyboard.yml` is the name of your configuration file.
+    *   `--auth datasette-demo-auth.json` is an optional flag to provide authentication details (like a cookie) if the website requires you to be logged in. This file would contain sensitive information and is described in the `shot-scraper` documentation.
+    *   `--mp4` specifies that the output video should be in MP4 format (the default is WebM).
+
+    You should see `shot-scraper` launch a browser, perform the actions defined in your `storyboard.yml`, and then save a video file to the specified output path.
+
+## Words you'll see, explained
+*   **shot-scraper**: A command-line tool created by Simon Willison for automating web interactions, specifically for taking screenshots and recording videos.
+*   **Playwright**: A powerful open-source library that allows developers to automate web browsers like Chrome, Firefox, and Safari for testing, scraping, and recording.
+*   **storyboard.yml**: The name of the configuration file used by `shot-scraper video` to define the sequence of actions and settings for recording a web interaction.
+*   **YAML**: A human-readable data format often used for configuration files, known for its simple structure using indentation.
+*   **CLI (Command Line Interface)**: A text-based way to interact with your computer, where you type commands instead of clicking icons.
+*   **Datasette**: An open-source tool for exploring and publishing data as an API and website, used in the author's example as the web application being demonstrated.
+*   **uv**: A very fast and modern Python package installer and project runner, used here to manage and start the `Datasette` web server.
+*   **Web application**: A program that runs in a web browser, like a social media site, an online store, or a data dashboard.
+*   **Local server**: A web server that runs directly on your own computer, making a website accessible only to you (or others on your local network) without needing to be hosted online.
+
+## Original source
+This concept is based on a blog post by Simon Willison, published on his personal blog. He introduced `shot-scraper video` as a new command to help AI agents produce video demonstrations of their work, highlighting its importance for showcasing automated tasks.
+
+## Notes & variations
+*   **Do you even need this?** For simple screen recordings, you might find it easier to use built-in screen recording tools on your phone or computer (like the Xbox Game Bar on Windows, QuickTime on macOS, or dedicated apps like OBS Studio). `shot-scraper video` is best suited for situations where you need to *automatically and reproducibly* record specific, scripted interactions with a web application, especially for demonstrating AI agent capabilities or automated testing.
+*   **Free-tier limits:** All the core tools mentioned (shot-scraper, Playwright, uv, Datasette, Python) are open-source and completely free to use. The main investment is your time in learning and setting up the environment.
+*   **Common pitfall:** Incorrectly formatted `storyboard.yml` files or using incorrect CSS selectors (the codes that identify specific elements on a webpage) are common reasons why the automation might fail. Always double-check your YAML syntax and test your selectors.
+*   **Tip for better results:** Start with a very simple `storyboard.yml` that just navigates to a URL and pauses. Once that works, gradually add more complex actions (clicks, typing, waiting for elements) one by one, testing each addition to ensure it functions as expected.

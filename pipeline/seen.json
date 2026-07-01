@@ -7816,8 +7816,328 @@
     "6a2e0cf0d273b121530a1b278dc8c84951b1673835bf0b511277da71a9a9adf9": {
       "url": "https://news.ycombinator.com/item?id=44302870",
       "date": "2026-06-30"
+    },
+    "bcde69780fb42dcbccbf3de1bb84a1a7b706921d28afb23f7d8b8fa566c0db75": {
+      "url": "https://news.ycombinator.com/item?id=48708941",
+      "date": "2026-07-01"
+    },
+    "3d81d05b4687dc2d81da7ce95e382721cb3b26bc98c76649fe1dcc753b90ef15": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1uhr5l4/this_might_be_sam_altmans_most_controversial",
+      "date": "2026-07-01"
+    },
+    "de27ff9504107bc2c53b01b1f3c22cd71a02584c537151e86ba7dc213150123e": {
+      "url": "https://simonwillison.net/2026/Jun/30/anthropic",
+      "date": "2026-07-01"
+    },
+    "ecc80545df769c41ad91dfd9ebb96516e6a7bac9ac6fcf2b6ff966e486e17a5e": {
+      "url": "https://github.com/byoungd/up",
+      "date": "2026-07-01"
+    },
+    "0a0e97f9326be806ecd5c4fe54455f0942995b97a27e8944d0a4fd635a3881a8": {
+      "url": "https://news.ycombinator.com/item?id=45189965",
+      "date": "2026-07-01"
+    },
+    "1848d893f9151147df02f96d8f0dbb89e3a7db7fd0067866110da61b78e7f6b9": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1ucs6ni/chatgpt_is_i_presume_broken",
+      "date": "2026-07-01"
+    },
+    "ef9fa262c7eb65dabb6da208767b4fec12e6add294f57ebfdc39901691195237": {
+      "url": "https://simonwillison.net/2026/Jun/30/nano-banana-2-lite",
+      "date": "2026-07-01"
+    },
+    "299e2680137ec23ee839e53f77a1e958a5135bf7dc7ea6c376c63f75caf49d38": {
+      "url": "https://news.ycombinator.com/item?id=43258585",
+      "date": "2026-07-01"
+    },
+    "4f48a825a0416c5b3c9bdb60e394b4de5cbbb0da067470b71e941da5a5ae6790": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1ubzm5j/pov_its_2003_and_you_bought_those_bangers_at",
+      "date": "2026-07-01"
+    },
+    "9a7410fe93ec11d4be1da0e29c9d6a98f839024cdc43b168a55fb18cd38cf2f7": {
+      "url": "https://simonwillison.net/2026/Jun/30/claude-sonnet-5",
+      "date": "2026-07-01"
+    },
+    "a16baec2656520c472dc419e348b2750b219e30637241b3738c7496890110121": {
+      "url": "https://news.ycombinator.com/item?id=47921064",
+      "date": "2026-07-01"
+    },
+    "d4a525b77d0e4adb03860532ba72d46918b140b44e40518a4957cabf757fc32b": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1uhg7ys/current_state_of_ai",
+      "date": "2026-07-01"
+    },
+    "555c6fe00134ba3ae621ba46ae23ae9c8d33e7ec388e159fade3a6038af54056": {
+      "url": "https://simonwillison.net/2026/Jun/30/the-ai-compass",
+      "date": "2026-07-01"
+    },
+    "54debb3f6173ac4b7e8c960796bf58c9a01a2a93a3068ccc7545194528a8ca5d": {
+      "url": "https://news.ycombinator.com/item?id=44985207",
+      "date": "2026-07-01"
+    },
+    "fd2b713787dea54cd1a600fd37b5b1be74c9c37569e05d501f5c623e00892f00": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1uccu7f/human_beings_are_a_disease_a_cancer_of_this",
+      "date": "2026-07-01"
+    },
+    "02b27ece15a28751746cbee79b98a6a72176b7bb95bcfe75ade986a2fb0a444e": {
+      "url": "https://simonwillison.net/2026/Jun/30/shot-scraper-video",
+      "date": "2026-07-01"
+    },
+    "0731905fd7179092d12ef71c9e68f2ccdd5b9b4da1750fd423c6ab61f6f35a5e": {
+      "url": "https://news.ycombinator.com/item?id=45242788",
+      "date": "2026-07-01"
+    },
+    "c0789d5f3650858e1922c2f7555b8e728896d9e657b4ecded2097773765e991e": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1ui8uml/for_the_love_of_god_teach_the_ai_to_say_i_dont",
+      "date": "2026-07-01"
+    },
+    "74d06c8bc43a3f4944de3f72d52d065a47dee01f744b9a310bd17818d3bed0e0": {
+      "url": "https://simonwillison.net/2026/Jun/30/shot-scraper",
+      "date": "2026-07-01"
+    },
+    "915c6c0109434fe26301a405d2824370ddf5b06be9fbaccf50c9c69cc522648f": {
+      "url": "https://news.ycombinator.com/item?id=43572134",
+      "date": "2026-07-01"
+    },
+    "7bd6de8942ef5b071c3158887039d581ee8807285e7020fdad6bdac8e13ae3ca": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1uez9eq/prompt_generate_an_image_of_your_favorite",
+      "date": "2026-07-01"
+    },
+    "49d83537b1abacda4b7f072fb39b30cb5041c1ef45c55bea2e2e4018b1352ba6": {
+      "url": "https://www.latent.space/p/aiewf-daily-dispatch-loops",
+      "date": "2026-07-01"
+    },
+    "2f34ff21f42734b97a05d4b16cec9b5f434c622860b45107e1317fbc095e55a6": {
+      "url": "https://news.ycombinator.com/item?id=46744572",
+      "date": "2026-07-01"
+    },
+    "b3a6b8b36187a5779a87478609295288d873f8736e9e379f859075a12afa00ae": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1tz4mfn/deepseek_improved_the_code_and_said_nothing",
+      "date": "2026-07-01"
+    },
+    "f067c5a87a87b23f911ff638437bef060c4f3b97e14a4e1796a03392e449840d": {
+      "url": "https://www.latent.space/p/ainews-sonnet-5-today-and-fable-5",
+      "date": "2026-07-01"
+    },
+    "579e25520864277db36e67ef85a1155840c4c35859e9cd52164c16b589ae6cd9": {
+      "url": "https://news.ycombinator.com/item?id=43169706",
+      "date": "2026-07-01"
+    },
+    "35681373d9e2500799a0c6b0fe14d14047ecc2a8e22131999179e47178adf1fa": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1uc77uq/yesterday_chatgpt_deleted_elevene_images_from_my",
+      "date": "2026-07-01"
+    },
+    "aac9f5c21de1545854a82fa537ca0eade9694b7a6eb3633292bce6977c046eb5": {
+      "url": "https://www.latent.space/p/forward-deployed-engineers-aiewf",
+      "date": "2026-07-01"
+    },
+    "46a154b552a6aca6293b16d6da5bf5e3c20776db92aefd34096fd6ded77fcee6": {
+      "url": "https://news.ycombinator.com/item?id=45270015",
+      "date": "2026-07-01"
+    },
+    "2fa10357a8813510f0f12c5fe2a8d8120df4b10026350b6b82ff3989b36a58f1": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1u1s0b9/friends_with_ai",
+      "date": "2026-07-01"
+    },
+    "985582112902929743aad2299ada0f924c4807b045cf852da9b91bf5bc72960c": {
+      "url": "https://www.latent.space/p/ahmad-osman-local-ai",
+      "date": "2026-07-01"
+    },
+    "c258e89239d8a907ea1a8660dc26885caa4420913c7e3ff057e0b60aacde3afe": {
+      "url": "https://news.ycombinator.com/item?id=44035770",
+      "date": "2026-07-01"
+    },
+    "2fda9fe5105273034c2d2660144205bedc23b88f0be6aff3effc087af8ef0e92": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1tznz91/generated_a_female_version_of_myself_then_made_a",
+      "date": "2026-07-01"
+    },
+    "fd44a21b34da8cd816fb164ea594f94dd0ecb4392b31beab36385a4be82e2c9c": {
+      "url": "https://www.bensbites.com/p/gpt-56-is-here-but",
+      "date": "2026-07-01"
+    },
+    "46549ee5ce3695ecd04fd8b247a0a530b02bc2c0d76356f08d9185a9b3b5b5d8": {
+      "url": "https://news.ycombinator.com/item?id=44247124",
+      "date": "2026-07-01"
+    },
+    "65d2dcf0fe5e32ab665bdc46f9d85b6b09d332947ec9fed1065508a6c59dd035": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1u96zae/yes",
+      "date": "2026-07-01"
+    },
+    "60bb7368a0c2a0856cdc5cde9062ba6332b07441aafafd441e1564155ccfdb8c": {
+      "url": "https://www.oneusefulthing.org/p/the-twilight-of-the-chatbots",
+      "date": "2026-07-01"
+    },
+    "dbd2689aaf60332d982129dc3b2496ea055fd3c3ac46ce926b4aceaa0c568617": {
+      "url": "https://news.ycombinator.com/item?id=44543913",
+      "date": "2026-07-01"
+    },
+    "f1b264627d07a24ddf278cc29338d897037ed0b29e0f84669d3c736cec5f7e73": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1ufr5qo/holy_just_generate_my_image",
+      "date": "2026-07-01"
+    },
+    "d2b47e5ca2b10e4d38ddb26f782d9fb30163ac0b076dcf56cbcff33b5e4a5298": {
+      "url": "https://huggingface.co/blog/ibm-research/scarfbench",
+      "date": "2026-07-01"
+    },
+    "a0a4b86f856bd8c212c86b82688b688c8208cb2575463d7838c441ac61b7caa6": {
+      "url": "https://news.ycombinator.com/item?id=43459240",
+      "date": "2026-07-01"
+    },
+    "14878ba53e342798bc9fe79ccf0d749b17fac0ffc8c575adb960146f554aca2a": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1u20kzb/character_reference_sheets_with_ideogram_4_in",
+      "date": "2026-07-01"
+    },
+    "9f340727232d898a6ead94d0d9b36cc11221be190f17bbdaf2fbe89bfc9de7ec": {
+      "url": "https://huggingface.co/blog/Dharma-AI/why-specialization-is-inevitable",
+      "date": "2026-07-01"
+    },
+    "e2c610bb6c04119296d25c02cdb7addfb0d8c392cfbe6076117423ce0a188224": {
+      "url": "https://news.ycombinator.com/item?id=45041397",
+      "date": "2026-07-01"
+    },
+    "42ebf04b5721fe1bd97e982d8161f8c025e1f3f7a5e93257783840a3a82d6bee": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1uc55ix/diffusion_model_that_can_turn_any_image_into_a",
+      "date": "2026-07-01"
+    },
+    "326b5d51b877e9cf2d481fdbe02584feef040ed2c5348fa57cc39057109a5061": {
+      "url": "https://huggingface.co/blog/eee-community-evals",
+      "date": "2026-07-01"
+    },
+    "78f813e2257c16346efe26be530810f84e95a315640bc6d529ac8c3991d3a88f": {
+      "url": "https://news.ycombinator.com/item?id=46919824",
+      "date": "2026-07-01"
+    },
+    "be262afc6a54dd48dd072c1c07f9c67deee2cb72ca538deb832a22d593d8ff5c": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1udb976/krea_2_is_really_good_at_knowing_and",
+      "date": "2026-07-01"
+    },
+    "3de230977cd4b8d45ee3493bc727a1006ede05e1dc9aede9ccd323fc88e327a0": {
+      "url": "https://newsletter.pragmaticengineer.com/p/impressions-from-visiting-openai",
+      "date": "2026-07-01"
+    },
+    "27dd7aedcc4346f35e09286214cb30077e7c382d51a0f25c54f3e5c1a3a2397b": {
+      "url": "https://news.ycombinator.com/item?id=44572043",
+      "date": "2026-07-01"
+    },
+    "a7dcdae5d2e63c175aa6a75614bc483b3f2d84e55f6ea03d2dd33b030b412b88": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1u28ram/i_made_a_tool_to_turn_any_image_into_ideogram",
+      "date": "2026-07-01"
+    },
+    "7a16463ad4b553b60c62bc2a2dd65d0d99d11f23e16dec86b1220dfdd0b977a9": {
+      "url": "https://news.ycombinator.com/item?id=44583014",
+      "date": "2026-07-01"
+    },
+    "4e0ca9c65ceab44d1603bc05b0ce9b58324fd929027d3f4759f58663afe2dfa8": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1u1cah3/ideogram_40_realism_engine_lora_beta",
+      "date": "2026-07-01"
+    },
+    "f827cedbb113ba01ad33a89a000df60563fb1e2a111e669d802bd568cd82e7a5": {
+      "url": "https://news.ycombinator.com/item?id=43753890",
+      "date": "2026-07-01"
+    },
+    "b587e4e98cee9ea653a0a7649bb9338309b4b0903da9d3e48704bb7ee9bf687c": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1udnm0a/we_are_the_team_behind_krea_2_ask_us_anything",
+      "date": "2026-07-01"
+    },
+    "12be107a0de102e47a8368b054d25dc1c72f265e7f30bfb23e6141034f9f6a12": {
+      "url": "https://news.ycombinator.com/item?id=43614582",
+      "date": "2026-07-01"
+    },
+    "e5493ff8da915bbfa8c588293d8d58023044c5160398daa9a70f0d9519b484bd": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1ueybt8/some_important_krea_usage_tips_ive_found_not_seen",
+      "date": "2026-07-01"
+    },
+    "0fd22a2bd026d1a50d017c6ae6ca2757c49d880b452bc79c3580a3ad6b5e258a": {
+      "url": "https://news.ycombinator.com/item?id=44671601",
+      "date": "2026-07-01"
+    },
+    "3b7454036835b01038d494e6771b102c8e1c1987c7dbd4df739390ccb60136b7": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1ud2nyq/krea_2_turbo_native_comfyui_workflow_fp8_weights",
+      "date": "2026-07-01"
+    },
+    "b78f999cbea62b9daef48cba92cabc6f40e13e3f0fb02a4aae6b3b9a1ea06e38": {
+      "url": "https://news.ycombinator.com/item?id=44604453",
+      "date": "2026-07-01"
+    },
+    "bef7e72c78748a815488dbd81e27f012cd6feb453b6ee7ec13d7879ca02f0735": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1ub4jpk/ltx_director_20_update_a_free_open_source",
+      "date": "2026-07-01"
+    },
+    "b386e92c6badb6b3abf68b9d642c9a582fc6ba0421586e548c5d106395b67faf": {
+      "url": "https://news.ycombinator.com/item?id=43535889",
+      "date": "2026-07-01"
+    },
+    "7e86ab1397e678fca27fe823f02f604e254bb4c3206165bef724e8d0fb639279": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1tzj8qk/who_of_you_was_this",
+      "date": "2026-07-01"
+    },
+    "271eeb918a5029205675dd68671f32020c9855bc0ef2ab00980d10b9340d6115": {
+      "url": "https://news.ycombinator.com/item?id=45172376",
+      "date": "2026-07-01"
+    },
+    "ca3e4dd3e67160ca6d61b1a24e17ae21a9e0c0c95b083941cd1d099f9b8ee98b": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1u7m255/scail2_infinity_a_single_node_for_unlimitedlength",
+      "date": "2026-07-01"
+    },
+    "2644c091d9e5f7bf943c6e2ee762b967d0a0f13c938fc4e23f9abbcc8f018941": {
+      "url": "https://news.ycombinator.com/item?id=44233315",
+      "date": "2026-07-01"
+    },
+    "cf93c94571d1f3e8816d657a22dda7aa88fbfb92f497be213ba814d3497302b1": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1uedbog/ideogram4_and_krea2_comparison",
+      "date": "2026-07-01"
+    },
+    "c45e55f9bc645d2a3a91a0bc64cfe9e4f109dd70a21b400cada12c9b8cadf1a1": {
+      "url": "https://news.ycombinator.com/item?id=48595882",
+      "date": "2026-07-01"
+    },
+    "cbfb815e50cc824b56155cec1e56c6a838859cf3494ecb69dbb5fe0e9682f833": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1uel0f0/krea_2_cinematic_stills",
+      "date": "2026-07-01"
+    },
+    "9c6487beb19d85858b6970280ea5e420553ec796daf1c91fd6ba41732038cb7e": {
+      "url": "https://news.ycombinator.com/item?id=44676066",
+      "date": "2026-07-01"
+    },
+    "169896147e02cf204cf504856879bc37cb3aeaca9aed2af893260f913f0f887c": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1u9npn6/testing_some_of_the_new_ltx_23_ic_loras",
+      "date": "2026-07-01"
+    },
+    "e41c1321cf6e1684d792fb3e1993d908005b473f195e202a28a60acf6f21961c": {
+      "url": "https://news.ycombinator.com/item?id=43419713",
+      "date": "2026-07-01"
+    },
+    "ebf79543965ba9f895b782c2563f2db97e7ce3bae833f8d9372c5c525177488a": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1tu8d5s/civitai_adult_content_models_for_comfyui",
+      "date": "2026-07-01"
+    },
+    "09a5fd4cdb1897237b2978f80a38e9bcb5a09978db699e2db0f9c86c4f2651fc": {
+      "url": "https://news.ycombinator.com/item?id=43425767",
+      "date": "2026-07-01"
+    },
+    "04c1c1b8c86c0259997ee0ca18fee45b3fc6500db2c3dc0cc9a305618f614b0c": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1uhubmk/training_lora_for_krea_2_is_easy_and_wonderful",
+      "date": "2026-07-01"
+    },
+    "a17828cfdecd64d4346654a6daa4e2aa14ea014713cfb2e045248882c5148cf5": {
+      "url": "https://news.ycombinator.com/item?id=45521788",
+      "date": "2026-07-01"
+    },
+    "03bd9cf7ba1528e6557111f60b9091b4874273c4adb6986a9343847499aabc3a": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1ug5o72/refcontrol_lora_family_for_flux2_klein",
+      "date": "2026-07-01"
+    },
+    "6e2c895fbdeaa3bc15a765bfdf8fb4c12a29aaea123beeeef6764d9c27de9ba0": {
+      "url": "https://news.ycombinator.com/item?id=46907001",
+      "date": "2026-07-01"
+    },
+    "305108b2877727401784a26f4ec74940ce042c47ea42db44f0df4ad267f81919": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1tv6et1/i_compared_62_samplers_and_16_schedulers_for",
+      "date": "2026-07-01"
+    },
+    "5287ef8791353f6d35151b8d50abf7d39be5f9c1c67a8ae670fbe720931941f6": {
+      "url": "https://news.ycombinator.com/item?id=47610245",
+      "date": "2026-07-01"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 1
+  "dailyPage": 2
 }

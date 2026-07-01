@@ -1,0 +1,89 @@
+---
+title: "Perform Statistical Analysis with AI using RMCP and Claude"
+description: "Use RMCP and an AI assistant like Claude to perform complex statistical analysis, machine learning, and data science tasks through natural conversation. Get insights from your data without coding."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 10
+jobToBeDone: "Perform sophisticated statistical analysis through natural conversation using AI"
+tools:
+  - name: "RMCP Live Server"
+    url: "https://rmcp-server-394229601724.us-central1.run.app/mcp"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Claude"
+    url: "https://claude.ai"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=45270015"
+  platform: "hackernews"
+  author: "neehao"
+  postedAt: 2025-09-17
+score: 8
+ingestedAt: 2026-07-01
+nigeriaNotes: "Claude.ai offers a free tier, making this workflow accessible. Interacting with RMCP through chat uses very little data, suitable for mobile-first users. The live server is hosted on Google Cloud, ensuring good accessibility."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will be able to perform complex statistical analysis, like regression, time series forecasting, or customer segmentation, by simply asking an AI assistant in plain English. The AI will use the RMCP server to run the necessary R statistical tools and provide you with clear results and visualizations. This approach works because RMCP connects powerful R statistical packages to AI chat models, letting you leverage advanced data science without needing to write any code or understand complex statistical software.
+
+## Tools you need
+*   **RMCP Live Server** (free): Connects AI assistants to a library of R statistical tools.
+*   **Claude** (freemium): An AI chat assistant that can understand your requests and interact with RMCP.
+
+## Steps
+
+1.  **Open the RMCP Live Server documentation**: Go to the RMCP Interactive Docs page to see what kinds of questions it can answer and how it works: `https://rmcp-server-394229601724.us-central1.run.app/docs`.
+
+    You should see a web page with documentation for the RMCP server, including available tools and examples.
+
+2.  **Open Claude**: In a new browser tab, go to the Claude AI chat website: `https://claude.ai`.
+
+    You should see the Claude chat interface, ready for you to type a message. If you don't have an account, you may need to sign up for the free tier.
+
+3.  **Instruct Claude on how to use RMCP**: The author doesn't share their exact prompt for instructing Claude. However, to enable Claude to use the RMCP server, you need to provide it with the server's address and how to make requests. Copy this starting prompt and paste it into Claude:
+
+    ```
+    You are an expert in statistical analysis. You have access to a tool called RMCP. To use RMCP, you must call its API. The base URL for the RMCP API is https://rmcp-server-394229601724.us-central1.run.app/mcp.
+    When you need to perform a statistical task, you will make a POST request to this URL with the appropriate JSON payload.
+    For example, to perform a linear regression, you might send:
+    {
+      "tool": "regression",
+      "method": "linear",
+      "data": {
+        "x": [1, 2, 3],
+        "y": [2, 4, 5]
+      }
+    }
+    Always respond with the full results from RMCP, including any plots or summaries.
+    ```
+
+    Claude should acknowledge that it understands its role and how to use the RMCP tool.
+
+4.  **Ask Claude to perform an analysis**: Now, ask Claude a statistical question. You can use one of the examples from the RMCP GitHub page or create your own. For instance, let's analyze some sales and marketing data.
+
+    ```
+    I have sales data and marketing spend. Can you analyze the ROI?
+    Assume sales data is [100, 120, 150, 130, 160] and marketing spend is [10, 12, 15, 13, 16].
+    ```
+
+    Claude will process your request, use the RMCP tool in the background, and then present the statistical results. For example, it might say something like: "I'll run a regression analysis to measure marketing effectiveness... Every $1 spent on marketing generates $4.70 in sales. The relationship is highly significant (p 0.001) with R² = 0.979".
+
+5.  **Try another analysis (optional)**: You can continue the conversation with Claude to perform other types of analysis, such as time series forecasting or customer segmentation, using different datasets or asking follow-up questions.
+
+    ```
+    Forecast next quarter's sales based on the sales data I provided earlier.
+    ```
+
+    Claude will use RMCP to perform a time series forecast and give you the predicted sales figures.
+
+## Original source
+This workflow is based on the RMCP (R MCP Server) project by neehao, shared on Hacker News. RMCP aims to make sophisticated statistical analysis accessible through natural language conversations with AI assistants.
+
+## Notes & variations
+*   **Free-tier alternatives**: The RMCP Live Server is free to use for demonstration purposes. Claude.ai offers a generous free tier. Other freemium AI chat models like Gemini (gemini.google.com) or ChatGPT (chatgpt.com) could also be used, but you would need to adapt the initial prompt (Step 3) to teach them how to interact with the RMCP API.
+*   **Common mistake**: Forgetting to provide the RMCP API instructions to Claude (Step 3) will prevent it from knowing how to use the tool. Always start a new chat with these instructions.
+*   **Tip for better results**: Be specific in your questions. Instead of just "Analyze my data," try "Perform a linear regression to see how marketing spend affects sales, given this data: [your data here]." If you have a dataset, you can paste it directly into Claude or ask Claude if it can load data from a URL (the excerpt mentions "Smart File Operations: CSV, Excel, JSON import with validation," so you could ask Claude to "Load and analyze my sales data from this CSV: [paste CSV content here]").

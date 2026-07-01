@@ -1,0 +1,81 @@
+---
+title: "Train a Custom AI Image Style (LoRA) for Krea 2 with ai-toolkit"
+description: "Learn to train a custom LoRA model using ai-toolkit to teach AI image generators like Krea 2 a unique style or subject. Get personalized AI art."
+category: "content-creation"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 180
+jobToBeDone: "Train a LoRA model for AI image generation"
+tools:
+  - name: "ai-toolkit"
+    url: "https://ai-toolkit.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Krea 2"
+    url: "https://www.krea.ai"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Civitai"
+    url: "https://civitai.com"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://www.reddit.com/r/StableDiffusion/comments/1uhubmk/training_lora_for_krea_2_is_easy_and_wonderful/"
+  platform: "reddit"
+  author: "/u/Estylon-KBW"
+  postedAt: 2026-06-28
+score: 5
+ingestedAt: 2026-07-01
+nigeriaNotes: "ai-toolkit offers a free trial, but full LoRA training usually requires a paid plan. Be mindful of data usage for uploading training images and downloading the final model. Krea 2 has a free tier for image generation, which is mobile-friendly."
+tiktokUrl: ""
+published: false
+---
+
+## What you'll get
+This workflow teaches you how to train a custom LoRA (Low-Rank Adaptation) model, which is a small add-on that teaches an AI image generator a new style or specific subject. You'll be able to create images in a unique style, like a specific artist's work, using tools like Krea 2. This approach works because LoRAs efficiently adapt existing large AI models without needing to retrain them from scratch, making custom styles accessible.
+
+## Tools you need
+*   **ai-toolkit** (freemium): An online platform that provides a user-friendly interface for training LoRA models, specifically using the Kohya_ss software.
+*   **Krea 2** (freemium): An AI image generation tool where you can use your trained LoRA to create images in your custom style.
+*   **Civitai** (free): A community hub for sharing and downloading AI models, including LoRAs. You can download existing LoRAs or share your own here.
+
+## Steps
+1.  **Gather your training images**: Collect 10 to 20 high-quality images that clearly show the style or subject you want your LoRA to learn. For example, if you want to mimic an artist's style, find images of their work. Make sure the images are consistent in style and quality.
+    You should have a folder of images ready to upload.
+
+2.  **Upload images to ai-toolkit**: Go to the ai-toolkit website and sign up or log in. Navigate to the LoRA training section. Upload your collected images to the platform. The author used ai-toolkit's interface for this.
+    You should see your images uploaded and listed within the ai-toolkit interface.
+
+3.  **Tag your images**: Use ai-toolkit's built-in tagging tool, often powered by Deepbooru, to automatically describe the content of each image. After automatic tagging, review and manually edit the tags for accuracy. Add specific keywords that describe the style or subject you want to teach (e.g., "Akira Toriyama style", "fantasy art").
+    You should have a set of images, each with a detailed list of descriptive tags.
+
+4.  **Configure LoRA training settings**: In ai-toolkit's LoRA training interface (which uses Kohya_ss), adjust the training parameters. The author used these settings as a starting point; you may need to experiment:
+    *   **Resolution**: 512x512 (This is the size your training images will be resized to)
+    *   **Batch size**: 1 (How many images are processed at once)
+    *   **Learning rate**: 0.0001 (How quickly the model learns from the data)
+    *   **Epochs**: 10 (How many times the model goes through the entire dataset)
+    *   **Network Rank (Dimension)**: 64 (Controls the complexity of the LoRA model)
+    *   **Network Alpha**: 32 (Helps stabilize training and improve quality)
+    *   **Optimizer**: AdamW8bit (A common algorithm for optimizing the training process)
+    *   **Caption Extension**: .txt (Ensures your text tags are used)
+    *   **Save every N epochs**: 1 (Saves a version of the LoRA after each epoch, useful for testing progress)
+    You should see all these settings applied in the training interface.
+
+5.  **Start LoRA training**: Once all settings are configured, initiate the training process on ai-toolkit. The training can take 1-2 hours depending on the number of images and chosen settings. The platform will show you the progress.
+    You should see a progress bar or log indicating that your LoRA model is being trained.
+
+6.  **Download and test your LoRA**: After training is complete, download the `.safetensors` file (your trained LoRA model) from ai-toolkit. Then, go to Krea 2 or another compatible AI image generator. Upload your LoRA and use it with a base model (like Stable Diffusion) and prompts to generate images in your new custom style. For example, try a prompt like:
+
+    ```
+    [your custom style keyword], a futuristic city, vibrant colors, detailed, cinematic lighting
+    ```
+
+    You should see images generated that reflect the style or subject you trained your LoRA on.
+
+## Original source
+This workflow is based on a Reddit post by /u/Estylon-KBW, who shared their experience training LoRAs and linked to a detailed guide on their Substack. The author successfully trained and published several LoRAs on Civitai, demonstrating the effectiveness of this method.
+
+## Notes & variations
+*   **Free-tier viability**: While ai-toolkit offers a free trial, training a full LoRA often requires a paid subscription due to the computational resources needed. Consider using free alternatives like Google Colab notebooks for Kohya_ss if you are comfortable with coding, though this is more advanced.
+*   **Common mistake**: Not having enough diverse or high-quality training images. If your images are too similar or low resolution, the LoRA might not learn effectively. Aim for variety within your desired style.
+*   **Tip for better results**: Experiment with the `Epochs` and `Learning rate` settings. Training for too few epochs might result in an underdeveloped style, while too many can lead to "overfitting" (where the LoRA only generates images identical to your training set). Save models at different epochs and test them to find the sweet spot.
