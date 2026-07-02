@@ -1,0 +1,96 @@
+---
+title: "Teach Ollama to Ask Clarifying Questions for Better Local LLM Responses"
+description: "Improve local AI model responses by teaching Ollama to ask clarifying questions before answering. Get more accurate and useful results with fewer tries."
+category: "content-creation"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 20
+jobToBeDone: "Improve local LLM responses by teaching them to ask clarifying questions"
+tools:
+  - name: "Ollama"
+    url: "https://ollama.com"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Text Editor"
+    url: "https://code.visualstudio.com"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Terminal/Command Prompt"
+    url: "https://en.wikipedia.org/wiki/Command-line_interface"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=48254993"
+  platform: "hackernews"
+  author: "froh"
+  postedAt: 2026-05-24
+score: 9
+ingestedAt: 2026-07-02
+nigeriaNotes: "Ollama is free and runs entirely on your device, so there are no ongoing costs. However, downloading models like Llama or Qwen requires a one-time download of several gigabytes (e.g., 4-8 GB per model), which uses significant mobile data if you're not on Wi-Fi. Ensure you have enough storage space on your device."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "Get better code suggestions for your CSC301 Python assignment by having your local LLM ask about specific function requirements or error handling."
+  - persona: "employee"
+    scenario: "Generate more precise summaries of lengthy internal documents for your team by having your local LLM ask about the key takeaways needed or the target audience for the summary."
+  - persona: "entrepreneur"
+    scenario: "Draft clearer social media captions for your new fashion brand by having your local LLM ask about your target audience's style preferences or post goals."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+Your local AI models (LLMs) running on your computer will learn to ask you clarifying questions when your request is unclear, instead of guessing. This approach helps you get more accurate and useful results in fewer steps, especially with local models that are not as good at inferring your intent as larger cloud-based ones.
+
+## Tools you need
+*   **Ollama** (free): Runs large language models (LLMs) directly on your computer.
+*   **Text Editor** (free): To create and edit the Modelfile (e.g., Notepad on Windows, TextEdit on Mac, or any code editor like VS Code).
+*   **Terminal/Command Prompt** (free): To run Ollama commands and interact with your local LLM.
+
+## Steps
+
+1.  **Install Ollama and a model**: Go to the Ollama website, download, and install the application for your operating system. Once installed, open your Terminal (on macOS/Linux) or Command Prompt/PowerShell (on Windows) and download a model. We'll use `llama2` as an example, but you can choose others like `qwen`.
+
+    ```bash
+    ollama run llama2
+    ```
+
+    You should see Ollama download the `llama2` model and then present a prompt where you can chat with it. Type `bye` and press Enter to exit the chat.
+
+2.  **Create a Modelfile**: Open a plain text editor (like Notepad, TextEdit, or VS Code). Copy and paste the following content into the editor. This Modelfile tells Ollama to use the `llama2` model and includes a `SYSTEM` instruction that teaches it to ask clarifying questions.
+
+    ```
+    FROM llama2
+    SYSTEM When tasked with coding, writing, editing, or summarizing, ask the user up to three targeted clarifying questions before attempting any non-trivial task. Wait for my answers before proceeding.
+    ```
+
+    Save this file in an easy-to-find location (e.g., your Documents folder) and name it `clarifying-llama.Modelfile`. Make sure the file extension is `.Modelfile`.
+
+3.  **Create your custom model**: Go back to your Terminal or Command Prompt. Navigate to the folder where you saved your `clarifying-llama.Modelfile` using the `cd` command (e.g., `cd Documents`). Then, run the following command to create your new custom model in Ollama:
+
+    ```bash
+    ollama create clarifying-llama -f clarifying-llama.Modelfile
+    ```
+
+    You should see output indicating that the model is being created, ending with a message like "success". This means Ollama has successfully built a new model named `clarifying-llama` with your custom instructions.
+
+4.  **Chat with your new model**: Now you can interact with your custom model. Run the following command in your Terminal or Command Prompt:
+
+    ```bash
+    ollama run clarifying-llama
+    ```
+
+    When prompted, give it an ambiguous task, such as:
+
+    ```
+    Write a summary of this document: [paste a short document or paragraph here]
+    ```
+
+    Instead of immediately giving you a summary, your model should now ask you clarifying questions, such as "What is the desired length of the summary?" or "Who is the target audience for this summary?" This shows that your custom instructions are working.
+
+## Original source
+This workflow is based on a tip shared by froh on Hacker News, referencing an article by Korbin Brown on XDA-Developers. The original author found that instructing local models to ask clarifying questions significantly improved their performance and reduced the back-and-forth needed to get desired results.
+
+## Notes & variations
+*   **Free-tier alternatives**: Ollama itself is free and runs locally, so there are no subscription costs. The models you download (like Llama 2 or Qwen) are also free to use.
+*   **Common mistake**: Forgetting to save the Modelfile with the correct `.Modelfile` extension, or not navigating to the correct directory in the terminal before running the `ollama create` command. Double-check your file name and current directory.
+*   **Tip for better results**: Experiment with the `SYSTEM` prompt in your `clarifying-llama.Modelfile`. You can adjust the number of questions the model asks, or specify the types of tasks for which it should ask questions. You can also try different base models like `qwen` or `llama3` by changing `FROM llama2` to `FROM qwen` or `FROM llama3` in your Modelfile (after downloading those models with `ollama run qwen` etc.).

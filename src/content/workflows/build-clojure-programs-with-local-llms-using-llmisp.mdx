@@ -1,0 +1,173 @@
+---
+title: "Build Clojure Programs with Local LLMs using LLMisp"
+description: "Learn how LLMisp uses local AI models like Gemma to generate Clojure code from text descriptions, building robust applications and logging every step."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 90
+jobToBeDone: "Generate Clojure code from text specifications using a local LLM"
+tools:
+  - name: "llmisp"
+    url: "https://github.com/quadracollision/llmisp"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "llama.cpp"
+    url: "https://github.com/ggerganov/llama.cpp"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Babashka"
+    url: "https://babashka.org"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Git"
+    url: "https://git-scm.com"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Java"
+    url: "https://www.java.com"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=48196707"
+  platform: "hackernews"
+  author: "vegnus"
+  postedAt: 2026-05-19
+score: 8
+ingestedAt: 2026-07-02
+nigeriaNotes: "This workflow runs entirely on your computer, so it uses very little internet data after the initial setup and model download. All tools mentioned are free and open-source."
+nigeriaUseCases:
+  - persona: "employee"
+    scenario: "As a software engineer at a Nigerian fintech company, use `llmisp` to generate Clojure functions for complex transaction validation rules, ensuring sensitive financial logic remains on local servers."
+  - persona: "student"
+    scenario: "As a Computer Science student, use `llmisp` to generate the Clojure code for a simple calculator GUI application using Java Swing, fulfilling a practical assignment requirement."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+This project, called `llmisp`, is an advanced tool that helps you create computer programs in the Clojure language using a local AI model. Instead of asking the AI to write a full program directly, which can be difficult for smaller models, `llmisp` guides the AI to produce small, structured pieces of code called JSON AST fragments. An AST (Abstract Syntax Tree) is like a blueprint of a program, showing its structure and components.
+
+`llmisp` then takes these structured pieces, checks if they are valid, and assembles them into a complete Clojure program. It also keeps a detailed record of every step, including what the AI was asked, what it produced, and any errors, in a database called SQLite. This approach makes it more reliable to generate code with smaller, local AI models.
+
+This workflow is considered advanced because it requires setting up several technical tools on your computer, including compiling software from source code, working with the command line, and managing file paths. It is not a simple copy-paste solution for beginners.
+
+## What you can use it for
+*   **Generate business logic**: Create Clojure functions that transform data based on text descriptions of business rules.
+*   **Build simple GUI applications**: Automatically generate basic desktop applications using Java Swing, a toolkit for creating graphical user interfaces.
+*   **Experiment with local AI models**: Explore how smaller AI models can be used for code generation when guided by a structured framework.
+*   **Understand structured code generation**: Learn a method for breaking down complex code generation tasks into smaller, more manageable steps for AI.
+
+## Tools you need
+*   **llmisp** (free): The main project that orchestrates the code generation process.
+*   **llama.cpp** (free): A high-performance library for running large language models (LLMs) on your computer. It includes `llama-server`, which serves the AI model.
+*   **Babashka** (free): A fast, native Clojure scripting environment used to run the `llmisp` commands.
+*   **Git** (free): A version control system used to download the `llmisp` project from GitHub.
+*   **Java** (free): A programming language runtime needed to build and run the generated Java Swing applications.
+
+## How it actually works
+This workflow involves setting up a local AI model and running specific commands from the `llmisp` project. The exact steps and values will depend on your system and specific goals. For the most up-to-date and detailed instructions, always refer to the official `llmisp` GitHub repository.
+
+Here's a general outline of the process:
+
+1.  **Set up your environment**: You will need to install Git, Babashka, and Java on your computer. If you are on Windows, it is highly recommended to use WSL (Windows Subsystem for Linux) for a smoother experience with command-line tools like `llama.cpp`.
+
+2.  **Clone the llmisp repository**: Use Git to download the `llmisp` project files to your local machine.
+
+    ```bash
+    # macOS or Linux
+    git clone https://github.com/quadracollision/llmisp.git
+    cd llmisp
+    ```
+
+    ```powershell
+    # Windows (PowerShell, preferably within WSL)
+    git clone https://github.com/quadracollision/llmisp.git
+    Set-Location llmisp
+    ```
+
+3.  **Download the AI model**: Obtain a compatible GGUF model, such as Gemma 4 E2B. You can typically find these models on AI model hubs like Hugging Face. Place the downloaded model file in a known location on your computer.
+
+4.  **Build and run llama-server**: Compile `llama.cpp` to create the `llama-server` executable. This server will host your local AI model. Then, start the server, pointing it to your downloaded GGUF model.
+
+    ```bash
+    # macOS or Linux (example commands, actual steps may vary based on llama.cpp docs)
+    # Navigate to your llama.cpp directory
+    # make
+    # ./llama-server -m /path/to/your/gemma4-e2b.gguf --port 18700 --ctx-size 4096 --n-gpu-layers 24
+    ```
+
+    The author does not provide specific build steps for `llama.cpp`, but you would typically follow the instructions in the `llama.cpp` repository. The command to run `llama-server` will look similar to the example above, replacing `/path/to/your/gemma4-e2b.gguf` with the actual path to your model file.
+
+5.  **Generate business logic (example)**: Use Babashka to run the `json-run` command from `llmisp`. This command takes a text specification (a `.txt` file describing what you want) and generates Clojure code for data transformation. You will need to specify paths to your GGUF model, the `llama-server` binary, and your task file.
+
+    ```bash
+    bb json-run \
+      --self-plan \
+      --skeleton-first \
+      --where-pass \
+      --column-pass \
+      --gguf /path/to/your/gemma4-e2b.gguf \
+      --llama-server-bin /path/to/your/llama-server \
+      --llama-port 18700 \
+      --llama-ctx-size 4096 \
+      --llama-gpu-layers 24 \
+      --task-file specs/blind/dynamic_pricing_matrix_spec.txt \
+      --project-dir tmp/dynamic_pricing \
+      --repair-attempts 0 \
+      --max-tokens 4096 \
+      --where-max-tokens 2048 \
+      --column-max-tokens 2048
+    ```
+
+    After running, you should find generated files like `candidate.ast.json` (the structured blueprint), `candidate.clj` (the Clojure code), and `session.sqlite3` (the log database) in your specified `--project-dir`.
+
+6.  **Generate a GUI application (example)**: Alternatively, you can use the `gui-run` command to generate a simple Java Swing application from a text specification.
+
+    ```bash
+    bb gui-run \
+      --self-plan \
+      --component-pass \
+      --gguf /path/to/your/gemma4-e2b.gguf \
+      --llama-server-bin /path/to/your/llama-server \
+      --task-file specs/gui/inventory_dashboard_spec.txt \
+      --project-dir tmp/gui_inventory
+    ```
+
+    To build the generated Swing program into a runnable `.jar` file and then run it:
+
+    ```bash
+    bb gui-jar tmp/gui_inventory/candidate.clj tmp/gui_inventory/app.jar
+    ```
+
+    ```bash
+    java -jar tmp/gui_inventory/app.jar
+    ```
+
+    You should see a new desktop window open with your generated Java Swing application.
+
+7.  **Run smoke tests**: The project includes smoke tests to validate your setup without calling the AI model or opening a GUI. These are useful for checking if Babashka and the project's internal logic are working correctly.
+
+    ```bash
+    bb json-smoke tmp/json_smoke
+    bb gui-smoke tmp/gui_smoke
+    ```
+
+    You should see output indicating that the tests passed, confirming your local Babashka classpath and code generation paths are functional.
+
+## Words you'll see, explained
+*   **LLM (Large Language Model)**: An AI model trained on vast amounts of text data, capable of understanding and generating human-like text, including code.
+*   **GGUF**: A file format for storing large language models, optimized for efficient loading and running on various hardware, including CPUs.
+*   **AST (Abstract Syntax Tree)**: A tree-like representation of the source code of a program, showing its structural elements and their relationships, but without the specific syntax details.
+*   **Babashka**: A lightweight, fast-starting runtime for Clojure scripts, allowing you to run Clojure code without a full Java Virtual Machine (JVM) setup.
+*   **llama.cpp**: A project that allows you to run large language models locally on your computer, often using your CPU, making them accessible without powerful GPUs.
+*   **llama-server**: A component of `llama.cpp` that acts as a local server, allowing other applications (like `llmisp`) to send prompts to your local LLM and receive responses.
+*   **Clojure**: A dynamic, functional programming language that runs on the Java Virtual Machine (JVM), known for its conciseness and power.
+*   **Java Swing**: A graphical user interface (GUI) toolkit for Java, used to create desktop applications with windows, buttons, and other visual components.
+
+## Original source
+This workflow was shared by vegnus on Hackernews. The project, `llmisp`, is available as an open-source repository on GitHub, where you can find the full code and detailed documentation.
+
+## Notes & variations
+*   **Do you even need this?** If your goal is simply to generate small code snippets and you are not comfortable with command-line tools or setting up local AI models, you might find it easier to use online AI chat services like ChatGPT, Claude, or Gemini. These services can generate code directly from your prompts without any local setup.
+*   **Common pitfall**: One common issue is incorrect file paths for the GGUF model or the `llama-server` binary. Double-check that all paths in your `bb` commands are accurate and point to the correct files on your system. Another pitfall is model compatibility; while Gemma 4 E2B GGUF is tested, other models may behave differently or require adjustments.
+*   **Tip for better results**: Start by running the `json-smoke` and `gui-smoke` tests. These tests validate the core `llmisp` setup without involving the AI model, helping you confirm that your Babashka environment and project structure are correct before troubleshooting AI generation issues.
