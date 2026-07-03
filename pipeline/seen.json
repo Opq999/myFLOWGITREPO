@@ -8292,8 +8292,52 @@
     "914b0577d47873f9b6c3b5b8ef298dc060c983959c0ac86069da139c441951c0": {
       "url": "https://news.ycombinator.com/item?id=43649779",
       "date": "2026-07-02"
+    },
+    "38367ecfd9f49186675f1764fb08fd8402f08c562f1731df03e3fdeac6bbf4db": {
+      "url": "https://news.ycombinator.com/item?id=48698057",
+      "date": "2026-07-03"
+    },
+    "4d3291c25d56323bd207a121d2933493db27f25c03697a61f7f70f99ef9c3f02": {
+      "url": "https://simonwillison.net/2026/Jul/2/llm-coding-agent",
+      "date": "2026-07-03"
+    },
+    "c8e0d0b7ca0f7e400713e3c32f4794fb21b4707fadae13668622f42a30e4d644": {
+      "url": "https://github.com/remotion-dev/remotion",
+      "date": "2026-07-03"
+    },
+    "481b19745d66d642b8cae93680d6b9b2d2f536e543ac6a444edcf82d03390c47": {
+      "url": "https://simonwillison.net/2026/Jul/2/dspy-datasette-agent-prompts",
+      "date": "2026-07-03"
+    },
+    "6d3bd03b499863301fb73ea1a72dc2547622e7fb9eec3d9bc389454009cf250b": {
+      "url": "https://github.com/calesthio/OpenMontage",
+      "date": "2026-07-03"
+    },
+    "b15ae7d074984a1727f3f53abb50dc457bd155acfd80dac8e1910e8e3cefe95d": {
+      "url": "https://simonwillison.net/2026/Jul/2/understand-to-participate",
+      "date": "2026-07-03"
+    },
+    "89c8ff3ac0dc649aa179a1a3ec931c35b7c36ac248609edcfe92ed91b9373e2d": {
+      "url": "https://www.latent.space/p/aiewf-daily-dispatch-locomotives",
+      "date": "2026-07-03"
+    },
+    "4512b99df01e1a58dc96f8161970ba5a75d89e67eee06ae1667a0faa8ac150fc": {
+      "url": "https://www.latent.space/p/vercel-agents-new-software",
+      "date": "2026-07-03"
+    },
+    "6fc14fca98b3cd1cdd3f4a640b8da7be935b17fd46fd7e12665ad09bbefeb5f2": {
+      "url": "https://www.latent.space/p/the-website-of-the-future",
+      "date": "2026-07-03"
+    },
+    "2566c8933f2e65d15f0aa2374a68e902917205ef4e855acc125ba096487cb676": {
+      "url": "https://www.latent.space/p/skill-engineering-design",
+      "date": "2026-07-03"
+    },
+    "f4c1372d0b7891f2dd953ff911a774ddf9eb6c36c4b381a79e181885b4407f49": {
+      "url": "https://www.bensbites.com/p/fable-is-back",
+      "date": "2026-07-03"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 3
+  "dailyPage": 4
 }

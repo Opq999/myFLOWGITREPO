@@ -1,0 +1,135 @@
+---
+title: "Automate Code Development with the llm-coding-agent"
+description: "Learn how to use the llm-coding-agent to automate software development tasks, from writing specifications to generating code and tests using large language models."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 45
+jobToBeDone: "Develop a coding agent using LLMs and specific prompts, then use it for code generation"
+tools:
+  - name: "Python"
+    url: "https://www.python.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "uvx"
+    url: "https://pypi.org/project/uvx/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "llm"
+    url: "https://llm.datasette.io/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "llm-coding-agent"
+    url: "https://pypi.org/project/llm-coding-agent/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Claude API"
+    url: "https://www.anthropic.com/api"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "OpenAI API"
+    url: "https://platform.openai.com/"
+    pricing: "paid"
+    affiliateUrl: ""
+source:
+  url: "https://simonwillison.net/2026/Jul/2/llm-coding-agent/#atom-everything"
+  platform: "blog"
+  author: "Simon Willison"
+  postedAt: 2026-07-02
+score: 5
+ingestedAt: 2026-07-03
+nigeriaNotes: "This workflow requires paid API access to large language models like Claude or OpenAI. While the tools themselves are free, the cost of API usage for code generation can add up quickly, especially for complex tasks. Data usage depends on the complexity and length of the code being generated and processed by the agent."
+tiktokUrl: ""
+published: false
+---
+
+## What this is, in plain English
+This entry describes `llm-coding-agent`, a Python library that transforms large language models (LLMs) into automated coding assistants. It allows you to give high-level instructions to an AI, and the agent will then attempt to write code, create tests, and even manage project files and execute commands to achieve the goal.
+
+This is an advanced workflow. It requires comfort with the command line, installing Python libraries, and setting up API keys for paid LLM services. It's not a simple copy-paste solution for a beginner.
+
+Because `llm-coding-agent` is a framework, there isn't a single, fixed set of copy-paste steps. Instead, you interact with it through commands and prompts, guiding the AI through a development process. The exact instructions and outcomes will vary based on your project and the prompts you provide.
+
+The agent works by giving the LLM 'tools' (like the ability to read and edit files, or run terminal commands). The LLM then uses these tools to interact with your project, making decisions and taking actions to fulfill your requests.
+
+## What you can use it for
+*   **Automate software development**: Have an AI write code, tests, and documentation for you based on high-level instructions.
+*   **Generate project specifications**: Get an AI to draft detailed `spec.md` files or other project documentation for new projects.
+*   **Implement features with TDD**: Guide an AI to build features using Test-Driven Development (TDD), where it creates automated tests first, then writes code to pass those tests.
+*   **Refactor and fix code**: Use the agent to identify and fix issues, or improve the structure of existing codebases.
+*   **Explore new project ideas**: Quickly prototype and build small projects by letting the agent handle many of the coding details.
+
+## Tools you need
+*   **Python** (free): The programming language required to run the `llm` and `llm-coding-agent` libraries.
+*   **uvx** (free): A fast Python package installer and runner, used to install and run Python tools without installing them globally.
+*   **llm** (free): Simon Willison's command-line tool for interacting with large language models, which `llm-coding-agent` builds upon.
+*   **llm-coding-agent** (free): The Python library that turns LLMs into coding agents, allowing them to perform development tasks.
+*   **Claude API** (paid): A paid service that provides access to Anthropic's Claude large language models, which the agent can use for its intelligence.
+*   **OpenAI API** (paid): A paid service that provides access to OpenAI's large language models (like GPT-4), which the agent can use for its intelligence.
+
+## How it actually works
+To use `llm-coding-agent`, you first need a working Python environment and access to a large language model via its API. The author used `uvx` to run the agent, which simplifies installation.
+
+1.  **Install Python**: Ensure you have Python installed on your computer. You can download it from the official Python website.
+2.  **Install `uvx`**: Open your terminal or command prompt and install `uvx` globally:
+
+    ```bash
+    # macOS or Linux
+    pip install uvx
+    ```
+
+    ```powershell
+    # Windows (PowerShell)
+    pip install uvx
+    ```
+
+3.  **Set up LLM API keys**: The `llm-coding-agent` uses the `llm` tool, which needs API keys for models like Claude or OpenAI. You'll need to sign up for an account with Anthropic (for Claude) or OpenAI and get your API key. Then, set it as an environment variable. For example, for OpenAI:
+
+    ```bash
+    # macOS or Linux
+    export OPENAI_API_KEY="your_openai_api_key_here"
+    ```
+
+    ```powershell
+    # Windows (PowerShell)
+    $env:OPENAI_API_KEY="your_openai_api_key_here"
+    ```
+
+    For Claude, it would be `ANTHROPIC_API_KEY`.
+
+4.  **Run the agent**: The author ran the agent using `uvx` to ensure it uses the correct version of the `llm-coding-agent` library. This command tells `uvx` to allow prerelease versions and to run the `llm code` command with the `llm-coding-agent` package available:
+
+    ```bash
+    uvx --prerelease=allow --with llm-coding-agent llm code
+    ```
+
+5.  **Provide prompts**: Once the agent is running, you interact with it by providing prompts. The author used two main prompts to guide the agent in building a new Python library:
+
+    ```
+    Write a spec.md for this project - it will depend on the latest “llm” alpha from PyPI and implement a Claude code style coding agent complete with tools for reading and editing files and executing commands
+    ```
+
+    ```
+    Commit the spec, then build it using red/green TDD in a series of sensible commits (each with passing tests and updated docs) - occasionally manually test it using the OpenAI API key in your environment
+    ```
+
+    The agent will then interpret these prompts, use its tools (like reading/editing files, executing commands) and the connected LLM to perform the requested tasks. You would typically follow the agent's output and provide further instructions as needed.
+
+For more detailed usage and advanced options, refer to the official `llm-coding-agent` documentation or its GitHub repository.
+
+## Words you'll see, explained
+*   **LLM (Large Language Model)**: An AI program trained on vast amounts of text data that can understand and generate human-like text, used for tasks like writing code or documentation.
+*   **Coding Agent**: An AI system designed to perform coding tasks autonomously, often by breaking down complex problems into smaller steps and using specialized tools.
+*   **API Key**: A secret code that allows you to access a specific online service (like an LLM) and tracks your usage, ensuring only authorized access.
+*   **PyPI (Python Package Index)**: The official repository for Python software packages, where developers publish and users can find and install Python libraries.
+*   **TDD (Test-Driven Development)**: A software development approach where you write automated tests for a feature before writing the actual code, then write code to make those tests pass.
+*   **CLI (Command Line Interface)**: A text-based way to interact with a computer program, where you type commands instead of clicking buttons or using a mouse.
+*   **`uvx`**: A fast and efficient Python package installer and runner that allows you to execute Python tools and scripts without needing to install them permanently in your system's global Python environment.
+
+## Original source
+This concept is based on a blog post by Simon Willison, where he announced the release of `llm-coding-agent 0.1a0`. He detailed his initial experiments in building a coding agent using his `llm` library, sharing the prompts and the resulting project structure.
+
+## Notes & variations
+*   **Do you even need this?**: For simple code generation or quick questions, directly chatting with a freemium LLM (like ChatGPT, Claude.ai, or Gemini) might be sufficient. This agent is best suited for more complex, multi-step, and automated development tasks that involve interacting with a project's files and environment.
+*   **Free-tier limits**: While the `llm` and `llm-coding-agent` tools are free, using the underlying LLM APIs (Claude, OpenAI) will incur costs. Monitor your API usage closely to avoid unexpected charges.
+*   **Common pitfall**: Not providing clear, detailed, and iterative prompts. Coding agents, like human developers, need specific instructions and feedback to perform well. Start with a high-level goal, then break it down into smaller, manageable steps for the agent. Also, ensure your API keys are correctly set as environment variables before running the agent.
