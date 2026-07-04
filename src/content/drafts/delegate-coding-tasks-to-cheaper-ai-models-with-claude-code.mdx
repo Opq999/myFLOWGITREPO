@@ -1,0 +1,66 @@
+---
+title: "Delegate Coding Tasks to Cheaper AI Models with Claude Code"
+description: "Learn how to instruct powerful AI coding assistants like Claude Code to use cheaper models for smaller tasks, saving costs and improving efficiency."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 30
+jobToBeDone: "Delegate coding tasks to cheaper AI models"
+tools:
+  - name: "Claude Code"
+    url: "https://www.anthropic.com/product/claude-code"
+    pricing: "paid"
+    affiliateUrl: ""
+source:
+  url: "https://simonwillison.net/2026/Jul/3/judgement/#atom-everything"
+  platform: "blog"
+  author: "Simon Willison"
+  postedAt: 2026-07-03
+score: 5
+ingestedAt: 2026-07-04
+nigeriaNotes: "This workflow uses a paid developer tool (Claude Code) which requires an API key and incurs costs per token. While it aims to save costs by delegating, the initial investment and ongoing usage are not free. Data usage is minimal for prompts and responses."
+tiktokUrl: ""
+published: false
+---
+
+## What this is, in plain English
+This workflow explains how to tell an advanced AI coding assistant, like Claude Code, to use its own judgment when handling coding tasks. Instead of you always choosing which AI model to use, you instruct the main AI to decide for itself. Specifically, it teaches the AI to delegate simpler coding jobs to "lower power models," which are usually less capable but also much cheaper to run.
+
+The goal is to save money and improve efficiency by only using the most powerful (and expensive) AI models when they are truly needed for complex work. For example, a small text change in code doesn't need the same AI power as designing a new feature.
+
+This is an advanced concept because it involves interacting with an AI agent framework, not just a simple chat interface. The exact steps to set up and run Claude Code with subagents are not provided in the source and require technical knowledge, including setting up an environment and potentially using an API key.
+
+## What you can use it for
+*   **Reduce AI costs**: Save money by using cheaper AI models for tasks that don't need the most powerful ones.
+*   **Optimize efficiency**: Match the right AI model to the complexity of the coding task, speeding up simpler jobs.
+*   **Automate model selection**: Let the AI decide which model to use, reducing your manual effort in choosing.
+*   **Manage complex coding projects**: Apply this strategy within an AI agent framework for larger development efforts where multiple tasks are handled by AI.
+
+## Tools you need
+*   **Claude Code** (paid): An AI coding assistant and agent framework that allows for advanced instructions and delegation of tasks to other models.
+
+## How it actually works
+The core idea is to give a high-level instruction to your main AI agent (Claude Code) to manage its own task delegation and model selection. The source excerpt provides the specific prompt used to achieve this. However, the exact setup for Claude Code, its agent framework, and how to define or integrate "lower power models" are not detailed in the source. You would need to consult the official Claude Code documentation for these technical steps.
+
+Once your Claude Code environment is set up and running, you would provide it with an instruction similar to this:
+
+```
+For all coding tasks use your judgement to decide an appropriate lower power model and run that in a subagent
+```
+
+The author notes that Claude Code saved this instruction as a "memory file" in a specific project directory (e.g., `~/.claude/projects/name-of-project/memory/delegate-coding-to-subagents.md`). This shows how the AI remembers and applies your high-level guidance for future tasks. To reproduce this, you would need to be operating within a Claude Code project environment where such memory files are managed.
+
+## Words you'll see, explained
+*   **AI agent**: An AI program designed to perform tasks autonomously, often by breaking them down into smaller steps and making decisions.
+*   **Subagent**: A smaller, specialized AI agent that works under the direction of a main AI agent to complete specific parts of a task.
+*   **Lower power model**: An AI model that is less complex or capable than a top-tier model, often resulting in faster processing and lower costs.
+*   **Tokens**: The basic units of text (like words or parts of words) that AI models process. You pay for AI usage based on the number of tokens.
+*   **Memory file**: A file where an AI agent stores important instructions, context, or past interactions to remember them for future tasks.
+
+## Original source
+This concept comes from a blog post titled "Fable's judgement" by Simon Willison, published on his personal blog. It shares insights from a fireside chat with the Claude Code team about optimizing AI agent behavior and costs.
+
+## Notes & variations
+*   **Do you even need this?**: For simple, one-off coding tasks, directly using a cheaper, freemium chat model (like the free tiers of Claude.ai, ChatGPT, or Gemini) might be sufficient without needing an agent framework. This advanced approach is best suited for ongoing, complex development projects where you are actively using an AI agent like Claude Code.
+*   **Free-tier limits**: Claude Code is a paid developer product; there is no free tier for its API or agent framework. Costs are incurred per token for all interactions, though this strategy aims to reduce overall spending by using cheaper models when possible.
+*   **Common pitfall**: Expecting the AI to perfectly choose the right model every time. While the instruction is to use "judgement," the AI might sometimes make a suboptimal choice, either using a more expensive model than necessary or a less capable one that affects quality. Careful monitoring and refinement of instructions are often needed.

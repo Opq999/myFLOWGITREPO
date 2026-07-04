@@ -8336,8 +8336,148 @@
     "f4c1372d0b7891f2dd953ff911a774ddf9eb6c36c4b381a79e181885b4407f49": {
       "url": "https://www.bensbites.com/p/fable-is-back",
       "date": "2026-07-03"
+    },
+    "7765e623bebd57da6be9c011a18b058b5df9308e4dcf35f0288bd045583a7baa": {
+      "url": "https://github.com/hesreallyhim/awesome-claude-code",
+      "date": "2026-07-04"
+    },
+    "d567780549d7aaed61082cea03534b59013270e01c89e22faa742ba496437499": {
+      "url": "https://news.ycombinator.com/item?id=48751752",
+      "date": "2026-07-04"
+    },
+    "07f168084687447f66285208d14bc12b3da469761265eec6f568595e04d15b6f": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1ujjkti/please_tell_me_im_not_the_only_one",
+      "date": "2026-07-04"
+    },
+    "cfbc8b78581b7bf06fc98d65bca2185ee632243f5f7a3e1fd8a40dd725667c4e": {
+      "url": "https://simonwillison.net/2026/Jul/3/open-source-ai-gap-map",
+      "date": "2026-07-04"
+    },
+    "3d654460d4021ced9a856ce8c563fb79a5f5d759f51c66a9e1497931bbdae759": {
+      "url": "https://news.ycombinator.com/item?id=48753411",
+      "date": "2026-07-04"
+    },
+    "c890bc4be081930d511528f81bdae48a842193be458229224ff7c987dac9f2b1": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1ul5dsv/seedance_20_on_openart_ai",
+      "date": "2026-07-04"
+    },
+    "e2a5f1f18d05573ad20cc574924957306be25521dba6a8ce913ac098684b6a8c": {
+      "url": "https://simonwillison.net/2026/Jul/3/josh-w-comeau",
+      "date": "2026-07-04"
+    },
+    "a4173dcbd3d411feabbca46d0a5ce3c7659d98c6da6539d1b7b3854bf08d5be1": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1ukfg7f/plot_twist_your_future_killer_already_has_a_usb",
+      "date": "2026-07-04"
+    },
+    "e36be334d348272165991373012c8fa0cf407196845cf3e077ad8932b263d434": {
+      "url": "https://simonwillison.net/2026/Jul/3/judgement",
+      "date": "2026-07-04"
+    },
+    "da00751b6b03be2825d440fc8349a996a0ccc1f8f8f1da8eec4c83f2eca1001b": {
+      "url": "https://www.reddit.com/r/learnprogramming/comments/1u16e6q/im_sick_of_tutoring_people_whose_brain_cells_have",
+      "date": "2026-07-04"
+    },
+    "63df4ac9cd8de9dc5648d48d435d370b357e0b36f5b3d78a770adf1214418655": {
+      "url": "https://simonwillison.net/2026/Jul/3/june-newsletter",
+      "date": "2026-07-04"
+    },
+    "7f84bf44426dfa382392347825a4ca58f1e2d0b4ba7a9fa8a05b804bdc4d5b43": {
+      "url": "https://www.reddit.com/r/learnprogramming/comments/1u3817l/dont_lose_your_manual_coding_skills",
+      "date": "2026-07-04"
+    },
+    "4cafb8ce4b1c5168b59d26e32de675c7768e47d2afb17eeef41cd5721b9164c9": {
+      "url": "https://www.reddit.com/r/learnprogramming/comments/1u7uef0/uh_huh_yes_i_am_totally_not_convinced_that_the",
+      "date": "2026-07-04"
+    },
+    "edaeb2ec9d2436d36e80a1740947db1286389b13876dbc1422e37ed77b5cecc1": {
+      "url": "https://www.reddit.com/r/learnprogramming/comments/1uf05ss/just_got_my_university_edu_email_what_should_i",
+      "date": "2026-07-04"
+    },
+    "b488d5d5adc6191f3639f28426d772c655867bf2e8e5213b7f94321cf6ac43f4": {
+      "url": "https://www.reddit.com/r/learnprogramming/comments/1ufgprr/ai_runed_2_years_of_learning",
+      "date": "2026-07-04"
+    },
+    "9006dd0da1d92f5193a0a34e5b129071c9898eff92eeac851453fd30bc99c621": {
+      "url": "https://www.reddit.com/r/learnprogramming/comments/1uarnpn/stop_doing_tutorials_stop_watching_youtube",
+      "date": "2026-07-04"
+    },
+    "95b2a43c1102756ce9618797ce504bad9b4cf9e9b1f68f73a0478d73c827f5fd": {
+      "url": "https://www.reddit.com/r/learnprogramming/comments/1ui0dul/programming_had_its_magic",
+      "date": "2026-07-04"
+    },
+    "5b0e860ff340ac000218b5395be29bd586e5ad984e8de5e84993414ea1ed58c9": {
+      "url": "https://www.reddit.com/r/learnprogramming/comments/1u57ntg/programming_seems_kind_of_like_copypasting_to_me",
+      "date": "2026-07-04"
+    },
+    "b03f7f006007741d32862833cbe36ef851053771d42369a368e4217398d4d6ff": {
+      "url": "https://www.reddit.com/r/learnprogramming/comments/1ujzjcu/why_does_contributing_to_open_source_seem_so_hard",
+      "date": "2026-07-04"
+    },
+    "76e6e18865b7e869ad22b937424b248cf01a1e033ea9051fa79c11bd99e8b94c": {
+      "url": "https://www.reddit.com/r/learnprogramming/comments/1tydiji/how_do_people_write_thousands_of_lines_of_code_by",
+      "date": "2026-07-04"
+    },
+    "477daedf0e995092a16619401509a51bbba981989fc95345a2e7aa229d2cb7b9": {
+      "url": "https://www.reddit.com/r/learnprogramming/comments/1ucv52n/i_cant_code_without_ai",
+      "date": "2026-07-04"
+    },
+    "6b1601e1c68975d1a7c9389462fc33f8134b296cc8021bf58748f542fcdb09bd": {
+      "url": "https://www.reddit.com/r/learnprogramming/comments/1ue57be/am_i_wasting_my_time_learning_to_code_in_my_40s",
+      "date": "2026-07-04"
+    },
+    "37e8c529af2b5b18b6840f721f8fb6be6573735bc2c9451c00b02a08dde47ec5": {
+      "url": "https://www.reddit.com/r/learnprogramming/comments/1u4rp6j/learn_how_to_use_libraries",
+      "date": "2026-07-04"
+    },
+    "ffd777e4a0f7abfd998caf4bac338006ce71a81bc342da2938584d57fe156c9e": {
+      "url": "https://www.reddit.com/r/learnprogramming/comments/1u08c8w/this_sub_is_becoming_an_ad_billboard_and_im_tired",
+      "date": "2026-07-04"
+    },
+    "4de4e53c286cc773886e954df1faef876435cbdd535aba2a133061bc33f86e87": {
+      "url": "https://www.reddit.com/r/learnprogramming/comments/1ukjdb9/how_do_you_stand_out_as_a_junior_developer",
+      "date": "2026-07-04"
+    },
+    "dc57ed1597f6f5a85f446c30da18240f513a2dca15adb7130a525a3e574a017b": {
+      "url": "https://www.reddit.com/r/learnprogramming/comments/1ugioyh/is_it_stupid_going_into_computer_science_if_i",
+      "date": "2026-07-04"
+    },
+    "3ea42305c8a9488dcfed92cf990d2da8c50bae26b8236d8da90f44dbee34fd46": {
+      "url": "https://www.reddit.com/r/learnprogramming/comments/1u5vryz/useful_computer_science_skills",
+      "date": "2026-07-04"
+    },
+    "dfb1d12b970a14124f14016c31a228df70c62327e9688ddbf350b9b5d6d3541b": {
+      "url": "https://www.reddit.com/r/learnprogramming/comments/1uehzqk/just_a_quick_world_for_newbies_yt_channels_sell",
+      "date": "2026-07-04"
+    },
+    "cdb0eafbdbb8853d0f6f2f10c8eee0ee4debc1c220a1b185c8fd552df51ad14b": {
+      "url": "https://www.reddit.com/r/learnprogramming/comments/1u6e3p6/how_can_i_be_a_better_or_excellent_programmer",
+      "date": "2026-07-04"
+    },
+    "11f973d7a7f5198de4d12091ec3179850d6f7637055c7a5b01e00dbfe8f6617d": {
+      "url": "https://www.reddit.com/r/learnprogramming/comments/1uldynu/i_know_the_basics_but_i_still_cant_build_programs",
+      "date": "2026-07-04"
+    },
+    "da5533fa9bbd738cfe41add0f9e40cc70ab7bcaf337906e110c8f32c2169ff23": {
+      "url": "https://www.reddit.com/r/learnprogramming/comments/1ufkqcw/get_out_of_your_comfort_zone",
+      "date": "2026-07-04"
+    },
+    "8d50289d0bc8c8c8ac079e1fed2b1d6cc0f4384ad153a54f256aac631aa1d42d": {
+      "url": "https://www.reddit.com/r/learnprogramming/comments/1u9h5g0/what_are_some_lessknown_coding_principlespatterns",
+      "date": "2026-07-04"
+    },
+    "3f2f9447b3c023f7b6265616c558ef0791acca9616b1808c499a60c2c7c2db8f": {
+      "url": "https://www.reddit.com/r/learnprogramming/comments/1ubr0e4/how_did_you_learn_to_read_repos",
+      "date": "2026-07-04"
+    },
+    "6bf7c356925a144044abe12b4cddb3583621b52be0580f0bab4c2dcdc193a2ab": {
+      "url": "https://www.reddit.com/r/learnprogramming/comments/1ucjvc6/what_is_this_formatting_called_and_why_do_people",
+      "date": "2026-07-04"
+    },
+    "75b0380d717f3e1210f15a0fd2be95bb65efb7f282991cafe6f73e5bcd214734": {
+      "url": "https://www.reddit.com/r/learnprogramming/comments/1u3d694/how_do_people_actually_learn_how_to_make_projects",
+      "date": "2026-07-04"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 4
+  "dailyPage": 5
 }
