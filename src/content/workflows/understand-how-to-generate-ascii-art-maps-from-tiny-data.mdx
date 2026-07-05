@@ -1,0 +1,85 @@
+---
+title: "Understand How to Generate ASCII Art Maps from Tiny Data"
+description: "Explore the concept of creating detailed ASCII world maps using minimal compressed data and client-side JavaScript, ideal for efficient web displays."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 10
+jobToBeDone: "Generate an ASCII world map using minimal data and AI assistance"
+tools:
+  - name: "Web Browser"
+    url: "https://www.google.com/chrome/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "JavaScript"
+    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Codex"
+    url: "https://openai.com/"
+    pricing: "paid"
+    affiliateUrl: ""
+source:
+  url: "https://simonwillison.net/2026/Jul/4/building-a-world-map-with-only-500-bytes/#atom-everything"
+  platform: "blog"
+  author: "Simon Willison"
+  postedAt: 2026-07-04
+score: 7
+ingestedAt: 2026-07-05
+nigeriaNotes: "This concept highlights very data-light techniques that run entirely in a web browser, making it highly efficient for mobile users and free to explore."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "For your CSC401 web development project, implement an ASCII art world map that loads instantly using minimal data, demonstrating advanced client-side compression and rendering techniques."
+  - persona: "employee"
+    scenario: "As a web developer for an NGO, embed an ASCII art map of project regions on your website, ensuring it loads quickly for users on low bandwidth without relying on external image files."
+  - persona: "entrepreneur"
+    scenario: "If you're launching a web service for data-light users, embed an ASCII art map of your service areas directly into your page, ensuring it loads instantly without heavy image assets."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+This entry explores a clever technique to display a detailed ASCII art world map using an incredibly small amount of data, less than 500 bytes. The core idea involves taking complex visual information, compressing it heavily, and then embedding that compressed data directly into a web page. When the page loads, a small piece of JavaScript code decompresses the data and renders it as text characters (ASCII art) in your browser.
+
+The original author, Iwo Kadziela, developed this method with assistance from an AI tool called Codex. While the exact steps or prompts used with Codex are not shared, the AI likely helped in optimizing the compression or generating the JavaScript snippet.
+
+This approach is advanced because it requires understanding of data compression, base64 encoding, and JavaScript's `fetch()` and `DecompressionStream` APIs. It's not a simple copy-paste recipe because the full compressed data string is not provided in the source, meaning you cannot directly reproduce the exact map shown.
+
+## What you can use it for
+*   **Ultra-lightweight web elements**: Display complex visuals on websites with extremely low bandwidth requirements, useful for areas with slow internet.
+*   **Creative coding challenges**: Explore the limits of data compression and minimalist programming to achieve impressive results with tiny code.
+*   **Educational demonstrations**: Illustrate how data compression and client-side processing can be used to render graphics without needing large image files.
+*   **Offline web applications**: Create web content that can display rich information even when internet access is limited, as the data is embedded directly.
+
+## Tools you need
+*   **Web Browser** (free): To understand how the JavaScript code would run and display the map.
+*   **JavaScript** (free): The programming language central to the technique of decompressing and rendering the map.
+*   **Codex** (paid): An AI assistant that helped the original author figure out the technique. It's a developer tool for generating code.
+
+## How it actually works
+The process involves several technical steps to achieve the compact ASCII map:
+
+1.  **Compress the map data**: First, the visual data for the world map is highly compressed using a method like `deflate`. This reduces the size of the data significantly.
+2.  **Encode the compressed data**: The compressed data is then encoded into a `base64` string. This makes it safe to embed directly into a URL or HTML document as text.
+3.  **Embed as a data URI**: The `base64` encoded data is placed into a `data URI`. This is a special type of URL that contains the data itself, rather than pointing to a file on a server.
+4.  **Fetch and decompress with JavaScript**: A small JavaScript snippet uses the `fetch()` function to retrieve this `data URI`. It then pipes the response through a `DecompressionStream` (a browser feature for handling compressed data) to decompress it back into its original form.
+5.  **Display as ASCII art**: Finally, the decompressed text data, which represents the ASCII art map, is inserted into an HTML `<pre>` tag. The `<pre>` tag preserves spaces and line breaks, ensuring the ASCII art displays correctly.
+
+The original source provides a JavaScript snippet that demonstrates steps 4 and 5, but the full `base64` string for the map data is truncated, so the exact map cannot be reproduced directly from the excerpt.
+
+## Words you'll see, explained
+*   **ASCII art**: Graphics created using only text characters, like letters, numbers, and symbols.
+*   **Deflate compression**: A common method for reducing the size of data without losing any information.
+*   **Base64**: A way to encode binary data (like images or compressed files) into a text format, making it safe to transmit or embed in text-based systems.
+*   **Data URI**: A special type of URL that contains the actual data of a file directly within the URL string, rather than a path to a file.
+*   **JavaScript**: A programming language primarily used to make web pages interactive.
+*   **`fetch()`**: A modern JavaScript function used to make network requests, like getting data from a server or a `data URI`.
+*   **`DecompressionStream`**: A browser feature in JavaScript that allows you to decompress data streams directly within the web browser.
+
+## Original source
+This technique was highlighted by Simon Willison on his blog, crediting Iwo Kadziela for figuring out how to generate a credible ASCII world map with minimal data. Kadziela was assisted by Codex, an AI tool, in developing this method.
+
+## Notes & variations
+*   **Do you even need this?**: For most common web development, you would typically use image files (like PNG or SVG) for maps, as they offer better visual quality and are easier to manage. This technique is more for specialized use cases where extreme data efficiency or a specific ASCII art aesthetic is required.
+*   **Free-tier limits**: This concept primarily relies on client-side browser capabilities, so there are no specific free-tier limits to worry about. The tools involved (web browser, JavaScript) are free to use.
+*   **Common pitfall**: The main challenge in reproducing this specific example is that the full compressed data string is not provided. To create your own, you would need to generate and compress your own ASCII art data, then encode it in base64.

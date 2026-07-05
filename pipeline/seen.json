@@ -8476,8 +8476,140 @@
     "75b0380d717f3e1210f15a0fd2be95bb65efb7f282991cafe6f73e5bcd214734": {
       "url": "https://www.reddit.com/r/learnprogramming/comments/1u3d694/how_do_people_actually_learn_how_to_make_projects",
       "date": "2026-07-04"
+    },
+    "ca47afcd0584d50d3dd8d6cc24811e3ec12f2a4a9ff83dd04ce644ded136f611": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1umnn5l/i_asked_chatgpt_to_zoom_out_on_the_mona_lisa",
+      "date": "2026-07-05"
+    },
+    "e673d7b59c92d521c0dc244d09f4839b827811ca10732ae9e766de86fb6f05e3": {
+      "url": "https://simonwillison.net/2026/Jul/5/sqlite-utils-fable",
+      "date": "2026-07-05"
+    },
+    "c7c9684abfb725296d83aa6b752834edc6833c7a2ef6270929b2e3cbb0d41374": {
+      "url": "https://github.com/usestrix/strix",
+      "date": "2026-07-05"
+    },
+    "f6f798ea5d6a23933bc86fc07145acf9e9e98e96b9e25e79ab56c7a113b049e7": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1ulyll7/i_switched_from_claude_to_chatgpt_theres_a_stark",
+      "date": "2026-07-05"
+    },
+    "4d119ce914b2ada6dedbcef9190394ca488ea63833c4211e8d2ab7a7b997e650": {
+      "url": "https://simonwillison.net/2026/Jul/5/sqlite-utils",
+      "date": "2026-07-05"
+    },
+    "4da73f82f826522460447950c8f669da6a24819a7f91fbdcf46169fec13cd25a": {
+      "url": "https://github.com/AlDanial/cloc",
+      "date": "2026-07-05"
+    },
+    "52059b64f91f68672b5ec7a839c385b0f85314886f6485f05b4a6d0d29fb0479": {
+      "url": "https://www.reddit.com/r/webdev/comments/1tz7kr8/jpeg_xl_is_objectively_better_than_webp_in_almost",
+      "date": "2026-07-05"
+    },
+    "67c4bd1d9a6e6ccbee0d4bfc7050b0a2018a636cdb87fdb264b0f42d47bb031b": {
+      "url": "https://simonwillison.net/2026/Jul/4/building-a-world-map-with-only-500-bytes",
+      "date": "2026-07-05"
+    },
+    "7b499fc79131499c4f3c10005923dcf155cbe61fdff453926d3c0a5d2c1ff7df": {
+      "url": "https://www.reddit.com/r/webdev/comments/1tyf7f6/p2p_file_sharing_app_without_cloud_free_and",
+      "date": "2026-07-05"
+    },
+    "df80d6a1f2b3f4fe0c680955c47a26d3f03d20962dc94f83c7342ff89c2cf2bb": {
+      "url": "https://simonwillison.net/2026/Jul/4/better-models-worse-tools",
+      "date": "2026-07-05"
+    },
+    "f9cabed0723e8d88dd18adfe867ce351d52d0cba54dac0b86d3e056b45cecb0a": {
+      "url": "https://www.reddit.com/r/webdev/comments/1ui535m/whats_a_web_development_trend_that_looked_stupid",
+      "date": "2026-07-05"
+    },
+    "87baa58de3292b25215120d5dafd2f9cb360c57f7727bb8e695c70adc919f5fd": {
+      "url": "https://www.reddit.com/r/webdev/comments/1tyqrvb/your_github_contribution_grid_but_3d",
+      "date": "2026-07-05"
+    },
+    "ee3363b70e7c8f0c0c772e216a2ed374f1bf15c42dbac984434802f393142723": {
+      "url": "https://www.reddit.com/r/webdev/comments/1uhgmmq/i_made_a_font_that_renders_guitar_chords_as_tabs",
+      "date": "2026-07-05"
+    },
+    "565b32eebe5122f5ffcbee43e8d6e4f0bf80ec601d6e37af6051354068c114c0": {
+      "url": "https://www.reddit.com/r/webdev/comments/1ueq6th/exploiting_vulnerabilities_in_johnson_johnson_web",
+      "date": "2026-07-05"
+    },
+    "3329a0f343fd4e75f48dd3ad2b1b5068c0b0186523d551882d6bd45d750b89b9": {
+      "url": "https://www.reddit.com/r/webdev/comments/1uct8a9/anyone_else_going_back_to_completion_style_coding",
+      "date": "2026-07-05"
+    },
+    "ad49a2375ed36a3e960f6fe431e8a7a77cc0497c365a076530911b87145371e0": {
+      "url": "https://www.reddit.com/r/webdev/comments/1ulb2nj/introducing_the_usermedia_html_element_chrome_for",
+      "date": "2026-07-05"
+    },
+    "f90a75909e17640c54d06bd41d44ac90e110308ccf10a78cdd192b1b6cc7d46b": {
+      "url": "https://www.reddit.com/r/webdev/comments/1ujn2qv/undocumented_instagram_deep_link",
+      "date": "2026-07-05"
+    },
+    "b2c9736f84936a7ce3ef9afb14e6da371ef49172eeec65c468ca19a08525118a": {
+      "url": "https://www.reddit.com/r/webdev/comments/1uh81g3/opensource_3d_earth_with_neardaily_satellite",
+      "date": "2026-07-05"
+    },
+    "a0105078805113bc5aa8f47ac0b5eabb8def503ef15fff25986e0a9ace796f0c": {
+      "url": "https://www.reddit.com/r/webdev/comments/1u9uekl/ive_only_worked_in_my_current_company_every_since",
+      "date": "2026-07-05"
+    },
+    "82b8f35113a66d066d547816e9dec7a563c5eba7bb4f0539f104d67f842cebdc": {
+      "url": "https://www.reddit.com/r/webdev/comments/1ubvjp9/i_discovered_and_responsibly_disclosed_a_broken",
+      "date": "2026-07-05"
+    },
+    "ed6bb9ef566e25a3e6fb053884b9a55fe2a14ea37b670896ea592338f74cedc7": {
+      "url": "https://www.reddit.com/r/webdev/comments/1u2w59t/google_published_its_official_guide_on_getting",
+      "date": "2026-07-05"
+    },
+    "f22d4f03080aceebf47d8b6c3246446bb31d4e3c1534c6d28e5515f8878c1da6": {
+      "url": "https://www.reddit.com/r/webdev/comments/1u8kk7m/discussion_is_the_golden_rule_never_build_your",
+      "date": "2026-07-05"
+    },
+    "cda9f8db4caceda2cbf3630f22c83185d8dad1728be224ec5ead9a1050744435": {
+      "url": "https://www.reddit.com/r/webdev/comments/1ujjwuv/chrome_devtools_flex_options_menu",
+      "date": "2026-07-05"
+    },
+    "33cc1333face0ff7b26d13dc84f33035da5a041bd5ac3cfff6b9f393302c4c4e": {
+      "url": "https://www.reddit.com/r/webdev/comments/1uiq8xs/its_2026_and_ios_safari_does_not_support",
+      "date": "2026-07-05"
+    },
+    "19ec3458504d8dfd3020bb8cfa7015336336f55825b4c5093e0840789dae5f2d": {
+      "url": "https://www.reddit.com/r/webdev/comments/1ubm9id/making_ui_work_for_all_screen_sizes_is_probably",
+      "date": "2026-07-05"
+    },
+    "789f03be16b84859692bda75f7496085f724331cfde0b23ec014ea77e993a1b7": {
+      "url": "https://www.reddit.com/r/webdev/comments/1uay5g6/i_coded_a_minimalist_site_to_find_your_birthday",
+      "date": "2026-07-05"
+    },
+    "7d3489654b16857906b078440ec6b76c982867965c09dfac7dbfa7bf33427c3e": {
+      "url": "https://www.reddit.com/r/webdev/comments/1u4sj6r/how_many_people_are_using_the_bffbackend_for",
+      "date": "2026-07-05"
+    },
+    "7a9e4cd8c3d3c067232f4fea68336f9feb73f9ebeb5288a1402901bd67afde25": {
+      "url": "https://www.reddit.com/r/webdev/comments/1tyj16s/overwatchearth_my_newly_released_project",
+      "date": "2026-07-05"
+    },
+    "1df105a0c6d069475441fee8ba9dff4fa8f9cae3f16bc68a8517e482a4a6ec50": {
+      "url": "https://www.reddit.com/r/webdev/comments/1u0itpz/web_technology_sessions_at_wwdc26",
+      "date": "2026-07-05"
+    },
+    "2f9ef5feef195181284befa16cbea03ef77b2ea3a6cc0b1bd2221d40f0a83229": {
+      "url": "https://www.reddit.com/r/webdev/comments/1u4rk2j/i_made_a_social_network_where_every_post_is",
+      "date": "2026-07-05"
+    },
+    "f2dca20950317174f852aad9fcbbb5ab22a10f2fe25b33ab8a212f35341fafc5": {
+      "url": "https://www.reddit.com/r/webdev/comments/1ukwhkc/need_help_making_the_callout_numbers_clickable",
+      "date": "2026-07-05"
+    },
+    "b6204f5e42c9adc93d21bcba529efbcabe147bf2c12d43beb3d76558b2b61153": {
+      "url": "https://www.reddit.com/r/webdev/comments/1tylwxk/i_wrote_a_free_online_book_on_auth",
+      "date": "2026-07-05"
+    },
+    "29931e05f2030d3dba636e1b5c834953276d5bdfe908d6ebbd01ce3471da4f5f": {
+      "url": "https://www.reddit.com/r/webdev/comments/1uh4fqp/animate_with_pseudorandom_numbers_value_noise_in",
+      "date": "2026-07-05"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 5
+  "dailyPage": 0
 }

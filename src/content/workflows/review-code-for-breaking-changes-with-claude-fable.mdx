@@ -1,0 +1,67 @@
+---
+title: "Review Code for Breaking Changes with Claude Fable"
+description: "Use AI to perform a final code review and identify potential breaking changes before releasing new software versions."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 10
+jobToBeDone: "Perform a final code review to identify breaking changes using AI"
+tools:
+  - name: "Claude Fable"
+    url: "https://www.anthropic.com/api"
+    pricing: "paid"
+    affiliateUrl: ""
+source:
+  url: "https://simonwillison.net/2026/Jul/5/sqlite-utils-fable/#atom-everything"
+  platform: "blog"
+  author: "Simon Willison"
+  postedAt: 2026-07-05
+score: 7
+ingestedAt: 2026-07-05
+nigeriaNotes: "This workflow uses a paid AI service, which may be a barrier. Text-based AI interactions generally use very little mobile data."
+nigeriaUseCases:
+  - persona: "employee"
+    scenario: "As a software engineer, use this to perform a final review of a new API version, catching any breaking changes that could disrupt client applications or internal tools before deployment."
+  - persona: "entrepreneur"
+    scenario: "Before pushing an update to your startup's mobile app backend, use this to check for API changes that could stop existing user versions from working, ensuring a smooth rollout."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will get an AI-generated report highlighting potential "breaking changes" in your code before a new software release. Breaking changes are updates that might stop existing users' code from working, so finding them early is crucial for maintaining compatibility. This approach helps catch critical issues that human reviewers might miss, improving software quality.
+
+## Tools you need
+*   **Claude Fable** (paid): An advanced AI model from Anthropic, accessed via their developer platform, used here to analyze code for potential breaking changes.
+
+## Steps
+
+1.  **Access the Claude Fable interface**: Open your web browser on your phone or computer and navigate to the Claude developer platform. The author used "Claude Code for web on my iPhone," which suggests a web interface for interacting with the Claude API.
+    *   *What to do*: Go to `https://www.anthropic.com/api` and log in to your account. You will need a paid subscription or API access to use Claude Fable.
+    *   *What you should see*: The interface where you can input prompts and receive AI responses.
+
+2.  **Prepare your code for review**: Have the code you want to review ready. The author was reviewing the `sqlite-utils` library.
+    *   *What to do*: Copy the relevant code files or sections that you want the AI to analyze for breaking changes. For a comprehensive review, you might need to paste significant portions of your codebase.
+    *   *What you should see*: Your code copied and ready to be pasted into the AI's input area.
+
+3.  **Input the review prompt**: Paste the author's prompt into the AI's input field, followed by your code.
+    *   *What to do*: Copy the prompt below and paste it into the Claude Fable input area. Then, paste your code immediately after the prompt.
+
+    ```
+    Final review before shipping a stable 4.0 release - very important to spot any last minute things that would be a breaking change if we fix them later
+    [Paste your code here]
+    ```
+    *   *What you should see*: The AI will process your request and generate a report. The author received a report categorizing issues, including "release blockers."
+
+4.  **Review the AI's report**: Carefully read the AI's output to understand the identified issues.
+    *   *What to do*: Look for specific problems the AI highlights, especially those it categorizes as "breaking changes" or "release blockers." The author's report identified issues like `delete_where()` not committing changes, which could lead to data loss.
+    *   *What you should see*: A list of potential problems, explanations, and possibly code snippets or line numbers pointing to where the issues are in your code. You will need to understand these technical details to act on them.
+
+## Original source
+This workflow was shared by Simon Willison on his blog. He used Claude Fable to perform a critical final code review for the `sqlite-utils` library, specifically looking for breaking changes before a stable 4.0 release. The AI successfully identified several significant problems, including a data loss bug.
+
+## Notes & variations
+*   **Do you even need this?** For very small projects or personal scripts, a manual review by yourself or a peer might be sufficient. This AI-assisted review is most valuable for larger projects, critical software, or when you need an extra layer of scrutiny for potential breaking changes.
+*   **Free-tier alternatives**: While Claude Fable is a paid service, other freemium AI chat models like the free tiers of `chatgpt.com`, `claude.ai` (the consumer chat app), or `gemini.google.com` can also perform code reviews. However, their capabilities for identifying complex breaking changes might not be as advanced as specialized models like Claude Fable. You would use a similar prompt structure.
+*   **Common mistake**: Not providing enough context or code to the AI. If you only paste a small snippet, the AI might miss issues that depend on how different parts of your code interact. For best results, provide as much relevant code as possible, or break down the review into smaller, focused sections.
+*   **Tip for better results**: Be specific in your prompt. Instead of just "review this code," you could add details like "focus on database interactions," "check for changes in API endpoints," or "ensure backward compatibility with version 3.x." This helps the AI narrow its focus.

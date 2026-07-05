@@ -1,0 +1,136 @@
+---
+title: "Count Lines of Code in Your Projects with cloc"
+description: "Quickly count blank lines, comments, and actual code in many programming languages using the cloc tool. Understand your project's size and complexity."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 15
+jobToBeDone: "Count lines of code in various programming languages"
+tools:
+  - name: "cloc"
+    url: "https://github.com/AlDanial/cloc"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Perl"
+    url: "https://www.perl.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Docker Desktop"
+    url: "https://www.docker.com/products/docker-desktop/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "wget"
+    url: "https://www.gnu.org/software/wget/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://github.com/AlDanial/cloc"
+  platform: "github"
+  author: "AlDanial"
+  postedAt: 2026-07-04
+score: 10
+ingestedAt: 2026-07-05
+nigeriaNotes: "cloc is a free, open-source tool that runs locally on your computer, so it uses very little data after the initial download. No internet connection is needed to count files once installed."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "Before submitting your final year project, use cloc to get a quick summary of your code's size and complexity for your project report."
+  - persona: "entrepreneur"
+    scenario: "As you build your startup's MVP, use cloc to track the growth of your codebase and estimate future development effort for new features."
+  - persona: "employee"
+    scenario: "As a software developer, quickly generate a report on the size of a new feature module to include in your weekly project update for your team lead."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will get a detailed report showing the number of blank lines, comment lines, and actual code lines in your project files. This helps you quickly understand the size and complexity of your codebase, which is useful for project planning, tracking progress, or comparing different parts of your software.
+
+## Tools you need
+*   **cloc** (free): The main tool that counts lines of code in many programming languages.
+*   **Perl** (free): A programming language interpreter, required if you install cloc from its source code (often pre-installed on macOS/Linux).
+*   **Docker Desktop** (freemium): A platform for running software in isolated containers, offering an alternative way to run cloc without installing Perl directly.
+*   **wget** (free): A command-line tool for downloading files from the internet (needed for one example to download an archive).
+*   **Terminal** (free): The command-line interface on macOS/Linux to run commands.
+*   **Command Prompt / PowerShell** (free): The command-line interface on Windows to run commands.
+
+## Steps
+1.  **Install cloc**: Choose the installation method that suits your operating system.
+    *   **For Windows users**: Download the `cloc` executable. Go to the official cloc GitHub page (the site will provide the URL). Look for the "Releases" section and download the latest `cloc-X.Y.exe` file (e.g., `cloc-2.10.exe`). Rename the downloaded file to `cloc.exe` for easier use. Save it to a folder you can easily find, like `C:\cloc`.
+    *   **For macOS/Linux users**: cloc is a Perl script. Most macOS and Linux systems have Perl installed by default. Download the `cloc` script directly from the official cloc GitHub page (the site will provide the URL). Look for the `cloc` file in the main directory and download it. Save it to a convenient location, for example, `~/bin/cloc`. Then, make it executable by opening your Terminal and running:
+
+        ```bash
+        # macOS or Linux
+        chmod +x ~/bin/cloc
+        ```
+
+        You should see no output if successful. If `~/bin` is not in your system's PATH, you will need to run the script using its full path (e.g., `~/bin/cloc`) or by typing `perl ~/bin/cloc`. For simplicity, we will use `cloc` in the following steps, assuming it's either in your PATH or you are running it from the same directory after moving it there.
+
+2.  **Open your terminal or command prompt**:
+    *   **For Windows**: Search for "Command Prompt" or "PowerShell" in your Start menu and open it.
+    *   **For macOS**: Search for "Terminal" in Spotlight (Cmd+Space) and open it.
+    *   **For Linux**: Look for "Terminal" in your applications menu and open it.
+    You should see a window with a blinking cursor, ready for you to type commands.
+
+3.  **Navigate to your project folder**: Use the `cd` (change directory) command to go to the folder containing the code you want to count. For example:
+
+    ```bash
+    # macOS or Linux
+    cd ~/Projects/MyAwesomeApp
+    ```
+
+    ```powershell
+    # Windows (PowerShell)
+    cd C:\Users\YourName\Documents\MyAwesomeApp
+    ```
+
+    ```cmd
+    # Windows (Command Prompt)
+    cd C:\Users\YourName\Documents\MyAwesomeApp
+    ```
+
+    You should see your terminal prompt change to show the current directory you are in.
+
+4.  **Count lines in a file or directory**: Now you can use `cloc` to count your code. Remember, if you are on Windows and saved `cloc.exe` to `C:\cloc`, you might need to type `C:\cloc\cloc.exe` instead of just `cloc` if you didn't add it to your PATH.
+
+    *   **Count a single file**: To count lines in a specific file, type `cloc` followed by the file name:
+
+        ```
+        cloc hello.c
+        ```
+
+        You should see a table showing the number of blank lines, comment lines, and actual code lines for `hello.c`.
+
+    *   **Count a whole directory**: To count all supported files in the current directory and its subfolders, type `cloc` followed by a dot (`.`):
+
+        ```
+        cloc .
+        ```
+
+        You should see a summary table for all supported files found, grouped by programming language.
+
+    *   **Count a compressed archive (like a .zip file)**: First, you might need to download an archive. The example below downloads cloc's own source code as a zip file:
+
+        ```bash
+        # macOS or Linux
+        wget https://github.com/AlDanial/cloc/archive/master.zip
+        ```
+
+        ```powershell
+        # Windows (PowerShell)
+        Invoke-WebRequest -Uri https://github.com/AlDanial/cloc/archive/master.zip -OutFile master.zip
+        ```
+
+        You should see the `master.zip` file downloaded to your current directory. Then, count its contents:
+
+        ```
+        cloc master.zip
+        ```
+
+        You should see a table summarizing the code within the `master.zip` file, broken down by language.
+
+## Original source
+This workflow is based on the `cloc` tool, an open-source project by AlDanial, hosted on GitHub. It provides a simple and effective way to analyze codebases by counting different types of lines across many programming languages.
+
+## Notes & variations
+*   **Common mistake**: A common pitfall is not being in the correct directory when you run `cloc`, or not having the `cloc` executable/script in a location your system can find (like your system's PATH). Make sure you've navigated to your project folder using `cd` or provided the full path to your `cloc` executable.
+*   **Tip for better results**: Use `cloc --help` in your terminal to see all available options. You can use flags to ignore specific files or directories, specify languages, or change the output format. For example, `cloc --exclude-dir=node_modules .` would count code in the current directory but skip the `node_modules` folder.
