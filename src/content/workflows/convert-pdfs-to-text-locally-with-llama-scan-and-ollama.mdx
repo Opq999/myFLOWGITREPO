@@ -1,0 +1,113 @@
+---
+title: "Convert PDFs to Text Locally with Llama-Scan and Ollama"
+description: "Convert PDF documents into editable text files on your computer using local AI models, without internet or token costs."
+category: "academic-research"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 30
+jobToBeDone: "Convert PDFs to text files locally using LLMs"
+tools:
+  - name: "Python"
+    url: "https://www.python.org"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Ollama"
+    url: "https://ollama.com"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "llama-scan"
+    url: "https://github.com/ngafar/llama-scan"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=44935169"
+  platform: "hackernews"
+  author: "nawazgafar"
+  postedAt: 2025-08-17
+score: 7
+ingestedAt: 2026-07-06
+nigeriaNotes: "This workflow runs entirely on your computer, so it uses very little internet data after the initial setup and model download. There are no ongoing costs."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "Convert your CSC201 lecture slides or a research paper PDF into text to easily search for definitions, extract quotes for an assignment, or create flashcards for exam revision, all offline."
+  - persona: "employee"
+    scenario: "Convert a lengthy PDF policy document or client proposal into text to quickly search for specific terms, extract key points for a summary report, or prepare for a presentation, ensuring data privacy."
+  - persona: "entrepreneur"
+    scenario: "Extract key clauses from a PDF contract or a market research report into plain text for quick analysis, without uploading sensitive documents online or incurring recurring fees."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will convert any PDF document (including those with images and diagrams) into a plain text file on your own computer. This approach uses local AI models, meaning you don't need an internet connection after the initial setup, and there are no ongoing costs or 'token' fees.
+
+## Tools you need
+*   **Python** (free): The programming language needed to run the `llama-scan` tool.
+*   **Ollama** (free): A tool that lets you run large language models (LLMs) directly on your computer.
+*   **llama-scan** (free): A Python tool that uses Ollama to read and convert PDFs into text.
+
+## Steps
+1.  **Install Python**: First, you need Python 3.10 or newer. If you don't have it, download and install it from the official Python website (python.org). On Windows, make sure to check the box that says "Add Python to PATH" during installation.
+
+2.  **Install Ollama and download the model**: Ollama is a tool that lets you run powerful AI models directly on your computer. Go to the Ollama website (ollama.com) and download the installer for your operating system (Windows, macOS, or Linux). Follow the installation instructions. Once installed, Ollama will run in the background.
+
+    Next, open your computer's terminal (on Windows, search for 'Command Prompt' or 'PowerShell'; on macOS/Linux, search for 'Terminal'). Type this command and press Enter to download the `qwen2.5vl` model. This model can understand both text and images.
+
+    ```
+    ollama run qwen2.5vl:latest
+    ```
+
+    You will see a download progress. This might take some time depending on your internet speed. Once it's done, the model will be ready to use. You can then type `/bye` and press Enter to exit the chat, or simply close the terminal window.
+
+3.  **Install llama-scan**: In the same terminal window (or a new one), type this command to install the `llama-scan` tool:
+
+    ```
+    pip install llama-scan
+    ```
+
+    You should see messages about `llama-scan` and its dependencies being installed. If it finishes without errors, it's ready.
+
+4.  **Prepare your PDF file**: Make sure you have the PDF file you want to convert saved on your computer. Note down its full path (e.g., `C:\Users\YourName\Documents\my_report.pdf` on Windows, or `/Users/YourName/Documents/my_report.pdf` on macOS/Linux). Remember to use double quotes around paths that contain spaces.
+
+5.  **Convert the PDF to text**: In your terminal, use the `llama-scan` command followed by the full path to your PDF file. For example:
+
+    ```
+    # Windows (Command Prompt or PowerShell)
+    llama-scan "C:\Users\YourName\Documents\my_report.pdf"
+    ```
+
+    ```
+    # macOS or Linux
+    llama-scan "/Users/YourName/Documents/my_report.pdf"
+    ```
+
+    By default, `llama-scan` will create a new folder called `output` in the same location where you run the command. Inside this folder, you will find a text file (`.txt`) containing the content of your PDF.
+
+    **Optional: Specify an output folder**: If you want the text file to be saved somewhere else, use the `--output` option:
+
+    ```
+    # Windows (Command Prompt or PowerShell)
+    llama-scan "C:\Users\YourName\Documents\my_report.pdf" --output "C:\MyTextFiles"
+    ```
+
+    ```
+    # macOS or Linux
+    llama-scan "/Users/YourName/Documents/my_report.pdf" --output "/home/YourName/MyTextFiles"
+    ```
+
+    **Optional: Convert specific pages**: To convert only a part of the PDF, use `--start` and `--end`:
+
+    ```
+    # Example: Convert pages 1 to 5
+    llama-scan "document.pdf" --start 1 --end 5
+    ```
+
+    You will see messages in the terminal as `llama-scan` processes each page. Once it's done, check your specified output folder (or the default `output` folder) for the new text file.
+
+## Original source
+This workflow was created by nawazgafar and shared on Hackernews. It uses the open-source `llama-scan` tool to process PDFs with local AI models.
+
+## Notes & variations
+*   **Common mistake**: The most common issue is not having Ollama running in the background or not having the `qwen2.5vl:latest` model downloaded. Make sure Ollama is installed and the model download step is completed successfully before running `llama-scan`.
+*   **Tip for better results**: For complex PDFs, you can provide custom instructions to the model. Create a text file (e.g., `instructions.txt`) with specific guidance (e.g., "Summarize each section" or "Extract only the financial figures"). Then, use the `--custom-instructions` option: `llama-scan your_file.pdf --custom-instructions instructions.txt`.
+*   **Alternative models**: The `llama-scan` tool allows you to use other multimodal models supported by Ollama. You can find a list of available models on the Ollama website. To use a different model, replace `qwen2.5vl:latest` with your chosen model name in the `ollama run` command and the `llama-scan` command (using the `--model` option).

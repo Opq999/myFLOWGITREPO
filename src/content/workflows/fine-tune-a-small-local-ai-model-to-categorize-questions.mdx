@@ -1,0 +1,109 @@
+---
+title: "Fine-tune a Small Local AI Model to Categorize Questions"
+description: "Learn how to fine-tune a small local AI model to automatically sort questions into categories, improving search results for information systems."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 180
+jobToBeDone: "Fine-tune a small local LLM to categorize questions for a RAG system"
+tools:
+  - name: "Unsloth"
+    url: "https://unsloth.ai/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Python"
+    url: "https://www.python.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Hugging Face Hub"
+    url: "https://huggingface.co/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Local machine with GPU"
+    url: "https://www.nvidia.com/en-us/geforce/graphics-cards/"
+    pricing: "paid"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=48623434"
+  platform: "hackernews"
+  author: "dev-experiments"
+  postedAt: 2026-06-21
+score: 10
+ingestedAt: 2026-07-06
+nigeriaNotes: "This workflow requires a powerful computer with a dedicated graphics card (GPU) for efficient training, which can be expensive. It also involves downloading large AI models, requiring significant data. Consider cloud-based alternatives if local resources are limited."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "For your final year project, fine-tune a local AI model to categorize customer support questions for a Nigerian e-commerce startup, speeding up their response times."
+  - persona: "entrepreneur"
+    scenario: "As a founder building an AI chatbot for Nigerian businesses, fine-tune a local model to categorize customer inquiries (e.g., 'order status', 'payment') for faster routing to relevant teams."
+  - persona: "employee"
+    scenario: "As an IT support specialist for a large Nigerian bank, fine-tune a local AI model to categorize incoming helpdesk tickets (e.g., 'password reset', 'network issue') for faster routing and resolution."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+This workflow describes how to fine-tune a very small local AI model, specifically a Large Language Model (LLM), to perform a specific task: categorizing questions. The goal is to make the AI model highly accurate at sorting questions into predefined categories, like 'pool' or 'hvac', based on their content.
+
+This process is typically used as a pre-processing step for a larger AI system called RAG (Retrieval Augmented Generation). By categorizing questions first, the RAG system can narrow down its search for answers, leading to more accurate and relevant results. For example, a question about a 'pool pump' would be categorized as 'pool', helping the system only search pool-related information.
+
+This is an advanced workflow because it requires setting up a programming environment, writing and running code, and managing data for training an AI model. It cannot be reproduced with simple copy-paste steps, as the exact instructions depend on your specific computer setup and the evolving nature of the tools involved.
+
+## What you can use it for
+*   **Improve search accuracy**: Categorize user questions to narrow down search results in a knowledge base or information system, making it easier to find relevant answers.
+*   **Build smart chatbots**: Help a chatbot understand the specific topic of a user's question before it attempts to find or generate an answer.
+*   **Automate data tagging**: Automatically assign categories or labels to incoming questions, support tickets, or other text data, saving manual effort.
+*   **Personal knowledge management**: Organize personal notes, documents, or household information by automatically tagging them based on their content.
+
+## Tools you need
+*   **Unsloth** (free): An open-source framework that makes fine-tuning large language models faster and easier on consumer-grade GPUs.
+*   **Python** (free): The programming language used to run Unsloth and manage the fine-tuning process.
+*   **Hugging Face Hub** (freemium): A platform where many open-source AI models, like Qwen, are hosted and can be downloaded.
+*   **Local machine with GPU** (paid): A computer with a powerful graphics card (GPU) is highly recommended for running and training large language models efficiently.
+
+## How it actually works
+This workflow involves training a small AI model to become a specialized question classifier. Here's a realistic path you would follow:
+
+1.  **Understand the problem**: The goal is to categorize questions into specific, predefined categories (e.g., 'pool', 'car', 'hvac').
+
+2.  **Try a baseline (optional but recommended)**: Before fine-tuning, you can test how well a general-purpose AI model performs with just a carefully written prompt. The author tried this with the original Qwen 0.6B model. A sample prompt used for this baseline was:
+
+    ```
+    Classify the homeowner question into exactly one category from the list below. Return only the category name from the list. Never return a code, a number, a synonym, an explanation, or any other text. The answer must be exactly one category name from the list. Choose the best category based on the meaning of the question. Valid categories: - appliances - brick work - car - cooking - doorbell - electric - fence - fountain - garden lights - gutters - hvac - irrigation - mosquito - painting - pool - tree service - water heater - window service Question: Who installed the tankless hot water setup for the house? Category:
+    ```
+
+    The author found that this baseline approach only categorized about 10% of questions correctly, showing the need for fine-tuning.
+
+3.  **Prepare your data**: Create a dataset of questions, each paired with its correct category. The author used about 850 entries, splitting them into training, evaluation, and testing sets. An example of the data format is:
+
+    ```json
+    [
+      { "question": "Who cleans our gutters at the house?", "category": "gutters" },
+      { "question": "Who serviced the hot water heater for the home?", "category": "water heater" }
+    ]
+    ```
+
+4.  **Set up your environment**: Install Python and the Unsloth framework on your computer. This typically involves using a command-line interface (terminal) to run installation commands. You will also need to ensure your GPU drivers are correctly set up if you are using a graphics card for training.
+
+5.  **Download the base model**: Obtain a small language model, such as Qwen 3:0.6B, from a platform like Hugging Face Hub. This model serves as the starting point for your fine-tuning.
+
+6.  **Write and run the fine-tuning code**: Use Python and Unsloth to load your chosen model and your prepared dataset. You will then write code to configure Unsloth's training parameters and start the fine-tuning process. The author does not share their exact code, but Unsloth's official documentation provides examples for how to do this.
+
+7.  **Evaluate the fine-tuned model**: After training, test your fine-tuned model with new questions from your test dataset to measure its accuracy. The author created a set of about 130 integration tests for this purpose.
+
+## Words you'll see, explained
+*   **LLM (Large Language Model)**: A type of artificial intelligence that can understand, generate, and process human-like text.
+*   **Fine-tuning**: The process of taking an existing, pre-trained AI model and training it further on a smaller, specific dataset to make it better at a particular task.
+*   **RAG (Retrieval Augmented Generation)**: An AI system that first searches for relevant information from a knowledge base and then uses a language model to generate an answer based on that information.
+*   **Vector database**: A specialized database that stores information as numerical representations (vectors) to quickly find similar pieces of data, often used in RAG systems.
+*   **Metadata**: Extra information that describes data, such as tags, categories, or dates, which helps organize and search for information.
+*   **GPU (Graphics Processing Unit)**: A specialized computer chip that is very efficient at performing the complex mathematical calculations required for training and running AI models.
+*   **Open-source framework**: A collection of pre-written code, tools, and guidelines that are freely available for anyone to use, modify, and share, making it easier to develop software.
+
+## Original source
+This concept was shared by dev-experiments on Hacker News, based on an article by Torgeir Helgevold titled "Fine Tuning a Local LLM to Categorize Questions" published on Teach Me Cool Stuff.
+
+## Notes & variations
+*   **Do you even need this?**: For very simple categorization tasks with clear rules, you might not need to fine-tune an LLM. You could potentially use a larger, general-purpose AI chat model (like those available on freemium platforms) with a well-crafted prompt, or even a rule-based system if categories are easily defined by keywords.
+*   **Free-tier limits**: While Unsloth and Python are free, running them effectively for fine-tuning requires a powerful computer, often with a dedicated GPU, which is a significant upfront cost. Cloud GPU services (like Google Colab or Kaggle Notebooks) offer free tiers but typically have strict usage limits that might not be sufficient for extensive training.
+*   **Common pitfall**: Not having enough high-quality training data. Fine-tuning an LLM requires a diverse and accurately labeled dataset to teach it the specific categories you want it to recognize. Poor or insufficient data will lead to a model that performs poorly.

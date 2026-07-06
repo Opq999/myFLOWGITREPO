@@ -1,0 +1,86 @@
+---
+title: "Automate Gmail with AI Agents using CrewAI"
+description: "Learn how AI agents can categorize, label, draft responses, and clean up your Gmail inbox automatically. Understand the power of CrewAI for email management."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 90
+jobToBeDone: "Automate Gmail inbox management with AI agents"
+tools:
+  - name: "CrewAI"
+    url: "https://www.crewai.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Python"
+    url: "https://www.python.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Gmail"
+    url: "https://gmail.com/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Slack"
+    url: "https://slack.com/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Google Gemini API"
+    url: "https://ai.google.com/gemini-api/"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=43354219"
+  platform: "hackernews"
+  author: "Tonykip"
+  postedAt: 2025-03-13
+score: 6
+ingestedAt: 2026-07-06
+nigeriaNotes: "This workflow requires running code and may incur costs for Large Language Model (LLM) API usage beyond free tiers. Data usage will depend on your email volume and how often the agents interact with the LLM."
+tiktokUrl: ""
+published: false
+---
+
+## What this is, in plain English
+This workflow uses AI agents, which are like smart software programs that can understand, reason, and act on their own to complete tasks. These agents are built using CrewAI, an open-source framework that helps you create teams of AI agents that work together.
+
+In this case, a team of AI agents is set up to manage your Gmail inbox automatically. This means the agents can read your emails, decide what they are about, and take actions like categorizing them, drafting replies, or even deleting unimportant messages.
+
+This is an advanced workflow because it requires you to set up a programming environment, install software, and configure various settings. It is not a simple copy-paste solution that can be done directly on a phone. The exact instructions live within the project's code repository and accompanying tutorials, which change as the tool updates.
+
+## What you can use it for
+*   **Categorize emails**: Automatically sort your incoming emails into different categories and assign priority levels.
+*   **Apply labels and stars**: Have the AI agents add labels and stars to your emails based on their content.
+*   **Draft responses**: Generate draft replies for important emails, saving them in your Gmail Drafts folder for you to review.
+*   **Send Slack notifications**: Get alerts in Slack for high-priority messages, ensuring you don't miss urgent communications.
+*   **Clean up low-priority emails**: Automatically delete low-quality or unimportant emails and empty your trash, helping to manage your inbox storage.
+
+## Tools you need
+*   **CrewAI** (free): An open-source Python framework for building and running AI agents.
+*   **Python** (free): A programming language needed to run the CrewAI project.
+*   **Gmail** (freemium): Your email service that the AI agents will manage.
+*   **Slack** (freemium): A messaging app used for receiving notifications from the AI agents.
+*   **Google Gemini API** (freemium): Provides access to powerful Large Language Models (LLMs) that the AI agents use to understand and process emails. It has a free tier for developers.
+
+## How it actually works
+To use this workflow, you will need to set up a development environment on your computer and run the project's code. The author provides a well-documented GitHub repository and a YouTube tutorial with detailed instructions.
+
+1.  **Open the GitHub repository**: You will start by visiting the project's GitHub page (linked in the original source) to access the code and setup instructions.
+2.  **Install Python and dependencies**: You will need to install Python on your computer, then use Python's package manager to install the necessary libraries, including CrewAI.
+3.  **Configure IMAP access for Gmail**: You will need to enable IMAP (Internet Message Access Protocol) in your Gmail settings and generate an app password if you use two-factor authentication. This allows the AI agents to securely access your emails.
+4.  **Set up API keys for an LLM provider**: You will need to get an API key from a Large Language Model (LLM) provider, such as Google Gemini, and configure the project to use it. The author notes that the LLM needs to be good at "tool calling" (the ability to use external tools).
+5.  **Customize rules**: You will modify the project's configuration files to define your specific rules for categorizing emails, drafting responses, and sending Slack notifications. The author doesn't share their exact rules, so you will need to define your own based on your needs.
+6.  **Run the Python script**: Once everything is set up, you will run a Python script that starts the AI agents, allowing them to begin processing your Gmail inbox according to your rules.
+
+## Words you'll see, explained
+*   **AI Agents**: Software programs that can understand, reason, and act on their own to complete tasks, often working together as a team.
+*   **CrewAI**: An open-source framework (a set of tools and rules) for building, running, and managing AI agents that collaborate on tasks.
+*   **IMAP (Internet Message Access Protocol)**: A standard way for email programs to access emails stored on a mail server, allowing them to be managed from different devices.
+*   **LLM (Large Language Model)**: An AI program trained on vast amounts of text data, capable of understanding and generating human-like text, which the agents use to process emails.
+*   **Tool Calling**: The ability of an LLM to decide which external tools (like sending an email, searching the web, or interacting with Slack) to use to complete a task.
+
+## Original source
+This workflow was created by Tonykip and shared on Hackernews. He built this side project to automate his own Gmail inbox and shared it with the community, providing a GitHub repository and a YouTube tutorial for others to use.
+
+## Notes & variations
+*   **Do you even need this?**: For simpler email automation tasks, you might consider using built-in Gmail filters or simpler automation services like Zapier or IFTTT. These tools can handle basic sorting and notifications without requiring code, though they offer less advanced AI capabilities.
+*   **Free-tier limits**: While some LLM providers offer free tiers, processing a large volume of emails can quickly consume these free credits and incur costs. Monitor your API usage to avoid unexpected charges.
+*   **Common pitfall**: Incorrect IMAP setup or insufficient permissions can prevent the AI agents from accessing your emails. Ensure you follow the instructions carefully for enabling IMAP and generating an app password if your Gmail account uses two-factor authentication.

@@ -1,0 +1,132 @@
+---
+title: "Find the Best Local AI Model for Your Computer with whichllm"
+description: "Discover which local AI models run best on your computer's hardware, ranked by performance benchmarks. Get recommendations and start chatting with models."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 20
+jobToBeDone: "Find and run optimal local LLMs for specific hardware configurations"
+tools:
+  - name: "whichllm"
+    url: "https://github.com/Andyyyy64/whichllm"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "uv"
+    url: "https://astral.sh/uv"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "HuggingFace"
+    url: "https://huggingface.co"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "LM Studio"
+    url: "https://lmstudio.ai"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=48146369"
+  platform: "hackernews"
+  author: "andyyyy64"
+  postedAt: 2026-05-15
+score: 8
+ingestedAt: 2026-07-06
+nigeriaNotes: "Running local AI models requires significant computer resources (RAM, GPU). While `whichllm` is free, downloading large models from HuggingFace can consume a lot of mobile data if you're not on Wi-Fi. The models themselves are free to download."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "A computer science student uses `whichllm` to identify an open-source LLM that runs efficiently on their laptop, enabling them to build and test AI projects for their final year thesis without relying on expensive mobile data."
+  - persona: "employee"
+    scenario: "A software developer in a Nigerian tech firm uses `whichllm` to quickly identify suitable open-source LLMs that can run locally on their workstation, for developing internal tools that handle sensitive company data securely and without inte"
+  - persona: "entrepreneur"
+    scenario: "An entrepreneur developing a low-cost, offline-capable AI assistant for local businesses uses `whichllm` to find the best-performing LLMs that can run on affordable hardware, making their product accessible even in areas with poor internet."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will get a ranked list of AI models (Large Language Models, or LLMs) that are most likely to run well on your computer's specific hardware (like your GPU, CPU, and RAM). You will also be able to start a chat with a recommended model directly from your computer. This approach helps you avoid wasting time downloading models that won't perform well or even run on your machine, by using real performance benchmarks instead of just model size.
+
+## Tools you need
+*   **whichllm** (free): A command-line tool that detects your hardware and recommends local AI models.
+*   **uv** (free): A fast Python package installer, used here to install `whichllm`. (Alternatively, `brew` for macOS/Linux or `pip` for all OSes can be used).
+*   **HuggingFace** (freemium): A platform where many open-source AI models are hosted and can be downloaded.
+*   **LM Studio** (free): An optional desktop application that provides a user-friendly way to download and run local AI models with a chat interface.
+
+## Steps
+
+1.  **Open your computer's terminal**: This is a program where you can type commands to control your computer.
+
+    *   **On Windows:** Search for "PowerShell" in the Start menu and open it.
+    *   **On macOS:** Search for "Terminal" in Spotlight (Cmd + Space) and open it.
+    *   **On Linux:** Open your preferred terminal application (often found in your applications menu).
+
+    You should see a window with a blinking cursor, ready for you to type commands.
+
+2.  **Install `uv` (the package installer)**: `uv` is a very fast tool to install Python packages. `whichllm` is a Python package.
+
+    Type the following command and press Enter:
+
+    ```
+    # macOS or Linux
+    curl -LsSf https://astral.sh/uv/install.sh | sh
+
+    # Windows (PowerShell)
+    irm https://astral.sh/uv/install.ps1 | iex
+    ```
+
+    You should see messages indicating `uv` is being downloaded and installed. Once complete, you might need to close and reopen your terminal for `uv` to be recognized. To check if it's installed, type `uv --version` and press Enter. You should see the `uv` version number.
+
+3.  **Install `whichllm`**: Now that `uv` is installed, use it to install `whichllm`.
+
+    Type the following command and press Enter:
+
+    ```
+    uv tool install whichllm
+    ```
+
+    You should see `whichllm` being installed. After it finishes, you can check if it's installed by typing `whichllm --version` and pressing Enter. You should see the `whichllm` version number.
+
+4.  **Find the best AI models for your hardware**: Run `whichllm` to automatically detect your computer's hardware (like your GPU, which is a special chip that makes AI training fast, and your RAM, which is your computer's short-term memory) and recommend suitable AI models.
+
+    Type the following command and press Enter:
+
+    ```
+    whichllm
+    ```
+
+    You should see a list of recommended AI models, ranked by how well they perform on benchmarks and how well they fit your hardware. Each entry will show the model name, size, a score, and estimated speed (tokens per second). For example:
+
+    ```
+    #1 Qwen/Qwen3.6-27B 27.8B Q5_K_M score 92.8 27 t/s
+    ```
+
+    This means the Qwen3.6-27B model (27.8 billion parameters) is ranked #1, has a quality score of 92.8, and can process about 27 "tokens" (like words or parts of words) per second.
+
+5.  ** (Optional) Get a "safer" recommendation**: By default, `whichllm` can be ambitious, suggesting models that might just barely fit. If you want a more conservative recommendation, similar to what a tool like LM Studio might suggest, use these options:
+
+    Type the following command and press Enter:
+
+    ```
+    whichllm --gpu-only --speed usable --vram-headroom 1GB
+    ```
+
+    You should see a new list of models. This list will only include models that fit entirely within your GPU's VRAM (video memory), filters out models estimated to be too slow, and leaves 1GB of extra VRAM for the system to use. If models still seem too large in another tool, you can increase `1GB` to `1.5GB` or `2GB`.
+
+6.  **Start a chat with a recommended model**: Once you've identified a model you want to try, `whichllm` can help you start a chat with it. This will download the model to your computer and then open a simple chat interface in your terminal.
+
+    Replace `[model name]` with the full name of a model from your `whichllm` output (e.g., `qwen 2.5 1.5b gguf`).
+
+    Type the following command and press Enter:
+
+    ```
+    whichllm run "[model name]"
+    ```
+
+    You should see `whichllm` downloading the model (this might take some time depending on your internet speed and the model size). After the download, a chat interface will appear in your terminal, allowing you to type messages and get responses from the local AI model.
+
+## Original source
+This workflow is based on `whichllm`, an open-source project by andyyyy64, shared on Hacker News. The tool helps users find and run local AI models optimized for their specific computer hardware.
+
+## Notes & variations
+*   **Free-tier alternatives:** `whichllm` itself is free and open-source. The models it recommends are also generally free to download from HuggingFace. The main "cost" is your computer's hardware and the time/data required to download large models.
+*   **Common mistake:** Not having enough free disk space or a stable internet connection for downloading large AI models. Models can be several gigabytes in size. Ensure you have plenty of space and a reliable connection before starting a download.
+*   **Tip for better results:** If you know your computer's exact GPU model (e.g., "RTX 4090"), you can simulate it even if you don't have it, or get recommendations for it by running `whichllm --gpu "RTX 4090"`. This is useful if you're planning a hardware upgrade.

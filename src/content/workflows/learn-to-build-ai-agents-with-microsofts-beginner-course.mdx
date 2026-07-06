@@ -1,0 +1,109 @@
+---
+title: "Learn to Build AI Agents with Microsoft's Beginner Course"
+description: "Explore Microsoft's free course to understand AI agents, their design, and how to build them. Covers frameworks, tool use, and multi-agent systems."
+category: "academic-research"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 60
+jobToBeDone: "Learn to build AI agents"
+tools:
+  - name: "GitHub"
+    url: "https://github.com"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Git"
+    url: "https://git-scm.com"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Code Editor"
+    url: "https://code.visualstudio.com"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Python"
+    url: "https://www.python.org"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=44460800"
+  platform: "hackernews"
+  author: "thunderbong"
+  postedAt: 2025-07-04
+score: 7
+ingestedAt: 2026-07-06
+nigeriaNotes: "This course involves downloading a large repository and running code locally, which requires a stable internet connection and a computer, not just a mobile phone. The course content is free, but data costs for downloads apply. If lessons involve using paid AI services (like certain APIs), those costs would be separate."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "Use the Microsoft AI Agents course to build a simple chatbot for your school project, learning Python and agent frameworks."
+  - persona: "employee"
+    scenario: "Follow the Microsoft AI Agents course to build a custom internal tool that automates a repetitive office task."
+  - persona: "entrepreneur"
+    scenario: "Learn to build AI agents from Microsoft's course to create a proof-of-concept for a new AI-powered service for your startup."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+This is a comprehensive, free online course from Microsoft designed to teach you how to build AI agents. An AI agent is a computer program that can understand its surroundings, make decisions, and take actions to achieve a specific goal, often by using advanced AI models.
+
+This course is hosted on GitHub, which is a platform for sharing and managing computer code. It's structured into multiple lessons, covering everything from the basics of AI agents to more complex topics like how agents use tools, remember information, and work together.
+
+While it's called a 'beginner' course, it requires some technical skill. You'll need to be comfortable with using a computer, installing software, and running code. It's not a simple copy-paste workflow you can do on a mobile phone, as the exact instructions and code live within the course materials themselves.
+
+## What you can use it for
+*   **Understand AI agents**: Learn the fundamental concepts of what AI agents are and how they work.
+*   **Explore agent frameworks**: Discover different tools and structures that help in building AI agents.
+*   **Enable tool use**: Understand how to design agents that can use external tools and services to perform tasks.
+*   **Design multi-agent systems**: Learn how to create systems where multiple AI agents collaborate to achieve a larger goal.
+*   **Implement agent memory**: Explore techniques for giving AI agents the ability to remember past interactions and information.
+*   **Plan agent actions**: Understand how to design agents that can plan a sequence of steps to reach their objectives.
+
+## Tools you need
+*   **GitHub** (free): To access and download the course materials, which are stored as a code repository.
+*   **Git** (free): A version control system used to download (clone) the course files from GitHub to your computer.
+*   **Code Editor** (free): A program like Visual Studio Code (VS Code) to view and edit the course files and run code examples. This is where you'll interact with the lessons.
+*   **Python** (free): A popular programming language that is likely used for the AI agent examples and exercises within the course. You'll need to install it on your computer.
+
+## How it actually works
+This course requires you to set up a development environment on your computer and follow the lessons within the downloaded files. Here's the general path:
+
+1.  **Visit the course repository**: Open your web browser and go to the official GitHub page for the Microsoft AI Agents for Beginners course.
+
+2.  **Install Git**: If you don't have Git installed, download and install it from the official Git website (git-scm.com). Follow the instructions for your operating system.
+
+3.  **Clone the repository**: Open your computer's terminal (Command Prompt on Windows, Terminal on macOS/Linux) and use Git to download the course files. The course recommends a 'sparse checkout' to save download size by excluding translations.
+
+    # macOS or Linux
+    ```bash
+    git clone --filter=blob:none --sparse https://github.com/microsoft/ai-agents-for-beginners.git
+    cd ai-agents-for-beginners
+    git sparse-checkout set --no-cone ' /* ' ' !translations ' ' !translated_images '
+    ```
+
+    # Windows (Command Prompt)
+    ```cmd
+    git clone --filter=blob:none --sparse https://github.com/microsoft/ai-agents-for-beginners.git
+    cd ai-agents-for-beginners
+    git sparse-checkout set --no-cone " /* " " !translations" "! translated_images "
+    ```
+
+    You should see files downloading and then a message indicating the repository has been cloned to a new folder named `ai-agents-for-beginners` on your computer.
+
+4.  **Explore the lessons**: Open the `ai-agents-for-beginners` folder in your chosen code editor (like VS Code). You'll find numbered folders (e.g., `01-intro-to-ai-agents`, `02-explore-agentic-frameworks`). Each folder contains the materials for a specific lesson, including explanations and code examples.
+
+5.  **Follow lesson instructions**: Within each lesson folder, you'll find detailed instructions, often in Markdown files (like `README.md`) or Jupyter notebooks. These will guide you through installing any necessary Python libraries, running code, and completing exercises. The exact steps for each lesson are provided directly within the course materials.
+
+## Words you'll see, explained
+*   **AI Agent**: A computer program that uses artificial intelligence to perceive its environment, make decisions, and act to achieve specific goals.
+*   **Repository**: A central location, typically on GitHub, where all the files, code, and history for a software project are stored.
+*   **Clone**: The process of downloading a complete copy of a repository from a remote server (like GitHub) to your local computer.
+*   **Sparse Checkout**: A feature in Git that allows you to download only a selected subset of files and directories from a repository, rather than the entire project, saving disk space and download time.
+*   **Framework**: A foundational structure or set of tools that provides a starting point and guidelines for building software applications, simplifying development.
+*   **Terminal/Command Prompt**: A text-based interface used to interact with your computer's operating system by typing commands, rather than using a mouse and graphical icons.
+
+## Original source
+This entry is based on a link shared by 'thunderbong' on Hackernews, which points to Microsoft's official 'AI Agents for Beginners' course hosted on GitHub. The course provides a structured learning path for understanding and building AI agents.
+
+## Notes & variations
+*   **Do you even need this?**: If your goal is simply to use an AI for tasks like writing or summarizing, a standard chat application (like ChatGPT, Claude, or Gemini) might be sufficient. This course is for those who want to learn the technical skills to *build* their own AI agents and understand the underlying concepts.
+*   **Free-tier limits**: The course content itself is free and open-source. However, some lessons might involve using specific AI models or cloud services (e.g., from OpenAI, Azure AI, or other providers) that could have associated costs or require API keys. Always check the prerequisites for each lesson.
+*   **Common pitfall**: A frequent challenge is correctly setting up the development environment, including installing Python, Git, and any required libraries. Pay close attention to the setup instructions in the course's `00-course-setup` folder or `README.md` file to avoid issues.
