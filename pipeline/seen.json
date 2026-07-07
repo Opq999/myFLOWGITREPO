@@ -8856,8 +8856,80 @@
     "48818b5a70a882451ffae148167a212200176dd15be95e8bf5c191d6a80163e1": {
       "url": "https://news.ycombinator.com/item?id=44460800",
       "date": "2026-07-06"
+    },
+    "e65fd906336c71ce0c32d2db98ba18a29b8ef572f922122dc2346802d68b5d5d": {
+      "url": "https://news.ycombinator.com/item?id=43420678",
+      "date": "2026-07-07"
+    },
+    "6f3e1ca4e5a5ef5628587d65a9296deb0f7caded07eb2ad5473da05f1e7a8b10": {
+      "url": "https://simonwillison.net/2026/Jul/6/hy3",
+      "date": "2026-07-07"
+    },
+    "a44c394caed860446d2cec9e03e32544bca50f267e52242e7b4ec782f2ee323a": {
+      "url": "https://news.ycombinator.com/item?id=48540813",
+      "date": "2026-07-07"
+    },
+    "223287766691e86de274da4ddc78a68d393c06b0a10b9023241b64bc37a31245": {
+      "url": "https://www.latent.space/p/ainews-the-field-guide-to-fable",
+      "date": "2026-07-07"
+    },
+    "3ec0727a2513f83f3537282ce61c97e77ffcabf965aca3da50767c8c53461738": {
+      "url": "https://news.ycombinator.com/item?id=44088055",
+      "date": "2026-07-07"
+    },
+    "1dc5824027254506ac448d497409fe8237204e6f08872c091f17d510c81b823c": {
+      "url": "https://huggingface.co/blog/Photoroom/prx-part4-data",
+      "date": "2026-07-07"
+    },
+    "2c7e4c560025cdd3be21e8df77ba48aab6406cff1bc3cee7533ad6623facf317": {
+      "url": "https://news.ycombinator.com/item?id=43332352",
+      "date": "2026-07-07"
+    },
+    "98f212dcb919542efe4d6e6fab6f76d2158307c8508b3c41ad73131e4bd1322a": {
+      "url": "https://news.ycombinator.com/item?id=44429116",
+      "date": "2026-07-07"
+    },
+    "760cc59bcba38b06d1db5f1335275110777c1658fe4eed41bdc24b5bf0133789": {
+      "url": "https://news.ycombinator.com/item?id=47594816",
+      "date": "2026-07-07"
+    },
+    "b1352b9b50c9809ac2302e7f3769849810a77a624ef60ab28be0528a2f6cc537": {
+      "url": "https://news.ycombinator.com/item?id=44097699",
+      "date": "2026-07-07"
+    },
+    "8fde667f8ec8d423afa153025ab75043816e3d75bb369961707e074bafd3623d": {
+      "url": "https://news.ycombinator.com/item?id=44379538",
+      "date": "2026-07-07"
+    },
+    "98e38eb523da3311b2d95f0fbec8e5973a648ac5bfa13c23db05a527286b5351": {
+      "url": "https://news.ycombinator.com/item?id=44456347",
+      "date": "2026-07-07"
+    },
+    "79618975d88cfed87c464556a1b1da728326cc47cd80c5748e6012d005d683f8": {
+      "url": "https://news.ycombinator.com/item?id=48530657",
+      "date": "2026-07-07"
+    },
+    "dc5c1b81123dc0075332f9a8b7edca15dbbcf626fbc3c3e5c176613be1a18efd": {
+      "url": "https://news.ycombinator.com/item?id=46734135",
+      "date": "2026-07-07"
+    },
+    "a6dcba658fc0f8944c020a2ab67f4f4f5a991c7d77c613155450f432dda6eb7c": {
+      "url": "https://news.ycombinator.com/item?id=46470115",
+      "date": "2026-07-07"
+    },
+    "ee9da8252bd605a38edfc8033f7488548bc289c6a78304069cf5d8804d054be1": {
+      "url": "https://news.ycombinator.com/item?id=46689093",
+      "date": "2026-07-07"
+    },
+    "3041bd4dee799f1a99d8e4f67375c558aa13dfd25f0b45eb5c0418d0a214d5f2": {
+      "url": "https://news.ycombinator.com/item?id=46708002",
+      "date": "2026-07-07"
+    },
+    "aa6670044ba7152cc4311ca21b9898090e0cfdef6d26e57a16c5b9cc44461364": {
+      "url": "https://news.ycombinator.com/item?id=44985058",
+      "date": "2026-07-07"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 1
+  "dailyPage": 2
 }

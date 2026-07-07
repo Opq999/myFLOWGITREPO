@@ -1,0 +1,95 @@
+---
+title: "Self-Host AI Text Summarization from Your Database with Exasol and Ollama"
+description: "Learn how to perform AI text summarization directly within your Exasol database using self-hosted open-source models like Mistral 7B via Ollama. Keep your data private."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 90
+jobToBeDone: "Perform self-hosted AI text summarization directly from a database"
+tools:
+  - name: "Exasol DB"
+    url: "https://www.exasol.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Ollama"
+    url: "https://ollama.com"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Docker"
+    url: "https://www.docker.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Python"
+    url: "https://www.python.org"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=46708002"
+  platform: "hackernews"
+  author: "exasol_nerd"
+  postedAt: 2026-01-21
+score: 7
+ingestedAt: 2026-07-07
+nigeriaNotes: "This workflow is entirely self-hosted, meaning all data processing happens on your local machine, eliminating per-token API costs and minimizing internet data usage after initial setup. The tools (Exasol development version, Ollama, Docker Desktop) offer free tiers suitable for learning and development."
+nigeriaUseCases:
+  - persona: "employee"
+    scenario: "A data engineer at a Nigerian bank uses this to build an internal tool that summarizes sensitive compliance reports from their database, ensuring data privacy and avoiding cloud API costs."
+  - persona: "student"
+    scenario: "A final-year Computer Science student uses this to build a local research assistant for their project, summarizing hundreds of academic papers stored in their database without internet data costs."
+  - persona: "entrepreneur"
+    scenario: "A technical founder building a local market intelligence platform uses this to summarize proprietary customer feedback and competitor reports from their database, keeping data private and controlling AI processing costs."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+This workflow shows you how to run an AI model (specifically, a Large Language Model or LLM) directly on your own computer and connect it to your database. This setup is called "self-hosted" because your data never leaves your own infrastructure, offering strong privacy and cost control.
+The core idea is to use Exasol, a powerful database, to store your text data. Then, you use Ollama, a tool that makes it easy to run open-source LLMs like Mistral 7B on your computer. The connection between the database and the AI model is made using User Defined Functions (UDFs), which are small programs (written in Python in this case) that live inside the database and can call out to other services.
+This is an advanced setup. It requires comfort with command-line tools, basic programming (Python), and database administration. It's not a simple copy-paste recipe for beginners, but it demonstrates a powerful way to integrate AI directly into your data systems while keeping everything private and under your control.
+
+## What you can use it for
+*   **Summarize large text datasets**: Automatically create short summaries of articles, reports, or customer feedback stored in your database.
+*   **Enhance data privacy**: Process sensitive information with AI without sending it to external cloud services, ensuring your data stays within your own systems.
+*   **Control costs**: Avoid recurring per-token API fees from cloud AI providers by running models on your own hardware.
+*   **Customize AI models**: Use open-source models that you can potentially fine-tune (adjust) for your specific needs, without vendor lock-in.
+*   **Build intelligent data applications**: Create database functions that can directly interact with AI models for tasks like classification, entity extraction, or content generation.
+
+## Tools you need
+*   **Exasol DB** (freemium): A high-performance analytical database. The workflow uses its free Docker image for development.
+*   **Ollama** (free): A tool to easily run open-source Large Language Models (LLMs) on your local computer.
+*   **Docker** (freemium): A platform that helps you run software in isolated environments called containers, used here to set up the Exasol database.
+*   **Python** (free): A popular programming language used to write the User Defined Functions (UDFs) that connect Exasol to Ollama.
+
+## How it actually works
+This workflow involves setting up several components on your computer and connecting them. The full, detailed instructions are available in the official Exasol developer documentation linked in the "Original source" section.
+
+1.  **Set up Exasol Database**: You start an Exasol database instance using Docker. Docker allows you to run the database in a self-contained environment without installing it directly on your system.
+    *   You will use a `docker run` command to download and start the Exasol database image.
+    *   You will then connect to this database using a SQL client (like DBeaver or DBVisualizer) with specific credentials.
+2.  **Prepare Sample Data**: Inside your Exasol database, you create a new schema (a way to organize database objects) and a table to hold your text data (e.g., articles to be summarized). You then import sample text data into this table.
+    *   This involves running `CREATE SCHEMA` and `CREATE TABLE` SQL commands.
+3.  **Set Up Ollama**: You install Ollama on your local machine and download the specific Large Language Model (LLM) you want to use, such as Mistral 7B.
+    *   This involves running `ollama pull mistral` (or similar) in your terminal.
+    *   You will also test that the Ollama API (a way for other programs to talk to Ollama) is running correctly by accessing a specific web address on your local network.
+4.  **Create User Defined Functions (UDFs)**: You write Python code that lives inside the Exasol database. These UDFs are designed to take text from your database table, send it to the Ollama API running on your computer, and then return the summary generated by the AI model back into the database.
+    *   This involves writing Python code that makes HTTP requests to the Ollama API endpoint.
+    *   You will define these UDFs using `CREATE SCRIPT` SQL commands in your database client.
+5.  **Run Summarization**: Once the UDFs are set up, you can call them directly from SQL queries to summarize the text in your database tables.
+    *   You will run `SELECT` statements that include your newly created UDFs to process your data.
+
+## Words you'll see, explained
+*   **Large Language Model (LLM)**: An AI program trained on vast amounts of text data that can understand, generate, and summarize human-like text.
+*   **User Defined Function (UDF)**: A custom program or script that you write and store inside a database, allowing you to extend the database's capabilities with your own logic.
+*   **Docker**: A tool that packages software into standardized units called "containers," which include everything needed to run the software, making it consistent across different environments.
+*   **Ollama**: A free, open-source tool that simplifies running large language models (LLMs) on your own computer, making it easy to download and manage different models.
+*   **Exasol**: A high-performance, in-memory analytical database often used for complex data processing and business intelligence.
+*   **Schema**: In a database, a schema is a way to organize tables, views, and other database objects into logical groups.
+*   **API (Application Programming Interface)**: A set of rules and tools that allows different software applications to communicate with each other. In this case, Exasol uses an API to talk to Ollama.
+
+## Original source
+This workflow was shared by exasol_nerd on Hacker News and links to the official Exasol developer documentation. The documentation provides a comprehensive guide on how to set up and run self-hosted AI text summarization using Exasol, Ollama, and Python User Defined Functions.
+
+## Notes & variations
+*   **Do you even need this?**: For simple, one-off summarization tasks or if data privacy is not a critical concern, using a freemium cloud-based chat tool like ChatGPT, Claude, or Gemini might be much simpler. This self-hosted approach is best for integrating AI directly into existing data pipelines, processing sensitive data, or when you need full control over the AI model and its costs.
+*   **Free-tier limits**: The Exasol Docker image is free for development and testing, supporting up to 10GB of data. Ollama and Python are free. Docker Desktop has a free tier for personal and small business use, but larger organizations may require a paid subscription.
+*   **Common pitfall**: Network configuration can be tricky. Ensure Ollama is running and accessible from your database's environment. If running Exasol in Docker, you might need to configure Docker's network settings or use the host's IP address correctly for the UDF to reach the Ollama API. Always check your firewall settings if you encounter connection issues.

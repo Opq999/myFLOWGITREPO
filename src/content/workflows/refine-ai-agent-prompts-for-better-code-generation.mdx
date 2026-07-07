@@ -1,0 +1,93 @@
+---
+title: "Refine AI Agent Prompts for Better Code Generation"
+description: "Learn how to write detailed prompts for AI agents to generate accurate code and features for command-line tools. Improve AI output by providing clear context."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 15
+jobToBeDone: "Use an AI agent to add features to a CLI tool by refining prompts"
+tools:
+  - name: "AI Agent"
+    url: "https://github.com/features/copilot/"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Terminal"
+    url: "https://en.wikipedia.org/wiki/Terminal_emulator"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Code Editor"
+    url: "https://code.visualstudio.com/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=47594816"
+  platform: "hackernews"
+  author: "mooreds"
+  postedAt: 2026-03-31
+score: 8
+ingestedAt: 2026-07-07
+nigeriaNotes: "AI agents for coding often require paid subscriptions or API credits, which can be costly. Consider using freemium chat AI tools for simpler code snippets to manage costs and data usage."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "A computer science student uses an AI agent to generate boilerplate code for their final year project, refining prompts to ensure the generated code integrates correctly with their existing codebase."
+  - persona: "entrepreneur"
+    scenario: "A tech entrepreneur building an MVP for their startup uses an AI agent to quickly generate backend API endpoints for user authentication, refining prompts to meet specific security and data handling requirements."
+  - persona: "employee"
+    scenario: "A software engineer at a Nigerian tech company uses an AI agent to add a new reporting feature to an internal command-line tool, meticulously refining prompts to ensure the agent generates accurate data processing logic."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+This entry explains "agentic development," which means using an AI program (an "AI agent") that can understand a complex goal, break it down into smaller steps, and then try to complete those steps, often for coding tasks. The core idea is that to get good results from an AI agent, you need to give it very clear and detailed instructions, just like you would for a human team member.
+
+The article highlights that vague instructions lead to vague or incomplete outputs, whether you're talking to an AI or giving directions to a human team. It emphasizes that providing clear "context" (goals, constraints, and expectations) is key to success.
+
+This workflow is considered advanced because it involves using specialized AI agents, often within a coding environment like a terminal or code editor, and requires understanding how to specify technical requirements. There isn't a single, simple copy-paste recipe because the exact steps depend on the specific AI agent tool you choose, which the author does not name.
+
+## What you can use it for
+*   **Generate code with AI agents**: Use AI agents to write new code or add features to existing software projects, such as command-line tools.
+*   **Automate repetitive coding tasks**: Have an AI agent handle common coding patterns, create boilerplate code (standard code that is reused), or perform refactoring (restructuring existing code) based on clear instructions.
+*   **Improve communication with AI tools**: Learn to craft more precise and effective instructions (prompts) for any AI model, not just agents, to get the exact output you need.
+*   **Enhance team communication**: Apply the principles of providing clear context, goals, and constraints to improve how you give instructions to human teams or colleagues.
+
+## Tools you need
+*   **AI Agent** (paid): An AI program that can understand complex goals, break them into smaller steps, and execute them, often for coding tasks. The author used one in a terminal but didn't name the specific tool. GitHub Copilot is an example of a paid AI coding assistant.
+*   **Terminal** (free): A text-based interface used to interact with your computer's operating system and run command-line tools.
+*   **Code Editor** (free): A software application used for writing and editing computer programs, such as Visual Studio Code.
+
+## How it actually works
+1.  **Choose an AI Agent**: Select an AI agent tool that supports code generation and interaction within a terminal or code editor. Examples include GitHub Copilot Chat, Cursor, or open-source agent frameworks. The author does not specify which agent they used.
+2.  **Define the Goal**: Clearly state what you want the AI agent to achieve. Start with a high-level goal, then break it down into specific requirements.
+3.  **Craft a Detailed Prompt**: This is the most critical step. Instead of a vague request, provide specific instructions, constraints, and expected outcomes. The author provides an example:
+    *   **Initial, vague prompt (example from author)**:
+
+    ```
+    Add support for showing card details
+    ```
+
+    This led to incomplete results because the AI didn't know *which* details were important.
+
+    *   **Improved, detailed prompt (example from author)**:
+
+    ```
+    Add a card:show command that accepts --board and --list as flags. Output the card title, description, due date, any attached checklists and labels. If any of these values do not exist, skip the header for that section. If checklists have more than 10 items, add a + X more entry. Add an --all-details flag to show all of the information.
+    ```
+
+    This prompt specifies the command name, required inputs (`--board`, `--list`), exact output fields (title, description, due date, checklists, labels), formatting rules (skip header if value missing, "+ X more" for long checklists), and an optional flag (`--all-details`).
+4.  **Run the Agent**: Execute the AI agent with your detailed prompt. This usually involves typing the prompt into the agent's interface within your terminal or code editor.
+5.  **Review and Refine**: Examine the code or output generated by the agent. If it's not exactly what you need, refine your prompt by adding more details, clarifying ambiguities, or specifying new constraints, then run the agent again.
+
+## Words you'll see, explained
+*   **AI Agent**: An AI program designed to perform tasks autonomously, often by breaking down a main goal into smaller, manageable steps.
+*   **CLI tool (Command Line Interface tool)**: A software program that users interact with by typing text commands into a terminal, rather than using a graphical interface with buttons and menus.
+*   **Prompt Engineering**: The skill of writing clear, effective instructions (prompts) for AI models to guide them towards generating the desired and most useful output.
+*   **Context**: All the relevant background information, specific requirements, limitations, and desired outcomes that you provide to an AI or a human to help them understand and complete a task correctly.
+
+## Original source
+This concept is drawn from an article titled "Prompt Engineering for Humans" by mooreds, shared on hackernews. The article discusses how providing clear context and detailed instructions is crucial for getting good results from both AI agents and human teams.
+
+## Notes & variations
+*   **Do you even need this?**: For simpler coding tasks or generating small code snippets, you might not need a full AI agent. Freemium chat AI tools like ChatGPT, Claude, or Gemini can often provide useful code suggestions with well-crafted prompts, without the need for a dedicated agent setup.
+*   **Free-tier limits**: Most advanced AI agents for coding rely on paid API access (e.g., OpenAI API, Anthropic API) or require a subscription (e.g., GitHub Copilot). Be aware of potential costs, as free tiers for these specific developer tools are rare or very limited.
+*   **Common pitfall**: The biggest mistake is using vague or underspecified prompts. Always assume the AI knows nothing about your intent and provide every detail, constraint, and example needed to achieve the exact desired outcome.
