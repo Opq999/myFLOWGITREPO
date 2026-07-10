@@ -9504,8 +9504,44 @@
     "9f64f9ce21c6837811a30f7f8ae213fc57bf4a74f017c6af6e53bfee1e6bd11f": {
       "url": "https://www.reddit.com/r/digital_marketing/comments/1ur6jvd/how_can_use_ahref_best",
       "date": "2026-07-09"
+    },
+    "50d7a9c4e9c95b7e2f048a2ad2e66f86a64ff3bd9adf2df6812ef5eb8485836b": {
+      "url": "https://simonwillison.net/2026/Jul/10/openai",
+      "date": "2026-07-10"
+    },
+    "195d8ae2131b1abc064c55550c0723f68a6f06f72ce6159c5ffb6a88822db454": {
+      "url": "https://simonwillison.net/2026/Jul/9/gpt-5-6",
+      "date": "2026-07-10"
+    },
+    "48eb2f626f34cc7b5fdd9d7db8d2010174afec53449103d6924c981d95b2dea4": {
+      "url": "https://simonwillison.net/2026/Jul/9/muse-spark-1-1",
+      "date": "2026-07-10"
+    },
+    "2570b9052c5fcb3c05ed28704b32a8ef4aa4d19bcc3a150397016a8c3bd2b75d": {
+      "url": "https://simonwillison.net/2026/Jul/9/llm-meta-ai",
+      "date": "2026-07-10"
+    },
+    "86606b1179250fa67534d7922aa88f3c5d097ebc349ba25912109a08dea1e03c": {
+      "url": "https://simonwillison.net/2026/Jul/9/llm",
+      "date": "2026-07-10"
+    },
+    "20a024974871c44e4b5da1a177a721f5095ab6f51428750431bec5c41bb4bf70": {
+      "url": "https://www.latent.space/p/ainews-openai-launches-gpt-56-solterraluna",
+      "date": "2026-07-10"
+    },
+    "7a5e52839464617fdc21f811ddb19b422bcacd75fd2d51e114f897330a55a56b": {
+      "url": "https://www.bensbites.com/p/grok-x-cursor",
+      "date": "2026-07-10"
+    },
+    "9dd06ff2acc7e68a149ec535f0847946c774790bb534c02265acc5bab4ca247a": {
+      "url": "https://huggingface.co/blog/torch-attention-profile",
+      "date": "2026-07-10"
+    },
+    "ad3ead1305f1b10a949c7dea5fb7a88f61610f25cf84945a5e4216f32a465d80": {
+      "url": "https://newsletter.pragmaticengineer.com/p/the-pulse-what-can-we-learn-from",
+      "date": "2026-07-10"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 4
+  "dailyPage": 5
 }
