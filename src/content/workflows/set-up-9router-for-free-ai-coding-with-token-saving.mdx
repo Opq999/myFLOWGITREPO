@@ -1,0 +1,81 @@
+---
+title: "Set up 9router for Free AI Coding with Token Saving"
+description: "Learn how to set up 9router, a local AI router, to connect your coding tools to free and cheap AI models, saving tokens and avoiding limits."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 20
+jobToBeDone: "Set up a local AI router for free and cheap AI coding with token saving"
+tools:
+  - name: "Node.js"
+    url: "https://nodejs.org"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "9router"
+    url: "https://github.com/decolua/9router"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://github.com/decolua/9router"
+  platform: "github"
+  author: "decolua"
+  postedAt: 2026-07-10
+score: 8
+ingestedAt: 2026-07-11
+nigeriaNotes: "This workflow leverages free AI models and local processing, making it highly data-light and cost-effective. The main data usage will be during the initial `npm install` (which can be several hundred MB) and subsequent AI model interactions (which are typically light, sending and receiving text)."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "Set up 9router to use free AI models with your coding assistant, getting help with your CSC201 Python assignments or building a side hustle app without paying for API tokens."
+  - persona: "entrepreneur"
+    scenario: "Configure 9router to power your AI coding tools with free models, rapidly prototyping your startup's MVP or building internal tools without spending your limited budget on API calls."
+  - persona: "employee"
+    scenario: "Integrate 9router with your AI coding assistant at work to generate scripts for automating reports or debugging code, saving your department's AI token budget and avoiding rate limits."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will get a local AI router, called 9router, running on your computer. This router connects your AI coding tools (like Claude Code, Cursor, or Copilot) to various AI models, including free ones. It helps save money and tokens by automatically switching between free, cheap, and paid models, and by compressing tool outputs. This approach ensures you never hit rate limits and maximize your existing subscriptions.
+
+## Tools you need
+*   **Node.js with npm** (free): A software platform that includes `npm` (Node Package Manager), which is used to install `9router` globally. (https://nodejs.org)
+*   **9router** (free): The local AI router that manages connections to different AI models and saves tokens. (https://github.com/decolua/9router)
+*   **A command line terminal** (free): A text-based interface on your computer (like Command Prompt on Windows, Terminal on macOS/Linux) to run installation commands.
+
+## Steps
+1.  **Install Node.js and npm**: Download and install Node.js from its official website. `npm` (Node Package Manager) comes with Node.js.
+    *   *What to do*: Go to https://nodejs.org and download the recommended version for your operating system. Follow the installation instructions.
+    *   *What you should see*: Node.js and npm installed on your system. You can verify by opening your command line terminal and typing `node -v` and `npm -v`. Both commands should show version numbers.
+2.  **Install 9router globally**: Use `npm` to install `9router` so it can be run from anywhere on your computer.
+    *   *What to do*: Open your command line terminal (e.g., Command Prompt on Windows, Terminal on macOS/Linux) and paste the following command:
+
+    ```
+    npm install -g 9router
+    ```
+
+    *   *What you should see*: The installation process will run, and once complete, you'll see messages indicating `9router` has been added.
+3.  **Start 9router and open the dashboard**: Run the `9router` command to start the local server and open its web interface.
+    *   *What to do*: In your command line terminal, type:
+
+    ```
+    9router
+    ```
+
+    *   *What you should see*: A web browser tab should automatically open, showing the `9router` dashboard, usually at `http://localhost:20128`. The terminal will show messages indicating the server is running.
+4.  **Connect a free AI provider**: In the `9router` dashboard, add a free AI model provider.
+    *   *What to do*: In the `9router` dashboard (the web page that opened), look for a section like "Providers" or "Connect Providers". The author suggests connecting "Kiro AI (free Claude unlimited)" or "OpenCode Free (no auth)". Click on one of these options and follow the on-screen instructions to connect it.
+    *   *What you should see*: The provider should appear in your list of connected providers, ready to be used.
+5.  **Configure your AI coding tool**: Update the settings in your preferred AI coding tool (e.g., Claude Code, Cursor, Copilot) to use `9router` as its AI endpoint.
+    *   *What to do*: Open your AI coding tool. Go to its settings or preferences, specifically where you configure AI model endpoints or API keys.
+        *   Set the **Endpoint** to `http://localhost:20128/v1`.
+        *   Copy the **API Key** from the `9router` dashboard and paste it into your tool's API key field.
+        *   For the **Model**, the author suggests `kr/claude-sonnet-4.5`. Select this model if available, or a similar free model you connected.
+    *   *What you should see*: Your AI coding tool should now be routing its requests through `9router`, using the free provider you configured. You can test it by asking your tool to generate some code.
+
+## Original source
+This workflow is based on the `9router` project by decolua, found on GitHub. It provides a local AI router to manage connections to various AI models, including free and cheap options, with token-saving features.
+
+## Notes & variations
+*   **Free-tier alternatives**: The `9router` project itself is free and open-source. It's designed to connect to various AI providers, including those with free tiers like Kiro AI and OpenCode Free (as mentioned by the author). This means you can get significant AI coding assistance without direct payment.
+*   **Common mistake**: Forgetting to start `9router` before trying to use your AI coding tool. If your coding tool reports connection errors or can't find the AI model, ensure `9router` is running in your terminal and its dashboard is accessible at `http://localhost:20128`.
+*   **Tip for better results**: Explore the `9router` dashboard's "Providers" section. It supports over 40 providers and 100 models. You can connect multiple free or cheap providers and let `9router` automatically switch between them, ensuring you always have an active AI connection and never hit rate limits.

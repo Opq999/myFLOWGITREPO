@@ -9540,8 +9540,32 @@
     "ad3ead1305f1b10a949c7dea5fb7a88f61610f25cf84945a5e4216f32a465d80": {
       "url": "https://newsletter.pragmaticengineer.com/p/the-pulse-what-can-we-learn-from",
       "date": "2026-07-10"
+    },
+    "385dfcadaa51b70de4611f119ae3e2a2b7276a5c16950124c69cd847930bc371": {
+      "url": "https://simonwillison.net/2026/Jul/10/nilay-patel",
+      "date": "2026-07-11"
+    },
+    "8ed2cce02536b2fac8708e67e14ab1136fcb76481ac22657c331df6ebb6ffb92": {
+      "url": "https://github.com/tinyhumansai/openhuman",
+      "date": "2026-07-11"
+    },
+    "58d1338a93b7b9255397d6032d7ce43afc6f5d8e4af7170eb21d873e5c7cbd6d": {
+      "url": "https://www.latent.space/p/ainews-not-much-happened-today-f5c",
+      "date": "2026-07-11"
+    },
+    "541318303a272608b59c60700f240208b4832f85057c6730b15045e84c46880b": {
+      "url": "https://github.com/agentscope-ai/QwenPaw",
+      "date": "2026-07-11"
+    },
+    "e89892834986866d1dcd39d7f56433639cd4758b1cdde15c976a2661baa348c9": {
+      "url": "https://github.com/decolua/9router",
+      "date": "2026-07-11"
+    },
+    "1b56cc9447a6475c09dfd2aa6b40c17cf1d2751dd6372dd209321bdcdc9a208a": {
+      "url": "https://github.com/HKUDS/Vibe-Trading",
+      "date": "2026-07-11"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 5
+  "dailyPage": 0
 }
