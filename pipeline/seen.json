@@ -9564,8 +9564,12 @@
     "1b56cc9447a6475c09dfd2aa6b40c17cf1d2751dd6372dd209321bdcdc9a208a": {
       "url": "https://github.com/HKUDS/Vibe-Trading",
       "date": "2026-07-11"
+    },
+    "296ddb829e36dd6fe97a23412956f648c578a72d50c111392fa92f94d9b42947": {
+      "url": "https://simonwillison.net/2026/Jul/11/sqlite-utils",
+      "date": "2026-07-12"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 0
+  "dailyPage": 1
 }
