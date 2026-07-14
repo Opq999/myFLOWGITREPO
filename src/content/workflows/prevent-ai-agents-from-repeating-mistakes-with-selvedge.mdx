@@ -1,0 +1,106 @@
+---
+title: "Prevent AI Agents from Repeating Mistakes with Selvedge"
+description: "Learn how Selvedge helps AI coding agents remember past decisions and avoid repeating reverted changes, improving reliability."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 60
+jobToBeDone: "Prevent AI coding agents from repeating past mistakes by managing their memory/context"
+tools:
+  - name: "Claude"
+    url: "https://www.anthropic.com/api"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Selvedge"
+    url: "https://selvedge.sh"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "pip"
+    url: "https://pip.pypa.io/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "SQLite"
+    url: "https://www.sqlite.org/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/masondelan/my-ai-agent-tried-to-ship-a-mistake-wed-already-reverted-4737"
+  platform: "blog"
+  author: "masondelan"
+  postedAt: 2026-07-06
+score: 8
+ingestedAt: 2026-07-14
+nigeriaNotes: "Selvedge itself is a local, data-light tool. However, using an AI coding agent like Claude Code requires a paid API subscription and consumes data for each interaction, which can add up quickly."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+Selvedge is a tool that helps AI coding agents remember past decisions and avoid repeating mistakes. Imagine an AI agent working on a software project. Without Selvedge, if the agent closes its session, it forgets everything it learned, including why certain changes were made or why others were reverted (undone).
+
+Selvedge acts like a memory for your AI agent. It stores the agent's reasoning and past actions locally, so the agent can check this history before making new changes. This prevents the AI from trying to re-introduce problems that were already fixed or avoided.
+
+This workflow is advanced because it requires setting up an AI coding agent, which is more complex than using a simple chat app. It involves running code and configuring the agent to use Selvedge. There isn't a simple copy-paste recipe for a beginner.
+
+## What you can use it for
+*   **Stop repeating old mistakes**: Prevent your AI agent from re-introducing bugs or design choices that were previously tried and reverted (undone).
+*   **Maintain consistent project history**: Ensure your AI agent's decisions build on past work, rather than starting fresh and potentially conflicting with previous efforts.
+*   **Understand agent reasoning**: See why your AI agent made certain choices, even across different sessions, by reviewing its stored "thoughts."
+*   **Improve agent reliability**: Make your AI coding agent more dependable by giving it a persistent memory of the project's evolution.
+
+## Tools you need
+*   **Claude** (paid): An AI model used here as a coding agent.
+*   **Selvedge** (free): A local tool that stores an AI agent's reasoning and past decisions.
+*   **pip** (free): The package installer for Python, used to install Selvedge.
+*   **SQLite** (free): A lightweight database used by Selvedge to store its memory locally.
+
+## How it actually works
+1.  **Install Selvedge**: You would first install Selvedge on your computer using `pip`, Python's package installer. This requires having Python installed and comfort with using a command line terminal.
+
+    ```bash
+    # macOS or Linux
+    pip install selvedge
+    ```
+
+    ```powershell
+    # Windows (PowerShell)
+    pip install selvedge
+    ```
+
+2.  **Set up Selvedge**: After installation, you run a setup command to initialize Selvedge, which creates a local folder (`.selvedge/`) and a SQLite database file next to your code project to store its memory.
+
+    ```bash
+    # macOS or Linux
+    selvedge setup
+    ```
+
+    ```powershell
+    # Windows (PowerShell)
+    selvedge setup
+    ```
+
+3.  **Integrate with your AI agent**: The core idea is to teach your AI coding agent to use Selvedge. Before the agent makes a change (like adding a database column), it would call Selvedge to check if a similar attempt was made before. For example, it might run a command like `selvedge prior-attempts users.card_token`.
+
+4.  **Agent checks history**: Selvedge would then look in its local database and report any past attempts related to `users.card_token`, including whether they were reverted and why.
+    *Expected result*: The agent receives information like: "Prior attempt 28 days ago (reverted after 2 days). Reasoning: Added to store card tokens for one-click retries. Outcome: REVERTED — kept card data out of our own DB to stay clear of PCI-DSS scope; moved to Stripe-managed methods."
+
+5.  **Agent records new decisions**: If the agent makes a change, it's also configured to use Selvedge to `log_change`, recording its reasoning and the outcome. This ensures its decisions are stored for future sessions.
+    *Expected result*: The agent's actions and reasoning are saved in the local Selvedge database, building a persistent memory.
+
+The author mentions a "longer teardown with the raw JSON shapes at selvedge.sh/prior-attempts" for more technical details on how to integrate.
+
+## Words you'll see, explained
+*   **AI agent**: A program that uses artificial intelligence to perform tasks, often by interacting with other tools and making decisions. In this case, it's a coding agent that writes or modifies code.
+*   **PCI-DSS**: A set of security standards that businesses must follow if they handle credit card information, designed to protect cardholder data.
+*   **Context**: The information an AI model has available to understand a situation or generate a response. For agents, this includes past conversations, code, and project details.
+*   **Reverted**: When a change (like a code update) is undone, returning the system to its previous state.
+*   **SQLite**: A very small, self-contained database system that stores data in a single file, often used for local applications.
+*   **MCP server**: Stands for Multi-Agent Communication Protocol server. It's a system that allows different AI agents to communicate and coordinate their actions.
+
+## Original source
+This concept was shared by masondelan on the DEV Community blog. They described how they built Selvedge to prevent their AI coding agent from repeating a mistake that had already been identified and reverted in a previous session.
+
+## Notes & variations
+*   **Do you even need this?**: For simple, one-off coding tasks or quick questions, a human can usually just remind the AI of past decisions. Selvedge is most valuable for complex, ongoing projects where an AI agent is expected to work across multiple sessions and needs a reliable, persistent memory of the project's history and prior decisions.
+*   **Free-tier limits**: While Selvedge itself is free and runs locally, the AI coding agent (like Claude Code) that uses it typically requires a paid API subscription. Each interaction with the AI agent consumes credits or incurs costs, and this can add up depending on usage.
+*   **Common pitfall**: The main challenge is correctly integrating Selvedge into your AI agent's workflow. If the agent isn't explicitly instructed to check `prior-attempts` before making changes and `log_change` after, it won't use Selvedge's memory, and the problem of repeating mistakes will persist. The integration steps are specific to your chosen agent framework.

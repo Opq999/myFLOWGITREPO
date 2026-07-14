@@ -1,0 +1,67 @@
+---
+title: "Orchestrate AI Agents to Build Software Features with Claude Code"
+description: "Learn how to use Claude Code to orchestrate AI agents, decompose problems, and manage parallel development for building software features."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 60
+jobToBeDone: "Orchestrate AI agents to build software features by decomposing problems and managing parallel development"
+tools:
+  - name: "Claude Code"
+    url: "https://code.claude.com"
+    pricing: "paid"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/_vjk/i-made-claude-code-think-before-it-codes-then-i-gave-it-a-team-2bl8"
+  platform: "blog"
+  author: "_vjk"
+  postedAt: 2026-06-20
+score: 7
+ingestedAt: 2026-07-14
+nigeriaNotes: "Claude Code is a paid tool. Accessing it from Nigeria will incur international data charges. Free tier alternatives for AI coding assistance are limited and may not support complex agent orchestration."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+This workflow describes an advanced method for using AI to build software features by orchestrating multiple AI agents. Instead of a single AI writing all the code, this approach breaks down a software feature into smaller tasks. These tasks are then assigned to different specialized AI agents that work on them simultaneously, much like a human engineering team. The author's role shifts from writing code to managing and directing these AI agents, acting as a conductor for an AI orchestra.
+
+This is an advanced concept because it moves beyond simple AI code generation. It requires setting up complex workflows and managing the interactions between different AI agents. The exact steps and prompts are often found within specific code repositories or evolving tools, making a simple copy-paste recipe difficult to provide. The core idea is to leverage AI for managing the software development process itself, not just for writing individual pieces of code.
+
+## What you can use it for
+*   **Automated Feature Development**: Describe a new software feature, and have a team of AI agents build it from start to finish, including planning, coding, and review.
+*   **Problem Decomposition**: Break down complex software problems into smaller, manageable tasks that specialized AI agents can handle independently.
+*   **Parallel Development**: Have multiple AI agents work on different parts of a feature at the same time, speeding up the development process.
+*   **AI Team Management**: Learn to supervise and direct AI agents, assigning roles and ensuring they work together effectively.
+*   **Shift Your Role**: Move from writing code to a higher-level role of orchestrating AI systems, similar to a software architect or engineering manager.
+
+## Tools you need
+*   **Claude Code** (paid): An AI coding assistant that can be used to generate and manage code, and importantly, to orchestrate other AI agents.
+
+## How it actually works
+This workflow involves setting up a system where one main AI orchestrator AI manages several specialist AI agents. The process generally follows these high-level steps:
+
+1.  **Define the Feature**: You start by describing the software feature you want to build. This initial description is then processed to create specific tasks or "tickets".
+2.  **Issue Maintenance**: An AI agent (the "issue-maintainer") takes your idea and breaks it down into actionable tickets or issues, similar to how a project manager would.
+3.  **Orchestration**: A central AI agent (the "orchestrator") that does not write code itself, receives these tickets. It then delegates parts of the work to specialist sub-agents.
+4.  **Parallel Development**: Each specialist sub-agent works on its assigned task in an isolated environment (like a separate Git worktree). This allows multiple agents to build different parts of the feature simultaneously.
+5.  **Automated Review**: Once sub-agents complete their tasks, their work is passed through an automated review process. This gatekeeper AI ensures the code meets certain standards before proceeding.
+6.  **Integration and Merging**: The reviewed code from multiple agents is then driven towards being merged, creating a cohort of pull requests that are ready to be integrated.
+
+*Note: The exact prompts and setup for these agents are detailed in the author's linked open-source repository and may require technical expertise to implement and run.* 
+
+## Words you'll see, explained
+*   **AI Agents**: Computer programs that can perform tasks autonomously, often mimicking human intelligence and decision-making.
+*   **Orchestration**: The process of coordinating and managing multiple AI agents to work together towards a common goal.
+*   **Sub-agents**: Specialized AI agents that handle specific parts of a larger task, reporting back to a main orchestrator.
+*   **Git Worktree**: A feature in Git that allows you to have multiple working directories associated with a single Git repository, useful for isolating development tasks.
+*   **Pull Request (PR)**: A mechanism in version control systems like Git where a developer proposes changes they've made to a codebase, requesting that those changes be reviewed and merged into the main project.
+*   **Acceptance Criteria**: Specific conditions that a software product or feature must satisfy to be accepted by users or stakeholders.
+
+## Original source
+This workflow is based on a blog post by _vjk, shared on the DEV Community platform. The author describes their journey from making a single AI coding assistant more disciplined to building a system where multiple AI agents collaborate to develop software features, shifting their own role to that of an orchestrator.
+
+## Notes & variations
+*   **Do you even need this?**: This is a highly advanced workflow for experienced developers looking to automate complex software development. For simpler coding tasks, using a single AI assistant like Claude Code directly might be sufficient.
+*   **Free-tier limits**: Claude Code is a paid tool. While some AI coding assistants offer limited free tiers, they are unlikely to support the complex agent orchestration described here. You would need a paid subscription to Claude Code or a similar advanced AI development platform.
+*   **Common pitfall**: A common mistake is trying to use a single AI agent for all tasks. This workflow's power comes from dividing the work among specialized agents. Ensure your orchestration setup correctly delegates tasks and integrates the results from each agent's output.

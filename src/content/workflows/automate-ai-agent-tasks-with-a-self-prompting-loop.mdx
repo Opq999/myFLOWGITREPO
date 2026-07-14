@@ -1,0 +1,144 @@
+---
+title: "Automate AI Agent Tasks with a Self-Prompting Loop"
+description: "Learn to design a loop that prompts your AI agent, moving from operator to supervisor for automated daily tasks."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 60
+jobToBeDone: "Automate an AI agent's daily tasks by designing a self-prompting loop"
+tools:
+  - name: "Hermes"
+    url: "https://github.com/merwane-chabane/Hermes"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Manifest"
+    url: "https://github.com/manifest-rewards/manifest"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Python"
+    url: "https://www.python.org/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/sebconejo/i-stopped-prompting-my-agent-now-i-design-the-loop-that-prompts-it-2o9k"
+  platform: "blog"
+  author: "sebconejo"
+  postedAt: 2026-06-30
+score: 7
+ingestedAt: 2026-07-14
+nigeriaNotes: "Hermes and Manifest are open-source Python libraries, meaning they are free to use and can be run locally. Python itself is also free. Data usage will depend on the models used with Manifest, but local execution of the agent framework itself is data-light."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to set up an AI agent to perform tasks autonomously by creating a self-prompting loop. This approach shifts your role from actively prompting the agent to supervising its automated decision-making process, making your AI more efficient.
+
+## Tools you need
+*   **Hermes** (free): An open-source framework for building AI agents.
+*   **Manifest** (free): A tool that helps route requests to different AI models and handles failures.
+*   **Python** (free): A programming language used to write the agent's logic and the prompting loop.
+
+## Steps
+1.  **Set up your AI agent framework**: Install Hermes, which provides the core structure for your AI agent.
+    *   The author does not provide specific installation instructions for Hermes, but typically for Python packages, you would use pip. A common command is:
+
+    ```
+    pip install hermes-ai
+    ```
+
+    You should see output indicating the package is successfully installed.
+
+2.  **Define the agent's capabilities**: Create a `contract.md` file that clearly outlines what the agent is allowed to do. This file acts as the agent's boundary.
+    *   The author does not share the exact content of their `contract.md`. A starting point could be:
+
+    ```markdown
+    You are an AI assistant that can triage emails. You can mark emails as read, archive them, or flag them for follow-up. You can also summarize emails.
+    ```
+
+    This file should be plain text.
+
+3.  **Prepare the target directory**: Create a `target/` directory where the agent can store and modify files it works on.
+    *   You can create this directory using your file explorer or command line.
+
+    ```bash
+    # macOS or Linux
+    mkdir target
+    ```
+
+    ```powershell
+    # Windows (PowerShell)
+    New-Item -ItemType Directory -Name target
+    ```
+
+    You should see a new folder named `target` appear in your project directory.
+
+4.  **Write the evaluation script**: Create an `eval` script that scores the agent's output. This script should be immutable (cannot be changed by the agent) to ensure honest evaluation.
+    *   The author does not share the exact `eval` script. It will be a Python script that takes the agent's output and returns a numerical score. For example, if the agent is supposed to summarize an email, the `eval` script might check if the summary is concise and accurate, returning a score from 0 to 1.
+
+    ```python
+    # Example placeholder for an eval script
+    def score_output(output):
+        # Logic to score the agent's output
+        # Returns a number between 0 and 1
+        return 0.8 # Placeholder score
+    ```
+
+    This script should be saved as `eval` (or `eval.py`).
+
+5.  **Set up the state logging**: Create a `state/` directory to log every experiment, score, and decision (keep or discard).
+    *   Similar to step 3, create this directory.
+
+    ```bash
+    # macOS or Linux
+    mkdir state
+    ```
+
+    ```powershell
+    # Windows (PowerShell)
+    New-Item -ItemType Directory -Name state
+    ```
+
+    You should see a new folder named `state` appear.
+
+6.  **Implement the prompting loop**: Write a Python script that contains a `while` loop. This loop will repeatedly: read the contract and state, propose a change, generate the output, evaluate it, and decide whether to keep or discard the change.
+    *   The author mentions the script is a `while` loop but does not provide the code. You will need to write a Python script that orchestrates the agent's actions using Hermes and Manifest. This script will contain the core logic:
+
+    ```python
+    # Placeholder for the main loop script
+    import os
+    import Hermes
+    import Manifest
+
+    budget = 10 # Example budget
+
+    while budget > 0:
+        # 1. Planner reads contract + state
+        # 2. Propose a change (generator)
+        # 3. Modify target/
+        # 4. Evaluate scores the result
+        # 5. If better, keep; if worse, revert
+        # 6. Log everything
+        # 7. budget -= 1
+        pass # Replace with actual implementation
+    ```
+
+    This script will be the core of your automated agent.
+
+7.  **Integrate Manifest for model routing**: Configure Manifest within your Python script to route requests to different AI models for generation and evaluation. This helps reduce correlated errors by using distinct models for each task.
+    *   The author states that Manifest allows routing requests via an HTTP header. You will need to install Manifest and configure your script to use it. The exact configuration depends on the models you choose to use with Manifest.
+
+    ```bash
+    # Install Manifest (example)
+    pip install manifest-rewards
+    ```
+
+    Your Python script will then use Manifest's functions to send prompts to specific models.
+
+## Original source
+This workflow is based on an article by sebconejo posted on DEV Community. The author explains how they moved from manually prompting their AI agent to designing an automated loop that prompts itself, turning them into a supervisor rather than an operator.
+
+## Notes & variations
+*   **Free-tier alternative**: All the core tools mentioned (Hermes, Manifest, Python) are free and open-source, allowing for local execution without cost.
+*   **Common mistake**: A common pitfall is using a single AI model for both generating actions and evaluating their success. This can lead to the model having blind spots in both roles, resulting in seemingly good scores for poor performance. The solution is to use separate models or at least separate calls to the same model, ensuring they don't see each other's reasoning.
+*   **Tip for better results**: Writing a robust `eval` script is crucial. The quality of your agent's automation depends heavily on how well you can objectively measure its performance. Clearly define what success looks like for each task and translate that into a scoring mechanism.

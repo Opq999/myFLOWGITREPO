@@ -1,0 +1,66 @@
+---
+title: "Query Your Web Analytics with Claude Desktop and InsightsTrack"
+description: "Learn how to connect Claude Desktop to your self-hosted web analytics using InsightsTrack and MCP to ask questions about your website traffic."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 60
+jobToBeDone: "Query personal web analytics data using a desktop AI client"
+tools:
+  - name: "InsightsTrack"
+    url: "https://insightstrack.dev/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Claude Desktop"
+    url: "https://www.anthropic.com/claude"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "MCP (Model Context Protocol)"
+    url: "https://github.com/NishikantaRay/InsightTrack/tree/main/analytics-db/src/mcp"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/nishikantaray/insightstrack-pulse-i-taught-claude-desktop-to-read-my-web-analytics-via-mcp-13bd"
+  platform: "blog"
+  author: "nishikantaray"
+  postedAt: 2026-07-12
+score: 7
+ingestedAt: 2026-07-14
+nigeriaNotes: "InsightsTrack is self-hosted, meaning you need a server or a computer to run it. This can be done locally on your machine, but requires some technical setup. Data usage for querying analytics is minimal once InsightsTrack is running. Claude Desktop has a free tier, but usage limits may apply."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to connect a desktop AI application, Claude Desktop, to your own web analytics data. This allows you to ask questions about your website traffic directly to the AI, getting answers in plain English without needing to navigate complex dashboards. This approach works by using a system called MCP (Model Context Protocol) to let the AI access your analytics data as if it were a tool.
+
+## Tools you need
+*   **InsightsTrack** (free): A self-hosted, privacy-focused web analytics platform that collects your website data.
+*   **Claude Desktop** (freemium): A desktop application for interacting with AI models, which can connect to external tools via MCP.
+*   **MCP (Model Context Protocol)** (free): A protocol that allows AI models to interact with external tools and data sources.
+*   **A server or computer** (free, if using your own): To run the InsightsTrack analytics platform.
+
+## Steps
+1.  **Set up InsightsTrack**: Follow the Quick Start guide on the InsightsTrack GitHub page to install and run the analytics platform on your server or computer. This involves downloading the software and configuring it to track your website. The author mentions deployment can take under 15 minutes.
+    *   You should see InsightsTrack running and starting to collect data from your website.
+2.  **Enable MCP in InsightsTrack**: The author's setup exposes InsightsTrack's analytics tools over MCP. This is part of the InsightsTrack installation and configuration process. The specific steps for enabling MCP are detailed within the InsightsTrack code repository, particularly in the `mcp-server/src/index.js` file.
+    *   You should have a running InsightsTrack instance that is ready to communicate via MCP.
+3.  **Install and open Claude Desktop**: Download and install Claude Desktop from the Anthropic website. Open the application.
+    *   You should see the main chat interface for Claude Desktop.
+4.  **Connect Claude Desktop to InsightsTrack via MCP**: The author does not provide exact steps for connecting Claude Desktop to a self-hosted MCP service. Generally, you would need to configure Claude Desktop to recognize InsightsTrack as an available tool. This might involve pointing Claude Desktop to the local address where InsightsTrack's MCP server is running or using a specific command or setting within Claude Desktop to register the tool.
+    *   Claude Desktop should now be aware of your InsightsTrack analytics data.
+5.  **Ask questions about your web analytics**: In Claude Desktop, type your questions about your website traffic. For example:
+
+    ```
+    Which sites do I have in InsightsTrack, and what's my top traffic source this month?
+    ```
+
+    *   Claude Desktop should query InsightsTrack using MCP and provide an answer based on your website's data, potentially including charts, tables, or CSV exports.
+
+## Original source
+This workflow is based on a blog post by nishikantaray titled "InsightsTrack + Pulse: I taught Claude Desktop to read my web analytics (via MCP)" posted on DEV Community. The author shares their passion project of making web analytics as easy to query as sending a text message by connecting their self-hosted analytics platform, InsightsTrack, to AI tools like Claude Desktop using the Model Context Protocol (MCP).
+
+## Notes & variations
+*   **Free tier viability**: InsightsTrack is open-source and free to self-host. Claude Desktop offers a freemium model with a free tier, but heavy usage might require a paid subscription. Ensure your Claude Desktop usage stays within the free tier limits.
+*   **Common pitfall**: Incorrectly configuring the MCP connection between InsightsTrack and Claude Desktop can prevent them from communicating. Double-check the local network address and port where InsightsTrack's MCP server is running and ensure Claude Desktop is configured to access it.
+*   **Tip for better results**: Be specific with your questions in Claude Desktop. Instead of asking "How is my website doing?", ask "What were my top 5 pages by traffic last week?" or "Where did most of my new visitors come from in the last 3 days?" This helps the AI provide more targeted and useful answers.

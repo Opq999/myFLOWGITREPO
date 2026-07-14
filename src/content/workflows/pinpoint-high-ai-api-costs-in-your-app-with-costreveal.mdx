@@ -1,0 +1,109 @@
+---
+title: "Pinpoint High AI API Costs in Your App with CostReveal"
+description: "Learn how to identify the true source of high AI API costs in your applications and fix them, preventing unexpected bills by tracking usage per feature and user."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 180
+jobToBeDone: "Identify and fix unexpected high AI API costs in an application"
+tools:
+  - name: "OpenAI"
+    url: "https://openai.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "CostReveal"
+    url: "https://costreveal.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Node.js"
+    url: "https://nodejs.org"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/arpitstack/the-0-bug-that-cost-us-1800-in-api-calls-3add"
+  platform: "blog"
+  author: "arpitstack"
+  postedAt: 2026-06-16
+score: 7
+ingestedAt: 2026-07-14
+nigeriaNotes: "This workflow uses paid developer tools (OpenAI API, CostReveal) and is not suitable for free tiers. Data usage depends entirely on your application's AI call volume and user activity."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+This workflow helps you understand *why* your AI API costs are high, not just *how much* they are. Many tools show you your total spending, but they don't tell you which part of your application, which feature, or even which user is causing the costs. This makes it very hard to find and fix the actual problem.
+
+This entry explains how to use a tool called CostReveal to track your AI API usage at a detailed level, so you can pinpoint exactly what's driving your bill. It's an advanced workflow because it involves modifying your application's code and deploying those changes, requiring comfort with programming and developer tools.
+
+## What you can use it for
+*   **Pinpoint expensive features**: Identify which specific features in your application are consuming the most AI API resources.
+*   **Track costs by user**: Understand if certain users or user groups are generating disproportionately high AI API costs.
+*   **Debug hidden cost bugs**: Discover "silent bugs" where features are unintentionally making many API calls without errors, leading to unexpected bills.
+*   **Optimize AI usage**: Make informed decisions about where to add caching or optimize prompts based on real usage data.
+*   **Prevent bill shock**: Get early warnings about rising costs and address them before they become a major problem.
+
+## Tools you need
+*   **OpenAI** (paid): The service that provides access to AI models like GPT-4o through an API (Application Programming Interface).
+*   **CostReveal** (paid): A tool for tracking and attributing AI API costs within your application.
+*   **Node.js** (free): A programming environment for running JavaScript code outside a web browser, used here for the CostReveal SDK.
+*   **Your existing application code** (free): The application you want to monitor, where you will integrate CostReveal.
+
+## How it actually works
+This workflow involves integrating the CostReveal SDK (Software Development Kit) directly into your application's code. This allows you to add specific tags (like feature name, service, and user ID) to each AI API call you make. CostReveal then collects this data and presents it in a dashboard, showing you a breakdown of costs by these tags.
+
+Here are the general steps:
+
+1.  **Sign up for CostReveal**: Create an account on the CostReveal website and obtain your API key. The author doesn't share exact steps for this, but it's a standard process for developer tools.
+2.  **Install the SDK**: Add the CostReveal SDK to your application's project. If you are using Node.js, you would typically use a package manager like npm:
+
+    ```bash
+    # Install the CostReveal Node.js SDK
+    npm install @costreveal/node
+    ```
+
+3.  **Instrument your API calls**: Modify your application code to wrap your existing AI API calls with CostReveal's tracking function. You will need to pass details like the provider (e.g., 'openai'), the model used (e.g., 'gpt-4o'), and custom tags for `feature`, `service`, and `userId`.
+
+    ```javascript
+    import { CostReveal } from '@costreveal/node';
+
+    const cr = new CostReveal({ apiKey: process.env.COSTREVEAL_API_KEY });
+
+    // Your existing OpenAI API call (assuming 'openai' object is defined elsewhere)
+    const response = await openai.chat.completions.create({
+      model: 'gpt-4o',
+      messages: prompt,
+    });
+
+    // Add this call after your existing OpenAI call to track usage
+    await cr.track({
+      provider: 'openai',
+      model: 'gpt-4o',
+      feature: 'batch-report-generator', // Replace with your application's feature name
+      service: 'report-service',         // Replace with your application's service name
+      userId: req.user.id,               // Replace with the actual user ID from your application
+      inputTokens: response.usage.prompt_tokens,
+      outputTokens: response.usage.completion_tokens,
+    });
+    ```
+
+4.  **Deploy your application**: Once the code changes are made, deploy your updated application. CostReveal will start collecting data as your application makes AI API calls.
+5.  **Monitor the dashboard**: Log in to your CostReveal dashboard to view detailed cost breakdowns by feature, service, and user, helping you identify unexpected spending.
+
+## Words you'll see, explained
+*   **API (Application Programming Interface)**: A set of rules that allows different software programs to talk to each other.
+*   **API Key**: A secret code that authenticates your application when it makes calls to an API, like OpenAI's.
+*   **SDK (Software Development Kit)**: A collection of tools and code that helps developers build applications for a specific platform or service.
+*   **Attribution**: The process of assigning costs or usage to specific features, services, or users within an application.
+*   **Prompt Tokens**: The parts of your input (the prompt) that an AI model processes. You are charged based on the number of tokens.
+*   **Completion Tokens**: The parts of the AI model's output (the response). You are also charged based on these.
+*   **Node.js**: A popular programming environment that lets you run JavaScript code outside of a web browser, often used for building server-side applications.
+
+## Original source
+This workflow is inspired by an experience shared by arpitstack on the DEV Community blog. They detailed how a hidden bug led to a significant increase in their OpenAI API bill and how using a tool like CostReveal helped them quickly identify and fix the problem.
+
+## Notes & variations
+*   **Do you even need this?**: For very small, simple applications with predictable AI usage, manually checking total costs might be enough. This detailed tracking is most useful for applications with multiple features, many users, or complex interactions with AI models.
+*   **Free-tier limits**: The OpenAI API and CostReveal are paid developer services. This workflow does not have a free tier.
+*   **Common pitfall**: Inconsistent tagging. If you don't tag all your AI API calls, or if you use different names for the same feature, your cost data will be incomplete and misleading. Ensure every call includes accurate `feature`, `service`, and `userId` information.
+*   **Tip for better results**: Start by instrumenting your most frequently used or potentially expensive AI features first. This allows you to quickly gather data and identify major cost drivers without needing to instrument your entire application at once.

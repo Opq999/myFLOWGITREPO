@@ -1,0 +1,76 @@
+---
+title: "Build an AI Support Agent Without RAG Using System Prompts"
+description: "Learn how to create an AI support agent by loading knowledge directly into the system prompt, avoiding complex RAG pipelines for small knowledge bases."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 30
+jobToBeDone: "Implement an AI support agent without RAG by loading knowledge directly into the system prompt"
+tools:
+  - name: "llmchat"
+    url: "https://github.com/theopenco/llmchat"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "llmchat API"
+    url: "https://github.com/theopenco/llmchat"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/omar_bni_f6856a8bb0e021e9/our-ai-support-agent-doesnt-use-rag-heres-the-math-1n8c"
+  platform: "blog"
+  author: "omar_bni_f6856a8bb0e021e9"
+  postedAt: 2026-07-13
+score: 7
+ingestedAt: 2026-07-14
+nigeriaNotes: "This workflow uses open-source tools that can be run locally or on free-tier cloud services. Data usage is minimal as it involves text processing and API calls, suitable for mobile data plans."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to build a simple AI support agent by directly embedding your knowledge base into the AI's instructions (the system prompt). This method is simpler than traditional RAG (Retrieval-Augmented Generation) for smaller amounts of information and can provide fresher, more direct answers.
+
+This approach works best when your support knowledge base is relatively small, fitting within the AI model's context window, and you want to avoid the complexity of setting up a separate database for embeddings.
+
+## Tools you need
+*   **llmchat** (free): An open-source support widget that provides the framework for building the AI agent.
+*   **llmchat API** (free): The backend service that handles incoming messages and interacts with the AI model.
+
+## Steps
+1.  **Set up the llmchat project**: Follow the instructions in the llmchat GitHub repository to install and set up the open-source project on your local machine or a server. This typically involves cloning the repository and installing dependencies.
+    *   You should see the project files downloaded and ready for configuration.
+2.  **Configure knowledge sources**: Add your support information to the llmchat database. This can be in three formats: URL (a snapshot of a webpage), text (pasted content), or QA (question/answer pairs).
+    *   Your knowledge sources should be saved and associated with your project.
+3.  **Modify the chat API route**: Access the `apps/api/src/routes/chat.ts` file in the llmchat project. This file contains the logic for how the AI agent processes incoming messages.
+    *   You will be editing the code that retrieves active knowledge sources.
+4.  **Implement direct knowledge loading**: In the `chat.ts` file, locate the section where active sources are fetched. The code directly queries the database for all active sources related to the project, filtering by `projectId` and `active` status. This replaces any RAG retrieval logic.
+    *   The code should look similar to this, fetching sources without any embedding or similarity search:
+    ```typescript
+    const activeSources = await db(c.env).query.source.findMany({
+      where: (s, { and, eq, e }) =>
+        a(e(s.projectId, project.id), e(s.active, true)),
+    });
+    ```
+5.  **Assemble the system prompt**: The system will then build a single string that includes guardrails, the operator's system prompt, your free-text knowledge, a reference sources block, and an identity block. The key is that all active sources are included here.
+    *   You should see a prompt builder that concatenates these different pieces of information.
+6.  **Limit knowledge source size**: To ensure the combined knowledge fits within the AI model's context window (around 80,000 characters or 20,000 tokens), implement a character limit per source. If a source exceeds this limit, truncate it and add an ellipsis (`...`).
+    *   The code for this will involve calculating how many characters each source can contribute and slicing the content:
+    ```typescript
+    const MAX_SOURCES_CHARS = 80000;
+    const perSource = Math.floor(MAX_SOURCES_CHARS / usable.length);
+    const rendered = usable.map((s, i) => {
+      const body = s.content.length > perSource ? `${s.content.slice(0, perSource)}…` : s.content;
+      // ... rest of the rendering logic
+    });
+    ```
+    *   You should see a clean list of sources, each potentially truncated, ready to be included in the prompt.
+7.  **Test your AI agent**: Send messages to your deployed llmchat widget and verify that the AI agent uses the provided knowledge to answer questions accurately, citing sources when appropriate.
+    *   The AI's responses should be relevant to the knowledge you've loaded directly into its prompt.
+
+## Original source
+This workflow is based on an article by omar_bni_f6856a8bb0e021e9, posted on DEV Community. The author explains a method for building an AI support agent without using RAG, by loading knowledge directly into the system prompt of the llmchat tool.
+
+## Notes & variations
+*   **Free-tier alternative**: The entire llmchat project is open-source and free to use. You can host it yourself on free-tier cloud services or run it locally.
+*   **Common mistake**: Trying to load too much knowledge. If your knowledge base exceeds the AI model's context window (e.g., 80,000 characters), the agent will not be able to process all of it, leading to incomplete answers.
+*   **Tip for better results**: Keep your knowledge sources concise and focused. Regularly review and update the content to ensure accuracy and relevance. For very large knowledge bases, consider if RAG might eventually be necessary.

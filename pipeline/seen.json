@@ -9596,8 +9596,424 @@
     "5d562081212b9e076cc26ffa05e5a65b8ec1a20bf2e7e5740f7eef5e23571deb": {
       "url": "https://www.interconnects.ai/p/6-months-to-live-for-open-models",
       "date": "2026-07-13"
+    },
+    "14fe2e3395193d3b59797669494344f5a161ac6626aaf3efdf751f2953ce8ed5": {
+      "url": "https://dev.to/sholajegede/kinde-is-missing-from-mastras-auth-lineup-so-i-built-the-provider-5gc9",
+      "date": "2026-07-14"
+    },
+    "b137c63a720a5e8a2bd4425e042b4e1a2965f8b4aa0839fd88ae61e935703014": {
+      "url": "https://github.com/mindsdb/mindshub",
+      "date": "2026-07-14"
+    },
+    "31312160f6c1514cc7e2f8e8a4b8130703adcd6fd393ed10a37be5fe16544dee": {
+      "url": "https://dev.to/xulingfeng/15-ai-stories-later-some-honest-words-o9j",
+      "date": "2026-07-14"
+    },
+    "f18862ac259ff148ae8663e8992f8a380a28a1adb2df61a26cf8267142bd388e": {
+      "url": "https://dev.to/xulingfeng/stratagems-10-lena-watched-a-team-adopt-her-ai-template-leo-didnt-know-the-knife-was-in-the-4khj",
+      "date": "2026-07-14"
+    },
+    "f2f03dee8fa5c740009ce20acdcc8271996f38f952baf6a22afef26225b79665": {
+      "url": "https://dev.to/ale3oula/being-an-engineer-in-the-ai-era-277p",
+      "date": "2026-07-14"
+    },
+    "502f3ec408f6060bd721a3d0c6b7ca7bad1fef3f3bed1aa39acd964c74984f6e": {
+      "url": "https://dev.to/xulingfeng/stratagems-3-lena-walked-into-an-ai-deal-she-walked-out-with-three-borrowed-knives-3li4",
+      "date": "2026-07-14"
+    },
+    "6ecbb43fed7a70b613d0021e21d6fe37a8dd1187dbe4c7342e0559ac1e3bc366": {
+      "url": "https://dev.to/xulingfeng/vp-of-nothing-the-ceos-nephew-took-over-my-ai-platform-the-client-walked-within-a-month-5dla",
+      "date": "2026-07-14"
+    },
+    "94d720e88c4bd2b135c2d1c991593cc9b78927779e2fa6737b91fba169a89a58": {
+      "url": "https://dev.to/xulingfeng/p-watched-an-ai-that-only-looked-one-way-the-9997-was-real-it-just-missed-everything-that-1djm",
+      "date": "2026-07-14"
+    },
+    "b23b650529c1e2e2b3e6ca6676d6550f83e0803c0d850ff9f542bb0c8ad2c8f4": {
+      "url": "https://dev.to/xulingfeng/6-stories-6-people-16-of-the-way-an-honest-check-in-on-the-36-stratagems-series-55ci",
+      "date": "2026-07-14"
+    },
+    "2375f8ace1687ab34b4883b3a91e9fe7d4e72bcdd37ae6e75c63fd54249e8836": {
+      "url": "https://dev.to/jon_at_backboardio/internmaxxing-vs-old-man-shakes-fist-at-cloud-5bnd",
+      "date": "2026-07-14"
+    },
+    "1ec36032cad4d6bfbfacfbb9fd44e2855c4a3984946adb75253fc57af83fa2ff": {
+      "url": "https://dev.to/gamya_m/i-deleted-200-lines-of-code-i-didnt-write-and-learned-more-than-when-i-wrote-it-18dd",
+      "date": "2026-07-14"
+    },
+    "3fd199d03fa32c409b6676e628fdd3108a1cb6b781c20296f763f669517ccb76": {
+      "url": "https://dev.to/lovestaco/one-agent-or-many-orchestrating-ai-agents-without-the-mess-1g1l",
+      "date": "2026-07-14"
+    },
+    "ba91f3ee77e439e2ddd943d465e384e136a42c2363a028e20a8665e765c05d3a": {
+      "url": "https://dev.to/dailycontext/18-hot-takes-on-where-ai-is-headed-next-10b9",
+      "date": "2026-07-14"
+    },
+    "64cf443b2be1ad7bb1f130c2be9b541a77640ea155f1f5140a2a106e0d58ede6": {
+      "url": "https://dev.to/xulingfeng/stratagems-6-alex-walked-into-an-ai-compliance-war-room-every-director-watched-the-dashboard-he-o99",
+      "date": "2026-07-14"
+    },
+    "92f2051f3bde8e9cff5711c38f694f51a56fd1f188ab186720aca08dc2f1a737": {
+      "url": "https://dev.to/varshithvhegde/1200-applications-4-offers-heres-what-actually-got-me-the-product-based-role-10mp",
+      "date": "2026-07-14"
+    },
+    "df90ba80aa62e962767e2bc1d77095bbac741a7607e3f67eeaf18b7c633fe539": {
+      "url": "https://dev.to/dailycontext/gemma-the-epstein-files-and-sandboxing-cause-a-stir-at-the-worlds-fair-2a7p",
+      "date": "2026-07-14"
+    },
+    "6c8fe189081663ef35257bd6b0b4e592ec1e256577eba7159c451cfb16018ed1": {
+      "url": "https://dev.to/lovestaco/stop-your-llm-from-getting-owned-25b9",
+      "date": "2026-07-14"
+    },
+    "374b5355c08f265926c7ea075367ebf3b36bb4e4eb0258ce34bafc472d96d434": {
+      "url": "https://dev.to/lovestaco/fusuma-write-markdown-get-slides-pdfs-and-a-self-made-social-card-4b2k",
+      "date": "2026-07-14"
+    },
+    "1da552c295a3c4ed50b3b3ee064d4abdba6ada2e92e28f7bfb2a4542645c6376": {
+      "url": "https://dev.to/lovestaco/data-structures-your-cs-degree-kind-of-glossed-over-29dh",
+      "date": "2026-07-14"
+    },
+    "4a59778840aa4d15aeb6a916cc657f85a654577c8ddb47a8e3114bdf13fc8208": {
+      "url": "https://dev.to/gavincettolo/typescript-tips-that-actually-matter-in-real-projects-including-the-satisfies-operator-2cfg",
+      "date": "2026-07-14"
+    },
+    "eb342bcd2c4037e1460cd4ada89a4d99981e6ddab60853d213e9401cfc27bef5": {
+      "url": "https://dev.to/dailycontext/you-dont-always-need-the-frontier-1k8o",
+      "date": "2026-07-14"
+    },
+    "1e99f7fd8fb7b8809a4c542b96c6f0443b88d989b1dc88bc78ac91d3d501681c": {
+      "url": "https://dev.to/jeelvankhede/most-engineers-use-ai-few-engineer-with-it-3pd",
+      "date": "2026-07-14"
+    },
+    "ec3dec04d8f6cf4f9361d8d88bd5b845359894c17a6dfe560617572c51a03f48": {
+      "url": "https://dev.to/pddesign/design-nao-se-faz-sozinho-friends-of-figma-mudou-como-eu-vejo-design-4gn7",
+      "date": "2026-07-14"
+    },
+    "be0dc0f0bad1ea0da16b148e29c63fee01775a1f06ad3c495e3a458c56c01681": {
+      "url": "https://dev.to/dailycontext/its-time-to-put-humans-back-in-the-software-factories-3cjh",
+      "date": "2026-07-14"
+    },
+    "4a5f71685896b706de6828530a9a31686d2d3635d69e986299cda67407e4d0b4": {
+      "url": "https://dev.to/miawab/i-love-fragrances-so-i-built-a-6-game-arcade-concierge-about-my-obsession-a6g",
+      "date": "2026-07-14"
+    },
+    "4c8f77cc371246cced3571001a7706accaed18b2f5cf5878cf68d701c7df0b7f": {
+      "url": "https://dev.to/lovestaco/i-poked-a-10-year-old-chat-protocol-with-a-stick-2g4h",
+      "date": "2026-07-14"
+    },
+    "1be3189fa1dcbef0bf5605ed3e7e85ec40560001c7dfd26e031ee4d345f10228": {
+      "url": "https://dev.to/lizziepika/agents-write-code-but-they-dont-remember-4ob0",
+      "date": "2026-07-14"
+    },
+    "590929cdd239638b20302d18ca36ae51aa3ca10c46414a4a2376b037bc40b6c5": {
+      "url": "https://dev.to/dhutaryan/tanstack-query-style-caching-the-angular-native-way-4igc",
+      "date": "2026-07-14"
+    },
+    "9483115781402b40fd2f1477bd61d0d69501572000059f14fa3043be7b463f34": {
+      "url": "https://dev.to/dannwaneri/has-sloan-flagged-your-article-lately-1gmh",
+      "date": "2026-07-14"
+    },
+    "5430a7d86b0e3185f74e99e67252a23b62bbfd46c8dfa6927f9b21c296bd5b59": {
+      "url": "https://dev.to/dailycontext/is-forward-deployed-engineering-killing-devrel-1833",
+      "date": "2026-07-14"
+    },
+    "ab4dd1d9a5de47c283ee87ddc7ab4719e71a25b730e8b7807963cf305720105f": {
+      "url": "https://dev.to/gamya_m/when-judgment-becomes-the-bottleneck-973",
+      "date": "2026-07-14"
+    },
+    "075f8811678ca79e4dedd5933c26c9b7bfaa2e18e7cbf07432a5aa044a234b95": {
+      "url": "https://dev.to/ewbenigno/pipes-e-redirecionamento-no-linux-o-que-eu-aprendi-estudando-o-terminal-no-celular-19oo",
+      "date": "2026-07-14"
+    },
+    "0f028ced610820037ab90cb2c484e59fd3aa3948ecc86f6ae3b2ce4dd91df7fe": {
+      "url": "https://dev.to/manolito99/i-checked-my-openai-and-anthropic-dashboards-every-morning-for-a-month-then-i-stopped-mbo",
+      "date": "2026-07-14"
+    },
+    "4fa22daf82502b7d115fbc684008d7fb69fe84af00944fae8acd19d9ad0830f3": {
+      "url": "https://dev.to/earlgreyhot1701d/fable-5-hype-fangirling-with-datasets-to-build-a-lakers-dashboard-3pdd",
+      "date": "2026-07-14"
+    },
+    "5c4870ca7b82867b3afeb36fd849ff28aedf64124a4d7a33671a1f51b153f6dc": {
+      "url": "https://dev.to/xulingfeng/stratagems-13-p-posted-a-question-on-a-public-forum-24-hours-later-their-sales-team-called-29h1",
+      "date": "2026-07-14"
+    },
+    "95648ca5c7c660756146c06227017d565ba5191306b4384346054a1d4dcd25f2": {
+      "url": "https://dev.to/lovestaco/two-terminals-one-pot-of-tea-parallel-claude-code-with-git-worktrees-6h",
+      "date": "2026-07-14"
+    },
+    "1ae83f009ed1894d92ace70aa521ab7d316bd1ca36b944ed4d5767aaf0b1329b": {
+      "url": "https://dev.to/aws-builders/introducing-aws-sandbox-environment-learn-aws-for-free-without-a-credit-card-58np",
+      "date": "2026-07-14"
+    },
+    "9a6cb05ef177b6aa345f2de5ad54745b878f375ada89205e8f3a6d0d5eee9b93": {
+      "url": "https://dev.to/annavi11arrea1/jetson-nano-ollama-optimal-quantization-2de8",
+      "date": "2026-07-14"
+    },
+    "50aef1ef0440b0585ea6aadb410cfc8ae4891fc233470838674737a3770876cf": {
+      "url": "https://dev.to/micaavigliano/what-is-going-on-fho",
+      "date": "2026-07-14"
+    },
+    "cd91564b46603ea61a7ca8dd241bab6aa712275ad82a5ba98ca2c515053ae39a": {
+      "url": "https://dev.to/valerykot/bigger-context-windows-didnt-make-our-rag-smarter-4d0l",
+      "date": "2026-07-14"
+    },
+    "7144c97f6032c362f01f8f782313c1eadb576bf2594a9e965a96623bad0f093c": {
+      "url": "https://dev.to/masondelan/my-ai-agent-tried-to-ship-a-mistake-wed-already-reverted-4737",
+      "date": "2026-07-14"
+    },
+    "c2d2fe1c6047f76d0f35a05ac7fe47e6f074944f94a68880bf9f3b0525902727": {
+      "url": "https://dev.to/ujja/passion-atlas-a-living-map-of-human-curiosity-298h",
+      "date": "2026-07-14"
+    },
+    "152d21e08bc75128602329710411cceae4429f5385d7fe26ae3f95bc0a226a15": {
+      "url": "https://dev.to/unitbuilds_cc/pagedattention-navigating-vram-fragmentation-3521",
+      "date": "2026-07-14"
+    },
+    "d5fff339a3d3c121541c30440c06b417d9e5a7039c7c47b24d46b388976b31f2": {
+      "url": "https://dev.to/dailycontext/devrel-in-the-age-of-ai-is-a-search-for-meaning-2j91",
+      "date": "2026-07-14"
+    },
+    "feb2a159edbc3fc1365feed8bd9cf8d7ab460339117db4f2cf2e2e309e7df86f": {
+      "url": "https://dev.to/dailycontext/choosing-the-right-tooling-layer-for-your-agent-1eg2",
+      "date": "2026-07-14"
+    },
+    "41edd9bdef089d56e9551a6e6eebf8705ede1c4a9dd4be2bdb8569946e88004a": {
+      "url": "https://dev.to/woshiliyana/ai-summaries-need-receipts-how-i-built-evidence-bound-reports-from-comments-1c29",
+      "date": "2026-07-14"
+    },
+    "f978f4b972373722b6e618c8837a9758b18b0f13c05b94d810f7893bed47a0d5": {
+      "url": "https://dev.to/aws-heroes/aws-blocks-full-stack-building-blocks-that-run-locally-without-an-aws-account-346l",
+      "date": "2026-07-14"
+    },
+    "e3276de37095279ad9ef178815f7065625e1844a3ac03dc2162fbf950094f445": {
+      "url": "https://dev.to/nehaaaa6/ive-shipped-150-prs-and-built-ai-agents-in-a-day-but-i-still-cant-get-a-job-12m2",
+      "date": "2026-07-14"
+    },
+    "0be5d1cf1b4ff1498bab238f04d08922b641fb01013450e6bbaeefe84903fb70": {
+      "url": "https://dev.to/adamthedeveloper/i-could-review-it-i-couldnt-write-it-3gfj",
+      "date": "2026-07-14"
+    },
+    "0bd6a8aee79e0e0b3dfa19070b6b6e5e01589084118c0cd4c060d10342acd2c3": {
+      "url": "https://dev.to/chocoscoding/typescript-patterns-for-environment-variables-5eeg",
+      "date": "2026-07-14"
+    },
+    "04e532e22a8409f322d2c359ce30c99048e92faaa382c955bc078f8c8a3242a2": {
+      "url": "https://dev.to/krlz/ai-made-code-free-so-why-are-the-giants-still-winning-and-where-solo-devs-actually-beat-them-5h27",
+      "date": "2026-07-14"
+    },
+    "28176e48b74b0ab6d049228b2fde74907fbad47cf63443e31a5980eb263085a7": {
+      "url": "https://dev.to/rubenglez/coding-agents-made-me-take-specs-seriously-2fi6",
+      "date": "2026-07-14"
+    },
+    "de4dc92e645c33b57ef208b943eefa7b793ead10e17ef2c04e0eb750932af83f": {
+      "url": "https://dev.to/annavi11arrea1/simple-benchmark-review-ollama-on-jetson-nano-5gee",
+      "date": "2026-07-14"
+    },
+    "640775ed0c107d8dec4b4b68e8d3ff80fa580eb5f583db0a8cbd82bcb0c9ea3c": {
+      "url": "https://dev.to/tessl-io/why-your-gemini-bill-doesnt-match-the-model-names-9nk",
+      "date": "2026-07-14"
+    },
+    "499aa79ce409f7a8249b482d2c8cf4a66b524b609de328646022d8282e254ec4": {
+      "url": "https://dev.to/arpitstack/the-0-bug-that-cost-us-1800-in-api-calls-3add",
+      "date": "2026-07-14"
+    },
+    "82a1053068b08dc245010e8c7b085cf6412da4f81b339fef37ba4676d2fd59d0": {
+      "url": "https://dev.to/m_maksimovic_/affordable-alternative-to-hetzner-for-us-companies-3ad9",
+      "date": "2026-07-14"
+    },
+    "9ffd8c30addf4bd90dd751743ea00ea399e0c2f2e6e31308d31ccd8224cb8c21": {
+      "url": "https://dev.to/aditya_007/nobody-knows-why-it-said-that-3o8l",
+      "date": "2026-07-14"
+    },
+    "2dc53465c47de6cbebe8d736791e2f159303711bb7472044d469471c0657f2c0": {
+      "url": "https://dev.to/towernter/the-german-tank-problem-why-you-need-uuids-85p",
+      "date": "2026-07-14"
+    },
+    "525f9662dafb9d93ac88037d6a5476a8f68edee6556d1d31c6eaec916739c9c5": {
+      "url": "https://dev.to/saksheessawant/your-rag-system-is-lying-to-you-about-that-table-32gh",
+      "date": "2026-07-14"
+    },
+    "a987d6ba3f29627fd8e9634a2461939fd1e01941b97c73af9506634288fa6b8c": {
+      "url": "https://dev.to/yashksaini/dev-log-8-hardening-the-orchestrator-a-week-of-making-dev-publish-resilient-14lh",
+      "date": "2026-07-14"
+    },
+    "70a7c1535b615ff19b6d871233994046f8bb7acbacefba77cbf313f603bf96b4": {
+      "url": "https://dev.to/yash_sonawane25/context-engineering-is-the-new-prompt-engineering-556h",
+      "date": "2026-07-14"
+    },
+    "8e7e629d08564d6cedc4f6a8a64ddcd853765608fb69c878e999cfc0e0dfd1c2": {
+      "url": "https://dev.to/bismay-exe/day-2-of-learning-react-reconciliation-diffing-algorithm-render-phase-commit-phase-react-4f0f",
+      "date": "2026-07-14"
+    },
+    "7e16ec007e059b271e79a8ea1404f932f00bdaf12549fc9c62aa7b132544203a": {
+      "url": "https://dev.to/glnurltn/why-my-angular-21-upgrade-failed-mef",
+      "date": "2026-07-14"
+    },
+    "4098fa3defbdad82f5bdefe972f1f6654c48efd55ef5a4d5dd7c36df81c6b652": {
+      "url": "https://dev.to/nishikantaray/insightstrack-pulse-i-taught-claude-desktop-to-read-my-web-analytics-via-mcp-13bd",
+      "date": "2026-07-14"
+    },
+    "42bff25bc8b00cf6f582da45374cd718cdc73dd64dd99eae9fdf2626729d0126": {
+      "url": "https://dev.to/bismay-exe/day-1-of-learning-react-why-react-exists-the-real-dom-virtual-dom-react-elements-5b61",
+      "date": "2026-07-14"
+    },
+    "f7f27faa9dbfddccd90766dfd149f8307a52f2cd428ea14629740d4ac4ffcc69": {
+      "url": "https://dev.to/bluelobster_agent/the-senior-devs-refusing-to-use-ai-are-becoming-juniors-again-3fnf",
+      "date": "2026-07-14"
+    },
+    "ab8fffa0de05674def30dbf8aece7b1a9c5aba2a7c22110d2ba5f64ebc512c9c": {
+      "url": "https://dev.to/akcumeh/my-journey-at-altschool-africa-366b",
+      "date": "2026-07-14"
+    },
+    "941b212ac33e71e94738b546147121ddcb50e48885a280baf5e6d72fb4f34d54": {
+      "url": "https://dev.to/aws/understanding-tools-in-the-agentic-framework-2dkg",
+      "date": "2026-07-14"
+    },
+    "2ff74607e6a3cc47a2cf146585a474606acd93d22f465b8fa7a8645f3b16f23a": {
+      "url": "https://dev.to/bismay-exe/day-4-of-learning-react-what-actually-makes-react-react-hooks-usestate-and-state-198g",
+      "date": "2026-07-14"
+    },
+    "cecc04333b64e0777d6c159e7ea1c1aac8b5fb170bddba6d830d9e0c7b30ad0d": {
+      "url": "https://dev.to/hasansarwer/why-your-dark-mode-flashes-before-javascript-runs-2kkg",
+      "date": "2026-07-14"
+    },
+    "2fbd6a759391f99568451b5121e5965fabac73f9fabf46d681dfb5f43913d53b": {
+      "url": "https://dev.to/gde/grind404-i-turned-my-passion-for-leetcode-into-a-playable-arcade-game-1hnl",
+      "date": "2026-07-14"
+    },
+    "15d50d651483ab69104d2b9a077b01c75bbea18363868dc8abaf521bf55a01f1": {
+      "url": "https://dev.to/asyncinnovator/i-built-a-linter-that-catches-the-security-bugs-ai-assistants-keep-writing-58m8",
+      "date": "2026-07-14"
+    },
+    "429ef004231d4f2524ccd966b06fe140e2e7eacb9f589ef8ee3faba51e6747af": {
+      "url": "https://dev.to/remoet/you-cant-vibe-code-infrastructure-the-job-market-agrees-15oh",
+      "date": "2026-07-14"
+    },
+    "51ccc411234f17c79bef16de8f4d702eaac1beb6cd190493da8ab9618ebab77a": {
+      "url": "https://dev.to/yashksaini/dev-log-12-hardening-webrtc-and-polishing-the-ui-a-week-of-networking-and-refinement-29m2",
+      "date": "2026-07-14"
+    },
+    "a615e3ea6175dca97c42d1533f5f855127e76e04e34e226a9aa1f957648da4bd": {
+      "url": "https://dev.to/fm/new-ai-model-quality-check-flowchart-55h4",
+      "date": "2026-07-14"
+    },
+    "edaf5016425e0b04c01019337a2dca143a5de0f17e77b301838d41b0ba6dc30e": {
+      "url": "https://dev.to/nazar-boyko/llm-gateways-routing-fallbacks-and-semantic-caching-1n2b",
+      "date": "2026-07-14"
+    },
+    "db3ccd96ada2cb413e512e4d58debdc85ae675724ddc296872335f6f573ede48": {
+      "url": "https://dev.to/baruna_abirawa_374ef1f781/solstice-farm-submission-for-the-june-solstice-game-jam-4p81",
+      "date": "2026-07-14"
+    },
+    "41e8a3729c0f3c81c85351f8d25bb00096727cac74b487b2295769ab6299239d": {
+      "url": "https://dev.to/marcosomma/maybe-it-is-not-yet-time-to-bring-every-ai-demo-to-production-o74",
+      "date": "2026-07-14"
+    },
+    "523b207aa9a0d4e6040a31edea07adfe478582871fd15d994f97f67b1f661fa6": {
+      "url": "https://dev.to/etoile_bleu/39-stars-my-first-open-source-contributor-and-a-message-i-keep-re-reading-3bl2",
+      "date": "2026-07-14"
+    },
+    "85bc998364f3d67e43fd9d248dbb9219357dbd4668e0561ce4865cb128fad7c8": {
+      "url": "https://dev.to/_vjk/i-made-claude-code-think-before-it-codes-then-i-gave-it-a-team-2bl8",
+      "date": "2026-07-14"
+    },
+    "fa6668d25e832557718dac1fbf841729c2aea360ae0fe4f2c6c453cba2269a04": {
+      "url": "https://dev.to/nilofer_tweets/context-compaction-visualizer-see-exactly-what-your-ai-agent-forgot-before-it-costs-you-1o8n",
+      "date": "2026-07-14"
+    },
+    "5e42cb8322c38b0fb5e924b1cde61c9867dcd27aa346e3b1ae6e226fcff8a13b": {
+      "url": "https://dev.to/zenrows/how-to-build-a-market-research-agent-with-zenrows-and-langchain-1mck",
+      "date": "2026-07-14"
+    },
+    "a93d8e6ff3479a21e36d977de7b764f38138c2b02d2aabf1b2cd4f3ad2541eb2": {
+      "url": "https://dev.to/zxpmail/i-tested-the-deterministic-agent-loop-claims-with-four-experiments-they-all-failed-including-38kj",
+      "date": "2026-07-14"
+    },
+    "ef8a11ac26b0b3f2035faa087644cac8b18d9353c070a4e9f5731bb7592a79ca": {
+      "url": "https://dev.to/sebconejo/i-stopped-prompting-my-agent-now-i-design-the-loop-that-prompts-it-2o9k",
+      "date": "2026-07-14"
+    },
+    "54d0f5500fb81bf07538fb09c25da6e61ec1497dd90544ebc9708920221d5de6": {
+      "url": "https://dev.to/nexuslabzen/our-ai-agents-fabricated-done-five-times-in-17-days-here-is-what-actually-reduced-it-3pbm",
+      "date": "2026-07-14"
+    },
+    "35bf1178ade879d87216edcee5f002702f1a17a6d87abe60b32e561fd4d9bf10": {
+      "url": "https://dev.to/damixlord/how-i-coded-a-shoot-em-up-alone-at-18-after-learning-lua-in-a-single-week-4m9e",
+      "date": "2026-07-14"
+    },
+    "f2861496d3920bcde67c8b253ac85d64798e245128be716a00ae610480d485fc": {
+      "url": "https://dev.to/dev_saravanan_journey/callback-callback-hell-promise-in-javascript-2dn8",
+      "date": "2026-07-14"
+    },
+    "a2575056a16c69c6a12de86642a498765cb23836058ecca0988495bbf8741561": {
+      "url": "https://dev.to/akhourianmolkumar/softpedia-just-reviewed-my-windows-app-im-not-famous-im-13-43mf",
+      "date": "2026-07-14"
+    },
+    "415680f9bf3c3417b0af7fcfabd71840108199706496dceb48a89100f80caaf2": {
+      "url": "https://dev.to/pallavi_sharma_10c1a6f1da/the-reliability-problem-that-forced-us-to-rethink-ai-agents-53l",
+      "date": "2026-07-14"
+    },
+    "5a811096b8188095feb9dc83905c5d241c6dd3574c9a4dce774e47f27bd41a5d": {
+      "url": "https://dev.to/vitalii_6f4b1c4e619379ee6/useoptimistic-useactionstate-react-19-killed-50-lines-of-my-boilerplate-54ee",
+      "date": "2026-07-14"
+    },
+    "c70575c92da4cde6904cca4d9ec35d6ccf2516cdc6db64022f45a75137b594bd": {
+      "url": "https://dev.to/eschmechel/protect-yourself-mesh-yourself-3fkn",
+      "date": "2026-07-14"
+    },
+    "66ebb004d7ceb92f75ed2fd83b01593bce03e9bc67f990d7197c726ec5b290ed": {
+      "url": "https://dev.to/timetxt/from-prompting-chatgpt-to-orchestrating-ai-agents-two-years-as-an-ordinary-engineer-1li7",
+      "date": "2026-07-14"
+    },
+    "883e841fb715430aab366bf4df79e858fa54a7f9e51fc1865a1e32ce79f4eb70": {
+      "url": "https://dev.to/otaready/github-managed-settings-vs-ota-platform-governance-vs-execution-governance-26co",
+      "date": "2026-07-14"
+    },
+    "9c78673787cc7b8403b31ff912c415422ec28b18564a8d6bd64cc52766872c8c": {
+      "url": "https://dev.to/childrentime/react-useisomorphiclayouteffect-fix-the-ssr-uselayouteffect-warning-2026-57m0",
+      "date": "2026-07-14"
+    },
+    "3a7bcbeead5925fa75bdf9a1a0fea277fc58d7b021f035ab969c284569b0df0f": {
+      "url": "https://dev.to/omar_bni_f6856a8bb0e021e9/our-ai-support-agent-doesnt-use-rag-heres-the-math-1n8c",
+      "date": "2026-07-14"
+    },
+    "65aa35edc49b305244bc7a5459edfb7a0e23c8f5e62971e2818a7db36d768abd": {
+      "url": "https://dev.to/nazar-boyko/evaluating-llm-output-quality-in-production-39an",
+      "date": "2026-07-14"
+    },
+    "327936e75df7aaed2f80d78ea20691868aeedaaed868e6202bd442fbd89123bb": {
+      "url": "https://dev.to/jamesli/part-6-rag-recall-quality-from-60-to-93-building-a-continuous-evaluation-loop-not-gut-feeling-382k",
+      "date": "2026-07-14"
+    },
+    "87534b436d421a1d9a8e1d5bd496ef7b1b68fee0b9da5bcae6cb08e4d281915a": {
+      "url": "https://dev.to/catnight_a_9f8d4f2f05a1b1/how-do-you-track-your-learning-progress-as-a-developer-5838",
+      "date": "2026-07-14"
+    },
+    "0f3bae72df6557de313f643f3ddbad821653c4ae3f4ba0055c1c79b78fe938c3": {
+      "url": "https://dev.to/adeoluwaadesina/two-undocumented-bugs-in-mcp-apps-i-found-building-a-task-panel-for-claude-4723",
+      "date": "2026-07-14"
+    },
+    "578cc13489de15834005507041727b98e25588b5fd747cc9b9643671a36b8ac0": {
+      "url": "https://dev.to/m__mdy__m/what-is-an-array-really-im-writing-a-book-to-find-out-pf1",
+      "date": "2026-07-14"
+    },
+    "2cdcdb98b9ddde8b711fb03a868efd568f1798dcd06a5caf4efa744d8aa91e7f": {
+      "url": "https://dev.to/iliaa/i-forked-a-dead-php-name-parser-because-it-couldnt-tell-a-credential-from-a-surname-316o",
+      "date": "2026-07-14"
+    },
+    "c354f053c895af885b482bd9c1fd0a85987db80cc5e2007abca58e2560efb722": {
+      "url": "https://dev.to/homayounmmdy/how-i-got-made-in-afghanistan-added-to-github-explore-43b4",
+      "date": "2026-07-14"
+    },
+    "7a54ab58dc53fe221676dc81754e184456867067b78fd38304c1d4eb5028b451": {
+      "url": "https://dev.to/copyleftdev/ai-didnt-invent-slop-it-only-made-it-infinite-21o4",
+      "date": "2026-07-14"
+    },
+    "b1865ea208fff3ffe06b2e1ad16aa2b8e8b19e32b5d5bf5b310c06f1b76e2a3c": {
+      "url": "https://dev.to/m__mdy__m/i-rebuilt-the-foundation-of-my-text-editor-cbm",
+      "date": "2026-07-14"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 2
+  "dailyPage": 3
 }

@@ -1,0 +1,131 @@
+---
+title: "Fix React Server-Side Rendering Warnings with useIsomorphicLayoutEffect"
+description: "Learn how to fix 'useLayoutEffect does nothing on the server' warnings in React, Next.js, and Remix using a simple hook."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 15
+jobToBeDone: "Fix server-side rendering warnings related to useLayoutEffect in React applications."
+tools:
+  - name: "React"
+    url: "https://react.dev/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Next.js"
+    url: "https://nextjs.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Remix"
+    url: "https://remix.run/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Gatsby"
+    url: "https://www.gatsbyjs.com/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/childrentime/react-useisomorphiclayouteffect-fix-the-ssr-uselayouteffect-warning-2026-57m0"
+  platform: "blog"
+  author: "childrentime"
+  postedAt: 2026-06-25
+score: 7
+ingestedAt: 2026-07-14
+nigeriaNotes: "These tools are primarily JavaScript libraries and frameworks. They can be used with a standard internet connection. Data usage is minimal for development and testing."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to fix a common warning in React applications that use server-side rendering (SSR). This warning, 'useLayoutEffect does nothing on the server', can cause mismatches between what your app shows initially and what it's supposed to show. The solution involves using a small, custom hook called `useIsomorphicLayoutEffect` which ensures your layout calculations work correctly on both the server and the client.
+
+This approach is useful when you need to measure elements or perform DOM manipulations that must happen before the user sees the page, a requirement that conflicts with how server rendering works.
+
+## Tools you need
+*   **React** (free): A JavaScript library for building user interfaces.
+*   **Next.js** (free): A popular React framework that enables server-side rendering and static site generation.
+*   **Remix** (free): Another React framework focused on web fundamentals and modern web platform features.
+*   **Gatsby** (free): A React-based framework for building fast, performant websites and apps.
+
+## Steps
+This workflow involves understanding the problem and then implementing a solution by creating and using a custom hook. The exact implementation of the hook is provided below.
+
+1.  **Understand the warning**: When you use `useLayoutEffect` in a React component that is rendered on the server (using frameworks like Next.js, Remix, or Gatsby), you will see a warning in your console. This is because `useLayoutEffect` runs after DOM mutations but before the browser paints, which cannot happen during server rendering. The warning indicates that the UI rendered on the server might not match the UI that eventually renders on the client.
+
+2.  **Create the `useIsomorphicLayoutEffect` hook**: This hook is a small piece of code that acts as a replacement for `useLayoutEffect`. It checks if the code is running in a browser environment. If it is, it uses `useLayoutEffect`. If it's running on the server, it falls back to using `useEffect`. This ensures the effect runs at the appropriate time depending on the environment.
+
+    Create a new file (e.g., `useIsomorphicLayoutEffect.js`) and add the following code:
+
+    ```javascript
+    import { useEffect, useLayoutEffect } from 'react';
+
+    const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
+
+    export default useIsomorphicLayoutEffect;
+    ```
+
+    You should see the code saved in a new file, ready to be imported into your components.
+
+3.  **Replace `useLayoutEffect` with `useIsomorphicLayoutEffect`**: In your React components where you previously used `useLayoutEffect`, import your new custom hook and use it instead. For example, if you had a tooltip component that needed to measure its position before painting:
+
+    *Before (causing the warning):*
+    ```javascript
+    import { useState, useLayoutEffect, useRef } from 'react';
+
+    function Tooltip({ targetRect, children }) {
+      const ref = useRef(null);
+      const [pos, setPos] = useState({ top: 0, left: 0 });
+
+      useLayoutEffect(() => {
+        if (ref.current) {
+          const { height, width } = ref.current.getBoundingClientRect();
+          setPos({
+            top: targetRect.top - height - 8,
+            left: targetRect.left + targetRect.width / 2 - width / 2,
+          });
+        }
+      }, [targetRect]);
+
+      return (
+        <div ref={ref} style={{ position: 'fixed', ...pos }}>
+          {children}
+        </div>
+      );
+    }
+    ```
+
+    *After (using the custom hook):*
+    ```javascript
+    import { useState, useRef } from 'react';
+    import useIsomorphicLayoutEffect from './useIsomorphicLayoutEffect'; // Adjust path as needed
+
+    function Tooltip({ targetRect, children }) {
+      const ref = useRef(null);
+      const [pos, setPos] = useState({ top: 0, left: 0 });
+
+      useIsomorphicLayoutEffect(() => {
+        if (ref.current) {
+          const { height, width } = ref.current.getBoundingClientRect();
+          setPos({
+            top: targetRect.top - height - 8,
+            left: targetRect.left + targetRect.width / 2 - width / 2,
+          });
+        }
+      }, [targetRect]);
+
+      return (
+        <div ref={ref} style={{ position: 'fixed', ...pos }}>
+          {children}
+        </div>
+      );
+    }
+    ```
+
+    After making this change, the server-side rendering warning should disappear, and your component will behave correctly in both server and client environments. You should see your application build and run without the specific `useLayoutEffect` warning.
+
+## Original source
+This explanation is based on a blog post by childrentime, shared on DEV Community. It addresses a common challenge faced by developers using React frameworks that support server-side rendering, like Next.js, Remix, and Gatsby, when dealing with layout-dependent effects.
+
+## Notes & variations
+*   **Free-tier alternatives**: This solution uses standard React hooks and does not require any paid services. The frameworks mentioned (Next.js, Remix, Gatsby) are also free and open-source.
+*   **Common mistake**: A common pitfall is to simply switch `useLayoutEffect` to `useEffect` without understanding the timing differences. While this silences the warning, it can reintroduce visual bugs where the UI flickers or displays incorrectly for a moment before the effect corrects it, especially on slower devices.
+*   **Tip for better results**: Always consider why you need `useLayoutEffect`. If your effect doesn't strictly need to run before the browser paints (e.g., it's not reading layout to adjust styles), `useEffect` is generally preferred as it doesn't block the browser paint and can lead to a smoother user experience. Use `useIsomorphicLayoutEffect` only when the pre-paint timing is essential for correct visual rendering.

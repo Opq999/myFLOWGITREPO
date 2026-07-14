@@ -1,0 +1,83 @@
+---
+title: "Validate Sports Analytics Concepts and Gather Data with Claude"
+description: "Use an AI chat assistant to pressure-test your data project ideas, identify biases, gather relevant statistics, and refine your approach before you start building."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 15
+jobToBeDone: "Validate sports analytics concepts and gather data for a dashboard using AI"
+tools:
+  - name: "Claude"
+    url: "https://claude.ai"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/earlgreyhot1701d/fable-5-hype-fangirling-with-datasets-to-build-a-lakers-dashboard-3pdd"
+  platform: "blog"
+  author: "earlgreyhot1701d"
+  postedAt: 2026-07-06
+score: 8
+ingestedAt: 2026-07-14
+nigeriaNotes: "Claude offers a generous free tier for chat interactions, making this workflow accessible. Data usage is minimal as it's text-based."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will use an AI chat assistant to quickly test and refine an idea for a data project, like a sports dashboard. This approach helps you identify hidden biases and factual errors in your assumptions before you spend time building.
+
+## Tools you need
+*   **Claude (freemium):** An AI chat assistant for brainstorming, data gathering, and concept validation.
+
+## Steps
+1.  **Introduce your project idea**: Open Claude (at claude.ai) and describe your initial concept. The author started with a broad idea for a sports metric.
+
+    ```
+    I'm thinking about building a tool to score NBA players based on how well they fit with a star player like Luka Doncic. My first idea is to create a single metric that scores every player to determine if the offseason was a success or failure. What are your initial thoughts on this approach?
+    ```
+
+    You should get an initial response from the AI, possibly asking for more details or offering immediate feedback.
+
+2.  **Pressure-test your concept for biases**: Ask the AI to critically evaluate your idea, looking for potential flaws, biases, or limitations. The author discovered that "every fit metric is stuffed with opinions wearing a math costume."
+
+    ```
+    Considering my goal to create a player fit metric, what are the potential biases or hidden assumptions in this approach? How might my own opinions influence the scoring, and what data limitations should I be aware of, especially for new player combinations?
+    ```
+
+    The AI should highlight areas where your metric might be subjective or based on insufficient data.
+
+3.  **Define your scoring rules**: Based on the AI's feedback, refine your concept and establish clear rules for how you will evaluate players. The author decided on four axes (Spacing, Play finishing, Defensive cover, Ball-need) and a rule against blended composite scores.
+
+    ```
+    Instead of a single composite score, I want to evaluate players on four separate axes: Spacing, Play finishing, Defensive cover, and Ball-need (where lower usage scores higher). For each axis, what specific NBA statistics or player actions would be most relevant to measure? Also, how can I ensure that each axis is scored independently without blending them into one number?
+    ```
+
+    You should receive suggestions for relevant statistics and methods to keep your scoring independent.
+
+4.  **Gather specific player data**: Ask the AI to pull real statistics for the players you want to analyze, based on your defined axes. The author asked for stats for new team signings. *The author doesn't share their exact prompt; a starting point:*
+
+    ```
+    Please provide recent season statistics for the following NBA players, focusing on metrics relevant to Spacing, Play finishing, Defensive cover, and Usage Rate:
+    Quentin Grimes
+    [Another Player Name]
+    [Another Player Name]
+    [Another Player Name]
+    ```
+
+    You should get a list of statistics for each player.
+
+5.  **Propose initial scores and identify discrepancies**: Ask the AI to apply your rules to the gathered data and propose scores for each player on each axis. Then, compare these scores with your existing knowledge. The author found two key corrections in this step, like a player's outdated shooting percentage or injury history. *The author doesn't share their exact prompt; a starting point:*
+
+    ```
+    Based on the statistics you just provided for Quentin Grimes and the other players, and using the four axes (Spacing, Play finishing, Defensive cover, Ball-need) we discussed, please propose a preliminary score for each player on each axis. Also, highlight any statistics that might contradict common perceptions or my initial assumptions about these players.
+    ```
+
+    The AI should give you proposed scores and point out any surprising data points, helping you catch errors in your assumptions.
+
+## Original source
+This workflow is inspired by "Fable 5 Hype: Fangirling with Datasets to Build a Lakers Dashboard" by earlgreyhot1701d, originally posted on the DEV Community blog. The author shared how they used an AI model to validate a sports analytics concept and gather initial data for a dashboard project.
+
+## Notes & variations
+*   **Free-tier alternatives:** Other freemium AI chat assistants like ChatGPT (chatgpt.com) or Gemini (gemini.google.com) can be used for similar concept validation and data gathering tasks.
+*   **Common mistake:** Don't blindly trust the AI's data or analysis. Always verify key facts and statistics with official sources, especially for critical decisions. The author explicitly mentioned logging "receipts" to a spike file for verification.
+*   **Tip for better results:** Be as specific as possible in your prompts about the data you need and the rules you want the AI to apply. If you have specific criteria for "Spacing" or "Play finishing," include them in your prompt.

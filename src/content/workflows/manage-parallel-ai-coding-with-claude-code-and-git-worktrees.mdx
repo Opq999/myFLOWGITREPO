@@ -1,0 +1,140 @@
+---
+title: "Manage Parallel AI Coding with Claude Code and Git Worktrees"
+description: "Learn to manage multiple AI-assisted coding tasks in parallel using Git worktrees and Claude Code, keeping changes isolated for easier review."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 45
+jobToBeDone: "Manage parallel AI-assisted coding tasks using Git worktrees"
+tools:
+  - name: "Git"
+    url: "https://git-scm.com"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Claude Code"
+    url: "https://www.anthropic.com/product/claude-api"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Terminal"
+    url: "https://en.wikipedia.org/wiki/Command-line_interface"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/lovestaco/two-terminals-one-pot-of-tea-parallel-claude-code-with-git-worktrees-6h"
+  platform: "blog"
+  author: "lovestaco"
+  postedAt: 2026-06-30
+score: 10
+ingestedAt: 2026-07-14
+nigeriaNotes: "This workflow is designed for desktop use with a command-line interface, not mobile. It relies on Claude Code, a paid developer tool. For users in Nigeria, exploring free-tier AI coding assistants like the Gemini API (which has a free tier) or using local AI models with tools like Ollama and VS Code extensions could be more accessible. Data usage for Git commands is minimal, but active Claude Code sessions will consume data."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will set up multiple isolated coding environments (called Git worktrees) for a single project. Each worktree will have its own dedicated branch and can run a separate AI coding session with Claude Code. This approach allows you to work on several coding tasks simultaneously without their changes interfering with each other, making code review much simpler and avoiding common interruptions like stashing changes.
+
+## Tools you need
+*   **Git** (free): A version control system that tracks changes in your code, allowing you to manage different versions of your project.
+*   **Claude Code** (paid): An AI assistant for writing and debugging code, typically accessed via a command-line interface (CLI) or API.
+*   **Terminal** (free): A text-based interface on your computer (like Command Prompt on Windows or Terminal on macOS/Linux) used to run commands.
+
+## Steps
+1.  **Install Git**: Download and install Git for your operating system. Follow the instructions on the official Git website.
+    *   You should see a successful installation message. Open your Terminal and type `git --version` to confirm it's working.
+
+2.  **Install Claude Code**: The author doesn't specify installation steps for Claude Code. You will need to install the Claude Code CLI tool and configure it with your API key. Refer to the official Anthropic documentation for the most up-to-date instructions.
+    *   You should have the `claude` command available in your Terminal and be authenticated to use the service.
+
+3.  **Clone your repository**: If you don't already have a project, clone an existing Git repository to your computer. Replace `[your-repo-url]` with the actual URL of your project's repository.
+
+    ```
+    git clone [your-repo-url]
+    ```
+
+    *   You should see a new folder created with your project's files inside it.
+
+4.  **Navigate to your main repository**: Open your Terminal and change your current directory to the main folder of your cloned repository. Replace `/path/to/your/main-repo` with the actual path.
+
+    ```
+    # macOS or Linux
+    cd /path/to/your/main-repo
+
+    # Windows (PowerShell)
+    cd "/path/to/your/main-repo"
+    ```
+
+    *   Your terminal prompt should now show that you are inside your project's main folder.
+
+5.  **Refresh your base branch**: Fetch the latest changes from the remote repository to ensure your local `main` (or `master`) branch is up-to-date. The author used `master`, but `main` is a common modern default.
+
+    ```
+    git fetch origin main
+    ```
+
+    *   You should see messages indicating that new changes have been downloaded from the remote server.
+
+6.  **Create the first worktree**: Create a new, isolated working directory and a new branch for your first parallel task. Replace `feature-one-name` with a descriptive name for your task and `your-repo-feature-one` with the desired folder name for this worktree. This folder will be created next to your main repository folder.
+
+    ```
+    # macOS or Linux
+    git worktree add -b feature-one-name ../your-repo-feature-one main
+
+    # Windows (PowerShell)
+    git worktree add -b feature-one-name "../your-repo-feature-one" main
+    ```
+
+    *   You should see a new folder (`your-repo-feature-one`) appear next to your main repository, containing a copy of your project files, now on its own dedicated branch.
+
+7.  **Start Claude Code in the first worktree**: Change into the newly created worktree folder and start a Claude Code session. This session will only see and modify files within this isolated worktree.
+
+    ```
+    # macOS or Linux
+    cd ../your-repo-feature-one
+    claude
+
+    # Windows (PowerShell)
+    cd "../your-repo-feature-one"
+    claude
+    ```
+
+    *   You should be in the new worktree folder, and a Claude Code session should start, ready for you to work on your first task.
+
+8.  **Create the second worktree**: Open a *new* Terminal window. Navigate back to your *main* repository folder (as in Step 4). Then, create a second isolated worktree for your next parallel task. Replace `feature-two-name` and `your-repo-feature-two` with appropriate names.
+
+    ```
+    # macOS or Linux
+    cd /path/to/your/main-repo
+    git worktree add -b feature-two-name ../your-repo-feature-two main
+
+    # Windows (PowerShell)
+    cd "/path/to/your/main-repo"
+    git worktree add -b feature-two-name "../your-repo-feature-two" main
+    ```
+
+    *   You should see another new folder (`your-repo-feature-two`) appear, also with project files on its own branch.
+
+9.  **Start Claude Code in the second worktree**: In the *new* Terminal window, change into this second worktree folder and start another Claude Code session.
+
+    ```
+    # macOS or Linux
+    cd ../your-repo-feature-two
+    claude
+
+    # Windows (PowerShell)
+    cd "../your-repo-feature-two"
+    claude
+    ```
+
+    *   You should be in the second worktree folder, and a second Claude Code session should start, completely independent of the first.
+
+10. **Work in parallel**: You now have two separate Terminal windows, each running an independent Claude Code session within its own Git worktree. You can switch between these windows to work on different coding tasks simultaneously without their changes interfering with each other.
+    *   You can now make changes, commit them, and interact with Claude Code in each worktree independently. When you're done with a task in one worktree, you can review and merge its changes without affecting the other ongoing work.
+
+## Original source
+This workflow was shared by `lovestaco` on the `DEV Community` blog. The author demonstrated how Git worktrees can be combined with parallel AI coding sessions to manage multiple development tasks efficiently.
+
+## Notes & variations
+*   **Free-tier alternatives**: If Claude Code's paid model is a barrier, consider using the free tier of the Gemini API for coding assistance, or explore local AI models like those run with Ollama or LM Studio, which can be integrated with code editors like VS Code.
+*   **Common mistake**: A common pitfall is forgetting that while worktrees isolate your working files, they still share the same underlying `.git` repository. This means you cannot have the same branch checked out in two different worktrees simultaneously. Also, ensure you `cd` into the correct worktree folder before starting your AI coding session to avoid modifying the wrong set of files.
+*   **Tip for better results**: Always use clear, descriptive branch names for your worktrees that directly relate to the task you're performing. This makes it easy to remember which worktree is for which task, especially when you have several running in parallel.

@@ -1,0 +1,148 @@
+---
+title: "Optimize Ollama for Local AI on Jetson Nano"
+description: "Learn how to build Ollama from source on a Jetson Nano to run AI models efficiently using its GPU, saving resources and improving speed for local inference."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 30
+jobToBeDone: "Optimize Ollama for efficient local AI inference on Jetson Nano hardware"
+tools:
+  - name: "Jetson Nano"
+    url: "https://developer.nvidia.com/embedded/jetson-nano"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Ollama"
+    url: "https://ollama.com"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "CUDA toolkit"
+    url: "https://developer.nvidia.com/cuda-toolkit"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "CMake"
+    url: "https://cmake.org"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Go"
+    url: "https://go.dev"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Git"
+    url: "https://git-scm.com"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Cloudflare"
+    url: "https://www.cloudflare.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Claude"
+    url: "https://claude.ai"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/annavi11arrea1/jetson-nano-ollama-optimal-quantization-2de8"
+  platform: "blog"
+  author: "annavi11arrea1"
+  postedAt: 2026-07-05
+score: 10
+ingestedAt: 2026-07-14
+nigeriaNotes: "This workflow focuses on running AI models locally on dedicated hardware, which can significantly reduce ongoing cloud computing costs. While the initial hardware investment is required, it offers a cost-effective way to deploy AI for small businesses and personal projects, especially where internet access or data costs are a concern for continuous cloud usage. Building from source helps conserve the limited resources of devices like the Jetson Nano."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+This entry explains how to set up Ollama, a tool for running large language models (LLMs) on your own computer, specifically on a **Jetson Nano**. A Jetson Nano is a small, powerful computer designed for AI tasks at the "edge" (meaning on the device itself, not in the cloud). The goal is to make Ollama run as fast and efficiently as possible by building it directly from its source code and making sure it uses the Nano's **GPU** (Graphics Processing Unit), which is a special chip that makes AI calculations much faster than the regular **CPU** (Central Processing Unit).
+
+This process is considered **advanced** because it involves working directly with the Linux operating system on the Jetson Nano, using command-line tools, and compiling software from its source code. It requires comfort with technical instructions and understanding how to manage system resources on a specialized device.
+
+The author encountered issues with Ollama running slowly and being difficult to access externally. By building Ollama from source, they were able to explicitly configure it to use the GPU and avoid resource-heavy methods like Docker containers, which are often too demanding for the Jetson Nano's limited memory. This approach ensures the AI models run smoothly on the device.
+
+## What you can use it for
+*   **Run AI models locally**: Deploy and use large language models directly on your Jetson Nano without needing a constant internet connection or paying for cloud services.
+*   **Develop edge AI applications**: Create applications that use AI on devices like the Jetson Nano, which is useful for robotics, smart cameras, and other embedded systems.
+*   **Optimize resource usage**: Learn how to fine-tune software installations to get the best performance from hardware with limited memory and processing power.
+*   **Study AI model efficiency**: Understand the importance of **quantization** (making models smaller and faster) and how to ensure software uses the correct hardware components (like the GPU) for maximum speed.
+
+## Tools you need
+*   **Jetson Nano** (paid): A small, powerful computer board from NVIDIA designed for AI and robotics projects.
+*   **Ollama** (free): Software that lets you run large language models (LLMs) on your local computer.
+*   **CUDA toolkit** (free): A set of tools from NVIDIA that allows software to use NVIDIA GPUs for general-purpose processing, including AI.
+*   **CMake** (free): A tool that helps manage the process of building software from its source code.
+*   **Go** (free): A programming language developed by Google, used here to build Ollama.
+*   **Git** (free): A version control system used to download the Ollama source code from its online repository.
+*   **Cloudflare** (freemium): A service that can provide secure tunnels to access local services (like Ollama) from outside your local network.
+*   **Claude** (freemium): An AI assistant used by the author for help with documentation and process summaries.
+
+## How it actually works
+This workflow involves building Ollama from its source code directly on a Jetson Nano, which runs a Linux operating system. This advanced process ensures Ollama uses the Nano's GPU efficiently and avoids resource-heavy alternatives.
+
+1.  **Prepare your Jetson Nano**: Ensure your Jetson Nano is powered on and you have access to its Linux terminal. This process assumes you are working directly on the device.
+2.  **Install essential development tools**: Use the `apt` package manager (a tool for installing software on Debian/Ubuntu Linux systems) to install the NVIDIA CUDA toolkit (which provides the necessary drivers and libraries for the GPU) and CMake (a tool to help compile software).
+
+    ```bash
+    # Linux (Jetson Nano)
+    sudo apt install -y cuda-toolkit-13 cmake
+    ```
+
+    You should see packages being downloaded and installed. `sudo` means you are running the command with administrative rights.
+3.  **Install the Go programming language**: Download the specific version of Go for ARM64 architecture (the type of processor in the Jetson Nano), extract it, and remove the downloaded archive.
+
+    ```bash
+    # Linux (Jetson Nano)
+    curl -LO https://go.dev/dl/go1.24.4.linux-arm64.tar.gz
+    sudo tar -C /usr/local -xzf go1.24.4.linux-arm64.tar.gz
+    rm go1.24.4.linux-arm64.tar.gz
+    ```
+
+    You should see the Go archive downloaded, then extracted to `/usr/local`, and finally the archive file deleted.
+4.  **Update your system's PATH**: The `PATH` is a list of directories where your system looks for executable programs. You need to add the locations of Go and CUDA to your `PATH` so that the system can find them when building Ollama. The author's original command had a typo (`bint` instead of `bin`), which is corrected here. This command adds the `export PATH` line to your `.bashrc` file (a configuration file for the Bash shell) and then immediately applies it to your current session.
+
+    ```bash
+    # Linux (Jetson Nano)
+    echo 'export PATH=$PATH:/usr/local/go/bin:/usr/local/cuda-13/bin' >> ~/.bashrc
+    export PATH=$PATH:/usr/local/go/bin:/usr/local/cuda-13/bin
+    ```
+
+    After running, your terminal should recognize commands from Go and CUDA.
+5.  **Clone and build Ollama from source**: Use Git to download the Ollama source code from GitHub. Then, navigate into the downloaded directory and use `cmake` to start the build process. The `CUDA_ARCHITECTURES=87` part tells the build system to optimize Ollama specifically for the GPU architecture found in the Jetson Orin Nano (which is `sm_87`). This step can take about 30 minutes, as noted by the author.
+
+    ```bash
+    # Linux (Jetson Nano)
+    git clone https://github.com/ollama/ollama /home/anna/ollama-src
+    cd /home/anna/ollama-src
+    CUDA_ARCHITECTURES=87 cmake
+    ```
+
+    You should see Git downloading the repository, then your terminal changing directory, and finally `cmake` starting the compilation process. This will produce the executable Ollama software optimized for your Jetson Nano's GPU.
+6.  **Configure Ollama for external access (optional)**: The author mentions setting up Cloudflare tunnels and a configuration file to make Ollama reachable externally. The exact steps for this are not provided in the excerpt, but generally involve setting up a Cloudflare account, installing the Cloudflare `cloudflared` daemon on your Nano, and configuring a tunnel to expose Ollama's port. You would also create a configuration file for Ollama to ensure it's not stuck in a local loop and can be accessed via the tunnel.
+
+    *The author does not share the exact steps for Cloudflare tunnel setup or the Ollama configuration file; you would need to consult Cloudflare's documentation for tunnels and Ollama's documentation for configuration.*
+7.  **Monitor system resources**: Throughout this process, especially during compilation and when running models, keep an eye on your Jetson Nano's system resources (like RAM and CPU usage) to prevent it from crashing due to overload. Tools like `htop` or `nvtop` (for NVIDIA GPUs) can help with this.
+
+## Words you'll see, explained
+*   **Jetson Nano**: A small, low-power computer board made by NVIDIA, designed for running AI applications directly on the device.
+*   **Ollama**: A free software tool that allows you to download and run large language models (LLMs) on your own computer.
+*   **Quantization**: A technique used to make AI models smaller and faster by reducing the precision of the numbers they use, which is crucial for running them on devices with limited resources.
+*   **GPU (Graphics Processing Unit)**: A specialized electronic circuit designed to rapidly manipulate and alter memory to accelerate the creation of images, but also highly effective for parallel computations needed in AI.
+*   **CPU (Central Processing Unit)**: The primary component of a computer that performs most of the processing inside a computer.
+*   **Build from source**: The process of compiling software directly from its original programming code (source code) rather than installing a pre-compiled version. This allows for custom optimizations.
+*   **CUDA toolkit**: A software development kit (SDK) from NVIDIA that provides tools and libraries for developers to use NVIDIA GPUs for general-purpose computing.
+*   **CMake**: A cross-platform tool used to manage the build process of software, especially when compiling from source code.
+*   **Go**: A programming language developed by Google, known for its efficiency and concurrency features.
+*   **Git**: A system for tracking changes in computer files and coordinating work on those files among multiple people, commonly used for downloading source code.
+*   **Cloudflare tunnel**: A feature of Cloudflare that creates a secure, encrypted connection from your local network to Cloudflare's global network, allowing you to expose local services to the internet without opening firewall ports.
+*   **`apt`**: The Advanced Package Tool, a command-line utility for installing, updating, and removing software packages on Debian-based Linux distributions like the one on Jetson Nano.
+*   **`curl`**: A command-line tool for transferring data with URLs, often used to download files from the internet.
+*   **`tar`**: A command-line utility used to archive and extract files, commonly for `.tar.gz` files.
+*   **`export PATH`**: A command in Linux that adds a directory to the `PATH` environment variable, telling the system where to look for executable programs.
+*   **`sm_87`**: A specific "compute capability" number that identifies the architecture of an NVIDIA GPU, in this case, for the Jetson Orin Nano.
+
+## Original source
+This workflow was shared by annavi11arrea1 on the DEV Community blog. The author detailed their journey of optimizing Ollama for a Jetson Nano, including building it from source to overcome performance issues and resource limitations for their "Flippycard" study app.
+
+## Notes & variations
+*   **Do you even need this?**: Building Ollama from source on a Jetson Nano is a highly specialized task. If you don't have a Jetson Nano or similar embedded device, or if you don't need the absolute maximum performance on limited hardware, you might find it much simpler to use Ollama on a more powerful desktop computer (Windows, macOS, or Linux) where pre-built binaries are available and installation is typically a single command. This avoids the complexity of compiling from source.
+*   **Resource limits**: The Jetson Nano has limited RAM (e.g., 8GB). Building from source and running large models can push these limits. Always monitor your system resources. Consider using highly **quantized** models (smaller versions of LLMs) to fit within the Nano's memory.
+*   **Alternative for external access**: While Cloudflare tunnels are mentioned, other methods for securely exposing local services exist, such as VPNs or other reverse proxy solutions, though they might require more advanced networking knowledge.
+*   **GPU architecture**: The `CUDA_ARCHITECTURES=87` flag is specific to the Jetson Orin Nano. If you are using a different Jetson device or NVIDIA GPU, you would need to find its corresponding compute capability (e.g., `sm_72` for Jetson Xavier NX, `sm_53` for original Jetson Nano) and adjust the `cmake` command accordingly.

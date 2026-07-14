@@ -1,0 +1,101 @@
+---
+title: "Resolve Angular Version Conflicts with npm"
+description: "Learn how to fix Angular upgrade errors caused by version mismatches using npm commands to clean and reinstall project dependencies."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 30
+jobToBeDone: "Troubleshoot and resolve Angular versioning conflicts during upgrades"
+tools:
+  - name: "npm"
+    url: "https://www.npmjs.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Angular"
+    url: "https://angular.io/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/glnurltn/why-my-angular-21-upgrade-failed-mef"
+  platform: "blog"
+  author: "glnurltn"
+  postedAt: 2026-07-09
+score: 7
+ingestedAt: 2026-07-14
+nigeriaNotes: "npm is a command-line tool that comes with Node.js. Node.js installation is relatively small. The process involves deleting and reinstalling project files, which requires internet access but not a large amount of data."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to fix errors that appear after upgrading your Angular project to a new version, specifically when the build tools are out of sync with the framework. This approach helps resolve misleading errors that suggest missing modules when the real problem is a version mismatch.
+
+## Tools you need
+*   **npm** (free): A package manager for Node.js, used here to manage your project's dependencies and clean up installation issues.
+*   **Angular** (free): The web application framework you are using. This workflow specifically addresses issues encountered during Angular version upgrades.
+
+## Steps
+1.  **Check the build package version**: See which version of the Angular build tools your project is currently using.
+
+    ```bash
+    npm ls @angular-devkit/build-angular
+    ```
+
+    You should see the version number listed. If it's an older version (like 19 in the example) while your core Angular packages are newer (like 21), this is likely the problem.
+
+2.  **Understand the dependency**: Get more information about the build package to understand its role.
+
+    ```bash
+    npm explain @angular-devkit/build-angular
+    ```
+
+    This command helps you understand why this specific package might be causing issues or what it's responsible for.
+
+3.  **Clean the project's installed packages**: Remove all currently installed project dependencies and the lock file that specifies exact versions.
+
+    ```bash
+    rm -rf node_modules
+    rm package-lock.json
+    ```
+
+    You should see no output if the commands run successfully, meaning the files and folders were removed.
+
+4.  **Clear the npm cache**: Remove any cached package data that might be causing conflicts.
+
+    ```bash
+    npm cache clean --force
+    ```
+
+    You should see a confirmation message that the cache has been cleaned.
+
+5.  **Reinstall all project dependencies**: Install all packages again based on your `package.json` file, ensuring all versions are compatible.
+
+    ```bash
+    npm install
+    ```
+
+    You will see a lot of output as npm downloads and installs all the necessary packages. This step can take some time.
+
+6.  **Verify Angular package alignment**: After reinstalling, check again that all core Angular packages, including the build tools, are on the same major version.
+
+    ```bash
+    npm ls @angular/core @angular/build @angular-devkit/build-angular
+    ```
+
+    Ensure that all listed packages show the same major version number (e.g., all are version 21.x.x).
+
+7.  **Build the project**: Attempt to build your project again to see if the errors are resolved.
+
+    ```bash
+    ng build
+    ```
+
+    The build should now complete successfully without the previous version conflict errors.
+
+## Original source
+This workflow is based on a blog post by glnurltn on DEV Community, shared on July 9, 2026. The author describes a common problem encountered during Angular upgrades where build tools lag behind the framework, causing confusing errors, and provides a practical solution using npm commands.
+
+## Notes & variations
+*   **Free-tier alternatives**: npm and Angular are free and open-source, so there are no direct free-tier limitations for this workflow.
+*   **Common mistake**: A common pitfall is to assume a "cannot find module" error means the module is truly missing. In version upgrade scenarios, it often indicates a version mismatch in your project's dependencies, especially with build tools.
+*   **Tip for better results**: Before running `npm install` after cleaning, consider using `npm ls` to identify specific packages that might be holding back older versions. This can help you target the problematic package directly in the future, rather than cleaning the entire `node_modules` folder.

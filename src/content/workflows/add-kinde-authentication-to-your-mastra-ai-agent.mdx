@@ -1,0 +1,110 @@
+---
+title: "Add Kinde Authentication to Your Mastra AI Agent"
+description: "Integrate Kinde authentication into your Mastra AI agent product to manage users, organizations, billing, and feature flags with a robust free tier."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 20
+jobToBeDone: "Integrate Kinde authentication with a Mastra AI agent product"
+tools:
+  - name: "Kinde"
+    url: "https://kinde.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Mastra"
+    url: "https://mastra.dev"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "mastra-auth-kinde"
+    url: "https://github.com/sholajegede/mastra-auth-kinde"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Node.js"
+    url: "https://nodejs.org"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Code Editor"
+    url: "https://code.visualstudio.com"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Terminal"
+    url: "https://en.wikipedia.org/wiki/Terminal_emulator"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/sholajegede/kinde-is-missing-from-mastras-auth-lineup-so-i-built-the-provider-5gc9"
+  platform: "blog"
+  author: "sholajegede"
+  postedAt: 2026-06-21
+score: 8
+ingestedAt: 2026-07-14
+nigeriaNotes: "Kinde offers a generous free tier with 10,500 monthly active users and unlimited organizations, making it suitable for building real products without upfront costs. The setup involves light data usage for installing packages."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will add Kinde as an authentication provider for your Mastra AI agent product. This allows you to protect your agent's API routes and UI, manage user access, organizations, billing, and feature flags all within Kinde. This approach is powerful because Kinde combines authentication with essential business tools like multi-tenancy and monetization, which are crucial for SaaS (Software as a Service) products.
+
+## Tools you need
+*   **Kinde** (freemium): Provides user authentication, organization management, billing, and feature flags for your application.
+*   **Mastra** (free): A TypeScript-first framework for building AI agents.
+*   **mastra-auth-kinde** (free): A custom authentication provider that connects Kinde with Mastra.
+*   **Node.js** (free): A JavaScript runtime environment needed to run Mastra and install packages. You'll use its package manager, npm.
+*   **Code Editor** (free): Such as VS Code, to edit your Mastra project files.
+*   **Terminal** (free): To run installation commands.
+
+## Steps
+
+1.  **Set up Kinde**: Create an account and an application in Kinde.
+    *   Go to the Kinde website (https://kinde.com) and sign up for a free account.
+    *   Follow the instructions to create a new application or project. You will need your Kinde domain (e.g., `https://yourapp.kinde.com`) for a later step.
+    *   You should have a Kinde application ready to integrate.
+
+2.  **Install the Kinde authentication provider**: Open your terminal in your Mastra project directory and install the custom Kinde provider.
+    *   Open your terminal or command prompt.
+    *   Navigate to the root directory of your Mastra project.
+    *   Run the following command to install the `mastra-auth-kinde` package:
+
+    ```
+    npm install github:sholajegede/mastra-auth-kinde
+    ```
+
+    *   You should see output indicating that the package was successfully added to your project.
+
+3.  **Install Mastra Core (if needed)**: If you don't already have `@mastra/core` installed in your project, install it.
+    *   In the same terminal, run this command:
+
+    ```
+    npm install @mastra/core
+    ```
+
+    *   You should see output confirming the installation of `@mastra/core`.
+
+4.  **Wire the provider into Mastra**: Open your main Mastra configuration file (e.g., `src/index.ts` or similar) and add the Kinde provider.
+    *   Open your Mastra project in a code editor.
+    *   Locate the file where your `Mastra` instance is initialized.
+    *   Add the `import` statements and update your `Mastra` instance configuration as shown below. Replace `https://yourapp.kinde.com` with your actual Kinde domain.
+
+    ```typescript
+    import { Mastra } from '@mastra/core'
+    import { MastraAuthKinde } from 'mastra-auth-kinde'
+
+    export const mastra = new Mastra({
+      server: {
+        auth: new MastraAuthKinde({
+          domain: 'https://yourapp.kinde.com', // Replace with your Kinde domain
+        }),
+      },
+    })
+    ```
+
+    *   After saving the file, your Mastra instance will now use Kinde for authentication, protecting your API routes and Mastra Studio UI.
+
+## Original source
+This workflow was created by sholajegede and shared on the DEV Community blog. It addresses the missing Kinde authentication provider in the Mastra AI agent framework by providing a custom solution, `mastra-auth-kinde`.
+
+## Notes & variations
+*   **Free-tier viability**: Kinde's free tier is very generous, supporting up to 10,500 monthly active users and unlimited organizations. This means you can build and launch a real multi-tenant product without incurring costs until you reach significant scale.
+*   **Common mistake**: Forgetting to replace `'https://yourapp.kinde.com'` with your actual Kinde domain in the code will prevent authentication from working. Double-check this value.
+*   **Getting better results**: The author mentions that Kinde's organizational model maps directly to multi-tenancy. Explore Kinde's features for managing organizations and permissions to effectively segment your customers and gate features by plan, which is crucial for B2B SaaS products. The author also notes that you can use environment variables for the domain, but the exact syntax for this is not provided in the excerpt.

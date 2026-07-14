@@ -1,0 +1,114 @@
+---
+title: "Build a Market Research Agent with ZenRows and LangChain"
+description: "Learn to build a market research agent using LangChain and ZenRows to scrape real-time web data, even from bot-protected sites, for AI analysis."
+category: "academic-research"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 30
+jobToBeDone: "Build a market research agent that scrapes real web data, including from bot-protected pages, for LLM analysis."
+tools:
+  - name: "ZenRows"
+    url: "https://www.zenrows.com/"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "LangChain"
+    url: "https://www.langchain.com/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "ChatOpenAI"
+    url: "https://openai.com/"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "WebBaseLoader"
+    url: "https://python.langchain.com/docs/integrations/document_loaders/web_base"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/zenrows/how-to-build-a-market-research-agent-with-zenrows-and-langchain-1mck"
+  platform: "blog"
+  author: "humna_ghufran_d9049240419"
+  postedAt: 2026-07-13
+score: 7
+ingestedAt: 2026-07-14
+nigeriaNotes: "ZenRows is a paid service. LangChain and ChatOpenAI (via OpenAI API) have costs associated with their use. Data usage will depend on the volume of web pages scraped."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will build a market research agent that can reliably scrape data from websites, even those protected by anti-bot systems. This approach uses LangChain, a framework for building AI applications, with ZenRows, a tool that helps bypass web scraping protections, to ensure your agent gets clean, usable data for analysis.
+
+This is useful because many websites block standard scraping tools, leading to incomplete or incorrect data for your AI models. ZenRows acts as a reliable data retrieval layer.
+
+## Tools you need
+*   **ZenRows** (paid): A web scraping service that handles anti-bot bypass and JavaScript rendering.
+*   **LangChain** (freemium): An open-source framework for developing applications powered by language models.
+*   **ChatOpenAI** (paid): A component within LangChain that connects to OpenAI's language models like GPT-4o mini.
+*   **WebBaseLoader** (free): A basic tool within LangChain for loading content from web pages.
+
+## Steps
+1.  **Install necessary libraries**: You'll need to install LangChain, the OpenAI integration for LangChain, and the ZenRows integration for LangChain. Open your terminal or command prompt and run:
+
+    ```bash
+    pip install langgraph langchain-openai langchain-zenrows
+    ```
+
+    You should see messages indicating that the packages have been successfully installed.
+
+2.  **Set up your API keys**: Before running the agent, you need to provide your API keys for ZenRows and OpenAI. The easiest way is to set them as environment variables. The author does not specify how to set environment variables, but generally, you would do this in your operating system's settings or directly in your terminal before running your Python script. For example, on Linux or macOS:
+
+    ```bash
+    export ZENROWS_API_KEY='your_zenrows_api_key_here'
+    export OPENAI_API_KEY='your_openai_api_key_here'
+    ```
+
+    On Windows (PowerShell):
+
+    ```powershell
+    $env:ZENROWS_API_KEY='your_zenrows_api_key_here'
+    $env:OPENAI_API_KEY='your_openai_api_key_here'
+    ```
+
+    You should see no output if the commands are successful, but your script will now be able to access these keys.
+
+3.  **Create the scraping agent**: Write a Python script that defines a function to create your agent. This script will initialize the language model and the ZenRows scraper tool. The author provides a starting point for this code:
+
+    ```python
+    from langchain_zenrows import ZenRowsUniversalScraper
+    from langchain_openai import ChatOpenAI
+    from langgraph.prebuilt import create_react_agent
+    import os
+
+    # Set these in your environment before running
+    # export ZENROWS_API_KEY=your_key_here
+    # export OPENAI_API_KEY=your_key_here
+
+    def scraper():
+        llm = ChatOpenAI(model="gpt-4o-mini")
+        zenrows_tool = ZenRowsUniversalScraper()
+        # The agent reads the URL from the prompt and passes it to ZenRowsUniversalScraper automatically
+        agent = create_react_agent(llm, [zenrows_tool])
+        return agent
+    ```
+
+    This code sets up the agent. You should see the Python code appear in your editor without errors.
+
+4.  **Invoke the agent with a URL**: To use the agent, you need to call the `invoke` method and provide the URL you want to scrape. The author's excerpt cuts off here, but a typical invocation would look something like this:
+
+    ```python
+    # Assuming you have a function called 'scraper' defined as above
+    agent = scraper()
+    url_to_scrape = "https://www.scrapingcourse.com/antibot-challenge" # Example URL
+    result = agent.invoke({"messages": [("human", f"Scrape this URL: {url_to_scrape}")]})
+    print(result)
+    ```
+
+    You should expect to see the scraped content from the URL printed to your console, or an error message if something went wrong with your API keys or the URL.
+
+## Original source
+This workflow is based on a tutorial by humna_ghufran_d9049240419, originally posted on DEV Community. It explains how to integrate ZenRows with LangChain to create more robust web scraping agents that can handle protected websites.
+
+## Notes & variations
+*   **Free-tier alternative**: ZenRows is a paid service. For simpler scraping tasks that don't involve bot protection, LangChain's built-in `WebBaseLoader` can be used for free, but it will fail on many real-world sites.
+*   **Common mistake**: Forgetting to set your `ZENROWS_API_KEY` and `OPENAI_API_KEY` as environment variables will cause the script to fail. Ensure they are correctly exported before running your Python code.
+*   **Tip for better results**: Experiment with different models available through `ChatOpenAI` (e.g., `gpt-4o`) for potentially more sophisticated analysis of the scraped data, though this may increase costs.

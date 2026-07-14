@@ -1,0 +1,80 @@
+---
+title: "Find AI Code Security Bugs with hallint"
+description: "Learn how to use hallint, a free tool, to automatically find security flaws in code written by AI assistants like Copilot, Claude, and ChatGPT."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 10
+jobToBeDone: "Identify and fix security vulnerabilities in AI-generated code"
+tools:
+  - name: "hallint"
+    url: "https://github.com/Asyncinnovator/hallint"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Node.js"
+    url: "https://nodejs.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Copilot"
+    url: "https://github.com/features/copilot"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Claude"
+    url: "https://claude.ai/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "ChatGPT"
+    url: "https://chatgpt.com/"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/asyncinnovator/i-built-a-linter-that-catches-the-security-bugs-ai-assistants-keep-writing-58m8"
+  platform: "blog"
+  author: "asyncinnovator"
+  postedAt: 2026-07-10
+score: 8
+ingestedAt: 2026-07-14
+nigeriaNotes: "This tool is free and open-source. It requires Node.js, which is a small download. Running the tool itself uses very little data, mainly for the initial download and occasional updates. The AI assistants mentioned (Copilot, Claude, ChatGPT) have varying costs, with Claude and ChatGPT offering free tiers for basic use."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to use `hallint`, a free tool, to scan code written by AI assistants for common security mistakes. This helps you catch bugs that regular code checkers miss, making your AI-assisted code safer to use. It works by looking for specific patterns that AI assistants often get wrong, like hardcoded passwords or ways to inject malicious code.
+
+## Tools you need
+*   **hallint** (free): A command-line tool that checks AI-generated code for security flaws.
+*   **Node.js** (free): A runtime environment that allows you to run JavaScript code on your computer. You'll need this to install and run `hallint`.
+*   **AI Assistant** (Copilot: paid, Claude: freemium, ChatGPT: freemium): Any AI tool you use to write code, like GitHub Copilot, Claude, or ChatGPT.
+
+## Steps
+1.  **Install Node.js**: If you don't have Node.js installed, download and install it from the official website. This is necessary to run `hallint`.
+    You should see a confirmation message after installation, or you can check by opening your terminal or command prompt and typing `node -v`. You should see a version number.
+2.  **Run hallint on your code**: Open your terminal or command prompt. Navigate to the folder where your code is saved. Then, run the `hallint` command followed by the path to your code. The author suggests `./src` as a common starting point.
+
+    ```bash
+    npx @asyncinnovator/hallint-cli ./src
+    ```
+
+    If you want to scan specific files, you can use patterns like this:
+
+    ```bash
+    npx @asyncinnovator/hallint-cli "./src/**/*.ts"
+    ```
+
+    You should see `hallint` start scanning your files. If it finds any security issues, it will list them. If it finds no issues, it will simply finish without errors.
+3.  **Filter for serious issues (optional)**: If you only want to see the most critical problems, you can add a flag to the command:
+
+    ```bash
+    npx @asyncinnovator/hallint-cli ./src --min-severity high
+    ```
+
+    This will only show findings marked as 'high' severity or more.
+
+## Original source
+This workflow is based on a blog post by `asyncinnovator` titled "I Built a Linter That Catches the Security Bugs AI Assistants Keep Writing", shared on the DEV Community platform. The author explains the common security pitfalls found in AI-generated code and introduces `hallint` as a solution.
+
+## Notes & variations
+*   **Free tier alternative**: `hallint` itself is free and open-source. For AI code generation, you can use the free tiers of Claude or ChatGPT, though they might have usage limits.
+*   **Common mistake**: Forgetting to install Node.js first. `npx` is a tool that comes with Node.js, so if you get an error like "command not found: npx", you need to install Node.js.
+*   **Tip for better results**: Integrate `hallint` into your code review process or a continuous integration (CI) pipeline. The tool is designed to exit with an error code if it finds critical issues, which can automatically stop your code from being merged if it's not secure.
