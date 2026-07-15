@@ -1,0 +1,71 @@
+---
+title: "Teach Claude Opus and Sonnet to Follow Quality Checks"
+description: "Learn how to document and apply advanced AI model quality checks to cheaper models like Claude Opus and Sonnet for consistent, high-quality output."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 60
+jobToBeDone: "Replicate Fable 5's orchestration and quality checks using Opus and Sonnet agents"
+tools:
+  - name: "Claude Opus"
+    url: "https://www.anthropic.com/news/claude-3-opus"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Claude Sonnet"
+    url: "https://www.anthropic.com/news/claude-3-sonnet"
+    pricing: "paid"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/toffy/want-to-keep-using-fable-5-teach-opus-and-sonnet-to-behave-like-it-4kl0"
+  platform: "blog"
+  author: "toffy"
+  postedAt: 2026-07-06
+score: 7
+ingestedAt: 2026-07-15
+nigeriaNotes: "This workflow relies on paid API access for Claude Opus and Sonnet, which incurs costs per use. Data usage depends on the complexity of your agent setup and tasks."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+This workflow explains a strategy to maintain high-quality AI outputs even when you can no longer use very expensive, top-tier AI models. The author previously used "Fable 5" (a high-end model) as the main "orchestrator" (the model that plans, designs, and reviews tasks). Cheaper models like Claude Opus and Sonnet then handled the actual work.
+
+When Fable 5 became unavailable, the author noticed that Opus and Sonnet, while intelligent, often missed important quality checks or followed less-than-ideal procedures. Instead of trying to find a direct "replacement" for Fable 5, the author decided to document Fable 5's implicit (unspoken) quality checks and best practices. These documented checks are then explicitly "taught" to Opus and Sonnet, making them "behave" more like the expensive model.
+
+This entry is in Concept mode because the original source describes the *idea* and *why* it works, but does not provide the exact "skills" or detailed prompts the author wrote to teach Opus and Sonnet. Reproducing this requires understanding the principles and then creating your own specific instructions based on your needs.
+
+## What you can use it for
+*   **Maintain quality with cheaper AI models**: Keep your AI outputs high-standard even when using more affordable models by giving them clear rules.
+*   **Standardize AI agent behavior**: Ensure your AI agents consistently follow specific procedures and best practices for tasks like coding or content creation.
+*   **Improve code review with AI**: Train AI models to spot common errors and suggest improvements in code, mimicking a senior developer's review process.
+*   **Automate common development checks**: Implement automated checks for issues like missing input validation, incorrect caching, or inefficient data fetching in web development.
+
+## Tools you need
+*   **Claude Opus** (paid): A powerful AI model from Anthropic, used here for its advanced reasoning capabilities, typically accessed via API.
+*   **Claude Sonnet** (paid): A faster, more cost-effective AI model from Anthropic, also accessed via API, suitable for execution tasks.
+
+## How it actually works
+The core idea is to identify the "implicit checks" that a high-quality AI model (like the author's "Fable 5") performs automatically, and then explicitly write these down as instructions for other models (Claude Opus and Sonnet).
+
+1.  **Identify quality gaps**: Observe where your current AI models (e.g., Opus/Sonnet) make mistakes or produce suboptimal results. The author noted issues like incorrect `use client` directives, missing cache options, or skipping input validation in web development.
+2.  **Document implicit procedures**: For each identified gap, determine what a high-quality model *would* do. For example, Fable 5 might implicitly check for input validation on public endpoints. Write this down as a clear, actionable rule or procedure. The author states these are not knowledge gaps, but procedural ones.
+3.  **Create explicit instructions**: Translate these documented procedures into clear system instructions or specific prompts that you can give to Claude Opus or Sonnet. These instructions should guide the model's behavior and decision-making process. The author mentions that simple "be careful" prompts are not effective; the instructions need to be specific.
+4.  **Integrate into an agent workflow**: If you are using an agent setup (where one model orchestrates others), ensure these instructions are passed down to the relevant subagents (Opus/Sonnet) when they perform their tasks. This might involve setting up a custom agent framework or using a tool that allows detailed system prompts for different agents.
+5.  **Test and refine**: Continuously test the models with the new instructions and refine them based on the output. The goal is to raise the overall capability of the team of agents.
+
+The author does not share the exact prompts or "skills" they wrote down. You would need to observe your own AI model's outputs and create specific instructions tailored to the quality checks you want to enforce.
+
+## Words you'll see, explained
+*   **Orchestrator**: In an AI agent system, this is the main AI model responsible for planning, delegating tasks, and reviewing the overall work.
+*   **Subagents**: These are secondary AI models that receive tasks from the orchestrator and perform specific parts of the workflow.
+*   **Implicit checks**: These are quality standards, best practices, or procedural steps that an advanced AI model might follow automatically without needing explicit instructions.
+*   **System instructions**: These are specific guidelines or rules given to an AI model at the start of a conversation or task to define its role, behavior, and constraints.
+*   **API (Application Programming Interface)**: A set of rules and tools that allows different software applications to communicate with each other. In this case, it's how you send requests to and receive responses from AI models like Claude Opus and Sonnet.
+
+## Original source
+This concept was shared by toffy on the DEV Community blog. The author documented how they transferred the implicit quality checks of a high-end AI model, Fable 5, to more accessible models like Claude Opus and Sonnet, to maintain output quality after losing access to Fable 5.
+
+## Notes & variations
+*   **Do you even need this?**: For simpler tasks or if you are just starting, you might not need a complex agent orchestration setup. You can often achieve good results by using freemium chat applications like claude.ai or chatgpt.com with well-crafted, detailed prompts that include your desired quality checks. This approach is for when you need consistent, automated quality across many tasks with specific models.
+*   **Free-tier limits**: Claude Opus and Sonnet are typically accessed via paid APIs. There is no free tier for these specific developer products. You will incur costs based on your usage (number of tokens processed). Always monitor your API usage to manage expenses.
+*   **Common pitfall**: Vague instructions like "be careful" or "follow best practices" are often ineffective. AI models need concrete, specific, and actionable rules. Instead of "validate inputs," specify "always add server-side input validation for all public POST endpoints, checking for data type, length, and common injection patterns."

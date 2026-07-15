@@ -1,0 +1,146 @@
+---
+title: "Build a Serverless AI Chrome Extension with User API Keys"
+description: "Learn how to build an AI-powered Chrome extension that uses the user's own API key, eliminating backend server costs and enhancing user data privacy."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 120
+jobToBeDone: "Build an AI-powered Chrome extension with zero backend cost"
+tools:
+  - name: "Google Chrome"
+    url: "https://www.google.com/chrome/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Text editor (e.g., VS Code)"
+    url: "https://code.visualstudio.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "OpenAI API"
+    url: "https://platform.openai.com/"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Groq API"
+    url: "https://groq.com/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Mistral AI API"
+    url: "https://mistral.ai/"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Ollama"
+    url: "https://ollama.com/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/projekta2/i-built-an-ai-chrome-extension-with-zero-backend-cost-heres-the-exact-architecture-43j7"
+  platform: "blog"
+  author: "projekta2"
+  postedAt: 2026-06-28
+score: 10
+ingestedAt: 2026-07-15
+nigeriaNotes: "This approach eliminates server costs, which is great for small businesses. However, it requires users to provide their own API keys, which might be a barrier for some. Ollama offers a completely free, local option."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+This entry explains a way to build AI features into a Chrome extension without needing your own server or paying for backend infrastructure. It uses a method called "Bring Your Own Key" (BYOK). Instead of your extension using your API key to talk to an AI service, the user provides their *own* API key. This key is stored securely in their browser and used directly to communicate with the AI provider.
+
+This is an advanced concept because it requires coding knowledge, specifically with JavaScript, web APIs, and Chrome extension development. It's not a simple copy-paste recipe, as the exact implementation will depend on your specific extension's features and the AI models you choose.
+
+The main benefit is that you avoid all server costs and responsibilities (like protecting API keys or handling user data on your servers). It also offers greater privacy for users, as their data goes directly from their browser to the AI provider, never touching your infrastructure.
+
+## What you can use it for
+*   **Summarize text directly in the browser**: Create an extension that summarizes web pages, emails, or documents using an AI model, without sending the content to a server.
+*   **Generate draft responses or reviews**: Help users write emails, social media posts, or product reviews by generating AI-powered drafts based on their input.
+*   **Analyze data for risk scoring**: Build tools that assess information (like code changes or financial data) for potential risks, keeping the sensitive data on the user's device.
+*   **Provide real-time AI assistance**: Offer instant AI help for tasks like grammar checking, translation, or content generation, all powered by the user's own AI access.
+
+## Tools you need
+*   **Google Chrome** (free): The web browser where you will develop and run your extension.
+*   **Text editor** (free): A program like Visual Studio Code to write and manage your extension's code.
+*   **OpenAI API** (paid): Provides access to powerful AI models like GPT for various tasks.
+*   **Groq API** (freemium): Offers very fast access to AI models, with a free tier for developers to get started.
+*   **Mistral AI API** (paid): Provides access to Mistral's advanced AI models.
+*   **Ollama** (free): A tool to run open-source AI models directly on your own computer, requiring no API keys or internet connection for the AI part.
+
+## How it actually works
+This architecture involves building a Chrome extension that directly communicates with AI providers using the user's API key. Here's the general process:
+
+1.  **Set up your Chrome extension project**: Create a new folder for your extension. Inside, you'll need a `manifest.json` file and your JavaScript code files.
+2.  **Declare necessary permissions**: In your `manifest.json` file, you must tell Chrome that your extension needs permission to store data locally and to connect to specific AI provider websites.
+    ```json
+    {
+      "manifest_version": 3,
+      "name": "My AI Extension",
+      "version": "1.0",
+      "description": "An AI-powered Chrome extension.",
+      "permissions": [
+        "storage"
+      ],
+      "host_permissions": [
+        "https://api.openai.com/*",
+        "https://api.groq.com/*",
+        "https://api.mistral.ai/*",
+        "http://localhost:*/*"
+      ],
+      "action": {
+        "default_popup": "popup.html",
+        "default_icon": "icon.png"
+      }
+    }
+    ```
+    The `storage` permission allows your extension to save the user's API key. The `host_permissions` list tells Chrome which external websites your extension is allowed to connect to. `http://localhost:*/*` is included for users who might run Ollama locally.
+3.  **Create an onboarding flow for API keys**: Design a simple user interface (e.g., a popup or options page) where users can paste their API key and select their preferred AI provider.
+4.  **Store the user's API key securely**: Once the user provides their key, save it using Chrome's local storage API. This keeps the key within the user's browser, accessible only by your extension, and never sends it to your servers.
+    ```javascript
+    // The user pastes their API key during onboarding
+    // You store it locally — never send it anywhere else
+    await chrome.storage.local.set({
+      aiApiKey: userProvidedKey,
+      aiProvider: 'groq' // or 'openai', 'mistral', 'ollama'
+    });
+    ```
+    After this step, the API key is saved in the user's browser.
+5.  **Make direct API calls to the AI provider**: When your extension needs to use AI, retrieve the stored API key and provider choice, then make a direct network request (using `fetch`) from the user's browser to the AI provider's API endpoint.
+    ```javascript
+    // Every AI call uses their key, from their browser
+    async function callAI(prompt) {
+      const { aiApiKey, aiProvider } = await chrome.storage.local.get(['aiApiKey', 'aiProvider']);
+      // The author doesn't share their exact getEndpoint or getModel functions;
+      // you would implement these to return the correct URL and model name
+      // based on the selected aiProvider (e.g., for Groq: 'https://api.groq.com/openai/v1/chat/completions')
+      const endpoint = getEndpoint(aiProvider);
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${aiApiKey}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          model: getModel(aiProvider),
+          messages: [{ role: 'user', content: prompt }],
+          max_tokens: 500
+        })
+      });
+      return response.json();
+    }
+    ```
+    You would need to implement the `getEndpoint` and `getModel` functions to correctly map the `aiProvider` (e.g., 'groq', 'openai') to the specific API URL and model identifier for that service. The `fetch` call sends the user's prompt and their API key directly to the AI provider.
+
+## Words you'll see, explained
+*   **Chrome extension**: A small program that adds new features or functions to the Google Chrome web browser.
+*   **API key**: A secret code that identifies you to an online service (like an AI provider) and allows you to use its features.
+*   **Backend**: The server-side part of a web application that handles data storage, complex logic, and communication with other services.
+*   **BYOK (Bring Your Own Key)**: An approach where users provide their own API keys to directly access a service, rather than the application using its own key.
+*   **`manifest.json`**: A file that provides important information about a Chrome extension, such as its name, version, required permissions, and what files it uses.
+*   **`chrome.storage.local`**: A feature in Chrome extensions that allows data to be saved directly in the user's browser, accessible only by that specific extension.
+*   **Ollama**: A free, open-source tool that lets you run large language models (LLMs) directly on your own computer, without needing an internet connection for the AI processing.
+
+## Original source
+This architecture was shared by projekta2 on the DEV Community blog. The author detailed how to build AI-powered Chrome extensions with zero backend costs by having users provide their own API keys.
+
+## Notes & variations
+*   **Do you even need this?**: This BYOK approach is excellent for minimizing costs and maximizing user privacy. However, if your AI feature requires complex server-side logic, data aggregation across users, or if you want to manage user billing directly, a traditional backend server might still be necessary. For very simple AI tasks, a direct call to a freemium AI chat app (like ChatGPT or Claude) might be sufficient without building an extension at all.
+*   **Free-tier viability**: Ollama is completely free to use, as it runs models locally on your computer. Groq offers a generous free tier for developers, making it a cost-effective choice for many projects. OpenAI and Mistral AI are paid services, meaning users will need to pay for their API usage.
+*   **Common pitfall**: While BYOK enhances security by keeping API keys out of your hands, it's crucial to ensure your extension's code doesn't accidentally expose the user's API key in logs, network requests (other than to the AI provider), or insecure storage. Always validate user-provided keys to ensure they are in the correct format before storing them.

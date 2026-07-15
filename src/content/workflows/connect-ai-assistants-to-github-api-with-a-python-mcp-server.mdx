@@ -1,0 +1,142 @@
+---
+title: "Connect AI Assistants to GitHub API with a Python MCP Server"
+description: "Learn how to build a Python Model Context Protocol (MCP) server to connect AI assistants like Claude to the GitHub API, enabling them to fetch live data and take actions."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 45
+jobToBeDone: "Build a Python MCP server to connect AI assistants to the GitHub API"
+tools:
+  - name: "Python"
+    url: "https://www.python.org"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "uv"
+    url: "https://astral.sh/uv"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "MCP SDK"
+    url: "https://github.com/mcp-protocol/mcp"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "httpx"
+    url: "https://www.python-httpx.org"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Claude Code"
+    url: "https://code.claude.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "GitHub API"
+    url: "https://docs.github.com/en/rest"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/moksh/building-a-python-mcp-server-from-scratch-a-practical-github-api-guide-397k"
+  platform: "blog"
+  author: "moksh"
+  postedAt: 2026-06-19
+score: 8
+ingestedAt: 2026-07-15
+nigeriaNotes: "This workflow requires a stable internet connection for installing packages and interacting with the GitHub API. While Python and `uv` are free, `Claude Code` is a paid service, which might be a barrier. Consider free alternatives for AI clients if available, or explore the free tiers of the GitHub API for usage limits."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+The Model Context Protocol (MCP) is a standard way for AI tools to talk to external services. It allows AI assistants, like Claude, to use 'tools' (functions) you define to fetch live data or take actions outside of their own knowledge.
+
+This guide shows you how to build an MCP server using Python. This is an advanced workflow because it requires writing code, setting up a programming environment, and understanding how to interact with APIs (Application Programming Interfaces) – which are ways different software systems communicate.
+
+The exact steps involve creating files, writing Python code, and running commands in a terminal, which requires technical comfort beyond simple copy-pasting.
+
+## What you can use it for
+*   **Connect AI to live data**: Enable an AI assistant to get up-to-date information from external sources, like current weather or stock prices.
+*   **Automate tasks with AI**: Allow an AI to perform actions, such as sending emails, creating calendar events, or managing project tasks, by calling specific functions.
+*   **Integrate AI with existing systems**: Link an AI assistant to your business's internal tools or databases, making it more powerful and context-aware.
+*   **Build custom AI agents**: Create specialized AI agents that can interact with specific web services or APIs, tailored to your unique needs.
+*   **Extend AI capabilities**: Give AI assistants the ability to go beyond their training data by providing them with real-time access to the internet or specific applications.
+
+## Tools you need
+*   **Python** (free): The programming language used to write the server.
+*   **uv** (free): A fast tool for managing Python packages and virtual environments.
+*   **MCP SDK** (free): The Software Development Kit (a collection of tools and libraries) for building Model Context Protocol servers.
+*   **httpx** (free): A Python library for making HTTP requests, which your server will use to talk to the GitHub API.
+*   **Claude Code** (paid): An AI client from Anthropic that can connect to and use MCP servers.
+*   **GitHub API** (freemium): The Application Programming Interface for GitHub, allowing your server to access GitHub data and functionality.
+
+## How it actually works
+1.  **Install Python and a package manager**: Ensure you have Python 3.10 or newer installed on your computer. You will also need a package manager like `uv` or `pip` to install libraries.
+2.  **Set up your project folder**: Create a new directory for your server and navigate into it using your computer's terminal or command prompt.
+
+    ```bash
+    # macOS or Linux
+    mkdir github-mcp-server
+    cd github-mcp-server
+    ```
+
+    ```powershell
+    # Windows (PowerShell)
+    New-Item -ItemType Directory -Name github-mcp-server
+    Set-Location -Path github-mcp-server
+    ```
+
+3.  **Initialize your Python environment and install libraries**: Use `uv` to set up a virtual environment and install the `mcp` SDK with the `cli` extra (for development tools) and `httpx` (for making web requests).
+
+    ```bash
+    # macOS, Linux, or Windows
+    uv init .
+    uv add "mcp[cli]" httpx
+    ```
+
+4.  **Create your server files**: You will need to create a `server.py` file to hold your Python code and, if using `uv`, a `pyproject.toml` file. An optional `.env` file can store sensitive information like your GitHub API token.
+5.  **Write the server code**: Start by writing a basic `FastMCP` server in `server.py` that defines a simple "tool" (a Python function) that the AI can call. The excerpt provides a "minimal tool" example:
+
+    ```python
+    from mcp.server.fastmcp import FastMCP
+
+    mcp = FastMCP("hello-mcp")
+
+    @mcp.tool()
+    def greet(name: str) -> str:
+        """
+        Return a personalized greeting. Use this when asked to greet someone.
+        """
+        return f"Hello, {name}! Your MCP server is working."
+
+    if __name__ == "__main__":
+        mcp.run(transport="stdio")
+    ```
+
+6.  **Test your server with the MCP Inspector**: Run the development server to launch the MCP Inspector in your web browser. This tool lets you test your defined tools directly.
+
+    ```bash
+    # macOS, Linux, or Windows
+    uv run mcp dev server.py
+    ```
+
+    You should see a message indicating the server is running, and a browser window will open, typically at `http://localhost:5173`. Navigate to the "Tools" tab and try calling your `greet` tool.
+7.  **Expand to a GitHub API server**: Replace the minimal `greet` tool with more complex tools that interact with the GitHub API using `httpx`. The author's full example (not fully provided in the excerpt) would include tools to fetch repository details or list issues. This step requires writing more Python code to handle API requests and responses.
+8.  **Connect to an AI client**: Once your server is ready, you can connect it to an MCP-compliant AI client like Claude Desktop or Claude Code. The excerpt mentions using `stdio` (standard input/output) for transport, which works directly with these clients. The exact connection steps will depend on the specific AI client's interface.
+
+## Words you'll see, explained
+*   **Model Context Protocol (MCP)**: A standard way for AI tools to communicate with external services, allowing them to use custom functions and access data.
+*   **AI client**: An AI application or tool (like Claude Desktop) that uses the MCP to interact with external servers and tools.
+*   **Server**: A program that runs on your computer and provides services to other programs (clients). In this case, it hosts the tools for the AI.
+*   **Tools**: Callable functions defined on the MCP server that an AI can invoke to perform actions or fetch data from external services.
+*   **Resources**: Read-only data endpoints on the MCP server that an AI can access, similar to reading from a file or database.
+*   **Prompts**: Reusable instruction templates stored on the server that an AI can reference, helping to standardize workflows.
+*   **API (Application Programming Interface)**: A set of rules and definitions that allows different software applications to communicate with each other.
+*   **SDK (Software Development Kit)**: A collection of tools and libraries that developers use to create applications for a specific platform or system.
+*   **`uv` / `pip`**: Tools used in Python to install, manage, and update software packages and libraries.
+*   **`httpx`**: A Python library used for making HTTP requests, which is how your server will talk to web APIs like GitHub's.
+*   **`stdio` (Standard Input/Output)**: A common way for programs to communicate with each other, where one program sends data to another's input and reads from its output.
+
+## Original source
+This workflow is based on a blog post by moksh titled 'Building a Python MCP Server from Scratch - A Practical GitHub API Guide' published on the DEV Community platform.
+
+## Notes & variations
+*   **Do you even need this?**: Before diving into building a custom MCP server, consider if a simpler approach might work. Many AI clients offer built-in web browsing or basic tool-use capabilities that might cover your needs without requiring custom code. This workflow is best for complex, specific integrations or when you need fine-grained control over how the AI interacts with external systems.
+*   **Free-tier limits**: While Python and the MCP SDK are free, using `Claude Code` is a paid service. The GitHub API has rate limits for unauthenticated and authenticated requests; exceeding these limits will require waiting or potentially upgrading your GitHub plan for higher usage.
+*   **Common pitfall**: A common mistake is not clearly defining the docstrings for your tools. The AI uses these descriptions to understand when and how to call your tools. Make sure your docstrings are precise, explain the tool's purpose, and list its parameters clearly.
+*   **Tip for better results**: When designing your tools, break down complex tasks into smaller, single-purpose functions. This makes it easier for the AI to understand and use them effectively, and also simplifies debugging.

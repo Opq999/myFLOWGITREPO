@@ -1,0 +1,56 @@
+---
+title: "Reproducible LLM Scores with LLM-as-judge"
+description: "Learn how to control LLM scoring variability for consistent results, even with free tools."
+category: "academic-research"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 15
+jobToBeDone: "Ensure reproducible LLM-as-judge scores by controlling for sampling variability"
+tools:
+  - name: "LLM-as-judge"
+    url: "https://github.com/ethanwritesai/llm-as-judge"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "GPT-4o"
+    url: "https://openai.com/index/gpt-4o/"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Claude"
+    url: "https://claude.ai/"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/ethanwritesai/llm-as-judge-disagrees-with-itself-between-runs-2dp4"
+  platform: "blog"
+  author: "ethanwritesai"
+  postedAt: 2026-07-08
+score: 7
+ingestedAt: 2026-07-15
+nigeriaNotes: "While the core LLM-as-judge tool is free and open-source, using powerful models like GPT-4o will incur costs. Claude.ai offers a free tier which can be used for scoring, but may have usage limits. Data usage is minimal for prompt inputs and score outputs."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to make Large Language Model (LLM) scores more consistent and reliable, even when using the same model and prompt. This is crucial for automated checks in research or development, preventing unreliable results due to random variations in the AI's output. This approach works by reducing the 'noise' in LLM scoring, making your automated checks trustworthy.
+
+## Tools you need
+*   **LLM-as-judge** (free): A framework to use LLMs for scoring other LLM outputs.
+*   **GPT-4o** (paid): A powerful AI model that can be used as a judge. Note: Using the API for this model requires payment.
+*   **Claude** (freemium): Another AI model that can be used as a judge. The free tier on claude.ai has usage limits.
+
+## Steps
+1.  **Set sampling temperature to zero**: When an LLM generates text, it often samples from a range of possibilities. Setting the 'temperature' to 0 makes the output deterministic, meaning it will produce the same result every time for the same input. The author found this collapsed most of the variability. The exact setting for this depends on the tool or API you use to interact with the LLM. For example, if using an API, you would set `temperature=0` in your request.
+2.  **Pin the exact judge model and prompt version**: AI models are updated, and their behavior can change. To ensure reproducibility, use a specific version of the model (e.g., 'gpt-4-0613' instead of 'gpt-4o') and track your prompt text. The author suggests using a cache key that includes the input, the judge model snapshot, and the rubric version. If you change the prompt, you should also change its version string.
+3.  **Average over k judged samples or take majority vote**: Instead of relying on a single score, run the judge multiple times (the author uses k=5) and average the scores or take the majority vote. This reduces the impact of random variations.
+4.  **Quantize the score**: Round scores to a coarser grid (e.g., 0.0, 0.25, 0.5, 0.75, 1.0) instead of using very fine-grained decimals. This prevents tiny variations from shifting the aggregate score too much.
+5.  **Version the judge prompt as code**: Treat your scoring rubric like code. Store it in your project repository, give it a version string, and manage changes through a review process. This ensures that any changes to the scoring criteria are tracked and auditable.
+6.  **Gate on the noise band**: Instead of failing if a score is just below a threshold, consider the measured noise. Only fail when the average score is below the threshold by more than the expected noise. If the score is within the noise band, it might just be jitter, not a real regression.
+
+## Original source
+This workflow is based on insights shared by Ethan in a blog post on DEV Community. Ethan discusses the challenge of LLM-as-judge systems producing inconsistent scores between runs and outlines practical steps to achieve more reproducible results, essential for reliable automated evaluation.
+
+## Notes & variations
+*   **Common mistake**: Forgetting to set the sampling temperature to 0 is a frequent oversight that leads to score variability. Many LLM tools default to a temperature above zero.
+*   **Tip for better results**: Combine all these techniques. Setting temperature to 0 is the biggest lever, but using multiple samples, quantizing scores, and versioning prompts provides a more robust and trustworthy scoring system.
+*   **Free tier consideration**: While the LLM-as-judge framework is free, using advanced models like GPT-4o for judging will require API access and payment. Claude.ai's free tier can be used, but be mindful of its usage limits. For truly free and reproducible scoring, you might explore open-source models run locally if you have the hardware, though this adds technical complexity.

@@ -1,0 +1,156 @@
+---
+title: "Build a Python AI Assistant with OpenAI API"
+description: "Learn to build a basic AI assistant service using Python and the OpenAI API. Understand prompt design and production readiness."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 30
+jobToBeDone: "Build a basic AI assistant service using Python and an LLM API"
+tools:
+  - name: "Python"
+    url: "https://www.python.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "OpenAI API"
+    url: "https://platform.openai.com/"
+    pricing: "paid"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/alton_zheng_15fb4bf0d73a3/building-a-practical-ai-assistant-with-python-from-prompt-to-production-thinking-ofg"
+  platform: "blog"
+  author: "alton_zheng_15fb4bf0d73a3"
+  postedAt: 2026-06-21
+score: 7
+ingestedAt: 2026-07-15
+nigeriaNotes: "Requires an OpenAI API key, which incurs costs. Python is free and widely used. Data usage for API calls depends on message length but is generally light for basic assistant tasks."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "Build a Python script to ask the OpenAI API for explanations of complex coding concepts for your assignments."
+  - persona: "employee"
+    scenario: "Create a Python tool to get quick, clear answers on technical documentation or coding problems for your work."
+  - persona: "entrepreneur"
+    scenario: "Develop a basic Python assistant to brainstorm product names or marketing taglines using the OpenAI API."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will create a simple AI assistant using Python that can answer questions by connecting to the OpenAI API. This approach works by sending user questions to a powerful AI model and returning its answers, forming the core of many AI-powered applications.
+
+## Tools you need
+*   **Python** (free): A popular programming language used for building applications, including AI tools.
+*   **OpenAI API** (paid): A service that provides access to advanced AI models for building applications.
+
+## Steps
+1.  **Set up your Python environment**: Ensure you have Python installed on your computer. You will also need to install the OpenAI Python library. Open your terminal or command prompt and run:
+
+    ```bash
+    pip install openai
+    ```
+
+    You should see messages indicating the library is being installed. If `pip` is not recognized, you might need to install Python or ensure it's added to your system's PATH.
+
+2.  **Get your OpenAI API key**: Sign up on the OpenAI platform and obtain an API key. This key is like a password that lets your Python code access the API. You will need to set this key as an environment variable. The author does not specify how to set environment variables, but a common method is:
+
+    *   On Linux/macOS, add `export OPENAI_API_KEY='your-api-key-here'` to your shell profile file (like `.bashrc` or `.zshrc`).
+    *   On Windows, you can set it through System Properties -> Environment Variables.
+
+    Your code will then be able to access it using `os.getenv("OPENAI_API_KEY")`.
+
+3.  **Write the basic AI assistant code**: Copy and paste the following Python code into a new file (e.g., `assistant.py`). This code defines a function to send a message to the AI and print the response.
+
+    ```python
+    import os
+    from openai import OpenAI
+
+    client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+
+    def ask_ai(user_message: str) -> str:
+        if not user_message.strip():
+            return " Please provide a valid question. "
+        response = client.chat.completions.create(
+            model="gpt-4o-mini",
+            messages=[
+                {
+                    "role": "system",
+                    "content": "You are a helpful technical assistant. Answer clearly and professionally."
+                },
+                {
+                    "role": "user",
+                    "content": user_message
+                }
+            ],
+            temperature=0.3
+        )
+        return response.choices[0].message.content
+
+    question = " Explain REST API in simple terms. "
+    answer = ask_ai(question)
+    print(answer)
+    ```
+
+    After pasting, replace `" Explain REST API in simple terms. "` with your own question if you wish.
+
+4.  **Run the Python script**: Open your terminal or command prompt, navigate to the directory where you saved the file, and run it using:
+
+    ```bash
+    python assistant.py
+    ```
+
+    You should see the AI's answer to your question printed in the terminal.
+
+5.  **Improve the assistant with a class structure**: For better organization and extensibility, you can use a class. Replace the previous code with this:
+
+    ```python
+    import os
+    from openai import OpenAI
+
+    class AIAssistant:
+        def __init__(self, client):
+            self.client = client
+
+        def build_messages(self, user_message: str):
+            return [
+                {
+                    "role": "system",
+                    "content": (
+                        "You are a senior software engineering assistant. "
+                        "Give practical, clear, and accurate answers. "
+                    )
+                },
+                {
+                    "role": "user",
+                    "content": user_message
+                }
+            ]
+
+        def ask(self, user_message: str) -> str:
+            if not user_message or not user_message.strip():
+                raise ValueError("User message cannot be empty.")
+            response = self.client.chat.completions.create(
+                model="gpt-4o-mini",
+                messages=self.build_messages(user_message),
+                temperature=0.2
+            )
+            return response.choices[0].message.content
+
+    # --- How to use the class ---
+    client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+    assistant = AIAssistant(client)
+    question = " What is a container in software development? "
+    try:
+        answer = assistant.ask(question)
+        print(answer)
+    except ValueError as e:
+        print(f"Error: {e}")
+    ```
+
+    Run this script the same way: `python assistant.py`. You should see a different, more professional answer from the AI.
+
+## Original source
+This workflow is based on an article by alton_zheng_15fb4bf0d73a3, posted on the DEV Community platform. It explains how to build a practical AI assistant in Python, focusing on moving from a basic script to a more structured and production-ready application.
+
+## Notes & variations
+*   **Free tier alternative**: While the OpenAI API itself is paid, you can experiment with free tiers of other services like Groq or Google AI Studio if you want to avoid initial costs, though model availability and performance may vary.
+*   **Common mistake**: Forgetting to set your `OPENAI_API_KEY` as an environment variable will cause the script to fail with an authentication error. Ensure the key is correctly set and accessible by your Python script.
+*   **Tip for better results**: Experiment with the `temperature` setting. A lower value (like 0.2 used in the class example) makes the AI's answers more focused and predictable, which is good for technical tasks. A higher value can lead to more creative or varied responses, suitable for brainstorming.

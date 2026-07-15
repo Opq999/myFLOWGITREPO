@@ -1,0 +1,60 @@
+---
+title: "Debug RAG App Hallucinations with Better Chunking and Prompting"
+description: "Learn how to fix hallucinations in your RAG AI application by improving document chunking, adding reranking, and instructing the model to say 'I don't know'."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 30
+jobToBeDone: "Debug and reduce hallucinations in a RAG-powered AI application"
+tools:
+  - name: "Large Language Model (LLM) API"
+    url: "https://platform.openai.com/"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Vector Database"
+    url: "https://www.pinecone.io/"
+    pricing: "paid"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/pallavi_sharma_10c1a6f1da/why-my-rag-app-kept-hallucinating-and-how-i-fixed-it-3i10"
+  platform: "blog"
+  author: "pallavi_sharma_10c1a6f1da"
+  postedAt: 2026-06-22
+score: 7
+ingestedAt: 2026-07-15
+nigeriaNotes: "This workflow requires access to LLM APIs and potentially a vector database, which typically involve costs. Free tiers for these services are limited and may not be sufficient for robust testing. Data usage depends on the size of documents processed and the number of queries made."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to reduce "hallucinations" (when an AI confidently makes up information) in your Retrieval Augmented Generation (RAG) AI application. This approach helps ensure your AI provides accurate answers by improving how it processes information and is prompted.
+
+## Tools you need
+*   **Large Language Model (LLM) API** (paid): This is the AI model that generates text. You'll need access to an API like OpenAI's or Anthropic's to integrate it into your application.
+*   **Vector Database** (paid): A specialized database for storing and searching data based on its meaning (semantic similarity). Examples include Pinecone or Weaviate.
+
+## Steps
+1.  **Improve document chunking**: Instead of splitting documents by a fixed number of characters, split them based on natural breaks like headings and paragraphs. This prevents unrelated information from being mixed in a single chunk.
+    *   **What to do**: Review your document processing code. If you are using character counts, switch to a method that respects document structure (e.g., using libraries that can parse Markdown or HTML to identify headings and paragraphs).
+    *   **What you should see**: Your documents will be broken into more logical, self-contained pieces of information.
+2.  **Add a reranking step**: After retrieving the most similar chunks, use a secondary model (a "cross-encoder") to re-evaluate their relevance to the query. This helps filter out chunks that are semantically close but not actually useful.
+    *   **What to do**: Implement a reranking model. Many RAG frameworks offer built-in support for this. You will need to configure it to process the top-k retrieved chunks and score them again.
+    *   **What you should see**: A more refined list of the most relevant chunks, with scores indicating their true relevance.
+3.  **Instruct the model to say "I don't know"**: Modify your prompt to explicitly tell the AI what to do if the answer is not found in the provided context. This prevents it from inventing answers.
+    *   **What to do**: Update your prompt template. Add a clear instruction like: "If the answer is not clearly present in the context, say you don't know."
+    *   **What you should see**: The AI will now respond with "I don't know" or a similar phrase when it cannot find the answer in the provided information, instead of hallucinating.
+4.  **Enforce a retrieval threshold**: Set a minimum score for retrieved chunks. If the best chunk's score is below this threshold, do not let the AI answer from general knowledge; instead, provide a fallback response.
+    *   **What to do**: Add logic to your application to check the score of the top retrieved chunk. If it's below your defined cutoff (e.g., 0.7), trigger a fallback response (e.g., "I could not find relevant information.") instead of passing the context to the LLM.
+    *   **What you should see**: The AI will only attempt to answer when there is sufficient relevant context, preventing improvisation.
+5.  **Test with "trap questions"**: Create a set of test questions that are ambiguous, missing information, or only partially covered by your documents. Regularly run these tests to catch weaknesses.
+    *   **What to do**: Compile a list of challenging queries. Use these to evaluate your RAG system's performance, especially after making changes to chunking, retrieval, or prompting.
+    *   **What you should see**: You will proactively identify and fix cases where your RAG system is likely to hallucinate.
+
+## Original source
+This workflow is based on lessons learned by pallavi_sharma_10c1a6f1da, shared in a blog post on DEV Community. The author details their experience debugging a RAG application that was producing incorrect information and outlines the steps they took to improve its accuracy and reliability.
+
+## Notes & variations
+*   **Free-tier alternatives**: While robust RAG often requires paid services, you can experiment with smaller datasets and open-source LLMs run locally (e.g., using Ollama) for learning. Some vector databases offer limited free tiers.
+*   **Common mistake**: Relying solely on semantic similarity without a reranking step or a "don't know" instruction. This leads to the AI confidently answering questions even when the retrieved information is not truly relevant.
+*   **Tip for better results**: Regularly evaluate your RAG system not just on "happy path" questions but also on edge cases and ambiguous queries. This proactive testing is key to catching and fixing hallucinations before they impact users.

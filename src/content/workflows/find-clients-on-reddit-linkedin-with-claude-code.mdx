@@ -1,0 +1,85 @@
+---
+title: "Find Clients on Reddit & LinkedIn with Claude Code"
+description: "Automate finding potential clients by identifying their pain points on Reddit and LinkedIn using a Claude Code skill. Learn how to draft helpful comments."
+category: "freelancing"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 30
+jobToBeDone: "Automate finding potential clients on Reddit and LinkedIn by identifying their pain points."
+tools:
+  - name: "Claude Code"
+    url: "https://code.claude.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Reddit"
+    url: "https://www.reddit.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "LinkedIn"
+    url: "https://www.linkedin.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/newan2001/i-built-a-claude-code-skill-that-finds-customers-not-competitors-on-reddit-linkedin-4h82"
+  platform: "blog"
+  author: "newan2001"
+  postedAt: 2026-06-19
+score: 8
+ingestedAt: 2026-07-15
+nigeriaNotes: "Claude Code is a paid tool. Reddit and LinkedIn have free tiers but may require significant data to browse actively. The workflow itself is data-light once set up, focusing on text analysis."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will get a system that helps you find potential clients on Reddit and LinkedIn by searching for the problems they are experiencing, rather than the services you offer. This approach helps you connect with people who genuinely need your help and avoids showing you competitors.
+
+## Tools you need
+*   **Claude Code** (paid): A tool for building custom AI skills that can understand and process information.
+*   **Reddit** (freemium): A social media platform with many communities (subreddits) where people discuss various topics.
+*   **LinkedIn** (freemium): A professional networking platform used for business connections and industry discussions.
+
+## Steps
+1.  **Understand the core idea**: Instead of searching for terms like "leadership consulting" on Reddit or LinkedIn, search for the actual problems people face, like "my team keeps having the same conflict." This is because people experiencing a problem are more likely to describe the problem than the solution they need.
+2.  **Set up your Claude Code skill**: The author created an open-source Claude Code skill called `delta-engage`. This skill is designed to run twice a week.
+    *   It searches Reddit and LinkedIn for the specific pain points of your ideal customers (your Ideal Customer Profile or ICP).
+    *   It then classifies each post to identify if it's from a potential buyer, a competitor, an influencer, or just noise.
+    *   It separates posts from peers (competitors or potential partners) into a different list.
+    *   Finally, it drafts a comment for each potential buyer post, written in your style, ready for you to edit and send.
+3.  **Review the engagement digest**: After the skill runs, you will receive a digest. This digest will show you:
+    *   How many people are ready to engage with.
+    *   How many potential partnerships you found.
+    *   For each person to engage with:
+        *   The platform (Reddit or LinkedIn).
+        *   The subreddit or user.
+        *   A "fit" score (how relevant the post is).
+        *   Whether it's classified as a buyer or peer.
+        *   The original post title and a link to it.
+        *   A suggested comment that you can edit before posting.
+    *   For each potential partnership:
+        *   The platform and user.
+        *   A "fit" score.
+        *   The original post title and a link.
+        *   A suggested comment for building a relationship.
+4.  **Manually post your comment**: The most important rule is that you must always edit the drafted comment and post it yourself from your own account. The AI prepares the content, but you take the final action.
+
+    *Example of a digest entry you might see:*
+    ```plaintext
+    ENGAGE (your ICP)
+    [REDDIT] r/ExperiencedDevs · fit 9/10 · buyer · 4h ago
+    Our oncall is burning people out — how do you actually fix alert fatigue?
+    https://www.reddit.com/r/ExperiencedDevs/comments/1abc234/oncall_burnout/
+    ↑142 · 38 comments
+
+    Why it cleared the bar: Squarely your ICP, voicing the exact pain you solve.
+    Comment (edit before posting):
+    The fix that worked for us wasn't a new tool — it was deleting the ~40% of alerts that never led to action, then routing the rest by severity. What's your noisiest alert source right now, and does anyone own tuning it?
+    ```
+
+## Original source
+This workflow is based on a blog post by newan2001, who shared how they built a custom Claude Code skill to automate finding potential clients on Reddit and LinkedIn by focusing on their expressed pain points rather than generic service keywords.
+
+## Notes & variations
+*   **Free tier alternative**: While Claude Code is a paid tool, you could adapt the *concept* by manually searching Reddit and LinkedIn for pain-point keywords and then using a free AI chatbot like ChatGPT (free tier), Claude.ai (free tier), or Gemini (free tier) to help you draft comments based on the posts you find.
+*   **Common mistake**: A common pitfall is searching for your service category (e.g., "marketing services") instead of the problems your ideal clients are talking about (e.g., "my website isn't getting leads"). This will lead you to competitors, not customers.
+*   **Tip for better results**: Be very specific about the pain points your ideal customers voice. The more precise your search terms are to their actual language, the more relevant the results will be.

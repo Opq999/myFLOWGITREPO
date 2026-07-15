@@ -1,0 +1,83 @@
+---
+title: "Automate WordPress Plugin Release Checks with Claude Code"
+description: "Streamline WordPress plugin releases by automating version, readme, and changelog consistency checks using Claude Code. Prevent silent errors and save time."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 15
+jobToBeDone: "Automate WordPress plugin release consistency checks and content generation"
+tools:
+  - name: "Claude Code"
+    url: "https://code.claude.com"
+    pricing: "paid"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/rapls/i-automated-everything-except-the-code-and-thats-where-claude-code-actually-paid-off-51oh"
+  platform: "blog"
+  author: "rapls"
+  postedAt: 2026-06-19
+score: 6
+ingestedAt: 2026-07-15
+nigeriaNotes: "Claude Code is a paid developer tool, meaning it requires a subscription or credits to use. This may not be suitable for users relying on free tiers. Data usage for these text-based checks is minimal."
+tiktokUrl: ""
+published: false
+---
+
+## What you'll get
+This recipe helps you automate the fiddly, repetitive checks needed before releasing a WordPress plugin. You'll set up Claude Code to automatically verify your plugin's version number, readme file, and changelog entries for consistency. This approach prevents common, silent errors that can break user updates and frees up your mental energy from routine tasks, letting you focus on actual coding.
+
+## Tools you need
+*   **Claude Code** (paid): An AI coding assistant that can read files and run commands to help with development tasks.
+
+## Steps
+1.  **Understand the problem**: Before releasing a WordPress plugin, you need to ensure several version numbers and descriptions match across different files (like the main PHP file and the `readme.txt`). Mismatches can cause updates to fail for users without showing an error. This recipe automates checking these details.
+
+2.  **Access Claude Code**: Open your Claude Code environment. This is typically a desktop application or a web interface where you interact with the AI assistant. Ensure you have access to your plugin's files within this environment.
+
+3.  **Create the release-check skill**: Claude Code allows you to define custom 'skills' (also called 'commands') that it can run. You'll create a file that defines this specific release check. First, create the necessary folders, then create the `SKILL.md` file inside them. The author suggests placing this in your project's root directory.
+
+    # macOS or Linux
+    ```bash
+    mkdir -p .claude/skills/release-check
+    ```
+
+    # Windows (PowerShell)
+    ```powershell
+    New-Item -ItemType Directory -Force .claude\skills\release-check
+    ```
+
+    After creating the folders, open a text editor (like Notepad on Windows, TextEdit on macOS, or VS Code) and create a new file named `SKILL.md` inside the `.claude/skills/release-check/` folder. Paste the following content exactly into this new `SKILL.md` file and save it:
+
+    ```
+    ---
+    name: release-check
+    description: "Check a WordPress plugin's version and readme consistency before release. Use right before shipping."
+    allowed-tools: Read, Grep, Bash(grep:*)
+    ---
+    # Release check
+    Verify before release:
+    1. main PHP Version header vs readme Stable tag
+    2. top changelog entry is this version
+    3. Tested up to tracks current stable, not above RC
+    Report mismatches as file + line. Do not edit. The human decides.
+    ```
+
+    You should now have a file structure like `your-plugin-folder/.claude/skills/release-check/SKILL.md`.
+
+4.  **Run the release-check**: In your Claude Code interface, type `/release-check` and press Enter. This command tells Claude Code to execute the skill you just defined.
+
+    ```
+    /release-check
+    ```
+
+    Claude Code will then use its internal tools (like `Read` to look at files and `Grep` to search for text) to perform the checks outlined in your `SKILL.md` file.
+
+5.  **Review the results**: Claude Code will report any inconsistencies it finds, showing you the file and line number where a mismatch occurs. For example, it might say "`main.php: Version header (1.2.0) does not match readme.txt: Stable tag (1.1.9)`". The author emphasizes that Claude Code will *report* mismatches, not fix them automatically, so you can make the final decision.
+
+## Original source
+This workflow was shared by rapls on their blog, where they discussed how Claude Code helped them automate repetitive release tasks for WordPress plugins. The author found that the AI's real value was in handling these 'chores' around the code, rather than just writing code faster.
+
+## Notes & variations
+*   **Do you even need this?** For very simple plugins or infrequent releases, manually checking these items might be quicker than setting up Claude Code. However, for multiple plugins or frequent updates, automation saves significant time and prevents errors.
+*   **Common mistake**: Forgetting to save the `SKILL.md` file in the exact correct path (`.claude/skills/release-check/SKILL.md`) or with the correct content. If Claude Code says `/release-check` is not found, double-check your file path and content.
+*   **Tip for better results**: The `allowed-tools` line (`Read, Grep, Bash(grep:*)`) is crucial. It limits Claude Code to only reading and searching files, preventing it from accidentally making unwanted changes. Always be explicit about what tools your AI assistant can use for sensitive tasks.

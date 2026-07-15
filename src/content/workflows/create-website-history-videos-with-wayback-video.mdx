@@ -1,0 +1,76 @@
+---
+title: "Create Website History Videos with wayback-video"
+description: "Turn any website's historical evolution into a video using its Wayback Machine archive with the wayback-video Python tool."
+category: "content-creation"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 30
+jobToBeDone: "Create a video showing the historical evolution of a website using its Wayback Machine archive"
+tools:
+  - name: "wayback-video"
+    url: "https://github.com/tegos/wayback-video"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Python"
+    url: "https://www.python.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "GitHub"
+    url: "https://github.com/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Playwright"
+    url: "https://playwright.dev/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "ffmpeg"
+    url: "https://ffmpeg.org/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/tegos/wayback-video-turn-any-sites-history-into-a-video-3542"
+  platform: "blog"
+  author: "tegos"
+  postedAt: 2026-06-15
+score: 7
+ingestedAt: 2026-07-15
+nigeriaNotes: "Requires Python and several command-line tools to be installed, which might be challenging on mobile. Data usage can be high as it downloads many archived pages. Free tier is fully functional."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will create an MP4 video that visually shows how a specific website has changed over time, using its historical snapshots from the Wayback Machine. This approach works by automatically fetching, rendering, and stitching together archived web pages into a video format, giving a clear overview of a site's design evolution.
+
+## Tools you need
+*   **wayback-video** (free): A Python command-line tool to generate videos from website archives.
+*   **Python** (free): A programming language used to run the wayback-video tool.
+*   **GitHub** (freemium): A platform to host and download the wayback-video code.
+*   **Playwright** (free): A tool that controls a web browser to take screenshots of archived pages.
+*   **ffmpeg** (free): A tool to combine the screenshots into a video file.
+
+## Steps
+1.  **Install Python**: If you don't have Python installed, download and install it from the official Python website. Make sure to check the option to 'Add Python to PATH' during installation.
+2.  **Install wayback-video**: Open your terminal or command prompt and run the following command to install the tool using pip, Python's package installer:
+
+    ```bash
+    pip install wayback-video
+    ```
+
+    You should see messages indicating that the package and its dependencies are being installed.
+3.  **Install ffmpeg**: Download and install ffmpeg from its official website. You will need to add it to your system's PATH so that wayback-video can find it. The exact steps vary by operating system, but generally involve downloading the binaries and updating your environment variables.
+4.  **Generate the video**: Navigate to the directory where you want to save your video in your terminal. Then, run the `wayback-video` command with the URL of the website you want to archive, and specify your desired settings. For example, to create a video of GitHub's history from 2008 to the present, scrolling full-page per year:
+
+    ```bash
+    wayback-video https://github.com --scroll --interval year --from 2008
+    ```
+
+    You should see output indicating the tool is fetching data, rendering pages, and then stitching them together. The final MP4 video file will be saved in the current directory.
+
+## Original source
+This workflow is based on a blog post by tegos, shared on DEV Community. The author created a Python tool called `wayback-video` to automatically generate videos showing how websites have changed over time by using their archives from the Wayback Machine.
+
+## Notes & variations
+*   **Free-tier alternative**: This tool is entirely free to use as it relies on open-source software and publicly available archives.
+*   **Common pitfall**: Websites that heavily rely on JavaScript or have Service Workers might not render correctly in the archive. The `wayback-video` tool has built-in measures to handle some of these issues, but complex Single Page Applications (SPAs) can still be problematic.
+*   **Tip for better results**: Experiment with different `mode` options like `--scroll` (full-page height with animation) or `--hybrid` (uses pre-captured PNGs with Playwright as a fallback) to see which best suits the website you are archiving and the video style you prefer. The `--scroll` mode is generally recommended for seeing the full layout evolution.

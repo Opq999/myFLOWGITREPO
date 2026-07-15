@@ -1,0 +1,85 @@
+---
+title: "Clean AI-Generated Code: Detect and Fix JavaScript/TypeScript Issues with Fallow"
+description: "Learn to use Fallow to automatically find and fix common code problems like dead code, duplication, and high complexity in your JavaScript or TypeScript projects."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 10
+jobToBeDone: "Automate detection and cleanup of code smells in AI-generated code"
+tools:
+  - name: "Node.js"
+    url: "https://nodejs.org"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Fallow"
+    url: "https://www.npmjs.com/package/fallow"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Git"
+    url: "https://git-scm.com"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Knip"
+    url: "https://www.npmjs.com/package/knip"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/erikch/3-tools-that-make-ai-suck-less-at-coding-4c3"
+  platform: "blog"
+  author: "erikch"
+  postedAt: 2026-06-22
+score: 7
+ingestedAt: 2026-07-15
+nigeriaNotes: "This workflow uses free, open-source tools that run locally on your computer, meaning there are no subscription costs or significant data usage beyond the initial installation of Node.js and Git."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will get a detailed report of common code issues like dead code, duplicated sections, and overly complex functions within your JavaScript or TypeScript project. Many of these issues can then be automatically fixed. This approach helps you maintain cleaner, more efficient code, especially when working with AI-generated code that can sometimes introduce these "code smells."
+
+## Tools you need
+*   **Node.js** (free): A software platform that runs JavaScript code outside of a web browser. It includes `npx`, which lets you run command-line tools easily.
+*   **Fallow** (free): A command-line tool that analyzes JavaScript and TypeScript code to find issues like dead code, duplication, and high complexity.
+*   **Git** (free): A version control system used to track changes in your code projects, useful for reviewing Fallow's automatic fixes.
+*   **Knip** (free): An alternative command-line tool that specifically finds unused files, dependencies, and exports in JavaScript and TypeScript projects.
+
+## Steps
+1.  **Install Node.js**: If you don't already have it, install Node.js on your computer.
+    *   **What to do**: Go to the official Node.js website and download the recommended version (the author suggests Node.js 20 or newer). Follow the installation instructions for your operating system.
+    *   **What to see**: After installation, open your terminal or command prompt and type `node -v` and `npx -v`. You should see version numbers displayed, confirming that Node.js and `npx` are installed and ready.
+2.  **Navigate to your project**: Open your terminal and go to your JavaScript or TypeScript project folder.
+    *   **What to do**: Use the `cd` command (change directory) to move into the main folder of your project. For example, if your project is in a folder called `my-ai-app`, you might type `cd my-ai-app`.
+    *   **What to see**: Your terminal prompt should change to show that you are now inside your project's directory.
+3.  **Find code issues with Fallow**: Run Fallow to scan your project for problems.
+    *   **What to do**: In your project's terminal, type the following command and press Enter:
+
+        ```
+        npx fallow
+        ```
+
+    *   **What to see**: Fallow will scan your code and display a report directly in your terminal. Look for sections detailing "dead code" (code that is never used), "duplication" (repeated code blocks), and "complexity" (functions that are hard to understand or test).
+4.  **Automatically fix issues**: Use Fallow's built-in fix command to clean up your code.
+    *   **What to do**: Type the following command and press Enter:
+
+        ```
+        npx fallow fix
+        ```
+
+    *   **What to see**: Fallow will attempt to automatically correct many of the issues it found. You might see messages indicating which files were modified. It's always a good practice to review these changes using a tool like Git before saving them permanently.
+5.  ** (Optional) Find dead code with Knip**: If you only need to identify unused code, Knip is a good alternative.
+    *   **What to do**: In your project's terminal, type the following command and press Enter:
+
+        ```
+        npx knip
+        ```
+
+    *   **What to see**: Knip will scan your project and report any unused files, dependencies (libraries your project uses), and exports (parts of your code meant to be used by other files).
+
+## Original source
+This workflow is inspired by a blog post titled "3 Tools That Make AI Suck Less at Coding" by erikch, published on the DEV Community platform. The author shared their updated workflow for cleaning up AI-generated code.
+
+## Notes & variations
+*   **Free-tier alternatives**: Both Fallow and Knip are free and open-source tools, making them excellent choices for local code analysis without any cost.
+*   **Common mistake**: A common pitfall is not reviewing the changes made by `npx fallow fix`. Always use a version control system like Git to inspect the modifications before committing them, ensuring that Fallow hasn't removed essential code or introduced new issues.
+*   **Tip for better results**: The author mentions that Fallow can output its findings in a structured JSON format (`npx fallow --json`). This output can be fed directly to AI coding agents (like Kiro, Claude Code, or Cursor) to help them automatically clean up their own generated code. This integration typically involves a more advanced setup using agent skills.

@@ -1,0 +1,100 @@
+---
+title: "Check Suspicious Links Offline with Kilo (Command Line Tool)"
+description: "Use the Kilo command-line tool to identify potentially malicious IP addresses from suspicious links, working completely offline for privacy and security."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 10
+jobToBeDone: "Identify malicious links using an offline command-line tool"
+tools:
+  - name: "kilo"
+    url: "https://github.com/copyleftdev/kilocheck"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "curl"
+    url: "https://curl.se"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "dig"
+    url: "https://www.isc.org/dig/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/copyleftdev/a-vibe-is-not-a-verdict-i-built-a-tool-thats-allowed-to-say-i-dont-know-4foe"
+  platform: "blog"
+  author: "copyleftdev"
+  postedAt: 2026-07-13
+score: 8
+ingestedAt: 2026-07-15
+nigeriaNotes: "This workflow uses free, open-source command-line tools and works entirely offline after initial setup, making it very data-light and cost-effective."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to use `kilo`, an offline command-line tool, to check if an IP address linked in a suspicious message is known to be malicious. This approach is private and secure because `kilo` performs all checks locally against a cryptographically verified threat database, without making any network calls during the check itself.
+
+## Tools you need
+*   **kilo** (free): An offline IP-reputation engine written in Rust, used to check if an IP address is a known bad actor.
+*   **curl** (free): A command-line tool used to transfer data, in this case, to download the kilo installation script.
+*   **dig** (free): A command-line tool used to query DNS name servers and resolve hostnames (like website addresses) into IP addresses. It is usually pre-installed on macOS and Linux, and available via Windows Subsystem for Linux (WSL).
+*   **Terminal** (free): The command-line interface (CLI) on your computer (e.g., Command Prompt or PowerShell on Windows, Terminal on macOS/Linux) where you will type and run commands.
+
+## Steps
+1.  **Open your terminal**: Open the command-line interface on your computer. On macOS, search for "Terminal". On Linux, it's usually called "Terminal" or "Konsole". On Windows, you will need to use the Windows Subsystem for Linux (WSL) to run these commands. If you don't have WSL set up, you'll need to install it first (search online for "install WSL"). Once WSL is ready, open your preferred Linux distribution's terminal.
+
+2.  **Install kilo**: Run the following command to download and install the `kilo` tool. If you are on Windows, run this command inside your WSL terminal.
+
+    ```bash
+    # macOS or Linux (run in your regular terminal)
+    curl -fsSL https://raw.githubusercontent.com/copyleftdev/kilocheck/v0.2.0/scripts/install.sh | sh
+    ```
+
+    ```bash
+    # Windows (run inside Windows Subsystem for Linux - WSL)
+    # First, ensure WSL is installed and you have a Linux distribution like Ubuntu.
+    # Then, open your WSL terminal and run:
+    curl -fsSL https://raw.githubusercontent.com/copyleftdev/kilocheck/v0.2.0/scripts/install.sh | sh
+    ```
+
+    You should see some output indicating the installation progress. After it finishes, `kilo` should be installed and available as a command.
+
+3.  **Update kilo's threat data**: After installation, `kilo` needs to download its threat database. Run this command:
+
+    ```bash
+    kilo update
+    ```
+
+    You should see a message like "Claims 3160" (the number may vary), indicating that the signed threat data has been pulled and processed.
+
+4.  **Verify kilo's status (optional)**: To confirm that `kilo`'s data is verified and fresh, you can run:
+
+    ```bash
+    kilo status --json
+    ```
+
+    You should see a JSON output similar to `{"integrity": "verified", "freshness": "fresh"}`, confirming the data is ready.
+
+5.  **Extract the IP address from the suspicious link**: Before checking with `kilo`, you need to get the actual domain name from the suspicious link and resolve it to an IP address. Replace `[SUSPICIOUS_DOMAIN_HERE]` with the main domain part of the link (e.g., if the link is `https://example.com/tracking?id=123`, use `example.com`).
+
+    ```bash
+    dig +short [SUSPICIOUS_DOMAIN_HERE]
+    ```
+
+    You should get an IP address as the output, for example, `203.0.113.90`. This is the number `kilo` will check.
+
+6.  **Check the IP address with kilo**: Now, use `kilo` to check the IP address you just found. Replace `[PASTE_IP_ADDRESS_HERE]` with the IP address from the previous step.
+
+    ```bash
+    kilo check [PASTE_IP_ADDRESS_HERE]
+    ```
+
+    `kilo` will report if the IP is a known bad actor or if it doesn't have information on it. The author notes that "I don't know" is a valid and useful answer, indicating that the IP is not in its *known* bad actor list.
+
+## Original source
+This workflow is based on an article by copyleftdev titled 'A Vibe Is Not a Verdict: I Built a Tool That's Allowed to Say 'I Don't Know'' published on the DEV Community blog. The author developed `kilo` to provide an honest, offline way to check suspicious links without relying on gut feelings or leaking queries.
+
+## Notes & variations
+*   **Free-tier alternatives**: While `kilo` is free and open-source, its unique benefit is being an *offline* IP reputation checker. Many online services like VirusTotal or AbuseIPDB offer similar checks, but they require you to submit the IP or URL to their servers, which might not be suitable for highly sensitive or private investigations.
+*   **Common mistake**: A common pitfall is trying to check a full URL directly with `kilo`. Remember, `kilo` checks IP addresses, so you must first use `dig` (or a similar tool) to convert the domain name from the URL into an IP address.
+*   **Tip for better results**: Regularly run `kilo update` to ensure your local threat database is current. Threat intelligence changes frequently, and an outdated database might miss new malicious IPs. Also, remember that `kilo` saying "I don't know" doesn't automatically mean an IP is safe, only that it's not in its *known* bad actor list.

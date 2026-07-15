@@ -1,0 +1,54 @@
+---
+title: "Undo a Git Rebase Mistake with Git Reflog and Reset"
+description: "Learn how to recover lost work after a mistaken Git rebase using the git reflog and git reset commands. Recover your previous commits."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 15
+jobToBeDone: "Undo a mistaken git rebase operation to recover lost work"
+tools:
+  - name: "Git"
+    url: "https://git-scm.com/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/cheerazar/how-to-undo-a-git-rebase-hint-git-reflog-and-git-reset-5gj"
+  platform: "blog"
+  author: "cheerazar"
+  postedAt: 2026-06-15
+score: 7
+ingestedAt: 2026-07-15
+nigeriaNotes: "Git is a free, offline tool. Data usage is minimal, only for initial download and updates. This workflow is highly viable for mobile users with limited data."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to recover commits you thought were lost after performing a Git rebase incorrectly. This method uses Git's built-in history tracking to revert your branch to a previous state. It's useful when you accidentally merge unwanted changes or lose your work.
+
+## Tools you need
+*   **Git** (free): A version control system used for tracking changes in code and other files.
+
+## Steps
+1.  **Check your current branch and history**: Before trying to undo anything, it's good practice to see where you are. Make sure you are on the branch you want to fix.
+    *   You should see your current branch name, and a list of commits with their unique IDs and messages.
+
+2.  **Find the commit before the bad rebase**: Use the `git reflog` command to see a history of where your branch's tip has been. Look for the commit message that was present just before you performed the `git rebase` command. The author found a reference like `HEAD@{7}`.
+    ```bash
+    git reflog
+```
+    *   You should see a list of actions your branch has taken, with references like `HEAD@{0}`, `HEAD@{1}`, etc., and the commit messages associated with them.
+
+3.  **Reset your branch to the desired commit**: Once you've identified the correct `HEAD@{n}` reference from the reflog, use `git reset --hard` to move your branch back to that point. The author used `HEAD@{7}` as an example.
+    ```bash
+    git reset --hard HEAD@{7}
+```
+    *   Your branch will now point to the commit you specified, effectively undoing the rebase and any commits that came after it. You should see a message indicating the branch has been updated.
+
+## Original source
+This guide is based on a blog post by cheerazar on DEV Community. It explains how to recover from a mistaken Git rebase by using Git's reflog to find a previous state and then resetting the branch to that state.
+
+## Notes & variations
+*   **Free-tier alternative**: Git itself is free and works offline, so there are no tier limitations.
+*   **Common mistake**: Using `git reset --hard` will discard any new commits made after the target commit. Ensure you have the correct `HEAD@{n}` reference before running this command. If you're unsure, you can use `git reset HEAD@{n}` (without `--hard`) to move the branch pointer without discarding commits, allowing you to inspect the changes first.
+*   **Tip for better results**: If you're not sure which commit to reset to, examine the commit messages in the `git reflog` output carefully. You can also use `git log` to see more details about each commit before deciding.

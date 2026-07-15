@@ -1,0 +1,115 @@
+---
+title: "Compile LLM Agent Prompts with MDS CLI"
+description: "Learn to manage and compile LLM agent prompts from a single Markdown source using the MDS CLI, saving time and preventing errors."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 15
+jobToBeDone: "Manage and compile LLM agent prompts across different platforms from a single source"
+tools:
+  - name: "mds-cli"
+    url: "https://github.com/dean0x/mds"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Rust"
+    url: "https://www.rust-lang.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Makefile"
+    url: "https://www.gnu.org/software/make/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/dean0x/compose-your-agent-prompts-once-compile-them-to-every-harness-8ic"
+  platform: "blog"
+  author: "dean0x"
+  postedAt: 2026-07-06
+score: 7
+ingestedAt: 2026-07-15
+nigeriaNotes: "The mds-cli is a command-line tool, so data usage is minimal. Rust and Make are development tools that run locally and do not require internet access after installation."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to use a tool called MDS (Markdown Script) to write your AI agent prompts in one place and automatically convert them into different formats needed by various AI platforms. This saves you from copying and pasting prompts, reducing errors and making updates easier.
+
+## Tools you need
+*   **mds-cli** (free): A command-line tool that compiles your special Markdown prompts into formats AI models understand.
+*   **Rust** (free): A programming language used to build the mds-cli tool. You need it to install the tool.
+*   **Makefile** (free): A tool that helps automate build processes, often used with Rust projects.
+
+## Steps
+1.  **Install the mds-cli tool**: You need to install the command-line tool first. This requires having Rust installed on your computer.
+    *   If you don't have Rust installed, visit the official Rust website (rust-lang.org) and follow their installation instructions. This is a one-time setup.
+    *   Once Rust is installed, open your terminal or command prompt and run the following command to install mds-cli:
+
+    ```bash
+    cargo install mds-cli
+    ```
+
+    You should see messages indicating the tool is being downloaded and installed. Once complete, the command prompt will return to a ready state.
+
+2.  **Create your prompt file**: Create a new file for your prompt. The author uses a `.mds` extension for these special Markdown files. Let's call it `review.mds`.
+
+3.  **Write your prompt using MDS syntax**: Open `review.mds` in a text editor. You can use variables, functions, and imports. Here's an example based on the author's description:
+
+    First, define a reusable persona in a separate file, for example, `_persona.mds`:
+
+    ```markdown
+    @define reviewer(lang):
+      You are a senior {lang} code reviewer.
+      Flag correctness bugs first, then style.
+      Keep it concise.
+    @end
+    ```
+
+    Then, in your main `review.mds` file, import and use this persona. You can also define message blocks that will compile to JSON format for AI models:
+
+    ```markdown
+    @import "./_persona.mds" as p
+
+    @message system:
+      {p.reviewer("TypeScript")}
+    @end
+
+    @message user:
+      Review this diff:
+      {diff}
+    @end
+    ```
+
+    You should see the text you typed appear in your editor. The special `@` commands are how MDS understands your prompt structure.
+
+4.  **Compile your prompt**: Go back to your terminal or command prompt, navigate to the directory where you saved your `.mds` files, and run the build command. The author shows `mds build review.mds`.
+
+    ```bash
+    mds build review.mds
+    ```
+
+    If your `review.mds` file contains `@message` blocks, this command will create a `review.json` file in the same directory. This JSON file contains the structured messages ready to be sent to an AI model. If there were no `@message` blocks, it would create `review.md`.
+
+    You should see a new file, `review.json`, appear in your file explorer. Opening it will show a list of message objects, like this example:
+
+    ```json
+    [
+      {
+        "role": "system",
+        "content": "You are a senior TypeScript code reviewer. Flag correctness bugs first, then style. Keep it concise."
+      },
+      {
+        "role": "user",
+        "content": "Review this diff: \n ..."
+      }
+    ]
+    ```
+
+    If your file only contained Markdown elements (no `@message` blocks), it would create `review.md` with the compiled Markdown content.
+
+## Original source
+This workflow is based on a blog post by dean0x, explaining how to use their custom tool, MDS (Markdown Script), to simplify writing and managing prompts for AI agents. The goal is to write prompts once and have them work across different AI platforms.
+
+## Notes & variations
+*   **Free tier alternatives**: While MDS is a specific tool, the core idea of managing prompts can be approached by using simple text files and carefully organizing them, though it lacks the automation and error checking MDS provides.
+*   **Common mistake**: Forgetting to install Rust before trying to install `mds-cli` will cause the `cargo install` command to fail with an error message about `cargo` not being found.
+*   **Tip for better results**: Use partial files (files starting with `_`) for common prompt components like personas or instructions. This allows you to update a single file and have all prompts that import it automatically recompile with the changes.

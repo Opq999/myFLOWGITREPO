@@ -1,0 +1,111 @@
+---
+title: "Measure and Reduce AI Token Costs with mcp-audit"
+description: "Learn how to identify and cut unnecessary token usage from Model Context Protocol (MCP) servers to save money and improve AI model performance."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 15
+jobToBeDone: "Optimize AI model context window usage and reduce token costs"
+tools:
+  - name: "pipx"
+    url: "https://pypa.github.io/pipx/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "git"
+    url: "https://git-scm.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "mcp-audit"
+    url: "https://github.com/alih552/mcp-audit"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/alih552/your-mcp-servers-are-burning-50k-tokens-before-you-type-a-word-2oc6"
+  platform: "blog"
+  author: "alih552"
+  postedAt: 2026-06-28
+score: 9
+ingestedAt: 2026-07-15
+nigeriaNotes: "This workflow uses `mcp-audit`, a free, open-source tool that runs entirely on your local computer. This means it consumes very little internet data once installed and incurs no direct costs for the tool itself. The token costs it helps you identify are for paid AI services, so optimizing them can save real money."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to measure the token usage of your Model Context Protocol (MCP) servers and identify areas where you can reduce costs. This approach helps you see hidden token 'burn' from tool definitions, allowing you to optimize your AI model's context window and save money on every request.
+
+## Tools you need
+*   **pipx** (free): Installs Python applications in isolated environments, making them easy to run from your command line.
+*   **git** (free): A version control system used to download code from online repositories.
+*   **mcp-audit** (free): A local command-line tool that estimates token usage and checks security for Model Context Protocol (MCP) servers.
+
+## Steps
+1.  **Install pipx (if you don't have it)**: `pipx` helps manage Python tools. You will need Python installed on your computer first.
+    *   How to do it: Open your terminal or command prompt. If you don't have `pipx` installed, run the appropriate command for your system.
+
+    ```
+    # macOS or Linux
+    python3 -m pip install --user pipx
+    python3 -m pipx ensurepath
+    ```
+
+    ```
+    # Windows (PowerShell)
+    py -m pip install --user pipx
+    py -m pipx ensurepath
+    ```
+
+    *   What you should see: The commands will run, possibly showing installation progress. You might need to close and reopen your terminal for the `pipx` command to be recognized.
+
+2.  **Install mcp-audit**: This tool will analyze your MCP server setup.
+    *   How to do it: In your terminal, run the following command to install `mcp-audit` directly from its source code.
+
+    ```
+    pipx install git+https://github.com/alih552/mcp-audit
+    ```
+
+    *   What you should see: `pipx` will download and install `mcp-audit`. You should see a message confirming successful installation, like "Installed package mcp-audit..."
+
+3.  **Run mcp-audit**: Execute the tool to see your current token usage.
+    *   How to do it: Type the command below and press Enter.
+
+    ```
+    mcp-audit
+    ```
+
+    *   What you should see: The tool will print an estimate of your context token usage, similar to this example:
+
+    ```
+    - 7 server(s) - ~13,160 context tokens - score 0/100
+    ```
+
+    This output tells you how many servers are connected, the estimated total tokens they consume, and a security score.
+
+4.  **Identify token-burning servers**: Review the results from `mcp-audit`.
+    *   How to do it: Look at the `~[number] context tokens` value. This number represents the tokens your MCP servers are using *before* your actual prompt, crowding out space for your own input.
+    *   What you should see: A clear understanding of the baseline token cost for your current MCP setup.
+
+5.  **Reduce unnecessary server connections**: The biggest way to save tokens is to turn off what you don't use.
+    *   How to do it: The author doesn't share their exact steps for *how* to disconnect MCP servers, as this depends on your specific MCP client or setup. Generally, you would go into the settings or configuration of your AI client or development environment and disable or remove connections to MCP servers you no longer need.
+    *   What you should see: After disconnecting servers, if you run `mcp-audit` again, you should see a lower number of servers and fewer context tokens.
+
+6.  **Remove redundant capabilities**: Avoid having multiple servers doing the same job.
+    *   How to do it: If you have, for example, two separate search servers or two file servers connected, choose one that best suits your needs and disconnect the other.
+    *   What you should see: A more streamlined setup with fewer active servers and reduced token overhead.
+
+7.  **Optimize server tools and descriptions**: If you build your own MCP servers, make them efficient.
+    *   How to do it: Focus on creating fewer, more targeted tools (e.g., ten focused tools instead of thirty overlapping ones). Keep the descriptions for each tool short and clear.
+    *   What you should see: For servers you control, this leads to lower token costs per tool and helps the AI model pick the right tool more efficiently.
+
+8.  **Load niche servers on demand**: Don't keep everything connected all the time.
+    *   How to do it: Instead of having all servers always active, configure your system to connect to specialized or less frequently used servers only when you specifically need them. The author doesn't share their exact steps, as this depends on your MCP client's capabilities.
+    *   What you should see: A default setup that is lean, with additional capabilities loaded only when necessary, further reducing your baseline token usage.
+
+## Original source
+This workflow is based on a blog post by alih552 on DEV Community, where they explain how Model Context Protocol (MCP) servers can consume a large number of tokens unnecessarily. The author also introduced `mcp-audit`, a tool they built to help measure and address this issue.
+
+## Notes & variations
+*   `mcp-audit` itself is free and runs locally. The issue it addresses (token costs) is relevant for paid AI APIs (e.g., OpenAI API, Anthropic API) which typically do not have free tiers for significant usage.
+*   **Common mistake**: Leaving unused or redundant MCP servers connected. Many users connect servers once and forget about them, leading to constant, hidden token consumption. Regularly audit your connections.
+*   **Tip for better results**: After making changes, run `mcp-audit` again to verify your token savings. This feedback loop helps you understand the impact of your optimizations.
+*   **Do you even need this?**: The author notes that if your client and provider support context caching, the token cost for subsequent requests might be much lower (e.g., 5% of the full price). However, the schemas still occupy context space, and caching doesn't help the first call or if the cache expires. So, optimizing still matters for context space and initial costs.
