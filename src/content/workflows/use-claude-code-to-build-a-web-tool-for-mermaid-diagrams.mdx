@@ -1,0 +1,86 @@
+---
+title: "Use Claude Code to Build a Web Tool for Mermaid Diagrams"
+description: "Learn how Simon Willison used Claude Code to compile Rust code into a WebAssembly tool that renders Mermaid diagrams as Unicode box art."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 90
+jobToBeDone: "Build a WebAssembly tool to render Mermaid diagrams to Unicode box art"
+tools:
+  - name: "Claude Code"
+    url: "https://code.claude.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Mermaid"
+    url: "https://mermaid-js.github.io/mermaid/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Rust"
+    url: "https://www.rust-lang.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Grok CLI codebase"
+    url: "https://github.com/xai-org/grok-cli"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://simonwillison.net/2026/Jul/16/grok-mermaid/#atom-everything"
+  platform: "blog"
+  author: "Simon Willison"
+  postedAt: 2026-07-16
+score: 7
+ingestedAt: 2026-07-16
+nigeriaNotes: "This workflow involves advanced programming concepts and a paid AI coding assistant. For basic Mermaid diagrams, free online editors are a much simpler and more data-light alternative."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "As a Computer Science student, build a web-based utility for your final year project that converts text-based system architecture diagrams into shareable Unicode box art."
+  - persona: "entrepreneur"
+    scenario: "As a tech entrepreneur, develop a unique online service that allows users to input Mermaid code and instantly get Unicode box art diagrams for documentation or social media."
+  - persona: "employee"
+    scenario: "As a software engineer, create an internal web tool for your team to quickly convert Mermaid diagrams of system designs into Unicode box art for quick sharing in text-based chats or reports."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+This entry describes how a developer used an AI coding assistant, Claude Code, to create a specialized web tool. The goal was to take existing code written in Rust, which could render Mermaid diagrams (simple text-based flowcharts), and make it run directly in a web browser using a technology called WebAssembly. The final tool converts Mermaid diagrams into "Unicode box art," which are diagrams made from text characters.
+
+This is an advanced workflow because it combines several technical concepts: programming in Rust, compiling code for the web using WebAssembly, and effectively prompting a sophisticated AI coding assistant to handle these complex tasks. The exact prompt used by the author to achieve this specific result is not available in the provided excerpt.
+
+## What you can use it for
+*   **Convert specialized code for web use**: Take code originally designed for one environment (like a computer's terminal) and adapt it to run efficiently within a web browser.
+*   **Automate complex coding tasks**: Use AI assistants to help with intricate programming challenges, such as compiling code from one language to another for a different platform.
+*   **Create custom web tools**: Build unique web applications or utilities that combine different programming languages and technologies to achieve a specific function.
+*   **Visualize data or processes**: Develop custom ways to display diagrams, charts, or other visual information directly within a web application.
+
+## Tools you need
+*   **Claude Code** (paid): An advanced AI coding assistant that helps developers write, debug, and transform code.
+*   **Mermaid** (free): A simple, text-based language used to create diagrams and flowcharts easily.
+*   **Rust** (free): A programming language known for its speed, safety, and reliability, often used for high-performance applications.
+*   **Grok CLI codebase** (free): The open-source collection of code where the original Rust component for rendering Mermaid diagrams was found.
+
+## How it actually works
+The author's process began by identifying a specific Rust code component (`mermaid.rs`) within the open-source Grok CLI codebase. This Rust code was designed to render Mermaid diagrams in a terminal.
+
+The core idea was to adapt this Rust code to run in a web browser. To do this, the author used Claude Code, an AI coding assistant. The author provided Claude Code with a prompt (which is not shared in the excerpt) to guide the AI in this transformation. The AI's task was to:
+1.  Understand the Rust code's function.
+2.  Generate the necessary code to compile the Rust component into WebAssembly (Wasm). WebAssembly is a format that allows code to run very fast in web browsers.
+3.  Potentially create the surrounding JavaScript code needed to load and interact with the WebAssembly module in a web page.
+
+After Claude Code generated the required code, the author would have then used it to create the final web tool. The exact steps for setting up the development environment, compiling, and deploying the WebAssembly tool would depend on the specific instructions provided by Claude Code and the author's development choices. Since the original prompt is not available, these steps cannot be precisely reproduced here.
+
+## Words you'll see, explained
+*   **Mermaid**: A simple, text-based language for drawing diagrams and flowcharts, similar to writing in Markdown.
+*   **Unicode box art**: Visual diagrams or images created using special text characters that resemble lines, corners, and boxes.
+*   **Rust**: A modern programming language known for its speed, memory safety, and ability to build reliable software, often used for system-level programming.
+*   **WebAssembly (Wasm)**: A low-level code format that allows programs written in languages like Rust to run directly and very quickly in web browsers.
+*   **AI coding assistant**: A software tool powered by artificial intelligence that helps programmers with various tasks, such as writing code, debugging, or converting code between languages.
+*   **Grok CLI**: A command-line interface (CLI) for a coding agent, meaning a text-based program that helps with coding tasks.
+
+## Original source
+This workflow was shared by Simon Willison on his personal blog. He detailed how he used Claude Code to convert a Rust component from the Grok CLI project into a browser-based tool for rendering Mermaid diagrams.
+
+## Notes & variations
+*   **Do you even need this?**: For simply creating and viewing Mermaid diagrams, much simpler and free online tools exist, such as the Mermaid Live Editor (https://mermaid.live). This workflow is for advanced users who need to integrate specific rendering logic into a custom web application or explore AI-assisted code transformation.
+*   **Free-tier limits**: Claude Code is a paid developer product. There is no free tier for its advanced coding capabilities.
+*   **Common pitfall**: Without the exact prompt and the full context of the original Rust code and desired output, reproducing this specific tool is challenging. The results from AI coding assistants can vary based on the prompt's clarity and the AI model's version.

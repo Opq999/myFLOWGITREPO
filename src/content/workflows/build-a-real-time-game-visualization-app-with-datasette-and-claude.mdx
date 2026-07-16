@@ -1,0 +1,162 @@
+---
+title: "Build a Real-time Game Visualization App with Datasette and Claude"
+description: "Learn how to create a real-time dashboard to visualize game state from a SQLite database using Datasette and AI-generated code."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 45
+jobToBeDone: "Create a real-time game state visualization app for a SQLite-based game"
+tools:
+  - name: "Claude"
+    url: "https://claude.ai"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Datasette"
+    url: "https://datasette.io"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Python"
+    url: "https://python.org"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Git"
+    url: "https://git-scm.com"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "uv"
+    url: "https://astral.sh/uv"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "SQLite"
+    url: "https://sqlite.org"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "datasette-apps"
+    url: "https://datasette.io/plugins/datasette-apps"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://simonwillison.net/2026/Jul/13/doomql/#atom-everything"
+  platform: "blog"
+  author: "Simon Willison"
+  postedAt: 2026-07-13
+score: 8
+ingestedAt: 2026-07-16
+nigeriaNotes: "This workflow primarily uses free and freemium tools, running mostly on your local computer. Initial downloads will use data, but ongoing use is data-light as it runs locally."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "For your final year project, build a real-time dashboard to visualize the live output of your Python simulation that stores data in a local SQLite database, using AI to generate the front-end code."
+  - persona: "employee"
+    scenario: "As a data analyst, set up a live visualization dashboard for a local data collection tool or simulation that writes its output to a SQLite database, allowing you to monitor results instantly."
+  - persona: "entrepreneur"
+    scenario: "As a tech founder, create a custom internal dashboard to monitor the real-time data flow and state of your local desktop application, which uses SQLite, accelerating your development and debugging."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+This entry explores a sophisticated method for visualizing real-time data from a local database, using the example of "DOOMQL." DOOMQL is a unique, small game where the entire game logic (movement, combat, screen pixels) is managed by a SQLite database, rather than just storing game data. The author used an AI assistant, Claude, to generate a web application that connects to this live SQLite database and displays the game's screen state and a minimap in real time.
+
+This workflow is advanced because it requires comfort with command-line tools, setting up a Python environment, using Git for code management, and running local web servers. It's not a simple copy-paste recipe for beginners, as the exact steps involve navigating a technical setup and adapting AI-generated code.
+
+Instead, this entry explains the underlying concepts and the general path taken by the author. It highlights how powerful tools like Datasette, combined with AI, can be used to create custom, dynamic dashboards for complex local applications, even if the initial setup requires technical skill.
+
+## What you can use it for
+*   **Visualize real-time data:** Create custom dashboards to see live updates from any local SQLite database, not just games.
+*   **Build custom local dashboards:** Develop unique interfaces for your own local applications or data projects without needing to build a full web backend.
+*   **Integrate AI-generated code:** Learn how to use AI assistants to quickly generate front-end code (HTML, JavaScript) for specific data visualization tasks.
+*   **Explore complex data structures:** Gain insights into how data changes within a running application, like a game engine built on SQLite.
+
+## Tools you need
+*   **Claude** (freemium): An AI chat assistant used to generate HTML and JavaScript code.
+*   **Datasette** (free): A tool that turns SQLite databases into an instant, explorable website and API.
+*   **Python** (free): A popular programming language that powers Datasette and the DOOMQL game.
+*   **Git** (free): A version control system used to download the DOOMQL game code.
+*   **uv** (free): A fast Python package installer and runner, used here to manage Python environments and run scripts.
+*   **SQLite** (free): A lightweight, file-based database system that stores the game's state.
+*   **datasette-apps** (free): A plugin for Datasette that allows you to create and host custom web applications directly within Datasette.
+
+## How it actually works
+The author's process involved several technical steps to set up the game, run Datasette, and then use Claude to build the visualization app. This is a high-level overview of the path:
+
+1.  **Prepare your environment**: Ensure you have Python and Git installed on your computer. You'll need to use a terminal (like Command Prompt or PowerShell on Windows, or Bash on macOS/Linux) for most of these steps.
+
+2.  **Download the game code**: Navigate to a temporary directory and clone the DOOMQL game repository. This downloads all the game files to your computer.
+
+    # macOS or Linux
+    ```bash
+    cd /tmp
+    git clone https://github.com/petergpt/doomql
+    cd doomql
+    ```
+
+    # Windows (PowerShell)
+    ```powershell
+    Set-Location "$env:TEMP"
+    git clone https://github.com/petergpt/doomql
+    Set-Location "$env:TEMP\doomql"
+    ```
+
+3.  **Run the game**: Execute the game script using `uv`. This will start the DOOMQL game in your terminal and create a SQLite database file that stores its state.
+
+    ```bash
+    uv run host/doomql.py
+    ```
+
+    You should see the game running in your terminal. Keep this terminal window open.
+
+4.  **Start Datasette with the app plugin**: In a *new* terminal window, use `uvx` to run Datasette, pointing it to the game's SQLite database. The `--with datasette-apps` option installs the necessary plugin for custom apps.
+
+    # macOS or Linux
+    ```bash
+    uvx --prerelease=allow --with datasette-apps datasette \
+    /tmp/doomql/.doomql/doomql.sqlite \
+    -p 4444 --root --secret 1 --internal internal.db
+    ```
+
+    # Windows (PowerShell)
+    ```powershell
+    uvx --prerelease=allow --with datasette-apps datasette `
+    "$env:TEMP\doomql\.doomql\doomql.sqlite" `
+    -p 4444 --root --secret 1 --internal internal.db
+    ```
+
+    You should see Datasette start up, usually indicating it's running on `http://127.0.0.1:4444` or a similar local address.
+
+5.  **Open Datasette and create a new app**: Open your web browser and go to the address where Datasette is running (e.g., `http://127.0.0.1:4444`). Look for an option to create a new application within the Datasette interface, usually provided by the `datasette-apps` plugin.
+
+6.  **Generate the initial app code with Claude**: Go to Claude chat (e.g., `claude.ai`) and provide a prompt to generate the HTML and JavaScript for displaying the game screen. The author used a prompt similar to this:
+
+    ```
+    Build an app that displays the current state of the screen using the frame_pixels view with its x, y, r, g, b columns. have it refresh once a second.
+    ```
+
+    Claude should provide you with HTML and JavaScript code. Copy this code.
+
+7.  **Paste code into Datasette app**: Paste the generated code into the new app you created in Datasette. Save and view the app. You should see a basic visualization of the game screen that updates every second as you play the game in the other terminal window.
+
+8.  **Enhance the app with a minimap**: Return to Claude chat and ask it to add a minimap feature to your existing code. The author used a prompt like this:
+
+    ```
+    add a minimap
+    ```
+
+    Claude will provide updated code. Replace the existing code in your Datasette app with the new version and save it. You should now see a minimap alongside the main game screen visualization.
+
+## Words you'll see, explained
+*   **SQLite**: A very lightweight database system that stores all its data in a single file on your computer.
+*   **Datasette**: A tool that helps you explore and publish data from SQLite databases as a website, making it easy to view and query your data.
+*   **Datasette Apps**: A special add-on (plugin) for Datasette that lets you create and host custom web applications directly within the Datasette interface.
+*   **Python**: A widely used programming language, known for its simplicity, used to build the game and Datasette itself.
+*   **Git**: A system that helps developers track changes in code and collaborate on projects, used here to download the game's source code.
+*   **uv**: A very fast tool for installing Python packages and running Python scripts, ensuring your project has the right dependencies.
+*   **Recursive CTE (Common Table Expression)**: A powerful feature in SQL that allows a query to refer to itself, often used for complex tasks like generating sequences or traversing hierarchical data.
+*   **Terminal script**: A program designed to be run directly from a command-line interface, which is a text-based way to interact with your computer.
+
+## Original source
+This workflow was inspired by Peter Gostev's DOOMQL project, which uses GPT-5.6 Sol, and was highlighted by Simon Willison on his blog. Simon Willison demonstrated how he used Claude chat (Fable 5) to build a real-time visualization app for the game's state within Datasette.
+
+## Notes & variations
+*   **Do you even need this?** For simple data viewing, tools like Google Sheets, Microsoft Excel, or even a basic SQLite browser might be sufficient. This advanced workflow is best suited when you need a custom, real-time, interactive dashboard for a local application or a complex dataset that updates frequently.
+*   **Free-tier limits:** While Claude chat offers a freemium tier, it may have usage limits on the number of prompts or the length of responses. For very extensive code generation, you might hit these limits.
+*   **Common pitfall:** Setting up the Python environment and ensuring all tools (Git, uv, Datasette) are correctly installed and accessible from your terminal can be challenging. Pay close attention to error messages and ensure your system's PATH variable is correctly configured for Python and uv.

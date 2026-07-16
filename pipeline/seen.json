@@ -10400,8 +10400,100 @@
     "08d6877c6de6cb7397b00afac263e1d4557cb00a7ce8bfd8e8d4d9a9ea2b5e06": {
       "url": "https://dev.to/jaleedahmad/-i-built-a-tool-that-found-my-langgraph-email-agent-could-be-hijacked-to-forward-the-entire-inbox-3ik7",
       "date": "2026-07-15"
+    },
+    "a86d40434fe2a084f8c1d3827fb9e3b664490a7d847007c1769603d2897d7152": {
+      "url": "https://news.ycombinator.com/item?id=48878641",
+      "date": "2026-07-16"
+    },
+    "72f1fc2966332d2093732f7c989d73a51efcd3b25a152fdc014e989b8ba94ff4": {
+      "url": "https://simonwillison.net/2026/Jul/16/grok-mermaid",
+      "date": "2026-07-16"
+    },
+    "e8b567c5b8942a1cbde2d43e02ff2159f5044900037406ad5be123d8b07efe74": {
+      "url": "https://simonwillison.net/2026/Jul/15/grok-build",
+      "date": "2026-07-16"
+    },
+    "066046df4871265ccd71328e1358869726707395f3ff682c692cc54612cb63ad": {
+      "url": "https://simonwillison.net/2026/Jul/15/claude-web-fetch-exfiltration",
+      "date": "2026-07-16"
+    },
+    "8503be752bcefe06dbd0b6064a9ea8d4bc3e67bda17590a433266dc683726c96": {
+      "url": "https://simonwillison.net/2026/Jul/14/github-changeling",
+      "date": "2026-07-16"
+    },
+    "b182c362844659bade6ead66bd3e99ccf11640690bda850c4ed8163841c8a8f8": {
+      "url": "https://simonwillison.net/2026/Jul/14/pedalican",
+      "date": "2026-07-16"
+    },
+    "3eb498f3de751d597fb5feb83cbab0e464e804b7c829c1ed6c44da49b9f21b38": {
+      "url": "https://simonwillison.net/2026/Jul/14/lobsters-sqlite",
+      "date": "2026-07-16"
+    },
+    "596b88b3089e3cf93deea14a4a41a442d0bbd376fcc9864c0180c3b8af4e52ba": {
+      "url": "https://simonwillison.net/2026/Jul/14/armin-ronacher",
+      "date": "2026-07-16"
+    },
+    "b79780c1675e4fa7abd788383725c7d4e1bfa9725aa36da45be00743920bf554": {
+      "url": "https://simonwillison.net/2026/Jul/14/datasette",
+      "date": "2026-07-16"
+    },
+    "383074e2de7c887414acf9d48843545d20f20fa46752998c6b8fecbeef412756": {
+      "url": "https://simonwillison.net/2026/Jul/14/uvx-github-actions-cache",
+      "date": "2026-07-16"
+    },
+    "fef1723d0079f86eea53a97a4663c12cfd4d7055f19014b7b3532c3b50541840": {
+      "url": "https://simonwillison.net/2026/Jul/13/doomql",
+      "date": "2026-07-16"
+    },
+    "669accad4d8a52d1820079c37e8ff1398eaf2990639db2daf1580dd0c3f1806e": {
+      "url": "https://simonwillison.net/2026/Jul/13/datasette-code-frequency",
+      "date": "2026-07-16"
+    },
+    "34ced310fc3298ab86aede96334a8a6883c6a365ddeed3ecc1db91c0d6c2fd53": {
+      "url": "https://www.latent.space/p/ainews-thinkys-inkling-975b-a41b",
+      "date": "2026-07-16"
+    },
+    "e476c6952fb49846fc24f2037cc97e87ee747a87efddfaa6ec6d83e07e55eedc": {
+      "url": "https://www.latent.space/p/ainews-not-much-happened-today-c72",
+      "date": "2026-07-16"
+    },
+    "5353388ec768010e7a8ba3773e8c1983352ae3f46fc8c8232330b4a79b68af90": {
+      "url": "https://www.latent.space/p/aiewf26trends",
+      "date": "2026-07-16"
+    },
+    "e0b1b76a247bd05987e3e09caca372d9b26af2476fc81f08934064dacbb1d662": {
+      "url": "https://www.latent.space/p/ainews-codex-usage-up-10x-in-6-months",
+      "date": "2026-07-16"
+    },
+    "bfe76e8681fb269e36e14806fc168881c4e82e4d579a2861b2df3782cc160498": {
+      "url": "https://www.bensbites.com/p/how-to-use-gpt-56",
+      "date": "2026-07-16"
+    },
+    "11253d0d7f13833897b2558e138cdafc151b50ff83dec5fe56513f88b9a33b56": {
+      "url": "https://huggingface.co/blog/allenai/shippy-tech-blog",
+      "date": "2026-07-16"
+    },
+    "969cdff003616d877728734c0df8eb69cbcac3e36aeedc2eef49af940b3cc6b5": {
+      "url": "https://huggingface.co/blog/ibm-research/model-routing-is-simple-until-it-isnt",
+      "date": "2026-07-16"
+    },
+    "7f36308856b0311fcff4f4439bf2df1cf5d0ade39f366d71c47364dd13170cfe": {
+      "url": "https://huggingface.co/blog/thinkingmachines-inkling",
+      "date": "2026-07-16"
+    },
+    "5e1ffb76943884fba9ea1ab5c1316be0c7312e7f4c34cac3c6edffda677bb954": {
+      "url": "https://huggingface.co/blog/real-world-voiceeq",
+      "date": "2026-07-16"
+    },
+    "811b2710c736817d2b11130b0fea20b2bae920001ce385caa5c6a8c6e33d669a": {
+      "url": "https://newsletter.pragmaticengineer.com/p/context-engineering-with-dex-horthy",
+      "date": "2026-07-16"
+    },
+    "6ebe4bc3d26fb903a6ce7d3b043fcad531003c7d27467c95e135cd86d7eb476d": {
+      "url": "https://newsletter.pragmaticengineer.com/p/what-is-loop-engineering",
+      "date": "2026-07-16"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 4
+  "dailyPage": 5
 }
