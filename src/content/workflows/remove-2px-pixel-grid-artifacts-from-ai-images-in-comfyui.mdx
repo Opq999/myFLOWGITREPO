@@ -1,0 +1,76 @@
+---
+title: "Remove 2px Pixel Grid Artifacts from AI Images in ComfyUI"
+description: "Learn how to remove distracting 2px pixel grid patterns that appear in AI-generated images, especially those created with Qwen or Wan 2.1 VAEs in ComfyUI. Get cleaner, sharper results."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 10
+jobToBeDone: "Remove 2px pixel grid artifacts from images generated with specific VAEs in ComfyUI"
+tools:
+  - name: "ComfyUI"
+    url: "https://comfyui.com/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://www.reddit.com/r/StableDiffusion/comments/1umwhq7/2px_pixel_grid_on_krea2_from_vae_and_how_to/"
+  platform: "reddit"
+  author: "/u/Haiku-575"
+  postedAt: 2026-07-04
+score: 9
+ingestedAt: 2026-07-17
+nigeriaNotes: "ComfyUI runs locally on your computer, so it uses your device's processing power and storage. The workflow file is tiny, but you'll need to download ComfyUI and large AI models (like Stable Diffusion and VAEs) first, which can use significant data."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "Clean up AI-generated images for assignments by removing 2px grid artifacts using a ComfyUI workflow."
+  - persona: "employee"
+    scenario: "Remove 2px pixel grid artifacts from AI-generated marketing visuals in ComfyUI for sharper presentation."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will get AI-generated images free from the distracting 2-pixel repeating grid pattern often left by VAEs like Qwen Image VAE or Wan 2.1 VAE. This method uses a special filter to detect and cancel out the grid, ensuring your images look cleaner and sharper, especially after applying other edits.
+
+## Tools you need
+*   **ComfyUI** (free): A powerful, visual tool that lets you build and run AI image generation workflows using nodes (blocks that perform specific tasks).
+
+## Steps
+1.  **Download the grid removal workflow**: Open the provided link in your web browser, then save the content as a JSON file on your computer.
+
+    The author provides a special ComfyUI workflow file to remove the grid.
+
+    ```
+    https://pastebin.com/v7y1z0SH
+    ```
+
+    You should see a page with a lot of code. Look for a "Download" or "Raw" button (often near the top right) and click it to save the file. If there isn't one, copy all the text and paste it into a plain text editor (like Notepad on Windows or TextEdit on Mac), then save it as `remove_2px_grid.json`.
+
+    You should now have a file named `remove_2px_grid.json` saved on your device.
+
+2.  **Open ComfyUI**: Launch the ComfyUI application on your computer.
+
+    You should see the ComfyUI interface, which is a large blank canvas where you can arrange different processing blocks (nodes).
+
+3.  **Load the new workflow**: Drag the `remove_2px_grid.json` file you just downloaded directly onto the ComfyUI canvas.
+
+    A new group of nodes will appear on your canvas. These nodes represent the "notch filter" that removes the pixel grid.
+
+4.  **Connect the filter into your workflow**: Integrate the new filter nodes into your existing image generation setup.
+
+    In your ComfyUI workflow, find the `VAE Decode` node (this block converts compressed image data into a full image) and the `Preview Image` or `Save Image` node (these show or save your final picture). Disconnect the line that goes directly from `VAE Decode` to the next image processing step. Then, connect the output of your `VAE Decode` node to the input of the first new filter node. Finally, connect the output of the last new filter node to the input of your `Preview Image` or `Save Image` node. The filter should now sit directly between your VAE decoding and your final output.
+
+    Your image generation workflow now includes the grid removal filter.
+
+5.  **Generate and check your images**: Run your ComfyUI workflow to create an image, then inspect it closely.
+
+    Use a VAE that is known to cause the 2px grid, such as the Qwen Image VAE or Wan 2.1 VAE, to generate an image. Once the image is created, zoom in on it, ideally to 400% magnification. Compare this image to one generated *without* the filter (you can temporarily bypass the filter nodes or load your original workflow).
+
+    You should see that the image processed with the filter is free of the 2px pixel grid, especially when compared to an unfiltered image, which might still show the pattern.
+
+## Original source
+This workflow was originally shared by Reddit user /u/Haiku-575 on July 4, 2026. They described how a special GLSL ComfyUI node could effectively remove the 2px repeating grid pattern caused by certain VAEs in AI-generated images.
+
+## Notes & variations
+*   Do you even need this? This specific filter is designed for a very particular problem: a 2px grid caused by Qwen Image VAE or Wan 2.1 VAE. If your images don't show this specific grid, you likely don't need this workflow.
+*   Common pitfall: The author stresses that the filter must be applied *directly after* the VAE decode step. If you apply it later in your workflow, it might not work correctly or could even introduce new issues.
+*   Tip for better results: The grid becomes more noticeable if you sharpen images. By removing the grid *before* sharpening, you can achieve much cleaner and sharper final images without amplifying an ugly pattern.

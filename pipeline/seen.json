@@ -10492,8 +10492,276 @@
     "6ebe4bc3d26fb903a6ce7d3b043fcad531003c7d27467c95e135cd86d7eb476d": {
       "url": "https://newsletter.pragmaticengineer.com/p/what-is-loop-engineering",
       "date": "2026-07-16"
+    },
+    "0076e72e7efeba129fd338edf2951161a25fc022fd3d241f9590a756ee5b7408": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1uvnso6/it_says_hello_human",
+      "date": "2026-07-17"
+    },
+    "ae56f098fbfed2de35215a8dedfefca10096f7ed8823799d29bbe898743c55fe": {
+      "url": "https://simonwillison.net/2026/Jul/17/spot-birds-not-golf",
+      "date": "2026-07-17"
+    },
+    "5ae8aede20b52732388462c8eb208c1d775f78cfcc205fb1317f140584968429": {
+      "url": "https://github.com/colbymchenry/codegraph",
+      "date": "2026-07-17"
+    },
+    "d19ec44050d0ebba70babb86b43ecee04713fcf8f096e9fa1ea4f971ad30467a": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1uu14a3/surprised_this_came_out_of_a_one_shot_prompt",
+      "date": "2026-07-17"
+    },
+    "2b102685bd9b6d6f7b395bb8c709aa823abac739d2e717b94fcd58101c5ee3a0": {
+      "url": "https://simonwillison.net/2026/Jul/16/firefox-in-webassembly",
+      "date": "2026-07-17"
+    },
+    "06fd0e9232d0cffaae900b8f9e5a9d8fc4d3b5062c45ecc603a865ecd3bf93d3": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1utvtr7/i_asked_chatgpt_to_imagine_the_daily_life_of_the",
+      "date": "2026-07-17"
+    },
+    "07f97d4cbd8ecd7bf5ac77b50235b52f025ea0dfdaae2655fc78038fbe5c8077": {
+      "url": "https://simonwillison.net/2026/Jul/16/kimi-k3",
+      "date": "2026-07-17"
+    },
+    "09c1a7ba43ca6afb2bdfd7b962d6c813c9b39db6abe2ee344d45f03f170bb0ad": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1uqh1gc/chatgpt_remaking_my_work_for_the_thousandth_time",
+      "date": "2026-07-17"
+    },
+    "6bcf21fe63d9ec208c52d9b2bcd823faa8749cb9ad9c9b6b0b8e43e44615b8b7": {
+      "url": "https://simonwillison.net/2026/Jul/16/bad-codex-bug",
+      "date": "2026-07-17"
+    },
+    "d1aea22c06dbcb92e1869777be6dc90fffe610111d8d93e28e11081729992f75": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1uuflmm/with_how_ram_are_getting_expensive_they_left_us",
+      "date": "2026-07-17"
+    },
+    "d96d9d6bf49b26c591236e1bb2e09de4ecae862f0db856e7bb937a75a6c98675": {
+      "url": "https://simonwillison.net/2026/Jul/16/inkling",
+      "date": "2026-07-17"
+    },
+    "a219018a287857343b14763c1226ef9767cb59163c05b67f3054262726804519": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1urovnd/execs_confused_and_horrified_by_the_huge_ai_bills",
+      "date": "2026-07-17"
+    },
+    "404a63554183ec5ce0ff7a82d9d45e79b10ddfe39f3857394a00186a63aee6ae": {
+      "url": "https://simonwillison.net/2026/Jul/16/mermaid-ascii",
+      "date": "2026-07-17"
+    },
+    "d61f5d102adc00b737818314e41a88bc05e5e3e4e0aa111c769e4ba26f6f5560": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1uhummt/ive_never_seen_someone_elses_chatgpt_so_i_thought",
+      "date": "2026-07-17"
+    },
+    "7dcd1d605fa1423301e6659317b55c19f4cd40b088e0d9303c252994af5b7852": {
+      "url": "https://simonwillison.net/2026/Jul/16/linus-torvalds",
+      "date": "2026-07-17"
+    },
+    "99548d0e9eb38a45801d62d1627444e2654d3eb6febc881b6378d062111c72ed": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1ugp31x/%CA%96",
+      "date": "2026-07-17"
+    },
+    "a1fa918dc4b4a86f59b4e2dd6084a46703b100dbc2dc3f2211dff5713338f80a": {
+      "url": "https://www.latent.space/p/ainews-kimi-k3-28t-a50b-the-largest",
+      "date": "2026-07-17"
+    },
+    "6d43ebc4a628618faac9b3362d44e6428da24d743d73def0eae877ba06998a5e": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1usg7b1/chatgpts_depiction_of_elite_families_across_asia",
+      "date": "2026-07-17"
+    },
+    "12559ee9e76aa6b366b0fd27393eaece105305cf83afecd24b191b6fb5adb5d0": {
+      "url": "https://www.latent.space/p/the-lab-of-the-future-should-feel",
+      "date": "2026-07-17"
+    },
+    "4cd51deb1d47fd6c43d570f731d55bdac60bf64bfbfb563051e173479a82bdc5": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1utulqc/this_is_some_dbag_behavior_on_civitai",
+      "date": "2026-07-17"
+    },
+    "e475b8a9d8acab56c77ceffb996c3dcd9272f0a60f7527308f1b40983802edb5": {
+      "url": "https://www.bensbites.com/p/ive-got-an-inkling",
+      "date": "2026-07-17"
+    },
+    "a3546acaa50765b76aad5895acf29bc6c78eab0f45451a419be5d6a8c5b83189": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1ulidi8/ultrareal_lora_for_krea2",
+      "date": "2026-07-17"
+    },
+    "980d749ecfc6165f5b0ba142ad2e932590f10a5256964afdcf0d6ab2a7615a82": {
+      "url": "https://huggingface.co/blog/nvidia/nemotron-3-embed-wins-rteb",
+      "date": "2026-07-17"
+    },
+    "06654db33ec5386ec754562ee5798a49b5252fbbae1e22b8f18fba9ef99bec18": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1uoiesg/evening_date",
+      "date": "2026-07-17"
+    },
+    "c5c3971a8972616617d38b775feccbc8460effc513d5eaeba9c7e1e9e64c1a6f": {
+      "url": "https://huggingface.co/blog/Dharma-AI/newer-models-same-advantages",
+      "date": "2026-07-17"
+    },
+    "0025326e83f83f3faa061a4af228e00cabe6a48dc71b9c3448cbf3e11fc6d4a8": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1uue841/which_style_is_surprisingly_well_done_by_krea_2",
+      "date": "2026-07-17"
+    },
+    "f443de946cf38955186f067e0c1346f0585aa3faabf63f8b3df50f3c7d243563": {
+      "url": "https://huggingface.co/blog/security-incident-july-2026",
+      "date": "2026-07-17"
+    },
+    "1a2045d69b3a71e8c507a5226877eeda9bc9e611f86777a9e869c6467ca91f3f": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1urza62/lingbot_world_a_new_open_weights_world_model",
+      "date": "2026-07-17"
+    },
+    "9d293a5ca00b31ca4974cd0fb5ce214087502732fcce9a953dede89199af0484": {
+      "url": "https://newsletter.pragmaticengineer.com/p/the-pulse-groks-cli-caught-uploading",
+      "date": "2026-07-17"
+    },
+    "30315ebefa7479b5447cc1fd13f94c53083f69821111d5a3eb5cba06e0c38f25": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1uphlfx/new_face_id_lora_seems_to_be_great",
+      "date": "2026-07-17"
+    },
+    "9b5807e4976b327426f9c19b48ea81a24c1c54fe8585d8979bd0c77043e5314c": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1ufetpj/day_2_testing_krea_2_with_krea2realismv1_lora",
+      "date": "2026-07-17"
+    },
+    "f17a364fdad13d966190c9e8ca49ab5a6367068c139660d7941210297632def5": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1uku1dv/local_ai_news_you_missed_june_2026",
+      "date": "2026-07-17"
+    },
+    "b747edaa8606f94976f9f095f2ec5209d4e7e3a2df8c45c36f67f095e05777ac": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1uqu2p3/sceneworks_a_free_open_source_local_alternative",
+      "date": "2026-07-17"
+    },
+    "c72701dbd7748445449d237cd87f38af2dc202b3fbb6ec4e03dfe4ab0e3cb674": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1umwhq7/2px_pixel_grid_on_krea2_from_vae_and_how_to",
+      "date": "2026-07-17"
+    },
+    "b3c963a1f9ea308525c4230d3cf04d71292d806334f78a9337408dbad7d6d4bd": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1uumub5/styles_buoy_for_krea_2",
+      "date": "2026-07-17"
+    },
+    "71d10b7a03f00bda575b243540a49148f8bc92cc3f384db1943efea5f2afd0cc": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1ux3md6/nvidia_pid_15_checkpoint_is_out",
+      "date": "2026-07-17"
+    },
+    "0e8897372183ce18b73f837695b1c08ec177adf4371fffa7f9e41b7428b01f60": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1uf1qcc/krea_2_turbo_100_styles_on_the_same_scene",
+      "date": "2026-07-17"
+    },
+    "c529043c7a97b6eef9d12885b09d19d2cc3522407104a42d37bba04bf7535694": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1ucdyvr/ultrawide_cinematic_shots_ideogram_v4",
+      "date": "2026-07-17"
+    },
+    "717e1ad0b6b2250b4c0110e5c1d1e71454a3a935d5a3006f2868e569f9e87a3e": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1ukgw94/some_krea2_generations_in_4k",
+      "date": "2026-07-17"
+    },
+    "e10793e5b3c5107d01b5b52742a49062dcd45a544a37af17cfb9b41f593fc2e2": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1ue8rns/krea_2_uses_a_terrible_vae_but_luckily_for_us_pid",
+      "date": "2026-07-17"
+    },
+    "436972fb6ddbeef9afcdf3e3887cf87406501029ff78614ab5bc44e2e9cca797": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1ulonm8/krea2realismv2_is_finally_here_things_got_a",
+      "date": "2026-07-17"
+    },
+    "aa9435926632cbbf2e4bb278e2291dbd7b325d0738bed6c2519eaf72ca73961d": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1ubbeis/because_of_licensing_terms_lewd_model_trainers",
+      "date": "2026-07-17"
+    },
+    "d16d247145a1477d4a65428bd8f46fa55a1ee21025f1ea3be6d295662aabd346": {
+      "url": "https://www.reddit.com/r/Notion/comments/1uavfz6/anyone_else_seeing_this_pinned_properties_now",
+      "date": "2026-07-17"
+    },
+    "50e78cee6ca6740fd88d1e6090faa0a8cc8c3af6ccda5a18fb433a9f101d8c4e": {
+      "url": "https://www.reddit.com/r/Notion/comments/1uwl098/i_am_building_locality_that_mounts_notion_as",
+      "date": "2026-07-17"
+    },
+    "fb01a34e2bb64e9cee3b61cb3d62a0bcb25f889ee7ebb8b14584f44b1be9e815": {
+      "url": "https://www.reddit.com/r/Notion/comments/1uujh76/12_months_since_last_system_post_back_with",
+      "date": "2026-07-17"
+    },
+    "6b2fd584f265c95adb5d1dc1005d08c586ae66f0efc29625539b1beb5b008f4c": {
+      "url": "https://www.reddit.com/r/Notion/comments/1uo7pf1/what_are_you_guys_doing_with_the_html",
+      "date": "2026-07-17"
+    },
+    "21465f3c3c31b84cdbf41df1e8f2367536a161992e48de003b0a40646fcb711a": {
+      "url": "https://www.reddit.com/r/Notion/comments/1udq6vq/scammer_creator_madebytheo_stealing_your_work",
+      "date": "2026-07-17"
+    },
+    "adc0fbfd6c2485925c3c5dd822aa3ce17f0d629a143e632529500c164e3f40fa": {
+      "url": "https://www.reddit.com/r/Notion/comments/1ux0a22/notion_malaysia_coffee_cart_at_mytown_kl_notion",
+      "date": "2026-07-17"
+    },
+    "99884d05fe23674724b0d5df1e25e9ef7d5ca8257780fb1cddef83e501eecccd": {
+      "url": "https://www.reddit.com/r/Notion/comments/1uvu5yv/notion_mobile_sucks_would_this_actually_make",
+      "date": "2026-07-17"
+    },
+    "f8795fb32c0d76e78e506857dbe95f5b7149ce1ca6ebcc24da16ea3acd45d9d8": {
+      "url": "https://www.reddit.com/r/Notion/comments/1u8zurf/how_are_you_using_claude_with_notion_in_2026",
+      "date": "2026-07-17"
+    },
+    "f9ba83082bf61a253ebd691fdabfe7d0c947f0772a72eba3f82533aa064abe91": {
+      "url": "https://www.reddit.com/r/Notion/comments/1uic3le/free_tool_that_migrates_your_obsidian_vault_to",
+      "date": "2026-07-17"
+    },
+    "243d99861dbc567f6a243ae04de84b867914c77dabcf4d39bf30c77bd5e750a4": {
+      "url": "https://www.reddit.com/r/Notion/comments/1u9dv3f/notion_is_such_a_pain_right_now",
+      "date": "2026-07-17"
+    },
+    "c2ae37641a6ea14c9e1afc0088542a656374558174069f5430c93576faacd346": {
+      "url": "https://www.reddit.com/r/Notion/comments/1upbev0/something_new_is_coming_what_new_app_did_notion",
+      "date": "2026-07-17"
+    },
+    "61f20b5c18958cd8732e51f366f054e2db4dcdc0a925136e713d3faadfb596e8": {
+      "url": "https://www.reddit.com/r/Notion/comments/1ug1i8o/anyone_else_misses_the_old_desktop_notion_sidebar",
+      "date": "2026-07-17"
+    },
+    "0be8f7c444e1d8af5f4e5fad52811c462666dc10e4f5b4e96fa9446daf48744b": {
+      "url": "https://www.reddit.com/r/Notion/comments/1uy3w96/the_original_savetonotion_bot_died_so_i_spent_the",
+      "date": "2026-07-17"
+    },
+    "1b87a6899ab264496b59eb8ab9c9b7e86f9e6355198dc798ca76b14a5d394a47": {
+      "url": "https://www.reddit.com/r/Notion/comments/1uv4d3o/whats_the_best_knowledge_base_creation_tool_for_a",
+      "date": "2026-07-17"
+    },
+    "b6727e8fb0dc3c5c768b8d443eca8df1fd0185beddbfe87ef6dcf7d307b9e00e": {
+      "url": "https://www.reddit.com/r/Notion/comments/1uuc8hr/two_years_later_almost_all_my_notion_issues_are",
+      "date": "2026-07-17"
+    },
+    "286e07e959dcc9bd53a02f1bc195aade1f6a716150ec05a4ff60ffbd2f24c7ba": {
+      "url": "https://www.reddit.com/r/Notion/comments/1usbs1n/how_do_you_actually_keep_your_notion_workspace",
+      "date": "2026-07-17"
+    },
+    "fa164cfc30614cef6915110d25c20ebce60e6ea1e6d53c3039b5025fa57223ae": {
+      "url": "https://www.reddit.com/r/Notion/comments/1ujn1wj/an_open_letter_to_notion_dont_strand_personal",
+      "date": "2026-07-17"
+    },
+    "966e1fbfe8ed733f65cab647e64201bd535081e0a224b41f52d885ee1aaa7e09": {
+      "url": "https://www.reddit.com/r/Notion/comments/1ugw4b9/im_kind_of_an_ai_hater_but_notion_ai_is_genuinely",
+      "date": "2026-07-17"
+    },
+    "1fcd46f8805e95b1c2c4ac20671861cceb93dca6289cebd22b37bc993d32c608": {
+      "url": "https://www.reddit.com/r/Notion/comments/1uwppbw/bring_your_own_ai_key_is_coming_soon",
+      "date": "2026-07-17"
+    },
+    "e2d76caa2a081045af4f426023080e726cdfb51a2086fb3cff47b4cee1790523": {
+      "url": "https://www.reddit.com/r/Notion/comments/1uw589v/how_do_you_actually_structure_a_notion_workspace",
+      "date": "2026-07-17"
+    },
+    "25651e853a4ffd6927a58fe3b93c1eb9e64b415453f9ea880cf67b6553e3e081": {
+      "url": "https://www.reddit.com/r/Notion/comments/1ue6qom/notion_desktop_app_is_making_my_laptop_heat",
+      "date": "2026-07-17"
+    },
+    "5988f8d68a8d9ecd5b9fdbe75918aa4f60a8f2f2448e3cb96c022370b643e264": {
+      "url": "https://www.reddit.com/r/Notion/comments/1utqui0/i_cant_use_notion",
+      "date": "2026-07-17"
+    },
+    "68f4373e20b45cd1a858bcd00103b709316efd8d7314b0546fb924760843f272": {
+      "url": "https://www.reddit.com/r/Notion/comments/1ukengt/do_you_think_people_overcomplicate_notion",
+      "date": "2026-07-17"
+    },
+    "c3e283ea9be4dba7ef9f50cd347ee1201e4afec9207ff97cbf1a373f93e0afdd": {
+      "url": "https://www.reddit.com/r/Notion/comments/1uwxbrd/kanban_style_task_manager_alternatives_to_notion",
+      "date": "2026-07-17"
+    },
+    "a9574abcb1ed6777aab60dc468161061748e294ff49084edd60d36a4b8c02c80": {
+      "url": "https://www.reddit.com/r/Notion/comments/1url3lv/what_are_your_thoughts_on_notion_business_plan",
+      "date": "2026-07-17"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 5
+  "dailyPage": 0
 }
