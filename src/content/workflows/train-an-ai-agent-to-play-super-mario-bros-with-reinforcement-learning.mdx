@@ -1,0 +1,95 @@
+---
+title: "Train an AI Agent to Play Super Mario Bros with Reinforcement Learning"
+description: "Learn how to train an AI agent to play Super Mario Bros using Reinforcement Learning. Understand the core concepts and tools behind building intelligent game-playing agents."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 180
+jobToBeDone: "Train an AI agent to play Super Mario Bros using Reinforcement Learning"
+tools:
+  - name: "Python"
+    url: "https://www.python.org"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Stable-Baselines3"
+    url: "https://stable-baselines3.readthedocs.io/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "gym-super-mario-bros"
+    url: "https://pypi.org/project/gym-super-mario-bros/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "OpenCV"
+    url: "https://opencv.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Google Colab"
+    url: "https://colab.research.google.com/"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://www.reddit.com/r/learnmachinelearning/comments/1ucna6s/i_trained_my_first_ai_agent_to_play_super_mario/"
+  platform: "reddit"
+  author: "/u/Own_Hamster_5938"
+  postedAt: 2026-06-22
+score: 9
+ingestedAt: 2026-07-18
+nigeriaNotes: "This workflow uses Google Colab's free tier, which provides access to a T4 GPU. Initial setup and library downloads may use some data, but the interactive parts are relatively light."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "Train an AI to play Super Mario Bros using Reinforcement Learning for a computer science project."
+  - persona: "employee"
+    scenario: "Automate repetitive tasks in a simulated environment using Reinforcement Learning for a tech demo."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+This workflow explains how to train an AI agent (a computer program that makes decisions) to play the classic video game Super Mario Bros. It uses a method called Reinforcement Learning (RL), where the AI learns by trial and error, getting rewards for good actions (like moving right or jumping over enemies) and penalties for bad ones.
+
+The author successfully built an AI that learned to navigate the game, jump over Goombas (the mushroom-like enemies), and reach the flagpole consistently, all without any human demonstrations or pre-programmed rules. The AI figured out these strategies purely from the rewards and penalties it received.
+
+This is an advanced workflow because it requires coding skills, understanding complex AI concepts like Reinforcement Learning algorithms (specifically PPO, or Proximal Policy Optimization), and setting up a development environment. The exact code and detailed instructions are typically found in a code notebook or GitHub repository, which the author offered to share but is not included in this excerpt. Therefore, it cannot be reduced to simple copy-paste steps for a beginner.
+
+## What you can use it for
+*   **Build game-playing AI**: Create agents that learn to play video games without human instructions, adapting to different challenges.
+*   **Develop autonomous systems**: Apply similar learning techniques to control robots or self-driving cars in simulated environments.
+*   **Understand AI decision-making**: See how an AI learns complex strategies from basic rewards and penalties, offering insights into intelligent behavior.
+*   **Experiment with Reinforcement Learning**: Get hands-on experience with a powerful branch of AI that focuses on learning through interaction.
+
+## Tools you need
+*   **Python** (free): The programming language used for the entire project.
+*   **Stable-Baselines3** (free): A library that provides pre-built Reinforcement Learning algorithms, including PPO.
+*   **gym-super-mario-bros** (free): A special environment that lets AI agents interact with and play Super Mario Bros.
+*   **OpenCV** (free): A library for computer vision, used here to process the game's visual input.
+*   **Google Colab** (freemium): A free online platform that provides access to powerful computers (GPUs) needed for training AI models.
+
+## How it actually works
+1.  **Set up your environment**: You would typically start by opening Google Colab, which provides a powerful computer with a GPU (a special chip that makes AI training fast) directly in your web browser.
+2.  **Install libraries**: Inside Colab, you would install the necessary Python packages using commands. These include `stable-baselines3` for the AI algorithm, `gym-super-mario-bros` for the game environment, and `OpenCV` for image processing.
+3.  **Prepare the game environment**: The `gym-super-mario-bros` library allows your AI to interact with the game. This involves setting up how the AI sees the game (its observations) and how it can control Mario (its actions).
+4.  **Pre-process game frames**: Use OpenCV to process the game's visual input. The author used "frame stacking" (4 frames), which means the AI sees a short sequence of past frames to understand motion and changes over time, not just a single snapshot.
+5.  **Choose an AI algorithm**: The author used PPO (Proximal Policy Optimization), a common and effective Reinforcement Learning algorithm for training agents.
+6.  **Define rewards and penalties**: The AI learns by receiving points (rewards) for desired actions (like moving right, jumping over enemies) and losing points (penalties) for undesired ones (like getting hit). The author relied purely on these rewards, without human demonstrations or hardcoded rules.
+7.  **Train the agent**: You would run the PPO algorithm for a set number of "timesteps" (individual actions the AI takes in the game). The author trained their agent for 500,000 timesteps across 10 parallel environments (meaning 10 games running at once to speed up learning).
+8.  **Tune hyperparameters**: Adjust settings called "hyperparameters" that control how the AI learns. The author specifically mentioned `ent_coef = 0.01` to encourage exploration (trying new things) and `gae_lambda = 0.95` for stable advantage estimation (a way to make learning more consistent). Understanding *why* these settings matter is key.
+9.  **Evaluate the agent**: After training, you would test the AI to see how well it plays. The author selected the best performance out of 300 test runs. The exact code for these steps was not provided in the excerpt but was offered by the author upon request.
+
+## Words you'll see, explained
+*   **AI agent**: A computer program designed to make decisions and take actions in an environment, like playing a game.
+*   **Reinforcement Learning (RL)**: A type of AI where an agent learns to make decisions by trial and error, receiving rewards or penalties for its actions.
+*   **PPO (Proximal Policy Optimization)**: A popular and effective algorithm used in Reinforcement Learning to train AI agents efficiently.
+*   **Hyperparameters**: Settings that control how an AI model learns. These need to be carefully chosen (tuned) for the best results.
+*   **Timesteps**: A measure of how many actions an AI agent takes in its environment during training.
+*   **Parallel environments**: Running multiple copies of the game or simulation at the same time to speed up the AI's learning process.
+*   **Frame stacking**: A technique where an AI sees several consecutive game frames (images) to understand movement and changes over time, not just a single snapshot.
+*   **Goombas**: Common mushroom-like enemies in the Super Mario Bros game.
+
+## Original source
+This workflow is inspired by a Reddit post from /u/Own_Hamster_5938, who shared their first successful Reinforcement Learning project where they trained an AI agent to play Super Mario Bros.
+
+## Notes & variations
+*   **Do you even need this?**: If your goal is simply to play Super Mario Bros, you don't need to train an AI. This workflow is for those interested in learning *how* AI agents can be taught to perform complex tasks through trial and error.
+*   **Free-tier limits**: Google Colab's free tier has limits on GPU usage and session length. Long training runs, especially for complex games, might be interrupted or require restarting.
+*   **Common pitfall**: Reinforcement Learning can be very sensitive to hyperparameters. Small changes to these settings can drastically affect how well or how quickly the AI learns. It often requires a lot of experimentation and patience.
+*   **Tip**: If you're new to Reinforcement Learning, start with simpler environments (like the classic CartPole game) before tackling more complex games like Super Mario Bros. This helps build foundational understanding without getting overwhelmed.
