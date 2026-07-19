@@ -1,0 +1,83 @@
+---
+title: "Turn WhatsApp Client Chats into an AI-Generated Kanban Board with WA Kanban AI"
+description: "Convert messy WhatsApp client chats into an organized Kanban board with AI. Structure project requirements, tasks, and progress without cloud middlemen."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 20
+jobToBeDone: "Turn WhatsApp client chats into an AI-generated Kanban board"
+tools:
+  - name: "OpenAI API"
+    url: "https://platform.openai.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Anthropic API"
+    url: "https://console.anthropic.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "WA Kanban AI"
+    url: "https://chromewebstore.google.com/detail/wa-kanban-ai/jngjbbjfdjccjajkdfjcdjajfjdjajfjdj"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "WhatsApp Web"
+    url: "https://web.whatsapp.com"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Google Chrome"
+    url: "https://www.google.com/chrome"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://www.reddit.com/r/automation/comments/1un41uj/how_to_turn_a_whatsapp_client_chat_into_an/"
+  platform: "reddit"
+  author: "/u/americanoandhotmilk"
+  postedAt: 2026-07-04
+score: 6
+ingestedAt: 2026-07-19
+nigeriaNotes: "The AI models (OpenAI/Anthropic) require a paid API key, but a few dollars of credit can process many chats, making it very affordable. WhatsApp Web uses mobile data, so consider connecting to Wi-Fi for heavy use to save on data costs."
+tiktokUrl: ""
+published: false
+---
+
+## What you'll get
+You'll transform unstructured WhatsApp client messages (including voice notes, screenshots, and text) into an organized, local Kanban board. This approach uses a browser extension to directly connect your WhatsApp Web chats to an AI model using your own API key, avoiding third-party cloud services for privacy and security.
+
+## Tools you need
+*   **OpenAI API** (paid): Provides the AI brain to understand your messages and create tasks.
+*   **Anthropic API** (paid): An alternative AI brain to understand your messages and create tasks.
+*   **WA Kanban AI** (free): A Chrome browser extension that reads your WhatsApp Web chats and sends them to the AI.
+*   **WhatsApp Web** (free): The web version of WhatsApp where you access your client chats.
+*   **Google Chrome** (free): The web browser needed to install and run the WA Kanban AI extension.
+
+## Steps
+1.  **Get an AI API Key**: You need an API key (a unique code that lets you use the AI service) from either OpenAI or Anthropic. This will cost a few dollars in credit, which is usually enough for many extractions.
+    Go to the OpenAI website (platform.openai.com) or Anthropic website (console.anthropic.com). Sign up or log in. Find the 'API keys' section and create a new key. Copy this key.
+    You should have a long string of letters and numbers (your API key) ready to paste in the next step.
+
+2.  **Install WA Kanban AI**: Install the WA Kanban AI browser extension.
+    Open Google Chrome. Go to the Chrome Web Store and search for 'WA Kanban AI'. Click 'Add to Chrome' and then 'Add extension' when prompted.
+    You should see the WA Kanban AI icon appear in your browser's toolbar (usually top right).
+
+3.  **Configure the extension**: Paste your AI API key into the extension's settings.
+    Click the WA Kanban AI icon in your Chrome toolbar. This will open its options page. Find the field for 'API Key' and paste the key you copied earlier. Save the settings.
+    The extension is now connected to the AI service and ready to use.
+
+4.  **Open WhatsApp Web**: Access your client chats in WhatsApp Web.
+    Go to web.whatsapp.com in your Chrome browser. Scan the QR code with your phone to link your WhatsApp account.
+    You should see your WhatsApp chats displayed in the browser.
+
+5.  **Generate the Kanban board**: Use the extension to turn your chat into tasks.
+    Open the specific client chat you want to convert into a Kanban board. Click the WA Kanban AI icon in your Chrome toolbar again. The extension will ask you how far back to read messages (e.g., 'last 3 days' for recent requirements, or further back for a full project history).
+    The extension will process the messages and generate task cards (with title, description, original message source, attachments, and implementation steps) onto a local Kanban board. This board will have columns like 'Backlog', 'To Do', 'In Progress', 'Review', and 'Done'.
+
+6.  **Manage your tasks**: Organize your project by dragging tasks.
+    Drag the generated task cards between the columns as your work progresses. The board automatically keeps a history of all card movements.
+    Your project tasks are now structured and trackable.
+
+## Original source
+This workflow was shared by Reddit user /u/americanoandhotmilk, who developed this method to convert client project requirements from WhatsApp messages into a structured Kanban board without relying on third-party cloud services.
+
+## Notes & variations
+There are no truly free alternatives for the AI models (OpenAI/Anthropic APIs) in this specific setup, as they are paid services. However, the cost per extraction is usually very low, often just a few Naira.
+A common pitfall is trying to use the WhatsApp Business API or other cloud CRMs. These are designed for sending messages or require your data to sit on external servers, which this workflow specifically avoids for privacy. Stick to the browser extension method for local processing.
+For best results, ensure your WhatsApp chat history is relatively clean and focused on project requirements. If the chat is very long or contains many irrelevant messages, the AI might struggle to identify the core tasks. You can also try selecting a shorter reading period (e.g., 'last 3 days') for more focused extractions.

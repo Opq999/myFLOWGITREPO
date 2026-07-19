@@ -1,0 +1,75 @@
+---
+title: "Automate Receipt and Invoice Data Entry into Google Sheets with Nanonets"
+description: "Learn how to automatically extract key information from receipts and PDF invoices and send it directly to Google Sheets, saving time on manual data entry."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 45
+jobToBeDone: "Auto-extract receipt and PDF invoice data into Google Sheets"
+tools:
+  - name: "Gmail"
+    url: "https://gmail.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Nanonets"
+    url: "https://nanonets.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Google Sheets"
+    url: "https://docs.google.com/spreadsheets/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://www.reddit.com/r/automation/comments/1upnten/fastest_way_to_autoextract_receipt_and_pdf/"
+  platform: "reddit"
+  author: "/u/AdSpiritual1172"
+  postedAt: 2026-07-07
+score: 6
+ingestedAt: 2026-07-19
+nigeriaNotes: "Nanonets offers a free tier of 100 pages/month, which is suitable for small businesses to test and use for light data entry. Data usage is minimal, mainly for sending emails and small PDF files."
+tiktokUrl: ""
+published: false
+---
+
+## What you'll get
+You will set up an automated system that reads key information (like vendor, date, total, tax) from your receipts and PDF invoices. This data will then be automatically added to a Google Sheet, eliminating the need for manual typing. This approach works by using an AI-powered document parser to "read" your documents and extract specific fields, making it efficient for recurring invoices from common vendors.
+
+## Tools you need
+*   **Gmail** (freemium): For receiving vendor emails and setting up forwarding rules.
+*   **Nanonets** (freemium): An AI-powered tool that extracts data from documents using templates you create.
+*   **Google Sheets** (free): For storing the extracted data in an organized spreadsheet.
+
+## Steps
+
+1.  **Set up a dedicated email for receipts**: Create a new Gmail address (e.g., `receipts@yourbusiness.com`) or set up a filter in your existing Gmail account. This email will be where all your vendor invoices and receipts are sent or forwarded.
+    *   *What to do*: Go to Gmail, create a new account, or go to Settings > See all settings > Filters and Blocked Addresses to create a new filter.
+    *   *What you should see*: A new email address or a filter that can identify vendor emails.
+
+2.  **Sign up for Nanonets and create a custom model**: Nanonets will be your document parser. You'll create a "model" (an AI template) specifically for invoices or receipts.
+    *   *What to do*: Go to the Nanonets website, sign up for a free account. Choose to create a "Custom Model" and select "Invoice" or "Receipt" as the document type.
+    *   *What you should see*: Your Nanonets dashboard with a new custom model ready for training.
+
+3.  **Train your model with example documents**: Upload 2-3 examples of invoices or receipts from your most common vendors. You will then "annotate" these documents, showing the AI where to find specific pieces of information.
+    *   *What to do*: In your Nanonets model, upload a PDF or image of a receipt/invoice. Use the Nanonets interface to draw boxes around fields like "Vendor Name", "Date", "Subtotal", "Tax", "Total", and "Currency". Label each box correctly. Repeat for 2-3 different documents, especially from different vendors if their layouts vary.
+    *   *What you should see*: Nanonets will show the fields you've mapped. After annotating a few documents, the model will start to learn and predict these fields on new documents.
+
+4.  **Connect Nanonets to your dedicated email**: Configure Nanonets to receive documents directly from your `receipts@` email address.
+    *   *What to do*: In Nanonets, go to the "Integrations" or "Input" section for your model. Look for an option to connect via email. Nanonets will provide a unique email address (e.g., `yourmodel@nanonets.com`).
+    *   *What to do (Gmail)*: In your `receipts@` Gmail account, set up email forwarding to the unique Nanonets email address. Alternatively, if you're using a filter, set it to forward matching emails to the Nanonets address.
+    *   *What you should see*: Nanonets confirming that email input is configured.
+
+5.  **Connect Nanonets to Google Sheets**: Set up an integration so that extracted data is automatically sent to a Google Sheet.
+    *   *What to do*: In Nanonets, go to the "Integrations" or "Output" section. Select "Google Sheets". You will be prompted to connect your Google account and choose an existing Google Sheet or create a new one. Map the fields you extracted (Vendor, Date, Total, etc.) to specific columns in your Google Sheet. The author suggests adding a unique key like `file_id` or a hash; Nanonets often provides a document ID that can serve this purpose.
+    *   *What you should see*: Nanonets confirming the Google Sheets integration is active, and your Google Sheet showing new column headers matching your mapped fields.
+
+6.  **Test the full workflow**: Send a test invoice or receipt to your `receipts@` Gmail address.
+    *   *What to do*: Send an email with a PDF or image attachment of an invoice/receipt to your `receipts@` email. Wait a few minutes.
+    *   *What you should see*: The email should be forwarded to Nanonets, processed by your model, and the extracted data should appear as a new row in your connected Google Sheet. Check if all fields are correctly extracted.
+
+## Original source
+This workflow was shared by Reddit user /u/AdSpiritual1172, who posted their findings on July 7, 2026. They detailed efficient methods for small teams to automate receipt and PDF invoice data extraction.
+
+## Notes & variations
+*   **Free tier limits**: Nanonets offers a free tier that processes up to 100 pages per month. This is a good starting point for small businesses or freelancers with light data entry needs. If you process more, you'll need to upgrade to a paid plan.
+*   **Common mistake**: Not training enough templates or training with low-quality documents. The AI model learns from your examples, so provide clear, representative invoices from your most frequent vendors. If a new vendor has a very different layout, you might need to create a new template or add an example from them.
+*   **Tip for better results**: Start by creating templates for your 2-3 most common vendors first. Once those are working reliably, you can expand to more vendors or create a general "receipt" template for less frequent ones. Always review the first few extractions to ensure accuracy.
