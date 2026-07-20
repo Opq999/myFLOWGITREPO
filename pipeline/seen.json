@@ -11144,8 +11144,24 @@
     "89035521118af56e63be8f4fbf5c21ea760c5c0f8b88509b84a491471eeab668": {
       "url": "https://www.reddit.com/r/automation/comments/1ut413w/heres_how_were_handling_telemetry_and_query_load",
       "date": "2026-07-19"
+    },
+    "b62a763aef1421b7cd93c0dec57b498cf7d7bc0d7c8ba14add602574847457cd": {
+      "url": "https://news.ycombinator.com/item?id=48966569",
+      "date": "2026-07-20"
+    },
+    "d0597bbfd20e34f06f8da320bab2bcbb99907b54abba2f1004e8312b4d88fa86": {
+      "url": "https://simonwillison.net/2026/Jul/20/sam-altman",
+      "date": "2026-07-20"
+    },
+    "75284f4065946857982821d7e269c5f22c45402752de3c1a73bf6671d4224ac6": {
+      "url": "https://github.com/odysseus-dev/odysseus",
+      "date": "2026-07-20"
+    },
+    "3c90af76cbde03631070bf5eec1567bb3c41a846769b58754a9edb0c9525d137": {
+      "url": "https://github.com/abhigyanpatwari/GitNexus",
+      "date": "2026-07-20"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 2
+  "dailyPage": 3
 }
