@@ -1,0 +1,68 @@
+---
+title: "Automate Notion Backups to Google Drive with Restora CLI"
+description: "Learn how to automatically back up your Notion workspace to Google Drive using the free Restora CLI tool. Set up daily backups easily."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 5
+jobToBeDone: "Automate daily backups of Notion workspace to Google Drive"
+tools:
+  - name: "Restora CLI"
+    url: "https://restora.cc/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Notion"
+    url: "https://www.notion.so/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Google Drive"
+    url: "https://www.google.com/drive/"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://www.reddit.com/r/Notion/comments/1uk0ns6/finally_got_automatic_notion_backups_working_free/"
+  platform: "reddit"
+  author: "/u/king_polls"
+  postedAt: 2026-06-30
+score: 8
+ingestedAt: 2026-07-21
+nigeriaNotes: "This workflow is free to use. Data usage is minimal as it only transfers your Notion data to Google Drive. Ensure you have a stable internet connection for the daily backup."
+nigeriaUseCases:
+  - persona: "entrepreneur"
+    scenario: "Automatically back up your startup's entire Notion workspace, including product roadmaps, content calendars, and client notes, to Google Drive daily, safeguarding your business data."
+  - persona: "student"
+    scenario: "Ensure all your final-year project research, thesis drafts, and group assignment notes stored in Notion are automatically backed up to Google Drive every day, preventing data loss."
+  - persona: "employee"
+    scenario: "Ensure all your critical project documentation, meeting notes, and task lists stored in Notion for your 9-to-5 role are automatically backed up to your Google Drive daily, protecting your work."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will set up an automatic daily backup of your entire Notion workspace, including all its structure, to your personal Google Drive. This approach ensures your data is safe and accessible even if something happens to your Notion account, using a free tool that runs locally on your computer.
+
+## Tools you need
+*   **Restora CLI** (free): A command-line tool to automate Notion backups.
+*   **Notion** (freemium): Your workspace where you store your data.
+*   **Google Drive** (freemium): Cloud storage to keep your backups.
+*   **Node.js and npm** (free): Required to install and run the Restora CLI. You can download Node.js from https://nodejs.org/.
+
+## Steps
+1.  **Install Node.js and npm**: If you don't have them, download and install Node.js from its official website. npm (Node Package Manager) comes bundled with Node.js. You should see a confirmation message after installation.
+2.  **Open your terminal**: This is a command-line interface where you type commands. On Windows, search for 'Command Prompt' or 'PowerShell'. On macOS, search for 'Terminal'.
+3.  **Set up Restora CLI**: Run the following command in your terminal. This command starts the setup process for Restora.
+
+    ```bash
+    npx @restora/cli setup
+    ```
+
+    The tool will guide you through connecting your Notion account, selecting which parts of your workspace to back up, and scheduling daily runs. You will need to find your Notion integration token, which is a unique key that allows Restora to access your Notion data. The setup process should be straightforward and take only a few minutes.
+4.  **Confirm daily backups**: After the setup is complete, Restora CLI will run automatically in the background every day. You should see confirmation messages or logs indicating that your Notion data is being backed up to your Google Drive. The tool states that nothing is stored on their servers; your data goes directly from your machine to your Google Drive.
+
+## Original source
+This workflow was shared by Reddit user /u/king_polls on the platform, explaining how they finally automated their Notion backups using the free Restora CLI tool. They wanted to share the solution after seeing others express concerns about losing data.
+
+## Notes & variations
+*   **Free tier viability**: Restora CLI is completely free for backups. Your Notion and Google Drive accounts will use their free tiers, which are generally sufficient for personal backups.
+*   **Common mistake**: Take your time finding your Notion integration token. If it's incorrect, the setup will fail. Double-check the token before proceeding with the configuration.
+*   **Tip for better results**: Restora CLI also supports backing up to other services like S3, Backblaze, R2, or a local folder. If you have specific storage needs or want an additional local copy, explore these options during the setup process.
