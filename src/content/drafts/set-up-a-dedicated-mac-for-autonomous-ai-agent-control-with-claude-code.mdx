@@ -1,0 +1,79 @@
+---
+title: "Set up a dedicated Mac for autonomous AI agent control with Claude Code"
+description: "Learn the concept of dedicating a spare Mac for secure, autonomous AI agent control using Claude Code. Understand the benefits of isolated environments."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 30
+jobToBeDone: "Set up a dedicated Mac for autonomous AI agent control (Claude Code)"
+tools:
+  - name: "Claude Code"
+    url: "https://www.anthropic.com/claude-code"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Mac"
+    url: "https://www.apple.com/mac/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "SSH"
+    url: "https://www.ssh.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Claude app"
+    url: "https://claude.ai"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=48959392"
+  platform: "hackernews"
+  author: "ykev"
+  postedAt: 2026-07-18
+score: 6
+ingestedAt: 2026-07-22
+nigeriaNotes: "This workflow relies on a paid subscription to Claude Code for the agent's capabilities. While the Claude mobile app has a freemium tier, the full agent control features are part of the paid developer product. The setup itself is not data-heavy, but ongoing AI tasks will consume data."
+tiktokUrl: ""
+published: false
+---
+
+## What this is, in plain English
+This entry describes a method to transform a separate, older Mac computer into a dedicated workstation for an AI agent called Claude Code. The goal is to create a secure, isolated environment where the AI agent can perform tasks like research or software development on its own, without interfering with your main computer or accessing your personal data.
+
+The author highlights that running powerful AI agents with broad permissions carries inherent risks on your primary machine. By using a spare Mac, you can mitigate these risks, allowing the agent to operate freely within its own environment. This setup also offers the convenience of controlling the AI agent remotely from your phone using the Claude app, or from your main Mac via SSH (Secure Shell), which is a secure way to connect to and control a computer remotely.
+
+This workflow is considered advanced because the full instructions for setting up Claude Code to control the Mac are not included in this excerpt. The process involves technical steps like preparing a computer for remote control and configuring an AI agent, which requires specific technical skills beyond simple copy-pasting. The complete guide is available at the author's external link.
+
+## What you can use it for
+*   **Delegate risky tasks**: Run AI agents that might access files or send network requests in an isolated environment, protecting your main computer from potential issues.
+*   **Automate development**: Have Claude Code assist with game development (e.g., running Unity) or other software tasks on a full macOS system, which might not be possible in a container.
+*   **Remote control**: Interact with the AI agent from your phone using the Claude app, or from your main computer via SSH, allowing you to manage tasks anytime and anywhere.
+*   **Dedicated research**: Set up the agent to perform specific research tasks without interfering with your daily work on your primary machine, ensuring a focused environment.
+
+## Tools you need
+*   **Claude Code** (paid): The AI agent that will control the Mac.
+*   **Mac** (free): A spare or old Mac computer to serve as the dedicated AI workstation.
+*   **SSH** (free): A secure way to connect to and control the spare Mac remotely from your main computer.
+*   **Claude app** (freemium): The mobile application used to interact with Claude Code from your phone.
+
+## How it actually works
+The author's approach involves preparing a spare Mac to be fully controlled by Claude Code. Based on the provided excerpt, the initial steps are:
+
+1.  **Prepare a spare Mac**: The author suggests using an old or spare Mac, referred to as the 'target' machine. This involves wiping any personal data from it. For Macs that support it, you would go to "System Settings - General - Transfer or Reset - Erase All Content and Settings." For older Intel Macs, you would restart into Recovery mode (hold Cmd-R at boot), use Disk Utility to erase the internal drive, and then reinstall macOS. Optionally, you can update to the latest macOS afterward.
+
+2.  **Create an isolated user account**: On the newly prepared spare Mac, you would create a new local user account by going to "System Settings - Users & Groups." It is strongly recommended not to sign into an Apple ID during this setup, ensuring the AI agent has no access to your personal information or cloud services.
+
+3.  **Connect and control**: The author states the intention is to drive the agent over SSH from your main Mac (the 'source' machine) on your local network, and control it from your phone using the Claude app. However, the specific steps for installing and configuring Claude Code for this control, or how to set up SSH access, are not detailed in this excerpt. For the full, step-by-step guide, you would need to refer to the author's original source.
+
+## Words you'll see, explained
+*   **AI agent**: A computer program that can act on its own to achieve specific goals, often by interacting with other software or the internet.
+*   **Claude Code**: An advanced AI model from Anthropic, specifically designed to understand and generate code, and capable of controlling a computer.
+*   **SSH (Secure Shell)**: A secure network protocol that allows you to connect to and control a computer remotely over an unsecured network.
+*   **Container**: A standardized package of software and its dependencies that can run reliably across different computing environments, often used for isolation but with some limitations compared to a full operating system.
+*   **Apple ID**: A user account required to access Apple services like the App Store, iCloud, and iMessage on Apple devices.
+
+## Original source
+This concept is based on a guide by ykev, shared on Hacker News, which details how to set up a spare Mac for full control by Claude Code. The author created this setup to have a separate, secure environment for delegating AI tasks.
+
+## Notes & variations
+*   **Do you even need this?**: The author explains their preference for this setup over alternatives like running agents in containers or using tools like OpenClaw. They highlight the benefits of having a full Mac operating system for tasks like running specific applications (e.g., Unity for game development) and accessing the latest Claude Code features with mobile app control. For simpler, less risky AI tasks, running agents in a container on your main machine or using a cloud-based service might be a more straightforward and easier-to-set-up option.
+*   **Free-tier limits**: Claude Code is a paid service, meaning you need a subscription to use its agent capabilities. While the Claude mobile app has a freemium tier for general chat, the advanced agent control features described here are part of the paid developer product.
+*   **Common pitfall**: A critical mistake to avoid is not properly isolating the spare Mac. The author strongly emphasizes creating a fresh user account with no personal data and no Apple ID signed in. Failing to do this could allow the AI agent to access sensitive personal information stored on the machine, defeating the purpose of creating a secure, isolated environment.
