@@ -1,0 +1,89 @@
+---
+title: "Train an AI Model for Image Likeness with Krea 2 LoKr"
+description: "Learn how to train a Krea 2 LoKr model to achieve highly accurate image likeness using specific dataset and technical settings."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 45
+jobToBeDone: "Train a Krea 2 LoKr model for accurate image likeness"
+tools:
+  - name: "Krea AI"
+    url: "https://krea.ai"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Kohya_ss"
+    url: "https://github.com/kohya-ss/kohya_ss"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://www.reddit.com/r/StableDiffusion/comments/1v2vsqm/almost_perfect_likeness_in_750_steps_krea_2_lokr/"
+  platform: "reddit"
+  author: "/u/LilBrownBebeShoes"
+  postedAt: 2026-07-21
+score: 6
+ingestedAt: 2026-07-23
+nigeriaNotes: "The high VRAM requirement (18-20GB) means this workflow needs a powerful, expensive GPU. This makes it inaccessible for most users relying on free tiers or mobile devices. Cloud GPU services would be paid, and local hardware is a significant upfront cost."
+tiktokUrl: ""
+published: false
+---
+
+## What this is, in plain English
+This workflow describes how to train an AI model using the Krea 2 LoKr method to create images that have an almost perfect likeness to a specific person or character. LoKr (Low-Rank Adaptation for Krea) is a technique that helps AI models learn specific visual details very efficiently, making it ideal for capturing unique facial features, body proportions, and overall appearance.
+
+This is an advanced workflow because it requires significant computing power, specifically a powerful GPU (Graphics Processing Unit, the chip that makes AI training fast) with a large amount of VRAM (Video Random Access Memory, the GPU's dedicated memory). The author mentions needing 18-20GB of VRAM, which is typically found in high-end graphics cards like an RTX 3090. It also involves using specialized software for dataset preparation and model training, which are not simple web tools.
+
+There isn't a single copy-paste recipe because the exact steps depend on your chosen training environment (e.g., local software setup, a specific cloud platform) and the particular 'ai-toolkit' you use for data preparation. This entry explains the core concepts, settings, and best practices so you can understand and adapt them to your setup.
+
+## What you can use it for
+*   **Create AI models of specific people:** Train a model to accurately reproduce the face and features of a particular individual.
+*   **Generate characters in various styles:** Produce images of a specific character or person in different artistic styles, outfits, or situations while maintaining their core likeness.
+*   **Develop custom assets for creative projects:** Use the trained model to generate consistent visual assets for games, animations, or digital art.
+
+## Tools you need
+*   **Krea AI** (paid): A platform for AI image generation and model training. This workflow describes training a model using the Krea 2 architecture, which may be a feature within Krea AI or a local implementation of its technology. For the high-resource training described, a paid subscription or powerful local hardware is required.
+*   **Kohya_ss** (free): A popular open-source toolkit for training various AI image models, including features for dataset preparation and automatic captioning. This tool is a common example of what the author refers to as an "ai-toolkit" for preparing your image data.
+
+## How it actually works
+To achieve almost perfect likeness, you'll focus on preparing a high-quality dataset and configuring specific training settings. The overall process involves gathering images, preparing them with an AI toolkit, and then running the training process.
+
+1.  **Prepare your image dataset:**
+    *   **Image Count:** Aim for 20 high-quality images. If your images are lower quality, you can use up to 40.
+    *   **Full Body Shots:** Include at least two to five full body images. This helps the model understand the person's height and body proportions.
+    *   **Variety:** Use images with different hairstyles and situations. This makes the model more flexible, allowing you to change features later without losing the likeness.
+
+2.  **Caption your images using an AI toolkit:**
+    *   Use an automatic captioning feature, such as those found in tools like Kohya_ss. This tool will analyze your images and generate descriptive text for each one.
+    *   **Trigger Word:** Do not use the person's actual name in the captions. Instead, create a unique, shortened trigger word (e.g., if the person is "Jane Doe," use "jnedoe"). This word will be used later to activate the likeness in your generated images.
+    *   **Quality Tags:** If your images are low quality or vintage, add tags like "low quality" or "vintage" to their captions. This prevents the model from learning and reproducing these imperfections in its outputs.
+
+3.  **Configure Krea 2 training settings:**
+    *   **LoKr Factor:** Set this to 16.
+    *   **Training Resolution:** Set this to 768 pixels.
+    *   **Total Steps:** The author suggests 3000 total steps, but notes that likeness is usually achieved by step 750. If your dataset quality is lower than average, you might add a couple of hundred extra steps.
+    *   **Settings:** Use "Automagic2," "Sigmoid," and "Balanced."
+    *   **Advanced Settings:** Enable "Do Differential Guidance" at its default level of 3.
+
+4.  **Run the training:**
+    *   The training process will use about 18 to 20GB of VRAM. On a powerful GPU like an RTX 3090, a 750-step run takes approximately 40 to 45 minutes.
+    *   Monitor the training progress. The goal is to stop training once good likeness is achieved, typically around 750 steps, to avoid overtraining.
+
+*Note: The author doesn't provide exact click-by-click instructions for a specific Krea 2 platform or 'ai-toolkit.' The steps above outline the general process and recommended settings. You will need to apply these settings within your chosen training software or platform.* 
+
+## Words you'll see, explained
+*   **LoKr (Low-Rank Adaptation for Krea):** A specific, efficient method for training AI models to learn and reproduce very detailed visual features, like a person's face.
+*   **Likeness:** How well an AI-generated image matches the appearance of a specific person, character, or object it was trained on.
+*   **Dataset:** A collection of images and their descriptions used to teach an AI model what to generate.
+*   **Captioning:** The process of adding descriptive text to images in a dataset, which helps the AI model understand the content of each image.
+*   **Trigger word:** A unique, short word you create and add to image captions. When you use this word in a prompt, the AI model will generate images based on the specific likeness it learned.
+*   **VRAM (Video Random Access Memory):** The dedicated memory on a GPU (Graphics Processing Unit). It's essential for running and training AI models, especially for high-resolution images or complex models. More VRAM allows for more demanding tasks.
+*   **GPU (Graphics Processing Unit):** A specialized computer chip designed to handle complex calculations very quickly, making it ideal for tasks like AI model training and image generation.
+*   **Overtraining:** When an AI model is trained for too long, it starts to memorize the specific images in its dataset instead of learning general features. This can make the model less flexible and produce less varied or natural-looking results.
+
+## Original source
+This workflow is based on a guide shared by Reddit user /u/LilBrownBebeShoes on the r/StableDiffusion subreddit. The author provided detailed settings and tips for achieving high-quality likeness when training Krea 2 LoKr models.
+
+## Notes & variations
+*   **Do you even need this?** For general image generation or exploring different styles, simpler web-based AI tools or pre-trained models might be sufficient. This advanced workflow is best suited when you need to achieve a very specific and accurate likeness of a person or character that isn't available through existing models.
+*   **Free-tier limits:** The requirement for a powerful GPU with high VRAM means there are no practical "free tiers" for running this workflow. The hardware itself represents a substantial investment, or you would need to pay for cloud GPU services.
+*   **Common pitfall:** Overtraining is a frequent issue. If you train the model for too many steps, it might start to produce images that look too much like your original dataset, losing the ability to generate new, varied poses or expressions. The author specifically notes that likeness is often achieved by step 750, even if the total steps are set higher.
+*   **Tip for better results:** Start with the recommended 750 steps and evaluate the results. If the likeness isn't strong enough, you can gradually add a few hundred more steps and re-evaluate, rather than running for the full 3000 steps immediately. This helps prevent overtraining and saves time.
