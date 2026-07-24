@@ -11916,8 +11916,28 @@
     "25e27f44359e1b9a6817c965c13cd68fb40147973dd15b14b2ef4789bfa8bdb4": {
       "url": "https://www.reddit.com/r/jobsearchhacks/comments/1uh616q/i_thought_my_whole_career_was_dead_but_i_think_i",
       "date": "2026-07-23"
+    },
+    "42587da10e5f8c54ba816df9a78ab2f59c689f4a1506b36d886146fe55382a13": {
+      "url": "https://simonwillison.net/2026/Jul/23/the-first-known-runaway-ai-agent",
+      "date": "2026-07-24"
+    },
+    "2e07e31fd0edeba2b364c081f3afc09f363777ae5600ce433eb6b963d8f4a56b": {
+      "url": "https://www.latent.space/p/ainews-black-forest-labs-flux-3-multimodal",
+      "date": "2026-07-24"
+    },
+    "63b02a6fd9b9f45663229a47a25ecc44f3d1c5a2aaa0851a6d1193452579e1d8": {
+      "url": "https://www.bensbites.com/p/caught-cheating",
+      "date": "2026-07-24"
+    },
+    "d53d2d2cbde8d7768f5aad6c5d716a64f29f02570afa389b9a7abcf2260f7055": {
+      "url": "https://www.oneusefulthing.org/p/an-opinionated-guide-to-which-ai-b22",
+      "date": "2026-07-24"
+    },
+    "92cb7fd0851217e4f4edc98d4d5c43e11fdac70df18b216ec957d1f8fd8c9612": {
+      "url": "https://newsletter.pragmaticengineer.com/p/the-pulse-quitting-spotify-podcasts",
+      "date": "2026-07-24"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 0
+  "dailyPage": 1
 }
