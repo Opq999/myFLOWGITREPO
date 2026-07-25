@@ -11936,8 +11936,236 @@
     "92cb7fd0851217e4f4edc98d4d5c43e11fdac70df18b216ec957d1f8fd8c9612": {
       "url": "https://newsletter.pragmaticengineer.com/p/the-pulse-quitting-spotify-podcasts",
       "date": "2026-07-24"
+    },
+    "6c126c1ead709ee45dd7d4fa9c16f2fbf7097580064692eef19eaf9d6782cafa": {
+      "url": "https://news.ycombinator.com/item?id=48989006",
+      "date": "2026-07-25"
+    },
+    "41b7406eb7b85e53eeff566897125e0d73f1b90506ca86cd295011f30caf22cf": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1v4lztj/fair_point",
+      "date": "2026-07-25"
+    },
+    "19ec33d3c212238bb6d7a6bb752344a71e41f28fc90058fb3092c890417c0087": {
+      "url": "https://simonwillison.net/2026/Jul/25/boris-cherny",
+      "date": "2026-07-25"
+    },
+    "b71affffc65f8385e4f40de965c00fac411a35d2351c13e7917e648ad45b4d58": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1v4dnuq/i_asked_chatgpt_to_create_an_uncanny_image_from",
+      "date": "2026-07-25"
+    },
+    "7ad7adb78cc0b27856b7f827909514ce751d8dbf2063bbdfe9672ca743d85334": {
+      "url": "https://simonwillison.net/2026/Jul/24/introducing-claude-opus-5",
+      "date": "2026-07-25"
+    },
+    "53454a600c93c6196c77b2579d8a245a0efd75ab468bcbd06d517b2bda239c7e": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1v3x079/it_must_be_my_birthday_because_chat_is_serving_up",
+      "date": "2026-07-25"
+    },
+    "013aaa4c67382290fea9da2926e0a31e610048ff1e553f6fde7bc5b7458bcda3": {
+      "url": "https://www.latent.space/p/ainews-claude-opus-5-fable-level",
+      "date": "2026-07-25"
+    },
+    "80b38aa052813c5b0d08cd723320ae302160baf9ed5f0ce2609de0862f7b5c17": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1v3pwdu/i_wanted_a_reverse_merman_but_i_got_this",
+      "date": "2026-07-25"
+    },
+    "0dedaf200a3a1dd6e9e1d02333be3aceff038d6ed201d3962e046ca8c3036d72": {
+      "url": "https://www.reddit.com/r/ChatGPTPromptGenius/comments/1uoqd8p/the_reason_your_aibuilt_site_looks_cheap_is_one",
+      "date": "2026-07-25"
+    },
+    "1b56ab4ba8358cf9368181cc00d4003b47ca8d54608c332560aea3506ca13814": {
+      "url": "https://www.reddit.com/r/ChatGPTPromptGenius/comments/1uj43gl/built_a_prompt_structure_that_actually_gets",
+      "date": "2026-07-25"
+    },
+    "6108d94c880059185c2ee76a4ecb2d34465653cd6346f7bea934e26fadbd172f": {
+      "url": "https://www.reddit.com/r/ChatGPTPromptGenius/comments/1uke512/exhaustive_selfawareness_prompt_the_full_mirror",
+      "date": "2026-07-25"
+    },
+    "f1a66b73e058ba2894e783f0084bab4c5231464b318d10db4fae3da5f516d522": {
+      "url": "https://www.reddit.com/r/ChatGPTPromptGenius/comments/1ul9buy/stop_asking_ai_to_help_you_think_ask_it_to",
+      "date": "2026-07-25"
+    },
+    "f73a8eed3cd118bb4834d6114565c57791938bddcff7f804fdbc577dfb3a2031": {
+      "url": "https://www.reddit.com/r/ChatGPTPromptGenius/comments/1uwyi0v/every_website_ai_builds_looks_the_same_purple",
+      "date": "2026-07-25"
+    },
+    "82429282b0a078392991b80e384ef1f94e9d39d25ee928a8b9f1b3073096c4a3": {
+      "url": "https://www.reddit.com/r/ChatGPTPromptGenius/comments/1uiljwo/the_two_kinds_of_prompts_worth_saving_quick",
+      "date": "2026-07-25"
+    },
+    "b1b9f13d5ff12ec12200fce6ca68794dc474c78d732e47fc1a9205a3b6b24b0b": {
+      "url": "https://www.reddit.com/r/ChatGPTPromptGenius/comments/1utnjxp/i_need_some_prompts_that_really_get_the_best",
+      "date": "2026-07-25"
+    },
+    "71debc9545067b8cf839a7d9750db3ce0b8ee3ab20b72d53f64e3a9efd3c7b5e": {
+      "url": "https://www.reddit.com/r/ChatGPTPromptGenius/comments/1v4jtvg/prompt_template_for_creating_ultrarealistic",
+      "date": "2026-07-25"
+    },
+    "c92ec43ae20428780d0fca6e596c78ae062f459210c4f5aafaa7c57891a41ddf": {
+      "url": "https://www.reddit.com/r/ChatGPTPromptGenius/comments/1uzhe6y/built_a_skill_that_fights_overengineered",
+      "date": "2026-07-25"
+    },
+    "cb0fea516aaed367b54e6ed681b3bd848e3e9c7b12756edb12842b9cda6c2a9d": {
+      "url": "https://www.reddit.com/r/ChatGPTPromptGenius/comments/1v29n1f/found_a_prompt_that_fixed_my_staring_at_client",
+      "date": "2026-07-25"
+    },
+    "8e81ed70353bf0e898bae5c05737930430e1f052fdef5ec21fcacb3acd09bb7f": {
+      "url": "https://www.reddit.com/r/ChatGPTPromptGenius/comments/1urktj3/chatgpt_infographics_are_prettyand_most_likely",
+      "date": "2026-07-25"
+    },
+    "589a5d87c2216e3d5f1a33a87c1ac6bfe4fc818b01d7326ef82ae054ea511b7d": {
+      "url": "https://www.reddit.com/r/ChatGPTPromptGenius/comments/1uguiw0/tested_12_ai_prompts_for_listings_only_one",
+      "date": "2026-07-25"
+    },
+    "d993f75cee27aa7be92a4979a0e46b9d3c35ea8b43e4844ee398de5fcc369f4f": {
+      "url": "https://www.reddit.com/r/ChatGPTPromptGenius/comments/1uzaogg/prompt_generator_web_app",
+      "date": "2026-07-25"
+    },
+    "6e4d99c76b63e2ba915d96c68a39eb2ee50173051572991ade64550e30510f9d": {
+      "url": "https://www.reddit.com/r/ChatGPTPromptGenius/comments/1uwhloj/promptclaude_van_damme",
+      "date": "2026-07-25"
+    },
+    "5ddd5c4ba45b4e15a413144bc54b103d526e16e78deb84e5fd55e0a188b5bd7e": {
+      "url": "https://www.reddit.com/r/ChatGPTPromptGenius/comments/1umy8x3/gpt_reasoning_about_time_instruction",
+      "date": "2026-07-25"
+    },
+    "a7440f9be99d2997354e8d9962319426bd827b4c6ac7e3a73920f9181f6e773c": {
+      "url": "https://www.reddit.com/r/ChatGPTPromptGenius/comments/1ui480o/alright_fck_ill_do_it",
+      "date": "2026-07-25"
+    },
+    "c83432943d5ad6f09796aa398097e0ea71a87a00ef079e67e3385c3417d599d7": {
+      "url": "https://www.reddit.com/r/ChatGPTPromptGenius/comments/1uqjudd/think_as_hard_as_you_can_and_alikes_no_longer",
+      "date": "2026-07-25"
+    },
+    "176d8959328d8f1ffeeb52cd390eaf4fa5959be35b0cea6bb38d458d2ea7a067": {
+      "url": "https://www.reddit.com/r/ChatGPTPromptGenius/comments/1uoth6e/suggestions_for_novel_writing_prompts",
+      "date": "2026-07-25"
+    },
+    "37fde911eb7a8986602fc18ea5e192d52138c62c2e17c17aae2a2db40203e81d": {
+      "url": "https://www.reddit.com/r/ChatGPTPromptGenius/comments/1un2cbk/dont_juts_use_prompts",
+      "date": "2026-07-25"
+    },
+    "9ea3b8d1306ffdcac91e995aef422c685dea1f82f805028bb1273ac47acf296b": {
+      "url": "https://www.reddit.com/r/ChatGPTPromptGenius/comments/1v37jd0/fillintheblank_chatgpt_template_that_turns_any",
+      "date": "2026-07-25"
+    },
+    "1c740d510120c3b0123d3cf76d0a865aac4530c5a9ade527045d848f2d44ef71": {
+      "url": "https://www.reddit.com/r/ChatGPTPromptGenius/comments/1uzh1sg/chatgpt_wont_follow_my_writing_style",
+      "date": "2026-07-25"
+    },
+    "33998924cb330079f39096d4b61b2a3f49daa3d5e19f1b176654c7678f22815f": {
+      "url": "https://www.reddit.com/r/ChatGPTPromptGenius/comments/1ujv19y/title_the_two_prompts_in_this_pack_that_people",
+      "date": "2026-07-25"
+    },
+    "f35efde59de24cece03652a844c48c3b850e669022513f389dc213767d2b98f3": {
+      "url": "https://www.reddit.com/r/ChatGPTPromptGenius/comments/1v1rp96/my_last_prompt_holt_got_100k_views_this_one_is",
+      "date": "2026-07-25"
+    },
+    "24ab1b2e5809fd240f31e2f1330b92ebec30e043d865ce181247e63eb87865ff": {
+      "url": "https://www.reddit.com/r/ChatGPTPromptGenius/comments/1uykbaq/legal_use_of_chatgpt",
+      "date": "2026-07-25"
+    },
+    "3538fa6c09c518f7372ca8ce1767ad431214d46bb1417ba89cd8a6f818262180": {
+      "url": "https://www.reddit.com/r/productivity/comments/1uldvah/any_decent_apps_to_replace_social_media",
+      "date": "2026-07-25"
+    },
+    "8fbd79eacdd667c72be3db655feca32b155245fdf1caafd104ee20511b543c91": {
+      "url": "https://www.reddit.com/r/productivity/comments/1v4sgkx/mental_fatigue_is_holding_me_back",
+      "date": "2026-07-25"
+    },
+    "3edb7bc1dce74c4c21d9427ea2a53100249ef1ce6e94b495a32ea6110e6b4373": {
+      "url": "https://www.reddit.com/r/productivity/comments/1v2xx3b/i_feel_paralyzed_by_my_workload",
+      "date": "2026-07-25"
+    },
+    "b54957da6dd3f68bf450742af92dcc53fba3f808c9bc1c0386d91a5db5b116c8": {
+      "url": "https://www.reddit.com/r/productivity/comments/1urr2su/is_every_office_job_this_chaotic_im_mentally",
+      "date": "2026-07-25"
+    },
+    "2875906c721c33fa5c288428fb8fb2468b85a50d2825eedb7be339abc13c18f4": {
+      "url": "https://www.reddit.com/r/productivity/comments/1ufgiug/ive_wasted_1_month_of_my_2month_vacation_and_i",
+      "date": "2026-07-25"
+    },
+    "d447b3b8335272a63c2e2ced9ba0c7217b75e642bcff97a4ea4b18d283559b11": {
+      "url": "https://www.reddit.com/r/productivity/comments/1uxp0ts/help_i_cant_get_out_of_bed_in_the_morning",
+      "date": "2026-07-25"
+    },
+    "419a7b44604b938d1cd92fd2858c139637ec297afddae76f42460d22a7e8a17c": {
+      "url": "https://www.reddit.com/r/productivity/comments/1v2gnsb/instead_of_completing_their_todo_list_i_keep",
+      "date": "2026-07-25"
+    },
+    "4d24719d86d1818d2fa947ae453a6ab9d2bc75326815ec86d6d05ab14ef17877": {
+      "url": "https://www.reddit.com/r/productivity/comments/1uw41g2/what_are_your_biggest_productivity_traps",
+      "date": "2026-07-25"
+    },
+    "9d2bd3251a9d717fdd27cec8624b430dbb33e3346adadffc2b0bb3fa8f411eef": {
+      "url": "https://www.reddit.com/r/productivity/comments/1uqpkef/in_a_lifelong_rut_and_am_struggling_with_getting",
+      "date": "2026-07-25"
+    },
+    "e94a24645789af23270c83bb42cfbc1eb529dbf8f4925f17b12b2a0048b0ee53": {
+      "url": "https://www.reddit.com/r/productivity/comments/1untse7/which_3_productivity_books_would_you_recommend",
+      "date": "2026-07-25"
+    },
+    "9144e7dabea1fda2b2343ae2a550a86554f22f75d235368da79dc89b960916ca": {
+      "url": "https://www.reddit.com/r/productivity/comments/1uft1gn/i_feel_like_theres_not_enough_hours_in_the_day",
+      "date": "2026-07-25"
+    },
+    "e3daa15653a07f769d7365ba06d3e7cf0a1a26bd64a2b50b2287a20578340b29": {
+      "url": "https://www.reddit.com/r/productivity/comments/1v5n01o/whats_a_small_habit_that_quietly_improved_your",
+      "date": "2026-07-25"
+    },
+    "132c9c46630f6e607df9572c71ce7d3bda33056e0b4fc84e950f17e53164730c": {
+      "url": "https://www.reddit.com/r/productivity/comments/1ui1cib/please_guide_me_i_feel_overwhelmed_by_everything",
+      "date": "2026-07-25"
+    },
+    "3124216afaf37f631154ec23d87b97f4d2381f410f1b9edbfe7aaf0016797a4f": {
+      "url": "https://www.reddit.com/r/productivity/comments/1uwswy8/what_is_the_literal_first_step_of_your_daily",
+      "date": "2026-07-25"
+    },
+    "9e7a52201fd9d3422c35e41d98b510ff38722bcedd2d111f27ecdf0c03862ea5": {
+      "url": "https://www.reddit.com/r/productivity/comments/1uhq4iv/how_do_you_keep_parts_of_your_life_in_maintenance",
+      "date": "2026-07-25"
+    },
+    "29bd49614baa761011f85b05de18304ec1bcdb33b4def0c3dbf6686c18ade0ee": {
+      "url": "https://www.reddit.com/r/productivity/comments/1ujxr5y/how_do_people_force_themselves_to_get_work_done",
+      "date": "2026-07-25"
+    },
+    "7589962bfe787976925f6ed6d6d4511f85ae17eee8470fa5978214fde387300f": {
+      "url": "https://www.reddit.com/r/productivity/comments/1urmtmf/real_time_savers_are_things_that_run_in_the",
+      "date": "2026-07-25"
+    },
+    "48a578983a31e51377f36ab1859950fbd7121bcc414a877d07b5bf4fc4bb3e75": {
+      "url": "https://www.reddit.com/r/productivity/comments/1ut4jm5/is_this_heat_killing_anyone_elses_productivity",
+      "date": "2026-07-25"
+    },
+    "6219241ad8ec6e2770897932db4eea5dc07eda9c8b5ac86c6ea3e742d2fb01d2": {
+      "url": "https://www.reddit.com/r/productivity/comments/1uqnef5/can_you_achieve_success_with_some_form_of",
+      "date": "2026-07-25"
+    },
+    "a25978050869e51cc6774a8e931f13f845c836cd993a4153e923e7ed52f4f130": {
+      "url": "https://www.reddit.com/r/productivity/comments/1usinm1/do_you_feel_more_productive_at_a_specific_time_of",
+      "date": "2026-07-25"
+    },
+    "268b00ee9db1c5f8995294678b841a3528e319fe23c448f784eda6f01483ea83": {
+      "url": "https://www.reddit.com/r/productivity/comments/1v3xtwy/how_do_you_bounce_back_after_a_day_of_zero",
+      "date": "2026-07-25"
+    },
+    "5efffa4887ef76bc0a71868e18bb93d61e85a21f1ba920ef726e851cdab42f86": {
+      "url": "https://www.reddit.com/r/productivity/comments/1ur9sgk/best_caffeine_gum_or_nootropic_gum_for_studying",
+      "date": "2026-07-25"
+    },
+    "7942b735469640d0f683f27d7ddf476065eaf7831a321f30cb5d3967978a1004": {
+      "url": "https://www.reddit.com/r/productivity/comments/1umemvh/how_do_you_decide_what_actually_deserves_your",
+      "date": "2026-07-25"
+    },
+    "8d07cc1e4083f6220914bdc8bf693ea74115b9af993c543403fc972c1a3a8b3b": {
+      "url": "https://www.reddit.com/r/productivity/comments/1v14uze/how_do_you_stay_organized_at_work_methodologies",
+      "date": "2026-07-25"
+    },
+    "0086cfefba47a8b9f31ac0a2b126352c914800edf81e23b513b21ffa72e2ebb7": {
+      "url": "https://www.reddit.com/r/productivity/comments/1uxnkix/does_anyone_else_spend_more_time_planning_their",
+      "date": "2026-07-25"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 1
+  "dailyPage": 2
 }

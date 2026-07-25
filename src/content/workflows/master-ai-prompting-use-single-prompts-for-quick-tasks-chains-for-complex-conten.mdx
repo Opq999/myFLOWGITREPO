@@ -1,0 +1,96 @@
+---
+title: "Master AI Prompting: Use Single Prompts for Quick Tasks, Chains for Complex Content"
+description: "Learn to optimize your AI prompts by choosing between quick, single prompts for simple tasks and multi-step prompt chains for complex content creation and review."
+category: "content-creation"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 8
+jobToBeDone: "Optimize AI prompting for various content creation and review tasks"
+tools:
+  - name: "ChatGPT"
+    url: "https://chatgpt.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Claude"
+    url: "https://claude.ai"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Gemini"
+    url: "https://gemini.google.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://www.reddit.com/r/ChatGPTPromptGenius/comments/1uiljwo/the_two_kinds_of_prompts_worth_saving_quick/"
+  platform: "reddit"
+  author: "/u/Ok_Negotiation_2587"
+  postedAt: 2026-06-29
+score: 9
+ingestedAt: 2026-07-25
+nigeriaNotes: "All recommended tools offer a free tier that is sufficient for this workflow. Data usage is very light, as it involves only text input and output."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "Tighten lecture notes to under 500 words for quick revision before an exam, keeping your voice."
+  - persona: "small-business"
+    scenario: "Get a gut-check on a WhatsApp customer reply: what could go wrong, and how to improve it."
+  - persona: "employee"
+    scenario: "Draft a first version of a project update email, then refine it for clarity and conciseness."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn to choose the right type of AI prompt for any task: a quick, single prompt for simple jobs, or a multi-step 'chain' for more complex projects. This approach helps you get clearer, more useful results from AI by matching the prompt structure to the task's complexity, avoiding vague outputs or wasted time.
+
+## Tools you need
+*   **ChatGPT** (freemium): A popular AI chatbot for generating text and ideas.
+*   **Claude** (freemium): Another AI chatbot known for its strong writing and reasoning abilities.
+*   **Gemini** (freemium): Google's AI chatbot, useful for a wide range of text-based tasks.
+
+## Steps
+1.  **Understand the two prompt types**: The author identifies two main types of prompts: "Quick single prompts" are for self-contained tasks that can be completed in one go, like filling in a blank or a simple edit. "Chains" are for tasks that need the AI to work in stages, where each step builds on the previous one.
+    You should now understand when to use a single prompt versus a multi-step chain.
+
+2.  **Try a quick single prompt (The Tightener)**: Open your chosen AI chat tool (like ChatGPT, Claude, or Gemini). Copy and paste the prompt below, replacing the `{{variables}}` with your specific text type, desired word count, and the text itself.
+
+    ```
+    Tighten this {{text type, e.g. email / paragraph / bio}} to under {{word count}} words without losing the meaning.
+    - Cut filler and repetition.
+    - Keep my voice - do not make it generic.
+    - Give me the tightened version, then one line on what you cut.
+    TEXT: {{paste it}}
+    ```
+
+    You should get a shorter version of your text, a note on what was removed, and your original voice preserved.
+
+3.  **Try another quick single prompt (The Gut-Check)**: In a new chat, copy and paste the prompt below. Replace `{{describe or paste it}}` with the content you want the AI to review.
+
+    ```
+    Here is something I am about to send or do: {{describe or paste it}}. Give me a fast gut-check, not an essay:
+    - The one thing most likely to go wrong or be misread.
+    - The single change that would improve it most.
+    - Your call: send/do it as-is, or fix that first? Keep it to a few lines.
+    ```
+
+    You should receive a concise, actionable review of your text or plan, highlighting potential issues and suggesting improvements.
+
+4.  **Start a multi-step chain (Draft)**: Open a new chat in your chosen AI tool. Copy and paste the first step of the chain prompt, replacing `{{what you need - email, post, plan, etc.}}` and `{{tone, length, audience}}` with your specific content and constraints.
+
+    ```
+    Write a first draft of: {{what you need - email, post, plan, etc.}}. Constraints: {{tone, length, audience}}. Just get a complete draft down.
+    ```
+
+    The AI will generate a complete first draft based on your instructions.
+
+5.  **Continue the chain (Refine the draft)**: The author describes a chain as "several prompts in sequence, where each step builds on the last." To continue this chain, take the draft generated in Step 4. In the *same chat*, paste the draft and then provide a new prompt to refine it. The author did not provide the exact prompts for the subsequent steps, but a common next step is to improve the draft.
+
+    ```
+    Based on the draft above, refine it for clarity and conciseness. Focus on making the language more engaging for the target audience and ensuring it meets the specified length.
+    ```
+
+    The AI will provide a revised version of your draft, incorporating the new instructions. You would then repeat this process with a third prompt (e.g., for final proofreading or tone adjustment) to complete the author's suggested "three in order" chain.
+
+## Original source
+This workflow is inspired by a Reddit post from user /u/Ok_Negotiation_2587, who shared their insights on effective AI prompting strategies based on their personal experience.
+
+## Notes & variations
+All the recommended AI chat tools offer generous free tiers, making this workflow accessible without cost. A common mistake is trying to cram a complex, multi-stage task into a single, very long prompt. This often leads to "mushy results" where the AI struggles to follow all instructions. Conversely, using a chain for a simple, one-shot task can be slow and unnecessary. To get better results, always be specific when replacing the `{{variables}}` in the prompts, and don't be afraid to experiment with different constraints and tones.
