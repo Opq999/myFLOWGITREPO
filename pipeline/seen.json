@@ -12164,8 +12164,16 @@
     "0086cfefba47a8b9f31ac0a2b126352c914800edf81e23b513b21ffa72e2ebb7": {
       "url": "https://www.reddit.com/r/productivity/comments/1uxnkix/does_anyone_else_spend_more_time_planning_their",
       "date": "2026-07-25"
+    },
+    "422604e67656f4b2a18f6dffae67afe1bf11284ff2ddab50b965936cf9adee8c": {
+      "url": "https://news.ycombinator.com/item?id=49033388",
+      "date": "2026-07-26"
+    },
+    "412f8cb67d937c7e2ada2621c3d38e824b99564d139128840f70bc6752f8227f": {
+      "url": "https://simonwillison.net/2026/Jul/25/ruff",
+      "date": "2026-07-26"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 2
+  "dailyPage": 3
 }
