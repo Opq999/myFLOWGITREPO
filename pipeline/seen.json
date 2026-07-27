@@ -12172,8 +12172,24 @@
     "412f8cb67d937c7e2ada2621c3d38e824b99564d139128840f70bc6752f8227f": {
       "url": "https://simonwillison.net/2026/Jul/25/ruff",
       "date": "2026-07-26"
+    },
+    "16853215d1388b6018cd67cda7d1b030f21114b269849a99a0dd27e09920695c": {
+      "url": "https://news.ycombinator.com/item?id=48994186",
+      "date": "2026-07-27"
+    },
+    "b68ab22c72256d97944e27c8c8104910560957204b7023a643a354cdf6b44fba": {
+      "url": "https://simonwillison.net/2026/Jul/26/relay-market",
+      "date": "2026-07-27"
+    },
+    "154a5e7e876f18c6c050fb181de1550ce04bb8a4f104bc58ad272ef4802d090d": {
+      "url": "https://github.com/Z4nzu/hackingtool",
+      "date": "2026-07-27"
+    },
+    "96537f9acc12bc3d68e6b6fb2d661a65772f583697352d4f1c191b91c0ae113e": {
+      "url": "https://huggingface.co/blog/nvidia/cosmos-h-dreams",
+      "date": "2026-07-27"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 3
+  "dailyPage": 4
 }
