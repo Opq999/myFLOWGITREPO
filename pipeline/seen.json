@@ -12188,8 +12188,20 @@
     "96537f9acc12bc3d68e6b6fb2d661a65772f583697352d4f1c191b91c0ae113e": {
       "url": "https://huggingface.co/blog/nvidia/cosmos-h-dreams",
       "date": "2026-07-27"
+    },
+    "5b53c358c67e9c6cba0634ec303af8a3bcd8ba2576d6722ef6ac6fefb56da499": {
+      "url": "https://simonwillison.net/2026/Jul/27/kimi-k3",
+      "date": "2026-07-28"
+    },
+    "9e196603ee11c14951c6b095bc404cdffc6118122af769ded3c7fb08595a0cea": {
+      "url": "https://simonwillison.net/2026/Jul/27/an-opinionated-guide-to-which-ai-to-use-to-do-stuff",
+      "date": "2026-07-28"
+    },
+    "2b7537498fec0e7e34b0c580c6b60c3528d1c25f021dfcfc3cba987e36262943": {
+      "url": "https://www.latent.space/p/ainews-much-ado-about-open-weights",
+      "date": "2026-07-28"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 4
+  "dailyPage": 5
 }
