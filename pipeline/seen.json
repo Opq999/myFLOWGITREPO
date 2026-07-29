@@ -12200,8 +12200,52 @@
     "2b7537498fec0e7e34b0c580c6b60c3528d1c25f021dfcfc3cba987e36262943": {
       "url": "https://www.latent.space/p/ainews-much-ado-about-open-weights",
       "date": "2026-07-28"
+    },
+    "f03c61538314beb0a559b5164b5c1d1e2668e27e3d87227d4f40f3181fcae747": {
+      "url": "https://simonwillison.net/2026/Jul/28/discovering-cryptographic-weaknesses-with-claude",
+      "date": "2026-07-29"
+    },
+    "5e9618da1ab3ad8b41ccd448cc3dbb6d8d9889053884853529599b72cc72c1b9": {
+      "url": "https://simonwillison.net/2026/Jul/28/akshat-bubna",
+      "date": "2026-07-29"
+    },
+    "88d7aa66eaa5db4064fd05f8ed5bd358c718f3ab30ea3b0100ab925622a1cf38": {
+      "url": "https://simonwillison.net/2026/Jul/28/uv",
+      "date": "2026-07-29"
+    },
+    "2c795bbc8434d4813d4e597007128a55b62c9bc7db64649e6fdb941a8a1c73e0": {
+      "url": "https://simonwillison.net/2026/Jul/28/anatomy-of-a-frontier-lab-agent-intrusion",
+      "date": "2026-07-29"
+    },
+    "ce4dbfa96116679deb7ce49eb722e2642b04dfed8dfbee4167448c357352dd78": {
+      "url": "https://simonwillison.net/2026/Jul/26/sqlite-utils",
+      "date": "2026-07-29"
+    },
+    "f6d0815aa9af8b943f06fd59d5d0530bf117d9edd336a0ed1eb6bd8cf3db21f5": {
+      "url": "https://www.latent.space/p/ainews-fearing-rsi-openai-anthropic",
+      "date": "2026-07-29"
+    },
+    "60a8b00e51bcf718d397d6060c5c4716d8440ca30f74c761f5079584b7cb797d": {
+      "url": "https://www.latent.space/p/chatgpt-work",
+      "date": "2026-07-29"
+    },
+    "0497a2bdad0b8fba0d8def24859c3e8451733029036411baed407136de938f4a": {
+      "url": "https://www.bensbites.com/p/opus-5-fable-5",
+      "date": "2026-07-29"
+    },
+    "9c980868c23ca002eb7f08b08c24455bac730da795770a83d77edadb51dcb49e": {
+      "url": "https://huggingface.co/blog/allenai/olmoearth-infrastructure",
+      "date": "2026-07-29"
+    },
+    "a5bc54280bf29efc8ba4026101ad5cf8b064542a06824bd9a96bcd6a316715e4": {
+      "url": "https://huggingface.co/blog/LiquidAI/lfm2-5-encoders",
+      "date": "2026-07-29"
+    },
+    "71e019829a306610b77fdf8bbed4a05d8f04f83c3d282a03a23698d65469e6b3": {
+      "url": "https://newsletter.pragmaticengineer.com/p/inside-anthropic",
+      "date": "2026-07-29"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 5
+  "dailyPage": 0
 }
