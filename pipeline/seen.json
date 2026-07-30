@@ -12244,8 +12244,48 @@
     "71e019829a306610b77fdf8bbed4a05d8f04f83c3d282a03a23698d65469e6b3": {
       "url": "https://newsletter.pragmaticengineer.com/p/inside-anthropic",
       "date": "2026-07-29"
+    },
+    "2cccb3e57d215eb97104db5398151180acf289513e0087c0a4cf8e7738722012": {
+      "url": "https://news.ycombinator.com/item?id=49047526",
+      "date": "2026-07-30"
+    },
+    "1ccc572c8eb08e34453a27cca3f1de7d1a3c117108e8bf75e15c60d520a88ed5": {
+      "url": "https://simonwillison.net/2026/Jul/29/d-richard-hipp",
+      "date": "2026-07-30"
+    },
+    "c6d0d7bfb878307c7cbda23f6387c58b7cf8d102881161d345ac3d7aff317dc8": {
+      "url": "https://news.ycombinator.com/item?id=49063723",
+      "date": "2026-07-30"
+    },
+    "3000631c4580bfced1f12dbe946a5d4e201829422e4aa8399ffc26ca0a70f859": {
+      "url": "https://simonwillison.net/2026/Jul/29/ai-worming-through-word",
+      "date": "2026-07-30"
+    },
+    "e522abc197239956a7483862becf070ca26aab27b7cadf49a51f8fd9faa12c4d": {
+      "url": "https://news.ycombinator.com/item?id=49012685",
+      "date": "2026-07-30"
+    },
+    "c2be95c4524aebfdd6ffeb73ea91e4f3afc01d653ad594d0e6407205fff5d1f0": {
+      "url": "https://simonwillison.net/2026/Jul/29/matthew-green",
+      "date": "2026-07-30"
+    },
+    "8ed697aafabe2929acfc0452e5667fe2608dd9c5758d32f9595309554a12b1c7": {
+      "url": "https://simonwillison.net/2026/Jul/29/mcp-in-claude-and-chatgpt",
+      "date": "2026-07-30"
+    },
+    "67da035349e3126a6879e794acb6884097dfa5bda4e4b21868f10d65aa4710d2": {
+      "url": "https://www.latent.space/p/ainews-ai-is-eating-finance-aie-nyc",
+      "date": "2026-07-30"
+    },
+    "8088c1dfd69d52169d26c3ad98d416ee06b8c8b567835bffc63d0babec849503": {
+      "url": "https://huggingface.co/blog/agent-intrusion-technical-timeline",
+      "date": "2026-07-30"
+    },
+    "8e1cf2c43444c54750d727a27610a249183d7967a44932ad386268f5aba269e1": {
+      "url": "https://newsletter.pragmaticengineer.com/p/formal-methods-with-hillel-wayne",
+      "date": "2026-07-30"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 0
+  "dailyPage": 1
 }
