@@ -12284,8 +12284,44 @@
     "8e1cf2c43444c54750d727a27610a249183d7967a44932ad386268f5aba269e1": {
       "url": "https://newsletter.pragmaticengineer.com/p/formal-methods-with-hillel-wayne",
       "date": "2026-07-30"
+    },
+    "9dc864b95fc6be0d0510ce27c3f0762939329f32ab0b522b448ee8cd57238ca0": {
+      "url": "https://simonwillison.net/2026/Jul/30/luna-price-drop",
+      "date": "2026-07-31"
+    },
+    "60d2e5eea80421a1c92d077116972df4eb6057c02ecd84d0a9f1358d4d65a9c8": {
+      "url": "https://simonwillison.net/2026/Jul/30/three-real-world-incidents",
+      "date": "2026-07-31"
+    },
+    "c7515e0fa4368a553e3204e0079e7996fd19ff2ff05283bbd9e1a87176c1d452": {
+      "url": "https://simonwillison.net/2026/Jul/30/llm-rc2",
+      "date": "2026-07-31"
+    },
+    "5b37cc1e046a431cf984e62098de274e7ae9eeb21545212d18a104773da0cc64": {
+      "url": "https://simonwillison.net/2026/Jul/30/bruce-schneier",
+      "date": "2026-07-31"
+    },
+    "d4d674821fc308ad1e670728dee00471fd149d746ab752477193a7e7710357ae": {
+      "url": "https://simonwillison.net/2026/Jul/30/llm-chat-completions-server",
+      "date": "2026-07-31"
+    },
+    "053f960947801f33a51efd0f03b0a04b446f0fe94c62f5b0429f22989ba0dd47": {
+      "url": "https://www.latent.space/p/ainews-gpt-56-price-cut-by-20-80",
+      "date": "2026-07-31"
+    },
+    "99fb060843803783f813fcb8c486c9990c94b11ffd8c0e2839cd2ad54e6a6f72": {
+      "url": "https://www.latent.space/p/ontologies-agentic-systems",
+      "date": "2026-07-31"
+    },
+    "38e957d5a8a655a75252c68925856861a5936d52724ca4083ed2452d9972c3f2": {
+      "url": "https://www.bensbites.com/p/1-billion-chatgpt-users",
+      "date": "2026-07-31"
+    },
+    "859cdcef3df01ae8d929e50b9f9da9f8126fe435aacd0a43ca0bd2b8ba0b3f21": {
+      "url": "https://huggingface.co/blog/Dharma-AI/gpu-management",
+      "date": "2026-07-31"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 1
+  "dailyPage": 2
 }
