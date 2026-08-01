@@ -12320,8 +12320,308 @@
     "859cdcef3df01ae8d929e50b9f9da9f8126fe435aacd0a43ca0bd2b8ba0b3f21": {
       "url": "https://huggingface.co/blog/Dharma-AI/gpu-management",
       "date": "2026-07-31"
+    },
+    "d25b25d27116538f2a74c24a9e016971fd19c6b25e5a260d35b411631618e1ae": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1v59k7s/normal_technology",
+      "date": "2026-08-01"
+    },
+    "3b4d0b686ffbe7f44bac1f2ec1a7ffd3b6fe92e8fd670b04fa33ff97949de03b": {
+      "url": "https://simonwillison.net/2026/Jul/31/deepseek-v4-flash-0731",
+      "date": "2026-08-01"
+    },
+    "d38431da0d665a9ee2f9551fcece233a4e8b7f3eacd31fe75011af98cb49a6f3": {
+      "url": "https://github.com/router-for-me/CLIProxyAPI",
+      "date": "2026-08-01"
+    },
+    "b1e9115cb4f392753fd2e9771acfbdd70e201a85b0226cad2f150742f06194a1": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1v9taxl/the_work_is_mysterious_and_important",
+      "date": "2026-08-01"
+    },
+    "c91e9c9718a58754cc3ccebda5db6c93fd6ae033ca27528ef45e321510d13754": {
+      "url": "https://simonwillison.net/2026/Jul/31/stateless-mcp",
+      "date": "2026-08-01"
+    },
+    "151aab5d98f9e206e255382ba0eaf2e5ff53f00e05dfe7f440261f8b07c0357b": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1v12bei/what_happens_next",
+      "date": "2026-08-01"
+    },
+    "e76a6eae5d38637bd3e5732c7ac47b1101ba2137080603400400cc7c6aeda302": {
+      "url": "https://simonwillison.net/2026/Jul/31/llm-mcp-client",
+      "date": "2026-08-01"
+    },
+    "dff20c64073ff79712a578a2025f6e98f6b25f058dc286e2a9b3e9a5deb98d62": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1v3w7cd/bruh_really",
+      "date": "2026-08-01"
+    },
+    "a7581fdd4462c35bb768d769bd0125d6bc1fc82298d95cd1227a425b1ca79874": {
+      "url": "https://simonwillison.net/2026/Jul/31/oxide-and-friends",
+      "date": "2026-08-01"
+    },
+    "106ca14fbefa0d7c5672d0ff31a28bc3048cb41f28a1a99b015e26196f8e8e4d": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1v04wiw/generate_a_scene_that_is_technically_innocent_but",
+      "date": "2026-08-01"
+    },
+    "3985605a150f6e7664c430ddcac9d0026c4fa94fbcfd8f3a151e65bdb0bba465": {
+      "url": "https://simonwillison.net/2026/Jul/31/smevals",
+      "date": "2026-08-01"
+    },
+    "07afaca11ca202c6a6cad0cc4d910200e05dfcef27ed5fc2be736cdfd1a88fca": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1uzck20/potentially_the_hardest_notification_chatgpt_has",
+      "date": "2026-08-01"
+    },
+    "0726bc457d4dcf898c6b2fd94cdc208b2ea5cef5d9422c20951bd57c53abf900": {
+      "url": "https://simonwillison.net/2026/Jul/31/datasette-agent",
+      "date": "2026-08-01"
+    },
+    "f02762ec72bccaca0e125aa51733e44002c920cefff33b1b576d6be27b936163": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1v1cqmi/generate_a_ridiculous_caught_in_the_act_photo",
+      "date": "2026-08-01"
+    },
+    "fa00ad32cbe948ceb443626268e54c5a9727755071c0e210f26d09829d3a7a6c": {
+      "url": "https://simonwillison.net/2026/Jul/30/llm-rc1",
+      "date": "2026-08-01"
+    },
+    "2da586687bd71f3473dd009c75fbb80cb3a6be58b77e239e5937d6a691465b24": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1v3b866/i_asked_chatgpt_to_generate_the_average_redditor",
+      "date": "2026-08-01"
+    },
+    "e2e254cd02109ed102b0cb2651734b93517a62812643abb7534c8d18fcb0f14e": {
+      "url": "https://www.latent.space/p/ainews-not-much-happened-today-038",
+      "date": "2026-08-01"
+    },
+    "e58ef2499d9f294ac55f44876d4e0bc4c92e05f43033d223f0c1488529d2e4cb": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1v30lck/openai_says_its_ai_models_escaped_from_a_secure",
+      "date": "2026-08-01"
+    },
+    "380ae507bba8081cd621bdad6d8afaaaaafa97b5f3b139ce8e0209cde95bdcbf": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1v0ru8v/generate_an_innocent_photo_that_would_be",
+      "date": "2026-08-01"
+    },
+    "e018343e5e9f17a83832b46941d2b0e688df8f9b22ff083314295f1d385c3684": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1vbecrr/chatgpt_may_have_saved_my_life",
+      "date": "2026-08-01"
+    },
+    "e6ab0372e45c3f030280c57d270fc6733814715fbf0661635a3107fbcdd43c63": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1v5b0la/people_are_using_minecraft_farms_as_ai_agent",
+      "date": "2026-08-01"
+    },
+    "dde4fd4f8e4a3b43e164beb63a8739616d482ea6b516bc8378044db8e23f0ab6": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1va6pg4/openais_rogue_models_roamed_the_internet_for_4",
+      "date": "2026-08-01"
+    },
+    "cdfdb21cf634901c62608a1ab13b499b4c74b105bbe05b80717d5b6065813adc": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1ux140w/6_ai_models_picked_france_to_win_the_world_cup",
+      "date": "2026-08-01"
+    },
+    "ee070c5a34f12e390684ddb059ec56036d425b79f030a93408e8a71ddf8493b5": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1utfajd/prompt_generate_the_most_obnoxious_youtube",
+      "date": "2026-08-01"
+    },
+    "4afd5acf3c45667b5ce5a28caca1713f7eca7c306eba6cdcc972ba75e9a410d3": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1v89rie/theres_no_way",
+      "date": "2026-08-01"
+    },
+    "9bac3ceff6157a0d8675221f94010ff4421e4f46faf95820f51d15453d964cf3": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1v67r29/chat_taking_over_basic_thinking",
+      "date": "2026-08-01"
+    },
+    "17a5d668ca80a6bcbaaca7ba4a06c01980130e8f526bfa01fe04b566b2937d5f": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1utqhi4/why_gpt56_sol_is_the_best_model",
+      "date": "2026-08-01"
+    },
+    "0681fd7001792bb0a737c2fe0bf8557a077bb2f004149bacec5f09fb72c14f68": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1v6cu85/pov_using_gpt56_sol_ultra_to_rename_a_variable",
+      "date": "2026-08-01"
+    },
+    "9bfa95a44fbcb5f1bcda009d959b9f69623f613789c62900a739fe18252284f4": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1vagu2e/chatgpt_changed_my_life_i_dont_say_that_lightly",
+      "date": "2026-08-01"
+    },
+    "cfea88d89d73251e4b88c545e8b72243c7952ece4d7d89a0d2ce7a37b890dc5d": {
+      "url": "https://www.reddit.com/r/AI_Agents/comments/1urd4my/am_i_missing_something_with_cursor",
+      "date": "2026-08-01"
+    },
+    "df46dcf83e32f4aa6cd2cf17fe68eb3a164ac4a56ece80531dc4332bc49c491d": {
+      "url": "https://www.reddit.com/r/AI_Agents/comments/1upxr4a/repeat_after_me_if_its_in_the_prompt_its_a",
+      "date": "2026-08-01"
+    },
+    "5a923f954b9f19f056024c4566cc78fccf4d242cb498c02a6d33cb5bd5787139": {
+      "url": "https://www.reddit.com/r/AI_Agents/comments/1vbren8/if_a_human_has_to_check_everything_your_ai",
+      "date": "2026-08-01"
+    },
+    "fab0f4d9e557e208420fff8aa01c5587d4a23ee0bb8971001c70ca90e841cc36": {
+      "url": "https://www.reddit.com/r/AI_Agents/comments/1vapk9l/i_was_tired_of_doing_seo_manually_so_i_turned",
+      "date": "2026-08-01"
+    },
+    "0a833c8e255aa1c3cd4f94a98ebb1669314c82756dc9b090f1840211856c881b": {
+      "url": "https://www.reddit.com/r/AI_Agents/comments/1v9q7q0/i_am_getting_sick_of_claude_codes_32ktoken_system",
+      "date": "2026-08-01"
+    },
+    "69df02d2c89ab1f7598c2fb4de816d4e3c835b54ddce5267dea3b5c14afc4eca": {
+      "url": "https://www.reddit.com/r/AI_Agents/comments/1uysv5y/what_are_you_actually_using_for_tts_on_voice",
+      "date": "2026-08-01"
+    },
+    "ef6d29929e5c64662e1af8ad15cbbf7fd05cded676ba85317a49504c7aea0056": {
+      "url": "https://www.reddit.com/r/AI_Agents/comments/1utvebx/codex_deleted_matt_shumars_entire_home_directory",
+      "date": "2026-08-01"
+    },
+    "ea2b521fba56a75e44384b618d1e70a839bde8b0189217ac814aa5c1d6a515a5": {
+      "url": "https://www.reddit.com/r/AI_Agents/comments/1uod36r/i_built_an_opensource_team_of_ai_agents_that",
+      "date": "2026-08-01"
+    },
+    "3e10c804ab45838d05be7d633fe577652309df2fa43efa8d01d28c5de84772f8": {
+      "url": "https://www.reddit.com/r/AI_Agents/comments/1v30zgr/any_youtube_channels_or_livestreams_of_people",
+      "date": "2026-08-01"
+    },
+    "8a80441d75660220c6010fc9d9ddeba31f67c522f5f9b9aee8c6ec110dc83bb2": {
+      "url": "https://www.reddit.com/r/AI_Agents/comments/1utrjsp/what_ai_agents_are_you_actually_paying_for_and_why",
+      "date": "2026-08-01"
+    },
+    "941e91ff0c18a791ec3a8d564ce76128b814d85afb15560c4f2c2734b087160f": {
+      "url": "https://www.reddit.com/r/AI_Agents/comments/1v1zi8e/are_ai_copilots_for_agents_worth_the_hype",
+      "date": "2026-08-01"
+    },
+    "6f13a9814c14078d551f6c66c9648c0cc708fa4423e3732d635303985a0ed8b2": {
+      "url": "https://www.reddit.com/r/AI_Agents/comments/1upjbei/human_approval_is_too_vague_for_production_agents",
+      "date": "2026-08-01"
+    },
+    "3a7041121c20bc35650c02562c52e72e6f490bc2d54e36ca70094cbea6d6ffb5": {
+      "url": "https://www.reddit.com/r/AI_Agents/comments/1v9oki3/what_makes_you_trust_one_ai_product_over_another",
+      "date": "2026-08-01"
+    },
+    "7147cb383129dbcb72b6db1d50eb24357935fc1bcaef72be47cdd174d57f6f87": {
+      "url": "https://www.reddit.com/r/AI_Agents/comments/1uwvatc/if_i_had_to_grow_my_automation_agency_from_zero",
+      "date": "2026-08-01"
+    },
+    "4a204c69c5de0112a4073a9fe41cc6af72bd0eace43c34369dc0dcc7061f5d77": {
+      "url": "https://www.reddit.com/r/AI_Agents/comments/1umfzap/ai_agents_explained_in_plain_english_because_most",
+      "date": "2026-08-01"
+    },
+    "c7f48a8d45d89bebde3b93b6cfe300c25a0af02ec76797aa7d245127a828127c": {
+      "url": "https://www.reddit.com/r/AI_Agents/comments/1v69tal/opus_5_great_performance_gaslighting",
+      "date": "2026-08-01"
+    },
+    "cdf722a13b4cea4930322fd8903c744e9165d4dd851973a2de1c55b8d200be22": {
+      "url": "https://www.reddit.com/r/AI_Agents/comments/1v5lj3s/rant_do_not_use_codex_to_run_your_orchestration",
+      "date": "2026-08-01"
+    },
+    "3dcb8171a0e38967589aece492b716823dc6e1c3fb23fc0c878a78bfc1b4efb3": {
+      "url": "https://www.reddit.com/r/AI_Agents/comments/1v3ghc0/should_i_learn_ai_agents_in_2026_is_it_a_good",
+      "date": "2026-08-01"
+    },
+    "06ab8912b9525f8d660a6572155faea0614f6e1f6c6cdc192c838ba6c47f0251": {
+      "url": "https://www.reddit.com/r/AI_Agents/comments/1v2f9fr/what_is_the_moat_what_do_we_do",
+      "date": "2026-08-01"
+    },
+    "ae0721a1cc492d9fcc64a79638cb1c7d6c16637014f8fc9a31f82a5b17816242": {
+      "url": "https://www.reddit.com/r/AI_Agents/comments/1vbdz2w/what_cloudserver_do_you_guys_run_your_ai_agents",
+      "date": "2026-08-01"
+    },
+    "540211c3bb3dab11d53713108c5b42a7fe8299063bc8731b3f9e8974f6ba4e3c": {
+      "url": "https://www.reddit.com/r/AI_Agents/comments/1v8zq21/the_insane_80x_rtx_5090_local_kimi_k3_setup",
+      "date": "2026-08-01"
+    },
+    "2ed3c942f99737e0ee30ea02206cb203562e4f9d50f8d2abdc1b746df41ce895": {
+      "url": "https://www.reddit.com/r/jobsearchhacks/comments/1vbtxze/should_i_change_my_name",
+      "date": "2026-08-01"
+    },
+    "ae1b426b8699c89cac69decafb0c62f679e4f9cc70624602022643b2230971c7": {
+      "url": "https://www.reddit.com/r/jobsearchhacks/comments/1unub6q/ive_reached_this_stage_of_job_searching",
+      "date": "2026-08-01"
+    },
+    "f414a76294f98b72155f333f95ffb87a0dba9932b1897699a2dcfe0e230ac140": {
+      "url": "https://www.reddit.com/r/jobsearchhacks/comments/1v3zbrv/those_of_you_who_took_the_first_job_that_gave_you",
+      "date": "2026-08-01"
+    },
+    "f60c7839a6a6d9d28be9933f21a4cd17ad28cf7ea1bde06a0461df1334aa6e8e": {
+      "url": "https://www.reddit.com/r/jobsearchhacks/comments/1usgttw/every_time_i_use_hiring_websites_im_reminded_what",
+      "date": "2026-08-01"
+    },
+    "39400fa20fe8e709d1c8f848789cf5d529741c28fe4ead4ea92dd1751f0e3fad": {
+      "url": "https://www.reddit.com/r/jobsearchhacks/comments/1upv09b/i_got_a_ft_job_within_a_month_after_being_a",
+      "date": "2026-08-01"
+    },
+    "7d267efd3841db62fd5ec1628f7de01e718ae07e4a4ce8b5c4f5d7588ab7835b": {
+      "url": "https://www.reddit.com/r/jobsearchhacks/comments/1v8y1j3/i_pulled_the_bls_numbers_on_how_long_a_job_search",
+      "date": "2026-08-01"
+    },
+    "3facf2a15032cb949e4a808fb84bd65c2eb7d7a6d55a136ea7b49cb01af5678a": {
+      "url": "https://www.reddit.com/r/jobsearchhacks/comments/1v9nw4f/best_way_to_actually_find_a_job",
+      "date": "2026-08-01"
+    },
+    "4b77c39640b3fca27d1271f7360d3a529605b8af3aa2399542df811fa7ffdd8b": {
+      "url": "https://www.reddit.com/r/jobsearchhacks/comments/1v9h3xf/has_anyone_got_hired_by_reading_this",
+      "date": "2026-08-01"
+    },
+    "75671fc8021137a8cf3e47143d04c83211c916d02992c474238bfddfbff76b37": {
+      "url": "https://www.reddit.com/r/jobsearchhacks/comments/1uu4myl/whats_your_salary_expectation",
+      "date": "2026-08-01"
+    },
+    "b5974db4a56ff1766a9950ad3a3d8fa9fb5efb75902f1f2bcd67c4b40fc11d78": {
+      "url": "https://www.reddit.com/r/jobsearchhacks/comments/1v9qi3o/1382_applications_1110_silences",
+      "date": "2026-08-01"
+    },
+    "6c80ea257d37d0aa845b7d0f4f716a37152f9e1b894866343b28e3f7c2276544": {
+      "url": "https://www.reddit.com/r/jobsearchhacks/comments/1vaad0d/how_do_you_apply_to_so_many_jobs_and_how_you_find",
+      "date": "2026-08-01"
+    },
+    "ae27e7a043bf9043d0f15561a6249f9f5b2dff5d31a1c949eec28481bd22f504": {
+      "url": "https://www.reddit.com/r/jobsearchhacks/comments/1v25410/this_was_like_my_favorite_interview_ive_had_so",
+      "date": "2026-08-01"
+    },
+    "cc149386d2f296599d91804b851285be8d0cb1672b48f089648f90d2524ece26": {
+      "url": "https://www.reddit.com/r/jobsearchhacks/comments/1uwcgqv/has_it_been_harder_finding_a_job_without_being",
+      "date": "2026-08-01"
+    },
+    "7679ade12e76cb4f93cf45db14f85c361885aa26364d5dd1c4a7abd3c69f2a76": {
+      "url": "https://www.reddit.com/r/jobsearchhacks/comments/1v6dhlr/i_noticed_using_ai_to_help_with_the_job_search_is",
+      "date": "2026-08-01"
+    },
+    "544fe76317864f85f2133c2ad16a822d32e6b4a0f7780d495268257c81377bf4": {
+      "url": "https://www.reddit.com/r/jobsearchhacks/comments/1va3ixu/are_some_interviews_conducted_just_to_meet_hr_kpis",
+      "date": "2026-08-01"
+    },
+    "8184a6ac9b32b9857f9eb5d16279774cf971b5cbc34653768fdc81014591856f": {
+      "url": "https://www.reddit.com/r/jobsearchhacks/comments/1v3kyoj/offering_1_months_salary_in_exchange_for_a",
+      "date": "2026-08-01"
+    },
+    "8b5d8e5b01822b38a4a274bc974f54230b31f877c606bc3265a8ace69e6ed8e3": {
+      "url": "https://www.reddit.com/r/jobsearchhacks/comments/1umhwh9/nothing_prepares_you_for_the_emotional",
+      "date": "2026-08-01"
+    },
+    "6d44781dd8974e7e635b02047571fcd77b8dccdd5ef010d996a0d1bcc57b5143": {
+      "url": "https://www.reddit.com/r/jobsearchhacks/comments/1v5johy/ive_done_everything_the_internet_told_me_to_do_to",
+      "date": "2026-08-01"
+    },
+    "581d069b690aacd362705d1c962a70c6a4fd0784d83184e96a9092e095cfc979": {
+      "url": "https://www.reddit.com/r/jobsearchhacks/comments/1us3x2h/you_might_be_losing_offers_in_the_first_two",
+      "date": "2026-08-01"
+    },
+    "aac312c75a7408af38469dabad3f729423afbb7e64c56b4d9f20308eb89a404b": {
+      "url": "https://www.reddit.com/r/jobsearchhacks/comments/1upeasr/write_your_salary_answer_before_the_application",
+      "date": "2026-08-01"
+    },
+    "a18fa972f83e86c0e600f68808254f8515527c141ce83960b173c8330b5f210d": {
+      "url": "https://www.reddit.com/r/jobsearchhacks/comments/1utvv5w/even_dishwasher_jobs_are_turning_me_down",
+      "date": "2026-08-01"
+    },
+    "88d43414205c5de3112e1c287f26f116da01ff7dc23338b32a01fcc06468a3a3": {
+      "url": "https://www.reddit.com/r/jobsearchhacks/comments/1uw1rdv/whats_the_funniest_thing_youve_accidentally_said",
+      "date": "2026-08-01"
+    },
+    "4c4c57fdfbc01915a5ff3237b64bcbcf87c7973f2208b2adea7f31fe13fb7928": {
+      "url": "https://www.reddit.com/r/jobsearchhacks/comments/1uzx87n/is_workday_a_total_scam_i_applied_so_many_times",
+      "date": "2026-08-01"
+    },
+    "fe63ae7cb14e86cf8c109592b25d16059bec299bd7830ccbdc5c9c8f0cde93ea": {
+      "url": "https://www.reddit.com/r/jobsearchhacks/comments/1uxfqxj/i_think_im_being_auto_rejected",
+      "date": "2026-08-01"
+    },
+    "a9cd3ff52db1a52af2605f8453ff792b63fd6fed7f7aae2b16e1487c84e1f4dd": {
+      "url": "https://www.reddit.com/r/jobsearchhacks/comments/1v0hl0o/will_i_be_finally_happy_when_if_i_finally_get_a",
+      "date": "2026-08-01"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 2
+  "dailyPage": 3
 }
