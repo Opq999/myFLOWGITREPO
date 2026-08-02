@@ -12620,8 +12620,36 @@
     "a9cd3ff52db1a52af2605f8453ff792b63fd6fed7f7aae2b16e1487c84e1f4dd": {
       "url": "https://www.reddit.com/r/jobsearchhacks/comments/1v0hl0o/will_i_be_finally_happy_when_if_i_finally_get_a",
       "date": "2026-08-01"
+    },
+    "25a5524eae6ce5df3c756813f5c93ea4bdd2f2ff20ca6491ebba20c68973c04a": {
+      "url": "https://news.ycombinator.com/item?id=49080775",
+      "date": "2026-08-02"
+    },
+    "4a3100618be2bf6a3c6b526ede2725d9b89d94cc580ffc47faf1da5a8d0685fc": {
+      "url": "https://simonwillison.net/2026/Aug/2/open-letters",
+      "date": "2026-08-02"
+    },
+    "26ee600e33de75d11860824e525c43680f70be442a887b000bc09c45d3498aed": {
+      "url": "https://simonwillison.net/2026/Aug/2/july-newsletter",
+      "date": "2026-08-02"
+    },
+    "0ac685b1a7639af3fc905945be6a7b335e6a5eca880a050c17c8a8f6ade02b75": {
+      "url": "https://simonwillison.net/2026/Aug/1/greg-brockman",
+      "date": "2026-08-02"
+    },
+    "4c444ee1597ab328f5721ac6ced9c780e36953c66677aac4b37a5fe9337916b7": {
+      "url": "https://simonwillison.net/2026/Aug/1/datasette-apps",
+      "date": "2026-08-02"
+    },
+    "be2d9af154057573398a3a08dd441179cb16076718a4a36c62ec46bf8c8cf51a": {
+      "url": "https://simonwillison.net/2026/Aug/1/ten-advances-in-mathematics",
+      "date": "2026-08-02"
+    },
+    "8acbf5d3e3126687b0119d14047b06f549fe6b0b1eb924ec64100e6b42332eaa": {
+      "url": "https://simonwillison.net/2026/Jul/31/slack-emoji-maker",
+      "date": "2026-08-02"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 3
+  "dailyPage": 4
 }
