@@ -12648,8 +12648,20 @@
     "8acbf5d3e3126687b0119d14047b06f549fe6b0b1eb924ec64100e6b42332eaa": {
       "url": "https://simonwillison.net/2026/Jul/31/slack-emoji-maker",
       "date": "2026-08-02"
+    },
+    "bd96b7dfaf10654362e8318b0dc57309eb470b69633815eeeeda3fbd0ed54665": {
+      "url": "https://simonwillison.net/2026/Aug/2/condense-json",
+      "date": "2026-08-03"
+    },
+    "46db8ffd96fd56f974a3e108cd861de58af31ce182bfda3b09b48fe4237a2e23": {
+      "url": "https://github.com/lbjlaq/Antigravity-Manager",
+      "date": "2026-08-03"
+    },
+    "f116d7112e2b1d9e21f5269f4ddee5897543830148e0787690f955944d188b6d": {
+      "url": "https://www.interconnects.ai/p/latest-open-artifacts-23-laguna-s21",
+      "date": "2026-08-03"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 4
+  "dailyPage": 5
 }
