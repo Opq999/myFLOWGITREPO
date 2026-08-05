@@ -12888,8 +12888,56 @@
     "6bca7ca7566c4686114d644738421a1c5ba594dd6830d43584b2bb61b9abf779": {
       "url": "https://www.reddit.com/r/digital_marketing/comments/1v7tlws/a_hardware_failure_from_last_season_is_now_the_2",
       "date": "2026-08-04"
+    },
+    "e29c881b47cf8037af44486e7febc57c76fb3c976891b36c016ab31afff62a54": {
+      "url": "https://news.ycombinator.com/item?id=49152222",
+      "date": "2026-08-05"
+    },
+    "98a2deac3e2f97253c4af140f562d22d89fd17e19e3d8fdbdd67d3d76af2d36b": {
+      "url": "https://simonwillison.net/2026/Aug/4/new-release-of-llm",
+      "date": "2026-08-05"
+    },
+    "efd8ec6ed39975952a89963aa3685f20e384894cb51d51943d49bf2222f74ba1": {
+      "url": "https://news.ycombinator.com/item?id=49113774",
+      "date": "2026-08-05"
+    },
+    "b949a65ff91f97918e6d5504986eae495ca6c614c0f113e7ac1e53e621e95bbf": {
+      "url": "https://simonwillison.net/2026/Aug/4/llm-anthropic",
+      "date": "2026-08-05"
+    },
+    "dfe88657f9ca6c70d2cb0ef96fa03dda76ba2d85a0cfc25f8576ddf51c71dfaf": {
+      "url": "https://news.ycombinator.com/item?id=49170846",
+      "date": "2026-08-05"
+    },
+    "61f8507a867ba9af507244ee6fa85921b996015e1375553938f0e513210f77f0": {
+      "url": "https://simonwillison.net/2026/Aug/4/minimax-h3-mlx",
+      "date": "2026-08-05"
+    },
+    "d3abe74726b22711439b57e8eeb6daaadf52c59dbd8cccf3d08088dca46e3ad3": {
+      "url": "https://simonwillison.net/2026/Aug/4/llm",
+      "date": "2026-08-05"
+    },
+    "e43e3e4890ae01bee07ecdfff97466483f0ddf189dcdc3a3c331eebb971f2ef2": {
+      "url": "https://simonwillison.net/2026/Aug/3/condense-json",
+      "date": "2026-08-05"
+    },
+    "321af2fa263e633335f601622e8ebd12019499a7f53b944b7a92ddffe3a92ed7": {
+      "url": "https://www.latent.space/p/ainews-megakernels-are-so-dead-and",
+      "date": "2026-08-05"
+    },
+    "dfc4aca081a338564421c1ddb8bde723681a750c4c9f005ed5a308049148a098": {
+      "url": "https://www.latent.space/p/unpacking-chatgpt-work",
+      "date": "2026-08-05"
+    },
+    "74c7d969ea3de97a7aa1903650cd66f0e95f13fd2ad8a5bd883e9e849a5663b4": {
+      "url": "https://www.bensbites.com/p/what-my-agent-knows-about-me",
+      "date": "2026-08-05"
+    },
+    "aa21db80f8b7b7664c23f0b5de6fc014a64920e8fdb45e2877008c81969f17ab": {
+      "url": "https://huggingface.co/blog/LiquidAI/lfm2-5-2-6b",
+      "date": "2026-08-05"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 0
+  "dailyPage": 1
 }

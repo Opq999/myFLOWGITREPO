@@ -1,0 +1,134 @@
+---
+title: "Generate short AI videos from text prompts locally with MiniMax-H3 and MLX"
+description: "Learn to generate 15-second video clips with audio from text prompts using the advanced MiniMax-H3 model, optimized for Apple Silicon with MLX. Explore local AI video creation."
+category: "content-creation"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 180
+jobToBeDone: "Generate a short video clip from a text prompt using a local AI model"
+tools:
+  - name: "Python"
+    url: "https://www.python.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "uvx"
+    url: "https://github.com/astral-sh/uv"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Git"
+    url: "https://git-scm.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "MLX"
+    url: "https://github.com/ml-explore/mlx"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "PipeNetwork/minimax-h3-mlx"
+    url: "https://github.com/PipeNetwork/minimax-h3-mlx"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "MiniMax-H3 model files"
+    url: "https://huggingface.co/MiniMaxAI/MiniMax-H3"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://simonwillison.net/2026/Aug/4/minimax-h3-mlx/#atom-everything"
+  platform: "blog"
+  author: "Simon Willison"
+  postedAt: 2026-08-04
+score: 7
+ingestedAt: 2026-08-05
+nigeriaUseCases:
+  - persona: "entrepreneur"
+    scenario: "Generate short, unique video clips for Instagram Reels or TikTok ads to promote a new fashion line or a digital course, creating engaging visuals without relying on expensive stock footage."
+  - persona: "employee"
+    scenario: "Produce a 15-second video explainer for a new company policy or a quick product demo for an internal presentation, using text prompts to rapidly prototype visual ideas without needing a video editor."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+MiniMax-H3 is an advanced AI model that can create short video clips (up to 15 seconds) with audio from various inputs like text, images, or even other videos. It's described as an "omni-modal generative system" because it handles many types of media.
+
+This specific workflow uses a Python package called `PipeNetwork/minimax-h3-mlx` to run the MiniMax-H3 model on Apple Silicon Macs (computers with M-series chips like M1, M2, M3). It uses MLX, Apple's own framework, to make the model run efficiently on this hardware.
+
+This is an advanced workflow because it requires specific computer hardware, comfort with the command line (typing commands into a terminal), and downloading very large model files (around 115 GB). It's not a simple web tool you can use with a few clicks.
+
+## What you can use it for
+*   **Create short video clips from text descriptions**: Generate a 15-second video with audio from a simple text prompt, like "a rainbow colored skunk leaps over a mossy log in a supermarket."
+*   **Experiment with advanced local AI models**: Explore how powerful AI models can run directly on your computer, without needing cloud services or an internet connection after the initial download.
+*   **Generate creative content for personal projects**: Produce unique, short video snippets for your own creative work, social media, or small business promotions.
+
+## Tools you need
+*   **Apple Silicon Mac (M-series chip)** (paid): A Mac computer with an M1, M2, M3, or newer chip. This specific hardware is required to run the MLX framework efficiently.
+*   **Python** (free): A popular programming language needed to run the model's scripts. `https://www.python.org/`
+*   **uvx** (free): A fast tool for installing Python packages and running Python commands. `https://github.com/astral-sh/uv`
+*   **Git** (free): A system used to download and manage code projects from the internet. `https://git-scm.com/`
+*   **Terminal** (free): The command-line interface on your Mac, where you will type and run commands. (Built into macOS).
+
+## How it actually works
+1.  **Prepare your environment**:
+    *   Ensure you have Python, uvx, and Git installed on your Apple Silicon Mac. If not, install them following their official instructions.
+    *   Open your Terminal application (you can find it in `Applications > Utilities`).
+2.  **Download the project code**:
+    *   Use Git to download the `PipeNetwork/minimax-h3-mlx` project from GitHub. Type this command and press Enter:
+
+    ```bash
+    git clone https://github.com/PipeNetwork/minimax-h3-mlx.git
+    ```
+
+    *   You should see messages indicating the repository is being cloned. Once complete, a new folder named `minimax-h3-mlx` will appear in your current directory.
+3.  **Navigate to the project folder**:
+    *   Change your current directory in the Terminal to the newly cloned project folder:
+
+    ```bash
+    cd minimax-h3-mlx
+    ```
+
+    *   Your Terminal prompt should now show that you are inside the `minimax-h3-mlx` directory.
+4.  **Download the AI model files**:
+    *   The MiniMax-H3 model requires about 115 GB of files. This step will download them from Hugging Face Hub. This can take a long time depending on your internet speed.
+    *   Run these two commands one after the other:
+
+    ```bash
+    uvx --from huggingface_hub hf download MiniMaxAI/MiniMax-H3 \
+    --include 'FL2VA/*' --exclude 'FL2VA/transformer/*'
+    ```
+
+    ```bash
+    uvx --from huggingface_hub hf download pipenetwork/MiniMax-H3-MLX-8bit
+    ```
+
+    *   You will see progress updates as the files download. This step is complete when both commands finish without errors. The files will be stored in your system's cache, typically in a hidden folder like `~/.cache/huggingface/hub/`.
+5.  **Generate your video clip**:
+    *   Now, you can run the Python script to generate a video. The example prompt from the author is "a rainbow colored skunk leaps over a mossy log in a supermarket". The output video will be saved as `skunk.mp4`.
+    *   The paths to the downloaded models are specific to the author's system and the Hugging Face cache structure. You will need to adjust these paths if your cache location is different, but the provided paths are a good starting point.
+    *   Paste this command into your Terminal and press Enter:
+
+    ```bash
+    uvx run --with mlx-vlm \
+    --with-requirements requirements.txt python scripts/generate.py \
+    "a rainbow colored skunk leaps over a mossy log in a supermarket" \
+    -o skunk.mp4 \
+    -c ~/.cache/huggingface/hub/models--MiniMaxAI--MiniMax-H3/snapshots/fa9c8ab1eaa21c8ae25e7e40b83b2e6002f340af/FL2VA \
+    -t ~/.cache/huggingface/hub/models--pipenetwork--MiniMax-H3-MLX-8bit/snapshots/3ac52081470b0488921c3ec3ba84a39097bf2361
+    ```
+
+    *   The author reported this step took "just under 45 minutes" on an M5 Max MacBook Pro. You will see messages in the Terminal as the model processes the request. Once finished, a file named `skunk.mp4` will appear in your `minimax-h3-mlx` folder.
+
+## Words you'll see, explained
+*   **Apple Silicon**: The custom M-series chips (like M1, M2, M3) designed by Apple for their Mac computers, known for their efficiency in running AI tasks.
+*   **MLX**: A machine learning framework developed by Apple, specifically optimized for running AI models efficiently on Apple Silicon hardware.
+*   **Omni-modal**: An AI system that can understand and generate content using multiple types of data, such as text, images, audio, and video, all at once.
+*   **Repository (repo)**: A central location, often on platforms like GitHub, where code and files for a software project are stored and managed.
+*   **Command line / Terminal**: A text-based interface used to interact with your computer by typing commands, instead of clicking icons. It's a powerful way to control your system.
+*   **Hugging Face Hub**: A popular online platform where AI models, datasets, and code are shared and discovered by the machine learning community.
+
+## Original source
+This workflow is based on a blog post by Simon Willison, who documented getting the `PipeNetwork/minimax-h3-mlx` package running on his Apple Silicon Mac. He shared the commands and his initial results, including the generated video.
+
+## Notes & variations
+*   **Do you even need this?**: For simpler video generation from text, consider cloud-based tools like RunwayML or Pika Labs. These often offer a more user-friendly experience through a web browser, though they may have free-tier limits or require a subscription for full features. This local workflow is best for those who want to experiment with advanced models directly on their hardware and have the technical comfort to do so.
+*   **Free-tier limits**: While the model and code are free, running this workflow requires significant local resources: an Apple Silicon Mac, approximately 115 GB of free storage for the model files, and a strong internet connection for the initial download.
+*   **Common pitfall**: The author noted that without specific guidance for the audio, the generated sound can be "weird speech-like garbage." If your prompt only describes the video, the audio might not make sense.
+*   **Tip for better results**: The author mentioned a "prompting guide" for MiniMax-H3. While not included in the excerpt, seeking out the official MiniMax-H3 documentation or prompting guides would likely help you craft better prompts, especially for controlling the audio output.
