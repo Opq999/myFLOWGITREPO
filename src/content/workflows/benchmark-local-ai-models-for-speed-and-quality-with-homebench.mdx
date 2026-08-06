@@ -1,0 +1,118 @@
+---
+title: "Benchmark Local AI Models for Speed and Quality with Homebench"
+description: "Compare your local AI models (LLMs) for speed, memory, and quality on your own computer using Homebench. Get a live leaderboard to find the best model for your laptop."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 20
+jobToBeDone: "Benchmark local LLMs for speed, memory, and quality"
+tools:
+  - name: "Python"
+    url: "https://www.python.org"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "homebench"
+    url: "https://github.com/david-g-3654/homebench"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Ollama"
+    url: "https://ollama.com"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "LM Studio"
+    url: "https://lmstudio.ai"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=49166308"
+  platform: "hackernews"
+  author: "davai-g"
+  postedAt: 2026-08-04
+score: 7
+ingestedAt: 2026-08-06
+nigeriaNotes: "This workflow is entirely free to use as it runs locally on your computer. Data usage is minimal once you have downloaded your chosen local AI models, which can be large (several gigabytes each)."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "A computer science student uses `homebench` to select the most efficient local LLM for their final year project, balancing text generation speed and their laptop's memory limits."
+  - persona: "entrepreneur"
+    scenario: "An entrepreneur building a local AI writing assistant uses `homebench` to pick the fastest LLM that runs smoothly on users' laptops, ensuring quick content generation for their customers."
+  - persona: "employee"
+    scenario: "A software engineer uses `homebench` to evaluate local LLMs for a company's internal code assistant, identifying the best model for speed and memory on their team's workstations."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will get a live, easy-to-read comparison (a "leaderboard") of the AI models you have installed on your computer. This leaderboard will show you how fast each model generates text (tokens per second), how quickly it starts responding (time-to-first-token), how much memory it uses, and a quality score. This helps you quickly identify which local AI model performs best on your specific machine for different tasks.
+
+## Tools you need
+*   **Python** (free): The programming language required to run `homebench`. You will need version 3.9 or newer.
+*   **homebench** (free): The main tool that benchmarks your local AI models.
+*   **Ollama** (free): A popular, user-friendly tool for running large language models (LLMs) on your computer. You will need to install this (or another compatible runner) and download at least one AI model before running `homebench`.
+*   **LM Studio** (free): Another popular tool for running local LLMs, similar to Ollama.
+
+## Steps
+
+1.  **Install Python**: If you don't have Python 3.9 or newer, download and install it from the official website.
+    *   Go to `https://www.python.org/downloads/`.
+    *   Download the latest version for your operating system (Windows, macOS, or Linux).
+    *   Follow the installation instructions. On Windows, make sure to check the box that says "Add Python to PATH" during installation.
+    *   **What you should see**: After installation, open your computer's terminal (Command Prompt on Windows, Terminal on macOS/Linux) and type `python --version`. You should see `Python 3.9.x` or a newer version number.
+
+2.  **Install a local AI model runner and download models**: `homebench` needs AI models to test. You'll need a tool that can run these models on your computer, and you'll need to download at least one model using that tool. We recommend Ollama for its simplicity.
+    *   Go to `https://ollama.com/download`.
+    *   Download and install Ollama for your operating system.
+    *   Once Ollama is installed, open your terminal and download a small model, for example, `llama2`.
+
+    ```
+    ollama run llama2
+    ```
+
+    *   **What you should see**: Ollama will download the `llama2` model (this might take some time depending on your internet speed and model size). Once downloaded, it will start running the model, and you can type a message to it. You can then close Ollama by typing `/bye` or pressing `Ctrl+C`.
+
+3.  **Install homebench**: Now you can install the `homebench` tool using `pip`, Python's package installer.
+    *   Open your terminal (Command Prompt on Windows, Terminal on macOS/Linux).
+    *   Type the following command and press Enter:
+
+    ```
+    pip install homebench
+    ```
+
+    *   **What you should see**: The terminal will show progress as `homebench` and its dependencies are downloaded and installed. You should see a message indicating successful installation.
+
+4.  **Run the benchmark**: With `homebench` installed and at least one local AI model ready, you can now run the benchmark.
+    *   In your terminal, type the basic command:
+
+    ```
+    homebench
+    ```
+
+    *   **What you should see**: `homebench` will start detecting your local AI models (like the `llama2` model you downloaded with Ollama). It will then run a series of tests and display a live "TUI" (Terminal User Interface) leaderboard showing the performance of your models. The default run tests the 3 smallest models with a quick quality check.
+
+5.  **Interpret the results**: The `homebench` leaderboard shows several key metrics:
+    *   **tok/s (tokens per second)**: How many words or pieces of words the AI model can generate per second. Higher is better.
+    *   **TTFT (Time-To-First-Token)**: How long it takes for the AI model to start generating its first response. Lower is better.
+    *   **Memory**: How much computer memory (RAM) the AI model uses. Lower is better.
+    *   **Quality**: A score from 0-100 based on how well the model performs on various tasks like math, reasoning, and understanding instructions. Higher is better.
+    *   **🏆 Best Model**: `homebench` will highlight the best overall model based on a blend of these scores, normalized for your specific computer.
+
+## Original source
+This workflow is based on `homebench`, a tool created by `davai-g` and shared on `hackernews`. It provides a simple way to benchmark local AI models for speed, memory, and quality.
+
+## Notes & variations
+*   **Other local AI runners**: Besides Ollama, `homebench` can also detect models from LM Studio, `llama.cpp` (specifically `llama-server`), and `vLLM`. If you use one of these, ensure it's running and has models downloaded before starting `homebench`.
+*   **Benchmark all models or run a full quality suite**: By default, `homebench` runs a quick test on a few models. To get a more complete picture, you can use these commands:
+
+    ```
+    homebench --all
+    ```
+
+    (This benchmarks every discovered model.)
+
+    ```
+    homebench --full
+    ```
+
+    (This runs the full, more thorough quality test suite.)
+*   **Common mistake**: A common issue is running `homebench` without any local AI models installed or without a compatible model runner (like Ollama) running in the background. Make sure you've completed Step 2 before running the benchmark.
+*   **Tip for better results**: For the most accurate benchmark, close other demanding applications on your computer while `homebench` is running. This ensures the AI models have full access to your computer's resources.

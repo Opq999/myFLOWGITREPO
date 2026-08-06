@@ -1,0 +1,101 @@
+---
+title: "Build a Raccoon Heist Game Concept with AI (Claude Fable 5)"
+description: "Learn how AI models like Claude Fable 5 can turn game concepts and art into a playable game. Explore the process of using AI for creative game development."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 60
+jobToBeDone: "Build a game from a concept tweet and AI-generated art using Claude Fable 5"
+tools:
+  - name: "Claude Fable 5"
+    url: "https://www.anthropic.com/api"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "GPT-3"
+    url: "https://openai.com/api"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "DALL-E"
+    url: "https://openai.com/dall-e"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "GitHub"
+    url: "https://github.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://simonwillison.net/2026/Aug/5/raccoon-heist/#atom-everything"
+  platform: "blog"
+  author: "Simon Willison"
+  postedAt: 2026-08-05
+score: 7
+ingestedAt: 2026-08-06
+nigeriaNotes: "This workflow relies on paid API access for advanced AI models (Claude Fable 5, GPT-3, DALL-E), which may incur significant costs. Data usage for interacting with these APIs and potentially running the game locally would be moderate."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "As a Computer Science student, use AI to rapidly prototype a simple 2D game for your final year project, generating initial code and assets to demonstrate core mechanics."
+  - persona: "entrepreneur"
+    scenario: "As a startup founder, quickly build a playable demo and concept art for your mobile game idea using AI, to showcase its potential to early investors."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+This entry explores how advanced AI models can be used to quickly create a playable game from a simple idea and some visual concepts. The author used a powerful AI model, Claude Fable 5, within a developer environment called Claude Code for web, to turn a game description and AI-generated screenshots into a working game.
+
+This is an advanced workflow because it involves using cutting-edge AI models, often through their developer APIs (Application Programming Interfaces), rather than simple chat interfaces. The exact steps for interacting with these advanced models to generate a full game are complex and typically require technical skills, including understanding code and development environments. There isn't a single copy-paste recipe for a beginner to fully reproduce the game-building part of this process.
+
+## What you can use it for
+*   **Rapid Game Prototyping**: Quickly turn a game idea into a basic playable version to test concepts and mechanics.
+*   **AI-Assisted Creative Brainstorming**: Use AI to generate detailed game descriptions, character ideas, or visual concepts from minimal input.
+*   **Learning AI Agent Capabilities**: Understand how advanced AI models can act as "agents" to perform complex, multi-step creative tasks like game development.
+*   **Exploring AI in Code Generation**: See how AI can write and integrate code for interactive applications, even without explicit step-by-step instructions from the user.
+
+## Tools you need
+*   **Claude Fable 5 (paid)**: An advanced AI model, likely accessed via API, used here to generate the game code and assets.
+*   **GPT-3 (paid)**: An AI model from OpenAI, used to generate the initial detailed game description.
+*   **DALL-E (paid)**: An AI model from OpenAI, used to create concept art or "screenshots" for the game.
+*   **GitHub (freemium)**: A platform for hosting and managing software code, where the generated game code is stored.
+
+## How it actually works
+The author's process involved several stages, starting with concept generation and moving to AI-driven game creation. While the exact steps for Claude Fable 5 are not fully detailed in the source, the general approach is as follows:
+
+1.  **Generate a game concept**: The author used GPT-3 (an AI model for text generation) to expand a simple tweet idea into a detailed product description for a game.
+    *   **Action**: Access a GPT-3 interface (e.g., via the OpenAI API or a tool that uses it).
+    *   **Prompt**: The author used a prompt designed for text completion:
+
+    ```
+    Write a detailed product description of a computer game where a team of raccoons go on heists.
+    ```
+
+    *   **Expected result**: A detailed description of the game, including gameplay elements and characters.
+
+2.  **Create concept art**: DALL-E (an AI model for image generation) was used to create visual "screenshots" based on the game concept.
+    *   **Action**: Access a DALL-E interface (e.g., via the OpenAI API or a DALL-E interface).
+    *   **Prompt**: The author used a short, descriptive prompt:
+
+    ```
+    Screenshot from a video game where a team of raccoons go on a heist
+    ```
+
+    *   **Expected result**: Images that look like screenshots from the described game.
+
+3.  **Build the game with Claude Fable 5**: The core of the experiment involved feeding the game description and DALL-E screenshots into Claude Fable 5, running in "Claude Code for web," and instructing it to build the game.
+    *   **Action**: Access the Claude Code for web environment (this is a developer tool, likely requiring an API key or specific access). The author does not share their exact prompt for Claude Fable 5, but it would involve instructing the AI to create a game based on the provided text and images.
+    *   **Expected result**: Claude Fable 5 generated a working game, including code and assets, which the author then hosted on GitHub. The author's final game is available to play and its code is in a GitHub repository, which serves as the true source of truth for the generated game.
+
+## Words you'll see, explained
+*   **AI model**: A computer program designed to perform tasks that usually require human intelligence, like writing text or creating images.
+*   **API (Application Programming Interface)**: A set of rules that allows different software programs to communicate with each other, often used to access AI models programmatically.
+*   **Claude Fable 5**: A specific, advanced AI model developed by Anthropic, known for its strong reasoning and code generation capabilities.
+*   **GPT-3**: A powerful AI model from OpenAI that can generate human-like text based on prompts.
+*   **DALL-E**: An AI model from OpenAI that can create unique images from text descriptions.
+*   **GitHub repo**: A "repository" on GitHub, which is a cloud-based service for storing and managing software projects and their code.
+
+## Original source
+Simon Willison, a respected technologist and writer, shared this experiment on his blog. He demonstrated how he used advanced AI models like Claude Fable 5, GPT-3, and DALL-E to rapidly develop a game concept into a playable version.
+
+## Notes & variations
+*   **Do you even need this?**: For simple game ideas or learning basic game development, traditional game engines (like Scratch, Unity, or Godot) might be more accessible and cost-effective than relying solely on advanced, paid AI models. This AI approach is best for rapid prototyping or exploring the cutting edge of AI capabilities.
+*   **Free-tier limits**: The core AI models (Claude Fable 5, GPT-3, DALL-E) used in this workflow are typically paid services, often accessed via API keys. There are usually no free tiers for these specific developer products, meaning you pay per use or by subscription.
+*   **Common pitfall**: Expecting a perfect, fully polished game from a single AI prompt is unrealistic. AI-generated games often require significant human refinement, debugging, and additional development to become truly robust and enjoyable.

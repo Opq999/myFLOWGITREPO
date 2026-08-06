@@ -12936,8 +12936,36 @@
     "aa21db80f8b7b7664c23f0b5de6fc014a64920e8fdb45e2877008c81969f17ab": {
       "url": "https://huggingface.co/blog/LiquidAI/lfm2-5-2-6b",
       "date": "2026-08-05"
+    },
+    "8b35d9a7be3201b9767d397fa01d21b2f9e9642150f8f243e8537260fa69ac0a": {
+      "url": "https://news.ycombinator.com/item?id=49166308",
+      "date": "2026-08-06"
+    },
+    "708446172e325cdfabdb262940ef5d23a72bf62eb2a16749c5abe85d7a837a76": {
+      "url": "https://simonwillison.net/2026/Aug/6/an-ai-model-from-meta",
+      "date": "2026-08-06"
+    },
+    "a73147b00fa87689c5d02f7b8a76a08e65cda7b6d467d51cc7a4bac310ccc0b1": {
+      "url": "https://simonwillison.net/2026/Aug/5/muse-code-and-muse-spark-12",
+      "date": "2026-08-06"
+    },
+    "f01531ee47225e86936dd713fbb56bb85b8cc929d7b1dc2333ca10c9ba4d6339": {
+      "url": "https://simonwillison.net/2026/Aug/5/third-party-cyber-evaluations",
+      "date": "2026-08-06"
+    },
+    "a04397131d4e41894aa2f2c7e078e062fb79fce96958f869d814acf1fbfe5ee7": {
+      "url": "https://simonwillison.net/2026/Aug/5/incident-report",
+      "date": "2026-08-06"
+    },
+    "b023d4b3644fdebca1a0d4862f9496b132510f5cb41b3bf67d3e6651cd3ea1aa": {
+      "url": "https://simonwillison.net/2026/Aug/5/raccoon-heist",
+      "date": "2026-08-06"
+    },
+    "f98620a14048adad3865734eb0884aba5df3001611a41615287f0483217f14bc": {
+      "url": "https://www.latent.space/p/ainews-jeff-sanjay-oriol-and-quoc",
+      "date": "2026-08-06"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 1
+  "dailyPage": 2
 }
