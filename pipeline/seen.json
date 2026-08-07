@@ -12964,8 +12964,36 @@
     "f98620a14048adad3865734eb0884aba5df3001611a41615287f0483217f14bc": {
       "url": "https://www.latent.space/p/ainews-jeff-sanjay-oriol-and-quoc",
       "date": "2026-08-06"
+    },
+    "220a4e339831bb8e78e9c3a33b70fff445160a4b62df8373321a022bfa6cbb1e": {
+      "url": "https://simonwillison.net/2026/Aug/6/datasette",
+      "date": "2026-08-07"
+    },
+    "9d67ce648f6a891927c40000a0c553d9941ecabd9e2fd694c6dc165955049364": {
+      "url": "https://github.com/Alishahryar1/free-claude-code",
+      "date": "2026-08-07"
+    },
+    "0425f737e9089a241fb4d9ff2ab7dda900651c9815040cb4b168406a326fc51e": {
+      "url": "https://simonwillison.net/2026/Aug/6/datasette-2",
+      "date": "2026-08-07"
+    },
+    "433a672ed01df8eed38c522dfcffb57dc95e563dc63849b858aa385f96bd8cc3": {
+      "url": "https://simonwillison.net/2026/Aug/6/simon-willison-on-technical-blogging",
+      "date": "2026-08-07"
+    },
+    "25f0af2b3dedb35ba4de9e17c39e4f942f4d24c14cfa658efdd3ea0933060152": {
+      "url": "https://www.latent.space/p/ainews-amd-buys-taalas",
+      "date": "2026-08-07"
+    },
+    "3ffac97d6382b76eb0c70a96488f6432042a3d3e0a556f8d46808b39a7c38b6c": {
+      "url": "https://www.bensbites.com/p/im-using-a-new-agent-app",
+      "date": "2026-08-07"
+    },
+    "23ccd9ff0c11ef81ec2380b190cca16b9bf8060ea7b88f5f2fe29d03a80c6c2f": {
+      "url": "https://huggingface.co/blog/baseten",
+      "date": "2026-08-07"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 2
+  "dailyPage": 3
 }

@@ -1,0 +1,127 @@
+---
+title: "Use AI Coding Agents (Claude Code, Codex, Pi) for Free with Free Claude Code"
+description: "Access and use AI coding agents like Claude Code, Codex, and Pi from your terminal, IDE, or phone using the Free Claude Code wrapper."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 20
+jobToBeDone: "Access and use AI coding agents (Claude Code, Codex, Pi) for free from various interfaces"
+tools:
+  - name: "Free Claude Code (FCC)"
+    url: "https://github.com/Alishahryar1/free-claude-code"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "NVIDIA NIM"
+    url: "https://build.nvidia.com/"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Discord"
+    url: "https://discord.com/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Telegram"
+    url: "https://telegram.org/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://github.com/Alishahryar1/free-claude-code"
+  platform: "github"
+  author: "Alishahryar1"
+  postedAt: 2026-08-07
+score: 7
+ingestedAt: 2026-08-07
+nigeriaNotes: "While the project aims to enable free use of coding agents, the quick start guide uses NVIDIA NIM, which is a paid API service. Using AI agents will consume data, so monitor your usage."
+nigeriaUseCases:
+  - persona: "employee"
+    scenario: "As a software engineer, use Claude Code in your IDE to quickly generate documentation strings for complex functions, saving time on project handover tasks."
+  - persona: "student"
+    scenario: "As a university student, use Codex to generate example code snippets for data structures like linked lists, helping you understand concepts faster for your programming assignments."
+  - persona: "entrepreneur"
+    scenario: "As a tech founder, use Pi via a Telegram bot to get quick code suggestions for new API endpoints, accelerating your product's initial feature development."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will set up and run an open-source tool called Free Claude Code (FCC) that lets you access powerful AI coding agents like Claude Code, Codex, and Pi. This allows you to use these agents from your computer's terminal, integrated development environment (IDE), or even via Discord and Telegram bots. This approach works by providing a single interface to connect to various AI model providers, including free, paid, and local options, and adds optimizations to save time and API costs.
+
+## Tools you need
+*   **Free Claude Code (FCC)** (free): An open-source tool that acts as a wrapper, allowing you to use AI coding agents like Claude Code, Codex, and Pi from your computer or phone.
+*   **NVIDIA NIM** (paid): A platform that provides access to NVIDIA's AI models. In this workflow, FCC uses NVIDIA NIM as a provider for its coding agents, requiring an API key.
+*   **Discord** (freemium): An optional chat application you can use to interact with FCC's bot features.
+*   **Telegram** (free): An optional messaging app you can use to interact with FCC's bot features.
+
+## Steps
+1.  **Install Free Claude Code**: Open your terminal (on macOS/Linux) or PowerShell (on Windows) and run the appropriate command to install FCC. This command also works to update FCC later. The installer will ask which coding agents you want to install or verify. Choose at least one.
+
+    ```bash
+    # macOS or Linux
+    curl -fsSL "https://raw.githubusercontent.com/Alishahryar1/free-claude-code/main/scripts/install.sh" | sh
+    ```
+
+    ```powershell
+    # Windows (PowerShell)
+    ([scriptblock]::Create((irm "https://raw.githubusercontent.com/Alishahryar1/free-claude-code/main/scripts/install.ps1")))
+    ```
+
+    You should see the installer running, asking you to select agents. After it finishes, FCC will be installed on your system.
+
+2.  **Start the FCC Server**: Launch the FCC server. This server runs in the background and provides the Admin UI (user interface) in your web browser.
+
+    *   **Windows**: Open "Free Claude Code" from your desktop or Start menu. It will run in your system tray.
+    *   **macOS**: Open "Free Claude Code" from your desktop or Applications folder. It will run in your menu bar.
+    *   **Linux**: Open your terminal and run:
+
+        ```bash
+        fcc-server
+        ```
+
+    On Windows and macOS, FCC runs silently. On Linux, keep the terminal window open. The Admin UI should automatically open in your web browser, typically at `http://127.0.0.1:8082/admin`. If not, check the terminal log for the exact address.
+
+3.  **Create an NVIDIA NIM API Key**: Go to the NVIDIA NIM website and create a new API key. This key will allow FCC to access NVIDIA's AI models.
+
+    *   Open your web browser and go to `https://build.nvidia.com/settings/api-keys`.
+    *   Follow the instructions on the page to create a new API key.
+    *   Copy the generated API key.
+
+    You should have a unique API key copied to your clipboard.
+
+4.  **Configure FCC with your API Key**: Paste your NVIDIA NIM API key into the FCC Admin UI.
+
+    *   In the FCC Admin UI (which opened in your browser in Step 2), find the setting for `NVIDIA_NIM_API_KEY`.
+    *   Paste your copied API key into this field.
+    *   Leave the `MODEL` setting on its default (`nvidia_nim/nvidia/nemotron-3-super-120b-a12b`) or choose another model from the dropdown.
+    *   Click `Validate`, then `Apply`.
+
+    You should see a confirmation that the key is valid and the settings have been applied.
+
+5.  **Run Your Coding Agent**: Now you can use the AI coding agents from your terminal.
+
+    *   Open a new terminal window (or use the existing one if you're on Linux and kept it open for `fcc-server`).
+    *   To use Claude Code, run:
+
+        ```bash
+        fcc-claude
+        ```
+
+    *   To use Codex, run:
+
+        ```bash
+        fcc-codex
+        ```
+
+    *   To use Pi, run:
+
+        ```bash
+        fcc-pi
+        ```
+
+    The agent will start in your terminal, ready to receive your coding requests.
+
+## Original source
+This workflow is based on the `free-claude-code` project by Alishahryar1, hosted on GitHub. The project aims to provide a free and flexible way to interact with various AI coding agents from different platforms.
+
+## Notes & variations
+*   **Free-tier viability**: While the project is named "free-claude-code" and aims to support free providers, the quick start guide provided in the source excerpt uses NVIDIA NIM, which is a paid API service. Explore the FCC documentation for information on connecting to genuinely free or local AI model providers if you want to avoid paid services.
+*   **Common pitfall**: On Linux, if you close the terminal window where you ran `fcc-server`, the server will stop running, and you won't be able to use the coding agents or access the Admin UI. Keep that terminal window open, or configure FCC to run as a background service (which is an advanced setup not covered here).
+*   **Tip for better results**: FCC includes built-in optimizations that save time and API tokens (small units of text used by AI models) by handling tasks like command detection and title generation locally. The source also mentions an optional feature called RTK (Real-Time Kernel) that can filter noisy terminal output before it reaches the AI model, which can improve the model's focus and reduce token usage. Consider enabling RTK if you find the AI agent struggling with cluttered terminal logs.
