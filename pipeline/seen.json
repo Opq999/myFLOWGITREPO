@@ -12992,8 +12992,40 @@
     "23ccd9ff0c11ef81ec2380b190cca16b9bf8060ea7b88f5f2fe29d03a80c6c2f": {
       "url": "https://huggingface.co/blog/baseten",
       "date": "2026-08-07"
+    },
+    "7a819568873d61266214109ee1dc82ffeca3b8ab9066d76217890d022b987f9a": {
+      "url": "https://simonwillison.net/2026/Aug/8/john-gruber",
+      "date": "2026-08-08"
+    },
+    "e70af22d37d15b2a056757f8762fbc6aeb596adeb7fbe141f35c2f267348ceb6": {
+      "url": "https://github.com/siyuan-note/siyuan",
+      "date": "2026-08-08"
+    },
+    "2c2b6790f37b6b08da5ff5f9a1ceab8da5ef5dce53d3d5c61c3a88a608755b71": {
+      "url": "https://simonwillison.net/2026/Aug/7/openai-timeline",
+      "date": "2026-08-08"
+    },
+    "eee2b82f56e264e78ce3919445b981b723d54d09af33d5f43100b48e46da2cc3": {
+      "url": "https://simonwillison.net/2026/Aug/7/moonlight-mayhem",
+      "date": "2026-08-08"
+    },
+    "57cc8718f9446eb4759765255ba110da5740f7fc750d3be0819e3ca7d5f671a5": {
+      "url": "https://simonwillison.net/2026/Aug/7/pdfs-are-terrible",
+      "date": "2026-08-08"
+    },
+    "101adad35d4b0a053859c97922c18ad8a0e215e29d56afe39a4a718d6ab2981c": {
+      "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
+      "date": "2026-08-08"
+    },
+    "ccb81ea8cc6ce5feb6da2993712c656900fad36f65cfa7fd6d83fb5067ad1333": {
+      "url": "https://www.bensbites.com/p/bens-session",
+      "date": "2026-08-08"
+    },
+    "624979042481ff504b8cdd9f4fefd24e5c9226e8b96822c1d4945a834a37fbab": {
+      "url": "https://huggingface.co/blog/allenai/tutormoments",
+      "date": "2026-08-08"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 3
+  "dailyPage": 4
 }
