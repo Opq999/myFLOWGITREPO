@@ -13304,8 +13304,256 @@
     "6132a33c368b98f67d6073cbf0cec5928286c9eb668593495a9243adb7239636": {
       "url": "https://www.reddit.com/r/jobsearchhacks/comments/1ut6uc7/laid_off_today",
       "date": "2026-08-09"
+    },
+    "b60d636dedc066aec059a371e05c8369e48f96984d849e6cf7dc51ad687504a1": {
+      "url": "https://news.ycombinator.com/item?id=49239021",
+      "date": "2026-08-10"
+    },
+    "c572e2f8ef2657b4cfb2f01e1ca168a13399840a784b04757dd96e5f9970e9ec": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1vcw1lu/prompt_idea_create_a_completely_serious",
+      "date": "2026-08-10"
+    },
+    "b688dfd5fcf050cd12da4774cbc6b58ac03454c309873e45ca41b9dd8dee4ba3": {
+      "url": "https://simonwillison.net/2026/Aug/10/openclaw",
+      "date": "2026-08-10"
+    },
+    "97abc342eb85fcef63295106f24463f5f37acd0a817127a4516698a534a032f0": {
+      "url": "https://news.ycombinator.com/item?id=49175296",
+      "date": "2026-08-10"
+    },
+    "e69ac705393c32c34b62957694c58d86a03e48a0939ac5c33d98a4e4ac4abe56": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1veerrp/i_am_very_successful",
+      "date": "2026-08-10"
+    },
+    "1c4d767bb36abf17c32d234f6d5b59b17fe8a9cb1b7e088e9f6af8b2b7b8a7e8": {
+      "url": "https://simonwillison.net/2026/Aug/9/claude-opus-5-system-prompt",
+      "date": "2026-08-10"
+    },
+    "cbeba143a196a292a34ee494bd8a95152faa3e2fd37b7cb7f083620018d680ab": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1vjosfs/what_do_i_want_to_be_a_poem_about_parenting_in",
+      "date": "2026-08-10"
+    },
+    "3cc0e82c60b9214c6b80db0619aab4bd876578bfc107f437934026d9822404a2": {
+      "url": "https://simonwillison.net/2026/Aug/9/github-models-is-now-retired",
+      "date": "2026-08-10"
+    },
+    "a33de7dca4680d49bf7d3b83b5c4edff8bb5beef6d37f6a6cd6791ae47db1de6": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1view4k/seinfeld_ai",
+      "date": "2026-08-10"
+    },
+    "06407040640989c4e411854ff0c498555f018cd1e0269947ba63a00c7402f894": {
+      "url": "https://simonwillison.net/2026/Aug/9/sqlite-text-history-prototype",
+      "date": "2026-08-10"
+    },
+    "d6a5e78762e3fb5e6f11caa179562e8ba43331d2808f3e8095136307b03fc9ca": {
+      "url": "https://www.reddit.com/r/PromptEngineering/comments/1v8fi4l/stop_organizing_your_prompts_by_topic_organize",
+      "date": "2026-08-10"
+    },
+    "7a232858bb718e82e8588c9bb5f7f07f368267ebfdf5137f0cf1ea3e9b2f6ccc": {
+      "url": "https://simonwillison.net/2026/Aug/6/datasette-auth-tokens",
+      "date": "2026-08-10"
+    },
+    "b94eea8139c24a4fe3669abb353831773270140663c1ba5caa74bb562fe3eef5": {
+      "url": "https://www.reddit.com/r/PromptEngineering/comments/1v1l8jp/6_problemsolving_prompts_that_actually_got_me",
+      "date": "2026-08-10"
+    },
+    "b6afdd4892802e0fa47c8ac2c7f1de2147b532b3392f49ab638119c15bbd4341": {
+      "url": "https://www.interconnects.ai/p/lessons-from-the-hacks",
+      "date": "2026-08-10"
+    },
+    "53f7622e62ec9bbc6c2c15429ec5e8c706f48d02d1f017ac1695a9387e7211a5": {
+      "url": "https://www.reddit.com/r/PromptEngineering/comments/1vi4otm/best_prompt_to_generate_robust_conversational_and",
+      "date": "2026-08-10"
+    },
+    "09f576167843397e8e74b8ae7a93231dfcd347fa86468a6307c5167ce82c719a": {
+      "url": "https://www.reddit.com/r/PromptEngineering/comments/1vhg1wd/5_chatgpt_prompts_that_took_me_from_wearing_all",
+      "date": "2026-08-10"
+    },
+    "fc5d967b5701d54835b0283bfc8aa135392e0a3d5427297dcd1a1b3f51b0f51f": {
+      "url": "https://www.reddit.com/r/PromptEngineering/comments/1vg9kxg/most_people_tell_ai_what_to_do_very_few_people",
+      "date": "2026-08-10"
+    },
+    "d30904a1c743cd90c1f3c050266e560f75e0aa781047cce55537b41c46ec0f14": {
+      "url": "https://www.reddit.com/r/PromptEngineering/comments/1uy72a7/prompt_tweaks_causing_unexpected_cost_changes",
+      "date": "2026-08-10"
+    },
+    "ff7e45a5100fd3e3f9bca77b4c5bb93c9f77a32ce01839d9a3d290e730dac649": {
+      "url": "https://www.reddit.com/r/PromptEngineering/comments/1va22fx/context_compression_is_probably_more_important",
+      "date": "2026-08-10"
+    },
+    "69047b096ed037265a55c0d8f4e32714dd16c04f860592efddf55cc08848121f": {
+      "url": "https://www.reddit.com/r/PromptEngineering/comments/1uus1gq/my_agentsmd_if_you_want_to_see_it_i_like_looking",
+      "date": "2026-08-10"
+    },
+    "cd9136c5060623d7bd57f91f8888634e1adabab37323a92ef84d3fcb46bbca9a": {
+      "url": "https://www.reddit.com/r/PromptEngineering/comments/1uuwg43/modelspecific_prompt_structure_matters_more_than",
+      "date": "2026-08-10"
+    },
+    "0e046c9ec6d43c19b1e5152bb59eaa6300da5f376d12a6222ba5f26a30e791c2": {
+      "url": "https://www.reddit.com/r/PromptEngineering/comments/1vekow7/the_google_security_team_admitted_to_me_that_they",
+      "date": "2026-08-10"
+    },
+    "325d6ce0f41e3daa2997578b738cd00d3b3b0a1421a287421433932b1b49514b": {
+      "url": "https://www.reddit.com/r/PromptEngineering/comments/1v077l9/what_did_the_ai_tell_this_customer",
+      "date": "2026-08-10"
+    },
+    "4e697ab21fd3875caa8a9e542703703a53a7334c60d3c5325c37f8ebc5ffd11f": {
+      "url": "https://www.reddit.com/r/PromptEngineering/comments/1vfufp5/your_agent_didnt_run_out_of_context_the_context",
+      "date": "2026-08-10"
+    },
+    "8d69fe1f39f3cdf988ee9f5619e2e8a1703df60e8ca8291acb60278fbeb4dfd0": {
+      "url": "https://www.reddit.com/r/PromptEngineering/comments/1vfnkd3/how_to_keep_track_of_prompt_changes",
+      "date": "2026-08-10"
+    },
+    "e1738d62d210c8deb763119a9146f1526598d0fb971b74aeaeeb8920c15918f4": {
+      "url": "https://www.reddit.com/r/PromptEngineering/comments/1vbftn3/heres_a_prompt_that_turns_a_wall_of_text_into_an",
+      "date": "2026-08-10"
+    },
+    "6c36c05f12824ffe275740e155f32a6ae627a413f1cc698a83b9eaedaaa2f515": {
+      "url": "https://www.reddit.com/r/PromptEngineering/comments/1v4c3a9/most_employees_think_theyre_good_at_ai_a",
+      "date": "2026-08-10"
+    },
+    "40ac9cef289af32ad61ecafaa0f92cf98d309d71f8a935e3d0f1318bc6b4130f": {
+      "url": "https://www.reddit.com/r/PromptEngineering/comments/1v3dxeg/free_ai_learning_resources_for_anyone_getting",
+      "date": "2026-08-10"
+    },
+    "addd5f4617cdcbbfdd0670a424f360f0ddbb0033c8a3759021d19d3400552446": {
+      "url": "https://www.reddit.com/r/PromptEngineering/comments/1v1socu/think_like_a_machine_heres_20_prompts_you_can_mix",
+      "date": "2026-08-10"
+    },
+    "bb60c26910a7f8bec9b46ad3e4055d45594d64d3ec462f596f35373f0e983849": {
+      "url": "https://www.reddit.com/r/PromptEngineering/comments/1vj2drw/are_better_prompts_the_answer_to_bad_ai_generated",
+      "date": "2026-08-10"
+    },
+    "bb9edf8fa3e68851ce6801e1f3b231425a1bb35b55b6d4ee49f1b7a9bb5e1086": {
+      "url": "https://www.reddit.com/r/PromptEngineering/comments/1vey5do/we_were_optimizing_output_tokens_to_save_money",
+      "date": "2026-08-10"
+    },
+    "2cf34f749f1f8f2b84d0558151a0ffe8ae6c7dd7ef5e3838523bf0d0d03cb0de": {
+      "url": "https://www.reddit.com/r/PromptEngineering/comments/1v8rlie/prompt_optimizer_skillmd",
+      "date": "2026-08-10"
+    },
+    "4abe2d1940ba9a835cae9fec0ef2637aa1a057836d3147d30072bed5d5f5c055": {
+      "url": "https://www.reddit.com/r/PromptEngineering/comments/1uzo7rh/do_better_prompts_still_make_a_big_difference",
+      "date": "2026-08-10"
+    },
+    "af3c2d9b0fcf2984bb94af2b974b2759bd7a50b07cfc60ab3e7aa25e46f5ea4e": {
+      "url": "https://www.reddit.com/r/PromptEngineering/comments/1v6thxu/prompt_amplifier_free_for_the_community_something",
+      "date": "2026-08-10"
+    },
+    "fbaf8aa1ebd9087bb5236a0e9782c612baebc934f8aab27e301a876b86f6ecac": {
+      "url": "https://www.reddit.com/r/PromptEngineering/comments/1v3ffc6/sorted_my_marketing_tools_into_prompt_skill",
+      "date": "2026-08-10"
+    },
+    "be9e67968bfb2cb95bea9af02a10d6111914dfed77602b43aa38f82008b3be0f": {
+      "url": "https://www.reddit.com/r/PromptEngineering/comments/1uvo2l7/can_a_prompt_act_as_an_interface_instead_of_a",
+      "date": "2026-08-10"
+    },
+    "79bfd60e9077cda0855b9457c296e421409b619aec3903d456fa210971bae4e6": {
+      "url": "https://www.reddit.com/r/PromptEngineering/comments/1viiogh/ai_can_now_actually_call_a_business_for_you_have",
+      "date": "2026-08-10"
+    },
+    "72077d0d07d2fa6f5f07b727f06e3a457e552e0bf5c40df40d76b8b407101a0e": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1v9pfli/getting_scammed_twice_completely_changed_the_type",
+      "date": "2026-08-10"
+    },
+    "f11489a4d3dc1772515dc822f848923c21e26446d36c81dcd866f16b82e3440e": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1uto4n0/how_do_you_balance_work_vs_life_as_an_entrepreneur",
+      "date": "2026-08-10"
+    },
+    "e2d70ed897ccdd21d848defd95b6574d5fa0a43b886435d3ea00f6a66a1b1715": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1v1k5ks/i_used_to_think_the_best_suppliers_were_the",
+      "date": "2026-08-10"
+    },
+    "1c8db7cbf703bb582256b681e59d7f42ea7aceb3df87719768ac2fa1a56e772d": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1uzns9p/thank_you_for_the_encouragement",
+      "date": "2026-08-10"
+    },
+    "dacb8bb4a7ad49be0403b284335982307f2df954702b58bebe5bd084fabed3d2": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1v4vsma/when_do_founders_hire_salespeople",
+      "date": "2026-08-10"
+    },
+    "0118f4157b058246e0de5a9fb768ac45862d34a9c6200594208b5a5262bb4d50": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1v0xqs6/tidying_up_your_house_and_making_your_bed",
+      "date": "2026-08-10"
+    },
+    "6c305680f319ec3a1aa5e66327437dfc7ac76c242f8f2db4db6ef9c0071bb64c": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1vei22z/why_the_classic_cheesy_do_what_you_love_advice_is",
+      "date": "2026-08-10"
+    },
+    "3d8dee21a3b0db223a0dc8995b86e3d5b601f5f591822a02731d92017fbc656e": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1uw06dq/your_first_customer_may_already_know_you",
+      "date": "2026-08-10"
+    },
+    "5d46ac6a45068e45bd9d5737418db3a6a48b778761a599fd679cf9389f07fba7": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1uuhmbd/where_do_you_draw_the_line_of_content_vs_obsession",
+      "date": "2026-08-10"
+    },
+    "a4d94e793b5c764fa9ede256e6829c0a03c7250b55faf2a4106eebb00b2e53a9": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1vg9gha/business_book_recommendations",
+      "date": "2026-08-10"
+    },
+    "48cd1abc250fc11f98cb1d8a0e6f1b835803893fe02a1b1c2b101c0b6cf8026a": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1ve71vy/monday_mentorship_ask_anything_august_03_2026",
+      "date": "2026-08-10"
+    },
+    "e723fd88b10543b24c4de6828236501b11168bf42a5eb509e93563168abab9ff": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1vayqwf/when_you_were_just_starting_out_what_was_actually",
+      "date": "2026-08-10"
+    },
+    "96eeea1e383cd4f4927e27262b9bc7971675177877ffbe54a75eccc5def33ab0": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1v8y731/validating_a_healthcare_product_by_building_it",
+      "date": "2026-08-10"
+    },
+    "4b2fd5b81e8bc445f6bb39a2e12f0f2301a8f0a8ff8ba7a89baef07a77034577": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1v5vysj/looking_for_advice_howwhere_should_i_sell_my",
+      "date": "2026-08-10"
+    },
+    "1777908ec2034c1a1ce35fdb679e34cb899cfc49743789ed5ddfeca8ed4da484": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1uz6hbj/brainrot_specialist_job_listing_somehow_got_us_a",
+      "date": "2026-08-10"
+    },
+    "28ca9d364e30d118a6f74e9044bfde65098b7dc93959b68801a135bc52f47441": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1utjyis/overwhelmed_and_questioning_myself",
+      "date": "2026-08-10"
+    },
+    "b40c27d714c74f9a475bfcbdf1b7b147debee1fca620661c0fc3e1b648cad524": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1viyhlv/is_this_a_dumb_business_model_or_does_it_make",
+      "date": "2026-08-10"
+    },
+    "b431406b63c3ab7d018d18106060be526c3796e7cdfbe530eabc07821d32c4f2": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1vgyhzu/we_incorporated_our_startup_less_than_a_month_ago",
+      "date": "2026-08-10"
+    },
+    "866fa4b718be67199a95c1de2570f98b023ccf9afb9dd2973f5ae76f9a638700": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1vdfq37/how_do_you_decide_on_pricing",
+      "date": "2026-08-10"
+    },
+    "b7086ef5ca5245ff159b01fdeb8202b6fb31e169157f0d9dd5fb01c9ff907f51": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1v8c9mr/when_starting_your_business_how_did_you_find_your",
+      "date": "2026-08-10"
+    },
+    "c1944ce8c0330581a69462a4a3e9e727c581d7f61fbc4745eef7330f32bf31e0": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1vfvxtr/my_thoughts_on_branding",
+      "date": "2026-08-10"
+    },
+    "3c7f786649a866390158a56a835ec8dc479e7105119640aadd443d649a949577": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1vfb5jf/i_told_myself_a_story_for_8_months_instead_of",
+      "date": "2026-08-10"
+    },
+    "bd090764b8c727004c00ae7bee289a39d727cc66cc1dca7f8920cde7b43e36f6": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1vaqkol/i_saved_so_much_time_and_money_by_building_out",
+      "date": "2026-08-10"
+    },
+    "5c6f02cdad9847d17e97b9cb9411c814446ad498f130b199212d5ace5bfcd683": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1uyw3gs/build_v_promote",
+      "date": "2026-08-10"
+    },
+    "22a325abe88b209bab2cfdfc935b1fc251b0d54b034bd2334b5081db10104701": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1vfpd5m/thinking_about_starting_a_hydroseeding_business",
+      "date": "2026-08-10"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 5
+  "dailyPage": 0
 }

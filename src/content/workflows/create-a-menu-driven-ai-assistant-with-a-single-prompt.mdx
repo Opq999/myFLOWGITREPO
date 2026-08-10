@@ -1,0 +1,89 @@
+---
+title: "Create a Menu-Driven AI Assistant with a Single Prompt"
+description: "Learn how to turn a large language model into a menu-driven assistant that guides users through tasks with numbered choices, making complex workflows simple and repeatable."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 5
+jobToBeDone: "Design a menu-driven AI interface using a single prompt"
+tools:
+  - name: "ChatGPT"
+    url: "https://chatgpt.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Claude"
+    url: "https://claude.ai"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Gemini"
+    url: "https://gemini.google.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://www.reddit.com/r/PromptEngineering/comments/1uvo2l7/can_a_prompt_act_as_an_interface_instead_of_a/"
+  platform: "reddit"
+  author: "/u/Carrer88"
+  postedAt: 2026-07-13
+score: 9
+ingestedAt: 2026-08-10
+nigeriaNotes: "This workflow uses free tiers of popular AI chat tools, making it accessible and data-light. Interaction counters help manage chat length for mobile users."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "Use Digita to create a structured study plan for JAMB by selecting options for subjects, topics, and revision time."
+  - persona: "employee"
+    scenario: "Use Digita to generate a weekly sales report by selecting options for data input, analysis, and formatting."
+  - persona: "small-business"
+    scenario: "Use Digita to manage customer inquiries by selecting options for product info, order status, and support."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will get a chat assistant that acts like a simple program, guiding you through tasks with numbered choices instead of needing new prompts each time. This approach makes recurring tasks easier by providing a structured interaction, useful when you want the AI to follow a specific process without constant re-prompting.
+
+## Tools you need
+*   **ChatGPT** (freemium): A popular AI chatbot for general tasks.
+*   **Claude** (freemium): An AI chatbot known for handling longer texts and complex reasoning.
+*   **Gemini** (freemium): Google's AI chatbot, good for various conversational and creative tasks.
+
+## Steps
+1.  **Open your AI chat tool**: Go to your preferred AI chat website (ChatGPT, Claude, or Gemini).
+    You should see the main chat interface, ready for a new conversation.
+2.  **Start a new chat**: Look for a "New Chat" or similar button to begin a fresh conversation.
+    A blank chat window appears.
+3.  **Paste the Digita prompt**: Copy the entire prompt below and paste it into the chat box. This prompt tells the AI to act as a menu-driven program called "Digita".
+
+    ```
+    You are **Digita**, a menu-driven program running inside this chat. Behave like software, not like a regular assistant. Follow these rules in EVERY response.
+
+    ## PARAMETERS (adjustable)
+    - MAX_OPTIONS = 7 — task options per step; never more than 7
+    - WEIGHT_LIMIT = 30 — number of interactions at which the chat starts getting heavy
+
+    ## FIXED RULES (always apply)
+    1. Every response ends with NUMBERED options and waits for the user to type a number. Never act before the user picks a number.
+    2. Reserved keys are constant in every menu:
+       - 8 = view context
+       - 9 = update context (restarts the steps)
+       - 0 = new task
+    3. Task options never collide with reserved keys (0, 8, 9).
+    4. An off-script free-text question is treated as new context, answered, then the menu is reprinted. The program state survives interruptions.
+    5. A visible interaction counter warns when the chat gets heavy and offers a portable "continuation block" to resume in a fresh chat.
+    ```
+
+    The AI (Digita) will introduce itself and present the first set of numbered options, ending with a prompt for you to pick a number.
+4.  **Interact with Digita**: Type the number corresponding to your desired action and press Enter.
+    Digita will respond based on your choice, always ending with new numbered options.
+5.  **Use reserved keys**: Remember the special numbers: `8` to view the current context, `9` to update the context (restarts the steps), and `0` to start a new task.
+    Digita will perform the requested action (show context, restart, or offer new task options) and then present new numbered choices.
+6.  **Handle off-script questions**: If you type a free-text question instead of a number, Digita will answer it, treat it as new context, and then reprint the menu.
+    Digita answers your question, then shows the menu again, ready for a numbered choice.
+7.  **Manage long chats**: If the chat gets too long (around 30 interactions), Digita will warn you and offer a "continuation block". Copy this block to resume your session in a new chat.
+    Digita provides a special text block you can copy.
+
+## Original source
+This workflow is inspired by an experiment shared by Reddit user /u/Carrer88 on the platform. The author explored how a single prompt could create a menu-driven interface within an AI chat, naming their concept 'Digita'.
+
+## Notes & variations
+*   **Common mistake**: Forgetting the reserved keys (0, 8, 9) or trying to give free-form instructions when a numbered choice is expected. While Digita is designed to handle off-script questions, it's best to stick to numbers for menu navigation to keep the interaction structured.
+*   **Tip for better results**: Adjust the `MAX_OPTIONS` and `WEIGHT_LIMIT` parameters within the prompt itself to suit your needs. For example, reduce `MAX_OPTIONS` for simpler menus or `WEIGHT_LIMIT` if you want earlier warnings about chat length.

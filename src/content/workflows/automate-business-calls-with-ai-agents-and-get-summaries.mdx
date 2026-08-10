@@ -1,0 +1,84 @@
+---
+title: "Automate Business Calls with AI Agents and Get Summaries"
+description: "Use an AI agent to make phone calls to businesses, handle conversations, and receive a full transcript, audio, and summary of what was agreed."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 15
+jobToBeDone: "Automate phone calls to businesses for inquiries and task completion"
+tools:
+  - name: "Claude API"
+    url: "https://www.anthropic.com/api"
+    pricing: "paid"
+    affiliateUrl: ""
+source:
+  url: "https://www.reddit.com/r/PromptEngineering/comments/1viiogh/ai_can_now_actually_call_a_business_for_you_have/"
+  platform: "reddit"
+  author: "/u/Professional-Rest138"
+  postedAt: 2026-08-08
+score: 8
+ingestedAt: 2026-08-10
+nigeriaNotes: "This workflow relies on a new, specialized service (DialMCP) and a paid AI API (Claude API). Free tiers are generally not available for these types of developer tools, meaning costs will apply. Data usage for the actual phone calls and receiving transcripts/audio would be moderate."
+nigeriaUseCases:
+  - persona: "small-business"
+    scenario: "Automate calling suppliers for stock availability and prices, get call summaries instantly."
+  - persona: "entrepreneur"
+    scenario: "Call potential clients to pitch services, get call transcripts and summaries of interest."
+  - persona: "employee"
+    scenario: "Automate booking appointments with vendors, receive summaries of confirmed times and details."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+This workflow describes a new capability where an artificial intelligence (AI) can make real phone calls to businesses or people on your behalf. Unlike simple automated bots that follow a script, this AI can handle natural, back-and-forth conversations, ask follow-up questions, and even negotiate like a human would. It uses a service called DialMCP to connect an AI agent, such as Claude, to a phone line.
+
+After the call, the AI provides a complete written record (transcript), the actual audio recording of the conversation, and a simple summary of what was discussed or agreed upon. This allows you to automate tasks that typically require human interaction over the phone.
+
+This is an advanced concept because it involves connecting specialized AI services and the exact setup steps for new tools like DialMCP can change quickly. The author notes that the process for connecting DialMCP to an AI agent might shift as the tool settles, meaning there isn't a stable, copy-paste recipe for beginners right now.
+
+## What you can use it for
+*   **Check availability**: Ask a restaurant if they have a table for a specific time and number of people, and find out other open times if not.
+*   **Get quotes**: Call multiple contractors to inquire about their rates for a service and their earliest start dates.
+*   **Confirm reservations**: Verify details for an existing booking or make new arrangements.
+*   **Gather information**: Ask specific questions to businesses or individuals that require a natural conversation.
+
+## Tools you need
+*   **Claude API** (paid): An advanced artificial intelligence model that can power the conversation logic for the phone calls.
+
+## How it actually works
+This workflow involves connecting a phone-calling service (DialMCP, as mentioned by the author) to an AI agent like Claude. The author notes that the exact steps for connecting these tools may change as DialMCP is a very new service.
+
+Here is the general path to using this capability:
+
+1.  **Access an AI agent platform**: You would typically start by using a developer platform or interface for an AI agent that supports custom connectors, such as the Claude API platform.
+2.  **Connect DialMCP**: The author states you would connect DialMCP as a custom connector within your AI agent's settings. This usually involves going to a "settings" or "connectors" section and choosing to "add custom." The specific details for this step are not provided and may vary.
+3.  **Provide call instructions**: Once connected, you would instruct your AI agent with the phone number to call and a very specific objective. For example:
+
+    ```
+    Call [phone number] and ask if they have a table for 4 at 7pm Saturday, and if not what times are open.
+    ```
+
+    Or:
+
+    ```
+    Call [phone number] and ask their rate for a bathroom regrout and when they could start.
+    ```
+
+4.  **AI makes the call**: The AI agent, powered by DialMCP, will then place the call from your verified number and handle the entire conversation, including asking follow-up questions.
+5.  **Receive results**: After the call, you will get a full transcript of the conversation, the actual audio recording, and a plain summary of what was agreed.
+
+**Important note**: The author advises that if the AI is asked questions it cannot answer, it should be instructed to say it will check and follow up, rather than guessing.
+
+## Words you'll see, explained
+*   **AI agent**: An artificial intelligence program designed to perform specific tasks, like making phone calls and having conversations.
+*   **Connector**: A link or integration that allows one software tool or service to communicate and work with another, extending its capabilities.
+*   **Transcript**: A complete written record of a spoken conversation, word for word.
+
+## Original source
+This concept was shared by Reddit user /u/Professional-Rest138 on the Reddit platform. The author introduced a new service called DialMCP that enables AI agents to make and manage real phone calls.
+
+## Notes & variations
+*   **Do you even need this?**: For very simple inquiries that can be answered by a quick website check or a direct, short phone call, using this advanced AI setup might be overkill. This workflow is most valuable for tasks that require complex, multi-turn conversations, negotiation, or gathering detailed information from multiple sources.
+*   **Free-tier limits**: The DialMCP service and the Claude API are likely paid services, meaning there may not be a free tier available for extensive use. Costs will typically be incurred based on usage (e.g., call duration, API requests).
+*   **Common pitfall**: A common mistake is not giving the AI agent a clear and specific objective. If the instructions are vague, the AI may struggle to achieve the desired outcome or ask irrelevant questions. Be as precise as possible about what information you need or what action you want the AI to take.

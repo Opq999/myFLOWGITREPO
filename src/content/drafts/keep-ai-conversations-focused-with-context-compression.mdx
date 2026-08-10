@@ -1,0 +1,86 @@
+---
+title: "Keep AI Conversations Focused with Context Compression"
+description: "Learn to maintain AI conversation quality over long sessions by managing context, using project briefs, and summarizing key decisions."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 15
+jobToBeDone: "Maintain AI conversation quality over long sessions"
+tools:
+  - name: "Any AI Chatbot"
+    url: "https://chatgpt.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://www.reddit.com/r/PromptEngineering/comments/1va22fx/context_compression_is_probably_more_important/"
+  platform: "reddit"
+  author: "/u/ClickOk5811"
+  postedAt: 2026-07-29
+score: 6
+ingestedAt: 2026-08-10
+nigeriaNotes: "Most major AI chatbots offer free tiers that are suitable for this workflow, though data usage will increase with longer conversations."
+tiktokUrl: ""
+published: false
+---
+
+## What you'll get
+You will learn a strategy to keep your AI conversations focused and high-quality, even over many messages. Instead of just adding more to your prompts, you will actively manage the conversation's "context" (the history the AI remembers). This approach helps the AI stay on track and avoids it getting confused by irrelevant past information, making it especially useful for complex projects or long-term tasks.
+
+## Tools you need
+*   **Any AI Chatbot** (freemium): A conversational AI tool like ChatGPT, Claude, or Gemini, where you have long discussions.
+
+## Steps
+
+1.  **Start with a persistent project brief**: Before you begin a long conversation, create a clear summary of your project's goals, key information, and any rules. Include this brief at the start of your conversation and periodically remind the AI of it.
+
+    ```
+    Here is the project brief:
+    [Your project's main goal, key details, and any specific instructions or constraints.]
+
+    Please keep this brief in mind throughout our conversation.
+    ```
+
+    You should see the AI acknowledge the brief and be ready to proceed with your first task.
+
+2.  **Log key decisions**: As the conversation progresses, ask the AI to summarize important decisions or outcomes. This helps you and the AI keep track of what has been agreed upon.
+
+    ```
+    Please summarize the key decisions we have made so far in this conversation.
+    ```
+
+    You should get a concise list of important choices or agreements. Review this list to ensure accuracy.
+
+3.  **Create context checkpoints**: Periodically, especially after completing a major sub-task or reaching a natural break, ask the AI to summarize the conversation up to that point. This creates a "checkpoint" of the current state.
+
+    ```
+    Please provide a concise summary of our conversation so far, focusing on the main points and current status of the project.
+    ```
+
+    You should receive a summary that captures the essence of the discussion.
+
+4.  **Use compression summaries**: If the conversation becomes very long or drifts, take one of your context checkpoints or decision logs and use it to "compress" the history. You can then start a new chat session with this compressed summary, or explicitly tell the AI to focus only on the summary for future responses.
+
+    ```
+    From now on, please consider the following summary as our primary context for this project:
+    [Paste your context checkpoint or decision log here]
+
+    Ignore previous messages that contradict this summary.
+    ```
+
+    The AI should confirm it understands the new, compressed context.
+
+5.  **Prepare reusable templates**: For tasks you do often within your project (e.g., asking for a specific type of output, requesting a status update), create and save prompt templates. This saves time and ensures consistency.
+
+    ```
+    [Template for a specific task, e.g., "Draft a short social media post about [topic] for [platform]."]
+    ```
+
+    You should be able to quickly paste these templates to get consistent results for recurring tasks.
+
+## Original source
+This workflow was inspired by a discussion on Reddit by user /u/ClickOk5811, who highlighted the importance of context management over prompt engineering for long AI sessions. The author also shared a more detailed explanation and examples on Medium.
+
+## Notes & variations
+*   **Free-tier viability**: Most major AI chatbots (like ChatGPT, Claude, Gemini) offer free tiers that are perfectly suitable for this workflow. The main limitation might be the length of the conversation history they remember, which this strategy helps to manage.
+*   **Common mistake**: A common pitfall is to simply keep adding more information to your prompts without ever summarizing or resetting the context. This makes the AI's "memory" too cluttered, leading to irrelevant responses.
+*   **Tip for better results**: When creating compression summaries, be ruthless. Only include the absolutely essential information the AI needs to continue the task. The goal is to reduce noise, not just rephrase the entire conversation. Consider starting a new chat with the compressed summary if the current chat feels too bogged down.

@@ -1,0 +1,75 @@
+---
+title: "Improve Claude's Output Quality with Model-Specific Prompt Structures"
+description: "Learn how to structure your prompts for Claude to get better, more focused, and higher-quality responses, especially for summaries and decision-making."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 10
+jobToBeDone: "Improve Claude's output quality by using model-specific prompt structures"
+tools:
+  - name: "Claude"
+    url: "https://claude.ai"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://www.reddit.com/r/PromptEngineering/comments/1uuwg43/modelspecific_prompt_structure_matters_more_than/"
+  platform: "reddit"
+  author: "/u/Spiritual_Frame8340"
+  postedAt: 2026-07-13
+score: 8
+ingestedAt: 2026-08-10
+nigeriaNotes: "Claude offers a free tier that is generally sufficient for these prompt structuring techniques. Data usage is light, as you are primarily typing text and receiving text responses."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "Summarize lecture notes into 3 bullet points focusing only on key decisions, not discussions."
+  - persona: "employee"
+    scenario: "Ask Claude to review a contract, flagging financially risky clauses for a non-legal audience."
+  - persona: "entrepreneur"
+    scenario: "Request Claude to reason through product launch tradeoffs before giving a final recommendation."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will get better, more accurate, and more focused responses from Claude, especially for tasks like summarizing documents or making recommendations. This approach works because Claude, like other AI models, responds better when instructions are clear and structured in a way that matches its training, reducing ambiguity and guiding its reasoning process.
+
+## Tools you need
+*   **Claude** (freemium): An AI chat assistant that can understand and generate human-like text.
+
+## Steps
+
+1.  **Separate instructions from content**: When asking Claude to process a piece of text (like a document or transcript), always put your instructions first, then clearly separate them from the content you want it to analyze.
+
+    ```
+    Summarize the following transcript in 3 bullet points. Focus only on decisions made, not discussion.
+
+    [paste your transcript here]
+    ```
+
+    You should see Claude produce a summary that is less likely to misunderstand where your instructions end and the content begins, leading to a more accurate and focused output.
+
+2.  **Request reasoning before the answer**: For tasks that involve making a judgment, comparison, or recommendation, add a line asking Claude to briefly explain its thought process before giving the final answer.
+
+    ```
+    Before answering, briefly reason through the tradeoffs, then give your final recommendation for [your decision task here].
+    ```
+
+    You should see Claude provide a more thoughtful and higher-quality recommendation, as it has been prompted to consider different angles first.
+
+3.  **Frame the role for long documents**: When giving Claude a long document, start by telling it what role it should take or what perspective it should adopt, and what its goal is, *before* pasting the document.
+
+    ```
+    You're reviewing this contract for a small business owner with no legal background. Flag financially risky clauses in plain English, skip standard boilerplate.
+
+    [paste your long document here]
+    ```
+
+    You should see Claude focus on the most relevant parts of the document from the specified perspective, providing a more useful and targeted analysis instead of guessing what you need.
+
+## Original source
+This workflow is based on insights shared by Reddit user /u/Spiritual_Frame8340 on the platform, detailing how specific prompt structures can significantly improve output quality when using Claude.
+
+## Notes & variations
+*   **Common mistake**: A common pitfall is blending instructions and content together or not giving the AI a clear role, which can lead to vague or off-topic responses. Always aim for clarity and structure.
+*   **Tip for better results**: Experiment with different ways to phrase your instructions and reasoning requests. Even small changes can sometimes lead to noticeable improvements in Claude's understanding and output quality.
+*   **Free-tier alternatives**: While this advice is specific to Claude, the general principle of clear, structured prompting applies to other freemium chat models like ChatGPT (chatgpt.com) and Gemini (gemini.google.com). You can adapt these techniques for those platforms too.
