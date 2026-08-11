@@ -13552,8 +13552,32 @@
     "22a325abe88b209bab2cfdfc935b1fc251b0d54b034bd2334b5081db10104701": {
       "url": "https://www.reddit.com/r/Entrepreneur/comments/1vfpd5m/thinking_about_starting_a_hydroseeding_business",
       "date": "2026-08-10"
+    },
+    "c60b75d4c49e5375c4e08d91c7f0e3975da2f26d630c5bf36d8f43326bf12b6f": {
+      "url": "https://simonwillison.net/2026/Aug/10/introducing-muse-glimmer",
+      "date": "2026-08-11"
+    },
+    "e637baf27472b99cac5abfa840f8208c0479525e8468c804b9b926c03396a2d3": {
+      "url": "https://www.latent.space/p/ainews-muse-glimmer-and-spark-open",
+      "date": "2026-08-11"
+    },
+    "5890b1cfd4cc38aa3885e02e9fc3010d881da63d5d8b82ee82ae0ed7c4531d58": {
+      "url": "https://huggingface.co/blog/nvidia/magpie-tts-multilingual-voice-agents",
+      "date": "2026-08-11"
+    },
+    "815edfe6383208a72cfe7f7d043ea0afc2543b1ffb0ccb04372202c8f4eb8186": {
+      "url": "https://huggingface.co/blog/MultiverseComputingCAI/efficient-knowledge-distillation",
+      "date": "2026-08-11"
+    },
+    "dfb586131bf3d3cb04b45c447ddda1020a0bfabb4f918d58630b10079556383d": {
+      "url": "https://huggingface.co/blog/muse-glimmer",
+      "date": "2026-08-11"
+    },
+    "775f2a780d36285039dccd282a7630914b83917838c6fd8c63b82e661cb7f9b1": {
+      "url": "https://www.interconnects.ai/p/5-useful-things-youll-learn-in-my",
+      "date": "2026-08-11"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 0
+  "dailyPage": 1
 }
