@@ -13576,8 +13576,40 @@
     "775f2a780d36285039dccd282a7630914b83917838c6fd8c63b82e661cb7f9b1": {
       "url": "https://www.interconnects.ai/p/5-useful-things-youll-learn-in-my",
       "date": "2026-08-11"
+    },
+    "852b8aca396645168ecc07d335abcbe42b63f04d43396471c33a32432f50a276": {
+      "url": "https://simonwillison.net/2026/Aug/11/there-are-no-lossless-transformations-of-natural-language-text",
+      "date": "2026-08-12"
+    },
+    "701a34aa4671b069c79d3a93bcea7e87780faf74dfe6ca7c165eb079cb788437": {
+      "url": "https://simonwillison.net/2026/Aug/11/stealing-reasoning-traces",
+      "date": "2026-08-12"
+    },
+    "d7b54a76d04472d45fb2b5d9b512de3cb937d97ca0fbccf0dfd83129002cdc9a": {
+      "url": "https://simonwillison.net/2026/Aug/11/datasette-upload-dbs",
+      "date": "2026-08-12"
+    },
+    "68b415c71f0bdd5538df2f099ae31954adb9c5ef4dd90e52154d7576dd64a683": {
+      "url": "https://www.latent.space/p/ainews-how-to-steal-a-reasoning-trace",
+      "date": "2026-08-12"
+    },
+    "05a48f17b2b87f756af271de1721b7df45e769c842282ec4f681dba5e9d11277": {
+      "url": "https://www.latent.space/p/chai-discovery",
+      "date": "2026-08-12"
+    },
+    "cf55a870e3b1df4a95936b352db3715f36f1b0b7194a6c4681e44df1e563fbfd": {
+      "url": "https://www.bensbites.com/p/make-it-readable",
+      "date": "2026-08-12"
+    },
+    "077b61a0fed02bcc2a083d299a0c55e24311ad526ecaa535f96d02762c586c8f": {
+      "url": "https://huggingface.co/blog/ibm-research/altk-evolve-sldd",
+      "date": "2026-08-12"
+    },
+    "5f0ab700bf53125905bd3a54ef17803a04d75e401f131602118c2205c72cec8f": {
+      "url": "https://newsletter.pragmaticengineer.com/p/optiver",
+      "date": "2026-08-12"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 1
+  "dailyPage": 2
 }
