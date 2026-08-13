@@ -13608,8 +13608,44 @@
     "5f0ab700bf53125905bd3a54ef17803a04d75e401f131602118c2205c72cec8f": {
       "url": "https://newsletter.pragmaticengineer.com/p/optiver",
       "date": "2026-08-12"
+    },
+    "ad6abd6caa1300596aaed91ee2f59395968dc9360ee7dc31ebf30785d04cc11a": {
+      "url": "https://news.ycombinator.com/item?id=49242175",
+      "date": "2026-08-13"
+    },
+    "af87c1f98b4ce7bda274274a0fc599d2cc58b7e10212fde4bc12865aa889fe97": {
+      "url": "https://simonwillison.net/2026/Aug/12/deepseek-v4-pro-0813",
+      "date": "2026-08-13"
+    },
+    "4f9a51501a632c511768716fbce27c82183543e10625e64ee5ce6fad39b921ea": {
+      "url": "https://simonwillison.net/2026/Aug/12/alchemy-utils",
+      "date": "2026-08-13"
+    },
+    "8ce9f137579cbf5f1ee557b278298021e3b49726e3be3025d3072279863eacd8": {
+      "url": "https://simonwillison.net/2026/Aug/12/florian-herrengt",
+      "date": "2026-08-13"
+    },
+    "4f97ae52728d37cafc3f9acdf7c697c5ae4cac02f61d9d68c6881e66b55a0078": {
+      "url": "https://www.latent.space/p/ainews-spacexai-grok-46-and-grok",
+      "date": "2026-08-13"
+    },
+    "249a5e1ede4df4c078023a6f0eb49ede54fb5bdd187586ea50eee351b3c1007c": {
+      "url": "https://huggingface.co/blog/allenai/olmoearth-embeddings",
+      "date": "2026-08-13"
+    },
+    "2c563947428818b93259f9d0ea1b317a6ae63a349ada6ec8668a3f4447646bba": {
+      "url": "https://huggingface.co/blog/LiquidAI/lfm2-5-vl-3b",
+      "date": "2026-08-13"
+    },
+    "fd73ce0e976e316f4c8b99a07b93ef607ab15cc6b5f4ba892fce8e01c732b428": {
+      "url": "https://www.interconnects.ai/p/i-wrote-an-ai-textbook-how-long-until",
+      "date": "2026-08-13"
+    },
+    "2f0a6cdb2825d09d8a88928f839b83b78307295c69eedbcf33aa353a8a1b020d": {
+      "url": "https://newsletter.pragmaticengineer.com/p/stop-being-skeptical-about-ai-for",
+      "date": "2026-08-13"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 2
+  "dailyPage": 3
 }
