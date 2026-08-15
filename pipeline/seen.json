@@ -13940,8 +13940,44 @@
     "ee03627276be0ef3246924be5795f0f075f1b9daf5bec3227c2b058a1cb624ed": {
       "url": "https://www.reddit.com/r/studytips/comments/1vliqvm/day_6_of_the_100day_5hour_study_streak_challenge",
       "date": "2026-08-14"
+    },
+    "a6ba1fa198351c30060838d424c60dc5e89340fd6380dd567fd15de2aa36f602": {
+      "url": "https://simonwillison.net/2026/Aug/15/sighting-391300422",
+      "date": "2026-08-15"
+    },
+    "6e18aa23e1f0d14413d539fa101d4805bd353949000521274b9d961c5ab2baca": {
+      "url": "https://github.com/heygen-com/hyperframes",
+      "date": "2026-08-15"
+    },
+    "8961949ff68916c066c183eb67b78e1cb7795b88223a90552247584b588ecf65": {
+      "url": "https://simonwillison.net/2026/Aug/14/dont-classify-hallucinate",
+      "date": "2026-08-15"
+    },
+    "31b3468471cae2ac8e6ad66caba05cf89cf50612538d5587d9f86a264873964c": {
+      "url": "https://github.com/garrytan/gbrain",
+      "date": "2026-08-15"
+    },
+    "a0054230c097ef751fa2d99549658517d9c113b7312eca0cbdf56d6988b757d4": {
+      "url": "https://simonwillison.net/2026/Aug/13/sqlite-utils",
+      "date": "2026-08-15"
+    },
+    "bb441845c4554fdd1998dce5c07b8b7c941c76a8540b81a51adb0d987ccd2956": {
+      "url": "https://www.bensbites.com/p/bens-session-2",
+      "date": "2026-08-15"
+    },
+    "bc290ba394fd0d9149bf5cc4c18c982babca081925fc413d9da2b9ba7a12002f": {
+      "url": "https://huggingface.co/blog/state-of-open-models-summer-2026",
+      "date": "2026-08-15"
+    },
+    "ecb8f0dc7a1d654b6854bb24b87b986ddf2aae89fc068e6c2d5a6d5251f2c83d": {
+      "url": "https://www.interconnects.ai/p/glm-53-how-chinese-labs-keep-stride",
+      "date": "2026-08-15"
+    },
+    "f31f52960c1870d324637d17aba4d9d21941fcca85f3515b1d3ccadd15dc6272": {
+      "url": "https://newsletter.pragmaticengineer.com/p/the-pulse-metas-self-inflicted-resignation",
+      "date": "2026-08-15"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 4
+  "dailyPage": 5
 }

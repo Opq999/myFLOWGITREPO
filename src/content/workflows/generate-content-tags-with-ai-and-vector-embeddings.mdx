@@ -1,0 +1,90 @@
+---
+title: "Generate Content Tags with AI and Vector Embeddings"
+description: "Learn how to use AI to suggest new content tags and then match them to your existing tag list using vector embeddings for better organization."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 60
+jobToBeDone: "Generate content tags using AI and vector embeddings"
+tools:
+  - name: "ChatGPT"
+    url: "https://chatgpt.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Python"
+    url: "https://www.python.org"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Sentence Transformers"
+    url: "https://www.sbert.net/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://simonwillison.net/2026/Aug/14/dont-classify-hallucinate/"
+  platform: "blog"
+  author: "Simon Willison"
+  postedAt: 2026-08-14
+score: 7
+ingestedAt: 2026-08-15
+nigeriaNotes: "This workflow requires setting up a local Python environment and running code for vector embeddings, which needs some technical comfort. While the LLM part can often be done on free tiers, the embedding process itself doesn't typically incur direct costs beyond your device's power, but it does require data download for models. For very large tag lists, cloud services for embeddings or vector databases might be considered, which would have costs."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "For your final year project, automatically tag hundreds of research papers you've collected, ensuring consistent categories for easier retrieval and citation, even if you have a predefined list of departmental tags."
+  - persona: "employee"
+    scenario: "As a content manager, automatically categorize thousands of old company blog posts and articles with consistent tags, matching them to your existing SEO keyword list for improved website search and discoverability."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+This workflow helps you tag a large amount of content, especially older articles or products that don't have tags yet. The challenge with many existing tags is that a normal AI chat tool (an LLM) might struggle to pick the best ones from a very long list. This approach solves that by letting the AI 'imagine' new, ideal tags first.
+
+After the AI suggests these new tags, a technical process called 'vector embeddings' is used. This converts both the AI's suggested tags and your existing tags into numerical codes that represent their meaning. By comparing these codes, the system can find the closest match between the AI's imagined tags and your actual, existing tags.
+
+This is an advanced workflow because the vector embedding and matching steps require some coding knowledge and setup. It's not a simple copy-paste task for a beginner, but understanding the concept can still be very useful for improving how you organize content.
+
+## What you can use it for
+*   **Organize old content**: Quickly add relevant tags to blog posts, articles, or product descriptions that lack them.
+*   **Improve search**: Make your content easier to find by ensuring consistent and relevant tagging.
+*   **Discover new tag ideas**: Let the AI suggest tags you might not have thought of, then find the closest match in your existing list.
+*   **Maintain tag consistency**: Bridge the gap between AI-generated ideas and your established tag vocabulary.
+
+## Tools you need
+*   **ChatGPT** (freemium): An AI chat tool (Large Language Model) used to generate initial tag suggestions. You can use the free tier.
+*   **Python** (free): A programming language needed to run the code for creating and comparing vector embeddings. You will install this on your computer.
+*   **Sentence Transformers** (free): A Python library (a collection of pre-written code) that helps convert text into vector embeddings. This is installed within Python.
+
+## How it actually works
+This workflow involves two main parts: using an AI to suggest tags and then using code to match those suggestions to your existing tags. Here's the general process:
+
+1.  **Prepare your existing tags**: Gather all your current tags into a single list. This will be your 'corpus' (collection of text) that you want to match against.
+
+2.  **Generate embeddings for existing tags**: Using Python and the Sentence Transformers library, you will write code to convert each of your existing tags into a numerical vector. This vector is a mathematical representation of the tag's meaning.
+
+3.  **Ask an LLM to suggest new tags**: Open an AI chat tool like ChatGPT. You will provide it with your content (or a description of it) and ask it to generate new, descriptive tags. The author suggests including examples of your desired tag format to guide the AI. A starting point for the prompt, as shared by the author:
+
+    ```
+    Your task is to create novel, never seen before, furniture, home goods, or hardware classification that best fit a search query. Product classifications might look like: Furniture / Living Room Furniture / Coffee Tables & End Tables / Coffee Tables Décor & Pillows / Decorative Pillows & Blankets / Throw Pillows Furniture / Bedroom Furniture / Dressers & Chests Kitchen & Tabletop / Kitchen Organization / Food Storage & Canisters School Furniture and Supplies / School Furniture / School Chairs & Seating / Stackable Chairs Baby & Kids / Toddler & Kids Bedroom Furniture / Kids Beds Here's the query to generate classifications for: brown coffee table Tags:
+    ```
+
+    You should get a list of suggested tags from the AI.
+
+4.  **Generate embeddings for suggested tags**: Take the tags generated by the AI and, using the same Python and Sentence Transformers setup, convert them into numerical vectors.
+
+5.  **Find the closest existing tags**: Write Python code to compare the vectors of the AI-suggested tags with the vectors of your existing tags. This involves calculating the 'distance' or 'similarity' between them. The existing tag with the highest similarity to an AI-suggested tag is considered the best match.
+
+6.  **Review and apply**: Manually review the suggested matches. You can then apply the most appropriate existing tags to your content, using the AI's suggestions as a guide.
+
+## Words you'll see, explained
+*   **LLM (Large Language Model)**: An AI program that can understand and generate human-like text, like ChatGPT or Claude.
+*   **Vector Embeddings**: Numerical representations of words, phrases, or entire pieces of text, where similar meanings are represented by vectors that are close to each other in a multi-dimensional space.
+*   **Corpus**: A collection of text or data, in this case, your existing list of tags.
+*   **Similarity Search**: The process of finding items (like tags) that are most similar to a given item based on their vector embeddings.
+
+## Original source
+This concept was shared by Simon Willison on his blog, inspired by a solution from Doug Turnbull. The approach focuses on using an AI to generate new tag ideas and then matching them to an existing vocabulary using vector embeddings.
+
+## Notes & variations
+*   **Do you even need this?**: For a very small number of existing tags (e.g., less than 50), you might be able to feed your entire tag list directly to an LLM and ask it to pick the most relevant ones. This workflow is most beneficial for large, complex tag sets where direct selection by an LLM becomes impractical.
+*   **Free-tier limits**: While many LLMs offer usable free tiers, setting up and running embedding models locally requires computing resources on your device. For very large-scale tag matching or high-performance needs, you might consider cloud-based embedding services or vector databases, which often have free tiers but can incur costs with increased usage.
+*   **Common pitfall**: Not using a good embedding model. The accuracy of your tag matching depends heavily on how well the chosen embedding model understands the meaning of your tags. Research and select a model known for strong semantic similarity capabilities.

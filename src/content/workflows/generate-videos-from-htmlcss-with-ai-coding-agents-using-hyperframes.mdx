@@ -1,0 +1,116 @@
+---
+title: "Generate Videos from HTML/CSS with AI Coding Agents using HyperFrames"
+description: "Learn how HyperFrames uses AI coding agents to turn HTML, CSS, and media into MP4 videos, suitable for product intros and animated compositions."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 60
+jobToBeDone: "Generate videos from HTML/CSS descriptions using AI coding agents"
+tools:
+  - name: "HyperFrames"
+    url: "https://github.com/heygen-com/hyperframes"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Node.js with npm/npx"
+    url: "https://nodejs.org"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "An AI Coding Agent (e.g., Gemini CLI)"
+    url: "https://ai.google.dev/gemini-api/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "An AI Coding Agent (e.g., Claude Code)"
+    url: "https://code.claude.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "An AI Coding Agent (e.g., Cursor)"
+    url: "https://cursor.sh"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://github.com/heygen-com/hyperframes"
+  platform: "github"
+  author: "heygen-com"
+  postedAt: 2026-08-15
+score: 7
+ingestedAt: 2026-08-15
+nigeriaNotes: "This workflow requires a development environment and comfort with command-line tools, which may incur data usage for installations. Free tiers exist for some AI agents like Gemini CLI, but others like Claude Code are paid."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "A final-year Computer Science student uses an AI coding agent with HyperFrames to automatically generate a short animated video summarizing their project's findings, converting their HTML-based report outline into a visual presentation."
+  - persona: "employee"
+    scenario: "A software developer in a tech firm leverages an AI coding agent and HyperFrames to programmatically generate short, animated video summaries of daily system performance, converting HTML/CSS data visualizations into shareable video reports."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+HyperFrames is an open-source framework that lets you create MP4 videos using HTML, CSS, and various media elements. Think of it as a specialized tool that takes web page descriptions and turns them into video files.
+
+This workflow is specifically "Built for agents," meaning it's designed to be used by AI coding agents, not directly by a human in a simple chat interface. An AI coding agent is a program that can write, debug, and execute code on its own, often interacting with other developer tools.
+
+Because it relies on AI coding agents and command-line tools, this workflow is advanced. It requires setting up a development environment, installing specific software, and understanding how to interact with AI agents programmatically. There isn't a simple copy-paste recipe for beginners, as the exact steps depend heavily on your chosen AI agent and development setup.
+
+HyperFrames uses a concept called "skills" to teach AI agents how to plan, write valid HTML, add animations and media, and finally render a video. These skills guide the agent through the entire video production process.
+
+## What you can use it for
+*   **Automate video creation**: Generate product introductions, animated compositions, or short promotional videos from simple text descriptions.
+*   **Programmatic video generation**: Create many videos quickly by describing them using HTML/CSS, which is useful for dynamic content or personalized video campaigns.
+*   **AI-driven content creation**: Let an AI agent handle the technical details of video production, from planning the layout to rendering the final MP4 file.
+*   **Experiment with AI coding agents**: Learn how to integrate specialized tools like HyperFrames into an AI agent's workflow, expanding the agent's capabilities.
+
+## Tools you need
+*   **HyperFrames** (free): An open-source framework for turning HTML into MP4 videos.
+*   **Node.js with npm/npx** (free): A JavaScript runtime environment that includes npm (Node Package Manager) and npx, used to run HyperFrames commands.
+*   **An AI Coding Agent (e.g., Gemini CLI)** (freemium): An AI program that can write and execute code. The Gemini CLI offers a free tier for its API.
+*   **An AI Coding Agent (e.g., Claude Code)** (paid): An AI program for coding tasks. Claude Code typically requires a paid subscription or API access.
+*   **An AI Coding Agent (e.g., Cursor)** (freemium): An AI-powered code editor that can act as an agent. While it has a free tier, advanced agent features or API usage might be paid.
+
+## How it actually works
+This workflow involves setting up a development environment and then instructing an AI coding agent to use HyperFrames. The exact steps for setting up an AI agent can vary significantly.
+
+1.  **Set up Node.js and npm/npx**: You need to install Node.js on your computer. This will automatically include npm (Node Package Manager) and npx, which are essential for running HyperFrames commands. You can download it from the official Node.js website.
+
+2.  **Install an AI Coding Agent**: The author mentions compatibility with Claude Code, Cursor, Gemini CLI, and Codex. You will need to choose and set up one of these agents. This often involves installing specific software, configuring API keys, and potentially setting up a development environment like a code editor or a terminal. The author doesn't share specific setup instructions for these agents.
+
+3.  **Install HyperFrames skills**: Once your AI coding agent is set up and you have Node.js installed, you will use the `npx` command to install the HyperFrames "skills." These skills teach your agent how to use HyperFrames.
+
+    ```bash
+    # macOS or Linux
+    npx skills add heygen-com/hyperframes --full-depth
+    ```
+
+    ```powershell
+    # Windows (PowerShell)
+    npx skills add heygen-com/hyperframes --full-depth
+    ```
+
+    The author notes that if you are running this non-interactively or with an agent, `npx hyperframes skills update` installs the core set of skills directly.
+
+4.  **Prompt your AI agent**: After the skills are installed, you will interact with your chosen AI coding agent, providing it with a prompt describing the video you want to create. The agent will then use the HyperFrames skills to plan, write the necessary HTML and CSS, add media, and render the final MP4 video.
+
+    The author suggests a prompt like this:
+
+    ```
+    Using /hyperframes, create a 10-second product intro with a fade-in title, a background video, and subtle background music.
+    ```
+
+    The specific way you provide this prompt to your agent (e.g., through a chat interface, a command-line input, or a code file) will depend on the agent you are using. The agent will then execute the HyperFrames workflow to generate the video.
+
+## Words you'll see, explained
+*   **HyperFrames**: An open-source framework that converts HTML, CSS, and media into MP4 videos.
+*   **AI Coding Agent**: An artificial intelligence program designed to write, debug, and execute code, often interacting with developer tools.
+*   **npx**: A command-line tool that comes with Node.js, used to run packages directly from the npm registry without installing them globally.
+*   **Skills**: In this context, these are specialized instructions or modules that teach an AI coding agent how to perform specific tasks, like creating a video with HyperFrames.
+*   **HTML (HyperText Markup Language)**: The standard language used to create web pages, defining their structure and content.
+*   **CSS (Cascading Style Sheets)**: A language used to describe the presentation of a web page, including colors, layouts, and fonts.
+*   **MP4**: A common digital multimedia container format, often used for storing video and audio.
+
+## Original source
+This concept is based on the HyperFrames project by heygen-com, found on GitHub. It describes an open-source framework for generating videos from HTML and CSS, designed to be used with AI coding agents.
+
+## Notes & variations
+*   **Do you even need this?**: If your goal is simply to create a basic video without needing programmatic generation or AI agent involvement, simpler tools like Canva, CapCut, or other video editing apps might be more suitable and easier to use for a beginner.
+*   **Free-tier limits**: While HyperFrames itself is free and open-source, the AI coding agents you use with it may have their own costs, usage limits, or require paid subscriptions for full functionality. Always check the pricing and terms of your chosen AI agent.
+*   **Common pitfall**: The most significant hurdle for this workflow is often the initial setup of the development environment and the AI coding agent. Ensure you follow the specific setup instructions for your chosen agent carefully.
+*   **Tip**: For more detailed setup guides and examples, refer to the official HyperFrames documentation, including their Quickstart, Showcase, Playground, Catalog, and Docs sections, which are linked from their GitHub repository.
