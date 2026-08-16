@@ -13976,8 +13976,24 @@
     "f31f52960c1870d324637d17aba4d9d21941fcca85f3515b1d3ccadd15dc6272": {
       "url": "https://newsletter.pragmaticengineer.com/p/the-pulse-metas-self-inflicted-resignation",
       "date": "2026-08-15"
+    },
+    "f93ef1e873302f2aa35cd6512dcad55509e8cd760925dee4ab167ee7a965bf65": {
+      "url": "https://news.ycombinator.com/item?id=49316815",
+      "date": "2026-08-16"
+    },
+    "3b81110dcd9b3a7b4bc1d0c207caf573e1376e879f67abb41f902421726d952d": {
+      "url": "https://simonwillison.net/2026/Aug/15/cors-chat",
+      "date": "2026-08-16"
+    },
+    "8a940043da46a71f0edfa03e9353de52617e15cd0f10d0b41c88d3dbc5ee250a": {
+      "url": "https://www.latent.space/p/flue-2",
+      "date": "2026-08-16"
+    },
+    "fec51d95d54dbb564f125578b356238b0c84ed2b2842e71aa1496f5a72909de7": {
+      "url": "https://magazine.sebastianraschka.com/p/ai-detector-from-scratch",
+      "date": "2026-08-16"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 5
+  "dailyPage": 0
 }
