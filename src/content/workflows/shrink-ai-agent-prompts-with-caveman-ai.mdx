@@ -1,0 +1,125 @@
+---
+title: "Shrink AI Agent Prompts with Caveman AI"
+description: "Learn how Caveman AI reduces token usage for AI agents like Claude Code, cutting costs and improving efficiency by simplifying communication. This advanced tool helps optimize AI interactions."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 25
+jobToBeDone: "Reduce AI token usage for coding tasks with a 'caveman' communication style"
+tools:
+  - name: "Caveman"
+    url: "https://github.com/JuliusBrussee/caveman"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Claude Code"
+    url: "https://www.anthropic.com/claude-code"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Node.js"
+    url: "https://nodejs.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Git"
+    url: "https://git-scm.com/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://github.com/JuliusBrussee/caveman"
+  platform: "github"
+  author: "JuliusBrussee"
+  postedAt: 2026-08-16
+score: 8
+ingestedAt: 2026-08-17
+nigeriaNotes: "This workflow requires command-line tools and potentially paid API access, which may incur data costs and subscription fees. While Caveman itself is free, the AI services it integrates with (like Claude Code) are typically paid. Consider the free tier of the Gemini API as an alternative for similar token-saving concepts, as Caveman supports it."
+nigeriaUseCases:
+  - persona: "entrepreneur"
+    scenario: "A tech startup founder building an AI customer support chatbot integrates Caveman AI to reduce monthly API costs for Claude, making their early-stage budget last longer."
+  - persona: "employee"
+    scenario: "A software engineer at a tech company implements Caveman AI in their team's internal AI code generation agent to reduce token usage, cutting the company's cloud API costs."
+  - persona: "student"
+    scenario: "A university computer science student building an AI coding assistant for their final year project uses Caveman AI to cut down on API costs during development and testing."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+Caveman AI is an advanced tool designed to help AI agents (programs that use AI models to perform tasks) use fewer "tokens." Tokens are the small pieces of text that AI models process, and using fewer of them can significantly reduce the cost of interacting with AI APIs (Application Programming Interfaces) and speed up response times.
+
+This tool works by making your AI agent communicate in a simpler, more concise "caveman" style, both when it sends information to the AI model (input) and when it receives responses (output). It's particularly useful for coding tasks where precise information needs to be conveyed efficiently.
+
+This is an advanced workflow because it requires you to install software on your computer, use the command line, and integrate it with existing AI agent setups or developer APIs. It's not a simple web application you can use directly in your browser.
+
+## What you can use it for
+*   **Reduce AI API costs**: By using fewer tokens, you pay less for each interaction with AI models, especially for services that charge per token.
+*   **Speed up AI responses**: Shorter messages mean the AI processes information faster, leading to quicker task completion.
+*   **Optimize AI agent communication**: Make your AI agents more efficient by training them to use concise language for both input and output.
+*   **Integrate with existing AI tools**: Works with various AI agents and APIs, including Claude, Gemini, and others, to enhance their efficiency.
+
+## Tools you need
+*   **Caveman** (free): An open-source tool that optimizes AI agent communication to reduce token usage. `https://github.com/JuliusBrussee/caveman`
+*   **Claude Code** (paid): Anthropic's developer platform for building with Claude AI, often used for agents and API access. `https://www.anthropic.com/claude-code`
+*   **Node.js** (free): A software environment that runs JavaScript code outside a web browser, needed to install and run Caveman. `https://nodejs.org/`
+*   **Git** (free): A version control system used to manage code, often a prerequisite for developer tools. `https://git-scm.com/`
+
+## How it actually works
+Caveman AI works in two main ways: as a "skill" that makes your AI agent's output more concise, and as a "proxy" that shrinks the input your agent sends to the AI model. The exact steps for integration depend on your existing AI agent setup, but generally involve command-line installation and configuration.
+
+Here's a general path to get started:
+
+1.  **Install Node.js**: If you don't already have it, install Node.js (version 18 or higher). This is required to run the Caveman CLI (Command Line Interface).
+
+2.  **Install Caveman CLI**: Open your terminal or command prompt and install the Caveman command-line tool globally:
+
+    ```bash
+    npm install -g @caveman-ai/cli
+    ```
+
+    You should see a message indicating that the package was installed successfully.
+
+3.  **Set up Caveman for your agent (Proxy)**: To make your agent read less (saving input tokens), you can set up the Caveman Proxy. The author suggests running a setup command for your specific agent, for example, for Claude:
+
+    ```bash
+    caveman setup --install caveman claude
+    ```
+
+    The command will guide you through integrating the proxy with your agent. You might need to restart your agent or follow specific instructions provided by the tool.
+
+4.  **Add Caveman as a skill (Output)**: To make your agent answer in a concise "caveman" style (saving output tokens), you can add the skill to your agent. This command works with many agents:
+
+    ```bash
+    npx skills add JuliusBrussee/caveman
+    ```
+
+    You should see a confirmation that the skill has been added. Your agent's responses should now be shorter and more direct.
+
+5.  **Use the full installer (Alternative)**: For a more comprehensive setup that includes wiring Claude Code hooks and finding supported agents, you can use the full installer script. This is an alternative to steps 2-4.
+
+    # macOS or Linux
+    ```bash
+    curl -fsSL https://raw.githubusercontent.com/JuliusBrussee/caveman/v2.1.0/install.sh | bash
+    ```
+
+    # Windows (PowerShell)
+    ```powershell
+    Invoke-WebRequest -Uri "https://raw.githubusercontent.com/JuliusBrussee/caveman/v2.1.0/install.ps1" -OutFile "install.ps1"; .\install.ps1
+    ```
+
+    After running, you should see installation progress and a summary of what was set up. You may need to restart your system or agent for changes to take full effect.
+
+Once installed and configured, your AI agent will automatically use the Caveman optimizations. The exact behavior and token savings will depend on your agent's prompts and the tasks it performs.
+
+## Words you'll see, explained
+*   **Token**: The basic unit of text that AI models process. Shorter messages use fewer tokens, which can save costs.
+*   **AI Agent**: A program that uses an AI model to perform specific tasks, often by interacting with other tools or systems.
+*   **API (Application Programming Interface)**: A set of rules that allows different software applications to communicate with each other. AI APIs let you send requests to AI models and receive responses.
+*   **CLI (Command Line Interface)**: A text-based way to interact with a computer program, where you type commands instead of clicking buttons.
+*   **Proxy**: A server that acts as an intermediary for requests. In this workflow, the Caveman Proxy modifies AI input before it reaches the AI model.
+
+## Original source
+This concept is based on the "Caveman" project by JuliusBrussee, shared on GitHub. It introduces a method to significantly reduce token usage for AI agents by adopting a concise communication style.
+
+## Notes & variations
+*   **Do you even need this?** For simple, one-off tasks, directly using a freemium AI chat app like ChatGPT, Claude.ai, or Gemini might be sufficient without needing to optimize tokens at this advanced level. Caveman AI is most beneficial for developers building and running AI agents that have frequent, high-volume interactions with paid AI APIs.
+*   **Free-tier limits**: While the Caveman tool itself is free and open-source, the AI agents and APIs it integrates with (like Claude Code) are typically paid services. Be mindful of the costs associated with your chosen AI provider.
+*   **Common pitfall**: Incorrectly setting up the proxy or skill can lead to unexpected agent behavior or no token savings. Always refer to the official GitHub repository for the most up-to-date installation and configuration instructions, and test your agent thoroughly after setup.
+*   **Tip for better results**: Start by implementing the "skill" to optimize your agent's output, as this is often simpler to observe. Once comfortable, explore the "proxy" to optimize input, which can lead to even greater token savings.

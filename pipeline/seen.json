@@ -13992,8 +13992,32 @@
     "fec51d95d54dbb564f125578b356238b0c84ed2b2842e71aa1496f5a72909de7": {
       "url": "https://magazine.sebastianraschka.com/p/ai-detector-from-scratch",
       "date": "2026-08-16"
+    },
+    "7cfe58990862cb674c7b650a98ef24dd2d1eb1b56f2fc215d5a6617800de5e9a": {
+      "url": "https://news.ycombinator.com/item?id=49306800",
+      "date": "2026-08-17"
+    },
+    "79f38e749039b6531dfcbddaef1620607df31622850211f218795bbb274d28fa": {
+      "url": "https://simonwillison.net/2026/Aug/16/markdown-svg-upgrades",
+      "date": "2026-08-17"
+    },
+    "bac657e60ae022eb6406b2f4de1f26c808bbda37f1542646e2bc064949e9d4ab": {
+      "url": "https://github.com/JuliusBrussee/caveman",
+      "date": "2026-08-17"
+    },
+    "45cd7975f6d2c6418eaabda25630ee7978fc5057c7c4c3fb49d80c01153df5f6": {
+      "url": "https://simonwillison.net/2026/Aug/16/qwen-38-27b",
+      "date": "2026-08-17"
+    },
+    "4acb849c0f31d1ad8a1baa98fc2e068beb239be201e6eed07fb64c5fe5b4aee4": {
+      "url": "https://simonwillison.net/2026/Aug/16/dario-amodei",
+      "date": "2026-08-17"
+    },
+    "8c6fb50d9ee0c6265971e0eff863781cde74bf8af0cc455cdaf6181ce0743cd7": {
+      "url": "https://www.latent.space/p/ainews-cursors-60b-acquisition-by",
+      "date": "2026-08-17"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 0
+  "dailyPage": 1
 }
