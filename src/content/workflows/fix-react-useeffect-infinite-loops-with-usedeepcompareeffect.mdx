@@ -1,0 +1,93 @@
+---
+title: "Fix React useEffect Infinite Loops with useDeepCompareEffect"
+description: "Learn how to prevent infinite re-renders in React useEffect when object dependencies change by value, not reference, using useDeepCompareEffect."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 5
+jobToBeDone: "Prevent infinite re-renders in React useEffect when object dependencies change by value, not reference"
+tools:
+  - name: "React"
+    url: "https://react.dev/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "@reactuses/core"
+    url: "https://reactuses.com/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/childrentime/react-usedeepcompareeffect-fix-useeffect-object-dependencies-2026-2f91"
+  platform: "blog"
+  author: "childrentime"
+  postedAt: 2026-07-27
+score: 7
+ingestedAt: 2026-08-19
+nigeriaNotes: "This workflow is data-light and relies on free tools. It should be easily accessible for users with limited data plans."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to use `useDeepCompareEffect` to replace the standard `useEffect` hook in your React applications. This prevents infinite loops caused by object dependencies changing their value on every render, ensuring your effects run only when truly necessary.
+
+This approach works because `useDeepCompareEffect` performs a deep comparison of its dependencies, checking their contents rather than just their memory addresses.
+
+## Tools you need
+*   **React** (free): A JavaScript library for building user interfaces.
+*   **@reactuses/core** (free): A collection of custom React Hooks, including `useDeepCompareEffect`.
+
+## Steps
+1.  **Install the library**: Open your project's terminal and install the `@reactuses/core` package.
+
+    ```bash
+    npm install @reactuses/core
+    # or
+    yarn add @reactuses/core
+    ```
+
+    You should see the package added to your project's dependencies.
+
+2.  **Import `useDeepCompareEffect`**: In your React component file, import `useDeepCompareEffect` alongside the standard `useEffect`.
+
+    ```javascript
+    import { useEffect as useDeepCompareEffect } from '@reactuses/core';
+    import React, { useState, useEffect } from 'react';
+    ```
+
+    You will now have `useDeepCompareEffect` available for use.
+
+3.  **Replace `useEffect` with `useDeepCompareEffect`**: Find the `useEffect` hook in your component that is causing an infinite loop due to an object in its dependency array. Replace `useEffect` with `useDeepCompareEffect`.
+
+    **Original code (causing infinite loop):**
+    ```javascript
+    function Results ({ term , page }) {
+      const [ rows , setRows ] = useState ([]);
+      const query = { term , page , sort : ' desc ' }; // new object, every render
+
+      useEffect (() => {
+        fetchRows ( query ). then ( setRows );
+      }, [ query ]); // 'query' is a new object on every render
+    }
+    ```
+
+    **Modified code using `useDeepCompareEffect`:**
+    ```javascript
+    function Results ({ term , page }) {
+      const [ rows , setRows ] = useState ([]);
+      const query = { term , page , sort : ' desc ' };
+
+      useDeepCompareEffect (() => {
+        fetchRows ( query ). then ( setRows );
+      }, [ query ]); // 'query' is now deep-compared
+    }
+    ```
+
+    The effect will now only re-run if the `term`, `page`, or `sort` properties within the `query` object actually change their values, not just because a new object is created.
+
+## Original source
+This workflow is based on a blog post by childrentime, shared on DEV Community. It explains how React's default `useEffect` hook compares object dependencies by reference, leading to infinite loops, and offers `useDeepCompareEffect` as a solution.
+
+## Notes & variations
+*   **Common mistake**: Forgetting to import `useDeepCompareEffect` or incorrectly replacing `useEffect` can lead to the same infinite loop issue. Ensure you are using the imported hook correctly.
+*   **Tip for better results**: While `useDeepCompareEffect` solves the dependency comparison problem, consider if the `query` object itself can be memoized using `useMemo` if it's derived from other state or props. This can sometimes offer performance benefits by preventing the `query` object from being recreated unnecessarily in the first place.
+*   **Free tier viability**: Both React and `@reactuses/core` are free to use, making this solution accessible without cost.

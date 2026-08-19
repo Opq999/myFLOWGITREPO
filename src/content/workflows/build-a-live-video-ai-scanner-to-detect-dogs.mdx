@@ -1,0 +1,109 @@
+---
+title: "Build a Live-Video AI Scanner to Detect Dogs"
+description: "Learn about a live-video security scanner that uses AI to detect dogs and barks when it sees one. Explore how such a system is built and deployed."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 15
+jobToBeDone: "Build a live-video security scanner to detect dogs"
+tools:
+  - name: "GitHub"
+    url: "https://github.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Google Cloud Platform"
+    url: "https://cloud.google.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Chrome"
+    url: "https://www.google.com/chrome/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Edge"
+    url: "https://www.microsoft.com/edge"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/gde/i-built-a-security-scanner-that-checks-if-you-are-a-dog-357n"
+  platform: "blog"
+  author: "xbill"
+  postedAt: 2026-08-15
+score: 9
+ingestedAt: 2026-08-19
+nigeriaNotes: "The demo is free to use, but building and deploying this scanner on a cloud platform will incur costs, which can be significant. Data usage for the live video stream will also add up."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+This entry describes "Dog or Not," a unique live-video security scanner that uses artificial intelligence (AI) to identify dogs. When the system detects a dog through your camera, it barks. If it sees something else, like a wolf or a cat, it gives a specific, often humorous, response. The creator built this system over a weekend, highlighting how AI can be used for custom detection tasks.
+
+While the demo is easy to try, building this scanner yourself is an advanced project. It involves setting up a complex system that handles live video, AI models, and cloud deployment. The exact instructions for building it are found within the project's code repository and require technical skills to set up and run.
+
+## What you can use it for
+*   **Experience AI in action**: Try out a live AI system that responds to what it sees through your camera.
+*   **Learn about custom object detection**: Understand how AI can be trained to identify very specific things, like different types of animals, beyond general categories.
+*   **Explore live video processing**: See how a system can take a live video feed, analyze it in real-time, and react based on what it detects.
+*   **Understand AI deployment**: Get a sense of the components needed to make an AI application available online, including cloud services and web interfaces.
+*   **Develop a novelty security system**: Adapt the core idea to create your own fun or specialized detection systems for other objects or scenarios.
+
+## Tools you need
+*   **GitHub** (freemium): A platform for developers to store and manage code projects. You'll use it to access the scanner's source code.
+*   **Google Cloud Platform** (paid): A suite of cloud computing services from Google. The demo runs on Google Cloud Run, and deploying your own version will likely use this platform, incurring costs.
+*   **Chrome** (free): A web browser recommended for using the demo, especially for its voice command feature.
+*   **Edge** (free): Another web browser, also recommended for the demo's voice command feature.
+
+## How it actually works
+The "Dog or Not" scanner is a complex system that combines live video input, AI classification, and web technologies. To truly understand how it works or to build your own version, you would need to explore the project's source code on GitHub. The author provides a live demo that you can try immediately to see the system in action.
+
+To try the live demo:
+1.  Open your web browser (Chrome or Edge are recommended for voice commands) and go to the demo link: `https://dog-or-not-289270257791.us-central1.run.app`.
+2.  Grant camera access when prompted by your browser.
+3.  Press the "INITIATE" button on the page.
+4.  Hold an object (or a dog!) up to your camera.
+5.  Say "scan" aloud (if using Chrome or Edge), or click the "SCAN" button on the page.
+6.  The system will tell you if it detects a dog and will bark if it does.
+
+To run the scanner yourself, the author mentions a series of technical commands. These commands are typically run in a terminal (a text-based interface for your computer) and require a development environment to be set up. The exact details for each step are found within the project's GitHub repository.
+
+The general steps for a technical user are:
+1.  **Install dependencies**: This involves running a shell script to set up all the necessary software components. The author notes this is not a simple `pip install` command, implying a more involved setup.
+    ```bash
+    # macOS, Linux, or Windows (WSL)
+    ./scripts/install_deps.sh
+    ```
+    *Note: For Windows users, it is highly recommended to use Windows Subsystem for Linux (WSL) to run this script, as it is written for a Unix-like environment.*
+
+2.  **Build the frontend**: This step prepares the user interface (what you see in the browser) for the scanner.
+    ```bash
+    # macOS, Linux, or Windows (WSL)
+    make frontend
+    ```
+3.  **Run a mock server**: This allows you to test the scanner offline without incurring cloud costs or needing an API key.
+    ```bash
+    # macOS, Linux, or Windows (WSL)
+    make mock
+    ```
+4.  **Run the real API**: This command deploys the scanner to a cloud platform, making it accessible online. This is the step that will incur costs.
+    ```bash
+    # macOS, Linux, or Windows (WSL)
+    make run
+    ```
+The full, detailed instructions and code are available in the project's GitHub repository: `https://github.com/xbill9/devto-dog`.
+
+## Words you'll see, explained
+*   **GPU (Graphics Processing Unit)**: A specialized electronic circuit designed to rapidly manipulate and alter memory to accelerate the creation of images, often used for AI computations.
+*   **APU (Accelerated Processing Unit)**: A type of processor that combines a CPU (central processing unit) and a GPU on a single chip, allowing them to work together more efficiently.
+*   **Integrated Radeon**: Refers to a graphics processing unit (GPU) that is built directly into the main processor (CPU) or motherboard, rather than being a separate card.
+*   **Multimodal plumbing**: A system that handles and combines different types of data (like video, audio, and text) to work together in an application.
+*   **WebSocket**: A communication protocol that provides full-duplex (two-way) communication channels over a single TCP connection, often used for real-time web applications like live video streams.
+*   **Wake-word detection**: A technology that allows a device to listen for a specific phrase (like "scan" in this case) to activate a function, similar to "Hey Google" or "Alexa."
+*   **Zero-shot**: An AI capability where a model can perform a task or classify an object it has never explicitly been trained on, relying on its general understanding.
+
+## Original source
+This concept was developed by xbill and shared on the DEV Community platform as part of their "Weekend Challenge: Dog Days Edition." The author built this live-video security scanner over a weekend, demonstrating a creative application of AI.
+
+## Notes & variations
+*   **Do you even need this?**: For simple image classification (identifying if an image contains a dog), you might not need to build a complex live-video scanner. Many free online tools or pre-trained AI models can classify static images without any setup or coding. This project is more about the challenge of real-time, interactive AI.
+*   **Free-tier limits**: While the demo is free to use, running your own instance of this scanner on a cloud platform will incur costs. Cloud platforms typically offer free tiers for certain services, but a live video AI application like this will likely exceed those limits quickly.
+*   **Common pitfall**: The setup for running this project locally or deploying it to the cloud is complex and requires comfort with command-line tools and development environments. Beginners might find it challenging to get all dependencies correctly installed and configured. Always refer to the project's GitHub repository for the most up-to-date and detailed instructions.

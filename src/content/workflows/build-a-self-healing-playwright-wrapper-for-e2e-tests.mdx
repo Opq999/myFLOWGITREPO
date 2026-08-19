@@ -1,0 +1,79 @@
+---
+title: "Build a Self-Healing Playwright Wrapper for E2E Tests"
+description: "Learn how a custom Playwright wrapper can automatically fix failing end-to-end tests by trying alternative selectors, improving test reliability."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 20
+jobToBeDone: "Use AI to ideate and build a self-healing Playwright wrapper for E2E tests"
+tools:
+  - name: "Playwright"
+    url: "https://playwright.dev/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Claude"
+    url: "https://claude.ai/"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/m4rri4nne/self-healing-playwright-building-a-locator-healing-wrapper-with-ai-part-1-lip"
+  platform: "blog"
+  author: "m4rri4nne"
+  postedAt: 2026-07-23
+score: 7
+ingestedAt: 2026-08-19
+nigeriaNotes: "This workflow involves significant coding and development setup, which may require a stable internet connection for downloading tools and dependencies. The AI tool (Claude) has a free tier for ideation."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+The author describes a project to build a "self-healing" system for automated website tests using a tool called Playwright.
+
+When you test a website, you often write "end-to-end" (E2E) tests that act like a real user clicking buttons and filling forms. These tests rely on "locators," which are like addresses that tell the test where to find specific elements (like a "Login" button) on a webpage.
+
+The problem is that websites change often. If a developer changes the "address" (locator) of a button, your test will break. This project aims to create a "wrapper" (an extra layer of code) that automatically tries different ways to find that button if its original address changes. It "heals" the test by trying alternative strategies, like looking for text or accessibility labels, before giving up.
+
+This is an advanced software development project, not a simple tool you can use directly. It requires coding skills to build and integrate into your existing test setup.
+
+## What you can use it for
+*   **Improve test reliability**: Make your automated tests less likely to break when small changes happen on your website.
+*   **Reduce manual test maintenance**: Spend less time fixing tests that fail due to minor user interface updates.
+*   **Get detailed reports on test stability**: Understand which parts of your website are most prone to breaking tests and how often the "healing" mechanism is used.
+*   **Learn advanced Playwright techniques**: Explore how to extend and customize a powerful web testing framework.
+
+## Tools you need
+*   **Playwright** (free): An open-source tool for automating web browsers to test websites.
+*   **Claude** (freemium): An AI chat assistant used by the author for brainstorming project ideas.
+
+## How it actually works
+This workflow describes building a custom software solution, not using an off-the-shelf tool. The author used an AI chat assistant (Claude) to brainstorm the project idea. The core of the workflow involves:
+
+1.  **Ideation with AI**: The author asked Claude for project ideas to stay technically sharp. You could use a similar AI chat tool to brainstorm solutions for your own testing challenges.
+2.  **Setting up a Playwright project**: You would start with a standard Playwright project setup, typically using TypeScript. This involves installing Node.js and Playwright.
+3.  **Designing the architecture**: The author designed a specific folder structure and classes (like `SelfHealingPage`, `HealingEngine`, `HealingLog`, and various `Strategy` files) to manage the self-healing logic.
+4.  **Implementing the `SelfHealingPage`**: This class acts as the main wrapper. It tries to find an element using its original locator. If that fails, it calls the `HealingEngine`.
+5.  **Building the `HealingEngine`**: This class orchestrates the "healing" process. It contains a sequence of alternative strategies to find the element, from the most reliable (like `data-testid`) to the riskiest (like `relative position`). The author lists these strategies and their priority.
+6.  **Creating `Strategy` classes**: Each alternative method (e.g., finding by `aria-label`, `placeholder`, `alt text`) is implemented as a separate strategy class.
+7.  **Developing the `HealingLog`**: This component records every attempt, whether successful or not, and generates a report on the test suite's recovery rate.
+8.  **Integrating into tests**: Instead of using Playwright's default `page.locator()`, you would use your custom `SelfHealingPage` in your tests.
+
+The exact code for each class and strategy is not fully provided in the excerpt, but the architecture and the logic flow are detailed. This project requires strong programming skills in TypeScript and familiarity with Playwright.
+
+## Words you'll see, explained
+*   **Playwright**: A free, open-source tool used to automate web browsers for testing websites.
+*   **E2E tests (End-to-End tests)**: Automated tests that simulate a user's full journey through a website or application, from start to finish.
+*   **Locator**: In Playwright, a "locator" is a way to find and interact with a specific element (like a button, text field, or image) on a webpage.
+*   **Wrapper**: In programming, a "wrapper" is a piece of code that encloses another piece of code, often to add new features, simplify its use, or change its behavior.
+*   **Selector**: A pattern or expression used to identify and select specific elements within a webpage's structure (e.g., by their ID, class name, or visible text).
+*   **Semantic attribute**: An HTML attribute that describes the meaning or purpose of an element, rather than just its appearance (e.g., `aria-label` for accessibility, `role` for its function).
+*   **Fuzzy match**: A search technique that finds results that are approximately, rather than exactly, what was searched for.
+
+## Original source
+This concept was shared by m4rri4nne on the DEV Community blog. The author describes how they used an AI assistant to brainstorm project ideas and then began building this self-healing Playwright wrapper as a way to maintain technical skills while shifting roles.
+
+## Notes & variations
+*   **Do you even need this?**: For smaller projects with stable user interfaces, manually updating locators might be simpler and faster. This self-healing approach is most valuable for large, complex projects with frequently changing UIs where test maintenance becomes a significant burden.
+*   **Free-tier limits**: Playwright itself is free and open-source. The AI chat assistant (Claude) used for ideation offers a free tier for conversational use, which is sufficient for brainstorming.
+*   **Common pitfall**: Over-relying on fragile healing strategies, like "relative position," can make your tests pass even when the user interface is fundamentally broken or has changed in an unexpected way. Prioritize semantic and stable attributes first.
+*   **Tip for better results**: Carefully order your healing strategies from most reliable (e.g., `data-testid`, `aria-label`) to least reliable. This ensures your tests try the most robust methods first, leading to more stable and meaningful results.

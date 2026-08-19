@@ -1,0 +1,65 @@
+---
+title: "Set Up Rate Limiting on Web Apps with SafeLine"
+description: "Learn how to protect your web app from attacks by setting up rate limiting using SafeLine, a free Web Application Firewall."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 15
+jobToBeDone: "Implement rate limiting on a web application without code changes using a WAF"
+tools:
+  - name: "SafeLine"
+    url: "https://waf.chaitin.com/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/lialiago/how-to-set-up-rate-limiting-on-any-web-app-free-no-code-changes-3295"
+  platform: "blog"
+  author: "lialiago"
+  postedAt: 2026-08-10
+score: 7
+ingestedAt: 2026-08-19
+nigeriaNotes: "SafeLine Community Edition is free and self-hosted, making it accessible. Data usage is minimal as it operates at the firewall level, not processing user content."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to set up rate limiting on your web application using SafeLine, a free Web Application Firewall (WAF). This protects your site from being overwhelmed by too many requests, like during a login attack or excessive search queries, without needing to change your website's code. This approach is faster and more efficient than adding rate limits directly into your application.
+
+## Tools you need
+*   **SafeLine** (free): A Web Application Firewall that helps protect websites from attacks and can enforce rate limits.
+
+## Steps
+1.  **Log into SafeLine Dashboard**: Open your web browser and go to the SafeLine dashboard. The author uses `https://your-ip:9443` as an example, but you will use the actual IP address of your server where SafeLine is installed.
+    You should see the SafeLine dashboard interface.
+2.  **Navigate to Rules and Add a Rate Limiting Rule**: In the dashboard, find and click on 'Rules', then 'Add Rule', and select 'Rate Limiting'.
+    You will be presented with options to create a new rate limiting rule.
+3.  **Create a Rule for Login Protection**: Set up a rule to protect your login page from brute-force attacks. The author suggests the following settings:
+    *   **Name**: `Login brute force protection`
+    *   **Match**: `URL contains /login OR /wp-login.php OR /auth` (This tells SafeLine to apply this rule to pages that look like login pages).
+    *   **Limit**: `5 requests per minute per IP` (This means if one IP address makes more than 5 requests to these URLs in one minute, it will be affected).
+    *   **Action**: `Block (return 429 Too Many Requests)` (SafeLine will stop requests that exceed the limit and tell the user they are making too many requests).
+    *   **Block duration**: `15 minutes` (The IP address will be blocked for 15 minutes after hitting the limit).
+    You should see a confirmation that the rule has been created.
+4.  **Create a Rule for Search Endpoint Protection**: Set up a rule to limit requests to your search functionality.
+    *   **Name**: `Search rate limit`
+    *   **Match**: `URL contains /search OR /query` (This applies the rule to your search pages).
+    *   **Limit**: `30 requests per minute per IP`.
+    *   **Action**: `Challenge (JS captcha)` (Instead of blocking, SafeLine will present a JavaScript-based CAPTCHA to verify the user is human).
+    You should see a confirmation that this rule has been created.
+5.  **Create a Global Baseline Rule**: Set up a general rule to catch any unexpected high traffic.
+    *   **Name**: `Global request limit`
+    *   **Match**: `/*` (This is a wildcard that matches all URLs on your site).
+    *   **Limit**: `300 requests per minute per IP`.
+    *   **Action**: `Throttle` (SafeLine will slow down requests that exceed this limit, rather than blocking them outright).
+    You should see a confirmation that this global rule is active.
+6.  **Monitor Attack Logs**: After setting up your rules, regularly check the 'Attack Log' in SafeLine. This log shows which IP addresses triggered your rate limits, which URLs they were accessing, and what action SafeLine took (blocked, challenged, or throttled).
+    This helps you understand traffic patterns and identify potential issues or unexpected attacks.
+
+## Original source
+This workflow is based on a guide by lialiago, originally posted on the DEV Community platform. It explains how to use a Web Application Firewall (WAF) like SafeLine to implement rate limiting without modifying application code.
+
+## Notes & variations
+*   **Free Tier Alternative**: The SafeLine Community Edition is free and self-hosted. You can install it using the command provided in the original source if you prefer a self-hosted solution. The steps for setting up rules in the dashboard remain the same.
+*   **Common Pitfall**: Setting limits too strictly can block legitimate users. For example, if your search limit is too low, real users might get CAPTCHAs too often. Always monitor your logs and adjust limits based on real user feedback and traffic patterns.
+*   **Tip for Better Results**: For API endpoints, consider creating specific rules that match on the `Authorization` header or specific URL path prefixes, and set limits per API key rather than per IP address. This provides more granular control for API usage.

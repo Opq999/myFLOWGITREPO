@@ -1,0 +1,108 @@
+---
+title: "Analyze Customer Feedback with Pangolinfo VOC Insight MCP"
+description: "Learn to analyze customer feedback from social media and reviews using Pangolinfo VOC Insight MCP and AI agents. Understand sentiment and share of voice."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 15
+jobToBeDone: "Analyze customer feedback from multiple platforms to derive actionable insights."
+tools:
+  - name: "Pangolinfo VOC Insight MCP"
+    url: "https://docs.pangolinfo.com/en-help-center/mcp/voc-insight/overview"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Claude Code"
+    url: "https://code.claude.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Cursor"
+    url: "https://cursor.sh"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Windsurf"
+    url: "https://windsurf.ai"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Cline"
+    url: "https://github.com/pangolinfo/cline"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/pangolinfo/what-is-voice-of-customer-analysis-and-how-do-you-build-it-in-2026-2me9"
+  platform: "blog"
+  author: "pangolinfo"
+  postedAt: 2026-07-21
+score: 7
+ingestedAt: 2026-08-19
+nigeriaNotes: "This workflow requires a paid subscription to Pangolinfo VOC Insight MCP and potentially Claude Code. Data usage can be significant depending on the volume of feedback analyzed. Free tier alternatives for AI agents like Cursor might offer limited functionality."
+nigeriaUseCases:
+  - persona: "small-business"
+    scenario: "Analyze Instagram comments for customer sentiment on new product launches to improve marketing."
+  - persona: "entrepreneur"
+    scenario: "Compare brand sentiment and share of voice on Twitter against competitors to refine growth strategy."
+  - persona: "employee"
+    scenario: "Generate a weekly report on customer feedback sentiment from multiple platforms for management review."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to set up an AI agent to automatically collect and analyze customer feedback from various online platforms. This approach helps businesses understand customer sentiment and their market position without manual data collection.
+
+This method works by using a specialized tool that integrates with AI agents, allowing them to access and process customer voice data directly.
+
+## Tools you need
+*   **Pangolinfo VOC Insight MCP** (paid): A tool that provides 26 Voice of Customer analysis functions across 7 default platforms.
+*   **Claude Code** (paid): An AI coding assistant that can integrate with MCP tools.
+*   **Cursor** (freemium): A code editor with AI features that supports MCP integration.
+*   **Windsurf** (paid): Another AI tool that can utilize MCP protocols.
+*   **Cline** (free): A command-line tool that can also use MCP protocols.
+
+## Steps
+1.  **Install the VOC Insight MCP package**: You need to install the Pangolinfo VOC Insight MCP package using Node Package Manager (npm). The exact command depends on your setup, but it typically involves `npx`. Follow the official documentation for precise instructions.
+
+    ```bash
+    # Example command, refer to official docs for exact usage
+    npx -y @pangolinfo/voc-insight-mcp
+    ```
+
+    You should see output indicating the package is being installed or updated.
+
+2.  **Configure your AI agent**: You need to configure your chosen AI client (like Claude Code, Cursor, Windsurf, or Cline) to use the VOC Insight MCP. This involves creating or editing a configuration file, often named `.mcp.json`.
+
+    ```json
+    {
+      "mcpServers": {
+        "pangolinfo-voc": {
+          "command": "npx",
+          "args": [
+            "-y",
+            "@pangolinfo/voc-insight-mcp"
+          ],
+          "env": {
+            "PANGOLIN_API_KEY": "YOUR_API_KEY"
+          }
+        }
+      }
+    }
+    ```
+
+    Replace `YOUR_API_KEY` with your actual Pangolinfo API key. You should see the configuration file saved in your project or agent's settings.
+
+3.  **Ask your AI agent a question**: Once configured, you can ask your AI agent questions about customer feedback. The agent will use the VOC Insight MCP tools to find the answers.
+
+    For example, you can ask:
+
+    ```
+    This week on TikTok, how do our share of voice and sentiment compare to competitor A?
+    ```
+
+    You should receive a report detailing the share of voice and sentiment analysis based on the data collected from TikTok.
+
+## Original source
+This workflow is based on a practical guide by Leo, Head of Engineering at Pangolinfo, posted on the DEV Community platform. It explains how to integrate multi-platform customer feedback analysis into AI agents using their VOC Insight MCP standard.
+
+## Notes & variations
+*   **Free tier alternative**: While Pangolinfo VOC Insight MCP is a paid tool, you can explore free AI code editors like Cursor which has a freemium model. However, the core VOC analysis functionality will still require the paid Pangolinfo service.
+*   **Common mistake**: Ensure your `PANGOLIN_API_KEY` is correctly entered in the `.mcp.json` file. An incorrect or missing key will prevent the agent from accessing the VOC data.
+*   **Tip for better results**: Be specific in your prompts to the AI agent. Instead of a general question, ask about specific platforms, competitors, or timeframes to get more focused and actionable insights.

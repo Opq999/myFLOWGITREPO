@@ -1,0 +1,143 @@
+---
+title: "Build a 'Hello World' AI agent with Kotlin and Google's ADK"
+description: "Understand how to build a basic AI agent using Kotlin and Google's Agent Development Kit (ADK). Learn the core concepts and tools for creating AI agents that can use external tools."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 60
+jobToBeDone: "Build a starter 'Hello World' AI agent using Kotlin and Google's ADK"
+tools:
+  - name: "Kotlin"
+    url: "https://kotlinlang.org"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Agent Development Kit (ADK)"
+    url: "https://adk.dev"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Gemini"
+    url: "https://ai.google.dev/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "MCP Kotlin SDK"
+    url: "https://modelcontextprotocol.dev/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Ktor Framework"
+    url: "https://ktor.io"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "JDK (Java Development Kit)"
+    url: "https://openjdk.org"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Gradle"
+    url: "https://gradle.org"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "SDKMAN!"
+    url: "https://sdkman.io"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/gde/building-ai-agents-with-the-kotlin-agent-development-kit-adk-2gpa"
+  platform: "blog"
+  author: "xbill"
+  postedAt: 2026-07-28
+score: 9
+ingestedAt: 2026-08-19
+nigeriaNotes: "This workflow requires a stable internet connection for downloading SDKs and dependencies. The Gemini API has a free tier for basic usage, but costs can add up with heavy use. Running locally uses minimal data after initial setup."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+The Agent Development Kit (ADK) is a framework from Google that helps developers build AI agents using code. An AI agent is a program that can understand instructions, make decisions, and use tools to complete tasks, much like a smart assistant. This specific workflow uses Kotlin, a modern programming language, to create a simple "Hello World" agent.
+
+This approach is considered advanced because it requires you to write and run code, set up a development environment, and understand programming concepts. It's not a simple copy-paste task for a beginner, as the exact instructions involve navigating a code repository and running commands in a terminal.
+
+The ADK gives developers fine-grained control over how their agents behave, connect to AI models like Gemini, and use external tools. This allows for complex, custom AI solutions that can be debugged and deployed anywhere.
+
+## What you can use it for
+*   **Automate tasks**: Create agents that can perform repetitive actions, like processing data or sending notifications.
+*   **Build smart assistants**: Develop custom AI assistants that can understand user requests and interact with specific services.
+*   **Integrate AI with existing systems**: Connect AI capabilities directly into your current applications and software.
+*   **Develop complex AI workflows**: Design agents that can orchestrate multiple steps and tools to solve more intricate problems.
+*   **Experiment with agent behavior**: Gain deep control over how an AI agent makes decisions and uses its tools, allowing for advanced customization.
+
+## Tools you need
+*   **Kotlin** (free): A modern programming language used to write the agent's code.
+*   **Agent Development Kit (ADK)** (free): Google's open-source framework for building AI agents.
+*   **Gemini** (freemium): Google's AI model that the agent uses to understand instructions and make decisions. The developer API has a free tier for basic usage.
+*   **MCP Kotlin SDK** (free): A library that helps the agent discover and use local tools.
+*   **Ktor Framework** (free): An open-source framework used to build the local server that exposes the agent's tools.
+*   **JDK (Java Development Kit)** (free): A software development environment needed to run Java and Kotlin applications.
+*   **Gradle** (free): A tool that helps manage and build the project's code.
+*   **SDKMAN!** (free): A tool for installing and managing different versions of software development kits like Java on Unix-like systems.
+
+## How it actually works
+1.  **Install Java 25**: You need Java 25 to run this project. SDKMAN! is a convenient tool for installing and managing Java versions on macOS and Linux. Windows users should use Windows Subsystem for Linux (WSL).
+
+    ```bash
+    # macOS or Linux
+    sdk list java
+    sdk install java <your_preferred_java_25_distribution> # e.g., sdk install java 25.0.2-tem
+    java --version
+    ```
+
+    ```bash
+    # Windows (WSL)
+    # Run these steps inside Windows Subsystem for Linux (WSL) after installing WSL.
+    # Follow the macOS or Linux commands above within your WSL terminal.
+    ```
+
+2.  **Get a Gemini Developer API key**: Go to Google AI Studio (ai.google.dev) and create an API key for the Gemini model. This key allows your agent to connect to Google's AI services.
+
+3.  **Clone the sample project**: Download the author's sample "Hello World" ADK project from GitHub to your computer.
+
+    ```bash
+    git clone https://github.com/xbill9/adk-hello-world-kotlin.git
+    cd adk-hello-world-kotlin
+    ```
+
+4.  **Configure your environment**: Copy the example environment file and add your Gemini API key to it. This file tells the agent how to connect to the Gemini model.
+
+    ```bash
+    cp .env.example .env
+    # Open the .env file in a text editor and replace "YOUR_API_KEY" with your actual Gemini API key.
+    source ./set_env.sh
+    ```
+
+5.  **Run the MCP server**: In one terminal window, start the local server that provides the `greet` tool. This server makes the tool available for your AI agent to use.
+
+    ```bash
+    ./gradlew :server:run
+    ```
+
+6.  **Run the ADK agent**: In a *separate* terminal window, start the AI agent. This agent will use the Gemini model and the local `greet` tool.
+
+    ```bash
+    ./gradlew :agent:run
+    ```
+
+7.  **Interact with the agent**: Once both the server and agent are running, you can interact with the agent through its `ReplRunner` (Read-Eval-Print Loop Runner) in the agent's terminal window. The agent should be able to use the `greet` tool you set up.
+
+## Words you'll see, explained
+*   **AI Agent**: A computer program that uses artificial intelligence to understand instructions, make decisions, and use tools to complete tasks.
+*   **Kotlin**: A modern programming language that runs on the Java Virtual Machine (JVM) and is often used for Android, backend, and multiplatform development.
+*   **Agent Development Kit (ADK)**: Google's framework for building AI agents, allowing developers to define agent behavior and tool use in code.
+*   **Gemini API**: A developer product that allows you to integrate Google's Gemini AI models into your own applications.
+*   **MCP (Model Context Protocol)**: A protocol and SDK that helps AI agents discover and interact with external tools and services.
+*   **Ktor Framework**: An open-source framework for building web applications and APIs in Kotlin.
+*   **JDK (Java Development Kit)**: A collection of tools and libraries needed to develop and run Java-based applications, including Kotlin programs.
+*   **Gradle**: A build automation tool used to manage project dependencies and compile, test, and run code.
+*   **SDKMAN!**: A command-line tool for managing multiple versions of software development kits (SDKs) like Java on Unix-like systems.
+
+## Original source
+This concept is based on a tutorial by xbill titled 'Building AI Agents with the Kotlin Agent Development Kit (ADK)', originally published on the DEV Community blog.
+
+## Notes & variations
+*   **Do you even need this?**: For simpler AI tasks that don't require custom tools or deep integration, you might find consumer-facing AI chat applications (like claude.ai or gemini.google.com) or no-code AI tools more suitable. This ADK workflow is for developers who need fine-grained control and want to build custom, integrated AI solutions.
+*   **Free-tier limits**: While the ADK itself is free, using the Gemini API will incur costs beyond its free tier. Always monitor your API usage and set budget alerts to avoid unexpected charges.
+*   **Common pitfall**: A common issue is incorrect Java version setup. Ensure you have Java 25 installed and active. If you encounter errors, verify your `java --version` output matches the requirement.
+*   **Tip for better results**: Familiarize yourself with Kotlin basics and the ADK documentation on adk.dev before diving into complex agent designs. Understanding the core concepts will make debugging and extending the agent much easier.

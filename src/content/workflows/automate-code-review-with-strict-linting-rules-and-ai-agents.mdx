@@ -1,0 +1,132 @@
+---
+title: "Automate Code Review with Strict Linting Rules and AI Agents"
+description: "Learn how to automate code reviews by enforcing strict linting rules with AI agents, reducing manual checks and improving code quality."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 30
+jobToBeDone: "Automate code review by enforcing strict linting rules with AI agents"
+tools:
+  - name: "ESLint"
+    url: "https://eslint.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "@typescript-eslint"
+    url: "https://typescript-eslint.io/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/isamu/i-stopped-reviewing-my-own-code-heres-what-had-to-be-true-first-4nh0"
+  platform: "blog"
+  author: "isamu"
+  postedAt: 2026-08-01
+score: 7
+ingestedAt: 2026-08-19
+nigeriaNotes: "ESLint and @typescript-eslint are free, open-source tools. They run locally on your machine, so data usage is minimal. The primary requirement is having Node.js installed."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will set up automated code review rules that catch common issues before a human needs to look. This approach works by moving checks from a manual review process to an automated system, ensuring consistency and freeing up developer time.
+
+## Tools you need
+*   **Node.js** (free): A JavaScript runtime environment needed to run ESLint and its plugins.
+*   **ESLint** (free): A tool that analyzes your code to find problematic patterns or code that doesn't adhere to style guidelines.
+*   **@typescript-eslint** (free): A plugin for ESLint that provides support for parsing and analyzing TypeScript code.
+
+## Steps
+1.  **Install ESLint and TypeScript ESLint**: If you don't have them, install these tools in your project. The exact command depends on your project's package manager (npm or yarn). A common way is:
+
+    ```bash
+    # macOS or Linux
+    npm install eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin --save-dev
+    ```
+
+    ```powershell
+    # Windows (PowerShell)
+    npm install eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin --save-dev
+    ```
+
+    You should see these packages added to your project's `devDependencies` in `package.json`.
+
+2.  **Initialize ESLint Configuration**: Create a configuration file for ESLint. This command will ask you a series of questions to set up the file.
+
+    ```bash
+    # macOS or Linux
+    npx eslint --init
+    ```
+
+    ```powershell
+    # Windows (PowerShell)
+    npx eslint --init
+    ```
+
+    Follow the prompts. When asked about the type of modules your project uses, choose the option that best fits your project (e.g., 'JavaScript modules (import/export)'). When asked if you want to use a popular style guide, you can choose 'Yes' and select a preset like 'Airbnb' or 'Standard', or choose 'No' to define your own rules. For TypeScript projects, you will also be asked if you use TypeScript. Select 'Yes'.
+
+3.  **Configure Strict Linting Rules**: Open the generated ESLint configuration file (usually `.eslintrc.js` or `.eslintrc.json`) and add or modify rules to be stricter than a human team might tolerate. The author uses rules like `max-lines-per-function`, `complexity`, and `max-depth` set to error levels. They also enable `@typescript-eslint`'s strict preset and ban non-null assertions. Here's an example of how you might add some of these rules. The author doesn't share their exact configuration, so this is a starting point:
+
+    ```json
+    {
+      "parser": "@typescript-eslint/parser",
+      "plugins": [
+        "@typescript-eslint"
+      ],
+      "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended"
+      ],
+      "rules": {
+        "max-lines-per-function": ["error", { "max": 60, "skipBlankLines": true }],
+        "complexity": ["error", 20],
+        "max-depth": ["error", 4],
+        "@typescript-eslint/no-non-null-assertion": "error"
+      }
+    }
+    ```
+
+    You should see the rules you added reflected in the configuration file.
+
+4.  **Define Exceptions in Configuration**: If you need to make exceptions to the strict rules, add them to the ESLint configuration file with a clear reason, rather than using inline comments in your code. The author shows an example for specific files and a rule override:
+
+    ```json
+    {
+      "//": "Exceptions live in the config with a reason, never inline",
+      "overrides": [
+        {
+          "files": [
+            "src/components/Sidebar.vue",
+            "src/components/GuiPanel.vue",
+            "src/components/FilesOverlay.vue"
+          ],
+          "rules": {
+            "vue/no-restricted-block": "off"
+          }
+        }
+      ]
+    }
+    ```
+
+    Ensure these exceptions are documented with comments explaining why they are necessary.
+
+5.  **Run ESLint**: Execute ESLint on your codebase to check for violations of your configured rules.
+
+    ```bash
+    # macOS or Linux
+    npx eslint .
+    ```
+
+    ```powershell
+    # Windows (PowerShell)
+    npx eslint .
+    ```
+
+    You should see a list of any errors or warnings found in your code based on the rules you've set. If there are no violations, the command will exit without outputting errors.
+
+## Original source
+This workflow is based on the experience shared by Isamu on their blog, where they describe how they automated code reviews by implementing strict linting rules. The core idea is to shift code quality checks from manual review to automated tools.
+
+## Notes & variations
+*   **Free Tier Alternative**: ESLint and its plugins are free and open-source, so there are no free tier limitations. The main requirement is having Node.js installed.
+*   **Common Pitfall**: Allowing inline disable comments (like `// eslint-disable-next-line`) can undermine the strictness of your rules over time. It's better to manage exceptions centrally in the ESLint configuration file with clear justifications.
+*   **Tip for Better Results**: Regularly review the exceptions you've added to your ESLint configuration. If a reason for an exception is no longer valid, remove the exception to maintain code quality standards.

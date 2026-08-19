@@ -1,0 +1,85 @@
+---
+title: "Create Short Videos from Photos with AI (ReelCraft Concept)"
+description: "Learn how AI can help create short videos from individual photos and clips by understanding each asset and suggesting edits, then assembling them."
+category: "content-creation"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 60
+jobToBeDone: "Create short videos from photos and clips using AI"
+tools:
+  - name: "Gemini API"
+    url: "https://ai.google.dev/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Python"
+    url: "https://www.python.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "ffmpeg"
+    url: "https://ffmpeg.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Lyria 3 (Google AI Music Generation)"
+    url: "https://ai.google/"
+    pricing: "paid"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/gde/dev-logpython-create-short-videos-from-photos-and-clips-with-gemini-37-flash-reelcraft-1gc6"
+  platform: "blog"
+  author: "evanlin"
+  postedAt: 2026-08-14
+score: 7
+ingestedAt: 2026-08-19
+nigeriaNotes: "This workflow requires setting up a Python development environment and using paid API services (Gemini API, Lyria 3 API). While the Gemini API has a free tier for some models, advanced models like Flash may incur costs. Access to Lyria 3 for music generation might be limited or require specific Google Cloud services, potentially adding to costs. Data usage will depend on the number and length of videos/photos processed."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+This entry describes ReelCraft, a custom-built Python tool that uses artificial intelligence to help create short videos from a collection of photos and video clips. Instead of manually editing, the tool leverages AI to understand the content of each individual media file and then suggests a sequence of edits.
+
+This is an advanced workflow because ReelCraft is a custom Command Line Interface (CLI) tool, not a simple web application. It requires comfort with coding, setting up a Python development environment, and obtaining API (Application Programming Interface) keys for AI services. The exact steps and code are part of the author's project, which is not provided as a copy-paste recipe.
+
+The core idea is to bypass limitations of some AI models by having the AI understand each file separately, then combining these understandings to generate a complete editing plan. This plan is then reviewed by a human before a video processing tool assembles the final short video, complete with background music and subtitles.
+
+## What you can use it for
+*   **Automate video editing suggestions**: Get AI to propose cuts and transitions for your media, saving time on initial drafts.
+*   **Create social media shorts**: Quickly assemble vertical videos (like 9:16 aspect ratio) suitable for platforms such as TikTok or Instagram Reels.
+*   **Generate background music**: Automatically add music to your videos using AI, enhancing the overall feel.
+*   **Burn in subtitles**: Get subtitles automatically added directly into your video, making it accessible even without sound.
+
+## Tools you need
+*   **Gemini API** (freemium): Google's developer platform for accessing AI models like Gemini 3.7 Flash, used here to understand media content and suggest edits.
+*   **Python** (free): A popular programming language used to build the ReelCraft tool and its various components.
+*   **ffmpeg** (free): A powerful, open-source command-line tool for processing video and audio files, used for cutting, cropping, adding transitions, and burning in subtitles.
+*   **Lyria 3 (Google AI Music Generation)** (paid): An AI model used by the author to generate background music. Access to this specific API may be limited or require specific Google Cloud services.
+
+## How it actually works
+This workflow is built around a custom Python Command Line Interface (CLI) tool. To reproduce it, you would typically need to:
+
+1.  **Set up your development environment**: Install Python on your computer and set up a virtual environment. You would then install any necessary Python libraries (dependencies) that the ReelCraft tool relies on.
+2.  **Obtain API keys**: Get an API key for the Gemini API from Google AI Studio. This key allows your custom tool to communicate with Google's AI models.
+3.  **Prepare your media**: Place all the photos and video clips you want to use into a designated folder on your computer.
+4.  **Run the custom tool**: Execute the author's Python CLI tool. The tool first scans your media folder to identify all the assets.
+5.  **AI analysis (per-file)**: The tool then calls the Gemini API for *each individual photo or video clip*. Gemini 3.7 Flash analyzes each file to understand its content, generating descriptions or insights for every asset.
+6.  **AI planning (aggregated)**: After analyzing individual files, the tool aggregates all the analysis results. It then makes *another* call to the Gemini API, asking it to suggest an editing plan based on the combined understanding of all your media. This plan is saved as an `edl.yaml` file (Edit Decision List) and also summarized in a human-readable `summary.md` file.
+7.  **Human review and edit**: This is a crucial step. You would open and review the `edl.yaml` file. This file contains the AI's suggested sequence of cuts, transitions, and timings. You can manually adjust this file to refine the editing plan to your liking.
+8.  **Video rendering**: Once you confirm the `edl.yaml` file, the tool uses `ffmpeg` to execute the editing plan. `ffmpeg` cuts the clips, applies transitions, crops the video to a 9:16 vertical format, generates background music using Lyria 3, and automatically burns in subtitles.
+
+It's important to note that the exact commands and code for the ReelCraft tool are part of the author's specific project, which is not provided in this excerpt. You would need access to that project's source code to fully reproduce this workflow.
+
+## Words you'll see, explained
+*   **API (Application Programming Interface)**: A set of rules and tools that allows different software programs to communicate and share information with each other.
+*   **Multimodal**: An AI model that can understand and process different types of data simultaneously, such as text, images, audio, and video.
+*   **CLI (Command Line Interface)**: A way to interact with a computer program by typing text commands, rather than clicking buttons in a graphical user interface.
+*   **ffmpeg**: A free, open-source command-line tool widely used for handling, converting, streaming, and editing video and audio files.
+*   **EDL (Edit Decision List)**: A text file that describes the sequence of edits in a video project, including which clips to use, their order, start and end points, and transitions.
+
+## Original source
+This concept is based on the "ReelCraft" project and insights shared by evanlin on the DEV Community platform. The author detailed their journey in creating a Python CLI tool to automate video editing suggestions using AI.
+
+## Notes & variations
+*   **Do you even need this?**: For basic video editing on your phone, consider user-friendly mobile apps like CapCut or InShot. These apps offer many features for free, including AI-powered tools, without requiring coding knowledge or API keys.
+*   **Free-tier limits**: While the Gemini API generally offers a free tier, there are usage limits. Processing many videos or using advanced models like Gemini 3.7 Flash may incur costs. Access to the Lyria 3 API for music generation might be limited or require specific Google Cloud services, which are typically paid.
+*   **Common pitfall**: The author noted that `ffmpeg` can sometimes silently fail, meaning it reports success even when the output video has errors. Always play and thoroughly check the final video to ensure it rendered correctly.
+*   **Tip for better results**: The human review and editing of the `edl.yaml` file is critical. Even with AI suggestions, your creative input on the sequence, timing, and transitions will significantly improve the final video's quality and storytelling.
