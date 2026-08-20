@@ -14644,8 +14644,68 @@
     "f274cc7ce820286c6b2f5311687184a0b62bb9d1db2b0264f1b2b98addd0e37e": {
       "url": "https://dev.to/johnnylemonny/stop-parsing-ai-text-build-reliable-features-with-structured-outputs-8im",
       "date": "2026-08-19"
+    },
+    "32ebb85b6e4f4ee8e553437a7dd1f7169190160adb4f244acc859f58857a922f": {
+      "url": "https://news.ycombinator.com/item?id=49300800",
+      "date": "2026-08-20"
+    },
+    "f7dc95732d84964cc7133b30e7fa035a07a59cd1991bfabcce119d887729298e": {
+      "url": "https://simonwillison.net/2026/Aug/19/smolmachines-untrusted-sandbox",
+      "date": "2026-08-20"
+    },
+    "d774133140462016a9bf741c1a9123520109da048fe87e3d84a4cc6f7e989bc6": {
+      "url": "https://news.ycombinator.com/item?id=49317799",
+      "date": "2026-08-20"
+    },
+    "f1859c5bfd11aefc83793b622280016e5136569a4a33fd9cf73976befe774a5d": {
+      "url": "https://simonwillison.net/2026/Aug/19/jeremy-morrell",
+      "date": "2026-08-20"
+    },
+    "7a66fcf62cc50c40e038dd2ad7d31717f2ff4d813a9436de62524f92b4fc922e": {
+      "url": "https://simonwillison.net/2026/Aug/19/conceptual-integrity-and-counting-lines-of-code",
+      "date": "2026-08-20"
+    },
+    "74b7cfe17cd9d51443796bc38b3bd052981529f9a274952f7fafb28a6313ee69": {
+      "url": "https://simonwillison.net/2026/Aug/18/mojo-is-now-open-source",
+      "date": "2026-08-20"
+    },
+    "e8c330662717fd1acd1272b1ff736a5a8f9f877afe341644f3e28028812b9e08": {
+      "url": "https://www.latent.space/p/ainews-death-of-params-zai-ceo-jie",
+      "date": "2026-08-20"
+    },
+    "5ce0d6f8cf61a5ba7e2c1201e2530da1136baea86bdc6911dc304a1b9d69d175": {
+      "url": "https://www.latent.space/p/ainews-memory-prices-up-500-in-12",
+      "date": "2026-08-20"
+    },
+    "b6461cff58b0d468ae0839c09660bc58c13f01c83a6b6bd8f1064709b5bfb032": {
+      "url": "https://www.latent.space/p/glean-model-routing",
+      "date": "2026-08-20"
+    },
+    "3353e302ce704b0a8c374170be5a87fa8c012683726fe13991b8b6bcabc57872": {
+      "url": "https://www.bensbites.com/p/do-you-use-a-personal-agent",
+      "date": "2026-08-20"
+    },
+    "f56fb1ee13437f3d1c1d8f00ac5022fe0f8999facb1f47e0532e714861148c87": {
+      "url": "https://huggingface.co/blog/LiquidAI/qad",
+      "date": "2026-08-20"
+    },
+    "5ba78b757300e8cc3ff5b4c8f26a93a1cc067af59a63302997722a2b18eff29a": {
+      "url": "https://huggingface.co/blog/ibm-research/altk-evolve-hmm",
+      "date": "2026-08-20"
+    },
+    "d9524ab76177d5beaf9939ac752ba4ff34bad2c29295f021a9af357762a73ae0": {
+      "url": "https://huggingface.co/blog/multi-vector-encoder",
+      "date": "2026-08-20"
+    },
+    "e79b74b70d1e6e2c5297d2648893967dd0fd5200e2ae138db54e1c999bbd31b3": {
+      "url": "https://newsletter.pragmaticengineer.com/p/from-chrome-devtools-to-ai-engineering",
+      "date": "2026-08-20"
+    },
+    "9acdd7409d13c9de05c779184b110cd3434152b49a1d7b84bc51734f160e0ba2": {
+      "url": "https://newsletter.pragmaticengineer.com/p/the-great-engineering-leader-career-break",
+      "date": "2026-08-20"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 3
+  "dailyPage": 4
 }

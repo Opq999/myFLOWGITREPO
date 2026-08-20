@@ -1,0 +1,82 @@
+---
+title: "Researching secure code sandboxes with an AI agent"
+description: "Learn how an AI agent can research and test secure code sandboxes like smolvm, overcoming technical hurdles by adapting its approach."
+category: "academic-research"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 30
+jobToBeDone: "Research a secure sandbox tool using an AI agent"
+tools:
+  - name: "Claude Code"
+    url: "https://code.claude.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "smolmachines / smolvm"
+    url: "https://smolmachines.com"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "GitHub Actions"
+    url: "https://github.com/features/actions"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://simonwillison.net/2026/Aug/19/smolmachines-untrusted-sandbox/"
+  platform: "blog"
+  author: "Simon Willison"
+  postedAt: 2026-08-19
+score: 7
+ingestedAt: 2026-08-20
+nigeriaNotes: "This workflow uses advanced developer tools and potentially paid AI agent services, making it less suitable for mobile-first, data-light use cases. GitHub Actions has a free tier for public repositories, but usage limits apply."
+nigeriaUseCases:
+  - persona: "employee"
+    scenario: "As a developer, use an AI agent to research and test secure ways to run user-submitted Python scripts on your company's platform, ensuring no system resources are compromised."
+  - persona: "entrepreneur"
+    scenario: "If building a coding platform, task an AI agent to investigate and test secure sandbox tools like smolvm for safely executing user-submitted code without risking your server."
+  - persona: "student"
+    scenario: "As a Computer Science student, use an AI agent to research secure code sandboxes for your final year project, evaluating tools like smolvm for safely running user-submitted code."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+This entry describes how an advanced AI agent, Claude Fable 5, was used to research and test a secure software tool called `smolmachines / smolvm`. The goal was to see if `smolvm` could safely run untrusted Python and JavaScript code, limiting its access to computer resources like memory, processing power, network, and files.
+
+The interesting part is that the AI agent didn't just follow a script. When it hit a technical roadblock (its initial environment, Claude Code, couldn't run `smolvm` because of missing hardware features), it creatively came up with a "Plan B." It suggested using GitHub Actions, a different online service, to perform the tests, which it then successfully carried out.
+
+This shows how advanced AI agents can not only understand complex tasks but also adapt and find solutions to unexpected technical problems in real-time. It's a demonstration of proactive problem-solving by an AI.
+
+## What you can use it for
+*   **Automate complex research**: Task an AI agent to investigate new software tools or technical concepts, saving human time.
+*   **Overcome technical limitations**: See how an AI can identify environmental constraints and propose alternative methods or platforms to complete a task.
+*   **Test software in varied environments**: Use an AI to set up and run tests for software in different online services or configurations.
+*   **Explore secure coding practices**: Understand how tools like `smolvm` can create isolated "sandboxes" to run potentially unsafe code without risking the main system.
+
+## Tools you need
+*   **Claude Code** (paid): An online developer environment by Anthropic that hosts advanced AI agents like Claude Fable 5.
+*   **smolmachines / smolvm** (free): An open-source tool designed to create secure, resource-limited environments (sandboxes) for running code.
+*   **GitHub Actions** (freemium): A service from GitHub that automates tasks in software development, often used for testing and deployment.
+
+## How it actually works
+The author started by giving a research task to an AI agent, Claude Fable 5, running within the Claude Code environment. The task was to evaluate `smolmachines.com` as a fast, secure sandbox for untrusted Python and JavaScript code, specifically looking for ways to limit RAM, CPU time, and network/filesystem access.
+
+1.  **Task the AI agent**: The author provided the research goal to Claude Fable 5. The exact prompt isn't shared, but it would describe the `smolmachines` website and the specific security and resource-limiting features to investigate.
+2.  **AI agent identifies a problem**: The AI agent attempted to run `smolvm` within its current Claude Code environment but found it lacked a necessary virtualization feature called KVM. It reported this limitation.
+3.  **AI agent devises a "Plan B"**: The agent then creatively suggested using GitHub Actions, noting that GitHub's Ubuntu runners *do* provide the required KVM feature.
+4.  **AI agent executes Plan B**: The agent proceeded to set up a temporary workflow in GitHub Actions. This involved installing `smolvm` and running the necessary tests directly within that GitHub Actions environment.
+5.  **Review results**: The author then reviewed the logs and results collected by the AI agent from the GitHub Actions run.
+
+## Words you'll see, explained
+*   **AI agent**: A computer program that uses artificial intelligence to perform tasks, often by making decisions and adapting to new information, much like a human assistant.
+*   **Sandbox**: A secure, isolated environment on a computer where programs can be run without affecting the main system. It's like a playpen for software.
+*   **Untrusted code**: Software code from an unknown or potentially malicious source that might try to harm your computer or steal information.
+*   **KVM (Kernel-based Virtual Machine)**: A technology in Linux that allows a computer to run multiple operating systems or isolated environments (virtual machines) very efficiently.
+*   **GitHub Actions**: An automated service provided by GitHub that helps developers build, test, and deploy their software projects.
+*   **Virtualization**: The process of creating a virtual (rather than actual) version of something, such as an operating system, a server, or a storage device.
+
+## Original source
+This workflow was shared by Simon Willison on his blog. He documented how he used an advanced AI agent, Claude Fable 5, to research and test the `smolmachines / smolvm` sandbox tool, highlighting the agent's ability to adapt to technical challenges.
+
+## Notes & variations
+*   **Do you even need this?**: For simple research tasks, a standard freemium AI chat tool like ChatGPT, Claude.ai, or Gemini might suffice. This advanced workflow is for when you need an AI to actively *execute* code, troubleshoot environments, and perform complex, adaptive technical tasks.
+*   **Free-tier limits**: While GitHub Actions has a free tier, complex or long-running workflows can quickly consume free minutes. Claude Code is a paid developer product, so there isn't a free tier for the AI agent itself in this context.
+*   **Common pitfall**: Relying too heavily on an AI agent without understanding its limitations or verifying its outputs. Always review the agent's findings and actions, especially when dealing with security-sensitive topics like sandboxing.
