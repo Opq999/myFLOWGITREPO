@@ -1,0 +1,126 @@
+---
+title: "Add 'Export as Image' to Dashboards with Node.js and html2img"
+description: "Learn to add a reliable 'export as image' button to your web dashboards using Node.js and the html2img API for pixel-perfect PNG exports."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 30
+jobToBeDone: "Add an 'export as image' feature to a web dashboard"
+tools:
+  - name: "Node.js"
+    url: "https://nodejs.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Express"
+    url: "https://expressjs.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "html2img.com"
+    url: "https://app.html2img.com/"
+    pricing: "paid"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/accreditly/add-export-as-image-to-any-dashboard-g1a"
+  platform: "blog"
+  author: "accreditly"
+  postedAt: 2026-07-23
+score: 7
+ingestedAt: 2026-08-21
+nigeriaNotes: "Node.js and Express are free to use. html2img.com is a paid service, so costs will apply. Data usage will be minimal, primarily for API calls."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will add a button to your web dashboard that allows users to export a specific panel as a PNG image. This works by sending the panel's content to a server-side service that renders it in a real browser engine, ensuring an accurate image that matches what the user sees on screen. This is better than browser-based screenshotting tools which often struggle with complex dashboard elements.
+
+## Tools you need
+*   **Node.js** (free): A JavaScript runtime that lets you run JavaScript code on your server.
+*   **Express** (free): A web application framework for Node.js, used here to create the backend API.
+*   **html2img.com** (paid): An API service that takes HTML and renders it into an image file.
+
+## Steps
+1.  **Add the export button to your dashboard's frontend**: This involves adding a button to your HTML and writing a JavaScript function to handle the click. The button will trigger a request to your backend to get the image. You will need to have a way to identify which panel to export, for example, using a `data-export` attribute.
+
+    The JavaScript function `exportPanel` will make a POST request to your backend API (e.g., `/api/export/revenue`). If successful, it will receive the image data as a 'blob' (a file-like object), create a temporary link to download it, and then automatically click that link to start the download. The browser's role is simply to ask for the file and save it.
+
+    ```javascript
+    async function exportPanel ( panelId ) {
+      const res = await fetch ( `/api/export/ ${ panelId } ` , { method : ' POST ' });
+      if ( ! res . ok ) {
+        alert ( ' Export failed ' );
+        return ;
+      }
+      const blob = await res . blob ();
+      const link = document . createElement ( ' a ' );
+      link . href = URL . createObjectURL ( blob );
+      link . download = ` ${ panelId } .png` ;
+      link . click ();
+      URL . revokeObjectURL ( link . href );
+    }
+
+    document . querySelectorAll ( ' [data-export] ' ). forEach (( button ) => {
+      button . addEventListener ( ' click ' , () => exportPanel ( button . dataset . export ));
+    });
+    ```
+
+    You should see a button on your dashboard that, when clicked, attempts to download a PNG file named after the panel ID (e.g., `revenue.png`).
+
+2.  **Set up the backend to handle image rendering**: You'll use Node.js with the Express framework to create a server endpoint that receives the request, generates the HTML for the panel, and sends it to the `html2img.com` API. The API will return a URL to the generated image, which your backend then fetches and sends back to the user's browser as a PNG.
+
+    First, create a function `panelHtml` that generates the HTML for a specific panel. This HTML should be self-contained, including inline styles, to ensure it renders correctly without relying on your dashboard's main CSS.
+
+    ```javascript
+    function panelHtml ( panel ) {
+      return `
+        <div style="width:1000px;padding:48px;font-family:Arial,sans-serif;background:#fff;">
+          <h2 style="margin:0 0 8px;font-size:28px;">${ panel . title }</h2>
+          <p style="margin:0 0 24px;color:#6b7280;">${ panel . subtitle }</p>
+          <div style="font-size:72px;font-weight:bold;color:#4f46e5;">${ panel . value }</div>
+        </div>
+      `;
+    }
+    ```
+
+    Next, set up an Express POST route for `/api/export/:id`. This route will load the panel data (you'll need to implement `loadPanel` based on your data source), then send the generated HTML to the `html2img.com` API. You will need to get an API key from `html2img.com` and set it as an environment variable named `HTML2IMG_API_KEY`.
+
+    ```javascript
+    import express from ' express ' ;
+    const app = express ();
+
+    // ... panelHtml function from above ...
+
+    app . post ( ' /api/export/:id ' , async ( req , res ) => {
+      const panel = await loadPanel ( req . params . id ); // your data layer
+      const render = await fetch ( ' https://app.html2img.com/api/html ' , {
+        method : ' POST ',
+        headers : {
+          ' Content-Type ' : ' application/json ',
+          ' X-API-Key ' : process . env . HTML2IMG_API_KEY,
+        },
+        body : JSON . stringify ({
+          html : panelHtml ( panel ),
+          width : 1000,
+          height : 600,
+        }),
+      });
+      const { url } = await render . json ();
+      const image = Buffer . from ( await ( await fetch ( url )). arrayBuffer ());
+      res . set ( ' Content-Type ' , ' image/png ' );
+      res . send ( image );
+    });
+
+    // You will need to implement loadPanel and start your express server
+    // Example: const PORT = process.env.PORT || 3000;
+    // app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+    ```
+
+    After setting up your Node.js server and starting it, and ensuring your `HTML2IMG_API_KEY` is set, clicking the export button on your dashboard should now trigger a download of the panel as a PNG image.
+
+## Original source
+This workflow is based on an article by Accreditly, posted on their blog and shared on DEV Community. It explains how to add a reliable 'export as image' feature to web dashboards by using a server-side rendering approach with an external image API.
+
+## Notes & variations
+*   **Free-tier alternative**: If `html2img.com` is too expensive, you could explore self-hosting a headless browser like Puppeteer (which uses Chromium) on your own server. This requires more setup and server resources but can be more cost-effective for high usage.
+*   **Common mistake**: Forgetting to set the `X-API-Key` for `html2img.com` or not correctly configuring your Node.js environment variables will cause the image rendering to fail.
+*   **Tip for better results**: Ensure the inline CSS within your `panelHtml` function accurately reflects the desired appearance, as this is what the `html2img.com` service will render. Test thoroughly to catch any styling discrepancies.

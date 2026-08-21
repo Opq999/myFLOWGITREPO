@@ -1,0 +1,120 @@
+---
+title: "Implement AI agent safety guardrails with Claude Code"
+description: "Learn how to prevent AI coding agents from taking dangerous actions like force-pushing code or exposing credentials by using safety guardrails."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 60
+jobToBeDone: "Implement safety guardrails for AI coding agents to prevent dangerous actions"
+tools:
+  - name: "Claude Code"
+    url: "https://code.claude.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Git"
+    url: "https://git-scm.com"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Ansible"
+    url: "https://www.ansible.com"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "GitHub"
+    url: "https://github.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/rabih_jabr_29/your-agent-isnt-reckless-it-just-cant-see-the-blast-radius-1lkj"
+  platform: "blog"
+  author: "rabih_jabr_29"
+  postedAt: 2026-08-20
+score: 7
+ingestedAt: 2026-08-21
+nigeriaNotes: "This workflow uses paid developer tools. While the concept of AI agent guardrails is universally valuable, implementing it with Claude Code requires a subscription. The guardrail scripts themselves are open source and free to inspect on GitHub, but running them in this context incurs costs."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+AI coding agents are powerful tools that can write code and automate tasks quickly. However, they can sometimes make decisions that seem correct in isolation but have dangerous consequences for your project, like force-pushing to a main code branch or accidentally exposing sensitive information. This is because the agent might not "see" the full impact, or "blast radius," of its actions.
+
+This workflow introduces the concept of "guardrails" for AI agents. Instead of constantly reviewing every line of code or command the agent suggests, you define a short list of actions the agent must *never* take. When the agent is about to perform one of these forbidden actions, a special "hook" intercepts it, preventing the action and giving the agent feedback.
+
+In Claude Code, this is done using `PreToolUse` hooks. Your custom script receives details about the agent's intended command, decides if it's safe, and can deny it. Crucially, you can tell the agent *why* it was denied and *what to do instead*, turning a blocked action into a valuable learning moment for the AI.
+
+This is an advanced concept because it requires writing and deploying custom scripts to interact with the AI agent's environment, understanding technical data formats like JSON, and managing code execution flow. It is not a simple copy-paste recipe for beginners.
+
+## What you can use it for
+*   **Prevent accidental code damage**: Stop AI agents from force-pushing to critical code branches like `main`, which can erase work or break deployments for your team.
+*   **Protect sensitive information**: Block agents from writing credentials, API keys, or other secrets directly into public source files, preventing serious security breaches.
+*   **Maintain code quality standards**: Prevent agents from bypassing tests (for example, by adding `.skip` to failing tests) or making direct, unmanaged edits to sensitive configuration files like `package-lock.json`.
+*   **Guide agent behavior**: Use clear denial reasons to teach the agent better and safer coding practices, turning a blocked action into an immediate, high-signal learning opportunity.
+
+## Tools you need
+*   **Claude Code** (paid): An AI coding agent that provides custom safety hooks for intercepting and controlling its actions.
+*   **Git** (free): A version control system used for tracking changes in code, often interacted with by AI agents.
+*   **Ansible** (free): An open-source automation engine, mentioned as a type of code that Claude Code can write.
+*   **GitHub** (freemium): A platform for hosting and collaborating on code projects, where example guardrail scripts can be found.
+
+## How it actually works
+The core idea is to intercept and review commands an AI agent is about to run, applying your own safety rules before execution.
+
+1.  **Understand the `PreToolUse` hook**: In Claude Code, a `PreToolUse` hook is a mechanism that fires *before* the AI agent executes any command or "tool call." When this hook is triggered, it sends detailed information about the intended command to a script you control.
+
+    This script will receive JSON input like this:
+
+    ```json
+    {
+      "session_id": "abc123",
+      "cwd": "/home/rabih/app",
+      "hook_event_name": "PreToolUse",
+      "tool_name": "Bash",
+      "tool_input": {
+        "command": "git push --force origin main"
+      }
+    }
+    ```
+
+2.  **Write a guardrail script**: You need to write a custom script (for example, in Python, Node.js, or Bash) that will receive this JSON input. This script's job is to parse the input, identify the command the agent wants to run, and then check it against your list of forbidden actions.
+
+3.  **Define forbidden actions**: Create a list of specific commands or patterns that the agent should never execute. Examples from the author include:
+    *   `git push --force origin main`
+    *   Inlining credentials into source files
+    *   `rm -rf "$BUILD_DIR/"` when `BUILD_DIR` is not safely defined
+    *   Directly editing version files like `package-lock.json`
+    *   Adding `.skip` to failing tests
+    *   Running `cat .env` to view environment variables
+
+4.  **Deny and instruct the agent**: If your script detects a forbidden action, it returns a specific JSON output to Claude Code. This output must include `"permissionDecision": "deny"` and, crucially, a `"permissionDecisionReason"`. The agent reads this reason and uses it to understand why the action was blocked and how to proceed differently.
+
+    Your script would return JSON output like this:
+
+    ```json
+    {
+      "hookSpecificOutput": {
+        "hookEventName": "PreToolUse",
+        "permissionDecision": "deny",
+        "permissionDecisionReason": "This force-pushes to `main`, a shared branch. Consider `git rebase` or a new branch."
+      }
+    }
+    ```
+
+    A clear and actionable reason (e.g., "change the manifest and run pnpm add") will guide the agent to a correct solution much faster than a vague one.
+
+5.  **Reference implementation**: The author mentions that their own guardrail scripts, which implement thirteen different checks, are available in a public GitHub repository. This repository (`claude-guardrails`) is the best place to find concrete examples and learn how to structure and deploy such scripts.
+
+## Words you'll see, explained
+*   **AI Agent**: A computer program that uses artificial intelligence to perform tasks, often by interacting with tools and environments, like a coding assistant.
+*   **Guardrail**: A safety mechanism or rule designed to prevent an AI agent from performing dangerous, unintended, or undesirable actions.
+*   **Hook**: A specific point in a software program where you can insert your own custom code to run automatically when a particular event occurs.
+*   **Force-push**: A Git command (`git push --force`) that overwrites the history of a remote branch, which can lead to data loss or conflicts for collaborators.
+*   **Credentials**: Sensitive information like usernames, passwords, API keys, or tokens used to authenticate and gain access to systems or services.
+*   **JSON (JavaScript Object Notation)**: A lightweight, human-readable data format used by applications to exchange information, often between different software components.
+
+## Original source
+This concept was shared by rabih_jabr_29 on the DEV Community blog. The author detailed their experience using Claude Code and how they implemented custom safety guardrails to prevent the AI agent from making dangerous, yet "locally correct," decisions during coding tasks.
+
+## Notes & variations
+*   **Do you even need this?**: For very simple coding tasks or if you are always closely supervising every output from your AI agent, you might not need to implement full guardrails. However, for complex projects, critical systems, or when giving AI agents more autonomy, guardrails become essential for ensuring safety, maintaining code integrity, and preventing costly mistakes.
+*   **Free-tier limits**: Claude Code is a paid developer tool, meaning a subscription is required to use it and implement these hooks. While the general concept of agent guardrails applies broadly, its specific implementation with Claude Code involves paid services. Other AI coding assistants might offer similar hook mechanisms, but their availability and pricing will vary.
+*   **Common pitfall**: A frequent mistake is providing vague or unhelpful `permissionDecisionReason` messages. The AI agent learns from this feedback, so a clear, actionable instruction (for example, "change the manifest and run pnpm add") is far more effective at guiding the agent to a correct and safe solution than a simple "blocked" message.

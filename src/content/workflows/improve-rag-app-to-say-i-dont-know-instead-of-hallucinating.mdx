@@ -1,0 +1,75 @@
+---
+title: "Improve RAG App to Say 'I Don't Know' Instead of Hallucinating"
+description: "Learn how to prevent your RAG app from inventing answers. This guide shows how to make it state 'I don't know' when information is missing."
+category: "academic-research"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 60
+jobToBeDone: "Prevent a RAG system from hallucinating by making it admit when it doesn't know the answer."
+tools:
+  - name: "LLM"
+    url: "https://en.wikipedia.org/wiki/Large_language_model"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Anthropic"
+    url: "https://www.anthropic.com/"
+    pricing: "paid"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/sowaiba01/my-rag-app-confidently-made-up-a-drug-dosage-so-i-rebuilt-it-to-say-i-dont-know-3k61"
+  platform: "blog"
+  author: "sowaiba01"
+  postedAt: 2026-07-30
+score: 8
+ingestedAt: 2026-08-21
+nigeriaNotes: "LLMs can be data-light if used via APIs. Free tiers for consumer chat interfaces are available, but advanced features or API access for building RAG systems may incur costs. Data usage depends on the specific LLM provider and interaction volume."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+
+You will learn how to modify a Retrieval-Augmented Generation (RAG) system so that it admits when it cannot find an answer, rather than inventing one. This approach prevents your AI from confidently providing incorrect information, especially in sensitive areas like medical research.
+
+## Tools you need
+
+*   **LLM** (freemium): A large language model, like those offered by ChatGPT, Claude, or Gemini, used for generating text and understanding context.
+*   **Anthropic** (paid): A company that provides AI models and research, mentioned here for their contextual retrieval techniques.
+
+## Steps
+
+1.  **Understand the RAG problem**: Recognize that standard RAG systems can invent answers (hallucinate) because they try to generate text even when the retrieved information is irrelevant or insufficient. The system doesn't inherently know when it's wrong.
+
+2.  **Enhance chunk context**: Before embedding text chunks (small pieces of your document), use an LLM to write a single sentence that explains what the chunk is about and where it comes from within the document. This adds crucial context.
+    *   **Example prompt to add context**: The author doesn't share their exact prompt; a starting point:
+
+    ```
+        document {doc_preview}
+        /
+    document
+
+        Here is a chunk taken from that document:
+        chunk {chunk}
+        /
+        chunk
+
+        Write ONE short sentence (max 25 words) that situates this chunk within the document, so the chunk can be understood and retrieved on its own.
+    ```
+
+    You should get a short, descriptive sentence that explains the origin and topic of the chunk. This sentence is then prepended to the chunk before it is embedded.
+
+3.  **Implement context sentence generation**: The author mentions this process can be done using a thread pool and takes about 6 seconds for a 14-chunk paper, costing one small LLM call per chunk during the upload/processing phase.
+
+4.  **Store original text**: Ensure you store the original text of each chunk separately. This is often done in a metadata field, like `node.metadata["raw_text"]` in some RAG frameworks.
+
+5.  **Rethink generation**: The core idea is to improve the retrieval step so that the LLM receives more relevant context. If, even with these improvements, the system still cannot confidently answer, the goal is to have it explicitly state that it doesn't know, rather than fabricating an answer.
+
+## Original source
+
+This workflow is based on insights shared by sowaiba01 on DEV Community. The author describes their experience rebuilding a Retrieval-Augmented Generation (RAG) system to prevent it from inventing answers, drawing on research from Anthropic.
+
+## Notes & variations
+
+*   **Free tier alternative**: While Anthropic's specific research might be advanced, you can experiment with adding context to your document chunks using free LLM services like Google Gemini or free tiers of other chat models. The key is to prompt the LLM to summarize the chunk's context before embedding.
+*   **Common mistake**: A common pitfall is assuming that retrieving *any* text is equivalent to retrieving the *correct* answer. The system needs mechanisms to assess relevance and confidence, not just find the closest matches.
+*   **Tip for better results**: Experiment with different prompt lengths and instructions for the context sentence generation. Also, consider adding a confidence scoring mechanism to the final answer based on the quality and relevance of the retrieved chunks.

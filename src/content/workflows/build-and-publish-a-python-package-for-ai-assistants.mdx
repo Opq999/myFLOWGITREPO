@@ -1,0 +1,184 @@
+---
+title: "Build and Publish a Python Package for AI Assistants"
+description: "Learn to create a Python package that allows AI assistants like Claude to use your custom tools, and publish it to PyPI."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 30
+jobToBeDone: "Build and publish a Python package that exposes tools to AI assistants like Claude"
+tools:
+  - name: "Claude"
+    url: "https://claude.ai"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Python"
+    url: "https://www.python.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "PyPI"
+    url: "https://pypi.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "GitHub Actions"
+    url: "https://github.com/features/actions"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/gabrielmahia/build-your-first-east-africa-mcp-server-in-30-minutes-2nj6"
+  platform: "blog"
+  author: "gabrielmahia"
+  postedAt: 2026-07-28
+score: 8
+ingestedAt: 2026-08-21
+nigeriaNotes: "This workflow involves creating and publishing a Python package. While the tools themselves are free or have generous free tiers, publishing to PyPI is free. Data usage for local development is minimal. Using GitHub Actions for CI/CD is also free for public repositories."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will create a Python package that acts as a server, allowing AI assistants like Claude to call your custom tools. This approach works by packaging your Python functions so they can be easily installed and used by AI models, making your code accessible through natural language commands.
+
+## Tools you need
+*   **Claude** (freemium): An AI assistant that can call your published tools.
+*   **Python** (free): The programming language used to build the package.
+*   **PyPI** (free): The Python Package Index, where you will publish your package.
+*   **GitHub Actions** (freemium): A service to automate the building and publishing process.
+
+## Steps
+1.  **Set up the project directory**: Create the necessary folders and files for your Python package.
+    *   Open your terminal or command prompt.
+    *   Run the following commands to create a new project folder and its subdirectories:
+
+    ```bash
+    mkdir your-mcp-server
+    cd your-mcp-server
+    mkdir -p src/your_package
+    touch src/your_package/__init__.py
+    touch src/your_package/main.py
+```
+    *   You should now have a folder structure like `your-mcp-server/src/your_package/` with empty `__init__.py` and `main.py` files.
+
+2.  **Write your tool code**: Define your AI-accessible tool using the `fastmcp` library.
+    *   Open the `src/your_package/main.py` file in a text editor.
+    *   Paste the following Python code, replacing the placeholder descriptions and logic with your own:
+
+    ```python
+    from __future__ import annotations
+    from typing import Annotated
+    from fastmcp import FastMCP
+
+    mcp = FastMCP(
+        name=" your-mcp-server ",
+        instructions=" Describe what your server does in one paragraph. "
+    )
+
+    @mcp.tool(
+        description=(
+            " What this tool does in plain language. "
+            " Include the Western parallel if applicable. "
+            " Note if it uses DEMO data. "
+        )
+    )
+    def your_tool(param1: Annotated[str, " Description of param1 "],
+                    param2: Annotated[int, " Description of param2 "] = 0) -> dict:
+        # Your logic here
+        return {
+            "result": f" Processed {param1} ",
+            "note": " DEMO — replace with real data source in production ",
+            "source": " your-mcp-server "
+        }
+
+    def main():
+        mcp.run()
+
+    if __name__ == "__main__":
+        main()
+```
+    *   You should see Python code defining a tool that takes parameters and returns a dictionary.
+
+3.  **Configure `pyproject.toml`**: Set up the metadata for your Python package.
+    *   Create a file named `pyproject.toml` in the root of your `your-mcp-server` directory.
+    *   Paste the following configuration into the file, updating `name`, `version`, `description`, `authors`, and `license` as needed:
+
+    ```toml
+    [build-system]
+    requires = ["setuptools = "61.0 " ]
+    build-backend = "setuptools.build_meta"
+
+    [project]
+    name = "your-mcp-server"
+    version = "0.1.0"
+    description = "One-line description"
+    authors = [{name = "Your Name" , email = "you@example.com" }]
+    license = { text = "MIT" }
+    readme = "README.md"
+    requires-python = " >=3.9 "
+    dependencies = ["fastmcp = "2.0.0 " ]
+
+    [project.scripts]
+    your-mcp-server = "your_package.main:main"
+
+    [tool.setuptools.packages.find]
+    where = [ "src" ]
+```
+    *   This file tells Python how to build and package your code, including its name, version, and dependencies.
+
+4.  **Set up CI Publishing**: Configure GitHub Actions to automatically publish your package.
+    *   **Option A: API Token (faster)**
+        *   Go to [pypi.org/manage/account/#api-tokens](https://pypi.org/manage/account/#api-tokens) and create a new API token.
+        *   In your GitHub repository for this project, go to `Settings` > `Secrets` > `Actions` and add a new repository secret named `PYPI_API_TOKEN` with the token value you just created.
+    *   **Option B: OIDC Trusted Publisher (more secure, recommended)**
+        *   First, publish your package once using an API token (as in Option A) to create the project on PyPI.
+        *   Go to your PyPI project's settings page for publishing (`pypi.org/manage/project/{your-package-name}/settings/publishing/`).
+        *   Add a GitHub Actions publisher, providing your GitHub owner, repository name, and the path to your workflow file (`.github/workflows/publish.yml`).
+    *   Create a directory `.github/workflows/` in your project's root.
+    *   Inside this directory, create a file named `publish.yml` and paste the following content:
+
+    ```yaml
+    name: Publish to PyPI
+
+    on:
+      push:
+        tags:
+          - "v*"
+
+    jobs:
+      publish:
+        runs-on: ubuntu-latest
+        steps:
+          - uses: actions/checkout@v4
+          - uses: actions/setup-python@v5
+            with:
+              python-version: "3.11"
+          - run: pip install build
+          - run: python -m build
+          - uses: pypa/gh-action-pypi-publish@release/v1
+            with:
+              password: ${{ secrets.PYPI_API_TOKEN }}
+```
+    *   This YAML file defines the automated steps for building and uploading your package to PyPI whenever you create a new version tag (e.g., `v1.0.0`).
+
+5.  **Publish your package**: Commit your code and push it to GitHub to trigger the publishing workflow.
+    *   Open your terminal in the `your-mcp-server` directory.
+    *   Run the following commands to initialize Git, add your files, and commit them:
+
+    ```bash
+    git init
+    git add .
+    git commit -m "initial commit"
+```
+    *   Replace `yourusername` and `your-mcp-server` with your GitHub username and repository name, then add the remote origin and push:
+
+    ```bash
+    git remote add origin https://github.com/yourusername/your-mcp-server.git
+    git push -u origin main
+```
+    *   To publish a new version, create a Git tag (e.g., `git tag v0.1.0`) and push the tag (`git push origin v0.1.0`). This will trigger the GitHub Actions workflow to build and upload your package to PyPI.
+
+## Original source
+This workflow is based on a guide by Gabriel Mahia, originally posted on DEV Community. It explains how to build and publish a Python package that acts as a server for AI assistants.
+
+## Notes & variations
+*   **Common mistake**: Using an outdated `build-backend` in `pyproject.toml` like `setuptools.backends.legacy:build` can cause the build process to fail silently, especially in automated environments like GitHub Actions. Ensure you use `setuptools.build_meta`.
+*   **Tip for better results**: Clearly define the `description` for your tools and parameters in `main.py`. This helps the AI understand how and when to use your tools effectively. Make sure to replace placeholder data and notes with real information.
+*   **Free tier viability**: All tools mentioned (Claude, Python, PyPI, GitHub Actions) have free tiers that are sufficient for this workflow. Publishing to PyPI is free for everyone. GitHub Actions offers generous free usage for public repositories.

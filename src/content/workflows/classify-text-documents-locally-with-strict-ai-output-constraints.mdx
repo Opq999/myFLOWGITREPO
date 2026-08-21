@@ -1,0 +1,82 @@
+---
+title: "Classify Text Documents Locally with Strict AI Output Constraints"
+description: "Learn to classify text documents into predefined categories using a local AI model and strict output formatting, avoiding API calls and ensuring data privacy."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 30
+jobToBeDone: "Classify text documents into one of five categories using a local AI model with strict output constraints"
+tools:
+  - name: "llama.cpp"
+    url: "https://github.com/ggerganov/llama.cpp"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "shapecraft"
+    url: "https://github.com/aviasole/shapecraft"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "llama-3.2-3b-instruct.gguf"
+    url: "https://huggingface.co/TheBloke/Llama-3.2-3B-Instruct-GGUF"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/naitik_kapatel_f96f1fb424/i-kept-retrying-a-local-model-into-the-right-shape-turns-out-i-didnt-have-to-retry-at-all-44d9"
+  platform: "blog"
+  author: "naitik_kapatel_f96f1fb424"
+  postedAt: 2026-08-07
+score: 8
+ingestedAt: 2026-08-21
+nigeriaNotes: "This workflow runs entirely on your local device, making it ideal for users with limited or no internet access. Data usage is minimal after the initial model download. Ensure you have sufficient storage space for the model file."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will set up a local AI model to classify text into one of five specific categories. This method ensures the AI can only output one of the allowed labels, preventing errors and avoiding the need for retries. This is useful when you need highly reliable, structured output from an AI for automated processes, and cannot send data outside your device.
+
+## Tools you need
+*   **llama.cpp** (free): A tool that allows you to run large language models (like Llama) on your own computer, even without a powerful graphics card.
+*   **shapecraft** (free): A library that helps you control the exact format of the AI's output, making it more predictable.
+*   **llama-3.2-3b-instruct.gguf** (free): A specific, smaller version of the Llama AI model that is designed to follow instructions and can be run locally.
+
+## Steps
+1.  **Set up your local AI environment**: You need to have `llama.cpp` installed and the `llama-3.2-3b-instruct.gguf` model file downloaded. The author does not specify the exact installation steps for `llama.cpp` or where to download the model, but you can find instructions on the `llama.cpp` GitHub page. Ensure the model file is placed in a known location, for example, in a `models` folder within your project.
+2.  **Define the allowed categories**: Create a grammar that tells the AI exactly which words it is allowed to output. This is the core of ensuring structured output. The author uses a format called GBNF (Grammar Based on BNF). Here is an example based on the author's description:
+
+    ```javascript
+    const labelGrammar = `root ::= "invoice" | "receipt" | "contract" | "memo" | "other"`
+    ```
+
+    You should see a string variable named `labelGrammar` containing your list of categories, separated by the pipe symbol `|`.
+3.  **Initialize the local AI model with shapecraft**: Connect `shapecraft` to your local `llama.cpp` model. The author provides a code snippet for this. You will need to adjust the `modelPath` to where you saved the model file.
+
+    ```javascript
+    import { generate , llamaCpp } from "@aviasole/shapecraft";
+
+    const local = llamaCpp ({
+      modelPath: "./models/llama-3.2-3b-instruct.gguf" 
+    });
+    ```
+
+    You should see a `local` variable initialized, representing your connection to the AI model.
+4.  **Generate the classification**: Use `shapecraft` to process your text chunk and get a classification. The `generate` function takes the model, the grammar, and the text you want to classify. The `gbnf` option tells `shapecraft` to use your defined grammar.
+
+    ```javascript
+    const chunkText = "[Paste the text you want to classify here]"; // Replace with your actual text
+    const result = await generate ( local , {
+      gbnf: labelGrammar
+    }, chunkText );
+
+    console.log(result.data);
+    console.log(result.guaranteeLevel);
+    ```
+
+    You should see the output `result.data` containing one of your defined labels (e.g., `invoice`, `receipt`, etc.) and `result.guaranteeLevel` showing `constrained`. This confirms the AI was restricted to your specified outputs.
+
+## Original source
+This workflow is based on a blog post by naitik_kapatel_f96f1fb424 on DEV Community. The author shares their experience using local AI models for text classification with strict output requirements, detailing how they moved from unreliable methods to a more robust solution using `llama.cpp` and `shapecraft`'s grammar features.
+
+## Notes & variations
+*   **Free tier alternative**: This entire workflow is designed to run locally and for free. The main cost is your computer's processing power and electricity.
+*   **Common mistake**: Trying to use a simple prompt without a grammar constraint. The author found this leads to inconsistent results, like extra words or punctuation, which requires error checking and retries, slowing down the process.
+*   **Tip for better results**: Always use the `gbnf` (grammar) option in `shapecraft` when you need the AI to output only specific, predefined labels. This makes the AI structurally unable to produce incorrect formats, saving time and ensuring reliability.

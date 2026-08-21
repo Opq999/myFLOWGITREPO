@@ -1,0 +1,81 @@
+---
+title: "Programmatically Compare How AI Engines Cite Your Website"
+description: "Learn how to programmatically test and compare how different AI engines like ChatGPT, Gemini, and Claude cite your website using APIs and a custom Python script."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 45
+jobToBeDone: "Programmatically test and compare how different AI engines cite a specific domain"
+tools:
+  - name: "Python"
+    url: "https://www.python.org"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Code editor"
+    url: "https://code.visualstudio.com"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Anthropic API"
+    url: "https://www.anthropic.com/api"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "SearchApi"
+    url: "https://www.searchapi.com"
+    pricing: "paid"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/dannwaneri/i-tested-5-ai-engines-on-my-own-sites-none-agreed-4013"
+  platform: "blog"
+  author: "dannwaneri"
+  postedAt: 2026-08-19
+score: 7
+ingestedAt: 2026-08-21
+nigeriaNotes: "This workflow relies on paid API services (Anthropic API, SearchApi) which require payment and may incur costs. While some AI models like Gemini have free API tiers, this specific setup uses SearchApi which is a paid service. Data usage depends on the number of queries made and the size of responses."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+This is an advanced method to systematically check how different AI models mention or cite your website. Instead of manually asking each AI chat app, you use a custom computer program (a Python script) to query multiple AI engines through their developer tools (APIs).
+
+The script then automatically scans the AI responses for your website's domain name. This allows you to compare how various AI models, such as Claude, ChatGPT, Gemini, Perplexity, and Bing Copilot, reference information from your site.
+
+This workflow is considered advanced because it requires comfort with coding, setting up API keys, and running scripts from a terminal. It's not a simple copy-paste process for beginners.
+
+## What you can use it for
+*   **Monitor brand mentions**: See which AI models are citing your website or brand in their responses.
+*   **Understand AI visibility**: Learn how different AI engines "see" and reference information from your domain.
+*   **Track content impact**: Check if your new content is being picked up and cited by AI models over time.
+*   **Compare AI engine behavior**: Observe how various AI models differ in their citation habits and data sources.
+
+## Tools you need
+*   **Python** (free): The programming language used to write the script.
+*   **A code editor** (free): Like VS Code, to write and edit your Python code.
+*   **Anthropic API** (paid): To make direct API calls to Claude Haiku.
+*   **SearchApi** (paid): A service that provides API access to search results and AI engine responses from ChatGPT, Gemini, Perplexity, and Bing Copilot.
+
+## How it actually works
+The author built a Python script to perform this task. The exact steps live within the script itself, which you would need to obtain or write. Here's the general process:
+
+1.  **Get API Keys**: Sign up for developer accounts with Anthropic API and SearchApi to obtain your unique API keys.
+2.  **Set up environment variables**: Store your `ANTHROPIC_API_KEY` and `SEARCHAPI_KEY` securely as environment variables on your computer. This keeps your sensitive keys out of your code.
+3.  **Obtain the script**: The author extended an existing Python script named `llm_visibility.py`. You would need to get a similar script (e.g., from a public repository if the author shares it, or by writing your own based on the described logic).
+4.  **Configure the script**: Edit the Python script to include your target website domain and the specific search queries you want to use to test the AI engines.
+5.  **Make API calls**: The script will make direct API calls to the Anthropic API for Claude Haiku. For other engines like ChatGPT, Gemini, Perplexity, and Bing Copilot, it will call SearchApi's `/api/v1/search` endpoint, specifying the `engine` parameter (e.g., `engine=chatgpt`). For ChatGPT via SearchApi, the `web_search=true` parameter is important to get cited sources.
+6.  **Process responses**: The script then uses regular expressions (regex) to find your domain within the text responses from Claude or within the `reference_links` array returned by SearchApi for other engines.
+7.  **Review results**: The script will output a score or a report indicating which AI engines cited your domain for each query.
+
+## Words you'll see, explained
+*   **API (Application Programming Interface)**: A set of rules that allows different software programs to talk to each other and exchange information.
+*   **Environment variables**: Named values stored by your operating system that programs can access, often used for sensitive information like API keys.
+*   **Python**: A popular programming language used for many tasks, including building AI tools and scripts.
+*   **Regular expression (regex)**: A special sequence of characters that helps you find and match patterns in text, useful for searching for specific domains.
+*   **Terminal**: A text-based interface used to interact with your computer's operating system by typing commands, where you would run your Python script.
+
+## Original source
+This concept is based on a blog post by dannwaneri titled 'I Tested 5 AI Engines On My Own Sites. None Agreed.' published on the DEV Community platform.
+
+## Notes & variations
+*   **Do you even need this?**: For simple, one-off checks, you could manually ask each AI chat app (ChatGPT, Gemini, Perplexity, Bing Copilot, Claude) about your site. However, this programmatic approach is for systematic, large-scale testing and comparison over time.
+*   **Free-tier limits**: Anthropic API and SearchApi are paid services. While they might offer trial credits, sustained use will incur costs. Always monitor your usage to avoid unexpected charges.
+*   **Common pitfall**: The author specifically warns about mixing up `SearchApi` and `SerpApi`. These are two different companies with similar names. Using the wrong API key or service will lead to errors or incorrect billing. Always double-check which API you are calling.

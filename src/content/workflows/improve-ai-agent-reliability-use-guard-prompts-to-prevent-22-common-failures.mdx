@@ -1,0 +1,86 @@
+---
+title: "Improve AI Agent Reliability: Use Guard Prompts to Prevent 22 Common Failures"
+description: "Learn to identify and prevent 22 common failure modes in AI agents. Apply specific prompts to reduce issues like fabrication and misapplication, making your AI workflows more reliable and accurate."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 15
+jobToBeDone: "Improve LLM agent reliability by identifying and mitigating common failure modes"
+tools:
+  - name: "ChatGPT"
+    url: "https://chatgpt.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Claude"
+    url: "https://claude.ai"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Gemini"
+    url: "https://gemini.google.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/revans/22-llm-agent-failure-modes-and-the-prompts-that-guard-against-them-ill"
+  platform: "blog"
+  author: "revans"
+  postedAt: 2026-07-27
+score: 8
+ingestedAt: 2026-08-21
+nigeriaNotes: "This workflow uses free tiers of popular AI chat tools, making it accessible and data-light for mobile users. Text-based prompts consume minimal data."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You'll learn to identify common ways AI agents (AI systems that perform tasks) can fail and get specific "guard prompts" to reduce these failures. By adding these prompts to your instructions, you can make your AI interactions more reliable and accurate, helping the AI think more carefully and be more honest about what it doesn't know.
+
+## Tools you need
+*   **ChatGPT** (freemium): A popular AI chat tool for generating text and answering questions.
+*   **Claude** (freemium): Another AI chat tool known for its longer context window and conversational abilities.
+*   **Gemini** (freemium): Google's AI chat tool, useful for various text generation tasks.
+
+## Steps
+1.  **Choose your AI chat tool**: Open a web browser on your phone or computer and go to one of these sites: chatgpt.com, claude.ai, or gemini.google.com. You may need to sign in or create a free account.
+2.  **Understand 'Fabrication'**: This is a common AI failure where the model confidently states facts, citations, or details that don't actually exist. It happens because the AI is designed to generate plausible text, which isn't always the same as true text.
+3.  **Ask a question that might lead to fabrication**: For example, let's ask about a non-existent law. Copy and paste this prompt into your chosen AI chat tool and press Enter or Send:
+
+    ```
+    Tell me about the "Nigerian Digital Economy Act of 2025" and its key provisions, including specific dates and sections.
+    ```
+
+    *What to expect*: The AI might invent details, dates, or sections for a law that doesn't exist, presenting them as facts.
+4.  **Apply the 'Fabrication' guard prompt**: Start a new chat, or continue in the same conversation. This time, add the guard prompt from the source *before* your question. This tells the AI to be more careful.
+
+    ```
+    Distinguish between what you know, what you infer, and what you are generating as plausible. Mark inferences as inferences. When you cannot verify a specific claim (a citation, an API signature, a version number), say so explicitly rather than producing a plausible one.
+
+    Now, tell me about the "Nigerian Digital Economy Act of 2025" and its key provisions, including specific dates and sections.
+    ```
+
+    *What to expect*: The AI should now be more cautious. It might state that it cannot find information about such an act, or explicitly mark any generated details as inferences or plausible guesses, rather than presenting them as verified facts.
+5.  **Explore other guard prompts**: The original source lists 22 different failure modes, each with its own guard prompt. You can apply the same method for other common issues:
+    *   **Misapplication**: When the AI uses correct knowledge in the wrong situation. The guard prompt helps it check against the specific context.
+
+        ```
+        Before applying a known pattern or best practice, check it against the actual context: the conventions in this codebase, the constraints in this task, the stated preferences of this user. When the context contradicts the general pattern, the context wins. Name the conflict when you see one.
+
+        [Your task here, e.g., "Suggest a Python design pattern for this specific code snippet: [paste code]"]
+        ```
+
+    *   **Premise Acceptance**: When the AI builds on a false assumption in your question. The guard prompt makes it check the premise first.
+
+        ```
+        Check the premise before building on it. If the question assumes something false, incomplete, or unverified, address that first. A correct answer to a broken question is a wrong answer.
+
+        [Your question here, e.g., "Why does the new Nigerian AI policy require all businesses to use quantum computing?"]
+        ```
+
+    *What to expect*: By adding these specific instructions, you guide the AI to address potential issues before giving an answer, leading to more accurate and relevant responses.
+
+## Original source
+This workflow is based on an article by revans titled "22 LLM Agent Failure Modes (and the Prompts That Guard Against Them)," published on the DEV Community blog. The article details common ways AI agents fail and provides specific prompts to mitigate these issues.
+
+## Notes & variations
+*   **Common mistake**: Don't expect these guard prompts to completely eliminate all AI failures. The author notes that most prompts "Reduce" or "Flag" issues, meaning they make the AI less likely to fail or more honest when it does. Consistent application is key.
+*   **Tip for better results**: The original article mentions an interactive, filterable version of the failure modes. If you're working on a specific type of task (like coding or research), refer to the full article to find the most relevant guard prompts for your situation. You can also combine multiple guard prompts if your task is complex and prone to several types of failures.
+*   **Free-tier limits**: While the chat tools offer free tiers, they may have limits on the number of messages or the complexity of prompts you can use within a certain timeframe. If you hit these limits, you might need to wait or switch to another free-tier tool.

@@ -1,0 +1,76 @@
+---
+title: "Reduce AI Agent Costs with Claude Code's PreToolUse Hook"
+description: "Learn how to optimize AI agent orchestration and significantly cut token costs by implementing a PreToolUse hook in Claude Code. Avoid expensive model choices and improve caching."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 15
+jobToBeDone: "Reduce AI agent orchestration token costs."
+tools:
+  - name: "Claude Code"
+    url: "https://code.claude.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Claude Opus"
+    url: "https://www.anthropic.com/api"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Claude Sonnet"
+    url: "https://www.anthropic.com/api"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Claude Haiku"
+    url: "https://www.anthropic.com/api"
+    pricing: "paid"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/akashy/my-agent-orchestrator-burned-1-2m-opus-tokens-per-task-heres-the-postmortem-2k7g"
+  platform: "blog"
+  author: "akashy"
+  postedAt: 2026-08-04
+score: 7
+ingestedAt: 2026-08-21
+nigeriaNotes: "Claude Code and its models are paid services. Data usage will depend on the complexity of the tasks and the amount of context processed, but can be significant given the high token counts discussed. Free tier alternatives for general coding assistance exist, but this specific optimization technique is tied to Claude Code's paid features."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+
+You will learn how to implement a "PreToolUse hook" in Claude Code to control which Claude model is used for specific tasks, preventing the accidental use of expensive models like Opus for simple jobs. This approach helps significantly reduce the number of tokens consumed per task, saving costs. It works by adding a layer of control before the AI model processes a request, ensuring that the most cost-effective model is chosen based on the task's complexity.
+
+## Tools you need
+
+*   **Claude Code** (paid): An AI coding assistant environment for building and deploying AI applications.
+*   **Claude Opus** (paid): The most capable and expensive Claude model, used for complex reasoning.
+*   **Claude Sonnet** (paid): A balanced model offering good performance at a moderate cost.
+*   **Claude Haiku** (paid): The fastest and most affordable Claude model, suitable for simpler tasks.
+
+## Steps
+
+1.  **Understand the cost multipliers**: Recognize that using the most expensive model (Opus) for every task, even simple ones, dramatically increases costs. Opus costs $5.00 per 1 million input tokens and $25.00 per 1 million output tokens. Sonnet is cheaper at $3.00/$15.00, and Haiku is the cheapest at $1.00/$5.00 per 1 million tokens. The author found that running every task on Opus was a major cost driver.
+
+2.  **Identify the problem with pure delegation**: The original design delegated all work to sub-agents, ensuring a clean context for each task. However, this meant each sub-agent, by default, inherited the parent session's model setting, which was Opus. This led to Opus being used for tasks that didn't require its power, like summarizing a file.
+
+3.  **Implement a PreToolUse hook**: The core solution is to add a "PreToolUse hook." This is a piece of logic that runs *before* the AI model is called to perform a tool's action. This hook can inspect the intended task and decide which Claude model (Opus, Sonnet, or Haiku) is most appropriate based on predefined rules or budget constraints.
+
+4.  **Define rules for model selection**: The author suggests creating rules to determine the best model. For example:
+    *   If a task is very simple (e.g., reading a file and summarizing it), use Claude Haiku.
+    *   If a task is moderately complex, use Claude Sonnet.
+    *   If a task requires deep reasoning or complex problem-solving, use Claude Opus.
+
+    The author doesn't share the exact code for this hook; a starting point would be to write a Python function within Claude Code that intercepts the tool call and selects the model parameter before passing it to the main execution.
+
+5.  **Consider prompt caching**: Be aware that prompt caching relies on exact matches. If the system prompt, tools, or messages change even slightly, the cache may not be hit, leading to higher costs as the model has to re-process information. Ensure your PreToolUse hook and subsequent prompts are consistent where possible to maximize cache hits.
+
+    You should see reduced token usage in your Claude Code session logs after implementing this hook and ensuring consistent prompts.
+
+## Original source
+
+This workflow is based on a postmortem analysis by akashy, shared on the DEV Community platform. The author details how an AI orchestration skill for Claude Code incurred unexpectedly high token costs and explains the redesign and enforcement layer implemented to fix it.
+
+## Notes & variations
+
+*   **Free-tier alternative**: While this specific technique is tied to Claude Code's paid features, for general AI assistance, you can explore free tiers of other AI chat platforms like ChatGPT, Claude.ai, or Google Gemini to experiment with prompt engineering for cost savings on simpler tasks.
+*   **Common mistake**: A common pitfall is assuming the most powerful model is always necessary. This leads to overspending. Always evaluate if a simpler, cheaper model can achieve the desired outcome.
+*   **Tip for better results**: Implement a clear, tiered system for model selection. For instance, define specific keywords or task types that automatically trigger Haiku or Sonnet, reserving Opus only for tasks explicitly flagged as requiring advanced reasoning.

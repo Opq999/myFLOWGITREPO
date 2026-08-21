@@ -1,0 +1,109 @@
+---
+title: "Build Open-Source Flood Maps with Python and Satellite Data"
+description: "Learn how to build an open-source Python pipeline to detect new floodwaters using Sentinel-1 SAR satellite data and create actionable maps."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 180
+jobToBeDone: "Build an open-source Python pipeline for flood detection using SAR satellite data"
+tools:
+  - name: "Python"
+    url: "https://www.python.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "NumPy"
+    url: "https://numpy.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "OSMnx"
+    url: "https://osmnx.readthedocs.io/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "OpenStreetMap"
+    url: "https://www.openstreetmap.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Folium"
+    url: "https://python-visualization.github.io/folium/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "QGIS"
+    url: "https://qgis.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "SNAP"
+    url: "https://step.esa.int/main/toolboxes/snap/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "GitHub"
+    url: "https://github.com/"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/adityahunt/from-sar-data-to-actionable-maps-building-an-open-source-flood-detection-pipeline-with-python-2idf"
+  platform: "blog"
+  author: "adityahunt"
+  postedAt: 2026-08-01
+score: 9
+ingestedAt: 2026-08-21
+nigeriaNotes: "This workflow uses free, open-source tools and data, making it accessible. Be aware that downloading and processing satellite data can consume significant internet data and requires a computer with good processing power."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+Optical satellites, which use visible light, are often useless during floods because clouds block their view. This workflow uses SAR data (Synthetic Aperture Radar) from Sentinel-1 satellites, which can "see" through clouds and at night, making it ideal for flood monitoring.
+
+This entry describes a Python program (a "pipeline") designed to take raw SAR data and turn it into clear, actionable maps that show *new* flood areas, not just existing rivers and lakes. It specifically tackles common challenges in processing SAR data, such as removing noisy borders and distinguishing new floodwaters from permanent water bodies.
+
+This is an advanced workflow because it requires setting up a Python coding environment, understanding geospatial data concepts, and running specialized code. The exact, detailed instructions and code are found in the author's open-source Jupyter notebook, which handles everything from initial data cleanup to final map visualization.
+
+## What you can use it for
+*   **Identify new flood areas**: Pinpoint exactly where water has appeared due to flooding, separate from existing rivers and lakes.
+*   **Create interactive flood maps**: Generate web-based maps that you can zoom and pan, showing flood extent with satellite or street views.
+*   **Produce QGIS-ready data**: Create map layers that can be easily imported into free mapping software like QGIS for further analysis or combination with other data.
+*   **Calculate flood impact**: Measure the total area (in square kilometers) of newly flooded regions, which helps assess damage.
+
+## Tools you need
+*   **Python** (free): A popular programming language used for data analysis, AI, and automation.
+*   **NumPy** (free): A fundamental Python library for working with large, multi-dimensional arrays and mathematical functions.
+*   **OSMnx** (free): A Python library for downloading, modeling, analyzing, and visualizing street networks and other OpenStreetMap data.
+*   **OpenStreetMap** (free): A free, editable map of the world, used here as a source for permanent water body data.
+*   **Folium** (free): A Python library that helps create interactive web maps using Leaflet.js.
+*   **QGIS** (free): A free and open-source desktop Geographic Information System (GIS) application used to view, edit, print, and analyze geospatial information.
+*   **SNAP** (free): The Sentinel Application Platform, a free toolbox from the European Space Agency (ESA) for processing satellite data, especially from Sentinel missions.
+*   **GitHub** (freemium): A platform for hosting and collaborating on code, where the open-source notebook for this workflow is located.
+
+## How it actually works
+The full, detailed instructions and code for this workflow are available in the author's open-source Jupyter notebook. To reproduce this, you would typically:
+
+1.  **Set up your environment**: Install Python and the necessary libraries (NumPy, OSMnx, Folium) on your computer. You might use a tool like Anaconda or pip for this.
+2.  **Get SAR data**: Download raw Sentinel-1 SAR data for your area of interest. This can be done from sources like ESA's Copernicus Open Access Hub.
+3.  **Initial processing (optional but recommended)**: Use a specialized tool like SNAP to perform initial processing steps on the raw SAR data, converting it into a more usable format like GeoTIFFs.
+4.  **Access the notebook**: Download or clone the author's open-source notebook from GitHub.
+5.  **Run the Python notebook**: Open the notebook (e.g., in Jupyter Lab or VS Code) and execute its steps. The notebook will:
+    *   **Clean up data**: Automatically remove zero-value borders and convert SAR intensity values for better analysis.
+    *   **Find all water**: Apply a threshold to identify all water bodies in the SAR image.
+    *   **Remove permanent water**: Fetch data on permanent rivers and lakes from OpenStreetMap using OSMnx, then subtract these from the detected water areas to isolate only new floodwaters.
+    *   **Generate maps**: Create various outputs, including GeoJSON/Shapefiles for detailed analysis, interactive HTML maps using Folium, and clean raster overlays ready for import into QGIS.
+
+The notebook contains the specific code and detailed comments to guide you through each step.
+
+## Words you'll see, explained
+*   **SAR data (Synthetic Aperture Radar)**: A type of satellite data that uses radar signals to "see" through clouds and at night. This makes it very useful for monitoring floods when optical satellites (which use visible light) are blocked by clouds.
+*   **GeoTIFF**: A standard file format for images that also includes geographic information, like where the image is located on Earth. It's commonly used for satellite photos and maps.
+*   **Python**: A popular and easy-to-read programming language widely used for data analysis, artificial intelligence, and automating tasks.
+*   **NumPy**: A fundamental Python library that provides powerful tools for working with large collections of numbers (arrays) and performing complex mathematical calculations efficiently.
+*   **OSMnx**: A Python library that helps you download, analyze, and visualize geographic data from OpenStreetMap, such as roads, buildings, and water bodies.
+*   **Folium**: A Python library used to create interactive web maps. It lets you display geographic data on a map that users can zoom into and move around.
+*   **QGIS**: A free and open-source desktop software for Geographic Information Systems (GIS). It allows you to view, edit, and analyze all kinds of map data.
+*   **SNAP**: The Sentinel Application Platform, a free software tool provided by the European Space Agency (ESA) for processing data from their Sentinel satellites, including SAR data.
+*   **Permanent water**: Natural bodies of water like established rivers, lakes, and oceans that are always present. This pipeline helps distinguish them from temporary floodwaters.
+
+## Original source
+This workflow was shared by adityahunt on the DEV Community blog, detailing an open-source Python pipeline for flood detection using SAR satellite data.
+
+## Notes & variations
+*   **Do you even need this?**: For quick, general flood updates, simpler online tools or news reports might be sufficient. This pipeline is best for users who need precise, custom flood mapping and detailed analysis, or who want to understand and modify the underlying process.
+*   **Free-tier limits**: While all the tools mentioned are free, processing large amounts of SAR satellite data requires a powerful computer with a good amount of memory (RAM) and storage. Downloading these large datasets can also use a lot of internet data.
+*   **Common pitfall**: A common mistake in flood detection is to identify all water as "floodwater." This pipeline specifically addresses this by subtracting permanent water bodies, ensuring you only map newly flooded areas.

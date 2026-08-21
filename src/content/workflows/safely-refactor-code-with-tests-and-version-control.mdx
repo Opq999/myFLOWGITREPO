@@ -1,0 +1,130 @@
+---
+title: "Safely Refactor Code with Tests and Version Control"
+description: "Learn a step-by-step method to improve your code's structure without changing how it works, using tests and Git."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 30
+jobToBeDone: "Refactor code safely by making small, incremental changes with a safety net of tests and version control"
+tools:
+  - name: "Git"
+    url: "https://git-scm.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Python unittest"
+    url: "https://docs.python.org/3/library/unittest.html"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/codeatlas/how-to-refactor-code-safely-a-step-by-step-guide-l6f"
+  platform: "blog"
+  author: "codeatlas"
+  postedAt: 2026-07-27
+score: 7
+ingestedAt: 2026-08-21
+nigeriaNotes: "Git is a local tool, so data usage is minimal. Python's unittest is also local. The main data usage would be if you are looking up documentation online."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to improve the internal structure of your computer code without changing what it does. This makes your code easier to maintain and understand, reducing the risk of errors. This approach works by using automated tests and version control to catch mistakes early.
+
+## Tools you need
+*   **Git** (free): A system for tracking changes in your code, allowing you to go back to previous versions if needed.
+*   **Python unittest** (free): A built-in Python tool for writing and running automated tests to check if your code works correctly.
+
+## Steps
+1.  **Understand the code**: Before making any changes, read the code carefully to understand its purpose. If there are existing tests, review them. If not, write a simple test to check the current behavior. For example, if you have a function that calculates a discount, write a test to ensure it gives the correct discount for a known price and type.
+
+    ```python
+    # Example: a function that calculates discount
+    def calculateDiscount(price, type):
+        # ... complex logic
+        pass
+
+    # Write a simple test before refactoring
+    assert calculateDiscount(100, 'standard') == 10, 'Standard discount should be 10%'
+    ```
+
+    You should see the test pass if the code is working as expected.
+
+2.  **Set up a safety net with tests**: If your code doesn't have automated tests, write some for the part you plan to refactor. These tests act as a safety net. Run all your tests and make sure they all pass before you start changing the code.
+
+    ```python
+    import unittest
+
+    # Assume calculate_discount is the function you want to refactor
+    def calculate_discount(price, type):
+        # ... original complex logic here
+        if type == 'standard':
+            return price * 0.10
+        return 0 # default
+
+    class TestDiscount(unittest.TestCase):
+        def test_standard_discount(self):
+            self.assertEqual(calculate_discount(100, 'standard'), 10)
+
+    # To run these tests, you would typically use a test runner
+    # For a simple script, you might do:
+    # if __name__ == '__main__':
+    #     unittest.main()
+    ```
+
+    You should see output indicating that your tests have passed.
+
+3.  **Make small, incremental changes**: Break down your refactoring task into very small steps. Each step should change the code slightly while ensuring its behavior remains the same. For instance, instead of rewriting an entire function, extract a small part of its logic into a new, separate function.
+
+    *Bad approach: Rewriting the whole function at once.*
+    *Good approach: Extracting a part of the logic into a new function.*
+
+    ```python
+    # Original function (example)
+    def processOrder(order):
+        # 50 lines of mixed logic
+        pass
+
+    # Refactored step: Extract validation logic into a new function
+    def validateOrder(order):
+        # validation logic here
+        pass
+
+    def processOrder(order):
+        validateOrder(order)
+        # rest of the original logic here
+        pass
+    ```
+
+    After this change, you should be able to run your tests and see they still pass.
+
+4.  **Use compiler and linter warnings**: If you are using a programming language that checks your code for errors before running (like Python with type hints, or languages like Java or C++), pay attention to any warnings or errors the compiler or a linter (a tool that checks code style and potential errors) gives you. These can point out mistakes in your changes.
+
+5.  **Run tests after every change**: After making each small change, immediately run your automated tests. If any test fails, it means your recent change broke something. Revert that change or fix it before proceeding.
+
+6.  **Use version control effectively**: Save your work frequently using Git. Make a commit (a saved snapshot of your code) for each small, logical change you make. This way, if a change causes a problem, you can easily go back to a previous working version.
+
+    ```bash
+    # macOS or Linux
+    git commit -m "Extract validateOrder function"
+    git commit -m "Simplify discount calculation"
+    ```
+
+    ```powershell
+    # Windows (PowerShell)
+    git commit -m "Extract validateOrder function"
+    git commit -m "Simplify discount calculation"
+    ```
+
+    You should see output confirming that your changes have been committed.
+
+7.  **Leverage automated refactoring tools**: Many code editing programs (called Integrated Development Environments or IDEs) have built-in tools that can help with refactoring. For example, they can safely rename variables or extract code blocks into new functions for you. Use these tools when available to reduce the chance of manual errors.
+
+8.  **Review your changes**: Before you consider your refactoring complete, carefully review all the changes you have made. Look for any unintended side effects. If possible, ask a colleague to review your code as well.
+
+## Original source
+This guide is based on the experience of the author, codeatlas, shared on their blog. It provides a practical, step-by-step method for improving code structure safely in large projects.
+
+## Notes & variations
+*   **Avoid this pitfall**: Trying to refactor too much code at once is a common mistake. It makes it hard to track down errors and increases the risk of breaking your program. Stick to small, manageable changes.
+*   **Tip for better results**: If you are working on a critical piece of code, consider writing more comprehensive tests, such as property-based tests, which check your code with a wide range of inputs, not just specific examples.
+*   **Free tier viability**: All tools mentioned (Git and Python's unittest) are free and open-source, making this workflow fully accessible without cost.

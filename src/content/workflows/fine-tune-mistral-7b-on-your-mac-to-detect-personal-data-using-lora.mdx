@@ -1,0 +1,117 @@
+---
+title: "Fine-tune Mistral 7B on your Mac to detect personal data using LoRA"
+description: "Learn to fine-tune Mistral 7B on your Apple Silicon Mac to accurately detect personal data like emails and phone numbers in text. Improve model performance for specific tasks."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 240
+jobToBeDone: "Fine-tune a language model to detect personal data in text using LoRA on local hardware"
+tools:
+  - name: "MLX"
+    url: "https://github.com/ml-explore/mlx"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Python"
+    url: "https://www.python.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Git"
+    url: "https://git-scm.com/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/jguillaumesio/my-fine-tuned-model-scored-100-the-benchmark-was-lying-48fo"
+  platform: "blog"
+  author: "jguillaumesio"
+  postedAt: 2026-08-11
+score: 9
+ingestedAt: 2026-08-21
+nigeriaNotes: "This workflow runs entirely on your Apple Silicon Mac, costing nothing beyond the hardware. The initial download of the Mistral 7B model (around 4 GB) requires a stable internet connection, but subsequent training and inference use minimal data (the adapter file is only 42 MB)."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will get a fine-tuned version of the Mistral 7B language model, specifically a small 42 MB adapter file, capable of accurately detecting personal data (like email, phone, name, IBAN, address, and date of birth) in text. The model will output its findings in a strict JSON format. This approach uses LoRA (Low-Rank Adaptation) to efficiently train large models on a personal laptop by updating only a tiny fraction of the model's parameters, making it a cost-effective way to teach models new behaviors or formats.
+
+## Tools you need
+*   **Apple Silicon Mac** (paid): A laptop with an Apple M-series chip (like M1, M2, M3, M4, M5) and at least 16 GB of unified memory. This hardware is essential to run the MLX framework locally.
+*   **MLX** (free): Apple's open-source machine learning framework designed for Apple Silicon. It allows you to train and run AI models directly on your Mac's integrated GPU (the chip that makes AI training fast).
+*   **Python** (free): A popular programming language required to run MLX and the associated scripts.
+*   **Git** (free): A version control system used to download project code from online repositories.
+
+## Steps
+This workflow requires an Apple Silicon Mac (e.g., MacBook Air, MacBook Pro, Mac Mini with an M1, M2, M3, M4, or M5 chip) with at least 16 GB of unified memory.
+
+1.  **Install Homebrew (if needed)**: Homebrew is a package manager that simplifies installing software on macOS. If you don't have it, open your Terminal app (you can find it in Applications > Utilities) and paste this command:
+
+    ```bash
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    ```
+
+    Follow the on-screen instructions, which may include entering your password. You should see a message confirming Homebrew was installed successfully.
+
+2.  **Install Python and Git**: Use Homebrew to install Python (the programming language) and Git (for downloading code).
+
+    ```bash
+    brew install python git
+    ```
+
+    You should see messages indicating Python and Git are being downloaded and installed.
+
+3.  **Set up a Python environment and install MLX**: Create a dedicated space for your project's Python tools to avoid conflicts, then install the MLX library.
+
+    ```bash
+    python3 -m venv mlx-env
+    source mlx-env/bin/activate
+    pip install mlx-lm
+    ```
+
+    You should see `(mlx-env)` appear at the start of your terminal prompt, indicating you are in the virtual environment. The `pip install` command will show MLX components being downloaded and installed.
+
+4.  **Get the MLX examples repository**: The author's workflow is based on a repository. We'll use the official MLX examples, which include the LoRA fine-tuning script.
+
+    ```bash
+    git clone https://github.com/ml-explore/mlx-examples.git
+    cd mlx-examples/lora
+    ```
+
+    You should see files being downloaded, and your terminal will change directory to `mlx-examples/lora`.
+
+5.  **Prepare your dataset**: This is the most critical step. The author emphasizes that a good dataset, built from real public data, is essential to avoid the model simply memorizing patterns. Your dataset should be a JSON Lines (`.jsonl`) file, where each line is a JSON object with a `text` field (the input) and a `label` field (the expected output in JSON format).
+
+    The model needs to output strict JSON like `{"pii": true, "types": ["email", "name"]}`. The `types` can include `email`, `phone`, `name`, `iban`, `address`, `dob`. If no personal data is found, the `types` list should be empty.
+
+    Example of a dataset line (save this in a file named `data.jsonl` in the `mlx-examples/lora` directory):
+
+    ```json
+    {"text": "Customer email: jane.doe@example.com, phone: +2348012345678", "label": "{\"pii\": true, \"types\": [\"email\", \"phone\"]}"}
+    {"text": "Invoice number: INV-2023-001", "label": "{\"pii\": false, \"types\": []}"}
+    {"text": "Please send to John Doe, 123 Main St, Lagos.", "label": "{\"pii\": true, \"types\": [\"name\", \"address\"]}"}
+    ```
+
+    *You will need to create many such examples (the author spent three hours on this) to train your model effectively. Ensure your training data is diverse and reflects real-world scenarios, not just templates.* Save your dataset file (e.g., `data.jsonl`) in the `mlx-examples/lora` directory.
+
+6.  **Run the LoRA fine-tuning**: Execute the training script. This command will download the base Mistral 7B model (around 4 GB) and then fine-tune it using your dataset.
+
+    ```bash
+    python lora.py --model mlx-community/Mistral-7B-Instruct-v0.3-4bit --train --data data.jsonl --output-dir fine_tuned_model
+    ```
+
+    You will see output in your terminal showing the training progress, including loss values. After it completes, you should find a new directory named `fine_tuned_model` containing the `adapters.npz` file (your 42 MB fine-tuned model).
+
+7.  **Test your fine-tuned model**: Use the fine-tuned model to make predictions on new text.
+
+    ```bash
+    python lora.py --model mlx-community/Mistral-7B-Instruct-v0.3-4bit --adapter fine_tuned_model --prompt "My name is Alice and my email is alice@example.com."
+    ```
+
+    The model will process your prompt and output a JSON response, for example: `{"pii": true, "types": ["name", "email"]}`. This confirms your fine-tuned model is working as expected.
+
+## Original source
+This workflow is inspired by an article written by jguillaumesio on the DEV Community blog. The author detailed their experience fine-tuning Mistral 7B on a laptop to detect personal data, emphasizing the critical role of a well-constructed dataset.
+
+## Notes & variations
+*   **Common mistake**: The author highlights that using a test set derived from the same templates as your training data can lead to a model that simply memorizes, giving you a misleadingly high score. Always use diverse, real-world data for both training and testing to ensure your model truly learns.
+*   **Tip for better results**: Invest significant time in creating a high-quality, diverse dataset. The author notes that while the training command takes minutes, dataset preparation takes hours and is where the real results are decided. Include "hard negatives" (text that looks like it might contain personal data but doesn't) to help the model learn to distinguish accurately.
+*   **Do you even need this?**: For simpler tasks or if you don't have an Apple Silicon Mac, consider using freemium chat models like ChatGPT, Claude, or Gemini with carefully crafted prompts. While they might not achieve the same precision for complex, structured outputs, they can often perform basic data extraction without any setup or coding.

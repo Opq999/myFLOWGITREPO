@@ -1,0 +1,82 @@
+---
+title: "Automate Invoice Routing with n8n and Claude"
+description: "Learn to automate invoice routing and support triage using a simple LLM pipeline with n8n and Claude, avoiding complex agent frameworks."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 30
+jobToBeDone: "Automate invoice routing and support triage using a simple LLM pipeline."
+tools:
+  - name: "n8n"
+    url: "https://n8n.io/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Claude Sonnet"
+    url: "https://claude.ai/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Postgres"
+    url: "https://www.postgresql.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Zod"
+    url: "https://zod.dev/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/mgundlach/your-business-automation-probably-doesnt-need-an-agent-framework-4bi2"
+  platform: "blog"
+  author: "mgundlach"
+  postedAt: 2026-08-07
+score: 8
+ingestedAt: 2026-08-21
+nigeriaNotes: "n8n has a free tier but self-hosting is recommended for data privacy. Claude.ai has a free tier with usage limits. Data usage for LLM calls is generally low per request but can add up with high volume."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will set up a workflow that automatically classifies incoming emails, extracts key information like supplier name and invoice number, and routes them to the correct department. This approach uses a straightforward pipeline, making it more efficient and cost-effective than complex AI agent frameworks for tasks like invoice routing and support triage.
+
+## Tools you need
+*   **n8n** (freemium): A workflow automation tool that helps connect different apps and services to automate tasks. You can use the cloud version or self-host it.
+*   **Claude Sonnet** (freemium): An AI model from Anthropic that can understand and process text, used here for classifying emails and extracting data.
+*   **Postgres** (free): A powerful open-source database used to store information and track the status of your automated tasks.
+*   **Zod** (free): A TypeScript-first schema declaration and validation library, used here to ensure the AI's output is in the correct format.
+
+## Steps
+1.  **Set up n8n**: If you haven't already, create an account on n8n.io or install it on your own server. This will be your central hub for building the automation.
+2.  **Create a new workflow in n8n**: Start a new workflow. You'll need a way to get emails into the system. For testing, you might manually trigger a node or set up an email trigger if your n8n instance is configured for it.
+3.  **Add an LLM call node**: Use a node that allows you to make an API call to an AI model. The author uses a code node for this, which gives maximum flexibility. You will need to configure this node to send a request to the Claude API.
+    *   **API Endpoint**: `https://api.anthropic.com/v1/messages`
+    *   **Method**: `POST`
+    *   **Headers**: Include `x-api-key` with your Anthropic API key, `anthropic-version` set to `2023-06-01`, and `content-type` set to `application/json`.
+    *   **Body**: This is where you define the AI's task. You'll send the email content and instruct the AI to respond in a specific JSON format. The author's prompt is a good starting point:
+
+```json
+{
+  "model": "claude-sonnet-4-6",
+  "max_tokens": 1024,
+  "system": "You classify supplier emails for a logistics company. Respond with JSON only, no markdown, matching exactly: { \"category\": \"invoice\" | \"complaint\" | \"delivery_note\" | \"other\", \"confidence\": number between 0 and 1, \"supplier_name\": string or null, \"reference_number\": string or null, \"summary\": string, max 200 chars }",
+  "messages": [
+    {
+      "role": "user",
+      "content": emailBody
+    }
+  ]
+}
+```
+    *   **Note**: Replace `emailBody` with the actual content of the email you are processing. You will also need to set up your Anthropic API key as an environment variable named `ANTHROPIC_API_KEY` in your n8n environment.
+4.  **Validate the AI's output**: After the AI responds, you need to ensure its output is correct and safe to use. The author uses Zod for this. You would typically add a code node after the AI call to parse the JSON response and validate it against a predefined schema. If the validation fails, you can log an error or send it for manual review.
+    *   **Example Zod Schema**: The author provides a schema for `EmailClassification` which includes fields like `category`, `confidence`, `supplier_name`, `reference_number`, and `summary`.
+    *   **Error Handling**: Implement logic to handle cases where the AI's response is not valid JSON or does not match the expected structure. This might involve stripping potential markdown code fences (` ```json `) that the AI sometimes adds.
+5.  **Route the email**: Based on the validated `category` from the AI's response, use n8n's routing capabilities (like If nodes or Switch nodes) to send the email or its extracted information to the appropriate department or system. For example, if the category is 'invoice', forward it to the accounts payable team.
+6.  **Log the activity**: Use a database node (like Postgres) to log the classification, extracted details, and the action taken. This creates an audit trail and helps in tracking.
+
+## Original source
+This workflow is based on the insights shared by mgundlach in a blog post on DEV Community. The author explains how to build efficient AI automations for businesses by using simple pipelines with tools like n8n and Claude, rather than over-relying on complex agent frameworks for tasks that don't require them.
+
+## Notes & variations
+*   **Free Tier Alternative**: While Claude Sonnet has a freemium tier, heavy usage might require a paid plan or exploring other models with generous free tiers if available. For n8n, self-hosting is free and recommended for better control and data privacy.
+*   **Common Pitfall**: A common mistake is not validating the AI's output. LLMs can sometimes produce malformed JSON or incorrect classifications. Always implement robust validation, like using Zod, before acting on the AI's response.
+*   **Tip for Better Results**: Be very specific in your system prompt to the AI, clearly defining the expected JSON structure and the possible values for each field. This reduces the chances of errors and the need for extensive post-processing.

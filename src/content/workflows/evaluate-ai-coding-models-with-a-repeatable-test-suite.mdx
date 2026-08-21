@@ -1,0 +1,87 @@
+---
+title: "Evaluate AI Coding Models with a Repeatable Test Suite"
+description: "Learn how to rigorously test AI coding models using a suite of prompts and a scoring rubric, moving beyond simple tests to uncover real weaknesses."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 30
+jobToBeDone: "Rigorously evaluate AI coding models beyond simple prompts"
+tools:
+  - name: "Claude.ai"
+    url: "https://claude.ai"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "ChatGPT"
+    url: "https://chatgpt.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Gemini"
+    url: "https://gemini.google.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/datars_7274/stop-vibes-testing-ai-coding-models-a-repeatable-evaluation-suite-you-can-run-for-free-3b3n"
+  platform: "blog"
+  author: "datars_7274"
+  postedAt: 2026-08-05
+score: 8
+ingestedAt: 2026-08-21
+nigeriaNotes: "Free tiers of popular AI chat tools are suitable for this workflow. Data usage is minimal, primarily text-based prompts and responses, making it mobile-friendly."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will create a repeatable system to test AI coding models, moving beyond basic prompts to uncover their true capabilities and weaknesses. This method helps you evaluate models based on evidence, not just initial impressions, ensuring you choose tools that genuinely save time.
+
+## Tools you need
+*   **AI Chat Tool** (freemium): To interact with AI models and get responses to your prompts. Examples include Claude.ai, ChatGPT, or Gemini.
+*   **Text Editor** (free): To write and save your evaluation prompts. Most phones have a built-in notes app or you can use free apps like Google Keep or Simplenote.
+*   **Spreadsheet Software** (free): To create a scoring rubric and record model performance. Google Sheets or Microsoft Excel Online are good options.
+
+## Steps
+1.  **Create prompt files**: Save each of the eight evaluation prompts into separate text files. This helps organize your tests and makes them repeatable. You can name them sequentially, for example, `01_constrained_api.md`, `02_refactor_with_tests.md`, and so on.
+
+    Here is an example prompt for testing specification fidelity:
+    ```
+    Write a Python function `retry_with_backoff(fn, retries, base_delay)` .
+    Constraints:
+    - Standard library only.
+    - Exponential backoff with full jitter.
+    - Raise the last exception after retries are exhausted.
+    - Include type hints and one usage example.
+    Do not explain the code; output code only.
+    ```
+    You should see a code block containing the Python function as the output.
+
+2.  **Set up your scoring rubric**: Create a spreadsheet with columns for each prompt category (e.g., Specification Fidelity, Honesty, Workflow) and rows for each of the eight prompts. Add columns for scoring criteria like 'Code Quality', 'Adherence to Constraints', 'Asks Clarifying Questions', and 'Confident Fiction'.
+
+    The author does not provide a specific rubric, but a good starting point would be to assign points for how well the AI meets each constraint or requirement.
+
+    You should have a clear table ready to fill in scores after each test.
+
+3.  **Run the evaluation prompts**: For each AI model you want to test, go through each of your eight saved prompt files. Copy the content of the prompt file and paste it into your chosen AI chat tool.
+
+    For example, if testing a model via a chat interface, you would paste the prompt and send it.
+
+    You should receive a response from the AI model for each prompt.
+
+4.  **Record and score responses**: After getting a response for each prompt, carefully review it against your scoring rubric. Note down your scores and any observations in your spreadsheet. Pay attention to whether the AI followed all constraints, invented information, or asked clarifying questions when faced with ambiguity.
+
+    For the `retry_with_backoff` example, check if it used only the standard library, implemented jitter correctly, and raised the last exception.
+
+    Your spreadsheet should be populated with scores and notes for each prompt and model.
+
+5.  **Compare models**: Once you have tested all models with all eight prompts and filled in your rubric, compare the scores. This provides a data-driven way to see which AI model performs best for your specific needs.
+
+    Look for patterns in the scores to understand the strengths and weaknesses of each model.
+
+    You should be able to identify the most suitable AI coding model based on your evaluation.
+
+## Original source
+This workflow is based on an article by datars_7274 posted on DEV Community. The author shares a method for evaluating AI coding models using a structured set of prompts and a scoring system, aiming to provide a more reliable assessment than casual testing.
+
+## Notes & variations
+*   **Free tier alternative**: While the author mentions using free tiers, ensure the specific AI chat tool you choose has a generous enough free tier to run all eight prompts multiple times if needed for re-testing. Some free tiers have message limits.
+*   **Common pitfall**: Relying too much on automated checks. While automation can catch some errors (like using banned libraries), many crucial aspects, such as whether the AI asked clarifying questions for ambiguous requirements, require manual judgment.
+*   **Tip for better results**: Adapt the prompts to your specific domain. If you are a frontend developer, swap out the system-level prompts for tasks related to UI components or frontend frameworks to get more relevant evaluation results.

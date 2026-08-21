@@ -1,0 +1,113 @@
+---
+title: "Automate Python Scripts with GitHub Actions"
+description: "Learn to schedule your Python scripts to run automatically every day using GitHub Actions, even when your computer is off."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 30
+jobToBeDone: "Automate a Python script to run daily using GitHub Actions"
+tools:
+  - name: "GitHub Actions"
+    url: "https://github.com/features/actions"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Git"
+    url: "https://git-scm.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "GitHub"
+    url: "https://github.com/"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/towernter/automate-spotify-and-youtube-playlists-chapter-6-deployment-1c4h"
+  platform: "blog"
+  author: "towernter"
+  postedAt: 2026-07-25
+score: 8
+ingestedAt: 2026-08-21
+nigeriaNotes: "GitHub Actions is free and uses minimal data for scheduling. Git and GitHub are free to use. Data usage for script execution depends on the script itself."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to set up a GitHub Action to automatically run your Python script on a schedule. This means your script will run every day without you needing to manually start it, using GitHub's servers instead of your own computer.
+
+## Tools you need
+*   **GitHub Actions** (free): GitHub's built-in automation system that runs code on a schedule.
+*   **Git** (free): A tool for tracking changes in your code and uploading it to GitHub.
+*   **GitHub** (freemium): A platform for hosting your code and running GitHub Actions.
+
+## Steps
+1.  **Install Git**: If you don't have Git installed, download it from git-scm.com and follow the installation instructions. You can check if you have it by opening your terminal or command prompt and typing `git --version`. You should see a version number.
+2.  **Create a GitHub Repository**: Go to github.com, log in, click the '+' icon in the top right, and select 'New repository'. Name it 'youtube-to-spotify', add a description like 'Syncs a YouTube playlist to Spotify automatically.', and choose 'Public' or 'Private' visibility. Click 'Create repository'. Keep this page open.
+3.  **Connect your local folder to GitHub**: Open your terminal or command prompt and navigate to your project folder (where your Python scripts are). Then run these commands one by one:
+    *   Initialize Git in your folder:
+        ```bash
+        git init
+```
+        You should see a message like 'Initialized empty Git repository in /path/to/your/project/.git/'.
+    *   Add the remote origin (replace YOUR_GITHUB_USERNAME with your actual username):
+        ```bash
+        git remote add origin https://github.com/YOUR_GITHUB_USERNAME/youtube-to-spotify.git
+```
+        This command connects your local folder to the GitHub repository you just created. You won't see a specific output message if successful, but it prepares Git for the next step.
+    *   Stage your script files for upload:
+        ```bash
+        git add spotify.py youtube.py script.py requirements.txt
+```
+        This tells Git which files you want to upload. You should see no output if the files exist and are added successfully.
+    *   Commit your changes:
+        ```bash
+        git commit -m "Initial commit"
+```
+        You should see a message confirming the commit, like '[main (root-commit) abc1234] Initial commit' and a list of files changed.
+    *   Push your code to GitHub:
+        ```bash
+        git push -u origin main
+```
+        If prompted for your username and password, use your GitHub username and a Personal Access Token (PAT) as the password. You can generate a PAT at github.com/settings/tokens (give it a name, check 'repo' scope, and copy the token). After a successful push, refresh your GitHub repository page. Your files should now be visible there.
+4.  **Create the GitHub Actions workflow file**: On your GitHub repository page, click on the 'Actions' tab. Then click 'set up a workflow yourself'. This will open an editor with a default workflow file. Replace its content with the following, ensuring the `on` section is set to run daily at a specific time (e.g., 00:00 UTC):
+
+    ```yaml
+    name: Sync Playlist Daily
+    on:
+      schedule:
+        # Runs at 00:00 UTC every day
+        - cron: '0 0 * * *'
+      workflow_dispatch: # Allows manual triggering
+
+    jobs:
+      sync:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Checkout code
+            uses: actions/checkout@v3
+
+          - name: Set up Python
+            uses: actions/setup-python@v3
+            with:
+              python-version: '3.x' # Use your Python version
+
+          - name: Install dependencies
+            run: pip install -r requirements.txt
+
+          - name: Run script
+            run: python script.py
+            env:
+              # Add any environment variables your script needs, e.g. API keys
+              # SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
+              # SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
+              # YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+    ```
+    *   **Important**: If your script requires sensitive information like API keys or passwords, you should store them as GitHub Secrets. Go to your repository's 'Settings' > 'Secrets and variables' > 'Actions' and add your secrets there. Then, in the workflow file, reference them using `${{ secrets.YOUR_SECRET_NAME }}` as shown in the commented-out `env` section.
+5.  **Commit the workflow file**: Click the 'Commit new file' button. You can use a message like 'Add daily sync workflow'. Your script will now run automatically every day at midnight UTC.
+
+## Original source
+This workflow is adapted from Chapter 6 of a guide by towernter, originally posted on the DEV Community platform. It explains how to deploy a Python script to run automatically using GitHub Actions.
+
+## Notes & variations
+*   **Common mistake**: Forgetting to add sensitive information (like API keys) as GitHub Secrets. If your script fails with authentication errors, check if you've correctly added and referenced your secrets.
+*   **Tip for better results**: Adjust the `cron` schedule in the workflow file to run at a time that best suits your needs. For example, `'30 2 * * *'` would run at 02:30 UTC.
+*   **Free tier limits**: GitHub Actions provides a generous amount of free compute minutes per month, which should be sufficient for most personal projects. Check GitHub's pricing page for current limits.

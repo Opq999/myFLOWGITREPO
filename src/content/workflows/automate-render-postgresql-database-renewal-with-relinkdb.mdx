@@ -1,0 +1,89 @@
+---
+title: "Automate Render PostgreSQL Database Renewal with RelinkDB"
+description: "Learn how to automate monthly PostgreSQL database renewal and data migration for Render free-tier services using the open-source tool RelinkDB."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 30
+jobToBeDone: "Automate monthly PostgreSQL database renewal and data migration for Render free-tier services"
+tools:
+  - name: "RelinkDB"
+    url: "https://github.com/shashcodes/relinkdb"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Render"
+    url: "https://render.com/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "PostgreSQL"
+    url: "https://www.postgresql.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "npm"
+    url: "https://www.npmjs.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Electron"
+    url: "https://www.electronjs.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "pg"
+    url: "https://node-postgres.com/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/shashcodes/relinkdb-auto-db-migration-tool-for-free-tier-services-4276"
+  platform: "blog"
+  author: "shashcodes"
+  postedAt: 2026-07-28
+score: 7
+ingestedAt: 2026-08-21
+nigeriaNotes: "RelinkDB is an open-source desktop application, meaning it runs locally. Data usage is minimal, primarily for database backups and restores. The main consideration is ensuring you have Node.js and npm installed, which are standard for web development."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to use RelinkDB, an open-source tool, to automate the monthly renewal and data migration of your PostgreSQL databases on Render's free tier. This process, which typically takes 15 minutes manually, can be reduced to a 2-minute workflow, preventing data loss.
+
+## Tools you need
+*   **RelinkDB** (free): An open-source desktop application designed to automate Render's free-tier PostgreSQL database renewal.
+*   **Render** (freemium): A cloud platform where you host your applications and databases. The free tier has limitations, including database resets.
+*   **PostgreSQL** (free): A powerful, open-source relational database system.
+*   **npm** (free): The Node Package Manager, used to install and manage JavaScript packages, including RelinkDB.
+*   **Electron** (free): A framework for building desktop applications using web technologies. RelinkDB uses this for its user interface.
+*   **pg** (free): A popular PostgreSQL client for Node.js, used by RelinkDB for database operations.
+
+## Steps
+1.  **Install Node.js and npm**: If you don't have them, download and install Node.js from its official website. npm is included with Node.js.
+    You should see confirmation messages indicating successful installation.
+2.  **Clone the RelinkDB repository**: Open your terminal or command prompt and navigate to the directory where you want to save the project. Then, clone the repository.
+    ```bash
+    git clone https://github.com/shashcodes/relinkdb
+    cd relinkdb
+    ```
+    You should now be inside the RelinkDB project folder in your terminal.
+3.  **Install RelinkDB dependencies**: Inside the `relinkdb` folder, run the following command to install all the necessary packages.
+    ```bash
+    npm install
+    ```
+    You should see a long list of packages being installed, ending with a success message.
+4.  **Start the RelinkDB desktop console**: Run the command to launch the RelinkDB application.
+    ```bash
+    npm run dev
+    ```
+    A desktop window for RelinkDB should open. This is your operator console.
+5.  **Backup your current database**: Before your Render database expires, use the RelinkDB console to create a backup. The exact steps within the UI are not detailed in the source, but look for an option to 'Dump' or 'Backup' your database.
+    You should get a `data.sql` file (or similar) saved locally.
+6.  **Recreate your Render PostgreSQL instance**: Manually go to your Render dashboard. Delete your old PostgreSQL database and create a new one with the same name. This is a manual step Render requires.
+    The new database instance should now be available on Render.
+7.  **Restore and Relink**: Use the RelinkDB console to restore the backup to your new database instance. RelinkDB will then automatically update your application's environment variables on Render and trigger a redeploy.
+    Your application should now be connected to the new database and running.
+
+## Original source
+This workflow is based on a blog post by shashcodes on DEV Community. The author developed RelinkDB to solve the recurring problem of Render's free-tier PostgreSQL databases being wiped every 30 days, providing an automated solution to prevent data loss and manual effort.
+
+## Notes & variations
+*   **Free-tier alternative**: While RelinkDB automates the process, Render's free tier still requires manual recreation of the database instance. There isn't a fully automated way around this due to Render's API limitations on free resources. For critical data, consider Render's paid tiers or other hosting providers.
+*   **Common pitfall**: Forgetting to manually recreate the PostgreSQL instance on Render before it expires will mean you lose your data, as RelinkDB can only restore to a newly created instance. Pay close attention to Render's 30-day expiry.
+*   **Tip for better results**: Ensure you have a reliable internet connection during the backup and restore process, especially for larger databases, to avoid interruptions.

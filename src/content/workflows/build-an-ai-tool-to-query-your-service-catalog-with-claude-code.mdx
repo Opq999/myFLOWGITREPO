@@ -1,0 +1,155 @@
+---
+title: "Build an AI Tool to Query Your Service Catalog with Claude Code"
+description: "Learn how to create a custom tool for an AI agent to query an internal service catalog, reducing manual data fetching."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 960
+jobToBeDone: "Create a custom tool for an AI agent to query an internal service catalog"
+tools:
+  - name: "Claude Code"
+    url: "https://code.claude.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Node.js"
+    url: "https://nodejs.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "TypeScript SDK for MCP"
+    url: "https://www.npmjs.com/package/@modelcontextprotocol/sdk"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/yureki_lab/how-i-built-my-first-mcp-server-for-claude-code-5-lessons-learned-2ffo"
+  platform: "blog"
+  author: "yureki_lab"
+  postedAt: 2026-08-18
+score: 7
+ingestedAt: 2026-08-21
+nigeriaNotes: "Claude Code is a paid service. Node.js and the SDK are free and can be installed on most devices. Data usage for querying a service catalog is typically very low."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will create a small server that allows an AI agent, like Claude Code, to look up information about your internal services. This avoids you having to manually copy and paste data from your service catalog into the AI chat.
+This approach works by giving the AI a specific 'tool' it can call, making it more efficient and less prone to errors when needing specific data.
+
+## Tools you need
+*   **Claude Code** (paid): An AI coding assistant that can use custom tools.
+*   **Node.js** (free): A JavaScript runtime environment that allows you to run server-side code.
+*   **TypeScript SDK for MCP** (free): A software development kit to help build servers that communicate with AI models using the Model Context Protocol (MCP).
+
+## Steps
+1.  **Set up your project**: Create a new directory for your server and initialize a Node.js project. Then, install the necessary SDK.
+    *   Create a new folder for your project, for example, `service-catalog-mcp`.
+    *   Open your terminal or command prompt, navigate into this new folder.
+    *   Run `npm init -y` to create a `package.json` file.
+    *   Run `npm install @modelcontextprotocol/sdk zod` to install the MCP SDK and Zod for data validation.
+
+2.  **Create the server file**: Create a new file named `server.ts` in your project folder. This file will contain the code for your MCP server.
+
+3.  **Write the server code**: Paste the following code into your `server.ts` file. This code sets up the server and defines a tool to look up services.
+
+    ```typescript
+    import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
+    import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
+    import { z } from "zod";
+    import { fetchService, searchServices } from "./catalog.js"; // Assuming you have these functions in catalog.js
+
+    const server = new McpServer({
+      name: "service-catalog",
+      version: "1.0.0",
+    });
+
+    server.registerTool("lookup_service", {
+      title: "Look up a service",
+      description:
+        "Get ownership, deploy target, and on-call info for one service " +
+        "by its exact catalog name (e.g. 'billing-events'). Use this when " +
+        "you know the service name. If you only have a partial name or a " +
+        "team name, use search_services first.",
+      inputSchema: {
+        name: z.string().describe("Exact service name, lowercase-hyphenated"),
+      },
+    },
+    async ({ name }) => {
+      const svc = await fetchService(name);
+      if (!svc) {
+        return {
+          content: [
+            {
+              type: "text",
+              text: `No service named "${name}". Service names are ` +
+                `lowercase-hyphenated. Try search_services with a partial name.`,
+            },
+          ],
+          isError: true,
+        };
+      }
+      // The original excerpt cuts off here. You would typically return the service details.
+      // For example:
+      return {
+        content: [
+          {
+            type: "text",
+            text: `Service: ${svc.name}\nOwner: ${svc.owner}\nDeploy Target: ${svc.deployTarget}\nOn-call: ${svc.onCall}`,
+          },
+        ],
+        isError: false,
+      };
+    });
+
+    // You would also register the search_services tool here if you had it.
+
+    server.start(new StdioServerTransport());
+    ```
+
+You should see the code pasted into your `server.ts` file. This code defines how your server will communicate with the AI.
+
+4.  **Implement catalog functions**: Create a file named `catalog.js` in the same folder. This file needs to contain the `fetchService` and `searchServices` functions that interact with your internal service catalog API. The exact implementation will depend on how your API works.
+
+    ```javascript
+    // Placeholder for your actual API interaction logic
+    export async function fetchService(name) {
+      // Replace with your actual API call to fetch a service by name
+      console.log(`Fetching service: ${name}`); // Log to stderr in production
+      // Example: return await fetch(`http://your-vpn-api/services/${name}`).then(res => res.json());
+      // For demonstration, returning a mock object:
+      if (name === 'billing-events') {
+        return { name: 'billing-events', owner: 'Finance Team', deployTarget: 'prod-us-east-1', onCall: 'Alice' };
+      }
+      return null;
+    }
+
+    export async function searchServices(partialName) {
+      // Replace with your actual API call to search for services
+      console.log(`Searching services for: ${partialName}`); // Log to stderr in production
+      // Example: return await fetch(`http://your-vpn-api/services?search=${partialName}`).then(res => res.json());
+      // For demonstration, returning a mock array:
+      return [{ name: 'billing-events', owner: 'Finance Team' }];
+    }
+    ```
+
+You should have a `catalog.js` file with placeholder functions. These need to be replaced with code that actually fetches data from your internal service catalog.
+
+5.  **Run the server**: Compile your TypeScript code to JavaScript and then run it using Node.js.
+    *   First, compile the TypeScript: Run `npx tsc server.ts catalog.js --module commonjs --target es2020 --outDir dist` in your terminal.
+    *   Then, run the compiled server: Run `node dist/server.js`.
+
+You should see your server start up. It will wait for instructions from Claude Code. Any output you print to `stdout` will be interpreted as communication with the AI, so use `console.log` for debugging to `stderr` instead.
+
+6.  **Connect to Claude Code**: In Claude Code, you need to tell it to use your new tool. The exact method might vary, but generally, you would provide the path to your server executable and a description of the tool.
+    *   When starting a new chat or configuring an existing one in Claude Code, look for an option to add or configure 'Tools' or 'Extensions'.
+    *   You will likely need to provide the command to run your server, which is `node dist/server.js`.
+    *   Claude Code will then ask your server what tools it has, and you can start using the `lookup_service` tool in your prompts.
+
+When you ask Claude Code a question that requires service information (e.g., "who owns the billing-events service?"), it should now use your tool to get the answer.
+
+## Original source
+This workflow is based on a blog post by yureki_lab on DEV Community. The author shares their experience building a custom tool for Claude Code to interact with an internal service catalog, detailing the lessons learned during the process.
+
+## Notes & variations
+*   **Free tier alternative**: Claude Code itself is a paid product. However, the MCP server and its dependencies (Node.js, TypeScript SDK) are free to use. If you need a free AI agent that can use tools, you might explore open-source LLM frameworks that support custom tool integrations.
+*   **Common pitfall**: Anything you print to standard output (`stdout`) from your server is treated as communication with the AI. A stray `console.log()` can corrupt the communication and cause your server to crash with a cryptic error. Always direct your own logging messages to standard error (`stderr`) by using `console.error()` or by redirecting `stdout` in your Node.js application.
+*   **Tip for better results**: The quality of the tool's description and input schema is crucial. Spend time making the `description` clear and concise, and ensure the `inputSchema` accurately reflects the expected input format. This helps the AI understand when and how to use your tool effectively.

@@ -1,0 +1,130 @@
+---
+title: "Build a Real-Time Animal Tracking System with IoT and a Web Map"
+description: "Learn how to build a real-time animal tracking system using an ESP32-S3, a Node.js API, and a React web dashboard with live map and alerts."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 45
+jobToBeDone: "Build a real-time animal tracking system using IoT hardware and a web dashboard"
+tools:
+  - name: "ESP32-S3"
+    url: "https://www.espressif.com/en/products/socs/esp32-s3"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Node.js"
+    url: "https://nodejs.org"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Express"
+    url: "https://expressjs.com"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "React"
+    url: "https://react.dev"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Leaflet"
+    url: "https://leafletjs.com"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "OpenStreetMap"
+    url: "https://www.openstreetmap.org"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "PostgreSQL"
+    url: "https://www.postgresql.org"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "PostGIS"
+    url: "https://postgis.net"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Socket.IO"
+    url: "https://socket.io"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "TinyGPS++"
+    url: "https://github.com/mikalhart/TinyGPSPlus"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "HTTPClient (Arduino ESP32)"
+    url: "https://github.com/espressif/arduino-esp32"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/abdeldjaouadfarid/building-loka-from-esp32-firmware-to-a-live-map-that-tracks-animals-in-real-time-j4c"
+  platform: "blog"
+  author: "abdeldjaouadfarid"
+  postedAt: 2026-08-05
+score: 7
+ingestedAt: 2026-08-21
+nigeriaNotes: "The tracker itself is designed to be low-cost and data-light, sending small JSON packets. However, hosting the Node.js backend and React frontend will likely incur costs beyond typical free tiers for sustained, real-time operation, requiring a paid server or cloud service."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+This entry describes LOKA, a complete system for tracking animals in real time. It uses a small, custom-built device attached to an animal to send its location to a central server. This location is then displayed as a moving dot on a live map on a website, and the system can even send alerts if an animal wanders outside a safe area.
+
+This workflow is advanced because it involves building custom hardware, writing specialized software for that hardware (called firmware), setting up a server that handles data, and creating a real-time website to display everything. It's not a simple copy-paste task that a non-technical person can do on a phone.
+
+The author focused heavily on solving tricky hardware problems to make sure the tracking device worked reliably in real-world conditions, like getting accurate GPS readings from inexpensive parts and maintaining a stable internet connection in remote areas. These challenges are a core part of building such a system.
+
+## What you can use it for
+*   **Track livestock**: Prevent animals like cattle or goats from getting lost or stolen by monitoring their location live.
+*   **Monitor wildlife**: Observe the movement patterns of wild animals for research or conservation efforts.
+*   **Create custom asset tracking**: Adapt the system to track other valuable assets, not just animals, that need real-time location updates.
+*   **Develop IoT projects**: Learn the full process of building an Internet of Things (IoT) solution, from hardware to web interface.
+
+## Tools you need
+*   **ESP32-S3** (paid): A small, powerful computer chip (microcontroller) that forms the core of the tracking device.
+*   **Node.js** (free): A software platform that lets you build the server part of the system using JavaScript.
+*   **Express** (free): A framework for Node.js that makes it easier to build the server's API (the part that receives data).
+*   **React** (free): A JavaScript library for building the interactive web dashboard (the map interface).
+*   **Leaflet** (free): A JavaScript library specifically for creating interactive maps on the web.
+*   **OpenStreetMap** (free): A free and open source map of the world that Leaflet uses to draw the background map.
+*   **PostgreSQL** (free): A powerful database system used to store all the animal's location history.
+*   **PostGIS** (free): An extension for PostgreSQL that adds tools for working with geographic data, like locations and boundaries.
+*   **Socket.IO** (free): A library that enables real-time communication between the server and the web dashboard, so the map updates instantly.
+*   **TinyGPS++** (free): A C++ library that helps the ESP32-S3 device read and understand data from a GPS module.
+*   **HTTPClient (Arduino ESP32)** (free): A C++ library for the ESP32-S3 that allows it to send data over the internet using HTTP requests.
+
+## How it actually works
+The LOKA system operates with three main parts working together: the ESP32-S3 tracker on the animal, a Node.js server (API), and a React web dashboard.
+
+First, the **ESP32-S3 tracker** (running custom firmware written in C++ using TinyGPS++ and HTTPClient) reads its GPS coordinates, battery level, and other details every few seconds. It then packages this information into a small data message (JSON format) and sends it over the internet (via a phone hotspot) to the server using an HTTP POST request.
+
+The **Node.js / Express API** (the server) receives this data. It stores the animal's location history in a **PostgreSQL database**, which uses **PostGIS** to handle the geographic information efficiently. The server also tracks if a device is online or offline and can simulate geofencing (virtual boundaries) using **Socket.IO** for real-time testing.
+
+Finally, the **React dashboard** (the website) uses **Leaflet** and **OpenStreetMap** to display the animal's live position, its recent path, battery level, and online status. It also shows alerts if an animal crosses a defined geofence. The dashboard gets real-time updates from the server using **Socket.IO**.
+
+Reproducing this system involves significant coding for each of these three layers, plus careful hardware setup and debugging. The author's blog post details specific challenges like correctly powering the GNSS (GPS) module, mapping the correct pins on the ESP32-S3, setting up battery readings, and dealing with unstable mobile WiFi hotspots. These are critical steps that require technical expertise and hands-on work.
+
+## Words you'll see, explained
+*   **ESP32-S3**: A type of small computer chip (microcontroller) that can connect to Wi-Fi and Bluetooth, often used in IoT devices.
+*   **Firmware**: The specialized software that is programmed directly onto a piece of hardware, like the ESP32-S3, to control its basic functions.
+*   **GPS**: Global Positioning System, a satellite-based system that provides location and time information anywhere on Earth.
+*   **LoRa**: A wireless technology that allows devices to send small amounts of data over very long distances with low power.
+*   **WiFi**: A technology that allows devices to connect to the internet or to each other wirelessly over a local network.
+*   **Node.js**: A software environment that allows you to run JavaScript code outside of a web browser, commonly used for building server-side applications.
+*   **Express**: A popular framework for Node.js that simplifies the process of building web applications and APIs (Application Programming Interfaces).
+*   **React**: A JavaScript library for building user interfaces, especially single-page applications where content updates without reloading the whole page.
+*   **Leaflet**: An open-source JavaScript library for creating interactive, mobile-friendly maps on web pages.
+*   **OpenStreetMap**: A collaborative project to create a free and editable map of the world, often used as a base map for web applications.
+*   **PostgreSQL**: A powerful, open-source database system used for storing and managing large amounts of data.
+*   **PostGIS**: An extension for the PostgreSQL database that adds support for storing and querying geographic objects, like points, lines, and polygons.
+*   **Socket.IO**: A JavaScript library that enables real-time, bidirectional communication between web clients (browsers) and servers.
+*   **TinyGPS++**: A C++ library designed to parse (read and understand) data coming from GPS modules, making it easier to get latitude, longitude, and other information.
+*   **HTTPClient**: A library used in C++ programming (especially for microcontrollers) to make HTTP requests, which are how web browsers and applications communicate over the internet.
+*   **Geofence**: A virtual boundary around a real-world geographic area. When a device enters or exits this area, an alert can be triggered.
+*   **HDOP**: Horizontal Dilution of Precision, a measure of the accuracy of a GPS fix. Lower HDOP values mean higher accuracy.
+*   **ADC attenuation**: A setting for an Analog-to-Digital Converter (ADC) that adjusts the range of analog voltages it can accurately measure, often used for reading battery levels.
+*   **GPIO**: General Purpose Input/Output, pins on a microcontroller that can be programmed to send or receive digital signals, controlling other electronic components.
+
+## Original source
+This concept is based on a detailed blog post by abdeldjaouadfarid on the DEV Community platform. The author shared their journey and the technical challenges of building LOKA, a full-stack IoT platform for real-time animal tracking.
+
+## Notes & variations
+*   **Do you even need this?** For simple animal tracking without real-time maps or custom alerts, off-the-shelf GPS trackers (often with subscription services) might be a simpler and cheaper option. This custom solution is best for those who need full control over hardware, software, and data, or who want to learn advanced IoT development.
+*   **Free-tier limits**: While many of the software tools are free, hosting the Node.js backend and React frontend for a real-time application will likely require a paid cloud service (like AWS, Google Cloud, or Vercel for the frontend) once you move beyond very basic usage. The ESP32-S3 hardware itself is a one-time purchase.
+*   **Common pitfall**: The most significant challenge, as highlighted by the author, is debugging the hardware and firmware. Getting cheap GPS modules to work reliably, ensuring correct pin connections, and managing power settings can be very time-consuming and frustrating for beginners. Be prepared for extensive troubleshooting if you attempt to build this yourself.
