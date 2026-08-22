@@ -1,0 +1,140 @@
+---
+title: "Set Up Your Personal AI Agent with Custom Files (Claude, ChatGPT)"
+description: "Learn how to create a personal AI agent by organizing custom instructions and memory files. This method helps your AI understand your preferences and work style."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 20
+jobToBeDone: "Set up a personal AI agent with custom instructions and memory files"
+tools:
+  - name: "Claude"
+    url: "https://claude.ai"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "ChatGPT"
+    url: "https://chatgpt.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Any Text Editor"
+    url: "https://www.google.com/search?q=free+text+editor"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Git"
+    url: "https://git-scm.com"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://www.bensbites.com/p/how-i-built-this"
+  platform: "blog"
+  author: "Ben's Bites"
+  postedAt: 2026-08-21
+score: 8
+ingestedAt: 2026-08-22
+nigeriaNotes: "This workflow uses freemium AI chat tools, which offer free tiers suitable for mobile use and light data. Creating text files locally uses no data."
+nigeriaUseCases:
+  - persona: "entrepreneur"
+    scenario: "Configure an AI agent with your brand voice and target audience to consistently draft social media posts or marketing copy for your online business."
+  - persona: "student"
+    scenario: "Set up an AI agent with your course outlines and study preferences to generate practice questions or summarize complex topics for your university exams."
+  - persona: "small-business"
+    scenario: "Configure an AI agent with your product catalog and customer service guidelines to quickly draft replies for common WhatsApp customer inquiries."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will create a personal AI agent that understands your specific preferences, work style, and project details. By giving the AI specific instruction and memory files, it can provide more relevant and consistent responses, acting like a personalized assistant.
+
+## Tools you need
+*   **Claude** (freemium): An AI chat assistant that can follow detailed instructions and process text files.
+*   **ChatGPT** (freemium): Another AI chat assistant that can be customized with instructions and used to process text.
+*   **Any Text Editor** (free): A simple application on your phone or computer (like Notepad on Windows, TextEdit on Mac, or a basic notes app) to create and edit plain text files.
+*   **Git** (free): A version control system thata helps track changes to files over time. While the AI agent might use it, you don't need to install or use it directly for this setup.
+
+## Steps
+1.  **Create a new folder**: Make a dedicated folder on your device for your AI agent's files.
+    *   *What to do*: On your phone or computer, create a new folder named `my-ai-agent` (or similar).
+    *   *What you should see*: An empty folder ready to hold your agent's instructions.
+
+2.  **Write your main instructions (AGENTS.md)**: This file tells your AI who you are and how you want it to work with you.
+    *   *What to do*: Open your text editor, create a new file, and save it as `AGENTS.md` inside your `my-ai-agent` folder. Paste the following starting point, then customize it with your own details.
+
+    ```
+    # My Personal AI Agent Instructions
+
+    You are my personal AI assistant. Here's how I want you to work with me:
+
+    - **Who I am**: I am a [Your Profession, e.g., freelance writer, small business owner, student]. My main goal is to [Your Main Goal, e.g., create engaging content, manage my online store, complete my assignments].
+    - **How to interact**:
+        - When I ask questions, provide direct answers. Do not change my requests unless I explicitly ask for suggestions.
+        - Be concise and to the point, but also thorough when necessary.
+        - Refer to the other files in this folder for additional context.
+    - **Pointers to other files**:
+        - `code.md`: Contains my preferences for building and technical tools.
+        - `todos.md`: Lists my current work tasks.
+        - `memory.md`: Points to other files with important information about me and my work.
+    ```
+
+    *   *What you should see*: A text file named `AGENTS.md` in your folder, containing your initial instructions.
+
+3.  **Define your building preferences (code.md)**: If you work on projects involving technology, this file lists your preferred tools and methods.
+    *   *What to do*: Create a new file named `code.md` in the same folder. Add your preferences.
+
+    ```
+    # My Building Preferences
+
+    When working on technical or coding tasks, I prefer to use:
+    - **Hosting**: Vercel
+    - **Databases**: Supabase
+    - **Programming Languages**: Python, JavaScript
+    - **Frameworks**: React, Next.js
+    - **Other tools**: [Add any other tools or preferences, e.g., "I like clean, well-commented code."]
+    ```
+
+    *   *What you should see*: A `code.md` file with your technical preferences.
+
+4.  **List your current tasks (todos.md)**: Keep track of your ongoing work.
+    *   *What to do*: Create a new file named `todos.md` in the folder. List your current tasks.
+
+    ```
+    # Current Work Tasks (To-Dos)
+
+    - [ ] Finish draft for blog post on AI tools.
+    - [ ] Research marketing strategies for new product.
+    - [ ] Update website content.
+    - [ ] [Add your own tasks here]
+    ```
+
+    *   *What you should see*: A `todos.md` file with your task list.
+
+5.  **Set up your memory pointers (memory.md)**: This file will guide your AI to other files containing important personal context.
+    *   *What to do*: Create a new file named `memory.md` in the folder. This file can point to other files you might create later (e.g., `about-me.md`, `travel-prefs.md`). For now, it can be simple.
+
+    ```
+    # Memory Pointers
+
+    Important context about me and my work can be found in:
+    - `about-me.md` (details about my background and interests)
+    - `bens-bites-info.md` (information about my newsletter/business, if applicable)
+    - `fund-stuff.md` (details about my financial projects, if applicable)
+    ```
+
+    *   *What you should see*: A `memory.md` file. You can create the linked files later if you wish.
+
+6.  **Start a new chat session with your AI**: Use Claude or ChatGPT to interact with your new agent setup.
+    *   *What to do*:
+        1.  Open Claude (claude.ai) or ChatGPT (chatgpt.com) in your web browser or app.
+        2.  Start a new chat.
+        3.  Copy the content of your `AGENTS.md` file.
+        4.  Paste it into the chat as your first message, or use the "Custom Instructions" feature if available (e.g., in ChatGPT, click your name > Custom Instructions).
+        5.  Then, copy and paste the content of `code.md`, `todos.md`, and `memory.md` into the chat, one after another, or upload them if the tool allows.
+        6.  Ask your first question, for example: "Based on my instructions and current tasks, what should I focus on today?"
+    *   *What you should see*: The AI should acknowledge your instructions and files, and respond based on the context you provided. For example, it might suggest focusing on the blog post draft from your `todos.md`.
+
+## Original source
+This workflow was shared by Ben's Bites in a blog post titled "How I built this - Ben's session #3". The author described setting up a new personal AI agent with a lightweight memory system using specific files and folders.
+
+## Notes & variations
+*   **Free-tier alternatives**: Both Claude and ChatGPT offer generous free tiers that are suitable for this workflow. You can also use Google Gemini (gemini.google.com) with a similar approach of pasting instructions.
+*   **Common mistake**: Overloading your main instruction file (`AGENTS.md`) with too much detail. The author found that putting too much specific context directly into the main instructions can make the AI "steered" and less creative. Keep `AGENTS.md` focused on *how* the AI should interact, and use separate files for specific "memory" content.
+*   **Tip for better results**: The author mentions that "agents read text and that’s all they know to respond to you." This means the clearer and more organized your text files are, the better your AI agent will perform. Regularly review and update your `todos.md` and any memory files to keep your agent current. Consider creating more specific memory files (e.g., `project-X-details.md`) as your needs grow.

@@ -15132,8 +15132,84 @@
     "5ee111a275affc60d5db7cf16b73e5a631aef6742598292f835abb108a3bf384": {
       "url": "https://dev.to/jogadiyadipak28art/i-built-a-real-time-news-aggregator-for-citizen-journalists-using-react-vite-5162",
       "date": "2026-08-21"
+    },
+    "0bf4087f76dae5bca553c59226a4c072221c5dd00e597a554f80a1d26830e84a": {
+      "url": "https://news.ycombinator.com/item?id=49330215",
+      "date": "2026-08-22"
+    },
+    "385f654fcfdbef71de29f6c938f49d0e3d98529302ef1d7c2a405f5d38906e09": {
+      "url": "https://simonwillison.net/2026/Aug/21/llm",
+      "date": "2026-08-22"
+    },
+    "48f76bdaa411afee0c9f0a6e967b3f862c026b7ee86fa392697b441933be735c": {
+      "url": "https://github.com/Molunerfinn/PicGo",
+      "date": "2026-08-22"
+    },
+    "76cdfe35fe64152a48247a6e26c9e3366ca32184c64da5d7c46ece8488672ef5": {
+      "url": "https://news.ycombinator.com/item?id=49387773",
+      "date": "2026-08-22"
+    },
+    "d61fc285c7155696bea4916c9ad0dff33a4ac03c16c7a2f5c13a5ce4c7540c95": {
+      "url": "https://simonwillison.net/2026/Aug/21/llm-openrouter",
+      "date": "2026-08-22"
+    },
+    "d8c52d9b1d03141e51f5a140f00119250555199e3253c0fe942b8f6874c87750": {
+      "url": "https://simonwillison.net/2026/Aug/21/stop-making-tuis",
+      "date": "2026-08-22"
+    },
+    "ba639e29dfccff26c1f42657bc5f81ebe8ba7a460d6df67255fb3f991dcc392a": {
+      "url": "https://simonwillison.net/2026/Aug/21/matt-webb",
+      "date": "2026-08-22"
+    },
+    "ad2b779c2da9702654fc022a3c467a8a15d4f136efca6e14731e3be97815cb22": {
+      "url": "https://simonwillison.net/2026/Aug/20/chatgpt-search-now-uses-the-siteoperator-at-scale",
+      "date": "2026-08-22"
+    },
+    "9c053eef9018983766db16140a84552406fab558221fb276e5c7ae5c819f10e9": {
+      "url": "https://simonwillison.net/2026/Aug/20/bun-webview-json-api",
+      "date": "2026-08-22"
+    },
+    "07d19bb9a7b34d164f51a3e18b4847454fcac62833be271f8e746caa9159171c": {
+      "url": "https://www.latent.space/p/ainews-10-worse-100x-cheaper-10000x",
+      "date": "2026-08-22"
+    },
+    "df63102a57f71f085d8b9dbe7056b2d1b805bd6c719be0b04c95c0aae862e661": {
+      "url": "https://www.latent.space/p/attention-interface",
+      "date": "2026-08-22"
+    },
+    "a0c2a274821518693e40667523d0e5ccc4251ffc44dea277351ed27f5fbe6cc0": {
+      "url": "https://www.latent.space/p/simile",
+      "date": "2026-08-22"
+    },
+    "7b47eab8cd2a7b4dd42fafa84fa7b389cfb3b205fa8ab8152a679da9dcc5f689": {
+      "url": "https://www.latent.space/p/ainews-poolside-gets-12b-reverse",
+      "date": "2026-08-22"
+    },
+    "9a7583fc09aea8e9643baca9e1eae3c38434ba7a8bd3bdf0d8b40b3c73c4020a": {
+      "url": "https://www.latent.space/p/wayfinder-skill",
+      "date": "2026-08-22"
+    },
+    "f9873c0d952a116ee97e1294f8f848f1205fab795454ce90ae56c882a0bc513f": {
+      "url": "https://www.bensbites.com/p/how-i-built-this",
+      "date": "2026-08-22"
+    },
+    "4b96dd79aeabe14519cbc30b7cc9ad8ce3bde1299cb19df2fd9bf1c04946e894": {
+      "url": "https://www.bensbites.com/p/simple-agents",
+      "date": "2026-08-22"
+    },
+    "e3ddd7a65cd3a566e91c60250d01ee8b4672eaf661344d99931e4cbb3eebb307": {
+      "url": "https://huggingface.co/blog/asr-benchmark-optimization",
+      "date": "2026-08-22"
+    },
+    "eab5285cfdebeb65a8ef35d4bffcfc39f4434e5c4addfd2ea652e42de6b3fb15": {
+      "url": "https://huggingface.co/blog/LiquidAI/lfm25-dspark",
+      "date": "2026-08-22"
+    },
+    "eca88545b0d2e08a5dbd01f54dbcc089ef97f1b75c9abaaddda5260eb1619484": {
+      "url": "https://newsletter.pragmaticengineer.com/p/the-pulse-we-need-to-talk-about-migrations",
+      "date": "2026-08-22"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 5
+  "dailyPage": 0
 }
