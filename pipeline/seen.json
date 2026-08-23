@@ -15208,8 +15208,184 @@
     "eca88545b0d2e08a5dbd01f54dbcc089ef97f1b75c9abaaddda5260eb1619484": {
       "url": "https://newsletter.pragmaticengineer.com/p/the-pulse-we-need-to-talk-about-migrations",
       "date": "2026-08-22"
+    },
+    "8faad838539822086faebaff80d4cd54f1b80b84e926e13da99c07d788b526f3": {
+      "url": "https://news.ycombinator.com/item?id=49402232",
+      "date": "2026-08-23"
+    },
+    "c84f5aaebf4c5d2e1433c41fbd77330cffd1b26b73b5e0d16bd4a0fb3d925cf7": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1vo3zlm/_",
+      "date": "2026-08-23"
+    },
+    "8a1948cc7f7c09c4f31d99f710bf7d0ffb4b1c085f62db58d829d8ecfb4cdcc0": {
+      "url": "https://simonwillison.net/2026/Aug/22/linus-torvalds",
+      "date": "2026-08-23"
+    },
+    "b425de704aec786e61ce221e1f8cadd6ca38f0586829a892fc6cd876049e1f71": {
+      "url": "https://news.ycombinator.com/item?id=49373851",
+      "date": "2026-08-23"
+    },
+    "7fa21fed8029d881e7c1efb7bd31006fc81d48510de701af2bb893f663e89cc6": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1vthwx1/were_proud_of_finishing_degree_without_using_ai",
+      "date": "2026-08-23"
+    },
+    "97c4e9cb8b163ddb829e9b6bdfc0535a9bc8913bcaaadf5140ef1d2b19f333f7": {
+      "url": "https://simonwillison.net/2026/Aug/22/llm",
+      "date": "2026-08-23"
+    },
+    "fb7b19945dfc7c5047e6498c6783850e9baefda3936ade486adf819ca7eed299": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1vsrh2u/last_one_is_surely_indian",
+      "date": "2026-08-23"
+    },
+    "3f89e94f44724b318410048e73b56d70cf88f771d4d1c029d992eddb0b72b02c": {
+      "url": "https://simonwillison.net/2026/Aug/22/more-than-just-code-review",
+      "date": "2026-08-23"
+    },
+    "31acfa42321f21770e29077b8b4096320bfe35b4c7c82485756b1bb1aa9ec643": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1vuqfn0/gta_pyongyang",
+      "date": "2026-08-23"
+    },
+    "ec1dae1d3407b62bf780e54bb648e5672afb2b5d0cad6ca830c7d3de1da2319c": {
+      "url": "https://magazine.sebastianraschka.com/p/claude-watermarking",
+      "date": "2026-08-23"
+    },
+    "75cb0f8ff7391c9ac713cdbb2cee1c22b8a148b7dad99c4804fdf6513de2580e": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1vnz4hw/bro_had_enough",
+      "date": "2026-08-23"
+    },
+    "71bdd9ab26e91b0621aa21fc831f2da695232f6601c0c4af4ea5283801f0edda": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1vndo7r/told_chatgpt_i_was_uninstalling_it_i_expected",
+      "date": "2026-08-23"
+    },
+    "f5d7d60be79a445cb1733b042de91e4fe3f0be0e71b0b9327bacacf138a5ccf7": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1vuhi3h/i_used_codex_to_make_seedance_25_arrive_at_the",
+      "date": "2026-08-23"
+    },
+    "ea76caaed1e672b8e6167f7128f462177084a1493bd53bae5963dc895271891f": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1vqkd8i/china_al_glm53_and_qwen38_open_weights_model_are",
+      "date": "2026-08-23"
+    },
+    "dc903734e72d16d0782d63a1092c672f8387f80318b1537f63dad38fae39f129": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1vs9usp/thanks_chat",
+      "date": "2026-08-23"
+    },
+    "fe77dc2e34801afb9a673937317baa5c7fd8646f5d1faf4f8dee26993392d4f6": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1vum98s/things_are_going_great_for_michael_id_say",
+      "date": "2026-08-23"
+    },
+    "ef7b0cc77406481897948ce30876b4b3e3182bdf5448bbf6f7966fe935f22e2d": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1vseoyt/were_doomed",
+      "date": "2026-08-23"
+    },
+    "7565307dc8ea2fca3210300c2873630be4a2cd3d73a7c0fbb6c63b8b40248860": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1vro3fa/journalists_slip_an_airtag_into_an_amazon",
+      "date": "2026-08-23"
+    },
+    "110ac2a621eb2f05d0b33846dc94e420d8abe74842898241cfa18332eefaab65": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1vks54h/its_here",
+      "date": "2026-08-23"
+    },
+    "2beeb74461240af0a9a3fa4c080a02bc067823f6d1febd6595744239f6a253f5": {
+      "url": "https://www.reddit.com/r/Python/comments/1v7tfx9/python_automations_are_so_much_better_than_ai",
+      "date": "2026-08-23"
+    },
+    "f479c1135fa5cc23fb4fc5f56f733d9997795fdf664b063014d9235502bdb88e": {
+      "url": "https://www.reddit.com/r/Python/comments/1vqggbo/what_are_some_python_automations_you_built_for",
+      "date": "2026-08-23"
+    },
+    "3d72813791b772e74399f2ef888bf4a5c5b4ccd04155830437bc40078fa17828": {
+      "url": "https://www.reddit.com/r/Python/comments/1vbm9h1/astrals_prebuilt_gpuenabled_wheels",
+      "date": "2026-08-23"
+    },
+    "a5a3fe1e98ee1df06cda31b6f334a36da5c6649a5864c913a761fa1011120835": {
+      "url": "https://www.reddit.com/r/Python/comments/1vjweaj/should_we_standardize_docstring_formats",
+      "date": "2026-08-23"
+    },
+    "1a6896e088b604de1701abac9357e5bcfe1bda8822ce58aa81879ead73c7c8fb": {
+      "url": "https://www.reddit.com/r/Python/comments/1vpk70t/what_are_some_fun_pythonheavy_niches",
+      "date": "2026-08-23"
+    },
+    "e16ac9867b1693018f77861e2ea4d3cbbb04c28b6d3b738f0413579154f922bc": {
+      "url": "https://www.reddit.com/r/Python/comments/1vg0amj/what_linter_rules_make_code_worse",
+      "date": "2026-08-23"
+    },
+    "0be558a736cc2a60a08b7536315cdb754a147dc23398c588307157bc7b3ff823": {
+      "url": "https://www.reddit.com/r/Python/comments/1vev5k1/is_widely_used",
+      "date": "2026-08-23"
+    },
+    "e7f31565330f404b4e315013fe0d23f995f29b0c0a6c15b6fc281686c5993a24": {
+      "url": "https://www.reddit.com/r/Python/comments/1vhtazc/pep_841_adding_frozen_syntax_to_optimize",
+      "date": "2026-08-23"
+    },
+    "569a055fdb8230b1b82f8b855ae2bae6abaec4c4ab304a97659ef4eceb61febe": {
+      "url": "https://www.reddit.com/r/Python/comments/1vbzpsz/pip_262_onlydeps_norequirehashes_venv_isolation",
+      "date": "2026-08-23"
+    },
+    "601320fed556431f0472433e25ba228789d35d0f90d0c95d63ce5c33c67896a3": {
+      "url": "https://www.reddit.com/r/Python/comments/1vhftff/python_3147_and_31315_are_now_available",
+      "date": "2026-08-23"
+    },
+    "7c50419fd95bfed73b8cf57d01c65080cf3f3015b774e9a9fe282c40f06c24be": {
+      "url": "https://www.reddit.com/r/Python/comments/1vexrvf/what_are_you_using_to_manage_your_dev",
+      "date": "2026-08-23"
+    },
+    "c6540ed5b173c8db42b5874b6ce01578b49aa3258f809e10c4cbf9528315aadd": {
+      "url": "https://www.reddit.com/r/Python/comments/1vh295u/2026_python_type_system_and_tooling_survey",
+      "date": "2026-08-23"
+    },
+    "f3d4248c8a0a1a1890039d4dc7bbe25a55ecb88579f0d380310e5a4e2d35f5f4": {
+      "url": "https://www.reddit.com/r/Python/comments/1vkrvhc/what_do_you_love_and_dislike_the_most_about",
+      "date": "2026-08-23"
+    },
+    "8caa732573e722e27ca5723a88bd2a21516889e523461d7d9999b7ece7e7a24f": {
+      "url": "https://www.reddit.com/r/Python/comments/1veq8jh/anyone_running_fastapi_in_production_with_high",
+      "date": "2026-08-23"
+    },
+    "b16d53b17a73b52326320a666abe9d153324ccc2139407b92a5f799c666ea45c": {
+      "url": "https://www.reddit.com/r/Python/comments/1vlfhlt/benchmarking_python_api_frameworks_with_real",
+      "date": "2026-08-23"
+    },
+    "39fd90484d882c30a1c6af350c2f13115b2c653d5965cced8c54adf34051691a": {
+      "url": "https://www.reddit.com/r/Python/comments/1vb2ruy/scaling_numpy_on_freethreaded_python",
+      "date": "2026-08-23"
+    },
+    "f75be2176528a1c4648987005209d25eb2d0d6059aa989eec4f2f501e366d1f6": {
+      "url": "https://www.reddit.com/r/Python/comments/1v88quw/percentage_formatting_or_fstrings_with_logging",
+      "date": "2026-08-23"
+    },
+    "3257cd4ab11db6d1ff7b2cbe81b29e69e25fa72cc516c04b052f4afd042ad8c1": {
+      "url": "https://www.reddit.com/r/Python/comments/1v8xi2u/define_less_check_more_special_support_for_attrs",
+      "date": "2026-08-23"
+    },
+    "0c2df30d8b90318c999aa1cb135b7b75e3f14ab9d6c46424bee07ba1ef6d9acc": {
+      "url": "https://www.reddit.com/r/Python/comments/1v59ter/ruff_no_datetoday",
+      "date": "2026-08-23"
+    },
+    "c81603f155d142bc6acb04a074310a57f9fedd5bc1e9ee2dd09c28097fd2a1b5": {
+      "url": "https://www.reddit.com/r/Python/comments/1viucj5/python_3150_rc1_is_here_python_315_is_almost_ready",
+      "date": "2026-08-23"
+    },
+    "354dc24a02d4512393c837af82c5e52b5396b3e7f8b14542aecaf687fb11467e": {
+      "url": "https://www.reddit.com/r/Python/comments/1vb3t6f/the_rise_of_the_command_line_building_a_new_ide",
+      "date": "2026-08-23"
+    },
+    "a3f684cdc80b71ff7d96f83259996e166a431ece27417ac917d3f8f41c6015eb": {
+      "url": "https://www.reddit.com/r/Python/comments/1vm8nkn/numba_in_the_browser_unlocking_a_new_scientific",
+      "date": "2026-08-23"
+    },
+    "8899291214bc7244e22cc23f20bdd98204c94055379e7809ec50f3dd4aab54e4": {
+      "url": "https://www.reddit.com/r/Python/comments/1vk3w9b/third_party_python_libraries_and_supply_chain",
+      "date": "2026-08-23"
+    },
+    "33d5ca51db0e02eba94910a091b2426a99d54f11871490145f9e81dcea14c7fe": {
+      "url": "https://www.reddit.com/r/Python/comments/1vh33qd/fastapi_conf_2026_first_ever_official_fastapi",
+      "date": "2026-08-23"
+    },
+    "1c9de35a3aacc7ff9a08a7a45418bef066d311f8b016e24aaa23871dbd28a4b2": {
+      "url": "https://www.reddit.com/r/Python/comments/1vauefo/python_ios_ui_development",
+      "date": "2026-08-23"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 0
+  "dailyPage": 1
 }
