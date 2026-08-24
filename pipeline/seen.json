@@ -15384,8 +15384,24 @@
     "1c9de35a3aacc7ff9a08a7a45418bef066d311f8b016e24aaa23871dbd28a4b2": {
       "url": "https://www.reddit.com/r/Python/comments/1vauefo/python_ios_ui_development",
       "date": "2026-08-23"
+    },
+    "afd300f326ca249dcd207835f37b80a4f4a6379d5d7fd20f6f8246e6c29d96bc": {
+      "url": "https://simonwillison.net/2026/Aug/23/anthropics-best-ai-model-struggles-to-attract-users-as-cheaper-t",
+      "date": "2026-08-24"
+    },
+    "291d5eb46511b79f06895f30254a6c3ca05ba8dbbbc727b19a3d14175d9eb6f7": {
+      "url": "https://github.com/Leonxlnx/taste-skill",
+      "date": "2026-08-24"
+    },
+    "525136f5e3165d97c9d893a9b00133dd4211fa3474300852e42843480e0eb434": {
+      "url": "https://simonwillison.net/2026/Aug/23/drew-breunig",
+      "date": "2026-08-24"
+    },
+    "df11630e65be505cc9baca77e9dc98cf13a05cbcc44466ffa557eda1573deb91": {
+      "url": "https://github.com/D4Vinci/Scrapling",
+      "date": "2026-08-24"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 1
+  "dailyPage": 2
 }
