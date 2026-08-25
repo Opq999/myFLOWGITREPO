@@ -1,0 +1,150 @@
+---
+title: "Control Your Android Phone with AI: A Local Setup Guide"
+description: "Learn to set up an AI agent on your Android phone that understands your voice commands to perform actions like sending messages and checking balances."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 60
+jobToBeDone: "Set up a local AI agent that controls an Android phone using natural language commands"
+tools:
+  - name: "Termux"
+    url: "https://f-droid.org/en/packages/com.termux/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "F-Droid"
+    url: "https://f-droid.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Ollama"
+    url: "https://ollama.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Gemma 4"
+    url: "https://ollama.com/library/gemma"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "GitHub"
+    url: "https://github.com/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Python"
+    url: "https://www.python.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Flask"
+    url: "https://flask.palletsprojects.com/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/okeke_chukwudubem_5f3bf49/project-log-21-the-grand-finale-we-shipped-plus-full-setup-guide-55ph"
+  platform: "blog"
+  author: "okeke_chukwudubem_5f3bf49"
+  postedAt: 2026-08-09
+score: 9
+ingestedAt: 2026-08-25
+nigeriaNotes: "This workflow requires a stable WiFi connection for downloading models and software. Data usage can be significant (several GB) for model downloads. Ensure you are on an unlimited plan or connected to WiFi. Termux and F-Droid are free to install. Ollama and Gemma 4 are free to run locally."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will set up an AI agent on your Android phone that can understand your spoken or typed commands and perform actions on your phone. This allows you to control apps, send messages, and check information using natural language, all processed locally on your device.
+
+This approach works by combining a local AI model with tools that allow software to interact with your phone's interface.
+
+## Tools you need
+*   **Termux** (free): A terminal emulator and Linux environment app for Android that allows you to run command-line tools.
+*   **F-Droid** (free): An app store for Android that hosts free and open-source applications, including an up-to-date version of Termux.
+*   **Ollama** (free): A tool that lets you run large language models, like Gemma 4, directly on your device.
+*   **Gemma 4** (free): A family of lightweight, state-of-the-art open models from Google, used here as the AI brain.
+*   **GitHub** (freemium): A platform for hosting code repositories, used here to download the project's code.
+*   **Python** (free): A popular programming language used for the agent's logic and web interface.
+*   **Flask** (free): A simple Python framework for building web applications, used here to create a chat interface.
+
+## Steps
+1.  **Install Termux from F-Droid**: Do not use the Google Play Store version as it is outdated. Open your phone's browser, go to f-droid.org, download and install the F-Droid app. Then, open F-Droid, search for "Termux", and install it.
+    You should see the Termux app icon appear on your phone.
+
+2.  **Set up Termux**: Open Termux and run the following commands one by one. Wait for each command to finish before typing the next.
+
+    ```bash
+    pkg update
+    pkg upgrade
+    pkg install python git curl wget
+    pkg install tesseract
+    pkg install android-tools
+    ```
+
+    After these commands, Termux will be updated, and necessary tools like Python and tools for Android debugging will be installed.
+
+3.  **Install Ollama and download the Gemma 4 model**: First, install Ollama by running:
+
+    ```bash
+    curl -fsSL https://ollama.com/install.sh | sh
+    ```
+
+    Then, start the Ollama service:
+
+    ```bash
+    ollama serve
+    ```
+
+    Open a new Termux session (swipe from the left edge of the screen and tap "New session"). In this new session, download the Gemma 4 model. This will take some time and download about 2-3GB, so use WiFi.
+
+    ```bash
+    ollama pull gemma4:4b
+    ```
+
+    You should see the download progress and a confirmation message once the model is downloaded.
+
+4.  **Get the Phone Agent code**: Clone the project's code from GitHub and navigate into the project directory.
+
+    ```bash
+    git clone https://github.com/Dexter2344/phone-agent.git
+    cd phone-agent
+    ```
+
+    You should now be inside the `phone-agent` folder in your Termux terminal.
+
+5.  **Install Python dependencies**: Install the required Python libraries for the agent to work.
+
+    ```bash
+    pip install flask flask-cors requests numpy PyPDF2 lancedb
+    ```
+
+    You should see messages indicating that these libraries are being installed.
+
+6.  **Enable Developer Options and ADB on your phone**: Go to your phone's `Settings` > `About Phone`. Tap on the `Build Number` about 7 times until you see a message saying "You are now a developer".
+    Go back to `Settings`, find `Developer Options` (it might be under `System`), and enable `USB Debugging`.
+
+    Connect your phone to itself using ADB. This command checks if your phone is recognized for debugging. You might see a prompt on your phone asking to "Allow USB debugging"; tap "Allow".
+
+    ```bash
+    adb devices
+    ```
+
+    You should see your device listed with a status like "device".
+
+7.  **Start the Phone Agent**: You can start the agent using its web interface, which is recommended.
+
+    ```bash
+    python server.py
+    ```
+
+    After running this, open your phone's web browser and go to `http://localhost:5000`. You will see a chat interface where you can type commands like "Open WhatsApp and send a message to Mom saying I'll call later".
+
+    Alternatively, you can run the agent directly in the terminal:
+
+    ```bash
+    python agent.py
+    ```
+
+    Then, type your commands directly into the Termux terminal.
+
+## Original source
+This guide is based on the project log by okeke_chukwudubem_5f3bf49, shared on the DEV Community platform. The author documented their journey of building an AI agent capable of controlling an Android phone using natural language commands, culminating in a full setup guide for others to follow.
+
+## Notes & variations
+*   **Free Tier Viability**: All tools used in this guide have free tiers or are completely free and open-source, making this workflow accessible without cost. The main data usage comes from downloading the Gemma 4 model (around 2-3GB) and any initial software downloads.
+*   **Common Pitfall**: Ensure you install Termux from F-Droid, not the Google Play Store, to get the latest version that supports all necessary commands. Also, be patient during model downloads as they can take time.
+*   **Tip for Better Results**: For more complex commands or if the agent struggles to understand, try breaking down your request into simpler, sequential steps. You can also experiment with different prompts in the chat interface to see how the AI responds.

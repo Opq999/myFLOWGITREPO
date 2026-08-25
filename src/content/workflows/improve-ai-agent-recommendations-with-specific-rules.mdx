@@ -1,0 +1,66 @@
+---
+title: "Improve AI Agent Recommendations with Specific Rules"
+description: "Learn to implement checks and rules for AI agents to make concrete recommendations, improving system monitoring and decision-making."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 15
+jobToBeDone: "Improve AI agent decision-making by implementing specific checks and rules."
+tools:
+  - name: "AI Chat Tool"
+    url: "https://claude.ai"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/fromzerotoship/s3-the-loot-report-vol-2-four-lines-that-fixed-the-boring-parts-1ajb"
+  platform: "blog"
+  author: "fromzerotoship"
+  postedAt: 2026-07-26
+score: 7
+ingestedAt: 2026-08-25
+nigeriaNotes: "This workflow relies on an AI chat tool, which can be accessed via a free tier. Data usage is minimal, primarily text-based prompts and responses. Ensure you have a stable internet connection."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to instruct an AI agent to provide a single, clear recommendation with a reason and an assumption that would invalidate it. This approach helps prevent AI agents from punting decisions back to you, making their output more decisive and useful.
+
+## Tools you need
+*   **AI Chat Tool** (freemium): A tool like Claude, ChatGPT, or Gemini to interact with an AI model.
+
+## Steps
+1.  **Instruct the AI agent**: Start a new chat with your AI tool. Tell the AI to follow a specific format for its recommendations.
+
+    ```
+    From now on, when you make a recommendation, follow this format:
+    1. State your single recommended option.
+    2. Provide a one-sentence reason for your recommendation.
+    3. Name the specific assumption that would make your recommendation wrong.
+    ```
+
+    You should see the AI acknowledge your instructions and confirm it will follow the new format.
+
+2.  **Test the AI's recommendations**: Ask the AI to perform a task that requires a recommendation. For example, ask it to recommend a marketing strategy for a small business.
+
+    ```
+    Recommend a social media marketing strategy for a new local bakery.
+    ```
+
+    You should receive a response that includes a single recommendation, a reason, and an assumption, like this example:
+
+    *   **Recommendation:** Focus on Instagram and Facebook with visually appealing posts of baked goods.
+    *   **Reason:** These platforms are highly visual and popular with local consumers looking for food.
+    *   **Assumption:** The bakery has the budget and time to consistently create high-quality photo and video content.
+
+3.  **Count decision "punts"**: To ensure the AI is sticking to the new rule, manually review its responses over a period of time. Count how many times the AI hands a decision back to you instead of providing a recommendation, reason, and assumption. Also, note if you yourself are tempted to ignore the "assumption" part, as this can be a hidden way the AI still punts decisions.
+
+    This step is about observation and self-correction. You should see a significant reduction in direct questions like "Which do you prefer?" and a clearer adherence to the requested format.
+
+## Original source
+This workflow is inspired by a post by 'fromzerotoship' on DEV Community. The author shares practical tips, called "Loot Reports," on improving systems, often by adding simple checks or rules. This specific tip focuses on making AI agents more decisive by enforcing a structured recommendation format.
+
+## Notes & variations
+*   **Free-tier alternative**: This workflow works well with the free tiers of most major AI chat tools like Claude.ai, ChatGPT, and Google Gemini.
+*   **Common mistake**: A common pitfall is not being specific enough in your initial instruction. If the AI still gives vague answers or multiple options, try rephrasing the instruction to be even clearer about "one" recommendation and "one" assumption.
+*   **Tip for better results**: Regularly review the AI's output and provide feedback. If it misses the mark, tell it specifically what was wrong and ask it to try again following the rules. This helps the AI learn and adapt to your needs.

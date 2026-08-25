@@ -1,0 +1,69 @@
+---
+title: "Verify AI Evaluation Suites with evalmut"
+description: "Learn how to use evalmut to find hidden defects in your AI evaluation suites, ensuring they actually check for issues."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 30
+jobToBeDone: "Verify the effectiveness of AI evaluation suites by detecting hidden defects"
+tools:
+  - name: "evalmut"
+    url: "https://github.com/egnaro9/evalmut"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Claude Code"
+    url: "https://code.claude.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Python"
+    url: "https://www.python.org"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/agentdev9/your-eval-suite-passes-i-built-the-tool-that-checks-whether-it-checks-anything-2c3f"
+  platform: "blog"
+  author: "agentdev9"
+  postedAt: 2026-08-14
+score: 7
+ingestedAt: 2026-08-25
+nigeriaNotes: "evalmut is a command-line tool, so data usage is minimal. Claude Code is a paid tool, but the core functionality of evalmut can be explored with Python and its open-source nature."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to use a tool called `evalmut` to check if your AI evaluation suites are actually catching problems. This works by intentionally breaking your AI system in small ways and seeing if your tests (your evaluation suite) catch these breaks. If your tests don't catch the breaks, `evalmut` shows you the 'holes' in your testing.
+
+## Tools you need
+*   **evalmut** (free): A command-line tool that injects defects into your AI system to test your evaluation suites.
+*   **Claude Code** (paid): An AI coding assistant that the author used to help build `evalmut`. You can use other AI coding assistants or write the code yourself.
+*   **Python** (free): A programming language used to build and run `evalmut` and your evaluation suites.
+
+## Steps
+1.  **Install evalmut**: Open your terminal or command prompt and type the following command to install the tool. You need Python installed on your system for this to work.
+
+    ```bash
+    pip install evalmut
+    ```
+
+    You should see messages indicating that `evalmut` and its dependencies are being installed. If you encounter errors, ensure Python and pip are correctly set up on your system.
+
+2.  **Prepare your evaluation suite**: The author mentions that `evalmut` runs against a plain Python suite file. You will need to have your AI evaluation suite written in Python. The exact structure of this file is not detailed in the excerpt, but it should be a standard Python file that defines your tests.
+
+3.  **Run evalmut**: Once `evalmut` is installed and you have your Python evaluation suite file ready, you can run the tool. The author doesn't provide the exact command for running `evalmut` against a specific suite file, but a typical command might look like this (replace `your_suite.py` with the actual name of your Python evaluation file):
+
+    ```bash
+    evalmut run your_suite.py
+    ```
+
+    You should see output indicating which mutations (injected defects) were caught by your suite and which ones survived. Surviving mutations represent holes in your evaluation suite's ability to detect problems.
+
+4.  **Review the findings**: The tool ships with a file named `FINDINGS.md` in its repository. This file contains a catalog of defects that `evalmut` can reproduce. You can compare the surviving mutations from your run against this catalog to understand the types of issues your evaluation suite might be missing.
+
+## Original source
+This workflow is based on a blog post by agentdev9 on the DEV Community platform. The author, agentdev9, describes building a tool called `evalmut` to mechanically test the effectiveness of AI evaluation suites by injecting known defects and checking if the suite catches them.
+
+## Notes & variations
+*   **Free-tier alternative**: While Claude Code was used, you can achieve the same results by writing the Python code for your evaluation suite and `evalmut` itself using standard Python libraries and potentially other free AI coding assistants.
+*   **Common pitfall**: A major pitfall is trusting an evaluation suite that hasn't been rigorously tested. `evalmut` is designed to prevent this false confidence by actively looking for ways your suite can fail to detect issues.
+*   **Tip for better results**: To get the most out of `evalmut`, ensure your Python evaluation suite is well-structured and covers a broad range of expected behaviors and potential failure modes for your AI system. The more comprehensive your suite, the more meaningful the results from `evalmut` will be.

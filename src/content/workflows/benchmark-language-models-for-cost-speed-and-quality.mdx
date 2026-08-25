@@ -1,0 +1,94 @@
+---
+title: "Benchmark Language Models for Cost, Speed, and Quality"
+description: "Learn how to benchmark multiple language models like Llama, GPT, DeepSeek, and Claude for cost, speed, and answer quality using a simple testing setup."
+category: "academic-research"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 30
+jobToBeDone: "Benchmark multiple language models for cost, speed, and answer quality"
+tools:
+  - name: "pytest"
+    url: "https://docs.pytest.org/en/stable/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Llama"
+    url: "https://llama.meta.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "GPT"
+    url: "https://openai.com/"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "DeepSeek"
+    url: "https://deepseek.ai/"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Claude"
+    url: "https://www.anthropic.com/"
+    pricing: "paid"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/sara_bezjak/a-benchmark-is-only-as-good-as-the-model-you-use-to-grade-it-4h01"
+  platform: "blog"
+  author: "sara_bezjak"
+  postedAt: 2026-08-20
+score: 7
+ingestedAt: 2026-08-25
+nigeriaNotes: "This workflow involves API calls to paid models, which can incur costs. Free local models like Llama are viable for comparison, but accessing paid models will require international payment methods and data. Data usage for API calls is generally low per query but can add up."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to set up a system to compare different AI language models based on their cost per query, how fast they respond, and the quality of their answers. This approach helps you choose the best model for your specific needs, whether it's for academic research or business applications.
+
+## Tools you need
+*   **pytest** (free): A tool for writing and running tests, used here to automate the process of sending questions to different AI models.
+*   **Llama** (free): A family of open-source language models that can be run locally on your computer.
+*   **GPT** (paid): A powerful language model developed by OpenAI, accessed via an API.
+*   **DeepSeek** (paid): A language model developed by DeepSeek AI, accessed via an API.
+*   **Claude** (paid): A family of language models developed by Anthropic, accessed via an API.
+
+## Steps
+1.  **Set up your testing environment**: The author used a tool called `pytest` to build a testing harness. This involves writing Python code to manage the tests. You will need to install Python and then `pytest`. The exact commands to set this up are not provided in the excerpt, but you can find general installation guides for Python and `pytest` online.
+
+    *   **Install Python**: If you don't have Python installed, download it from python.org and follow the installation instructions for your operating system.
+    *   **Install pytest**: Open your terminal or command prompt and run:
+
+    ```bash
+    pip install pytest
+    ```
+
+    You should see messages indicating that pytest and its dependencies were successfully installed.
+
+2.  **Prepare your questions**: The author used a set of ten questions that were sent to each model twice. You should create a list of questions relevant to the task you want to benchmark the models for. These questions will form your test dataset.
+
+3.  **Integrate with AI models**: The author's code connects to five different models: a free local Llama model, and paid models like GPT, DeepSeek, and two Claude models. To do this, you will need to:
+    *   **Set up local Llama**: Follow instructions specific to running Llama models locally. This often involves downloading model weights and using a compatible runtime like Ollama or LM Studio.
+    *   **Get API keys for paid models**: Sign up for accounts with OpenAI (for GPT), DeepSeek AI, and Anthropic (for Claude). You will need to obtain API keys from their respective developer dashboards. These keys allow your code to send requests to their models.
+    *   **Write code to call models**: The author's `pytest` harness likely contains Python code to send your questions to each model via its API or local runtime. The exact code for this is not shared, but it would involve using libraries like `requests` or specific SDKs provided by the model providers.
+
+4.  **Run the benchmark**: Execute the `pytest` command in your terminal from the directory where your test code is saved. The author ran the same ten questions through each of the five models, twice each.
+
+    ```bash
+    pytest your_test_file.py
+    ```
+
+    You should see output from pytest indicating that tests are running and passing. The author's script collects data on cost per query, speed (latency in milliseconds), and the number of output tokens for each model.
+
+5.  **Analyze the results**: The author presents a table comparing the models. The table includes scores for quality (0-1), cost per query, latency, and output tokens. The author's analysis shows that the quality scores were very close (0.92 to 0.97), suggesting that the differences might be negligible for many use cases. The author also highlights that the 'judge' model used to score answer quality was one of the models being tested, which could introduce bias.
+
+    *   **Quality Score**: A second model grades each answer on correctness and relevance, combined into a 0-1 score. A pass line of 0.7 is mentioned.
+    *   **Cost per query**: The price paid for each question asked.
+    *   **Latency**: How long, in milliseconds (ms), it took for the model to respond.
+    *   **Output tokens**: The number of 'tokens' (pieces of words) the model generated in its answer.
+
+6.  **Re-evaluate with a trusted judge**: Because the initial quality scoring was potentially biased, the author re-graded answers using a paid model as a judge. This step is crucial for ensuring the benchmark's reliability, especially when comparing models that have close scores. The author notes this re-grading cost very little.
+
+## Original source
+This workflow is based on the experience shared by Sara Bezjak on the DEV Community platform. The author built a testing system to compare AI language models on key performance metrics like cost, speed, and answer quality, revealing insights into the reliability of such benchmarks.
+
+## Notes & variations
+*   **Free tier alternatives**: While GPT, DeepSeek, and Claude are paid services, you can use free local models like Llama 3.2 as a baseline. Some platforms like Groq or OpenRouter might offer free tiers or credits for certain models, which could be explored for testing.
+*   **Common pitfall**: Do not trust a benchmark where the scoring model is also one of the models being tested, as this can lead to biased results. Always use an independent or more capable model for grading if possible.
+*   **Tip for better results**: When comparing models with very close quality scores, focus on cost and speed as the deciding factors, but always verify that the differences are statistically significant rather than just random noise by running the benchmark multiple times.

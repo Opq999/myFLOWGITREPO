@@ -1,0 +1,95 @@
+---
+title: "Improve AI-generated code quality with a planning prompt"
+description: "Learn to get better code from AI by asking for an implementation plan before generating the code. This makes AI changes easier to review and trust."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 15
+jobToBeDone: "Improve AI-generated code quality and reviewability by asking for an implementation plan first"
+tools:
+  - name: "ChatGPT"
+    url: "https://chatgpt.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/johnnylemonny/a-small-change-to-your-ai-coding-workflow-ask-for-the-plan-first-4679"
+  platform: "blog"
+  author: "johnnylemonny"
+  postedAt: 2026-07-28
+score: 9
+ingestedAt: 2026-08-25
+nigeriaNotes: "This workflow uses a freemium AI chat tool, which typically has a free tier that is sufficient for this task. Data usage is light, mainly text input and output."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will receive a clear, step-by-step plan from an AI assistant for a code change, before it writes any code. This approach helps you catch potential mistakes early, makes the AI's code easier to understand, and ensures it aligns with your project's specific needs, saving time in the long run.
+
+## Tools you need
+*   **ChatGPT** (freemium): An AI chat assistant to help you plan and generate code changes.
+
+## Steps
+1.  **Prepare your task description**: Gather four key pieces of information about the code change you want to make.
+    *   **Goal**: What you want to achieve (e.g., "Cache successful user profile reads to reduce repeated database queries.").
+    *   **Relevant context**: Key files or parts of your code related to the change (e.g., "The user service is in src/users/user-service.ts."). You will need to copy-paste the contents of these files into the AI later.
+    *   **Constraints**: Rules the AI must follow (e.g., "Do not add dependencies.", "Do not change the public API.").
+    *   **Acceptance criteria**: How you will know the change is successful (e.g., "A repeated read for the same user can use the cached value.").
+    You should have these points ready to paste into the AI.
+
+2.  **Open your AI assistant**: Go to ChatGPT (or your preferred AI chat tool).
+    You should see the chat interface ready for your input.
+
+3.  **Provide the task description and relevant code**: Paste your prepared task description and the contents of the relevant code files into the chat.
+    The author doesn't share their exact prompt; a starting point is to clearly label each section:
+
+    ```
+    Here is a task I need help with for my codebase. I will provide the goal, relevant context (including file contents), constraints, and acceptance criteria.
+
+    Goal: Cache successful user profile reads to reduce repeated database queries.
+
+    Relevant context:
+    - The user service is in src/users/user-service.ts.
+    - The project already has a cache abstraction in src/cache/cache.ts.
+    - User updates are handled by updateUser.
+    - Unit tests use Vitest.
+
+    Here is the content of src/users/user-service.ts:
+    [Paste content of user-service.ts here]
+
+    Here is the content of src/cache/cache.ts:
+    [Paste content of cache.ts here]
+
+    Constraints:
+    - Do not add dependencies.
+    - Do not change the public API.
+    - Do not cache unsuccessful lookups.
+    - A cache failure must not prevent a database read.
+    - Do not modify unrelated services.
+
+    Acceptance criteria:
+    - A repeated read for the same user can use the cached value.
+    - Updating a user invalidates the corresponding cache entry.
+    - Cache failures fall back to the database.
+    - Existing tests continue to pass.
+    - The new behavior has focused tests.
+    ```
+    The AI will process this information. It won't generate code yet.
+
+4.  **Ask for an implementation plan**: After providing all the context, ask the AI to inspect the files and propose a plan.
+
+    ```
+    Inspect the relevant files and propose a minimal implementation plan. Before writing any code, explain the current behavior, identify the smallest required change, and list your assumptions.
+    ```
+    You should receive a detailed plan from the AI, outlining how it intends to approach the code change, its understanding of the existing code, and any assumptions it's making. This plan should *not* include the actual code changes yet.
+
+5.  **Review and refine the plan**: Read the AI's proposed plan carefully. Check if it aligns with your understanding, constraints, and acceptance criteria. If anything is unclear or incorrect, ask follow-up questions or provide corrections.
+    For example, if the AI makes an incorrect assumption, you might say: "Your assumption about X is incorrect. The system actually works by Y. Please adjust your plan." Once you are satisfied with the plan, you can then proceed to ask the AI to generate the code based on the agreed-upon plan (this next step is outside the scope of the original excerpt, but a natural follow-up).
+
+## Original source
+This workflow is inspired by an article titled "A Small Change to Your AI Coding Workflow: Ask for the Plan First" by johnnylemonny, published on the DEV Community blog. It highlights the importance of getting an implementation plan from an AI assistant before it generates code, to improve quality and reviewability.
+
+## Notes & variations
+*   **Free-tier alternatives**: You can use other freemium AI chat tools like Google Gemini (gemini.google.com) or Claude (claude.ai) for this workflow. They offer similar capabilities for text-based interaction.
+*   **Common mistake**: A common pitfall is to skip the planning step and immediately ask the AI to "write the code." This often leads to code that doesn't fit your project, makes wrong assumptions, or is hard to review. Always ask for the plan first.
+*   **Tip for better results**: Be as specific as possible in your "Relevant context," "Constraints," and "Acceptance criteria." The more detail you provide about your codebase and requirements, the better the AI's plan will be. If your code is very large, only paste the most directly relevant files or functions to keep the context focused.

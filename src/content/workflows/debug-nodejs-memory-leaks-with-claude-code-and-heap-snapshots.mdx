@@ -1,0 +1,80 @@
+---
+title: "Debug Node.js Memory Leaks with Claude Code and Heap Snapshots"
+description: "Learn to systematically debug Node.js memory leaks in production using AI. This guide explains how to use Claude Code with heap snapshot diffs to find the root cause."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 30
+jobToBeDone: "Debug a production memory leak using AI and heap snapshots"
+tools:
+  - name: "Claude Code"
+    url: "https://code.claude.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Node.js"
+    url: "https://nodejs.org"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Chrome DevTools"
+    url: "https://developer.chrome.com/docs/devtools"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/yureki_lab/how-i-used-claude-code-to-hunt-down-a-memory-leak-that-took-down-prod-2cpf"
+  platform: "blog"
+  author: "yureki_lab"
+  postedAt: 2026-08-08
+score: 10
+ingestedAt: 2026-08-25
+nigeriaNotes: "Claude Code is a paid tool. Node.js and Chrome DevTools are free. Debugging memory leaks can require significant data transfer if snapshots are large, but the core tools are accessible."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to use an AI coding assistant, Claude Code, to systematically find and fix memory leaks in your Node.js applications. This approach uses real data from your running application, rather than just asking the AI to guess from the code, making it much more effective for complex issues.
+
+## Tools you need
+*   **Claude Code** (paid): An AI coding assistant that can analyze code and data to help with debugging.
+*   **Node.js** (free): A JavaScript runtime environment used to run your server-side applications.
+*   **Chrome DevTools** (free): A set of web debugging tools built into the Google Chrome browser, which can be used to inspect Node.js applications.
+
+## Steps
+1.  **Capture heap snapshots**: When your Node.js application is running and you suspect a memory leak, you need to capture its memory state at two different points in time. The author used the Node.js inspector and then a Node.js script to save these snapshots. You can do this by running your Node.js application with the inspect flag, and then using Chrome DevTools or a script to save the snapshots.
+    *   To start your Node.js app with the inspector enabled:
+        ```bash
+        node --inspect=9229 server.js
+        ```
+    *   Then, to capture snapshots using Node.js:
+        ```bash
+        node -e " const v8 = require('v8'); const fs = require('fs'); fs.writeFileSync('heap-1.heapsnapshot', v8.getHeapSnapshot()); "
+        ```
+        Wait for some time (e.g., 20 minutes) while your application is under load, then run the command again to capture a second snapshot, naming it `heap-2.heapsnapshot`.
+    You should have two files, `heap-1.heapsnapshot` and `heap-2.heapsnapshot`, in your directory.
+
+2.  **Compare the heap snapshots**: Load both snapshot files into Chrome DevTools. The author used the comparison view to see the differences. This comparison highlights which parts of your application's memory are growing over time, which is a strong indicator of a leak.
+    You should see a view in Chrome DevTools showing the differences between the two memory snapshots, listing growing constructors and their memory impact.
+
+3.  **Export and provide data to Claude Code**: From the comparison view in Chrome DevTools, export the data showing the top growing constructors. Then, provide this data along with the relevant source code files to Claude Code. The author's prompt focused on asking Claude Code to cross-reference the growing allocations with the source code to identify the allocation site consistent with the growth pattern.
+    *   A starting prompt based on the author's approach:
+        ```
+        Here's a heap snapshot diff between t=0 and t=20min under steady load. The top 5 growing constructors by retained size are:
+        [Paste the exported JSON data from Chrome DevTools here]
+        
+        Cross-reference these against the source code files I've provided and tell me which allocation site is consistent with this growth pattern. Focus on identifying the specific code responsible for the memory leak.
+        ```
+    You should receive an analysis from Claude Code pointing to specific lines or sections of your code that are likely causing the memory leak.
+
+4.  **Analyze and fix the leak**: Based on Claude Code's analysis, review the identified code sections. The author found that focusing on the actual data growth, rather than just code patterns that look suspicious, was key. Implement the fix in your Node.js code.
+    You should have a corrected code snippet that addresses the identified memory leak.
+
+5.  **Verify the fix**: Redeploy your application with the fix and monitor its memory usage. Ensure that the memory usage stabilizes and does not continue to climb indefinitely.
+    You should see stable memory usage in your application's monitoring tools.
+
+## Original source
+This workflow is based on a blog post by yureki_lab on DEV Community, detailing their experience using Claude Code to debug a production memory leak in a Node.js service by systematically analyzing heap snapshots.
+
+## Notes & variations
+*   **Free tier alternative**: While Claude Code is a paid tool, the process of capturing and comparing heap snapshots using Node.js and Chrome DevTools is entirely free and is the crucial first step. For analyzing the diffs without an AI, you would manually inspect the Chrome DevTools output.
+*   **Common pitfall**: Avoid asking the AI to simply 'find the memory leak' based on source code alone. This often leads to plausible but incorrect guesses. The key is to provide the AI with concrete data from heap snapshot diffs.
+*   **Tip for better results**: Ensure your heap snapshots are taken under realistic load conditions that mimic your production environment. The more representative the load, the clearer the memory growth patterns will be.

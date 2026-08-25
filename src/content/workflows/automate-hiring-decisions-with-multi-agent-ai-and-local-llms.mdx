@@ -1,0 +1,90 @@
+---
+title: "Automate Hiring Decisions with Multi-Agent AI and Local LLMs"
+description: "Explore how a multi-agent AI system can automate candidate screening and hiring decisions. This advanced workflow uses LangChain4j, LangGraph4j, and local LLMs like Ollama."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 360
+jobToBeDone: "Automate candidate screening and hiring decisions with a multi-agent AI workflow"
+tools:
+  - name: "LangChain4j"
+    url: "https://github.com/langchain4j/langchain4j"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "LangGraph4j"
+    url: "https://github.com/langchain4j/langchain4j-graph"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Spring Boot"
+    url: "https://spring.io/projects/spring-boot"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Ollama"
+    url: "https://ollama.com"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Postgres"
+    url: "https://www.postgresql.org"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/ykpraveen/building-a-multi-agent-hiring-workflow-with-langchain4j-and-langgraph4j-on-spring-boot-2a15"
+  platform: "blog"
+  author: "ykpraveen"
+  postedAt: 2026-08-05
+score: 9
+ingestedAt: 2026-08-25
+nigeriaNotes: "This workflow requires a computer with sufficient processing power (CPU) to run local AI models like Ollama, which can be demanding. All tools are free and open-source, but setting up the development environment and database requires technical expertise and time."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+This is an advanced way to automate complex tasks using multiple AI agents that work together, much like a team of experts. Instead of one AI doing everything, different AI agents handle specific parts of a job, like checking skills or experience for a job applicant.
+
+This particular workflow uses LangChain4j, a Java library that helps developers connect AI models (like large language models, or LLMs) into applications. It also uses LangGraph4j, which is built on top of LangChain4j, to manage how these different AI agents interact and make decisions in a structured way, like a flowchart.
+
+This approach is advanced because it requires coding skills in Java, setting up a development environment, and managing databases. It's not a simple copy-paste solution. The author also explores running these AI agents using a local LLM (a large language model that runs on your own computer) called Ollama, which means you don't always need to rely on internet-based AI services.
+
+## What you can use it for
+*   **Automate candidate screening**: Automatically review resumes and job applications against specific criteria, saving time for recruiters.
+*   **Standardize hiring decisions**: Ensure all candidates are evaluated consistently by multiple AI agents, reducing human bias.
+*   **Flag complex cases for human review**: Automatically identify applications that need a human eye, such as unreadable resumes or candidates with mixed signals.
+*   **Build custom AI workflows**: Create tailored AI systems that can pause, wait for human input, and resume, making them suitable for multi-step business processes.
+*   **Run AI locally for privacy and cost**: Use local AI models with tools like Ollama to process sensitive data on your own computer and potentially reduce costs associated with cloud AI services.
+
+## Tools you need
+*   **LangChain4j** (free): A Java library for building applications that use large language models (LLMs).
+*   **LangGraph4j** (free): A Java library, built on LangChain4j, for creating multi-agent systems that can manage complex workflows and state.
+*   **Spring Boot** (free): A popular framework for building robust Java applications quickly.
+*   **Ollama** (free): Software that lets you run large language models (LLMs) directly on your own computer.
+*   **Postgres** (free): A powerful, open-source database used here to store the workflow's state, allowing it to pause and resume.
+
+## How it actually works
+1.  **Set up your development environment**: You'll need Java Development Kit (JDK), Maven or Gradle (build tools), and an Integrated Development Environment (IDE) like IntelliJ IDEA or VS Code.
+2.  **Install Ollama and a local LLM**: Download and install Ollama on your computer. Then, use Ollama to download a specific large language model (LLM) that your agents will use for reasoning. The author used a CPU-only model, implying it can run on standard computers, but performance varies.
+3.  **Install and configure Postgres**: Set up a PostgreSQL database instance. This database will be used by LangGraph4j to store the "state" of your hiring workflow, allowing it to remember where it left off even if the application restarts.
+4.  **Clone or create a Spring Boot project**: Start a new Spring Boot project or clone the author's `langchain4j-sample` project (if publicly available). You will need to integrate the necessary dependencies.
+5.  **Integrate LangChain4j and LangGraph4j**: Add the necessary LangChain4j and LangGraph4j libraries to your project. You will define different AI agents (e.g., `SkillsAgent`, `ExperienceAgent`) as Java interfaces, using annotations like `@UserMessage` to define their prompts.
+6.  **Design the workflow graph**: Use LangGraph4j's `StateGraph` to define the sequence of actions and decisions, including parallel agent execution, conditional routing (e.g., to human review if a resume is unreadable), and pause points. The author's diagram shows this flow.
+7.  **Connect agents to tools and the LLM**: Configure each agent to use the local Ollama LLM and any necessary "tools" (like functions to fetch job requisitions or candidate data from a database). LangChain4j's `AiServices.builder()` simplifies this connection.
+8.  **Run and test the workflow**: Execute your Spring Boot application. The agents will interact with the local LLM and the Postgres database to process candidate applications according to the defined graph.
+
+## Words you'll see, explained
+*   **AI Agent**: A piece of software that uses artificial intelligence to perform specific tasks, often by interacting with other agents or tools.
+*   **Large Language Model (LLM)**: An AI program trained on vast amounts of text data, capable of understanding and generating human-like text.
+*   **Multi-agent system**: A system where multiple AI agents work together, each handling a different part of a complex task.
+*   **LangChain4j**: A Java library that simplifies building applications that use large language models.
+*   **LangGraph4j**: A Java library, built on LangChain4j, specifically designed for creating and managing complex, stateful multi-agent workflows.
+*   **Spring Boot**: A popular framework that makes it easier to create stand-alone, production-grade Spring-based applications in Java.
+*   **Ollama**: Software that allows you to download and run various large language models directly on your own computer, without needing cloud services.
+*   **Postgres**: A powerful, open-source relational database system often used to store structured data and, in this case, the state of the AI workflow.
+*   **Stateful graph**: A type of workflow diagram that remembers its current position and past actions, allowing it to pause and resume operations.
+
+## Original source
+This concept is based on a blog post by ykpraveen on the DEV Community platform. The author shares their journey of building a multi-agent hiring workflow using LangChain4j and LangGraph4j on Spring Boot, detailing the architectural choices and lessons learned from running it with a local Ollama model.
+
+## Notes & variations
+*   **Do you even need this?**: For simpler automation tasks, you might not need a full multi-agent system. A single AI model with a well-crafted prompt, or a sequence of simple API calls, might be sufficient. This advanced setup is best for complex, multi-step processes that require conditional logic, human intervention, or parallel processing.
+*   **Free-tier limits**: All the tools mentioned (LangChain4j, LangGraph4j, Spring Boot, Ollama, Postgres) are free and open-source. However, running local LLMs with Ollama requires a computer with sufficient CPU (and ideally GPU) and RAM, which can be a significant hardware cost if you don't already have a powerful machine.
+*   **Common pitfall**: A common mistake is underestimating the complexity of managing state and concurrency in multi-agent systems. Ensuring that agents correctly share information and that the workflow can reliably pause and resume requires careful design and robust error handling, especially when integrating with a database like Postgres.

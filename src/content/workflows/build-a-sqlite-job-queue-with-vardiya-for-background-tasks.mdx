@@ -1,0 +1,120 @@
+---
+title: "Build a SQLite Job Queue with Vardiya for Background Tasks"
+description: "Learn to implement a lightweight job queue for background tasks using SQLite and Vardiya, avoiding the need for Redis."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 30
+jobToBeDone: "Implement a lightweight job queue for background tasks using SQLite instead of Redis"
+tools:
+  - name: "Vardiya"
+    url: "https://github.com/zulwatha/vardiya"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "SQLite"
+    url: "https://www.sqlite.org/index.html"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Node.js"
+    url: "https://nodejs.org/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/zulwatha/i-got-tired-of-running-redis-for-one-background-job-so-i-built-a-sqlite-job-queue-4flk"
+  platform: "blog"
+  author: "zulwatha"
+  postedAt: 2026-08-02
+score: 7
+ingestedAt: 2026-08-25
+nigeriaNotes: "This workflow is data-light and suitable for mobile users. Node.js and SQLite are free to use. Vardiya is also free and open-source. Data usage will be minimal, primarily for downloading packages and running the application."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will set up a simple job queue system using SQLite, a lightweight database that runs on your local machine. This avoids the complexity of setting up and managing a separate service like Redis, making it ideal for small projects or applications running on a single server. This approach works because SQLite can store your jobs directly on disk, and it handles concurrent access well enough for many common background tasks.
+
+## Tools you need
+*   **Vardiya** (free): A JavaScript library that turns a SQLite database into a job queue.
+*   **SQLite** (free): A simple, file-based database system that doesn't require a separate server process.
+*   **Node.js** (free): A JavaScript runtime environment needed to run Vardiya and your application code.
+
+## Steps
+1.  **Set up your project**: If you don't have a Node.js project, create a new directory and initialize it.
+    *   Open your terminal or command prompt.
+    *   Create a new folder for your project: `mkdir my-job-queue && cd my-job-queue`
+    *   Initialize Node.js: `npm init -y`
+    *   You should see a `package.json` file created in your folder.
+
+2.  **Install Vardiya and its dependency**: Add Vardiya and the necessary SQLite driver to your project.
+    *   In your terminal, run:
+    ```bash
+    npm install vardiya better-sqlite3
+```
+    *   You should see messages indicating that `vardiya` and `better-sqlite3` have been installed and added to your `node_modules` folder.
+
+3.  **Create your job queue script**: Write a JavaScript file to set up and use Vardiya.
+    *   Create a new file named `queue.js` in your project folder.
+    *   Paste the following code into `queue.js`:
+
+    ```javascript
+    import { Vardiya } from "vardiya";
+
+    // Initialize Vardiya with a path to your SQLite database file
+    const v = new Vardiya({ databasePath: "./jobs.sqlite" });
+
+    async function runQueue() {
+      await v.init();
+      console.log("Vardiya initialized.");
+
+      // Enqueue a job with a delay of 5 seconds
+      await v.enqueue("email", { to: "a@b.com" }, { delayMs: 5000 });
+      console.log("Email job enqueued.");
+
+      // Create a worker to process jobs
+      const worker = v.createWorker({ concurrency: 4 });
+
+      // Define how to process 'email' jobs
+      worker.process("email", async (job) => {
+        console.log(`Processing email job for: ${job.payload.to}`);
+        // Replace this with your actual email sending logic
+        await new Promise(resolve => setTimeout(resolve, 2000)); // Simulate sending email
+        console.log(`Email job processed for: ${job.payload.to}`);
+      });
+
+      await worker.start();
+      console.log("Worker started. Waiting for jobs...");
+    }
+
+    runQueue().catch(err => {
+      console.error("Error running queue:", err);
+      process.exit(1);
+    });
+    ```
+    *   You should see the code saved in your `queue.js` file.
+
+4.  **Run your job queue**: Execute the script to start the queue and process jobs.
+    *   In your terminal, run:
+    ```bash
+    node queue.js
+    ```
+    *   You should see output similar to this:
+    ```
+    Vardiya initialized.
+    Email job enqueued.
+    Worker started. Waiting for jobs...
+    ```
+    *   After about 5 seconds, you should see the worker start processing the job:
+    ```
+    Processing email job for: a@b.com
+    Email job processed for: a@b.com
+    ```
+    *   A file named `jobs.sqlite` will be created in your project directory, storing your jobs.
+
+## Original source
+This workflow is based on an article by Zulwatha posted on DEV Community. The author shares their experience of building a job queue using SQLite to avoid the overhead of running Redis for simple background tasks in their side projects.
+
+## Notes & variations
+*   **Free-tier alternatives**: This entire workflow is free. If you need a more robust solution with a dashboard and advanced features, consider `pg-boss` which uses PostgreSQL, or cloud-based queuing services if your budget allows.
+*   **Common mistake**: Forgetting to install `better-sqlite3` can cause errors. Ensure you run `npm install vardiya better-sqlite3` before running your script.
+*   **Tip for better results**: Make your job handler functions *idempotent*. This means if a job accidentally runs twice (which can happen if a worker crashes), it won't cause problems. For example, when sending an email, ensure you don't send duplicates if the job is processed more than once.

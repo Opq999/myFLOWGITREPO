@@ -1,0 +1,57 @@
+---
+title: "Develop Distributed Systems with Agentic Engineering using Claude Code"
+description: "Learn a workflow for building distributed systems using spec-driven development and loop engineering with AI agents."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 30
+jobToBeDone: "Develop distributed systems using an agentic engineering workflow with spec-driven development and loop engineering"
+tools:
+  - name: "Claude Code"
+    url: "https://code.claude.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "GitHub"
+    url: "https://github.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/mtsammy40/agentic-engineering-is-not-vibe-coding-the-three-skill-loop-i-use-to-ship-distributed-systems-2bge"
+  platform: "blog"
+  author: "mtsammy40"
+  postedAt: 2026-08-02
+score: 7
+ingestedAt: 2026-08-25
+nigeriaNotes: "Claude Code is a paid service, which may be a barrier. Data usage depends on the length of your prompts and the AI's responses. GitHub has a generous free tier for public repositories."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn a structured approach to building complex software systems using AI agents, moving beyond simple "vibe coding" to "agentic engineering." This method focuses on creating durable specifications and feedback loops to ensure reliable development, especially for systems handling real money.
+
+This approach works by treating AI not just as a code generator, but as a partner in a structured development process that includes clear specifications and automated checks.
+
+## Tools you need
+*   **Claude Code** (paid): An AI assistant designed for coding tasks, used here to help generate specifications and code.
+*   **GitHub** (freemium): A platform for hosting code, collaborating with others, and managing software development projects. Used here to store specifications and track progress.
+
+## Steps
+1.  **Define the initial intent**: Start with a rough idea or requirement for your system. The author mentions their prompts can be "embarrassingly rough," sometimes just a sentence.
+2.  **Generate a specification (PRD)**: Use Claude Code to turn your rough intent into a detailed Product Requirements Document (PRD). This PRD should include user stories, desired outcomes, system invariants (rules that must always be true), and clearly state what is out of scope. The author uses a prompt like `/to-prd` followed by their rough intent.
+    *   **What to expect**: Claude Code will ask clarifying questions to refine the PRD. The final PRD is a document that lives outside of any single AI session and is reviewed by a human before any code is written.
+3.  **Break down the PRD into testable slices**: Once the PRD is approved, use Claude Code again (with a prompt like `/to-issues`) to break down the PRD into "vertical slices." Each slice should be independently testable and link back to the PRD. These slices are then posted to GitHub Issues.
+    *   **What to expect**: A list of discrete tasks or features that can be worked on one by one.
+4.  **Develop the code for each slice**: Use Claude Code to engineer the code for each vertical slice. This is where the "loop engineering" comes in. The AI operates within a designed feedback loop.
+    *   **What to expect**: The AI generates code for a specific slice. This code is then tested.
+5.  **Implement validation and feedback loops**: Design how the AI will know if it's wrong. This involves setting up automated checks and defining clear criteria for when the AI must stop, report an error, or escalate to a human.
+    *   **What to expect**: A system where AI-generated code is automatically validated. If validation fails, the system should indicate that an assumption was wrong, potentially leading to an update in the PRD and re-derivation of undone slices. This forms the "outer loop" of the development process.
+6.  **Human Gate**: Before deploying to production (`/to-prd`), there's a human review step. This gate is based on the "blast radius" (potential impact of a failure), not just the difficulty of the task.
+
+## Original source
+This workflow is described by mtsammy40 on the DEV Community platform. It details a method for building distributed systems using AI agents, emphasizing structured specifications and feedback loops over informal "vibe coding."
+
+## Notes & variations
+*   **Free-tier alternative**: While Claude Code is a paid tool, you could experiment with other advanced coding assistants that offer free tiers, like GitHub Copilot (which has a free trial and is often included with student developer packs) or free tiers of models available through platforms like Groq or OpenRouter, though the setup might be more complex.
+*   **Common pitfall**: Relying too heavily on the AI's initial output without a robust feedback loop or human review can lead to subtle bugs or misunderstandings of requirements. Always ensure there are clear validation steps and human oversight, especially for critical systems.
+*   **Tip for better results**: Clearly define the "invariants" (rules that must always hold true) and "out of scope" sections in your PRD. This helps the AI understand the boundaries and constraints of the system more precisely, leading to more accurate code generation.

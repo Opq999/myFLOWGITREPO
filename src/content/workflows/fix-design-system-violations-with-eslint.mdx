@@ -1,0 +1,81 @@
+---
+title: "Fix Design System Violations with ESLint"
+description: "Learn to identify and fix design system violations in your code using ESLint and a specialized plugin. Improve code quality and maintainability."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 30
+jobToBeDone: "Identify and fix design system violations in code using a linter"
+tools:
+  - name: "ESLint"
+    url: "https://eslint.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "eslint-plugin-react-features"
+    url: "https://www.npmjs.com/package/eslint-plugin-react-features"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/ofri-peretz/i-linted-my-own-design-system-all-8-breaks-were-pasted-in-3hm4"
+  platform: "blog"
+  author: "ofri-peretz"
+  postedAt: 2026-08-20
+score: 7
+ingestedAt: 2026-08-25
+nigeriaNotes: "ESLint and its plugins are free to use and run locally, requiring minimal data. The primary data usage would be during installation via npm and occasional updates."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will set up ESLint with a specific plugin to automatically find and flag violations of your design system's rules within your code. This helps catch issues like using raw color values instead of design tokens, or missing styling hooks, preventing common errors and improving code consistency.
+
+## Tools you need
+*   **ESLint** (free): A popular tool for identifying and reporting on patterns in JavaScript and TypeScript code, helping to make code more consistent and free of errors.
+*   **eslint-plugin-react-features** (free): A plugin for ESLint that adds rules specifically designed to enforce best practices related to React components and design systems.
+
+## Steps
+1.  **Install the ESLint plugin**: Open your project's terminal and install the necessary plugin as a development dependency.
+
+    ```bash
+    npm i -D eslint-plugin-react-features
+    ```
+
+    You should see the package added to your `devDependencies` in your `package.json` file and the installation process complete without errors.
+2.  **Configure ESLint**: Update your ESLint configuration file (e.g., `eslint.config.mjs` or `.eslintrc.js`) to include the new plugin and enable specific rules. The author uses `eslint.config.mjs`.
+
+    ```javascript
+    import reactFeatures from "eslint-plugin-react-features";
+
+    export default [
+      {
+        files: ["**/*.tsx"],
+        plugins: {
+          "react-features": reactFeatures,
+        },
+        rules: {
+          "react-features/no-raw-color-literal": "error",
+          "react-features/no-arbitrary-token-class": "error",
+          "react-features/require-data-slot": "warn",
+          "react-features/no-inline-style": "warn",
+        },
+      },
+    ];
+    ```
+
+    Your ESLint configuration file should now include the plugin and the specified rules. The author recommends starting `require-data-slot` and `no-inline-style` at `"warn"` to ease adoption.
+3.  **Run ESLint**: Execute ESLint from your terminal to scan your project's `.tsx` files for violations based on the new rules.
+
+    ```bash
+    npx eslint .
+    ```
+
+    You should see a report in your terminal listing any violations found, categorized by severity (error or warning), and indicating the files and lines where they occur.
+
+## Original source
+This workflow is based on an article by Ofri Peretz, shared on the DEV Community platform. The author details their experience using ESLint and a custom plugin to enforce design system rules across their codebase, highlighting how imported components can introduce violations.
+
+## Notes & variations
+*   **Free tier viability**: Both ESLint and `eslint-plugin-react-features` are free and open-source, making them fully accessible without cost.
+*   **Common mistake**: If you are migrating an existing project, running all rules as `"error"` from the start can be overwhelming. The author suggests starting with `"warn"` for rules like `require-data-slot` and `no-inline-style` to gradually introduce them.
+*   **Tip for better results**: For rules like `no-raw-color-literal`, ensure your design system's tokens are correctly configured and accessible as CSS custom properties or Tailwind theme classes. This makes it easier for the linter to identify correct replacements.

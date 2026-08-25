@@ -1,0 +1,94 @@
+---
+title: "Automate Conference Paper Calls with an AWS Serverless Agent"
+description: "Build a serverless agent on AWS to find, filter, and rank conference calls for papers (CFPs) automatically, saving you time and ensuring you don't miss opportunities."
+category: "freelancing"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 120
+jobToBeDone: "Automate the process of finding and filtering conference calls for papers (CFPs)"
+tools:
+  - name: "AWS Lambda"
+    url: "https://aws.amazon.com/lambda/"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Amazon Bedrock"
+    url: "https://aws.amazon.com/bedrock/"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Amazon EventBridge Scheduler"
+    url: "https://aws.amazon.com/eventbridge/"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Amazon DynamoDB"
+    url: "https://aws.amazon.com/dynamodb/"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Amazon S3"
+    url: "https://aws.amazon.com/s3/"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Slack"
+    url: "https://slack.com/"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/aaronshunter/how-i-built-a-serverless-cfp-agent-on-aws-54j5"
+  platform: "blog"
+  author: "aaronshunter"
+  postedAt: 2026-07-30
+score: 7
+ingestedAt: 2026-08-25
+nigeriaNotes: "AWS services have costs associated with usage, even for serverless. Free tiers may cover initial development but ongoing operation will incur charges. Data usage for API calls and notifications is generally low."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+This workflow describes how to build an automated agent using Amazon Web Services (AWS) to find and manage Calls for Papers (CFPs) for conferences. Instead of manually searching websites every week, this agent runs automatically on a schedule. It gathers CFP information from different sources, filters them based on your preferences, uses an AI model to rank them according to your speaker profile, and then sends the most relevant ones to you via Slack. The key idea is to use serverless AWS services, which means you only pay when the agent is actively running, making it cost-effective for a task that happens periodically.
+
+Because this involves setting up multiple interconnected cloud services and writing code to orchestrate them, it's not a simple copy-paste task. The exact implementation requires technical knowledge of AWS services and programming. The steps involve configuring these services and writing a script (likely in Python) that tells them how to work together.
+
+## What you can use it for
+*   **Automate repetitive tasks**: Set up agents to regularly check for new information, like job postings, market trends, or new research papers, and notify you.
+*   **Filter and rank opportunities**: Use AI to score potential opportunities (like speaking engagements, freelance gigs, or investment prospects) against your personal criteria.
+*   **Reduce manual effort**: Save time by letting a system handle the tedious work of gathering and sifting through large amounts of data.
+*   **Stay organized**: Keep track of opportunities you've seen, applied to, or rejected, preventing duplicates and missed deadlines.
+
+## Tools you need
+*   **AWS Lambda** (paid): A service that runs your code in response to events without you needing to manage servers.
+*   **Amazon Bedrock** (paid): A service that provides access to AI models for tasks like ranking and understanding text.
+*   **Amazon EventBridge Scheduler** (paid): A service that can trigger your code to run at specific times or intervals.
+*   **Amazon DynamoDB** (paid): A fast, flexible NoSQL database service for storing information like your preferences and past CFPs.
+*   **Amazon S3** (paid): A simple storage service for storing files, like the raw CFP data or a dashboard.
+*   **Slack** (freemium): A communication platform used here to send notifications about relevant CFPs.
+
+## How it actually works
+This workflow is built as a serverless pipeline on AWS. Here's a general outline of the process:
+
+1.  **Schedule the agent**: Use Amazon EventBridge Scheduler to set a daily trigger for your agent.
+2.  **Run the code**: The trigger starts an AWS Lambda function. This function contains the logic for the entire process.
+3.  **Fetch CFP data**: Inside the Lambda function, code will call out to various conference aggregator websites or APIs to get a list of open Calls for Papers.
+4.  **Normalize data**: The fetched data from different sources is converted into a single, consistent format.
+5.  **Filter CFPs**: The normalized CFPs are checked against predefined rules you set (e.g., topics of interest, geographic location, deadline proximity).
+6.  **Rank with AI**: For the remaining CFPs, an AI model accessed through Amazon Bedrock scores them based on your speaker profile and preferences.
+7.  **Store results**: The ranked list of relevant CFPs is saved, likely to Amazon S3 for a dashboard or to DynamoDB for quick lookups.
+8.  **Notify in Slack**: A summary of the best CFPs is sent as a message to a designated Slack channel.
+
+The author's code orchestrates these steps within a single Lambda handler function. The exact code and configuration for each AWS service would be found in the author's original project repository or blog post.
+
+## Words you'll see, explained
+*   **Serverless**: A way to build and run applications without having to manage servers. The cloud provider (like AWS) handles the infrastructure.
+*   **CFP (Call for Papers)**: An announcement inviting people to submit proposals for presentations or talks at a conference.
+*   **Agent**: A piece of software designed to perform a specific task automatically.
+*   **Pipeline**: A series of data processing steps where the output of one step becomes the input for the next.
+*   **API (Application Programming Interface)**: A set of rules and protocols that allows different software applications to communicate with each other.
+*   **NoSQL Database**: A type of database that does not use the traditional table-based relational database structure, offering more flexibility.
+*   **Handler**: In serverless computing, this is the specific function within your code that is executed when the service is triggered.
+
+## Original source
+This workflow was described by aaronshunter on the DEV Community platform. The author shares their experience building a serverless agent on AWS to automate the tedious process of finding and filtering conference calls for papers.
+
+## Notes & variations
+*   **Do you even need this?**: If your needs are simpler, you might be able to achieve some automation with tools like Zapier or IFTTT, which offer no-code integrations between different apps, though they might not offer the same level of customization or AI ranking.
+*   **Free-tier limits**: While AWS offers free tiers for many services, running this agent daily might exceed those limits over time, leading to small charges. Carefully monitor your AWS billing dashboard.
+*   **Common pitfall**: Forgetting to store the 'seen' status of CFPs. Without this, the agent might repeatedly flag the same CFP, defeating the purpose of automation. Ensure your DynamoDB table correctly logs every CFP that has been processed.

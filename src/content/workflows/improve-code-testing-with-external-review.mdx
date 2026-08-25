@@ -1,0 +1,62 @@
+---
+title: "Improve Code Testing with External Review"
+description: "Learn how to identify and fix subtle bugs in your code tests by getting an external review, even without sharing your code."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 15
+jobToBeDone: "Improve code testing by identifying and fixing subtle bugs through external review"
+tools:
+  - name: "Email or Messaging App"
+    url: "https://www.google.com/gmail/about/"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/fromzerotoship/s5-the-stranger-who-rewrote-my-test-four-times-1ola"
+  platform: "blog"
+  author: "fromzerotoship"
+  postedAt: 2026-07-28
+score: 7
+ingestedAt: 2026-08-25
+nigeriaNotes: "This workflow relies on communication tools that are widely available and have free tiers. Data usage is minimal, primarily text-based."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn a method to improve your code's testing by having someone else review your test results, not your code itself. This approach helps uncover hidden bugs that you might miss because you are too familiar with your own work.
+
+## Tools you need
+*   **Email or Messaging App** (freemium): To communicate with a reviewer and share your test results.
+
+## Steps
+1.  **Run your code scanner and tests**: Execute your code analysis tool and any associated tests. Document the results, noting what passed, what failed, and any specific findings.
+2.  **Identify what you tested**: Clearly state what you intended to verify with your tests. For example, did you test if the scanner could find a specific type of security flaw, or if it correctly ignored certain files?
+3.  **Prepare your request for a reviewer**: Write a clear message to a trusted colleague or friend. Explain what you tested and share the results. Crucially, ask them to review your *results* and *your interpretation* of those results, not your actual code.
+    *   A good starting point for your message:
+    ```
+    Hi [Reviewer Name],
+
+    I've just run some tests on my code scanner. I wanted to check if it can find [specific type of flaw] and if it correctly ignores [specific files/folders].
+
+    Here are the results:
+    [Paste your test results here, e.g., 'Scanner found 7 out of 10 known bad patterns. I added rules for the 3 it missed, and it now finds 10 out of 10.']
+
+    My interpretation is that the scanner is now working perfectly.
+
+    Could you please look at these results and tell me if my interpretation makes sense? Are there any ways this could still be wrong, even if the results look good?
+
+    Thanks,
+    [Your Name]
+    ```
+4.  **Receive and analyze feedback**: Carefully read your reviewer's feedback. They might point out that your test only shows *something* passed, not that the *correct thing* passed, or that your test setup might be hiding actual problems.
+5.  **Refine your tests based on feedback**: If the reviewer identifies a flaw in your testing logic (like the example where a test passed for the wrong reason), update your tests to be more specific. For instance, instead of just checking if a test passes, check that it passes *for the right reason* or that specific conditions are met.
+6.  **Re-run and re-evaluate**: After making changes, run your tests again. Share the new results with your reviewer to confirm the issue is resolved.
+
+## Original source
+This workflow is inspired by a blog post by fromzerotoship on DEV Community, where the author shares a personal experience of how an external reviewer, without seeing the code, helped uncover critical bugs in their testing process by focusing on the test results and logic.
+
+## Notes & variations
+*   **Common mistake**: Assuming your tests are correct just because they show a passing result. The reviewer's job is to challenge your assumptions and look for edge cases or logical flaws you might have overlooked.
+*   **Tip for better results**: Be specific about what you want the reviewer to look for. Instead of a general 'does this look right?', ask 'could this test be passing for the wrong reason?' or 'is there a way this test could be fooled?'.
+*   **Free tier alternative**: If you don't have a colleague available, you can sometimes use online communities or forums dedicated to your programming language or tools. However, be cautious about sharing sensitive information and understand that responses might be less tailored than from a direct contact.

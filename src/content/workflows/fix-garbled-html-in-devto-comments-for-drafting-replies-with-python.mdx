@@ -1,0 +1,76 @@
+---
+title: "Fix Garbled HTML in DEV.to Comments for Drafting Replies with Python"
+description: "Learn how to process raw HTML comments from the DEV.to API, fixing garbled entities and plain text for drafting replies using a simple Python script."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 15
+jobToBeDone: "Process raw HTML comments from an API into plain text for drafting replies"
+tools:
+  - name: "Python"
+    url: "https://www.python.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "DEV.to API"
+    url: "https://dev.to/api/documentation"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/enjoy_kumawat/my-comment-reply-pipeline-was-feeding-me-garbled-html-entities-instead-of-the-actual-comment-g43"
+  platform: "blog"
+  author: "enjoy_kumawat"
+  postedAt: 2026-08-09
+score: 7
+ingestedAt: 2026-08-25
+nigeriaNotes: "This workflow is data-light and relies on a free API. Python can be run on most smartphones with appropriate apps, making it accessible."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will get a corrected Python script that takes raw HTML comments from the DEV.to API and converts them into clean, readable plain text. This ensures that special characters like ampersands and angle brackets are displayed correctly, making it easier to draft replies to comments on your DEV.to articles.
+
+This approach works because it uses Python's built-in `html` module to correctly decode HTML entities that the DEV.to API sometimes returns in a garbled format.
+
+## Tools you need
+*   **Python** (free): A programming language used to write the script.
+*   **DEV.to API** (free): Provides the raw comment data from your DEV.to articles.
+
+## Steps
+1.  **Set up your Python environment**: If you don't have Python installed, download and install it from the official website. You can run Python scripts on your computer or on your phone using apps like Pydroid 3 for Android.
+2.  **Create a new Python file**: Open a text editor or your Python IDE and create a new file named `reply_comments.py`.
+3.  **Add the corrected `strip_html` function**: Copy and paste the following Python code into your `reply_comments.py` file. This code includes the necessary import and the updated `strip_html` function that correctly handles HTML entities.
+
+    ```python
+    import re
+    import html
+
+    def strip_html(h):
+        """Plain text of a dev.to comment's body_html, for drafting replies.
+        dev.to's rendered HTML entity-escapes a commenter's own literal <, >, and " characters right alongside the actual tags it wraps the comment in.
+        Stripping tags alone leaves those entities untouched, so a comment quoting code with generics (List <String>) or using " " came back as literal " < " / " > " text in the exact field a reply gets drafted from.
+        """
+        # First, remove HTML tags using a regular expression
+        no_tags = re.sub(r'<[^>]+>', ' ', h)
+        # Then, decode HTML entities like &amp;, &lt;, &gt;, &#39;
+        unescaped = html.unescape(no_tags)
+        # Finally, collapse multiple whitespace characters into a single space and strip leading/trailing whitespace
+        return re.sub(r'\s+', ' ', unescaped).strip()
+
+    # Example usage (optional, for testing):
+    # raw_html_comment = "<p>Isn&#39;t it faster with a Q&amp;A cache? Try List &lt;String&gt; instead.</p>"
+    # plain_text_comment = strip_html(raw_html_comment)
+    # print(plain_text_comment)
+    # Expected output: Isn't it faster with a Q&A cache? Try List <String> instead.
+    ```
+
+    You should see the Python code pasted into your file. If you run the example usage at the bottom, you should see the corrected plain text output.
+4.  **Integrate with your script**: If you have an existing script that pulls comments from the DEV.to API, replace your old `strip_html` function with this new one. Ensure your script calls this function on the `body_html` field it receives from the API.
+
+## Original source
+This workflow is based on a post by enjoy_kumawat on DEV Community. The author identified an issue where their script was not correctly displaying special characters in comments pulled from the DEV.to API, leading to garbled text when drafting replies.
+
+## Notes & variations
+*   **Free tier viability**: This workflow is entirely free, using Python and the DEV.to API, which has no usage limits for this purpose.
+*   **Common mistake**: Forgetting to import the `html` module. Without it, `html.unescape` will not be recognized, and the entities will not be decoded.
+*   **Tip for better results**: If you encounter other unusual characters or encoding issues, you might need to explore more advanced text cleaning libraries in Python, but for most common HTML entities, this corrected function should suffice.

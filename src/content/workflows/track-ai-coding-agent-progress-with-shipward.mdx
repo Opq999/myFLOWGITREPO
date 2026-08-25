@@ -1,0 +1,58 @@
+---
+title: "Track AI Coding Agent Progress with Shipward"
+description: "Learn how to reliably track AI coding agent progress by verifying agent reports against your project's actual state using Shipward."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 15
+jobToBeDone: "Track AI coding agent progress reliably by verifying agent reports against project state"
+tools:
+  - name: "Shipward"
+    url: "https://github.com/albertoclemente/shipward"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Claude Code"
+    url: "https://code.claude.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Git"
+    url: "https://git-scm.com/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/albertoclemente/every-ai-coding-agent-tracker-is-a-self-report-system-53nm"
+  platform: "blog"
+  author: "albertoclemente"
+  postedAt: 2026-08-13
+score: 7
+ingestedAt: 2026-08-25
+nigeriaNotes: "Shipward is a command-line tool, so data usage is minimal. Claude Code is a paid service, but the core tracking mechanism relies on Git and Shipward, which are free."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will set up a system that automatically verifies if an AI coding agent's reported progress matches the actual state of your project. This approach works by making your project's version control system (Git) the ultimate authority on progress, rather than relying solely on the agent's self-reported status.
+## Tools you need
+*   **Shipward** (free): A command-line tool that helps track AI coding agent progress by verifying reports against your project's Git history.
+*   **Claude Code** (paid): An AI coding assistant that can be used to write code, but its progress reports will be verified by Shipward.
+*   **Git** (free): A version control system used to track changes in your code. This is essential for Shipward to verify progress.
+## Steps
+1.  **Set up Shipward**: Open your terminal or command prompt and run the Shipward setup command. You will need to tell Shipward where your project code is located.
+
+    ```bash
+    npx shipward setup ~/code/your-repo --seed-from-branches
+    ```
+
+    You should see Shipward start to set up your project's board based on your existing Git branches.
+2.  **Use Claude Code for development**: Work on your project using Claude Code, or any AI agent. As you make progress, Claude Code will report its status.
+3.  **Observe Shipward's verification**: Shipward will automatically check the agent's reports against your Git repository. For example, if Claude Code reports that a task is 'done' and tests have passed, Shipward will run your project's defined checks. If the checks pass and the code is committed to Git, the status is updated. If the agent's report doesn't match Git (e.g., code written against a card still in 'Backlog'), Shipward will flag this discrepancy.
+
+    The author provides an example where a 'done, tests pass' status was initially refused because the underlying Git commit was not yet an ancestor of the main branch. Once the fix was real and committed, Shipward accepted the status.
+4.  **Verify notes and contradictions**: Shipward also tracks if notes about the project are still true by checking against Git diffs. It will alert you to contradictions, such as branches with no associated card or cards closed without a check ever running.
+## Original source
+This workflow is based on the insights of albertoclemente, who shared their experience building an AI coding agent tracker on the DEV Community platform. They developed Shipward to address the problem of AI agents' self-reported progress drifting from the actual project state.
+## Notes & variations
+*   **Free-tier alternative**: Shipward itself is free and open-source. The main cost is the AI coding agent. While Claude Code is paid, you could experiment with free AI coding assistants or even manual coding to test Shipward's verification capabilities.
+*   **Common pitfall**: Relying solely on the AI agent's status updates without a verification system like Shipward can lead to a significant drift between your project board and your actual code repository. Always ensure there's an independent check.
+*   **Tip for better results**: Define your project's checks clearly in the Shipward configuration. These checks should be commands that can be run automatically and are not written or modified by the AI agent itself, ensuring an objective verification.

@@ -1,0 +1,70 @@
+---
+title: "Sync AI Avatar Lips to Spanish Audio with Wav2Lip"
+description: "Learn how to lip-sync an AI avatar video with Spanish audio using Wav2Lip, even with limited resources. A step-by-step guide."
+category: "content-creation"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 60
+jobToBeDone: "Lip-sync an AI avatar video with Spanish audio using Wav2Lip"
+tools:
+  - name: "edge-tts"
+    url: "https://github.com/rany2/edge-tts"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Wav2Lip"
+    url: "https://github.com/Rudrabha/Wav2Lip"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/migbolivar/5-attempts-2-sigkills-1-non-existent-flag-how-i-got-a-4-second-avatar-to-speak-spanish-1k2m"
+  platform: "blog"
+  author: "migbolivar"
+  postedAt: 2026-08-17
+score: 7
+ingestedAt: 2026-08-25
+nigeriaNotes: "This workflow requires running Python scripts and potentially installing libraries. While the tools themselves are free, the processing can be resource-intensive. Ensure you have a stable internet connection for downloads and consider using a cloud-based Python environment if your local machine has limited RAM or processing power. Data usage will be moderate for downloading tools and scripts, and higher for processing video files."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will create a video where an AI avatar's lips move in sync with a Spanish audio track. This approach works by using a specialized AI model to map spoken words onto a video of a face, making it appear as though the avatar is speaking the audio.
+
+## Tools you need
+*   **edge-tts** (free): A Python library to generate speech from text using Microsoft Edge's TTS engine.
+*   **Wav2Lip** (free): An AI model and associated code that synchronizes lip movements in a video with an audio file.
+
+## Steps
+1.  **Generate Spanish audio**: Use edge-tts to create an audio file from your Spanish text. You will need to install edge-tts first. The author doesn't share the exact installation command, but a common way is `pip install edge-tts`.
+
+    ```python
+    # Example command to generate audio (replace with your desired text and voice)
+    # The author used: edge-tts --text "La IA no espera. Tu negocio tampoco." --voice es-ES-AlvaroNeural --write-media avatar-es.mp3
+    # You will need to run this in your terminal or a Python script.
+    ```
+
+    You should get an MP3 audio file (e.g., `avatar-es.mp3`).
+
+2.  **Prepare your avatar video**: Have a video file of your AI avatar ready. The author used a video named `miguel-face-small.mp4`.
+
+3.  **Run Wav2Lip for lip-syncing**: Execute the Wav2Lip inference script with specific parameters to combine your avatar video and the Spanish audio. You will need to have Wav2Lip installed and its pre-trained model (`wav2lip_gan.pth`) downloaded. The author's successful command is provided below. Note that running Wav2Lip often requires a Python environment and specific dependencies.
+
+    ```bash
+    OMP_NUM_THREADS=4 python inference.py \
+    --checkpoint_path wav2lip_gan.pth \
+    --face miguel-face-small.mp4 \
+    --audio avatar-es.mp3 \
+    --wav2lip_batch_size 4 \
+    --resize_factor 2 \
+    --outfile miguel-avatar-es.mp4
+    ```
+
+    You should see the script processing frames and eventually produce an output video file (e.g., `miguel-avatar-es.mp4`) where the avatar's lips match the Spanish audio.
+
+## Original source
+This workflow is based on a blog post by migbolivar titled "5 attempts, 2 SIGKILLs, 1 non-existent flag: how I got a 4-second avatar to speak Spanish" shared on DEV Community. The author details their troubleshooting process to achieve lip-syncing for an AI avatar.
+
+## Notes & variations
+*   **Free-tier alternatives**: Both edge-tts and Wav2Lip are free and open-source tools, making them accessible without cost. However, running Wav2Lip can be computationally intensive and may require a machine with sufficient RAM.
+*   **Common mistake**: A common pitfall is using incorrect command-line arguments. The author highlights how they mistakenly used `--batch_size` instead of the correct `--wav2lip_batch_size`. Always double-check the available arguments using the tool's help command (e.g., `python inference.py --help`).
+*   **Tip for better results**: If you encounter memory errors (SIGKILL), try reducing the `--wav2lip_batch_size` and/or increasing the `--resize_factor` (e.g., to 2 or higher) to lower memory usage. The author found that a `--resize_factor` of 2 produced a working result even if it meant slightly lower video resolution.

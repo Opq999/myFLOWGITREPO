@@ -1,0 +1,83 @@
+---
+title: "Optimize React WebSocket Performance with Buffering"
+description: "Learn to prevent UI jank from fast WebSocket streams in React by buffering messages instead of rendering each one."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 15
+jobToBeDone: "Optimize React WebSocket performance by buffering messages instead of rendering every message"
+tools:
+  - name: "React"
+    url: "https://react.dev/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "WebSocket"
+    url: "https://developer.mozilla.org/en-US/docs/Web/API/WebSocket"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "requestAnimationFrame"
+    url: "https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "useSyncExternalStore"
+    url: "https://react.dev/reference/react/useSyncExternalStore"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "TanStack Query"
+    url: "https://tanstack.com/query/latest"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/nainikmehta/react-websocket-performance-buffer-dont-render-every-msg-4ka4"
+  platform: "blog"
+  author: "nainikmehta"
+  postedAt: 2026-08-25
+score: 8
+ingestedAt: 2026-08-25
+nigeriaNotes: "This workflow involves writing code and requires a stable internet connection. Data usage will depend on the size of messages and the frequency of updates, but the core logic is data-light. Free tiers are sufficient for all mentioned tools."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+
+You will learn how to prevent your React application from slowing down when receiving many messages very quickly over a WebSocket connection. Instead of updating your app's display for every single message, you'll learn to group them together and show them in batches. This approach is best for handling high-frequency data streams without making your user interface laggy.
+
+## Tools you need
+
+*   **React** (free): A JavaScript library for building user interfaces. You'll use it to display the messages.
+*   **WebSocket** (free): A technology that allows for two-way communication between your browser and a server. This is how messages are sent.
+*   **requestAnimationFrame** (free): A browser function that tells the browser you want to perform an animation and requests that the browser call a specified function to update an animation before the next repaint. It helps sync updates with the screen's refresh rate.
+*   **useSyncExternalStore** (free): A React hook that lets your component subscribe to an external data store. This is used to get the batched messages without causing performance issues.
+*   **TanStack Query** (free): A library for managing server state in React applications. It can be used to handle the buffered messages efficiently.
+
+## Steps
+
+1.  **Create a message store**: Set up a JavaScript file (e.g., `messageStore.js`) to hold the incoming messages in a temporary list (a buffer) and manage subscriptions. This store will not be directly observed by React.
+    *   You will need to define variables to hold the buffer, a list of functions that want to be notified when new messages arrive (subscribers), a flag to track if an update is already scheduled, and the current list of messages to display (snapshot).
+    *   Create a function `pushMessage` that adds new messages to the buffer and schedules an update.
+    *   Create a function `scheduleFlush` that uses `requestAnimationFrame` to process the buffer. Inside `requestAnimationFrame`, it will take messages from the buffer, combine them with the existing snapshot, limit the total number of messages, clear the buffer, and then notify all subscribers.
+    *   Create a `subscribe` function that allows components to register their interest in new messages and a `getSnapshot` function that returns the current list of messages.
+
+2.  **Create a React hook to consume messages**: In a separate file (e.g., `useMessages.js`), create a custom hook that uses `useSyncExternalStore` to connect your React components to the `messageStore`.
+    *   This hook will call `subscribe` to listen for updates and `getSnapshot` to get the latest messages.
+    *   The hook will return the messages to your component.
+
+3.  **Connect the WebSocket to the message store**: In your WebSocket handling file (e.g., `socket.js`), establish the WebSocket connection.
+    *   When a message arrives (`ws.onmessage`), parse the message data and then call the `pushMessage` function from your `messageStore` instead of directly calling `setState` in your React component.
+
+4.  **Use the hook in your React component**: In your main React component, import and use the `useMessages` hook to get the list of messages.
+    *   Render the messages provided by the hook. Because the hook provides batched updates, your component will re-render much less often, improving performance.
+
+5.  **Optional: Integrate with TanStack Query**: If you are using TanStack Query, instead of directly feeding coalesced updates into `useSyncExternalStore`, you can update the TanStack Query cache.
+    *   Modify the `scheduleFlush` function in `messageStore.js` to use `setQueryData` or invalidation from TanStack Query to update its cache with the coalesced messages. This keeps TanStack Query as the authoritative source for your data.
+
+## Original source
+
+This workflow is based on an article by Nainik Mehta posted on DEV Community. The author explains how to improve the performance of React applications that handle frequent updates from WebSockets by buffering messages and rendering them in batches.
+
+## Notes & variations
+
+*   **Free-tier alternatives**: All the tools mentioned are free to use for this purpose. You can use a simple array for the buffer and subscribers if you don't want to use `useSyncExternalStore` or TanStack Query, but these provide more robust solutions.
+*   **Common mistake**: Directly calling `setState` within the `ws.onmessage` callback is the most common performance pitfall. This leads to too many re-renders. Always buffer and batch updates.
+*   **Tip for better results**: Using `requestAnimationFrame` is generally preferred over a simple `setTimeout` for flushing the buffer because it aligns updates with the browser's rendering cycle, leading to smoother animations and less perceived lag.

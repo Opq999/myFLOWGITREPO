@@ -1,0 +1,101 @@
+---
+title: "Organize Notes for AI: Obsidian Second Brain with Claude"
+description: "Learn to structure your personal notes in Obsidian as an AI-readable 'second brain' and use Claude to quickly retrieve information from them."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 20
+jobToBeDone: "Create an AI-readable second brain for efficient information retrieval from personal notes"
+tools:
+  - name: "Obsidian"
+    url: "https://obsidian.md"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Claude"
+    url: "https://claude.ai"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/shayan-araghi/a-second-brain-your-ai-agent-can-read-4kf6"
+  platform: "blog"
+  author: "shayan-araghi"
+  postedAt: 2026-08-08
+score: 10
+ingestedAt: 2026-08-25
+nigeriaNotes: "This workflow uses free tools and minimal data. Obsidian notes are plain text and usually small, so uploading them to Claude will consume very little mobile data."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will create a personal knowledge base (often called a "second brain") in Obsidian, structured so an AI can easily understand the connections between your notes. This allows you to ask an AI (like Claude) questions about your notes and get accurate answers quickly, saving you time from manually searching. This approach works because Obsidian stores notes as simple text files, and you create a "Map of Content" (MOC) file that acts as a guide for the AI, telling it exactly which notes are important for a topic.
+
+## Tools you need
+*   **Obsidian** (free): A note-taking app that stores your notes as plain text files on your device.
+*   **Claude** (freemium): An AI chat assistant that can read and understand documents you provide.
+
+## Steps
+1.  **Install Obsidian and create a vault**: Download and install Obsidian on your phone or computer. Open it and create a new "vault" (this is just a folder where all your notes will live).
+    *   You should see the Obsidian app open with an empty vault, ready for you to create your first note.
+2.  **Set up your note folders**: Inside your new Obsidian vault, create two new folders: `MOC` and `Permanent Notes`.
+    *   You should see these two folders appear in the file explorer panel within Obsidian.
+3.  **Create a Map of Content (MOC) file**: In the `MOC` folder, create a new note. Name it something like `Topic Name - MOC.md` (e.g., `Legacy Payments API - MOC.md`). This file will be a summary and a directory for a specific topic.
+    *   You should see a new, empty note open in the editor, ready for content.
+4.  **Add content and links to your MOC**: Write a brief summary of the topic in your MOC file. Then, create sections (e.g., `## Reference`, `## Design`) and add links to other notes you will create. Use the `[[Note Name]]` format to create these links.
+
+    ```
+    # Legacy Payments API - MOC
+    Legacy service handling card settlement.
+
+    ## Reference
+    - [[Payments API - Endpoints]]
+    - [[Payments API - Webhook Retry Logic]]
+
+    ## Design
+    - [[Payments API - Settlement Flow]]
+    - [[Payments API - Architecture Decisions]]
+    ```
+
+    *   You should see the links appear in blue (or your theme's link color), indicating they are ready to be clicked or created.
+5.  **Create permanent notes and link back**: In the `Permanent Notes` folder, create the notes you linked from your MOC (e.g., `Payments API - Endpoints.md`). Fill these notes with your detailed information. Crucially, in each permanent note, add a link back to its MOC using the `[[Topic Name - MOC]]` format.
+
+    ```
+    # Payments API - Endpoints
+    Details about the API endpoints for the legacy payments system.
+
+    ## GET /payments/status
+    Checks the status of a payment.
+
+    ## POST /payments/settle
+    Initiates settlement for a payment.
+
+    [[Legacy Payments API - MOC]]
+    ```
+
+    *   You should see the links in both your MOC and permanent notes become active.
+6.  **Prepare your notes for Claude**: Locate the root folder of your Obsidian vault on your device. This is the folder that contains your `MOC` and `Permanent Notes` subfolders.
+    *   You should see the vault folder in your device's file explorer.
+7.  **Upload your vault to Claude**: Open `claude.ai` in your web browser. Use the attachment (paperclip) icon to upload the entire root folder of your Obsidian vault. If your vault is very large, you might need to upload only the `MOC` folder and the specific `Permanent Notes` files linked in your MOC.
+    *   You should see Claude indicating that the files are being processed or have been uploaded.
+8.  **Ask Claude to read your MOC**: Once the files are uploaded, tell Claude to read the specific MOC file you want it to focus on.
+
+    ```
+    Read MOC/Legacy Payments API - MOC.md and the notes it links to.
+    ```
+
+    *   You should see Claude acknowledge that it is reading the specified MOC and the linked notes.
+9.  **Ask questions about your notes**: Now that Claude has the context, ask it questions about the information contained in your notes.
+
+    ```
+    Explain the settlement flow for the legacy payments API based on the notes you read.
+    ```
+
+    *   You should get an answer from Claude that summarizes or extracts information directly from your Obsidian notes, showing it understood the context.
+
+## Original source
+This workflow was shared by Shayan Araghi on the DEV Community blog. He described how to structure personal notes in Obsidian to create an AI-readable "second brain" and then use an AI agent like Claude to efficiently retrieve information from these linked markdown files.
+
+## Notes & variations
+*   **Free-tier alternatives:** Instead of Claude, you can use other freemium AI chat tools like `gemini.google.com` or `chatgpt.com` (with file upload features) to achieve similar results. The key is that the AI can read multiple text files and follow links.
+*   **Common mistake:** Don't just upload a single note or the `Permanent Notes` folder without the MOC. The MOC is crucial because it tells the AI which notes are relevant to a topic and how they connect, preventing the AI from getting lost in too much information.
+*   **Tip for better results:** Keep your MOC files concise and focused on a single topic. Ensure all relevant permanent notes are linked both *to* and *from* the MOC. This bidirectional linking helps the AI understand the full context.

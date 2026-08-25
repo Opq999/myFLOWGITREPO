@@ -1,0 +1,158 @@
+---
+title: "Fix Next.js Build Errors with Cache Components and Dynamic Routes"
+description: "Learn how to resolve Next.js build errors when enabling cache components with dynamic routes by using React Suspense for data fetching."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 30
+jobToBeDone: "Resolve Next.js build errors when enabling cache components with dynamic routes"
+tools:
+  - name: "Next.js"
+    url: "https://nextjs.org"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "React"
+    url: "https://react.dev"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Node.js"
+    url: "https://nodejs.org"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Code Editor"
+    url: "https://code.visualstudio.com"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/shubhradev/i-turned-on-cache-components-in-nextjs-163-it-refused-to-build-my-simplest-page-3ak0"
+  platform: "blog"
+  author: "shubhradev"
+  postedAt: 2026-08-19
+score: 10
+ingestedAt: 2026-08-25
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will get a Next.js application that successfully builds and runs, even when you enable advanced caching features like `cacheComponents` and `partialPrefetching` for pages that use dynamic routes. This approach works by explicitly telling Next.js how to handle data that changes, preventing build failures that occur when the framework cannot determine how to prerender a page.
+
+## Tools you need
+*   **Next.js** (free): A popular open-source framework for building web applications using React.
+*   **React** (free): An open-source JavaScript library for building user interfaces.
+*   **Node.js** (free): A JavaScript runtime environment that allows you to run Next.js applications outside of a web browser. You will need this installed on your computer.
+*   **Code Editor** (free): A program like VS Code for writing and editing your code files.
+
+## Steps
+1.  **Set up a new Next.js project**: Open your terminal or command prompt and create a new Next.js application. When prompted, choose `TypeScript` for this workflow.
+
+    ```bash
+    npx create-next-app@latest my-nextjs-app
+    ```
+
+    You should see a new folder named `my-nextjs-app` created, containing your new Next.js project files.
+
+2.  **Enable cache components**: Navigate into your new project folder (`cd my-nextjs-app`) and open the `next.config.ts` file in your code editor. Add the `cacheComponents` and `partialPrefetching` flags as shown below.
+
+    ```typescript
+    // next.config.ts
+    import type { NextConfig } from 'next';
+
+    const nextConfig: NextConfig = {
+      cacheComponents: true,
+      partialPrefetching: true,
+    };
+
+    export default nextConfig;
+    ```
+
+    Your Next.js configuration is now updated to use these experimental caching features.
+
+3.  **Create a dynamic product page**: Inside your project, create a new folder structure `app/products/[id]` and then create a file named `page.tsx` inside the `[id]` folder. Paste the following code into `app/products/[id]/page.tsx`.
+
+    ```typescript
+    // app/products/[id]/page.tsx
+    async function getProduct(id: string) {
+      await new Promise((resolve) => setTimeout(resolve, 300));
+      return { id, name: `Product ${id}`, price: 42 };
+    }
+
+    export default async function ProductPage({
+      params,
+    }: {
+      params: Promise<{ id: string }>;
+    }) {
+      const { id } = await params;
+      const product = await getProduct(id);
+      return (
+        <main className="p-8">
+          <h1 className="text-2xl font-bold">{product.name}</h1>
+          <p>${product.price}</p>
+        </main>
+      );
+    }
+    ```
+
+    You have created a simple dynamic page that fetches product details based on an `id` from the URL.
+
+4.  **Attempt to build the project**: In your terminal, run the build command for your Next.js project.
+
+    ```bash
+    npm run build
+    ```
+
+    You should see an error message similar to: `Error: Route "/products/[id]": Next.js encountered uncached or runtime data during prerendering.` This error indicates that Next.js cannot build the page because it accesses dynamic `params` without a clear strategy for handling the loading state.
+
+5.  **Fix the build error with Suspense**: Open `app/products/[id]/page.tsx` again. Modify the code to wrap the `ProductDetails` component (which accesses the dynamic `params`) with `Suspense`. `Suspense` is a React feature that lets you display a fallback user interface (like a "Loading..." message) while a component or its data is still loading.
+
+    ```typescript
+    // app/products/[id]/page.tsx
+    import { Suspense } from "react";
+
+    async function getProduct(id: string) {
+      await new Promise((resolve) => setTimeout(resolve, 300));
+      return { id, name: `Product ${id}`, price: 42 };
+    }
+
+    async function ProductDetails({ params }: { params: Promise<{ id: string }> }) {
+      const { id } = await params;
+      const product = await getProduct(id);
+      return (
+        <>
+          <h1 className="text-2xl font-bold">{product.name}</h1>
+          <p>${product.price}</p>
+        </>
+      );
+    }
+
+    export default function ProductPage({
+      params,
+    }: {
+      params: Promise<{ id: string }>;
+    }) {
+      return (
+        <main className="p-8">
+          <Suspense fallback={<p>Loading product...</p>}>
+            <ProductDetails params={params} />
+          </Suspense>
+        </main>
+      );
+    }
+    ```
+
+    The page component now correctly uses `Suspense` to manage the loading state of dynamic data.
+
+6.  **Build the project again**: Run the build command in your terminal one more time.
+
+    ```bash
+    npm run build
+    ```
+
+    This time, the project should build successfully without errors. You will see a summary of your routes, indicating that the `/products/[id]` route was processed correctly.
+
+## Original source
+This workflow is based on an article by shubhradev on DEV Community, where the author explored the challenges of enabling new caching features in Next.js 16.3 and provided a solution for dynamic routes.
+
+## Notes & variations
+*   **Common mistake**: A frequent error is enabling `cacheComponents` without explicitly handling dynamic data access. Next.js 16.3 and later versions are stricter about this, requiring you to define how such data should be managed during the build process.
+*   **Other solutions**: The error message from Next.js suggests two other ways to fix this: you can use the `'use cache'` directive for uncached data fetches (though it doesn't apply to `params` directly), or you can set `export const instant = false` on your page to explicitly mark it as a blocking route that should not be prerendered. The `Suspense` approach is generally preferred for a better user experience, as it allows parts of the page to load while waiting for dynamic data.

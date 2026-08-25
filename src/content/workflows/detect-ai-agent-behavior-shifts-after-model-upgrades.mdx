@@ -1,0 +1,94 @@
+---
+title: "Detect AI Agent Behavior Shifts After Model Upgrades"
+description: "Learn to create a baseline of your AI agent's responses to detect unexpected changes after a model upgrade, ensuring consistent performance."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 90
+jobToBeDone: "Establish a baseline to detect behavioral shifts in AI agents after model upgrades"
+tools:
+  - name: "ChatGPT"
+    url: "https://chatgpt.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Google Sheets"
+    url: "https://docs.google.com/spreadsheets"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/sara_mo/did-the-model-upgrade-break-your-ai-agent-4ogp"
+  platform: "blog"
+  author: "sara_mo"
+  postedAt: 2026-08-22
+score: 8
+ingestedAt: 2026-08-25
+nigeriaNotes: "This workflow relies on freemium AI chat tools and a spreadsheet, making it accessible on mobile with minimal data usage. The main effort is careful human review."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will create a "frozen baseline" of your AI agent's typical responses to real user questions. This baseline helps you spot subtle, unexpected changes in how your AI agent behaves after its underlying AI model gets an upgrade. This approach works because it focuses on actual outputs and human judgment, catching shifts that automated tests often miss.
+
+## Tools you need
+*   **ChatGPT** (freemium): A popular AI chatbot for generating text responses. You will use it to simulate your AI agent's behavior.
+*   **Google Sheets** (free): A free online spreadsheet tool for organizing your questions, AI responses, and your own judgments.
+
+## Steps
+
+1.  **Identify your AI agent's core function**: Think about what your AI agent (or specific prompt setup) is designed to do. For example, "answer customer support questions," "summarize articles," or "generate social media posts." This helps you choose relevant test questions.
+    *   You should have a clear idea of the main purpose of your AI agent.
+
+2.  **Collect real user requests**: Gather a set of 10-20 actual questions or inputs that your AI agent typically receives. The author emphasizes "Not invented ones, not the ones you wish people sent." These should be real-world examples, including vague or underspecified ones.
+    *   You should have a list of real questions or prompts from your users or customers.
+
+3.  **Prepare your baseline spreadsheet**: Open Google Sheets and create a new spreadsheet. Set up columns for:
+    *   `Question/Input`: The real user request.
+    *   `Agent Prompt (if any)`: The specific instructions you give the AI model before the user's question (if you use a consistent "system prompt" or initial setup).
+    *   `Model Output (Baseline)`: The AI's response.
+    *   `Your Verdict (Baseline)`: Your judgment on the quality of the response (e.g., "Good," "Bad," "Needs Improvement," "Accurate," "Off-topic").
+    *   `Notes`: Any additional observations.
+    *   You should have an empty spreadsheet with these column headers ready.
+
+4.  **Run baseline tests and record outputs**: For each real user request you collected:
+    *   Go to ChatGPT (or your chosen AI chat tool).
+    *   If your "AI agent" involves a specific initial instruction or "system prompt" (a prompt you always give the AI before the user's actual question to set its role or behavior), paste that prompt first.
+    *   Then, paste one of your collected `Question/Input`s into the chat.
+
+    ```
+    [Paste your real user question here]
+    ```
+
+    *   Copy the AI's full response.
+    *   Paste the `Question/Input`, the `Agent Prompt (if any)` you used, and the `Model Output (Baseline)` into your spreadsheet.
+    *   Review the AI's response carefully. In the `Your Verdict (Baseline)` column, write down your honest opinion on whether the response is good, bad, or has specific issues. Add any `Notes`.
+    *   Repeat for all your collected questions.
+    *   You should have a spreadsheet filled with questions, AI responses, and your human judgments for each. This is your "frozen baseline."
+
+5.  **Save your baseline**: Save your Google Sheet. The author stresses: "That file is the only thing standing between you and hearing about it from a customer."
+    *   Your spreadsheet should be saved and easily accessible for future comparisons.
+
+6.  **After a model upgrade, run new tests**: When you learn that the underlying AI model has been upgraded (or if you suspect a change in behavior):
+    *   Add new columns to your spreadsheet: `Model Output (New)`, `Your Verdict (New)`, and `Differences Noted`.
+    *   Repeat Step 4 exactly, using the *same* `Agent Prompt (if any)` and `Question/Input`s in ChatGPT.
+
+    ```
+    [Paste your real user question here]
+    ```
+
+    *   Paste the new AI responses into the `Model Output (New)` column.
+    *   Provide your `Your Verdict (New)` for each new response.
+    *   You should have new responses and verdicts in your spreadsheet.
+
+7.  **Compare and identify shifts**: Go through your spreadsheet row by row. Compare `Model Output (Baseline)` with `Model Output (New)`.
+    *   In the `Differences Noted` column, describe any changes you see. The author notes that changes can be in "Shape" (longer/shorter answers), "Tool choice" (if your agent calls external tools, though this manual method won't directly show that), or "Ambiguity" (answering a slightly different question).
+    *   The author states: "A person still has to read the ones that changed and decide whether each change is an improvement or a regression, and that reading is the actual work."
+    *   You should have a clear understanding of what changed and whether those changes are positive or negative for your AI agent's purpose.
+
+## Original source
+This workflow is inspired by an article by sara_mo on the DEV Community blog. The author highlights how silent behavioral shifts in AI models after upgrades can break AI agents in ways that traditional automated tests often miss, advocating for a human-reviewed "frozen baseline" approach.
+
+## Notes & variations
+*   **Free-tier alternatives**: Instead of ChatGPT, you can use other freemium chat tools like **Claude.ai** (https://claude.ai) or **Gemini.google.com** (https://gemini.google.com). For spreadsheets, **Microsoft Excel Online** (https://www.microsoft.com/en-us/microsoft-365/excel) or **LibreOffice Calc** (https://www.libreoffice.org/discover/calc/) are free alternatives.
+*   **Common mistake**: A common pitfall is using "invented" or "perfect" questions for your baseline. The author strongly advises against this, emphasizing the need for *real* user requests, including vague or difficult ones, to truly capture how your agent behaves in the wild.
+*   **Tip for better results**: The author suggests automating the *running* of these tests, even if the *judging* remains human. For more advanced users, tools like **LangChain** or custom Python scripts can help send prompts to AI APIs (like OpenAI API or Anthropic API) in bulk and save responses programmatically, making the comparison process faster. This would typically involve `paid` API access.

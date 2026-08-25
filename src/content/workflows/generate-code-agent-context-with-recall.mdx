@@ -1,0 +1,82 @@
+---
+title: "Generate Code Agent Context with Recall"
+description: "Learn how to use Recall to create structured context for coding agents, saving them from re-discovering your project's layout."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 15
+jobToBeDone: "Generate persistent, structured context for coding agents to understand a repository without re-discovery"
+tools:
+  - name: "Recall"
+    url: "https://github.com/sabahattink/recall"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Node.js"
+    url: "https://nodejs.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Claude Code"
+    url: "https://code.claude.com/"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Codex"
+    url: "https://github.com/features/copilot"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Cursor"
+    url: "https://cursor.sh/"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/sabahattink/every-coding-agent-session-starts-by-rediscovering-your-repository-2i9e"
+  platform: "blog"
+  author: "sabahattink"
+  postedAt: 2026-08-11
+score: 7
+ingestedAt: 2026-08-25
+nigeriaNotes: "Recall is a local tool, so data usage is minimal. The main cost would be internet access for initial download and potential use of paid AI agents like Claude Code or Codex."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to use a tool called Recall to create a persistent, structured summary of your code repository. This summary helps AI coding agents understand your project faster, avoiding the need to re-explore it every time a new session starts. This approach works by scanning your code and generating a Markdown file that maps out your project's structure and key components.
+
+## Tools you need
+*   **Recall** (free): A command-line tool that scans your repository and generates context files.
+*   **Node.js** (free): A runtime environment needed to install and run the Recall command-line tool. Version 22+ is required.
+*   **Claude Code** (paid): An AI coding assistant that can use the generated Markdown context. (Alternatively, Codex or Cursor can be used).
+*   **Terminal or Command Prompt**: Your computer's built-in tool for running commands.
+
+## Steps
+1.  **Install Node.js**: If you don't have Node.js installed, download and install it from the official website. Ensure you have version 22 or newer.
+2.  **Initialize Recall**: Open your terminal or command prompt, navigate to your project's root directory, and run the following command to set up Recall for your repository:
+
+    ```bash
+    npx recall-context@latest init
+    ```
+
+    You should see output indicating that Recall has been initialized, likely creating a `.recall` directory within your project.
+3.  **Check Recall's Status**: To see the current state of Recall's understanding of your repository, run:
+
+    ```bash
+    npx recall-context@latest status
+    ```
+
+    This command will show you information about the context Recall has gathered.
+4.  **Generate Task-Focused Context**: To create a specific context file for an AI agent based on a particular task, use the `context` command. Replace the example task with your own:
+
+    ```bash
+    npx recall-context@latest context --task "Understand the CLI release and packaging workflow" --max-tokens 1200 --stdout
+    ```
+
+    The `--stdout` flag means the output will be printed directly to your terminal. The `--max-tokens` flag limits the size of the generated context. You should see a Markdown output describing relevant parts of your repository for the specified task.
+5.  **Provide Context to Your AI Agent**: Copy the Markdown output generated in the previous step. Then, in your AI coding agent tool (like Claude Code, Codex, or Cursor), paste this Markdown content. You might paste it into a dedicated context window, a special file (like `AGENTS.md`), or directly in your prompt, depending on how your agent tool works.
+
+## Original source
+This workflow is based on the insights shared by sabahattink on DEV Community. The author developed a tool called Recall to address the repetitive task of AI coding agents re-exploring code repositories at the start of each session, aiming to make AI agent interactions more efficient.
+
+## Notes & variations
+*   **Free Tier Alternative**: Recall itself is free and runs locally. The main cost comes from using the AI coding agents, which often have paid tiers or require API credits. For free AI agent use, you might explore models available through platforms like Groq or Hugging Face, though integrating their output with Recall's context might require extra steps.
+*   **Common Pitfall**: Ensure you are running the `npx recall-context` commands from the root directory of your project. If run from a subdirectory, Recall might not correctly identify all project files and structures.
+*   **Tip for Better Results**: Experiment with the `--task` flag in the `recall-context context` command. Being specific about the task helps Recall focus on the most relevant files and information, leading to more useful context for your AI agent.
