@@ -1,0 +1,87 @@
+---
+title: "Upgrade Python Libraries with AI Code Assistants like Claude Code"
+description: "Learn how AI code assistants can help developers upgrade Python libraries by reading migration guides and fixing code automatically."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 30
+jobToBeDone: "Upgrade a Python library to a newer version using an AI code assistant"
+tools:
+  - name: "Claude Code"
+    url: "https://code.claude.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Python"
+    url: "https://www.python.org"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Git"
+    url: "https://git-scm.com"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://simonwillison.net/2026/Aug/24/llm-anthropic/"
+  platform: "blog"
+  author: "Simon Willison"
+  postedAt: 2026-08-24
+score: 7
+ingestedAt: 2026-08-26
+nigeriaNotes: "This workflow requires paid access to developer AI tools and a stable internet connection for large file downloads and API calls. Consider free alternatives for basic code assistance if available."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "Upgrade your Python project's libraries for a final year project, ensuring compatibility with the latest versions."
+  - persona: "employee"
+    scenario: "Update a core Python library in your company's codebase, fixing breaking changes before the next sprint."
+  - persona: "entrepreneur"
+    scenario: "Refactor your startup's Python backend to use newer library versions, improving performance and security."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+An AI code assistant is a tool powered by artificial intelligence that helps developers write, debug, and upgrade computer code. This entry explains how these assistants can be used to simplify the complex task of upgrading a Python library to a newer version.
+
+When a software library updates, it often introduces changes that require developers to modify their existing code. This process can be time-consuming and prone to errors. AI code assistants can read official migration guides (documents explaining how to update) and then suggest the necessary code changes automatically.
+
+This is an advanced workflow because it requires comfort with programming, a development environment, and typically involves paid developer tools. It is not a simple copy-paste recipe for a beginner.
+
+## What you can use it for
+*   **Automate library upgrades**: Use AI to read migration guides and suggest code updates for your Python projects.
+*   **Fix breaking changes**: Get help adapting your code when a new library version introduces changes that make older code stop working.
+*   **Learn new API patterns**: Understand how to use new functions or methods in updated libraries by seeing AI-generated examples.
+*   **Speed up development**: Reduce the manual effort involved in keeping your project's software dependencies current.
+
+## Tools you need
+*   **Claude Code** (paid): An AI code assistant from Anthropic, designed to help developers write and fix code.
+*   **Python** (free): A popular programming language, essential for running the code you want to upgrade.
+*   **Git** (free): A system for tracking changes in code, useful for managing your project and applying AI-generated fixes.
+
+## How it actually works
+This workflow involves using an AI code assistant within a development environment. The exact steps will vary depending on your specific project and the AI tool you choose, but here's the general process:
+
+1.  **Prepare your Python project**: Ensure your project is set up with `Git` (a version control system) and has its dependencies listed (e.g., in a `requirements.txt` file). You will need to be comfortable with a code editor and the terminal (a text-based interface for your computer).
+2.  **Access an AI code assistant**: Open `Claude Code` (or a similar paid AI coding tool). You will need an account and likely an API key to use its features.
+3.  **Provide the upgrade instructions**: Share the migration guide URL and your code with the AI. The author used a prompt similar to this:
+
+    ```
+    Upgrade to anthropic>=1 - read https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/refs/heads/main/MIGRATION.md and get the tests passing
+    ```
+
+    You would replace `anthropic>=1` with the library and version you need to upgrade, and the URL with the relevant migration guide for your specific library.
+4.  **Review AI-generated changes**: The AI will suggest code modifications. Carefully examine these changes to understand what the AI has done. Do not apply them blindly.
+5.  **Run your project's tests**: After applying the changes, run your project's automated tests to confirm that the upgrade was successful and did not introduce new problems. You might need to iterate with the AI if tests fail.
+
+## Words you'll see, explained
+*   **AI Code Assistant**: A tool powered by artificial intelligence that helps developers write, debug, and upgrade computer code.
+*   **Python Library**: A collection of pre-written code that developers can use in their Python projects to add specific functions without writing everything from scratch.
+*   **Migration Guide**: A document that explains how to update software or a library from an older version to a newer one, often detailing changes and necessary code adjustments.
+*   **API (Application Programming Interface)**: A set of rules and tools that allows different software applications to communicate with each other.
+*   **Tests**: Automated checks written by developers to ensure that parts of a program work correctly and continue to work after changes are made.
+
+## Original source
+This concept was shared by Simon Willison on his blog in August 2026. He demonstrated how he used Claude Code with Fable 5 to upgrade the `llm-anthropic` Python plugin to be compatible with the newer `anthropic v1.0.0` library.
+
+## Notes & variations
+*   **Do you even need this?** For very simple library upgrades, manually reviewing the migration guide and making changes might be faster. This workflow is most beneficial for complex upgrades involving many changes or unfamiliar codebases.
+*   **Free-tier limits**: `Claude Code` is a paid developer tool. While some general-purpose AI chat models (like the freemium versions of ChatGPT, Claude, or Gemini) can assist with smaller code snippets, they typically lack the deep integration and context awareness needed for full library upgrades like this.
+*   **Common pitfall**: Blindly accepting AI-generated code without understanding or testing it can introduce new bugs or security vulnerabilities. Always review the AI's suggestions carefully and run your project's tests to ensure everything still works as expected.
