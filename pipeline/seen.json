@@ -16076,8 +16076,48 @@
     "b74db50cdf879b0c9adb96be4f61d3aa512f7db357150df726a12b7aedbc2ac8": {
       "url": "https://www.reddit.com/r/copywriting/comments/1vp7gg5/i_asked_ai_whats_stopping_it_from_beating_elite",
       "date": "2026-08-26"
+    },
+    "f5f4de75012e05660ae2db2f9242a7a829997dd59b4efa21058aff7b58b8be3c": {
+      "url": "https://github.com/jondot/awesome-react-native",
+      "date": "2026-08-27"
+    },
+    "8e2bea08b7f2937cbcfee9ebf4a3efa242ff17f1a842e7473475c1fbb64f5d78": {
+      "url": "https://simonwillison.net/2026/Aug/26/qwen38-flash-next",
+      "date": "2026-08-27"
+    },
+    "132d44f2f5aac4508f25a1ee0623f9e1f8c0f581b9e0c635c87ac9233a177ad8": {
+      "url": "https://www.latent.space/p/ainews-nvidia-buys-huggingface-for",
+      "date": "2026-08-27"
+    },
+    "8e483ee8fa51f11bf282aed2d12392d9dbfc1d9d9f327bb373cd8e2d519c6403": {
+      "url": "https://www.latent.space/p/ainews-hot-chips-openais-jalapeno",
+      "date": "2026-08-27"
+    },
+    "738f130d6895192c9c192ae77d0994d4fb9a81c9da5001b659917e0650f5fc8e": {
+      "url": "https://www.latent.space/p/lovable-future-of-saas",
+      "date": "2026-08-27"
+    },
+    "774c92e393ebe03e59fafd95581535942992ea6cfa193782fdcad6952ae81861": {
+      "url": "https://www.latent.space/p/anima",
+      "date": "2026-08-27"
+    },
+    "52cd6f64afa8aaf328ee7f9782dfbf139b3007aeb88e95afcda5ce8a7d08f5bc": {
+      "url": "https://www.bensbites.com/p/who-let-the-agents-in",
+      "date": "2026-08-27"
+    },
+    "17177c100c9150295f9a783a1f42c5ab7f67d636429664b84dc83f06cd3f4a18": {
+      "url": "https://huggingface.co/blog/train-multi-vector-encoder",
+      "date": "2026-08-27"
+    },
+    "aa52013cabd5e39db2c827b4959887ad62e818ea6bc71b117714cba3caa3ac9d": {
+      "url": "https://newsletter.pragmaticengineer.com/p/the-pulse-meta-wanted-to-reduce-teams",
+      "date": "2026-08-27"
+    },
+    "45c0fed4be6916c0daf7fef226c1c80e9f405a36907bea1b8b2f75889924eb69": {
+      "url": "https://newsletter.pragmaticengineer.com/p/why-performant-code-matters-but-gets",
+      "date": "2026-08-27"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 4
+  "dailyPage": 5
 }
