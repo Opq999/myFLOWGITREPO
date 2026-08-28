@@ -16116,8 +16116,272 @@
     "45c0fed4be6916c0daf7fef226c1c80e9f405a36907bea1b8b2f75889924eb69": {
       "url": "https://newsletter.pragmaticengineer.com/p/why-performant-code-matters-but-gets",
       "date": "2026-08-27"
+    },
+    "7e8c092fd3541868acde00015e8584e2b42861f9bdd1deb9308102a01dd6e2bf": {
+      "url": "https://news.ycombinator.com/item?id=49401549",
+      "date": "2026-08-28"
+    },
+    "f976a2a0000c8f853a16454817518e7ad7ba1d52e3bb3177891dcea159a19ccc": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1vmdtrn/sam_altman_says_ai_wont_bring_a_4day_work_week",
+      "date": "2026-08-28"
+    },
+    "86c9015dd55dff65a6546a3c87814011299aca7a6c4efbfa96167bb200ad2628": {
+      "url": "https://simonwillison.net/2026/Aug/27/breaking-claude-code-opus-5-auto-mode",
+      "date": "2026-08-28"
+    },
+    "d57d17bc3912759559b66fadeed50a178a50051e56dbd1193fd865553799b5f0": {
+      "url": "https://github.com/postcss/postcss",
+      "date": "2026-08-28"
+    },
+    "974a63f58a0a50bc5fbba11f00dc2ed2f2e17f1b05536de1c8446a107b6e67b2": {
+      "url": "https://news.ycombinator.com/item?id=49472820",
+      "date": "2026-08-28"
+    },
+    "3a579db12a5e1ac4d70d65e0838c5ac1c25434cee0b997829d89da5009d1303c": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1vwdmhb/thanks_for_the_help_mom",
+      "date": "2026-08-28"
+    },
+    "a425a975157b3226c4b5570f284ad334db29a53ba2a5f48c90f02d0769e2287d": {
+      "url": "https://www.latent.space/p/ainews-openai-to-reach-agi-bar-by",
+      "date": "2026-08-28"
+    },
+    "26de699d3e5c651e05d363a4e06a9e9b192f6eaa38e28f37c810ff0579a397e5": {
+      "url": "https://github.com/tt-a1i/archify",
+      "date": "2026-08-28"
+    },
+    "3e4bee139bd73bd99945d4fd8761b32115fc3c2c946fd192429e847679f48207": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1vicesi/israel_is_paying_millions_to_train_ai_chatbots",
+      "date": "2026-08-28"
+    },
+    "5d1198e2c0c1ba038d9732d27b9645146e5f0892be244218d8a88e98567c839a": {
+      "url": "https://www.bensbites.com/p/how-i-built-this-21f",
+      "date": "2026-08-28"
+    },
+    "ef6abebb343825aeabd56a869405b49972e3b19bdfa1a733dbc5c4e3e14827da": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1vzv95d/asked_chatgpt_for_a_professional_b2b_app_icon_it",
+      "date": "2026-08-28"
+    },
+    "5637e07874fbb1ca64e5ea6982c0c7d619d5a2e660474b92fd36377ba0b2eb6e": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1vttwc9/oops",
+      "date": "2026-08-28"
+    },
+    "ade21bfbef9b1a1c99de74077e4d4368c781f612a071c3566a721959c29f888d": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1vyyf54/insane",
+      "date": "2026-08-28"
+    },
+    "fc81d1a4330c0cfdbe3d8db59f175937507c2252f6f88a0804d7c5f3108d8236": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1vux7tz/ai_soap_opera_the_chiseled_and_the_beautiful",
+      "date": "2026-08-28"
+    },
+    "9aa1e748f2a852c10ca5d014b0bc102a17f89785628dccfd40d53904943d7580": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1vtwict/my_best_blunder_ever",
+      "date": "2026-08-28"
+    },
+    "c973f6a65f58b78c59e17f46ec1a92ed3ba1dacae6ff137a57b963b456d53e84": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1vv7qwe/i_used_gpt_image_2_to_turn_cities_around_the",
+      "date": "2026-08-28"
+    },
+    "c13766604d8660024970f7f18367d2b9290ca1447ae02337de3a722ec8e5cc1e": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1vvh2a6/thanks_chat",
+      "date": "2026-08-28"
+    },
+    "db7e4a46bc0b9c43144e8fdeb35da5decaae134a24f30342b891033670b15a40": {
+      "url": "https://www.reddit.com/r/ChatGPTPromptGenius/comments/1vubja4/using_chatgpt_to_help_clean_up_gmail_an_even",
+      "date": "2026-08-28"
+    },
+    "a3bf5f33c5d99f0462c57bfaef2eaf1ccd76f6702275e637d013db86f4fccc10": {
+      "url": "https://www.reddit.com/r/ChatGPTPromptGenius/comments/1vlitjx/this_prompt_made_chatgpt_feel_like_it_had_a_mind",
+      "date": "2026-08-28"
+    },
+    "754fa873a5c430b3ba9a02cb0f003452350c1b1141152648e29f2fed6032da1f": {
+      "url": "https://www.reddit.com/r/ChatGPTPromptGenius/comments/1vjp1q3/one_prompt_that_works_for_literally_any_task_no",
+      "date": "2026-08-28"
+    },
+    "aeba377e1e51f25dee01fa6af1cc5fc83e2b4a610eefd60cca64e2dfaf72c930": {
+      "url": "https://www.reddit.com/r/ChatGPTPromptGenius/comments/1vapjiu/the_prompt_i_run_before_any_big_decision_it",
+      "date": "2026-08-28"
+    },
+    "0f4354bd828d1359f3bd8875133e5aca28eae70c13afae94a01724ea48238a73": {
+      "url": "https://www.reddit.com/r/ChatGPTPromptGenius/comments/1vbq7mc/career_level_up",
+      "date": "2026-08-28"
+    },
+    "985cb3dbdec8b767ffffea18a5407dbf295354cbb35ac7134a59ddb26ff8f0fe": {
+      "url": "https://www.reddit.com/r/ChatGPTPromptGenius/comments/1vb0cnu/turn_your_genius_prompt_into_a_reusable_skill",
+      "date": "2026-08-28"
+    },
+    "55156a0f1a33ae47ebb580e29c51d871f9e51974fdd325465f82a323e466b66c": {
+      "url": "https://www.reddit.com/r/ChatGPTPromptGenius/comments/1w0okip/the_prompt_technique_that_fixed_my_biggest",
+      "date": "2026-08-28"
+    },
+    "1836870774872dbe0af1e7bf37c40e494c59884da8078534d2cfcfe7651dce6d": {
+      "url": "https://www.reddit.com/r/ChatGPTPromptGenius/comments/1vivrd5/i_turned_chatgpt_into_a_creative_problemsolving",
+      "date": "2026-08-28"
+    },
+    "993ab0db6698eeabb0363dda84b5134051d3c3cabd1c22d314bd2ae0dc4a1f2c": {
+      "url": "https://www.reddit.com/r/ChatGPTPromptGenius/comments/1vfy9dx/what_is_the_best_ai_for_making_ppt",
+      "date": "2026-08-28"
+    },
+    "609349bcf093fe1aad06c2bc6ae843eea6a6f55539ae3aae8da1e5881cc4bed7": {
+      "url": "https://www.reddit.com/r/ChatGPTPromptGenius/comments/1vuba3f/claude_can_now_run_tasks_on_a_schedule_in_the",
+      "date": "2026-08-28"
+    },
+    "66edb87a5c24cf086bec4e4ffe4cd6c101db1ca9a01eab346239f657900f9a46": {
+      "url": "https://www.reddit.com/r/ChatGPTPromptGenius/comments/1vskmlx/what_do_you_do_with_the_prompts_that_actually_work",
+      "date": "2026-08-28"
+    },
+    "5da43ccd652fc7aedb784985300ad63243538a55210b654d93df5cec7bd993fe": {
+      "url": "https://www.reddit.com/r/ChatGPTPromptGenius/comments/1vfx927/anyone_have_great_prompts_for_fantasy_football",
+      "date": "2026-08-28"
+    },
+    "7fc615f5220323febdbe7ae8dcfc4498ed418b71d50095c423623537ea59ac7d": {
+      "url": "https://www.reddit.com/r/ChatGPTPromptGenius/comments/1vdnepw/the_slash_command_stickynotes_to_create_social",
+      "date": "2026-08-28"
+    },
+    "03f419b6d5bcdbce6faf4a0fb515e59c267465d84f41440712fc73515a333e8b": {
+      "url": "https://www.reddit.com/r/ChatGPTPromptGenius/comments/1vc24a5/grobstyle_times_cover_portrait_headshot_prompt",
+      "date": "2026-08-28"
+    },
+    "dd2a7932872b6692b3f4e5ee12f5aa410dafbbcaa469e31c5f529177369f250b": {
+      "url": "https://www.reddit.com/r/ChatGPTPromptGenius/comments/1vk6gcf/before_you_give_an_ai_agent_more_access_give_it",
+      "date": "2026-08-28"
+    },
+    "4d381fef123a986794051d1117dc6a01ec4aeb248e1de86a1b8326bbcec08990": {
+      "url": "https://www.reddit.com/r/ChatGPTPromptGenius/comments/1vrl69z/a_fillintheblank_prompt_i_reuse_every_week_to_get",
+      "date": "2026-08-28"
+    },
+    "8b1121a4eedd305b5a4a7a0c30549ab9687897343c9cf5f5a4735a4b63d581b2": {
+      "url": "https://www.reddit.com/r/ChatGPTPromptGenius/comments/1vi4jgn/chatgpt_refuses_simple_roleplay_taskskeeps",
+      "date": "2026-08-28"
+    },
+    "e019deec583c550937fc51263dd9ab302b42bdbbc45c569ba0ae19703ca37ecc": {
+      "url": "https://www.reddit.com/r/ChatGPTPromptGenius/comments/1vhv1bz/realized_i_was_losing_leads_simply_by_forgetting",
+      "date": "2026-08-28"
+    },
+    "8386358c1e0caedec61cd228500f7fff51ced4d829a9aefa635a6ed23995f5d9": {
+      "url": "https://www.reddit.com/r/ChatGPTPromptGenius/comments/1vsc7jc/claudify_your_chatgpt_with_this_instructions",
+      "date": "2026-08-28"
+    },
+    "0a47b28ae484f31fe693bfd1d2b760d15130e639973d47d747b86bf48973ca24": {
+      "url": "https://www.reddit.com/r/ChatGPTPromptGenius/comments/1voymnt/what_humans_value",
+      "date": "2026-08-28"
+    },
+    "715c610597fecd74ac643224a66166e63a228112c741e5f86dfe994a0b35cf25": {
+      "url": "https://www.reddit.com/r/ChatGPTPromptGenius/comments/1vh0jc6/2_prompt_templates_for_following_up_when_a_client",
+      "date": "2026-08-28"
+    },
+    "fd26797f050bc4bfbf330f051b05a7c629cf495cb214aaf6be197d37b19c0622": {
+      "url": "https://www.reddit.com/r/ChatGPTPromptGenius/comments/1vddjsm/3_prompt_templates_for_the_clientcommunication",
+      "date": "2026-08-28"
+    },
+    "de98b1aaf7c337661a292335663e08129f1da6ea4240e14232117d20495be55a": {
+      "url": "https://www.reddit.com/r/ChatGPTPromptGenius/comments/1vsinlq/i_built_a_reusable_prompt_framework_for_better_ai",
+      "date": "2026-08-28"
+    },
+    "d573068bb202ed768dd64dbd90d5e0054cab0f6b9fdfb377a050b61ae440ae40": {
+      "url": "https://www.reddit.com/r/ChatGPTPromptGenius/comments/1vjd66b/feedback",
+      "date": "2026-08-28"
+    },
+    "d08f29491d3cb26f7b2f669e3923384ec5701f41cae2cc82fb80a14cda6ba73a": {
+      "url": "https://www.reddit.com/r/copywriting/comments/1vofoiu/asking_for_general_feedback_for_fragrance",
+      "date": "2026-08-28"
+    },
+    "b5995f7e3df5b2eadf914bc9f55c999927bd9acdbd1b2a8b6d26ce3658dd1e0a": {
+      "url": "https://www.reddit.com/r/copywriting/comments/1vfhfbl/freelancers_are_you_using_a_companys_llm",
+      "date": "2026-08-28"
+    },
+    "29caa979ebcc4674dd82b4b1651c464c70057349a10a89cc18e33ce36666429b": {
+      "url": "https://www.reddit.com/r/copywriting/comments/1vwvsrt/does_any_body_remember_which_gary_halbert_letter",
+      "date": "2026-08-28"
+    },
+    "3c70c2725bd6070a20ad237ee00f2b098b652caa932c4a3c9f37bc8d0beb4435": {
+      "url": "https://www.reddit.com/r/copywriting/comments/1vmefcf/should_i_relocat_worth_it",
+      "date": "2026-08-28"
+    },
+    "cbfbbd669d29bbb2d39e34cb670f1b048267937cf2dc802235af249188e48f57": {
+      "url": "https://www.reddit.com/r/copywriting/comments/1vb6lny/why_does_knowing_too_much_about_a_subject_ruin_my",
+      "date": "2026-08-28"
+    },
+    "a7c78d0a643b1885a26d240a721d82d08858252384dc024044b51514b9043b97": {
+      "url": "https://www.reddit.com/r/copywriting/comments/1vw8nnc/what_assets_should_i_need_from_client",
+      "date": "2026-08-28"
+    },
+    "9e27ef6b60ac0e1c90e179774e67d487e827eb3f088d21124e1122689bc10919": {
+      "url": "https://www.reddit.com/r/copywriting/comments/1vnzvon/im_struggling_to_find_my_current_companys_voice",
+      "date": "2026-08-28"
+    },
+    "b0d97ff8c56668edbb76beb226d34e7ac87d306635634c422f6cbbbb0f05f423": {
+      "url": "https://www.reddit.com/r/copywriting/comments/1vm9ecu/what_should_i_charge_as_a_freelance_copywriter",
+      "date": "2026-08-28"
+    },
+    "c87142db988f4894c2c68dc557a3b8bad3398b865a47a6d86a3c67121b0decc4": {
+      "url": "https://www.reddit.com/r/copywriting/comments/1vlctg6/portfolio_and_job_advice",
+      "date": "2026-08-28"
+    },
+    "af88c4cc866381548727bca7835c08c532aaf3a6dd7e1c458bbf4630139d25fc": {
+      "url": "https://www.reddit.com/r/copywriting/comments/1vgdhro/how_to_find_decent_newsletters_of_any_niche_that",
+      "date": "2026-08-28"
+    },
+    "ae25461482b0cd01416f893f1af78e61862b6d96e572addf886bec6f4bd51f99": {
+      "url": "https://www.reddit.com/r/copywriting/comments/1ver7mn/anyone_else_find_writing_for_clients_easier_than",
+      "date": "2026-08-28"
+    },
+    "0d654a1599c8f35cd7227ad201dc021ea847c89aeeb416f7ae65ffecd8081dcf": {
+      "url": "https://www.reddit.com/r/copywriting/comments/1vsh4s0/something_off_my_chest",
+      "date": "2026-08-28"
+    },
+    "240f84434c0d973de86515d006ea6eac62d0e911dc86b6ef864b5c8b57c6a5b1": {
+      "url": "https://www.reddit.com/r/copywriting/comments/1vm5gxp/stefan_georgi_what_happened_to_him",
+      "date": "2026-08-28"
+    },
+    "87c910848ac76a12b8848b9e230cefb7735b19d3d709e3abbf718aea9160481c": {
+      "url": "https://www.reddit.com/r/copywriting/comments/1vlr54a/when_you_write_copy_for_something_you_actually",
+      "date": "2026-08-28"
+    },
+    "9094540051bf7e36a8166ffa34fbcc6ec7b4edca6b8a5f44938d646d6e05427b": {
+      "url": "https://www.reddit.com/r/copywriting/comments/1vjxapq/canadians_who_have_been_hired_for_us_copywriting",
+      "date": "2026-08-28"
+    },
+    "d597f1b8573aa8599e225335c08b7eb8aaf1b79baf67dbb61c4a49669e2693c6": {
+      "url": "https://www.reddit.com/r/copywriting/comments/1vizfhs/ppc_ad_copy_and_copywriting_overlap_more_than_i",
+      "date": "2026-08-28"
+    },
+    "cfb5422f0f7250720ef64e76d246d47cd34091025644e68087cb2b8de2b58e6b": {
+      "url": "https://www.reddit.com/r/copywriting/comments/1vqfwnl/still_figuring_out_or_are_these_skills_completely",
+      "date": "2026-08-28"
+    },
+    "fbf8263ca8e73cdac1c9f92d3fe6b50accfd5221d4a01669af6d6b2ac919bde1": {
+      "url": "https://www.reddit.com/r/copywriting/comments/1vp8ci9/writer_needs_advice",
+      "date": "2026-08-28"
+    },
+    "ee26e81fd1740f60a6e0ce707dfc7692b6e4f555e0e98929fb63116a62bcab3e": {
+      "url": "https://www.reddit.com/r/copywriting/comments/1vo4uyl/does_schwartzs_actual_book_support_the_5_stages",
+      "date": "2026-08-28"
+    },
+    "d53c2842d3b3d78440cd89887965ae26fa5dd43a200d45a8881a885e9685e13b": {
+      "url": "https://www.reddit.com/r/copywriting/comments/1vn77ge/abstract_copy_guidance",
+      "date": "2026-08-28"
+    },
+    "fa8618b0a892361f203b9dc93a1d929f921cf431834885c482dc4e509d83be67": {
+      "url": "https://www.reddit.com/r/copywriting/comments/1vlitty/salve_vorrei_diventare_copywriter_qual_%C3%A8_il",
+      "date": "2026-08-28"
+    },
+    "dedeac4d9cac245100782a19a15f91d801d5c577c203e85b3646af7bb1ae8c62": {
+      "url": "https://www.reddit.com/r/copywriting/comments/1vf1s2o/blast_from_the_past",
+      "date": "2026-08-28"
+    },
+    "56ec61dfe742cfe73af1ec26fe19b341d14ed0387d2f877f3b64ca36f8e5cff7": {
+      "url": "https://www.reddit.com/r/copywriting/comments/1vaza4f/is_a_one_page_website_for_your_website_acceptable",
+      "date": "2026-08-28"
+    },
+    "6539651e1944d1f6fd10643c0ec3430e6ad4d750bf00b23eddc22583bd8f88cf": {
+      "url": "https://www.reddit.com/r/copywriting/comments/1vy375d/i_have_an_incredibly_irrational_hatred_for_how",
+      "date": "2026-08-28"
+    },
+    "c1be7f0cf0c4e24de1cabaa2aed11dde815be86bda23d6e092e319e0a68efaf5": {
+      "url": "https://www.reddit.com/r/copywriting/comments/1vkrepg/why_smart_brands_give_their_audience_hope",
+      "date": "2026-08-28"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 5
+  "dailyPage": 0
 }

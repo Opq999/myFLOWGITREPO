@@ -1,0 +1,97 @@
+---
+title: "Build a Personal Website with AI Agents and Visual Feedback"
+description: "Learn how AI agents can help design and build a personal website through iterative visual feedback. Explore using AI for rapid prototyping and content management."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 120
+jobToBeDone: "Build a personal website using AI agents and iterative design feedback"
+tools:
+  - name: "Codex (AI Agent)"
+    url: "https://openai.com/"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "tldraw"
+    url: "https://www.tldraw.com/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Anthropic API (Claude)"
+    url: "https://www.anthropic.com/api"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "OpenAI API (GPT)"
+    url: "https://openai.com/api"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Vercel"
+    url: "https://vercel.com/"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://www.bensbites.com/p/how-i-built-this-21f"
+  platform: "blog"
+  author: "Ben's Bites"
+  postedAt: 2026-08-28
+score: 7
+ingestedAt: 2026-08-28
+nigeriaNotes: "This workflow relies heavily on paid AI API services (Anthropic API, OpenAI API) for its core functionality, making it less viable for free-tier users. While tools like tldraw and Vercel offer free tiers suitable for personal projects, the iterative agent-driven development will incur costs for API usage. The setup and interaction with AI agents are typically done on a computer, not mobile. Data usage will depend on the complexity of designs and number of iterations, but the primary cost will be API calls."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "Build a personal portfolio website to showcase projects for internships or graduate school applications."
+  - persona: "entrepreneur"
+    scenario: "Quickly prototype a landing page for a new app or service to gather early user feedback."
+  - persona: "employee"
+    scenario: "Create an internal team dashboard or project showcase site without needing dedicated IT support."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+This workflow describes an advanced method for building a personal website using AI agents and an iterative design process. Instead of writing code from scratch, you interact with an AI agent that generates website prototypes based on your instructions and visual feedback. The process involves designing a layout, having the AI agent build it, reviewing the result, annotating a screenshot with changes, and sending it back to the agent for further refinement.
+
+This approach is considered advanced because it requires setting up and configuring an AI agent framework, integrating it with large language models (LLMs) via their APIs, and understanding how to effectively guide the agent through multiple design iterations. It's not a simple copy-paste recipe for beginners, as the exact instructions and agent setup live within a custom environment.
+
+The core idea is to treat the AI agent as a design and development assistant, allowing you to focus on the visual outcome and content rather than the underlying code. The agent handles the technical details of generating and modifying the website based on your input, including deploying it to a public URL.
+
+## What you can use it for
+*   **Rapid Prototyping**: Quickly turn design ideas or sketches into functional website prototypes without manual coding.
+*   **Iterative Design**: Refine website designs by giving visual feedback directly to an AI agent, making changes faster.
+*   **Content Management**: Structure website content using simple Markdown files, allowing for easy updates without touching code.
+*   **Automated Deployment**: Publish your website to a public URL using agent skills, simplifying the hosting process.
+*   **Exploring AI Agents**: Understand how AI agents can be customized and used for complex development tasks beyond simple chat.
+
+## Tools you need
+*   **Codex (AI Agent)** (paid): The author's custom AI agent setup, likely powered by underlying LLMs, used for generating and modifying website code.
+*   **tldraw** (freemium): An online whiteboard tool used for sketching designs and annotating screenshots with feedback.
+*   **Anthropic API (Claude)** (paid): An application programming interface (API) for accessing Claude large language models, used by the agent for understanding design intent.
+*   **OpenAI API (GPT)** (paid): An API for accessing OpenAI's GPT large language models, also used by the agent for code generation and understanding instructions.
+*   **Vercel** (freemium): A platform for deploying websites and web applications to a public URL.
+
+## How it actually works
+1.  **Set up an AI Agent Framework**: The author uses a custom AI agent setup, which they refer to as "Codex." This typically involves choosing an open-source agent framework (like AutoGen or CrewAI) and configuring it with specific instructions, often stored in a file like `AGENTS.md`.
+2.  **Integrate AI Models**: Connect your agent framework to large language models (LLMs) such as Claude and GPT. This is done by using their paid APIs, which allow the agent to send and receive information from these powerful AI models.
+3.  **Design the Initial Layout**: Start by creating a visual design for your website. The author began by giving their "Codex" agent an image of an existing app and asking it to build a prototype based on that visual input.
+4.  **Generate the First Prototype**: Instruct your agent to generate the initial website prototype. The agent will use the integrated LLMs to interpret your design or image and produce the first version of the website's code and layout.
+5.  **Review and Annotate**: Take a screenshot of the AI-generated prototype. Open this screenshot in a visual tool like tldraw and draw directly on it, adding notes and arrows to indicate desired changes or fixes. This provides clear visual feedback.
+6.  **Provide Iterative Feedback**: Send the annotated screenshot and a short text instruction back to your agent. The agent will then interpret your visual and text feedback to make the requested changes to the website. This loop of review, annotate, and send back is repeated multiple times until you are satisfied with the design.
+7.  **Manage Content with Markdown**: Configure your agent to store website content in separate Markdown files. Markdown is a simple text format that makes it easy to update text, headings, and lists without needing to edit complex code directly.
+8.  **Deploy the Website**: Instruct your agent to deploy the website to a public URL. The author uses a service like Vercel, which can be integrated as an agent "skill" to automate the publishing process, making the site accessible from any device.
+9.  **Refine and Add Features**: Continue the iterative design review, potentially adding more advanced "skills" to your agent for specific tasks, such as reviewing animations or implementing complex user interface fixes.
+
+## Words you'll see, explained
+*   **AI Agent**: A computer program that uses artificial intelligence to perform tasks, often by interacting with other tools or models autonomously.
+*   **LLM (Large Language Model)**: An AI model trained on vast amounts of text data, capable of understanding and generating human-like text and code. Examples include GPT and Claude.
+*   **Prototype**: An early sample or model of a product built to test a concept or process before full development.
+*   **Markdown**: A lightweight markup language for creating formatted text using a plain-text editor, commonly used for documentation and simple web content.
+*   **Localhost**: A term referring to the current computer. A website running on 'localhost' is only visible on that specific machine.
+*   **Deployment**: The process of publishing a website or application to a server so it can be accessed by others on the internet via a public address.
+*   **Static Site**: A website where all content is fixed in files and doesn't change dynamically based on user interaction or external data sources.
+*   **Skill (AI Agent)**: A specific capability or function that an AI agent can perform, often by calling an external tool, API, or executing a predefined script.
+
+## Original source
+This workflow is inspired by Ben's session #4, titled "How I built this," shared on the Ben's Bites blog. The author details their process of rebuilding a personal website using AI agents and an iterative design feedback loop.
+
+## Notes & variations
+*   **Do you even need this?**: For simple personal websites, using a traditional website builder like Canva, Google Sites, or WordPress.com might be a simpler, more cost-effective, and less technical alternative than setting up a complex AI agent workflow.
+*   **Free-tier limits**: The core AI models (Claude and GPT) are accessed via paid APIs, meaning you will incur costs for their usage. While tools like tldraw and Vercel offer generous free tiers suitable for personal projects, the iterative nature of this workflow will likely lead to significant API costs.
+*   **Common pitfall**: Providing vague or unclear instructions to the AI agent. Be as specific as possible with your visual annotations and accompanying text instructions. The author notes that some models, like GPT, require more precise feedback compared to others, like Claude, which might infer intent better.

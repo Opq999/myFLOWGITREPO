@@ -1,0 +1,69 @@
+---
+title: "Automate Daily Planning and Follow-ups with Claude's Scheduled Routines"
+description: "Learn how to set up scheduled AI routines in Claude's desktop app to automate tasks like catching forgotten follow-ups, generating weekly reports, and planning your week."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 20
+jobToBeDone: "Automate follow-ups, weekly reports, and daily planning using scheduled AI routines"
+tools:
+  - name: "Claude"
+    url: "https://claude.ai"
+    pricing: "paid"
+    affiliateUrl: ""
+source:
+  url: "https://www.reddit.com/r/ChatGPTPromptGenius/comments/1vuba3f/claude_can_now_run_tasks_on_a_schedule_in_the/"
+  platform: "reddit"
+  author: "/u/Professional-Rest138"
+  postedAt: 2026-08-21
+score: 6
+ingestedAt: 2026-08-28
+nigeriaNotes: "This workflow uses a paid feature of Claude, meaning it requires a subscription. Consider if the benefits of automation outweigh the cost for your specific needs."
+tiktokUrl: ""
+published: false
+---
+
+## What you'll get
+You will set up automated tasks in Claude that run on a schedule, even when your computer is off. This helps you consistently catch forgotten follow-ups, generate weekly business reports, and get a prioritized plan for your week ahead.
+
+## Tools you need
+*   **Claude** (paid): An AI assistant that can understand and execute instructions, used here for its desktop app with scheduled routines.
+
+## Steps
+1.  **Open the Claude desktop app**: Locate and open the Claude desktop application on your computer.
+    *   You should see the main Claude interface.
+2.  **Navigate to Routines**: In the Claude desktop app, look for a section labeled "Code" on the left side. Click on it, then find and click "Routines" within that section.
+    *   You should see the Routines interface, where you can create and manage scheduled tasks.
+3.  **Set routine execution to Cloud**: In the top right corner of the Routines interface, find the setting that controls where the routine runs. Change it from "Local" to "Cloud".
+    *   This ensures your routines will run on Anthropic's servers even if your laptop is closed or asleep. If you miss this step, your routines will not run when your machine is off.
+4.  **Create a Follow-up Catcher routine**: Click to create a new routine. Give it a name like "Follow-up Catcher" and set its schedule (e.g., "daily 5pm"). Then, provide the instructions:
+
+    ```
+    Check my sent email for anyone I said I'd follow up with and haven't, and send me a short list of who I owe a reply or a next step, so nothing slips.
+    ```
+
+    *   You should see the routine saved and scheduled. The author notes this is "quietly the best of the lot" for catching missed opportunities.
+5.  **Create a Weekly Numbers report routine**: Create another new routine. Name it "Weekly Numbers" and set its schedule (e.g., "Fridays 4pm"). Provide the instructions:
+
+    ```
+    Pull this week's activity from my connected apps, build a short report of what happened and what's still open, compare it to last week, and email it to me.
+    ```
+
+    *   You should see this routine saved. The author doesn't specify which "connected apps" are used; you will need to ensure Claude has access to the apps you want it to monitor (e.g., by connecting accounts in Claude's settings if available).
+6.  **Create a Sunday Planner routine**: Create a third routine. Name it "Sunday Planner" and set its schedule (e.g., "Sundays 6pm"). Provide the instructions:
+
+    ```
+    Look at my calendar and open tasks for the week ahead and email me a prioritized list of what I need to get done, most important first, with anything time-sensitive flagged.
+    ```
+
+    *   You should see this routine saved. The author doesn't specify how Claude connects to your calendar or task list; you will need to ensure Claude has the necessary permissions or integrations set up.
+7.  **Turn on notifications**: Look for a setting to enable notifications for your routines.
+    *   This will ensure you receive alerts when your routines run or if there are any issues.
+
+## Original source
+This workflow was shared by Reddit user /u/Professional-Rest138, who highlighted how Claude's desktop app allows users to set up scheduled AI routines that run in the cloud, independent of their computer's status.
+
+## Notes & variations
+*   **Free-tier viability**: The scheduled routines feature, especially those running on Anthropic's servers, is typically part of a paid Claude subscription (e.g., Claude Pro). There is no free tier for this specific capability.
+*   **Common mistake**: The most common reason routines fail to run when your laptop is off is forgetting to change the execution setting from "Local" to "Cloud" in the top right corner of the Routines interface. Always double-check this setting.
+*   **Better results**: For routines that need to access your email, calendar, or other apps, ensure Claude has the necessary permissions and integrations set up. The author implies these connections are possible, but specific setup steps are not provided in the source. Look for "connected apps" or "integrations" in Claude's settings.
