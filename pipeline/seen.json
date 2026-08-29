@@ -16380,8 +16380,20 @@
     "c1be7f0cf0c4e24de1cabaa2aed11dde815be86bda23d6e092e319e0a68efaf5": {
       "url": "https://www.reddit.com/r/copywriting/comments/1vkrepg/why_smart_brands_give_their_audience_hope",
       "date": "2026-08-28"
+    },
+    "2e3db918b26c4e7f4d0ff80a228b3cb6067055e5eb69b632eeddf11c6143d33a": {
+      "url": "https://simonwillison.net/2026/Aug/28/just-a-rumour-of-a-bug",
+      "date": "2026-08-29"
+    },
+    "74a4be6dfd2881cf4e63cc21d4d1e22e1d5813707091546f918fe44bc5964a1d": {
+      "url": "https://www.latent.space/p/ainews-openai-shuts-off-cursor",
+      "date": "2026-08-29"
+    },
+    "4d3b17a749f42c957e926aa5ecda3aa5c4eeeaa5ba6fc6a0122239385ec004be": {
+      "url": "https://huggingface.co/blog/open-asr-leaderboard-global-south",
+      "date": "2026-08-29"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 0
+  "dailyPage": 1
 }
