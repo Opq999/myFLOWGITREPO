@@ -1,0 +1,88 @@
+---
+title: "Summarize long PDFs for actionable insights with ChatGPT, Gemini, or Claude"
+description: "Get actionable summaries from long PDFs, reports, or contracts using a detailed prompt for ChatGPT, Gemini, or Claude. Focuses on key points, actions, and critical numbers."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 15
+jobToBeDone: "Summarize long PDFs for actionable insights without losing critical details"
+tools:
+  - name: "ChatGPT"
+    url: "https://chatgpt.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Google Gemini"
+    url: "https://gemini.google.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Claude"
+    url: "https://claude.ai"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Any PDF Reader"
+    url: "https://www.adobe.com/acrobat/pdf-reader.html"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://www.reddit.com/r/ChatGPTPromptGenius/comments/1w0gosk/a_copypaste_prompt_for_summarizing_a_long_pdf/"
+  platform: "reddit"
+  author: "/u/netra_2428"
+  postedAt: 2026-08-28
+score: 9
+ingestedAt: 2026-08-30
+nigeriaNotes: "All tools offer a free tier, making this workflow accessible. Data usage is minimal as it only involves text."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "Summarize your 50-page research paper draft into key points and action items for your supervisor's review."
+  - persona: "employee"
+    scenario: "Extract action items and key decisions from a 30-page project report to update your team."
+  - persona: "small-business"
+    scenario: "Summarize a 20-page supplier contract to quickly identify payment terms and delivery dates."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will get a structured summary of any long document, such as reports, contracts, or research papers. This summary will highlight key points, action items, important numbers, and details a busy person might otherwise miss. This approach works by using a highly specific prompt that guides the AI to cover the entire document and prioritize actionable information, avoiding the common issue of generic summaries that skip crucial sections.
+
+## Tools you need
+*   **ChatGPT** (freemium): An AI chat tool to process and summarize your PDF text.
+*   **Google Gemini** (freemium): An alternative AI chat tool for summarizing documents.
+*   **Claude** (freemium): Another alternative AI chat tool that can be used for summarizing.
+*   **Any PDF Reader** (free): A program or app to open your PDF files and copy their text content.
+
+## Steps
+1.  **Open your PDF and copy its text**: Open the PDF document you want to summarize using your preferred PDF reader. Select all the text in the document and copy it. If the document is very long, you might need to copy it in sections.
+
+2.  **Open your chosen AI tool**: Go to chatgpt.com, gemini.google.com, or claude.ai in your web browser or app. Make sure you are logged in.
+
+3.  **Paste the prompt and PDF text**: Copy the prompt below. In the AI chat window, paste the prompt first. Then, replace `{{paste the text}}` with the text you copied from your PDF. If your PDF is short enough to fit in one go, paste all of it here.
+
+    ```
+    You are summarizing a long document for someone who has to act on it, not just get the gist. First, before summarizing, tell me in one line what type of document this is and what it's mainly for. Then produce, in this exact order:
+    - TL;DR in 2 sentences.
+    - Key points as bullets, most important first. Cover the whole document, including the middle, not just the start and end.
+    - Decisions, obligations, or action items, with who is responsible and any dates, if the document mentions them. If none, say "none stated."
+    - Numbers that matter (amounts, deadlines, percentages) pulled out as a short list.
+    - The one thing a busy person skimming this would most likely miss.
+    Rules:
+    - Do not invent anything. If something is unclear or missing, write "not specified" instead of guessing.
+    - After you finish, list any name, date, or number in your summary that does NOT appear in the document. This is a self-check for made-up details.
+    DOCUMENT: {{paste the text}}
+    ```
+
+    You should receive a detailed, structured summary that includes a document type, a short summary, key points, action items, important numbers, a potential overlooked detail, and a self-check list of any invented details.
+
+4.  **Handle very long PDFs (two-pass approach)**: If your PDF is too long for the AI tool to process in one go (you might get an error message about text length), follow these steps:
+    *   **Summarize in sections**: Copy and paste the PDF text into the prompt in smaller sections (e.g., chapter by chapter or page by page). Run the prompt for each section, getting a summary for each part.
+    *   **Combine and re-summarize**: Once you have summaries for all sections, combine all these individual summaries into one large text block. Then, paste this combined text into the `{{paste the text}}` part of the original prompt and run it again. This will create a final, comprehensive summary from the section summaries.
+
+    You should get a complete summary of the entire long document, even if it was too large to process all at once.
+
+## Original source
+This workflow was originally shared by Reddit user /u/netra_2428 on the r/ChatGPT subreddit. They developed this detailed prompt to overcome common issues with AI summaries of long documents, ensuring critical information is not missed and focusing on actionable insights.
+
+## Notes & variations
+*   **Free-tier viability**: All the recommended AI tools (ChatGPT, Google Gemini, Claude) offer free tiers that are suitable for this workflow, especially for shorter documents. For very long documents requiring the two-pass approach, you might hit free-tier usage limits, but it's often enough for typical reports.
+*   **Common mistake**: Not using the two-pass approach for extremely long documents. If you try to paste a very long PDF's text all at once, the AI might cut off the summary, give an error, or produce a less accurate result because it couldn't process the entire input. Always break down large documents.
+*   **Tip for better results**: Always review the "self-check" list at the end of the summary, which highlights any details the AI might have invented. This helps you verify the accuracy of the summary against the original document and ensures you don't act on incorrect information.
