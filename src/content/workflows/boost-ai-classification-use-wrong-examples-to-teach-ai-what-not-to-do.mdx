@@ -1,0 +1,103 @@
+---
+title: "Boost AI Classification: Use 'Wrong Examples' to Teach AI What NOT To Do"
+description: "Learn a simple prompting trick to improve how AI classifies text. By showing the AI what isn't an example, you can make its classifications much more accurate and reliable."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 15
+jobToBeDone: "Improve AI classification and understanding using negative examples in prompts"
+tools:
+  - name: "ChatGPT"
+    url: "https://chatgpt.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Claude"
+    url: "https://claude.ai"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Gemini"
+    url: "https://gemini.google.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://www.reddit.com/r/PromptEngineering/comments/1vqm45e/i_started_putting_wrong_examples_in_my_prompts_it/"
+  platform: "reddit"
+  author: "/u/Inevitable-Good219"
+  postedAt: 2026-08-17
+score: 9
+ingestedAt: 2026-08-31
+nigeriaNotes: "This workflow uses free tiers of popular AI chat tools and requires very little data (text-based prompts), making it highly accessible on mobile devices."
+nigeriaUseCases:
+  - persona: "small-business"
+    scenario: "Use AI to sort customer WhatsApp messages into 'Order Inquiry', 'Complaint', or 'Feedback' by showing it examples of what each is NOT."
+  - persona: "employee"
+    scenario: "Train AI to classify incoming support emails as 'Urgent Bug' or 'Feature Request' using negative examples for better accuracy."
+  - persona: "student"
+    scenario: "Teach AI to categorize essay feedback as 'Grammar', 'Structure', or 'Content' by showing it examples of what each is NOT."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn a simple but powerful prompting technique to make AI classify text more accurately, especially for tricky or ambiguous cases. This approach works by showing the AI what a category *isn't*, which helps it understand the boundaries of each category better than just showing positive examples.
+
+## Tools you need
+*   **ChatGPT** (freemium): An AI chatbot to test your prompts and classify text.
+*   **Claude** (freemium): Another AI chatbot for testing prompts and text classification.
+*   **Gemini** (freemium): A third AI chatbot option for experimenting with prompts.
+
+## Steps
+1.  **Choose your AI tool**: Open your preferred AI chat tool (ChatGPT, Claude, or Gemini) on your phone or computer.
+    *   You should see the chat interface ready for your input.
+2.  **Prepare your classification task**: Identify the type of text you want the AI to classify and the categories you want it to use. For example, classifying support tickets as "Bug Report" or "Feature Request."
+    *   You should have a clear idea of your text and categories.
+3.  **Craft your initial prompt with positive examples**: Start by giving the AI a few clear examples of what *is* in each category. The author used 3 examples for each. The author doesn't share their exact positive examples; a starting point could be:
+
+    ```
+    Classify the following support tickets as either "Bug Report" or "Feature Request".
+
+    Bug Report: "The app crashes when I try to upload a photo."
+    Bug Report: "My login button is not working."
+    Bug Report: "I see an error message when I click save."
+
+    Feature Request: "It would be great to have a dark mode option."
+    Feature Request: "Can you add a search filter to the product list?"
+    Feature Request: "I wish I could export data to Excel."
+    ```
+
+    *   You should get a prompt ready to classify new tickets.
+4.  **Test with a tricky example**: Now, give the AI a real ticket that might be ambiguous. The author's example was:
+
+    ```
+    Classify this ticket: "The export button is too slow, we need this fixed."
+    ```
+
+    *   The AI will give a classification. The author found it might get ambiguous cases wrong (e.g., calling "export button too slow" a "Feature Request"), even if it seems like a bug.
+5.  **Add a negative example to improve accuracy**: Introduce one example of what a category is *not*. This helps the AI understand the boundaries. The author found one good negative example was more effective than three more positive ones. Add this line to your previous prompt, then re-test the tricky example:
+
+    ```
+    Classify the following support tickets as either "Bug Report" or "Feature Request".
+
+    Bug Report: "The app crashes when I try to upload a photo."
+    Bug Report: "My login button is not working."
+    Bug Report: "I see an error message when I click save."
+
+    Feature Request: "It would be great to have a dark mode option."
+    Feature Request: "Can you add a search filter to the product list?"
+    Feature Request: "I wish I could export data to Excel."
+
+    This is NOT a Bug Report: "It would be nice if the search bar had filters."
+
+    Now, classify this ticket: "The export button is too slow, we need this fixed."
+    ```
+
+    *   You should see the AI's classification improve, especially for tricky or ambiguous inputs, aligning better with your intended categories (e.g., correctly identifying the slow export button as a "Bug Report").
+6.  **Test and refine**: Try your new prompt with other real-world examples. If needed, add more negative examples for other categories or refine the wording of your examples.
+    *   Your AI classification should become more consistent and accurate across different types of input.
+
+## Original source
+This clever prompting technique was shared by Reddit user /u/Inevitable-Good219 on the r/ChatGPT subreddit. They discovered that showing an AI what a category is *not* can significantly improve its ability to classify text accurately, especially for ambiguous cases.
+
+## Notes & variations
+*   **Common mistake**: The author notes that you must truly understand your task to write a good "wrong example." If you can't clearly define what something *isn't*, you might not fully understand what you want the AI to do.
+*   **Tip for better results**: Experiment with different types of negative examples. Sometimes showing what's *close but not quite* a category is more effective than something completely unrelated. Also, consider adding negative examples for multiple categories if your task has many.

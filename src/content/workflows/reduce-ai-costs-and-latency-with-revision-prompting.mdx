@@ -1,0 +1,98 @@
+---
+title: "Reduce AI Costs and Latency with Revision Prompting"
+description: "Learn how Revision Prompting helps you save money and time when using AI by updating small changes in outputs instead of re-generating everything from scratch."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 240
+jobToBeDone: "Optimize AI workflow cost and latency by patching outputs instead of regenerating them"
+tools:
+  - name: "LLM API (e.g., OpenAI API)"
+    url: "https://platform.openai.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "A programming language (e.g., Python)"
+    url: "https://www.python.org"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Diff utility (e.g., `diff` command-line tool)"
+    url: "https://www.gnu.org/software/diffutils/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "JSON Patch library (e.g., `jsonpatch` for Python)"
+    url: "https://jsonpatch.com/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://www.reddit.com/r/PromptEngineering/comments/1vjqoux/revision_prompting_a_trick_to_avoid_regenerating/"
+  platform: "reddit"
+  author: "/u/Dry_Rabbit_1123"
+  postedAt: 2026-08-09
+score: 10
+ingestedAt: 2026-08-31
+nigeriaNotes: "This approach significantly reduces the amount of data sent to and from the AI model, which can save on mobile data costs. However, it requires coding skills and paid access to an AI API, making it less accessible for those without a development budget."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "Update lecture notes summary with new info by patching old summary instead of re-summarizing the whole document."
+  - persona: "employee"
+    scenario: "Update a draft report section based on minor data changes, patching the existing text for speed."
+  - persona: "entrepreneur"
+    scenario: "Refine product descriptions on your website by patching existing text with small edits, saving API costs."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+Revision Prompting is an advanced technique to make your AI workflows cheaper and faster, especially when you only make small changes to the input. Instead of asking an AI model to completely rewrite an output every time the input changes, you tell the model what the *differences* are between the old and new input. Then, you ask the model to provide a "patch" (a set of instructions) to update the *old* output. You then apply this patch to get the new output.
+
+This method is particularly useful in automated systems, like translating documents or extracting data, where inputs might be updated frequently. It saves money because you pay less for the AI model to process only the changes, not the entire text. It also makes the process faster and ensures that parts of the output that didn't need to change remain exactly the same, avoiding random rephrasing by the AI.
+
+This workflow cannot be reduced to simple copy-paste steps for a beginner. It requires programming skills to automatically compare inputs, generate the "diff" (the list of changes), send this information to an AI model via its API (Application Programming Interface, a way for programs to talk to each other), and then apply the "patch" that the AI provides. The exact steps depend on your programming language and the specific tools you use for diffing and patching.
+
+## What you can use it for
+*   **Update translations efficiently**: If you have a translated document and only a few sentences in the original text change, use this to get an updated translation without re-translating the whole document.
+*   **Refine structured data extraction**: When extracting information like invoice details or product specifications, if a source document has minor edits, you can get an updated JSON output with minimal AI processing.
+*   **Maintain consistent AI-generated content**: For content like product descriptions or marketing copy, this method helps ensure that small input tweaks don't lead to the AI completely rephrasing untouched sections of the output.
+*   **Reduce operational costs for automated pipelines**: Businesses running many AI tasks can significantly cut down on API costs and processing time by only paying for the "diff" and "patch" operations instead of full re-generations.
+
+## Tools you need
+*   **LLM API (e.g., OpenAI API)** (paid): A service that lets your computer program send requests to and receive responses from a large language model.
+*   **A programming language (e.g., Python)** (free): Used to write the code that handles comparing inputs, interacting with the AI API, and applying patches.
+*   **Diff utility (e.g., `diff` command-line tool)** (free): A program or library that compares two text files or strings and shows the differences between them.
+*   **JSON Patch library (e.g., `jsonpatch` for Python)** (free): A code library that helps you compare two JSON documents and create a set of instructions (a patch) to transform one into the other, or apply such a patch.
+
+## How it actually works
+1.  **Store old input and output**: In your automated system, save both the original input (e.g., a document, a piece of text) and the AI-generated output (e.g., a translation, structured JSON data) after the first run.
+2.  **Detect input changes**: When the source input is updated, compare the *new* input with the *old* input you stored.
+    *   For text, use a `diff` utility (like the `diff` command in Linux/macOS/WSL) to generate a "diff" in a standard format (like Unix diff format).
+    *   For JSON data, use a JSON Patch library to generate a JSON Patch document that describes the changes.
+3.  **Construct the revision prompt**: Send a prompt to your chosen LLM API that includes the original instruction, the old input, the old output, and the generated diff. The author suggests a prompt structure like this:
+
+    ```
+    [Instruction]: [Input] produces "[Output]". Now, the input got updated as follows: [diff of old input vs new input] Please produce a patch to update the output.
+    ```
+
+    The exact instruction and input/output will depend on your specific task. For example, if translating, `[Instruction]` might be "Translate this text to Yoruba".
+4.  **Receive and apply the patch**: The AI model will respond with a "patch" (a set of instructions) designed to update the old output.
+    *   If the output is text, the AI might provide a text-based patch (e.g., in a format similar to Unix diff, but for the output). You'll need to parse this and apply it to your old output.
+    *   If the output is JSON, the AI should provide a JSON Patch document. Use a JSON Patch library in your programming language to apply this patch to your stored old JSON output.
+5.  **Store the new output**: Save the patched output as the new "old output" for future revisions.
+
+The specific code for generating diffs, interacting with the LLM API, and applying patches will vary based on your programming language and chosen libraries. The author's write-up at `https://revisionprompting.info` provides more technical details and examples for implementation.
+
+## Words you'll see, explained
+*   **LLM (Large Language Model)**: An advanced AI program that can understand, generate, and process human-like text.
+*   **API (Application Programming Interface)**: A set of rules and tools that allows different software programs to communicate with each other.
+*   **Diff**: Short for "difference," it's a comparison between two versions of a file or text, showing exactly what has been added, removed, or changed.
+*   **Patch**: A set of instructions generated from a "diff" that describes how to modify one version of a file or data to turn it into another.
+*   **Unix diff format**: A standard way to represent the differences between two text files, often used in programming and version control.
+*   **JSON Patch**: A standard format for describing changes to a JSON (JavaScript Object Notation) document, allowing you to update parts of it without sending the entire document.
+*   **Non-deterministic**: Refers to AI models that might produce slightly different outputs even when given the exact same input multiple times, due to their internal workings.
+
+## Original source
+This advanced technique, called Revision Prompting, was shared by Reddit user /u/Dry_Rabbit_1123 on the platform. They also provided a detailed write-up on revisionprompting.info, explaining how this method significantly reduces costs and latency in automated AI pipelines.
+
+## Notes & variations
+*   **Do you even need this?**: For simple, one-off AI tasks or when your inputs rarely change, the complexity of setting up Revision Prompting might not be worth the effort. It's most beneficial for automated workflows that run frequently with minor input updates, where cost and consistency are critical. If you're just chatting with an AI, you don't need this.
+*   **Free-tier limits**: While some programming languages and diff/patch libraries are free, interacting with powerful LLMs typically requires a paid API. Free tiers for LLM APIs (like the Gemini API) might have usage limits that could still be exceeded by high-volume automated workflows, even with the cost savings from revision prompting.
+*   **Common pitfall**: A common mistake is not handling complex diffs or patches correctly. If the input changes drastically, the AI might struggle to generate a coherent patch, or applying the patch might lead to unexpected results. It's crucial to test your patching logic thoroughly and have a fallback mechanism (like regenerating the full output) for very large or complex input changes.

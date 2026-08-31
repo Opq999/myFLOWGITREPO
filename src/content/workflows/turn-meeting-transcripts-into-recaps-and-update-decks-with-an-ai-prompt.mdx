@@ -1,0 +1,61 @@
+---
+title: "Turn Meeting Transcripts into Recaps and Update Decks with an AI Prompt"
+description: "Quickly transform raw meeting transcripts into two distinct outputs: a concise recap for attendees and a clear update deck outline for those who missed it. Get actionable decisions and next steps."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 7
+jobToBeDone: "Turn a raw meeting transcript into a recap and an update deck outline"
+tools:
+  - name: "AI Chatbot"
+    url: "https://chatgpt.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://www.reddit.com/r/PromptEngineering/comments/1w0lwqd/the_prompt_i_paste_to_turn_a_raw_meeting/"
+  platform: "reddit"
+  author: "/u/Melodic_Log_2765"
+  postedAt: 2026-08-28
+score: 9
+ingestedAt: 2026-08-31
+nigeriaNotes: "This workflow uses a freemium AI chatbot, which typically offers a generous free tier suitable for many uses. Data usage is light, mainly text input and output."
+nigeriaUseCases:
+  - persona: "employee"
+    scenario: "Generate a concise meeting recap with action items and an update deck outline from a transcript for your boss."
+  - persona: "entrepreneur"
+    scenario: "Create a quick summary of your team's weekly sync, highlighting decisions and next steps for your Slack channel."
+  - persona: "student"
+    scenario: "Summarize a recorded study group session, listing key discussion points and unresolved questions for absent members."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will get two distinct outputs from your meeting transcript: a concise recap for attendees, highlighting decisions, action items, and open questions, and a 4-6 slide outline for an update deck for those who couldn't attend. This approach works by separating the needs of different audiences (insiders vs. outsiders) and forcing the AI to provide specific, trackable action items without inventing details.
+
+## Tools you need
+*   **AI Chatbot** (freemium): A conversational AI tool (like ChatGPT, Claude, or Gemini) to process your meeting transcript and generate summaries.
+
+## Steps
+
+1.  **Open your AI Chatbot**: Go to your preferred AI chatbot (e.g., ChatGPT, Claude, Gemini) in your web browser or mobile app. You should see a chat interface ready for your input.
+
+2.  **Paste the prompt**: Copy the prompt below and paste it into the chat window of your AI chatbot:
+
+    ```
+    Below is a raw meeting transcript. Produce two things, clearly separated. PART A - Recap (for people who were there): - Decisions made (just the decisions, not the debate). - Action items as "owner - task - by when." If an owner or date wasn't stated, write [unassigned] rather than guessing. - Open questions that were raised but not resolved. PART B - Update outline (for people who weren't there): - 4-6 slide-sized points, each a short title plus one line of context. - Written so someone with zero background understands what happened and what's next. Only use what's in the transcript. Don't invent owners, dates, or decisions. Transcript: [paste]
+    ```
+
+3.  **Add your meeting transcript**: Replace `[paste]` in the prompt you just pasted with your actual meeting transcript. Make sure to remove the `[paste]` text and insert your full transcript.
+
+4.  **Send the prompt**: Click the send button or press Enter to submit your prompt and transcript to the AI chatbot. The AI will process your request.
+
+You should get a response with two clearly separated sections: "PART A - Recap" and "PART B - Update outline", summarizing your meeting based on the transcript you provided.
+
+## Original source
+This workflow was shared by Reddit user /u/Melodic_Log_2765 on the platform Reddit, demonstrating an effective way to process meeting transcripts for different audiences and extract actionable information.
+
+## Notes & variations
+*   **Free-tier alternatives**: You can use other freemium AI chatbots like Claude (claude.ai) or Gemini (gemini.google.com) for this workflow if you prefer them over ChatGPT.
+*   **Common mistake**: Do not expect the AI to invent details like owners, dates, or decisions that are not explicitly stated in the transcript. The prompt is designed to use `[unassigned]` for missing information, which prevents the AI from hallucinating.
+*   **Tip for better results**: While the author notes this works on rough transcripts, reviewing the AI's output for accuracy, especially for action items and decisions, is always a good practice. A cleaner transcript will generally yield more precise results.
