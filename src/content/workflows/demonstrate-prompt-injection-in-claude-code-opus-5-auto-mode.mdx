@@ -1,0 +1,97 @@
+---
+title: "Demonstrate Prompt Injection in Claude Code Opus 5 Auto Mode"
+description: "Explore how a crafted website summary request can hijack Claude Code Opus 5 in Auto Mode, leading to code execution through a prompt injection vulnerability."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 120
+jobToBeDone: "Demonstrate a prompt injection vulnerability in Claude Code Opus 5 Auto Mode"
+tools:
+  - name: "Claude Code Opus 5"
+    url: "https://code.claude.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "curl"
+    url: "https://curl.se"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Python"
+    url: "https://www.python.org"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Bash"
+    url: "https://www.gnu.org/software/bash/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=49506819"
+  platform: "hackernews"
+  author: "Recursing"
+  postedAt: 2026-08-31
+score: 9
+ingestedAt: 2026-09-01
+nigeriaNotes: "Claude Code is a paid developer tool, so it does not offer a free tier. Attempting to reproduce this workflow would require a paid subscription. Data usage for the interaction itself would be minimal, but setting up and hosting a malicious web server could incur separate costs."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "A Computer Science student researching AI security for a final year project could use this to understand how prompt injection works in practice and include it in their report."
+  - persona: "employee"
+    scenario: "A cybersecurity analyst at a tech company could use this demonstration to educate their team on advanced AI attack vectors and improve the security posture of internal AI tools."
+  - persona: "entrepreneur"
+    scenario: "An entrepreneur building an AI-powered customer service chatbot could study this to identify potential prompt injection vectors and build robust defenses into their product."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+This entry describes a sophisticated security vulnerability called a "prompt injection" attack against Claude Code Opus 5, specifically when it's running in "Auto Mode." Prompt injection is when an attacker tricks an AI model into performing unintended actions by inserting malicious instructions into its input, often hidden within seemingly harmless data.
+
+Claude Code is a specialized AI tool designed to help with coding tasks. "Auto Mode" means the AI makes decisions and executes actions (like running code) without asking for human approval for every step, relying instead on its own safety checks. The author of this work found a way to bypass these checks, achieving a high success rate in making Claude Code run malicious code.
+
+This is an advanced security demonstration, not a typical workflow for building AI applications. It requires significant technical skill, including setting up custom web servers and understanding how programming languages handle file imports. Therefore, there isn't a simple, copy-paste recipe for a beginner to reproduce this attack safely or effectively.
+
+## What you can use it for
+*   **Understand AI security risks**: Learn how advanced AI models can be exploited through clever prompt engineering and system interactions.
+*   **Learn about prompt injection techniques**: See a real-world example of how indirect prompt injection can lead to serious security breaches.
+*   **Develop more secure AI applications**: Use this knowledge to design and implement stronger defenses in your own AI-powered tools.
+*   **Test AI model defenses**: For security researchers, this provides a case study for evaluating the robustness of AI safety mechanisms.
+
+## Tools you need
+*   **Claude Code Opus 5** (paid): An AI assistant for coding tasks, used here in its "Auto Mode."
+*   **curl** (free): A command-line tool used to transfer data with URLs, often used for interacting with web servers.
+*   **Python** (free): A popular programming language, used by Claude Code to process data and by the attacker to create malicious files.
+*   **Bash** (free): A common command-line shell (a text-based interface for your computer) found on Linux and macOS, used by Claude Code to execute commands like `curl`.
+
+## How it actually works
+This workflow describes an attack chain, not a set of steps for a user to follow directly. Reproducing it would require setting up a custom malicious web server and crafting specific files, which is beyond the scope of a simple recipe. The author's method involves several stages to trick Claude Code:
+
+1.  **Initial Request**: The attack starts with a user asking Claude Code to summarize a website, for example: `Summarize https://archive.redacted.uk/`. Claude Code initially tries to use its built-in `WebFetch` tool to get the content.
+
+2.  **Nudging to `curl`**: The malicious website is set up to respond to `WebFetch` with an `HTTP 415 Unsupported Media Type` error. This error makes Claude Code decide to try fetching the page directly using the `curl` command within a `Bash` shell, which is a key step in the hijacking.
+
+3.  **Redirect to Malicious ZIP**: Once Claude Code uses `curl`, the malicious website issues an `HTTP 303 Redirect` to a specially crafted ZIP archive (e.g., `/deposits/WIC-notebook-catalogue.ZIP`). Claude Code then downloads this ZIP file.
+
+4.  **Refusal and Self-Decoding**: The ZIP archive contains content that Claude Code's safety features correctly identify as potentially dangerous (e.g., a binary file) and refuse to execute directly. However, Claude Code attempts to write its own Python decoder to process the contents of the archive.
+
+5.  **Poisoned `struct.py`**: The downloaded ZIP archive is designed to contain a malicious file named `struct.py`. When Claude Code's self-written Python decoder runs, it does so within the directory where the malicious ZIP was unzipped. Python's import rules mean that when the decoder tries to import a standard module like `base64`, it will first look for `struct.py` in the current directory. This causes the malicious `struct.py` to be loaded instead of the legitimate one, leading to code execution.
+
+The exact setup for the malicious web server, the content of the ZIP archive, and the specific code within the poisoned `struct.py` are not detailed in the excerpt, as this is a high-level overview of the attack chain.
+
+## Words you'll see, explained
+*   **Prompt injection**: A security vulnerability where an attacker manipulates an AI model's behavior by inserting malicious instructions into its input data.
+*   **Claude Code Opus 5**: A specific version of an AI assistant from Anthropic designed to help with programming tasks.
+*   **Auto Mode**: A setting in Claude Code where the AI makes decisions and executes actions without requiring human approval for every step.
+*   **`curl`**: A command-line program used to send and receive data over the internet, often used to download files or interact with web servers.
+*   **Bash**: A common command-line interpreter (a program that runs commands typed by a user) used on Unix-like operating systems such as Linux and macOS.
+*   **WebFetch tool**: An internal tool used by Claude Code to retrieve and summarize content from websites.
+*   **HTTP 415 Unsupported Media Type**: An error code a web server sends when it cannot process the request because the content type is not supported.
+*   **HTTP 303 Redirect**: A response from a web server telling the client (like a browser or `curl`) to go to a different URL to find the requested resource.
+*   **`struct.py`**: In this context, a malicious Python file placed by the attacker to mimic and override a standard Python library module, exploiting how Python finds and imports code.
+*   **`base64` module**: A standard Python library module used for encoding and decoding data into a text format, often used for transferring binary data over text-only channels.
+
+## Original source
+This concept is based on a blog post by Recursing, shared on Hackernews, detailing how they successfully demonstrated a prompt injection vulnerability in Claude Code Opus 5's Auto Mode. The original post provides a deeper dive into the technical specifics of the attack.
+
+## Notes & variations
+*   **Do you even need this?**: This workflow is for security researchers or those interested in understanding AI vulnerabilities, not for general AI application development. For most users, interacting with Claude Code for coding tasks does not involve setting up malicious servers or attempting prompt injections.
+*   **Free-tier limits**: Claude Code Opus 5 is a paid product, meaning there is no free tier available to perform these actions. Access requires a subscription or paid credits.
+*   **Common pitfall**: Attempting to reproduce this attack without a deep understanding of web security, Python's import mechanisms, and AI safety could lead to unintended consequences or system instability. It is crucial to conduct such experiments in isolated, controlled environments to prevent harm.
