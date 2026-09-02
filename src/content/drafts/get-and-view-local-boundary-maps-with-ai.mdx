@@ -1,0 +1,69 @@
+---
+title: "Get and View Local Boundary Maps with AI"
+description: "Generate precise local political boundary maps in GeoJSON format using AI, then view and export them easily. Ideal for local planning or research."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 15
+jobToBeDone: "Create a GeoJSON map viewer and acquire boundary data using AI"
+tools:
+  - name: "ChatGPT"
+    url: "https://chatgpt.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "geojson.io"
+    url: "https://geojson.io"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://simonwillison.net/2026/Sep/1/geojson/"
+  platform: "blog"
+  author: "Simon Willison"
+  postedAt: 2026-09-01
+score: 5
+ingestedAt: 2026-09-02
+nigeriaNotes: "ChatGPT (paid tier) can be expensive. Consider using free alternatives like Gemini (gemini.google.com) or Claude (claude.ai) for similar data extraction, though results may vary. Data usage for viewing maps is generally light."
+tiktokUrl: ""
+published: false
+---
+
+## What you'll get
+You will get precise map boundaries for local areas, like community councils or districts, in a standard format called GeoJSON. You can then view these boundaries on an interactive map and save the map as an image. This approach works by using an AI chat tool to find and combine government data sources, saving you time from searching through complex datasets yourself.
+
+## Tools you need
+*   **ChatGPT** (paid): An AI chat assistant that can understand complex requests and generate structured data. (Note: The author used "ChatGPT Work," which implies a paid or enterprise version for advanced capabilities.)
+*   **geojson.io** (free): A simple online tool for viewing, editing, and creating GeoJSON data on a map.
+
+## Steps
+
+1.  **Ask AI for boundary data**: Open ChatGPT and paste a clear request for the specific geographical boundary you need. The author used these examples:
+
+    ```
+    I want a polygon that represents the exact boundary of the El Granada GCSD
+    ```
+
+    ```
+    Get me a GeoJSON file for the boundary (or boundaries if that makes sense) for the MCC - Midcoast Community Council - that operates near Half Moon Bay CA
+    ```
+
+    You should get a response that includes a block of text formatted as GeoJSON, which looks like a long series of numbers and coordinates.
+
+2.  **Copy the GeoJSON data**: Carefully copy the entire GeoJSON text block provided by ChatGPT. Make sure to include all the curly braces `{}` and square brackets `[]`.
+
+3.  **View the map**: Go to `https://geojson.io` in your web browser. This website is a simple online GeoJSON viewer.
+
+4.  **Paste your GeoJSON**: On the `geojson.io` site, look for an area where you can paste text (often on the left side). Paste the GeoJSON data you copied from ChatGPT into this area.
+
+    You should immediately see the geographical boundary appear on the map on the right side of the screen.
+
+5.  **Export the map (optional)**: If you want to save an image of the map, look for an export or save option on `geojson.io`. The author doesn't specify how they exported to PNG, but `geojson.io` typically offers a "Save" menu with various export formats, including image options.
+
+    You should get a downloadable image file of your map.
+
+## Original source
+This workflow was shared by Simon Willison on his blog. He described how he used AI, specifically GPT-5.6-Sol and Claude Code, to develop a GeoJSON map viewer, and then used ChatGPT Work to gather specific local political boundary data for it.
+
+## Notes & variations
+*   **Free-tier alternatives for data acquisition**: While the author used "ChatGPT Work" (implying a paid version), you might be able to get similar GeoJSON data using free-tier AI chat tools like Gemini (gemini.google.com) or Claude (claude.ai). The quality and accuracy of the generated GeoJSON may vary.
+*   **Common mistake**: Ensure you copy the *entire* GeoJSON block from the AI, including the opening and closing curly braces `{}` and square brackets `[]`. Missing parts will cause the map viewer to fail.
+*   **Tip for better results**: When asking for boundaries, be as specific as possible about the name of the entity (e.g., "El Granada GCSD") and its general location (e.g., "near Half Moon Bay CA") to help the AI find the correct data.
