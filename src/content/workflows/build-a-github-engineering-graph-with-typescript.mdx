@@ -1,0 +1,110 @@
+---
+title: "Build a GitHub Engineering Graph with TypeScript"
+description: "Learn to build a mini engineering graph from GitHub pull request data using TypeScript and the GitHub API. Understand code changes and ownership."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 60
+jobToBeDone: "Build a mini engineering graph from GitHub pull request data using TypeScript"
+tools:
+  - name: "TypeScript"
+    url: "https://www.typescriptlang.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "GitHub API"
+    url: "https://docs.github.com/en/rest"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Node.js"
+    url: "https://nodejs.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "npm"
+    url: "https://www.npmjs.com/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/bobbyhalljr/build-a-mini-engineering-graph-with-typescript-and-github-4haj"
+  platform: "blog"
+  author: "bobbyhalljr"
+  postedAt: 2026-08-24
+score: 7
+ingestedAt: 2026-09-03
+nigeriaNotes: "This workflow requires internet access to interact with the GitHub API. Data usage will depend on the number of pull requests analyzed, but is generally light for basic usage. A GitHub token is recommended for higher API rate limits, which can be generated for free."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will build a small command-line tool using TypeScript that analyzes pull requests from a GitHub repository. This tool creates an 'engineering graph' to help you understand code changes, who made them, and which files are related. This approach makes existing knowledge within your team's GitHub activity more visible and actionable.
+
+## Tools you need
+*   **TypeScript** (free): A programming language that adds types to JavaScript, helping to catch errors early.
+*   **GitHub API** (freemium): A way for programs to interact with GitHub data, like pull requests and file changes.
+*   **Node.js** (free): A runtime environment that lets you run JavaScript code outside of a web browser.
+*   **npm** (free): A package manager for Node.js, used to install libraries and manage project dependencies.
+
+## Steps
+1.  **Set up your project**: Create a new directory for your project and initialize it with npm. Install necessary development tools like TypeScript.
+    *   Run these commands in your terminal:
+
+    ```bash
+    mkdir mini-engineering-graph
+    cd mini-engineering-graph
+    npm init -y
+    npm install --save-dev typescript tsx @types/node
+    npm pkg set type=module
+    npm pkg set scripts.dev="tsx src/index.ts"
+    npm pkg set scripts.test="tsx --test src/graph.test.ts"
+    mkdir -p src
+    ```
+    *   You should see a new directory named `mini-engineering-graph` with a `package.json` file and a `src` folder inside.
+
+2.  **Configure your GitHub token (optional)**: To avoid rate limits when accessing the GitHub API, you can set a personal access token. This is recommended for analyzing many pull requests or private repositories.
+    *   In your terminal, run:
+
+    ```bash
+    export GITHUB_TOKEN="your_github_token_here"
+    ```
+    *   Replace `"your_github_token_here"` with your actual GitHub token. This token should not be shared or committed to your code.
+
+3.  **Create the main script**: Create a file named `src/index.ts` and add the basic structure for your command-line tool. The author does not provide the exact code for this file, but it will orchestrate the process of fetching data from GitHub and building the graph. A starting point might involve importing functions from other files you will create.
+
+4.  **Define data types**: Create a file named `src/types.ts` to define the structure of your graph nodes and relationships. The author describes these as: Repository, Pull Request, File, and Person for nodes, and BELONGS_TO, AUTHORED, MODIFIED, REVIEWED for relationships.
+
+5.  **Build the in-memory graph**: Create a file named `src/graph.ts`. This file will contain the logic to store and manage the nodes and relationships you discover from GitHub data. You will likely define classes or functions to add nodes and edges to your graph structure.
+
+6.  **Fetch GitHub data**: Create a file named `src/github.ts`. This file will contain functions to interact with the GitHub API. You will need to write code to fetch pull requests, the files modified in those pull requests, and potentially the users who authored or reviewed them. The author mentions fetching up to 10 recently closed pull requests.
+
+7.  **Query the graph**: Create a file named `src/queries.ts`. This file will contain functions to ask questions of your graph, such as finding files related to a specific file or identifying who reviewed a particular pull request.
+
+8.  **Run the tool**: Execute your script from the terminal. The author provides example commands:
+    *   To analyze a repository (e.g., `vercel/ai`):
+
+    ```bash
+    npm run dev -- vercel/ai
+    ```
+    *   To analyze a specific pull request (e.g., PR 123 for `vercel/ai`):
+
+    ```bash
+    npm run dev -- vercel/ai pr 123
+    ```
+    *   To find experts for a file (e.g., `src/example.ts`):
+
+    ```bash
+    npm run dev -- vercel/ai experts "src/example.ts"
+    ```
+    *   To find related files for a file (e.g., `src/example.ts`):
+
+    ```bash
+    npm run dev -- vercel/ai related "src/example.ts"
+    ```
+    *   You should see output in your terminal related to the analysis of the specified repository or pull request.
+
+## Original source
+This workflow is based on a tutorial by bobbyhalljr posted on DEV Community. It guides readers through building a practical engineering graph using TypeScript and the GitHub API to understand code relationships and history.
+
+## Notes & variations
+*   **Free tier alternative**: Public GitHub repositories can be analyzed without a GitHub token, but you will be subject to a lower API request limit (60 requests per hour). For more extensive analysis, generating a free GitHub token is recommended.
+*   **Common pitfall**: Forgetting to set the `type: module` in your `package.json` can lead to errors when using ES module syntax (`import`/`export`) in your TypeScript files.
+*   **Tip for better results**: Start by analyzing a repository you are very familiar with. This will make it easier to verify the accuracy of the graph and understand the relationships it discovers.

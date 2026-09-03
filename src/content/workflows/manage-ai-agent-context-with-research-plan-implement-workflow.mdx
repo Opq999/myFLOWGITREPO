@@ -1,0 +1,78 @@
+---
+title: "Manage AI Agent Context with Research, Plan, Implement Workflow"
+description: "Learn a workflow to keep AI agents accurate by managing context, preventing output degradation over long sessions. Uses subagents for efficiency."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 15
+jobToBeDone: "Manage AI agent context to prevent output degradation over long sessions"
+tools:
+  - name: "HumanLayer"
+    url: "https://www.humanlayer.com/"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Sonnet"
+    url: "https://www.anthropic.com/news/model-update-claude-3-5-sonnet"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Opus"
+    url: "https://www.anthropic.com/news/model-update-claude-3-5-sonnet"
+    pricing: "paid"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/shayan-araghi/research-plan-implement-a-workflow-that-keeps-ai-agents-accurate-npb"
+  platform: "blog"
+  author: "shayan-araghi"
+  postedAt: 2026-08-18
+score: 7
+ingestedAt: 2026-09-03
+nigeriaNotes: "This workflow relies on advanced AI models and a specialized platform (HumanLayer) which are typically paid services. Free tier viability is very low. Data usage can be high due to the nature of AI model interactions."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn a structured workflow to manage AI agent conversations, preventing them from becoming inaccurate over time. This method uses distinct phases (Research, Plan, Implement) with subagents to keep the main agent's memory focused, leading to more reliable outputs. It's useful when working with AI agents on complex, multi-step tasks where maintaining accuracy is crucial.
+
+## Tools you need
+*   **HumanLayer** (paid): A platform that helps build and manage AI agents, including orchestrating subagents.
+*   **Sonnet** (paid): A powerful AI model from Anthropic, used here for subagents to perform specific tasks efficiently.
+*   **Opus** (paid): Another advanced AI model from Anthropic, used here for the main agent that orchestrates the workflow.
+
+## Steps
+This workflow involves distinct phases, each producing a markdown file and clearing the AI's memory between phases. The exact prompts and subagent configurations are specific to the HumanLayer platform and the task at hand. The author's core idea is to keep the main agent's context window small by delegating heavy lifting to subagents and clearing context between major steps.
+
+1.  **Understand the Core Rule**: Always aim to keep the AI agent's context window usage below 40%. This prevents the agent from getting confused by old information.
+2.  **Delegate to Subagents**: Use smaller, specialized AI agents (subagents) for specific tasks. They process information in their own memory and return only a summary to the main agent.
+3.  **Clear Between Phases**: After a major step or phase is completed and its output is saved (e.g., to a file), clear the AI's memory before starting the next phase. This ensures the main agent only deals with the essential information from the previous step.
+4.  **Research Phase**: The main agent, potentially using subagents like `codebase-locator`, `codebase-analyzer`, and `codebase-pattern-finder`, researches how something works today. The author aims to stay under 40% context usage. The output of this phase is a research document.
+    *   The author doesn't share their exact prompt for the research phase; a starting point could be:
+    ```
+    Research the following topic in detail, focusing on [specific aspects]. Use subagents to analyze codebases and identify patterns where applicable. Document your findings in a markdown file.
+    [Your research topic here]
+    ```
+    You should expect a markdown document summarizing the research findings.
+5.  **Clear Context**: After the research document is generated and saved, clear the main agent's context.
+6.  **Plan Phase**: The main agent creates a detailed plan to build a feature. It might reference the research document from the previous phase and use subagents (like `codebase-locator`, `codebase-analyzer`, and potentially a custom `context-locator` for prior research) to determine exact steps, files to modify, and changes needed. The output is a plan document.
+    *   The author doesn't share their exact prompt for the plan phase; a starting point could be:
+    ```
+    Based on the research document [paste research doc summary or key points here], create a detailed implementation plan. Specify files to touch, lines to change, and exact modifications needed. Consider edge cases and desired behavior. Document the plan in a markdown file.
+    [Your feature request here]
+    ```
+    You should expect a detailed markdown plan, often several hundred lines long, outlining implementation steps.
+7.  **Clear Context**: After the plan document is generated and saved, clear the main agent's context.
+8.  **Implement Phase**: The main agent executes the plan created in the previous phase. Since the context was cleared, it only needs the plan document to proceed. The output is the implemented feature or task.
+    *   The author doesn't share their exact prompt for the implement phase; a starting point could be:
+    ```
+    Execute the following implementation plan to build the feature. Refer to the plan document for all details.
+    [Paste the plan document here]
+    ```
+    You should expect the AI agent to perform the actions outlined in the plan.
+
+## Original source
+This workflow is based on insights shared by Shayan Araghi, drawing inspiration from a talk by HumanLayer. The core idea is to combat 'context rot' in AI agents by using a structured Research, Plan, Implement approach with subagents, as detailed on the DEV Community platform.
+
+## Notes & variations
+*   **Free-tier alternatives**: This specific workflow relies heavily on paid platforms like HumanLayer and advanced models like Sonnet and Opus. For free alternatives, you would need to explore open-source AI agent frameworks (like AutoGen or LangChain) and run models locally using tools like Ollama or LM Studio, which requires more technical setup and potentially less powerful models.
+*   **Common mistake**: Trying to use a single AI agent for a long, complex task without clearing context or using subagents. This leads to the agent "forgetting" instructions or getting confused by outdated information, a problem known as "context rot".
+*   **Tip for better results**: Clearly define the scope and desired output for each phase (Research, Plan, Implement) before you start. Providing specific requirements and edge cases in the plan phase will significantly improve the accuracy of the final implementation.

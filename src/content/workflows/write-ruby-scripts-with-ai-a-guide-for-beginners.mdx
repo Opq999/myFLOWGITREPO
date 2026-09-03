@@ -1,0 +1,61 @@
+---
+title: "Write Ruby Scripts with AI: A Guide for Beginners"
+description: "Learn how to use AI agents to write quick utility scripts in Ruby, saving time and effort for common tasks."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 15
+jobToBeDone: "Write throwaway utility scripts in Ruby using AI agent instructions"
+tools:
+  - name: "Claude"
+    url: "https://claude.ai"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Ruby"
+    url: "https://www.ruby-lang.org/en/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/svyatov/your-agent-writes-python-the-ruby-rule-cuts-that-by-a-third-476"
+  platform: "blog"
+  author: "svyatov"
+  postedAt: 2026-08-06
+score: 7
+ingestedAt: 2026-09-03
+nigeriaNotes: "Claude.ai has a free tier. Ruby is free to install and use. Data usage will be minimal for short scripts."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to instruct an AI agent to write small, useful scripts in Ruby. This approach is helpful because it allows you to quickly create tools for tasks like renaming files or processing data, even if you are not a seasoned programmer, and it leverages the AI's ability to write code in a language you might be more familiar with for reading.
+
+## Tools you need
+*   **Claude** (freemium): An AI chatbot you can use to generate code. The free tier is sufficient for this task.
+*   **Ruby** (free): A programming language that will be used to write the scripts. You will need to install it on your computer.
+
+## Steps
+1.  **Install Ruby**: If you don't have Ruby installed, you'll need to add it to your system. The official Ruby website has instructions for different operating systems.
+2.  **Open your AI chat tool**: Go to the Claude website (claude.ai) and start a new chat.
+3.  **Give the AI instructions**: Tell the AI to write a script in Ruby for a specific task. Be clear about what you want the script to do. Here is a starting point based on the author's advice:
+
+    ```
+    Write throwaway and utility scripts in Ruby, even in projects written in another language. If it needs a pipe, a loop, a conditional, or more than one line, it is a script: write it in Ruby, not Python, Node, or bash. Single self-contained commands (grep, git status) are fine as-is. Use only the Ruby standard library. If a gem would clearly save significant effort, stop and ask before using it. Put temporary scripts in a scratch or temp directory, not the repo root, and delete them when done unless asked to keep them.
+
+    Now, write a script that does the following: [Describe your specific task here. For example: "renumber a pile of screenshots from screenshot-1.png to screenshot-0001.png"]
+    ```
+
+    You should see the AI generate a block of Ruby code.
+4.  **Copy the Ruby code**: Select the code the AI provided and copy it.
+5.  **Save the script**: Open a simple text editor (like Notepad on Windows, TextEdit on Mac, or Gedit on Linux) and paste the code. Save the file with a `.rb` extension (e.g., `myscript.rb`).
+6.  **Run the script**: Open your computer's command line interface (like Command Prompt on Windows, Terminal on Mac/Linux). Navigate to the directory where you saved the file. Then, type `ruby your_script_name.rb` (replacing `your_script_name.rb` with the actual name of your file) and press Enter.
+
+    You should see the script perform the task you described, or an error message if something went wrong.
+
+## Original source
+This workflow is inspired by a post by Lucian Ghinda on DEV Community, discussing the benefits of using AI agents to write utility scripts in Ruby. The author explores how this approach can streamline development and improve code review processes.
+
+## Notes & variations
+*   **Free tier alternative**: While Claude is recommended, you could try other free AI chat tools if they offer code generation capabilities.
+*   **Common mistake**: Ensure you have Ruby installed correctly on your system before trying to run the script. If you get an error like 'ruby' is not recognized, it means Ruby is not installed or not added to your system's PATH.
+*   **Tip for better results**: Be very specific in your prompt about the input files, the desired output format, and any constraints (like using only the standard library). The clearer your instructions, the better the AI's script will be.

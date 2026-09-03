@@ -1,0 +1,41 @@
+---
+title: "Enhance a LINE Bot with Google Search Grounding for Detailed Reports"
+description: "Learn how to use Google Search Grounding with the Gemini API to add a detailed research report feature to a LINE Bot, providing context and citations."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 180
+jobToBeDone: "Enhance a LINE Bot with a detailed research report feature using Google Search Grounding"
+tools:
+  - name: "LINE Bot"
+    url: "https://line.me/en/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Gemini API"
+    url: "https://ai.google.dev/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "GitHub"
+    url: "https://github.com/"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/gde/gemini-api-in-action-adding-a-detailed-research-report-button-to-a-line-bot-using-google-2cd0"
+  platform: "blog"
+  author: "evanlin"
+  postedAt: 2026-08-20
+score: 7
+ingestedAt: 2026-09-03
+nigeriaNotes: "This workflow requires setting up a server and using API services, which may incur costs beyond free tiers depending on usage. Data usage for the bot's interactions and search grounding will vary."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+This workflow describes how to add a powerful "Detailed Research Report" feature to a LINE Bot. It uses Google Search Grounding, a special capability of large language models (LLMs) like Gemini, to go beyond simple summaries.
+
+Instead of just summarizing an article, the bot can actively search the web for external information. This helps it provide background context, find counter-arguments, and verify facts or numbers mentioned in the original article. The key benefit is that the model doesn't just rely on its internal knowledge; it uses real-time search results, which helps prevent it from making up facts (a problem called "hallucination").
+
+When a user clicks the "Detailed Research Report" button on a summary card, the bot uses the Gemini API with Google Search Grounding. It then generates a comprehensive report, complete with links to the web pages it referenced, and sends this report as a web link to the user.
+
+This is an advanced workflow. It requires setting up a LINE Bot, writing and deploying code, and managing API keys. Therefore, it cannot be reduced to simple copy-paste steps for a beginner. The exact instructions and code live in a GitHub repository and require technical skill to implement.

@@ -1,0 +1,83 @@
+---
+title: "Enable AI Agents to Use Tools Like GitHub and Pytest"
+description: "Learn how to give AI agents real tools like code repositories and testing frameworks, instead of just better prompts. This guide explains the concept and provides a basic Python example."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 15
+jobToBeDone: "Enable an AI agent to interact with external tools like code repositories and testing frameworks"
+tools:
+  - name: "Python"
+    url: "https://www.python.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "GitHub"
+    url: "https://github.com/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "pytest"
+    url: "https://docs.pytest.org/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/aninmukhe/what-if-your-ai-agent-doesnt-need-better-prompts-just-better-tools-5ba7"
+  platform: "blog"
+  author: "aninmukhe"
+  postedAt: 2026-08-31
+score: 7
+ingestedAt: 2026-09-03
+nigeriaNotes: "Python and pytest are free and can be installed locally. GitHub has a free tier for public repositories. Data usage is minimal for local execution."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+
+This entry explains a powerful idea in AI development: instead of trying to perfect the instructions (prompts) you give to an AI agent, you can make it much more effective by giving it actual tools to use. Think of it like this: you can tell someone to "be professional and check the calendar" a thousand times, but if they don't have a way to actually open the calendar application, they'll never succeed. Giving the AI agent tools like the ability to clone a code repository or run a test allows it to interact with the real world, rather than just pretending.
+
+This approach is called "agentic AI." It shifts the focus from the AI's ability to generate text that sounds like it's doing something, to its ability to actually perform actions. The exact steps to implement this can be complex and often live within code or specific AI development environments, which is why this isn't a simple copy-paste recipe. It requires setting up a system where the AI can call specific functions (tools) that perform real tasks.
+
+## What you can use it for
+
+*   **Automate code testing**: Have an AI agent automatically clone a GitHub repository, run tests using pytest, and report the results.
+*   **Interact with APIs**: Connect an AI agent to external services through their APIs, allowing it to perform actions like booking meetings or fetching data.
+*   **Manage files and data**: Enable an AI agent to read from, write to, or modify files on your system.
+*   **Debug software**: Let an AI agent analyze code and run tests to identify and report bugs.
+
+## Tools you need
+
+*   **Python** (free): A popular programming language used to write the code that defines and runs the AI agent's tools.
+*   **GitHub** (freemium): A platform for hosting code repositories, which the AI agent can interact with to clone code.
+*   **pytest** (free): A testing framework for Python that the AI agent can use to run tests on code.
+
+## How it actually works
+
+This workflow involves setting up a Python environment where you define specific functions that act as tools for your AI agent. The AI then decides which tool to use and provides the necessary arguments. Here's a general path:
+
+1.  **Set up your Python environment**: Ensure you have Python installed. You might also need to install libraries like `pytest` if you don't have them.
+2.  **Define your tools**: Write Python functions that perform specific actions. For example, a `run_tests` function that takes a file path and executes `pytest` on it. These functions should return the output or any errors.
+3.  **Register the tools**: Create a way for the AI model to understand what tools are available, their names, descriptions, and the arguments they expect. This is often done by creating a list of tool definitions that the AI can access.
+4.  **Integrate with an AI model**: Use an AI model that supports tool calling. You send the AI the user's request along with the list of available tools. The AI will then respond by either providing a text answer or specifying which tool to call with what arguments.
+5.  **Dispatch the tool call**: If the AI requests to use a tool, your system will execute the corresponding Python function with the provided arguments and get the result.
+6.  **Continue the conversation**: Feed the result of the tool back to the AI so it can continue its task or provide a final answer. The original source provides a Python code snippet demonstrating how to define and register a `run_tests` tool.
+
+## Words you'll see, explained
+
+*   **AI Agent**: A program that can perform tasks autonomously, often by interacting with other software or systems.
+*   **Prompt**: The instruction or question given to an AI model.
+*   **System Prompt**: A background instruction that guides the AI's overall behavior and personality.
+*   **Hallucination**: When an AI model generates false or nonsensical information.
+*   **Agentic AI**: A type of AI that can take actions and interact with its environment using tools.
+*   **Function Call**: When an AI model is instructed to execute a specific piece of code (a function) with certain inputs.
+*   **Schema**: A description of the expected input or output format for a function or data.
+*   **API (Application Programming Interface)**: A set of rules and protocols that allows different software applications to communicate with each other.
+
+## Original source
+
+The author, aninmukhe, shared this insight on the DEV Community platform. They explain that giving AI agents real tools is often more effective than refining prompts, using their experience with GitHub and pytest as an example.
+
+## Notes & variations
+
+*   **Do you even need this?**: If your AI task is simple and doesn't require interacting with external systems (like just summarizing text), you might not need to build complex tool integrations. Stick to simpler prompts first.
+*   **Free-tier limits**: While the tools themselves (Python, pytest) are free, the AI model you use to power the agent might have usage limits or costs associated with it, depending on the service you choose.
+*   **Common pitfall**: A common mistake is not clearly defining the `schema` for your tools. The AI needs to know exactly what information to send to your tool. If the schema is vague, the AI might send incorrect arguments, causing the tool to fail.

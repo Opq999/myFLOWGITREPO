@@ -1,0 +1,56 @@
+---
+title: "Build a PWA to Track a Child's Reading with AI Assistance"
+description: "Learn how to use AI, specifically GitHub Copilot, to help build a Progressive Web App for tracking a child's reading progress, including book details and favorites."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 60
+jobToBeDone: "Create a PWA to track a child's reading progress."
+tools:
+  - name: "GitHub Copilot"
+    url: "https://github.com/features/copilot"
+    pricing: "paid"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/wyattdave/ai-fairys-and-agile-44cc"
+  platform: "blog"
+  author: "wyattdave"
+  postedAt: 2026-08-24
+score: 6
+ingestedAt: 2026-09-03
+nigeriaNotes: "GitHub Copilot is a paid tool. While the PWA itself can be free to host, the AI assistance requires a subscription. Data usage for the PWA itself would be minimal once hosted, but initial development might require internet access."
+tiktokUrl: ""
+published: false
+---
+
+## What you'll get
+You will learn how to use AI to help build a Progressive Web App (PWA) that a child can use to track the books they have read. This app will allow them to see all books, mark them as read, and add favorites, with the potential for offline use and data export. This approach uses AI to accelerate the development of a custom, user-friendly application.
+
+## Tools you need
+*   **GitHub Copilot** (paid): An AI pair programmer that suggests code and entire functions in real-time, right inside your editor.
+*   **A code editor** (free): A program to write and edit code, like Visual Studio Code.
+*   **A web browser** (free): To test your Progressive Web App.
+
+## Steps
+1.  **Define the app's purpose and features**: Discuss with the child what they want in the app. The author's daughter wanted to see all books, track read books, and have a favorites list. Consider non-functional requirements like offline use and data export.
+2.  **Start with an initial prompt**: Describe your app idea to the AI. The author's initial prompt included details about a mobile/tablet app, using HTML/CSS/JS for a PWA, local data saving with export/import, theming, book details, search, favorites, marking as read, and achievements.
+    ```
+    i want to create a mobile/tablet app to track my daughters reading. I want to use a progressive web abb (simple html/css/js) that saves locally what she has read, but that data can be exported/imported between devices. the web app should be themed like the rainbow princess books. it should have every book (ideally every book cover) and if possible grab a small bio on each book. my daughter should be able to search for books, add to favourites and mark as read. When she reads certain mile stones she would get a badge/fairy achievement. these achievements should be shown in a screen/section. the books can be stored local or grabbed from api. some references are: https://rainbowmagic.fandom.com/wiki/List_of_Fairies https://en.wikipedia.org/wiki/List_of_books_written_by_Daisy_Meadows https://rainbowmagic.fandom.com/wiki/Princess_Fairies though you may need more data
+    ```
+    You should expect the AI to generate code or suggestions based on this prompt.
+3.  **Refine book cover generation**: If the initial AI-generated book covers are not satisfactory (e.g., just emojis), research and find a reliable source for book covers and bios. The author found the Open Library API for this purpose.
+    ```
+    i need all of the book covers for this web app (the generated ones are not very good). i found this site with them https://openlibrary.org/authors/OL14521
+    ```
+    You should then use this information to guide the AI to fetch and display actual book covers and details.
+4.  **Implement core PWA features**: Use GitHub Copilot to help write the HTML, CSS, and JavaScript for the PWA. This includes creating sections for books, search functionality, favorite lists, and marking books as read. The AI can assist with generating code for these features based on your descriptions.
+5.  **Add offline capabilities and data export/import**: Work with GitHub Copilot to ensure the app functions offline and allows users to export and import their reading data. This might involve using browser storage APIs like LocalStorage or IndexedDB.
+6.  **Integrate gamification**: If desired, use the AI to help implement the badge or achievement system for reading milestones.
+
+## Original source
+This workflow is based on a blog post titled "AI, Fairy's, and Agile" by wyattdave, shared on DEV Community. The author describes their personal journey of using AI, specifically GitHub Copilot, to build a practical application for their daughter.
+
+## Notes & variations
+*   **Free tier alternative**: GitHub Copilot is a paid tool. For a completely free approach, you would need to write all the code yourself or explore free AI coding assistants that might have limitations.
+*   **Common pitfall**: Relying solely on the AI without understanding the generated code can lead to issues. Always review and test the code provided by GitHub Copilot to ensure it functions correctly and meets your needs.
+*   **Tip for better results**: Be very specific in your prompts to GitHub Copilot. The more detail you provide about the desired functionality, user interface, and data handling, the better the AI will be able to assist you.

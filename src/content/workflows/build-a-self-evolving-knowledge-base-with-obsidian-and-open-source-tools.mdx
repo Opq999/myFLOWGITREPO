@@ -1,0 +1,133 @@
+---
+title: "Build a Self-Evolving Knowledge Base with Obsidian and Open-Source Tools"
+description: "Learn to create a knowledge base that evolves with your feedback, ingests external info, and remembers across sessions using Obsidian and open-source tools."
+category: "academic-research"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 60
+jobToBeDone: "Build a self-evolving knowledge base from personal notes and external information"
+tools:
+  - name: "Obsidian"
+    url: "https://obsidian.md/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "GBrain"
+    url: "https://github.com/garrytan/gbrain"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "PGLite"
+    url: "https://github.com/dossy/pglite"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Horizon"
+    url: "https://github.com/Thysrael/Horizon"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Bun"
+    url: "https://bun.sh/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "uv"
+    url: "https://github.com/astral-sh/uv"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/dengyier/i-built-a-self-evolving-knowledge-base-heres-the-architecture-4ld9"
+  platform: "blog"
+  author: "dengyier"
+  postedAt: 2026-08-18
+score: 7
+ingestedAt: 2026-09-03
+nigeriaNotes: "This workflow relies on local tools and open-source software, making it highly viable for users in Nigeria. Data usage is minimal as most processing happens on your local machine. Ensure you have sufficient storage for your Obsidian vault."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will set up a system that turns your personal notes in Obsidian into a self-evolving knowledge base. This system can remember information across different AI sessions, pull in new information from the outside world, and improve itself based on your feedback. This approach works by treating your Markdown notes as the single source of truth, making the entire system robust and rebuildable.
+
+## Tools you need
+*   **Obsidian** (freemium): A powerful note-taking app that stores your notes as plain Markdown files, acting as your primary knowledge vault.
+*   **GBrain** (free): An open-source agent brain that helps your AI sessions query your knowledge base for long-term memory.
+*   **PGLite** (free): A lightweight database that runs in your browser or locally, used by GBrain without needing a server.
+*   **Horizon** (free): An AI-powered tool that acts as a personal knowledge radar, fetching and summarizing news and updates from various sources.
+*   **Bun** (free): A fast JavaScript runtime, used here for installing and running GBrain.
+*   **uv** (free): A fast Python package installer and resolver, used for managing Python dependencies for Horizon.
+
+## Steps
+1.  **Install GBrain**: If you don't have Bun installed, you'll need to install it first. Then, use Bun to install GBrain globally. You should see GBrain installed and ready to use.
+    *   First, install Bun if you haven't already. Follow the instructions on the official Bun website (bun.sh).
+    *   Then, open your terminal or command prompt and run:
+
+    ```bash
+    bun install -g github:garrytan/gbrain
+    ```
+
+    You should see output indicating GBrain has been installed.
+
+2.  **Initialize GBrain**: Set up GBrain in your project directory. This creates the necessary configuration for GBrain to manage your knowledge.
+    *   Navigate to your main Obsidian vault directory in your terminal.
+    *   Run the following command:
+
+    ```bash
+    gbrain init
+    ```
+
+    GBrain will create its necessary files, usually in a hidden folder within your vault.
+
+3.  **Import your Obsidian vault into GBrain**: Tell GBrain to index your notes. GBrain will process your Markdown files so it can search them later.
+    *   In your terminal, run:
+
+    ```bash
+    gbrain import ~/vault/ --no-embed
+    ```
+
+    Replace `~/vault/` with the actual path to your Obsidian vault. The `--no-embed` flag means it won't create complex AI embeddings yet, keeping it free to use. You should see GBrain processing your files and reporting how many were indexed.
+
+4.  **Search your knowledge base**: Test GBrain by asking it a question. This shows that GBrain can find information within your notes.
+    *   In your terminal, run a search query:
+
+    ```bash
+    gbrain search "who pays for this and how fast"
+    ```
+
+    GBrain should return relevant snippets from your notes that answer the question.
+
+5.  **Set up Horizon**: Horizon needs to be cloned and its dependencies installed. This tool will fetch and process external information.
+    *   First, ensure you have Python and `uv` installed. Follow instructions on the `uv` GitHub page if needed.
+    *   Clone the Horizon repository:
+
+    ```bash
+    git clone https://github.com/Thysrael/Horizon.git
+    ```
+
+    *   Navigate into the Horizon directory:
+
+    ```bash
+    cd Horizon
+    ```
+
+    *   Install Horizon's Python dependencies using `uv`:
+
+    ```bash
+    uv sync
+    ```
+
+    You should see `uv` downloading and installing the required packages.
+
+6.  **Run Horizon for daily briefings**: Configure Horizon to fetch and process information daily. This step requires you to set up a schedule for Horizon to run automatically.
+    *   Run Horizon to fetch updates for the next 24 hours:
+
+    ```bash
+    uv run horizon --hours 24
+    ```
+
+    Horizon will fetch data from RSS feeds, Hacker News, and GitHub, then process it. The output will be a daily briefing. You will need to set up a task scheduler (like `cron` on Linux/macOS or Task Scheduler on Windows) to run this command regularly.
+
+## Original source
+This workflow is based on an architecture described by dengyier on DEV Community. The author aimed to build a knowledge base that not only stores information but actively evolves and learns from external data and user feedback, moving beyond a static "second brain."
+
+## Notes & variations
+*   **Free Tier Focus**: This setup is designed to be free to use by running everything locally. The core functionality of GBrain works without paid API keys for semantic search, relying on keyword search and agent logic.
+*   **Common Pitfall**: Ensure your Obsidian vault path in the `gbrain import` command is correct. An incorrect path will lead to GBrain not indexing any of your notes.
+*   **Better Results**: For more advanced AI capabilities with GBrain, you can explore adding semantic search by integrating with embedding models, though this may incur costs if you use paid services.

@@ -1,0 +1,111 @@
+---
+title: "Make Claude 5 Concise: Use CLAUDE.md and Custom Output Styles"
+description: "Learn how to make Claude 5's responses more concise and structured. Use custom instructions in CLAUDE.md or define output styles in Claude Code for clearer, scannable answers."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 15
+jobToBeDone: "Control verbosity and output shape of Claude 5"
+tools:
+  - name: "Claude.ai"
+    url: "https://claude.ai"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Claude Code"
+    url: "https://code.claude.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Text Editor"
+    url: "https://code.visualstudio.com/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/reporails/opus-5-how-to-fix-verbose-output-4amn"
+  platform: "blog"
+  author: "cleverhoods"
+  postedAt: 2026-08-14
+score: 6
+ingestedAt: 2026-09-03
+nigeriaNotes: "This workflow uses Claude Code, which is a paid developer tool. The `CLAUDE.md` method can be tried with the freemium Claude.ai chat app, but the author notes it's less effective for Claude 5. Data usage is minimal, as the workflow primarily involves text instructions and responses."
+tiktokUrl: ""
+published: false
+---
+
+## What you'll get
+You will get Claude 5 to provide shorter, more structured answers, avoiding overly long explanations and unnecessary prose. This approach works by giving the AI clear rules on how to format its responses, which is especially useful when you need quick, scannable information without extra details.
+
+## Tools you need
+*   **Claude.ai** (freemium): The AI chat assistant where you can interact with Claude models, including Opus 5. You can use this for the simpler `CLAUDE.md` method.
+*   **Claude Code** (paid): A developer tool for interacting with Claude models via an API (Application Programming Interface), which allows for advanced features like custom output styles. This is where the more effective method is applied.
+*   **Text Editor** (free): Any program like Notepad (Windows), TextEdit (macOS), or VS Code to create and save text files.
+
+## Steps
+This workflow offers two methods: first, a simpler approach using direct instructions, and second, a more robust method using Claude Code's output styles.
+
+### Method 1: Using `CLAUDE.md` instructions (simpler, less effective for Claude 5)
+
+1.  **Open your text editor**: Launch a simple text editor on your computer or phone.
+2.  **Create `CLAUDE.md` instructions**: Paste the following rules into the editor. These rules tell Claude how to shape its replies.
+
+    ```
+    ## Reply shape
+    - Lead with the answer in the first sentence, before any table, list, or caveat.
+    - Carry status, comparisons, and any multi-item result in a `table` or `bullet` list, never a prose paragraph.
+    - Cap unbroken prose at two paragraphs; if a third starts, convert the run to a `bullet` list or `table` .
+    - Give each item its own `bullet` row, not a clause buried across sentences.
+    - Compose in this shape from the start; do not draft prose and reshape it afterward.
+    ```
+
+    You should see these specific formatting rules displayed in your text editor.
+3.  **Use in Claude.ai**: When you are chatting with Claude 5 on the Claude.ai website, paste these instructions at the beginning of your prompt. For example, you might start your message with these rules, then follow with your actual question.
+
+    You should observe Claude attempting to follow these rules in its response, though the author notes this method might not always work perfectly with Claude 5.
+
+### Method 2: Creating an Output Style in Claude Code (more effective)
+
+1.  **Set up Claude Code**: The author assumes you have Claude Code set up. If you do not, please refer to the official Claude Code documentation for instructions on installation and authentication (connecting your account).
+2.  **Create the output styles directory**: You need to create a specific folder structure in your user's home directory. This is where Claude Code looks for custom output styles.
+
+    # macOS or Linux
+    ```bash
+    mkdir -p ~/.claude/output-styles
+    ```
+
+    # Windows (PowerShell)
+    ```powershell
+    New-Item -ItemType Directory -Force "$HOME\.claude\output-styles"
+    ```
+
+    You should see a new hidden folder named `.claude` created in your home directory, with an `output-styles` subfolder inside it.
+3.  **Create the `reply-shape.md` file**: Open your text editor and create a new, empty file.
+4.  **Add the output style content**: Paste the following content into the new file. The part between the `---` lines is called "frontmatter" and tells Claude Code about this style. The rest are the same reply shape rules from Method 1.
+
+    ```
+    ---
+    name : Reply shape
+    description : " Answer-first, scannable replies; tables and bullets over prose walls"
+    keep-coding-instructions : true
+    ---
+    ## Reply shape
+    - Lead with the answer in the first sentence, before any table, list, or caveat.
+    - Carry status, comparisons, and any multi-item result in a `table` or `bullet` list, never a prose paragraph.
+    - Cap unbroken prose at two paragraphs; if a third starts, convert the run to a `bullet` list or `table` .
+    - Give each item its own `bullet` row, not a clause buried across sentences.
+    - Compose in this shape from the start; do not draft prose and reshape it afterward.
+    ```
+
+    You should see this full content, including the frontmatter, in your text editor.
+5.  **Save the file**: Save this file inside the `~/.claude/output-styles/` directory you created in step 2. Name the file `reply-shape.md`.
+
+    You should now have a file named `reply-shape.md` located at `~/.claude/output-styles/reply-shape.md`.
+6.  **Activate the output style in Claude Code**: The author states that output styles modify the system prompt (the AI's core instructions) in Claude Code and are re-surfaced during the conversation, making them more effective. To activate this specific style, you would typically select it within the Claude Code interface or specify it in your API call. The exact method for activation is not detailed in the source. Refer to Claude Code's official documentation for how to apply custom output styles.
+
+    You should see Claude 5, when used through Claude Code with this style active, consistently follow the "Reply shape" rules, providing more concise and structured answers.
+
+## Original source
+This workflow is based on a blog post titled 'Opus 5: How to Fix Verbose Output' by cleverhoods, published on the DEV Community platform.
+
+## Notes & variations
+*   **Free-tier alternative**: If you do not have access to Claude Code, you can still use the `CLAUDE.md` instructions (Method 1) with the freemium Claude.ai chat app. However, the author notes that this method is less effective for controlling Claude 5's verbosity compared to using output styles in Claude Code.
+*   **Common mistake**: A common pitfall is expecting `CLAUDE.md` instructions to perfectly control Claude 5's output. The author explicitly states that these direct instructions are the "weakest lever" for Claude 5, which tends to be more verbose by default.
+*   **Tip for better results**: The author advises that the rules are for shaping actual content, not for forcing short confirmations into a structured format. For example, a simple "Done." or "Yes, that works." should not be tabulated. Focus on applying the rules when there is substantial information to shape. Using the "Output styles" method (Method 2) is generally more effective for consistent results with Claude 5.

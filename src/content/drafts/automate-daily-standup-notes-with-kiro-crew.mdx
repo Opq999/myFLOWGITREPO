@@ -1,0 +1,94 @@
+---
+title: "Automate Daily Standup Notes with Kiro Crew"
+description: "Learn how to build a custom AI agent to automatically generate daily standup notes from your git commits using Kiro Crew."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 15
+jobToBeDone: "Automate daily standup note generation from git commits using a custom AI agent"
+tools:
+  - name: "Kiro Crew"
+    url: "https://kiro.ai/"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "AWS"
+    url: "https://aws.amazon.com/"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "git"
+    url: "https://git-scm.com/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/aws-builders/how-i-built-a-kiro-crew-app-in-5-minutes-full-tutorial-with-code-3el0"
+  platform: "blog"
+  author: "sarvar_04"
+  postedAt: 2026-08-18
+score: 5
+ingestedAt: 2026-09-03
+nigeriaNotes: "Kiro Crew and AWS are paid services. Data usage for git commits is minimal. A free tier for Kiro Crew is not specified, but paid services may be a barrier."
+tiktokUrl: ""
+published: false
+---
+
+## What you'll get
+You will learn how to create a custom AI agent that automatically reads your git commits and generates daily standup notes. This approach automates a common developer task, saving time and ensuring consistency in reporting progress.
+
+## Tools you need
+*   **Kiro Crew** (paid): An AI agent platform for building and deploying custom applications.
+*   **AWS** (paid): Cloud computing services used by Kiro Crew for its infrastructure.
+*   **git** (free): A version control system used to track changes in code and project files.
+
+## Steps
+This workflow involves creating several configuration files for Kiro Crew to define your custom app. The exact commands to install and run Kiro Crew are not fully detailed in the source, and may require referring to Kiro Crew's official documentation.
+
+1.  **Define your app's identity and resources**: Create an `app.json` file to declare your app's name, version, description, author, and the paths to its agents, skills, UI, and cron jobs.
+
+    ```json
+    {
+      "name" : "standup-bot",
+      "version" : "1.0.0",
+      "displayName" : "Daily Standup Bot",
+      "description" : "Auto-generates standup notes from git commits.",
+      "author" : "sarvar_04",
+      "agents" : [ "agents/standup-agent.json" ],
+      "skills" : [ "skills/standup-format" ],
+      "ui" : {
+        "entry" : "dist/index.mjs",
+        "pages" : [{
+          "route" : "/apps/standup-bot",
+          "label" : "Standups",
+          "icon" : "ClipboardList"
+        }]
+      },
+      "crons" : [{
+        "name" : "morning-standup",
+        "cron_expr" : "0 9 * * 1-5",
+        "message" : "Generate today\'s standup summary from yesterday\'s gi…"
+      }]
+    }
+    ```
+    You should have a JSON file named `app.json` with the basic structure for your application.
+
+2.  **Define the AI agent**: Create an `agents/standup-agent.json` file. This file specifies how the AI agent will behave, including its model and prompt. The source does not provide the full content of this file.
+    You should have a JSON file for your agent definition.
+
+3.  **Define the skill**: Create a `skills/standup-format/SKILL.md` file. This markdown file contains the rules and logic for formatting the standup notes. The source does not provide the full content of this file.
+    You should have a markdown file for your skill definition.
+
+4.  **Define the dashboard page**: Create UI files, likely in `ui/src/App.tsx`, to build a custom page for viewing standup history. The source does not provide the full content of these files.
+    You should have UI files ready to build your dashboard.
+
+5.  **Schedule the task**: The `app.json` file includes a `crons` section with a `cron_expr` set to `"0 9 * * 1-5"`. This means the task will run every weekday at 9 AM. The exact setup for cron jobs within Kiro Crew is not detailed.
+    Your app will be configured to run on a schedule.
+
+6.  **Install and run the app**: The author mentions installing the app live with one `curl` command. The exact command is not provided in the excerpt. You will need to refer to Kiro Crew's documentation for the installation process.
+    You should be able to install and run your custom app.
+
+## Original source
+This workflow is based on a tutorial by sarvar_04 posted on the DEV Community platform. It demonstrates how to build a custom AI application, specifically a daily standup bot, using the Kiro Crew platform in a short amount of time.
+
+## Notes & variations
+*   **Free-tier alternatives**: Kiro Crew and AWS are paid services. If you are looking for free alternatives, you might explore self-hosted AI agent frameworks or simpler scripting solutions that do not rely on cloud platforms.
+*   **Common mistake**: Ensure all configuration files (`app.json`, agent definitions, skill files) are correctly formatted and referenced in `app.json`. Errors in these files can prevent the app from installing or running.
+*   **Tip for better results**: Clearly define the prompts and expected outputs for your AI agent and skills. The more specific you are, the better the agent will perform its task of generating accurate standup notes.
