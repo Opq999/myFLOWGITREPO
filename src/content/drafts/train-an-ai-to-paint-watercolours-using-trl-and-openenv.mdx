@@ -1,0 +1,121 @@
+---
+title: "Train an AI to paint watercolours using TRL and OpenEnv"
+description: "Learn how a coding model is trained to generate unique watercolour paintings using JavaScript, TRL, and OpenEnv on Hugging Face. Explore the advanced techniques behind this creative AI."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 60
+jobToBeDone: "Train a coding model to generate watercolour paintings"
+tools:
+  - name: "TRL"
+    url: "https://huggingface.co/docs/trl/index"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "OpenEnv"
+    url: "https://huggingface.co/OpenEnv"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Hugging Face Jobs"
+    url: "https://huggingface.co/docs/hub/spaces-jobs"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Hugging Face Spaces"
+    url: "https://huggingface.co/docs/hub/spaces-overview"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Hugging Face Hub"
+    url: "https://huggingface.co/docs/hub"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Hugging Face Inference Providers"
+    url: "https://huggingface.co/docs/inference/index"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "p5.brush"
+    url: "https://p5brush.com"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "p5.js"
+    url: "https://p5js.org"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Qwen/Qwen3.5-35B-A3B"
+    url: "https://huggingface.co/Qwen/Qwen3.5-35B-A3B"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://huggingface.co/blog/train-to-paint-with-code"
+  platform: "blog"
+  author: "Hugging Face - Blog"
+  postedAt: 2026-09-03
+score: 6
+ingestedAt: 2026-09-04
+nigeriaNotes: "This workflow requires significant computing power, which is typically paid. Free tiers for Hugging Face Spaces might be too limited for the training environment. Data usage for model training and deployment will be substantial."
+tiktokUrl: ""
+published: false
+---
+
+## What this is, in plain English
+This entry explains how an artificial intelligence (AI) model can be trained to create unique watercolour paintings. Instead of generating images directly, this AI writes JavaScript code using specific libraries (p5.brush and p5.js) that then draw the paintings. The goal is to produce art that looks loose, imperfect, and handmade, similar to traditional watercolours.
+
+This is an advanced workflow that goes beyond simply typing prompts into an image generator. It involves training a large language model (LLM) using a technique called Reinforcement Learning (RL) within a specialized environment. The entire process is set up and run on Hugging Face, a platform for machine learning development.
+
+Because this workflow requires setting up complex environments, running training scripts, and managing cloud computing resources, it cannot be reduced to simple copy-paste steps for a beginner. The exact instructions and code live within the author's GitHub repository and Hugging Face projects, which are constantly updated. This entry will explain the core ideas and the general path to understanding how it works.
+
+## What you can use it for
+*   **Generate unique art**: Create AI-generated watercolour paintings with a distinct, imperfect style that stands out from typical AI-generated images.
+*   **Explore creative coding**: Understand how AI can be used to write code for artistic purposes, interacting with creative coding libraries like p5.js.
+*   **Learn advanced AI training**: See a real-world example of Reinforcement Learning (RL) applied to teaching an AI to generate creative code.
+*   **Reproduce research**: Follow an open-source attempt to reproduce a viral AI art project, gaining insight into the engineering challenges involved.
+
+## Tools you need
+*   **TRL** (free): A library for training large language models using Reinforcement Learning.
+*   **OpenEnv** (free): An open-source environment specifically designed for training AI models in this watercolour painting project.
+*   **Hugging Face Jobs** (paid): A service for running machine learning training tasks in the cloud, providing the necessary computing power.
+*   **Hugging Face Spaces** (paid): A platform for hosting and sharing machine learning demos, apps, and environments, used here for the RL environment and scorer model.
+*   **Hugging Face Hub** (freemium): A central platform for sharing and discovering machine learning models, datasets, and demos, used to store all project artifacts.
+*   **Hugging Face Inference Providers** (paid): Services for deploying and running machine learning models for predictions, used here for the "pairwise judge" model.
+*   **p5.brush** (free): A JavaScript library that adds natural drawing tools, like brushes and watercolour effects, to p5.js.
+*   **p5.js** (free): A JavaScript library for creative coding, making it easy to create visual and interactive experiences in a web browser.
+*   **Qwen/Qwen3.5-35B-A3B** (free): A large language model used as the base model that learns to write the painting code.
+
+## How it actually works
+This workflow involves a sophisticated setup on Hugging Face to train a large language model (LLM) using Reinforcement Learning (RL). The process can be broken down into these high-level steps:
+
+1.  **Set up Environments**: The core Reinforcement Learning environment and a "scorer model" (which evaluates the quality of generated paintings) are hosted as Hugging Face Spaces. These Spaces provide the interactive components needed for the training loop.
+2.  **Prepare Data and Models**: A reference pool dataset, training scripts, and the base language model (Qwen/Qwen3.5-35B-A3B) are made available on the Hugging Face Hub.
+3.  **Launch Training Job**: The actual training is run on Hugging Face Jobs, which provides the necessary computing resources. The training script uses the TRL library to fine-tune the Qwen model.
+4.  **Reinforcement Learning Loop**: During training, the model generates JavaScript code using `p5.brush` and `p5.js` to create paintings. These paintings are then evaluated by the scorer model and a "pairwise judge" (hosted via Inference Providers) which provides feedback (rewards) to the model. The model uses this feedback to improve its code generation over time.
+5.  **Store Artifacts**: Throughout the process, all generated artifacts, including trained models and datasets, are pushed back to the Hugging Face Hub.
+
+The author provides a command to launch the training once the Spaces are set up. This command specifies the base model, training parameters, and where to find the RL environment:
+
+```
+hf jobs uv run train/watercolour_grpo.py --flavor h200 --timeout 48h --secrets HF_TOKEN -- \ --env-url https:// you -watercolour-env.hf.space \ --model Qwen/Qwen3.5-35B-A3B --lora --all-linear --bf16 --gradient-checkpointing \ --subject 'a peach hibiscus' --references 4 \ --top-p 0.95 --top-k 20 \ --lr 5e-5 --lr-scheduler constant_with_warmup --warmup-steps 5 \ --scale-rewards none \ --steps 110 --n-episodes 240 --num-generations 8 \ --per-device-batch-size 1 --gradient-accumulation-steps 8 \ --max-completion-length 8192 \ --run-tag my-run --out you /watercolour-grpo --push-to-hub
+```
+
+This command needs to be run in a terminal with the Hugging Face CLI installed and configured. The `--env-url` placeholder `https:// you -watercolour-env.hf.space` would need to be replaced with the actual URL of your deployed RL environment Space. The `--out you /watercolour-grpo` placeholder also needs to be replaced with your Hugging Face username. The full details and the exact setup steps are available in the author's original repository.
+
+## Words you'll see, explained
+*   **TRL (Transformer Reinforcement Learning)**: A software library that helps train large language models using reinforcement learning, where the model learns by trial and error.
+*   **OpenEnv**: An open-source software environment specifically created for this project to help train the AI model that generates watercolour paintings.
+*   **Hugging Face Jobs**: A cloud service provided by Hugging Face that allows users to run intensive machine learning training tasks without managing their own servers.
+*   **Hugging Face Spaces**: A platform on Hugging Face where developers can host and share interactive machine learning demos, web applications, and environments.
+*   **Hugging Face Hub**: A central online platform for the machine learning community to share, discover, and collaborate on models, datasets, and code.
+*   **Hugging Face Inference Providers**: Services that allow you to deploy and run your trained machine learning models in the cloud, making them available for others to use for predictions.
+*   **p5.js**: A JavaScript library that simplifies creative coding, enabling artists and designers to create interactive graphics and animations in web browsers.
+*   **p5.brush**: A specialized library that extends p5.js by adding tools that simulate natural drawing and painting effects, such as watercolour brushes.
+*   **Reinforcement Learning (RL)**: A type of machine learning where an AI agent learns to make decisions by interacting with an environment and receiving rewards for desired actions and penalties for undesired ones.
+*   **Large Language Model (LLM)**: An advanced AI model trained on vast amounts of text data, capable of understanding, generating, and translating human-like text, and in this case, code.
+*   **LORA (Low-Rank Adaptation)**: A technique used to efficiently fine-tune large language models, allowing them to adapt to new tasks with less computational cost and memory.
+*   **Gradient Checkpointing**: A method used during the training of deep learning models to reduce memory usage by recomputing certain values instead of storing them, which is useful for very large models.
+*   **bf16 (bfloat16)**: A specific format for numbers used in deep learning that balances precision and memory efficiency, helping models train faster and use less memory.
+
+## Original source
+This concept is based on an open-source reproduction attempt by Sergio Paniego, shared on the Hugging Face Blog. He aimed to recreate the viral idea of a language model painting watercolours, originally conceived by Surya Narreddi, by making every piece of the engineering pipeline public.
+
+## Notes & variations
+*   **Do you even need this?**: For simply generating AI art, much simpler and often free text-to-image models like Stable Diffusion, DALL-E, or Midjourney are available. This workflow is for those interested in the advanced technical challenge of training an AI to *write code* for art, rather than just generating images directly.
+*   **Free-tier limits**: Running this workflow requires significant cloud computing resources, especially for training large language models. The free tiers offered by Hugging Face Spaces or Jobs are likely insufficient for this project, meaning you will incur costs.
+*   **Common pitfall**: Attempting to reproduce this without a solid understanding of machine learning concepts (especially Reinforcement Learning), command-line interfaces, and the Hugging Face ecosystem will be very challenging. Start by thoroughly reviewing the author's repository and documentation.
+*   **Tip**: Before trying to run the full training pipeline, explore the existing Hugging Face Spaces and models linked in the author's repository. This can help you understand the components without needing to set up the entire training environment yourself.

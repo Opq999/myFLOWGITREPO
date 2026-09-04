@@ -1,0 +1,213 @@
+---
+title: "Evaluate and Improve AI Model Structured Output Compliance"
+description: "Learn to evaluate an AI model's ability to produce valid, structured outputs like JSON or YAML using local tools. This helps improve models for better system integration."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 45
+jobToBeDone: "Fine-tune a small AI model for improved structured output compliance"
+tools:
+  - name: "llama.cpp"
+    url: "https://github.com/ggerganov/llama.cpp"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Homebrew"
+    url: "https://brew.sh"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "uv"
+    url: "https://github.com/astral-sh/uv"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Git"
+    url: "https://git-scm.com"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Colab"
+    url: "https://colab.research.google.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Kaggle"
+    url: "https://www.kaggle.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Hugging Face"
+    url: "https://huggingface.co"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://huggingface.co/blog/grpo-with-trl-ifstruct"
+  platform: "blog"
+  author: "Hugging Face - Blog"
+  postedAt: 2026-09-03
+score: 10
+ingestedAt: 2026-09-04
+nigeriaNotes: "This workflow involves local tools and free-tier cloud GPUs, making it viable for users with limited data and budget. Model downloads (GGUF) may require significant data (several gigabytes)."
+nigeriaUseCases:
+  - persona: "employee"
+    scenario: "As an AI engineer, compare how different small AI models perform in generating structured JSON logs for your company's internal monitoring system before deployment."
+  - persona: "student"
+    scenario: "For your final year project, evaluate if a local AI model consistently outputs JSON data needed to integrate with your web application, ensuring smooth data exchange."
+  - persona: "entrepreneur"
+    scenario: "As a tech founder, test if your locally-run AI chatbot consistently delivers customer order details in the precise JSON format your inventory system expects."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+AI models often need to give answers in a specific, organized format, like JSON or YAML, so other computer systems can easily use them. This is called "structured output compliance" or "schema compliance." Many AI models struggle to consistently produce these exact formats, which makes them hard to connect to other software.
+
+This entry describes how to *evaluate* a small AI model (LFM2.5-350M) to see how well it follows these rules. It uses a special benchmark called IFStruct and local tools like `llama.cpp` to run the model on your own computer. The original article also discusses how fine-tuning can improve a model's performance in this area, but the detailed steps provided are for the evaluation process.
+
+This workflow is in Concept mode because it involves advanced technical steps, including setting up a local server, running command-line tools, and understanding developer environments. It is not a simple copy-paste recipe for beginners.
+
+## What you can use it for
+*   **Test AI model reliability**: Check if an AI model consistently gives answers in the correct format (like JSON or YAML) for your specific needs.
+*   **Compare model performance**: See how different small AI models perform on structured output tasks before using them in a larger system.
+*   **Understand model limitations**: Identify specific types of structured outputs where a model struggles, helping you choose the right model or improve its prompts.
+*   **Prepare for integration**: Ensure an AI model can be smoothly connected to other software or databases that expect data in a precise format.
+
+## Tools you need
+*   **llama.cpp** (free): A tool that lets you run large language models (LLMs) on your own computer, even without a powerful internet connection. It can also create a local server that other programs can talk to.
+*   **Homebrew** (free): A package manager for macOS and Linux that helps you install developer tools easily.
+*   **uv** (free): A fast Python package installer and manager, used here to run the evaluation script.
+*   **Git** (free): A version control system used to download code projects from the internet, like the IFStruct benchmark.
+*   **Colab** (freemium): A free online service from Google that provides access to powerful computers (GPUs) for running AI models and training. Mentioned for fine-tuning, not directly used in the evaluation steps described.
+*   **Kaggle** (freemium): An online platform for data science and machine learning, offering free access to GPUs for training and running models. Mentioned for fine-tuning, not directly used in the evaluation steps described.
+*   **Hugging Face** (freemium): A platform for sharing and using AI models and datasets. The IFStruct benchmark dataset is hosted here.
+
+## How it actually works
+This workflow describes how to evaluate an AI model's structured output compliance using local tools. You will need a computer running macOS or Linux, or Windows with Windows Subsystem for Linux (WSL) installed, as some commands are specific to Unix-like environments.
+
+1.  **Install Homebrew (macOS or Linux)**: Homebrew is a package manager that simplifies installing developer tools. If you are on Windows, you will need to use WSL and install Homebrew within your WSL environment.
+
+    ```bash
+    # macOS or Linux
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    ```
+
+    You should see installation progress and a message indicating Homebrew was successfully installed.
+
+2.  **Install llama.cpp**: Use Homebrew to install `llama.cpp`, which will allow you to run the AI model locally.
+
+    ```bash
+    # macOS or Linux
+    brew install llama.cpp
+    ```
+
+    Verify the installation by checking its version:
+
+    ```bash
+    # macOS or Linux
+    llama-server --version
+    ```
+
+    You should see the version number of `llama-server` printed in your terminal.
+
+3.  **Install uv**: `uv` is a fast Python tool for managing packages. You will use it to run the evaluation script.
+
+    ```bash
+    # macOS or Linux
+    pip install uv
+    ```
+
+    You should see `uv` and its dependencies being installed.
+
+4.  **Clone the IFStruct benchmark repository**: Download the evaluation code from GitHub.
+
+    ```bash
+    # macOS or Linux
+    git clone https://github.com/Liquid4All/ifstruct.git
+    cd ifstruct
+    ```
+
+    You should see the `ifstruct` folder created and your terminal prompt change to indicate you are inside it.
+
+5.  **Prepare the IFStruct environment**: Create a Python virtual environment and install the necessary dependencies for the evaluation script.
+
+    ```bash
+    # macOS or Linux
+    uv venv
+    uv pip install -r requirements.txt
+    ```
+
+    You should see `uv` creating a virtual environment and installing packages listed in `requirements.txt`.
+
+6.  **Serve the model locally**: In your terminal, start the `llama-server` to host the LFM2.5-350M model. This command loads the model and makes it available for the evaluation script.
+
+    ```bash
+    # macOS or Linux
+    llama-server \
+    -hf LiquidAI/LFM2.5-350M-GGUF:BF16 \
+    -c 32768 \
+    -np 4 \
+    -ngl 99 \
+    --alias LiquidAI/LFM2.5-350M \
+    --host 127.0.0.1 \
+    --port 8080
+    ```
+
+    *   `-hf LiquidAI/LFM2.5-350M-GGUF:BF16`: Specifies the model to load from Hugging Face in BF16 format.
+    *   `-c 32768`: Sets the context size (how much text the model can consider at once).
+    *   `-np 4`: Allows the server to handle four requests at the same time.
+    *   `-ngl 99`: Asks `llama.cpp` to offload 99 layers of the model to your GPU, if available, for faster processing.
+    *   `--alias LiquidAI/LFM2.5-350M`: Sets a name for the model that the IFStruct evaluator will use.
+    *   `--host 127.0.0.1 --port 8080`: Configures the server to run on your local machine at port 8080.
+
+    You should see the `llama-server` starting up, loading the model, and indicating that it is listening for requests.
+
+7.  **Run the evaluation**: Open a *new terminal window* (while the `llama-server` is still running in the first one), navigate back to the `ifstruct` directory, and run the evaluation script using `uv`.
+
+    ```bash
+    # macOS or Linux
+    uv run ifstruct-eval \
+    --model LiquidAI/LFM2.5-350M \
+    --base-url http://localhost:8080/v1 \
+    --api-key dummy \
+    --dataset data/test.jsonl \
+    --results-file results/lfm2.5-350m-llamacpp-base.json \
+    --n-threads 4 \
+    --max-tokens 2048 \
+    -v
+    ```
+
+    *   `--model LiquidAI/LFM2.5-350M`: Specifies the model being evaluated.
+    *   `--base-url http://localhost:8080/v1`: Points to your locally running `llama-server`.
+    *   `--api-key dummy`: A placeholder API key, as the local server doesn't require a real one.
+    *   `--dataset data/test.jsonl`: Specifies the benchmark dataset to use.
+    *   `--results-file results/lfm2.5-350m-llamacpp-base.json`: Where the evaluation results will be saved.
+    *   `--n-threads 4`: Uses four threads for the evaluation process.
+    *   `--max-tokens 2048`: Sets the maximum number of tokens the model can generate for each response.
+    *   `-v`: Enables verbose output, showing more details during the evaluation.
+
+    You should see the evaluation running through 2000 samples and then print a summary of the results, similar to:
+
+    ```
+    ============================================================
+    Model: LiquidAI/LFM2.5-350M
+    ============================================================
+    Overall: 452/2000 passed (22.6%)
+    Average latency: 1453ms
+    By format: JSON: 180/1000 passed (18.0%) YAML: 272/1000 passed (27.2%)
+    By top-level structure: Wrapper key 288/1011 passed (28.5%) Bare list 164/989 passed (16.6%)
+    By entity type: test__camera_review 6/83 passed (7.2%) test__clinical_trial 20/104 pas…
+    ```
+
+## Words you'll see, explained
+*   **Structured Output**: When an AI model gives its answer in a specific, organized format, like a table, a list, or a JSON file, so computers can easily understand it.
+*   **Schema Compliance**: How well an AI model follows a predefined structure or "schema" for its output, ensuring the data is valid and usable by other systems.
+*   **Fine-tuning**: The process of taking an existing AI model and training it further on a smaller, specific dataset to make it better at a particular task.
+*   **GPU**: A Graphics Processing Unit, a special computer chip that is very good at the complex math needed to train and run AI models quickly.
+*   **llama.cpp**: An open-source tool that allows you to run large language models (LLMs) efficiently on various hardware, including local computers, often without needing a powerful internet connection.
+*   **GGUF**: A file format optimized for running large language models (LLMs) efficiently on consumer hardware, often used with `llama.cpp`.
+*   **Benchmark**: A standard test or set of tasks used to measure and compare the performance of different AI models.
+*   **API (Application Programming Interface)**: A set of rules and tools that allows different software applications to communicate with each other. An "OpenAI-compatible server" means it acts like OpenAI's API.
+
+## Original source
+This entry is based on a blog post from Hugging Face, written by Leonie Monigatti, Ben Burtenshaw, and Sergio Paniego. It details an inexpensive method for improving a small AI model's ability to produce structured outputs and how to evaluate this performance.
+
+## Notes & variations
+*   **Do you even need this?**: This workflow is for advanced users who need to rigorously test an AI model's structured output capabilities locally. For simpler needs, you might just test models directly in freemium chat interfaces (like ChatGPT, Claude, or Gemini) by asking them to produce JSON or YAML, and manually checking the output. This approach is less precise but much easier for quick checks.
+*   **Free-tier limits**: While `llama.cpp` runs locally and is free, downloading large GGUF models can consume significant data. The original article mentions free-tier Colab or Kaggle GPUs for fine-tuning, but these often have usage limits (e.g., hours per month) that can vary.
+*   **Common pitfall**: A common mistake is not having enough system resources (RAM or GPU memory) to run the `llama-server` command with the specified model and parameters. If the server fails to start or runs very slowly, try reducing the `-ngl` (number of layers offloaded to GPU) or `-c` (context size) values, or use a smaller model.
+*   **Tip for better results**: To get better evaluation results, ensure your `ifstruct` environment is correctly set up and that the `llama-server` is running stably before starting the benchmark. Pay close attention to the model alias and port settings.

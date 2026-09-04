@@ -17512,8 +17512,64 @@
     "0c89dfb6f28ce7b1508427dba0801fb8e13b5c17311f2b2766f813a12fe04df8": {
       "url": "https://dev.to/meteor/meteor-pluggable-ddp-transport-meet-uwebsocketsjs-514i",
       "date": "2026-09-03"
+    },
+    "7d4baaea5524135da35cf30b3e11fdea20e441ae31f4e5331f2a9e03abd211fc": {
+      "url": "https://simonwillison.net/2026/Sep/4/august-newsletter",
+      "date": "2026-09-04"
+    },
+    "fc6a277cb0e3df1122cfc71bd18f75e95c9146d69471ce6a39fe36845a7d8f56": {
+      "url": "https://simonwillison.net/2026/Sep/3/gpt6-astra",
+      "date": "2026-09-04"
+    },
+    "fc8ba1244954cc9682036f3c42ec4ed14f9c27e36ca43519e33bf5204834c5f0": {
+      "url": "https://simonwillison.net/2026/Sep/2/llm-gemini",
+      "date": "2026-09-04"
+    },
+    "8f194314e0d00e23c9310233025eeef2ac40a11923e014e639bd72aaa99fd5f3": {
+      "url": "https://simonwillison.net/2026/Sep/2/claudes-new-system-prompt",
+      "date": "2026-09-04"
+    },
+    "49bf67e78155156d80def20f74309dbcfe5f056bff6dae3303077cb471d88cc4": {
+      "url": "https://www.latent.space/p/ainews-gpt-6-astra-openais-biggest",
+      "date": "2026-09-04"
+    },
+    "a69c2848b34f1245ec5c172ad360d33852a883f1db60cf5e77b4a324174ef170": {
+      "url": "https://www.latent.space/p/astra",
+      "date": "2026-09-04"
+    },
+    "1d6b63efae6a0d6226fac11325da0b9d4ebed7447c71f367dfa6e2a659e4a20b": {
+      "url": "https://www.latent.space/p/ainews-muse-spark-13-matches-gpt",
+      "date": "2026-09-04"
+    },
+    "40a9913f55937995275810d8b768b6483f371f472dac68882acbe17cffcd3526": {
+      "url": "https://www.bensbites.com/p/fable-51",
+      "date": "2026-09-04"
+    },
+    "fffbcba03b0b217e48932bf108f9544d9d15dfe90cc71dd430d68dae9df9e2d9": {
+      "url": "https://huggingface.co/blog/Hcompany/neomme",
+      "date": "2026-09-04"
+    },
+    "a139f80b159295ada71d0ef039c73160eae68aeaf5d134012254faf54b7cc66b": {
+      "url": "https://huggingface.co/blog/grpo-with-trl-ifstruct",
+      "date": "2026-09-04"
+    },
+    "cdd1118267ee925c63286ac83c83df800f6195e85e821a17d4745982cb7ef8b5": {
+      "url": "https://huggingface.co/blog/funes",
+      "date": "2026-09-04"
+    },
+    "b5500bc6503561c622e234c790899474b8b24e1670dad4cceb0dbc466610f3db": {
+      "url": "https://huggingface.co/blog/train-to-paint-with-code",
+      "date": "2026-09-04"
+    },
+    "8c10bd00da2e478d246d8a5ed5ef6c67574eeadd8eaf7af8addbaf53aeec5060": {
+      "url": "https://huggingface.co/blog/ibm-research/real-time-intelligence",
+      "date": "2026-09-04"
+    },
+    "46e1b0cfa24acdb53426e89ab628b37cd13ae010225b8f3770eb8f73ed19663b": {
+      "url": "https://newsletter.pragmaticengineer.com/p/the-pulse-tech-companies-move-to",
+      "date": "2026-09-04"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 0
+  "dailyPage": 1
 }
