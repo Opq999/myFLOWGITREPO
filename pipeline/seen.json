@@ -17696,8 +17696,24 @@
     "0c428e591875ad27abda3f86716081fb63c9b2ed9f8c865c05c539f9e28bfd85": {
       "url": "https://www.reddit.com/r/SideProject/comments/1w2h26m/started_this_side_project_in_january_for_my_own",
       "date": "2026-09-05"
+    },
+    "d4c1ed706924d9ab73126ff4c3ee1455facc19997b86c7ce616f3fc6f56c12b2": {
+      "url": "https://simonwillison.net/2026/Sep/6/zach-kehs",
+      "date": "2026-09-06"
+    },
+    "2c8c6b516993cfbd5436e8ba5e8a79e5c1119be8e46f039d53bcca7a7b8479d9": {
+      "url": "https://simonwillison.net/2026/Sep/5/introducing-gpt-6-astra-for-developers",
+      "date": "2026-09-06"
+    },
+    "ae6b695c91ba14573c022fc97c1f30ca5e4eeca66b79546d332df7ea77ea9399": {
+      "url": "https://simonwillison.net/2026/Sep/5/blender-coding-agents-macos",
+      "date": "2026-09-06"
+    },
+    "8a5d315f88fac511ee672507cf53da60c88e297c0ea6ef925c2c7a7f595d041b": {
+      "url": "https://www.latent.space/p/grok-bot",
+      "date": "2026-09-06"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 2
+  "dailyPage": 3
 }
