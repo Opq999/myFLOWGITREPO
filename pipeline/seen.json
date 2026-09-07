@@ -17712,8 +17712,264 @@
     "8a5d315f88fac511ee672507cf53da60c88e297c0ea6ef925c2c7a7f595d041b": {
       "url": "https://www.latent.space/p/grok-bot",
       "date": "2026-09-06"
+    },
+    "c96533966e14912a1c817e9998c647115ef0710b3d0573826f68bd4673d29d74": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1w8s5e4/i_asked_astra_generate_cuphead_alike_witcher_scene",
+      "date": "2026-09-07"
+    },
+    "904ea86174aa4acc4bec58d1d6f122149151cb9143caf39f4e9305a476b4c4e4": {
+      "url": "https://simonwillison.net/2026/Sep/6/research-acceleration-the-view-inside-openai",
+      "date": "2026-09-07"
+    },
+    "14fe8b996dca9da9143335fa72a7515ac6578f563893636e7dc2c7cac7f4056e": {
+      "url": "https://github.com/janhq/jan",
+      "date": "2026-09-07"
+    },
+    "827eb436e173f03cad90b964b2f5b1a016cb4f7701bcef9977f837f946b7b07b": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1w90ol9/did_he_forget_this_or_sum",
+      "date": "2026-09-07"
+    },
+    "c9f2152db00a78c9268548239a8cdcbd06d1fbfc9c0540a2eaa7a1b193f40f87": {
+      "url": "https://simonwillison.net/2026/Sep/6/the-purpose-of-dns-is-to-spread-scams",
+      "date": "2026-09-07"
+    },
+    "2406ed090e4138f33aaedaf4b4cf3335ff6a912f5b5c1ee6ec32a0c22936b4ae": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1w6abil/my_neighbor_just_waved_at_me_and_said_good",
+      "date": "2026-09-07"
+    },
+    "729552d8cf1558aa9d6945de1401b15c10efaa513a08bd03c03a44f94b255055": {
+      "url": "https://simonwillison.net/2026/Sep/6/theres-no-limit-to-how-bad-code-can-get",
+      "date": "2026-09-07"
+    },
+    "fbc899cc1515a35fa6db57986664aae92cb7017ac639bebde5a9e3870b1481e7": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1w6w8dr/openai_removes_chatgpt_response_after_fox_news",
+      "date": "2026-09-07"
+    },
+    "36d09c68edff55605973887f7fc4ec9543ae4146b0fb0d73e4f552f49587bc2a": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1w5jy00/lake_america_sounds_like_the_kind_of_name_a",
+      "date": "2026-09-07"
+    },
+    "e22cb6c350f8aa5173f0e200148b43f462ba3a1657321135099dd919e21f6e7f": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1w4vgrs/tried_to_generate_a_womantaur",
+      "date": "2026-09-07"
+    },
+    "ed294917d4bee4ac2a044f98732b89875bd8e975989058c6d9bc3520a11d290f": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1w5jwcb/gpt_56_just_added_a_smiley_to_something_i_wrote",
+      "date": "2026-09-07"
+    },
+    "03b517acdc0209c2670033c0e5a2b046bf3b422018338c11438800c9143f44aa": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1w76y5y/generate_a_photo_of_cops_standing_in_front_of_the",
+      "date": "2026-09-07"
+    },
+    "c0dfd27f8b3c9c6dd109b33cd60f9b4bd320cbdc647cb8762dd9e49bf905824d": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1w3gcwx/why_does_chatgpt_dominate_the_usage_metric",
+      "date": "2026-09-07"
+    },
+    "64eb8bb7816a60a70397a72b9d45e82e12d3d2269be8bfe3ab19f654696ad712": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1w50ad7/unreal_pok%C3%A9mon_blue",
+      "date": "2026-09-07"
+    },
+    "0fe0b84d0575927a81d8e3b1e0c4f154df46076fa2570bbd17d4321092c449b8": {
+      "url": "https://www.reddit.com/r/aipromptprogramming/comments/1vsuw5v/question_about_models",
+      "date": "2026-09-07"
+    },
+    "b9fbebe533b15b86183cd50c499332b6c9177f903d0f6e8cc746d007ff455a8b": {
+      "url": "https://www.reddit.com/r/aipromptprogramming/comments/1vrvk7n/i_treat_llm_as_a_primitive_language_best_thing_i",
+      "date": "2026-09-07"
+    },
+    "4d68fbd346da4a5074eec4585a5de46477b5d48ecc5cab032b94f765ec73da36": {
+      "url": "https://www.reddit.com/r/aipromptprogramming/comments/1vphwyp/ai_short_film",
+      "date": "2026-09-07"
+    },
+    "78771d70c066043041f7be4aa2b52228a1a952cfe55e935dc50d6df7dbca0988": {
+      "url": "https://www.reddit.com/r/aipromptprogramming/comments/1vohl5v/image_restoration_snags",
+      "date": "2026-09-07"
+    },
+    "6ad9dc7dd0f838b5944618790baa2c4bc78635c36dc14cbc126088901d6678b8": {
+      "url": "https://www.reddit.com/r/aipromptprogramming/comments/1vn7iax/which_is_the_best_autonomous_ai_agent_harness",
+      "date": "2026-09-07"
+    },
+    "89bcf4bf22487cb4484420b3eb36b5e90410f126508e93b48c6862d18a7f864e": {
+      "url": "https://www.reddit.com/r/aipromptprogramming/comments/1vmcu3p/anyone_up_for_hackathons_its_a_ai_voice_agents",
+      "date": "2026-09-07"
+    },
+    "93ae0722ff833692cdc1a962cee36b0986e6111dba73d8b56b7b156cd4716472": {
+      "url": "https://www.reddit.com/r/aipromptprogramming/comments/1vmae6s/how_does_deepseek_v4_flash_0731_reasons_about",
+      "date": "2026-09-07"
+    },
+    "41133d1a643ae3375d2ec41f15a4e9a2cda6c95d8134d9fed992cf4272d4bb0f": {
+      "url": "https://www.reddit.com/r/aipromptprogramming/comments/1vltkne/i_analyzed_my_own_650_agentic_claude_code",
+      "date": "2026-09-07"
+    },
+    "6041d906ac99711ba5ebd82207af985049963381120750c891e9dfa29a8028d4": {
+      "url": "https://www.reddit.com/r/aipromptprogramming/comments/1vlfd1g/figma_just_exposed_the_reality_of_ai_in_design",
+      "date": "2026-09-07"
+    },
+    "cf690606e86e8e621c0c5bcc30827eefb8f2e956f9b7be4324e40121fb6af0dd": {
+      "url": "https://www.reddit.com/r/aipromptprogramming/comments/1vksxzk/a_gateway_that_autoblocks_a_compromised_mcp",
+      "date": "2026-09-07"
+    },
+    "359c6dd189bb40a8070eb926676419210f7bb4cdf5f378699f2ee9ad57665ea0": {
+      "url": "https://www.reddit.com/r/aipromptprogramming/comments/1vkhx3q/begun_working_on_a_wrestling_game_want_input",
+      "date": "2026-09-07"
+    },
+    "98566230f9c802861a3325cc3ffec18ec6384ffc9b983e1bae885ff462f4561a": {
+      "url": "https://www.reddit.com/r/aipromptprogramming/comments/1vkekvg/exclusive_metas_muse_code_binary_reveals_hidden",
+      "date": "2026-09-07"
+    },
+    "0cda5eefa1de272a862ec4b20bc5391963fac9b2c286c95164acacecdd3f3535": {
+      "url": "https://www.reddit.com/r/aipromptprogramming/comments/1vkdnet/i_just_benchmarked_octocode_for_agentic_code",
+      "date": "2026-09-07"
+    },
+    "5b1c429f2f4ec0eb24dfc451ae6cdeddc9187208f7dc8b4015cfe7ecd3951527": {
+      "url": "https://www.reddit.com/r/aipromptprogramming/comments/1vjmuha/kaappi_a_scheme_programming_language",
+      "date": "2026-09-07"
+    },
+    "12bec4eb131db38764ed7a9841812b6871ce7dd109647432d1134198f611d0dd": {
+      "url": "https://www.reddit.com/r/aipromptprogramming/comments/1vjm9dv/showcase_sundays_skill_for_improving_efficiency",
+      "date": "2026-09-07"
+    },
+    "dc96367b63292b7aedea6cd80d003426d49187631bc95cdabc176b093cbf8eaa": {
+      "url": "https://www.reddit.com/r/aipromptprogramming/comments/1vj9wt2/dnd_chatgpt",
+      "date": "2026-09-07"
+    },
+    "01528da94322e2e35dc50f01631d181b9df3d44b87b80d75ab9c996ef1d0f75c": {
+      "url": "https://www.reddit.com/r/aipromptprogramming/comments/1w7qcpd/does_your_algorithm_need_a_lawyer",
+      "date": "2026-09-07"
+    },
+    "fe2aa4607dfcf2a58ffd3d392f0a8b747b8cafcf3fc9b9b921722b2f3400f8e5": {
+      "url": "https://www.reddit.com/r/aipromptprogramming/comments/1w2dnmg/i_built_a_coding_agent_that_runs_on_a_server",
+      "date": "2026-09-07"
+    },
+    "a69954fc992f16f048a1fe1bf23229d648a3329a695829c811e28c4a4232b798": {
+      "url": "https://www.reddit.com/r/aipromptprogramming/comments/1w14jin/chatgpt_speed",
+      "date": "2026-09-07"
+    },
+    "784789de5fd8291a7027fe0bd39a5d5d5963715569a85a93451abbd053b9c281": {
+      "url": "https://www.reddit.com/r/aipromptprogramming/comments/1w0v06w/prompts_with_ai",
+      "date": "2026-09-07"
+    },
+    "af3d723571c90634bfc2eee1b3cad40d0fcb01dc5e2cd7d470d609576265a425": {
+      "url": "https://www.reddit.com/r/aipromptprogramming/comments/1vqkrvn/crooked_cooks_ii_by_bloody_fuckingtears",
+      "date": "2026-09-07"
+    },
+    "bc190ab9a78f50c2c4d8204914f640f076622d25a1d803ee8b01d50c5020987a": {
+      "url": "https://www.reddit.com/r/aipromptprogramming/comments/1vqhy8j/why_ai_seems_try_to_be_like_human_in_this_case",
+      "date": "2026-09-07"
+    },
+    "95dd22cdb826c643c1069350b8d762c95d4cd0684d1dab26007d5f70dd33fa21": {
+      "url": "https://www.reddit.com/r/aipromptprogramming/comments/1vp3nb7/ignorant_dreams_by_bloody_fuckingtears",
+      "date": "2026-09-07"
+    },
+    "b3307cf74b110bd439388d802a274f1d7ca8e93f5d5fcf66421abca964ead516": {
+      "url": "https://www.reddit.com/r/aipromptprogramming/comments/1vnbjdt/big_text_information_extractor_ai",
+      "date": "2026-09-07"
+    },
+    "3b85688621869c4f067fd07c45ecd639953b0792d87229e5e528c0c37de72bb6": {
+      "url": "https://www.reddit.com/r/aipromptprogramming/comments/1vme12q/superintelligence_bros",
+      "date": "2026-09-07"
+    },
+    "cc696c08d9fc53196979042a1f10dcefe2da1d1d13a1cb3e816f17fb5a248037": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1vst08r/client_asking_me_to_work_outside_of_upwork",
+      "date": "2026-09-07"
+    },
+    "39759043b0e44e477e4920e7a0955a1db7a4c689ac6f35285e152b99c14d6e78": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1vsf1r0/my_stats_so_far_in_2026",
+      "date": "2026-09-07"
+    },
+    "769232e177cebb5bcd4f58ce58ef5d22827b113a1847c6f0d3b4c3d748a17b78": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1vm8qow/is_our_permanent_biometric_data_and_face_really",
+      "date": "2026-09-07"
+    },
+    "2f4f6a02ef0bc247f5f8310211ab70b7f3bd307cc221067c8f7acb0dfc136cd9": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1w8yibb/bro_at_least_proofread_your_ai_mess_and_lets_not",
+      "date": "2026-09-07"
+    },
+    "11f3550aa2429d292079b9cf2e2804931798e90bb055fbf710f9503809d2cc3a": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1w4c5gf/customers_no_longer_write_reviews",
+      "date": "2026-09-07"
+    },
+    "acc980f3bff12a143d2fe319ec3343af395a880faf47f381d54043e3e838edd7": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1vxqrmo/are_you",
+      "date": "2026-09-07"
+    },
+    "b225f20afc1858815bb4d0533139fffbd6502bf35e09a6036f0bbe8c83bf17df": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1vwrz0s/reminder_do_not_mention_chat_tool_in_message",
+      "date": "2026-09-07"
+    },
+    "d173c06b52efa4e89a78102e62b4699a77f987959cfafbf10b4864ea735d7851": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1vvqq7n/2_months_on_upwork_and_0_interviews_what_the_hell",
+      "date": "2026-09-07"
+    },
+    "ffa2d0bfd986bc613cbcabb82154007c2dc016c1e58968a2f10ba278dab76164": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1vnctgk/poster_child_for_whats_wrong",
+      "date": "2026-09-07"
+    },
+    "7729005f630b0496a57c7599cbbbc02c4c6a697d43a5c38d05a9c44bbe314e60": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1vm61xf/upwork_cover_letter_review_what_am_i_doing_wrong",
+      "date": "2026-09-07"
+    },
+    "6428ac6e382a3df46e493c5a7ef2a12a759161b60cd9add9b8994f755aa1cd86": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1vldid0/is_every_client_just_hiring_through_invites_now",
+      "date": "2026-09-07"
+    },
+    "981f02ec2986744764bb0816d739ccb84154d07394d87a334a4ec81c8447253c": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1vjfdyw/boosted_messages_seem_absolutely_pointless",
+      "date": "2026-09-07"
+    },
+    "6993112a2c63c3421fb6382e5f2bb79284bd0a0d6787077a8e5588fe52e6ccf1": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1vzra8q/my_project_filter_rules",
+      "date": "2026-09-07"
+    },
+    "443e6ff5509a72958cfcc29fb6a4d9f5128cb04b37eec7789d2292d91bce5a71": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1vrpc2v/did_upwork_increase_payment_tax_from_10_to_15",
+      "date": "2026-09-07"
+    },
+    "7d50f164b5239b196246966fe6a90a529ef0fb6dfad00e1b313c1fbf3fa96672": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1vr3etn/client_here_looking_for_upwork_alternative",
+      "date": "2026-09-07"
+    },
+    "8c67076abb0468857f318f100b38135eaca5937fe3afc40792c2ac9816d6c2d5": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1vpds1h/august_was_good_so_far",
+      "date": "2026-09-07"
+    },
+    "e451f2564f0652606fb2de6989950a47ef0bc16b37db8906329a9aabe5943341": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1vks04g/im_surprised_by_this",
+      "date": "2026-09-07"
+    },
+    "dda61a443f1f795d13409aed4abd93db4f3dc435fff185e4972809e7b3565f65": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1w35o2f/unfair_3star_review",
+      "date": "2026-09-07"
+    },
+    "99cdbad0834122d0aef3c7bacd8b6f4e0291e4af1f472d415b706eb4fab070d0": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1w1a9vd/i_stopped_boosting_my_profile",
+      "date": "2026-09-07"
+    },
+    "e675b51bf43e1ea576638e77d4202ce9ab68395c96729011b799d90f25741cb1": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1vzc796/upwork_15_fee",
+      "date": "2026-09-07"
+    },
+    "616acf72b89d06fb03f0a13413649a39e7e5051ef9b42ed07c6f47d40aa66798": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1vo3zed/im_tired_of_paying_upworks_fees_are_there_any",
+      "date": "2026-09-07"
+    },
+    "3bf1e61f31f3804bbd05865e59f04b451247e3e155620991970383aa4f01848e": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1vmn9sy/ai_talking_to_ai",
+      "date": "2026-09-07"
+    },
+    "0deec1007020f3d0376fba0011aebd551570743677b1e0e0f10eae7cb416221a": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1vkx0uk/what_is_this",
+      "date": "2026-09-07"
+    },
+    "cf2487448e90e6078130b0be20966aafee282518a9dacdd73f9cbe42a9215a84": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1w6ygp4/your_proposals_arent_catching_eyes",
+      "date": "2026-09-07"
+    },
+    "1f2303ca45f660ad72f745ae6e80669ef6346faea3a91768e648741ce0137655": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1w5405o/insane_bid",
+      "date": "2026-09-07"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 3
+  "dailyPage": 4
 }
