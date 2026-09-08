@@ -1,0 +1,95 @@
+---
+title: "Automate Long Videos to Vertical Clips with AI and an Open-Source Tool"
+description: "Learn how an open-source tool uses AI to automatically extract, reframe, caption, and post vertical video clips from long videos for social media."
+category: "content-creation"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 180
+jobToBeDone: "Automate long video to vertical clips workflow"
+tools:
+  - name: "Claude API"
+    url: "https://www.anthropic.com/api"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "ChatGPT API"
+    url: "https://openai.com/api"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "n8n"
+    url: "https://n8n.io"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "TikTok"
+    url: "https://www.tiktok.com"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Instagram"
+    url: "https://www.instagram.com"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "YouTube"
+    url: "https://www.youtube.com"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://www.reddit.com/r/automation/comments/1w15gop/i_automated_90_of_my_long_video_to_vertical_clips/"
+  platform: "reddit"
+  author: "/u/mutonbini"
+  postedAt: 2026-08-28
+score: 5
+ingestedAt: 2026-09-08
+nigeriaNotes: "This workflow relies on paid AI APIs (Claude, ChatGPT) for driving the pipeline, which will incur costs. n8n offers a free self-hosted option, but requires technical setup. Data usage for video processing can be significant."
+tiktokUrl: ""
+published: false
+---
+
+## What this is, in plain English
+This entry describes an advanced, open-source pipeline built by a Reddit user to fully automate the process of turning long videos, like podcasts, into short vertical clips suitable for social media. The tool uses artificial intelligence (AI) to identify the most interesting moments from a video's transcript, reframe them to a 9:16 vertical aspect ratio (common for mobile viewing), and even stack multiple speakers or adjust layouts for screen shares.
+
+The pipeline also adds word-level captions, hook overlays, and can dub the clips into over 30 languages. Finally, it can post the finished clips directly to platforms like TikTok, Instagram Reels, and YouTube Shorts. The author states that an hour-long recording, which used to take an afternoon of manual work, now takes about 10 minutes of unattended processing once the system is set up.
+
+This workflow is considered advanced because the tool is "API first," meaning it's designed to be controlled by other programs or scripts rather than a simple user interface. It requires technical comfort with APIs (Application Programming Interfaces), webhooks, and potentially setting up workflow automation tools like n8n or using command-line tools like `cron` and `curl`.
+
+## What you can use it for
+*   **Automate social media content creation**: Quickly turn long videos (like podcasts or interviews) into many short, engaging clips for TikTok, Reels, and Shorts.
+*   **Save time on video editing**: Drastically reduce the manual effort of finding key moments, cropping, adding captions, and reframing videos.
+*   **Reach wider audiences**: Automatically add captions and dubbing in multiple languages to make your content accessible globally.
+*   **Maintain consistent posting schedules**: Set up automated workflows to regularly publish new clips without constant manual intervention.
+
+## Tools you need
+*   **The author's open-source video pipeline** (free, self-hosted): This is the core tool that automates video processing. The author did not share the link in the excerpt; you would need to find it in the original Reddit post's comments.
+*   **Claude API** (paid): An AI model used to "drive" the video pipeline, making decisions about clip selection and other tasks. This requires a paid API key.
+*   **ChatGPT API** (paid): Another AI model that can be used interchangeably with Claude to control the video pipeline. This also requires a paid API key.
+*   **n8n** (freemium): A workflow automation tool that can connect different services and run the video pipeline on a schedule. It offers a free self-hosted option.
+*   **TikTok** (free): A social media platform for sharing short-form videos.
+*   **Instagram** (free): A social media platform where Reels (short videos) can be posted.
+*   **YouTube** (free): A video sharing platform where Shorts (short vertical videos) can be posted.
+
+## How it actually works
+This workflow involves setting up and integrating several technical components. The author's open-source tool is designed to be controlled programmatically, not through a simple graphical interface.
+
+1.  **Set up the open-source pipeline**: The first step is to find the author's open-source tool (the link was not in the excerpt, but in the original Reddit comments) and follow its instructions to install and run it. This typically involves deploying it on your own server or a cloud service, which requires command-line knowledge.
+2.  **Obtain API keys**: If you plan to use an AI model like Claude or ChatGPT to "drive" the pipeline (e.g., to help select the best moments), you will need to sign up for their developer platforms and obtain API keys. These are paid services.
+3.  **Configure the pipeline**: The core of the pipeline is an API that accepts a `POST` request. You send it a video URL (the long video you want to process) and a `webhook_url` (where the finished clips will be sent). The author does not share the exact API endpoint or parameters; you would need to consult the tool's documentation for these details.
+4.  **Automate the process**: Once the pipeline is running, you can automate sending videos to it:
+    *   **Using n8n**: Set up a workflow in n8n. This would typically involve a trigger (e.g., a new video uploaded, or a daily schedule), followed by an HTTP Request node that sends a `POST` request to your pipeline's API. You would include the video URL and your `webhook_url` in this request. Another n8n node could then receive the finished clips from the webhook.
+    *   **Using cron and curl**: For a more technical approach, you can write a script that uses the `curl` command-line tool to send the `POST` request to the pipeline's API. This script can then be scheduled to run automatically at specific times using `cron` on a Linux or macOS system.
+5.  **Receive and review clips**: After the pipeline finishes processing (which the author states takes about 10 minutes for an hour-long video), it will send the finished clips and their durable links to the `webhook_url` you provided. You can then review the generated clips and make any final tweaks before posting them to social media.
+
+## Words you'll see, explained
+*   **API (Application Programming Interface)**: A set of rules and tools that allows different software programs to communicate and exchange information with each other.
+*   **Webhook**: A method for an application to provide real-time information to other applications. When a specific event occurs (like video processing finishing), the first application automatically sends data to a unique URL you've provided.
+*   **POST request**: A common method used by web browsers and applications to send data to a server, typically to create a new resource or submit information.
+*   **n8n**: A free and open-source workflow automation tool that helps you connect various applications and services to build automated processes, often without needing to write much code.
+*   **cron**: A time-based job scheduler found in Unix-like operating systems (like Linux and macOS). It's used to run commands or scripts automatically at specified intervals.
+*   **curl**: A command-line tool used for transferring data with URLs. It's commonly used to interact with web services and APIs from a terminal.
+*   **9:16 aspect ratio**: A vertical video format, where the height is greater than the width. This is the standard aspect ratio for short-form video platforms like TikTok, Instagram Reels, and YouTube Shorts.
+
+## Original source
+This workflow was shared by Reddit user /u/mutonbini, who developed the open-source tool described. The original post highlighted how the author automated their video editing process for social media clips.
+
+## Notes & variations
+*   **Do you even need this?**: For creators who only occasionally need a few short clips, manually editing in a free mobile video editor (such as CapCut or InShot) might be a simpler and less technical approach than setting up this advanced pipeline. This tool is most beneficial for content creators who regularly produce a large volume of long-form video and need to generate many short clips consistently.
+*   **Free-tier limits**: While the core video processing tool is open-source and free to run if self-hosted, using AI models like Claude or ChatGPT via their APIs will incur costs, as these services do not offer free tiers for API usage. n8n does provide a free self-hosted option, but it requires technical expertise to set up and maintain.
+*   **Common pitfall**: The most significant challenge for users will likely be the initial setup and deployment of the open-source video pipeline itself, as it requires technical skills to install, configure, and potentially troubleshoot. The author's excerpt does not provide specific setup instructions.
+*   **Tip for better results**: If you use Claude or ChatGPT to drive the pipeline, experiment with the prompts you provide to them. Clear and specific instructions can help the AI models more accurately identify and extract the most relevant and engaging moments from your video transcripts.

@@ -1,0 +1,101 @@
+---
+title: "Reduce AI Coding Costs with Portal by Spotify"
+description: "Learn how to cut AI coding agent token usage by routing I/O and boilerplate tasks to cheaper models using Portal by Spotify."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 30
+jobToBeDone: "Reduce AI coding agent token usage by delegating I/O and boilerplate tasks"
+tools:
+  - name: "Portal by Spotify"
+    url: "https://spotify.engineering/projects/portal"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Claude Code"
+    url: "https://www.anthropic.com/claude"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Gemini 2.5 Flash"
+    url: "https://ai.google.dev/models/gemini-2-5-flash"
+    pricing: "paid"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=49571465"
+  platform: "hackernews"
+  author: "cebert"
+  postedAt: 2026-09-04
+score: 5
+ingestedAt: 2026-09-08
+nigeriaNotes: "Portal by Spotify and Claude Code are paid services. Gemini 2.5 Flash also incurs costs. This workflow is likely not viable on free tiers due to the paid nature of all core tools. Data usage will depend on the size of code files processed."
+tiktokUrl: ""
+published: false
+---
+
+## What you'll get
+You will learn how to use Portal by Spotify to route simple AI tasks, like reading multiple files or generating boilerplate code, to a cheaper AI model. This saves money and allows more expensive AI models to focus on complex reasoning, significantly cutting your AI coding costs.
+
+This approach works by using a "router" AI that decides which AI model should handle a task, sending easy jobs to a less expensive model and complex jobs to a more powerful one.
+
+## Tools you need
+*   **Portal by Spotify** (paid): A platform to create and run AI "modes" (small, focused AI agents) without managing infrastructure.
+*   **Claude Code** (paid): An AI coding assistant that can be used for complex coding tasks.
+*   **Gemini 2.5 Flash** (paid): A fast and affordable AI model suitable for simpler tasks like reading files or generating predictable code.
+
+## Steps
+This workflow involves setting up two "modes" within Portal by Spotify, which act as specialized AI agents. These modes will be called by Claude Code to handle specific types of tasks.
+
+1.  **Understand the Goal**: The aim is to prevent Claude Code from wasting expensive "tokens" (units of text processed by AI) on tasks that don't require its full power. Instead, these tasks will be sent to Gemini 2.5 Flash via Portal.
+
+2.  **Set up the "bulk-reader" Mode**: This mode is designed to read multiple files and extract specific information, delegating this I/O task away from Claude Code.
+    *   The author doesn't share the exact steps to create a mode in Portal; you would typically use the Portal interface or CLI to define a new mode.
+    *   Here is a starting point for the configuration, based on the author's description:
+
+    ```yaml
+    name: bulk-reader
+    description: Bulk file reader for code analysis - delegates I/O from Claude Code
+    instructions: |-
+      You are a precise code analyst. Read the provided files and answer the question concisely. Output structured bullets only. No greetings, no prose, no preambles. Lead every bullet with the exact name, type, or line number. Use nested bullets for details. Skip anything the caller did not ask for.
+    visibility: public
+    model: gemini-2.5-flash
+    resourceLimits:
+      temperature: 0.2
+    tags:
+      - coding
+      - delegation
+    ```
+
+    *   You should see confirmation that the "bulk-reader" mode has been created and is available in your Portal instance.
+
+3.  **Set up the "code-writer" Mode**: This mode is for generating predictable code, like tests or configuration files, based on existing patterns.
+    *   Similar to the "bulk-reader", you will define this mode in Portal.
+    *   Here is a starting point for the configuration:
+
+    ```yaml
+    name: code-writer
+    description: Boilerplate code generator - delegates output-heavy work from Claude Code
+    instructions: |-
+      You generate code files based on a spec and reference files. Match the existing patterns, conventions, naming, and style exactly. Output only the code — no explanations, no markdown fences unless asked. If the spec is ambiguous, make reasonable choices that match the reference code's patterns.
+    visibility: public
+    model: gemini-2.5-flash
+    resourceLimits:
+      temperature: 0.2
+    tags:
+      - coding
+      - delegation
+    ```
+
+    *   Confirm that the "code-writer" mode is successfully created in your Portal instance.
+
+4.  **Integrate with Claude Code**: The author mentions using a Claude Code plugin called "shunt" to enable Claude Code to call these Portal modes. The exact setup for this plugin is not detailed in the excerpt.
+    *   You would typically install the "shunt" plugin within Claude Code, following its specific installation instructions.
+    *   Once installed, Claude Code can be configured to use the "shunt" plugin to route tasks to your "bulk-reader" and "code-writer" modes in Portal.
+
+    *   You should be able to trigger a task in Claude Code that is then handled by one of your Portal modes, and see the result returned to Claude Code.
+
+## Original source
+This workflow is based on a post by cebert on the Hacker News platform. The author shares their experience using Portal by Spotify to reduce the token usage of AI coding agents like Claude Code by offloading I/O and boilerplate tasks to a cheaper model, Gemini 2.5 Flash.
+
+## Notes & variations
+*   **Free-tier alternatives**: All the core tools mentioned (Portal by Spotify, Claude Code, Gemini 2.5 Flash) are paid services. This specific workflow is not suitable for free tiers. You might explore local AI models for simpler tasks if cost is a major concern, but integration would be more complex.
+*   **Common mistake**: Relying on Claude Code to "self-route" tasks to Portal without a dedicated plugin like "shunt" can be unreliable, as the AI might ignore instructions. Using a plugin enforces the routing.
+*   **Tip for better results**: Ensure the instructions for your Portal modes are very specific and clear. For the "code-writer" mode, providing good "reference files" that show the desired pattern is crucial for the AI to match the style and conventions accurately.
