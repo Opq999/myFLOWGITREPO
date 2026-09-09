@@ -1,0 +1,80 @@
+---
+title: "Validate Game Rules with AI-Generated JavaScript Script"
+description: "Learn how to use an AI like Codex to generate a JavaScript script for validating game rules before implementing them in SwiftUI."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 15
+jobToBeDone: "Validate game rules for a new feature using an AI-generated script"
+tools:
+  - name: "Codex"
+    url: "https://openai.com/index/codex/"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "JavaScript"
+    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "SwiftUI"
+    url: "https://developer.apple.com/swiftui/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/umitomo-lab/weekly-dev-log-2026-w18-33bd"
+  platform: "blog"
+  author: "umitomo-lab"
+  postedAt: 2026-09-08
+score: 7
+ingestedAt: 2026-09-09
+nigeriaNotes: "Codex is a paid tool. JavaScript can be run in a web browser or locally with Node.js, both of which are free. SwiftUI is free but requires a Mac."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "Generate a JavaScript script to test your game's complex rules before coding it, catching errors early."
+  - persona: "employee"
+    scenario: "Create a JavaScript script to validate complex business logic for a new software feature, preventing bugs."
+  - persona: "entrepreneur"
+    scenario: "Build a JavaScript script to test your app's game mechanics, ensuring a smooth user experience."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will use an AI tool to create a JavaScript script that tests your game rules. This script helps you find problems with your rules before you build the actual game feature, saving you time and effort. This approach is useful when you have complex rules that need thorough checking.
+
+## Tools you need
+*   **Codex** (paid): An AI model that can generate code, including JavaScript.
+*   **JavaScript** (free): A programming language used to create interactive web pages and scripts. You can run this in a web browser or using Node.js.
+*   **SwiftUI** (free): A framework for building user interfaces across Apple platforms. This is where the game feature will eventually be built, but you don't need it to run the validation script.
+
+## Steps
+1.  **Define your game rules**: Clearly write down all the rules for your game feature. The author detailed rules for a guitar chord practice mode, including root notes, chord qualities (Major/Minor), chord-tone patterns, and how to count correct answers.
+2.  **Ask the AI to create a validation script**: Use an AI tool like Codex to generate a JavaScript script that will test these rules. The author doesn't share their exact prompt; a starting point:
+
+    ```javascript
+    You are an expert JavaScript developer. I am building a game feature for a music app. The game involves finding chord tones on a guitar fretboard. Please write a JavaScript script to validate the following game rules. The script should check all possible combinations and report any issues, such as no valid answers, overlapping answers, or situations where the player gets stuck.
+
+    Game Rules:
+    - Root Notes: [List all possible root notes, e.g., C, C#, D, ...]
+    - Chord Qualities: [List all possible chord qualities, e.g., Major, Minor]
+    - Chord-Tone Patterns: [List all possible patterns, e.g., 1-3-5, 3-5-1, 5-1-3]
+    - Strings to Use: [Specify which guitar strings are involved]
+    - Answer Counting: [Explain how correct answers are determined]
+    - Fret Range: [Specify the range of frets to consider]
+
+    Ensure the script tests all 504 conditions and checks for:
+    1. No cases with zero valid answers.
+    2. No overlapping answer positions.
+    3. No situations where the player could get stuck before completing all valid answers.
+    ```
+
+    You should get a JavaScript code block that you can copy and run.
+3.  **Run the validation script**: Execute the generated JavaScript code. The author ran their script to check 504 different conditions. You should see output indicating whether the rules are valid under all tested conditions, or if there are any problems.
+4.  **Review the results**: Check the output from the script. The author confirmed that their rules had no issues. If your script finds problems, you will need to adjust your game rules and potentially regenerate the script.
+
+## Original source
+This workflow is based on a learning log by umitomo-lab posted on DEV Community. The author shares their weekly progress on development projects, including how they used an AI tool to validate game rules for a new music app feature.
+
+## Notes & variations
+*   **Free-tier alternative**: While Codex is a paid tool, you can explore free AI coding assistants like GitHub Copilot (which has a free trial) or free tiers of other AI models if available, though their capabilities might differ.
+*   **Common mistake**: Relying solely on the AI's output without understanding it. It's important to debug the script and ask the AI questions about its logic, as the author did, to ensure you truly grasp how it works.
+*   **Tip for better results**: Be very specific when describing your game rules to the AI. The more detail you provide, the more accurate and useful the generated validation script will be.

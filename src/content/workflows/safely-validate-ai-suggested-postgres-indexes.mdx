@@ -1,0 +1,99 @@
+---
+title: "Safely Validate AI-Suggested Postgres Indexes"
+description: "Learn how to safely test AI-suggested database indexes in Postgres by creating them in a transaction, checking if they're used, and rolling back if not."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 90
+jobToBeDone: "Safely validate AI-suggested Postgres indexes using a custom script"
+tools:
+  - name: "LLM (e.g., ChatGPT, Claude, Gemini)"
+    url: "https://chatgpt.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Postgres"
+    url: "https://www.postgresql.org"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Python"
+    url: "https://www.python.org"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/remdore/i-let-a-model-suggest-postgres-indexes-then-made-the-database-mark-its-work-2a4c"
+  platform: "blog"
+  author: "remdore"
+  postedAt: 2026-09-09
+score: 10
+ingestedAt: 2026-09-09
+nigeriaNotes: "This workflow requires setting up a local database and running custom scripts, which can be done on a laptop. The main cost is time and technical skill, not data usage or paid tools."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "Validate AI-suggested Postgres indexes for your final year project database to ensure queries run faster."
+  - persona: "employee"
+    scenario: "Safely test AI-generated Postgres index suggestions for your company's reporting database without risking downtime."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+An AI model can suggest ways to make your database queries faster by creating an "index" (a special lookup table). However, these suggestions aren't always useful. An index might not actually speed up your query, or the database might ignore it completely, making it a waste of resources.
+
+This workflow describes a method to safely test AI-suggested database indexes. It involves creating the index temporarily within a database "transaction" (a set of operations that can be undone), checking if it truly improves query speed and if the database actually uses it, and then automatically removing the index if it's not effective. This way, you can validate AI suggestions without permanently cluttering your database with useless indexes.
+
+This is an advanced workflow because it requires setting up a database, writing and running custom code (likely in Python), and understanding database concepts like transactions and query plans. There isn't a simple copy-paste recipe, as the exact instructions depend on your specific database setup and the custom script you'll need to build.
+
+## What you can use it for
+*   **Avoid useless database indexes**: Prevent adding indexes that don't improve query speed or are ignored by the database's query planner.
+*   **Save storage and write costs**: Unused indexes consume disk space and can slow down data writes, so this helps you avoid those unnecessary costs.
+*   **Validate AI suggestions**: Objectively check if an AI's advice for database optimization is actually effective and worth implementing.
+*   **Learn database internals**: Gain a deeper understanding of how Postgres's query planner works and how indexes are truly used in practice.
+
+## Tools you need
+*   **LLM (e.g., ChatGPT, Claude, Gemini)** (freemium): To get initial suggestions for database indexes based on your queries.
+*   **Postgres** (free): The database system where you will test the indexes.
+*   **Python** (free): A programming language used to write the script that automates the index testing process.
+
+## How it actually works
+The core idea is to use a database feature called a "transaction" to create and test an index without making permanent changes. Here's the general process the author followed to build their validation tool:
+
+1.  **Get an index suggestion from an AI**: You provide a database query and your database schema to an LLM and ask it to suggest a `CREATE INDEX` statement.
+2.  **Prepare your testing environment**: You'll need a running Postgres database (even a local one on your laptop) with a representative amount of data. You'll also need a programming language like Python with a database connector (e.g., `psycopg2`) to run your custom script.
+3.  **Start a database transaction**: Your script connects to Postgres and begins a transaction. This creates a temporary workspace where changes can be made and then undone.
+4.  **Create the suggested index**: Inside the transaction, your script executes the `CREATE INDEX` statement provided by the AI. The author notes that the `CONCURRENTLY` keyword, which allows index creation without locking the table, must be removed because it cannot run inside a transaction. You would add it back when applying a verified index for real.
+5.  **Update database statistics**: Immediately after creating the index, your script runs the `ANALYZE` command. This tells Postgres to collect fresh statistics about the table, ensuring the query planner has the most up-to-date information when deciding whether to use the new index.
+6.  **Measure query performance and index usage**: Your script then runs the original query using `EXPLAIN (ANALYZE, BUFFERS)`. This command not only executes the query and measures its actual runtime but also shows the "query plan" (how Postgres decided to run the query). The script checks two things:
+    *   Did the query run meaningfully faster compared to before the index was created?
+    *   Did the query planner actually choose to use the newly created index (by checking the `EXPLAIN` output for the index's name)? The author emphasizes that an index is useless if the planner ignores it, even if the query *appears* faster due to random noise.
+7.  **Rollback the transaction**: Crucially, your script then rolls back the transaction. This undoes all changes made within that transaction, including the creation of the index. It's as if the index never existed, leaving your database clean.
+8.  **Record and compare results**: Your script records whether the index was used and if it provided a real performance gain. The author's tool takes the fastest of five runs for comparison, as this represents the "warm-cache floor" and is more stable than an average.
+
+The author's core mechanism for safe testing looks like this in Python (using a database cursor `cur`):
+
+```python
+# Python (using a database connector like psycopg2)
+cur.execute('BEGIN')
+cur.execute(ddl) # ddl is the CREATE INDEX statement from the AI
+cur.execute('ANALYZE')
+after = measure(cur, sql) # measure runs the query with EXPLAIN (ANALYZE, BUFFERS)
+cur.execute('ROLLBACK') # the index never existed
+```
+
+## Words you'll see, explained
+*   **Postgres**: A popular, powerful, and free open-source database system.
+*   **Index**: A special lookup table that helps a database find data faster, much like an index in a book helps you find information quickly.
+*   **Query**: A request for data from a database, written in a language like SQL.
+*   **Query Planner**: The part of the database that decides the most efficient way to run a query, choosing which indexes (if any) to use.
+*   **Transaction**: A sequence of database operations treated as a single, indivisible unit. Either all operations succeed and are saved, or if any fail, all are undone (rolled back).
+*   **Rollback**: To undo all changes made within a transaction, returning the database to its state before the transaction started.
+*   **`EXPLAIN (ANALYZE, BUFFERS)`**: A Postgres command that shows how a query will be executed, including actual runtime statistics (how long it took) and how much memory it used.
+*   **DDL (Data Definition Language)**: SQL commands used to define or modify database structures, such as `CREATE INDEX`.
+*   **`ANALYZE`**: A Postgres command that collects statistics about the contents of tables, which the query planner uses to make better decisions about how to run queries.
+
+## Original source
+This concept was developed by remdore and shared on the DEV Community blog. The author built a small tool to evaluate AI-suggested Postgres indexes by making the database itself verify their usefulness.
+
+## Notes & variations
+*   **Do you even need this?**: For very simple, one-off queries, you might manually run `EXPLAIN` before and after creating an index (and then drop it). However, for systematically validating multiple AI suggestions or for critical production databases, an automated, transactional approach like this is much safer and more reliable.
+*   **Free-tier limits**: Postgres and Python are free to use. Most LLM chat interfaces (like ChatGPT, Claude, Gemini) offer a free tier that should be sufficient for getting index suggestions.
+*   **Common pitfall**: A major mistake is only timing the query to see if it got faster. As the author shows, a query might appear faster due to random chance, but if the database's query planner didn't actually use your new index, the index is useless and just adds overhead. Always check the `EXPLAIN` output to confirm the index was used.

@@ -18132,8 +18132,280 @@
     "edab92f9713784997a543fab120b4116ef277127cd179d2bb40a3691bacff268": {
       "url": "https://www.reddit.com/r/automation/comments/1vng9tv/best_ai_transcription_software_for_my_use_case",
       "date": "2026-09-08"
+    },
+    "1cc74fc3364a82d75123854e14d6d94700e5fab9924710a163f3239f246e76de": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1w9ru7i/no_way_it_actually_worked_lmao",
+      "date": "2026-09-09"
+    },
+    "43a7a43f2fac45b0d441e9e3f851c2e71c53f0600583c5bb3b4845eb7ecec2fa": {
+      "url": "https://dev.to/james_anderson_h/agents-that-act-need-brakes-not-just-brains-54h2",
+      "date": "2026-09-09"
+    },
+    "c94439d5b1695970315eb9ed42053084ffe1e013317555413e3356622d67d00e": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1w7u4qq/im_not_too_sure_about_that",
+      "date": "2026-09-09"
+    },
+    "3e99d4ec97f12157bcdefeff65df5798c50c51d2f27217f26e1071e94de84af9": {
+      "url": "https://dev.to/kenielzep97/i-followed-the-appeal-path-there-was-no-appeal-25e2",
+      "date": "2026-09-09"
+    },
+    "650e020772435b79efd8fd198e449c498439c5beded2ea10d13c2068e236fac9": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1w900ka/just_discovered_i_can_send_stickers_to_chatgpt",
+      "date": "2026-09-09"
+    },
+    "c353127e7901592d823c8f589f1aa9699bd8e4aa7bd30393f9db8debca7159eb": {
+      "url": "https://dev.to/nazar-boyko/php-for-ai-it-makes-more-sense-than-you-think-23li",
+      "date": "2026-09-09"
+    },
+    "8b86a8ceeb61b8b0a19621eb72c26d74f483a60745b5ed54de67627a977efd68": {
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1vxqzc4/best_realtime_transcription_api_im_more_worried",
+      "date": "2026-09-09"
+    },
+    "244265309b42c06100922603542b702cc6c89cc39f98a746e3e05f3c1c9023ff": {
+      "url": "https://dev.to/nazar-boyko/stop-copy-pasting-ai-code-you-dont-understand-4ad5",
+      "date": "2026-09-09"
+    },
+    "7e41a9d5984e2e282a168b4b25d02df493af36895b261ef4d91fddacb658b074": {
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1w5ov0r/i_gave_fable_51_ultracode_one_big_prompt_to_build",
+      "date": "2026-09-09"
+    },
+    "ca08fa1ca4e05b571b0f36709cf4858eadcc2e4e4489b8ce35d038d68d8d48d6": {
+      "url": "https://dev.to/kenielzep97/compare-against-the-schema-they-shipped-not-the-one-you-expected-3mb8",
+      "date": "2026-09-09"
+    },
+    "0b72d9a24c81e153b39b0e181bed769d8c7b71e8c7134c97e12350c862dbf119": {
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1vm5zw4/how_are_you_regressiontesting_decisions_not_just",
+      "date": "2026-09-09"
+    },
+    "347346b87ae3b4e8479448388440208b5e073431da5e8eb2b27e257ba182e315": {
+      "url": "https://dev.to/aws/how-a-strands-agent-took-claude-opus-5-from-30-to-9995-on-arc-agi-3-4kel",
+      "date": "2026-09-09"
+    },
+    "4d73d6e65d27c603f359b84949a6a92a217c786fcfe0772b21cd55c53ac3a7f2": {
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1w17g3r/tencents_hy4_preview_released_today",
+      "date": "2026-09-09"
+    },
+    "92678dfc90e7ec3a121cc2f835a2180e01a2c066b978e1795b137c324068fcd9": {
+      "url": "https://dev.to/debashish_ghosal/i-tested-4-models-and-none-could-improve-their-own-prompt-the-search-strategy-is-broken-not-the-3ajf",
+      "date": "2026-09-09"
+    },
+    "337f83f2f19ed25814794f452d1cb8c1f07181615718b13f61208c79b0b46ed6": {
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1w5x0e5/how_are_you_actually_testing_ai_agents_before",
+      "date": "2026-09-09"
+    },
+    "48d77e68ee669e63b6b24b634c742413fa4cbe6b4a8a14f419a0aef55e67f98c": {
+      "url": "https://dev.to/earlgreyhot1701d/future-aws-agent-engineer-i-didnt-write-the-code-does-it-count-1epj",
+      "date": "2026-09-09"
+    },
+    "14f5abb65cd51b3734d38a9184bbcec3da44630db0ca3cbaf4c9ffd71b8bc1d7": {
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1w31kog/qwen38_27b_q6_kv_q4_200k_skillstate_on_5090",
+      "date": "2026-09-09"
+    },
+    "5ba8089d803988c0ad1bd9fc109fd8fbeac4bbe653ca9df38774e99a50381a9e": {
+      "url": "https://dev.to/khalisollis/emotional-rollbacks-why-we-revert-to-old-versions-of-ourselves-around-certain-people-3pbm",
+      "date": "2026-09-09"
+    },
+    "02d4f27e9c640d6c558b792995052082a5d788e5d170375f8e23c8fa2d5d0c7a": {
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1w1o5by/a_typed_dag_language_so_llm_agents_can_compose",
+      "date": "2026-09-09"
+    },
+    "313683750eadc151abdce9d9481aa6c3ccb5a8daee0c8180c94adebb63e30863": {
+      "url": "https://dev.to/hosseinhezami/when-should-you-use-n8n-instead-of-writing-the-code-yourself-4j1f",
+      "date": "2026-09-09"
+    },
+    "dfcbe0d5443e3db0b437f63a132c8df07f1ee485e305b76b352edf9e46ff6ab7": {
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1w0l6ht/what_ai_coding_workflow_did_you_eventually_settle",
+      "date": "2026-09-09"
+    },
+    "9eb9b1958b9e32e83a92ef823ab05ed72cc2b79b66b1a2d8a28af7712dc40792": {
+      "url": "https://dev.to/aws-builders/i-built-an-aws-devops-ai-agent-using-kiro-crew-mcp-fk0",
+      "date": "2026-09-09"
+    },
+    "a1161dde7f570f9694eca4f813bb9d1569f03d6fa9a5a7e03f378acd574481dd": {
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1w64iys/be_careful_isnt_an_instruction_a_model_can",
+      "date": "2026-09-09"
+    },
+    "58483175e64c9939e97c97ad226451437fbed159e7a58dc06dad84bafd9d88f3": {
+      "url": "https://dev.to/devstackhub/i-compared-the-5-best-open-source-llm-gateways-for-enterprise-ai-2mln",
+      "date": "2026-09-09"
+    },
+    "491ad181c607525d58d8b2aad69abd6cd024b92fabbf8d22d4c12347bd1ed2b0": {
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1vn530v/confused_about_browserbase_product_lines",
+      "date": "2026-09-09"
+    },
+    "80fc1d9aa2e955f05da8265908c8e60ab7014549a8bd8726777fd654412d3e85": {
+      "url": "https://dev.to/ewwhardik/856168-differential-checks-later-what-it-actually-takes-to-delete-your-dependencies-4763",
+      "date": "2026-09-09"
+    },
+    "ee1c9e9a12a9ec8f7de331fc0e8da1a59d20d0ebe870c97632963efc0c6f8cd4": {
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1vz7cho/how_to_be_a_responsible_junior_dev_in_this_ai_age",
+      "date": "2026-09-09"
+    },
+    "a165c0bac1a47803a0cdfa54919a6bc8e65873097b8e6fe5131385d25f738e08": {
+      "url": "https://dev.to/sizzlebop/i-built-kintara-because-apparently-having-too-many-hobbies-eventually-leads-to-building-your-own-j2f",
+      "date": "2026-09-09"
+    },
+    "4685b7700fd6e5f7f01cdcf56493b2d01ac5c7902cd36e8fa2bcb622db4e1803": {
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1vnccvm/deepseek_v4_flash_0731_vs_deepseek_v4_pro_0813_i",
+      "date": "2026-09-09"
+    },
+    "d2dc7ac9a1efb3ee5c9e87b7477c800d6275c924a0b83c4ded2726ec737a2d74": {
+      "url": "https://dev.to/remdore/i-let-a-model-suggest-postgres-indexes-then-made-the-database-mark-its-work-2a4c",
+      "date": "2026-09-09"
+    },
+    "f6a5756143137fce4953148c6916853a749929b07691f118c31b1efa9be8ccc0": {
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1wamquq/how_are_you_handling_kv_cache_at_scale",
+      "date": "2026-09-09"
+    },
+    "a4591e542e10e6cebfb14861d2b1f6560b087653bd13d3b48b4206845f83ab2f": {
+      "url": "https://dev.to/effessdev/beyond-arduino-getting-started-with-esp-idf-in-vs-code-for-esp32-3ed4",
+      "date": "2026-09-09"
+    },
+    "5793b27bb57d78589e0d95d99ad3113d70eaf9d184fc5c20b66157bf18843bff": {
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1vvg8n5/are_llm_becoming_less_coherent_and_logical",
+      "date": "2026-09-09"
+    },
+    "bc44abcff34d014c4bab4a8b32aa8d71d20d13097f8a290e4007939f9129ebf3": {
+      "url": "https://dev.to/koda2026/i-tried-selling-a-website-to-a-local-business-at-12-heres-what-happened-56h2",
+      "date": "2026-09-09"
+    },
+    "87876cee0a5c92535ccf25a9469406fd1c90aeff8119d87d1c92ecae33c42273": {
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1vmcd3s/meet_unsloth_desktop_new_opensource_desktop_app",
+      "date": "2026-09-09"
+    },
+    "6b78f268add14816638c950f12ad0f1f2879801c47beaf93ee2b9de3deddacfc": {
+      "url": "https://dev.to/izgorodin/i-opened-all-thirteen-memory-mcp-servers-every-public-signal-i-trusted-was-wrong-1i1g",
+      "date": "2026-09-09"
+    },
+    "8af27f3109daafe74f158e956b898fa51ea6063b104eb81c7c5b1c0435f5a610": {
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1w4hd8u/this_chart_was_just_on_cnbc_what_happened_in_feb",
+      "date": "2026-09-09"
+    },
+    "e1aabf6c2f1329f1ab15c3cd2603f74966eda5a28e28417f0f58f1d59d8fe366": {
+      "url": "https://dev.to/bengreenberg/vector-search-is-still-the-memory-layer-agents-actually-need-50dn",
+      "date": "2026-09-09"
+    },
+    "c222b2fcdae109601cc6cd0bd7f6c3c178b832ae5133b97762ee72c2cfcd137a": {
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1vlsofn/concepts_techniques_you_need_to_know_about_if",
+      "date": "2026-09-09"
+    },
+    "17f67fa44a5d1163fd0a146094710f7e50ee5273db040cbe84bdf1b12da17171": {
+      "url": "https://dev.to/mindinu/the-usb-c-of-ai-make-your-own-mcp-568i",
+      "date": "2026-09-09"
+    },
+    "e8eec2fe30b961f29f94d673a175bec33448c371446e6e7d6cafd9aa581f1aa9": {
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1w7td2g/built_an_opensource_hallucination_detector_that",
+      "date": "2026-09-09"
+    },
+    "b6b97c659ff1ffe02e7e348d06bbb2aa67feb278bb300ba2fd3bf949381e0903": {
+      "url": "https://dev.to/debashish_ghosal/i-tried-to-poison-my-agents-rule-store-it-produced-20-triggers-zero-got-in-i44",
+      "date": "2026-09-09"
+    },
+    "9f49b444ab6d9813e3a7496bb6d60c101cdef59fbc5a05b749f5759c8ce30361": {
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1vzqs7c/docker_isnt_a_real_sandbox_for_agent_code",
+      "date": "2026-09-09"
+    },
+    "c41b96a41e4b25518fa5c93141e1d30d619cf90318eec7f02801c878889946a7": {
+      "url": "https://dev.to/arshtechpro/freellmapi-one-openai-compatible-endpoint-for-34-free-llm-providers-3630",
+      "date": "2026-09-09"
+    },
+    "f2c39e1b7802b9fe920e9ee93755e677a5eb817f2967e235e488c947ec6169c6": {
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1vwixw5/whats_up_with_new_trend_with_graphs",
+      "date": "2026-09-09"
+    },
+    "eab7e63de1e8e6cff09bca187871a61b0b60728c49807754239573376a7b1206": {
+      "url": "https://dev.to/remdore/your-zero-downtime-deploy-is-probably-fine-check-your-p99-before-you-believe-it-46g2",
+      "date": "2026-09-09"
+    },
+    "fc5e08d3de429fa2c32f154f6940b488d096caec63b81bc16861a62697f01465": {
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1vsj1mr/one_mcp_tool_schema_was_54k_tokens_in_context_we",
+      "date": "2026-09-09"
+    },
+    "0f7f1b590d2c590da56c7e11e99b235a28c831764d11b43731e86f640c57353c": {
+      "url": "https://dev.to/chizurumchidimma/you-dont-need-to-be-a-developer-to-contribute-to-open-source-1kgb",
+      "date": "2026-09-09"
+    },
+    "db07994d62f6be90fd144909549a326551d6b17fb2af31e47880f592a0a30802": {
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1voapaw/qwen38_27b_vs_qwen36_27b_vs_gemma_4_31b_comparing",
+      "date": "2026-09-09"
+    },
+    "d43db00d840f6e288f8e2e59f24ff2101dcb355d02511442b4fa3326a0c8c437": {
+      "url": "https://dev.to/canro91/with-ai-the-real-edge-is-knowing-what-to-build-204f",
+      "date": "2026-09-09"
+    },
+    "a1ddd7ff0cc23f39fd6a5f3af0ec8f321e177125d1cfdb7f8f4b92a64affa97d": {
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1w64e8r/agents_why_are_people_so_invested",
+      "date": "2026-09-09"
+    },
+    "6e4c65ad466cb8521092eef0714e82ceb4138bfa47873fcb62578352af8281bd": {
+      "url": "https://dev.to/copyleftdev/battlebots-but-the-robot-is-your-agent-harness-3jj5",
+      "date": "2026-09-09"
+    },
+    "e9a2f6f6715fcda7839e5e8484204805e9435a2f01422012c082e3e27a65a1c8": {
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1w5qqt6/introducing_human_tool_a_claude_code_plugin_that",
+      "date": "2026-09-09"
+    },
+    "091d0133cd48879c4f617aad927c538c6212b4d9a9045c533c4b6dbc561602b2": {
+      "url": "https://dev.to/umitomo-lab/weekly-dev-log-2026-w18-33bd",
+      "date": "2026-09-09"
+    },
+    "3f92728beddfd005f6d285f948f31bafddac0a44a4a47848314aec14cbc64af0": {
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1w4nee4/ontologydriven_multirole_llm_loops_in_production",
+      "date": "2026-09-09"
+    },
+    "43225ea3875909edb6703841af70da2497778b00836a2552f0c3f983fbadb35b": {
+      "url": "https://dev.to/velocityai/the-great-forgetting-what-knowledge-will-be-lost-because-we-outsourced-memory-to-ai-378e",
+      "date": "2026-09-09"
+    },
+    "fdb7c638e64ecc00fada56ce8a349a5bfbd8b5937e1095a1bba6773cdecc649d": {
+      "url": "https://www.reddit.com/r/resumes/comments/1w44mi8/7_yoe_recent_graduate_software_developer",
+      "date": "2026-09-09"
+    },
+    "55e9baf57d8436e5ab176120aa2d55b2526f6b814463e49235fcfcfeb57f7a93": {
+      "url": "https://dev.to/yash_sonawane25/devops-is-not-about-tools-its-about-thinking-in-systems-og",
+      "date": "2026-09-09"
+    },
+    "924a3c6c6ce50cb5e636f69d0bf24b49c2c7c77c13e67757665b2372a567fcd5": {
+      "url": "https://www.reddit.com/r/resumes/comments/1w9toau/how_to_make_resume_when_i_dont_have_ged_or_been",
+      "date": "2026-09-09"
+    },
+    "9c638adf095186a82710a4ea3605b2e1da07bc1a0cc491c6d6ff5317e7acdaad": {
+      "url": "https://dev.to/yash_sonawane25/why-your-devops-projects-fail-7-mistakes-beginners-make-55i3",
+      "date": "2026-09-09"
+    },
+    "e9a4d584e2b868595aeedb63c4f407a0fdae2b77df025734e608dd6727e581b7": {
+      "url": "https://www.reddit.com/r/resumes/comments/1w1tnvu/resume_and_job_search",
+      "date": "2026-09-09"
+    },
+    "a98a8946e52668d7432396a54653ce9f7beb5059c59062448a70726887c76179": {
+      "url": "https://dev.to/mahirhir/my-safety-check-was-an-assert-five-lines-made-the-module-refuse-to-load-without-it-36n3",
+      "date": "2026-09-09"
+    },
+    "f2e4f2d76c012ca32bc933cc27f71f8f5453ebc5d119e93adb6c042a282b7ef4": {
+      "url": "https://www.reddit.com/r/resumes/comments/1vu95ea/25_yoe_recent_grad_entry_level_seattle",
+      "date": "2026-09-09"
+    },
+    "5ba88391f3499299f3bfe991b0ec9f8a163cea4128cb33bb148651d2de8ff6c4": {
+      "url": "https://dev.to/nathanspeich/finding-volunteers-was-easy-managing-signups-wasnt-348e",
+      "date": "2026-09-09"
+    },
+    "656c83f0b7aad0eb6a53bafb5940c72ce852534f2923ec96d35df6b1aaa18d3a": {
+      "url": "https://www.reddit.com/r/resumes/comments/1vr9a6t/applying_for_jobs_and_updating_resumes",
+      "date": "2026-09-09"
+    },
+    "f804c48c8a9142ce02b82d3e89a578a65749e949ca2fc2ac3e17d699c910980a": {
+      "url": "https://dev.to/ijlalxhaider/building-3-ai-agents-on-a-0-budget-what-i-learned-about-tool-use-rag-and-code-execution-2ejl",
+      "date": "2026-09-09"
+    },
+    "14e9a46aa799cf5b133444146f26c7753f8e9b61288ca1198d4a0ab056c55d04": {
+      "url": "https://www.reddit.com/r/resumes/comments/1vq95ng/disabled_for_6_years_but_now_deemed_able_to_work",
+      "date": "2026-09-09"
+    },
+    "82fdcfd1035f8ee546adf4786ce47d7a8c62b481842df104b0057fc408857ff3": {
+      "url": "https://dev.to/dehemi_fabio/software-factories-why-every-engineering-blog-is-suddenly-talking-about-them-17p0",
+      "date": "2026-09-09"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 5
+  "dailyPage": 0
 }

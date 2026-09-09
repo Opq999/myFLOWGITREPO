@@ -1,0 +1,104 @@
+---
+title: "Build AI Agents for Web Search, RAG, and Code Execution with Gemini"
+description: "Learn how AI agents use tools for web search, retrieve information from your data, and execute code for data analysis, all using free-tier tools."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 90
+jobToBeDone: "Build AI agents for web search, RAG, and code execution using free-tier tools"
+tools:
+  - name: "Google Gemini API"
+    url: "https://ai.google.dev/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Python"
+    url: "https://www.python.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Code Editor (e.g., VS Code)"
+    url: "https://code.visualstudio.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "DuckDuckGo"
+    url: "https://duckduckgo.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "ddgs Python package"
+    url: "https://pypi.org/project/ddgs/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "ChromaDB"
+    url: "https://www.trychroma.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "pandas"
+    url: "https://pandas.pydata.org/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/ijlalxhaider/building-3-ai-agents-on-a-0-budget-what-i-learned-about-tool-use-rag-and-code-execution-2ejl"
+  platform: "blog"
+  author: "ijlalxhaider"
+  postedAt: 2026-09-07
+score: 8
+ingestedAt: 2026-09-09
+nigeriaNotes: "This workflow relies on Python and several open-source libraries, which are free to use. Google Gemini API offers a generous free tier, but all models are rate-limited. Data usage will be minimal for running the agents themselves, but downloading Python and libraries will require data."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "Create a Python agent to analyze your experimental data for your final year project, automating calculations and generating insights for your report."
+  - persona: "employee"
+    scenario: "Develop an internal AI agent to answer questions from your company's policy documents or project archives, helping new staff onboard faster and find information efficiently."
+  - persona: "entrepreneur"
+    scenario: "As a tech founder, create a custom AI agent that performs automated web searches to track competitor activities and gather market intelligence for your startup's strategy."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+This entry explains the core ideas behind building AI agents that can interact with the world, rather than just answering questions from their training. It covers three main types: agents that search the web, agents that answer questions from your own documents, and agents that run code for data analysis. The author built these agents from scratch using free-tier tools, demonstrating how modern AI systems work without relying on expensive services.
+
+This approach requires coding and understanding technical concepts, making it an advanced topic rather than a simple copy-paste recipe. The goal is to understand the principles behind these agents, which are similar to the advanced features found in tools like ChatGPT's Code Interpreter, but built from the ground up.
+
+## What you can use it for
+*   **Build a smart research assistant**: Create an AI that can decide when to search the internet for current or specific information.
+*   **Create a Q&A system for your own documents**: Develop an agent that answers questions accurately using only your provided notes, articles, or files, reducing made-up answers (hallucinations).
+*   **Automate data analysis**: Design an agent that can write and execute real code (like Python's pandas library) to analyze data from a spreadsheet and give precise results.
+*   **Understand how AI tools work**: Gain insight into the underlying mechanisms of advanced AI features, similar to those found in tools like ChatGPT's Code Interpreter.
+
+## Tools you need
+*   **Google Gemini API** (freemium): The AI model (LLM) that powers the agents' intelligence.
+*   **Python** (free): The programming language used to build and run the agents.
+*   **Code Editor (e.g., VS Code)** (free): A program to write and manage your Python code.
+*   **DuckDuckGo** (free): A search engine used by the web research agent.
+*   **ddgs Python package** (free): A Python library that allows your code to interact with DuckDuckGo search.
+*   **ChromaDB** (free): A local database used to store and retrieve information from your documents for the RAG agent.
+*   **pandas** (free): A Python library essential for data analysis, used by the code execution agent.
+
+## How it actually works
+To explore these concepts, you would typically start by setting up a Python development environment on your computer. This involves installing Python itself and then using its package manager (pip) to install the necessary libraries like `ddgs`, `chromadb`, and `pandas`.
+
+The author's project, which is not included in this excerpt, would contain the specific Python code for each agent. You would need to study such a codebase to see the exact implementation details.
+
+**For the Research Assistant (Web Search)**: The core idea is to program the AI (using Google Gemini 2.5 Flash) to decide when it needs external information. If it judges its internal knowledge is insufficient, it calls a 'tool' (in this case, the `ddgs` Python package to perform a DuckDuckGo search). The search results are then given back to the AI, which uses them to formulate an answer.
+
+**For the RAG Q&A (Retrieval-Augmented Generation)**: First, your documents (like text files) are broken into smaller pieces (chunks). Each chunk is converted into a numerical representation called an 'embedding' using Gemini's embedding model. These embeddings are stored in a local database (ChromaDB). When you ask a question, your question is also embedded, and the database finds the most similar document chunks. Only these relevant chunks are then sent to Gemini as context, and the AI is instructed to answer *only* from this context, citing the source.
+
+**For the Data Analysis Agent (Code Execution)**: Instead of the AI trying to calculate answers itself, it's designed to write Python code (specifically using the pandas library) to analyze a given CSV file. This code is then executed by your computer, and the actual computed result is returned. This ensures accuracy for calculations, which LLMs are not inherently good at.
+
+## Words you'll see, explained
+*   **AI Agent**: A program that uses an AI model (like an LLM) to make decisions and take actions, often using tools.
+*   **LLM (Large Language Model)**: An AI that understands and generates human-like text.
+*   **Tool-use**: When an LLM decides to use an external program or service (a "tool") to complete a task, like searching the web.
+*   **RAG (Retrieval-Augmented Generation)**: A technique where an LLM looks up information from a specific set of documents before generating an answer, reducing made-up facts.
+*   **Code Execution**: When an LLM writes computer code and then runs it to get a precise answer, especially for calculations.
+*   **Embedding**: Converting text into a list of numbers (a vector) that captures its meaning, allowing computers to compare texts for similarity.
+*   **Vector Database**: A special database that stores and quickly searches these numerical representations (vectors) of data.
+*   **pandas**: A popular Python library used for working with and analyzing data, especially in tables.
+
+## Original source
+This concept entry is inspired by a blog post titled 'Building 3 AI Agents on a $0 Budget: What I Learned About Tool-Use, RAG, and Code Execution' by ijlalxhaider, originally published on the blog platform.
+
+## Notes & variations
+*   **Do you even need this?** For many simple tasks, using a direct chat interface like Google Gemini, ChatGPT, or Claude might be sufficient and much easier. This approach is for those who want to build custom, automated AI systems, understand the underlying technology, or integrate AI capabilities into their own applications.
+*   **Free-tier limits**: While Google Gemini API offers a free tier, it comes with rate limits (how many requests you can make in a certain time). For heavy use, you might hit these limits. The other tools mentioned (Python, pandas, ChromaDB, ddgs) are entirely free and open-source.
+*   **Common pitfall**: A key challenge, as noted by the author, is teaching the AI *when not to use a tool*. An agent that always searches the web, for example, can waste resources and sometimes provide worse answers than if it had relied on its own knowledge when appropriate. Balancing tool-use with internal knowledge is crucial for efficient and accurate agents.
