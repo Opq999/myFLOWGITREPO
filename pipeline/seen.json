@@ -18476,8 +18476,32 @@
     "5739a0fdef2cfdc09833030a087bf25570d4aaf7183fccda9fdef50e0489d9ac": {
       "url": "https://newsletter.pragmaticengineer.com/p/what-is-happening-with-code-reviews",
       "date": "2026-09-10"
+    },
+    "2608dc383dd79ca4b3a0b10d22eed41d2a1461e3980d3f768ceed2cc30bd52c9": {
+      "url": "https://simonwillison.net/2026/Sep/11/datasette-security",
+      "date": "2026-09-11"
+    },
+    "4cd485d6f44cee902b467c5024fe2d9c1f4af2c97422901c21b983083fd3e5f0": {
+      "url": "https://simonwillison.net/2026/Sep/10/trynix",
+      "date": "2026-09-11"
+    },
+    "cbffbbffa6fab47ebf982cd63e50a1b6b35f3866446f8f259c3d596dd2fd4781": {
+      "url": "https://simonwillison.net/2026/Sep/10/shopify-react-native",
+      "date": "2026-09-11"
+    },
+    "76f60d64aa6d789064c0f7f41dd4fa6685e7cbf02706d0feaad6fbf287f1c2ed": {
+      "url": "https://www.interconnects.ai/p/open-source-ai-reading-list",
+      "date": "2026-09-11"
+    },
+    "131a43e02364cc60cd4a390599cbbf7baff5b927ab60cdafa142d4a86b46d974": {
+      "url": "https://www.interconnects.ai/p/one-resignation-turned-the-embers",
+      "date": "2026-09-11"
+    },
+    "d70ecdec4e940daa69393543dbadaac243be80e1acb0bddcaf6be414ecfc79ac": {
+      "url": "https://newsletter.pragmaticengineer.com/p/the-pulse-191-a-new-trend-of-cpu",
+      "date": "2026-09-11"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 1
+  "dailyPage": 2
 }
