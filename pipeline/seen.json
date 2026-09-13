@@ -18796,8 +18796,24 @@
     "cfb9afdded855a533742f98446874f825d9fe40da2585db416aca96386091d7e": {
       "url": "https://www.reddit.com/r/jobsearchhacks/comments/1w2eg4t/disclosing_disability",
       "date": "2026-09-12"
+    },
+    "e0bb328294c6f8f6e2fb9f657c6c75892867c6e11ff6d9087f02ea32021e9543": {
+      "url": "https://simonwillison.net/2026/Sep/12/astra-running-routes",
+      "date": "2026-09-13"
+    },
+    "ea1d2d3a2bc11c2b5a35462d9079349a3545d8024bc4a18dfb4de2c52cc6f0a4": {
+      "url": "https://simonwillison.net/2026/Sep/12/sighting-399708714",
+      "date": "2026-09-13"
+    },
+    "f4d9abc5784198830b576d9ad2cc1fa6556e39a3247f7cecd81e571041bc81cc": {
+      "url": "https://simonwillison.net/2026/Sep/12/paul-ford",
+      "date": "2026-09-13"
+    },
+    "b01f2ad61bd017c9f37a1a617c68ae6c479c68ebbe2216a4d51ffc2367073745": {
+      "url": "https://www.latent.space/p/forward-deployed-engineer-best-practices",
+      "date": "2026-09-13"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 3
+  "dailyPage": 4
 }
