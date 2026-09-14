@@ -18812,8 +18812,248 @@
     "b01f2ad61bd017c9f37a1a617c68ae6c479c68ebbe2216a4d51ffc2367073745": {
       "url": "https://www.latent.space/p/forward-deployed-engineer-best-practices",
       "date": "2026-09-13"
+    },
+    "4607a6273d1ad8dce3cdc8a9198a176a5d47a234bd79279c8fb36a1753b6530d": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1webw9b/skyrim_soviet_edition",
+      "date": "2026-09-14"
+    },
+    "340906303398794d2afc6905a152ee605e077da206ab2ea5f0d0c1e9ed6375d8": {
+      "url": "https://simonwillison.net/2026/Sep/14/laurie-voss",
+      "date": "2026-09-14"
+    },
+    "676f349f8b1b1249cf31d8c8d48d9c8c8a47b0f8a9dd72d9ac435f9a419d3e83": {
+      "url": "https://github.com/SimplifyJobs/Summer2027-Internships",
+      "date": "2026-09-14"
+    },
+    "ac82b573d1550f85ac5b52fc71aa3cb80b5e40fad1fbe505ed12878c9a1afa26": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1wdtpbu/as_so_it_begins_over_3_million_views_on_this",
+      "date": "2026-09-14"
+    },
+    "5ec4f014855370da56b5fdf9d42d0efac1b4673524d45e52eb7f2998bbd1256a": {
+      "url": "https://simonwillison.net/2026/Sep/14/commit-rewriter",
+      "date": "2026-09-14"
+    },
+    "52065722ffcbc904a5c3c5f5d0bcb365bf968e29a39a7ca18ad2437f5e6cc729": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1wbhzjh/helping_gpt6_astra_become_agi",
+      "date": "2026-09-14"
+    },
+    "e72ad3b066661bb07ca0157fcefadfcfbaa439cbe7d024c16378af02b21502b0": {
+      "url": "https://simonwillison.net/2026/Sep/13/shot-scraper",
+      "date": "2026-09-14"
+    },
+    "3549cc6497eb66f5832d85cd94616fd5773f6e05fb1729e86a9034c8b605a55d": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1wco3pe/imagine_being_a_philosopher_and_getting_emails",
+      "date": "2026-09-14"
+    },
+    "85052f9befba2c4e17fa41a5b103c0c0ae8459b0b1c3561b24bc565188ff9e10": {
+      "url": "https://huggingface.co/blog/asyncgrpo-lora-hfjobs",
+      "date": "2026-09-14"
+    },
+    "0a43ad2a86222fed9d2444222d1204281880b7663e1ba55ba673e2f1ee49cfb4": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1weszx8/lost_some_friends_over_this_one",
+      "date": "2026-09-14"
+    },
+    "4584c1260564e509ed8c254b29b3ba596dc8911cf770c4b87d6a12037a463e76": {
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1wavdi7/openal_says_it_has_cracked_one_of_maths",
+      "date": "2026-09-14"
+    },
+    "b0d712eaba3f6158e47915e2544bde3b529bf4d103a9f52e8a2ff6023e95ac5b": {
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1w10tax/i_implemented_a_very_tiny_image_generation_model",
+      "date": "2026-09-14"
+    },
+    "49a5cc4686302ba5ac0be0ac5253cccb9a98f3b6afc0a503ac2d96cbbd614747": {
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1w1wt1s/you_can_beat_sota_time_series_anomaly_detection",
+      "date": "2026-09-14"
+    },
+    "a77eb88e2b31c27bd30d78620b75c34adab619565e23bd91e1785226ea193f60": {
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1wea1t7/a_severe_misalignment_of_ai_in_mathematics",
+      "date": "2026-09-14"
+    },
+    "3e2080c11aa2d11c61d1974935484f376a77e6d19cacac212aba540b8d5358b7": {
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1wf4b5g/zachery_lipton_cs_academia_broke_the",
+      "date": "2026-09-14"
+    },
+    "7399ecae69069cf153c560e0f7f1358d492151c2e72d17006ba1d26fc3b5aab0": {
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1vv2nkh/i_developed_my_own_quantized_llm_from_scratch",
+      "date": "2026-09-14"
+    },
+    "f0ea8736b4020c8e23b8de50580e4ee977634220c1dd78af83782cf60d7fe89c": {
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1w89m36/gpt6_reportedly_jailbroken_within_24_hours_using",
+      "date": "2026-09-14"
+    },
+    "73f14d87987ad02e93b76c4f43be923cefabe09bfea5049ac8eac817816cc765": {
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1w3bwci/cold_emailing_profs_about_phd_positions_read_this",
+      "date": "2026-09-14"
+    },
+    "cdf3463d78496e4f1076e5776dd7e7c4d2fb8d3e16f30cced9cb7b9689ad822f": {
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1w2wqbm/claude_code_for_research_papers_r",
+      "date": "2026-09-14"
+    },
+    "d0168f51d6c2a965ea7aad526157b7aa0858f5bfb200a1f9d7ff1a0adcad4e54": {
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1wakf62/neurips_deskrejected_178_papers_for_being",
+      "date": "2026-09-14"
+    },
+    "a50c1f7ce185af7c052ec017630b2073f0feac4c305587d65c9b6372ee9481ec": {
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1vpt6ay/ssogattention_sum_of_separable_gaussians_as_a",
+      "date": "2026-09-14"
+    },
+    "286182f1620563cfc77de360b6ba51f9f5325dca2434c52aa56735ed92310322": {
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1wa8rub/generating_bad_apple_autonomously_from_a_single",
+      "date": "2026-09-14"
+    },
+    "64b9f8400d821a2dd6fa625164634900160bb4c7caeb72ffa35068267350c964": {
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1wfesc0/upcoming_ama_waymo_ai_team_ama_drop_your",
+      "date": "2026-09-14"
+    },
+    "46bf19114869ba0a26ac20b3242d2d218841ebbe2788e42f6a8d6777ffc9a645": {
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1vrk7t5/trained_an_diffusion_model_that_runs_on_264kb_of",
+      "date": "2026-09-14"
+    },
+    "0d245cd6ea423b2d0e3d47aa89391827a9cb2ba650dc19abef22d15dbe3a440a": {
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1wdfmvq/training_a_210m_texttoimage_dit_from_scratch_on",
+      "date": "2026-09-14"
+    },
+    "a62bb8faa7ab4960f75552a88520d73418c0a10bf9dcea906fca27d957ebdc3b": {
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1wbf3ox/teach_ml_community_service_project_from_stanford_n",
+      "date": "2026-09-14"
+    },
+    "f9a519b40a307371500e407d28f13faaa998d1791b4d1a01bfe5a789552cc491": {
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1w6v0ig/gpt6_is_released_n",
+      "date": "2026-09-14"
+    },
+    "98245d7d2a00f6796f238680a8d6728c0af57145e0f2525ac5ecea54eda53311": {
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1w16jwj/wtf_is_a_world_model_d",
+      "date": "2026-09-14"
+    },
+    "c09c6ceaee7352e6fcab2e584986cbc4c70f4459bf5c4adabd303a715d073393": {
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1w7sgf3/language_models_can_control_their_own_attention_r",
+      "date": "2026-09-14"
+    },
+    "15892e80b081b5c77fdded651acd886d31de4f0cff4db9242f02908ac0b72546": {
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1w5fuhm/deepity_a_c_library_showing_predictive_coding",
+      "date": "2026-09-14"
+    },
+    "bf6bd2f4a5918036fad781fee14f96066a0b94651e20aeca4bcc7edb999f49c2": {
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1w92eis/reproducibility_seems_to_be_headed_towards",
+      "date": "2026-09-14"
+    },
+    "45458dea422689796a4b297003f1fa79b2bb5b88d06e598e841a5bdcfefe488a": {
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1w9nyhz/rustuna_a_highperformance_rust_implementation_of",
+      "date": "2026-09-14"
+    },
+    "1142299a4d83fa54826be67e44deb57359f0495be1225796a2f5436735065bde": {
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1vtdpve/discussion_thread_for_emnlp_2026",
+      "date": "2026-09-14"
+    },
+    "abd79a54090095384369108c5ea3fdbbbbf5b3acf7e841e358ea1f6575ab3590": {
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1vxryws/reviewing_4_papers_for_aaai_2027_and_none_have",
+      "date": "2026-09-14"
+    },
+    "c742a85bb97720a73dfd1919d8d838ab7502438bdd0e5b645ede1a0b60f269dd": {
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1w2r1f3/neurips_accepted_papers_leaked_d",
+      "date": "2026-09-14"
+    },
+    "68e0aa0b4c45589c7c9ce8e09d51581988d74ea1a0b07fe9447951c6dc78aca0": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1w7xrz6/good_news_guys",
+      "date": "2026-09-14"
+    },
+    "7f95a58cc035c27c6d70026dd18db559e5f618730a666b56fb4ce125057fba8c": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1wbjvb3/upwork_no_longer_makes_sense_for_freelancers_with",
+      "date": "2026-09-14"
+    },
+    "962c0b2794e5d5be4d395359d6a92d87e463bd31dcd7f77e772df7a532f3c18f": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1vyouxv/my_first_job_on_upwork",
+      "date": "2026-09-14"
+    },
+    "86ba75c65411af91475657fd50ddcdaa2d05b41c8665b857697a1fe6ca60aee7": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1w9hsjo/upwork_bridge_is_going_down",
+      "date": "2026-09-14"
+    },
+    "778af0f1f9159fc530f22aa4e47587062c94e7c04cd3edfcb53596f851a9c9c8": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1wch8qr/bro_this_is_crazy",
+      "date": "2026-09-14"
+    },
+    "024643c9fed33057a22a82318b556fd0b2757ebce348d550517ba4582b295c3c": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1vw6aw9/why_upwork_is_a_shithole",
+      "date": "2026-09-14"
+    },
+    "895f17a240c4d02974491eeb61181fd1a88ffba5c4703db215724b904bcd8047": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1vy5xwp/upworks_35_desperation_move_downfall_continues",
+      "date": "2026-09-14"
+    },
+    "4528bccb2c1b1841cfcb00270388dd81ff7e1ac28f4c5623cea645141bf9a01d": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1vvy9y4/thank_you_upwork_my_3_months_earning",
+      "date": "2026-09-14"
+    },
+    "9fdbbb5d5a6d0c8a0754392966185173da87a8f7832cba214d6db28a0a02528c": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1vzp85d/got_my_husband_hired_twice",
+      "date": "2026-09-14"
+    },
+    "c583cf06f78de22edab567fd23c52bf39fcb96f3182751728ba434545e884df4": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1vpioue/when_youre_that_one_hire_thank_you_lord",
+      "date": "2026-09-14"
+    },
+    "5d7df4d7d9a04e3a2485d4d668d502d76ab2b7d64a988a4ae5898e7ad4783a81": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1wea6hf/did_you_notice_upwork_silently_bumped_the",
+      "date": "2026-09-14"
+    },
+    "01e7ff2018d718cbd7c9dbfe3ac9eadbc0fe3f7594a161ff341f62df69bb2d65": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1wa4113/genius_scam_dream_project_2040h_but_inside_the",
+      "date": "2026-09-14"
+    },
+    "34a791c8ef55ecbef398bca98ed30aab4de54f6a73ec93292341e8b9a716efe9": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1vssqo9/i_bid_480_connects_on_this_project",
+      "date": "2026-09-14"
+    },
+    "82fc2b0b002132dfd763c14e2642b628493d63702eed3e60baccea31cbe7aab8": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1w5bu4z/even_toptals_competitive_rate_is_now_14hr_how_did",
+      "date": "2026-09-14"
+    },
+    "28c73d31ff3780907c72569fcf95447f3274b1c72c273dea7a51b60f9b4869a5": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1vsk334/this_is_a_joke_right",
+      "date": "2026-09-14"
+    },
+    "bf962a2693cc0c1a4713e0682b4245aa83e32363664a1ee81696c9c3598cc5b2": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1vufce9/this_is_insane",
+      "date": "2026-09-14"
+    },
+    "78a169b6d3630cc20daf0789e366645566149b6057a98fdfa4cea5b2c84e2cdc": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1waukp0/seems_like_a_goodbye_for_good",
+      "date": "2026-09-14"
+    },
+    "1b1fdca08b9d14fb31dfabe76579dcb7e98ae841c6e0d04ace0b13ad830d1103": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1w8mh7l/weirdest_upwork_job_post_ive_seen",
+      "date": "2026-09-14"
+    },
+    "1ef8d680c397657d8b52bf4f206c12f1efe7ccf0150c3ddab4fc7097dd8208e3": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1w2f0a8/upwork_needs_a_strong_competitor",
+      "date": "2026-09-14"
+    },
+    "744fc69073e857777b9a423b1a325debec913fa20cf76f571e05929f1651ed25": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1w965vj/joined_upwork_for_the_first_time_shocked",
+      "date": "2026-09-14"
+    },
+    "b4ed1293b4b7859caada9e8445498346e31d9628984e930ca7184067847471c8": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1vt5bq5/i_got_my_first_client_in_less_than_a_week_on",
+      "date": "2026-09-14"
+    },
+    "bf846f39c83e2e2aa296e3aca4e5a5235518ed6e637d6b7e54696e5001cd3e2f": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1wd745i/here_are_my_tips_for_upwork_newcomers_as_a_top",
+      "date": "2026-09-14"
+    },
+    "885b61f7edbf67f8194abd29f3ce0f8f5241eb04d23f75bc4e225fd368c73c27": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1wbs7x4/got_a_job_offer_then_i_saw_this_clients_reviews",
+      "date": "2026-09-14"
+    },
+    "af5398a8b9a8065d4046953366feaf1d5efccd49b25e1ba370abc76149eb05f4": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1vxpyj9/a_small_transparency_could_save_freelancers",
+      "date": "2026-09-14"
+    },
+    "05ac949a60b095b4f8ac8b718772311301b6ec0dbf751971cdb8e3d5723d63e5": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1vwuxzj/for_guys_who_talk_about_expensive_vs_cheap",
+      "date": "2026-09-14"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 4
+  "dailyPage": 5
 }
