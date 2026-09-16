@@ -1,0 +1,76 @@
+---
+title: "Guide AI to design software architecture and UI states before coding with a simple prompt"
+description: "Learn to guide an AI model to design robust software architecture and user interface states before it writes any code, preventing common project failures."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 10
+jobToBeDone: "Guide an AI model to design robust software architecture and UI states before coding"
+tools:
+  - name: "ChatGPT"
+    url: "https://chatgpt.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://www.reddit.com/r/PromptEngineering/comments/1w4j9hr/cheat_code_1_make_the_model_finish_the_design/"
+  platform: "reddit"
+  author: "/u/sporkbombing"
+  postedAt: 2026-09-01
+score: 9
+ingestedAt: 2026-09-16
+nigeriaNotes: "The free tier of ChatGPT is fully usable for this workflow. Data usage is minimal, making it suitable for mobile use with limited data."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "Generate functional requirements and UI states for a JAMB prep app before coding it."
+  - persona: "employee"
+    scenario: "Design the architecture and UI states for a new internal company reporting tool before writing code."
+  - persona: "entrepreneur"
+    scenario: "Outline the software architecture and UI states for a new e-commerce app before hiring developers."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will get a detailed software design plan from an AI, including functional requirements, design parameters, a design matrix, and user interface (UI) states like empty, loading, and partial. This approach helps prevent common project failures by ensuring the design is well-structured and handles different user interface conditions before any code is written, using established design principles to guide the AI.
+
+## Tools you need
+*   **ChatGPT** (freemium): An AI chatbot that can understand and generate text, used here to create a detailed software design.
+
+## Steps
+1.  **Open your AI chatbot**: Go to the ChatGPT website on your phone or computer.
+    You should see the chat interface ready for you to type a message.
+
+2.  **Paste the design prompt**: Copy the special design prompt below and paste it into the chat window. This prompt tells the AI to focus on design principles before thinking about code.
+
+    ```
+    Before you write any code, do this:
+    List the functional requirements. State what the system must do as outcomes, not as implementation. Number them FR1, FR2, and so on.
+    List the design parameters. State the specific modules, functions, or data structures that satisfy each FR. Number them DP1, DP2, and so on.
+    Build the design matrix. For each FR and DP pair, mark X if changing that DP changes that FR. Show me the matrix. If the matrix is not diagonal or triangular, revise the DPs until it is. Tell me what you changed and why. Do not continue with a coupled design.
+    Choose the DP set with the least information content. If two designs satisfy the same FRs, take the one with fewer moving parts and fewer assumptions. Say why the one you picked is the simpler one.
+    For every interactive element, state the affordance, the signifier, the feedback on success, the feedback on failure, and the recovery path. Include the empty state, the loading state, and the partial state.
+    Stop here. Show me all of the above. Do not write c...
+    ```
+    The AI will not respond yet; it's waiting for your actual request.
+
+3.  **Add your project request**: After the design prompt, on a new line, describe the software project you want to build. Be clear about its purpose and main features. For example:
+
+    ```
+    I want to build a simple mobile app for tracking daily expenses. Users should be able to add new expenses with a category, amount, and date, view a list of all expenses, and see a summary of spending by category.
+    ```
+    You should see the AI start to process your request and generate a detailed design plan based on the instructions you gave it.
+
+4.  **Review the design**: Read through the AI's output. It should include:
+    *   Functional Requirements (FRs): What the app needs to do.
+    *   Design Parameters (DPs): The parts of the app that meet those requirements.
+    *   A Design Matrix: Showing how FRs and DPs relate, aiming for a simple, uncoupled design.
+    *   UI States: Descriptions for interactive elements, including what happens when things are empty, loading, or partially loaded.
+    You should have a structured design plan that helps you think through the project before writing any code.
+
+## Original source
+This workflow was shared by Reddit user /u/sporkbombing on the platform Reddit. They introduced a prompt designed to guide AI models in creating robust software and UI designs before generating any code, drawing on established design methodologies.
+
+## Notes & variations
+*   **Free-tier alternatives**: Other freemium AI chatbots like Claude.ai or Gemini.google.com can also be used for this workflow.
+*   **Common mistake**: Not being specific enough in your project request after the design prompt. The AI needs a clear idea of what you want to build to apply the design principles effectively.
+*   **Tip for better results**: If the design matrix isn't clear or the UI states are missing details, ask the AI to refine specific sections. For example, you could say, "Can you elaborate on the recovery path for adding an expense?" or "Please revise the design matrix to be more diagonal."

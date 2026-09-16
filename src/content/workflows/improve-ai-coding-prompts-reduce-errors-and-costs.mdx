@@ -1,0 +1,82 @@
+---
+title: "Improve AI Coding Prompts: Reduce Errors and Costs"
+description: "Learn advanced prompt engineering techniques to guide AI assistants for coding tasks. Structure your prompts to prevent errors, catch misunderstandings, and optimize costs."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 15
+jobToBeDone: "Improve prompt engineering for AI-assisted coding tasks"
+tools:
+  - name: "ChatGPT"
+    url: "https://chatgpt.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Claude"
+    url: "https://claude.ai"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Gemini"
+    url: "https://gemini.google.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://www.reddit.com/r/PromptEngineering/comments/1wg1l47/two_years_of_prompt_engineering_for_coding_work/"
+  platform: "reddit"
+  author: "/u/Fragrant-Cheek-4273"
+  postedAt: 2026-09-14
+score: 7
+ingestedAt: 2026-09-16
+nigeriaNotes: "These techniques apply to any freemium AI chat tool, which are generally accessible and data-light for text-based interactions. Free tiers are usually sufficient for learning and applying these principles."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "Prevent AI from breaking your Python assignment code by telling it which files not to touch before it suggests fixes."
+  - persona: "employee"
+    scenario: "Ensure AI understands your code change request by having it summarize the task before writing any code."
+  - persona: "entrepreneur"
+    scenario: "Reduce AI coding costs by structuring prompts with static project info first, then specific task details."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+This entry explains advanced ways to write instructions (called "prompts") for AI tools when you need help with coding. It's not a step-by-step guide for one specific coding task. Instead, it teaches you general principles for *how* to talk to an AI so it understands your coding requests better.
+
+These principles come from an experienced user who spent two years working with AI for coding. They found that certain ways of structuring prompts significantly reduced errors and saved time and money. Because these are general strategies, you'll need to apply them thoughtfully to your own coding projects, rather than just copying exact phrases.
+
+## What you can use it for
+*   **Prevent unintended changes**: Guide the AI to only modify what you want, avoiding accidental breaks in other parts of your code.
+*   **Catch AI misunderstandings early**: Make sure the AI truly understands your task *before* it starts writing code, saving you review time.
+*   **Reduce AI processing costs**: Structure your prompts efficiently to save money on longer coding sessions, especially with paid AI services.
+
+## Tools you need
+*   **ChatGPT** (freemium): A popular AI assistant that can help with various coding tasks, from writing code to debugging.
+*   **Claude** (freemium): Another AI assistant known for its strong reasoning abilities, useful for complex coding problems.
+*   **Gemini** (freemium): Google's AI assistant, good for code generation, explanation, and debugging across different programming languages.
+
+## How it actually works
+This workflow involves applying three key principles when you write prompts for your AI coding assistant. You will integrate these ideas into how you structure your requests.
+
+1.  **Tell the AI what *not* to touch**: Before you describe the coding task itself, clearly list any files, functions, or behaviors that the AI *must not* change or interfere with. This helps prevent the AI from accidentally breaking other parts of your project.
+    *   *Example*: "Do not modify `database.py` or change how user authentication works. Only focus on the `shopping_cart.py` file."
+
+2.  **Make it restate the plan before writing anything**: After you give the AI your task, ask it to summarize what it thinks the task is, in its own words, in one paragraph. If the summary is wrong, you can correct it immediately before the AI wastes time generating incorrect code.
+    *   *Example*: "Before you write any code, please summarize the task I've given you in a single paragraph, explaining your understanding of what needs to be done."
+
+3.  **Static content first, dynamic content last**: When building your prompt, put all the unchanging, stable information about your project (like general project context, coding standards, or existing code snippets that won't change) at the very beginning. Place the specific, changing details of your current task or your working notes at the end of the prompt. This can help AI models process information more efficiently and potentially save costs on longer interactions.
+    *   *Example structure*:
+        *   [General project context, stable code, coding guidelines]
+        *   [Specific task details, current problem, your notes for this session]
+
+## Words you'll see, explained
+*   **Prompt engineering**: The skill of writing clear and effective instructions (prompts) for an AI to get the best possible results.
+*   **LLM (Large Language Model)**: The type of artificial intelligence system, like ChatGPT or Claude, that can understand and generate human-like text, including code.
+*   **Caching**: A technique where computers store frequently used data so they can access it faster later. In AI, this can relate to how models process and reuse parts of your prompt.
+*   **Prefix matching**: A method where a system looks for information by matching the beginning part (prefix) of a text. In AI, this can affect how efficiently the model processes long prompts.
+
+## Original source
+This advice on improving AI-assisted coding prompts comes from a Reddit user named /u/Fragrant-Cheek-4273. They shared these insights on the platform after two years of practical experience with prompt engineering for coding work.
+
+## Notes & variations
+*   **Do you even need this?** For very simple, one-off coding questions, you might not need to apply all these principles strictly. However, for any ongoing project or complex coding task, adopting these habits will significantly improve your AI interactions.
+*   **Free-tier limits**: While the principles apply to freemium AI tools, remember that free tiers often have limits on the number of messages or the length of prompts you can send. Efficient prompting, especially "static content first," can help you make the most of these limits.
+*   **Common pitfall**: The biggest mistake is inconsistency. These techniques work best when you apply them regularly to all your coding prompts, making them a habit rather than a one-time fix.

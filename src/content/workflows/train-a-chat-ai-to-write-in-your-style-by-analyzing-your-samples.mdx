@@ -1,0 +1,80 @@
+---
+title: "Train a Chat AI to Write in Your Style by Analyzing Your Samples"
+description: "Learn how to make a chat AI analyze your writing samples to create a reusable style guide, then use it to generate new content that matches your unique voice."
+category: "content-creation"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 10
+jobToBeDone: "Train an AI to reverse-engineer and adopt a specific writing style from samples"
+tools:
+  - name: "ChatGPT"
+    url: "https://chatgpt.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Claude"
+    url: "https://claude.ai"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://www.reddit.com/r/PromptEngineering/comments/1vugamo/stop_describing_your_tone_to_an_ai_writing_tool/"
+  platform: "reddit"
+  author: "/u/aditalreadytaken"
+  postedAt: 2026-08-21
+score: 9
+ingestedAt: 2026-09-16
+nigeriaNotes: "Both ChatGPT and Claude offer free tiers that are fully usable for this workflow. Data usage is minimal, making it suitable for mobile data plans."
+nigeriaUseCases:
+  - persona: "entrepreneur"
+    scenario: "Train AI to write Instagram captions in your brand voice using your past posts, then get AI to draft new ones."
+  - persona: "student"
+    scenario: "Create a style profile from your past essays, then ask AI to draft assignment sections in your unique writing voice."
+  - persona: "employee"
+    scenario: "Analyze your work emails to create a style profile, then use it to draft client updates that sound like you."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You'll get a detailed 'style profile' that describes your unique writing voice, extracted directly from your own samples. Then, you can use this profile to make a chat AI write new content that truly sounds like you. This method works better than just giving adjectives because the AI learns from real examples, capturing the subtle patterns of your writing.
+
+## Tools you need
+*   **ChatGPT** (freemium): A popular AI chatbot that can analyze text and generate new content.
+*   **Claude** (freemium): Another powerful AI chatbot, good for understanding and generating human-like text.
+
+## Steps
+1.  **Gather your writing samples**: Find three pieces of writing (like emails, blog posts, or social media updates) that truly represent the style you want the AI to learn. They should be long enough to show your writing patterns, but not excessively long.
+    You should have three distinct text blocks ready to paste.
+2.  **Ask the AI to create your style profile**: Open your chosen chat AI (ChatGPT or Claude). Paste the first prompt, then add your three writing samples below it.
+
+    ```
+    Here are three samples of my writing. Do not compliment them. Extract a style profile I can reuse:
+    - average sentence length and how much it varies
+    - words or phrases I actually use, and ones I clearly avoid
+    - how I open and close
+    - punctuation habits (lists, dashes, one-line paragraphs)
+    - reading level
+    Output this as a short spec, not prose.
+
+    [Paste your first writing sample here]
+
+    [Paste your second writing sample here]
+
+    [Paste your third writing sample here]
+    ```
+
+    The AI should give you a clear, bulleted or numbered list describing your writing style, without flowery language. This is your reusable style spec.
+3.  **Generate new content in your style**: In the *next message* in the same chat, paste the second prompt. Replace `[thing]` with what you want the AI to write (for example, "a short email to a client" or "a social media post about a new product").
+
+    ```
+    Write [thing] using only the style spec above. After the draft, flag any line that breaks the spec and why.
+    ```
+
+    The AI will generate the requested content, followed by a section where it points out any parts that didn't quite match the style profile and explains why. This helps you refine the output.
+
+## Original source
+This clever technique was shared by Reddit user /u/aditalreadytaken on the platform, demonstrating a practical way to get more consistent writing from AI tools.
+
+## Notes & variations
+*   **Free-tier alternatives**: Gemini (gemini.google.com) also works well for this workflow.
+*   **Common mistake**: People often skip the self-flagging step, but it's crucial. Without it, you miss out on the AI's feedback about where it might have slipped back into its default writing style, which is often what makes AI-generated text sound generic.
+*   **Tip for better results**: Keep your extracted style specs. You can create different ones for different purposes (for example, 'email me-voice' or 'blog me-voice') and reuse them whenever you need to write in a specific tone.

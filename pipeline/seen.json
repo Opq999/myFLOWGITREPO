@@ -19320,8 +19320,212 @@
     "b65959433c217fcd7cb28195d846325e9b67cd911c4f87a496221d6aa9824bc8": {
       "url": "https://www.reddit.com/r/studytips/comments/1wadoov/study_tips_for_300_slides",
       "date": "2026-09-15"
+    },
+    "74a3ccabc60a4833d394966e347f05ee64068d7560cafdceeab4a1ee8c696208": {
+      "url": "https://www.reddit.com/r/PromptEngineering/comments/1vw28m1/i_stopped_asking_ai_to_write_stuff_i_make_it",
+      "date": "2026-09-16"
+    },
+    "9da1736b8159c9ab0a15ab6a652b182a4a4e1a87e190963471bdaae6ceb4ab18": {
+      "url": "https://simonwillison.net/2026/Sep/15/gemini-live",
+      "date": "2026-09-16"
+    },
+    "ca5a5eef276d37ddb478986d97281854290af1aca015f5ac9aa69ebb10b46e60": {
+      "url": "https://www.reddit.com/r/PromptEngineering/comments/1vyhln8/if_you_didnt_have_25_hours_to_watch_andrej",
+      "date": "2026-09-16"
+    },
+    "487ee06b84c7feddf771ec82fc962edeff7c6dc2a30b4756a3780e7ee7fe11d1": {
+      "url": "https://www.latent.space/p/ainews-jev-a-system-one-model-that",
+      "date": "2026-09-16"
+    },
+    "14e2eaa8f2adf95dc7171ed3e522e086d2e1c25f8e2f7917e32a545fda8f88cd": {
+      "url": "https://www.reddit.com/r/PromptEngineering/comments/1vrsw9i/tell_me_your_shortest_prompt_lines_that_literally",
+      "date": "2026-09-16"
+    },
+    "eb64bf46642bd1686947e043c83b8981b93207aa9ec69f9380d39bc041e88ac0": {
+      "url": "https://www.latent.space/p/good-start-labs",
+      "date": "2026-09-16"
+    },
+    "3ab6c90befc98922340543322d7b840152a179d0f359fad5eb93c5d73b65851d": {
+      "url": "https://www.reddit.com/r/PromptEngineering/comments/1w44dbq/anthropic_quietly_released_free_industry_packs",
+      "date": "2026-09-16"
+    },
+    "a1d018f16fad79f97456f75bff3df416e35d9a73410b1735dcbcc9bb4c30fb83": {
+      "url": "https://huggingface.co/blog/ibm-research/altk-evolve-consistency",
+      "date": "2026-09-16"
+    },
+    "84bd86df93eab984cdcb9670a364687e3f59654fcaa2a88d5a43e87e3a5ccdcd": {
+      "url": "https://www.reddit.com/r/PromptEngineering/comments/1vsb3gn/notice_be_careful_with_drop_your_best_prompt_posts",
+      "date": "2026-09-16"
+    },
+    "3292dfb1cac00708f87eb4372a1caca9592f2c9ecb84f4e1e6760dc484ac3b74": {
+      "url": "https://newsletter.pragmaticengineer.com/p/openai-software-factory",
+      "date": "2026-09-16"
+    },
+    "5edcd8c5233a21110d053826792d526e89f3945c22ad2da5887f61385e781691": {
+      "url": "https://www.reddit.com/r/PromptEngineering/comments/1w8ui3o/i_created_44_free_mitlicensed_tools_to_help_with",
+      "date": "2026-09-16"
+    },
+    "0207c647790d497e725fde22fc5e3aef04ac2943a06224250acc607af77d8679": {
+      "url": "https://www.reddit.com/r/PromptEngineering/comments/1w1pkii/stop_asking_ai_to_make_slides_give_it_this",
+      "date": "2026-09-16"
+    },
+    "71ce2ee1d61e81c167dd30d4922a7fa19359c24888653791a10932fbb0479cca": {
+      "url": "https://www.reddit.com/r/PromptEngineering/comments/1w9mtpb/stop_asking_chatgpt_to_explain_things_and_make_it",
+      "date": "2026-09-16"
+    },
+    "d2a872c1715d8dcb7bb1c3161c9b319f5df7a2e330ac0231a35e2d85d7d5fd39": {
+      "url": "https://www.reddit.com/r/PromptEngineering/comments/1w2ykh3/i_stopped_using_chatgpts_memory_as_project_state",
+      "date": "2026-09-16"
+    },
+    "3d10ace5b5b2804fde85f511786cd529c1c241df13a38433b7872d3d58bdf631": {
+      "url": "https://www.reddit.com/r/PromptEngineering/comments/1weeyuc/15_nonobvious_ways_developers_are_using_terminal",
+      "date": "2026-09-16"
+    },
+    "b2ddbc75274f66794738e8d0dcda593361c5ff2a2a217495c63c4d96bb90987e": {
+      "url": "https://www.reddit.com/r/PromptEngineering/comments/1w3vp88/jeff_dean_on_moe_tensorflow_regrets_why_he_left",
+      "date": "2026-09-16"
+    },
+    "dbfce7b066767feb40308a8c184fce447692c695cf47899d32d921531c6d4230": {
+      "url": "https://www.reddit.com/r/PromptEngineering/comments/1vskvxj/context_is_becoming_more_important_than_the_prompt",
+      "date": "2026-09-16"
+    },
+    "c7cdd97c727dd819b958bc77b17d9fe56e478a2e26a5c2efd7cf3120584d37f6": {
+      "url": "https://www.reddit.com/r/PromptEngineering/comments/1vr9oba/i_used_ai_as_a_requirements_interviewer_on_a",
+      "date": "2026-09-16"
+    },
+    "1ce7908539ad09be41c7110aa94de6f61e69b9c5187b2eb26b27fc82f5daf05f": {
+      "url": "https://www.reddit.com/r/PromptEngineering/comments/1wd1tjy/is_anyone_else_annoyed_that_ai_prompting_is",
+      "date": "2026-09-16"
+    },
+    "1c96b1e05fc980cf1d34480a02e98401a1b13a62b527307b31d5fc44baff4643": {
+      "url": "https://www.reddit.com/r/PromptEngineering/comments/1vwavie/your_cognition_can_now_be_extracted_and_owned_y",
+      "date": "2026-09-16"
+    },
+    "32648b3a475f414a0694d6f7adc3dc0a2d75bddcd0db1f96416d4b6a9f0677ed": {
+      "url": "https://www.reddit.com/r/PromptEngineering/comments/1wg1l47/two_years_of_prompt_engineering_for_coding_work",
+      "date": "2026-09-16"
+    },
+    "43d2433b193c69c22c5aad6759a758a796573b6306f55e54dcb40f6bf1ca1596": {
+      "url": "https://www.reddit.com/r/PromptEngineering/comments/1vzg6mv/anthropics_own_docs_say_a_second_model_only_pays",
+      "date": "2026-09-16"
+    },
+    "b6d6ecb25a64e7295a338d63f3ac79185a8d97ca373c2956c3d5f5e8974c3bec": {
+      "url": "https://www.reddit.com/r/PromptEngineering/comments/1vugamo/stop_describing_your_tone_to_an_ai_writing_tool",
+      "date": "2026-09-16"
+    },
+    "875c08ffb48f367e27651d93a5918a01c77cc3904275aac5361267d12f785d94": {
+      "url": "https://www.reddit.com/r/PromptEngineering/comments/1wfjzf3/what_are_the_best_and_most_up_to_date_free_ai",
+      "date": "2026-09-16"
+    },
+    "b41ef02d0ca255a4b4dbca7d7828487d50c2a363d4f1bb814c19866b5db4d78b": {
+      "url": "https://www.reddit.com/r/PromptEngineering/comments/1w2b9im/the_5_prompt_sequence_i_run_before_committing_to",
+      "date": "2026-09-16"
+    },
+    "63cf6cae6d86b5484a21e9eccd7d931879695826115f96640ab34e108e5681c6": {
+      "url": "https://www.reddit.com/r/PromptEngineering/comments/1w7b0jy/my_sweet_prompts_52_crazy_looking_prompts_that",
+      "date": "2026-09-16"
+    },
+    "9ce8cf8a6597be3cbc061ce6e7e37a26df1fbf80c80c9ffbaa55ed3cbcd5f809": {
+      "url": "https://www.reddit.com/r/PromptEngineering/comments/1w4j9hr/cheat_code_1_make_the_model_finish_the_design",
+      "date": "2026-09-16"
+    },
+    "b0f8880a308a9b1b5f8f5f2f8ce8132b99781b4e2d5f55530bec20b34b04ec64": {
+      "url": "https://www.reddit.com/r/PromptEngineering/comments/1vzv1d1/mythbusting_chatgpt_secret_slash_commands_free",
+      "date": "2026-09-16"
+    },
+    "6d7a21db8422343fe024d2043f117a18a37709385fc4d85098337d2fbc65c880": {
+      "url": "https://www.reddit.com/r/PromptEngineering/comments/1vtdpo0/claude_can_now_run_tasks_on_a_schedule_in_the",
+      "date": "2026-09-16"
+    },
+    "2653921d2a3f6f71f46440a597701796155f62c76702ba0ba5fa233cafa3cb48": {
+      "url": "https://www.reddit.com/r/PromptEngineering/comments/1w1f9ll/copypaste_this_prompt_to_compress_any_report_into",
+      "date": "2026-09-16"
+    },
+    "c9b4bbbde22a715312fc3b66b7192c0b89600839047ef5e2c3850053e94b94ea": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1vyj5hg/is_it_impolite_to_use_gift_cards_asap_for_an",
+      "date": "2026-09-16"
+    },
+    "1fb22a0894e7485f5172fb656e73357bf1742826d890225be47a2450d23fe357": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1vy195n/stop_using_ai_to_make_your_flyers_and_social_posts",
+      "date": "2026-09-16"
+    },
+    "155a5fcc2e339051a5a82d00c0c7023a1adfba6f4fea038fb9d8346182d641aa": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1vtnh7o/im_fucked_up",
+      "date": "2026-09-16"
+    },
+    "38f858a149cd34cdf952e9fdb1c5c3dad43423d948f6ecdfce827de39b6a85a9": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1w9o6cq/business_is_failing_no_idea_what_to_do_next",
+      "date": "2026-09-16"
+    },
+    "63f5b172322d4c54a607651d5bc9af03316a15318ef2341866a5c6bffe98262d": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1vy6qfn/you_left_your_85_for_your_business_was_it_worth_it",
+      "date": "2026-09-16"
+    },
+    "8450cd9b193b4d60d95b785d991ad54d76b5cf50ab8039c964a78dc7810ffb36": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1w1obqb/how_did_i_accidentally_ended_up_making_a",
+      "date": "2026-09-16"
+    },
+    "0ec1895a94a41d7bf853d3f2e177fd0518d4faf5d55111bd972ded4d06e3f1b8": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1vvyd56/you_cant_share_massive_wins_online_without",
+      "date": "2026-09-16"
+    },
+    "9a878a3c9de058241290a418cc217ee4f8e86fa6e7c491b0486f4191fbef8b09": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1w4qow7/business_is_tough",
+      "date": "2026-09-16"
+    },
+    "8f966b37b01d3610a3a2b0da7bd70e6596d6d92dc2add9d72edfac626628f829": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1vufoj3/if_youre_struggling_with_your_business_you_dont",
+      "date": "2026-09-16"
+    },
+    "166e6e868f315c963ea980e13d6e7f8287ba8d8d10dd7a42a60be39b83e67798": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1vx8bwq/i_gave_10_people_free_access_to_my_product_0_of",
+      "date": "2026-09-16"
+    },
+    "42f35cfec166f2e616f95a29f2e3f851921ee1efe330e742ce815967d59c95e0": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1w6b44m/18m_have_been_running_a_2530kmo_ish_business_now",
+      "date": "2026-09-16"
+    },
+    "e29b442e54f307d0ed9d36b7113c636fdb0e525b1a604baf22537c49a3320418": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1w85f2o/taking_the_leap",
+      "date": "2026-09-16"
+    },
+    "15dc2681d8a5a0e51af0c3e51a0829c076ed6c979b89f9f5d5e5bc7c1336ee2a": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1w69km2/whats_one_thing_you_wish_you_knew_before_starting",
+      "date": "2026-09-16"
+    },
+    "1605bf435632a655694c83c2fe54541500db46e90affaf6955bce65faee795a7": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1wausdw/what_is_the_best_way_to_prepare_yourself_to",
+      "date": "2026-09-16"
+    },
+    "f29bed9d944b80a1dd6ea1b9c8c5efcb09b4b2a10ab348a090b9f2e6faaa3f71": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1w2wlvb/youre_bit_behind_probably",
+      "date": "2026-09-16"
+    },
+    "2ca0960ea9d36d4904c279f7636195edff4ec0c57630b67512e4be792dc0f531": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1w8yl0z/what_do_you_think_is_the_most_advantageous_career",
+      "date": "2026-09-16"
+    },
+    "915cf3ee0706b511291cd3bf2937c6ec129e624c4178ade567fc918bbbd69872": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1vyrbgn/i_know_im_probably_going_to_get_hammered_for",
+      "date": "2026-09-16"
+    },
+    "028a1b008a6e4fb2a115487d27611aa65baa2fa9a3611cf40ca4cbf5dc5db461": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1wauhn0/founders_who_cant_sell_what_did_it_cost_you_to",
+      "date": "2026-09-16"
+    },
+    "3d6c1e9c555377452418a9eb92e6a9f3ad57ecd0e58cdc8043322174c719ff60": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1wgzave/scared_of_success",
+      "date": "2026-09-16"
+    },
+    "3a9713036a317f4b4008a40759108a64b3d073f76542451dd35b9c1e6d466d2b": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1wcyrt4/am_i_crazy_for_wanting_to_raise_money_to_build_a",
+      "date": "2026-09-16"
+    },
+    "ee273fe283f792ab216496deedb0e9e25acae7363ae31432f3201e61dc5fe993": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1weth9e/execution_is_everything",
+      "date": "2026-09-16"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 0
+  "dailyPage": 1
 }

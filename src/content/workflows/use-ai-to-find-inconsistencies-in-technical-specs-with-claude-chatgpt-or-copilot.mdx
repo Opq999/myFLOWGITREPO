@@ -1,0 +1,82 @@
+---
+title: "Use AI to Find Inconsistencies in Technical Specs with Claude, ChatGPT, or Copilot"
+description: "Learn how to use AI as a 'requirements interviewer' to identify and resolve hundreds of inconsistencies and missing decisions in technical specifications."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 90
+jobToBeDone: "Use AI to identify and resolve inconsistencies in technical specifications"
+tools:
+  - name: "Claude"
+    url: "https://claude.ai"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "ChatGPT"
+    url: "https://chatgpt.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Copilot"
+    url: "https://copilot.microsoft.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://www.reddit.com/r/PromptEngineering/comments/1vr9oba/i_used_ai_as_a_requirements_interviewer_on_a/"
+  platform: "reddit"
+  author: "/u/skals998"
+  postedAt: 2026-08-18
+score: 10
+ingestedAt: 2026-09-16
+nigeriaNotes: "This workflow uses freemium AI chat tools, which typically have generous free tiers. Data usage is light, mainly text input and output."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "Turn your 50-page project spec into a list of questions to clarify ambiguities before coding."
+  - persona: "employee"
+    scenario: "Use AI to find missing details in a 20-page software requirement doc before development starts."
+  - persona: "entrepreneur"
+    scenario: "Clarify your MVP feature list by asking AI to generate questions about undecided product requirements."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will get a detailed list of questions about missing decisions, contradictions, and ambiguities in your technical document, presented as multiple-choice questions. After you answer these questions, the AI can help integrate your decisions into an updated document. This approach leverages AI's strength in detecting gaps rather than making decisions, making it highly effective for refining complex specifications.
+
+## Tools you need
+*   **Claude** (freemium): An AI chatbot for generating questions and processing text.
+*   **ChatGPT** (freemium): An AI chatbot for generating questions and processing text.
+*   **Copilot** (freemium): An AI chatbot for generating questions and processing text.
+
+## Steps
+1.  **Open your chosen AI chatbot**: Go to claude.ai, chatgpt.com, or copilot.microsoft.com on your phone or computer. You should see the chat interface ready for your input.
+
+2.  **Paste the "interviewer" prompt**: Copy the prompt below and paste it into the chat window. This tells the AI to act as a senior functional analyst.
+
+    ```
+    You are a senior functional analyst with 15 years of experience turning ambiguous documents into executable specifications. Your specialty is finding the decisions the document does NOT make. I will paste a draft functional specification. Your job is NOT to improve or rewrite it: it is to INTERVIEW me to extract every missing decision. RULES: 1. Generate CLOSED multiple-choice questions (options A/B/C/D + always an option "E: other — specify"). Never open questions. 2. Each question must be answerable in under 10 seconds by someone who knows the business. If a question needs paragraphs of explanation, it is too complex and must be simplified.
+    ```
+
+    You should see the AI acknowledge your request and wait for the specification.
+
+3.  **Paste your functional specification**: Copy your functional specification document (e.g., a 17-page spec) and paste it into the chat. Make sure the entire document fits within the AI's context window (the amount of text it can process at once).
+
+    You should see the AI start generating questions based on your document.
+
+4.  **Answer the AI's questions**: The AI will present multiple-choice questions (e.g., "Q1: A", "Q2: B but only for admins"). Answer them one by one, providing your business decisions.
+
+    You should see the AI continue generating new questions or acknowledge your answers.
+
+5.  **Ask the AI to rebuild the document**: Once you've answered a sufficient number of questions and feel you've clarified key points, tell the AI to integrate your decisions. The author doesn't share their exact prompt for this step; a starting point:
+
+    ```
+    Based on my answers to your questions, please rebuild the functional specification document, integrating all the decisions we've made.
+    ```
+
+    You should get an updated document that incorporates your clarifications, potentially much longer and more detailed than the original.
+
+## Original source
+This workflow was shared by /u/skals998 on Reddit, who described using AI as a "requirements interviewer" to find hundreds of inconsistencies in a 17-page functional specification, leading to a much clearer document for their development team.
+
+## Notes & variations
+*   **Free-tier alternatives**: Claude, ChatGPT, and Copilot all offer free tiers that should be sufficient for processing moderately sized documents and generating questions. Be mindful of context window limits (how much text the AI can remember at once) for very long specifications.
+*   **Common mistake**: Don't try to make the AI *decide* for you. Its strength is in *detecting* what's undecided. Stick to answering its questions based on your business knowledge.
+*   **Tip for better results**: The author's prompt was truncated in the source. The completion "If a question needs paragraphs of explanation, it is too complex and must be simplified" was added to rule 2 to avoid truncation and maintain clarity, based on the context of "answerable in under 10 seconds". You can adjust this rule if your specific needs differ. Also, for very long documents, consider breaking them into sections and processing each section separately to avoid hitting context window limits.
