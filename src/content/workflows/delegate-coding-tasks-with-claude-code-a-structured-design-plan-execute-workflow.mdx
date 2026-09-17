@@ -1,0 +1,88 @@
+---
+title: "Delegate Coding Tasks with Claude Code: A Structured Design-Plan-Execute Workflow"
+description: "Learn how to delegate complex coding tasks to an AI agent like Claude Code using a structured design, plan, and execute workflow. Understand its capabilities and limitations."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 60
+jobToBeDone: "Delegate coding tasks to an AI agent using a structured design-plan-execute workflow"
+tools:
+  - name: "Claude Code"
+    url: "https://code.claude.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Git"
+    url: "https://git-scm.com"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Terminal"
+    url: "https://en.wikipedia.org/wiki/Terminal_emulator"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/gabbs279/how-i-actually-code-with-claude-code-my-real-workflow-on-a-real-project-4ao0"
+  platform: "blog"
+  author: "gabbs279"
+  postedAt: 2026-08-24
+score: 7
+ingestedAt: 2026-09-17
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "Delegate coding tasks for your final year project to Claude Code, using a design-plan-execute workflow to implement features and write tests."
+  - persona: "employee"
+    scenario: "Use Claude Code to refactor existing codebase sections or implement small features, following a structured plan to ensure code quality and efficiency."
+  - persona: "entrepreneur"
+    scenario: "Delegate the implementation of new product features or bug fixes to Claude Code, using a structured design-plan-execute workflow to manage development."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+Claude Code is an advanced AI agent that works directly within your code project, known as a repository, from your computer's terminal. Unlike simple chat tools, it can read all your project files, run commands, edit your code, and even make official changes (commits) to your project's history.
+
+The key difference is that Claude Code sees your entire project, not just small pieces of code you paste. This allows it to take on complete coding tasks, effectively letting you delegate work rather than just asking for advice or code snippets. It's designed to integrate deeply into your development workflow.
+
+This tool is considered advanced because it requires comfort with using a terminal (a text-based interface for running commands), understanding how Git (a version control system) manages code, and general familiarity with software development concepts. It's not a simple copy-paste solution for beginners.
+
+To use it effectively, the author emphasizes a structured "design, plan, execute" workflow. This approach helps guide the AI agent, ensuring it understands the task and stays on track, which is crucial for complex coding projects.
+
+## What you can use it for
+*   **Audit a codebase**: Have the agent review your project for potential issues, such as unoptimized images, broken links, or missing sitemap entries, providing a list of findings with priorities.
+*   **Implement small features**: Delegate well-defined, contained coding tasks, like adding a new component or a specific piece of functionality, especially after a clear plan is in place.
+*   **Refactor existing code**: Improve the structure, readability, or performance of your code based on a specific plan, letting the agent handle the detailed changes.
+*   **Write tests**: Ask the agent to create automated tests for specific parts of your code, helping to ensure its correctness and prevent future bugs.
+
+## Tools you need
+*   **Claude Code** (paid): An AI agent that works in your terminal to read, edit, and commit code within your project.
+*   **Git** (free): A version control system to track changes in your code and manage different versions of your project.
+*   **Terminal** (free): A text-based interface on your computer (like Command Prompt on Windows or Terminal on macOS/Linux) used to run commands.
+
+## How it actually works
+The author's workflow for using Claude Code is split into three distinct phases: design, plan, and execute. This structured approach helps manage the AI agent effectively and prevents it from going off track.
+
+1.  **Design**: Before writing any code, you have a conversation (either with yourself or a team) about the problem you're trying to solve. You explore two or three possible solutions, discuss their downsides, and pick the best approach. The outcome is a short, written design document, typically stored in a `docs/plans/` folder within your project.
+
+2.  **Plan**: The design document is then turned into a detailed, task-by-task plan. This plan specifies which files each task will touch, which tests need to be written first, the commands to verify the changes, and where each commit (a saved set of changes) should go. Examples of plan files might be `2026-04-28-slice-2-vercel-migration.md` or `2026-04-29-portfolio-audit-implementation.md`.
+
+3.  **Execute**: Only after a clear plan is in place do you start the coding. You open your terminal and run Claude Code, providing it with the detailed plan. The agent then reads the plan and performs the coding tasks, making commits as specified. If something doesn't fit the plan, it becomes immediately obvious, making it easier to correct.
+
+For larger tasks, the author also uses `Git worktrees` to isolate the work from the main project, and a `.claude/` folder for local configuration and permissions. The exact commands and setup for Claude Code itself will be found in its official documentation, as this entry focuses on the workflow rather than specific tool commands.
+
+## Words you'll see, explained
+*   **AI agent**: A computer program that uses artificial intelligence to perform tasks, often by interacting with its environment, like a code repository.
+*   **Repository (repo)**: A central location where all the files, history, and versions of a software project are stored, usually managed by Git.
+*   **Terminal**: A text-based interface on your computer where you can type commands to interact with the operating system or run programs.
+*   **Git**: A system that tracks changes in computer files and helps multiple people work on the same code project without overwriting each other's work.
+*   **Vite**: A fast build tool for modern web projects, often used with frameworks like React, that helps prepare code for deployment.
+*   **Sanity (CMS)**: A content management system (CMS) that stores content separately from how it's displayed, allowing for flexible use across different platforms and devices.
+*   **Vercel Functions**: Serverless functions hosted on Vercel, which run small pieces of code in response to events (like a website request) without needing to manage a server.
+*   **Git worktrees**: A Git feature that allows you to have multiple working directories (copies of your project) from a single repository, useful for working on several tasks at once without affecting your main work.
+
+## Original source
+This workflow is adapted from a blog post by gabbs279 titled "How I Actually Code with Claude Code: My Real Workflow on a Real Project" published on the DEV Community platform. The author shares their practical experience and a structured approach to delegating coding tasks to an AI agent.
+
+## Notes & variations
+*   **Do you even need this?**: For simpler coding tasks, generating code snippets, or debugging small issues, a standard AI chat tool like ChatGPT, Claude.ai, or Gemini might be sufficient and easier to use. Claude Code is best suited for delegating more complex, integrated tasks within an existing codebase where the AI agent needs to understand the full project context.
+*   **Free-tier limits**: Claude Code is a paid developer tool. Its usage is typically billed based on the amount of data (tokens) processed. There is no free tier for this specific developer product.
+*   **Common pitfall**: A common mistake is to skip the "design" and "plan" phases and immediately ask the AI agent to execute a task. This often leads to the agent producing something that runs but doesn't match your exact needs, resulting in more time spent fixing issues than if a clear plan had been provided upfront.
+*   **Tip for better results**: Always start with a clear, written plan, even for seemingly small tasks. This document serves as a precise guide for the AI agent, helping it stay focused and making it much easier to identify and correct any deviations from your intended outcome.

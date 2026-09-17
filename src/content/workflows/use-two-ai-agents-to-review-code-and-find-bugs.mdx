@@ -1,0 +1,65 @@
+---
+title: "Use Two AI Agents to Review Code and Find Bugs"
+description: "Learn how to set up two AI agents with adversarial prompts to review each other's code, identify bugs, and improve code quality."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 30
+jobToBeDone: "Use two AI agents with adversarial prompts to review code and identify bugs"
+tools:
+  - name: "AI Chat Tool"
+    url: "https://claude.ai"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/infoinlet1/i-made-two-ais-review-each-others-code-for-30-days-a-human-still-caught-the-bug-in-5-minutes-484a"
+  platform: "blog"
+  author: "infoinlet1"
+  postedAt: 2026-09-13
+score: 7
+ingestedAt: 2026-09-17
+nigeriaNotes: "This workflow relies on AI chat tools which are generally accessible. Data usage will depend on the length of code snippets and the number of interactions. Free tiers of most AI chat tools should be sufficient for initial testing."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to set up two AI agents to review code. One agent writes the code, and a second, adversarial agent tries to find flaws. This method can catch bugs that self-review might miss, especially those related to data integrity or unexpected inputs. It works because the skeptic agent is specifically prompted to look for failure, rather than just confirming correctness.
+
+## Tools you need
+*   **AI Chat Tool** (freemium): To interact with AI models for writing and reviewing code.
+
+## Steps
+1.  **Set up the Author Agent**: Instruct an AI chat tool to act as a code author. Provide it with a clear task to build a specific feature and ensure any tests pass.
+    *   The author doesn't share their exact prompt; a starting point:
+
+    ```
+    You are a senior software engineer tasked with writing new code. Your goal is to implement the following feature: [Describe the feature here]. Ensure that all provided tests pass and the code is clean and well-documented.
+    ```
+
+    You should get code written by the AI.
+
+2.  **Set up the Skeptic Agent**: Instruct a separate instance of an AI chat tool (or a new chat session) to act as a code reviewer with an adversarial mindset. Give it a specific brief to find flaws, not just to approve.
+    *   The author doesn't share their exact prompt; a starting point:
+
+    ```
+    You are a security and quality assurance engineer tasked with finding bugs in code. Assume the provided code is broken. Your goal is to find inputs or scenarios that cause the code to fail, lose money for a customer, duplicate existing functionality, or handle unexpected states incorrectly. Do not simply review the code for style; actively hunt for critical flaws.
+    ```
+
+    You should get a list of potential issues or specific failure scenarios.
+
+3.  **Review the Skeptic's Findings**: Compare the issues found by the skeptic agent against the code written by the author agent. The author notes that the skeptic is particularly good at finding issues like duplicated code, swallowed errors, and race conditions.
+
+    You should see a list of potential bugs or areas for improvement.
+
+4.  **Identify Missed Bugs**: After the AI review, perform your own final check. The author found that the AI review missed certain types of silent data-integrity failures, especially on the 'unhappy path' (when things go wrong).
+
+    You should be aware that AI might miss critical bugs and a human review is still essential.
+
+## Original source
+This workflow is based on an experiment by infoinlet1, shared on DEV Community. The author explored using two AI agents with distinct roles – one to write code and another to critically review it – to improve code quality over 30 days.
+
+## Notes & variations
+*   **Free Tier Alternative**: Most AI chat platforms offer a free tier that is sufficient for this workflow, though you may encounter message limits. Using separate browser tabs or windows for each agent can help keep their roles distinct.
+*   **Common Pitfall**: Do not use the same AI chat session for both the author and skeptic roles. The AI will tend to agree with itself, negating the adversarial review process. Ensure you are using two distinct prompts or chat sessions.
+*   **Tip for Better Results**: Be very specific in the skeptic agent's prompt about the types of bugs you are most concerned about (e.g., security vulnerabilities, performance issues, data corruption) to guide its review more effectively.

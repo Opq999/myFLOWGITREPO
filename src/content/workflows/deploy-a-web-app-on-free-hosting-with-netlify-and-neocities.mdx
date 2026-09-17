@@ -1,0 +1,82 @@
+---
+title: "Deploy a Web App on Free Hosting with Netlify and Neocities"
+description: "Learn how to deploy and maintain a web application on free-tier hosting providers like Netlify and Neocities, overcoming common limitations."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 30
+jobToBeDone: "Deploy and maintain a web application on free-tier hosting despite provider limitations and network issues"
+tools:
+  - name: "Netlify"
+    url: "https://www.netlify.com/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Neocities"
+    url: "https://neocities.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Supabase"
+    url: "https://supabase.com/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Cloudflare Pages"
+    url: "https://pages.cloudflare.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Groq"
+    url: "https://groq.com/"
+    pricing: "paid"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/koda2026/im-12-this-morning-i-fought-two-hosting-providers-my-app-survived-both-5bo6"
+  platform: "blog"
+  author: "koda2026"
+  postedAt: 2026-09-12
+score: 8
+ingestedAt: 2026-09-17
+nigeriaNotes: "Free tiers on Netlify and Neocities are suitable for small static sites. Data usage for AI features depends on the specific application and API calls, which can be managed with careful implementation. Supabase offers a generous free tier for backend services. Groq is a paid service for AI processing."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "Deploy your JAMB prep web app on Netlify or Neocities, using manual upload to save build credits for future projects."
+  - persona: "entrepreneur"
+    scenario: "Launch your MVP web app on free hosting like Netlify or Neocities, with AI fallbacks to ensure user experience during network issues."
+  - persona: "employee"
+    scenario: "Host your personal portfolio or side project website on Neocities, bypassing Netlify build limits with manual uploads."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to deploy a simple web application to free hosting services like Netlify and Neocities. This approach helps you get your project online without immediate costs, even when facing limitations like build credit usage or network restrictions.
+
+## Tools you need
+*   **Netlify** (freemium): A platform for building, deploying, and scaling web applications. Its free tier is useful for static sites.
+*   **Neocities** (free): A free, open-source web hosting service that allows you to build and host websites.
+*   **Supabase** (freemium): An open-source Firebase alternative that provides a backend for your application, including databases and authentication.
+*   **Cloudflare Pages** (free): A platform for building and deploying web applications directly from a Git repository.
+*   **Groq** (paid): A cloud service that provides fast inference for large language models, often used for AI features.
+
+## Steps
+1.  **Prepare your static site**: Ensure your web application is a single HTML file or a set of static assets that do not require a complex build process. The author's example was a single HTML file.
+2.  **Deploy to Netlify (Manual Upload)**: If you encounter build credit limits on Netlify, you can manually upload your site's files. This bypasses the build process and saves credits.
+    *   Go to your Netlify dashboard.
+    *   Drag and drop your website's folder or zip file onto the deployment area.
+    *   You should see your site deploy to a temporary Netlify URL.
+3.  **Deploy to Neocities**: For a permanent home with no build credit system, use Neocities.
+    *   Sign up for a Neocities account.
+    *   Follow the onboarding steps to create your first site. The author mentions a tutorial that can be sped through.
+    *   Upload your website's files to your Neocities account.
+    *   Your site will be live on a Neocities URL.
+4.  **Implement Graceful Fallbacks for AI Features**: If your app uses external AI services (like Groq), implement error handling and fallbacks.
+    *   Set timeouts for AI calls to prevent long waits.
+    *   Log errors to a database (like Supabase) to track issues.
+    *   Create a fallback user experience (e.g., display a static message or a "sensei scroll") if the AI service is unreachable. This prevents the app from appearing broken.
+5.  **Consider Cloudflare Pages for Future Deploys**: For more robust deployment control, set up Cloudflare Pages with a GitHub repository. This prevents any single provider from holding your deploys hostage.
+
+## Original source
+This workflow is based on a blog post by koda2026 on DEV Community, detailing their experience deploying a web application called KODA on a budget using a smartphone. The author shares lessons learned from encountering limitations with Netlify and Neocities, and how they built resilience into their application.
+
+## Notes & variations
+*   **Free-tier alternative**: For static sites, GitHub Pages is another excellent free hosting option that integrates well with Git repositories.
+*   **Common pitfall**: Relying solely on a single hosting provider without understanding their free tier limitations can lead to unexpected service interruptions. Always check the fine print for build minutes, bandwidth, and other resource caps.
+*   **Tip for better results**: Implement a robust error handling strategy for any external API calls, especially AI services. This makes your application more resilient to network issues or provider downtime, providing a better user experience.

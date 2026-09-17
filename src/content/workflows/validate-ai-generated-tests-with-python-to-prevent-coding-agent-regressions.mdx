@@ -1,0 +1,105 @@
+---
+title: "Validate AI-Generated Tests with Python to Prevent Coding Agent Regressions"
+description: "Learn how to use Python to check if AI-generated tests for coding agents are effective and prevent unintended bugs."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 15
+jobToBeDone: "Validate AI-generated tests for coding agents to prevent regressions"
+tools:
+  - name: "Python"
+    url: "https://www.python.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "GPT-5.6-sol"
+    url: "https://openai.com/"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Qwen-3.5-35B-A3B"
+    url: "https://qwen.tsinghua.edu.cn/"
+    pricing: "paid"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/p0rt/ai-generated-tests-can-make-coding-agents-worse-heres-how-to-check-yours-3jc9"
+  platform: "blog"
+  author: "p0rt"
+  postedAt: 2026-09-11
+score: 7
+ingestedAt: 2026-09-17
+nigeriaNotes: "Python is free and widely available. Accessing advanced AI models like GPT-5.6-sol or Qwen-3.5-35B-A3B typically requires paid subscriptions or API credits, which might be a barrier. Data usage for running Python scripts locally is minimal."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to check if AI-generated tests for coding agents are actually good, using a Python example. This helps ensure that when an AI fixes a bug, it doesn't accidentally introduce new problems, which is crucial for reliable AI coding assistants.
+
+## Tools you need
+*   **Python** (free): A programming language used to write and run the code examples.
+*   **GPT-5.6-sol** (paid): A large language model that can generate code, including tests. (Note: This specific model may not be directly accessible; similar advanced models are available via paid APIs).
+*   **Qwen-3.5-35B-A3B** (paid): Another large language model for code generation. (Note: This specific model may not be directly accessible; similar advanced models are available via paid APIs).
+
+## Steps
+1.  **Understand the problem**: AI-generated tests can sometimes pass even when the code is wrong, or they might not catch new bugs introduced by a fix. This example shows how a simple Python function can fail to meet all requirements, and how a test might incorrectly pass a flawed fix.
+
+    The example function `filter_orders` is supposed to filter a list of orders based on a list of statuses. It has three requirements:
+    *   If no filter is given (or `None` is passed), return all orders.
+    *   If an empty list `[]` is passed, return no orders.
+    *   If a list of statuses is passed, return only orders matching those statuses.
+
+2.  **Examine a flawed fix**: The author presents a Python code snippet with a proposed fix for a bug where omitting the filter returned nothing. This fix looks reasonable at first glance:
+
+    ```python
+    ORDERS = [
+      { "id": 1, "status": "paid" },
+      { "id": 2, "status": "pending" },
+    ]
+
+    def filter_orders(orders, statuses=None):
+      if not statuses:
+        return list(orders)
+      return [order for order in orders if order["status"] in statuses]
+
+    # Initial checks that pass with the flawed fix
+    assert filter_orders(ORDERS) == ORDERS
+    assert filter_orders(ORDERS, ["paid"]) == [ORDERS[0]]
+    print("2 checks passed")
+    ```
+
+    You should see `2 checks passed` printed to your console, indicating that the basic functionality seems to work.
+
+3.  **Add a new check for the second requirement**: To properly test the function, you need to check the case where an empty list `[]` is passed as statuses. Add this assertion to the code:
+
+    ```python
+      assert filter_orders(ORDERS, []) == []
+    ```
+
+    When you run this code, it will likely **fail**. The author notes that Python treats `None` and `[]` as "falsey" (meaning they evaluate to false in a boolean context), but they have different meanings for this function. The proposed fix incorrectly handles both the `None` case and the `[]` case the same way, failing to return an empty list when `[]` is explicitly passed.
+
+4.  **See how a bad test can mislead AI**: The author then shows a deliberately constructed assertion that the flawed fix *passes*, even though it's incorrect according to the requirements:
+
+    ```python
+    # This expectation contradicts the stated empty-list requirement.
+    assert filter_orders(ORDERS, []) == ORDERS
+    ```
+
+    If an AI coding agent were to use this incorrect test, it might think its flawed fix is correct, or worse, it might try to "fix" a correct implementation to pass this bad test, breaking the code further.
+
+5.  **Examine the correct implementation**: The author provides the complete, correct implementation that handles `None` explicitly:
+
+    ```python
+    def filter_orders(orders, statuses=None):
+      if statuses is None:
+        return list(orders)
+      return [order for order in orders if order["status"] in statuses]
+    ```
+
+    This version correctly distinguishes between `None` (return all) and `[]` (return none), and would fail the misleading assertion from step 4.
+
+## Original source
+This workflow is based on an article by p0rt on the DEV Community platform. The author explains how AI-generated tests can sometimes be weak and lead to regressions, and provides a Python example to demonstrate how to catch these flawed tests.
+
+## Notes & variations
+*   **Free tier alternative**: While the specific AI models mentioned (GPT-5.6-sol, Qwen-3.5-35B-A3B) are typically paid, you can use free, locally runnable models via tools like Ollama or LM Studio to experiment with generating tests. However, the core concept of validating tests remains the same regardless of the AI used.
+*   **Common mistake**: A common pitfall is assuming that if an AI-generated test passes after a code change, the change is correct. This example shows that the test itself might be flawed or not comprehensive enough.
+*   **Tip for better results**: Always write your own critical tests, especially for edge cases and requirements that might be ambiguous, rather than solely relying on AI-generated tests. Manually review AI-generated tests to ensure they cover all necessary conditions and accurately reflect the desired behavior.

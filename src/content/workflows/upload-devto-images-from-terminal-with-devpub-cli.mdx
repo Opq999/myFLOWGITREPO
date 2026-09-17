@@ -1,0 +1,107 @@
+---
+title: "Upload Dev.to Images from Terminal with devpub CLI"
+description: "Learn to upload images to Dev.to directly from your terminal using the devpub CLI tool. Avoid manual uploads and streamline your blogging workflow."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 15
+jobToBeDone: "Upload images to Dev.to from the terminal using a custom CLI tool"
+tools:
+  - name: "devpub CLI"
+    url: "https://github.com/sarvar04/devpub"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Forem API"
+    url: "https://developers.forem.com/"
+    pricing: "paid"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/sarvar_04/my-devto-cli-got-its-first-community-pr-image-uploads-from-terminal-4562"
+  platform: "blog"
+  author: "sarvar_04"
+  postedAt: 2026-09-03
+score: 7
+ingestedAt: 2026-09-17
+nigeriaNotes: "The devpub CLI is free and open-source. The Forem API is free to use for posting articles, but requires a session cookie and CSRF token obtained from your browser session on dev.to, which is free to access. Data usage is minimal, as it involves uploading image files."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will be able to upload images directly to your Dev.to posts from your computer's command line interface (CLI). This saves you the time of manually uploading images through the Dev.to website. This approach works because the devpub tool cleverly mimics the browser's image upload process, even though the official Forem API doesn't have a direct image upload feature.
+
+## Tools you need
+*   **devpub CLI** (free): A command-line tool that helps you manage your Dev.to posts, including uploading images.
+*   **Forem API** (paid): The underlying API that Dev.to uses. While the API itself doesn't have a direct image upload endpoint, the devpub tool uses it indirectly by interacting with Dev.to's web interface.
+
+## Steps
+1.  **Install the devpub CLI**: If you don't have it already, you'll need to install the devpub tool. The author used version 0.3.0.
+
+    ```bash
+    pip install devpub == 0.3.0
+    ```
+
+    You should see output indicating that the package has been successfully installed.
+
+2.  **Get your Dev.to session cookie and CSRF token**: The devpub tool needs these to authenticate your uploads, as the Forem API doesn't directly support image uploads. You can find these by inspecting your browser's cookies and network requests when you are logged into Dev.to.
+    *   Open Dev.to in your browser and log in.
+    *   Open your browser's developer tools (usually by pressing F12).
+    *   Go to the 'Application' or 'Storage' tab and find the cookies for `dev.to`. Look for `_Devto_Forem_Session`.
+    *   Go to the 'Network' tab, and try to upload an image manually through the Dev.to editor. Look for a request to `/image_uploads`. Inspect the request headers for the `X-CSRF-Token`.
+    *   Save these values. The author stores them in a `.env` file in the `.devpub/` directory, but this file is ignored by git.
+
+    You will need to have these two pieces of information to proceed.
+
+3.  **Configure devpub with your credentials**: The author mentions that these credentials are stored in `.devpub/.env`. You will need to create this file and add your session cookie and CSRF token.
+
+    ```bash
+    # Create the directory if it doesn't exist
+    mkdir -p .devpub
+    ```
+
+    Create a file named `.devpub/.env` and add your credentials. The exact format is shown in the original source, but it looks like this:
+
+    ```
+    DEVPUB_SESSION_COOKIE=_Devto_Forem_Session = YOUR_SESSION_COOKIE_VALUE
+    DEVPUB_CSRF_TOKEN=YOUR_CSRF_TOKEN_VALUE
+    ```
+
+    Replace `YOUR_SESSION_COOKIE_VALUE` and `YOUR_CSRF_TOKEN_VALUE` with the actual values you found in step 2.
+
+4.  **Upload an image**: Use the `devpub upload` command followed by the name of your image file.
+
+    ```bash
+    devpub upload cover.png
+    ```
+
+    You should see output similar to this, showing the uploaded file and its URL:
+
+    ```
+    Uploaded: cover.png
+    Uploaded Images
+    ┏━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+    ┃ File ┃ URL ┃
+    ┡━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+    │ cover.png │ https://dev-to-uploads.s3.amazonaws.com/… │
+    └──────────────┴──────────────────────────────────────────┘
+    ```
+
+5.  **Upload multiple images or get Markdown**: You can upload all PNG images in the current directory using `* .png`. You can also get the Markdown formatted image tag directly by adding the `--markdown` flag.
+
+    ```bash
+    devpub upload architecture.png --markdown
+    ```
+
+    This will output the Markdown ready to be pasted into your article:
+
+    ```
+    ![architecture](https://dev-to-uploads.s3.amazonaws.com/uploads/...)
+    ```
+
+## Original source
+This workflow is based on a blog post by Sarvar on the DEV Community platform. Sarvar shares the story of how a community contributor added image upload functionality to his devpub CLI tool, explaining the technical challenge of uploading images to Dev.to without a direct API endpoint and how it was solved.
+
+## Notes & variations
+*   **Free tier alternative**: There is no direct free tier alternative for a CLI tool that automates this specific Dev.to upload process. The manual upload via the Dev.to website is the standard, free method.
+*   **Common pitfall**: Forgetting to set the `DEVPUB_SESSION_COOKIE` and `DEVPUB_CSRF_TOKEN` in the `.devpub/.env` file will cause the upload to fail. The tool needs these to authenticate with Dev.to's web interface.
+*   **Tip for better results**: Use the `--markdown` flag when uploading images that you plan to use in your articles. This saves you the extra step of formatting the image link yourself.

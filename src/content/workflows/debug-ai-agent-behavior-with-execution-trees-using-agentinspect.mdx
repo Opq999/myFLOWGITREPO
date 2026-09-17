@@ -1,0 +1,149 @@
+---
+title: "Debug AI Agent Behavior with Execution Trees using AgentInspect"
+description: "Understand and debug complex AI agent behavior by visualizing execution trees instead of flat logs. Learn how AgentInspect helps trace operations."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 60
+jobToBeDone: "Debug AI agent behavior by visualizing execution trees"
+tools:
+  - name: "AgentInspect"
+    url: "https://www.npmjs.com/package/agent-inspect"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "TypeScript"
+    url: "https://www.typescriptlang.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Node.js"
+    url: "https://nodejs.org/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/raju_dandigam/execution-trees-not-more-logs-a-better-debugging-model-for-ai-agents-3d4g"
+  platform: "blog"
+  author: "raju_dandigam"
+  postedAt: 2026-09-02
+score: 8
+ingestedAt: 2026-09-17
+nigeriaNotes: "This workflow requires setting up a local development environment, including Node.js and TypeScript. While the tools are free, it demands technical comfort with coding and command-line interfaces, which might incur data usage for initial downloads."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "Debug your custom AI chatbot's decision tree for assignment research by visualizing its execution steps."
+  - persona: "employee"
+    scenario: "Trace why your internal AI assistant failed to book a meeting by inspecting its execution tree."
+  - persona: "entrepreneur"
+    scenario: "Analyze your AI marketing bot's customer interaction flow to find where it drops leads."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+Debugging complex AI agents can be tricky when you only have a flat list of events, like a simple timeline. It's hard to tell what caused what, or how different operations are connected. This concept introduces "execution trees," which are a much clearer way to visualize an agent's actions.
+
+An execution tree shows the relationships between an agent's steps, like a family tree for its operations. It makes it obvious which action led to another, which steps ran in parallel, or which higher-level task owned a specific sub-operation. This is especially useful for understanding how an agent plans, uses tools, or recovers from errors.
+
+This workflow uses `AgentInspect`, an open-source toolkit built with TypeScript. It helps developers instrument (add monitoring code to) their AI agents to automatically generate these execution trees. Because it involves writing and running code in a local development environment, this is an advanced concept for those building and testing AI agents.
+
+## What you can use it for
+*   **Understand complex agent paths**: See exactly how an AI agent makes decisions and executes a sequence of steps, rather than just a flat list of events.
+*   **Identify failure points**: Pinpoint which specific operation failed and which higher-level task was responsible for it.
+*   **Trace fallback mechanisms**: Observe how an agent attempts to recover from errors or tries alternative strategies when a primary action fails.
+*   **Visualize nested operations**: Understand when one part of an agent delegates work to another, or when a tool performs several sub-operations as part of a larger task.
+*   **Debug parallel tasks**: Clearly see how multiple tool calls or steps run at the same time within an agent's execution.
+
+## Tools you need
+*   **AgentInspect** (free): An open-source TypeScript toolkit for inspecting AI agent executions locally.
+*   **TypeScript** (free): A programming language that adds type checking to JavaScript, used for writing agent code.
+*   **Node.js** (free): A runtime environment that allows you to run JavaScript and TypeScript code outside of a web browser, including the 'npm' and 'npx' commands.
+
+## How it actually works
+This workflow requires you to set up a local development environment and instrument your AI agent's code. The exact steps will depend on your specific agent's structure, but here's the general process:
+
+1.  **Install Node.js**: Download and install Node.js from its official website. This will also install `npm` (Node Package Manager) and `npx`, which are needed to manage and run packages.
+
+2.  **Set up a TypeScript project**: If you don't already have one, create a new directory for your project and initialize it for TypeScript. You'll typically run `npm init -y` and then `npm install typescript ts-node @types/node` to get started.
+
+3.  **Install AgentInspect**: In your project directory, install the `agent-inspect` package:
+
+    ```bash
+    # macOS or Linux
+    npm install agent-inspect
+    ```
+
+    ```powershell
+    # Windows (PowerShell)
+    npm install agent-inspect
+    ```
+
+4.  **Instrument your agent code**: Modify your AI agent's TypeScript code to use `inspectRun` and `step` from `agent-inspect`. These wrappers mark the boundaries of your agent's operations, allowing `AgentInspect` to build the execution tree. The author provides a small example:
+
+    ```typescript
+    import { inspectRun , step } from "agent-inspect" ;
+
+    await inspectRun ( "travel-planner" , async () => {
+      const plan = await step ( "plan" , async () => ({
+        destinations : [ "SFO" , "SEA" ],
+      }));
+
+      const [ flights , hotels ] = await Promise . all ([
+        step . tool ( "search-flights" , async () => [
+          { id : "F-101" , price : 220 },
+        ]),
+        step . tool ( "search-hotels" , async () => [
+          { id : "H-202" , nightly : 180 },
+        ]),
+      ]);
+
+      return step . llm ( "rank-options" , async () => ({
+        plan , flights , hotels ,
+      }));
+    }, { traceDir : "./.agent-inspect" },
+    );
+    ```
+
+5.  **Run your instrumented agent**: Execute your TypeScript file using `ts-node` (which you installed in step 2). This will run your agent and generate the trace data in the directory specified by `traceDir` (e.g., `./.agent-inspect`).
+
+    ```bash
+    # macOS or Linux
+    ts-node your-agent-file.ts
+    ```
+
+    ```powershell
+    # Windows (PowerShell)
+    ts-node your-agent-file.ts
+    ```
+
+6.  **View the execution tree**: Use the `npx agent-inspect view` command to display the generated execution tree in your terminal. Replace `travel-planner` with the name you gave your run in the `inspectRun` function.
+
+    ```bash
+    # macOS or Linux
+    npx agent-inspect view travel-planner \
+      --dir .agent-inspect \
+      --summary
+    ```
+
+    ```powershell
+    # Windows (PowerShell)
+    npx agent-inspect view travel-planner `
+      --dir .agent-inspect `
+      --summary
+    ```
+
+## Words you'll see, explained
+*   **AI Agent**: A program that can make decisions and perform actions autonomously, often interacting with tools or other systems.
+*   **Execution Tree**: A visual representation that shows the sequence and hierarchical relationships of operations an agent performs, making causality clear.
+*   **Flat Log**: A simple, chronological list of events or messages generated by a program, without explicitly showing how they relate to each other.
+*   **Instrumentation**: The process of adding code to a program specifically to monitor its behavior, collect data, or trace its execution.
+*   **TypeScript**: A programming language that is a superset of JavaScript, meaning it adds optional static typing to JavaScript to help catch errors during development.
+*   **Node.js**: An open-source, cross-platform JavaScript runtime environment that allows developers to execute JavaScript code outside of a web browser.
+*   **npx**: A command-line tool that comes with Node.js, used to run Node.js package executables directly without needing to install them globally.
+
+## Original source
+This debugging model and the AgentInspect toolkit were introduced by Raju Dandigam in an article on the DEV Community blog. The article explains the limitations of traditional flat logs for AI agents and advocates for execution trees as a superior debugging approach.
+
+## Notes & variations
+*   **Do you even need this?**: For very simple AI agents with only a few sequential steps, traditional print statements or basic logging might be sufficient. Execution trees become invaluable when your agent's logic involves complex planning, parallel operations, nested sub-agents, or sophisticated error recovery.
+*   **Free-tier limits**: `AgentInspect` itself is a free, open-source tool that runs locally on your machine. However, the AI agents you are debugging might rely on paid services, such as large language model (LLM) APIs, which would incur costs based on your usage.
+*   **Common pitfall**: A common mistake is not instrumenting enough of your agent's critical operations. If key steps or tool calls are not wrapped with `step`, the resulting execution tree will be incomplete and might not reveal the full picture of your agent's behavior.
+*   **Tip for better results**: Start by instrumenting the main planning and tool-use steps. As you encounter bugs or areas of confusion, progressively add more detailed `step` wrappers to smaller, nested operations to gain deeper insights into specific parts of your agent's execution.
