@@ -20104,8 +20104,36 @@
     "161867cc2199fba5a310882dfad278ce10f921637ca73c431b70083e3f9919f5": {
       "url": "https://www.reddit.com/r/webdev/comments/1w4422i/emails_forwarded_from_my_vps_to_gmail_being",
       "date": "2026-09-18"
+    },
+    "7c8e8c8a698ae3fe23444537f191c2c6074b95e44db96693e34cb13c71831c69": {
+      "url": "https://news.ycombinator.com/item?id=49706708",
+      "date": "2026-09-19"
+    },
+    "cd7d3f3cc962b4c4717294edd1485b8ade9fa5a84965d2229c96767f62f3ce94": {
+      "url": "https://simonwillison.net/2026/Sep/18/gemini-hacked-three-companies",
+      "date": "2026-09-19"
+    },
+    "d24cf3d00a4598572647acc2ce9b508979a1ad0bb8b892da92b65e05412543de": {
+      "url": "https://simonwillison.net/2026/Sep/18/probably-gonna-eat-you",
+      "date": "2026-09-19"
+    },
+    "bb098ef13f310da7ff14b9d7f86e7769bf3fc5f48469d26d92be7866f203b3dc": {
+      "url": "https://simonwillison.net/2026/Sep/18/thariq-shihipar",
+      "date": "2026-09-19"
+    },
+    "8d9964b2a1d355f80ec3f8ee675027b619454475c9197777fb57431e0f7e2b85": {
+      "url": "https://simonwillison.net/2026/Sep/18/the-creative-spirit-of-who-framed-roger-rabbit",
+      "date": "2026-09-19"
+    },
+    "fb0ebe24a1ef57575fb524e4cae242ba1a153a9697764568f11467223329a72f": {
+      "url": "https://www.latent.space/p/ainews-here-are-6-clones-of-jev-in",
+      "date": "2026-09-19"
+    },
+    "e76b74dfee5283947a0c916cf97b7bb7c1b650bce4255401a424280b84fa444f": {
+      "url": "https://www.oneusefulthing.org/p/the-overhang",
+      "date": "2026-09-19"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 3
+  "dailyPage": 4
 }
