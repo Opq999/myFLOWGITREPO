@@ -20348,8 +20348,112 @@
     "b8cf439c69c3d07c8c39a37edab12648ba00721c61ca4861de3c11fa6c8e13f8": {
       "url": "https://www.reddit.com/r/copywriting/comments/1vvr42m/need_your_opinion_on_an_email_sequence",
       "date": "2026-09-20"
+    },
+    "94680fccd1e8ce360f829b4bda924d33be119232562c79a76372f567e60516af": {
+      "url": "https://news.ycombinator.com/item?id=49745351",
+      "date": "2026-09-21"
+    },
+    "8f6b17855954d7d20c55e49f1365448c96f7965040594ed9524d17e8c08e20c9": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1wj0usc/battering_ram",
+      "date": "2026-09-21"
+    },
+    "b6349f50297a201515619b07d93544e5051a6e4c0806d556f667ad9f86407532": {
+      "url": "https://simonwillison.net/2026/Sep/20/voxium",
+      "date": "2026-09-21"
+    },
+    "587c68a1307478c20d6cdd9a2bcecc617a199455561a81fd65f8d010f4bd38ac": {
+      "url": "https://github.com/ahujasid/mcp-for-blender",
+      "date": "2026-09-21"
+    },
+    "a9e173503fefd148cf8f69012630e66abb79a5d22b4f8a236b6f9828b2b3fd89": {
+      "url": "https://simonwillison.net/2026/Sep/20/llm-keys-ui",
+      "date": "2026-09-21"
+    },
+    "c92be186c651123ddfda5dfafca20dfe2da65c92fc12ca45190dc9a7b16d7ac2": {
+      "url": "https://github.com/anywhere-labs/dsh-desktop",
+      "date": "2026-09-21"
+    },
+    "c127f0c02fd03a6c8a66e4947495f67ec474c36e98f7c085bb06b56baf6f31e0": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1wm3bit/this_isnt_real_i_made_this_street_art_entirely_in",
+      "date": "2026-09-21"
+    },
+    "9292c0e35415dfab9be0ae072c05dde7bb8211254e318d79c097605632943db9": {
+      "url": "https://simonwillison.net/2026/Sep/20/datasette-explain",
+      "date": "2026-09-21"
+    },
+    "d42fad4e939c91ccd409ba1b127bd24d8e5965436cd89a41d2746a375b31c8c1": {
+      "url": "https://github.com/steipete/CodexBar",
+      "date": "2026-09-21"
+    },
+    "4d1908b55c06e31eb8b0f4a1c9aa40ee252d3184f85e271d54cb5566540d2b11": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1wi5rfb/andrew_yang_today_the_rogue_swarm_already",
+      "date": "2026-09-21"
+    },
+    "ae2a66f3c360fd1788ea542ecd106283297aa5851d8fa012405023e8db53a75a": {
+      "url": "https://huggingface.co/blog/MultiverseComputingCAI/pruning-llms-like-a-physicist-block-removal-as-an",
+      "date": "2026-09-21"
+    },
+    "6e1c434b56619bbe12df3adbb56d2da338192e8922e1b0279587952f787864a2": {
+      "url": "https://www.reddit.com/r/Python/comments/1wesa5w/sunday_daily_thread_whats_everyone_working_on",
+      "date": "2026-09-21"
+    },
+    "693b3130e25cc8808f585a694f7201006d36e37cb71c7b8ae2099287d6befd80": {
+      "url": "https://huggingface.co/blog/tokenizers-v1",
+      "date": "2026-09-21"
+    },
+    "ccb74c007423086ab6a3441f71ed45efd625ce22bce02aeb53508d6fc4a6cac1": {
+      "url": "https://www.reddit.com/r/Python/comments/1vxrna7/pdftotext_layout_still_isnt_enough_when_a",
+      "date": "2026-09-21"
+    },
+    "43bf4602833d95a55b199127c60daca7b4d42b6b84b5cda0d0d6a5221104bbf2": {
+      "url": "https://www.interconnects.ai/p/the-current-balance-of-power-in-open",
+      "date": "2026-09-21"
+    },
+    "50c13f1c2d346ec139d2542ce1707e24ad7d028dabcac5898582acf39bcdb9cc": {
+      "url": "https://www.reddit.com/r/Python/comments/1vwn3pg/monday_daily_thread_project_ideas",
+      "date": "2026-09-21"
+    },
+    "32f0e323b5d604668c514ba34fdd63cc2a7ba9150d69d7a68acf86f560307749": {
+      "url": "https://www.reddit.com/r/Python/comments/1wa8mn4/tuesday_daily_thread_advanced_questions",
+      "date": "2026-09-21"
+    },
+    "0291373f6e7c9f62cd07b915950ea95fe3cf1fe9306da2278235fa7b044cbed3": {
+      "url": "https://www.reddit.com/r/Python/comments/1w3jqtj/pycon_2026_in_aveiro",
+      "date": "2026-09-21"
+    },
+    "c13f146819f4bea76f6541f259986c0d98dd3915b49198df5b0969198bfe901e": {
+      "url": "https://www.reddit.com/r/Python/comments/1vxahvg/how_are_you_all_testing_boto3heavy_tools_without",
+      "date": "2026-09-21"
+    },
+    "5d62e58eb360ebfedb986126acf5b7f652288c9abbb0c3418c800fadd40edb4a": {
+      "url": "https://www.reddit.com/r/Python/comments/1wie2p8/thursday_daily_thread_python_careers_courses_and",
+      "date": "2026-09-21"
+    },
+    "9070cbfdf7985d2a027ef87a604dc8fb21e6ce26f462e595f0645c0eecda800b": {
+      "url": "https://www.reddit.com/r/Python/comments/1w1kkiq/contribution_to_pyperf",
+      "date": "2026-09-21"
+    },
+    "2d3eb71c6cf9ec8810eb90ca8d847a6dbaf1e2a08fb9af29e02be3c37126d074": {
+      "url": "https://www.reddit.com/r/Python/comments/1w65z4k/pyinstaller_for_android",
+      "date": "2026-09-21"
+    },
+    "58240acc2fc7435a43a445a954f7c4bc01cea3dae8c765e3b06ab5d2fb95cede": {
+      "url": "https://www.reddit.com/r/Python/comments/1w4j7m0/python_under_the_hood_update_chapter_3",
+      "date": "2026-09-21"
+    },
+    "fc06afbde97bcade86ded25e3e52da2c4c94e0673f752acf467cc0fba711a62b": {
+      "url": "https://www.reddit.com/r/Python/comments/1wk6nck/saturday_daily_thread_resource_request_and",
+      "date": "2026-09-21"
+    },
+    "968830443ca16e7e8048d562c26c61c916cc9c9a1148d748441a6aba75f13f25": {
+      "url": "https://www.reddit.com/r/Python/comments/1wm1s0r/common_mistakes_devs_make_when_starting_with",
+      "date": "2026-09-21"
+    },
+    "2eb645922920f712852742d78381ed50374660707b3356531bff8fe63d7391a7": {
+      "url": "https://www.reddit.com/r/Python/comments/1wlm5c4/effective_python_book",
+      "date": "2026-09-21"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 5
+  "dailyPage": 0
 }
