@@ -20452,8 +20452,228 @@
     "2eb645922920f712852742d78381ed50374660707b3356531bff8fe63d7391a7": {
       "url": "https://www.reddit.com/r/Python/comments/1wlm5c4/effective_python_book",
       "date": "2026-09-21"
+    },
+    "542d74b9dc1184a099adb38326ef23784a3c9d43439d5761255b41d8faa1df2c": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1wkuowb/i_swear_one_of_them_died_from_aids",
+      "date": "2026-09-22"
+    },
+    "012242336f7588da60f61b699d6bb32bd6bf23173a0a79021e64e7c9bc64bb6c": {
+      "url": "https://simonwillison.net/2026/Sep/21/jev",
+      "date": "2026-09-22"
+    },
+    "0cf571e4d722dd860ce48edad61a9ad0517b42aa549167dd88d0ee2df54453d3": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1wkyt22/victory_by_any_means_educational",
+      "date": "2026-09-22"
+    },
+    "1d4c089b9c3b10f4e0486ab3700aa6c80fa5779c8e0ab9335a6fd5b875100788": {
+      "url": "https://simonwillison.net/2026/Sep/21/cloudflare-python-worker",
+      "date": "2026-09-22"
+    },
+    "af77a6f61b95220c94b63d7f784954fe9c3c62888d0527e1de5ff903eaf8b444": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1wlec9y/chatgpt_sees_a_shirtless_man_behind_my_excel",
+      "date": "2026-09-22"
+    },
+    "76fec386ed6440f314b151f88cac7084514b8bd193a8379026782b9e3af61f5c": {
+      "url": "https://simonwillison.net/2026/Sep/20/hn-49779718",
+      "date": "2026-09-22"
+    },
+    "96d92782da08cb950aa1497a612c4949cb277876218db447334221f253a3b5cd": {
+      "url": "https://www.reddit.com/r/learnmachinelearning/comments/1vykt8l/its_all_about_fighting_bugs",
+      "date": "2026-09-22"
+    },
+    "c5ef439db94fe95e2aa5ea40b22df33c610e13a37fc83dd05902059af2a31443": {
+      "url": "https://www.latent.space/p/ainews-xiaomi-mimo-v26-pro-1t-a42b",
+      "date": "2026-09-22"
+    },
+    "4f7bae4aaec351728a77b7e37cf39b94bd14cd3e5e96327b0eef664fa2efebec": {
+      "url": "https://www.reddit.com/r/learnmachinelearning/comments/1w67l9i/what_is_the_reasoning_for_this",
+      "date": "2026-09-22"
+    },
+    "7409d5ffee8a2c05841b75acaa01a2e075c8dbdd449825ea2807d39484e82956": {
+      "url": "https://www.latent.space/p/jev",
+      "date": "2026-09-22"
+    },
+    "eb0e18eee97b62cc8831aa1373456dacda5d4ff41c246c3d427147011f0d5b27": {
+      "url": "https://www.reddit.com/r/learnmachinelearning/comments/1wamnw7/you_do_not_need_a_maths_degree_to_truly",
+      "date": "2026-09-22"
+    },
+    "6738f3ceabaa304f81cb8cdf008e669215d734a4753d539f7c79d78c5c545457": {
+      "url": "https://www.bensbites.com/p/what-can-you-build-with-jev",
+      "date": "2026-09-22"
+    },
+    "bcea484f957cbe0cd7c506189dc47a510e55d3406468782e9b06e75194472b1c": {
+      "url": "https://www.reddit.com/r/learnmachinelearning/comments/1wbgjw6/is_this_book_good",
+      "date": "2026-09-22"
+    },
+    "689d78c6e007ab8e2c4f1996bb4d798c0801548871029acd469c087e5a6afc90": {
+      "url": "https://huggingface.co/blog/transformers-llama-cpp-quants",
+      "date": "2026-09-22"
+    },
+    "101278b27e1f9a65c06047b4b8629c16ca4a58e42065bcfab29eab5e2312d57c": {
+      "url": "https://www.reddit.com/r/learnmachinelearning/comments/1w5038h/training_a_video_generation_model_from_scratch_on",
+      "date": "2026-09-22"
+    },
+    "6b3083011aeb49b1cc1d670c7a6b978a0e574dd3aa04f209e3cfec07c825f88d": {
+      "url": "https://huggingface.co/blog/omlx",
+      "date": "2026-09-22"
+    },
+    "60a2aabfe775e51c5a111d6051db83537fd355b25cf4c9b8d44674a294634e9c": {
+      "url": "https://www.reddit.com/r/learnmachinelearning/comments/1w4bg6j/neetcode_150_for_ml_interviews_ml150com",
+      "date": "2026-09-22"
+    },
+    "39e3c65b6e1366588ba8722e788eb2245486a2c2db3fcdbd1d3d06625be9d4db": {
+      "url": "https://www.reddit.com/r/learnmachinelearning/comments/1vxtc5c/probabilistic_machine_learning_lecture_1_notes",
+      "date": "2026-09-22"
+    },
+    "c84301ad93cb186174182d8516fa6b5e6b5a5cd138c09ceb88fcdfeaa4ec2f19": {
+      "url": "https://www.reddit.com/r/learnmachinelearning/comments/1vyjkmx/what_comes_after_llm",
+      "date": "2026-09-22"
+    },
+    "c6aaf5e34b95cb6d2de38b0428a5f8cca1060e0942caf079b4d39dff7a53163e": {
+      "url": "https://www.reddit.com/r/learnmachinelearning/comments/1w7gbnz/experiment_i_trained_a_model_on_childhood_photos",
+      "date": "2026-09-22"
+    },
+    "2915b7268af706377a3f818c92a75741842dfeb6d755cd469b3827120468f13c": {
+      "url": "https://www.reddit.com/r/learnmachinelearning/comments/1wlfow0/how_do_people_come_up_with_massive_papers_like",
+      "date": "2026-09-22"
+    },
+    "e0c9c9b671e9694ec2161e01c5caafa7cb84ef313b97bfa8f4e6ec1a557967d9": {
+      "url": "https://www.reddit.com/r/learnmachinelearning/comments/1w9icrm/is_this_course_good_for_mathematics",
+      "date": "2026-09-22"
+    },
+    "7f049fbd6d8545f2fa8dbe8c69df758a038e861798c6fc9ce825b75302731c50": {
+      "url": "https://www.reddit.com/r/learnmachinelearning/comments/1wjw1m0/completed_soft_margin_svm_algorithm_but_only_for",
+      "date": "2026-09-22"
+    },
+    "c2dc5bbdc31f8fff8adc430f66ad67424c19c3fe012733f3023659af8480f339": {
+      "url": "https://www.reddit.com/r/learnmachinelearning/comments/1wi8kot/is_aiml_engineering_basically_just_paywalled_at",
+      "date": "2026-09-22"
+    },
+    "e0205d8056b1ba1ca18e6f0e622ccfd750ff5282dbc6612e19a08f6bde2c549b": {
+      "url": "https://www.reddit.com/r/learnmachinelearning/comments/1w2m6o3/i_built_tensor_operations_and_scalar_autograd",
+      "date": "2026-09-22"
+    },
+    "9a995aaa06dc832eefb160ef7ad1c4cba4ed7322af87ae1bb9e6ee3dc4d785ff": {
+      "url": "https://www.reddit.com/r/learnmachinelearning/comments/1w8g6qi/why_decoder_only_tranformer_won",
+      "date": "2026-09-22"
+    },
+    "f527a4e271e289f42ba27b0d71280a22b15b035f30442ba939189162a2f5601c": {
+      "url": "https://www.reddit.com/r/learnmachinelearning/comments/1w3gt3w/a_3d_robot_arm_which_evolved_to_reach_targets",
+      "date": "2026-09-22"
+    },
+    "e3727aa5af91a045ca5bf4c5e43b78085c79aee458223360988eeb99f651f8d2": {
+      "url": "https://www.reddit.com/r/learnmachinelearning/comments/1w5fqt9/ive_learned_ml_but_now_that_im_starting_kaggle_i",
+      "date": "2026-09-22"
+    },
+    "eba585e60fa061c5db3a27e5b5a19ce08a58c9f16a88cafa6949581ef4d5e67f": {
+      "url": "https://www.reddit.com/r/learnmachinelearning/comments/1w0ghn4/i_made_a_live_visualization_library_for_neural",
+      "date": "2026-09-22"
+    },
+    "a974eece3b3a829fea2a4c55dca60ee4e297818e6afe0d72e776d9f99d8bdc78": {
+      "url": "https://www.reddit.com/r/learnmachinelearning/comments/1w1elqe/coding_distributions",
+      "date": "2026-09-22"
+    },
+    "4f67c545d0a920608f2638b716024c4dc40d71e008d50eefc808656a9fea1278": {
+      "url": "https://www.reddit.com/r/learnmachinelearning/comments/1wj2j8i/how_to_test_an_optimizer_is_this_a_good_optimizer",
+      "date": "2026-09-22"
+    },
+    "f669934917a1c416d97ccf1c3f4c1481e91f917c0c833455532ec901b7bad572": {
+      "url": "https://www.reddit.com/r/studytips/comments/1w710zf/how_on_earth_do_people_study",
+      "date": "2026-09-22"
+    },
+    "27d39a06a0175e95299ff80bbb82941af716f679213ec8942d7f9443b768e718": {
+      "url": "https://www.reddit.com/r/studytips/comments/1wfv29s/what_is_your_secret_to_studying",
+      "date": "2026-09-22"
+    },
+    "27443d94898ea17b99f84e0f8ccfa6db713a89bc16a71081f37229b074886787": {
+      "url": "https://www.reddit.com/r/studytips/comments/1vxuxkv/can_you_explain_cell_division",
+      "date": "2026-09-22"
+    },
+    "512967cc77bdaf6f4f8a12d763134856c82e25d50819e57cac29ae7a1c2d4dc9": {
+      "url": "https://www.reddit.com/r/studytips/comments/1wcu3q8/study_habitspatterns",
+      "date": "2026-09-22"
+    },
+    "9975c2079bb887355e6ba9504115adc746bcdc40489824c2416a9d889c783a32": {
+      "url": "https://www.reddit.com/r/studytips/comments/1w63xtl/i_built_a_free_tool_that_turns_any_youtube",
+      "date": "2026-09-22"
+    },
+    "67e24017f9d712dcb87ad7349b22e885ef0a8f1f70c12a1d8471065538a8206f": {
+      "url": "https://www.reddit.com/r/studytips/comments/1whxdlj/how_to_block_shorts_and_reels",
+      "date": "2026-09-22"
+    },
+    "0104c9e5ea446a581cbf1a90d6524ea7b844ed089de91e7cf481dfd3ef573fa2": {
+      "url": "https://www.reddit.com/r/studytips/comments/1wf2e7p/my_simple_study_tracker_for_this_week",
+      "date": "2026-09-22"
+    },
+    "bfa31485874cdd112bc79489c9335aea3d9056f45c16e7d8bdf18ba2c98e310f": {
+      "url": "https://www.reddit.com/r/studytips/comments/1wivc0k/drop_your_motivation_for_staying_consistent",
+      "date": "2026-09-22"
+    },
+    "c55e53ce91c5fc51c2146590b467668a7ef6152e7279312538108b52f1738b54": {
+      "url": "https://www.reddit.com/r/studytips/comments/1w7afi1/how_do_i_find_purpose_in_studying_after",
+      "date": "2026-09-22"
+    },
+    "6c2d7d908513d6196d5da8268ae71566da9ac7b13becb7bdc461f814cec78858": {
+      "url": "https://www.reddit.com/r/studytips/comments/1w8gg04/i_just_crossed_over_500_hrs_studying",
+      "date": "2026-09-22"
+    },
+    "a5bd6631876e15ca6e6414f2ae7a6371ce8e679e188e38e4709d6776eefefd9f": {
+      "url": "https://www.reddit.com/r/studytips/comments/1wgz1mp/you_need_to_defocus_your_brain_between_study",
+      "date": "2026-09-22"
+    },
+    "c032ab9ebecf812e12803f0c896f75acb3e4eb961f022773eb9589143d04af55": {
+      "url": "https://www.reddit.com/r/studytips/comments/1wmigxg/alternatives_for_taking_notes",
+      "date": "2026-09-22"
+    },
+    "4b1bcf66da2fc6f05d116bb3c1cb992b7df01a52d3c504bc6679afbbdf0ffa3c": {
+      "url": "https://www.reddit.com/r/studytips/comments/1wax2pm/how_to_study_without_distractions",
+      "date": "2026-09-22"
+    },
+    "2bb857b058cd36c7260793a39da4cb3d3725e954c9621654df8f571410193972": {
+      "url": "https://www.reddit.com/r/studytips/comments/1wbgwuy/why_do_japanese_study_rooms_look_like_this",
+      "date": "2026-09-22"
+    },
+    "59b856e2a7964b3d6de867360edf112731ac45f0acae68ac5718ce8e1229c73c": {
+      "url": "https://www.reddit.com/r/studytips/comments/1wklvju/i_attached_my_current_schedule_so_you_can_see_how",
+      "date": "2026-09-22"
+    },
+    "37c47408f1ad9b28547df246aea63cda394a0f31fd29fe1e08163ba614313199": {
+      "url": "https://www.reddit.com/r/studytips/comments/1vz1awa/stop_learning_page_by_page_start_learning_in",
+      "date": "2026-09-22"
+    },
+    "5b9459b2df32275d00ab65a31c58b5be5c77e062170727f464435a7f6997fba7": {
+      "url": "https://www.reddit.com/r/studytips/comments/1w1ckkj/whats_your_actual_study_method_because_mine",
+      "date": "2026-09-22"
+    },
+    "63cb03a30a07907d24389bae698a7dda74b8ac3ca12cca4e43c309a10802a24b": {
+      "url": "https://www.reddit.com/r/studytips/comments/1w3ecfg/screen_free_hobbies_for_students",
+      "date": "2026-09-22"
+    },
+    "b32a207bae0de2d3630c05722bcccec404f4ae7515856cfc3827b749b042db0e": {
+      "url": "https://www.reddit.com/r/studytips/comments/1w1geh9/should_practical_skills_be_given_more_importance",
+      "date": "2026-09-22"
+    },
+    "cd98e460d84fa585b4f1cc9bc657eef5e319d99c3fb8a2c021b77b82eda8c7d5": {
+      "url": "https://www.reddit.com/r/studytips/comments/1whhdsf/this_is_the_first_time_i_studied_for_an_hour",
+      "date": "2026-09-22"
+    },
+    "c58376cabe10c8323e1d0fe42e29dbaa2a301c87ac3d64215cd2f22f6c19a7e3": {
+      "url": "https://www.reddit.com/r/studytips/comments/1w0txgp/decoration_guidance",
+      "date": "2026-09-22"
+    },
+    "5ff4275f072dde16872822e59e552f25b9a44c1b159e7a1b45faa1a7a46ebb4a": {
+      "url": "https://www.reddit.com/r/studytips/comments/1vxwxe9/why_you_forget_so_easily_and_the_perspective",
+      "date": "2026-09-22"
+    },
+    "00bad73cd25326bf7713597f24fd07e85144c1fb5f764e8547b4402305e14fbe": {
+      "url": "https://www.reddit.com/r/studytips/comments/1warz4z/i_used_to_struggle_with_studying_until_i_made_one",
+      "date": "2026-09-22"
+    },
+    "a91edd016f505e893055d025a1530cdf51dbd6a56541fde8348ac3994271aaa7": {
+      "url": "https://www.reddit.com/r/studytips/comments/1wanhxa/flashcard_apps_without_ai",
+      "date": "2026-09-22"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 0
+  "dailyPage": 1
 }
