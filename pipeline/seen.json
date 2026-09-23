@@ -20672,8 +20672,104 @@
     "a91edd016f505e893055d025a1530cdf51dbd6a56541fde8348ac3994271aaa7": {
       "url": "https://www.reddit.com/r/studytips/comments/1wanhxa/flashcard_apps_without_ai",
       "date": "2026-09-22"
+    },
+    "a6ad541ad0b728dc434f508b1aedfd37c5e6d22625c15baaee564ee878039fc2": {
+      "url": "https://news.ycombinator.com/item?id=49760187",
+      "date": "2026-09-23"
+    },
+    "0e59a0f3b5128f6222c98034a5453a252048f5e33af18bda8d8ab6e895d6e1e7": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1wmeuvf/why_is_chat_gpt_being_reasonable",
+      "date": "2026-09-23"
+    },
+    "16d87fa5b1873fae127bba726758a84d929dd979134f97718f403eefa2677014": {
+      "url": "https://simonwillison.net/2026/Sep/23/bof-agentic-engineering",
+      "date": "2026-09-23"
+    },
+    "6d3db59d51fa2f736fa46a042078cc125eacb5a00ffaf3c44bf1ed0b5dedb491": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1wmxjs0/we_almost_let_my_dad_sleep_through_a_stroke",
+      "date": "2026-09-23"
+    },
+    "5b206843ef211175e25ca5d4b82b8c8a502ccadc800fb29e5802111c1054b1d7": {
+      "url": "https://simonwillison.net/2026/Sep/22/opus-and-sol-and-luna",
+      "date": "2026-09-23"
+    },
+    "8a51114d4adb208f8c2357d6b4d261310a7733ed331cdc23a245cc7816f52511": {
+      "url": "https://simonwillison.net/2026/Sep/22/llm",
+      "date": "2026-09-23"
+    },
+    "ed1bff04956a860727eb8fb369f91eb2c8bd24c7c4e5503445165f57a878fa15": {
+      "url": "https://www.reddit.com/r/Python/comments/1wn2tuu/whats_under_your_python_app_postgres_sqlite_mysql",
+      "date": "2026-09-23"
+    },
+    "463daa474782f53c54ff286c00c501356e25c9874a78c2f211d9b1fb17a1994d": {
+      "url": "https://simonwillison.net/2026/Sep/22/therealcornpop",
+      "date": "2026-09-23"
+    },
+    "1b74c5b6d59603597ec7fe7d0e8e99d82428b0f4353aa5fc8affee87c4663787": {
+      "url": "https://www.reddit.com/r/Python/comments/1w78kp5/showcase_thread",
+      "date": "2026-09-23"
+    },
+    "2568bb3ee3fd85c6509ba82f1bda8071fcfca9be1742c441593d882f74af4018": {
+      "url": "https://simonwillison.net/2026/Sep/22/llm-anthropic",
+      "date": "2026-09-23"
+    },
+    "b03e4ddd4d1671761d375ae13295ea3316b5cf5d56e2c236590ef5240b9663de": {
+      "url": "https://www.reddit.com/r/Python/comments/1w8glvb/sunday_daily_thread_whats_everyone_working_on",
+      "date": "2026-09-23"
+    },
+    "6f103e1368f86379223ca17777c42a2e5e395e15c76402909a7054379b4614bf": {
+      "url": "https://simonwillison.net/2026/Sep/22/llm-typesafe",
+      "date": "2026-09-23"
+    },
+    "79134a65634f1b4974fcb84f318d1e4eea94b89e3a39761f3b72d3374e2cc316": {
+      "url": "https://www.reddit.com/r/Python/comments/1wne8wt/whats_your_testing_philosophy_for_scripts_vs",
+      "date": "2026-09-23"
+    },
+    "131910aff5aad610af6d02f3067befd11ef788bae427fd05b2cd085ac318e8e5": {
+      "url": "https://www.latent.space/p/bio-security-is-an-ai-arms-race-eric",
+      "date": "2026-09-23"
+    },
+    "ce352806cc700d9b4a8d5890c1a95bdbebd465c1df12fd3e13cee778242cbed6": {
+      "url": "https://www.reddit.com/r/Python/comments/1wfnsfa/monday_daily_thread_project_ideas",
+      "date": "2026-09-23"
+    },
+    "19163c30f0a4c92555051d9a95875a42a5136c8cdeed8dd604a02883f528cc53": {
+      "url": "https://www.latent.space/p/ainews-claude-opus-55-the-new-default",
+      "date": "2026-09-23"
+    },
+    "50cc5511fc9820f08e748b8737230f66fea6b80be7abff1ca05baa73281e655b": {
+      "url": "https://www.reddit.com/r/Python/comments/1wgke1m/tuesday_daily_thread_advanced_questions",
+      "date": "2026-09-23"
+    },
+    "709f0ba0cc6c91a33f3c44e186bbe1262e3f8448e34d7d12f6d37902856efe77": {
+      "url": "https://www.latent.space/p/john-platt",
+      "date": "2026-09-23"
+    },
+    "f208c96fbaff8484719347c93a4cb06701c1e65531c8b436e79996d39120a4f1": {
+      "url": "https://www.reddit.com/r/Python/comments/1w5ritv/thursday_daily_thread_python_careers_courses_and",
+      "date": "2026-09-23"
+    },
+    "bf57ce3f2e77f3951dbe6d0357091a22d11eb8b9b867ae8b5deb7f97e88d1a97": {
+      "url": "https://huggingface.co/blog/nvidia/nemotron-diarization",
+      "date": "2026-09-23"
+    },
+    "d3e580c49c6755aff1b4916cffc9a2355d97f93964e26a4a596574e8c493eac1": {
+      "url": "https://www.reddit.com/r/Python/comments/1w7l34y/saturday_daily_thread_resource_request_and",
+      "date": "2026-09-23"
+    },
+    "e9f63aa1f7aaa02f4024a14154a47668586b26d73f72e5b77e702319146aa96f": {
+      "url": "https://huggingface.co/blog/evaleval-aisi",
+      "date": "2026-09-23"
+    },
+    "3b3756fb85f48c9e7a64969d884ca909cea0623d7d12ec1bf878684806304a20": {
+      "url": "https://www.interconnects.ai/p/debating-rsi-the-us-china-gap-and",
+      "date": "2026-09-23"
+    },
+    "bcbd7f9bf283d596c6eb197654fb4ce20bd1b0676820d4d13fb741f08d425dcf": {
+      "url": "https://newsletter.pragmaticengineer.com/p/windows-and-ai",
+      "date": "2026-09-23"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 1
+  "dailyPage": 2
 }
