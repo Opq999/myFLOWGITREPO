@@ -1,0 +1,90 @@
+---
+title: "Generate and Edit Images with Qwen-Image-2.1 and ComfyUI"
+description: "Learn to create and modify images using AI with Qwen-Image-2.1. Covers text-to-image, editing, background removal, and more."
+category: "content-creation"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 60
+jobToBeDone: "Perform various image generation and editing tasks using an AI model"
+tools:
+  - name: "Qwen-Image-2.1"
+    url: "https://github.com/QwenLM/Qwen-VL"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "ComfyUI"
+    url: "https://comfyanonymous.github.io/ComfyUI/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://www.reddit.com/r/StableDiffusion/comments/1wm77xo/some_very_simple_qwenimage21_workflows/"
+  platform: "reddit"
+  author: "/u/nomadoor"
+  postedAt: 2026-09-21
+score: 8
+ingestedAt: 2026-09-24
+nigeriaNotes: "ComfyUI can be run locally, which is ideal for users with limited or expensive internet access. The AI models themselves require significant processing power, so a capable computer is recommended. Data usage is minimal once the tools are downloaded."
+nigeriaUseCases:
+  - persona: "entrepreneur"
+    scenario: "Generate unique product mockups for your online store by describing them in text."
+  - persona: "small-business"
+    scenario: "Create eye-catching Instagram graphics for your products or services without needing a designer."
+  - persona: "student"
+    scenario: "Generate custom illustrations for your project presentation or blog post from text descriptions."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+
+Qwen-Image-2.1 is a powerful artificial intelligence model designed for creating and editing images. It can understand text descriptions to generate new pictures, or modify existing ones based on your instructions. Think of it like a digital artist that you can guide with words and simple edits.
+
+ComfyUI is a flexible and node-based interface for running AI models like Qwen-Image-2.1. Instead of writing code, you connect different functional blocks (nodes) together in a visual workflow. This makes it easier to experiment with complex AI tasks and see how different parts of the process interact.
+
+This workflow uses Qwen-Image-2.1 through ComfyUI to perform a variety of image-related tasks. Because ComfyUI is a visual tool and the exact workflows can be complex and customized, this entry explains the concepts and general steps rather than providing exact copy-paste instructions for every single task. The official templates and the author's linked site offer more specific guides for each workflow.
+
+## What you can use it for
+
+*   **Generate new images from text**: Describe a scene or object, and the AI will create a unique image for you.
+*   **Edit existing images**: Improve or change parts of a photo based on your instructions.
+*   **Refine images**: Use an existing image as a reference to create a new, similar image.
+*   **Perform basic image editing**: Make precise adjustments to specific areas of an image.
+*   **Remove backgrounds**: Isolate subjects from their backgrounds for cleaner visuals.
+*   **Create panoramas**: Stitch multiple images together to form a wider view.
+*   **Generate transparent images**: Create images with transparent backgrounds, useful for design work.
+
+## Tools you need
+
+*   **Qwen-Image-2.1** (free): The AI model that generates and edits images.
+*   **ComfyUI** (free): A visual interface for running AI models like Qwen-Image-2.1.
+
+## How it actually works
+
+1.  **Install ComfyUI**: Download and set up ComfyUI on your computer. This usually involves downloading the software and its dependencies.
+2.  **Download Qwen-Image-2.1 model**: Obtain the necessary model files for Qwen-Image-2.1 and place them where ComfyUI can access them.
+3.  **Load a workflow**: Open ComfyUI and load a pre-made workflow template for the task you want to perform (e.g., text-to-image, editing). The author provides links to these workflows.
+4.  **Connect nodes**: In ComfyUI's visual interface, connect the different functional blocks (nodes) according to the workflow template. This sets up the sequence of operations.
+5.  **Provide input**: Add your text prompts for image generation, or upload existing images and specify editing areas (e.g., by drawing colored circles or using masks).
+6.  **Run the workflow**: Execute the workflow. ComfyUI will process your inputs through the Qwen-Image-2.1 model.
+7.  **View results**: The generated or edited image will appear in ComfyUI. You can then save it.
+
+*Refer to the author's linked site (comfyui.nomadoor.net) for specific workflow templates and detailed instructions for each task.*
+
+## Words you'll see, explained
+
+*   **Node**: A functional block in ComfyUI that performs a specific task, like loading an image or running the AI model.
+*   **Workflow**: A connected series of nodes in ComfyUI that together perform a complete task, such as generating an image.
+*   **Text-to-image**: An AI process where an image is created based on a written description.
+*   **Ref2Image**: Stands for 'Reference-to-Image', an AI process that generates a new image based on an existing image and possibly a text prompt.
+*   **Mask**: A black and white image used to define specific areas for editing or processing.
+*   **Outpainting**: An AI technique that extends an image beyond its original borders, filling in new content.
+*   **Subject extraction**: The process of separating a main subject from its background.
+
+## Original source
+
+This workflow was shared by Reddit user /u/nomadoor on the platform Reddit. They created individual ComfyUI workflows based on tasks from the Qwen blog, making it easier for others to experiment with the Qwen-Image-2.1 model for various image generation and editing needs.
+
+## Notes & variations
+
+*   **Do you even need this?**: If you only need simple image generation and don't want to set up local software, free online AI image generators might be easier to start with, though they offer less control.
+*   **Free-tier limits**: Both Qwen-Image-2.1 and ComfyUI are free to use, but running them requires a capable computer. Performance will depend on your hardware, especially your GPU (graphics processing unit).
+*   **Common pitfall**: Ensure you have downloaded the correct model files for Qwen-Image-2.1 and placed them in the right directory for ComfyUI to recognize them. Incorrect model paths are a frequent cause of errors.

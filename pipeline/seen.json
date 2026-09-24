@@ -20768,8 +20768,144 @@
     "bcbd7f9bf283d596c6eb197654fb4ce20bd1b0676820d4d13fb741f08d425dcf": {
       "url": "https://newsletter.pragmaticengineer.com/p/windows-and-ai",
       "date": "2026-09-23"
+    },
+    "e894db137b11a9aea7818ec55c1ab94da7eb83dd0d66cfa11f8ddd86f0727b71": {
+      "url": "https://news.ycombinator.com/item?id=49814947",
+      "date": "2026-09-24"
+    },
+    "47b7ef1da6c316fb11aa56c29385a5e88f2b245514ab3dc6fdd0211dbc3cad37": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1wkryl0/ai_is_getting_out_of_hand",
+      "date": "2026-09-24"
+    },
+    "942f5e3b838f3db10b903793c1945a6ebb2965287463c0425f4681f60d27aeb7": {
+      "url": "https://simonwillison.net/2026/Sep/23/gemini-tts-playground",
+      "date": "2026-09-24"
+    },
+    "9c344727024ad1c4f9c7f1c28e85adc70e2f378cf55133652bb3cab2f67bacdb": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1wjjv9l/vibe_debugging",
+      "date": "2026-09-24"
+    },
+    "39f98443eaa45f1903b181247a85deee473c0290bd08b4b719aa6fbd310b2dc0": {
+      "url": "https://simonwillison.net/2026/Sep/23/shadow-roots",
+      "date": "2026-09-24"
+    },
+    "42a12edf1146d99931ed90f4aeb2c9265b196bc01c26cbd1086e5f5f838a5831": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1wklite/researchers_found_a_pain_signal_in_ai_brains_when",
+      "date": "2026-09-24"
+    },
+    "b50ee818f2970d6da4ed30c875e5801451660a85dff9d5572adec2f88d2159c1": {
+      "url": "https://www.latent.space/p/ainews-meta-connect-2026-muse-glasses",
+      "date": "2026-09-24"
+    },
+    "eddd2f3459e8f86bea80e65a6bf26002dd387457f1f965a26fa432b7c20f2079": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1wk25nl/astra_creates_great_comics",
+      "date": "2026-09-24"
+    },
+    "fd54812f164c816fbab953705b79d65891b081835f373786e7c66b93b77c4774": {
+      "url": "https://www.bensbites.com/p/back-to-claude",
+      "date": "2026-09-24"
+    },
+    "b5dfcefd88b76a921fe61ada04a1f8d222e303601da2944f02cf6f8e05098459": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1wle3ks/two_different_sides_of_the_internet",
+      "date": "2026-09-24"
+    },
+    "30aa7c0acfe7f3809f1c0c2e3d8197e23f507daa6c3cae8fb2a05da2a018d4df": {
+      "url": "https://huggingface.co/blog/nvidia/how-to-use-nvidia-warp-and-mjwarp",
+      "date": "2026-09-24"
+    },
+    "e0cedd74224612e4a77492ec2c94438b7efda91120cad8e45ca4edfe3cc95a87": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1wl1ept/chatgpt_generated_porn_when_i_asked_for_ui_icons",
+      "date": "2026-09-24"
+    },
+    "1dd287f7ecf6770448460831b38e77221276c1adcb5c812ad26648a6314519c9": {
+      "url": "https://newsletter.pragmaticengineer.com/p/design-engineering-with-maggie-appleton",
+      "date": "2026-09-24"
+    },
+    "1c2c9ea359ba46e0d059296749a56ee5398c96078b0bc74b71d9051943c90746": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1wgibid/why_is_gemini_like_that",
+      "date": "2026-09-24"
+    },
+    "30cf056a8d31f6a78d509cdd137c37bad7d34ad5719ce5719262f97855079aff": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1wcg1xw/h3_80s_character_generationswardrobe_swap",
+      "date": "2026-09-24"
+    },
+    "8c28fee3b807fd437e5a9eb1f47685ff92dad1658e8901c1fd8f7dc9ff2b9d54": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1wnqy2k/tried_out_qwenimage21_today_and_the_prompt",
+      "date": "2026-09-24"
+    },
+    "15e500e9bae270ecfad718b0536838bb935ec31cfef1f655687ffdb124cd94e9": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1wothsh/from_a_single_image_to_gaussian_splats_another",
+      "date": "2026-09-24"
+    },
+    "302711b51de12365068cd90ab61287d5a49a6226e13c0f2c6d41f4edbb6b05b8": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1wni6ui/all_the_tricks_i_used_to_make_proper_anime_in",
+      "date": "2026-09-24"
+    },
+    "e04000bd628d6ff46f4aeb0682767494b3dc4f0e4a5650b70ec2c3b1b9e26eca": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1wkexqz/512gb_ddr5_ram_16w_power_draw",
+      "date": "2026-09-24"
+    },
+    "08682c13bb7f505994351a86f1425827069d9b5895553b9469aaf03489ff5f57": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1w2zsf3/someones_running_fasth3_the_distilled_minimax_h3",
+      "date": "2026-09-24"
+    },
+    "67449d753afc0442ba317db9255348491273aaaf7d9f518d266b2171bd1b585c": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1w2es8k/krea_3_will_have_editing_capabilities_and_may_be",
+      "date": "2026-09-24"
+    },
+    "29068d2c27d34eab3acf00c83e08c1045c58fbe700b398197c87b78550faeca7": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1wm77xo/some_very_simple_qwenimage21_workflows",
+      "date": "2026-09-24"
+    },
+    "16f41fb7e002e11aa804430297b2fcf88a0e620a7b4c6926faa4e758fd61666f": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1wdh0l0/flux2klein_is_the_most_underrated_image",
+      "date": "2026-09-24"
+    },
+    "96c11b6094bf642761e022d3c726146ef22085aee41d42bee921a3c3a4e59daa": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1wo8oqd/v6_update_newbie_modify_a_targeted_area_of_any",
+      "date": "2026-09-24"
+    },
+    "c2b28a43e67160b44273ce7f2baca88eacaf1c88cd8f06bee45df0f6cbc24d59": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1w4mmst/minimax_h3_acceleration_arenaleaderbord_15_h3",
+      "date": "2026-09-24"
+    },
+    "7d2efdf802f91841a930592885d2f84126222f1f04def29141aacba54ecb5d0d": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1wmpnc0/erotic_image_prompts_test_models_and_character",
+      "date": "2026-09-24"
+    },
+    "fec41d326089bf91893fe21802690d2c5300ede1932cbbadbf5ab159abb9bed9": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1wlnmob/qwen21_licence_is_the_worst",
+      "date": "2026-09-24"
+    },
+    "67cc59cafd58fdb375264a36c42894109dd13be5f10b29cdd576611d7bab3863": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1w0ei8t/time_period_shift_special_effect_in_minimax_h3",
+      "date": "2026-09-24"
+    },
+    "a434cda6432af4421e4cc00ac335f8b7d5e43f88b7b04015c18f2000c4347c2c": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1w8cl3e/naruto_ai_animation_hinata_joins_the_akatsuki",
+      "date": "2026-09-24"
+    },
+    "3c40cf74d33c7fe9eb9f44a753cbeb1c926cc1beb3fcade9b7857bc74d910456": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1w0a6nl/a_minimax_h3_texttovideo_test",
+      "date": "2026-09-24"
+    },
+    "85e1d4163506e352706e18450e99b67c1fe902d8103aa75383eea10c13e9b441": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1w1a9uj/fal_having_a_extended_meltdown_over_fasth3",
+      "date": "2026-09-24"
+    },
+    "d3fe0b30771268cf3dc1f47efed613cc938cbf219d82e3afd017d2e92acded86": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1wi0mpd/krea_2_pixel_art_loras_32x32_64x64_128x128",
+      "date": "2026-09-24"
+    },
+    "57dcdcfcd5eebe436c23e92786ffd4ea595d2970b60cb1ad17ad522187f49846": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1w25d7g/hr_endless_sampler_now_you_can_create_minimax_h3",
+      "date": "2026-09-24"
+    },
+    "5d7f0fd8c2e48a46fe9a8f51f570a42ae5ecfe2fc5724e0ea53a39298952f414": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1w34nd7/famegrid_spice_krea_2_lora_corrected_release",
+      "date": "2026-09-24"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 2
+  "dailyPage": 3
 }

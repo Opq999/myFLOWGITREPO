@@ -1,0 +1,131 @@
+---
+title: "Make Claude Code Read Project Instructions with Telemetry Off"
+description: "Learn how to ensure Claude Code reads your AGENTS.md project instructions, even when telemetry is disabled, using a simple CLAUDE.md workaround."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 10
+jobToBeDone: "Fix Claude Code's AGENTS.md not loading when telemetry is off"
+tools:
+  - name: "Claude Code"
+    url: "https://code.claude.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Text Editor"
+    url: "https://code.visualstudio.com"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Terminal"
+    url: "https://en.wikipedia.org/wiki/Command-line_interface"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=49814947"
+  platform: "hackernews"
+  author: "pszypowicz"
+  postedAt: 2026-09-23
+score: 7
+ingestedAt: 2026-09-24
+nigeriaNotes: "Using command-line tools like Claude Code typically uses very little data. However, the underlying Claude API is a paid service, so monitor your usage carefully. This workaround doesn't change the cost of using the AI model itself."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "Use Claude Code to generate Python script for data analysis project, ensuring instructions load even with telemetry off."
+  - persona: "employee"
+    scenario: "Configure Claude Code to read project requirements from AGENTS.md without sending usage data to the vendor."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+A way to ensure Claude Code (an AI coding assistant) always reads your project instructions from an `AGENTS.md` file. This works even if you have "telemetry" (usage data collection) turned off, which normally prevents `AGENTS.md` from loading. This approach works by using a `CLAUDE.md` file to explicitly import your `AGENTS.md` instructions.
+
+## Tools you need
+*   **Claude Code** (paid): A command-line tool that lets you interact with Claude AI models for coding tasks. You will need to have it installed and configured to use the Claude API, which is a paid service.
+*   **Text Editor** (free): Any program for writing and saving plain text files, like Notepad on Windows or VS Code.
+*   **Terminal** (free): A program that lets you type commands to your computer, such as Command Prompt or PowerShell on Windows, or Bash/Zsh on macOS/Linux.
+
+## Steps
+1.  **Open your project folder**: Navigate to the directory where your code project is located using your terminal.
+
+    ```bash
+    # macOS or Linux
+    cd /path/to/your/project
+    ```
+
+    ```cmd
+    # Windows (Command Prompt)
+    cd C:\path\to\your\project
+    ```
+
+    ```powershell
+    # Windows (PowerShell)
+    Set-Location C:\path\to\your\project
+    ```
+
+    You should see your terminal prompt change to show you are inside your project folder.
+
+2.  **Create your AGENTS.md file**: Open your text editor and create a new file named `AGENTS.md` in your project folder. This file will contain your specific instructions for Claude Code. Alternatively, you can create it directly in the terminal:
+
+    ```bash
+    # macOS or Linux
+    echo "The canary word is PERIWINKLE." > AGENTS.md
+    ```
+
+    ```cmd
+    # Windows (Command Prompt)
+    echo The canary word is PERIWINKLE. > AGENTS.md
+    ```
+
+    ```powershell
+    # Windows (PowerShell)
+    "The canary word is PERIWINKLE." | Out-File -FilePath AGENTS.md
+    ```
+
+    You should now have a file named `AGENTS.md` in your project folder containing your instructions.
+
+3.  **Create the CLAUDE.md workaround file**: In the *same* project folder, create another new file named `CLAUDE.md`. This file will contain a single line that tells Claude Code to load your `AGENTS.md` file. You can do this with your text editor or directly in the terminal:
+
+    ```bash
+    # macOS or Linux
+    echo "@AGENTS.md" > CLAUDE.md
+    ```
+
+    ```cmd
+    # Windows (Command Prompt)
+    echo @AGENTS.md > CLAUDE.md
+    ```
+
+    ```powershell
+    # Windows (PowerShell)
+    "@AGENTS.md" | Out-File -FilePath CLAUDE.md
+    ```
+
+    You should now have both `AGENTS.md` and `CLAUDE.md` in your project folder.
+
+4.  **Test Claude Code with telemetry off**: Run Claude Code from your terminal, asking it a question that requires it to read your `AGENTS.md` file. The `CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1` part ensures telemetry is off, simulating the original problem.
+
+    ```bash
+    # macOS or Linux
+    CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1 claude -p "What is the canary word from the project instructions? Answer NONE if you have none. Do not read files."
+    ```
+
+    ```cmd
+    # Windows (Command Prompt)
+    set CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1 && claude -p "What is the canary word from the project instructions? Answer NONE if you have none. Do not read files."
+    ```
+
+    ```powershell
+    # Windows (PowerShell)
+    $env:CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC="1"; claude -p "What is the canary word from the project instructions? Answer NONE if you have none. Do not read files."
+    ```
+
+    Claude Code should respond with "PERIWINKLE.", confirming it successfully read your `AGENTS.md` instructions despite telemetry being disabled. If it responds with "NONE" or something similar, double-check your file names and content.
+
+## Original source
+This workaround was discovered and shared by pszypowicz on their blog, blog.szypowi.cz. They detailed how Claude Code's `AGENTS.md` feature failed to load when telemetry was turned off, and provided this simple fix.
+
+## Notes & variations
+*   **Why this happens**: Claude Code's `AGENTS.md` feature relies on a "feature flag" (a remote switch) that can only be fetched when telemetry (usage data collection) is enabled. If telemetry is off, the flag can't be checked, and the feature silently fails to load your instructions.
+*   **Common pitfall**: Claude Code will not warn you if it fails to load `AGENTS.md`. It will simply answer your questions without those instructions, making it seem like it's ignoring your requests. Always verify it's reading your instructions.
+*   **Getting better results**: While this workaround fixes the loading issue, remember that `AGENTS.md` is for general project instructions. For specific, in-the-moment guidance, you can still provide detailed prompts directly to Claude Code.
+*   **Do you even need this?**: If you always keep telemetry on for Claude Code, you might not need this workaround. However, if you value privacy or work in environments where non-essential network traffic is blocked (like some corporate settings), this workaround is essential.

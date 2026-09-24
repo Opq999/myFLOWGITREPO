@@ -1,0 +1,81 @@
+---
+title: "Generate Diverse Erotic Image Prompts with a Dataset in ComfyUI"
+description: "Learn how to use a large dataset of erotic image prompts within ComfyUI to generate diverse and creative text-to-image prompts for AI art models."
+category: "content-creation"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 120
+jobToBeDone: "Generate and filter erotic image prompts for AI art models using a dataset and ComfyUI"
+tools:
+  - name: "ComfyUI"
+    url: "https://comfyui.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "HuggingFace"
+    url: "https://huggingface.co/"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://www.reddit.com/r/StableDiffusion/comments/1wmpnc0/erotic_image_prompts_test_models_and_character/"
+  platform: "reddit"
+  author: "/u/StableLlama"
+  postedAt: 2026-09-21
+score: 8
+ingestedAt: 2026-09-24
+nigeriaNotes: "ComfyUI runs locally, so it uses your computer's resources and minimal internet data for generation once set up. However, downloading ComfyUI, AI models (which can be many gigabytes), and the prompt dataset will require a significant internet connection and data, which can be costly."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "Generate unique, creative prompts for AI art assignments or personal projects using a large dataset of erotic image ideas."
+  - persona: "entrepreneur"
+    scenario: "Create diverse, niche erotic art prompts for your AI art business by filtering a large dataset for specific themes and styles."
+  - persona: "employee"
+    scenario: "Quickly generate varied prompts for AI art testing or personal creative exploration, bypassing generic chatbot suggestions."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+This workflow describes an advanced method for generating a large variety of "erotic-leaning" text prompts for AI image models. Instead of asking a general AI chatbot to invent prompts, which often gives repetitive results, this approach uses a pre-made dataset of over 80,000 prompts as inspiration.
+
+The core of this method involves ComfyUI, a powerful, visual tool for creating AI images on your own computer. The author created a special workflow for ComfyUI that connects directly to their dataset hosted on Hugging Face. This allows you to filter and select prompts from the dataset, then feed them into your AI image model.
+
+This is an advanced workflow because it requires you to install and set up ComfyUI on your computer, which typically needs a powerful graphics card (GPU). You also need to install special add-ons (custom nodes) within ComfyUI and understand how to load and modify a visual workflow. It is not a simple copy-paste task for beginners.
+
+## What you can use it for
+*   **Generate diverse erotic image prompts**: Access a large, curated collection of prompts to get varied and creative ideas for AI art.
+*   **Test AI art models**: Quickly generate many images using different prompts to see how various AI models or LoRAs (small model add-ons) respond to specific themes.
+*   **Filter prompts by keywords**: Select prompts from the dataset that match your specific creative needs or interests.
+*   **Overcome AI prompt generation limitations**: Use a human-curated dataset to get more imaginative and less generic results than a general AI chatbot might produce.
+
+## Tools you need
+*   **ComfyUI** (free): A powerful, node-based interface for generating AI images on your own computer. It requires a computer with a strong graphics card (GPU).
+*   **HuggingFace** (freemium): A platform for sharing AI models, datasets, and code. You will access the prompt dataset here.
+
+## How it actually works
+This workflow involves setting up a local AI image generation environment and integrating a specific dataset into it. The exact steps can vary based on your computer setup and ComfyUI updates, but the general process is as follows:
+
+1.  **Install ComfyUI**: First, you need to download and install ComfyUI on your computer. This typically involves downloading the software from its official GitHub page and running a setup script. ComfyUI requires a powerful computer with a dedicated GPU (Graphics Processing Unit) to run efficiently. You can find detailed installation instructions on the official ComfyUI GitHub repository.
+2.  **Install custom nodes**: The author mentions using "Hugging Face dataset custom nodes." You will need to find and install these specific custom nodes within your ComfyUI setup. This usually involves placing the node files into a specific folder within your ComfyUI installation and restarting ComfyUI. The author does not provide exact installation steps for these nodes; you would typically find them on the Hugging Face dataset page or a related ComfyUI community forum.
+3.  **Download the workflow**: The author created a specific ComfyUI workflow that integrates the dataset. This workflow is usually a JSON file. The author states they provided this workflow, likely on the Hugging Face dataset page itself or linked from the original Reddit post.
+4.  **Load the workflow in ComfyUI**: Once ComfyUI is running, you would load the downloaded workflow JSON file into the interface. This will set up a visual graph of nodes that includes the custom nodes for accessing the Hugging Face dataset.
+5.  **Access and filter the dataset**: Within the loaded workflow, the custom nodes will allow you to browse and filter the `stablellama/erotic-image-prompts` dataset directly. You can select prompts based on criteria relevant to your image generation goals.
+6.  **Connect to Krea 2 workflow**: The author states their workflow is "connected to the default Krea 2 workflow." This implies that the selected prompts from the dataset are then fed into a Krea 2-compatible setup within ComfyUI to generate images. You would need to ensure you have the necessary models and components for the Krea 2 workflow integrated into your ComfyUI environment.
+7.  **Generate images**: With the prompts selected and the workflow configured, you can then use your loaded Stable Diffusion model within ComfyUI to generate images based on the chosen prompts.
+
+## Words you'll see, explained
+*   **ComfyUI**: A visual tool that lets you create AI images by connecting different steps (called "nodes") like a flowchart on your computer.
+*   **Node-based interface**: A way to build complex tasks by linking small, self-contained blocks (nodes) together, where each node performs a specific function.
+*   **Dataset**: A collection of structured information, in this case, a large list of text prompts specifically designed for AI image generation.
+*   **Hugging Face**: A popular website where people share AI models, datasets, and tools, making them accessible to others.
+*   **Workflow**: A pre-arranged set of steps or connections within a tool like ComfyUI, designed to achieve a specific task, often saved as a file.
+*   **LoRA (Low-Rank Adaptation)**: A small add-on file that modifies an AI image model to generate specific styles, characters, or objects without retraining the entire model.
+*   **GPU (Graphics Processing Unit)**: A special computer chip that is very good at handling the complex calculations needed for AI tasks, making processes like generating images much faster.
+
+## Original source
+This concept was shared by /u/StableLlama on Reddit. They created a large dataset of erotic image prompts and a ComfyUI workflow to use it, aiming to provide more creative inspiration than general AI models typically offer.
+
+## Notes & variations
+*   **Do you even need this?**: For simple, one-off prompt generation, a freemium large language model (LLM) like ChatGPT, Claude, or Gemini can generate prompts. However, as the author notes, these can often be "boring" or repetitive. This workflow is for advanced users who need high volume, specific filtering, and local control over their AI image generation process.
+*   **Free-tier limits**: Access to the Hugging Face dataset is generally free. ComfyUI itself is free, open-source software, but it requires a powerful computer with a dedicated GPU, which is a significant upfront cost. There are no free cloud-based ComfyUI services mentioned in the source for this specific workflow.
+*   **Common pitfall**: Setting up ComfyUI, especially installing custom nodes and managing large AI models, can be complex and prone to errors. Ensure your GPU drivers are up to date, and follow installation guides carefully. Many issues arise from incorrect file paths or incompatible software versions.
+*   **Tip**: If you are new to ComfyUI, start with simpler workflows to understand the basics of connecting nodes and generating images before attempting to integrate custom nodes and datasets. This will build your foundational knowledge and make troubleshooting easier.
