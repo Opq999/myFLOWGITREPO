@@ -1,0 +1,121 @@
+---
+title: "Optimize AMD GPUs for local AI with ROCmFix: Fix errors and benchmark performance"
+description: "Fix common AMD GPU errors for local AI models (Ollama, LM Studio, PyTorch) using ROCmFix. Automatically detect GPU, apply settings, and benchmark performance."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 20
+jobToBeDone: "Configure and optimize AMD GPUs for running local AI models"
+tools:
+  - name: "Python"
+    url: "https://www.python.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "ROCmFix"
+    url: "https://github.com/xanpavle/rocmfix"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Ollama"
+    url: "https://ollama.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "LM Studio"
+    url: "https://lmstudio.ai"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=49770070"
+  platform: "hackernews"
+  author: "Xanpavle"
+  postedAt: 2026-09-19
+score: 7
+ingestedAt: 2026-09-25
+nigeriaNotes: "ROCmFix itself is data-light. However, if you proceed to download large language models (LLMs) for use with Ollama or LM Studio, these models can be several gigabytes, which is very data-heavy for mobile data plans."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "Set up your AMD GPU to run AI models locally for coding projects or research papers, avoiding common errors."
+  - persona: "employee"
+    scenario: "Optimize your AMD GPU for local AI tasks, ensuring faster performance on company projects or personal development."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+Your AMD GPU (the graphics chip that helps run AI tasks) will be correctly set up to run local AI models, like those found in Ollama or LM Studio, without common errors. This tool helps you automatically detect your specific GPU, apply the necessary technical settings, and find out whether Vulkan or HIP (two different ways to make your GPU work with AI) is faster for your computer.
+
+## Tools you need
+*   **Python** (free): `https://www.python.org/`: The programming language needed to run the ROCmFix script.
+*   **ROCmFix** (free): `https://github.com/xanpavle/rocmfix`: A Python script that automatically detects your AMD GPU and configures it for local AI.
+*   **Ollama** (freemium): `https://ollama.com`: An application to run large language models (LLMs) directly on your computer. Needed if you want to benchmark with Ollama.
+*   **LM Studio** (freemium): `https://lmstudio.ai`: Another application for running large language models (LLMs) locally. Needed if you want to benchmark with LM Studio.
+
+## Steps
+1.  **Install Python**: If you don't have Python installed, download it from the official website.
+    *   Go to `https://www.python.org/downloads/`.
+    *   Download the latest stable version for your operating system (Windows, macOS, or Linux).
+    *   Run the installer. On Windows, make sure to check the box that says "Add Python to PATH" during installation.
+    *   After installation, open your terminal (Command Prompt or PowerShell on Windows, Terminal on macOS/Linux) and type:
+        ```
+        python --version
+        ```
+    *   You should see the Python version displayed, for example, `Python 3.10.12`. If you see an error, Python might not be correctly installed or added to your system's PATH.
+
+2.  **Download ROCmFix**: Get the ROCmFix script onto your computer.
+    *   Open your terminal (Command Prompt or PowerShell on Windows, Terminal on macOS/Linux).
+    *   Navigate to a folder where you want to save the script, for example, by typing `cd Documents` and pressing Enter.
+    *   Paste and run the command for your operating system:
+        ```
+        # Windows (PowerShell)
+        Invoke-WebRequest -Uri "https://raw.githubusercontent.com/xanpavle/rocmfix/main/rocmfix.py" -OutFile "rocmfix.py"
+        ```
+        ```
+        # macOS or Linux
+        curl -O https://raw.githubusercontent.com/xanpavle/rocmfix/main/rocmfix.py
+        ```
+    *   You should see a file named `rocmfix.py` appear in the folder you chose.
+
+3.  **Run ROCmFix to detect your GPU**: Let the script find your AMD GPU and suggest the correct settings.
+    *   In the same terminal window, make sure you are in the directory where you saved `rocmfix.py`.
+    *   Run the script:
+        ```
+        python rocmfix.py
+        ```
+    *   ROCmFix will scan your system, detect your AMD GPU, and suggest a specific `HSA_OVERRIDE_GFX_VERSION` (a technical setting that tells your computer how to use your GPU for AI). It will also ask if you want to apply this setting automatically.
+
+4.  **Apply the suggested fix**: Let ROCmFix automatically configure your system.
+    *   When ROCmFix asks if you want to apply the override, type `y` (for yes) and press Enter.
+    *   The script will modify your shell's configuration file (like `.bashrc` or `.zshrc` on Linux/macOS, or PowerShell profile on Windows) to set the `HSA_OVERRIDE_GFX_VERSION` environment variable. An "environment variable" is a system-wide setting that programs can read.
+    *   You should see a confirmation message that the override was applied. You might need to close and reopen your terminal for the changes to take effect.
+
+5.  **Optional: Install AMD HIP SDK (Windows only)**: If you're on Windows and want to use HIP (a specific technology for AMD GPUs that can be faster for AI), ROCmFix can help install the necessary software.
+    *   In your terminal, run:
+        ```
+        python rocmfix.py install-hip
+        ```
+    *   ROCmFix will download and launch the official AMD installer for the HIP SDK (Software Development Kit). Follow the on-screen instructions to complete the installation.
+    *   You should see the AMD installer window appear and guide you through the process.
+
+6.  **Optional: Run a health check**: Verify your setup is working correctly.
+    *   In your terminal, run:
+        ```
+        python rocmfix.py doctor
+        ```
+    *   ROCmFix will scan your hardware, Adrenalin drivers (AMD's graphics drivers), HIP SDK, and Vulkan API (another way to make your GPU work with AI) to diagnose any potential issues.
+    *   You should see a detailed report on the status of these components, indicating if everything is ready for local AI.
+
+7.  **Optional: Benchmark Vulkan vs. HIP/ROCm**: Find out which AI backend performs better on your PC.
+    *   First, ensure you have either Ollama or LM Studio installed and have downloaded at least one AI model within them.
+    *   In your terminal, run:
+        ```
+        python rocmfix.py bench
+        ```
+    *   ROCmFix will temporarily isolate Ollama or LM Studio, run a short AI generation test using Vulkan, then repeat the test using HIP (if available).
+    *   You should see a comparison of the generation speeds, telling you which backend (Vulkan or HIP) is faster for running AI models on your computer.
+
+## Original source
+This workflow is based on ROCmFix, a tool created by Xanpavle and shared on Hackernews. It helps users automatically configure AMD GPUs for running local AI models and benchmark their performance.
+
+## Notes & variations
+*   **Data usage**: While ROCmFix itself is very data-light, downloading large language models (LLMs) for use with Ollama or LM Studio can consume several gigabytes of data. Be mindful of your data plan if you proceed to download models.
+*   **Common mistake**: A frequent issue is not having Python correctly installed or not running the `rocmfix.py` commands from the directory where you saved the script. Double-check your Python installation and your current directory in the terminal.
+*   **Tip for better results**: If you encounter any issues or want to ensure everything is set up correctly, always run `python rocmfix.py doctor`. This command provides a comprehensive health check of your AMD GPU setup for AI.
