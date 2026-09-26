@@ -21152,8 +21152,36 @@
     "4939de3cab88c172da513bdbf25c9d3345edda65a8f21e121840ea3bebabd52e": {
       "url": "https://www.reddit.com/r/copywriting/comments/1w1lomt/for_those_using_ai_for_copywriting_check_out",
       "date": "2026-09-25"
+    },
+    "5c14eb1d19508a034a96635d21861ef8d5e1f49fbfa497288270e29dc943294f": {
+      "url": "https://news.ycombinator.com/item?id=49827375",
+      "date": "2026-09-26"
+    },
+    "81bc4a3546b40a0d9344528e0ec1e98763af1bcd6a13fa7a765ef063e5eeafeb": {
+      "url": "https://simonwillison.net/2026/Sep/25/john-gruber",
+      "date": "2026-09-26"
+    },
+    "baf1743b222e81ed590057770a1fa37906b4d292df86acf96f01a4d519a1eb2a": {
+      "url": "https://news.ycombinator.com/item?id=49763466",
+      "date": "2026-09-26"
+    },
+    "eda0228e54b688cdfbcbc91cdeeec405f7d21bd3942b1a00970a7b5bdfdd7c12": {
+      "url": "https://simonwillison.net/2026/Sep/25/sighting-403293902",
+      "date": "2026-09-26"
+    },
+    "0ee17be4eec049c0080347dd80775ea2c5b0b8231ae039262a609f60d39136ce": {
+      "url": "https://simonwillison.net/2026/Sep/24/harder",
+      "date": "2026-09-26"
+    },
+    "0e55a46b8b9f5be291a91559b11891c718f69289b5ab0eb1b1501a7308550990": {
+      "url": "https://simonwillison.net/2026/Sep/17/hn-49747390",
+      "date": "2026-09-26"
+    },
+    "bfe1ce9ba4eb0335eda4f309e53f2d1c8370e4ac54d59254b0cfe195a5f6c4a7": {
+      "url": "https://www.latent.space/p/openrouter",
+      "date": "2026-09-26"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 4
+  "dailyPage": 5
 }

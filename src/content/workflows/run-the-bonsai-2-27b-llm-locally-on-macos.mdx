@@ -1,0 +1,145 @@
+---
+title: "Run the Bonsai 2 27B LLM Locally on macOS"
+description: "Set up and run the compressed Bonsai 2 27B large language model on your Apple Silicon Mac, accessible via a local web interface or API."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 20
+jobToBeDone: "Set up and run a compressed LLM (Bonsai 2 27B) locally on macOS"
+tools:
+  - name: "curl"
+    url: "https://curl.se"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "tar"
+    url: "https://www.gnu.org/software/tar/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Prism's llama.cpp"
+    url: "https://github.com/PrismML-Eng/llama.cpp"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Hugging Face"
+    url: "https://huggingface.co"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "uv"
+    url: "https://astral.sh/uv"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "llm"
+    url: "https://llm.datasette.io"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://simonwillison.net/2026/Sep/17/hn-49747390/"
+  platform: "blog"
+  author: "Simon Willison"
+  postedAt: 2026-09-17
+score: 10
+ingestedAt: 2026-09-26
+nigeriaNotes: "This workflow requires downloading a 6 GB model file, which can be expensive on mobile data plans. Once downloaded, the model runs entirely on your device, using no further internet data for inference. It is specifically for Apple Silicon Macs."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "A computer science student can set up this local LLM to experiment with text generation for their final year project, like building a simple chatbot or a content summarizer, without needing internet access or paying for API calls."
+  - persona: "entrepreneur"
+    scenario: "A tech founder can run this LLM locally to rapidly prototype AI features for their startup's product, such as an automated customer support response generator or a marketing copy assistant, without cloud API expenses."
+  - persona: "employee"
+    scenario: "A software developer in an organization can use this local LLM to prototype internal tools for text summarization of reports or automated email drafting, ensuring company data privacy and reducing reliance on external AI services."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will set up and run the Bonsai 2 27B large language model (LLM) directly on your Apple Silicon Mac. This model is known for its near-lossless compression, meaning it's much smaller (about 6 GB) than typical LLMs of its size while still performing well. You can interact with it through a simple web interface in your browser or via an API (Application Programming Interface), which allows other programs to talk to it.
+
+## Tools you need
+*   **curl** (free): A command-line tool used to download files from the internet.
+*   **tar** (free): A command-line tool built into macOS for extracting compressed archive files.
+*   **Prism's llama.cpp** (free): A special version of `llama.cpp`, an open-source project that allows large language models to run efficiently on your computer's hardware. This specific version is needed for the Bonsai 2 27B model.
+*   **Hugging Face** (freemium): A platform that hosts many AI models. You will download the Bonsai 2 27B model file from here.
+*   **uv** (free): A fast Python package installer and manager. You will use it to install and run the `llm` command-line tool.
+*   **llm** (free): A command-line tool by Simon Willison for interacting with large language models, including those running locally.
+
+## Steps
+This workflow is designed for **Apple Silicon Macs (M-series chips)** only. You will use your computer's Terminal application for all steps.
+
+1.  **Open Terminal**: Open the Terminal application on your Mac. You can find it in `Applications > Utilities > Terminal` or by searching for "Terminal" in Spotlight (Command + Space).
+
+2.  **Prepare your workspace**: Change your current directory to `/tmp`. This is a temporary folder where downloaded files can be stored without cluttering your main directories.
+
+    ```bash
+    # macOS or Linux
+    cd /tmp
+    ```
+
+    You should see your terminal prompt change to reflect the new directory, for example, `/tmp %`.
+
+3.  **Download the Prism llama.cpp runtime**: Use `curl` to download the specific runtime needed for this model. This file is a compressed archive containing the `llama-server` program.
+
+    ```bash
+    # macOS or Linux
+    curl -fL https://github.com/PrismML-Eng/llama.cpp/releases/download/prism-b10685-7dffb15/llama-prism-b10685-7dffb15-bin-macos-arm64.tar.gz -o bonsai-runtime.tar.gz
+    ```
+
+    You should see `curl` download the file, showing progress, and then the file `bonsai-runtime.tar.gz` will be saved in your `/tmp` directory.
+
+4.  **Extract the runtime**: Use `tar` to uncompress and extract the downloaded runtime file.
+
+    ```bash
+    # macOS or Linux
+    tar -xzf bonsai-runtime.tar.gz
+    ```
+
+    You should see a new folder appear in `/tmp` (e.g., `llama-prism-b10685-7dffb15`) containing the `llama-server` program.
+
+5.  **Download the Bonsai 2 27B model**: Download the actual language model file, which is in GGUF format. GGUF is a file format optimized for running LLMs efficiently on consumer hardware.
+
+    ```bash
+    # macOS or Linux
+    curl -fL https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-gguf/resolve/main/Ternary-Bonsai-2-27B-PTQ1_0.gguf -o Ternary-Bonsai-2-27B-PTQ1_0.gguf
+    ```
+
+    This is a large file (around 6 GB), so it will take some time to download depending on your internet speed. You should see `curl` showing download progress, and then the file `Ternary-Bonsai-2-27B-PTQ1_0.gguf` will be saved in `/tmp`.
+
+6.  **Start the LLM server**: Run the `llama-server` program to load the model and make it available. The `-m` flag specifies the model file, `--port` sets the network port, `-ngl 99` attempts to offload 99 layers to the GPU for faster processing, `-fa on` enables flash attention, and `-c 32768` sets the context window size.
+
+    ```bash
+    # macOS or Linux
+    ./llama-prism-b10685-7dffb15/llama-server \
+      -m Ternary-Bonsai-2-27B-PTQ1_0.gguf \
+      --port 8331 -ngl 99 -fa on -c 32768
+    ```
+
+    The server will start, and you should see many lines of text in your Terminal as it loads the model. Look for a message indicating the server is listening on `http://localhost:8331`.
+
+7.  **Access the web interface**: Open your web browser (like Chrome, Safari, or Firefox) and go to the address `http://localhost:8331`. `localhost` refers to your own computer, and `8331` is the specific network port the server is using.
+
+    You should see a web interface for the `llama-server`, allowing you to chat with the Bonsai 2 27B model directly in your browser.
+
+8.  **(Optional) Interact via API using the LLM CLI**: If you prefer to interact with the model using a command-line tool, you can use `uv` and `llm`. First, ensure `uv` is installed (e.g., by following instructions on `astral.sh/uv`). Then, install `llm` and its `openai` plugin:
+
+    ```bash
+    # macOS or Linux
+    uv pip install llm
+    uv run llm install openai
+    ```
+
+    Once installed, you can send a prompt to your local server. The author used `uvx` (a custom script for running `uv` commands) for this, but you can achieve the same with `uv run`:
+
+    ```bash
+    # macOS or Linux
+    uv run llm openai endpoint http://127.0.0.1:8331/v1 \
+      --model bonsai-2-27b --responses hi
+    ```
+
+    You should see a response from the model printed in your Terminal. The author noted varying speeds, sometimes around 20 tokens per second, sometimes 44 tokens per second.
+
+## Original source
+This workflow is based on a comment by Simon Willison on Hacker News, where he shared instructions for running the Bonsai 2 27B model using a specific fork of `llama.cpp` and his `llm` command-line tool.
+
+## Notes & variations
+*   **Hardware requirement**: This workflow is specifically designed for **Apple Silicon Macs (M-series chips)**. The downloaded runtime binary (`macos-arm64`) will not work on Intel Macs or Windows/Linux computers without significant modifications (e.g., compiling `llama.cpp` for your specific system or using Windows Subsystem for Linux (WSL) for Linux binaries).
+*   **Initial data usage**: The model file is approximately 6 GB. Ensure you have a stable internet connection and sufficient data if you are on a metered plan before downloading.
+*   **GPU acceleration issues**: The author noted a message "ggml_metal_device_init: - the tensor API is not supported in this environment - disabling" during server startup. This indicates that the model might not be fully utilizing your Mac's GPU (Graphics Processing Unit) for acceleration, even with the `-ngl 99` flag. If you encounter this, the model will still run on your CPU (Central Processing Unit), but it might be slower. There isn't a simple fix provided in the source, but it's a common observation with `llama.cpp` forks and specific hardware/software configurations.
+*   **Getting better results**: If you experience slow performance or the GPU error, you can try adjusting the `-ngl` parameter (Number of GPU Layers). Reducing it (e.g., `-ngl 0` to run entirely on CPU) or removing it might sometimes resolve issues if the GPU offloading isn't working correctly for your specific system setup. Experimenting with this value can help find the best balance for your Mac.
