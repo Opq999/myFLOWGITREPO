@@ -21180,8 +21180,128 @@
     "bfe1ce9ba4eb0335eda4f309e53f2d1c8370e4ac54d59254b0cfe195a5f6c4a7": {
       "url": "https://www.latent.space/p/openrouter",
       "date": "2026-09-26"
+    },
+    "e3904aceb32fda19090d77c9bb8a66fcb49579484afa3c2f96e66686b1282323": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1wo6nb2/welcome_to_the_new_world",
+      "date": "2026-09-27"
+    },
+    "7da0fc2cb4358388d1a76c3ae1d6ae8571e4052074a288ff2c6970adba354a21": {
+      "url": "https://simonwillison.net/2026/Sep/26/kakapo-party",
+      "date": "2026-09-27"
+    },
+    "f9d54d6e051498a6f64367d2ad139b4acb2e5b0803775d98f6961b43fb658dcb": {
+      "url": "https://github.com/tashfeenahmed/freellmapi",
+      "date": "2026-09-27"
+    },
+    "38ffa19f0aa61b7d080551537a76fbeedff468d5b240ba603d8a680989d79111": {
+      "url": "https://github.com/NandhaKishorM/laya",
+      "date": "2026-09-27"
+    },
+    "89707278dd45c0b236e65d411880f456dfb73c0ccc62f51b15a0e396f9e837e6": {
+      "url": "https://www.reddit.com/r/programming/comments/1w630ne/branchavoidant_programming",
+      "date": "2026-09-27"
+    },
+    "2f9e941fcdb81e97d148dbb64519cdbaef268a1968dd7d004301a30f2cd00bc3": {
+      "url": "https://github.com/yuaotian/go-cursor-help",
+      "date": "2026-09-27"
+    },
+    "f3f0b91e09137afca14a6413f5a14d24797ff893c8af76a6b8c8b1eba5840958": {
+      "url": "https://www.reddit.com/r/programming/comments/1wgaaqq/how_gcc_eliminates_unnecessary_integer_division",
+      "date": "2026-09-27"
+    },
+    "ab5ad038fd6518eba9633034bbb764bae8c03199c0f526a195ef7a0e4b5895c8": {
+      "url": "https://www.reddit.com/r/programming/comments/1w45ety/rui_ueyama_we_are_rewriting_the_mold_linker_in",
+      "date": "2026-09-27"
+    },
+    "93fd482bba055657d4d1db0a53e9be407e1b98862d94362f0699095ef5b88adc": {
+      "url": "https://www.reddit.com/r/programming/comments/1w2yw8j/p99_0_ms_autocomplete_for_240_million_domain_names",
+      "date": "2026-09-27"
+    },
+    "381156f638471a3edd806e7c597d94b3786399b12b4e9992f58fbad78c099765": {
+      "url": "https://www.reddit.com/r/programming/comments/1w4ctb4/the_browsers_main_thread_is_expensive",
+      "date": "2026-09-27"
+    },
+    "0eabe5bf2772b4dac2b4db6bed097541d92d2f802579d951dcaa9a4b003a151e": {
+      "url": "https://www.reddit.com/r/programming/comments/1wo3zxx/railwayoriented_programming",
+      "date": "2026-09-27"
+    },
+    "ded7368a72718b1728b242227af691d19eb14fa3e1202c9fed3e2e922e527c43": {
+      "url": "https://www.reddit.com/r/programming/comments/1wm24ab/cse_452_googles_introduction_to_distributed",
+      "date": "2026-09-27"
+    },
+    "e629c1fd3dec03c667868d38c51894366569d4fe0632e11dbf8fcaf2e836711a": {
+      "url": "https://www.reddit.com/r/programming/comments/1w2ckmm/reverse_engineering_unknown_file_formats_with",
+      "date": "2026-09-27"
+    },
+    "60636005da3c2ccec40f7d0c32239ba997ebfc7dd705b36afe34db66bf253d2c": {
+      "url": "https://www.reddit.com/r/programming/comments/1wf2fei/40ms_go_gc_stoptheworld_pauses_caused_by_swap",
+      "date": "2026-09-27"
+    },
+    "8a05e172983a7bd9471cae9c180f237941da8e56fe12b1994165c080c0b1c3c9": {
+      "url": "https://www.reddit.com/r/programming/comments/1wi0xi2/git_worktree_gotchas",
+      "date": "2026-09-27"
+    },
+    "1c3a5d6402740771231917bf9316c7fff58ca9cc51dc346044a7d31b12a034b0": {
+      "url": "https://www.reddit.com/r/programming/comments/1wkrfqw/you_can_run_git_on_object_storage_if_you_remake",
+      "date": "2026-09-27"
+    },
+    "f7c14cba8a3bd1ae2b39437ddcafcac1ed52551248e103b18a53e9d2851d5347": {
+      "url": "https://www.reddit.com/r/programming/comments/1wifzlx/unicode_1800_has_been_released",
+      "date": "2026-09-27"
+    },
+    "57736b822d1d995d4c45053fa6681ad5ba5d342131d49697d27c3159f8d1d167": {
+      "url": "https://www.reddit.com/r/programming/comments/1wbr6an/optimizing_a_spinlock",
+      "date": "2026-09-27"
+    },
+    "71fcc8dd23aa3714734f8faa73a30c0d4c15af519acebb6919637039e6aa6e46": {
+      "url": "https://www.reddit.com/r/programming/comments/1wghjns/small_programming_tricks",
+      "date": "2026-09-27"
+    },
+    "f788d45c36895c70f21d57ffc60c2534f5fdf163b4e5e3e42ce6ad199464505b": {
+      "url": "https://www.reddit.com/r/programming/comments/1w1sl70/zod_v45_adds_schema_compilation_39x_faster",
+      "date": "2026-09-27"
+    },
+    "54b3310b007839d1178541664fc9884f05990c15abb5b9d89cc0b63deb8637b6": {
+      "url": "https://www.reddit.com/r/programming/comments/1w721ry/avoid_adding_new_library_to_project_10year",
+      "date": "2026-09-27"
+    },
+    "5517ff3ccbf03f408b128f5ca632dfc501334309ff9d400a6e7b73938fdc01f3": {
+      "url": "https://www.reddit.com/r/programming/comments/1w9c0an/making_a_python_interpreter_in_1024_bytes",
+      "date": "2026-09-27"
+    },
+    "936bec1e12ac8e8facf494e86075f91bb450cce34d0b48e4c9f28feffef52a95": {
+      "url": "https://www.reddit.com/r/programming/comments/1w6m8qg/linked_lists_in_the_linux_kernel",
+      "date": "2026-09-27"
+    },
+    "3d4d94b532acf589f859c43fb46aca56f77fdcd32d2bd502c91bef872142e39c": {
+      "url": "https://www.reddit.com/r/programming/comments/1wbhjda/i_spend_a_stupid_amount_of_time_on_an_issue_i",
+      "date": "2026-09-27"
+    },
+    "4fce2c9d7e7afcc52d9cf2d4ad29591e86181090cef3a582d92bfb96a3a727ae": {
+      "url": "https://www.reddit.com/r/programming/comments/1wgvjin/broken_windows_abstractions_and_the_cost_of",
+      "date": "2026-09-27"
+    },
+    "8b8bbc25776e3af059015f6d9763cb770722ee76a2b139077224edee8d8611af": {
+      "url": "https://www.reddit.com/r/programming/comments/1wmckoi/back_to_coupling_and_cohesion",
+      "date": "2026-09-27"
+    },
+    "65ff775eed146c5b6fec683ed7ca9ea358629f1928584290cdd7952b9f5388a6": {
+      "url": "https://www.reddit.com/r/programming/comments/1wdjvd3/rune_is_now_open_source",
+      "date": "2026-09-27"
+    },
+    "d667ebec5173a97f7ec91bddea8a515510496e65501806a404d9e06923e4e5cb": {
+      "url": "https://www.reddit.com/r/programming/comments/1wrc4sh/postgres_at_time_zone_utc_does_not_do_what_you",
+      "date": "2026-09-27"
+    },
+    "9c3f074c8ae09c3d113f721ba44891b34e8a9fb051bdbb1bbc0bf85cfbc71bd5": {
+      "url": "https://www.reddit.com/r/programming/comments/1w53v9c/beyond_lambdas_raising_the_abstraction_level_of",
+      "date": "2026-09-27"
+    },
+    "ca58a3104d992624bffe1d76f5738dd4b50545f3bf796834698c715062c5fe59": {
+      "url": "https://www.reddit.com/r/programming/comments/1w39te8/the_hugging_face_incident_from_a_security",
+      "date": "2026-09-27"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 5
+  "dailyPage": 0
 }

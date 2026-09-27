@@ -1,0 +1,84 @@
+---
+title: "Reset Cursor AI IDE Free Trial Limits on Your Computer"
+description: "Bypass Cursor AI IDE free trial limits on your computer. This workflow helps you reset trial restrictions and continue using Cursor for coding assistance."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 5
+jobToBeDone: "Reset Cursor AI IDE free trial limits"
+tools:
+  - name: "Cursor"
+    url: "https://cursor.sh"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://github.com/yuaotian/go-cursor-help"
+  platform: "github"
+  author: "yuaotian"
+  postedAt: 2026-09-23
+score: 7
+ingestedAt: 2026-09-27
+nigeriaNotes: "This workflow helps extend the free trial of Cursor, which is highly beneficial for users who rely on free tiers for their coding tools. The data usage is minimal, only for downloading and running a small script."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "As a computer science student, extend your Cursor AI IDE trial to complete your final year project or a coding assignment, ensuring you have AI assistance without paying for a subscription."
+  - persona: "entrepreneur"
+    scenario: "As a bootstrapping tech founder, reset your Cursor AI IDE trial to continue developing your Minimum Viable Product (MVP) or prototyping new features, ensuring uninterrupted AI coding assistance without subscription fees."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will be able to continue using the Cursor AI IDE even after reaching its free trial limits. This approach uses a script to modify system identifiers that Cursor uses to track trial usage, effectively resetting your trial status. Use this when Cursor displays messages like "Your request has been blocked" or "You've reached your trial request limit" during its free subscription period.
+
+## Tools you need
+*   **Cursor** (freemium): An AI-powered code editor that helps you write, debug, and understand code faster.
+
+## Steps
+1.  **Open your terminal or PowerShell**: This is a program where you can type commands to control your computer.
+    *   **On Windows**: Search for "PowerShell" in the Start menu and open "Windows PowerShell".
+    *   **On macOS**: Search for "Terminal" in Spotlight (press Command + Space) and open it.
+    *   **On Linux**: Open your preferred terminal application (usually found in your applications menu).
+
+    You should see a command-line window open, ready for you to type or paste commands.
+
+2.  **Run the reset script for your operating system**: Copy the command for your computer's operating system, paste it into the terminal/PowerShell window, and press Enter.
+
+    *   **For Windows users (PowerShell)**:
+
+        ```powershell
+        irm https://raw.githubusercontent.com/yuaotian/go-cursor-help/refs/heads/master/scripts/run/cursor_win_id_modifier.ps1 | iex
+        ```
+
+        You should see some text appear, indicating the script is running and processing. It might confirm the reset or show progress.
+
+    *   **For macOS users (Terminal)**:
+
+        ```bash
+        # macOS
+        curl -fsSL https://raw.githubusercontent.com/yuaotian/go-cursor-help/refs/heads/master/scripts/run/cursor_mac_id_modifier.sh -o ./cursor_mac_id_modifier.sh
+        sudo bash ./cursor_mac_id_modifier.sh
+        rm ./cursor_mac_id_modifier.sh
+        ```
+
+        You will be asked for your computer's password after the first command (this is normal for `sudo` commands, which run actions with administrative rights). Type your password and press Enter. You should see messages about the script downloading, running, and then being removed.
+
+    *   **For Linux users (Terminal)**:
+
+        ```bash
+        # Linux
+        curl -fsSL https://raw.githubusercontent.com/yuaotian/go-cursor-help/refs/heads/master/scripts/run/cursor_linux_id_modifier.sh | sudo bash
+        ```
+
+        You will be asked for your computer's password (this is normal for `sudo` commands). Type your password and press Enter. You should see output indicating the script is running. The author notes that the script tries to find Cursor in common installation paths; if it fails, ensure Cursor is installed in a standard location.
+
+3.  **Restart Cursor**: Completely close the Cursor application and then open it again.
+
+    You should now be able to use Cursor's AI features without seeing the trial limit messages.
+
+## Original source
+This workflow is based on the `go-cursor-help` project by yuaotian, shared on GitHub. The project provides scripts designed to help users reset their Cursor AI IDE free trial limits.
+
+## Notes & variations
+*   **Common mistake**: Make sure you run the correct script for your operating system (Windows, macOS, or Linux). Also, remember to completely close and reopen Cursor after running the script for the changes to take effect.
+*   **Tip for better results**: For Linux users, ensure your Cursor application is installed in a standard location, as the script looks for it in common directories. If you encounter issues on Windows, especially if you've run the script before, the author suggests adding a unique identifier (like a timestamp) to the script's web address to ensure you download the freshest version and bypass any cache. For most users, simply trying the command again should be enough.

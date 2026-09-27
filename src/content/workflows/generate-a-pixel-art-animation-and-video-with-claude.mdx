@@ -1,0 +1,106 @@
+---
+title: "Generate a Pixel Art Animation and Video with Claude"
+description: "Learn how to use AI to create a pixel art animation and then record it as a video for presentations."
+category: "content-creation"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 60
+jobToBeDone: "Generate a pixel art animation and video for a presentation slide"
+tools:
+  - name: "Claude"
+    url: "https://claude.ai"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Google Image Search"
+    url: "https://images.google.com"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Claude Code"
+    url: "https://code.claude.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Playwright"
+    url: "https://playwright.dev"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Keynote"
+    url: "https://www.apple.com/keynote/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://simonwillison.net/2026/Sep/26/kakapo-party/"
+  platform: "blog"
+  author: "Simon Willison"
+  postedAt: 2026-09-26
+score: 7
+ingestedAt: 2026-09-27
+nigeriaNotes: "The initial animation generation using Claude's chat interface can be done on its freemium tier, making it accessible. However, recording the video requires Claude Code, which is a paid developer tool. Data usage is light for text prompts and image search, but downloading the generated video will consume more data."
+nigeriaUseCases:
+  - persona: "employee"
+    scenario: "Generate a pixel art animation of your team's project milestone to embed in a client presentation, making the visual content more engaging."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+This workflow shows how to use artificial intelligence (AI) to first create a custom pixel art animation and then use another AI tool to automatically record that animation as a video. The final video can then be used in presentations or other media.
+
+This is an advanced workflow because it relies on a developer tool called Claude Code, which runs locally on your computer. Claude Code uses another tool called Playwright to control a web browser, open your animation, and record its actions. Setting up these tools requires technical comfort with installing software and running commands, which is beyond simple copy-paste steps for a non-technical beginner.
+
+Because the exact setup instructions for Claude Code and Playwright can change and depend on your computer's operating system, this entry explains the overall process and points you to where you can find the most up-to-date technical instructions.
+
+## What you can use it for
+*   **Create custom animations for presentations**: Generate unique visual content to make your slides more engaging.
+*   **Generate unique visual content for social media**: Produce eye-catching pixel art videos for your online platforms.
+*   **Automate recording of interactive web content**: Record videos of web pages that require clicks or other user interactions.
+*   **Prototype dynamic web elements quickly**: See your AI-generated web animations in action as a video without manual recording.
+
+## Tools you need
+*   **Claude (freemium)**: An AI chatbot that can generate code and creative content, including HTML animations.
+*   **Google Image Search (free)**: A web service to find images, useful for providing visual context to the AI.
+*   **Claude Code (paid)**: A local AI agent that can interact with your computer, including running web browsers to record videos of web pages.
+*   **Playwright (free)**: An open-source library used by Claude Code to control web browsers, allowing it to navigate, click, and record web content.
+*   **Keynote (free)**: Apple's presentation software, used here to embed the final video.
+
+## How it actually works
+1.  **Find reference images**: Use Google Image Search to find photos of your subject (e.g., Kākāpō parrots). These images will help the AI understand what you want it to draw.
+
+2.  **Generate the animation HTML**: Open Claude (e.g., at claude.ai) and provide the images along with a detailed prompt asking for an animated pixel art HTML5 canvas. The author used a prompt similar to this:
+
+    ```
+    Here are some photos of kakapo parrots just to remind you what they look like I need you to make an animation in animated pixel art on HTML 5 canvas of obviously pixel art kakapo jumping up and down having a party with confetti and suchlike - there should be at least 20 of them
+    ```
+
+    You should get back HTML code that creates the animation.
+
+3.  **Save the animation**: Copy the generated HTML code from Claude and save it as an `.html` file on your computer. For example, you could name it `kakapo-party.html` and save it in your Downloads folder.
+
+4.  **Set up Claude Code and Playwright**: This is the most technical part. You will need to install Claude Code locally on your computer and ensure Playwright is also installed and configured. The exact steps depend on your operating system and current setup. Refer to the official Claude Code documentation for detailed installation instructions.
+
+5.  **Record the video with Claude Code**: Once Claude Code is set up, open your local Claude Code session. Provide a prompt to Claude Code to record the HTML file you saved. The author used this prompt:
+
+    ```
+    Make me a video of file:///Users/simon/Downloads/kakapo-party.html - you need to load it in a browser and click on it a few times to get the confetti effect, the video should be 15s long don't start clicking until 3s in make sure several clicks are spread around the clickable area
+    ```
+
+    **Important**: You will need to replace `file:///Users/simon/Downloads/kakapo-party.html` with the actual path to your saved HTML file on your computer.
+
+    Claude Code will then use Playwright to open your HTML file in a web browser, interact with it (clicking to trigger the confetti effect), and record a 15-second video of the animation.
+
+6.  **Embed the video**: Once the video is generated by Claude Code, you can embed it into your presentation software, such as Keynote, for your final slide.
+
+## Words you'll see, explained
+*   **Pixel art**: A form of digital art created by arranging individual pixels to form an image, often with a retro or blocky appearance.
+*   **HTML5 Canvas**: A part of web pages (HTML) that allows for drawing graphics, animations, and interactive content directly within a web browser using JavaScript.
+*   **Claude Code**: An AI agent that runs on your computer, designed to help with coding tasks, automate browser actions, and interact with local files.
+*   **Playwright**: A free, open-source tool that lets you control web browsers (like Chrome, Firefox, Safari) automatically. It's often used for testing websites or automating tasks.
+*   **Keynote**: Apple's software for creating presentations, similar to Microsoft PowerPoint.
+
+## Original source
+This workflow was shared by Simon Willison on his blog, detailing how he created a pixel art animation and video for a keynote presentation. He used AI to generate the animation and then record it for his final slide.
+
+## Notes & variations
+*   **Do you even need this?**: For very simple animations, you might find online pixel art generators or GIF makers that don't require advanced AI tools. However, for custom, AI-generated content and automated video recording of interactive elements, this approach is powerful and offers a high degree of control.
+*   **Free-tier limits**: While Claude's chat interface (claude.ai) offers a freemium tier for generating the initial animation, Claude Code is a paid developer tool. Other AI models like those available via the Gemini API or Google AI Studio offer free tiers for similar AI generation tasks, though they might not have a direct "Code Agent" equivalent for local browser automation.
+*   **Common pitfall**: The most common issue will be setting up Claude Code and Playwright correctly on your computer. Ensure all necessary dependencies are installed and that the paths to your local HTML files are accurate in your prompts to Claude Code.
+*   **Tip for better results**: When prompting Claude for the animation, be very specific about the style, colors, number of elements, and desired actions (e.g., "jumping up and down," "confetti effect"). For video recording, clearly specify the duration, any interactions needed, and the desired start time for those interactions.
