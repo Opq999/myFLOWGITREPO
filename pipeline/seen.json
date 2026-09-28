@@ -21300,8 +21300,144 @@
     "ca58a3104d992624bffe1d76f5738dd4b50545f3bf796834698c715062c5fe59": {
       "url": "https://www.reddit.com/r/programming/comments/1w39te8/the_hugging_face_incident_from_a_security",
       "date": "2026-09-27"
+    },
+    "acfe2de164a7fae0cfb831b2d070dba93daaadb51eb376cbf9797697c68f7226": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1woe567/ai_girlfriend",
+      "date": "2026-09-28"
+    },
+    "c22628e02ed9c965bae2ffec5e15039e7492b856db5a149f64b047c0039c5e7e": {
+      "url": "https://simonwillison.net/2026/Sep/28/muse-ai-agent",
+      "date": "2026-09-28"
+    },
+    "ec2b8bd43eefd65f9cb1366e04d6d7239d69726ae6ef27da804d5b01341f9890": {
+      "url": "https://github.com/NousResearch/hermes-agent",
+      "date": "2026-09-28"
+    },
+    "b2e660bedf884d4719b5e6b9122319b2660568649fb3a0c54a4ae5c4c9852e24": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1wp7imz/trump_as_a_mexican_abuelita",
+      "date": "2026-09-28"
+    },
+    "a068c50324a9ff73a93953fc790075e003ed5bc8ad299ec78b5bf7b03e7a8915": {
+      "url": "https://simonwillison.net/2026/Sep/27/2026-in-llms-so-far",
+      "date": "2026-09-28"
+    },
+    "1e3b4d0d1430007da40192a4f770980338e51f1879c4a1b6d413c0609e40f988": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1wo4bgr/trump_as_an_indian_street_vendor",
+      "date": "2026-09-28"
+    },
+    "bb331b54f566e32ba209330707285601a1b4ff5eecaa1ca75613c9b92a49d0ef": {
+      "url": "https://simonwillison.net/2026/Sep/27/hn-49871741",
+      "date": "2026-09-28"
+    },
+    "f48a0d715a11a7e574357d87bf4bdc140f45ca54c3c30f2adc9a4b3813c230a4": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1wqn2zl/why_has_noone_done_this_before_are_they_stupid",
+      "date": "2026-09-28"
+    },
+    "f60e0a4876d6798770617d81dc257d8d30b263cf914770eeed7366b00a6cc167": {
+      "url": "https://simonwillison.net/2026/Sep/27/bluesky-bot-check",
+      "date": "2026-09-28"
+    },
+    "67d71c2ee70d4f3f436d0cfad245ce479b14590ab135c83b83b3e2c66963a438": {
+      "url": "https://www.reddit.com/r/SideProject/comments/1wbu40o/i_built_an_iphone_app_that_turns_your_walks_into",
+      "date": "2026-09-28"
+    },
+    "11adc2c908e74e856a617e613c09460c3fd9e4e7e9c17b17e3e862d30e15375e": {
+      "url": "https://simonwillison.net/2026/Sep/23/hn-49823961",
+      "date": "2026-09-28"
+    },
+    "3cf2b26603350d67c0284f2d971ca68142ac9a8c3196baa7351cadd8028a64d4": {
+      "url": "https://www.reddit.com/r/SideProject/comments/1wgcfb4/my_side_project_just_made_0000_revenue_in_just_6",
+      "date": "2026-09-28"
+    },
+    "09d1d26fa19dd694ec40f7bb3bc136d48191abcd2b19156a45d7567a4b7fa32e": {
+      "url": "https://huggingface.co/blog/Hcompany/holo4",
+      "date": "2026-09-28"
+    },
+    "57787261acacd94818874b36b1f9ce20fbc45134c1f9405ae04c7fd25b07e012": {
+      "url": "https://www.reddit.com/r/SideProject/comments/1we8y3s/i_put_the_fly_brain_into_a_robot_strandbeest",
+      "date": "2026-09-28"
+    },
+    "a30de8e67aff1f0b7d5f0054f820008cf6174d36ccabe7a06b2e0660da0d25ef": {
+      "url": "https://www.reddit.com/r/SideProject/comments/1wqsd4f/i_built_an_app_that_tells_me_when_my_lifting_form",
+      "date": "2026-09-28"
+    },
+    "8cc4a112a62f4a5543031eef08ee42ce1f396208ad431cab38f132ca2a12902f": {
+      "url": "https://www.reddit.com/r/SideProject/comments/1wf801o/where_is_mr_kim_i_built_an_entire_village_just_to",
+      "date": "2026-09-28"
+    },
+    "84f4b8f6166ad230ced90efda8bdbb03376d59e4ce1438ac5e24759c6c543fe1": {
+      "url": "https://www.reddit.com/r/SideProject/comments/1wpaalh/im_building_a_reading_app_where_books_come_alive",
+      "date": "2026-09-28"
+    },
+    "76e3f9aa723f84d915e6f9d24f1e346a91eb5ea22a4dcbf2933694dccd11444e": {
+      "url": "https://www.reddit.com/r/SideProject/comments/1w5efwo/update_3_indeed_laid_off_my_pregnant_wife_so_i",
+      "date": "2026-09-28"
+    },
+    "d9812f97258a53c67fb3cdaf5c8331731bcc6fb8e780388cc1bf5497a5821064": {
+      "url": "https://www.reddit.com/r/SideProject/comments/1wgxzx9/rant_stop_building_useless_apps_and_products",
+      "date": "2026-09-28"
+    },
+    "8fa785a6e10eee683898d3d68165ea1a8b50dd8f8f36a268b5295920d7d89d70": {
+      "url": "https://www.reddit.com/r/SideProject/comments/1w7zags/my_game_app_released_and_got_a_big_update_today",
+      "date": "2026-09-28"
+    },
+    "dec46d11fb9f92edd373c825a7c28e445995b9458f98b9142d7b1a65af1c1853": {
+      "url": "https://www.reddit.com/r/SideProject/comments/1wpib92/i_made_an_open_mic_for_the_internet_book_a_slot",
+      "date": "2026-09-28"
+    },
+    "ba138cd5b084accc91f168796a3b272e677a7e94571305387c1565d40fcf728e": {
+      "url": "https://www.reddit.com/r/SideProject/comments/1w9s9al/i_spent_1000_hours_building_an_interactive_3d",
+      "date": "2026-09-28"
+    },
+    "0ea8121524ff9f9dfe54137949196d27001a0489c664c703f430add06e71accf": {
+      "url": "https://www.reddit.com/r/SideProject/comments/1wrqc2a/i_made_an_interactive_procedurally_animated_koi",
+      "date": "2026-09-28"
+    },
+    "d7eb47822aab50e77c5f81b61324fc2572cd91a5d128c6e45f0111bf49c13d10": {
+      "url": "https://www.reddit.com/r/SideProject/comments/1wm70b6/i_made_an_app_that_turns_any_drawing_into_a_qr",
+      "date": "2026-09-28"
+    },
+    "ca4b1ce4e71e09111545a529c562a7e33a92bab32453c8393a83e5eb8a4780f2": {
+      "url": "https://www.reddit.com/r/SideProject/comments/1wjzpqm/i_built_plexo_a_download_manager_that_combines",
+      "date": "2026-09-28"
+    },
+    "f5dab06a9554d42baf648d035e5feef70daea0de52eda28602eb52e22a1aab87": {
+      "url": "https://www.reddit.com/r/SideProject/comments/1wavl6z/a_full_fly_brain_emulated_in_the_browser_and",
+      "date": "2026-09-28"
+    },
+    "060766df0c1b13f6c8c3c07b83a3677f5a8158c5c5b25ec849f11f137b736e3a": {
+      "url": "https://www.reddit.com/r/SideProject/comments/1w74cif/i_built_an_app_that_makes_you_do_push_ups_against",
+      "date": "2026-09-28"
+    },
+    "dcbc122aa57e70ee7c2c755172279435aa21638f628335b0843ef28ea5b9e9c7": {
+      "url": "https://www.reddit.com/r/SideProject/comments/1wljtu9/i_got_tired_of_checking_safe_area_insets_in",
+      "date": "2026-09-28"
+    },
+    "ba765f57c61bdba8b763969e490cab24a74af2bd1c798b08e6683ed03730b317": {
+      "url": "https://www.reddit.com/r/SideProject/comments/1wdnuqs/hold_my_notes_sticky_notes_that_feels_real_and",
+      "date": "2026-09-28"
+    },
+    "a5aa0041a266a1986151ec3ecf8470e67c2d5d4beecaaf481568a20e5200816f": {
+      "url": "https://www.reddit.com/r/SideProject/comments/1wmesq6/update_the_camera_app_that_films_portrait_and",
+      "date": "2026-09-28"
+    },
+    "54707ab23dc3d51a2b18c252982e32495af63c6b5d33505ab0d3736d1586d37b": {
+      "url": "https://www.reddit.com/r/SideProject/comments/1wozqy6/my_birdrelated_hobby_project_became_the_1_hacker",
+      "date": "2026-09-28"
+    },
+    "b437297f4832842452b72ab62ac2c7d65ef612ed3a6b81862011b34b2583eee7": {
+      "url": "https://www.reddit.com/r/SideProject/comments/1wfivzo/i_built_a_website_that_doesnt_need_a_server",
+      "date": "2026-09-28"
+    },
+    "0c83bc19e3928646556754b234e0fa8a39a24c35eb4cbe2daff9ded42a32ace3": {
+      "url": "https://www.reddit.com/r/SideProject/comments/1w9ryct/let_me_googly_eye_that_for_you",
+      "date": "2026-09-28"
+    },
+    "6f20d516e355b48270ff30d22d947f007bcc0bb9a3ded0bb424647179daf3fbd": {
+      "url": "https://www.reddit.com/r/SideProject/comments/1wbh8ew/dont_quit_95_until_your_side_hustle_makes_x2_your",
+      "date": "2026-09-28"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 0
+  "dailyPage": 1
 }
