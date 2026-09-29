@@ -1,0 +1,56 @@
+---
+title: "Map Your Codebase into a Queryable Knowledge Graph with Graphify"
+description: "Transform any codebase, including its documentation and configurations, into an interactive knowledge graph you can query. Understand code structure and relationships easily."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 10
+jobToBeDone: "Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph"
+tools:
+  - name: "Python"
+    url: "https://www.python.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "uv"
+    url: "https://astral.sh/uv"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "pipx"
+    url: "https://pypa.github.io/pipx/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "graphify"
+    url: "https://github.com/Graphify-Labs/graphify"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Gemini CLI"
+    url: "https://ai.google.dev/"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://github.com/Graphify-Labs/graphify"
+  platform: "github"
+  author: "Graphify-Labs"
+  postedAt: 2026-09-29
+score: 7
+ingestedAt: 2026-09-29
+nigeriaNotes: "The core `graphify` tool is free and runs locally, minimizing data usage. For non-code files, it uses an AI assistant; consider the Gemini CLI for its free tier to keep costs low."
+nigeriaUseCases:
+  - persona: "employee"
+    scenario: "As a software engineer, use Graphify to map a legacy system's codebase, SQL schemas, and design PDFs into a queryable graph, quickly understanding dependencies for a critical bug fix."
+  - persona: "student"
+    scenario: "As a final year Computer Science student, use Graphify to map a large open-source library for your project, quickly understanding how different modules and functions interact for your thesis."
+  - persona: "entrepreneur"
+    scenario: "As a technical founder, use Graphify to visualize your startup's growing backend code and API documentation, making it easier to onboard new developers or debug complex integrations."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+`graphify` is a powerful tool that helps you understand your software code by turning it into a "knowledge graph." Think of a knowledge graph as a detailed, interactive map where every part of your code (like functions, variables, and even documentation files) is a "node" (a point), and the connections between them are "edges" (lines).
+
+Unlike simple text searches, `graphify` precisely understands the structure of your code using a technique called AST parsing (Abstract Syntax Tree). This means it doesn't just look for keywords, but understands how different pieces of your project are actually related. For code, this process happens entirely on your computer, keeping your work private and fast.
+
+While `graphify` offers a clear command to get started, this workflow is considered advanced because it requires comfort with command-line tools, installing software packages, and setting up AI coding assistants. The exact steps for these prerequisites depend on your specific computer setup and the AI assistant you choose.
+
+For non-code files like PDFs or images, `graphify` uses your chosen AI assistant to understand their content and connect them to your code. Every connection it finds is explained, so you know if it was directly stated in your files or inferred by the tool.

@@ -1,0 +1,116 @@
+---
+title: "Learn Reinforcement Learning: Train a Robot's Walking Policy with Isaac Lab"
+description: "Explore how to train a humanoid robot's walking using reinforcement learning in simulation. Understand policy observations, actions, and reward terms with Isaac Lab."
+category: "academic-research"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 180
+jobToBeDone: "Learn reinforcement learning by training a robot's walking policy in simulation"
+tools:
+  - name: "Isaac Lab"
+    url: "https://developer.nvidia.com/isaac-lab"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "NVIDIA GPU"
+    url: "https://www.nvidia.com/en-us/geforce/graphics-cards/"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Ubuntu"
+    url: "https://ubuntu.com/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://www.reddit.com/r/learnmachinelearning/comments/1wpqbur/we_opensourced_the_locomotion_training_code_for/"
+  platform: "reddit"
+  author: "/u/eck72"
+  postedAt: 2026-09-25
+score: 6
+ingestedAt: 2026-09-29
+nigeriaNotes: "This workflow requires specific hardware (an NVIDIA GPU) and operating system (Ubuntu), which may be a barrier. The software itself is free to use once installed. Initial setup and downloads will consume significant data."
+tiktokUrl: ""
+published: false
+---
+
+## What this is, in plain English
+This workflow shows how to train a humanoid robot to walk using a type of artificial intelligence called reinforcement learning. It uses a simulation environment called Isaac Lab, which is a virtual world where the robot can practice and learn without needing a physical robot.
+
+Reinforcement learning works like teaching a child: the robot tries different actions, and if it does something good (like taking a step without falling), it gets a "reward." If it does something bad, it gets a "penalty." Over many trials in the simulation, the robot learns the best way to move to achieve its goal, which in this case is walking.
+
+This is an advanced workflow because it requires a specific computer setup, including a powerful NVIDIA graphics card (GPU) and the Ubuntu Linux operating system. You also need to be comfortable using the command line (typing instructions into a terminal) and understanding technical concepts in AI.
+
+Because the exact steps involve setting up a complex development environment and running code, there isn't a simple copy-paste recipe. Instead, this entry explains the core ideas and points you to the official code repository where you can find the detailed, up-to-date instructions.
+
+## What you can use it for
+*   **Learn Reinforcement Learning**: Understand how AI agents learn complex behaviors through trial and error in a simulated environment.
+*   **Study Robot Locomotion**: See how robots are taught to walk, balance, and navigate using AI techniques.
+*   **Experiment with AI Algorithms**: Explore advanced reinforcement learning algorithms like PPO and AMP in a practical, real-world (simulated) setting.
+*   **Develop Custom Robot Behaviors**: Adapt the provided code to train robots for new tasks or to move in different ways.
+
+## Tools you need
+*   **Isaac Lab** (free): A simulation platform by NVIDIA for training AI models to control robots in a virtual environment.
+*   **NVIDIA GPU** (paid): A powerful graphics card needed to run the complex robot simulations quickly and efficiently.
+*   **Ubuntu** (free): A specific version of the Linux operating system (22.04 or newer) required for the development environment.
+
+## How it actually works
+This workflow involves setting up a development environment, downloading the robot's training code, and running commands in a terminal to train the robot in simulation. The detailed, up-to-date instructions are found in the official GitHub repository.
+
+1.  **Get the code**: Open your terminal (or WSL terminal on Windows) and download the project code from GitHub:
+
+    ```bash
+    # macOS or Linux
+    git clone https://github.com/menloresearch/isaac_asimov.git
+    cd isaac_asimov
+    ```
+
+    ```powershell
+    # Windows (PowerShell, requires Git for Windows)
+    git clone https://github.com/menloresearch/isaac_asimov.git
+    Set-Location isaac_asimov
+    ```
+
+2.  **Install dependencies**: The author mentions that installation is required before running the training. You will need to follow the detailed setup instructions provided in the `isaac_asimov` repository's documentation. This typically involves installing various software libraries and configuring your system.
+
+3.  **Run a pipeline check**: Once your environment is set up, you can run a short training job to confirm everything is working correctly. This command will start a simulation and run a limited training session:
+
+    ```bash
+    # macOS or Linux
+    ./isaac_asimov.sh --train \
+      --task Asimov1-Velocity-AMP-v0 \
+      --num_envs 128 --headless --max_iterations 100
+    ```
+
+    ```bash
+    # Windows (WSL - Windows Subsystem for Linux)
+    # Run these commands inside your WSL terminal.
+    ./isaac_asimov.sh --train \
+      --task Asimov1-Velocity-AMP-v0 \
+      --num_envs 128 --headless --max_iterations 100
+    ```
+
+    You should see output indicating that a training job has started and completed quickly. This command runs a short training job to confirm your setup works, but it will not train a complete walking policy.
+
+4.  **Explore the code**: To understand how the robot learns, you can inspect the code files. Look for sections that define the robot's "observations" (what information the AI receives, like joint angles), "actions" (what the AI controls, like motor commands), and "reward terms" (the goals that give the AI positive feedback).
+
+5.  **Train a baseline**: The repository includes commands to train a full walking policy. You will need to run a more extensive training job than the pipeline check. The author suggests saving the configuration, logs, and a video of the policy running as a reference.
+
+6.  **Experiment**: To learn by doing, try changing one small thing in the training setup, such as adjusting a "reward weight" (how much importance is given to a specific goal). Then, retrain the robot and compare its new behavior to your baseline under the same evaluation conditions.
+
+## Words you'll see, explained
+*   **Reinforcement Learning (RL)**: A type of artificial intelligence where an agent learns to make decisions by trying actions and receiving rewards or penalties from its environment.
+*   **Policy**: In reinforcement learning, this is the strategy an AI agent uses to decide what action to take in any given situation to maximize its rewards.
+*   **Simulation**: A virtual environment that mimics real-world conditions, allowing AI models to be trained safely and quickly without needing physical hardware.
+*   **Isaac Lab**: An NVIDIA platform that provides tools and environments specifically designed for developing and training AI-powered robots in simulation.
+*   **PPO (Proximal Policy Optimization)**: A popular and effective algorithm used in reinforcement learning to train policies efficiently and stably.
+*   **AMP (Adversarial Motion Priors)**: A technique that uses reference movements (like recorded human walking data) to guide a robot's learning, making its actions more natural and realistic.
+*   **Observations**: The information an AI agent receives from its environment, such as a robot sensing its joint angles, velocity, or contact with the ground.
+*   **Actions**: The decisions or commands an AI agent makes, such as a robot moving its limbs, adjusting its balance, or changing its speed.
+*   **Reward terms**: Specific goals or conditions that give an AI agent positive feedback (rewards) when achieved, guiding its learning process towards desired behaviors.
+
+## Original source
+This workflow is based on an announcement by Emre from Menlo Research on Reddit. He shared the open-source locomotion training code for their humanoid robot, Asimov 1, built on Isaac Lab with PPO and adversarial motion priors (AMP).
+
+## Notes & variations
+*   **Do you even need this?**: This workflow is highly specialized for robot locomotion and requires significant technical setup. If your primary goal is simply to learn the basics of reinforcement learning, consider starting with online courses or simpler simulated environments (like those for playing games) that do not require a powerful GPU or Linux operating system.
+*   **Free-tier limits**: While Isaac Lab software is free to download and use, it requires a powerful NVIDIA GPU, which is a paid hardware component. The Ubuntu operating system is free.
+*   **Common pitfall**: The most common challenge with this type of workflow is the initial environment setup. Ensure your NVIDIA GPU drivers are correctly installed and that you meet all the software dependencies specified in the `isaac_asimov` repository's documentation.
+*   **Tip**: Always start by running the small pipeline check provided by the author. This ensures your environment is correctly configured and working before you invest time in training a full walking policy.
