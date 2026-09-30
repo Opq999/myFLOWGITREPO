@@ -21596,8 +21596,268 @@
     "a3913364eb7fcf33e98b200edfe8285ad7e22460f5d8e8804b62cb01f5658bf3": {
       "url": "https://www.reddit.com/r/studytips/comments/1wot5ke/this_is_how_my_question_practice_notebook_look",
       "date": "2026-09-29"
+    },
+    "36e7dbfec0f2216555d9384cf1ca7f0011ddef859a316c495a3138c688208955": {
+      "url": "https://news.ycombinator.com/item?id=49849986",
+      "date": "2026-09-30"
+    },
+    "d9efc92f7d4e469aa218480c885c0a5f02c3b1874b2f1ae51ee569ca492f7c31": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1wsd6ou/doctors_if_i_went_to_them_every_time_chatgpt",
+      "date": "2026-09-30"
+    },
+    "91181d37d0594606800c8b656f1e27e46a002fc9d9ceaaf3734afd79d963b593": {
+      "url": "https://simonwillison.net/2026/Sep/29/anthropic-frontier-red-team",
+      "date": "2026-09-30"
+    },
+    "91ecc99837fb58eeecd318b7e30dbfd8c2ac7c77b3465ee314ea8bb412e177c1": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1wqd0gg/houston_we_have_a_problem_opus_55",
+      "date": "2026-09-30"
+    },
+    "2fd483a5ede3dbd83dd27d2f65a7e147df38e4a1d00cc3ded90120462f33c528": {
+      "url": "https://simonwillison.net/2026/Sep/29/hn-49898129",
+      "date": "2026-09-30"
+    },
+    "9a644f5a860988b99bf48a6c50aa06f35514a361e1e412b8afcd16ee9fe05b7f": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1wrq7e7/either_they_win_or_you_lose",
+      "date": "2026-09-30"
+    },
+    "eecdef587924d01783bed7d4bf066b4a8ebbc07a2bd28b49bd99b35ee3a2ddfa": {
+      "url": "https://simonwillison.net/2026/Sep/29/photo-scrubber",
+      "date": "2026-09-30"
+    },
+    "95415eedc4523270527eb791017a4f070befa2751407c5ae7c4ff630d308c55f": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1wpw0ka/reportoftheweek_should_be_a_highend_model",
+      "date": "2026-09-30"
+    },
+    "0dc9ce3083b6cf682baf135cc087e56543cc364b622b096063726d741d4be281": {
+      "url": "https://simonwillison.net/2026/Sep/29/openai-devday-2026-live-blog",
+      "date": "2026-09-30"
+    },
+    "fa1e906fed41307ed654a088621989fafa2ddf1a10c3ff8820dbdc0b74bbebc3": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1wrugjs/astra_really",
+      "date": "2026-09-30"
+    },
+    "3439063e9fd745f73599d596452814b517d657f33d740435706de59fb94ffb74": {
+      "url": "https://www.latent.space/p/ainews-openai-devday-2026-dots-61",
+      "date": "2026-09-30"
+    },
+    "483e8c8c2d71a2aa32cc1a7e1feff0150c9faa188ae948f4108e50cce7d39954": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1wst3tf/the_last_roll_of_civilization",
+      "date": "2026-09-30"
+    },
+    "74c2ff7e2707d1f61043b51abcb8a4e28720706a6f4caf05256394e578267110": {
+      "url": "https://huggingface.co/blog/open-tts-leaderboard",
+      "date": "2026-09-30"
+    },
+    "2af4c558a9317a252e90ffe7953cb838c8674f9e9051a3a28c70c86a88abebe3": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1ws7dfs/chatgpt_voice_kept_waking_me_up_while_my_blood",
+      "date": "2026-09-30"
+    },
+    "dc53fce90c6f36f5c727235e1a467f2d849dcd49be3c83b393c97ef4331e392f": {
+      "url": "https://huggingface.co/blog/nvidia/kumo-tabular",
+      "date": "2026-09-30"
+    },
+    "a461d2da72936e6206b4278889691d87a5dfce5e8d4f6aeceea9f4f3a229ed64": {
+      "url": "https://www.reddit.com/r/OpenAI/comments/1wjy7hy/astra_ported_the_original_portal_game_to_my",
+      "date": "2026-09-30"
+    },
+    "c473d33411416538291d1d31f92fcac6c2bfff77d231a5c520b68c4c3c6cdb8d": {
+      "url": "https://newsletter.pragmaticengineer.com/p/shopify-native-mobile",
+      "date": "2026-09-30"
+    },
+    "bae0dcb106d1bcd31347e35ac5465cfb156e718439ab5d2980156335d779f640": {
+      "url": "https://www.reddit.com/r/OpenAI/comments/1wssokn/wsj_reports_openai_scrapped_gpt61_astra_over",
+      "date": "2026-09-30"
+    },
+    "92e8fea30c37c8a38983f0cc9ba32e36175b146faa9e43f8f2e37383cf19df59": {
+      "url": "https://www.reddit.com/r/OpenAI/comments/1wdekm0/gpt_6_sol_is_coming_soon",
+      "date": "2026-09-30"
+    },
+    "e1168c4ea75598ab79952adb31b1f81dfd75d6f56f2e7dac09a8e2ef2d34d4f8": {
+      "url": "https://www.reddit.com/r/OpenAI/comments/1wd7llf/new_leaderboard_just_dropped",
+      "date": "2026-09-30"
+    },
+    "de2dd39b0f163f9636bef4051c55a420e1d8609c1987f4207687c61aa5dd6e7c": {
+      "url": "https://www.reddit.com/r/OpenAI/comments/1wrolgj/dario_amodei_on_snl_assuring_viewers_that",
+      "date": "2026-09-30"
+    },
+    "554632e27404692c9c51fcdb433aff6d077effc87fd3059c506ced2d6544de89": {
+      "url": "https://www.reddit.com/r/OpenAI/comments/1wozedu/prince_harry_walks_off_stage_awkwardly_after",
+      "date": "2026-09-30"
+    },
+    "8fe636e99bbcee5b0aa6f90874cb61c4bcbb09717c39e1221c75c2a0f47f01f7": {
+      "url": "https://www.reddit.com/r/OpenAI/comments/1w6nmrf/nice",
+      "date": "2026-09-30"
+    },
+    "aaeff307a6af68fae0c2a81b0d1e0972bf58ff1a61978f0418c651521be3dfd2": {
+      "url": "https://www.reddit.com/r/OpenAI/comments/1ws604a/how_to_import_pandas",
+      "date": "2026-09-30"
+    },
+    "5333ed1c81c83b0bc69545ef05849e6b8a684046915c08383c93a6eb9bfe39af": {
+      "url": "https://www.reddit.com/r/OpenAI/comments/1wfhsa3/gpt_6_astra_playing_anno_117_pax_romana_from",
+      "date": "2026-09-30"
+    },
+    "0902c34fdd01356c79c3ef1931e1ebcebbc4e74c8959fa6eedc37e09416ffa2b": {
+      "url": "https://www.reddit.com/r/OpenAI/comments/1w6zoag/welcome_to_the_agi_era",
+      "date": "2026-09-30"
+    },
+    "5aed6859902e56e5c4e22f71e32361106021714d707e76fc963f66f119752373": {
+      "url": "https://www.reddit.com/r/OpenAI/comments/1wajm7k/helping_gta_6_astra_become_agi",
+      "date": "2026-09-30"
+    },
+    "507ddcfcb5b9275a2682df2c0609a34782d283c302351fdc0358802648910744": {
+      "url": "https://www.reddit.com/r/OpenAI/comments/1wf0npq/gpt6_astra_in_a_nutshell",
+      "date": "2026-09-30"
+    },
+    "d2697ae17241349a4c105317bf7f95b3e6dd20e821021111e4e1eab206b7c7ee": {
+      "url": "https://www.reddit.com/r/OpenAI/comments/1wp5eqa/gpt6_sol_is_not_the_replacement_of_gpt56_sol",
+      "date": "2026-09-30"
+    },
+    "56d5b031d8388b51f2c84b8ad1a1856b0cd3e452b6eb784fa8b1db3b17bf0cec": {
+      "url": "https://www.reddit.com/r/OpenAI/comments/1wp91aj/tested_astra_6_vs_opus_55_on_the_same_3d_task_and",
+      "date": "2026-09-30"
+    },
+    "e1fa85a07750391af3afaf76c9603af52943e18e03bd6182d8955197778643e0": {
+      "url": "https://www.reddit.com/r/OpenAI/comments/1wtgzp7/worst_dev_day",
+      "date": "2026-09-30"
+    },
+    "8b61edc58e5cd63c98af92473056cf7d748bba42cc64834fcf9d755c3740f481": {
+      "url": "https://www.reddit.com/r/OpenAI/comments/1wo5nb6/the_most_concise_explanation_of_the_hugging_face",
+      "date": "2026-09-30"
+    },
+    "528eaa840afb931139efe6f50d70b9dd51b784516eebbbbe806abddf8af78d88": {
+      "url": "https://www.reddit.com/r/OpenAI/comments/1wonpfq/claude_opus_55_vs_chatgpt_6_astra",
+      "date": "2026-09-30"
+    },
+    "910cec576a50f3db82225e50812cb3186bed754f86d44d3e78d25440de828b8d": {
+      "url": "https://www.reddit.com/r/OpenAI/comments/1w7ly1n/the_race_to_agi_is_finally_finished",
+      "date": "2026-09-30"
+    },
+    "f2c1a183f3801da164f7593cd5716903d79e50f543a0168a3a53c6ef3e494aa3": {
+      "url": "https://www.reddit.com/r/OpenAI/comments/1wr78yj/the_first_real_ai_worms_have_arrived_openai_just",
+      "date": "2026-09-30"
+    },
+    "78f17628c79a3783cdba1a3ef0a9f64fa959910e12bf9ee7278086b41e45c3c8": {
+      "url": "https://www.reddit.com/r/OpenAI/comments/1wax7bo/introducingchatgpt_images_25",
+      "date": "2026-09-30"
+    },
+    "f682756a26bf7ad6e85976f7dc733636ec98c6c1c049eeb6e6d647e6d3c761cc": {
+      "url": "https://www.reddit.com/r/OpenAI/comments/1wefb79/kimi_was_routing_to_claude",
+      "date": "2026-09-30"
+    },
+    "f477fe5bf6cd088f5bd80a9ad0563555e51631564601a857f41e25c4120ebedf": {
+      "url": "https://www.reddit.com/r/OpenAI/comments/1woal22/openai_rolls_out_upgraded_prompt_caching_and",
+      "date": "2026-09-30"
+    },
+    "1465fb03e705ead0b953d40271651ee9216e01e45487eb9ed04ab1de67d94013": {
+      "url": "https://www.reddit.com/r/OpenAI/comments/1w6qwdh/we_are_either_getting_astra_asap_or_we_are",
+      "date": "2026-09-30"
+    },
+    "6315f0d6c2c528c40a4fdff3f7cf527c48725de4f4d25068403a3800fdbf35c7": {
+      "url": "https://www.reddit.com/r/OpenAI/comments/1wolc31/billionaire_reddit_ceo_steve_huffman_says_his",
+      "date": "2026-09-30"
+    },
+    "564195750e9014bedc41b50b8a5fbb44d99346d2b45b0697ddf8dccb69ca8e0c": {
+      "url": "https://www.reddit.com/r/productivity/comments/1wmwq5w/got_an_itch_that_i_can_never_seem_to_satisfy",
+      "date": "2026-09-30"
+    },
+    "bcbad02ff94f103bc7e93e045d34ec89bc7cf5f2b3cda344a0f74ad13d19dc05": {
+      "url": "https://www.reddit.com/r/productivity/comments/1w3kalz/tasks_and_projects_that_you_find_important_yet",
+      "date": "2026-09-30"
+    },
+    "a5339af3039bdfaf44e8b8d795c1b855380aaf2032a59fc7689ae889d395562f": {
+      "url": "https://www.reddit.com/r/productivity/comments/1wpv4t2/anyone_else_planning_a_productive_weekend_and",
+      "date": "2026-09-30"
+    },
+    "a4ff2106c840b0448ce21e0555fadb2431e4cb944221cee90cecb2d9c7204ab2": {
+      "url": "https://www.reddit.com/r/productivity/comments/1wpmzpb/prioritization_is_making_it_worse",
+      "date": "2026-09-30"
+    },
+    "25e05745fbc71ac66a00f55cea4ea54dca59817bbce2755149775797e97af021": {
+      "url": "https://www.reddit.com/r/productivity/comments/1w92mw6/how_do_you_actually_manage_your_todo_list_day_to",
+      "date": "2026-09-30"
+    },
+    "77a66ab17b49bc4792790a1435987c06d0a90dbfa2a51e2f44e5fb0eb99fb56d": {
+      "url": "https://www.reddit.com/r/productivity/comments/1wtgj9m/the_perpetual_feeling_of_catching_up",
+      "date": "2026-09-30"
+    },
+    "0d7214bd1011a6fa56156df3d1087f12fbb3d9e02c9e3d440598ba3a94169272": {
+      "url": "https://www.reddit.com/r/productivity/comments/1wo86pe/what_actually_makes_you_start_something_youve",
+      "date": "2026-09-30"
+    },
+    "8ee2650762888c3f09c5c0e76fb3bc82a7e9083652324ebb29fda587932cd627": {
+      "url": "https://www.reddit.com/r/productivity/comments/1wg6ujm/how_can_i_improve_my_shitty_ass_memory",
+      "date": "2026-09-30"
+    },
+    "3b0326e7423b5a61331d504107bd962e56fec9ec94808453b45bf2d4c7ea1297": {
+      "url": "https://www.reddit.com/r/productivity/comments/1wtr16m/whats_one_thing_you_stopped_doing_that_made_you",
+      "date": "2026-09-30"
+    },
+    "a2bcf2647821b3b023014de9fb3d181165c69ecebba6527dd8ab8c91dd941d34": {
+      "url": "https://www.reddit.com/r/productivity/comments/1ws7j4f/has_relocating_cured_anyones_depression",
+      "date": "2026-09-30"
+    },
+    "667502c2a28aa7511de3e7a607f63e26b4f64dcb8a76914048fa1ceefc99c961": {
+      "url": "https://www.reddit.com/r/productivity/comments/1wko3o3/chronic_procastination_anxiety_or_laziness",
+      "date": "2026-09-30"
+    },
+    "2871de90c37877bd5b3e26582bd0cef849268b4cb8620bacec5cea03360e94b2": {
+      "url": "https://www.reddit.com/r/productivity/comments/1w674yu/is_it_normal_to_be_productive_in_small_bursts",
+      "date": "2026-09-30"
+    },
+    "f4e4f58ef24c411c8270c4626cd8c5b5a8e97bd80406b04707617c3c1a2d7527": {
+      "url": "https://www.reddit.com/r/productivity/comments/1wu011k/why_am_i_tired_in_the_morning_and_want_to_skip",
+      "date": "2026-09-30"
+    },
+    "d98cecbf3c397decc95dfd46733ba70161c00ecb59b634ee811e08a23b1ac26b": {
+      "url": "https://www.reddit.com/r/productivity/comments/1wkwzqt/ive_been_wasting_my_vacation_on_my_phone",
+      "date": "2026-09-30"
+    },
+    "ab6826b07482ac7511dcb6a5f8a712f675fa6ca1d6987954568bd9ba118a876f": {
+      "url": "https://www.reddit.com/r/productivity/comments/1wa31wo/i_cant_bring_myself_to_do_anything_pretty_much",
+      "date": "2026-09-30"
+    },
+    "779251f5843e6d7ef21232cf8fb458ae314c6a25dd3d6c4c6c5ad608004826be": {
+      "url": "https://www.reddit.com/r/productivity/comments/1w8q0s1/how_do_you_keep_track_of_things_you_need_to",
+      "date": "2026-09-30"
+    },
+    "122f4264d5601eddc88541a31078ed951313bf04d3d0d5ddf033d0cc4d4e1499": {
+      "url": "https://www.reddit.com/r/productivity/comments/1w8di4z/understand_productivity_on_a_foundational_level",
+      "date": "2026-09-30"
+    },
+    "1bac34d175b5b1fa1287e21afe4f1d4ab513dde3ad42bbabd54a97e65d58d4f4": {
+      "url": "https://www.reddit.com/r/productivity/comments/1wthf0f/is_success_really_all_about_time_management",
+      "date": "2026-09-30"
+    },
+    "2ac072d9c0d8996f8fcb75d54a2ca87e4ab6bf61b2544655ae8917a9e94dcf39": {
+      "url": "https://www.reddit.com/r/productivity/comments/1wt7v7s/i_hate_email_anyone_else_gen_xer_here_and_i",
+      "date": "2026-09-30"
+    },
+    "8cf0395df08f810be0ec5117b4c33471368c983838d6376b85d2461ada73d03c": {
+      "url": "https://www.reddit.com/r/productivity/comments/1wqamnq/i_cannot_remember_the_last_time_i_actually_got",
+      "date": "2026-09-30"
+    },
+    "3b1a74765bf0913ea202e562bc28ccc1c4e8d27634df78394ba7758b37fc41e4": {
+      "url": "https://www.reddit.com/r/productivity/comments/1wox0oy/does_anyone_else_group_tasks_into_flexible_blocks",
+      "date": "2026-09-30"
+    },
+    "edbd18c43fcbaeadca625972035f41360fe853f2ea0c4118f693efd3e6f6c3a1": {
+      "url": "https://www.reddit.com/r/productivity/comments/1wl64rw/i_feel_helpless_to_get_out_of_bed",
+      "date": "2026-09-30"
+    },
+    "284322fe6610995160caa2d0b2c970b98f2a59e755d09f1918906acd9a58a4e0": {
+      "url": "https://www.reddit.com/r/productivity/comments/1wfhp2v/thinking_of_deactivating_instagram_for_a_while",
+      "date": "2026-09-30"
+    },
+    "0d209ec26ecb9de72ca5c32faa28caf90faa4be0ea572adcbe25a91f75fbce1e": {
+      "url": "https://www.reddit.com/r/productivity/comments/1w987do/late_30s_and_trying_to_become_a_reader",
+      "date": "2026-09-30"
+    },
+    "941e580a088c7c7d97305e9dab299951b571b6d849e2edbb03e5cf2d6ceebe86": {
+      "url": "https://www.reddit.com/r/productivity/comments/1wn4urv/i_have_an_aversion_to_studying",
+      "date": "2026-09-30"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 2
+  "dailyPage": 3
 }
