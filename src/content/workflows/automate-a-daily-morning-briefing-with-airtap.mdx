@@ -1,0 +1,86 @@
+---
+title: "Automate a Daily Morning Briefing with Airtap"
+description: "Learn how to automate a concise daily morning briefing of weather, calendar events, and package status to save time and avoid distractions."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 45
+jobToBeDone: "Automate a concise daily morning briefing of weather, calendar, and package status"
+tools:
+  - name: "Airtap (using Tasker as an example of a powerful Android automation tool)"
+    url: "https://tasker.joaoapps.com/"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "UPS Mobile App"
+    url: "https://www.ups.com/mobile/apps"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Google Calendar"
+    url: "https://calendar.google.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://www.reddit.com/r/automation/comments/1w98n36/the_phone_automation_i_kept_sends_four_lines/"
+  platform: "reddit"
+  author: "/u/Anxious_Abrocoma_596"
+  postedAt: 2026-09-06
+score: 8
+ingestedAt: 2026-10-01
+nigeriaNotes: "The author's specific 'Airtap' tool is not clearly identifiable or widely known. The workflow described requires a powerful mobile automation tool, which often involves a learning curve and may have a cost. For simpler daily briefings, consider using built-in phone features (like scheduled summaries) or general-purpose automation platforms like IFTTT or Zapier, which offer free tiers but might not provide the deep app integration described here. Data usage for checking weather, calendar, and package status is generally light, making this feasible on mobile data plans."
+nigeriaUseCases:
+  - persona: "entrepreneur"
+    scenario: "Receive a morning briefing on your phone with client meeting times, inventory delivery updates, and key reminders for your product launch tasks."
+  - persona: "employee"
+    scenario: "Get a daily message with your meeting schedule, project deadlines, and important reminders for your team's tasks, delivered before you even open your laptop."
+  - persona: "student"
+    scenario: "Receive a daily WhatsApp message with your lecture schedule, assignment due dates, and afternoon weather forecast for your campus commute."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+This workflow describes how to set up a custom automated message that delivers a concise daily morning briefing directly to your phone. Instead of opening multiple apps and getting distracted, you receive a short, focused message with only the essential information you need to start your day.
+
+The author created this to get updates on afternoon weather, upcoming calendar events, and any changes in UPS package status. They used a mobile automation tool called Airtap to pull information from a separate Android environment (for the UPS app) and send it to their iPhone.
+
+This is an advanced concept because the exact steps depend heavily on the specific mobile automation tool you choose and how you configure it to interact with other apps and services. There isn't a simple copy-paste recipe, as it requires setting up custom rules and logic within the automation platform.
+
+## What you can use it for
+*   **Start your day efficiently**: Get key information like weather, calendar, and package updates without opening multiple apps.
+*   **Avoid phone distractions**: Receive only the essential updates, reducing the urge to browse other apps or websites.
+*   **Stay informed on critical items**: Track package deliveries, important appointments, and immediate weather changes without constant manual checks.
+*   **Customize your information diet**: Tailor the briefing to exactly what you need, ignoring irrelevant data from your apps.
+
+## Tools you need
+*   **Airtap (using Tasker as an example of a powerful Android automation tool)** (paid): A mobile automation app that allows you to create custom rules and actions to interact with other apps and services. The author used a tool named 'Airtap' for this workflow, but its specific identity is not widely known. Tasker is a similar powerful Android automation tool that could achieve this.
+*   **UPS Mobile App** (free): The official app for tracking UPS packages and managing deliveries.
+*   **Google Calendar** (freemium): A time-management and scheduling calendar service, free for basic use with paid upgrades for advanced features.
+
+## How it actually works
+Reproducing this workflow requires setting up a custom automation flow within a mobile automation tool. The exact steps will vary significantly based on the tool you choose, but the general process involves these actions:
+
+1.  **Choose an automation tool**: Select a powerful mobile automation app (like Tasker for Android, or a cross-platform tool like IFTTT or Zapier if it supports deep app integration). The author used a tool called 'Airtap' that could operate in a separate Android environment.
+2.  **Set up triggers**: Configure your chosen automation tool to run at a specific time each morning, for example, at 7:15 AM as the author did.
+3.  **Integrate data sources**: Connect your automation tool to the necessary apps and services to pull information:
+    *   **Weather**: Link to a weather service to get the afternoon forecast.
+    *   **Google Calendar**: Connect your Google Calendar account and specify which calendars to read (the author only read 'Classes' and 'Personal' calendars).
+    *   **UPS App**: Access package status updates. The author found this easier to do from an Android app, even though their primary phone was an iPhone, suggesting a need for cross-device or virtual environment integration.
+4.  **Apply filtering logic**: Add rules to process the gathered information. The author refined their setup to ignore packages that had already been delivered and to only pull events from specific calendars.
+5.  **Format the output**: Combine the gathered and filtered information into a concise message. The author aimed for a four-line message, such as "Rain after 3. Lab at 10. Study group moved to 6. No package changes."
+6.  **Send the message**: Configure the automation to send this formatted message to your primary phone, perhaps as a notification or through a messaging app.
+7.  **Test and refine**: Run the automation and adjust its settings based on the results. The author noted issues like including already delivered packages or pulling old calendar events, and also observed that Google Calendar sync delays could cause missed updates.
+
+## Words you'll see, explained
+*   **Automation**: Setting up a system to perform tasks automatically without human input.
+*   **Mobile automation tool**: An app or service that lets you create rules to make your phone perform actions automatically.
+*   **Trigger**: An event or condition that starts an automated task, such as a specific time of day or a new email arriving.
+*   **Cross-device automation**: Setting up automated tasks that involve multiple devices, like an Android phone and an iPhone.
+*   **Virtual environment**: A simulated computer system that runs independently within another system, often used to run apps designed for a different operating system.
+
+## Original source
+This concept was shared by Reddit user /u/Anxious_Abrocoma_596, who posted about their personal phone automation setup on September 6, 2026.
+
+## Notes & variations
+*   **Do you even need this?**: For simpler needs, consider using built-in phone features like scheduled summaries (available on iOS) or general-purpose briefing apps. These might not offer the same level of deep customization or cross-app integration but can provide basic daily updates with less setup effort.
+*   **Free-tier limits**: Many powerful automation tools, like the one described, are paid or have significant limitations on their free tiers. Evaluate if the cost is worth the time saved and convenience for your specific needs.
+*   **Common pitfall**: Do not treat automated messages as the sole source of truth for urgent information. The author noted that a late room change was missed because Google Calendar had not synced yet, highlighting that automation can sometimes lag behind real-time updates. Always double-check critical details in the original apps if urgency is high.
