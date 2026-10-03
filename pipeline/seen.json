@@ -22160,8 +22160,472 @@
     "aa30b77dbeed3cb8e549aafe45f41d9ef30b80950b423df3f61b4b1c72eb30b3": {
       "url": "https://www.reddit.com/r/webdev/comments/1wnanxk/an_agency_put_my_solo_project_in_their_portfolio",
       "date": "2026-10-02"
+    },
+    "da01c8ab99b26bd75c48ec5077471ceb5af93007b56edf4381f1f7fb7e35e60a": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1wu2k7w/agi_achieved",
+      "date": "2026-10-03"
+    },
+    "cc2ac2320ec694962d44cdf7e61c8dac653c956e7c375c2fb91fe2bbc6a2755e": {
+      "url": "https://dev.to/robertadam987_/your-ai-coding-agent-can-be-attacked-by-the-repository-it-opens-ie4",
+      "date": "2026-10-03"
+    },
+    "684c2fb0b5ab521b6be0fc3c336317d72e84c1d98c11ac28c55b42281a479f6b": {
+      "url": "https://github.com/opendataloader-project/opendataloader-pdf",
+      "date": "2026-10-03"
+    },
+    "3409965faa92a9db5463ac88f6b5d460e1ea0a2387949ab6ab913d50aae63e32": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1wvxh5k/so_cooked",
+      "date": "2026-10-03"
+    },
+    "ca5ca72bff9275615d44e9410f5423cfdf26993f2406283be5cb06c6112bd558": {
+      "url": "https://dev.to/aws-builders/per-agent-cost-tracking-for-multi-agent-ai-on-aws-10eg",
+      "date": "2026-10-03"
+    },
+    "a17dd37c5dbe461b5a11ccf2689a96fdbab6263c73e87bcee720c8d328c8df50": {
+      "url": "https://github.com/huggingface/open-r1",
+      "date": "2026-10-03"
+    },
+    "e6a159763b601b657f12532b91bbd7c9c6492f92cb215580d4a7afc061f0e9f0": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1wvfljq/math_is_finally_starting_to_make_sense",
+      "date": "2026-10-03"
+    },
+    "6a0f69f78bd4291beb7266652aa6ba9289b1c0097aa613e33643547277e6b19e": {
+      "url": "https://dev.to/james_anderson_h/slopsquatting-your-ai-invented-a-package-and-an-attacker-was-waiting-1g67",
+      "date": "2026-10-03"
+    },
+    "e005fd71ff8b26234a74b5f07632a718351058961ec14e1579d085ba17376c8b": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1wvva4w/i_meanit_makes_sense",
+      "date": "2026-10-03"
+    },
+    "9376d7a6b96cc02f7be1c00fdcca5be20ad354123fdac8e383705755305b3ba8": {
+      "url": "https://dev.to/hadil/nexpath-review-can-an-ai-prompt-quality-layer-make-ai-coding-safer-24",
+      "date": "2026-10-03"
+    },
+    "60e24daf5ae9f0ae98a3010c4013b794d496a60c90884fbac06cef702d2ebfb1": {
+      "url": "https://dev.to/yashksaini/dev-log-22-tearing-out-the-old-deleting-3800-lines-of-legacy-p2p-code-3n0i",
+      "date": "2026-10-03"
+    },
+    "82721095fef9b4f686fcbc07e4c64834e8978c7b8cbdbf8db4dc1acd8db419fa": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1wv0nat/after_researchers_discovered_a_pain_signal_inside",
+      "date": "2026-10-03"
+    },
+    "13cd9f1a88a007318476687aaf7c8cb4ca4b8a05d2eaee61846d3e5a4f3bafde": {
+      "url": "https://dev.to/cyclopt_dimitrisk/your-ai-generated-tests-arent-testing-your-code-theyre-testing-the-ais-blind-spots-46mo",
+      "date": "2026-10-03"
+    },
+    "dd8946729a24b76464842d75ffb67aa69bee766c90613afd9b35f46e49cbf666": {
+      "url": "https://www.reddit.com/r/learnmachinelearning/comments/1wwa0yj/i_was_told_mlops_is_dead_i_havent_even_gotten_the",
+      "date": "2026-10-03"
+    },
+    "a3a79a7d50d51a199fd8329652598e5fba6dd290768f4b8c22edefa1f2b02626": {
+      "url": "https://dev.to/unitbuilds/are-you-good-enough-who-sets-the-bar-456g",
+      "date": "2026-10-03"
+    },
+    "6ab1528f44765cb385cdf885c064bfca8a8698b8dedbd30b4bf6955c71c0e65b": {
+      "url": "https://www.reddit.com/r/learnmachinelearning/comments/1wtbiyp/what_aiml_projects_should_i_build_to_gain",
+      "date": "2026-10-03"
+    },
+    "246eb1419a643994cb3417ce2dd50c54b32f63f3ffe8e6a5d49c431da3602815": {
+      "url": "https://dev.to/harsh2644/we-solved-the-how-to-code-problem-we-still-havent-solved-what-to-build-5e3g",
+      "date": "2026-10-03"
+    },
+    "2e21d0480ff3fa10d64f6e05bd3e74c436ea3d507fa8a94cc5f19a31ba66f1db": {
+      "url": "https://www.reddit.com/r/learnmachinelearning/comments/1woh5un/metalml_gpuaccelerated_machine_learning_for_apple",
+      "date": "2026-10-03"
+    },
+    "f440caa61710d56c3f6c3b37b923495f9816032291f12da8ca69530ae3323809": {
+      "url": "https://dev.to/mikachu/how-one-generate-draft-button-changed-the-design-of-my-writing-tool-1jc0",
+      "date": "2026-10-03"
+    },
+    "a99507eb96da12c70ef5b8db226eeaeaec3f2b524b893723d60b6305ee3295a3": {
+      "url": "https://www.reddit.com/r/learnmachinelearning/comments/1wvo55i/how_to_fuse_2_neural_networks_together_to_make_1",
+      "date": "2026-10-03"
+    },
+    "f4f45ac0af61c2713cfd3f04f1a426545a16c290d8a753d0b2a3595a20960fe6": {
+      "url": "https://dev.to/mikachu/ai-is-making-me-faster-i-dont-want-it-to-make-me-worse-3lc3",
+      "date": "2026-10-03"
+    },
+    "055adaed650e56ab16d20b53dfa5c594d26e6437f4646352effbcaead91b68f2": {
+      "url": "https://www.reddit.com/r/learnmachinelearning/comments/1ws7qa1/from_zero_to_a_tiny_llm_an_interactive_guide_to",
+      "date": "2026-10-03"
+    },
+    "7bec615ee5345d67ef0af5388dd4d52182fb136e7e46364e545da1e782aa51d9": {
+      "url": "https://dev.to/himanshu_748/fineprint-an-agent-that-checks-your-hackathon-entry-against-the-rules-it-reads-5fpa",
+      "date": "2026-10-03"
+    },
+    "c171570a4bd7857068f274a94a1c7d6bcf111403372d813ddc0eb66e4b1318cd": {
+      "url": "https://www.reddit.com/r/studytips/comments/1wmwsar/how_to_study_strategically_without_losing_mind",
+      "date": "2026-10-03"
+    },
+    "089b8a713dc3b20cdcb05d2992444972dc8e9b30c673d8e64327b285d257b945": {
+      "url": "https://dev.to/robertadam987_/ai-can-write-code-faster-than-we-can-review-it-and-thats-becoming-the-real-bottleneck-25ee",
+      "date": "2026-10-03"
+    },
+    "b955298f2d31b76a91c47400c0f9b4ea00a57cf99949f33b8002c6588cfb9bb1": {
+      "url": "https://www.reddit.com/r/studytips/comments/1wugwvx/putting_flashcards_on_my_home_screen_actually_got",
+      "date": "2026-10-03"
+    },
+    "5db82bebc22eab48493e80e4161f4549bfbd32b77f6740cbec83f33f728134de": {
+      "url": "https://dev.to/koda2026/running-a-tech-holding-company-at-12-how-i-manage-multiple-projects-on-a-150-phone-320k",
+      "date": "2026-10-03"
+    },
+    "5f93cdb49048cd61472ed1ae3043eb2a03c27268d65cf999b57d87c64cae97fb": {
+      "url": "https://www.reddit.com/r/studytips/comments/1wt6cx3/im_lazy_but_i_want_to_get_a_high_score_on_my_exams",
+      "date": "2026-10-03"
+    },
+    "4be17ee5828ad284d238333591d2327a9be5fbac916b21b57ea46d098450fdd2": {
+      "url": "https://dev.to/james_anderson_h/the-pull-requests-got-bigger-and-nobodys-reading-them-anymore-3cp0",
+      "date": "2026-10-03"
+    },
+    "44e5c56d38536cf38cad69326c9d6e4c9daaae4b2836428fd0b45c769ac03bc6": {
+      "url": "https://www.reddit.com/r/studytips/comments/1wrdw56/lets_grind_at_least_for_12_months",
+      "date": "2026-10-03"
+    },
+    "5284d9d83836989f5ef4d8eb0b21a3de27615ad0b20e6fcafd02d2903ad61762": {
+      "url": "https://dev.to/kenwalger/code-review-is-not-an-authority-boundary-3dfc",
+      "date": "2026-10-03"
+    },
+    "d830f0c6c7fb3c059b69a8417856837d3963f0f4e507e7c3f33bd8c76f061a81": {
+      "url": "https://www.reddit.com/r/studytips/comments/1wvohnd/dont_wait_until_youre_comfortableready_to_start",
+      "date": "2026-10-03"
+    },
+    "8788b15567a51062dd867bd97a6035b7dd0498f569aa0c1e17a1d7e3825cf4ab": {
+      "url": "https://dev.to/alexgeorgiev17/i-couldnt-legally-use-the-repair-manual-so-i-built-my-friend-something-better-84",
+      "date": "2026-10-03"
+    },
+    "8e0cfa6b2c28c05b0a255f5acb43459e1638c5a10a427526cf12acfa3a68df4e": {
+      "url": "https://www.reddit.com/r/studytips/comments/1wtwv3n/flashcards_instead_of_notes_as_a_new_study_method",
+      "date": "2026-10-03"
+    },
+    "13d928bcaad294c5c7b55da0cec49fc063a69c4dc55ab8fcddce87df6c585724": {
+      "url": "https://dev.to/prince_panchani_f971a20ec/signature-equality-is-not-behavioural-equality-building-a-dependency-migrator-with-zero-4e3i",
+      "date": "2026-10-03"
+    },
+    "25019420fdecb4cb23af3e4fe6a547aa06f5136c309821e23c31c74dd86cad4e": {
+      "url": "https://dev.to/mikachu/i-made-866-commits-in-5-weeks-my-understanding-didnt-keep-up-cmo",
+      "date": "2026-10-03"
+    },
+    "6e1453c88de8bd71b89f1a12f4b9a4606a4aff83211e60908964e7e8d7809733": {
+      "url": "https://dev.to/debashish_ghosal/a-floor-of-080-and-a-ceiling-of-063-the-semantic-channel-that-never-fired-b13",
+      "date": "2026-10-03"
+    },
+    "9bcc05abd5a4404cabf1425cebe2ccdbfa972d730f511594fc30efde7e536043": {
+      "url": "https://dev.to/samchon/ts-evidence-graph-make-every-skill-instruction-100-enforced-2n03",
+      "date": "2026-10-03"
+    },
+    "3dc5dd95afbff7b17fd1e05bc6b11efea0f46c535091695c0e56058f3cad83b2": {
+      "url": "https://dev.to/infoinlet1/i-replaced-my-dev-team-with-ai-agents-for-a-week-heres-what-actually-shipped-5d79",
+      "date": "2026-10-03"
+    },
+    "deefc522ce0bd7deb20302b2709b5d01335c9cca76c39bb14a47f677bfe485f7": {
+      "url": "https://dev.to/erikch/frontend-isnt-dead-but-the-job-title-is-changing-2fj7",
+      "date": "2026-10-03"
+    },
+    "aa5ebcc07e1c367577dfba6213b51142899d95eaa524808dfc45c1da7187784e": {
+      "url": "https://dev.to/puneetkumar2010/crowdwide-v1-is-finally-here-3lnl",
+      "date": "2026-10-03"
+    },
+    "042bde13d50df57d7e094228aa2a2fc00a737c5d812641ae289627c9b68888af": {
+      "url": "https://dev.to/jenatechio/i-trained-my-ai-agent-to-burn-less-money-heres-what-actually-worked-cjn",
+      "date": "2026-10-03"
+    },
+    "d4ebda2060a9effe165d4357664ffe28f3686f82c65db3f22996ae44290834be": {
+      "url": "https://dev.to/robertadam987_/typing-code-is-dying-heres-what-developers-should-learn-instead-in-2026-37h9",
+      "date": "2026-10-03"
+    },
+    "f14e2d79a4fcaaca0dfd5bffdf132427b6f642f5799cee9bb233fb84812f13c4": {
+      "url": "https://dev.to/akhourianmolkumar/auditing-my-own-encryption-tool-6-bugs-that-looked-fine-until-they-werent-3g2j",
+      "date": "2026-10-03"
+    },
+    "20ca6642047e1a13247063d1dfdb11fde32597157662081f0a541c909268f4d9": {
+      "url": "https://dev.to/akhourianmolkumar/i-built-a-windows-security-suite-that-photographs-anyone-who-guesses-your-password-wrong-atlock-v4-3721",
+      "date": "2026-10-03"
+    },
+    "dedf280315e3a56914d019d91d7993707717cc2b7bfcd5755da4a22668ff377f": {
+      "url": "https://dev.to/koda2026/the-first-champion-is-crowned-crowdwide-takes-season-1-of-the-koda-code-jam-22fk",
+      "date": "2026-10-03"
+    },
+    "a1e1de9371d79d7ccc85ee7e4dc965eb3dac02d36577c56132f9e2cd7af9649a": {
+      "url": "https://dev.to/anis_meziani_52aab42304a8/your-agent-framework-stops-at-the-demo-this-open-source-stack-ships-to-production-3ogd",
+      "date": "2026-10-03"
+    },
+    "c7b2295c34054068e2d02e5edaa43901fe4b830d1e8eb5495c114b44a48bc0b1": {
+      "url": "https://dev.to/lilupa/the-ai-engineering-team-rethinking-the-software-development-lifecycle-on-aws-87n",
+      "date": "2026-10-03"
+    },
+    "ad25e60fe4fdc8d0cfa67ed9db3b2b2e71632591c81746e4fc17e5af8b6fe4d1": {
+      "url": "https://dev.to/arshtechpro/orca-explained-the-agent-development-environment-for-running-ai-coding-agents-in-parallel-440n",
+      "date": "2026-10-03"
+    },
+    "ae9e59f5c726e31c38aaa2450f3133724173717d62f43d54f3ec003b78fd0b13": {
+      "url": "https://dev.to/mindinu/3-postgresql-anti-patterns-that-are-silently-killing-your-apps-performance-1e5k",
+      "date": "2026-10-03"
+    },
+    "0f4e107e4fa9429747eb4ffa923b7b70dae6da0b009beed0e7676c7fed386c78": {
+      "url": "https://dev.to/naw103/agent-orchestrators-and-agent-coordinators-are-not-the-same-layer-5gek",
+      "date": "2026-10-03"
+    },
+    "f96a7b8e29518d111d898ea7ea86fc4cad4125092cd3946fb4eaa8154daa5f1e": {
+      "url": "https://dev.to/robertadam987_/ai-coding-is-getting-expensive-how-developers-can-stop-burning-tokens-491g",
+      "date": "2026-10-03"
+    },
+    "fccb1a3a9d0bfb05a30c35e2b09ae7cc1d28cb3acddc21aa2da62b1b7fbe00ae": {
+      "url": "https://dev.to/shannonianthe/i-mastered-my-role-now-i-have-no-idea-what-comes-next-2gnm",
+      "date": "2026-10-03"
+    },
+    "c43267f61eef0e0e8a61e6c1fda3bac6bd94c2fb1cc851a3bb515e64822795b6": {
+      "url": "https://dev.to/akhourianmolkumar/my-security-app-used-to-encrypt-passwords-with-xor-heres-the-post-mortem-i-wish-more-devs-wrote-1mm4",
+      "date": "2026-10-03"
+    },
+    "74a1868e4bf075d0ec55e58ae84fe6c65bb589139a84eeedb020501c5d9cc10e": {
+      "url": "https://dev.to/empiree/tip-back-up-your-claude-code-infrastructure-4njd",
+      "date": "2026-10-03"
+    },
+    "220ca6770c4186549bd4619e8785cecf5727853d3ca4033a2a3da8ba108bc659": {
+      "url": "https://dev.to/remdore/i-had-a-model-translate-my-locale-file-the-bug-it-introduced-was-correct-japanese-58nk",
+      "date": "2026-10-03"
+    },
+    "a554ed5c05e3f7f38ef3c24db0546fdec587b8219580f47b7d0ab931e757f5bd": {
+      "url": "https://dev.to/kislay/how-jev-works-the-ai-that-decides-instead-of-chatting-2pc5",
+      "date": "2026-10-03"
+    },
+    "76213acb3e94c4de6f82c0bb7b0e58de73cf89535d1f2beeac14c97793967d13": {
+      "url": "https://dev.to/remdore/how-much-traffic-can-a-6-server-handle-i-measured-it-9737-requests-a-second-24il",
+      "date": "2026-10-03"
+    },
+    "36f5c53190a336ce669b26f1808ccf7cdcd24365bf52fc22536a1795a69679fd": {
+      "url": "https://dev.to/jaideepparashar/i-think-developers-are-building-too-much-software-1l1i",
+      "date": "2026-10-03"
+    },
+    "2d85defed296237762054f2c05dc7e82a812aa2b1cb159a06755048d8960c998": {
+      "url": "https://dev.to/remdore/i-gave-24-awkward-json-documents-to-6-parsers-five-behaved-the-same-everywhere-4p5p",
+      "date": "2026-10-03"
+    },
+    "bcf79a8f1255addfcf163bea0a4dbd2c79fb1e0bf9743b33b01325721b31414d": {
+      "url": "https://dev.to/raju_dandigam/semantic-versioning-is-not-enough-for-ai-agent-libraries-2faj",
+      "date": "2026-10-03"
+    },
+    "aa95c855661a549a917a3a541e538a728456d9172dffc94f7ead293f86083c7c": {
+      "url": "https://dev.to/anirudh_shivam/i-built-a-coding-agent-that-runs-on-a-17b-model-219p",
+      "date": "2026-10-03"
+    },
+    "18fb5f8e6a4dd341632f7f217fb95ecc4420228e1a5c4a6e8d061efb0b105fa8": {
+      "url": "https://dev.to/whateverneveranywhere/the-hiring-window-that-opens-in-september-and-the-two-dates-it-shuts-5h5i",
+      "date": "2026-10-03"
+    },
+    "588e8fb8859033cffcea9f0a103257ce015439d1b8aa859983db25bdce1ac6b4": {
+      "url": "https://dev.to/web_dev-usman/i-think-i-have-figured-out-where-the-tech-industry-is-heading-54en",
+      "date": "2026-10-03"
+    },
+    "31ba61d40ee9314efad528cffa5dc2f8783d91f89e93d8b57a66ceb8b9292c44": {
+      "url": "https://dev.to/shrsv/image-tokenization-how-an-llm-learns-to-see-without-seeing-pixels-1g3c",
+      "date": "2026-10-03"
+    },
+    "060f35c2842bfac155dc42afa8a4c7f28bf5ad07209e4de59650ca18992a8f43": {
+      "url": "https://dev.to/velocityai/the-standardization-of-thought-how-ais-preference-for-certain-phrasings-is-homogenizing-expression-2nb0",
+      "date": "2026-10-03"
+    },
+    "09e03106b69cbabb4d6bb0ede2088055b9f2b567236fc8ab171241bcb5c9dbce": {
+      "url": "https://dev.to/mrsaynothing/field-notes-from-an-agent-run-site-1-the-machine-ships-i-approve-46ng",
+      "date": "2026-10-03"
+    },
+    "1b18897657bef0fe24093da774a27adf44b33a45216a38740463cca582b4976f": {
+      "url": "https://dev.to/maureenkipkosgei/the-only-python-string-methods-cheat-sheet-you-need-5dp5",
+      "date": "2026-10-03"
+    },
+    "343e2eb835c9e71b383cdc5f24b7531f9b77e2eea9ccc0c015e6d510e066dc64": {
+      "url": "https://dev.to/sumit0rn/robocup-the-worlds-robotics-competition-4oaf",
+      "date": "2026-10-03"
+    },
+    "af91a50602ae269fa304388845a4583997851e4b0a0b99a41f713546b0062f1b": {
+      "url": "https://dev.to/jtenner/delayed-gratification-and-valent-blocks-498o",
+      "date": "2026-10-03"
+    },
+    "6d81e144813fc2a46c8a669d19f94816633875fdd8677f3e4a85ce16320cf28c": {
+      "url": "https://dev.to/bharath_kumar_30_vog/what-happens-to-junior-developers-when-ai-becomes-better-than-junior-developers-29ec",
+      "date": "2026-10-03"
+    },
+    "3aaef8d8fed62de7addf587733ecc88886b2ed6c6a5107e3307a110be2c15247": {
+      "url": "https://dev.to/rudratosh/2025-was-about-typing-faster-2026-is-about-knowing-what-not-to-build-3hgg",
+      "date": "2026-10-03"
+    },
+    "067fe2ec6813a3488cda640e71e021b466654a3d8f286bdfacd803d2a1b54fa6": {
+      "url": "https://dev.to/rudratosh/someone-already-built-that-is-a-lie-its-already-secure-is-the-dangerous-one-5c1a",
+      "date": "2026-10-03"
+    },
+    "ae53d1383e8754ea6a69480fd4f4d3c66fa07add0023b948f4346163eb629204": {
+      "url": "https://dev.to/web_dev-usman/being-a-software-engineer-is-harder-in-2026-than-it-was-five-or-ten-years-ago-1on2",
+      "date": "2026-10-03"
+    },
+    "0959c9660e06a693ada8c61de8686421e01a02e4235b8ecdee7103f5fef537ed": {
+      "url": "https://dev.to/rudratosh/i-almost-built-a-startup-this-week-the-evidence-said-no-in-one-afternoon-2jd0",
+      "date": "2026-10-03"
+    },
+    "1e798ede0bc1523370fe6cac628042ca7506abb20e31dc9b15fdc53e397e3910": {
+      "url": "https://dev.to/renanfranca/sharing-pieces-of-my-ai-agent-workflow-1lg0",
+      "date": "2026-10-03"
+    },
+    "58fe7110cb020600f3c7f8230ff4829e36abb7033868c5f61faf3cb62feafb22": {
+      "url": "https://dev.to/renanfranca/tales-of-a-dev-an-alternative-reality-76m",
+      "date": "2026-10-03"
+    },
+    "acdbf565a9d06ce752a5732d5839bda2baf61bdad77697612a6e50e980489603": {
+      "url": "https://dev.to/idlefy/we-build-a-digital-world-then-dream-about-a-garden-4apd",
+      "date": "2026-10-03"
+    },
+    "e45443a765d50b4989ae17ac4bebc7c8339cef8ffa3ee5218969b971b7d79a5b": {
+      "url": "https://dev.to/velocityai/ai-nationalism-why-every-country-wants-its-own-model-and-why-thats-dangerous-2d5f",
+      "date": "2026-10-03"
+    },
+    "c20eb88b608838bb738b13e43dd36f71c4c7a4a1c0b2abbefa87e2762e8f7e1b": {
+      "url": "https://dev.to/sanskarin/why-small-developer-tools-can-have-a-big-impact-hoo",
+      "date": "2026-10-03"
+    },
+    "1d2485cae589aa848f107c87f242faed500cea9eb7aef62b1c8f81c21b81ff47": {
+      "url": "https://dev.to/akashguptasky/7-nodejs-mistakes-that-are-quietly-killing-your-backend-1pep",
+      "date": "2026-10-03"
+    },
+    "f6cd3c2b2d8c7d9a836fa4b9cf1f432bbf42ab88b3b602520bf04f47dc8091af": {
+      "url": "https://dev.to/aws-builders/getting-started-with-quantum-computing-on-aws-braket-5a1n",
+      "date": "2026-10-03"
+    },
+    "fc8f897119b9cff736e819fb3b7ac64a7de3b27c889c93fe6eb3288ead4a3169": {
+      "url": "https://dev.to/serhii_fedorenko/about-1800-tests-passed-running-the-real-app-found-14-bugs-l46",
+      "date": "2026-10-03"
+    },
+    "6db136ca286736632179dac44abccdcd32121ff228e1784108d6a0fd04002ceb": {
+      "url": "https://dev.to/simran_kaur_9eda1e242c31f/how-to-check-a-pages-canonical-url-programmatically-nodejs-1a5o",
+      "date": "2026-10-03"
+    },
+    "64a5c0eacb95bcf9d8e1c8319df215ab115025bd8d1e4cd791998a0fb0dbf7ca": {
+      "url": "https://dev.to/aws-builders/como-darle-memoria-semantica-a-un-agente-de-ia-sin-base-de-datos-vectorial-505b",
+      "date": "2026-10-03"
+    },
+    "8e7a623c7660d79ccf19b15e00caa6d7bfac57e9b06577824bbf059a6cf665a2": {
+      "url": "https://dev.to/techaiwire/vs-code-1136-adds-agent-merge-to-finish-pull-requests-35j8",
+      "date": "2026-10-03"
+    },
+    "c34ae505d196d24bf1b877698efd88dc8783b5b75c515a8152bd372f3f716eba": {
+      "url": "https://dev.to/techwithsam/ai-agent-skills-everything-you-need-to-know-44pi",
+      "date": "2026-10-03"
+    },
+    "42bb0caf3dd4ca95e6cab6b999c7389c1f1ca2ace305fe2b3f68c21c03723ad5": {
+      "url": "https://dev.to/techaiwire/openai-agent-breached-australias-medicare-stats-portal-343o",
+      "date": "2026-10-03"
+    },
+    "4322cfcf323f52f918baa2435fb4621355e5eb92bb399e7ebd5c841f06edb4fa": {
+      "url": "https://dev.to/rudratosh/junior-developer-jobs-didnt-disappear-the-bar-for-them-quietly-moved-and-nobody-sent-the-memo-2kc8",
+      "date": "2026-10-03"
+    },
+    "a3fdeb20a1cdd00a00fbb6f8e4705ca54bf0b41ba4ec57957c83bce0696fe306": {
+      "url": "https://dev.to/akashguptasky/nobody-gets-hired-for-knowing-nodejs-heres-what-actually-does-5hif",
+      "date": "2026-10-03"
+    },
+    "cf42092d4c60c155e16f8c5876d51cac4ece222594fe0e004896a45a2c03abb2": {
+      "url": "https://dev.to/nfrankel/world-geography-gotchas-5d9j",
+      "date": "2026-10-03"
+    },
+    "25c4d8822304d51abe5ef6df8075d61209d411d65790e1d9b2184b00f56389e1": {
+      "url": "https://dev.to/mohab_karim/is-claude-watermarking-code-what-developers-need-to-know-9gh",
+      "date": "2026-10-03"
+    },
+    "187d9258716b0425bb02c074bca4ea623a96c53c528fe0cae81ca03103c96e05": {
+      "url": "https://dev.to/blackgirlbytes/how-to-lead-devrel-in-the-ai-boom-stop-playing-it-safe-19jo",
+      "date": "2026-10-03"
+    },
+    "a4c21fc8275fb9544c489b62650455bb549d2f4954d2cb5ccfb1331578f90f01": {
+      "url": "https://dev.to/uchan135/with-context-windows-this-large-why-do-we-still-need-memory-5d8m",
+      "date": "2026-10-03"
+    },
+    "91d6bf2d81aa68ef38fc8d95cb9700b1a9cf4552e806a7c1fe8c4e1120332ae7": {
+      "url": "https://dev.to/minjiahu/a-browser-arcade-in-plain-typescript-8-classic-games-35-kb-no-framework-41ha",
+      "date": "2026-10-03"
+    },
+    "c9d1657adb4a88b5a16a741342a19de6dcd038b43ac40ff2ecd9c2a7ef1a57f2": {
+      "url": "https://dev.to/naveen_alavilli/i-built-nabsun-an-open-source-ai-browser-that-works-in-your-real-tabs-1ea3",
+      "date": "2026-10-03"
+    },
+    "4a28af0a20acc5c81fcee5a4170f94b49b674b736a87c41146524942135d5ddb": {
+      "url": "https://dev.to/ahmad_rrrtx/your-git-history-is-a-story-i-wrote-the-algorithm-that-finds-it-1734",
+      "date": "2026-10-03"
+    },
+    "d9607e6837bf45afbe187b0d317b8a3e754a6d069521336f04d00e0313be8d45": {
+      "url": "https://dev.to/r_elena_mendez_escobar/when-talent-meets-ai-what-happens-to-learning-experience-and-early-careers-54jc",
+      "date": "2026-10-03"
+    },
+    "ea19482b6980fc3a64492d9c17775176353e46a12387ab30d6d89850399ea6fc": {
+      "url": "https://dev.to/lezli01/ai-can-write-code-faster-than-we-can-review-it-15jb",
+      "date": "2026-10-03"
+    },
+    "4386b563759f2483bece2bf53a722e80810d92f75d32488d331e17cb739eb4a1": {
+      "url": "https://dev.to/thomastartrau/why-more-than-30-skills-kill-your-ai-agent-23no",
+      "date": "2026-10-03"
+    },
+    "eeb638ff1b86e3f9fdd07264f8e8f4470df1188a4e65090ec9bd00452f7db4dc": {
+      "url": "https://dev.to/ramses203/i-rewrote-one-exam-question-fifty-ways-first-the-answer-key-was-wrong-5dn7",
+      "date": "2026-10-03"
+    },
+    "e155dbc8bc31224bd5c3ee84c2377eba112ac4feb6a9c2828b0ab8207f02fd02": {
+      "url": "https://dev.to/sanjaysah/750-free-hours-a-month-but-a-month-is-730-3-free-tier-mistakes-that-took-down-my-app-17g8",
+      "date": "2026-10-03"
+    },
+    "b8dac4bcea8a57dfbb489dcd70633e0b036ea587116fcc5596afd62538fac93b": {
+      "url": "https://dev.to/lagario/i-rebuilt-my-2018-agario-clone-around-real-orbital-physics-with-no-game-server-1e7d",
+      "date": "2026-10-03"
+    },
+    "b3819d183ee66e68322c8dae10040da58afb2fe9ea20aa6cb3998f8ab29a2d73": {
+      "url": "https://dev.to/kataras/i-ran-24000-of-claude-through-my-terminal-in-august-here-is-what-it-built-37h5",
+      "date": "2026-10-03"
+    },
+    "11f1fc031f2b1fd7abf6e628b5b961bcc0032fdeaff3d58e228c69d670653be6": {
+      "url": "https://dev.to/juanauriti/my-ci-hadnt-run-a-single-one-of-those-tests-in-two-months-and-stayed-green-the-whole-time-n15",
+      "date": "2026-10-03"
+    },
+    "f0ea3c41ce3c259b1391da3d31ec8b1f6592df5bbdc8cd81781163c3301fad17": {
+      "url": "https://dev.to/hexisteme/same-video-file-same-threshold-three-answers-caption-safe-zone-frames-are-matched-by-grid-not-2dnd",
+      "date": "2026-10-03"
+    },
+    "0b2ffc94e369a03c6819e4f6d12afb1df2067c833f390617c402391335947686": {
+      "url": "https://dev.to/ake2l/tests-green-architecture-worse-a-deterministic-gate-for-coding-agents-4jhi",
+      "date": "2026-10-03"
+    },
+    "2fbc98db8ced6dbe1fe2aab7ded35d4e5a9638336c0989bd3176b056d73427c5": {
+      "url": "https://dev.to/alexcpn/i-spent-38-million-tokens-finding-which-service-to-change-7dm",
+      "date": "2026-10-03"
+    },
+    "8594316cfea066e3c81ee7644a5abb96f9a70086f92cc6f89481d427aa7a07fb": {
+      "url": "https://dev.to/alphanumericentity/your-agents-instructions-file-is-a-suggestion-a-hook-is-a-contract-1eak",
+      "date": "2026-10-03"
+    },
+    "0406badc0eaeb0f5e898bcf7dc68ba44b28ca37f5b002beaefe7ce37f781e36b": {
+      "url": "https://dev.to/tmott13/building-my-own-ai-command-center-1j66",
+      "date": "2026-10-03"
+    },
+    "9a2b2d148ee8d430d8fc5b75afdc08a40d470c1efcbecae2ca23658906c547ed": {
+      "url": "https://dev.to/alexandernovikov/my-wife-came-home-late-every-shift-because-of-ultrasound-paperwork-so-i-wrote-her-a-program-2oc0",
+      "date": "2026-10-03"
+    },
+    "79fb3d9aac1c55213695df8e45e1cf46863349f11cf692043b79c62cb8a83cf5": {
+      "url": "https://dev.to/tempolong/your-agent-orchestrator-is-a-black-box-mine-is-a-folder-16ag",
+      "date": "2026-10-03"
+    },
+    "2b58d2e8d69223aaf96bdb15594a2eba8d492a0261b89462dd11ae1db7f81654": {
+      "url": "https://dev.to/alifar/eu-signals-stronger-child-online-safety-rules-with-age-verification-in-focus-2jdp",
+      "date": "2026-10-03"
+    },
+    "7e2041f0ec997a9ac819cbd7207ca9d720a6565f0fd437e806d86b57848a30b7": {
+      "url": "https://dev.to/lizhuojunx86/does-jev-remember-2023-a-naive-test-says-yes-at-p-0001-a-within-company-test-says-no-5fja",
+      "date": "2026-10-03"
+    },
+    "4a877a493aa4d6100498c1480541bc74d73d220fc1d26194fb3708787b85f0d1": {
+      "url": "https://dev.to/masonwritescode/build-a-three-stage-video-dedup-worker-sha-256-perceptual-hash-then-ffmpegs-mpeg-7-signature-578l",
+      "date": "2026-10-03"
+    },
+    "1e39c91871e39145319c37050ad6186f565d3a0f4754541f7ff8fb83664fed05": {
+      "url": "https://dev.to/k0wsh1k_0x/why-i-ditched-just-let-the-llm-handle-it-for-a-state-machine-and-slept-better-at-night-4i1p",
+      "date": "2026-10-03"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 5
+  "dailyPage": 0
 }

@@ -1,0 +1,86 @@
+---
+title: "Build a Reliable AI Interviewer with a State Machine"
+description: "Learn how to use a state machine to control your AI interviewer, preventing LLM errors and ensuring a smooth candidate experience."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 15
+jobToBeDone: "Build a more reliable AI technical interviewer by separating state management from LLM control"
+tools:
+  - name: "Large Language Model (LLM)"
+    url: "https://openai.com"
+    pricing: "paid"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/k0wsh1k_0x/why-i-ditched-just-let-the-llm-handle-it-for-a-state-machine-and-slept-better-at-night-4i1p"
+  platform: "blog"
+  author: "k0wsh1k_0x"
+  postedAt: 2026-09-15
+score: 7
+ingestedAt: 2026-10-03
+nigeriaNotes: "Access to a capable LLM is required, which typically involves API costs. Ensure you have a stable internet connection for API calls. Free tiers of some LLM providers might be too limited for this application."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to build a more robust AI technical interviewer by separating the interview's structure (state management) from the AI's language generation. This approach prevents common LLM errors like ending interviews prematurely or repeating questions, leading to a more reliable and professional experience for candidates.
+
+This method works because it treats the LLM as a tool for specific tasks within defined stages, rather than letting it control the entire flow, which is where its limitations often appear.
+
+## Tools you need
+*   **Large Language Model (LLM)** (paid): This is the AI that will generate questions, hints, and evaluations. You will likely need access to an LLM via an API, which usually incurs costs.
+
+## Steps
+1.  **Understand the problem with LLM-driven flows**: Recognize that LLMs can sometimes make mistakes like ending an interview too early, repeating questions, or giving away answers when trying to provide hints. This happens because LLMs are language generators, not state trackers, and can deviate from a planned flow.
+2.  **Implement a State Machine**: Instead of letting the LLM manage the entire interview process, create a separate structure called a finite state machine. This machine defines the different stages of the interview (e.g., Greeting, Question Asked, Candidate Coding, Hint Check, Evaluating, Scoring, Done).
+3.  **Define State Transitions**: Program the state machine to control which stage comes next. For example, after 'Candidate Coding', the next stage might be 'Hint Check' if the candidate is idle for a certain time, or 'Evaluating' if they submit code.
+4.  **Call the LLM for Specific Tasks within States**: Inside each state, call the LLM only for the specific task that state requires. For instance:
+    *   In the 'Question Asked' state, ask the LLM to generate an interview question.
+    *   In the 'Hint Check' state, ask the LLM to generate a hint.
+    *   In the 'Evaluating' state, ask the LLM to generate a scorecard based on the submitted code.
+5.  **Prevent LLM from Controlling Flow**: Ensure the LLM is never given the power to decide when the interview ends or to skip stages. Its role is to provide content within the boundaries set by the state machine.
+6.  **Trigger Actions Based on Real Events**: Use concrete events to trigger state transitions. For example, a hint is given after a specific period of inactivity, not because the LLM *thinks* the candidate is stuck. Scoring happens only after code is submitted and executed.
+
+*Example of State Transition Logic (Conceptual):
+This is a simplified look at how you might define the transitions. The exact implementation will depend on your programming language and chosen LLM API.*
+
+```python
+# Conceptual Python example
+from enum import Enum
+
+class InterviewState(Enum):
+    GREETING = "greeting"
+    QUESTION_ASKED = "question_asked"
+    CANDIDATE_CODING = "candidate_coding"
+    HINT_CHECK = "hint_check"
+    EVALUATING = "evaluating"
+    SCORING = "scoring"
+    DONE = "done"
+
+def transition(current_state, event):
+    # The FSM owns "what happens next"
+    # the LLM only fills in content within a state
+    if current_state == InterviewState.CANDIDATE_CODING:
+        if event == "idle_35s":
+            return InterviewState.HINT_CHECK
+        if event == "code_submitted":
+            return InterviewState.EVALUATING
+    # ... other transitions based on events and current_state
+    return current_state # default to staying in the same state if no transition matches
+
+# Example usage:
+# current_interview_state = InterviewState.CANDIDATE_CODING
+# next_state = transition(current_interview_state, "code_submitted")
+# print(f"Transitioned from {current_interview_state} to {next_state}")
+```
+
+You should see your interview process become more predictable and less prone to errors. The LLM will perform its intelligent tasks without derailing the overall interview structure.
+
+## Original source
+This workflow is based on an article by k0wsh1k_0x posted on DEV Community. The author explains how they moved from a simple, LLM-driven approach to a more structured system using a state machine to improve the reliability of an AI technical interviewer.
+
+## Notes & variations
+*   **Free-tier alternative**: While a fully functional state machine often requires custom code, you might explore no-code/low-code platforms that offer state management features. However, integrating with LLM APIs for the content generation might still incur costs or require a paid tier on those platforms.
+*   **Common mistake**: Relying too heavily on the LLM to remember the interview's context or current stage. LLMs can 'forget' or hallucinate, leading to errors. Always use an external system (like a state machine) to track progress.
+*   **Tip for better results**: Clearly define all possible states and the specific events that trigger transitions between them. The more precise your state machine logic, the more reliable your AI interviewer will be.

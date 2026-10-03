@@ -1,0 +1,92 @@
+---
+title: "Give AI Agents Long-Term Memory Without a Vector Database"
+description: "Learn how to give serverless AI agents durable, semantic memory using DynamoDB's native vector search and Amazon Bedrock embeddings."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 30
+jobToBeDone: "Give an AI agent durable, semantic memory without a dedicated vector database"
+tools:
+  - name: "DynamoDB"
+    url: "https://aws.amazon.com/dynamodb/"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Amazon Bedrock"
+    url: "https://aws.amazon.com/bedrock/"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Strands Harness"
+    url: "https://github.com/kevinlupera/strands-dynamo-vectors"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "AWS Lambda"
+    url: "https://aws.amazon.com/lambda/"
+    pricing: "paid"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/aws-builders/como-darle-memoria-semantica-a-un-agente-de-ia-sin-base-de-datos-vectorial-505b"
+  platform: "blog"
+  author: "kevinlupera"
+  postedAt: 2026-09-24
+score: 7
+ingestedAt: 2026-10-03
+nigeriaNotes: "This workflow involves several AWS services which are generally paid services. While AWS offers a free tier for some services, usage beyond that will incur costs. Data usage for the core functionality is likely low, but the cost of the services themselves is the primary consideration."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+
+This workflow shows how to give an AI agent a memory that lasts, even when the agent is restarted. Normally, AI agents might forget what they learned in previous conversations. This method uses a special feature in Amazon DynamoDB, a type of database, to store and find information based on its meaning, not just keywords. It also uses Amazon Bedrock to understand the meaning of text.
+
+This approach avoids needing a separate, dedicated "vector database," which is a specialized tool for storing and searching data by meaning. Instead, it uses DynamoDB's built-in capabilities. This can make the process faster and simpler for certain tasks, especially when the AI agent runs on AWS Lambda, a service that restarts the agent frequently.
+
+Because this involves setting up and using specific cloud services like AWS Lambda, DynamoDB, and Amazon Bedrock, it requires some technical knowledge and an AWS account. The exact steps are detailed within the provided code repository and may change as the tools are updated. Therefore, it's not a simple copy-paste recipe but a concept to understand and adapt.
+
+## What you can use it for
+
+*   **Remembering user preferences**: An AI assistant can recall your preferred settings or past choices across different conversations.
+*   **Maintaining context in long tasks**: If an AI is helping with a complex project, it can remember details from earlier stages without you needing to repeat them.
+*   **Building a knowledge base**: You can create an AI that learns from documents or past interactions and can answer questions based on that stored knowledge.
+*   **Personalized AI experiences**: An AI can offer more tailored responses by remembering your history and specific needs.
+*   **Improving AI agent reliability**: Ensure that AI agents, especially those that restart often, don't lose critical information between sessions.
+
+## Tools you need
+
+*   **DynamoDB** (paid): A fast and flexible NoSQL database service from Amazon Web Services used here to store data and perform meaning-based searches.
+*   **Amazon Bedrock** (paid): A service that provides access to various AI models for tasks like understanding text meaning (embeddings).
+*   **Strands Harness** (free): An open-source framework that helps in building and managing AI agents, used here to integrate the memory system.
+*   **AWS Lambda** (paid): A computing service that runs your code in response to events and automatically manages the underlying compute resources, often used for serverless AI applications.
+
+## How it actually works
+
+1.  **Clone the repository**: Download the code that contains the example implementation.
+    ```bash
+    git clone https://github.com/kevinlupera/strands-dynamo-vectors
+    cd strands-dynamo-vectors
+    ```
+2.  **Set up AWS services**: Ensure you have an AWS account and have configured your AWS credentials. You will need to set up DynamoDB tables and potentially configure Amazon Bedrock access.
+3.  **Configure the Strands Harness**: Modify the `create_harness` function within the provided Python code to use DynamoDB as the memory store. This involves specifying the session ID and the memory store configuration.
+4.  **Run the demo**: Execute the `demo.py` script to see the agent in action. This script will demonstrate how the agent can recall information from previous interactions.
+5.  **Observe the results**: Pay attention to how the agent responds to questions, particularly those that rely on information provided in earlier, separate interactions. The original source provides specific examples of prompts and expected outputs.
+
+## Words you'll see, explained
+
+*   **Semantic memory**: The ability of an AI to remember information based on its meaning or context, rather than just exact keywords.
+*   **Vector database**: A type of database designed to store and search data based on numerical representations (vectors) that capture meaning.
+*   **Embeddings**: Numerical representations of text or other data that capture their semantic meaning, used for comparison and search.
+*   **Serverless**: A way to build and run applications without having to manage servers. The cloud provider handles the infrastructure.
+*   **AWS Lambda**: A serverless compute service that lets you run code without provisioning or managing servers.
+*   **DynamoDB**: A fully managed NoSQL database service provided by AWS.
+*   **Amazon Bedrock**: A service that offers a choice of leading foundation models (FMs) from AI companies via a single API.
+*   **Strands Harness**: A framework for building AI agents, simplifying the process of connecting different components.
+
+## Original source
+
+This workflow is based on a blog post by Kevin Lupera, shared on DEV Community. It explains how to implement long-term memory for AI agents using DynamoDB's native vector search and Amazon Bedrock, without needing a separate vector database.
+
+## Notes & variations
+
+*   **Do you even need this?**: If your AI agent's memory needs are simple and short-lived, you might be able to manage with simpler in-memory storage or basic session management within your application, avoiding the complexity and cost of cloud services.
+*   **Free-tier limits**: While the Strands Harness code is free, the AWS services (DynamoDB, Amazon Bedrock, AWS Lambda) have costs associated with their usage. Be mindful of the free tier limits for these services to manage expenses.
+*   **Common pitfall**: A common mistake is confusing "session memory" (which lasts for a single conversation) with "long-term memory" (which persists across all conversations). Ensure you are implementing the correct type of memory for your needs, as they are handled differently by the Strands Harness.

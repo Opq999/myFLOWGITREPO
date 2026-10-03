@@ -1,0 +1,150 @@
+---
+title: "Check Webpage Canonical URLs with Node.js"
+description: "Learn how to programmatically check canonical URLs for webpages using Node.js, including HTML and HTTP header methods."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 15
+jobToBeDone: "Programmatically check canonical URLs for a webpage using Node.js"
+tools:
+  - name: "Node.js"
+    url: "https://nodejs.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "fetch API"
+    url: "https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/simran_kaur_9eda1e242c31f/how-to-check-a-pages-canonical-url-programmatically-nodejs-1a5o"
+  platform: "blog"
+  author: "simran_kaur_9eda1e242c31f"
+  postedAt: 2026-09-08
+score: 8
+ingestedAt: 2026-10-03
+nigeriaNotes: "Node.js is a free runtime environment. The fetch API is built-in. Data usage will be minimal, as it involves fetching small amounts of text data from webpages. This workflow is highly viable on mobile with a data-light approach."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will get a way to automatically check the canonical URL of a webpage using code. This helps ensure search engines are looking at the correct version of your page, which is important for search engine ranking. This approach works by reading both the webpage's HTML and its HTTP headers.
+
+## Tools you need
+*   **Node.js** (free): A JavaScript runtime that lets you run JavaScript code outside of a web browser. This is needed to run the script.
+*   **fetch API** (free): A built-in way in modern Node.js to make requests to websites, similar to how a web browser does.
+
+## Steps
+1.  **Set up your Node.js environment**: Make sure you have Node.js version 18 or newer installed. You can download it from the official Node.js website.
+2.  **Create a new JavaScript file**: Create a file named `checkCanonical.js` (or any name you prefer) in a folder on your computer.
+3.  **Paste the code to get the canonical URL**: Copy the following JavaScript code and paste it into your `checkCanonical.js` file. This code defines a function that fetches a webpage and looks for the canonical URL in both the HTTP headers and the HTML.
+
+    ```javascript
+    async function getCanonical ( url ) {
+      const res = await fetch ( url , {
+        redirect : " follow " ,
+        headers : {
+          " User-Agent " : " canonical-check/1.0 "
+        },
+      });
+      let canonical = null ;
+      let source = null ;
+      // 1) HTTP Link header
+      const linkHeader = res . headers . get ( " link " );
+      if ( linkHeader ) {
+        const m = linkHeader . match ( / ([^ ] + ) \s *; \s *rel= [ "' ]? canonical [ "' ]? /i );
+        if ( m ) {
+          canonical = m [ 1 ];
+          source = " http-header " ;
+        }
+      }
+      // 2) HTML link rel="canonical"
+      if ( ! canonical ) {
+        const html = await res . text ();
+        const tag = html . match ( / link [^ ] +rel= [ "' ] canonical [ "' ][^ ] * /i );
+        if ( tag ) {
+          const href = tag [ 0 ]. match ( /href= [ "' ]([^ "' ] + )[ "' ] /i );
+          if ( href ) {
+            canonical = href [ 1 ];
+            source = " html " ;
+          }
+        }
+      }
+      return { requested : res . url, canonical, source };
+    }
+    ```
+
+    You should see the code pasted into your file. This function is ready to be used.
+
+4.  **Paste the code to classify the canonical URL**: Add the following JavaScript code below the `getCanonical` function in your file. This code helps understand if the canonical URL is correct (points to itself), points elsewhere, or is missing.
+
+    ```javascript
+    function classify ( requested , canonical ) {
+      if ( ! canonical ) return " missing " ;
+      const norm = ( u ) => u . replace ( / \/ +$/ , "" ). toLowerCase ();
+      return norm ( canonical ) === norm ( requested ) ? " self-referencing " // the healthy default
+        : " points-elsewhere " ; // intentional for duplicates, a bug otherwise
+    }
+    ```
+
+    This second function will help interpret the results from the first function.
+
+5.  **Paste the code to run the check**: Add the following code to the end of your file. This part calls the functions you just added with a sample URL and prints the result to your console. Replace `"https://example.com/"` with the URL you want to check.
+
+    ```javascript
+    (async () => {
+      const urlToCheck = " https://example.com/ " ;
+      try {
+        const { requested, canonical, source } = await getCanonical(urlToCheck);
+        console.log(`Requested URL: ${requested}`);
+        console.log(`Canonical URL: ${canonical} (${source ?? "none"})`);
+        console.log(`Classification: ${classify(requested, canonical)}`);
+      } catch (error) {
+        console.error(`Error checking ${urlToCheck}: ${error}`);
+      }
+    })();
+    ```
+
+    You should see a placeholder for the URL you want to check.
+
+6.  **Run the script**: Open your computer's terminal or command prompt, navigate to the folder where you saved `checkCanonical.js`, and run the script using Node.js by typing the following command and pressing Enter:
+
+    ```bash
+    node checkCanonical.js
+    ```
+
+    You should see output in your terminal showing the requested URL, the found canonical URL (and where it was found), and its classification (e.g., `self-referencing`, `missing`).
+
+7.  **Check multiple URLs (optional)**: To check many URLs at once, replace the last part of the script (step 5) with the following code. This code iterates through a list of URLs and checks each one. Update the `urls` array with the actual URLs you want to scan.
+
+    ```javascript
+    (async () => {
+      const urls = [
+        " https://example.com/ " ,
+        " https://example.com/blog/ " ,
+        " https://example.com/pricing/ " ,
+        // Add more URLs here
+      ];
+
+      for (const url of urls) {
+        try {
+          const { requested, canonical, source } = await getCanonical(url);
+          console.log(`URL: ${url}`);
+          console.log(`  Canonical: ${canonical} (${source ?? "none"})`);
+          console.log(`  Classification: ${classify(requested, canonical)}`);
+        } catch (error) {
+          console.error(`Error checking ${url}: ${error}`);
+        }
+      }
+    })();
+    ```
+
+    After running this modified script, you will see the results for each URL in your list printed to the terminal.
+
+## Original source
+This workflow was adapted from a blog post by simran_kaur_9eda1e242c31f on DEV Community. The original post explains how to programmatically check canonical URLs using Node.js, covering both HTML and HTTP header methods to ensure accurate SEO checks.
+
+## Notes & variations
+*   **Common mistake**: Using regular expressions (regex) to parse HTML can be fragile. For more complex HTML structures or production use, consider using a dedicated HTML parsing library like Cheerio for Node.js.
+*   **Tip for better results**: For production-level checks, you might want to add more robust error handling, rate limiting to avoid overwhelming servers, and potentially check for IP canonicalization as mentioned in the original source.
+*   **Free tier viability**: This workflow uses Node.js and its built-in fetch API, making it entirely free to run. It's also very data-light, suitable for mobile users.

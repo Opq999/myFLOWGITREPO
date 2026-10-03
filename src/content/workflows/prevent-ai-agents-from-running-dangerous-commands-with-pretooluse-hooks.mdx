@@ -1,0 +1,83 @@
+---
+title: "Prevent AI Agents from Running Dangerous Commands with PreToolUse Hooks"
+description: "Learn how to use PreToolUse hooks to stop AI coding agents from executing harmful or costly commands, making them safer and more efficient."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 15
+jobToBeDone: "Prevent AI coding agents from executing dangerous or inefficient commands."
+tools:
+  - name: "Claude Code"
+    url: "https://code.claude.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Python"
+    url: "https://www.python.org"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/alphanumericentity/your-agents-instructions-file-is-a-suggestion-a-hook-is-a-contract-1eak"
+  platform: "blog"
+  author: "alphanumericentity"
+  postedAt: 2026-10-02
+score: 7
+ingestedAt: 2026-10-03
+nigeriaNotes: "Claude Code is a paid tool. Python is free and widely available. Running Python scripts locally requires minimal data. The core concept of using hooks is transferable to other AI agents that support similar mechanisms, potentially with free tier options."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to create a safety net for your AI coding agent by using 'PreToolUse' hooks. These hooks act as a gatekeeper, stopping the AI from running commands that could be dangerous, expensive, or silently wrong. This approach makes supervising your AI agent much easier and prevents costly mistakes.
+
+This method works because hooks run *before* the AI agent's command is executed, giving you a chance to review and block it. It's more effective than just writing rules in the AI's instructions because the hook is a program that *must* run, not just a suggestion.
+
+## Tools you need
+*   **Claude Code** (paid): An AI coding assistant that allows you to set up custom hooks.
+*   **Python** (free): A programming language used to write the hook scripts.
+
+## Steps
+1.  **Understand the concept of a PreToolUse hook**: A PreToolUse hook is a small program that runs just before your AI agent tries to use a tool (like running a command in your terminal). It receives information about the command the AI wants to run and can decide whether to allow it or block it.
+
+2.  **Set up your AI agent to use hooks**: The exact way to do this depends on your AI agent. The author uses Claude Code, which allows you to create hook files. You'll need to consult your AI agent's documentation for how to specify a hook script.
+
+3.  **Write a hook script to block dangerous commands**: The author provides an example of a hook that prevents the AI from running a `DELETE` command with the `psql` tool. You will need to write your own Python script based on what you want to protect.
+
+    Here is the example Python script provided by the author. You would save this as a file (e.g., `block_delete.py`) and configure your AI agent to use it as a PreToolUse hook for the `psql` tool.
+
+    ```python
+    #!/usr/bin/env python3
+    import sys
+    import json
+
+    data = json.loads(sys.stdin.read())
+    cmd = (data.get("tool_input") or {}).get("command", "")
+
+    if "psql" in cmd and "DELETE" in cmd.upper():
+        print(json.dumps({
+            "decision": "block",
+            "reason": "No DELETE against this database from an agent session. Write the statement into a migration and let a human run it."
+        }))
+        sys.exit(0)
+
+    # If the command is not blocked, allow it to proceed by printing an empty JSON object
+    print(json.dumps({}))
+    sys.exit(0)
+    ```
+
+    **What to expect**: When the AI agent tries to run a command that matches the conditions in your hook (like a `DELETE` command in `psql`), the hook will intercept it. Instead of running the command, the AI will receive a refusal message, and the command will not be executed. The AI will then use the `reason` provided in the hook's output to try and correct its action.
+
+4.  **Add more hooks for other protections**: The author suggests creating hooks for different categories of risks:
+    *   **Things that can't be undone**: Blocking commands that modify production databases (like mass deletes or truncates), merge commands, or `sed -i` commands that rewrite files without review.
+    *   **Things that are expensive**: Blocking commands that consume a lot of resources, like running full local type-checking on a large project, especially if a CI system already does it.
+    *   **Things that are silently wrong**: Blocking commands that might produce incorrect results due to subtle issues, like misinterpreting timestamps in a specific timezone.
+
+    **What to expect**: Each hook you add will create another layer of safety for your AI agent, preventing it from performing actions that could lead to data loss, wasted resources, or incorrect outcomes.
+
+## Original source
+This workflow is based on the ideas shared by alphanumericentity on DEV Community. The author explains how moving critical rules from an AI agent's instruction file into executable 'PreToolUse' hooks can significantly improve safety and reduce the need for constant supervision.
+
+## Notes & variations
+*   **Free-tier alternatives**: While Claude Code is a paid tool, the concept of PreToolUse hooks is applicable to other AI agents that allow custom scripting or tool execution interception. Look for agents that support pre-execution checks or custom plugins.
+*   **Common mistake**: Relying solely on instructions within the AI's main prompt file. These instructions are often treated as suggestions and can be overlooked by the AI, especially in complex tasks. Hooks, however, are programs that *must* run and decide.
+*   **Tip to get better results**: Make the `reason` message in your hook very clear and helpful. Instead of just saying "blocked", explain *why* it was blocked and suggest a better alternative, like writing a migration script or running a check in a different environment. This helps the AI learn and correct itself more effectively.

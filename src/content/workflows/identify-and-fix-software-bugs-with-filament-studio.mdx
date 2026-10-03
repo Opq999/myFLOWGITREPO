@@ -1,0 +1,69 @@
+---
+title: "Identify and Fix Software Bugs with Filament Studio"
+description: "Learn how to find and fix software bugs by simulating real user interactions with Filament Studio and Laravel. A practical guide for developers."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 30
+jobToBeDone: "Identify and fix bugs in a software application by simulating real user interactions"
+tools:
+  - name: "Filament Studio"
+    url: "https://filamentadmin.com/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Laravel"
+    url: "https://laravel.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "MySQL"
+    url: "https://www.mysql.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "SQLite"
+    url: "https://www.sqlite.org/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/serhii_fedorenko/about-1800-tests-passed-running-the-real-app-found-14-bugs-l46"
+  platform: "blog"
+  author: "serhii_fedorenko"
+  postedAt: 2026-09-22
+score: 7
+ingestedAt: 2026-10-03
+nigeriaNotes: "Filament Studio and Laravel are free to use. Running a local development server with MySQL or SQLite is generally low data usage. This workflow is suitable for users with limited data."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to find hidden bugs in your software by setting up a realistic testing environment that mimics how a real user would interact with your application. This approach helps uncover issues that automated tests might miss, leading to a more stable and reliable product.
+
+## Tools you need
+*   **Filament Studio** (freemium): A tool for building beautiful administration panels for Laravel applications, used here to manage and test application features.
+*   **Laravel** (free): A popular PHP web application framework used to build web applications. You will set up a separate Laravel app to test your Filament Studio package.
+*   **MySQL** (free): A widely used open-source relational database management system. You will use this for testing your application.
+*   **SQLite** (free): A lightweight, file-based database. It's used here as an alternative to MySQL for testing.
+
+## Steps
+1.  **Set up a separate Laravel application**: Install a fresh instance of Laravel to use as a testing ground for your Filament Studio package. This ensures a clean environment isolated from your main project.
+2.  **Install your Filament Studio package**: Add your Filament Studio package to the new Laravel application. The author does not specify the exact command, but it typically involves using Composer, Laravel's package manager.
+3.  **Configure the database**: Set up your database connection in the Laravel application's `.env` file. The author used MySQL for their main test but also mentions SQLite as an alternative. Choose one and configure it.
+    *   For MySQL, you would typically set `DB_CONNECTION=mysql`, `DB_HOST`, `DB_PORT`, `DB_DATABASE`, `DB_USERNAME`, and `DB_PASSWORD`.
+    *   For SQLite, you would set `DB_CONNECTION=sqlite` and `DB_DATABASE` to the path of your database file.
+4.  **Simulate real user interactions**: Use the Filament Studio admin panel within your test Laravel app to interact with your package's features as a user would. This includes:
+    *   Triggering flows or automations.
+    *   Sending real HTTPS webhook deliveries.
+    *   Running a real queue worker.
+    *   Navigating and clicking through the admin panel in a browser.
+5.  **Analyze the results**: Observe the application's behavior and check for any unexpected outcomes or errors. The author found that the system sometimes reported success even when nothing ran or the wrong action was taken. Pay close attention to:
+    *   **Completion times**: A run completing in 0 ms might indicate an issue where the system reported success without performing any actions.
+    *   **Webhook verification**: Check if webhook signatures are correctly verified, especially when dealing with potentially empty secrets, as this can lead to security vulnerabilities.
+6.  **Identify and fix defects**: Based on your observations, pinpoint the exact bugs. The author identified fourteen defects in one release (v1.8.0) and one more in v1.7.1. Document each bug and implement the necessary fixes in your package code.
+
+## Original source
+This workflow is based on a post by serhii_fedorenko on DEV Community. The author shares their experience finding and fixing bugs in their Filament Studio package by moving beyond automated tests to simulate real user interactions within a separate Laravel application.
+
+## Notes & variations
+*   **Free-tier alternatives**: All the core tools mentioned (Filament Studio, Laravel, MySQL, SQLite) have robust free options, making this workflow accessible without cost.
+*   **Common mistake**: Relying solely on automated tests without manual, real-world simulation can lead to missed bugs. The author discovered that their existing test suite did not cover the issues found through manual testing.
+*   **Tip for better results**: When simulating webhook triggers, ensure your test setup accurately reflects the production environment, including using HTTPS and a proper queue worker, to catch the most realistic bugs.

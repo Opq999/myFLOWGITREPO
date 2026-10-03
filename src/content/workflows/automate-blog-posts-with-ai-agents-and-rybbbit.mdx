@@ -1,0 +1,73 @@
+---
+title: "Automate Blog Posts with AI Agents and Rybbbit"
+description: "Learn how to automate blog post generation, deployment, and cross-posting using AI agents and Rybbbit for tracking."
+category: "content-creation"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 60
+jobToBeDone: "Automate blog post generation, deployment, and cross-posting using AI agents"
+tools:
+  - name: "Rybbbit"
+    url: "https://rybbbit.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Google Search Console"
+    url: "https://search.google.com/search-console"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/mrsaynothing/field-notes-from-an-agent-run-site-1-the-machine-ships-i-approve-46ng"
+  platform: "blog"
+  author: "mrsaynothing"
+  postedAt: 2026-09-20
+score: 8
+ingestedAt: 2026-10-03
+nigeriaNotes: "Rybbbit is a self-hosted tracker and likely requires server setup. Data usage for AI models can be significant if not managed locally. Free tier viability depends on Rybbbit's specific offerings, but self-hosting implies upfront setup effort."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to set up an automated system that generates blog posts, deploys them, and shares them across different platforms. This approach uses AI to write content and other tools to handle the technical aspects of publishing and tracking, freeing you to focus on approving and guiding the process.
+
+## Tools you need
+*   **Rybbbit** (paid): A self-hosted website tracker used here to measure post performance and inform future content. 
+*   **Google Search Console** (free): A service from Google that helps you monitor your site's performance in Google Search and identify issues.
+*   **AI Model** (free / freemium / paid): A language model capable of generating text based on prompts. The author implies using a locally run model, but a web-based one can also work.
+*   **Git** (free): A version control system used to manage code changes and deployments.
+*   **CI/CD Tool** (free / freemium / paid): A tool for automating software build, test, and deployment pipelines. Examples include GitHub Actions, GitLab CI, or Jenkins.
+
+## Steps
+1.  **Set up your AI writer**: Configure a scheduled job that uses an AI model to write blog posts. The author mentions using an AI model that mines 'autocomplete for real query language' and checks against a 'ledger of what already worked' to decide what to write next. The posts are written to a 'strict contract' including frontmatter schema and word counts.
+    *   The author does not share their exact prompt or AI model setup. A starting point for a prompt could be:
+    ```
+    You are a blog post writer. Based on the following performance data [paste data here] and a list of previously successful topics [paste topics here], write a new blog post. The post should be approximately [word count] words long and follow this structure: [define structure, e.g., Introduction, Main Body Paragraphs, Conclusion]. Ensure the frontmatter includes a title, date, and relevant tags.
+    ```
+    You should get a draft blog post with the required frontmatter.
+
+2.  **Automate deployment**: Set up a scheduled job that handles the operational aspects of publishing. This includes using Git to manage code changes, deploying through a CI/CD pipeline, and pinging search engines.
+    *   The author uses 'GitOps pull-deploys through CI and a registry'. You will need to configure your CI/CD tool to automatically build and deploy your blog posts whenever new content is committed to your Git repository.
+    *   Ensure your CI/CD pipeline is set up to handle static site generation and deployment to your chosen hosting platform.
+
+3.  **Implement search engine pings**: After each post is deployed, automatically notify search engines about the new content. The author mentions using 'IndexNow per post'.
+    *   You will need to integrate with services like IndexNow or submit sitemaps to Google Search Console regularly.
+
+4.  **Set up cross-posting and translation**: Configure the system to automatically share posts to other platforms and translate them into multiple languages.
+    *   The author mentions 'translation pass across 18 locales'. You will need to integrate with translation services and social media APIs to automate this.
+
+5.  **Track performance with Rybbbit**: Install and configure Rybbbit to monitor your website's traffic and user engagement.
+    *   Follow Rybbbit's documentation to set it up on your server. You should see analytics data appearing in the Rybbbit dashboard.
+
+6.  **Monitor Google Search Console**: Regularly check Google Search Console for your site's indexing status and any potential issues.
+    *   Ensure your website is verified in Google Search Console. You should see data on indexed pages and any 'Discovered – currently not indexed' items.
+
+7.  **Establish a feedback loop**: Use the data from Rybbbit and Google Search Console to inform the AI writer about what content is performing well, and adjust future writing contracts.
+    *   The author states, 'The ledger caught it, and the ledger decides what gets written next.' This means analyzing your analytics to identify successful topics and keywords, and feeding this information back into your AI prompts.
+
+## Original source
+This workflow is inspired by a blog post by mrsaynothing on DEV Community, detailing their experience running a blog entirely with AI agents. The author shares how they set up automated content creation, deployment, and tracking, focusing on the practicalities and failures of such a system.
+
+## Notes & variations
+*   **Free-tier alternative**: For AI writing, you can use free tiers of services like ChatGPT, Claude, or Gemini. For tracking, basic analytics can be obtained from Google Analytics, though it's less automated than Rybbbit. For CI/CD, GitHub Actions offers a generous free tier.
+*   **Common mistake**: A common pitfall is not clearly defining the 'contracts' or rules for the AI writer. Vague instructions lead to unpredictable or low-quality output. Ensure your prompts are specific about format, tone, and content requirements.
+*   **Tip for better results**: Regularly review the performance data and use it to refine your AI prompts and content strategy. The more feedback the AI receives, the better it can adapt to what resonates with your audience.

@@ -1,0 +1,76 @@
+---
+title: "Understand and Track AI Agent Costs on AWS"
+description: "Learn how to track hidden costs in multi-agent AI workflows on AWS, even when runs appear successful. Understand the tools and concepts for agent observability."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 240
+jobToBeDone: "Implement a zero-cost, read-only system to track per-agent costs in multi-agent AI workflows on AWS"
+tools:
+  - name: "AWS"
+    url: "https://aws.amazon.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "AWS Bedrock"
+    url: "https://aws.amazon.com/bedrock/"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "OpenTelemetry"
+    url: "https://opentelemetry.io"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/aws-builders/per-agent-cost-tracking-for-multi-agent-ai-on-aws-10eg"
+  platform: "blog"
+  author: "sarvar_04"
+  postedAt: 2026-09-23
+score: 10
+ingestedAt: 2026-10-03
+nigeriaNotes: "This workflow primarily uses AWS services which have free tiers for some usage, but running multi-agent AI with Bedrock will incur costs. Data usage for tracing can vary significantly based on activity."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+This workflow helps you find "silent waste" in multi-agent AI systems running on AWS. Silent waste means your AI agents complete their tasks successfully, but they use more resources (and cost more money) than they should. Traditional monitoring tools often miss this because they only check if a system is "up," "fast," and "error-free."
+
+The author built a read-only system to track the exact cost of each step taken by individual agents within a multi-agent crew. This allows you to see which parts of your AI system are burning money, even when everything looks fine on the surface.
+
+This is an advanced concept because it requires deep knowledge of AWS services, how AI agents work, and how to implement detailed observability (tracking) using tools like OpenTelemetry. The exact steps involve custom code and configuration that depend on your specific agent setup and AWS environment, making a simple copy-paste recipe impossible for a beginner. The author spent a week on this, highlighting its complexity.
+
+## What you can use it for
+*   **Identify hidden costs**: Pinpoint exactly which AI agents or steps in a multi-agent workflow are costing more than expected, even if they complete successfully.
+*   **Optimize resource usage**: Understand where agents might be doing unnecessary work, like re-reading data or looping too many times, to reduce your AWS bill.
+*   **Improve agent design**: Use cost data to refine how your AI agents interact and make decisions, leading to more efficient and cheaper operations.
+*   **Prevent financial surprises**: Catch cost overruns early, before they become a significant trend on your monthly AWS statement.
+
+## Tools you need
+*   **AWS** (paid): The cloud platform where your multi-agent AI systems run and where costs are incurred.
+*   **AWS Bedrock** (paid): A managed service on AWS for building and scaling generative AI applications, used here to run the large language models (LLMs) that power the agents.
+*   **OpenTelemetry** (free): An open-source standard for collecting and exporting telemetry data (traces, metrics, logs) from your applications, used to track agent activities and costs.
+
+## How it actually works
+1.  **Understand agent observability**: Learn why traditional monitoring isn't enough for AI agents. Agent observability needs to track things like reasoning cycles, tool calls, token counts, and dollar costs per step.
+2.  **Set up tracing with OpenTelemetry**: Integrate OpenTelemetry into your multi-agent AI code to generate "traces" (records of operations) and "spans" (individual steps within a trace). This involves adding specific code to instrument your agents. The author mentions "Adding Traccia to your code" which likely refers to a specific tracing library or approach for this.
+3.  **Bridge cost data to traces**: Develop a mechanism to associate actual AWS costs (e.g., from Bedrock API calls) with the corresponding spans in your OpenTelemetry traces. This is a complex step that requires careful integration with AWS billing data or SDKs. The author refers to this as "The cost bridge and one gotcha."
+4.  **Model multi-agent crews**: Design your tracing to accurately represent the interactions and work done by each agent in a multi-agent system. This ensures you can see per-agent costs. The author mentions working with an "AWS Bedrock and Strands crew," implying a specific multi-agent framework.
+5.  **Analyze for silent waste**: Use a "live control panel" or similar visualization to review the traces and identify patterns where agents complete tasks but incur higher-than-expected costs. The author describes this as "The unique part: catching silent waste" and "Watching it happen: the live control panel."
+6.  **Build locally for zero cost**: The author states the system can be run locally for $0, implying that the tracing and analysis setup can be tested without incurring live AWS Bedrock costs, though the *cost data itself* would still need to be simulated or derived from real AWS usage.
+
+## Words you'll see, explained
+*   **AI agent**: A program that can make its own decisions and take actions to achieve a goal, often by calling various tools and using large language models.
+*   **Multi-agent system**: A setup where several AI agents work together, often communicating and collaborating, to solve a more complex problem.
+*   **AWS Bedrock**: A service from Amazon Web Services that provides access to powerful large language models (LLMs) from Amazon and other AI companies, which agents can use for reasoning and generating text.
+*   **Observability**: The ability to understand the internal state of a system by examining the data it produces (like logs, metrics, and traces). For AI agents, this means seeing how they make decisions and use resources.
+*   **Trace**: In observability, a trace is a record of the full journey of a request or operation through a system, showing all the steps it took.
+*   **Span**: A single operation or step within a trace. Each span has a start and end time and can contain attributes (like cost, token count, or agent ID).
+*   **OpenTelemetry**: A collection of tools, APIs, and SDKs that standardize how you collect and send telemetry data (traces, metrics, logs) from your applications to an observability backend.
+*   **Silent waste**: When an AI agent or system completes its task successfully and without errors, but uses more computational resources or incurs higher costs than necessary.
+
+## Original source
+This concept is based on an article by sarvar_04, shared on the DEV Community blog. The author details their week-long effort to implement a zero-cost, read-only system for tracking per-agent costs in multi-agent AI workflows on AWS, aiming to catch hidden financial waste.
+
+## Notes & variations
+*   **Do you even need this?**: If you are just starting with single AI agents or have very simple, low-volume multi-agent systems, you might not need this level of detailed cost tracking immediately. Basic AWS billing reports might be sufficient. This advanced observability becomes crucial when you are running complex, high-volume multi-agent systems where hidden costs can quickly add up.
+*   **Free-tier limits**: While OpenTelemetry itself is free, running multi-agent AI systems on AWS Bedrock will incur costs beyond any free tiers. The "zero-cost" aspect mentioned by the author refers to the *tracing system itself* being read-only and not adding new infrastructure costs, and the ability to run *parts* of the analysis locally. However, the underlying AI agent runs on AWS will still be paid.
+*   **Common pitfall**: A major challenge is accurately linking specific AWS resource usage and costs (especially for services like Bedrock) to individual spans within your traces. AWS billing data can be complex, and getting granular, real-time cost attribution requires careful integration and understanding of AWS APIs and cost reporting. This is where the author's "cost bridge and one gotcha" comes in.

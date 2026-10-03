@@ -1,0 +1,79 @@
+---
+title: "Automate Ultrasound Reports with Voice Dictation"
+description: "Learn how to automate the generation of ultrasound reports from dictated measurements using voice input and a custom application."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 60
+jobToBeDone: "Automate the generation of ultrasound reports from dictated measurements"
+tools:
+  - name: "Mobile Development Platform"
+    url: "https://developer.android.com/studio"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Speech-to-Text Service"
+    url: "https://cloud.google.com/speech-to-text"
+    pricing: "paid"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/alexandernovikov/my-wife-came-home-late-every-shift-because-of-ultrasound-paperwork-so-i-wrote-her-a-program-2oc0"
+  platform: "blog"
+  author: "alexandernovikov"
+  postedAt: 2026-09-17
+score: 7
+ingestedAt: 2026-10-03
+nigeriaNotes: "Mobile development can be done on most smartphones. Speech-to-text services may incur data costs, but many offer free tiers for limited usage. Offline speech-to-text options might be available for reduced data dependency."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+
+This is a workflow for automating the creation of medical reports, specifically ultrasound reports, by using voice dictation. Instead of typing out a long list of measurements, a physician can speak them, and a custom application turns them into a structured report. This approach recognizes that medical dictation isn't just about converting spoken words to text, but about understanding specific measurements, their units, and how they relate to each other within a medical context.
+
+The core idea is to build a system that understands the specific vocabulary and structure of an ultrasound report. It needs to know what measurements are expected, what units they use, and how some values are calculated from others. This goes beyond simple speech-to-text because it requires a specialized 'vocabulary' for medical measurements and an understanding of their context. For example, it needs to differentiate between a 'tricuspid' valve in general and a 'tricuspid aortic valve' which describes the structure of the aortic valve.
+
+This workflow is not a simple copy-paste solution because it involves custom software development. The exact steps require programming knowledge to build the mobile application and integrate it with a speech-to-text service. The complexity lies in creating the specific 'knowledge base' for the medical domain, ensuring accuracy and handling nuances in medical terminology.
+
+## What you can use it for
+
+*   **Automate report writing**: Quickly generate structured medical reports from spoken measurements, saving significant time.
+*   **Reduce manual data entry**: Minimize the need for physicians to manually type in numerical data, reducing errors and fatigue.
+*   **Improve report accuracy**: By understanding context and relationships between measurements, the system can flag potential inconsistencies or assist in calculations.
+*   **Enhance workflow efficiency**: Allow medical professionals to focus more on patient care by streamlining the administrative tasks associated with report generation.
+*   **Create searchable archives**: Automatically generate digital reports that can be easily stored, searched, and retrieved.
+
+## Tools you need
+
+*   **Mobile Development Platform** (free): To build the application that runs on a phone and captures voice input. Examples include Android Studio for Android apps or Xcode for iOS apps.
+*   **Speech-to-Text Service** (paid): To convert the spoken measurements into text that the application can process. Examples include Google Cloud Speech-to-Text or other cloud-based AI services.
+
+## How it actually works
+
+1.  **Develop a mobile application**: Create an app for a smartphone that can record audio and send it to a speech-to-text service.
+2.  **Integrate speech-to-text**: Connect the mobile app to a speech-to-text API. The app will send audio recordings to this service.
+3.  **Build a medical vocabulary**: This is the most crucial step. The system needs to be trained or programmed to understand specific medical terms, measurements, units, and their relationships within an ultrasound report. This involves creating a dictionary of expected inputs and how to interpret them.
+4.  **Process the transcribed text**: Once the speech-to-text service returns text, the application parses it, identifying measurements and their values based on the custom medical vocabulary.
+5.  **Structure the report**: Organize the identified measurements into the correct sections and fields of a standard ultrasound report.
+6.  **Perform calculations**: Automatically calculate derived values (like ejection fraction) from dictated measurements using pre-defined formulas.
+7.  **Generate output**: Create the final report in a usable format, such as a Word document or PDF, and potentially store audio snippets linked to specific measurements for easy review.
+
+## Words you'll see, explained
+
+*   **Ultrasound probe**: A medical device used to create images of internal body structures by emitting sound waves.
+*   **Echocardiography**: An ultrasound of the heart.
+*   **Chamber dimensions, wall thickness, valves, flow velocities, ejection fraction**: Specific measurements taken during an echocardiogram to assess heart function and structure.
+*   **Speech-to-text**: Technology that converts spoken language into written text.
+*   **Vocabulary**: In this context, it refers to the specific set of medical terms, measurements, and their meanings that the software needs to understand.
+*   **Cusps**: The flaps of a heart valve.
+*   **Pulmonary artery pressure**: A measurement of blood pressure in the arteries of the lungs.
+
+## Original source
+
+This workflow is inspired by a personal project shared by Alexandernovikov on DEV Community. The author developed a custom mobile application to help his wife, a physician, automate the tedious process of writing ultrasound reports by using voice dictation for measurements.
+
+## Notes & variations
+
+*   **Do you even need this?**: For very simple reports or if you have a dedicated transcription service, a basic speech-to-text tool might suffice. However, for specialized medical reports with complex measurements, a custom solution like this offers significant advantages in accuracy and efficiency.
+*   **Free-tier limits**: Cloud-based speech-to-text services often have free tiers with limited usage. Exceeding these limits will incur costs. Developing the mobile app itself can be done using free software development tools.
+*   **Common pitfall**: A major challenge is creating a comprehensive and accurate medical vocabulary. Misinterpreting a measurement or its unit can lead to incorrect patient data. Thorough testing with real medical dictation is essential.

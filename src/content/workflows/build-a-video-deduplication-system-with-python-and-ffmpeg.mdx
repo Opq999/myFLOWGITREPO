@@ -1,0 +1,138 @@
+---
+title: "Build a Video Deduplication System with Python and FFmpeg"
+description: "Learn to build a multi-stage video deduplication system using Python and FFmpeg to identify duplicate or modified video files."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 30
+jobToBeDone: "Build a multi-stage video deduplication system to identify re-encoded, resized, or watermarked copies of existing videos."
+tools:
+  - name: "Python"
+    url: "https://www.python.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "FFmpeg"
+    url: "https://ffmpeg.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "videohash2"
+    url: "https://github.com/joeyh/videohash"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "SQLite"
+    url: "https://www.sqlite.org/index.html"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/masonwritescode/build-a-three-stage-video-dedup-worker-sha-256-perceptual-hash-then-ffmpegs-mpeg-7-signature-578l"
+  platform: "blog"
+  author: "masonwritescode"
+  postedAt: 2026-09-29
+score: 8
+ingestedAt: 2026-10-03
+nigeriaNotes: "This workflow requires installing software locally, which is generally free. Data usage will depend on the size of the videos being processed, but the core operations are computational. Ensure you have sufficient disk space for video files and the SQLite database."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will build a Python module that can identify duplicate videos, even if they have been re-encoded, resized, or watermarked. This system uses a three-stage approach to efficiently find similar videos, saving you storage space and processing time.
+
+## Tools you need
+*   **Python** (free): A popular programming language used for building the deduplication logic.
+*   **FFmpeg** (free): A powerful command-line tool for handling video and audio files, used here for generating video signatures.
+*   **videohash2** (free): A Python library that creates a perceptual hash for videos, allowing for similarity comparisons.
+*   **SQLite** (free): A lightweight database used to store video hashes and speed up future checks.
+
+## Steps
+1.  **Set up your environment**: Install FFmpeg and the Python libraries needed.
+    *   On Linux (like Ubuntu), open your terminal and run:
+
+        ```bash
+        sudo apt-get update
+        sudo apt-get install -y ffmpeg
+        ```
+    *   Verify FFmpeg's signature filter is available. In your terminal, run:
+
+        ```bash
+        ffmpeg -hide_banner -filters | grep signature
+        ```
+        You should see `signature N- V` in the output. If not, you may need to install a different FFmpeg build.
+    *   Create a Python virtual environment and install `videohash2`:
+
+        ```bash
+        python3 -m venv .venv
+        source .venv/bin/activate
+        pip install videohash2
+        ```
+    You should see `Successfully installed videohash2-X.Y.Z` (where X.Y.Z is the version number).
+
+2.  **Create test video files**: Generate sample videos to test your deduplication system.
+    *   Create a directory for your test files:
+
+        ```bash
+        mkdir fixtures
+        cd fixtures
+        ```
+    *   Run the following FFmpeg commands to create a source video and several modified versions:
+
+        ```bash
+        ffmpeg -y -f lavfi -i "testsrc2=duration=20:size=640x360:rate=25,format=yuv420p" \
+        -f lavfi -i "sine=frequency=440:duration=20" \
+        -c:v libx264 -crf 20 -c:a aac -shortest source.mp4
+        ffmpeg -y -i source.mp4 -vf scale=320:180 -c:v libx264 -crf 32 -c:a aac dup_reencode.mp4
+        ffmpeg -y -i source.mp4 -vf "drawbox=x=10:y=10:w=80:h=30:color=white@0.8:t=fill" \
+        -c:v libx264 -crf 23 -c:a copy dup_watermark.mp4
+        ffmpeg -y -ss 7 -i source.mp4 -t 6 -c:v libx264 -crf 23 -c:a aac excerpt.mp4
+        ffmpeg -y -f lavfi -i "mandelbrot=size=640x360:rate=25" -t 20 \
+        -c:v libx264 -crf 23 unrelated.mp4
+        ```
+    You should now have `source.mp4`, `dup_reencode.mp4`, `dup_watermark.mp4`, `excerpt.mp4`, and `unrelated.mp4` in your `fixtures` directory.
+
+3.  **Implement Stage 1: Byte Hash**: This stage checks for exact file duplicates.
+    *   Create a Python file named `dedup/stage1.py` and add the following code:
+
+        ```python
+        import hashlib
+        from pathlib import Path
+
+        def sha256(path: Path, chunk: int = 1020) -> str:
+            h = hashlib.sha256()
+            with path.open("rb") as f:
+                while blk := f.read(chunk):
+                    h.update(blk)
+            return h.hexdigest()
+        ```
+    This function calculates the SHA-256 hash of a file, which is a unique digital fingerprint. If two files have the same SHA-256 hash, they are identical.
+
+4.  **Implement Stage 2: Perceptual Hash**: This stage identifies visually similar videos.
+    *   Create a Python file named `dedup/stage2.py` and add the following code:
+
+        ```python
+        from pathlib import Path
+        from videohash2 import VideoHash
+
+        def phash(path: Path) -> int:
+            vh = VideoHash(path=str(path))
+            return int(vh.hash_hex, 16) # 64-bit int
+
+        def hamming(a: int, b: int) -> int:
+            return (a ^ b).bit_count()
+        ```
+    The `phash` function generates a 64-bit perceptual hash. The `hamming` function calculates the difference between two hashes; a small difference indicates visual similarity.
+
+5.  **Implement Stage 3: MPEG-7 Signature (Conceptual)**: This stage uses FFmpeg's signature filter to detect if one video contains another, even with significant modifications. The provided excerpt does not include the full Python code for this stage, but it involves using FFmpeg commands to generate and compare MPEG-7 signatures.
+    *   To check if your FFmpeg build supports this, you can run:
+
+        ```bash
+        ffmpeg -hide_banner -filters | grep signature
+        ```
+        You should see `signature N- V` in the output. If this line is missing, your FFmpeg build was not configured with the signature filter.
+
+## Original source
+This workflow is based on a blog post by masonwritescode, shared on DEV Community. It details how to build a robust video deduplication system using common tools like Python and FFmpeg, designed to catch various forms of video duplication.
+
+## Notes & variations
+*   **Free Tier Alternative**: All tools mentioned are free and open-source, so there are no free tier limitations.
+*   **Common Pitfall**: Ensure your FFmpeg installation includes the MPEG-7 signature filter. If it's missing, the third stage of deduplication will not work. You might need to download a static build of FFmpeg.
+*   **Tip for Better Results**: For Stage 2, the `hamming` distance threshold can be adjusted. A lower threshold means you're looking for very close matches, while a higher threshold will catch more loosely similar videos. Experiment to find what works best for your needs.

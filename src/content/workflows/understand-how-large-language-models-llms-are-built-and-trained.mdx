@@ -1,0 +1,82 @@
+---
+title: "Understand How Large Language Models (LLMs) Are Built and Trained"
+description: "Learn the advanced concepts behind training large language models (LLMs) like DeepSeek-R1, including supervised fine-tuning (SFT) and data generation."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 120
+jobToBeDone: "Reproduce and train large language models (LLMs) and generate synthetic data"
+tools:
+  - name: "GitHub"
+    url: "https://github.com"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Distilabel"
+    url: "https://distilabel.argilla.io/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "TRL"
+    url: "https://huggingface.co/docs/trl/en/index"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "CUDA"
+    url: "https://developer.nvidia.com/cuda-toolkit"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://github.com/huggingface/open-r1"
+  platform: "github"
+  author: "huggingface"
+  postedAt: 2026-10-02
+score: 7
+ingestedAt: 2026-10-03
+nigeriaNotes: "This workflow requires significant computing power, including a powerful GPU, which may be expensive or difficult to access. It also involves large data downloads."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+This project, called `open-r1`, was an effort to show how powerful AI models like DeepSeek-R1 are built from scratch. DeepSeek-R1 is a type of Large Language Model (LLM), which is an AI program trained on vast amounts of text to understand and generate human-like language.
+
+The goal of `open-r1` was to openly reproduce the steps involved in training such a model, including advanced techniques like Supervised Fine-Tuning (SFT) and a type of reinforcement learning called GRPO. It also explored how to generate synthetic data, which is artificial data created by AI to further improve models.
+
+It is important to know that this specific project is no longer actively maintained. The authors now recommend using the TRL library for current methods of training and fine-tuning LLMs. This entry is therefore for understanding the *concepts* and *methods* of advanced LLM training, rather than providing a direct, reproducible set of steps for a beginner.
+
+## What you can use it for
+*   **Understand advanced LLM training**: Learn the stages and techniques involved in building powerful AI models.
+*   **Explore data generation**: See how synthetic (AI-generated) data is created to improve models.
+*   **Study specific training techniques**: Examine how Supervised Fine-Tuning (SFT) and GRPO (a type of reinforcement learning) are applied in practice.
+*   **Learn from open-source examples**: Review the code and datasets used in a real-world effort to reproduce an LLM's training process.
+
+## Tools you need
+*   **GitHub** (free): A platform for hosting and sharing code projects, where the `open-r1` project's code is stored.
+*   **Distilabel** (free): A tool used for generating new, artificial data (synthetic data) from existing models.
+*   **TRL** (free): A library from Hugging Face for training large language models, especially for fine-tuning and reinforcement learning. This is the recommended tool for current training efforts.
+*   **CUDA** (free): A technology from NVIDIA that allows computer programs to use the power of a graphics card (GPU) for faster calculations, which is essential for AI training.
+
+## How it actually works
+This is an advanced project that requires significant technical skills, including comfort with coding (Python), using a command line, and having access to a powerful computer with a GPU (Graphics Processing Unit). The original project is no longer maintained, so direct reproduction of *this specific repository* for training is not recommended. Instead, you can explore the repository to understand the concepts.
+
+1.  **Access the project code**: Go to the `huggingface/open-r1` repository on GitHub. You will need to clone (download) the repository to your computer if you want to explore the files locally.
+2.  **Review the `README.md`**: Read the main `README.md` file in the repository. This document explains the project's goals, its overall plan, and the different components involved.
+3.  **Explore the `src/open_r1` folder**: Look inside this folder to find Python scripts like `sft.py` (for Supervised Fine-Tuning), `grpo.py` (for GRPO training), and `generate.py` (for generating synthetic data). These scripts show the actual code used for these advanced training steps.
+4.  **Look at the `recipes` folder**: This folder might contain specific examples or configurations used to train particular models or datasets within the project.
+5.  **Consider using TRL**: If your goal is to *actually train* or fine-tune large language models today, explore the official documentation for the TRL library. The `open-r1` project's training methods have evolved and are now part of TRL.
+
+## Words you'll see, explained
+*   **LLM (Large Language Model)**: An AI program trained on vast amounts of text data to understand and generate human-like language.
+*   **DeepSeek-R1**: A specific, powerful large language model that this project aimed to understand and reproduce.
+*   **Reproduction**: The process of recreating the results or methods of a scientific study or project, in this case, how an AI model was built.
+*   **Supervised Fine-Tuning (SFT)**: A training method where an existing AI model is further trained on a specific dataset with correct answers to improve its performance on a particular task.
+*   **GRPO**: An advanced training technique, a type of reinforcement learning, used to improve an AI model's behavior based on rewards.
+*   **Synthetic data**: Data that is artificially created by a computer program or AI, rather than collected from the real world.
+*   **GPU (Graphics Processing Unit)**: A specialized electronic circuit designed to rapidly manipulate and alter memory to accelerate the creation of images, essential for AI training.
+*   **CUDA**: A platform and programming model developed by NVIDIA that allows computer programs to use the power of a graphics card (GPU) for faster calculations.
+
+## Original source
+This project, `open-r1`, was created by Hugging Face and shared on GitHub. It aimed to openly reproduce the training process of the DeepSeek-R1 large language model.
+
+## Notes & variations
+*   **Do you even need this?**: For most users, interacting with existing LLMs through chat interfaces (like ChatGPT, Claude, Gemini) is sufficient and much simpler. Training your own LLM from scratch or reproducing complex research projects like this requires significant technical expertise, time, and expensive computing resources.
+*   **Free-tier limits**: While the code itself is free and open-source, running it requires powerful hardware (GPUs) which are typically paid for (either by buying physical hardware or renting cloud services). Cloud GPU services often have free trials, but full training runs quickly exceed these limits.
+*   **Common pitfall**: Trying to run this project without the correct CUDA version or a powerful enough GPU will lead to errors and frustration. Ensure your system meets the hardware and software requirements before attempting any setup.

@@ -1,0 +1,80 @@
+---
+title: "Build an AI-powered mobile reference for car repair"
+description: "Learn how to build a custom AI reference tool for specific information, like car repair, using open-source models and serverless inference. Get accurate answers from your own data."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 60
+jobToBeDone: "Build an AI-powered mobile reference for car repair"
+tools:
+  - name: "Gemma"
+    url: "https://ai.google.dev/gemma"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "DigitalOcean Serverless Inference"
+    url: "https://www.digitalocean.com/products/serverless-inference"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "GitHub"
+    url: "https://github.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/alexgeorgiev17/i-couldnt-legally-use-the-repair-manual-so-i-built-my-friend-something-better-84"
+  platform: "blog"
+  author: "alexgeorgiev17"
+  postedAt: 2026-10-02
+score: 7
+ingestedAt: 2026-10-03
+nigeriaNotes: "This workflow involves paid cloud services (DigitalOcean) which require a credit card. While Gemma is free, hosting it incurs costs. Data usage for the mobile front-end would be light, but the backend AI inference calls consume data."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+This entry describes how to build a specialized AI reference tool, like a smart search engine, that answers questions using only information you provide. The author created a mobile-first tool called "BMW Repair Workshop" for car repair, which provides specific procedures, part numbers, and torque values, and an "Ask box" powered by AI.
+
+This is an advanced workflow because it requires coding skills, setting up cloud infrastructure, and carefully preparing your own data. It's not a simple copy-paste recipe for a beginner. The exact instructions for building such a system live within the author's code repository and would change as the tools and technologies evolve.
+
+The core idea is called RAG (Retrieval Augmented Generation). This means the AI model doesn't just use its general knowledge; it first looks up relevant facts from your specific documents or database, and then uses those facts to generate a precise answer. This helps ensure the AI's responses are accurate and relevant to your unique content.
+
+## What you can use it for
+*   **Build a custom knowledge base**: Create a specialized AI assistant for your small business's internal policies, product FAQs, or local market information.
+*   **Create a personalized study aid**: Turn your textbooks, notes, or research papers into an interactive AI tutor that answers questions based on your learning materials.
+*   **Develop a specialized customer support bot**: Offer instant, accurate answers to common customer questions about your products or services, using only your official documentation.
+*   **Organize and query personal archives**: Make your personal collection of documents, recipes, or historical data easily searchable and queryable with natural language.
+
+## Tools you need
+*   **Gemma** (free): An open-source AI model from Google that forms the brain of the system.
+*   **DigitalOcean Serverless Inference** (paid): A cloud service that runs the AI model without you needing to manage servers. You pay for what you use.
+*   **GitHub** (freemium): A platform for storing your project's code and, in this case, hosting the website for the reference tool.
+
+## How it actually works
+1.  **Gather your specific content**: The most crucial step is to collect or create the information you want the AI to use. The author manually wrote repair procedures and specs for a BMW E90 325i, cross-checking facts against public sources. This content forms your unique knowledge base.
+2.  **Choose an open-source AI model**: Select an AI model that can understand and generate text. The author used Gemma, an open-weight model, which means its core components are publicly available.
+3.  **Set up serverless inference**: To run the AI model, you'll use a cloud service like DigitalOcean Serverless Inference. This service handles the technical details of running the AI, allowing your application to send questions to it and receive answers. You will need to obtain an API key (a secret code) to connect your application to this service.
+4.  **Build the application**: This involves writing code to create a website or mobile app. This application will:
+    *   Take a question from the user (e.g., "my coolant keeps disappearing").
+    *   Search your gathered content for relevant information (the "Retrieval" part).
+    *   Combine the user's question with the retrieved information into a single prompt for the AI.
+    *   Send this prompt to the DigitalOcean Serverless Inference endpoint.
+    *   Receive the AI's generated answer and display it to the user.
+5.  **Host your application**: The author hosted the front-end (the part users see) of their application using GitHub Pages, which is a free way to host simple websites directly from a GitHub repository.
+6.  **Refer to the source code**: For the detailed implementation, you would examine the author's GitHub repository (linked in the original source section) to understand how they connected these pieces together.
+
+## Words you'll see, explained
+*   **RAG (Retrieval Augmented Generation)**: An AI technique where a language model first retrieves relevant information from a specific knowledge base and then uses that information to generate a more accurate and informed answer.
+*   **Open-source AI model**: An artificial intelligence model whose underlying code and data are made publicly available, allowing anyone to use, modify, and distribute it.
+*   **Serverless Inference**: A cloud computing service that allows you to run AI models without having to manage the servers yourself; you typically pay only for the actual computations performed.
+*   **API key**: A unique code that authenticates a user or application when making requests to an application programming interface (API), granting access to its services.
+*   **Front-end**: The part of a website or application that users directly interact with, including everything they see and click on.
+*   **Back-end**: The part of a website or application that handles data storage, server logic, and communication with databases and other services, working behind the scenes.
+
+## Original source
+This concept was developed by Alex Georgiev and shared on the DEV Community blog. He created this project as a submission for a Hacktoberfest challenge, aiming to build a practical tool for a friend.
+
+## Notes & variations
+*   **Do you even need this?**: For very simple needs, a well-organized document with a search function, or even just using a general-purpose AI chat app (like ChatGPT, Claude, or Gemini) and manually pasting your specific information, might be sufficient and cheaper than building a custom RAG system.
+*   **Free-tier limits**: DigitalOcean Serverless Inference is a paid service. While some cloud providers offer free credits for new accounts, sustained use of serverless AI inference will incur costs. Carefully monitor your usage to avoid unexpected charges.
+*   **Common pitfall**: The quality of the AI's answers is directly dependent on the quality and completeness of the content you provide. If your source data is incomplete, inaccurate, or poorly organized, the AI will struggle to give good answers.
+*   **Tip**: Start with a very small, focused set of your content to build and test your RAG pipeline. Once you confirm it works well, you can gradually expand your knowledge base.

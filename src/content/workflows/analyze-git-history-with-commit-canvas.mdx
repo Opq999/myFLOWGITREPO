@@ -1,0 +1,76 @@
+---
+title: "Analyze Git History with Commit Canvas"
+description: "Turn your Git repository history into a visual story with Commit Canvas. Identify key chapters, sprints, and silent gaps in your project's development."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 15
+jobToBeDone: "Analyze Git repository history to identify narrative 'chapters' and significant periods like 'gaps' or 'sprints'."
+tools:
+  - name: "Git"
+    url: "https://git-scm.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Python"
+    url: "https://www.python.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Commit Canvas"
+    url: "https://github.com/ahmadrrrtx/commit-canvas"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/ahmad_rrrtx/your-git-history-is-a-story-i-wrote-the-algorithm-that-finds-it-1734"
+  platform: "blog"
+  author: "ahmad_rrrtx"
+  postedAt: 2026-09-09
+score: 7
+ingestedAt: 2026-10-03
+nigeriaNotes: "This workflow requires installing software (Git and Python) and running a script. Data usage is minimal as the analysis happens locally. Ensure you have sufficient storage for the generated HTML file (around 160KB)."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "Analyze your final year project's Git history to spot development sprints and quiet periods before submitting."
+  - persona: "employee"
+    scenario: "Generate a visual timeline of your team's code contributions to identify project milestones and gaps."
+  - persona: "entrepreneur"
+    scenario: "Visualize your startup's product development timeline from Git commits to share with investors."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will get a single HTML file that visually represents your Git repository's history as a story. This file acts as a 'scrubbable time machine' for your project, highlighting significant periods like sprints, quiet gaps, and overall project development arcs. This approach works because it translates raw commit data into a narrative, making complex project timelines understandable at a glance.
+
+## Tools you need
+*   **Git** (free): A system for tracking changes in your code and collaborating with others. You need this to access your project's history.
+*   **Python** (free): A programming language used to run the Commit Canvas script. You need version 3.8 or newer.
+*   **Commit Canvas** (free): A script that analyzes your Git history and generates the HTML story file.
+
+## Steps
+1.  **Install Git**: If you don't have Git installed, download and install it from the official website. Follow the on-screen instructions for your operating system.
+    You should see Git commands working in your terminal after installation.
+2.  **Install Python**: If you don't have Python 3.8 or newer installed, download and install it from the official Python website. Make sure to check the option to add Python to your system's PATH during installation.
+    You should be able to run `python --version` or `python3 --version` in your terminal and see a version number 3.8 or higher.
+3.  **Clone the Commit Canvas repository**: Open your terminal or command prompt and navigate to where you want to download the Commit Canvas script. Then, run the following command:
+    ```
+    git clone https://github.com/ahmadrrrtx/commit-canvas
+    ```
+    You should see a new folder named `commit-canvas` created in your current directory.
+4.  **Navigate into the Commit Canvas directory**: Change your current directory to the one you just cloned:
+    ```
+    cd commit-canvas
+    ```
+    Your terminal prompt should now show you are inside the `commit-canvas` folder.
+5.  **Run Commit Canvas**: Execute the script, providing the path to the Git repository you want to analyze. You can also specify a theme. Replace `/path/to/your/repo` with the actual path to your project's folder.
+    ```bash
+    ./run.sh /path/to/your/repo --theme sunset
+    ```
+    The script will process your repository's history. This might take a few moments depending on the size of your Git history. After it finishes, it will automatically open the generated HTML file in your default web browser. You should see a visual representation of your project's story.
+
+## Original source
+This workflow is based on the work by ahmad_rrrtx, who developed Commit Canvas. The author shared their creation on their blog, explaining how they built an algorithm to analyze Git repository history and turn it into a narrative HTML file, highlighting project milestones and quiet periods.
+
+## Notes & variations
+*   **Free tier alternative**: The primary tool, Commit Canvas, is free and runs locally. The web version mentioned by the author allows pasting a public GitHub URL and runs entirely in your browser, which is also free.
+*   **Common mistake**: Ensure you are providing the correct absolute or relative path to your Git repository when running the script. An incorrect path will cause the script to fail.
+*   **Tip for better results**: Experiment with different `--theme` options (e.g., `sunset`, `night`, `day`) to find a visual style that best suits your project's story.

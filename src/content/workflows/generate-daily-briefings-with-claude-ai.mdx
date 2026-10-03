@@ -1,0 +1,70 @@
+---
+title: "Generate Daily Briefings with Claude AI"
+description: "Learn how to create a personalized daily briefing for your life priorities using Claude AI, organizing tasks and focusing on what matters most."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 30
+jobToBeDone: "Generate a personalized daily briefing for life priorities"
+tools:
+  - name: "Claude"
+    url: "https://claude.ai"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/tmott13/building-my-own-ai-command-center-1j66"
+  platform: "blog"
+  author: "tmott13"
+  postedAt: 2026-10-02
+score: 7
+ingestedAt: 2026-10-03
+nigeriaNotes: "Claude.ai is accessible via web browser and works well on mobile. Data usage is minimal for text-based interactions. The free tier is sufficient for daily briefings."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will create a system that generates a personalized daily briefing for your life priorities. This approach works by using an AI to process your daily logs and trackers, helping you focus on what truly matters each day.
+
+## Tools you need
+*   **Claude** (freemium): An AI assistant you can chat with to help organize information and generate text.
+
+## Steps
+1.  **Understand the briefing structure**: The author's briefing includes sections like "What's still open from yesterday," "Quick wins," "The one most important thing today," and "Focus ideas." You can adapt these to your own needs.
+2.  **Set up your daily log**: Create a plain-text file (like `carryover.md`) where you can write down what you did each day. Use sections like "Done," "Didn't get to," "Came up today," and "Carry forward." At night, simply add your notes to the relevant section.
+3.  **Set up your trackers**: Identify what you want to track daily. This could be habits, recovery progress, learning goals, or project progress. The author notes that trackers that make you feel behind should be paused.
+4.  **Define your ground rules**: Decide on the tone and style for your briefing. The author uses frameworks like Human Design and the Enneagram for self-reflection and emphasizes framing suggestions as options, not orders, and avoiding guilt.
+5.  **Craft your prompt for Claude**: When you want your briefing, you will paste your daily log, trackers, and ground rules into Claude and ask it to generate the briefing. The author doesn't share their exact prompt; a starting point could be:
+
+```
+I need a daily briefing based on my log, trackers, and ground rules. Please organize it into the following sections, keeping it concise and positive:
+
+My Daily Log:
+[Paste your daily log content here]
+
+My Trackers:
+[Paste your tracker information here]
+
+My Ground Rules:
+[Paste your ground rules here]
+
+Generate a briefing with no more than five key items, focusing on my priorities. Ensure it includes:
+- What's still open from yesterday.
+- Up to five quick wins (things I can finish in about 10 minutes) with time estimates.
+- The one most important thing for today.
+- A brief note on my recovery, energy, and reading habit.
+- Any Hacktoberfest progress or emails worth answering.
+- One or two focus ideas, offered as options.
+
+Maintain a supportive and encouraging tone, avoiding any guilt or 'should have' statements.
+```
+
+After pasting your information and prompt, you should receive a structured daily briefing from Claude.
+
+## Original source
+This workflow is inspired by a blog post titled "Building My Own AI Command Center" by tmott13 on the DEV Community platform. The author shares their experience creating a personalized AI system to manage daily priorities.
+
+## Notes & variations
+*   **Free tier alternative**: This workflow relies on the free tier of Claude.ai, which is generally sufficient for this task. Ensure you are logged into your Claude.ai account.
+*   **Common mistake**: Forgetting to update your daily log or trackers means the AI won't have current information, leading to an irrelevant briefing. Make updating these a consistent habit.
+*   **Tip for better results**: Be very specific in your "ground rules" section about the tone and format you want. The more guidance you give Claude, the better the output will match your expectations.
