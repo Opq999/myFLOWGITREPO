@@ -22624,8 +22624,236 @@
     "1e39c91871e39145319c37050ad6186f565d3a0f4754541f7ff8fb83664fed05": {
       "url": "https://dev.to/k0wsh1k_0x/why-i-ditched-just-let-the-llm-handle-it-for-a-state-machine-and-slept-better-at-night-4i1p",
       "date": "2026-10-03"
+    },
+    "f7b35d3cd7f9120ee2d0ed633fc377ec1aa29adafec7dbda697d189fd881f4d8": {
+      "url": "https://news.ycombinator.com/item?id=49881777",
+      "date": "2026-10-04"
+    },
+    "9597da8c461a6d6aa69ef10e4b6441633370154b256030fe8d4a4fcd3ed9ca19": {
+      "url": "https://www.reddit.com/r/aipromptprogramming/comments/1wci4ex/hot_take_the_agentic_workflow_is_deeply_wrong",
+      "date": "2026-10-04"
+    },
+    "47be91cd52d348ebb727a29c86852d6e032f08f6dd297cb40cceae7f69db64c5": {
+      "url": "https://simonwillison.net/2026/Oct/3/default-hard-budget-caps",
+      "date": "2026-10-04"
+    },
+    "af116e5417618a5894292d4a3bdf2ddf1d425706626eb87460f408ffaf8f2e99": {
+      "url": "https://www.reddit.com/r/aipromptprogramming/comments/1weizfn/how_are_people_building_so_fast",
+      "date": "2026-10-04"
+    },
+    "b6daf017b51efbe8e4a64ee79177642d928debd1fc9505d3e8d60cee8d7b4bdb": {
+      "url": "https://simonwillison.net/2026/Oct/3/newsletter",
+      "date": "2026-10-04"
+    },
+    "529aec883388a5523006492691efa7ef9d99b83864c3fed7c5938df974bf79ec": {
+      "url": "https://www.reddit.com/r/aipromptprogramming/comments/1w7t9ws/aiassisted_job_search_it_works",
+      "date": "2026-10-04"
+    },
+    "1c386bddda81bbff2b4bdc9c61622a048ed6f62dbe353297c31c5f734031b9cc": {
+      "url": "https://simonwillison.net/2026/Oct/2/rex-s-dino-store",
+      "date": "2026-10-04"
+    },
+    "a29f46a9dc3218c84996070394c2eed9e3f09c81446a572ab2daf4f34f2fa232": {
+      "url": "https://www.reddit.com/r/aipromptprogramming/comments/1wljrgx/i_just_wanted_to_organize_my_prompts",
+      "date": "2026-10-04"
+    },
+    "d43d2f13301d3339cfd26d8731b648a0f4e5f30a2f6539c5f7564d4273431a07": {
+      "url": "https://www.latent.space/p/ainews-not-much-happened-today-cee",
+      "date": "2026-10-04"
+    },
+    "5c58775841c8ac0f1d45882b28c587f5cb99330d487b7fa5a1ec318e6be9e810": {
+      "url": "https://www.reddit.com/r/aipromptprogramming/comments/1wrftzu/my_experience_with_ai_coding_assistants_lately",
+      "date": "2026-10-04"
+    },
+    "bd1136d0fcfd6f1357de280adaee84cea07cc88c30626783f53af728070f9fc3": {
+      "url": "https://huggingface.co/blog/microsoft/thinkingbox",
+      "date": "2026-10-04"
+    },
+    "ed9888e971d331c0ca99059f0a3fb32cd303688246628fb6f142cd7784702ee2": {
+      "url": "https://www.reddit.com/r/aipromptprogramming/comments/1wpvgjw/i_built_a_tool_to_visualize_the_projects_progress",
+      "date": "2026-10-04"
+    },
+    "e81b1dea7ce0fb42c97855621c52f6a49d0893d2f06b0ac1c6c329bdc3da8830": {
+      "url": "https://huggingface.co/blog/allenai/astabrief",
+      "date": "2026-10-04"
+    },
+    "5c420d3fe1eed14639bcbefd1777b31d10f158932ca3859de640089a3d290f2b": {
+      "url": "https://www.reddit.com/r/aipromptprogramming/comments/1wmkgdi/grok_47_just_dropped_and_the_priceperformance_is",
+      "date": "2026-10-04"
+    },
+    "2cd32a873bed6a7a6c763fef5bdcc06dcd9c9138d1bd6e74af9117abbc2cd4fa": {
+      "url": "https://www.reddit.com/r/aipromptprogramming/comments/1wbkhc2/livestreams_of_someone_building_a_real_project",
+      "date": "2026-10-04"
+    },
+    "d5a82e6416fad28cc58cfa4b371f0e59345d405bd33609e5a0c5504c0a3bc9d3": {
+      "url": "https://www.reddit.com/r/aipromptprogramming/comments/1wrtkel/i_made_a_skill_for_architectural_decisions_would",
+      "date": "2026-10-04"
+    },
+    "8863347ff9cbe502122f4ff5c257aacea5698f49c24893c55fe780ff7e158e44": {
+      "url": "https://www.reddit.com/r/aipromptprogramming/comments/1wi4yj1/psa_for_those_using_agents_dsflash_41_has_solid",
+      "date": "2026-10-04"
+    },
+    "23531749b678208bfc4009a6bf964a1d2b54c04745a982e3e5b476ab4baad0fb": {
+      "url": "https://www.reddit.com/r/aipromptprogramming/comments/1wgjaaf/best_ai_stack_for_a_24h_hackathon_with_30_paid",
+      "date": "2026-10-04"
+    },
+    "5d7b7353f860847514de5c29cee1d265f7dbbde22c63e562fff88bdff2cb73c7": {
+      "url": "https://www.reddit.com/r/aipromptprogramming/comments/1w9wyz6/where_can_i_find_freelancing_projects_for_a",
+      "date": "2026-10-04"
+    },
+    "f2caaca675c1995d6489216cc3f898c73ec25e9655cddfb2666823da111ec603": {
+      "url": "https://www.reddit.com/r/aipromptprogramming/comments/1wjedbs/a_free_github_action_that_flags_ai_slop_pull",
+      "date": "2026-10-04"
+    },
+    "902f82260b4e1efe097bc718557fd2bd4b78faa8c093fd4efd5eaab61b7a19fd": {
+      "url": "https://www.reddit.com/r/aipromptprogramming/comments/1wawhhy/where_are_my_loop_engineers_at_what_you_loopin",
+      "date": "2026-10-04"
+    },
+    "60ab2af64b9ba38331ab7bac80118704271a90c801087db2729af5d3aae1223f": {
+      "url": "https://www.reddit.com/r/aipromptprogramming/comments/1w85qzc/how_i_use_gemini_notebooklm_to_turn_80_pages_of",
+      "date": "2026-10-04"
+    },
+    "ded0b15165f4a17c01468a869e43c0c7392ad205f0ff58d9efe764c5216d77b6": {
+      "url": "https://www.reddit.com/r/aipromptprogramming/comments/1wwv0y2/rules_learned_from_my_own_edits_worked_better",
+      "date": "2026-10-04"
+    },
+    "64016fb64d72e12ad201dc929ef8655f66637ff40001548b9e2465c6cd8c5e68": {
+      "url": "https://www.reddit.com/r/aipromptprogramming/comments/1wu5lya/i_compress_my_ai_chat_history_aggressively_but_i",
+      "date": "2026-10-04"
+    },
+    "38af96e4ab4fc39b2aeb66a2abef11fbe8c1fced8e2fc2c658dad0a3a691e66f": {
+      "url": "https://www.reddit.com/r/aipromptprogramming/comments/1wozh69/how_to_optimize_limit_usage_burned_through_2_free",
+      "date": "2026-10-04"
+    },
+    "b63fc2c63c6de2628f6c44890de83c3c9306699537eaa7342c8436e239d4be67": {
+      "url": "https://www.reddit.com/r/aipromptprogramming/comments/1woi63a/mamout_an_opensource_prompt_manager_for_saving",
+      "date": "2026-10-04"
+    },
+    "31908ae97dae7df4feaf23c64c805e201d18fc670d11a5dcdb981a432bcbe957": {
+      "url": "https://www.reddit.com/r/aipromptprogramming/comments/1wb949g/claude_fable_51_vs_gpt6_astra",
+      "date": "2026-10-04"
+    },
+    "8524fb1573883020c4054363837bad22acd3248b1c8aeac31913f1e75a3a7dde": {
+      "url": "https://www.reddit.com/r/aipromptprogramming/comments/1w8kt9a/any_working_deepseek_jailbreak_scripts",
+      "date": "2026-10-04"
+    },
+    "c2616c03eab1215a07891cef1222c1a13f3c08110aaefc956c34be2dc7e3802f": {
+      "url": "https://www.reddit.com/r/aipromptprogramming/comments/1wx09qc/i_created_an_opensource_locally_usable_full",
+      "date": "2026-10-04"
+    },
+    "f53f61fe1a76b593afe52bb102bf1382cbc087422cfbf2038299de1249d4ab3d": {
+      "url": "https://www.reddit.com/r/aipromptprogramming/comments/1ws9u8k/i_dumped_63_raw_ai_chat_transcripts_into_a_fresh",
+      "date": "2026-10-04"
+    },
+    "da6dac041987fc3b59801f0b81a8f81be47902f01905ac4a9a88cbca664cdccb": {
+      "url": "https://www.reddit.com/r/aipromptprogramming/comments/1wposoa/i_built_an_opensource_cli_to_keep_ai_coding",
+      "date": "2026-10-04"
+    },
+    "d4ed5488580661a16981d0ae267c78bb0c44655f9f3b32b06e19bcc1dcf2cb54": {
+      "url": "https://www.reddit.com/r/aipromptprogramming/comments/1wnu3d7/trying_ada_for_aiassisted_development",
+      "date": "2026-10-04"
+    },
+    "99437017fff9e1d4452e52412dc7218ded32cba88472bdb88af772d3ed98fa64": {
+      "url": "https://www.reddit.com/r/digital_marketing/comments/1wsegy6/working_in_marketing_has_ruined_the_internet_for",
+      "date": "2026-10-04"
+    },
+    "38f2c3ced8232d608728bba2cd5d1a3801531e940b1fa84392a1e2953d66dd0f": {
+      "url": "https://www.reddit.com/r/digital_marketing/comments/1wd9vrw/is_seo_still_worth_learning_if_youre_starting",
+      "date": "2026-10-04"
+    },
+    "3da92b4bfdcf8556b16acbe53ae411d76795d6aa0365d2bf83e4945788874350": {
+      "url": "https://www.reddit.com/r/digital_marketing/comments/1wpqniu/whats_one_digital_marketing_tip_you_wish_you_had",
+      "date": "2026-10-04"
+    },
+    "bdbaa45e3d8ab04891d577891d713026d9563f12a4b6cf064b839d4f22ab4327": {
+      "url": "https://www.reddit.com/r/digital_marketing/comments/1wjoyxq/what_digital_marketing_skill_is_hardest_to_learn",
+      "date": "2026-10-04"
+    },
+    "cdd3531110ff54af71e3ef22465a38073a69d73b8547ab35118c74fb9794fa14": {
+      "url": "https://www.reddit.com/r/digital_marketing/comments/1wnzedu/which_marketing_skill_is_becoming_more_important",
+      "date": "2026-10-04"
+    },
+    "854a5cf0794eb5ca1ed7a62618bb445eaa32fe29b9b78e579449d3354b4d8937": {
+      "url": "https://www.reddit.com/r/digital_marketing/comments/1w9pkna/what_is_the_best_ai_seo_toolagent_out_there_in",
+      "date": "2026-10-04"
+    },
+    "7d6af8e83e3695806c4eb18d5aa20a89195e56d123eb0812af2a178a7e42d0ef": {
+      "url": "https://www.reddit.com/r/digital_marketing/comments/1wu2wgg/is_seo_becoming_harder_because_everyone_is_using",
+      "date": "2026-10-04"
+    },
+    "cca454bbd522629114acf2968ab3d757e0b575ed81c29c48ed279d0fc2e2099b": {
+      "url": "https://www.reddit.com/r/digital_marketing/comments/1wisx1i/whats_one_seo_mistake_you_see_people_making_all",
+      "date": "2026-10-04"
+    },
+    "deba1b3752e49e96f86decb41df51ef6952d8617d135ac447aadd9b55f454947": {
+      "url": "https://www.reddit.com/r/digital_marketing/comments/1wjnb4u/is_seo_really_dead_because_of_ai_what_are_seo",
+      "date": "2026-10-04"
+    },
+    "7441aa14f63745b75bdfa154c9aa4e58426f4f07248049a48c618950ad03361f": {
+      "url": "https://www.reddit.com/r/digital_marketing/comments/1wgwxr8/what_marketing_channel_has_become_harder_to_get",
+      "date": "2026-10-04"
+    },
+    "c364a6c1ebdbb46be7445979f2572e3d6ee27bfed2dfc6b670321fe3e98265c3": {
+      "url": "https://www.reddit.com/r/digital_marketing/comments/1wn0mz1/whats_a_skill_you_use_all_the_time_that_you_never",
+      "date": "2026-10-04"
+    },
+    "12d0de97a89ae682abd27530a17e56d98908b30bad1653472a377378ce1a5d26": {
+      "url": "https://www.reddit.com/r/digital_marketing/comments/1waft05/is_seo_still_worth_learning_with_ai_search",
+      "date": "2026-10-04"
+    },
+    "301b30aa7c600aa94e28297f439fe9eb6521041bbb32568414213c671b594997": {
+      "url": "https://www.reddit.com/r/digital_marketing/comments/1wtwmzm/if_you_could_improve_one_seo_thing_on_a_website",
+      "date": "2026-10-04"
+    },
+    "d5c2cfd931e7cff9fcc7c3110d87b4d6161f239d01b3f5380f8bc795fdf69815": {
+      "url": "https://www.reddit.com/r/digital_marketing/comments/1wt51fx/what_has_been_the_biggest_use_case_of_ai_in",
+      "date": "2026-10-04"
+    },
+    "70280c38881ddc28ff5a4f320d04c4c05176826c24c01503da77dd2f000a1bd5": {
+      "url": "https://www.reddit.com/r/digital_marketing/comments/1wp4mwt/how_do_you_do_your_job_when_leaderships_answer_to",
+      "date": "2026-10-04"
+    },
+    "e997950bd500a32509567338cea08037e9793c9ac89ce4de151af2c8f11249d7": {
+      "url": "https://www.reddit.com/r/digital_marketing/comments/1wjpxln/first_year_in_digital_marketing",
+      "date": "2026-10-04"
+    },
+    "31fc00035679416775f3910a363131fbff00ee452c337bfa4597118c0f4b15b3": {
+      "url": "https://www.reddit.com/r/digital_marketing/comments/1wsh0el/what_should_you_be_focusing_more_in_seo_for_your",
+      "date": "2026-10-04"
+    },
+    "443653027472069a0dee8023e8ed8baf8dcf646c39c05592878a60b3b2c74e77": {
+      "url": "https://www.reddit.com/r/digital_marketing/comments/1wgsrue/dont_write_anything_new_for_your_website",
+      "date": "2026-10-04"
+    },
+    "38b2e6d12e4210bdb75b12aa228d46b2575fbde622d0b5e59cc0fd76ec7e88da": {
+      "url": "https://www.reddit.com/r/digital_marketing/comments/1wfvmv6/i_need_help_with_lead_generation",
+      "date": "2026-10-04"
+    },
+    "19f46582e2abe25451745f76b4ba7a61de5797aad83248ff73131a335c17681b": {
+      "url": "https://www.reddit.com/r/digital_marketing/comments/1wa2iac/where_can_i_find_advertising_or_marketing",
+      "date": "2026-10-04"
+    },
+    "75a2d4161707db8af9c4bacfb902d43cc419e4483574071a552b6865cd46e49b": {
+      "url": "https://www.reddit.com/r/digital_marketing/comments/1wtzcfz/social_media_managers_how_do_you_handle_client",
+      "date": "2026-10-04"
+    },
+    "f656079ee0e6657e1c84caeb2a2fdf0afe3aacee0b38268b672df1c4c9175aad": {
+      "url": "https://www.reddit.com/r/digital_marketing/comments/1whtozp/has_anyone_here_tried_running_ads_on_chatgpt_what",
+      "date": "2026-10-04"
+    },
+    "ec066d2affed7d7e3fa0fe58b9c01ec9158e10b1cf3946900e9c1968b523cdd1": {
+      "url": "https://www.reddit.com/r/digital_marketing/comments/1wpv9gs/has_ai_changed_your_content_workflow",
+      "date": "2026-10-04"
+    },
+    "cc4090a088f6d4fb703480d60c187e9d632c566aaed8a71075b1a0f80730dc7e": {
+      "url": "https://www.reddit.com/r/digital_marketing/comments/1wo1j1c/what_are_the_best_and_most_underrated_marketing",
+      "date": "2026-10-04"
+    },
+    "f6abdfb9ec5bed4a41c7f2551534cef0ed37b0b1f700a0934a55160e9cfaa317": {
+      "url": "https://www.reddit.com/r/digital_marketing/comments/1wcmbwj/if_ai_can_already_find_every_problem_in_marketing",
+      "date": "2026-10-04"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 0
+  "dailyPage": 1
 }
