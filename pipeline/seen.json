@@ -22852,8 +22852,24 @@
     "f6abdfb9ec5bed4a41c7f2551534cef0ed37b0b1f700a0934a55160e9cfaa317": {
       "url": "https://www.reddit.com/r/digital_marketing/comments/1wcmbwj/if_ai_can_already_find_every_problem_in_marketing",
       "date": "2026-10-04"
+    },
+    "2c11d5f3ded9d76f9f6b7dcf4d164e94db594ad889d54004d07a4bb3756f72e7": {
+      "url": "https://simonwillison.net/2026/Oct/4/qwen38-addition-in-words",
+      "date": "2026-10-05"
+    },
+    "4f9dd4bccc9cca662bfc6842c8f0e93f034410268bc3ac44f4a67655be4c4c37": {
+      "url": "https://simonwillison.net/2026/Oct/1/pwasm",
+      "date": "2026-10-05"
+    },
+    "e9879ff70aa53e1e0a1ae9ab832a4c17faf86d50262740465d2e6c078e0bc754": {
+      "url": "https://simonwillison.net/2026/Sep/28/llm-anthropic",
+      "date": "2026-10-05"
+    },
+    "eb916b5190e379580afd8a2b64a1b09f519b9eaab2d6b77ebafe73fb4d87ef90": {
+      "url": "https://huggingface.co/blog/rl-environments",
+      "date": "2026-10-05"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 1
+  "dailyPage": 2
 }

@@ -1,0 +1,71 @@
+---
+title: "Understanding How AI Models Add Numbers and Speak the Answer"
+description: "Explore how large language models (LLMs) perform addition and express results in words. Learn about the challenges and the impact of 'reasoning' on accuracy for mathematical tasks."
+category: "academic-research"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 20
+jobToBeDone: "Benchmark an LLM's ability to sum numbers and return the answer in words"
+tools:
+  - name: "Qwen GGUF Models"
+    url: "https://huggingface.co/Qwen"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "NVIDIA DGX Systems"
+    url: "https://www.nvidia.com/en-us/data-center/dgx-systems/"
+    pricing: "paid"
+    affiliateUrl: ""
+source:
+  url: "https://simonwillison.net/2026/Oct/4/qwen38-addition-in-words/"
+  platform: "blog"
+  author: "Simon Willison"
+  postedAt: 2026-10-04
+score: 6
+ingestedAt: 2026-10-05
+nigeriaNotes: "This workflow requires specialized, expensive hardware (like NVIDIA DGX systems) and advanced technical setup, making it impractical for most users. The core concept of testing LLM math skills can be explored with free-tier chat models, though not with the same level of control or specific model."
+tiktokUrl: ""
+published: false
+---
+
+## What this is, in plain English
+This entry explores an experiment designed to test how well large language models (LLMs) can perform basic arithmetic, specifically adding numbers and then giving the answer in words. It highlights that LLMs, while powerful for language, often struggle with precise mathematical calculations, especially as numbers get larger. The experiment also investigates the impact of "reasoning" (asking the model to show its step-by-step work) on the accuracy of these calculations.
+
+This is an advanced concept because it involves running specific AI models on specialized, high-performance hardware in a controlled environment. The exact setup and tools used by the author, such as a "DGX Spark" and "Codex Remote (GPT-6 Astra)", are not easily accessible or reproducible for a non-technical person. Therefore, this entry focuses on explaining the experiment and its findings rather than providing copy-paste steps.
+
+The original experiment was inspired by a post about GPT-4o's performance on this task, and the author replicated it using a different model, Qwen3.8-27B-Q4_K_M.gguf, to observe the effects in a fully controlled setting.
+
+## What you can use it for
+*   **Evaluate AI math skills**: Understand how different AI models handle arithmetic tasks, especially when asked to output results in a specific format like words.
+*   **Understand AI "reasoning"**: See how asking an AI to show its step-by-step work can significantly improve its accuracy on complex problems.
+*   **Compare model performance**: Observe how various AI models perform on the same challenge, revealing their strengths and weaknesses in numerical tasks.
+*   **Explore local AI capabilities**: Learn about the potential of running powerful AI models on your own hardware for controlled research and experiments.
+
+## Tools you need
+*   **Qwen GGUF Models** (free): A specific file format for large language models (LLMs) from the Qwen series, optimized for running on local computers. The author used `Qwen3.8-27B-Q4_K_M.gguf`.
+*   **NVIDIA DGX Systems** (paid): High-performance computing systems with powerful GPUs (Graphics Processing Units), which are specialized chips that make AI training and running fast. These systems are used for advanced AI model development and deployment.
+
+## How it actually works
+The author, Simon Willison, was inspired by an experiment that tested GPT-4o's ability to sum increasingly large numbers and return the answer in words. He decided to run a similar experiment in a more controlled environment using local hardware.
+
+1.  **Set up a local LLM environment**: The author used a specialized piece of hardware called a "DGX Spark" and an environment called "Codex Remote (GPT-6 Astra)" to run the experiment. For a similar setup, you would need powerful computing resources, typically with high-end GPUs, and software capable of running GGUF model files.
+2.  **Load the Qwen model**: The specific model used was `Qwen3.8-27B-Q4_K_M.gguf`. This model file would be loaded into the local AI environment.
+3.  **Prepare the test cases**: The experiment involved providing pairs of numbers for the model to add. These numbers increased in size to test the model's limits.
+4.  **Run the experiment without reasoning**: The model was prompted to calculate the sum of the numbers and provide the answer in words, without being asked to show its step-by-step work. The author ran 30 attempts for each number combination in this phase.
+5.  **Run the experiment with reasoning**: The experiment was repeated, but this time the model was prompted to show its detailed addition process (its "reasoning") before giving the final answer. This took much longer per calculation, so the author ran only one attempt per combination. An example of the model's reasoning included aligning numbers and adding from right to left, similar to how a human would.
+6.  **Analyze the results**: The author compared the accuracy of the model's answers in both conditions. With reasoning disabled, the model made many errors. With reasoning enabled, it achieved a much higher accuracy, getting 167 out of 169 attempts correct in the one-shot run.
+
+## Words you'll see, explained
+*   **LLM (Large Language Model)**: An AI program trained on vast amounts of text data, capable of understanding and generating human-like language, like writing stories or answering questions.
+*   **GGUF (GPT-Generated Unified Format)**: A file format used for storing and distributing large language models, optimized for running efficiently on personal computers, often with less powerful hardware than what's used for training.
+*   **GPU (Graphics Processing Unit)**: A specialized electronic circuit designed to rapidly process images and graphics, but also highly effective for speeding up complex calculations needed for AI tasks.
+*   **Reasoning**: In AI, this refers to the model's ability to show its step-by-step thought process, calculations, or logical deductions, rather than just providing a final answer. It's like asking the AI to "show its work."
+*   **One-shot**: In AI experiments, this means running a task only once for each test case, rather than multiple times to get an average result. It provides a quick snapshot of performance.
+
+## Original source
+This concept is based on an experiment conducted by Simon Willison, shared on his blog. He was inspired by Colin Frasier's earlier experiment using GPT-4o and decided to replicate it with a different model and local hardware to explore the effects of reasoning on mathematical accuracy.
+
+## Notes & variations
+*   **Do you even need this?**: For basic testing of an LLM's math skills, you can use free-tier chat models like ChatGPT (chatgpt.com), Claude (claude.ai), or Gemini (gemini.google.com). Simply ask them to sum numbers and return the answer in words. However, you won't have the same level of control over the specific model or the ability to run it on dedicated local hardware as described in this advanced workflow.
+*   **Free-tier limits**: Running large GGUF models locally requires significant computer resources, including a powerful GPU and ample RAM. These resources are typically not available on free cloud tiers or standard mobile devices.
+*   **Common pitfall**: Expecting consumer chat models to perform complex arithmetic perfectly. LLMs are primarily language models, not calculators. They often make mistakes with precise numerical tasks, especially with very large numbers or when asked to output the answer in a specific, non-standard format like words.
+*   **Tip for better results**: When asking an LLM to perform calculations, always ask it to "think step-by-step" or "show your work" (which is what the author refers to as "reasoning"). This approach often dramatically improves the model's accuracy on mathematical and logical tasks.
