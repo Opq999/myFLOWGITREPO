@@ -1,0 +1,58 @@
+---
+title: "Analyze Codebase for Bugs with ChatGPT"
+description: "Learn how to use ChatGPT to analyze your entire codebase for bugs and architectural issues. Understand AI's capabilities and limitations in code review."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 15
+jobToBeDone: "Analyze a codebase for bugs and architectural issues using an AI model"
+tools:
+  - name: "ChatGPT"
+    url: "https://chatgpt.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/infoinlet1/i-gave-chatgpt-my-full-codebase-the-results-scared-me-but-not-for-the-reason-you-think-2ggk"
+  platform: "blog"
+  author: "infoinlet1"
+  postedAt: 2026-09-29
+score: 7
+ingestedAt: 2026-10-06
+nigeriaNotes: "Free tier of ChatGPT has limitations on context window size, which might not be enough for a full codebase. Mobile data usage can be high if pasting large amounts of code."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "Debug your Python assignment code by pasting it into ChatGPT and asking for bugs."
+  - persona: "employee"
+    scenario: "Find bugs in your company's internal script by pasting it into ChatGPT for analysis."
+  - persona: "entrepreneur"
+    scenario: "Identify potential bugs in your startup's MVP code before launch by asking ChatGPT to analyze it."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will get an AI-generated analysis of your codebase, identifying potential bugs, architectural issues, and areas of concern. This approach works by leveraging the AI's ability to process large amounts of text and identify patterns, making it useful for a quick overview of code quality.
+
+## Tools you need
+*   **ChatGPT** (freemium): A conversational AI tool that can understand and generate human-like text, and in this case, analyze code.
+
+## Steps
+1.  **Prepare your codebase**: Gather all the relevant code files for your project. You will need to copy and paste these into the AI tool.
+2.  **Open ChatGPT**: Go to the ChatGPT website and log in or sign up.
+3.  **Paste your codebase**: In the chat input area, paste your entire codebase. If your codebase is very large, you may need to paste it in sections. The author notes that a model with a large enough context window is ideal.
+4.  **Ask for analysis**: After pasting your code, ask the AI to analyze it for issues. A good starting prompt, based on the author's experience, is:
+
+```
+What's wrong with this codebase?
+```
+
+You should receive a numbered list of findings, which may include architectural insights and specific bugs.
+5.  **Review the AI's findings**: Carefully read through the list provided by the AI. The author warns that the AI can sometimes present fabricated issues as facts, so critical evaluation is necessary.
+
+## Original source
+This workflow is inspired by a blog post by infoinlet1 on DEV Community, where they experimented with feeding their entire codebase into ChatGPT to uncover bugs and architectural problems, highlighting both the AI's impressive capabilities and its tendency to hallucinate plausible-sounding errors.
+
+## Notes & variations
+*   **Free tier limitations**: The free version of ChatGPT might have limits on how much text you can input at once (context window). If your codebase is too large, you might need to break it down or use a paid version with a larger context window.
+*   **Common pitfall**: Do not blindly trust the AI's output. The author found that the AI can confidently present made-up bugs or issues. Always cross-reference the AI's suggestions with your own knowledge and testing.
+*   **Tip for better results**: Be specific in your prompts. Instead of just asking "What's wrong?", you could try asking "Analyze this codebase for security vulnerabilities, race conditions, and architectural inconsistencies. Provide a numbered list of findings with suggested fixes."

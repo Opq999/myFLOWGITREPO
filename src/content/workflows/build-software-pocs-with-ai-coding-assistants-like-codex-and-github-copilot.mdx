@@ -1,0 +1,102 @@
+---
+title: "Build Software PoCs with AI Coding Assistants like Codex and GitHub Copilot"
+description: "Learn to build software Proof-of-Concepts (PoCs) using AI coding assistants like ChatGPT with Codex and GitHub Copilot. Understand their strengths and weaknesses."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 30
+jobToBeDone: "Build Proof-of-Concepts (PoCs) for software features using AI coding assistants"
+tools:
+  - name: "ChatGPT"
+    url: "https://chatgpt.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Codex"
+    url: "https://openai.com/blog/openai-codex"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "GitHub Copilot"
+    url: "https://github.com/features/copilot"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Apryse WebViewer"
+    url: "https://apryse.com/pdf-sdk/webviewer/"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "pdf.js"
+    url: "https://mozilla.github.io/pdf.js/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/missamarakay/building-pocs-with-codex-and-github-copilot-while-they-try-to-adjust-my-poc-requirements-along-the-1fc9"
+  platform: "blog"
+  author: "missamarakay"
+  postedAt: 2026-09-16
+score: 7
+ingestedAt: 2026-10-06
+nigeriaNotes: "Free tiers for ChatGPT are available. GitHub Copilot and Codex are paid services. Data usage can be moderate to high depending on the complexity of the PoC and the amount of code generated. Ensure a stable internet connection."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "Build a simple web app PoC to display JAMB past questions using AI code generation."
+  - persona: "entrepreneur"
+    scenario: "Create a basic prototype for a new app feature using AI coding assistants to test market interest."
+  - persona: "employee"
+    scenario: "Generate Python script PoC to automate repetitive data entry tasks for your office job."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+
+This workflow explores using AI coding assistants, specifically OpenAI's Codex and GitHub Copilot, to help build Proofs-of-Concept (PoCs) for software features. A PoC is a small project to test if an idea is feasible and how it might work in practice.
+
+These tools act like intelligent assistants that can write code for you based on your descriptions. They can help speed up the initial development of a feature by generating code snippets, suggesting improvements, and even creating entire project structures. However, they are not perfect and often require guidance and refinement to get the desired results.
+
+This entry is in concept mode because the exact steps to reproduce the workflow depend heavily on the specific PoC you want to build, the programming language, and the AI model's current capabilities. The author's experience shows that interacting with these tools involves a back-and-forth process of prompting, reviewing code, and making adjustments, rather than a simple copy-paste solution.
+
+## What you can use it for
+
+*   **Rapid Prototyping**: Quickly generate initial code for new software features to test their viability.
+*   **Code Generation**: Get AI to write boilerplate code or complex functions based on your natural language descriptions.
+*   **Feature Refinement**: Work with AI to improve existing code, fix bugs, or add new functionalities to a PoC.
+*   **Exploring Libraries**: Use AI to quickly integrate and test third-party libraries like Apryse WebViewer for specific functionalities.
+*   **Requirement Adjustment**: See how AI assistants might interpret and even suggest changes to your initial PoC requirements as you build.
+
+## Tools you need
+
+*   **ChatGPT** (freemium): A web-based AI chatbot used here to interact with Codex and generate code.
+*   **Codex** (paid): An AI model from OpenAI that translates natural language into code. It's often accessed through tools like ChatGPT.
+*   **GitHub Copilot** (paid): An AI pair programmer that suggests code and entire functions in real-time, directly in your code editor.
+*   **Apryse WebViewer** (paid): A tool for viewing and annotating documents, particularly PDFs, within a web application.
+*   **pdf.js** (free): A JavaScript library developed by Mozilla for rendering PDF documents in web browsers.
+
+## How it actually works
+
+1.  **Access the AI Assistant**: Start by using a tool like ChatGPT (which can access Codex) or by launching GitHub Copilot within a code editor like VS Code.
+2.  **Define Your PoC Goal**: Clearly state what you want the AI to build. For example, "Create a React component that loads a PDF using Apryse WebViewer."
+3.  **Generate Initial Code**: The AI will generate code based on your prompt. Review this code carefully.
+4.  **Iterate and Refine**: If the code doesn't work as expected, provide feedback to the AI. For instance, "The PDF extraction isn't working when data is missing. Can you adjust the code to handle blank fields?" or "Try updating the Apryse WebViewer to the latest version."
+5.  **Test and Debug**: Run the generated code (e.g., using `npm run dev` in a React project) and observe the results. You may need to stop and restart the development server to see changes.
+6.  **Integrate Components**: If the AI stubs out a component (like a PDF viewer), prompt it to replace the stub with the actual library you intend to use (e.g., Apryse WebViewer).
+7.  **Handle Dependencies**: Be prepared to resolve issues with installing or using libraries, and ask the AI for suggestions, such as switching to an alternative like pdf.js if problems persist.
+
+*The exact prompts and code adjustments will vary greatly depending on your specific PoC. Refer to the original author's blog post for detailed examples of their interactions.*
+
+## Words you'll see, explained
+
+*   **PoC (Proof-of-Concept)**: A small project or experiment to demonstrate the feasibility of an idea or technology.
+*   **React**: A popular JavaScript library for building user interfaces.
+*   **Stub/Mock**: Placeholder code that mimics the behavior of a real component or service, often used during development.
+*   **npm run dev**: A command used in Node.js projects to start a development server, which typically rebuilds the project automatically when files change.
+*   **Dependencies**: External libraries or packages that a software project relies on to function.
+*   **API (Application Programming Interface)**: A set of rules and protocols that allows different software applications to communicate with each other.
+
+## Original source
+
+This workflow is based on a blog post by missamarakay on DEV Community. The author shares their experience comparing AI coding assistants like Codex and GitHub Copilot for building software Proofs-of-Concept, highlighting the iterative process of prompting and refining code.
+
+## Notes & variations
+
+*   **Do you even need this?**: For very simple code snippets or learning basic syntax, free AI chatbots like ChatGPT or Gemini might suffice without needing paid tools like Copilot or Codex.
+*   **Free-tier limits**: GitHub Copilot and Codex are paid services. While ChatGPT has a free tier, advanced features or higher usage might require a paid subscription. Apryse WebViewer also has paid plans.
+*   **Common pitfall**: Be aware that AI assistants might sometimes generate code that looks correct but contains subtle bugs or security vulnerabilities. Always review and test the generated code thoroughly, especially for production environments. Also, remember that AI might use your code snippets for training unless you opt-out or use specific enterprise versions.

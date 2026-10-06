@@ -1,0 +1,91 @@
+---
+title: "Verify AWS Service Limits with an AI Agent"
+description: "Learn how to build an AI agent to check current AWS service limits against official documentation and live APIs."
+category: "academic-research"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 15
+jobToBeDone: "Verify current AWS service limits by querying multiple sources and live APIs"
+tools:
+  - name: "Amazon Bedrock"
+    url: "https://aws.amazon.com/bedrock/"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Strands Agents"
+    url: "https://github.com/simplynadaf/aws-source-of-truth-agent"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Python"
+    url: "https://www.python.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Sanity Context Knowledge Base"
+    url: "https://www.sanity.io/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "AWS API"
+    url: "https://aws.amazon.com/apis/"
+    pricing: "paid"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/sarvar_04/which-aws-limit-is-actually-current-an-agent-that-proves-it-32-vs-5-vs-16-6i4"
+  platform: "blog"
+  author: "sarvar_04"
+  postedAt: 2026-10-01
+score: 7
+ingestedAt: 2026-10-06
+nigeriaNotes: "This workflow requires access to AWS services and potentially paid API calls, which can incur costs. Free tiers for AWS services might not cover the full scope of this agent. Data usage for API calls can be moderate to high depending on the frequency and services queried."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will set up a Python agent that can verify current AWS service limits. This agent compares information from official AWS documentation, a knowledge base, and live AWS APIs to provide the most up-to-date service limit. This approach is useful when official documentation might be outdated, and you need to confirm live service quotas before deploying resources.
+
+## Tools you need
+*   **Amazon Bedrock** (paid): A service that provides access to various AI models for building and scaling generative AI applications.
+*   **Strands Agents** (free): The specific Python library or framework used to build the agent, found in the provided GitHub repository.
+*   **Python** (free): A popular programming language used to write and run the agent's code.
+*   **Sanity Context Knowledge Base** (freemium): A system for storing and retrieving structured content, used here to hold AWS facts.
+*   **AWS API** (paid): The interface that allows programs to interact with AWS services, used here to check live service quotas.
+
+## Steps
+1.  **Clone the agent repository**: Download the project files to your computer.
+    ```bash
+    git clone https://github.com/simplynadaf/aws-source-of-truth-agent
+    cd aws-source-of-truth-agent
+    ```
+    You should see the project files appear in a new folder named `aws-source-of-truth-agent`.
+
+2.  **Install required Python packages**: Set up the agent's environment.
+    ```bash
+    pip install -r requirements.txt
+    ```
+    This command installs all the necessary libraries for the agent to run. You should see a list of packages being installed.
+
+3.  **Run the credential-free core check**: Test the agent's ability to reconcile information and check live AWS data without needing your personal AWS credentials or API keys.
+    ```bash
+    python -m agent.reconcile_offline --service EBS --type limit --region us-east-1
+    ```
+    You should see output indicating the verdict, for example: `Verdict: 80000 IOPS (serviceQuotasConsole wins over officialDocs)`.
+
+4.  **Run the keyword control test**: Compare the agent's structured approach against a simple keyword search to see how it handles potentially outdated information.
+    ```bash
+    python -m agent.baseline "maximum IOPS per volume general purpose SSD"
+    ```
+    This command will show how a basic keyword search might return an older, incorrect value, highlighting the agent's advantage.
+
+5.  **Set up for the full LLM agent (Optional)**: To use the full agent with a language model, you need to configure your environment variables.
+    Copy the example environment file:
+    ```bash
+    cp .env.example .env
+    ```
+    Then, edit the `.env` file to add your AWS region (e.g., `us-east-1`) and a Sanity Context Viewer token. You will also need to configure access to Amazon Bedrock, which typically involves setting up AWS credentials and potentially a Bedrock region. Refer to the project's README for detailed instructions on obtaining a Sanity token and configuring Bedrock.
+
+## Original source
+This workflow is based on a submission by sarvar_04 to the Sanity Challenge. The author built an AI agent to tackle the problem of outdated information in AWS documentation by cross-referencing multiple sources, including live APIs, to determine the current service limits.
+
+## Notes & variations
+*   **Free-tier alternatives**: While the core agent logic and installation are free, using Amazon Bedrock and live AWS APIs for more advanced features will incur costs. For a completely free experience, you would need to explore open-source language models and local data sources, which might not provide real-time AWS data.
+*   **Common mistake**: Relying solely on keyword searches for AWS service limits can lead to using stale data. Always verify critical information against multiple, authoritative sources, especially live APIs when available.
+*   **Tip for better results**: For the most accurate and up-to-date information, ensure your Sanity Context Knowledge Base is regularly updated and that the agent is configured to query the most relevant AWS services and regions for your needs.

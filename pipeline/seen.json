@@ -22868,8 +22868,312 @@
     "eb916b5190e379580afd8a2b64a1b09f519b9eaab2d6b77ebafe73fb4d87ef90": {
       "url": "https://huggingface.co/blog/rl-environments",
       "date": "2026-10-05"
+    },
+    "2148b822448c78eedeb574002ecdbc254d4f503fe07244d3c2e295c13dfd3dda": {
+      "url": "https://news.ycombinator.com/item?id=49952111",
+      "date": "2026-10-06"
+    },
+    "8f8eff49555bcebcc27b635fd715af4c1300b1aebfbe60093352dd8044f969c3": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1wvdu0l/i_used_chatgpt_to_make_my_100yearold_family",
+      "date": "2026-10-06"
+    },
+    "9e04b0913500a870ec8e624dd319d00c23c89a236321e483b8e7cfdb3d51f67a": {
+      "url": "https://dev.to/nikolas_dimitroulakis_d23/we-described-our-api-twice-once-for-humans-once-for-agents-4e4g",
+      "date": "2026-10-06"
+    },
+    "7760ea58e4f09cff31027f9bf61867b472f2d0246d67b54bef6724f712e2ae11": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1wyebob/he_did_the_meme",
+      "date": "2026-10-06"
+    },
+    "26898e3d43a91fa52c4abe2b215ecc644cd7c440cbc13168eddfcb88176b00a9": {
+      "url": "https://dev.to/dj29/chain-of-thought-faithfulness-toggling-reasoning-mode-made-one-model-5x-more-likely-to-follow-39b3",
+      "date": "2026-10-06"
+    },
+    "ad3d72762a060396be1c262eab59c929747954330be753a198ec1c7f5bc6683b": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1wvwiy8/pov_new_claude_model_drops",
+      "date": "2026-10-06"
+    },
+    "3642b58f0d9efd055fa6419595506765fbd633c52c84e057db35d27cc7fd8e59": {
+      "url": "https://dev.to/lovestaco/cheap-rag-in-go-with-gemini-file-search-no-vector-db-two-calls-one-hosted-store-4kb5",
+      "date": "2026-10-06"
+    },
+    "99687503c450e255789a5ebf1ee58786e81f5e6badecdd7c1034b944288953f1": {
+      "url": "https://www.reddit.com/r/ChatGPTPro/comments/1wui70k/pro_20x_credits_are_draining_while_my_weekly",
+      "date": "2026-10-06"
+    },
+    "2133b917d7671354599c5915420684cc6a0d079bd8e9841f8f659abd8394bcd3": {
+      "url": "https://dev.to/james_anderson_h/the-7-walls-javascript-hits-and-how-webassembly-gets-past-them-3khk",
+      "date": "2026-10-06"
+    },
+    "0277e74069127d5a64b1ea3d0c98755e4ac96f9c902eea86863581fdb88af013": {
+      "url": "https://www.reddit.com/r/ChatGPTPro/comments/1wiwjb9/why_does_chat_consistently_give_me_better_results",
+      "date": "2026-10-06"
+    },
+    "5d3632edcc29cd64edeb7e305dafe3974183ea9b68184134e46e022973c07832": {
+      "url": "https://dev.to/devstackhub/the-bug-that-only-happened-on-fridays-38a7",
+      "date": "2026-10-06"
+    },
+    "adc66b7088af2cf9a808fb87a1a24cbe013fbd134021348799bb0011d3e0b0fb": {
+      "url": "https://www.reddit.com/r/ChatGPTPro/comments/1wtxje1/regarding_the_new_plans_and_eu",
+      "date": "2026-10-06"
+    },
+    "58bd8530f0723b6d43f7ec423722ac8647caa3cc415ee88a6ac8d1dbcf2a69f4": {
+      "url": "https://dev.to/cyclopt_dimitrisk/half-the-ai-agents-in-production-are-if-statements-with-a-gpu-bill-4934",
+      "date": "2026-10-06"
+    },
+    "d25b75ad576c66ec815fc2cd31dca1616b6a49ffff66556d36ac75df2791544f": {
+      "url": "https://www.reddit.com/r/ChatGPTPro/comments/1wq87ib/chatgpt_pro_100_vs_200_whats_the_actual",
+      "date": "2026-10-06"
+    },
+    "8bef61014dfb13d6d7474a6a3d25d6bb14b9294dd700600d6ac1ef9ebcac349c": {
+      "url": "https://dev.to/dj29/origintrace-protecting-the-dev-community-from-content-theft-using-sanity-context-mcp-j5c",
+      "date": "2026-10-06"
+    },
+    "d5eba6aa0a70dc0cf4a7a704d29685c78cfbcc1c9373f26536b0c60ec2a8b959": {
+      "url": "https://www.reddit.com/r/ChatGPTPro/comments/1wuq0pp/its_it_just_me_or_is_61_sol_genuinely_way_lighter",
+      "date": "2026-10-06"
+    },
+    "1a09e7cc7411ea34d04be06e995138a989760ab2492458e3db5df3c5d340eeff": {
+      "url": "https://dev.to/lovestaco/i-made-spider-man-swing-without-animating-a-single-frame-blender-rigging-and-mcp-14f7",
+      "date": "2026-10-06"
+    },
+    "f1361ac7f3cef3391e4a798be6594e8fc097dbb6b64c70e3d47c61fdca024f23": {
+      "url": "https://www.reddit.com/r/ChatGPTPro/comments/1wqesgu/chatgpt_workprojects_vs_claude_cowork_why_does",
+      "date": "2026-10-06"
+    },
+    "e85761151c15f0b5c45114bd18aa538706db992c330b0cdb210558a2100d93ea": {
+      "url": "https://dev.to/infoinlet1/everyones-learning-to-prompt-better-thats-the-wrong-skill-544o",
+      "date": "2026-10-06"
+    },
+    "545b7ae52a06887ad2f3805e18200c740c8b00b6b9a8e5b42ffb93bb5a3ef446": {
+      "url": "https://www.reddit.com/r/ChatGPTPro/comments/1wifgo3/claude_just_combined_chat_cowork_should_chatgpt",
+      "date": "2026-10-06"
+    },
+    "34b080b66227d673b90ba186a780a2fde660ce8fcd8ada5c00cf1e11272ad20d": {
+      "url": "https://dev.to/unitbuilds/i-finished-at-3am-337k",
+      "date": "2026-10-06"
+    },
+    "dba3aed28fa0393b10f4ecadbf779f839cac8885785aff335f92f8f77e2a0a5a": {
+      "url": "https://www.reddit.com/r/ChatGPTPro/comments/1wwub6l/how_do_i_get_the_most_out_of_my_plus_subscription",
+      "date": "2026-10-06"
+    },
+    "ac932285c0e4e761fa627905e8b0743057c494fef550d1458907580265de7527": {
+      "url": "https://dev.to/devstackcommunity/i-compared-5-llm-gateway-tools-for-real-world-production-use-4n5p",
+      "date": "2026-10-06"
+    },
+    "02689363f5f07126aef6021a84e4514042344615a40dfe6b21348cf7135ebeb3": {
+      "url": "https://www.reddit.com/r/ChatGPTPro/comments/1wuqmfk/62500_credits_now_gone_anyone_else",
+      "date": "2026-10-06"
+    },
+    "50cc68574129dee228b70afd81a0c7d0451748fbc89185f149ab501bef94544e": {
+      "url": "https://dev.to/shreyansh_agrahari_2009db/the-almirah-a-7b-local-vision-model-and-3d-cabinet-that-keeps-my-friends-family-papers-off-the-48io",
+      "date": "2026-10-06"
+    },
+    "ad46d99d25baada354c78b5d97de1bb16f0662da88c38fd50d2bb13a3f3a8b24": {
+      "url": "https://www.reddit.com/r/ChatGPTPro/comments/1worp04/new_video_gem",
+      "date": "2026-10-06"
+    },
+    "e0cfd3a65daae6786916ea1d3455d75ea0f5852b2571dbffb4adcaca13a28090": {
+      "url": "https://dev.to/kakeroth/never-stranded-again-how-i-built-an-edge-ai-bus-guardian-for-my-friend-tejas-using-tabpfn-serpapi-57i3",
+      "date": "2026-10-06"
+    },
+    "e2ddbb4ec8687b014e048a3069466a9b8a87c5d8ef8ff96815c60cfd4360eefa": {
+      "url": "https://www.reddit.com/r/ChatGPTPro/comments/1wbyyjg/whats_astra_like_on_pro_5x",
+      "date": "2026-10-06"
+    },
+    "60c14a1ea87bc912b8c432c28458135ba7023c7e3a81184c1bc742da90182ab1": {
+      "url": "https://dev.to/kanunilabs/how-to-build-a-sales-dashboard-on-a-million-real-rows-in-react-datagrid-4io8",
+      "date": "2026-10-06"
+    },
+    "c1809517018afe8f3939a409cb1085c8464ea1ceee3c6ac40e908d1cb2d073d1": {
+      "url": "https://www.reddit.com/r/ChatGPTPro/comments/1wqv0oh/why_does_every_update_make_it_harder_to_just_use",
+      "date": "2026-10-06"
+    },
+    "048c112e3b9cb261aa1e5edc13b9029705c6b8ba15f8e719f77da193f4ac5a91": {
+      "url": "https://dev.to/varshithvhegde/i-built-a-mac-menu-bar-app-because-i-kept-saying-wait-what-in-every-meeting-live-demo--3gkj",
+      "date": "2026-10-06"
+    },
+    "51d3d6f3ac1d6912e84fd6de806555520b22c71ce06616f7ce0ac52f1a98fe8d": {
+      "url": "https://www.reddit.com/r/ChatGPTPro/comments/1wfsmpy/do_we_all_get_luna_reserve_or_am_i_lucky",
+      "date": "2026-10-06"
+    },
+    "adcf981d54c06522a1458ad1780ecc6555aca20ce1b4954c7e175526e2642057": {
+      "url": "https://dev.to/sizzlebop/programming-is-mostly-learning-how-to-investigate-things-2hf6",
+      "date": "2026-10-06"
+    },
+    "a3deda265117f899a1c14623c8a015f5d293fc0e96f625d319d8cd657a6ebdb6": {
+      "url": "https://www.reddit.com/r/ChatGPTPro/comments/1waj5yf/astra_ultra_need_help_with_3d_modelling",
+      "date": "2026-10-06"
+    },
+    "609237531a78080d9048d57df74b98c50e427a228ab353ff51c991bf52d2e31d": {
+      "url": "https://dev.to/aonica_/adaptive-intelligence-why-the-next-generation-of-ai-systems-will-learn-from-change-28ih",
+      "date": "2026-10-06"
+    },
+    "9ab472a2a52206486518ae1277bf2cd25812c306d63bba8a2178c2e02c6cb76f": {
+      "url": "https://www.reddit.com/r/ChatGPTPro/comments/1wv12sh/anyone_actually_switched_from_chrome_to_an_ai",
+      "date": "2026-10-06"
+    },
+    "6e2a1f96136003485ec44a40c1b6411a92174bf5666d9d86a200cdc0f788da1f": {
+      "url": "https://dev.to/infoinlet1/how-to-stop-ai-from-confidently-shipping-broken-code-a-pattern-that-actually-works-2gn7",
+      "date": "2026-10-06"
+    },
+    "6bed07e1fd4c644347ac9536fbc778adeff40b2e03d38466bf764081ddbd7226": {
+      "url": "https://www.reddit.com/r/ChatGPTPro/comments/1ws9ac7/pro_turned_ambient_musicmp3_midi_with_no_mistake",
+      "date": "2026-10-06"
+    },
+    "9ef7ae21b0982493e1b7aa52988553546818758e3b1006996f1b4977a632efed": {
+      "url": "https://dev.to/izgorodin/how-can-i-prevent-my-ai-coding-assistant-from-repeating-fixed-mistakes-across-sessions-2kf7",
+      "date": "2026-10-06"
+    },
+    "f983d6c960de41317af619491572a40b03109bf8fd456ad51c6509356fd3c87d": {
+      "url": "https://www.reddit.com/r/ChatGPTPro/comments/1wk1w2o/does_anyone_else_find_chatgpts_cloud_browser",
+      "date": "2026-10-06"
+    },
+    "08cd0d0e92ab7d0ef5402711565307cc5ff9ac80f18765a23088b54e1b8d5dd8": {
+      "url": "https://dev.to/sizzlebop/ai-coding-has-made-project-switching-way-too-easy-1bef",
+      "date": "2026-10-06"
+    },
+    "a0153f2661f2ace69a4db884ee337c59abb3c55b09bfbf7ca14712fd24077d16": {
+      "url": "https://www.reddit.com/r/ChatGPTPro/comments/1wehkuw/my_chatgpt_conversations_reach_maximum_length",
+      "date": "2026-10-06"
+    },
+    "201c00d028ac673177758e0776c1fb60610d0d13f0418115c34a16cf12952279": {
+      "url": "https://dev.to/missamarakay/building-pocs-with-codex-and-github-copilot-while-they-try-to-adjust-my-poc-requirements-along-the-1fc9",
+      "date": "2026-10-06"
+    },
+    "6fe5a38c3e86cd5ae1e1898d781d7a56b3a01d366c222c58580774765e61e48d": {
+      "url": "https://www.reddit.com/r/ChatGPTPro/comments/1wy5y6h/model_at_capacity",
+      "date": "2026-10-06"
+    },
+    "d4a6fc4d57114d5c44c33c3900e7a25bef74e67b1688b3fe0473acf0fb7e9c96": {
+      "url": "https://dev.to/sarvar_04/which-aws-limit-is-actually-current-an-agent-that-proves-it-32-vs-5-vs-16-6i4",
+      "date": "2026-10-06"
+    },
+    "5d46b1d8d3661e512b6ccc887d3f474c6f073f2d690cd9278c52ee8acd202a8e": {
+      "url": "https://www.reddit.com/r/ChatGPTPro/comments/1wkq6fu/at_which_point_did_you_decide_to_go_pro",
+      "date": "2026-10-06"
+    },
+    "8a0b07be9923ac52dfe940db3b5a44b6b7509d951c10a2bfaf1f2e7cfbba5fc9": {
+      "url": "https://dev.to/annavi11arrea1/burnout-i-wrote-a-song-bleeding-knuckles-43fp",
+      "date": "2026-10-06"
+    },
+    "1aa56ff4a9f91d04505e159eb11e9020906dc2717d98067b91fe7481ac6eb93a": {
+      "url": "https://www.reddit.com/r/ChatGPTPro/comments/1wgvvj0/does_the_20x_plan_actually_give_4x_more_weekly",
+      "date": "2026-10-06"
+    },
+    "b0a15d09bd54532c10a3075db0ea7ee9348d9b9d48f43c37c0e4c45e29c2f544": {
+      "url": "https://dev.to/gde/architecting-a-resilient-devsecops-pipeline-for-enterprise-ai-agents-on4",
+      "date": "2026-10-06"
+    },
+    "55137da94f749ab20c2de37a8fb348dd6a710eda73c0e87f7ba239ef2cf4f884": {
+      "url": "https://www.reddit.com/r/ChatGPTPro/comments/1wcedy9/how_good_is_asta_chat_in_pro",
+      "date": "2026-10-06"
+    },
+    "e91f1ba9768472cf93ed0e13fef6b6cdd0a8789df0c5542b06716e01bbae442b": {
+      "url": "https://dev.to/sizzlebop/ai-is-making-it-too-easy-to-avoid-thinking-3hnk",
+      "date": "2026-10-06"
+    },
+    "f474e0733018501ae890f81a28064e9479b113c02ae5b459cb51bba53741ea8f": {
+      "url": "https://www.reddit.com/r/ChatGPTPro/comments/1wwm3xt/your_dot_paused_out_of_precaution",
+      "date": "2026-10-06"
+    },
+    "06389a1d0bca7cdab2ea16350726037886bd2f3340ad299beb71d296174fe68a": {
+      "url": "https://dev.to/sizzlebop/i-gave-my-ai-agents-their-own-documentation-crawler-and-pulled-60-pages-of-clean-markdown-in-49-2cl7",
+      "date": "2026-10-06"
+    },
+    "643087add720fdd9a0680364a2e459cf30349f5f7dca4062000bbb0dfcf08e9f": {
+      "url": "https://www.reddit.com/r/ChatGPTPro/comments/1wszjhz/is_chatgpt_pro_worth_it_for_website_coding",
+      "date": "2026-10-06"
+    },
+    "f84dc5e23a3e1c7f7553ada09272351501fde66d5a8ef0bb0cb9f37e4aa454c3": {
+      "url": "https://dev.to/mikachu/i-built-a-text-based-survival-game-to-test-ai-morals-the-honest-one-lost-3fan",
+      "date": "2026-10-06"
+    },
+    "f965f1c2be9e69a2479b91280df432391a276b4628990c24239c994c9073433e": {
+      "url": "https://www.reddit.com/r/ChatGPTPro/comments/1wlojzw/anyone_still_have_luna_reserve",
+      "date": "2026-10-06"
+    },
+    "6383b9060cc62f6f7a09eb34d57ca78e45558e8dd0599af3702847276e9f7c77": {
+      "url": "https://dev.to/missamarakay/admit-it-you-have-a-favorite-ai-just-like-you-have-a-favorite-coworker-1fa0",
+      "date": "2026-10-06"
+    },
+    "c587f5b3bee613f124e8bedd6bea6ae61fbd4398771a30f5654d49010f2fbcf3": {
+      "url": "https://www.reddit.com/r/marketing/comments/1wjya9s/news_soundbites_in_an_ad",
+      "date": "2026-10-06"
+    },
+    "c1df73134fbedeae82dd955271a08dfabae822405d01e802d0b5cb31dc87f8e9": {
+      "url": "https://dev.to/infoinlet1/i-gave-chatgpt-my-full-codebase-the-results-scared-me-but-not-for-the-reason-you-think-2ggk",
+      "date": "2026-10-06"
+    },
+    "71aa0dce3d3bea458228b06742d0a55256ada8bee6bdba78a231324cc693d6e7": {
+      "url": "https://www.reddit.com/r/marketing/comments/1wi1vyd/working_an_archery_range_how_to_market_to",
+      "date": "2026-10-06"
+    },
+    "fa7348fd7f966ae4e30213f7d9c25545b2b2bc29c5140648888ec6739387a781": {
+      "url": "https://dev.to/gde/why-ai-keeps-making-the-same-coding-mistakes-and-how-teaching-it-pain-gives-it-wisdom-4a9m",
+      "date": "2026-10-06"
+    },
+    "d32d745bd604325e8a6ae64bbf326201050a20f05b58853e34f81b5fcab22e04": {
+      "url": "https://www.reddit.com/r/marketing/comments/1wxle7t/how_much_should_a_beginner_charge_for_managing_a",
+      "date": "2026-10-06"
+    },
+    "07729afc4aada5ee5eb829075a0448979131450368e84761ee45bf1b8c6e4fbb": {
+      "url": "https://dev.to/parsajiravand/your-required-field-turns-red-before-you-type-anything-1ad2",
+      "date": "2026-10-06"
+    },
+    "7dbedebaec7acb48c6d97c9b9a3c1980579623a29488ee78c5a05ae1d3bfa662": {
+      "url": "https://www.reddit.com/r/marketing/comments/1ww4shx/lasocal_question_for_employers",
+      "date": "2026-10-06"
+    },
+    "a7abaffdafba16ad0a15b852ff564acc5ea85a6cdc879263ca8e8c479a9b8aa7": {
+      "url": "https://dev.to/zenstack/turning-your-database-into-an-mcp-server-with-one-click-404f",
+      "date": "2026-10-06"
+    },
+    "992c1a19a2f3e58d421392d2f9f0a43413f13725e36547a447ecf64f1d85b8a5": {
+      "url": "https://www.reddit.com/r/marketing/comments/1wtsnuh/networking_group_recs",
+      "date": "2026-10-06"
+    },
+    "9d6648e39234453b8530f0f4001ed130f5206f97dd0acbd78667fc762c7f47d7": {
+      "url": "https://dev.to/gde/write-markdown-once-publish-it-everywhere-devto-medium-aws-builder-center-and-linkedin-np4",
+      "date": "2026-10-06"
+    },
+    "3877faf8eaf8f77b8f0e3c76863348e52b416e492597f55ccb00ed8cd8f1ad21": {
+      "url": "https://www.reddit.com/r/marketing/comments/1woxvuw/slowing_growth_in_b2c_is_anybody_seeing_a_similar",
+      "date": "2026-10-06"
+    },
+    "df03307181b4767ca4409dbc8578cc24a791d48a946930febab81dc8139c1046": {
+      "url": "https://dev.to/kenwalger/living-a-colorful-life-in-a-black-and-white-ats-world-2m0o",
+      "date": "2026-10-06"
+    },
+    "a3028564c02263df08aa82eb606511bde483e24c8b147d11f683b80459427d88": {
+      "url": "https://www.reddit.com/r/marketing/comments/1wnhso4/looking_for_legitimate_publishers_to_help_us",
+      "date": "2026-10-06"
+    },
+    "595303ad2668e375e8f0aa478998ce258a35f2584da3d946c2f969552a36dad7": {
+      "url": "https://dev.to/debashish_ghosal/coverage-stopped-being-a-code-metric-its-a-career-metric-now-3h8h",
+      "date": "2026-10-06"
+    },
+    "3c9c6d0f7358a2916ce4dfe8af591727a9dbba0828abb00277dd48a9f40d6520": {
+      "url": "https://www.reddit.com/r/marketing/comments/1ww77o4/in_this_situation_how_much_would_you_charge_per",
+      "date": "2026-10-06"
+    },
+    "19c1156d806047041b308a5707577ad07f37a1d3a2fc3ca04f6915d63113709b": {
+      "url": "https://dev.to/asyncinnovator/i-connected-a-fruit-fly-connectome-to-tic-tac-toe-with-a-minimax-safety-net-5bc0",
+      "date": "2026-10-06"
+    },
+    "f738fd80948519dc14177a53d58929d9a163bb6facd55c67f3d65c29d3add5a4": {
+      "url": "https://www.reddit.com/r/marketing/comments/1wv0irs/what_should_a_b2b_company_expect_to_pay_for",
+      "date": "2026-10-06"
+    },
+    "48269656822517783c987a35fded0333af406187110bff1b7fd3d54b56820edb": {
+      "url": "https://dev.to/branislav_kuga_4118d3b3ab/im-an-er-doctor-after-decades-without-touching-code-i-built-3-websites-with-ai-in-one-month-on-5ccm",
+      "date": "2026-10-06"
+    },
+    "01ab66753843554e46850b22fdc931fc7a3b750a3e6d47983fffae5d824d483d": {
+      "url": "https://www.reddit.com/r/marketing/comments/1wtmxjh/do_you_repost_business_reels_for_engagement_like",
+      "date": "2026-10-06"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 2
+  "dailyPage": 3
 }

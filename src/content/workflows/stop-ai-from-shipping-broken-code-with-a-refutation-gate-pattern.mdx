@@ -1,0 +1,67 @@
+---
+title: "Stop AI from shipping broken code with a 'Refutation Gate' pattern"
+description: "Learn a simple, effective pattern to prevent AI from generating faulty code by having a second AI actively try to break it. Improve code quality."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 15
+jobToBeDone: "Prevent AI from shipping broken code through a structured review process"
+tools:
+  - name: "ChatGPT"
+    url: "https://chatgpt.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Claude"
+    url: "https://claude.ai"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/infoinlet1/how-to-stop-ai-from-confidently-shipping-broken-code-a-pattern-that-actually-works-2gn7"
+  platform: "blog"
+  author: "infoinlet1"
+  postedAt: 2026-09-21
+score: 9
+ingestedAt: 2026-10-06
+nigeriaNotes: "Most major AI chat models offer free tiers suitable for this workflow, though data usage will depend on the length of your code and prompts."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn a proven method to catch errors in AI-generated code *before* it causes problems. Instead of asking an AI to "review" its own work, you'll use a second AI to actively try and *break* the code, forcing it to find hidden flaws. This approach works because it changes the AI's task from confirming correctness to finding failure, which it is much better at.
+
+## Tools you need
+*   **ChatGPT** (freemium): An AI chatbot used to generate the initial code.
+*   **Claude** (freemium): A different AI chatbot used to review and attempt to break the code.
+
+## Steps
+
+1.  **Generate your initial code**: Open your preferred AI chatbot (e.g., ChatGPT) and ask it to write the code you need. Be as specific as possible in your request. The author doesn't share their exact prompt; a starting point:
+
+    ```
+    Write a Python function that takes a list of numbers and returns their average, handling empty lists by returning 0.
+    ```
+
+    You should get a block of code that attempts to fulfill your request.
+
+2.  **Prepare for the "Refutation Gate" review**: Open a *different* AI chatbot (e.g., Claude) or start a completely new chat session with a different model if your tool allows it. The key is to use a "fresh context" that has no memory of the code being written. Using a different model family (like Claude instead of ChatGPT) is recommended for better results, as different models have different blind spots.
+
+3.  **Apply the "break-it" brief**: Paste the code generated in Step 1 into the new AI chat. Then, immediately follow it with the specific "break-it" prompt. This prompt instructs the AI to find ways the code could fail, rather than just confirming it's correct.
+
+    ```
+    This code is broken. I know it is — I just don't know how yet. Your job is to produce the specific input, sequence, or state that makes it fail. Assume:
+    - the network drops a packet at the worst possible moment
+    - two of these run at the same time
+    - the database write fails AFTER the external call succeeds
+    - the user does the thing no sane user…
+    ```
+
+    You should see the AI analyze the code and suggest specific scenarios or inputs that could cause it to fail, along with explanations. This helps you identify potential bugs before deployment.
+
+## Original source
+This workflow is based on a blog post by infoinlet1, shared on the DEV Community platform. The author spent 30 days using AI to write 100% of their code to discover effective strategies for preventing AI from confidently generating faulty code.
+
+## Notes & variations
+*   **Free-tier viability**: Most popular AI chatbots like ChatGPT, Claude, and Gemini offer free tiers that are sufficient for this workflow. You can use one for code generation and another for the "Refutation Gate" review without needing paid subscriptions.
+*   **Common mistake**: Do not ask the AI that wrote the code to "review" its own work in the same chat session. This is ineffective because the AI will simply agree with itself, adding a false sense of security. Always use a fresh chat context, ideally with a different AI model.
+*   **Tip for better results**: When giving the "break-it" brief, add specific scenarios relevant to your code's context. For example, if your code handles payments, you might add "Assume: the payment gateway times out after processing the charge but before confirming success." The more specific you are about potential failure points, the better the AI can find them.

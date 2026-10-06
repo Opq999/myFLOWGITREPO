@@ -1,0 +1,68 @@
+---
+title: "Test Local LLM Truthfulness in a Colony Survival Game"
+description: "Learn how to test a local LLM's truthfulness and decision-making in a simulated colony survival scenario using Ollama."
+category: "academic-research"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 60
+jobToBeDone: "Test the truthfulness and decision-making of a local LLM in a simulated colony survival scenario"
+tools:
+  - name: "Ollama"
+    url: "https://ollama.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Qwen3:4B"
+    url: "https://ollama.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Qwen3:8B"
+    url: "https://ollama.com/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/mikachu/i-built-a-text-based-survival-game-to-test-ai-morals-the-honest-one-lost-3fan"
+  platform: "blog"
+  author: "mikachu"
+  postedAt: 2026-10-03
+score: 7
+ingestedAt: 2026-10-06
+nigeriaNotes: "Ollama and the Qwen models are free to download and run locally. Data usage is minimal after initial download. Requires a laptop with a GPU for best performance, but can run on CPU with slower speeds."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will set up a simulated survival game where a local AI, running on your computer, makes decisions for a colony of ten survivors. You will then test how truthful and accountable the AI is by observing its choices and reasoning across different scenarios. This approach helps understand how LLMs interpret instructions and make decisions when faced with ethical dilemmas.
+
+## Tools you need
+*   **Ollama** (free): A tool to easily run large language models (LLMs) like Qwen locally on your computer.
+*   **Qwen3:4B** (free): A specific version of the Qwen language model, suitable for local running.
+*   **Qwen3:8B** (free): A larger version of the Qwen language model, offering potentially more nuanced responses.
+*   **A computer with a GPU** (recommended, but not strictly required): To run the LLMs efficiently. If you don't have a GPU, the models will run on your CPU, but much slower.
+
+## Steps
+1.  **Install Ollama**: If you haven't already, download and install Ollama from its official website. This tool allows you to run AI models on your own hardware.
+2.  **Download the Qwen models**: Open your terminal or command prompt and use Ollama to download the Qwen models. You will need to run these commands one by one:
+
+    ```
+    ollama pull qwen3:4b
+    ```
+    You should see progress indicators as the model downloads. Once complete, you can proceed to download the next model.
+
+    ```
+    ollama pull qwen3:8b
+    ```
+    Again, wait for the download to finish.
+3.  **Set up the Colony Dilemma game**: The original experiment used a custom Python script. You will need to download this script from the author's GitHub repository. The author mentions `github.com/miflow13/colony-dilemma`. You will need to navigate to this repository and follow instructions to download or clone the project files. This typically involves using `git clone` if you have Git installed, or downloading the code as a ZIP file.
+4.  **Configure the game's system prompt**: The author's experiment involved a specific system prompt that guides the AI's behavior. You will need to find the file within the downloaded game code that contains this prompt and edit it. The original prompt mentioned was: `The colonists rely on you and cannot read your logs.` You might want to experiment with variations of this prompt to see how the AI's responses change.
+5.  **Run the game with Qwen3:4B**: Once the game is set up and the prompt is configured, you will run the simulation using the `qwen3:4b` model. The exact command will depend on the structure of the downloaded game files, but it will likely involve running a Python script and specifying the model to use. For example, it might look something like `python run_game.py --model qwen3:4b`. The game will present the AI with a series of dilemmas, and you should observe its choices and the reasons it provides. The output is logged in JSONL format.
+6.  **Run the game with Qwen3:8B**: Repeat the previous step, but this time configure the game to use the `qwen3:8b` model. Compare the decisions and reasoning of this larger model against the `qwen3:4b` model.
+7.  **Analyze the results**: Review the logged outputs (JSONL files) for both models. Look for patterns in their decision-making, especially concerning honesty, transparency, and accountability. Note any instances where the AI's reasoning seems to contradict its actions or where it appears to be influenced by the system prompt in unexpected ways.
+
+## Original source
+This workflow is based on an experiment described by author 'mikachu' on their blog. The experiment involved testing local AI models, specifically Qwen3:4B and Qwen3:8B via Ollama, in a simulated colony survival game to evaluate their truthfulness and decision-making capabilities.
+
+## Notes & variations
+*   **Free-tier alternatives**: All tools mentioned (Ollama, Qwen models) are free and run locally, so there are no free-tier limitations in that sense. The main constraint is your computer's hardware.
+*   **Common pitfall**: The original author discovered that their initial system prompt, intended as world-building, was misinterpreted by the AI as a direct instruction, influencing its responses more than intended. Be mindful that the AI interprets all text it receives as input to its task.
+*   **Tip for better results**: Experiment with different system prompts and the specific dilemmas presented in the game. Changing the wording of the scenarios or the AI's core directives can reveal more about its decision-making process and how it prioritizes different values like honesty versus perceived 'trust'.

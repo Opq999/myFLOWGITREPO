@@ -1,0 +1,111 @@
+---
+title: "Build a Cost-Effective RAG System with Gemini File Search and Go"
+description: "Learn how to build a cost-effective Retrieval Augmented Generation (RAG) system using Gemini File Search and Go for internal documentation."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 120
+jobToBeDone: "Build a cost-effective RAG system for internal documentation using Gemini File Search"
+tools:
+  - name: "Gemini API"
+    url: "https://ai.google.dev/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Go"
+    url: "https://go.dev/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "SQLite"
+    url: "https://www.sqlite.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Python"
+    url: "https://www.python.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "pymupdf4llm"
+    url: "https://pypi.org/project/pymupdf4llm/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/lovestaco/cheap-rag-in-go-with-gemini-file-search-no-vector-db-two-calls-one-hosted-store-4kb5"
+  platform: "blog"
+  author: "lovestaco"
+  postedAt: 2026-09-22
+score: 10
+ingestedAt: 2026-10-06
+nigeriaNotes: "The Gemini API offers a generous free tier, including for File Search, making this approach very cost-effective. Data usage for document conversion is minimal, but uploading large document stores will consume data."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "Build a chatbot to answer questions about your university's course catalog using Gemini File Search and Go."
+  - persona: "employee"
+    scenario: "Create an AI assistant to query internal company policies and procedures from uploaded documents using Gemini File Search."
+  - persona: "entrepreneur"
+    scenario: "Develop a tool to answer customer FAQs based on your product documentation stored in Gemini File Search."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+This workflow describes how to build a cost-effective Retrieval Augmented Generation (RAG) system using Google's Gemini File Search and the Go programming language. A RAG system helps a Large Language Model (LLM) answer questions more accurately by first searching a specific set of documents for relevant information, then using that information to generate a grounded answer. This prevents the LLM from making up facts and ensures its responses are based on your own data.
+
+The core idea here is to use Gemini File Search, a feature where you upload your documents to Google. Google then handles the complex parts: it breaks your documents into smaller pieces (called 'chunks'), converts them into numerical representations (called 'embeddings'), and creates an index for fast searching. When you ask a question, the Gemini model can automatically search this index and pull out the most relevant chunks to help it answer.
+
+This approach is highlighted for its low cost, especially because storage and query-time embeddings are free within Gemini's free tier limits. You only pay for the initial indexing of documents and the standard cost of using the Gemini model for generating answers. However, building this system requires coding skills in Go and comfort with API (Application Programming Interface) interactions, making it an advanced project.
+
+## What you can use it for
+*   **Build an AI assistant for internal documents**: Create a chatbot that can answer questions based on your company's policies, reports, or knowledge base, providing accurate, cited answers.
+*   **Enhance code review with historical context**: Develop a tool that reviews new code proposals and suggests relevant past decisions or post-mortems from your internal documentation.
+*   **Summarize long reports with specific context**: Generate summaries of complex documents, ensuring the AI uses only information from your trusted sources and cites them correctly.
+
+## Tools you need
+*   **Gemini API** (freemium): Google's developer platform for accessing their AI models, including the File Search feature.
+*   **Go** (free): A programming language used to build the application that interacts with the Gemini API.
+*   **SQLite** (free): A lightweight, file-based database used for local data storage within the Go application.
+*   **Python** (free): A programming language needed to run the `pymupdf4llm` library for document conversion.
+*   **pymupdf4llm** (free): A Python library specifically designed to convert PDF documents into well-formatted Markdown text, preserving headings and spacing.
+
+## How it actually works
+This workflow involves setting up a development environment and writing code to connect different services. There isn't a simple copy-paste recipe, as the exact steps depend on your specific project and coding choices. Here's the general path:
+
+1.  **Prepare your documents**: Convert your source documents (like PDFs) into a text format that Gemini File Search can easily process. The author recommends `pymupdf4llm` for converting PDFs to Markdown, as it correctly handles spacing and headings, which are crucial for good retrieval.
+
+    To install and run `pymupdf4llm` (requires Python and `uv` or `pip`):
+
+    ```bash
+    # macOS or Linux
+    uv run --with pymupdf4llm python -c "import pymupdf4llm, pathlib; pathlib.Path('out.md').write_text(pymupdf4llm.to_markdown('in.pdf'))"
+    ```
+
+    ```powershell
+    # Windows (PowerShell)
+    uv run --with pymupdf4llm python -c "import pymupdf4llm, pathlib; [pathlib.Path('out.md')].write_text([pymupdf4llm.to_markdown('in.pdf')])"
+    ```
+
+    Replace `in.pdf` with your input PDF file and `out.md` with your desired output Markdown file name. You should get a Markdown file with correct formatting and headings.
+
+2.  **Create a Gemini File Search store**: Using the Gemini API or Google Cloud console, you will create a 'store'. This is where your documents will live and be indexed by Google. The author doesn't share the exact API calls, but this typically involves making a `createStore` request.
+
+3.  **Upload documents to the store**: Once your documents are converted to Markdown, you will upload them to the Gemini File Search store using the Gemini API. Google will then automatically chunk, embed, and index these documents for you.
+
+4.  **Develop a Go application**: Write a Go program that acts as the interface for your RAG system. This application will handle user queries, interact with the Gemini API, and potentially use SQLite to manage metadata or track interactions. The author chose to build a REST client without an SDK to have full control over API requests and responses.
+
+5.  **Query the Gemini model**: Your Go application will make calls to the Gemini API. To use the File Search store, you attach it as a 'tool' to your `generateContent` request. The Gemini model will then automatically search your uploaded documents for relevant information before generating its answer, providing `groundingMetadata` (the chunks it used) along with the response.
+
+## Words you'll see, explained
+*   **RAG (Retrieval Augmented Generation)**: An AI technique where a language model first retrieves relevant information from a knowledge base before generating an answer, making it more accurate and factual.
+*   **Vector database**: A specialized database designed to store and quickly search 'embeddings' (numerical representations) of data, often used in RAG systems.
+*   **Embeddings**: Numerical representations of text, images, or other data that capture their meaning. AI models use these to understand and compare information.
+*   **LLM (Large Language Model)**: An advanced AI model, like Gemini, that can understand and generate human-like text.
+*   **API (Application Programming Interface)**: A set of rules and tools that allows different software applications to communicate with each other.
+*   **Go**: A modern, open-source programming language developed by Google, known for its efficiency and performance.
+*   **SQLite**: A very lightweight, file-based database system that is often embedded directly into applications.
+*   **Chunking**: The process of breaking down large documents or texts into smaller, manageable pieces or 'chunks' for easier processing by AI models.
+
+## Original source
+This concept was shared by Maneshwar on the DEV Community blog. He developed this approach while building LiveReview, an AI code review tool, aiming for a cost-effective RAG solution without needing a traditional vector database.
+
+## Notes & variations
+*   **Do you even need this?** For simple questions or general knowledge, a standard chat LLM (like the freemium Gemini chat app) might be sufficient. This advanced RAG setup is most valuable when you need highly accurate, cited answers based on a specific, private, or constantly updated set of documents.
+*   **Free-tier limits**: The Gemini File Search store has a free tier cap of 1 GB. While this is generous for many internal document sets (the author's entire library was 5.3 MB), be mindful of this limit if you plan to upload very large collections. The Gemini API also has free tier limits for `generateContent` calls.
+*   **Common pitfall**: Document quality is critical. If your source documents are poorly formatted, have incorrect spacing, or lack clear headings, the retrieval process will suffer. Tools like `pymupdf4llm` are essential to ensure your documents are prepared correctly for optimal results.

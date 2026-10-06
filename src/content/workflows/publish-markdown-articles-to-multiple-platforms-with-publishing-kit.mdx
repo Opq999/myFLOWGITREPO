@@ -1,0 +1,72 @@
+---
+title: "Publish Markdown Articles to Multiple Platforms with Publishing-Kit"
+description: "Learn how to use the publishing-kit agent to automatically publish your markdown articles to dev.to, Medium, AWS Builder Center, and LinkedIn."
+category: "content-creation"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 30
+jobToBeDone: "Publish a single markdown article to multiple platforms (dev.to, Medium, AWS Builder Center, LinkedIn) with platform-specific checks and formatting."
+tools:
+  - name: "Claude Code"
+    url: "https://code.claude.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Codex"
+    url: "https://github.com/microsoft/Codex"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Antigravity"
+    url: "https://github.com/xbill9/antigravity"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Python"
+    url: "https://www.python.org/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/gde/write-markdown-once-publish-it-everywhere-devto-medium-aws-builder-center-and-linkedin-np4"
+  platform: "blog"
+  author: "xbill"
+  postedAt: 2026-10-02
+score: 7
+ingestedAt: 2026-10-06
+nigeriaNotes: "This workflow relies on AI tools and Python scripts. Access to Claude Code requires a paid subscription. Python can be installed on most devices. Data usage will be minimal, primarily for script execution and AI interactions."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will be able to publish a single markdown article to multiple platforms like dev.to, Medium, AWS Builder Center, and LinkedIn. This workflow uses an agent skill called publishing-kit to handle the differences in how each platform displays markdown, code blocks, and images. This approach works because publishing-kit automates the checks and formatting needed for each specific platform, saving you from manual adjustments and potential errors.
+
+## Tools you need
+*   **Claude Code** (paid): An AI coding assistant that helps write and refine code. You will use it to interact with the publishing-kit agent.
+*   **Codex** (free): A tool that helps with code generation and understanding. It is used here as part of the agent's capabilities.
+*   **Antigravity** (free): A Python library that likely helps with web interactions or data handling, used by the publishing-kit scripts.
+*   **Python** (free): A programming language used to run the scripts that format and publish your content.
+
+## Steps
+1.  **Set up your AI agent environment**: The author uses Claude Code, which requires a paid subscription. You will need to set up an account and ensure you have access to its agent capabilities. The exact setup steps for Claude Code can be found on their official website.
+2.  **Get the publishing-kit agent**: The author provides a GitHub repository for publishing-kit. You will need to clone this repository to your local machine. The author does not specify the exact command, but a common way to do this is:
+
+    ```bash
+    git clone https://github.com/xbill9/publishing-kit.git
+    ```
+
+    You should see a new folder named `publishing-kit` created on your computer.
+3.  **Prepare your markdown article**: Write your article in a single markdown file. Ensure it includes all the content you want to publish, such as text, headings, code blocks, and image references.
+4.  **Configure the agent**: The author mentions that publishing-kit is an agent skill. You will need to instruct your AI agent (within Claude Code) to use this skill. The author does not provide the exact prompt, but a starting point could be:
+
+    ```
+    Use the publishing-kit agent skill to prepare and publish the following markdown article to dev.to, Medium, AWS Builder Center, and LinkedIn. The article content is: [Paste your markdown article content here]
+    ```
+
+    The agent should then use the scripts within the publishing-kit repository to process your article for each platform.
+5.  **Review and publish**: The agent will attempt to publish your article to each platform. You should receive confirmation or any error messages from the agent. The author notes that failures can occur without explicit errors, so it's important to check each platform after publishing to ensure the article appears correctly.
+
+## Original source
+This workflow is based on the work by xbill, who shared their experience on DEV Community. They developed a tool called publishing-kit, which is an agent skill designed to help content creators publish a single markdown file across multiple platforms like dev.to, Medium, AWS Builder Center, and LinkedIn, while handling platform-specific formatting differences.
+
+## Notes & variations
+*   **Free tier alternative**: Since Claude Code is a paid tool, consider exploring other AI assistants or custom Python scripts that can achieve similar results without a subscription. For example, you might be able to use open-source models with local Python environments if you have the technical expertise.
+*   **Common mistake**: A common pitfall is assuming the markdown will render identically everywhere. Each platform has unique quirks (e.g., Medium dropping tables, dev.to's line breaks, LinkedIn's lack of drafts). Always double-check the final output on each site.
+*   **Tip for better results**: Before publishing, test your markdown file with a local markdown previewer that can simulate different rendering engines, or use a simpler version of the publishing-kit process on one platform first to ensure your core content is formatted correctly.

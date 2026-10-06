@@ -1,0 +1,59 @@
+---
+title: "Convert Web Docs to Markdown for AI Agents with Pulpie"
+description: "Learn how to automatically crawl and convert web documentation into clean Markdown files using Pulpie and Claude, making information accessible for AI agents."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 5
+jobToBeDone: "Automatically crawl and convert web documentation into clean Markdown files for AI agents"
+tools:
+  - name: "pulpie-mcp"
+    url: "https://github.com/pinkpixel-dev/pulpie-mcp"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Claude"
+    url: "https://claude.ai"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Pulpie"
+    url: "https://github.com/pinkpixel-dev/pulpie"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/sizzlebop/i-gave-my-ai-agents-their-own-documentation-crawler-and-pulled-60-pages-of-clean-markdown-in-49-2cl7"
+  platform: "blog"
+  author: "sizzlebop"
+  postedAt: 2026-10-05
+score: 7
+ingestedAt: 2026-10-06
+nigeriaNotes: "This workflow requires running software locally, which might be data-intensive for initial setup. However, once set up, the actual crawling and conversion process can be relatively data-light. Free tiers for Claude are available, but local execution of Pulpie requires a capable computer."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to set up a system that allows an AI agent to automatically crawl entire sections of web documentation and save them as clean Markdown files. This approach ensures that AI agents have access to the full, unsummarized content of documentation, including tables, links, and code, which is crucial for tasks like referencing API documentation.
+
+## Tools you need
+*   **pulpie-mcp** (free): A tool that acts as an MCP server, giving AI agents the ability to fetch and save web content as Markdown.
+*   **Claude** (freemium): A conversational AI model that can be instructed to use the pulpie-mcp tools to crawl and save documentation.
+*   **Pulpie** (free): The underlying content extraction model that pulpie-mcp uses to convert web pages into clean Markdown.
+
+## Steps
+1.  **Set up the pulpie-mcp server**: The author does not provide exact setup instructions for pulpie-mcp, but it involves running the server locally. You will need to follow the instructions in the pulpie-mcp GitHub repository to get it running. This typically involves cloning the repository and running a command to start the server. You should see output indicating the server has started and is ready to receive commands.
+2.  **Load the extraction model**: The pulpie-mcp server needs to load the Pulpie content extraction model. The author mentions this happens automatically when the server starts, especially if a GPU is available. If you are running this for the first time, expect a short delay for the model to load. You should see messages in your server's console indicating the model is being loaded.
+3.  **Instruct Claude to crawl documentation**: Once the server is running and the model is loaded, you can instruct Claude to use the `crawl_docs` tool. The author provides an example prompt. You will need to replace `uv docs` with the documentation you want to crawl and `DOCS/reference` with the folder where you want to save the files.
+
+```
+Pull the uv docs into this project's DOCS/reference folder.
+```
+
+After sending this prompt, Claude will use the `crawl_docs` tool to fetch the documentation from the specified source and save it as Markdown files in the designated folder on your local machine. You should see output from Claude confirming the action and potentially listing the files saved.
+
+## Original source
+This workflow is based on a blog post by sizzlebop, shared on the DEV Community platform. The author describes creating a custom tool called pulpie-mcp to empower AI agents with the ability to autonomously crawl and convert web documentation into usable Markdown files.
+
+## Notes & variations
+*   **Free-tier alternative**: While Claude has a freemium tier, the core functionality relies on running pulpie-mcp and Pulpie locally, which are free and open-source. Ensure your computer meets the requirements for running these tools.
+*   **Common pitfall**: If the AI agent struggles to find or crawl the documentation, double-check that the `crawl_docs` tool is correctly configured and that the URL or documentation path provided is accurate and accessible.
+*   **Tip for better results**: For complex documentation sites, consider using the `fetch_markdown` tool first on a single page to ensure the Pulpie model is extracting content as expected before attempting to crawl an entire section.
