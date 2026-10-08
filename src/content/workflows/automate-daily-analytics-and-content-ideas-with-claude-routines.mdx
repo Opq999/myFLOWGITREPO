@@ -1,0 +1,78 @@
+---
+title: "Automate Daily Analytics and Content Ideas with Claude Routines"
+description: "Learn to automate daily analytics checks, generate content ideas, and get Hacker News digests using AI routines with Claude."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 30
+jobToBeDone: "Automate daily analytics checks, content idea generation, and Hacker News digests using AI routines."
+tools:
+  - name: "Claude"
+    url: "https://claude.ai"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "VSCode"
+    url: "https://code.visualstudio.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Publora"
+    url: "https://publora.com/"
+    pricing: "paid"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/eugeniya_ivanova_4a58eadc/i-didnt-come-to-claude-through-code-i-came-through-a-10-am-routine-3e14"
+  platform: "blog"
+  author: "eugeniya_ivanova_4a58eadc"
+  postedAt: 2026-09-18
+score: 7
+ingestedAt: 2026-10-08
+nigeriaNotes: "Claude.ai has a free tier, but extensive use may require paid plans. VSCode is free. Publora is a paid tool, so its viability on a free tier is limited. Data usage for AI interactions is generally low, but depends on the length of prompts and responses."
+nigeriaUseCases:
+  - persona: "entrepreneur"
+    scenario: "Generate 3 content ideas for your startup's blog every Monday, Wednesday, and Friday, adding them to a content backlog file."
+  - persona: "employee"
+    scenario: "Get a daily AI summary of your Publora analytics at 10 a.m. to spot unusual findings quickly."
+  - persona: "student"
+    scenario: "Receive a twice-daily digest of top Hacker News articles to stay informed on tech trends for research."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will set up automated AI routines to check your daily analytics, generate content ideas, and provide Hacker News digests. This approach works by using AI to process information and present it in a digestible format, saving you time on manual checks and idea generation.
+
+## Tools you need
+*   **Claude** (freemium): An AI assistant for generating text, summarizing information, and performing analysis.
+*   **VSCode** (free): A code editor where you can write and manage your AI routines and potentially interact with more detailed data.
+*   **Publora** (paid): An analytics tool that provides the data for your AI to check. You will need access to this tool for the analytics routine.
+
+## Steps
+1.  **Set up the 10 a.m. analytics check routine**: This routine will prompt Claude to provide a brief on your Publora analytics, tasks, and any unusual findings. The author uses Claude Desktop and then found 'routines' within Claude. The exact steps to set up a 'routine' are not detailed, but it involves configuring Claude to check Publora data at a specific time. If you find something unusual, you would then open VSCode to investigate further.
+    *   The author does not share their exact prompt for this routine. A starting point could be:
+    ```
+    At 10 a.m. today, please provide a brief summary of my Publora analytics. Highlight any tasks that need attention and point out anything that looks unusual in the data. I have been at my desk since 8 a.m., so I have had coffee and answered emails.
+    ```
+    You should expect a summary of your analytics and any flagged items.
+
+2.  **Set up the content idea generation routine**: This routine runs on Monday, Wednesday, and Friday to find topics worth writing about and adds them to a file named `content-backlog.md`. The author initially had Claude send ideas directly, but found they were not revisited. Accumulating ideas in a file allows for better selection later.
+    *   The author does not share their exact prompt for this routine. A starting point could be:
+    ```
+    On Mondays, Wednesdays, and Fridays, find two or three interesting topics related to [your industry/niche] that would be worth writing about. Add these topics to a file named content-backlog.md.
+    ```
+    You should expect new topic ideas to appear in your `content-backlog.md` file on the specified days.
+
+3.  **Set up the Hacker News digest**: This is described as a scheduled task rather than a routine. It provides a Hacker News digest twice a day to keep you informed without getting lost on the website.
+    *   The author does not share their exact prompt or method for this scheduled task. You would typically use a tool or script that can fetch content from Hacker News and send it to you via email or a messaging app, or configure a Claude routine if the platform supports fetching external web content directly.
+    *   A conceptual prompt if using a tool that can fetch web content might be:
+    ```
+    Twice a day, provide a digest of the top 5 most interesting articles from Hacker News. Summarize each article briefly and include the link.
+    ```
+    You should expect to receive a digest of Hacker News articles twice daily.
+
+## Original source
+This workflow is based on a personal blog post by eugeniya_ivanova_4a58eadc, shared on DEV Community. The author explains how they integrated AI routines into their daily work to automate tasks like checking analytics and generating content ideas, rather than using code-based AI integrations.
+
+## Notes & variations
+*   **Free-tier alternative**: For the analytics check, if Publora is too expensive, explore free analytics tools or use Claude to analyze data you manually export. For content ideas, free AI models like Gemini or ChatGPT can also generate ideas.
+*   **Common mistake**: Relying solely on AI-generated ideas without review can lead to irrelevant or unoriginal content. Always review and refine the AI's suggestions.
+*   **Tip for better results**: Be very specific in your prompts about the type of information you need and the format you want it in. For analytics, specify the key metrics you care about. For content ideas, mention your target audience and preferred topics.

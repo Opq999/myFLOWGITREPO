@@ -1,0 +1,71 @@
+---
+title: "Evaluate AI Code Reviewers for Custom Coding Rule Enforcement"
+description: "Learn how AI code review tools can enforce custom coding rules, not just common best practices. Understand the difference between tools that read your rules and those that guess."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 15
+jobToBeDone: "Evaluate AI code reviewers' ability to read and enforce custom coding rules"
+tools:
+  - name: "Cloudflare Worker"
+    url: "https://workers.cloudflare.com/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "CodeRabbit"
+    url: "https://coderabbit.ai/"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/dannwaneri/i-hid-a-rule-in-claudemd-only-one-reviewer-could-prove-it-read-it-4ik9"
+  platform: "blog"
+  author: "dannwaneri"
+  postedAt: 2026-09-09
+score: 6
+ingestedAt: 2026-10-08
+nigeriaNotes: "This workflow involves developer tools and coding, which may incur costs beyond free tiers for larger projects. Data usage is minimal for the review process itself, but setting up the API and development environment requires internet access."
+tiktokUrl: ""
+published: false
+---
+
+## What this is, in plain English
+This entry explains how to test if an AI code reviewer truly understands and applies your team's specific coding rules, rather than just flagging common programming mistakes. Many AI tools claim to read your project's documentation, but it's hard to tell if they actually do, or if they're just catching well-known bad practices that don't need a rule to be written down.
+
+The core idea is to create a custom, unusual coding rule (one that isn't a security risk or a bug) and then intentionally break it. If the AI tool flags this violation and can explain *why* by referencing your custom rule file, it proves the AI actually read your documentation.
+
+This is an advanced concept because it requires setting up a coding project, using version control (like Git), deploying a simple API, and integrating specialized AI code review tools into a development workflow. It's not a simple copy-paste task for beginners.
+
+## What you can use it for
+*   **Verify AI understanding**: Check if an AI code reviewer truly understands and applies your team's specific coding conventions, not just general best practices.
+*   **Enforce house style**: Use AI to automatically flag violations of internal style guides (like naming conventions) that aren't security risks or bugs.
+*   **Improve AI reliability**: Understand the limits of your AI code review tools and choose ones that provide clear explanations for their findings.
+*   **Automate code quality**: Integrate AI into your development workflow to catch issues early, reducing manual review time.
+
+## Tools you need
+*   **Cloudflare Worker** (freemium): A serverless platform to run small pieces of code (APIs) on Cloudflare's global network.
+*   **CodeRabbit** (freemium): An AI-powered tool that reviews code changes in pull requests, offering suggestions and identifying potential issues.
+
+## How it actually works
+To perform this kind of evaluation, you would typically follow these steps:
+
+1.  **Set up a code repository**: Create a new project using a version control system like Git and host it on a platform like GitHub or GitLab. This is where your code will live.
+2.  **Define custom rules**: Create a markdown file (for example, `CLAUDE.md` or `AGENTS.md`) in your repository. In this file, document specific, non-standard coding conventions for your project. An example from the author is requiring "kebab-case" for all new API route paths (e.g., `/feedback-summary`), never "camelCase" (e.g., `/feedbackSummary`).
+3.  **Develop a test API**: Build a simple API (like the author's Cloudflare Worker) that includes a route violating your custom rule. For instance, create an endpoint named `/feedbackSummary` when your rule states all new routes must be kebab-case.
+4.  **Integrate AI code review**: Connect an AI code review tool (like CodeRabbit) to your repository. This usually involves installing an app from the platform's marketplace or configuring a webhook to send code changes to the AI tool.
+5.  **Submit a pull request**: Create a pull request with the code that breaks your custom rule. This makes the changes visible to the AI reviewer.
+6.  **Review AI feedback**: Examine the comments and suggestions from the AI tool. Look for whether it flags the custom rule violation and, crucially, if it references your `CLAUDE.md` or `AGENTS.md` file as the reason for the flag. This reference proves the AI actually read your custom rules.
+
+## Words you'll see, explained
+*   **API (Application Programming Interface)**: A set of rules that allows different software programs to talk to each other.
+*   **Cloudflare Worker**: A service that lets developers run small pieces of code on Cloudflare's global network, often used for creating serverless APIs.
+*   **Kebab-case**: A naming convention where words are separated by hyphens (e.g., `feedback-summary`).
+*   **CamelCase**: A naming convention where words are joined without spaces, and each new word starts with a capital letter (e.g., `feedbackSummary`).
+*   **Pull Request (PR)**: A request to merge changes from one branch of code into another, commonly used in collaborative software development.
+*   **Repository (Repo)**: A central place where code and all its versions are stored, typically managed with a version control system like Git.
+
+## Original source
+This concept is based on an experiment by dannwaneri, shared on the DEV Community blog. The author explored how different AI code reviewers handled custom coding rules.
+
+## Notes & variations
+*   **Do you even need this?**: For simple code quality checks, many linters and static analysis tools can catch common issues without needing AI. This advanced approach is for specific, custom rules that are unique to your team or project.
+*   **Free-tier limits**: Cloudflare Workers offer a generous free tier, but complex or high-traffic APIs might exceed it. CodeRabbit also has free tiers for open-source or small projects, but larger teams or private repositories may require paid plans.
+*   **Common pitfall**: Relying solely on AI to "read" rules without verifying its understanding. Always test with non-obvious, custom rules to ensure the AI isn't just guessing based on general best practices or common knowledge.

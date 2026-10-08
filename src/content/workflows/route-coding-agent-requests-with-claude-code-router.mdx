@@ -1,0 +1,89 @@
+---
+title: "Route Coding Agent Requests with Claude Code Router"
+description: "Learn to set up Claude Code Router v3 as a local gateway to manage AI model providers and routing for your coding agents."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 30
+jobToBeDone: "Route coding agent requests through a local gateway to manage providers and models"
+tools:
+  - name: "Claude Code Router"
+    url: "https://github.com/musistudio/claude-code-router"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Node.js"
+    url: "https://nodejs.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Claude Code"
+    url: "https://github.com/ ανθρώπινος/claude-code"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/zaramenon/claude-code-router-v3-what-changed-and-how-i-set-it-up-now-mj7"
+  platform: "blog"
+  author: "zaramenon"
+  postedAt: 2026-10-07
+score: 7
+ingestedAt: 2026-10-08
+nigeriaNotes: "This workflow requires installing software locally and running a background service. Data usage is minimal as it processes requests locally. Ensure you have sufficient disk space for the installation."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will set up Claude Code Router (CCR) as a local application on your computer. This acts as a central hub to manage different AI coding models and their providers, allowing your coding agents to use them efficiently. This approach is useful when you want to control which AI models your tools use, manage costs, or ensure reliability by having fallback options.
+
+## Tools you need
+*   **Claude Code Router** (free): A desktop app and local gateway that manages AI model providers, routing, and credentials for coding agents.
+*   **Node.js** (free): A JavaScript runtime environment needed to install and run the command-line version of Claude Code Router.
+*   **Claude Code** (free): A coding assistant tool that can be configured to use Claude Code Router as its gateway.
+
+## Steps
+1.  **Check Node.js version**: Ensure you have Node.js version 22 or newer installed. This is required for the command-line installation of Claude Code Router.
+    *   Open your terminal or command prompt.
+    *   Type the following command and press Enter:
+
+    ```bash
+    node --version
+    ```
+
+    *   You should see a version number like `v22.x.x` or higher.
+
+2.  **Install Claude Code Router**: Install the command-line version of Claude Code Router globally using npm (Node Package Manager).
+    *   In your terminal, run the following command:
+
+    ```bash
+    npm install -g @musistudio/claude-code-router
+    ```
+
+    *   You should see output indicating the package is being installed. Once complete, you can use the `ccr` command.
+
+3.  **Start the Claude Code Router service**: Launch the background service for Claude Code Router. The author used the CLI version, which is suitable for headless servers or when you don't need the graphical interface immediately.
+    *   In your terminal, run:
+
+    ```bash
+    ccr ui --no-open
+    ```
+
+    *   This command starts the CCR service in the background and prevents it from automatically opening a web browser. You should see output indicating the service is running and a management URL.
+
+4.  **Note the management and gateway ports**: The service will tell you which ports it is using. The management UI is typically on port `3458` and the model gateway on port `3456`. If these ports are already in use, CCR will automatically select the next available port.
+    *   Look for lines in the terminal output similar to:
+
+    `Management UI: http://127.0.0.1:3458`
+    `Model Gateway: http://127.0.0.1:3456`
+
+    *   Make a note of these URLs, especially the Model Gateway URL, as you will need it to configure Claude Code.
+
+5.  **Configure Claude Code to use CCR**: You need to tell Claude Code to use CCR as its endpoint instead of connecting directly to the AI provider. The author mentions creating an "Agent Config" profile.
+    *   The exact steps for creating an Agent Config profile are not detailed in the excerpt. You would typically do this through the CCR management UI (using the URL from step 4) or via further `ccr` commands. Consult the Claude Code Router documentation for specific instructions on creating and managing agent profiles.
+    *   Once configured, you would launch Claude Code using a command that points to your CCR profile, for example, `ccr "profile name"`.
+
+## Original source
+This workflow is based on notes from a blog post by zaramenon on DEV Community, discussing the changes and setup for Claude Code Router v3.1.1. The author shares their experience updating their setup to manage AI model providers and routing for coding agents.
+
+## Notes & variations
+*   **Free tier alternative**: Claude Code Router itself is free and open-source. The main cost consideration would be the underlying AI models you choose to route through it, which may have their own pricing tiers.
+*   **Common pitfall**: Do not edit the `config.sqlite` file directly while CCR is running. The documentation warns against this. Use the export/import features in the management UI or stop CCR before making manual changes.
+*   **Tip for better results**: Explore the custom routing rules and fallback options within Claude Code Router. This allows you to automatically switch to cheaper or more reliable models if your primary choice is unavailable or too expensive, optimizing your workflow.

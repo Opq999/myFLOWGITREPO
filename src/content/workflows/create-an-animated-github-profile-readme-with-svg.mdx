@@ -1,0 +1,70 @@
+---
+title: "Create an Animated GitHub Profile README with SVG"
+description: "Learn how to make your GitHub profile stand out with a dynamic, animated README using SVG graphics and real-time data."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 60
+jobToBeDone: "Create an animated, data-driven GitHub profile README using SVG"
+tools:
+  - name: "GitHub"
+    url: "https://github.com/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "SVG"
+    url: "https://www.w3.org/Graphics/SVG/About/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/rudratosh/readme-driven-development-except-the-readme-is-a-spacecraft-491h"
+  platform: "blog"
+  author: "rudratosh"
+  postedAt: 2026-10-03
+score: 7
+ingestedAt: 2026-10-08
+nigeriaNotes: "GitHub's free tier is sufficient. SVG animations are generally lightweight and should not consume significant mobile data."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "Create an animated GitHub profile README showing your weekly coding activity to impress potential employers or collaborators."
+  - persona: "employee"
+    scenario: "Build an animated GitHub profile README that visualizes your project contributions and coding streaks for personal branding."
+  - persona: "entrepreneur"
+    scenario: "Design a dynamic GitHub profile README with animated stats to showcase your project development activity to investors."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will create a GitHub profile README that is not static but animated and displays real-time data. This approach uses Scalable Vector Graphics (SVG) to bypass GitHub's security restrictions against running code in READMEs, allowing for dynamic visuals.
+
+## Tools you need
+*   **GitHub** (freemium): A platform for hosting code and projects, which will display your profile README.
+*   **SVG** (free): A vector image format that supports animation, which will be used to create the dynamic elements of your README.
+
+## Steps
+1.  **Understand the core limitation**: GitHub READMEs cannot run JavaScript or other executable code for security reasons. This means you cannot directly animate elements or fetch live data using typical web development methods within the README itself.
+2.  **Leverage SVG animation**: The key trick is that GitHub *does* allow SVGs to be displayed as images, and these SVGs can contain their own declarative animations (like CSS @keyframes or SMIL) that will run automatically. You can reference an SVG file in your README like any other image.
+    *   **Example of a simple animated SVG**: To see how this works, imagine you have an SVG file named `badge.svg` that contains a dot with a pulsing animation. You would include it in your README like this:
+        ```markdown
+        ![](badge.svg)
+        ```
+    *   **What you should see**: The dot in the `badge.svg` will animate (e.g., pulse) directly within your GitHub profile README, even though no code is running on GitHub's servers.
+3.  **Design your animated elements**: The author created a "mission console" effect. This involved:
+    *   **A rotating planet**: This is the central visual element.
+    *   **Rings for contribution data**: Seven rings, one for each day of the week, were used. Each ring is divided into 53 segments, representing the weeks of the year. The segments light up based on commit activity, showing the intensity of contributions over time.
+    *   **Data-driven visuals**: The author emphasizes that every animated element must represent real data (commits, pull requests, languages, writing activity) to have meaning, rather than just being decorative.
+4.  **Implement data-driven SVG**: To make the rings show contribution data, the author used an SVG feature called `pathLength`. This allows you to define a path (like a ring) and then use stroke patterns to "paint" segments of that path. For example, a ring might be told its circumference is 53 units, where one unit represents one week. A `stroke-dasharray` can then be used to draw segments corresponding to activity in each week.
+    *   **Example SVG path snippet**: The author shows a snippet like this for an ellipse representing a ring:
+        ```xml
+        <ellipse pathLength=" 53 " stroke-dasharray=" 0 12 0.7 0.3 0 40 " ... />
+        ```
+    *   **What you should see**: This configuration tells the SVG to draw a ring where segments represent weeks, and the `stroke-dasharray` controls how much of each week's segment is visible based on commit data.
+5.  **Generate the SVG dynamically**: Since GitHub READMEs can't run code, the SVG file itself needs to be generated with the latest data. The author mentions this happens "every morning" automatically. This typically involves a separate script or service that fetches your latest GitHub data (commits, etc.), calculates the values needed for the SVG (e.g., how much of each ring segment to draw), and then writes the SVG file. This generated SVG file is then committed to your repository, and GitHub displays it.
+
+## Original source
+This workflow is based on a blog post by rudratosh, shared on the DEV Community platform. The author explains how they transformed a standard GitHub profile README into an animated "mission console" using SVG graphics to display real-time data about their activity.
+
+## Notes & variations
+*   **Free tier viability**: GitHub's free tier is perfectly adequate for hosting your profile README and the SVG files. The main challenge is generating the SVG file itself, which can be done with free tools.
+*   **Common mistake**: Trying to use JavaScript directly within the README file. Remember, GitHub strips all scripts for security. The solution is to embed animations *within* the SVG file itself.
+*   **Tip for better results**: Ensure that every visual element in your animated SVG has a clear meaning tied to your data. This makes the animation purposeful and more engaging than purely decorative effects.

@@ -1,0 +1,102 @@
+---
+title: "Verify AI-Found Genealogy Data with Official Records"
+description: "Learn how to use AI to find genealogy data and then verify it against official records using tools like Playwright and Chrome."
+category: "academic-research"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 30
+jobToBeDone: "Automate genealogy research by verifying AI-found data against official records"
+tools:
+  - name: "Playwright"
+    url: "https://playwright.dev/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Chrome"
+    url: "https://www.google.com/chrome/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/nfrankel/ai-assisted-genealogy-a-follow-up-531"
+  platform: "blog"
+  author: "nfrankel"
+  postedAt: 2026-09-24
+score: 7
+ingestedAt: 2026-10-08
+nigeriaNotes: "This workflow involves web browsing and potentially downloading data. Ensure you have a stable internet connection. Data usage will depend on the size of the genealogy records accessed."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+
+You will learn how to set up a process to automatically verify information found by AI against official records. This approach helps ensure the accuracy of your genealogy research by using AI to find potential matches and then confirming them with primary sources.
+
+## Tools you need
+
+*   **Playwright** (free): A tool for automating web browser actions, useful for navigating and extracting data from websites.
+*   **Chrome** (free): A web browser that will be controlled by Playwright to visit websites and access records.
+
+## Steps
+
+1.  **Set up Playwright**: Install Playwright and its browser binaries. The exact command may vary slightly depending on your operating system, but it typically involves running an npm command.
+
+    ```bash
+    # macOS or Linux
+    npm init playwright@latest
+    ```
+
+    ```powershell
+    # Windows (PowerShell)
+    npm init playwright@latest
+    ```
+
+    You should see messages indicating that Playwright is being installed and browsers are being downloaded.
+
+2.  **Create a Python script for automation**: The author mentions using a Python project with Playwright. You will need to create a Python file (e.g., `genealogy_verifier.py`) to write your automation script.
+
+3.  **Write the script to browse genealogy sites**: The script should instruct Playwright to open a web browser and navigate to specific genealogy websites. The author suggests creating a 'skill' for each site.
+
+    The author does not provide the exact Python code for this step. A starting point would involve importing Playwright and launching a browser instance:
+
+    ```python
+    from playwright.sync_api import sync_playwright
+
+    with sync_playwright() as p:
+        browser = p.chromium.launch()
+        page = browser.new_page()
+        page.goto("https://www.example-genealogy-site.com") # Replace with actual site
+        # Add steps here to log in if necessary and search for records
+        browser.close()
+    ```
+
+    You should see the browser window open and navigate to the specified website.
+
+4.  **Implement data extraction and verification**: Within your script, after navigating to a site and finding a potential record, you will need to extract the relevant information. Then, you'll need to write logic to search for this information in official archives or civil records.
+
+    The author's process involves: mining data from genealogy sites (assigning QUAY 2), checking if the data exists in an official record (civil or parish), and if so, assigning it QUAY 3. If not, discard the data.
+
+    The exact code for extraction and verification is not provided. This will involve using Playwright's methods to select elements on the page (e.g., `page.locator("selector").text_content()`) and then potentially navigating to other archive sites to perform new searches.
+
+5.  **Handle protected sites**: For sites with bot protection (like Cloudflare), the author suggests using Chrome in debug mode. This requires starting Chrome with a specific command-line flag that allows Playwright to connect to it.
+
+    The author mentions this requires a separate, more advanced setup. You would typically launch Chrome with the `--remote-debugging-port` flag and then connect Playwright to that port instead of launching a new browser instance.
+
+    ```python
+    # Example of connecting to a running Chrome instance (details may vary)
+    # Ensure Chrome is running with --remote-debugging-port=9222
+    browser = p.chromium.connect_over_cdp("http://localhost:9222")
+    page = browser.new_page()
+    # ... rest of your script
+    ```
+
+    You should be able to interact with the already running Chrome browser, including any logged-in sessions.
+
+## Original source
+
+This workflow is based on a blog post by nfrankel on DEV Community, discussing an AI-assisted genealogy follow-up. The author shares insights on verifying AI-generated genealogical data against official records to ensure accuracy, building upon previous discussions.
+
+## Notes & variations
+
+*   **Free-tier alternative**: While Playwright and Chrome are free, the core challenge is the scripting. If you are not comfortable with Python, you might explore no-code automation tools, though they may have limitations.
+*   **Common pitfall**: Websites frequently change their structure. If a site's layout is updated, your Playwright script might break, requiring you to update the selectors used to find information.
+*   **Tip for better results**: Start by automating the simplest, most accessible genealogy sites first. Once you have a working script for those, gradually add support for more complex or protected sites, like those requiring logins or advanced bot protection.

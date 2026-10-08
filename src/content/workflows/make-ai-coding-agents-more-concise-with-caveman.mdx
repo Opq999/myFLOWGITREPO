@@ -1,0 +1,68 @@
+---
+title: "Make AI Coding Agents More Concise with Caveman"
+description: "Learn how to use Caveman, an open-source tool, to reduce token usage and make AI coding agents more direct and readable."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 5
+jobToBeDone: "Reduce token usage and verbosity of AI coding agents"
+tools:
+  - name: "Caveman"
+    url: "https://github.com/JuliusBrussee/caveman"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Claude Code"
+    url: "https://code.claude.com/"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Copilot"
+    url: "https://github.com/features/copilot"
+    pricing: "paid"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/arshtechpro/caveman-make-your-ai-coding-agent-talk-less-and-save-tokens-4moi"
+  platform: "blog"
+  author: "arshtechpro"
+  postedAt: 2026-10-02
+score: 7
+ingestedAt: 2026-10-08
+nigeriaNotes: "Caveman is free and open-source. It helps reduce data usage by making AI responses shorter. This is beneficial for users with limited or expensive mobile data plans. The primary cost would be using the AI coding agent itself, which is typically a paid service."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to install and use Caveman, a tool that makes your AI coding assistant give shorter, more direct answers. This helps you save money on AI usage costs and read responses faster because it removes unnecessary filler phrases. It works by making the AI's output more concise without changing the accuracy of the code or explanations.
+
+## Tools you need
+*   **Caveman** (free): An open-source tool that shortens AI agent responses.
+*   **An AI coding agent** (paid): Such as Claude Code or Copilot, which you use for coding tasks.
+
+## Steps
+1.  **Install the Caveman skill**: Open your terminal or command prompt and run the following command to add Caveman as a skill to your AI agent. You should see a confirmation message indicating the skill was added successfully.
+
+    ```bash
+    npx skills add JuliusBrussee/caveman
+    ```
+
+2.  **Activate Caveman**: If your AI agent doesn't automatically start using Caveman, you can manually activate it by typing `/caveman` in the chat. You should see a confirmation or the AI should start responding more concisely.
+
+3.  **Adjust Caveman's terseness (optional)**: You can control how short the AI's responses are. Try these commands in your chat:
+    *   `/caveman lite`: For slightly shorter responses.
+    *   `/caveman full`: For standard terse responses.
+    *   `/caveman ultra`: For the most concise responses.
+    *   `/caveman off`: To turn Caveman off.
+    After running a command, observe that the AI's subsequent answers are shorter or longer based on your choice.
+
+4.  **Use special Caveman commands (optional)**: Caveman adds extra helpful commands:
+    *   `/caveman-commit`: Ask Caveman to write a short commit message for your code changes. You should get a concise commit message suggestion.
+    *   `/caveman-review`: Get a one-line, actionable code review comment. You should see a brief suggestion for improving your code.
+    *   `/caveman-compress file`: Shrink Markdown files and keep a backup. You will be prompted for a file and then receive confirmation of the compressed file and its backup.
+
+## Original source
+This workflow is based on the Caveman project by arshtechpro, shared on their blog. It offers a way to make AI coding agents more efficient by reducing the length of their output, saving both time and computational resources.
+
+## Notes & variations
+*   **Free tier alternative**: Caveman itself is free and open-source. The main cost is using the AI coding agent, so look for agents with generous free tiers or pay-as-you-go options if possible.
+*   **Common mistake**: Don't expect Caveman to reduce the tokens used for your *input* prompts or the AI's internal reasoning. It only shortens the final output. If your prompts are very long, your total token usage might not decrease significantly.
+*   **Tip for better results**: Measure your own token savings. The author's 65% average saving is a guideline. If your work involves a lot of code and less explanatory text, your savings might be smaller. Use the `/caveman-stats` command in Claude Code to see your actual savings.
