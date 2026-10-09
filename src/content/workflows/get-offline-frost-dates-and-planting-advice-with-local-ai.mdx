@@ -1,0 +1,117 @@
+---
+title: "Get Offline Frost Dates and Planting Advice with Local AI"
+description: "Learn how an offline AI predicts your last spring frost date and offers tailored planting advice, ideal for gardeners without internet access."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 45
+jobToBeDone: "Get offline last frost date and planting advice for gardening"
+tools:
+  - name: "Python"
+    url: "https://www.python.org"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Git"
+    url: "https://git-scm.com"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Gemma"
+    url: "https://ai.google.dev/gemma"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "TabPFN-v2"
+    url: "https://github.com/automl/TabPFN"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/sarvar_04/i-built-an-offline-ai-that-knows-your-last-frost-date-no-internet-no-api-3b8e"
+  platform: "blog"
+  author: "sarvar_04"
+  postedAt: 2026-10-09
+score: 8
+ingestedAt: 2026-10-09
+nigeriaNotes: "This workflow runs entirely offline after initial setup, making it excellent for areas with unreliable internet. Initial setup requires downloading models and dependencies, which can consume significant data."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+This workflow describes FrostWise, an advanced tool that helps gardeners predict the last spring frost date for their specific location and get personalized planting advice. Unlike most online tools, FrostWise runs entirely on your own computer, meaning you don't need an internet connection or an API key after the initial setup. This makes it perfect for community gardens, remote allotments, or any place with unreliable mobile signal.
+
+FrostWise uses two open-weight AI models: TabPFN-v2 to predict the frost date and Gemma to generate plain-language planting recommendations for your chosen crop. The goal is to provide quick, reliable information right where you need it, without relying on cloud services.
+
+This workflow is considered advanced because it requires comfort with command-line tools, installing software like Python and Git, and running scripts from a code repository. It's not a simple app you can download and click through; it's a project you set up yourself.
+
+## What you can use it for
+*   **Plan your garden**: Get a predicted last spring frost date, along with an honest range, for your exact location.
+*   **Protect tender plants**: Know precisely when it's safe to plant sensitive crops like tomatoes and basil to avoid losing them to a late cold snap.
+*   **Optimize planting times**: Receive advice on when to sow hardy crops like peas and kale, potentially allowing for earlier harvests.
+*   **Garden in remote areas**: Use the tool in locations with poor or no internet signal, such as community gardens or hillside allotments.
+*   **Explore local AI**: See how powerful open-source AI models can be run directly on your personal computer without needing cloud services.
+
+## Tools you need
+*   **Python** (free): The programming language used to run the FrostWise application on your computer.
+*   **Git** (free): A tool used to download (or "clone") the FrostWise project code from its online repository.
+*   **Gemma** (free): An open-weight large language model (LLM) that runs locally on your machine to generate custom planting advice.
+*   **TabPFN-v2** (free): An open-weight tabular AI model that runs locally to predict your last spring frost date.
+
+## How it actually works
+To use FrostWise, you will need to set up a development environment on your computer. The exact steps and requirements are detailed in the project's official GitHub repository, but the general process involves:
+
+1.  **Install Python and Git**: If you don't already have them, download and install Python (version 3.8 or newer is usually recommended) and Git for your operating system. Ensure they are added to your system's PATH so you can run them from the command line.
+
+2.  **Clone the FrostWise repository**: Open your computer's terminal or command prompt and use Git to download the project's code:
+
+    ```bash
+    # macOS or Linux
+    git clone https://github.com/simplynadaf/frostwise.git
+    cd frostwise
+    ```
+
+    ```powershell
+    # Windows (PowerShell)
+    git clone https://github.com/simplynadaf/frostwise.git
+    cd frostwise
+    ```
+
+3.  **Install project dependencies**: Once inside the `frostwise` folder, install the necessary Python libraries. The author doesn't explicitly state this step, but it's standard practice for Python projects:
+
+    ```bash
+    # macOS or Linux
+    pip install -r requirements.txt
+    ```
+
+    ```powershell
+    # Windows (PowerShell)
+    pip install -r requirements.txt
+    ```
+
+4.  **Run the application**: Execute the main Python script. The author states this is how to run it for custom climate input:
+
+    ```bash
+    # macOS or Linux
+    python run.py
+    ```
+
+    ```powershell
+    # Windows (PowerShell)
+    python run.py
+    ```
+
+    The application will then prompt you to pick a location or type in your own climate numbers, and choose a crop. It will use the local TabPFN-v2 model to predict the frost date and the local Gemma model to write planting advice live on your screen. For the most up-to-date and detailed instructions, always refer to the `simplynadaf/frostwise` GitHub repository.
+
+## Words you'll see, explained
+*   **Open-weight model**: An AI model whose inner workings (its "weights") are made public, allowing anyone to download and run it on their own computer.
+*   **Tabular model**: A type of AI model specifically designed to work with data organized in tables, like spreadsheets, where information is in rows and columns.
+*   **Large Language Model (LLM)**: An AI program trained on vast amounts of text that can understand, generate, and summarize human-like language.
+*   **Offline-first**: Describes software designed to work without an internet connection, especially useful in areas with poor signal.
+*   **Repository (repo)**: A central place, usually online, where a project's code and files are stored and managed, often using a system like Git.
+
+## Original source
+This workflow was developed by `sarvar_04` and shared on the DEV Community platform. It was created as a submission for the Hacktoberfest Open-Source AI Challenge, Week 1: Touch Grass, demonstrating a practical application of local AI for gardeners.
+
+## Notes & variations
+*   **Do you even need this?**: If you consistently have a strong internet connection in your gardening area, simpler online tools like The Old Farmer's Almanac or local agricultural extension office websites can provide frost dates without any setup.
+*   **Free-tier limits**: While the models and tools are free, running them locally requires your computer to have sufficient processing power, RAM, and storage for the models. Initial downloads of the models can be large and consume significant data.
+*   **Common pitfall**: Setting up a Python development environment and managing dependencies can be challenging for beginners. Carefully follow the instructions in the GitHub repository, and consider using a virtual environment to avoid conflicts with other Python projects.
+*   **Tip**: Ensure your computer meets the minimum system requirements for running large language models like Gemma locally. These models can be resource-intensive, and a computer with limited RAM or an older processor might struggle to run them efficiently.

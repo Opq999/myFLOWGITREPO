@@ -1,0 +1,141 @@
+---
+title: "Build a Python Gate for Coherent AI Voice Companion Turns"
+description: "Learn to build a Python gate that ensures complete sentences are sent to AI models in voice companion apps, preventing half-sentences and duplicate responses."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 30
+jobToBeDone: "Build a Python gate to ensure coherent turns are sent to an LLM in a voice companion application"
+tools:
+  - name: "Python"
+    url: "https://www.python.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "OpenAI"
+    url: "https://openai.com/"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Tencent RTC"
+    url: "https://cloud.tencent.com/product/rtc"
+    pricing: "paid"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/susiewang/stop-sending-half-sentences-to-openai-in-a-tencent-rtc-voice-companion-3ni6"
+  platform: "blog"
+  author: "susiewang"
+  postedAt: 2026-09-26
+score: 7
+ingestedAt: 2026-10-09
+nigeriaNotes: "Python is free and widely available. OpenAI and Tencent RTC are paid services, which may be a barrier for free-tier users. Data usage will depend on the volume of voice interactions."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will create a Python script that acts as a gatekeeper for your AI voice companion. This gate ensures that only complete and coherent sentences are sent to the AI model, preventing issues like sending half-finished thoughts or getting duplicate responses. This approach works by managing the flow of speech segments and AI responses, making the interaction feel more natural and reliable.
+
+## Tools you need
+*   **Python** (free): A programming language used to write the script.
+*   **OpenAI** (paid): A service that provides AI models to generate responses. You will need an API key and will be charged for usage.
+*   **Tencent RTC** (paid): A real-time communication service that handles voice input and output. This workflow assumes you are using it to capture voice and play back AI responses.
+
+## Steps
+1.  **Set up your project directory**: Create a new folder for your project and navigate into it using your terminal or command prompt.
+    *   **macOS or Linux**
+    ```bash
+    mkdir rtc-turn-commit
+    cd rtc-turn-commit
+```
+    *   **Windows (PowerShell)**
+    ```powershell
+    New-Item -ItemType Directory -Name rtc-turn-commit
+    Set-Location rtc-turn-commit
+```
+    You should now be inside the `rtc-turn-commit` folder in your terminal.
+
+2.  **Create the Python script file**: Inside your project folder, create a new Python file named `companion.py`.
+    *   **macOS or Linux**
+    ```bash
+    touch companion.py
+```
+    *   **Windows (PowerShell)**
+    ```powershell
+    New-Item companion.py
+```
+    This creates an empty file ready for you to add code.
+
+3.  **Add the controller code to `companion.py`**: Copy and paste the following Python code into your `companion.py` file. This code defines the states and structures needed for your turn commitment gate.
+
+    ```python
+    from __future__ import annotations
+    from dataclasses import dataclass
+    from enum import Enum , auto
+    from typing import Optional
+
+    class Mode ( Enum ):
+        LISTENING = auto ()
+        SETTLING = auto ()
+        THINKING = auto ()
+        MODERATING = auto ()
+        SPEAKING = auto ()
+        RECOVERING = auto ()
+        STOPPED = auto ()
+
+    @dataclass ( frozen = True )
+    class Transcript :
+        epoch : int
+        segment_id : str
+        revision : int
+        text : str
+        final : bool
+
+    @dataclass
+    class StoredSegment :
+        revision : int
+        text : str
+        final : bool
+        order : int
+
+    @dataclass
+    class Effect :
+        kind : str
+        request_id : Optional [ str ] = None
+        text : Optional [ str ] = None
+
+    class TurnCommitter :
+        def __init__ ( self ):
+            # The author's code for the TurnCommitter class starts here, but is not fully provided in the source excerpt.
+            # You would typically initialize state variables here, such as current state, active request ID, and stored segments.
+            pass # Placeholder for initialization
+
+        # The rest of the TurnCommitter class methods (e.g., handling callbacks, managing states) would follow.
+        # These methods would implement the logic described in the article for managing transcript segments and AI responses.
+
+        # Example of a method that might be present (not in source):
+        # def process_transcript_segment(self, segment: Transcript):
+        #     # Logic to handle incoming speech segments
+        #     pass
+
+        # Example of a method that might be present (not in source):
+        # def send_to_llm(self):
+        #     # Logic to send finalized utterance to LLM
+        #     pass
+
+        # Example of a method that might be present (not in source):
+        # def handle_llm_response(self, response: Effect):
+        #     # Logic to handle AI model response
+        #     pass
+
+        # The author does not provide the full implementation of the TurnCommitter class.
+        # To reproduce this, you would need to complete the class based on the described states and invariants.
+        pass
+```
+    You should see the code pasted into your `companion.py` file. Note that the `TurnCommitter` class is not fully provided in the original source, so you would need to implement its methods based on the article's description to make it functional.
+
+## Original source
+This workflow is based on a tutorial by susiewang posted on the DEV Community platform. The author explains how to build a Python script to manage voice input and AI responses in a real-time voice application, specifically addressing the challenge of sending complete, coherent messages to AI models like those from OpenAI.
+
+## Notes & variations
+*   **Free-tier alternative**: While OpenAI and Tencent RTC are paid, you could explore free or lower-cost LLM APIs and real-time communication services if available, though they might have limitations. For local testing without API calls, you could mock the AI responses.
+*   **Common mistake**: A common pitfall is not properly handling the `final` flag on transcript segments. Ensure your logic only commits to sending a message to the AI when `final` is true and after a quiet period, to avoid sending incomplete sentences.
+*   **Tip for better results**: Clearly define and implement the state transitions described in the article (LISTENING, SETTLING, THINKING, etc.). This structured approach is key to managing the complexity of real-time voice interactions and ensuring the AI receives well-formed inputs.

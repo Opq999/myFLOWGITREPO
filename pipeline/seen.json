@@ -23840,8 +23840,456 @@
     "e7137625ef993120e002b94e95fea0e231c373f1503f0dc098d58b9bbf3cef73": {
       "url": "https://dev.to/bklaric/one-route-type-two-sides-a-purescript-client-and-server-that-share-their-http-api-374l",
       "date": "2026-10-08"
+    },
+    "7872bdc82d8a1e5ff8f82ad17f185e79406fd3bc0a1313ebce659b13adae3031": {
+      "url": "https://news.ycombinator.com/item?id=49946567",
+      "date": "2026-10-09"
+    },
+    "7ead9e2f99276bb5af61dac305f79c79a644afc5341b956a7c6c6a7aa4b51b61": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1wzxe7q/its_actually_insane_how_prescient_this_was_they",
+      "date": "2026-10-09"
+    },
+    "849e0dec3b9ede5f4841b851c997f85ad68fc1b5dbe2ad9374d0caea8fbebbb3": {
+      "url": "https://dev.to/amanmaurya92/deskbreak-the-ai-agent-that-wants-you-to-stop-looking-at-it-with-sentry-agent-tracing-4e9d",
+      "date": "2026-10-09"
+    },
+    "fe235693178d2d7d802f3c6b15c082148fa1b9a40c0501ca699358535d7d45a5": {
+      "url": "https://github.com/t8y2/dbx",
+      "date": "2026-10-09"
+    },
+    "a24b37cea2fc1be6b54d008352a85dc2a220116a571aa40ac13fe794b76ad3b6": {
+      "url": "https://news.ycombinator.com/item?id=50002665",
+      "date": "2026-10-09"
+    },
+    "2311d698a169c8e024300fe68946087fd4f1b16c65716d11f09d3b9d0846b362": {
+      "url": "https://dev.to/robertadam987_/ai-is-writing-more-of-the-code-but-developers-are-becoming-responsible-for-more-than-ever-55ni",
+      "date": "2026-10-09"
+    },
+    "fcafbbea83f2d65f699f32163b76d96c71688c0bb81eefe76761db53108e9020": {
+      "url": "https://news.ycombinator.com/item?id=50007993",
+      "date": "2026-10-09"
+    },
+    "0368788b3d786841564ade909b3e8dbdfcf4f58aa40892f48e127fbcf741a76d": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1x12tt8/donny_t_says_its_si_now",
+      "date": "2026-10-09"
+    },
+    "5fc6edbdee52577325cc9f1b1768f622fd308e44aac159981cd30a77b5e41008": {
+      "url": "https://dev.to/athulya_r/build-a-supply-chain-control-tower-with-tooljet-mcp-4olp",
+      "date": "2026-10-09"
+    },
+    "7de45a1c18636814e95f3e4b208d1c268f119e07fbca5c28557f90833783cf44": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1wu8vsz/someone_is_going_to_try_to_pretend_this_is_al",
+      "date": "2026-10-09"
+    },
+    "0bc959cd73cad1f214c4896489f99e630f079eb354ce15c586ac14516ed19fa5": {
+      "url": "https://dev.to/dj29/most-ai-reasoning-traces-are-just-the-answer-written-backwards-cho",
+      "date": "2026-10-09"
+    },
+    "f607f66e4c65b8ecd3aa16084ebc04bfb2e30ced91a5f0cd0b7faf170c296fb0": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1x0i1zl/another_peaceful_day_in_mathematics",
+      "date": "2026-10-09"
+    },
+    "4fe021ccaff65167626ada90ed2ad1878236448ad9e9162870847cb64ef5f4b7": {
+      "url": "https://dev.to/aremu_feranmifreddiesc/what-if-an-unstable-aircraft-approach-could-be-identified-early-enough-for-a-flight-instructor-to-3pmc",
+      "date": "2026-10-09"
+    },
+    "71c03662bbed17e11773ec3f7bcc1431442c1ea822f9d290caae35de5cc5d52c": {
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1wl13eu/programasweights_compile_english_function",
+      "date": "2026-10-09"
+    },
+    "ab1a2a55fc336f89d97a3c65dc7c7979b6d62ca6635c88659bcbfb98431dd245": {
+      "url": "https://dev.to/prince_panchani_f971a20ec/ai-can-write-the-code-can-it-prove-the-fix-3glg",
+      "date": "2026-10-09"
+    },
+    "597c6fb93b736da7be40a3982e313a8556c78377fa89381acf89753c19a45c9f": {
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1wn36d4/xiaomi_releases_mimov26_frontier_intelligence_all",
+      "date": "2026-10-09"
+    },
+    "f1099cf662d6dafdc74e1ded95e708d2742bfa64f2c375a6f7e579ff178d06ef": {
+      "url": "https://dev.to/gde/publishing-markdown-to-substack-from-an-agent-skill-258f",
+      "date": "2026-10-09"
+    },
+    "25cad3ecf162449dc882a411b5486df4cfb214e63e0b2d9cd92c059dcb94353d": {
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1wwtpg6/the_principles_of_diffusion_models_by_lai_et_al",
+      "date": "2026-10-09"
+    },
+    "931fa374b0aa1ee38f60b2dc2697d3230e668677e04b0efdaf054548147652b8": {
+      "url": "https://dev.to/n1tzan/introducing-maple-the-frontend-review-toolkit-1d02",
+      "date": "2026-10-09"
+    },
+    "7e7a9391b1d31c15425defb7cf04eec22132e1622779f5b129bc2b3f2f0daf71": {
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1wxz5qq/distilling_stockfish_on_a_billion_positions_full",
+      "date": "2026-10-09"
+    },
+    "9b2b444c8ac3ffd786248fa9d050a3b2d663f32d90d1e7b17e67ecb7c93bdfcd": {
+      "url": "https://dev.to/vidisha_gupta_/zero-screen-dungeon-master-the-voice-only-rpg-where-your-real-walk-drives-the-story-3m68",
+      "date": "2026-10-09"
+    },
+    "ffffacb1ed4bef8dc0176a9beb9212c2bd46a7a1817f4559c12015552f955477": {
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1x04235/uploaded_56_billion_tiktok_videos_metadata_on",
+      "date": "2026-10-09"
+    },
+    "bf0f60eb0c6c73c83c4bf49410a765f4540f74efd59a9d45441a02f3b0474b40": {
+      "url": "https://dev.to/anis_meziani_52aab42304a8/deploying-an-open-source-ai-agent-platform-to-kubernetes-the-honest-one-command-version-574",
+      "date": "2026-10-09"
+    },
+    "f209b12b47ed122b189af06c689b38ad27ad5c15feae0cae3ba5d6261b07b03a": {
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1wuc7ft/for_those_who_just_submit_to_workshop_d",
+      "date": "2026-10-09"
+    },
+    "0dbe847fcb901fb5908439a9d2173d682e25814d546827ba3caf30affebc1115": {
+      "url": "https://dev.to/cseeman/ontological-shock-at-altitude-2jp2",
+      "date": "2026-10-09"
+    },
+    "05ab3e1879994bb54034bda23ed2524f0f141008bcbc31967011fb8979c5a394": {
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1wv1c2e/llms_that_push_back_on_a_wrong_user_still_accept",
+      "date": "2026-10-09"
+    },
+    "3bc9c400eccc90d8e992e7fc3a7a06e4cb00fca45ccf7944398f4c4ee1cd972b": {
+      "url": "https://dev.to/sarvar_04/i-built-an-offline-ai-that-knows-your-last-frost-date-no-internet-no-api-3b8e",
+      "date": "2026-10-09"
+    },
+    "30a56083fa7345b25e844c8be838eb45d9e26890501208c7b87b7dad5e10356b": {
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1wm1crj/concerns_about_the_iclr_review_policy_d",
+      "date": "2026-10-09"
+    },
+    "bb2c9238bf71621c81eed8eb30b23d21c6fae4df6a99faf57f1126cfc3df71b0": {
+      "url": "https://dev.to/koda2026/im-12-i-ran-a-global-code-jam-on-a-150-phone-heres-the-supabase-architecture-that-held-it-4jkk",
+      "date": "2026-10-09"
+    },
+    "38cb066bb495b9e363eba1b13bb61382a6417899cd3c6640769026fabb70b69b": {
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1wqc6ci/medical_student_asked_if_they_can_match_into",
+      "date": "2026-10-09"
+    },
+    "384ba44a3e07ed66b9c14cea34f1c9f29dade7b9e315c5d6df227bd3d7962db9": {
+      "url": "https://dev.to/eshevtsov/same-prompt-four-models-what-opus-sonnet-astra-and-sol-each-got-wrong-2a3",
+      "date": "2026-10-09"
+    },
+    "e843b31677953d02abc4690710277f788e7722e99e2b1c5a4789e60dc70af76d": {
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1wh0xaz/neurips_2026_handling_of_multiple_venue_locations",
+      "date": "2026-10-09"
+    },
+    "3009273412b0e47df2a70b7a1a9718049cb988a1bc6a98b0fe6cdffa7f2bdef7": {
+      "url": "https://dev.to/aws-builders/i-built-an-ai-that-reads-eviction-notices-and-refuses-to-lie-to-you-3475",
+      "date": "2026-10-09"
+    },
+    "61fa82ca01aeeb112915ce32c9139a797c2e162fd5ace2c2b69916c8d0761474": {
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1wxar4x/working_with_an_ai_company_that_does_things_you",
+      "date": "2026-10-09"
+    },
+    "edae3323c6da48a25d1122c6c0206d82e5f6088e846af18499cc17cfc1fd6737": {
+      "url": "https://dev.to/effessdev/showdev-giffypy-a-fast-lightweight-video-editor-to-crop-and-trim-screen-recordings-for-your-2k2f",
+      "date": "2026-10-09"
+    },
+    "203d8589f86bbda9c2a80711e744309b663eea494df38396967d9d552504e8e9": {
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1wumgyy/how_to_address_novelty_concerns_in_top_ai",
+      "date": "2026-10-09"
+    },
+    "fe705048049b557d3f2d5b61ca09eb836b3ba4ae0352c5ec773c7e6118ac2519": {
+      "url": "https://dev.to/parsajiravand/localstorage-isnt-free-its-blocking-your-main-thread-nmn",
+      "date": "2026-10-09"
+    },
+    "c0d14420a2de942516483b3b815f63efb9de327dedc2c64729c74e2b9baafa86": {
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1wz71g3/transformers_vs_rnns_vs_ssms_where_does_memory",
+      "date": "2026-10-09"
+    },
+    "87f23deb4534a9d4d31f26d90d6cf31a5813c8409d9dc6ac04d0a1bad9cbd20f": {
+      "url": "https://dev.to/joduchan/lean-mode-gives-up-roughly-half-the-memory-saving-it-could-have-had-2ocl",
+      "date": "2026-10-09"
+    },
+    "4c3043ccc5ec04a08fe18701158047899a5f9406c5cbfcdde8d14ef124fb69f3": {
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1wzeszo/ml_phd_without_a_publications_d",
+      "date": "2026-10-09"
+    },
+    "84b8c99dcd956037dd2c16c99acb0f14e0c9f5c4de6a81d3b4db93ae6e9a46c1": {
+      "url": "https://dev.to/sahan/how-to-find-lm-studio-plugins-and-mcp-servers-hmc",
+      "date": "2026-10-09"
+    },
+    "d286c4261cb4d536bd35f0d3e0be87aad0a74193d111d3dc918de0f4bfca41a1": {
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1wuctrt/qwenfamily_llms_are_quietly_becoming_the_backbone",
+      "date": "2026-10-09"
+    },
+    "69dfe71c647d99ffd6d7ce42d47a8613f0916539fc580019af2863d04d7e7162": {
+      "url": "https://dev.to/devandrew/mastering-the-2026-chatgpt-plugin-landscape-an-mcp-first-guide-3aoj",
+      "date": "2026-10-09"
+    },
+    "73b799ba9d36cc73fbf6149a06bc785475b79e1325be12782dfac12a9466e923": {
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1wp8ung/publication_venue_recommendations_r",
+      "date": "2026-10-09"
+    },
+    "b885e07a1ed426ee18911a29b5bf99f06988118e00ea2c1a3184caa5eb07aed4": {
+      "url": "https://dev.to/parsajiravand/getcurrentposition-doesnt-just-check-it-prompts-52ap",
+      "date": "2026-10-09"
+    },
+    "e97b70cf0342d5983f4cbc60b521e4c55599fd766e8cb5a61d06b5db10817e95": {
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1wox8kt/arxiv_receives_multiyear_philanthropic",
+      "date": "2026-10-09"
+    },
+    "fd52dbab312da4effe9e9b572db8757aeff8484a3e755f6c8d4f2458b9881c90": {
+      "url": "https://dev.to/dzakh/standard-json-schema-vs-json-schema-54fc",
+      "date": "2026-10-09"
+    },
+    "8ecf350001e2e66276ee497a832e12c844010285a5be90c4c8287e338003324f": {
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1wuccjf/tokenization_a_survey_for_modern_nlp_r",
+      "date": "2026-10-09"
+    },
+    "f39ff7768e2931af7f03b2e4b62c9714de66e1f4c90827942b7e3d9d91c9fde4": {
+      "url": "https://dev.to/divyesh5981/stop-dragging-boxes-in-drawio-turn-plain-text-into-interactive-architecture-maps-2n7d",
+      "date": "2026-10-09"
+    },
+    "214ae614d3f683f995951cdb26ad32913415a12192209ecce4e87a3833aacee9": {
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1wxe9qx/the_official_iclr_template_bib_has_had_bengio",
+      "date": "2026-10-09"
+    },
+    "8de4f42ce73b78cdedf8fe25576afcac11dcffc11cb07af248434d427a09ab94": {
+      "url": "https://dev.to/parsajiravand/vue-composables-the-shared-state-trap-cheat-sheet-37ia",
+      "date": "2026-10-09"
+    },
+    "12547dd9fe792d7e6fe2d84663af061f2f25cdce59e9c108dc681bc0e8c428fe": {
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1wkwha7/can_conference_review_infrastructure_keep_up_with",
+      "date": "2026-10-09"
+    },
+    "f81a2c9c2be4f8ced953cc65f6415d1c6a7ac790df2040b4e596d77c87239474": {
+      "url": "https://dev.to/remdore/i-wired-django-to-nextjs-four-things-broke-and-only-one-of-them-threw-an-error-1g02",
+      "date": "2026-10-09"
+    },
+    "205de01c9e0b964552abad0269063e4079a12d325e952f06cee1fef3c11e3e50": {
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1wklia8/sharing_my_ml_learning_repo_numpy_to_transformers",
+      "date": "2026-10-09"
+    },
+    "aace8f4d927002a98afb5f50ab2e76ada0ee8dda305ec5eadadc7e2d139b5164": {
+      "url": "https://dev.to/remdore/the-web-cares-much-less-about-where-you-are-than-what-you-are-58i8",
+      "date": "2026-10-09"
+    },
+    "5bd4ade1eac13744f4d033cc7d31f279661bfb72b13c2faf9be71c82811e0e50": {
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1wypbnf/embedding_every_font_with_neural_networks_makes",
+      "date": "2026-10-09"
+    },
+    "1486f28f575e3f247b9f2d5ce84612197b944ca92c9a80c74288a0cf8ecd58e3": {
+      "url": "https://dev.to/hossein_najafi81/i-finally-published-my-first-npm-package-30om",
+      "date": "2026-10-09"
+    },
+    "6b95268fe5264f72ab5828d0016678c9bf453a9ed8eebb7f8db7d7db8dea94a2": {
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1wjnruv/how_competitive_are_journals_compared_to_top_ai",
+      "date": "2026-10-09"
+    },
+    "25aec15c86b21ce64a1eb4865cd7bb077bcf2fcd0768811a74c8e3c62ad49783": {
+      "url": "https://dev.to/0xna/daybook-a-private-ai-journal-that-learns-my-friend-habits-patterns-and-help-him-improve-powered-37kn",
+      "date": "2026-10-09"
+    },
+    "16703136b1c40fd547d99eed5c45afe1ee4a8b3a3fe6832dcaecbb43f51c67f6": {
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1wh4xhy/tabpfn35_is_released_as_the_next_sota_tabular",
+      "date": "2026-10-09"
+    },
+    "32f76336e8000979eb008bbf98fa37b1a50489c7762a993f0fd1471bea3f7b9d": {
+      "url": "https://dev.to/pavel_kkkkazantsev/from-10000-frames-to-30-moments-building-a-visual-story-compressor-h5p",
+      "date": "2026-10-09"
+    },
+    "4041ed2cea6ba1cb9f0025577cec17a4411e46f9cb0ba973aff368a50d2c7d39": {
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1wft2qd/arr_august_discussion_d",
+      "date": "2026-10-09"
+    },
+    "e10cd5d175ac22425d7418c30698027616237203dc2db03064d43c9119b7f942": {
+      "url": "https://dev.to/vivek_shetye/how-to-use-claude-code-for-free-with-omniroute-maa",
+      "date": "2026-10-09"
+    },
+    "3638761e92d868958f982b172e241bae654b936bc10f6c616deee955242983a6": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1whzjxo/toprated_dev_100_jss_10_yrs_exp_zero_new_upwork",
+      "date": "2026-10-09"
+    },
+    "8065c59b79182a53a5da67e79f31d4cf56fc69c119ab2b3fddd9a5c5dbaeca40": {
+      "url": "https://dev.to/sumit0rn/from-fork-to-merge-what-it-really-takes-to-land-your-first-open-source-contribution-2n5c",
+      "date": "2026-10-09"
+    },
+    "8df260f9ed849d146d86cac330388902752d3b74eedb21d6ca2efc9e022d4611": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1wngr0v/is_upwork_getting_worse_or_is_it_just_me",
+      "date": "2026-10-09"
+    },
+    "3477935080870c6c096f5161b25dabc239a83e993d2f58d5cdc64d0a14137090": {
+      "url": "https://dev.to/axrisi/ai-coding-agents-and-theos-rust-typescript-compiler-the-caveats-fpo",
+      "date": "2026-10-09"
+    },
+    "91d64e2e32485fd000887d1071289298a6814db3ceff91007aaae9fbf5662383": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1wdubuq/joined_upwork_seems_off_so_dug_into_it",
+      "date": "2026-10-09"
+    },
+    "afe3332d3b896d7e4a35c2ede5468e2e92c48683aa94ca095cfcb470658528a6": {
+      "url": "https://dev.to/parsajiravand/junior-interviews-dont-test-what-they-used-to-and-nobody-updated-you-1h01",
+      "date": "2026-10-09"
+    },
+    "29fb5be057faaefe0609cd590a078723476ed2b7589ddfb579826bcb9104f2df": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1wwyajh/lifechanging_addition_to_the_platform",
+      "date": "2026-10-09"
+    },
+    "392210bc0393b1ea198824db85bd81319439bdd97b3243dde69b9c5a93ea8326": {
+      "url": "https://dev.to/slabb/i-attack-tested-my-agents-seatbelt-heres-what-survived-15mj",
+      "date": "2026-10-09"
+    },
+    "20be6ea654ada4855ceec244e3aceab8860ba7057b9edd94628f6d36f8152993": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1wv5e8m/upworks_new_mcp_sounds_cool_but_isnt_this_just",
+      "date": "2026-10-09"
+    },
+    "7161cca047133d67fd1cc0791be20f851945e50f205760388045fc7a494dbf40": {
+      "url": "https://dev.to/remdore/copying-chromes-handshake-opened-18-doors-that-had-been-closed-5h75",
+      "date": "2026-10-09"
+    },
+    "472edb271d82b4ac788d2a15438788acbf96951ea143d4cdfeb917ed1f0c1251": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1wt3wca/is_it_just_me_or_is_upwork_completely_flooded",
+      "date": "2026-10-09"
+    },
+    "4cb6f0ae690e9168ba576b294c1e66eaf1c2465045188ba2299203deb1da2a95": {
+      "url": "https://dev.to/aws-espanol/como-usar-openai-decisions-api-con-strands-agents-2l1p",
+      "date": "2026-10-09"
+    },
+    "458b9c73390e124ed78c0b7fb12a4792d40f65c6f3070e216762e28a0f883f27": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1wtt9sp/connects_farming_by_upwork",
+      "date": "2026-10-09"
+    },
+    "e8c1af19beec02578ae8780a705102d9a494aa8533da734479c60eb58bddaede": {
+      "url": "https://dev.to/susiewang/stop-sending-half-sentences-to-openai-in-a-tencent-rtc-voice-companion-3ni6",
+      "date": "2026-10-09"
+    },
+    "9a74ae184592f8c8fd6c2a8057b630dcbb3b0f8ce3d8f260ead39d490ea003eb": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1wt8aan/guys_who_quit_upwork_or_close_to_quitting_or",
+      "date": "2026-10-09"
+    },
+    "0618b9aaa6b8a375b2680db099725752e9370712f0855531d32292455c1f77d2": {
+      "url": "https://dev.to/rudratosh/an-ai-correctly-ignored-a-forum-rumor-i-removed-one-label-and-it-paid-out-150-3jig",
+      "date": "2026-10-09"
+    },
+    "082d8e0e0ca657fdaf86b14319d6c93fce51b0114fad0f7cc0d2a4c857b95f83": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1wkhvdf/loosing_hope",
+      "date": "2026-10-09"
+    },
+    "b764e2af8e09f59df67d3a5e8fe40e90ecc25ca363e82af00ede759d61318b90": {
+      "url": "https://dev.to/alexfank/why-averaging-llm-benchmarks-gives-the-wrong-leaderboard-boc",
+      "date": "2026-10-09"
+    },
+    "6c8285034c2915a22cd30d40f3a44d4dbe7746a3c6bfbece93c594e04ed6a86a": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1wjxdur/several_suspiciously_generic_job_postings_mostly",
+      "date": "2026-10-09"
+    },
+    "f97bc8db2350cd883e5bb04851e2ca18feaffdacdb5191c1d13b5fdb3b4dec53": {
+      "url": "https://dev.to/gretavolkov/siliconflow-api-review-2026-setup-models-and-real-pricing-1gdo",
+      "date": "2026-10-09"
+    },
+    "dff8b3e4a7fb8a2ccbc38f785550709c6eeaf50eff992ccdd2f17fc212dd4695": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1wgk2ts/is_anyone_else_having_a_hard_time_finding_work_on",
+      "date": "2026-10-09"
+    },
+    "6813cf791dc7159d07e0df1a30c7f8c1de4eab01cf63596b24e2efe9f99c28ea": {
+      "url": "https://dev.to/tariqnasser/free-llm-api-tiers-in-october-2026-whats-left-and-how-i-chain-them-227l",
+      "date": "2026-10-09"
+    },
+    "b879f08c9a7a78684e8a1dd8207068520ff77868f27904c798bf52e561d32cd4": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1x094tr/ai_and_automation_gigs_are_dead_on_upwork",
+      "date": "2026-10-09"
+    },
+    "72dda348b6289b99712c6c9d7ec707392d444b77c36bba4532443da7f5af9c21": {
+      "url": "https://dev.to/julies1/i-tried-to-learn-github-actions-twice-i-failed-the-first-time-but-ai-helped-me-succeed-the-second-4ph",
+      "date": "2026-10-09"
+    },
+    "44c431508736f3ed14362e525d2cb27767d726a45584cd8b28343b4992257b4b": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1wy8dzn/lets_be_honest_about_upwork",
+      "date": "2026-10-09"
+    },
+    "bddb2db64bc3cb462ba31e9ab25b6dc2737e146e927c3c34a79cbcfcc1b8c75e": {
+      "url": "https://dev.to/gretaholt/virlo-in-2026-what-it-is-what-the-api-costs-and-a-python-starter-9pd",
+      "date": "2026-10-09"
+    },
+    "fef00916e3504a0eacf11f7ca2e838ae28ae623eced73f80a9722284ddeca936": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1wxojkg/are_there_any_freelancers_making_money_on_upwork",
+      "date": "2026-10-09"
+    },
+    "2d1b70f1d827779d14107e6156cbd52c89394efdf54d596fe68851ea6b52b346": {
+      "url": "https://dev.to/effnd/css-zero-reuse-sharpened-css-in-ts-with-zero-runtime-232d",
+      "date": "2026-10-09"
+    },
+    "be75c76f2ede011ccfe30965a68d238a20f0c02eb5b4ee2e9f7356986bec3083": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1wqc5vs/whats_going_on_with_this_platform",
+      "date": "2026-10-09"
+    },
+    "f9a93c8498ed566bf24171a530293fa091a16b15b8925dfe0df11ac4224d0a7a": {
+      "url": "https://dev.to/mikachu/how-i-built-a-gnome-utility-to-disable-my-laptop-keyboard-and-what-i-learned-about-linux-input-log",
+      "date": "2026-10-09"
+    },
+    "9d3a4ee87b72c19a3fcf64243cb423d289bec19f35586aa3d19a445ce160bd38": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1wbq11p/really",
+      "date": "2026-10-09"
+    },
+    "b9b2c9e765e8084879a2f8eba69e862a6ac1cc9969262bd4bebf35984cd39d2b": {
+      "url": "https://dev.to/techaiwire/openai-launches-dots-an-always-on-rival-to-metas-muse-6c4",
+      "date": "2026-10-09"
+    },
+    "53ecc5c27d93e1e21e923145f051bb56afcf38789df6df1b78961c0f2ab919c2": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1wzi0cv/my_first_week_on_upwork_as_a_beginner_and_what",
+      "date": "2026-10-09"
+    },
+    "29f92584adeed865fac7566b7d80c27e6cb942588eebedf5c00e1a2188a0dcb8": {
+      "url": "https://dev.to/rudratosh/ai-writes-the-code-ai-reviews-the-code-so-whos-actually-on-the-hook-when-it-breaks-3d7l",
+      "date": "2026-10-09"
+    },
+    "d5fe2bfd00645ed3187a8e6236bcc4c6a7cb3c6a8418ef0efe0ee713c6c8b314": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1wx6xld/latest_useless_addition_for_upwork",
+      "date": "2026-10-09"
+    },
+    "6f6a44cf7558cb7f6ccf319a60655a02f432de37a56fab8c63caf2627bff7f16": {
+      "url": "https://dev.to/rudratosh/10-years-in-everything-i-was-proud-of-as-a-junior-was-wrong-igo",
+      "date": "2026-10-09"
+    },
+    "b7274a1353c84a29644a1f10b6947c023d1c708aeb35aa15b0f7e113eaad3bce": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1wsod0f/geeez",
+      "date": "2026-10-09"
+    },
+    "ac68b6d34671b850daacfdc14ad1b7537273ecfe1385e084c5efdea81177347b": {
+      "url": "https://dev.to/jarvisscript/what-are-your-goals-for-the-week-198-41d8",
+      "date": "2026-10-09"
+    },
+    "ab896341dad3bc8aa4e817a27215bc095cf6924a36c84c635ac4bb46ac3d8f39": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1wo29hq/only_one_country_appears",
+      "date": "2026-10-09"
+    },
+    "0df138ce13335a4518c8ddf28eb7c5099c92d79112f3bf872ae20951ad615fe6": {
+      "url": "https://dev.to/05uniquedotcom/i-tested-5-ai-models-on-hinglish-heres-who-won-3b9e",
+      "date": "2026-10-09"
+    },
+    "4e8aeae8ad916d8ced7f165be3ea687ee24909eb35023bfcf2b4b2ac2ac7b44a": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1wbr1dr/is_upwork_down",
+      "date": "2026-10-09"
+    },
+    "d892e0180417a0d83fe829e18236d615c09af8d4032ceb0fad7ae84a0ba70d69": {
+      "url": "https://dev.to/tiagovilasboas/jev-e-laya-alem-do-hype-o-que-modelos-de-decisao-fazem-que-o-llm-nao-faz-5f1j",
+      "date": "2026-10-09"
+    },
+    "cadcb4c2e149035fb29af33a4091f40d32551481db80be14fd31c6b2497d47e1": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1x00ywu/boosting_experiment_i_boosted_my_profile_with_45",
+      "date": "2026-10-09"
+    },
+    "2db12975c9a7b16442d99bf0070aad70b776881f7ec56fea0f941baebf29b367": {
+      "url": "https://dev.to/js402/how-to-kill-a-zombie-3abf",
+      "date": "2026-10-09"
+    },
+    "10ffe10bb2dbd5597f0eb8514468471d0e9c59d6081394e02b799f7b57223af3": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1wlejzf/i_could_be_wrong_but_upwork_makes_more_with",
+      "date": "2026-10-09"
+    },
+    "6ba738cfa753644b5a0b9b0fdfec042e2d7401268574dc13fbcfe4a1466acbfb": {
+      "url": "https://dev.to/vyixor/even-legit-coders-are-being-forced-to-vibe-code-3cc7",
+      "date": "2026-10-09"
+    },
+    "65537ed81444f70d975e17498feee6ddca7f9777a7ea4bb71494776ea969b082": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1wulqgl/thank_you_rupwork_scam_guide",
+      "date": "2026-10-09"
+    },
+    "47e29c86604f4640e3f632f9a603a496b3515aae1c286fbb73a9f79ef40b331a": {
+      "url": "https://dev.to/anupa/your-coding-agents-work-is-lost-in-md-file-4emd",
+      "date": "2026-10-09"
+    },
+    "b8bffc50a4f207667ab5b6f1de4a96963c386eaefb116327333ebcad20c39712": {
+      "url": "https://www.reddit.com/r/Upwork/comments/1ws9cjs/just_got_a_contract_after_four_dry_months",
+      "date": "2026-10-09"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 5
+  "dailyPage": 0
 }

@@ -1,0 +1,130 @@
+---
+title: "Automate Coding Timelapse Editing with dHash and SSIM Algorithms"
+description: "Learn how dHash and SSIM algorithms can automatically select meaningful frames from coding sessions, reducing hours of footage to a concise timelapse."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 180
+jobToBeDone: "Automate the selection of meaningful frames from coding sessions for timelapses"
+tools:
+  - name: "JavaScript"
+    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Node.js"
+    url: "https://nodejs.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "VS Code"
+    url: "https://code.visualstudio.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "ProgressCut"
+    url: "https://progresscut.com/"
+    pricing: "paid"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/pavel_kkkkazantsev/from-10000-frames-to-30-moments-building-a-visual-story-compressor-h5p"
+  platform: "blog"
+  author: "pavel_kkkkazantsev"
+  postedAt: 2026-10-02
+score: 10
+ingestedAt: 2026-10-09
+nigeriaNotes: "This workflow requires coding skills and a development environment, which can be set up using free tools like Node.js and VS Code. Data usage depends on the size of video files processed locally."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "Generate a 5-minute timelapse video of your coding assignment progress by filtering out redundant screenshots using dHash and SSIM algorithms."
+  - persona: "employee"
+    scenario: "Create a concise timelapse of your daily coding work to share with your manager, automatically selecting key progress frames."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+This entry explains the core algorithms behind automatically selecting the most interesting frames from a long video, like a coding session, to create a short, engaging timelapse. Instead of manually sifting through thousands of screenshots, these algorithms help a computer identify when significant visual changes occur.
+
+The author built a pipeline that uses two main techniques: `dHash` (Difference Hash) to remove nearly identical frames, and `SSIM` (Structural Similarity Index) to identify frames where the visual content has genuinely changed in a meaningful way, not just minor pixel shifts. This process drastically reduces the number of frames, making it easier to create a concise video.
+
+This is an advanced workflow because it requires understanding and implementing these algorithms using programming code, rather than simply using a pre-built tool. The exact steps involve writing and running JavaScript code to process image data.
+
+## What you can use it for
+*   **Create coding timelapses**: Automatically condense hours of coding into a short video showing only the key development moments.
+*   **Analyze video changes**: Identify significant visual changes in any video footage, useful for monitoring or review.
+*   **Reduce video file size for analysis**: Filter out redundant frames from surveillance or scientific videos before further processing.
+*   **Develop custom video editing tools**: Understand the principles behind automated frame selection to build your own specialized video processing applications.
+
+## Tools you need
+*   **JavaScript** (free): The programming language used to implement the algorithms described in the article.
+*   **Node.js** (free): A runtime environment that allows you to run JavaScript code outside of a web browser, typically used for server-side applications or command-line tools.
+*   **VS Code** (free): A popular and free code editor that helps you write, debug, and manage your JavaScript code.
+*   **ProgressCut** (paid): A macOS application that automates the creation of coding timelapses. The article describes the algorithms that power such tools, but the workflow here focuses on understanding and implementing these algorithms yourself, not directly using ProgressCut.
+
+## How it actually works
+This workflow describes the conceptual pipeline for filtering video frames. To reproduce it, you would need to implement these steps in code, likely using JavaScript and an image processing library.
+
+1.  **Capture frames**: The first step is to record your coding session and capture individual frames (screenshots) at a regular interval, for example, 2 frames per second (fps). The author started with 10,847 frames from a two-hour session.
+
+2.  **Implement dHash (Difference Hash) for deduplication**: This algorithm identifies and removes frames that are almost identical. You would:
+    *   Resize each frame to a small size, like 9x8 pixels, and convert it to greyscale.
+    *   Compare each pixel to the one on its right, assigning a '1' if it's brighter and '0' otherwise, creating a 64-bit fingerprint (hash) for each image. JavaScript's `BigInt` type is needed for 64-bit numbers.
+    *   Compare the hashes of consecutive frames using a `Hamming Distance` calculation (counting differing bits after an XOR operation). If the distance is below a certain threshold (e.g., 8), the frames are considered duplicates and one is removed. The author's `hammingDistance` function looks like this:
+
+    ```
+    export function hammingDistance ( a : DHash , b : DHash ): number {
+      let diff = a ^ b ; // XOR: 1 where bits differ
+      let count = 0 ;
+      while ( diff > 0n ) {
+        diff = diff - 1n ; // clears the lowest set bit
+        count ++ ;
+      }
+      return count ;
+    }
+    ```
+
+    This stage reduced 10,847 frames to 1,203 frames.
+
+3.  **Implement SSIM (Structural Similarity Index) for novelty detection**: After removing exact duplicates, you still have frames that are unique but not visually interesting (e.g., only one character changed). SSIM measures how much the visual state of the screen has truly changed between frames.
+    *   Instead of comparing the entire frame, the frame is divided into smaller regions (e.g., 16 regions). SSIM is calculated for each region and then averaged.
+    *   SSIM compares three key aspects: luminance (brightness), contrast, and spatial structure (how pixels are arranged).
+    *   A score close to 1 means little change, while a score close to 0 means a significant change worth keeping. The author mentions a single-pass variance calculation for efficiency:
+
+    ```
+    let sumA = 0 , sumB = 0 , sumAA = 0 , sumBB = 0 , sumAB = 0 ;
+    const n = ( x1 - x0 ) * ( y1 - y0 );
+    for ( let y = y0 ; y < y1 ; y ++ ) {
+      for ( let x = x0 ; x < x1 ; x ++ ) {
+        const pa = a . pixels [ y * W + x ] ?? 0 ;
+        const pb = b . pixels [ y * W + x ] ?? 0 ;
+        sumA += pa ;
+        sumB += pb ;
+        sumAA += pa * pa ;
+        sumBB += pb * pb ;
+        sumAB += pa * pb ;
+      }
+    }
+    // ... derive SSIM components from these sums
+    ```
+
+    This stage reduced 1,203 frames to 284 frames.
+
+4.  **Further filtering (Segments and 30 moments)**: The author's pipeline includes two more stages: 'Segments' and '30 moments', which further reduce the frames from 284 to 48, and then to a final 30. The article does not provide details on how these specific stages work, so you would need to research or develop your own methods for these steps.
+
+5.  **Run your implemented pipeline**: Once you have coded these algorithms, you would run your script, feeding it the captured frames. The output would be a curated set of frames representing the most significant moments of your coding session.
+
+## Words you'll see, explained
+*   **dHash (Difference Hash)**: A method to create a unique, compact fingerprint for an image by comparing adjacent pixel brightness, used to quickly find nearly identical images.
+*   **SSIM (Structural Similarity Index)**: A metric used to measure the perceived similarity between two images, taking into account luminance, contrast, and structural information.
+*   **Hamming Distance**: In computing, this is the number of positions at which two binary strings of equal length differ, used here to compare dHashes.
+*   **BigInt**: A special data type in JavaScript that can represent whole numbers larger than the maximum value supported by the standard `Number` type, necessary for 64-bit dHashes.
+*   **Luminance**: The perceived brightness of a color or image, a key factor in how humans see visual differences.
+*   **Contrast**: The difference in brightness or color that makes an object distinguishable, another important element in visual perception.
+*   **Spatial Structure**: Refers to the arrangement and relationships of pixels within an image, which SSIM uses to understand visual similarity beyond just average brightness.
+
+## Original source
+This workflow is based on an article by pavel_kkkkazantsev titled "I Recorded 10,847 Frames While Coding. Only 30 Were Worth Keeping." published on the DEV Community blog.
+
+## Notes & variations
+*   **Do you even need this?**: If you only need a simple screen recording or a basic timelapse without advanced filtering, simpler screen recording software (many of which are free) might be sufficient. This advanced workflow is for those who need precise control over frame selection or want to understand the underlying algorithms.
+*   **Free-tier limits**: Implementing these algorithms locally using free tools like Node.js and VS Code has no inherent free-tier limits. However, processing very large video files (many hours, high resolution) can be demanding on your computer's processing power and storage.
+*   **Common pitfall**: A common mistake is not correctly handling image pixel data, such as converting images to greyscale, resizing them accurately, or accessing pixel values efficiently. Ensure you use a robust image processing library if you are implementing this from scratch.
+*   **Tip for better results**: Start by testing your dHash and SSIM implementations on small segments of your video (e.g., 100 frames) to ensure they are working as expected before processing an entire two-hour session. Adjusting the `Hamming Distance` threshold for dHash and the SSIM comparison parameters can fine-tune the results.

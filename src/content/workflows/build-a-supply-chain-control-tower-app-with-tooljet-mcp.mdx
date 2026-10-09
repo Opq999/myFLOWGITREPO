@@ -1,0 +1,59 @@
+---
+title: "Build a Supply Chain Control Tower App with ToolJet MCP"
+description: "Create a supply chain control tower application in ToolJet MCP to track exceptions, monitor supplier performance, and forecast inventory stockout risks for better planning."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 45
+jobToBeDone: "Build a Supply Chain Control Tower application for exception triage and inventory forecasting"
+tools:
+  - name: "ToolJet"
+    url: "https://tooljet.com"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "PostgreSQL"
+    url: "https://www.postgresql.org"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/athulya_r/build-a-supply-chain-control-tower-with-tooljet-mcp-4olp"
+  platform: "blog"
+  author: "athulya_r"
+  postedAt: 2026-09-15
+score: 9
+ingestedAt: 2026-10-09
+nigeriaNotes: "This workflow uses free, open-source tools (ToolJet and PostgreSQL) that can be self-hosted, keeping costs low. Data usage for generating the app is minimal, but running the control tower will depend on your actual supply chain data."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will get a complete, three-page supply chain control tower application built using ToolJet. This app helps planners track open exceptions, monitor supplier performance trends, and identify inventory components at risk of stocking out. This approach uses an AI agent within ToolJet to generate the entire application from a single prompt, ensuring that the data, queries, and user interface are integrated from the start.
+
+## Tools you need
+*   **ToolJet** (free): An open-source low-code platform used to build the control tower application. It can be self-hosted.
+*   **PostgreSQL** (free): An open-source database used to store the supply chain data for the application.
+
+## Steps
+1.  **Set up ToolJet**: The author points to a "ToolJet MCP repository" for setup instructions. You will need to find and follow those instructions to install and configure ToolJet.
+    *   *What to do*: Search online for "ToolJet MCP repository" or "ToolJet GitHub" to find the official setup guide. Follow the instructions to install ToolJet on your server or local machine. This typically involves cloning a repository and running setup commands.
+    *   *What you should see*: A running ToolJet instance, accessible in your web browser, ready for use.
+2.  **Prepare your PostgreSQL database**: The application expects an existing PostgreSQL database with specific tables (e.g., `supply_chain_exceptions`). The author doesn't provide the exact schema or data, so you'll need to set up a basic PostgreSQL database and create the necessary tables.
+    *   *What to do*: Install PostgreSQL (if you don't have it). Create a new database and connect it to ToolJet as a datasource. You will need to create tables that match the data the control tower will manage (e.g., `supply_chain_exceptions` for exceptions, `suppliers` for scorecards, `inventory` for stock levels). The author doesn't share the exact table schemas; a starting point would be tables with columns like `id`, `reason`, `severity`, `owner`, `due_date`, `status` for exceptions; `supplier_name`, `performance_score`, `trend` for suppliers; `component_name`, `current_stock`, `forecast_demand`, `next_inbound_date` for inventory.
+    *   *What you should see*: Your PostgreSQL database connected as a datasource within ToolJet, ready to be used by the application.
+3.  **Generate the application with the prompt**: Use the consolidated prompt provided by the author to generate the three-page control tower application.
+    *   *What to do*: In your ToolJet instance, find the feature to generate applications using an AI agent or prompt. Paste the following prompt into the designated input area. The author doesn't share the full prompt; the provided portion is:
+
+```
+Build a three-page supply chain control tower in ToolJet for a kitchen appliance manufacturer's planning team. Keep the app dense and corporate, with muted blues and greys, clear hierarchy, and restrained spacing. The first page shows open exceptions sorted by severity, with the reason visible in each row, inline owner and due date edits, a close action, and a modal path to escalate a case to procurement. That same page also shows open escalations, and selecting one reveals the linked supplier's scorecard. The second page aggregates trailing six-month supplier performance and ranks suppliers by who is deteriorating fastest, with a trend view for the selected supplier. The third page compares current stock with forecast demand for each component, calculates days of cover, and flags anything that will stock out before the next inbound shipment arrives. Use the existing PostgreSQL datasource and read and write the current supply_chain_exceptions, excepti…
+```
+
+    *   *What you should see*: ToolJet should generate a new application with three pages matching the description: an Exception Queue, a Supplier Scorecard, and an Inventory vs. Forecast view. You will likely need to manually connect the generated components to your specific PostgreSQL tables and complete any missing parts of the prompt's instructions, especially regarding database interactions.
+
+## Original source
+This workflow was originally shared by athulya_r on the DEV Community blog, demonstrating how to build a supply chain control tower using ToolJet MCP.
+
+## Notes & variations
+*   **Free-tier viability**: ToolJet is an open-source platform, meaning it's free to download and self-host. PostgreSQL is also free. The main cost would be for server infrastructure if you choose not to run it locally.
+*   **Common pitfall**: A common mistake is not having your PostgreSQL database and its required tables correctly set up and connected to ToolJet *before* attempting to generate the application. The AI agent relies on an "existing PostgreSQL datasource" to build the app correctly.
+*   **Tip for better results**: Since the provided prompt is incomplete, you will need to manually refine the generated application. Pay close attention to how the app connects to your PostgreSQL tables and ensure all read/write operations are correctly configured. You might also need to manually add the remaining database interaction details that were cut off from the original prompt.

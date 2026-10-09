@@ -1,0 +1,183 @@
+---
+title: "Build Portable ChatGPT Plugins with Model Context Protocol (MCP)"
+description: "Learn how the Model Context Protocol (MCP) allows developers to build portable ChatGPT plugins that work across different AI platforms."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 60
+jobToBeDone: "Build a portable ChatGPT plugin using the Model Context Protocol"
+tools:
+  - name: "ChatGPT"
+    url: "https://chatgpt.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Node.js"
+    url: "https://nodejs.org"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "npm"
+    url: "https://www.npmjs.com"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "@modelcontextprotocol/sdk"
+    url: "https://www.npmjs.com/package/@modelcontextprotocol/sdk"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "zod"
+    url: "https://zod.dev"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "OpenAI Platform"
+    url: "https://platform.openai.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "SSH client"
+    url: "https://www.openssh.com"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/devandrew/mastering-the-2026-chatgpt-plugin-landscape-an-mcp-first-guide-3aoj"
+  platform: "blog"
+  author: "devandrew"
+  postedAt: 2026-10-07
+score: 9
+ingestedAt: 2026-10-09
+nigeriaNotes: "This workflow requires a paid OpenAI developer account for publishing, which may be a barrier. Data usage for development is moderate, but running the plugin in production could incur significant costs depending on usage."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+This workflow introduces the Model Context Protocol (MCP), an open standard designed to make AI plugins portable. Historically, building extensions for AI models like ChatGPT meant creating a unique version for each platform. MCP changes this by providing a common way for plugins to communicate with various AI clients, including ChatGPT and other AI assistants.
+
+This approach is advanced because it requires coding skills, setting up a development environment, and understanding server deployment. It's not a simple copy-paste recipe, as the exact instructions for running and deploying the plugin live within code notebooks, official documentation, and evolving tools.
+
+The core idea is to write your plugin's logic once, and the MCP handles the complex task of connecting your tool to different AI models. This means your plugin can work across multiple AI platforms without needing to be rewritten for each one, saving developers time and effort.
+
+## What you can use it for
+*   **Build a universal AI tool**: Create a single backend for your service that can be used by ChatGPT, other AI assistants, and even integrated development environments (IDEs).
+*   **Automate tasks across platforms**: Develop a plugin that performs a specific action (like looking up information or managing data) and make it accessible from any MCP-compliant AI.
+*   **Extend AI capabilities**: Give AI models access to real-time data or specialized functions that are not built into the model itself.
+*   **Create portable data lookups**: Develop a tool, like the HTTP status lookup example, that provides instant, structured information to an AI model.
+
+## Tools you need
+*   **ChatGPT** (freemium): The AI chatbot where your plugin can eventually be used.
+*   **Node.js** (free): A software platform that lets you run JavaScript code outside of a web browser, used for building the plugin's server.
+*   **npm** (free): The package manager for Node.js, used to install software libraries needed for your project.
+*   **@modelcontextprotocol/sdk** (free): The official software development kit (SDK) for building MCP-compliant servers.
+*   **zod** (free): A library used to define and validate the structure of data (schemas) for your plugin's inputs and outputs.
+*   **OpenAI Platform** (paid): The developer platform where you manage your OpenAI account, enable developer mode, and eventually publish your plugin.
+*   **SSH client** (free): A software tool (like OpenSSH, often built into operating systems) used to securely connect to remote computers, potentially for managing tunnels to expose your local server.
+
+## How it actually works
+Building an MCP-first ChatGPT plugin involves several technical steps, primarily focused on setting up a Node.js server and defining your plugin's capabilities using the MCP SDK. The excerpt provides the core logic for a simple plugin but does not cover the full deployment process.
+
+1.  **Prepare your environment**: Ensure you have Node.js version 18 or higher installed. You will also need an OpenAI account with developer mode enabled and a verified organization profile on the OpenAI Platform for eventual publishing. An SSH client is mentioned for tunnel management, which is typically used to make a local server accessible over the internet.
+
+2.  **Initialize your project**: Open your terminal or command prompt and create a new directory for your plugin, then navigate into it. Initialize a new Node.js project and install the necessary libraries:
+
+    ```bash
+    # macOS or Linux
+    mkdir http-status-plugin
+    cd http-status-plugin
+    npm init -y
+    npm pkg set type = module
+    npm install @modelcontextprotocol/sdk zod
+    ```
+
+    ```powershell
+    # Windows (PowerShell)
+    New-Item -ItemType Directory -Name http-status-plugin
+    Set-Location -Path http-status-plugin
+    npm init -y
+    npm pkg set type = module
+    npm install @modelcontextprotocol/sdk zod
+    ```
+
+    You should see a new `package.json` file and a `node_modules` folder created in your project directory.
+
+3.  **Implement the server logic**: The core of your plugin is a Node.js server that uses the `@modelcontextprotocol/sdk`. The excerpt provides a function `buildServer` that defines a tool called `lookup_http_status`. This tool takes an HTTP status `code` as input and returns its `phrase` and `meaning`.
+
+    ```javascript
+    import { createServer } from "node:http";
+    import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
+    import { StreamableHTTPServerTransport } from "@modelcontextprotocol/sdk/server/streamableHttp.js";
+    import { z } from "zod";
+
+    const STATUS = {
+      200: ["OK", "The request succeeded."],
+      404: ["Not Found", "The server found nothing at this URL."],
+      429: ["Too Many Requests", "Rate limit exceeded."]
+    };
+
+    function buildServer() {
+      const server = new McpServer({
+        name: "http-status",
+        version: "1.0.0"
+      });
+      server.registerTool(
+        "lookup_http_status",
+        {
+          title: "Look up an HTTP status code",
+          description: "Provides details for specific HTTP codes.",
+          inputSchema: {
+            code: z.number().int().min(100).max(599)
+          },
+          outputSchema: {
+            code: z.number(),
+            phrase: z.string(),
+            meaning: z.string()
+          },
+          annotations: {
+            readOnlyHint: true,
+            destructiveHint: false,
+            openWorldHint: false
+          }
+        },
+        async ({ code }) => {
+          const [phrase, meaning] = STATUS[code] ?? ["Unknown", "Entry missing."];
+          return {
+            content: [
+              {
+                type: "text",
+                text: `${code} ${phrase}: ${meaning}`
+              }
+            ],
+            structuredContent: {
+              code,
+              phrase,
+              meaning
+            }
+          };
+        }
+      );
+      return server;
+    }
+    ```
+
+    This code defines the logic for your plugin's tool. The excerpt mentions using `createServer` from `node:http` and `StreamableHTTPServerTransport` to run this server, but the full implementation for connecting these pieces and making the server runnable and accessible is not provided in the source. You would typically need to create an HTTP server instance, pass the `McpServer` to the `StreamableHTTPServerTransport`, and then listen on a specific port.
+
+4.  **Next steps (not covered in excerpt)**: To make this plugin functional with ChatGPT, you would need to:
+    *   Write the additional code to run the `buildServer` function and start an HTTP server that listens for requests.
+    *   Expose your local server to the internet, often using a secure tunnel (e.g., `ngrok` or a similar service, or deploying to a cloud platform).
+    *   Register your plugin with ChatGPT through the OpenAI Platform, providing the public URL of your server.
+    *   Test and debug your plugin to ensure it interacts correctly with ChatGPT.
+
+## Words you'll see, explained
+*   **Model Context Protocol (MCP)**: An open standard that allows AI plugins to work across different platforms, making them portable.
+*   **Node.js**: A software platform that lets you run JavaScript code outside of a web browser, often used for building server applications.
+*   **npm**: The package manager for Node.js, used to install and manage software libraries (packages) for your projects.
+*   **ChatGPT Plugin**: An extension that allows ChatGPT to interact with external services and tools to perform specific tasks.
+*   **Stateless Server**: A server that does not store any information about past requests from a client, treating each new request as if it were the first.
+*   **Input Schema**: A definition that describes the expected format and type of data a tool or function needs to receive.
+*   **Output Schema**: A definition that describes the expected format and type of data a tool or function will return.
+*   **SSH Client**: A software tool used to securely connect to a remote computer, often used for managing servers or creating secure tunnels.
+*   **Zod**: A TypeScript-first schema declaration and validation library, used here to define the structure of data.
+
+## Original source
+This concept is based on an article titled "Mastering the 2026 ChatGPT Plugin Landscape: An MCP-First Guide" by devandrew, published on the DEV Community blog. The article discusses the shift towards the Model Context Protocol for building portable ChatGPT plugins.
+
+## Notes & variations
+*   **Do you even need this?**: For simpler tasks, you might not need a full plugin. ChatGPT's custom instructions or direct API calls (if you're comfortable with coding) can sometimes achieve similar results without the overhead of building and deploying a full MCP server. Consider if a simpler approach meets your needs before diving into plugin development.
+*   **Free-tier limits**: While the development tools (Node.js, npm, SDKs) are free, deploying and publishing a plugin via the OpenAI Platform typically requires a paid developer account and incurs usage costs based on how often your plugin is used.
+*   **Common pitfall**: Ensuring your server is truly stateless is crucial for reliability and scalability. The OpenAI plugin infrastructure expects that every request is handled independently, without relying on information from previous chat sessions. Avoid storing session-specific data directly on the server to prevent unexpected behavior.

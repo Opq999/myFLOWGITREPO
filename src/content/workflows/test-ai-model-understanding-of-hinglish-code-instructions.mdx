@@ -1,0 +1,87 @@
+---
+title: "Test AI Model Understanding of Hinglish Code Instructions"
+description: "Evaluate how well AI models understand Hinglish code instructions for debugging, context switching, and vague error descriptions."
+category: "academic-research"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 15
+jobToBeDone: "Evaluate AI model understanding of Hinglish code instructions"
+tools:
+  - name: "Kaggle"
+    url: "https://www.kaggle.com/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Claude Sonnet 5"
+    url: "https://claude.ai/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "DeepSeek-R1"
+    url: "https://deepseek.ai/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Gemini 3.5 Flash"
+    url: "https://gemini.google.com/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "GPT-5.4"
+    url: "https://chatgpt.com/"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/05uniquedotcom/i-tested-5-ai-models-on-hinglish-heres-who-won-3b9e"
+  platform: "blog"
+  author: "05uniquedotcom"
+  postedAt: 2026-09-28
+score: 8
+ingestedAt: 2026-10-09
+nigeriaNotes: "Kaggle is accessible and has free tiers. The AI models mentioned have free tiers for basic use, which should be sufficient for testing. Data usage will be minimal, primarily text-based prompts and responses."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will be able to test how well different AI models understand and respond to instructions given in Hinglish, a mix of Hindi and English common in India. This approach works because it directly uses the natural language developers use, showing if AI tools are truly accessible to a large population.
+
+## Tools you need
+*   **Kaggle** (freemium): A platform for data science and machine learning, used here to host the benchmark.
+*   **Claude Sonnet 5** (freemium): An AI model from Anthropic.
+*   **DeepSeek-R1** (freemium): An AI model from DeepSeek.
+*   **Gemini 3.5 Flash** (freemium): An AI model from Google.
+*   **GPT-5.4** (freemium): An AI model from OpenAI.
+
+## Steps
+1.  **Access the benchmark**: Go to the Kaggle benchmark created by the author. The author encourages you to fork it to add your own tests.
+2.  **Understand the categories**: The benchmark has three categories:
+    *   **Hinglish Code Debugging**: You give the AI broken Python code and ask it to fix it using Hinglish instructions.
+    *   **Context Switching**: You give instructions in Hindi and expect the AI to provide code in English.
+    *   **Vague Hinglish Error Descriptions**: You describe a coding problem using casual Hinglish slang, like 'kal se loop khatam hi nahi ho raha' (this loop hasn't finished since yesterday), and see if the AI can identify the issue (e.g., an infinite loop).
+3.  **Test the models**: Use the prompts provided in the benchmark or create your own. Here are examples of prompts used by the author:
+
+    *   For Hinglish Code Debugging:
+
+    ```
+    Yaar, mera code kuch kaam nahi kar raha. Zara fix kar de: def add(a, b) return a+b
+    ```
+
+    *   For Context Switching:
+
+    ```
+    Mujhe ek Python function chahiye jo do numbers ka sum return kare. English mein code likh.
+    ```
+
+    *   For Vague Hinglish Error Descriptions:
+
+    ```
+    kal se loop khatam hi nahi ho raha
+    ```
+
+    You should see the AI model respond with either corrected code, code generated based on the instructions, or an explanation of the problem, depending on the task.
+4.  **Analyze the results**: Observe how each AI model performs across the different categories. The author found that all tested models (Claude Sonnet 5, DeepSeek-R1, Gemini 3.5 Flash, and GPT-5.4) performed very well, understanding Hinglish instructions without issues.
+
+## Original source
+This workflow is based on an experiment by Arshad Ansari, a CSE student from Maharashtra, India, shared on the DEV Community. Arshad created a benchmark on Kaggle to test if AI models could understand Hinglish, a common mix of Hindi and English used by millions in India, for coding tasks.
+
+## Notes & variations
+*   **Free tier viability**: All the AI models mentioned have free tiers that are suitable for this kind of testing. Kaggle also offers a free tier.
+*   **Common mistake**: Assuming AI models only understand formal English. This experiment shows they are increasingly capable of understanding natural, colloquial language like Hinglish.
+*   **Tip for better results**: When testing, try using a variety of Hinglish phrases, from very casual slang to more structured sentences, to get a comprehensive understanding of the AI's capabilities.

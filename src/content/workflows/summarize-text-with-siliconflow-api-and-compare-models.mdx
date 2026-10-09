@@ -1,0 +1,95 @@
+---
+title: "Summarize Text with SiliconFlow API and Compare Models"
+description: "Learn to set up the SiliconFlow API for text summarization, compare model pricing, and use the OpenAI SDK with this practical guide."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 15
+jobToBeDone: "Summarize text and compare LLM models using an OpenAI-compatible API."
+tools:
+  - name: "SiliconFlow API"
+    url: "https://siliconflow.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "OpenAI SDK"
+    url: "https://github.com/openai/openai-python"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "curl"
+    url: "https://curl.se"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Python"
+    url: "https://www.python.org"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/gretavolkov/siliconflow-api-review-2026-setup-models-and-real-pricing-1gdo"
+  platform: "blog"
+  author: "gretavolkov"
+  postedAt: 2026-10-07
+score: 9
+ingestedAt: 2026-10-09
+nigeriaNotes: "Requires internet access. Data usage will depend on the amount of text processed and the number of API calls made. Free credits are provided initially, but continued use will incur costs."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to connect to the SiliconFlow API, a service that provides access to various AI models compatible with OpenAI's tools. This allows you to use different AI models for tasks like summarizing text and compare their costs. This approach is useful when you need flexibility in choosing AI models or want to find the most cost-effective option for your needs.
+
+## Tools you need
+*   **SiliconFlow API** (paid): A service that offers access to various AI models through an OpenAI-compatible interface.
+*   **OpenAI SDK** (paid): A software library that makes it easier to interact with AI models, including those from SiliconFlow.
+*   **curl** (free): A command-line tool for transferring data with URLs, used here to list available models.
+*   **Python** (free): A programming language used to run the code that interacts with the API.
+
+## Steps
+1.  **Get your SiliconFlow API key**: Sign up for an account on the SiliconFlow website. Navigate to the API Keys section in your account console and generate a new key. New accounts receive $1 in free credits.
+2.  **List available chat models**: Use the `curl` command in your terminal to see which chat models are currently available through the API. This is more reliable than marketing pages as model availability can change. You will need to set your API key as an environment variable first.
+
+    ```bash
+    export SILICONFLOW_API_KEY="sk-your_api_key_here"
+    ```
+
+    ```bash
+    curl -s "https://api.siliconflow.com/v1/models?sub_type=chat" \
+    -H "Authorization: Bearer $SILICONFLOW_API_KEY " | jq -r '.data[].id'
+    ```
+
+    You should see a list of model IDs printed to your terminal, like `deepseek-ai/DeepSeek-V4.1-Flash` or `Qwen/Qwen1.5-7B-Chat`.
+3.  **Summarize text using Python**: Write a Python script to send a text summarization request to the SiliconFlow API. You will need to install the OpenAI Python package first (`pip install openai`). Replace `sk-your_api_key_here` with your actual API key and use one of the model IDs you found in the previous step.
+
+    ```python
+    import os
+    from openai import OpenAI
+
+    client = OpenAI(
+        api_key=os.environ.get("SILICONFLOW_API_KEY"),
+        base_url="https://api.siliconflow.com/v1"
+    )
+
+    response = client.chat.completions.create(
+        model="deepseek-ai/DeepSeek-V4.1-Flash", # Use a model ID from the previous step
+        messages=[
+            {
+                "role": "user",
+                "content": "Summarise this changelog in 3 bullets: [Paste your changelog text here]"
+            }
+        ],
+        max_tokens=512
+    )
+
+    print(response.choices[0].message.content)
+    print(response.usage) # This shows token usage for billing
+    ```
+
+    You should see the summarized text printed, followed by usage statistics showing the number of tokens used for the request.
+
+## Original source
+This guide is based on a practical review by gretavolkov posted on the DEV Community platform. It aims to provide a current and hands-on approach to using the SiliconFlow API, focusing on setup, model discovery, and pricing comparisons, as older guides were found to be out of date.
+
+## Notes & variations
+*   **Free tier alternative**: While SiliconFlow is a paid service, you can explore free tiers on platforms like Hugging Face Spaces or use local models with tools like Ollama for experimentation if costs are a concern.
+*   **Common mistake**: Do not rely solely on the API reference documentation for a list of available models. Always use the `/models` endpoint (as shown in Step 2) to get the most up-to-date list of model IDs, as the documentation can be outdated.
+*   **Tip for better results**: For more accurate cost comparisons, always check the specific model's pricing on the SiliconFlow provider's page and compare it directly with alternatives for the exact model you intend to use. The author notes that SiliconFlow is not always the cheapest host for every model.

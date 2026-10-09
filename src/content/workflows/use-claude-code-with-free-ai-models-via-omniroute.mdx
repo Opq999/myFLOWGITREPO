@@ -1,0 +1,61 @@
+---
+title: "Use Claude Code with Free AI Models via OmniRoute"
+description: "Learn how to connect Claude Code to free AI models using OmniRoute, an open-source AI gateway. This guide helps you leverage powerful coding agents without expensive subscriptions."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 60
+jobToBeDone: "Use Claude Code with free AI models by routing requests through OmniRoute"
+tools:
+  - name: "Claude Code"
+    url: "https://github.com/The-Open-AI-Assistants-API/Claude-Code"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "OmniRoute"
+    url: "https://github.com/OmniRoute/OmniRoute"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "OpenRouter"
+    url: "https://openrouter.ai/"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/vivek_shetye/how-to-use-claude-code-for-free-with-omniroute-maa"
+  platform: "blog"
+  author: "vivek_shetye"
+  postedAt: 2026-10-06
+score: 7
+ingestedAt: 2026-10-09
+nigeriaNotes: "This workflow requires running local software (OmniRoute) and potentially downloading models, which can consume significant data. OpenRouter offers a free tier for many models, but usage might be limited. Ensure a stable internet connection for setup and ongoing use."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to use Claude Code, a powerful AI coding assistant that works from your terminal, with free AI models instead of paid ones. This approach separates the coding agent (Claude Code) from the AI model that powers it, allowing you to choose cheaper or free alternatives.
+
+## Tools you need
+*   **Claude Code** (paid): An AI coding agent that can inspect your codebase, edit files, and execute terminal commands.
+*   **OmniRoute** (free): An open-source AI gateway that acts as a middleman, routing requests from Claude Code to different AI model providers.
+*   **OpenRouter** (freemium): A service that provides access to many different AI models, including free ones. You will need an account and an API key.
+*   **NVIDIA** (paid): Mentioned as a provider, but not strictly required if you only use OpenRouter's free models.
+
+## Steps
+1.  **Install OmniRoute**: Download and install OmniRoute on your computer. The author does not specify exact installation instructions for each operating system, so follow the instructions provided in the OmniRoute GitHub repository.
+    *   After installation, run the `omniroute` command in your terminal.
+    *   You should see output indicating the server has started, along with a dashboard URL. Open this URL in your web browser.
+2.  **Connect an AI Provider (OpenRouter)**: In the OmniRoute dashboard, go to `Providers`, select `OpenRouter`, and click `Add Connection`.
+    *   Generate an API key from your OpenRouter account. Paste this key into the connection settings in OmniRoute.
+    *   To use only free models, enable the option `Only import free models`.
+    *   Save the connection. OmniRoute will then import the available free models from OpenRouter.
+3.  **Add NVIDIA Models (Optional)**: The author also mentions connecting NVIDIA models. If you wish to do this, follow similar steps in the OmniRoute dashboard under `Providers` to add NVIDIA as a connection, likely requiring specific setup for local NVIDIA hardware.
+4.  **Configure Claude Code**: The author mentions configuring Claude Code to use OmniRoute. The exact steps for this configuration are not detailed in the excerpt. Generally, this involves telling Claude Code to send its requests to your local OmniRoute server instead of directly to Anthropic's models. This might involve setting environment variables or editing a configuration file for Claude Code.
+5.  **Launch Claude Code with OmniRoute**: Once configured, you would launch Claude Code from your terminal. It should now send its requests through OmniRoute, which will then route them to the free AI models you connected.
+
+## Original source
+This workflow was adapted from a guide by vivek_shetye, shared on the DEV Community platform. The author explores how to use the Claude Code AI agent with free AI models by routing requests through an open-source AI gateway called OmniRoute.
+
+## Notes & variations
+*   **Free Tier Viability**: This method allows using Claude Code with free models available through providers like OpenRouter. However, free models may have limitations in performance or availability compared to paid models like Claude Sonnet or Opus.
+*   **Common Pitfall**: Ensure your OmniRoute server is running and accessible before launching Claude Code. If Claude Code cannot connect to OmniRoute, it will likely default to its original paid model or fail to function.
+*   **Tip for Better Results**: Explore different free models available through OpenRouter or other providers. Some models might be better suited for specific coding tasks than others. You can test them by switching the active model within OmniRoute's settings or by configuring Claude Code to try different models.

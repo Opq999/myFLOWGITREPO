@@ -1,0 +1,99 @@
+---
+title: "Automate Substack Publishing with AI Agents"
+description: "Learn how AI agents can automate publishing Markdown content to Substack, bypassing its editor limitations for tables, code blocks, and links. Understand the process and tools involved."
+category: "content-creation"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 120
+jobToBeDone: "Automate publishing Markdown content to Substack, bypassing editor limitations"
+tools:
+  - name: "Substack"
+    url: "https://substack.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Python"
+    url: "https://www.python.org"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "publishing-kit"
+    url: "https://github.com/xbill9/publishing-kit"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Claude Code"
+    url: "https://www.anthropic.com/api"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Codex"
+    url: "https://openai.com/api"
+    pricing: "paid"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/gde/publishing-markdown-to-substack-from-an-agent-skill-258f"
+  platform: "blog"
+  author: "xbill"
+  postedAt: 2026-10-05
+score: 8
+ingestedAt: 2026-10-09
+nigeriaNotes: "This workflow relies on paid developer APIs (Claude Code, OpenAI API) which may not be accessible or affordable for all users. The core `publishing-kit` is free and open-source, but requires a compatible agent platform. Consider the cost of API usage and the technical setup required."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "Convert lecture notes in Markdown to a 20-question Substack quiz for exam prep."
+  - persona: "entrepreneur"
+    scenario: "Automate publishing product updates from Markdown to your Substack newsletter."
+  - persona: "employee"
+    scenario: "Publish formatted reports from Markdown to your company's internal Substack blog."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+Substack's web editor has some limitations: it doesn't have a direct way to publish content using an API (a programming interface), and it can drop certain elements like tables or links around code. This workflow describes how to use an AI agent, combined with an open-source tool called `publishing-kit`, to automatically publish articles written in Markdown to Substack.
+
+An AI agent is a smart computer program that can perform tasks on its own, often by controlling a web browser to interact with websites just like a human would. This is called browser automation. The agent uses these automated actions to paste your content into Substack's editor and then verify that it looks correct.
+
+This is an advanced concept because it requires setting up a programming environment (Python), using developer tools for AI agents, and understanding how to automate web browsers. It's not a simple copy-paste process for beginners.
+
+## What you can use it for
+*   **Automate blog publishing**: Automatically post articles you've written in Markdown format to your Substack publication.
+*   **Bypass editor limitations**: Publish content that includes elements like tables or specific link formats that Substack's standard web editor might otherwise remove or change.
+*   **Ensure content integrity**: Verify that the article published as a draft on Substack looks exactly as intended, checking that code blocks, images, and links are all correct.
+*   **Manage content across platforms**: Use a single Markdown source to prepare and publish articles to multiple blogging platforms, such as Medium and Substack.
+
+## Tools you need
+*   **Substack** (freemium): A platform for writers to publish newsletters and blogs.
+*   **Python** (free): A popular programming language used to run scripts and develop applications.
+*   **publishing-kit** (free): An open-source tool (available on GitHub) that helps AI agents publish content to various online platforms.
+*   **Claude Code** (paid): A developer product from Anthropic, providing access to AI models and agent capabilities through an API.
+*   **Codex** (paid): OpenAI's developer API, which provides access to AI models capable of understanding and generating code, used here for agent functions.
+
+## How it actually works
+1.  **Set up your technical environment**: You will need to install Python on your computer and set up a way to manage Python projects. You'll also need Git to download the `publishing-kit` tool.
+2.  **Get the `publishing-kit`**: Download the `publishing-kit` code from its GitHub repository. This kit contains the "skill" or instructions for an AI agent to interact with Substack.
+3.  **Prepare your article**: Write your article in Markdown. The author uses a Python script from the `publishing-kit` to convert Markdown into HTML format suitable for publishing. This step is similar to preparing content for Medium.
+
+    ```
+    # Python command (cross-platform)
+    python3 make-medium.py your-article.md medium --cover = your-cover-image.jpg
+    ```
+
+    This command converts your Markdown file (`your-article.md`) into an HTML file, ready for the agent to use. Replace `your-article.md` and `your-cover-image.jpg` with your actual file names.
+4.  **Set up an AI agent platform**: You need an AI agent platform that can run the `publishing-kit` and perform browser automation (control a web browser). The author mentions platforms like Claude Code (from Anthropic) or OpenAI's Codex (accessed via their API). These platforms typically require an API key and may involve specific setup instructions. The source also mentions "Antigravity," which is another agent platform, but its public availability and setup details are not specified.
+5.  **Run the agent to publish**: Once your agent platform is set up and connected to the `publishing-kit`, you would instruct the agent to publish the prepared HTML to your Substack account. This involves the agent logging into Substack in a browser it controls, pasting the content, and saving it as a draft. The author doesn't share the exact command or prompt for the agent; it would depend on your chosen agent platform's interface.
+6.  **Verify the published draft**: The agent then reads the newly created draft post on Substack to check if all content (like code blocks, images, and links) was kept correctly by Substack's editor. This ensures that the final draft matches your original Markdown.
+
+## Words you'll see, explained
+*   **AI Agent**: A computer program that can understand instructions, make decisions, and perform tasks on its own, often by interacting with other software or websites.
+*   **Markdown**: A simple way to write text that can be easily converted into HTML. It uses symbols like `*` for bold or `#` for headings.
+*   **API (Application Programming Interface)**: A set of rules and tools that allows different software programs to communicate with each other. It lets different software talk to each other.
+*   **Browser Automation**: Using software to control a web browser automatically, performing actions like clicking buttons, typing text, or navigating pages.
+*   **DOM (Document Object Model)**: The internal structure of a web page, which allows programs to access and change its content, style, and structure.
+*   **publishing-kit**: An open-source tool (or "agent skill") that helps AI agents publish content to various platforms, including Substack.
+
+## Original source
+This concept is based on an article by xbill titled "Publishing Markdown to Substack from an Agent Skill," originally posted on a blog platform. The article details how to use the `publishing-kit` with AI agents to overcome Substack's editor limitations.
+
+## Notes & variations
+*   **Do you even need this?**: For simple blog posts without complex formatting like tables or specific inline code links, Substack's built-in editor is usually sufficient. This advanced workflow is most useful for automating publishing, ensuring precise formatting, or handling content that the Substack editor typically modifies or removes.
+*   **Free-tier limits**: While Substack itself offers a free tier for publishing, the AI agent platforms (like Claude Code and OpenAI's API) are paid services. This means the core automation part of this workflow will incur costs based on your usage. Python and the `publishing-kit` are free to use.
+*   **Common pitfall**: Substack's editor is built on ProseMirror and has a specific "schema" (rules for what content it accepts). It will silently drop or change elements it doesn't support (e.g., tables disappear, or links around inline code become plain text). Always use the agent's verification step to confirm your draft looks as expected before publishing.
+*   **Tip**: The source mentions that inline code cannot carry other marks (like links) in Substack's editor. To ensure links survive, separate the code from the link text before publishing. For example, instead of `skills/publishing/SKILL.md` (which is a link), write `skills/publishing/SKILL.md` (plain code) and then add the link separately.

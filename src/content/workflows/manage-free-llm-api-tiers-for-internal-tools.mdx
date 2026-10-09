@@ -1,0 +1,88 @@
+---
+title: "Manage Free LLM API Tiers for Internal Tools"
+description: "Learn how to manage and chain free LLM API tiers for internal tools to avoid costs, with practical tips and fallback strategies."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 30
+jobToBeDone: "Manage and chain free LLM API tiers for internal tools to avoid costs"
+tools:
+  - name: "Groq"
+    url: "https://groq.com/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "OpenRouter"
+    url: "https://openrouter.ai/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "NVIDIA NIM"
+    url: "https://www.nvidia.com/en-us/ai-and-data/nim/"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Google Gemini"
+    url: "https://gemini.google.com/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Mistral AI"
+    url: "https://mistral.ai/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Cloudflare Workers AI"
+    url: "https://www.cloudflare.com/products/workers-ai/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Cohere"
+    url: "https://cohere.com/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Z AI"
+    url: "https://www.zhipu.ai/"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/tariqnasser/free-llm-api-tiers-in-october-2026-whats-left-and-how-i-chain-them-227l"
+  platform: "blog"
+  author: "tariqnasser"
+  postedAt: 2026-10-07
+score: 7
+ingestedAt: 2026-10-09
+nigeriaNotes: "Free tiers are viable for low-volume internal tools. Data usage depends on the models and frequency of calls. Expect to manage quotas carefully. For higher usage, consider local models or paid tiers."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+
+You'll learn how to use various free tiers of Large Language Model (LLM) APIs to power your internal tools without incurring costs. This approach is useful when you need AI capabilities for tasks like summarizing text or classifying information, but the usage doesn't justify a monthly bill.
+
+## Tools you need
+
+*   **Groq** (freemium): A platform offering fast inference for LLMs, with a free tier.
+*   **OpenRouter** (freemium): A service that aggregates various LLM APIs, providing a unified interface and a free tier for certain models.
+*   **NVIDIA NIM** (paid): NVIDIA's inference microservices, offering optimized LLM deployment. While it has models, the free tier access might require specific conditions or membership.
+*   **Google Gemini** (freemium): Google's powerful AI model, accessible through a free tier via AI Studio.
+*   **Mistral AI** (freemium): A company offering advanced LLMs, with a free plan that includes a monthly credit allowance.
+*   **Cloudflare Workers AI** (freemium): A serverless platform that allows running AI models at the edge, with a free tier.
+*   **Cohere** (freemium): An AI platform providing LLMs for enterprise use, with a free trial or tier.
+*   **Z AI** (freemium): A platform offering LLM services, with a free tier.
+*   **Python** (free): A programming language used to build the fallback chain for managing API calls.
+
+## Steps
+
+1.  **Understand the types of free tiers**: Recognize that "free" can mean different things: permanent quotas (requests/tokens per minute/day that reset), monthly credit allowances (a dollar amount that refills), or anonymous access (no signup needed, but often with very low limits).
+2.  **Identify providers with permanent quotas**: Focus on services like Groq, OpenRouter's free models, NVIDIA NIM, and Google Gemini. These offer a fixed number of requests or tokens that reset regularly. When you hit the limit, you'll typically receive a "429 Too Many Requests" error and must wait for the quota to refresh.
+3.  **Note providers with monthly credit allowances**: Be aware of services like Mistral AI (offering $10/month in credits) and Hugging Face (offering $0.10/month). These are useful but finite for the month. Once used up, you must wait for the next billing cycle.
+4.  **Consider anonymous or keyless access**: For very low-volume tasks or prototypes, services like OVHcloud AI Endpoints, Kilo Code, and LLM7.io offer access without signup. These have strict rate limits per IP address and are not suitable for reliable, higher-volume use.
+5.  **Check specific free limits and catches**: For each provider, note the exact free limits (e.g., requests per minute, requests per day, tokens per day) and any associated catches. For example, Groq's limits apply per organization, not per key. OpenRouter's free models may log prompts. Google Gemini's free tier prompts might be used to improve products (with exceptions for EEA/UK/CH). Mistral's free mode prompts may train models unless you opt out. Cloudflare Workers AI uses a different API endpoint and neuron-based limits, not the standard OpenAI SDK format.
+6.  **Build a fallback chain (Python)**: To ensure your tools remain operational even if one API hits its daily cap, create a Python script that attempts to call one LLM API. If it fails (e.g., with a 429 error), the script automatically tries another API from your list of free tiers. This chain should be ordered based on your preference for model quality, speed, or specific capabilities.
+7.  **Integrate the chain into your tools**: Modify your internal tools to call your Python fallback script instead of directly calling a single LLM API. This script will handle the logic of trying different free tiers until a successful response is received or all options are exhausted.
+
+## Original source
+
+This workflow is based on a guide by tariqnasser posted on DEV Community, which details how to leverage free tiers of various Large Language Model APIs in October 2026. The author shares practical insights into rate limits, hidden catches, and a Python-based fallback system to maintain tool uptime.
+
+## Notes & variations
+
+*   **Free-tier alternative**: For very simple tasks or testing, consider using free tiers of consumer-facing AI chat interfaces like ChatGPT, Claude, or Gemini, though these are not designed for programmatic API access and may have stricter usage policies or require manual interaction.
+*   **Common pitfall**: Relying on a single free tier is risky. When that tier's limits are reached or the service changes its terms, your tool will stop working. Always have a backup or a chain of providers.
+*   **Tip for better results**: Keep a log of which API calls succeed and fail, and at what rate limits. This data can help you optimize the order of your fallback chain and predict when you might hit limits, allowing you to adjust your tool's usage proactively.

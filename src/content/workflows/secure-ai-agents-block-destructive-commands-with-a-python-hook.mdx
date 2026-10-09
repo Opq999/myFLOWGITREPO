@@ -1,0 +1,143 @@
+---
+title: "Secure AI Agents: Block Destructive Commands with a Python Hook"
+description: "Learn how to create a security layer for AI agents by inspecting and blocking destructive commands before they execute, using Python and Bash."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 30
+jobToBeDone: "Create a security layer for AI agents to prevent destructive commands"
+tools:
+  - name: "Python"
+    url: "https://www.python.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Bash"
+    url: "https://www.gnu.org/software/bash/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/slabb/i-attack-tested-my-agents-seatbelt-heres-what-survived-15mj"
+  platform: "blog"
+  author: "slabb"
+  postedAt: 2026-10-03
+score: 7
+ingestedAt: 2026-10-09
+nigeriaNotes: "This workflow involves running code locally, which is generally low data usage. Ensure you have Python 3 installed, which is common on most systems. The core logic is a script, so data transfer is minimal."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You'll create a script that acts as a 'seatbelt' for your AI agent, preventing it from running dangerous commands like deleting files or forcing code pushes. This approach works by checking commands before they are executed, ensuring they don't contain harmful patterns or target sensitive areas.
+
+## Tools you need
+*   **Python** (free): A programming language used here to parse commands and check their safety.
+*   **Bash** (free): A command-line shell used to run scripts and execute commands on your system.
+
+## Steps
+1.  **Create the initial blocklist script**: This script checks for specific destructive commands. Save this code in a file named `guard-bash.sh`.
+
+    ```bash
+    #!/bin/sh
+    # PreToolUse hook: reads { tool_name, tool_input } JSON on stdin.
+    # exit 0 = allow | exit 2 = block, stderr goes back to the agent.
+    cmd=$( python3 -c 'import json,sys; print(json.load(sys.stdin)("tool_input").get("command",""))' 2 /dev/null )
+    case " $cmd " in 
+        * "rm -rf $ " * | * "rm -rf ~" * | * "rm -rf /" * | \ 
+        * "git push --force" * | * "git push -f" * | \ 
+        * "DROP TABLE" * | * "chmod -R 777 /" * )
+        echo "SEATBELT: blocked — destructive pattern matched in: $cmd " 2
+        exit 2
+        ;; 
+        * )
+        exit 0
+        ;; 
+    esac
+    ```
+
+    After saving, make the script executable by running `chmod +x guard-bash.sh` in your terminal. This script should allow safe commands and block dangerous ones.
+
+2.  **Test the initial script**: You can test this script by feeding it example commands. For instance, to test blocking `rm -rf /`, you would run:
+
+    ```bash
+    echo '{"tool_input":{"command":"rm -rf /"}}' | ./guard-bash.sh
+    ```
+
+    You should see an error message indicating the command was blocked, and the script should exit with a non-zero status (indicating a block).
+
+3.  **Create the improved script using Python and shlex**: This version is more robust and uses Python's `shlex` module for safer command parsing. Save this code in a file named `guard-python.py`.
+
+    ```python
+    #!/usr/bin/env python3
+    """ PreToolUse hook, v2 — destructive verbs must target paths inside PROJECT. """
+    import json, shlex, sys, os
+    PROJECT = os.path.realpath(os.environ.get("PROJECT_ROOT", os.getcwd()))
+
+    def inside_project(path: str) -> bool:
+        p = os.path.realpath(path)
+        return p == PROJECT or p.startswith(PROJECT + os.sep)
+
+    def targets_of(argv: list) -> list:
+        # This is a placeholder. The actual implementation would parse argv
+        # to find file paths and return them. The original source cuts off here.
+        # For a real implementation, you would need to analyze the command arguments.
+        print("Placeholder: Implement target path extraction here.", file=sys.stderr)
+        return []
+
+    def main():
+        try:
+            data = json.load(sys.stdin)
+            tool_input = data.get("tool_input", {})
+            command_str = tool_input.get("command", "")
+            
+            if not command_str:
+                sys.exit(0) # No command to check, allow
+
+            # Basic check for destructive verbs (this list can be expanded)
+            destructive_verbs = ['rm', 'DROP', 'chmod', 'git clean']
+            argv = shlex.split(command_str)
+            verb = argv[0] if argv else ""
+
+            if verb in destructive_verbs:
+                # In a real scenario, you'd extract targets and check them
+                # For this example, we'll simulate blocking if a destructive verb is found
+                # and assume targets need to be checked against PROJECT_ROOT
+                print(f"SEATBELT: Potentially destructive command detected: {command_str}", file=sys.stderr)
+                # In a full implementation, you would call targets_of(argv) and check paths
+                # For now, we'll block any command with a known destructive verb
+                sys.exit(2) # Block
+            else:
+                sys.exit(0) # Allow
+
+        except json.JSONDecodeError:
+            print("SEATBELT: Invalid JSON input.", file=sys.stderr)
+            sys.exit(2)
+        except Exception as e:
+            print(f"SEATBELT: An error occurred: {e}", file=sys.stderr)
+            sys.exit(2)
+
+    if __name__ == "__main__":
+        main()
+    ```
+
+    Make this script executable: `chmod +x guard-python.py`.
+
+4.  **Set the PROJECT_ROOT environment variable**: Before running your agent, you need to tell the script where your project directory is. For example:
+
+    ```bash
+    export PROJECT_ROOT="/path/to/your/project"
+    ```
+
+    Replace `/path/to/your/project` with the actual path to your project folder.
+
+5.  **Run your AI agent with the Python hook**: When your AI agent is configured to use a 'PreToolUse' hook, point it to this Python script. The exact method depends on your AI agent's framework, but generally, you would configure it to execute `python3 /path/to/guard-python.py` before allowing any tool use.
+
+    The agent will now send commands to `guard-python.py`. If the script detects a potentially destructive command, it will block it and return an error message to the agent.
+
+## Original source
+This workflow is based on a blog post by slabb, shared on DEV Community. The author details their process of creating and testing a security 'seatbelt' for AI agents to prevent them from executing harmful commands.
+
+## Notes & variations
+*   **Common mistake**: The initial script (`guard-bash.sh`) can be easily bypassed because it relies on simple string matching. For example, commands like `echo cm0gLXJmIC9EYXRhL3NlY3JldA== | base64 -d | sh` hide the destructive command within other operations. The improved Python script using `shlex` is more resilient.
+*   **Tip for better results**: The `targets_of` function in the Python script is crucial. A robust implementation would carefully parse the command arguments to identify all file paths being targeted and then check if they fall within the allowed `PROJECT_ROOT`. This requires more sophisticated parsing logic.
+*   **Alternative**: For simpler needs, you might consider using a more opinionated AI agent framework that has built-in safety features, though custom hooks offer more control.

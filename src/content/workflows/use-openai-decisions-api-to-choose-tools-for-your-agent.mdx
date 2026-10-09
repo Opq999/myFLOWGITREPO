@@ -1,0 +1,132 @@
+---
+title: "Use OpenAI Decisions API to Choose Tools for Your Agent"
+description: "Learn how to use the OpenAI Decisions API with Strands Agents to intelligently select the right tool or model for your AI agent, optimizing performance and cost."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 15
+jobToBeDone: "Select the correct tool or model for an agent using OpenAI Decisions API."
+tools:
+  - name: "OpenAI Decisions API"
+    url: "https://platform.openai.com/docs/guides/tool-use/decisions-api"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Strands Agents"
+    url: "https://github.com/dave-the-coder/strands-agents"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "AsyncOpenAI"
+    url: "https://github.com/openai/openai-python"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/aws-espanol/como-usar-openai-decisions-api-con-strands-agents-2l1p"
+  platform: "blog"
+  author: "elizabethfuentes12"
+  postedAt: 2026-10-07
+score: 7
+ingestedAt: 2026-10-09
+nigeriaNotes: "Requires an OpenAI API key, which incurs costs per use. Data usage is minimal as it involves API calls, not large file transfers. Free tier viability depends on OpenAI's pricing for the Decisions API and your usage volume."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You'll learn how to use the OpenAI Decisions API to help your AI agent pick the right tool or model for a specific task. This approach is useful because it makes your agent more efficient by ensuring it uses the most appropriate and cost-effective tool for each request, rather than guessing or using a powerful, expensive model for simple tasks.
+
+## Tools you need
+*   **OpenAI Decisions API** (paid): A specialized API from OpenAI that helps AI agents make specific choices from a predefined list, returning a selection with a confidence score.
+*   **Strands Agents** (free): An open-source framework for building AI agents, which can be customized with different tools and models.
+*   **AsyncOpenAI** (free): The official asynchronous Python client library for interacting with OpenAI's APIs, including the Decisions API.
+
+## Steps
+1.  **Set up your environment**: Ensure you have Python installed and install the necessary libraries. You will also need an OpenAI API key. The author uses `gpt-6-luna` as a model, but you may need to use a different available model. The exact setup for Strands Agents and `AsyncOpenAI` is not fully detailed, but typically involves installing them via pip and setting your API key as an environment variable.
+
+    ```bash
+    pip install openai strands-agents
+    export OPENAI_API_KEY='your-api-key-here'
+    ```
+
+    You should see the libraries installed without errors.
+
+2.  **Define your tools and the decision prompt**: The author uses a list of tools (`ALL_TOOLS`) and a system prompt (`PROMPT`) for the agent. For the Decisions API, you need to define the choices the agent can make, each with a value and a description. The author provides an example of how to format these choices for selecting a tool.
+
+    ```python
+    # Example of how choices might be formatted for the Decisions API
+    oai_choices = [
+        { "value": t.tool_name, "description": t.tool_spec["description"] } 
+        for t in ALL_TOOLS
+    ]
+    ```
+
+    You should have a list of dictionaries, where each dictionary represents a possible choice for the agent.
+
+3.  **Create a function to call the Decisions API**: This function will take a user's query and use the `AsyncOpenAI` client to call the Decisions API. It will pass the query, the chosen model, and the list of possible choices. The API will return the agent's decision.
+
+    ```python
+    from openai import AsyncOpenAI
+    
+    oai = AsyncOpenAI()
+    
+    async def openai_select(query):
+        resp = await oai.decisions.create(
+            model="gpt-6-luna", # Or another available model
+            input=query,
+            questions=[
+                {
+                    "type": "choice",
+                    "name": "tool",
+                    "instructions": "Which tool answers this request?",
+                    "choices": oai_choices # This list comes from step 2
+                }
+            ],
+        )
+        answer = next(a for a in resp.answers if a.name == "tool")
+        # The author returns a list containing the selected tool, 
+        # but the exact format depends on how Strands Agents expects it.
+        # For example, it might be: return [BY_NAME[answer.choice]] 
+        # where BY_NAME maps the choice value back to a tool object.
+        return answer.choice # Simplified for demonstration
+    ```
+
+    You should be able to run this function without errors, and it should return a string representing the chosen tool's name or value.
+
+4.  **Integrate the decision function into your agent**: The author shows how to use this function within a Strands Agent by using a `ToolFilterHook`. This hook intercepts the agent's process before it calls a model, allowing you to filter or select the tools the agent can use based on the Decisions API's output.
+
+    ```python
+    # Assuming you have defined ALL_TOOLS, AGENT_MODEL, PROMPT, and BY_NAME
+    # and the openai_select function from step 3
+    
+    # Example hook definition (details may vary based on Strands Agents library)
+    class ToolFilterHook:
+        def __init__(self, selector_func):
+            self.selector_func = selector_func
+    
+        async def __call__(self, event):
+            if event.name == "BeforeModelCallEvent":
+                selected_tool_name = await self.selector_func(event.query)
+                # Filter event.tools to only include the selected tool
+                event.tools = [t for t in event.tools if t.tool_name == selected_tool_name]
+    
+    # Instantiate the agent with the hook
+    agent = Agent(
+        model=AGENT_MODEL,
+        tools=ALL_TOOLS,
+        system_prompt=PROMPT,
+        hooks=[ToolFilterHook(openai_select)],
+        callback_handler=None
+    )
+    
+    # Invoke the agent with a query
+    result = await agent.invoke_async("How much is a room at the Cliffside Resort?") 
+    ```
+
+    When you invoke the agent, it should process the query, use the Decisions API to select the most relevant tool (e.g., `get_hotel_room_rates`), and then proceed with that tool. The output should indicate which tool was chosen and potentially the confidence score.
+
+## Original source
+This workflow is based on a blog post by elizabethfuentes12 on DEV Community. The author explains how to integrate OpenAI's Decisions API with Strands Agents to create more efficient AI agents by having them intelligently select the right tools for specific tasks.
+
+## Notes & variations
+*   **Free-tier alternative**: While the OpenAI Decisions API itself is a paid service, you can explore using open-source models or simpler logic within Strands Agents if cost is a major concern. However, for the specific functionality of the Decisions API, there isn't a direct free alternative.
+*   **Common mistake**: A common pitfall is not correctly formatting the `choices` parameter for the Decisions API. Each choice needs a `value` (the identifier for the choice) and a `description` (explaining what the choice does). Ensure these are clear and distinct.
+*   **Tip for better results**: Provide very clear and concise instructions in the `instructions` field of the `questions` parameter for the Decisions API. The more specific your instructions, the better the API can understand the task and make an accurate choice.
