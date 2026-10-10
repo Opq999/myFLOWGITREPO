@@ -1,0 +1,108 @@
+---
+title: "Build a Virtual Pet on Arduino with Arduino App Lab"
+description: "Learn to build a Tamagotchi-style virtual pet on an Arduino Uno Q using Arduino App Lab. Control its moods and actions with keyboard input."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 60
+jobToBeDone: "Build a virtual pet on an Arduino with basic interactive features"
+tools:
+  - name: "Arduino Uno Q"
+    url: "https://www.arduino.cc/uno"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Arduino App Lab"
+    url: "https://app.lab.arduino.cc/"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/heraistudio/build-a-tiny-virtual-pet-on-arduino-in-60-minutes-2cf"
+  platform: "blog"
+  author: "jenlooper"
+  postedAt: 2026-10-06
+score: 7
+ingestedAt: 2026-10-10
+nigeriaNotes: "The Arduino Uno Q is a hardware component and may require international shipping. Arduino App Lab is a web-based tool with low data usage."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will build a virtual pet named Kiku on an Arduino Uno Q board. This pet will have an animated LED face, react to different moods, and be controllable via keyboard input. This project is a fun introduction to hardware hacking, showing how simple code can create interactive experiences on physical devices.
+
+## Tools you need
+*   **Arduino Uno Q** (paid): A microcontroller board that will run your code and display your virtual pet.
+*   **USB cable** (paid): To connect your Arduino Uno Q to your laptop for programming and power.
+*   **Laptop** (free): To run the Arduino App Lab software and write the code.
+*   **Arduino App Lab** (freemium): A web-based tool for writing and uploading code to your Arduino board.
+
+## Steps
+1.  **Connect your Arduino**: Plug your Arduino Uno Q into your laptop using the USB cable. You should see a light on the board indicating it has power.
+2.  **Open Arduino App Lab**: Go to the Arduino App Lab website on your laptop and log in. If you don't have an account, you'll need to create one.
+3.  **Create a new app**: In Arduino App Lab, create a new project. You will see some pre-written code, called a 'scaffold'.
+4.  **Make the LED blink**: Find the file named `sketch.ino`. Replace its contents with the following code to test if your Arduino is working:
+
+    ```cpp
+    void setup() {
+      pinMode(LED_BUILTIN, OUTPUT);
+    }
+
+    void loop() {
+      digitalWrite(LED_BUILTIN, LOW);
+      delay(1000);
+      digitalWrite(LED_BUILTIN, HIGH);
+      delay(1000);
+    }
+    ```
+    
+    After pasting the code, press the 'Run' button in App Lab. You should see the built-in LED on your Arduino board blink on and off every second. If it doesn't, check your USB cable; some cables only provide power and don't transfer data.
+5.  **Enable communication**: Now, we'll set up your Arduino to receive commands from your laptop. In the `setup()` function within `sketch.ino`, add the following line to start 'Serial communication' (sending data over the USB cable):
+
+    ```cpp
+    void setup() {
+      Serial.begin(9600);
+    }
+    ```
+    
+    You should see the `setup()` function now has this line. The `9600` is a speed setting for the communication.
+6.  **Listen for keyboard input**: In the `loop()` function (which runs over and over), add code to check if any keys have been pressed on your keyboard. If a key is pressed, it will be read and checked:
+
+    ```cpp
+    void loop() {
+      if (Serial.available() > 0) {
+        char typed = Serial.read();
+        if (typed == 'f') {
+          // feed Kiku
+        }
+        if (typed == 'p') {
+          // play with Kiku
+        }
+        if (typed == 's') {
+          // sleep or wake up
+        }
+      }
+    }
+    ```
+    
+    Press 'Run' again in App Lab. Your keyboard can now send commands to your Arduino. The commands are:
+    *   `f`: to feed Kiku
+    *   `p`: to play with Kiku
+    *   `s`: to make Kiku sleep or wake up
+7.  **Add Kiku's feelings**: To make Kiku feel alive, we need to track its 'state' (its current condition). Add these lines at the top of your `sketch.ino` file, before `setup()`:
+
+    ```cpp
+    int hunger = 3;
+    int joy = 6;
+    int energy = 8;
+    bool asleep = false;
+    ```
+    
+    These variables will keep track of how hungry Kiku is, how happy it is, how much energy it has, and whether it's sleeping. The project excerpt cuts off here, but you would continue by adding code within the `if (typed == 'f')`, `if (typed == 'p')`, and `if (typed == 's')` blocks to change these values based on the keyboard input.
+
+## Original source
+This workflow is based on a tutorial by Jen Looper, originally posted on the DEV Community platform. It guides users through creating a simple virtual pet on an Arduino microcontroller.
+
+## Notes & variations
+*   **Free tier alternative**: While the Arduino Uno Q hardware is paid, you can practice the coding part using an online Arduino simulator if you don't have the physical board yet.
+*   **Common mistake**: Ensure you are using a USB cable that supports data transfer, not just charging. A cable that works for charging your phone might not work for connecting your Arduino to your computer.
+*   **Tip for better results**: As you progress, you can add more complex interactions by introducing more keyboard commands or even simple sensors to make Kiku react to its environment.

@@ -1,0 +1,104 @@
+---
+title: "Create a Garden Care Plan with Tendril and Local AI"
+description: "Learn to build Tendril, a garden assistant that uses local AI to create personalized care plans based on weather and your input."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 60
+jobToBeDone: "Create a personalized, glanceable garden care plan based on weather and user input"
+tools:
+  - name: "Ollama"
+    url: "https://ollama.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Qwen 2.5 (3B)"
+    url: "https://huggingface.co/Qwen/Qwen2.5-0.5B"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Open-Meteo"
+    url: "https://open-meteo.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "FastAPI"
+    url: "https://fastapi.tiangolo.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "SQLite"
+    url: "https://www.sqlite.org/index.html"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Docker Compose"
+    url: "https://docs.docker.com/compose/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "faster-whisper"
+    url: "https://github.com/guillaumekl/faster-whisper"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Pillow"
+    url: "https://python-pillow.org/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/chanadev/tendril-a-garden-assistant-you-never-have-to-open-24d"
+  platform: "blog"
+  author: "chanadev"
+  postedAt: 2026-10-08
+score: 8
+ingestedAt: 2026-10-10
+nigeriaNotes: "This workflow requires running AI models locally, which can be data-light after initial model downloads. The core functionality relies on free, open-source tools, making it accessible. Ensure sufficient storage for models."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will set up a personal garden assistant that creates a simple, glanceable daily care plan for your plants. It uses local AI to interpret weather forecasts and your voice notes, adapting the plan as needed. This approach is useful because it keeps you connected to your garden without requiring constant phone interaction, focusing on essential tasks.
+
+## Tools you need
+*   **Ollama** (free): A tool to easily run AI models on your own computer.
+*   **Qwen 2.5 (3B)** (free): A small, open-source AI model that can run on your machine.
+*   **Open-Meteo** (free): A service that provides weather forecasts without needing an API key.
+*   **FastAPI** (free): A web framework for building the assistant's interface.
+*   **SQLite** (free): A simple database to store your garden's information.
+*   **Docker Compose** (free): A tool to manage and run multiple services (like the AI model and the assistant) together easily.
+*   **faster-whisper** (free): A tool to convert your voice notes into text using your computer's processor.
+*   **Pillow** (free): A Python library for image processing, used here to create the plan's visual display.
+
+## Steps
+1.  **Set up your development environment**: Install Docker and Docker Compose on your computer. You'll also need Python installed.
+2.  **Get the Tendril code**: Download the project files from the GitHub repository. The author doesn't specify how to download, but typically you would clone the repository using Git or download a ZIP file.
+    *   **If using Git (recommended)**:
+        ```bash
+        # macOS or Linux
+        git clone https://github.com/pyarchana/tendril
+        cd tendril
+        ```
+        ```powershell
+        # Windows (PowerShell)
+        git clone https://github.com/pyarchana/tendril
+        cd tendril
+        ```
+    *   **If downloading a ZIP**: Extract the contents of the ZIP file to a folder on your computer.
+3.  **Configure the AI model and weather settings**: The author mentions setting your city and adding plants. This is likely done by editing configuration files within the downloaded project. Look for files named `config.py` or similar, and update the `CITY` variable with your location. You will also add your plant names and types here.
+4.  **Start the assistant**: Use Docker Compose to run all the necessary services (the AI model, the web app, etc.) with a single command. This command will download the AI model if it's not already present.
+    ```bash
+    # macOS or Linux
+    docker compose up
+    ```
+    ```powershell
+    # Windows (PowerShell)
+    docker compose up
+    ```
+    You should see output indicating that the services are starting. This step might take a while the first time as it downloads the AI model.
+5.  **Access the assistant**: Once the services are running, open your web browser and go to `http://localhost:8000`. You should see the Tendril interface.
+6.  **Add your plants and city**: Follow the on-screen instructions to input your city and list your plants. This information is stored locally.
+7.  **View your first plan**: The assistant will automatically generate a weekly plan based on the weather forecast for your city and your plants. This plan is displayed as a picture, designed to be glanceable.
+8.  **Interact with the assistant**: You can tell Tendril what you did by tapping 'Done' or by using voice input. For example, hold the microphone and say, "Watered the chillies, there are aphids under the tulsi leaves." The assistant will update the plan based on your input.
+
+## Original source
+This workflow is based on the Tendril project by chanadev, shared on the DEV Community platform. The author built it as a Hacktoberfest submission to create a low-interaction garden assistant that runs locally.
+
+## Notes & variations
+*   **Free-tier alternative**: All tools used are free and open-source, so there are no free-tier limitations to worry about. The main constraint is your computer's processing power and storage.
+*   **Common pitfall**: The author notes that small AI models can sometimes copy instructions into their answers or repeat tasks excessively. Ensure your prompts are clear and that the system's logic for trimming repeats and applying weather rules is functioning correctly.
+*   **Tip for better results**: The author found that splitting tasks between the AI model (for creative plant care ideas) and plain code (for strict weather rules and data trimming) improved the output significantly. You can experiment with how these rules are applied in the code.

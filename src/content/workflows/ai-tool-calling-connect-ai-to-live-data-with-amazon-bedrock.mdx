@@ -1,0 +1,83 @@
+---
+title: "AI Tool Calling: Connect AI to Live Data with Amazon Bedrock"
+description: "Learn how to make AI models access live information by describing tools they can request, using Amazon Bedrock and Claude."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 30
+jobToBeDone: "Enable an AI model to access live data by describing tools it can request"
+tools:
+  - name: "Amazon Bedrock"
+    url: "https://aws.amazon.com/bedrock/"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Claude"
+    url: "https://www.anthropic.com/claude"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Open-Meteo"
+    url: "https://open-meteo.com/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/aws/how-ai-actually-calls-an-api-tool-calling-explained-from-scratch-4lf8"
+  platform: "blog"
+  author: "rohini_gaonkar"
+  postedAt: 2026-09-16
+score: 7
+ingestedAt: 2026-10-10
+nigeriaNotes: "Amazon Bedrock is a paid service. While Claude has a free tier, using Bedrock for this workflow will incur costs. Data usage for API calls is generally low, but consistent usage can add up."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+
+This workflow explains how Artificial Intelligence (AI) models can access up-to-date information from the real world, like weather forecasts or stock prices. Normally, an AI model's knowledge is limited to the data it was trained on, which can be old. Tool calling is a way to give the AI a 'window' to the outside world.
+
+It's important to understand that the AI model doesn't actually run code or fetch data itself. Instead, it generates a structured request, like a note, asking your application to call a specific tool with certain information. Your application then takes this note, runs the actual tool (like a weather app), and sends the result back to the AI. The AI then uses this new information to answer your question or perform another action.
+
+This process is crucial for making AI assistants more helpful and accurate, allowing them to provide current information rather than relying solely on outdated training data. The exact steps involve setting up descriptions of available tools for the AI and handling the requests and responses between the AI and your code.
+
+## What you can use it for
+
+*   **Get live weather updates**: Ask an AI about the current weather in any city.
+*   **Check real-time prices**: Have an AI fetch current prices for stocks or products.
+*   **Access current dates and times**: Enable an AI to tell you the exact date or time.
+*   **Integrate with external services**: Allow AI to interact with other online services that provide live data.
+
+## Tools you need
+
+*   **Amazon Bedrock** (paid): A service that provides access to various AI models, including Claude, and allows for tool configuration.
+*   **Claude** (freemium): An AI model that can be used for understanding prompts and generating tool requests.
+*   **Open-Meteo** (free): A free weather API that provides current weather data.
+
+## How it actually works
+
+This workflow requires setting up a connection to an AI model and defining the tools it can use. The core process follows a four-step loop:
+
+1.  **Send your question and tool descriptions**: You provide the AI model with your query and a description of the tools it can access. This description includes the tool's name, what it does, and what information it needs (its input schema).
+2.  **AI decides if a tool is needed**: The model determines if it can answer your question with its existing knowledge or if it needs to use a tool.
+3.  **AI generates a tool request**: If a tool is needed, the model outputs a structured request, specifying which tool to call and with what inputs (e.g., `call get_weather, city is Toronto`).
+4.  **Your code runs the tool and returns the result**: Your application receives this request, executes the actual tool (e.g., calls the Open-Meteo API for weather data), and sends the result back to the AI model.
+5.  **AI provides the final answer**: The model uses the tool's result to formulate a final answer for you, grounded in the live data it just received.
+
+The author's code provides examples of how to describe a tool like `get_weather` to the model, including its name, a plain-English description, and a JSON schema for its inputs. The actual Python function to fetch weather data using Open-Meteo is also provided.
+
+## Words you'll see, explained
+
+*   **API (Application Programming Interface)**: A set of rules and definitions that allows different software applications to communicate with each other.
+*   **Foundation Model**: A large AI model trained on a vast amount of data, capable of performing a wide range of tasks.
+*   **Tool Calling**: A feature that enables AI models to request the execution of external tools or functions to access real-time data or perform actions.
+*   **Input Schema**: A structured definition of the data that a tool or function expects as input.
+*   **Structured Request**: A precisely formatted message generated by the AI model, indicating a request to call a specific tool with defined parameters.
+
+## Original source
+
+This explanation of AI tool calling comes from a blog post by rohini_gaonkar on DEV Community. It breaks down how AI models can be given access to live data by describing tools they can request, building on previous concepts of document reading.
+
+## Notes & variations
+
+*   **Do you even need this?**: If you only need to access very simple, static information, you might be able to pre-load that data into the AI's context rather than setting up tool calling. However, for live or dynamic data, tool calling is essential.
+*   **Free-tier limits**: While Claude has a free tier, Amazon Bedrock is a paid service. Using this workflow will incur costs associated with Bedrock usage. Open-Meteo is free to use.
+*   **Common pitfall**: A common mistake is assuming the AI model runs the code itself. Remember, the AI only generates a request; your application code must execute the tool and return the results.

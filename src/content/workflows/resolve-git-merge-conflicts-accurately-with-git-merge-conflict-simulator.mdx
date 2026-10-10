@@ -1,0 +1,55 @@
+---
+title: "Resolve Git Merge Conflicts Accurately with Git Merge Conflict Simulator"
+description: "Learn to resolve Git merge conflicts without guesswork using markers, --ours/--theirs, and rebase techniques with an interactive browser simulator."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 30
+jobToBeDone: "Resolve Git merge conflicts accurately without trial and error"
+tools:
+  - name: "Git"
+    url: "https://git-scm.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Git Merge Conflict Simulator"
+    url: "https://www.git-conflict-simulator.com/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/devopsdaily/how-to-resolve-merge-conflicts-in-git-without-guessing-markers-ours-theirs-and-the-rebase-flip-b4g"
+  platform: "blog"
+  author: "devopsdaily"
+  postedAt: 2026-10-08
+score: 7
+ingestedAt: 2026-10-10
+nigeriaNotes: "Git is a local tool, so data usage is minimal. The simulator runs in the browser and requires an internet connection but is free to use."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to accurately resolve Git merge conflicts, avoiding common mistakes that lead to broken code or lost changes. This approach uses specific Git commands and understanding the different versions of a file involved in a conflict, rather than guessing. It's useful when you need to integrate changes from different branches into your project without introducing errors.
+
+## Tools you need
+*   **Git** (free): A version control system used to track changes in code and collaborate with others.
+*   **Git Merge Conflict Simulator** (free): An interactive browser-based tool that models Git commands to help you practice resolving conflicts without affecting a real repository.
+
+## Steps
+1.  **Understand the conflict scenario**: You are rebasing your branch onto main, and Git stops because of a conflict in a file (e.g., `limits.py`). You need to decide which version of the code to keep.
+2.  **Learn about the three versions**: A conflict involves three versions of a file: the common ancestor (base), your version (ours), and the version from the branch you are merging (theirs). The simulator helps you see these.
+3.  **View the base version**: Before making changes, inspect the common ancestor of the conflicting file. This helps you understand how the file evolved. The simulator shows this when you type commands like `git show :1:config.yaml`.
+    *   **Tip**: To see the base inline in real Git, use `git config --global merge.conflictStyle zdiff3` (requires Git 2.35 or newer).
+4.  **Resolve conflicts by editing**: For conflicts where you need to combine changes (e.g., two different packages in `requirements.txt`), open the file in an editor. Remove the conflict markers (`=======`, `|||||||`), keep the desired code, and save the file. Then, stage the resolved file using `git add <filename>`.
+    *   **What to expect**: Git marks the conflict as resolved when you stage the file. It doesn't check the content, so ensure you've removed all markers and kept the correct code.
+5.  **Take a whole side when needed**: If a file is binary (like an image) and you want to keep the version from the branch you are merging in, use `git checkout --theirs <filename>`. Then, stage the file with `git add <filename>` and commit.
+    *   **During a merge**: `--ours` refers to the branch you are currently on, and `--theirs` refers to the branch you are merging into.
+6.  **Understand the rebase flip**: During a rebase, the meaning of `--ours` and `--theirs` flips compared to a regular merge. `--ours` becomes the version from the branch you are rebasing onto (e.g., `main`), and `--theirs` becomes your branch's version. This is a common point of confusion.
+7.  **Practice in the simulator**: Follow the lessons in the Git Merge Conflict Simulator. Type commands into the terminal area and edit files in the editor to see how Git handles conflicts and how your actions resolve them.
+
+## Original source
+This workflow is based on a blog post by devopsdaily, shared on the DEV Community platform. It explains how to resolve Git merge conflicts effectively by understanding the underlying versions of files and using specific commands, rather than relying on trial and error.
+
+## Notes & variations
+*   **Free tier alternative**: The Git Merge Conflict Simulator is free and runs in the browser, making it accessible. For real-world practice, you can create a test Git repository on your computer.
+*   **Common mistake**: Confusing `--ours` and `--theirs` during a rebase. Remember that during a rebase, `--ours` refers to the target branch (like `main`), and `--theirs` refers to the branch you are currently rebasing.
+*   **Tip for better results**: Always try to understand the common ancestor of a conflict. Knowing the base version helps you make informed decisions about which changes to keep or how to combine them.

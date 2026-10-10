@@ -1,0 +1,103 @@
+---
+title: "Streamline QA Tasks with Obsidian and AI for Better Organization"
+description: "Learn how a QA professional uses Obsidian for organized note-taking and AI for task automation, improving efficiency and coverage in software testing."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 60
+jobToBeDone: "Streamline QA tasks and organization using AI and note-taking tools"
+tools:
+  - name: "Obsidian"
+    url: "https://obsidian.md"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Claude"
+    url: "https://claude.ai"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Jira"
+    url: "https://www.atlassian.com/software/jira"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/he4rt/claude-e-obsidian-como-uma-qa-utiliza-essas-ferramentas-no-dia-a-dia-51jc"
+  platform: "blog"
+  author: "m4rri4nne"
+  postedAt: 2026-09-28
+score: 7
+ingestedAt: 2026-10-10
+nigeriaNotes: "Obsidian stores notes locally, making it data-light. Claude has a free tier, but advanced integrations (like fetching data from Jira automatically) would likely require paid API access and technical setup, which can be costly and data-intensive."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+This workflow shows how a Quality Assurance (QA) professional combines a powerful note-taking app, Obsidian, with AI tools like Claude to manage daily tasks more efficiently. The goal is to ensure nothing is missed in fast-paced software development, covering all necessary test scenarios.
+
+The core idea is to use Obsidian to organize thoughts, create reusable templates for different types of tasks (like test plans or meeting notes), and store information securely on your computer. The author then integrates AI to automate repetitive parts of these tasks, such as generating test plans based on project details.
+
+This approach is considered advanced because the AI integration described involves "skills" that can automatically fetch context from other tools like Jira using a task ID. This usually requires setting up custom AI agents, using APIs (Application Programming Interfaces), or developing scripts, which goes beyond simple copy-pasting into a chat window. Therefore, there isn't a single, easy recipe to reproduce the full AI automation described.
+
+## What you can use it for
+*   **Organize project notes**: Keep all your project details, test plans, and meeting notes in one structured place.
+*   **Create reusable templates**: Quickly start new tasks or documents with pre-defined structures for consistency.
+*   **Secure local data**: Store sensitive project information on your own device, giving you more control over data security.
+*   **Automate repetitive writing**: Use AI to draft parts of test plans, risk assessments, or meeting summaries based on your notes.
+*   **Improve test coverage**: Ensure all critical scenarios are considered by using structured templates and AI assistance.
+
+## Tools you need
+*   **Obsidian** (freemium): A note-taking and knowledge management app that stores your notes as plain text files on your computer.
+*   **Claude** (freemium): An AI assistant that can help generate text, summarize information, and answer questions.
+*   **Jira** (freemium): A project management tool used for tracking tasks, bugs, and project progress, common in software development.
+
+## How it actually works
+The author uses Obsidian as their main hub for all notes and documentation. Here's a general path to replicate the *principles* of this workflow, understanding that the exact AI integration with Jira is complex:
+
+1.  **Install Obsidian and set up your "vault"**:
+    *   Download and install Obsidian from its official website.
+    *   When you first open it, choose "Create new vault" and give it a name. This vault is a folder on your computer where all your notes will be stored.
+
+2.  **Create templates in Obsidian**:
+    *   Inside your Obsidian vault, create a new folder named `Templates` (or similar).
+    *   Create new notes within this folder for different purposes, e.g., `Technical Task Template.md`, `Business Task Template.md`, `Meeting Notes Template.md`.
+    *   Fill these notes with common headings, checklists, or prompts you'd use. For example, a "Technical Task Template" might have sections for "Task ID:", "Description:", "Test Scenarios:", "Risks:", "Mitigation:".
+    *   To use a template, create a new note, then use the "Insert template" command (often found by typing `/` or `Ctrl+P` and searching for "template").
+
+3.  **Use Claude for content generation (manual approach)**:
+    *   For tasks like generating test plans, you would manually copy relevant context from Jira (e.g., task description, requirements) into Claude.
+    *   Then, you would use a prompt to ask Claude to generate content based on that context. The author mentions "skills" for "Test plan creation." This likely refers to a well-crafted prompt or a custom instruction set within Claude.
+    *   **Example prompt (starting point, author's exact prompt not shared):**
+
+    ```
+    I need a test plan for a software feature. Here is the task context from Jira:
+    [Paste Jira task description and requirements here]
+
+    Based on this, suggest detailed test scenarios, including positive, negative, and edge cases. Also, identify potential risks and suggest mitigation strategies.
+    ```
+
+    *   You would then copy Claude's output back into your Obsidian note.
+
+4.  **Advanced AI integration (requires technical skill)**:
+    *   The author's description of "skills" that "fetch context from Jira" by passing a task ID suggests an automated integration. This typically involves:
+        *   Using the **Jira API** to programmatically retrieve task details.
+        *   Using the **Claude API** (a paid service) to send the Jira context and receive generated content.
+        *   Writing custom code (e.g., Python script) or setting up an automation platform (like Zapier, Make, or a custom AI agent framework) to connect Jira and Claude.
+    *   These steps require programming knowledge and API keys, and are beyond a simple copy-paste recipe. The exact implementation details are not provided in the source.
+
+## Words you'll see, explained
+*   **QA (Quality Assurance)**: A role in software development focused on making sure software products meet quality standards and user needs.
+*   **Obsidian**: A desktop and mobile application for taking notes and managing knowledge, which stores information as plain text files on your device.
+*   **Markdown (.md)**: A simple way to format text using symbols (like `**` for bold or `#` for headings) that can be easily converted into other formats like HTML.
+*   **Vault**: In Obsidian, a vault is simply a folder on your computer where all your notes and related files are stored.
+*   **Templates**: Pre-designed note structures that you can reuse to quickly create new documents with consistent formatting and content.
+*   **Jira**: A popular software tool used by teams to plan, track, and release software, often used for managing tasks and bugs.
+*   **API (Application Programming Interface)**: A set of rules that allows different software applications to communicate and share information with each other.
+
+## Original source
+This workflow was shared by m4rri4nne on a blog post titled "Claude e Obsidian - Como uma QA utiliza essas ferramentas no dia-a-dia" on the DEV Community platform. The author describes their personal approach to using these tools for daily Quality Assurance tasks.
+
+## Notes & variations
+*   **Do you even need this?** For simple note-taking and manual AI assistance, you might not need the advanced integration described. Using Obsidian for templates and manually pasting information into Claude (or any other freemium AI chat tool) can still significantly boost productivity for beginners. The advanced "Jira context fetching" is for those who need high-volume automation and have technical skills.
+*   **Free-tier limits**: Obsidian's core features (local notes, templates, plugins) are free. Syncing notes across devices is a paid feature. Claude offers a freemium chat interface, but using its API for automated integrations with tools like Jira would require a paid plan. Jira also has a free tier for small teams, but larger usage or advanced features may require payment.
+*   **Common pitfall**: Over-customizing Obsidian's appearance or plugins can lead to the same "losing focus" issue the author experienced with Notion. Stick to essential plugins and a clean setup to maintain focus on your notes.
+*   **Tip for better results**: When using AI, provide very clear and specific instructions. The more context you give (even if manually copied), the better the AI's output will be. Break down complex requests into smaller, manageable steps for the AI.

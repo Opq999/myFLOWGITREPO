@@ -1,0 +1,74 @@
+---
+title: "Design a GitHub Profile README as a Product Storefront"
+description: "Learn to design your GitHub profile README like an app store listing, making your desktop apps easily downloadable."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 30
+jobToBeDone: "Design a GitHub profile README to function as a product storefront for desktop apps"
+tools:
+  - name: "GitHub"
+    url: "https://github.com/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "HTML"
+    url: "https://developer.mozilla.org/en-US/docs/Web/HTML"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/akhourianmolkumar/your-github-readme-isnt-a-profile-its-a-storefront-here-are-the-5-rules-i-used-57jm"
+  platform: "blog"
+  author: "akhourianmolkumar"
+  postedAt: 2026-10-06
+score: 7
+ingestedAt: 2026-10-10
+nigeriaNotes: "GitHub's free tier is sufficient. HTML is a standard web technology. Data usage is minimal, primarily for loading the page."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to transform your GitHub profile README from a personal page into a product storefront. This approach makes your desktop applications easily discoverable and downloadable directly from your profile, functioning like an app store listing.
+
+## Tools you need
+*   **GitHub** (freemium): A platform for hosting code and managing software development. You'll use it to create and display your profile README.
+*   **HTML** (free): The standard markup language for creating web pages. You'll use basic HTML to structure your README.
+
+## Steps
+1.  **Create or edit your GitHub profile README**: If you don't have one, create a file named `README.md` in a repository named after your GitHub username (e.g., `yourusername/yourusername`). If you have one, edit the existing `README.md` file.
+2.  **Structure your README like an app store listing**: For each app, create a card-like section. Directly below each card, add a download button.
+    The author uses the following HTML structure for each app card and download button:
+
+    ```html
+    <td align="center">
+      <a href="https://github.com/USER/APP" >
+        <img src="assets/app_card.svg" width="408" alt="APP" />
+      </a>
+      <br />
+      <a href="https://github.com/USER/APP/releases/download/TAG/APP.zip">
+        <img src="https://img.shields.io/badge/⬇%20DOWNLOAD%20APP-B8935F?style=for-the-badge&labelColor=8a6c3f&logo=windows&logoColor=white" height="38" />
+      </a>
+    </td>
+    ```
+    *Replace `USER`, `APP`, `TAG`, and `assets/app_card.svg` with your specific details. The `href` in the first `a` tag should point to your app's repository, and the `href` in the second `a` tag should point directly to the `.zip` release file.
+    You should see your app's card and a download button appear on your profile.
+3.  **Choose a consistent color palette**: Select one primary color and one secondary color for your entire README. Use these colors for elements like section headers, buttons, and card edges to create a cohesive design. The author uses gold tones (`#B8935F` and `#8a6c3f`).
+    Your README should look professionally designed, not like a collection of random elements.
+4.  **Maintain a consistent width**: Decide on a fixed width for all full-width images and elements on your page. The author uses 830px for full-width elements and 408px for app cards, ensuring they fit within the layout. This makes your page look like a single, well-organized column.
+    Your page elements should align neatly without overlapping or appearing awkwardly spaced.
+5.  **Name your sections like terminal paths**: Use headers that mimic terminal directory structures, such as `~/links`, `~/apps`, or `~/stack`. This signals to other developers that you are familiar with command-line interfaces and makes your page scannable.
+    Your section headers should look like this:
+    ```
+    ~/apps
+    ```
+    You should see clear, consistently formatted section titles.
+6.  **Make your product philosophy a design element**: Instead of a long paragraph, create a full-width image that displays your core product philosophy (e.g., "Zero telemetry. Zero cloud. Zero subscriptions. Zero ads."). End the page with a memorable, concise sentence that summarizes your product's value.
+    Your philosophy should be visually prominent, and the closing sentence should be impactful.
+
+## Original source
+This workflow is based on the insights shared by Akhouri Anmol Kumar on DEV Community. The author reframes the purpose of a GitHub README, advocating for it to be treated as a product storefront rather than a personal profile page, focusing on making applications easily accessible to visitors.
+
+## Notes & variations
+*   **Free tier alternative**: GitHub's free tier is fully capable of hosting your README and app releases.
+*   **Common mistake**: Avoid using too many different colors or inconsistent widths for elements, as this can make your profile look cluttered and unprofessional. Stick to your chosen color palette and layout.
+*   **Tip for better results**: Ensure your download links point directly to the release `.zip` files. This fulfills the "3-Second Download Test" and provides the best user experience.

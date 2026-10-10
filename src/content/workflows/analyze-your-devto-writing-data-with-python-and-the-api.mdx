@@ -1,0 +1,125 @@
+---
+title: "Analyze Your Dev.to Writing Data with Python and the API"
+description: "Learn how to pull your personal writing data from Dev.to using its API and Python to understand follower growth and writing trends."
+category: "academic-research"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 60
+jobToBeDone: "Analyze personal writing platform data using its API to understand trends and follower growth."
+tools:
+  - name: "Python"
+    url: "https://www.python.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Dev.to API"
+    url: "https://dev.to/settings/extensions"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/kenwalger/i-pulled-nine-years-of-my-own-devto-data-the-numbers-were-not-what-i-expected-37ac"
+  platform: "blog"
+  author: "kenwalger"
+  postedAt: 2026-09-24
+score: 7
+ingestedAt: 2026-10-10
+nigeriaNotes: "The Dev.to API is free to use. Python is free and can be installed on most devices. Data usage will be minimal, primarily for API requests and responses, which are text-based."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to access your personal writing data from the Dev.to platform using its API and Python. This allows you to create custom analyses, like charting follower growth against your post publication dates, which is not easily available through the standard dashboard. This approach is useful for understanding the impact of your content and identifying trends over time.
+
+## Tools you need
+*   **Python** (free): A popular programming language used for scripting and data analysis.
+*   **Dev.to API** (free): An interface that allows programs to access data from the Dev.to platform.
+
+## Steps
+1.  **Generate a Dev.to API Key**: Log in to your Dev.to account, go to your Settings, then find the 'Extensions' tab. Generate a new API key there. Keep this key secret as it grants access to your data.
+2.  **Set up your Python environment**: Ensure you have Python installed on your computer. You will also need to install the `requests` library, which helps Python send requests to web APIs. Open your terminal or command prompt and run:
+
+    ```
+    pip install requests
+    ```
+
+    You should see output indicating the library is being installed.
+3.  **Write a Python script to fetch data**: Create a new Python file (e.g., `devto_analyzer.py`). You will need to write code to interact with the Dev.to API. The author provides examples of how to structure your requests, including setting up the necessary headers. A starting point for fetching follower data might look like this (replace `YOUR_API_KEY` with your actual key):
+
+    ```python
+    import requests
+    from collections import Counter
+    from datetime import date, timedelta
+
+    API_ROOT = "https://dev.to/api"
+    key = "YOUR_API_KEY" # Replace with your actual API key
+
+    headers = {
+        "api-key": key,
+        "accept": "application/vnd.forem.api-v1+json",
+        "user-agent": "my-analytics-script/1.0"
+    }
+
+    # Fetch follower data, requesting up to 1000 per page
+    all_followers = []
+    page = 1
+    while True:
+        response = requests.get(f"{API_ROOT}/followers/users", headers=headers, params={"page": page, "per_page": 1000})
+        if response.status_code == 200:
+            batch = response.json()
+            if not batch:
+                break # No more data
+            all_followers.extend(batch)
+            # The author notes that the server might cap per_page, so we check the actual number received
+            if page == 1 and len(batch) < 1000:
+                # This is the real page size if the server capped us or if it's the last page
+                pass # We continue to the next page, but this info could be used to optimize
+            page += 1
+        else:
+            print(f"Error fetching page {page}: {response.status_code}")
+            break
+
+    print(f"Fetched {len(all_followers)} followers.")
+
+    # Process follower creation dates to reconstruct history
+    follower_dates = []
+    for follower in all_followers:
+        # Extract date part from ISO format string
+        follower_dates.append(date.fromisoformat(follower["created_at"][:10]))
+
+    # Count followers per week to see growth curve
+    weekly_followers = Counter(d - timedelta(days=d.weekday()) for d in follower_dates)
+
+    # Sort weeks and get cumulative counts
+    sorted_weeks = sorted(weekly_followers.keys())
+    cumulative_growth = []
+    current_count = 0
+    for week in sorted_weeks:
+        # This part is simplified; a full analysis would involve summing up followers added each week
+        # The author's example focuses on the date extraction and Counter, not the final cumulative chart generation
+        pass # Placeholder for actual cumulative calculation
+
+    print("Follower dates processed.")
+    # Further analysis and plotting would go here
+    ```
+
+    You should see output indicating the number of followers fetched and that the dates have been processed. The script will print messages about its progress.
+4.  **Analyze the data**: Once you have fetched the data, you can use Python to analyze it. The author's example shows how to extract the `created_at` date for each follower, which allows you to reconstruct your follower growth history retroactively. You can then count followers per week or per month to visualize your growth.
+
+    The script above includes basic steps to fetch followers and extract their creation dates. To create charts, you would typically use libraries like `matplotlib` or `seaborn` in Python. For example, to see the weekly follower counts:
+
+    ```python
+    # Continuing from the script above...
+    print("Weekly follower counts:")
+    for week in sorted_weeks:
+        print(f"{week}: {weekly_followers[week]} new followers")
+    ```
+
+    This will print a list of weeks and the number of new followers gained in that week.
+
+## Original source
+This workflow is based on a blog post by kenwalger on the DEV Community platform. The author shares their experience analyzing nine years of their own writing data from Dev.to using the platform's API and Python to uncover unexpected trends in their content's performance and follower growth.
+
+## Notes & variations
+*   **Free Tier**: The Dev.to API is free to use for accessing your own data. Python is also free and open-source.
+*   **Common Pitfall**: Forgetting to include the `accept` header in your API requests can lead to receiving older, v0 data without any error message, causing confusion when documented fields are missing. Ensure your headers are set correctly as shown in the example.
+*   **Tip for Better Results**: The API has rate limits. Implement error handling for `429 Too Many Requests` responses and add small delays between requests, especially when fetching large amounts of data like followers. Also, save your progress periodically to disk so you don't lose all your work if the script is interrupted.

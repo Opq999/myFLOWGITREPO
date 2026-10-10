@@ -1,0 +1,54 @@
+---
+title: "Decide When to Retry API Requests Using AI"
+description: "Learn how to benchmark AI models for deciding whether to retry API requests based on context like status codes and idempotency keys."
+category: "academic-research"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 30
+jobToBeDone: "Benchmark AI models' ability to decide whether to retry API requests based on context"
+tools:
+  - name: "Kaggle"
+    url: "https://www.kaggle.com/"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/gramli/to-retry-or-not-to-retry-that-is-the-question-1j2l"
+  platform: "blog"
+  author: "gramli"
+  postedAt: 2026-10-08
+score: 7
+ingestedAt: 2026-10-10
+nigeriaNotes: "Kaggle is accessible via mobile and has a free tier. Data usage is minimal as it involves text-based interactions and scenario descriptions."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to set up a simple benchmark to test if AI models can correctly decide whether to retry an API request. This is useful because AI models might be used to help write code that interacts with other services, and it's crucial they understand when retrying a failed request is safe and when it could cause problems.
+
+## Tools you need
+*   **Kaggle** (freemium): A platform for data science and machine learning competitions and datasets, used here to access benchmark scenarios.
+
+## Steps
+1.  **Access the benchmark scenarios**: Navigate to the Kaggle Benchmarking Challenge submission page. The author prepared 14 scenarios based on actual tasks. You will need to find these scenarios, which are described as being part of the original article or Kaggle benchmark. The exact location of these scenarios within Kaggle is not specified, but they are described as API failure scenarios.
+2.  **Prepare your AI model interaction**: For each scenario, you will present the details to an AI model. The author does not share the exact prompt used, but a starting point could be:
+
+    ```
+    Here is an API request scenario. Please provide your decision on whether to retry the request and a one-sentence explanation.
+
+    Scenario:
+    [Paste the full scenario details here, including HTTP method, status code, and any context like idempotency keys or rate limiting information]
+    ```
+
+    You should expect the AI model to respond with a decision and a reason.
+3.  **Record the AI's decision**: The author states that for scoring, only the 'Decision' is used. The possible decisions are YES, NO, or YES_AFTER_DELAY. You will need to record which decision the AI makes for each scenario.
+4.  **Compare with expected outcomes**: Each scenario has an expected decision. You will compare the AI's decision to the expected decision for each scenario.
+5.  **Calculate the success rate**: The final result is calculated as the percentage of retry decisions the model got right. For example, if the AI got 10 out of 14 decisions correct, its success rate would be approximately 71%.
+
+## Original source
+This workflow is based on a submission by 'gramli' for a Kaggle Benchmarking Challenge. The author explored benchmarking AI models on their ability to determine if an API request should be retried, considering factors beyond just the HTTP status code.
+
+## Notes & variations
+*   **Free tier alternative**: While Kaggle is freemium, you can adapt this concept using publicly available API documentation and common error codes if you don't want to use Kaggle directly. You can use free AI chat tools like ChatGPT, Claude.ai, or Gemini to test your scenarios.
+*   **Common pitfall**: Relying solely on the HTTP status code (like 503 Service Unavailable) without considering the request method (like POST), idempotency keys, or other context can lead to incorrect retry decisions. Always provide as much detail as possible to the AI.
+*   **Tip for better results**: When presenting scenarios to the AI, be very specific about the request details (method, URL, body if relevant) and the response details (status code, headers, error messages). Also, clearly state any relevant context, such as whether the API guarantees idempotency.

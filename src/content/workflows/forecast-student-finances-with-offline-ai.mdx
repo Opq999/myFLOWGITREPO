@@ -1,0 +1,63 @@
+---
+title: "Forecast Student Finances with Offline AI"
+description: "Learn to forecast your personal finances using AI on your own laptop, predicting if you'll run out of money before payday."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 60
+jobToBeDone: "Forecast personal finances for a student to avoid running out of money before payday"
+tools:
+  - name: "TabPFN"
+    url: "https://github.com/TabPfn"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Gemma"
+    url: "https://gemini.google.com/"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/soumyadeepdey/i-played-out-a-broke-students-month-500-times-on-a-budget-i3-laptop-with-the-wi-fi-off-it-warned-22dl"
+  platform: "blog"
+  author: "soumyadeepdey"
+  postedAt: 2026-10-04
+score: 8
+ingestedAt: 2026-10-10
+nigeriaNotes: "This workflow is designed to run offline on a personal laptop, making it highly viable for users in Nigeria. Data usage is minimal as the core processing happens locally. Free tiers for Gemma are sufficient for this task."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to set up a system that forecasts your personal finances, helping you predict if you might run out of money before your next allowance. This approach works by using AI models that run entirely on your own computer, without needing to share your bank details or connect to the internet, making it private and accessible.
+
+## Tools you need
+*   **TabPFN** (free): A machine learning model used here for numerical forecasting and analysis of spending patterns.
+*   **Gemma** (freemium): A small AI language model used here to explain the forecasts in plain language and warn you about potential issues.
+
+## Steps
+1.  **Set up your AI models**: The original author built a custom application. To reproduce this, you would typically need to download and set up the TabPFN model and the Gemma language model to run locally on your computer. The exact steps for setting up these models to work together offline are complex and depend on your operating system and technical comfort. A starting point would be to find guides on running TabPFN and Gemma locally, for example, using tools like Ollama or LM Studio.
+
+    *   **Note**: The author does not provide exact commands for setup, as it was a custom build. You will need to consult the documentation for TabPFN and Gemma for local installation and usage.
+
+2.  **Input your bank statement data**: Once the models are set up, you will need to provide your bank statement data. The author states the system reads the bank statement on the user's laptop. This means you would likely need to export your bank statement into a file format that the system can read (e.g., CSV).
+
+    *   **What to do**: Locate the feature in your banking app to download your transaction history. Save it as a CSV file.
+    *   **What you should see**: A file containing your past transactions, including dates, amounts, and descriptions.
+
+3.  **Run the forecast**: The system then uses TabPFN to analyze your spending habits and simulate 500 possible futures for the rest of the month. Gemma is used to communicate these forecasts.
+
+    *   **What to do**: The author does not share the exact prompt or command used to run the forecast. A starting point would be to look for a 'forecast' or 'predict' function within the application you set up, and provide it with your bank statement data.
+    *   **What you should see**: The system should provide an output indicating whether you are likely to run out of money, and how many days in advance you might be warned.
+
+4.  **Interpret the warnings**: The AI will warn you about potential shortfalls. The key is that it doesn't lecture you; it tells you what a plan costs in days and lets you decide.
+
+    *   **What to do**: Pay attention to the warnings provided by the AI. For example, it might say a particular purchase will cost you 'X days' of your budget.
+    *   **What you should see**: Clear, simple messages that help you understand the financial impact of your spending decisions.
+
+## Original source
+This workflow is based on a project by Soumyadeep Dey, shared on their blog. The author built an offline money forecasting tool for a student friend, using AI models that run entirely on the user's laptop to predict potential cash shortages before payday.
+
+## Notes & variations
+*   **Free-tier alternatives**: While the original project uses specific models, you could explore other offline-capable language models like Llama 3 or Mistral, which can also be run locally using tools like Ollama, for the 'talking' part. TabPFN is a specialized model, so finding a direct free alternative for its forecasting function might require exploring general-purpose machine learning libraries.
+*   **Common mistake**: Trying to use online AI tools that require uploading bank statements or API keys. This project's strength is its privacy and offline nature. Stick to local installations to maintain this.
+*   **Tip for better results**: Ensure your bank statement data is clean and covers a sufficient period (e.g., at least a few months) to allow the AI to learn your spending patterns accurately. The more data it has, the better its predictions will be.

@@ -1,0 +1,94 @@
+---
+title: "Recover Lost Work with Git: The Reflog Guide"
+description: "Learn to undo mistakes and recover lost work in Git using the reflog, even if you've made a mess of your commit history. Simple steps for developers."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 15
+jobToBeDone: "Recover lost work or fix mistakes in Git history"
+tools:
+  - name: "Git"
+    url: "https://git-scm.com/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/james_anderson_h/the-git-recovery-guide-how-to-undo-anything-without-panic-547e"
+  platform: "blog"
+  author: "james_anderson_h"
+  postedAt: 2026-09-22
+score: 8
+ingestedAt: 2026-10-10
+nigeriaNotes: "Git is a free, open-source tool. This workflow is data-light and can be performed offline once Git is installed. No internet connection is needed for the recovery steps themselves."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to recover lost code or fix mistakes in your Git history, even when you think your work is gone. This guide explains how Git keeps track of your changes and provides specific commands to undo common errors, making it possible to retrieve 'lost' commits.
+
+## Tools you need
+*   **Git** (free): A version control system used for tracking changes in code during software development.
+
+## Steps
+This guide is organized by the type of mistake you made. Find your situation below and follow the steps.
+
+**Part 1: Undoing Uncommitted Changes**
+
+1.  **Discard changes to a single file (before staging)**: If you've made edits to a file but haven't yet told Git to track those changes (staged them), and you want to throw away those edits, use this command. This restores the file to how it was in the last saved commit.
+    ```
+    git restore <file_name>
+    ```
+    You should see your file revert to its state from the last commit.
+
+2.  **Unstage a file but keep the changes**: If you've already told Git to track your changes (staged them) but want to remove them from the staging area without deleting your edits, use this.
+    ```
+    git restore --staged <file_name>
+    ```
+    The file will be unstaged, but your edits will remain in your working directory.
+
+3.  **Discard ALL uncommitted changes**: This command throws away all your uncommitted edits across all files. **Warning**: This action is destructive and cannot be undone by the reflog. Make sure you want to permanently lose these changes.
+    ```
+    git restore .
+    ```
+    All your uncommitted changes will be gone. There is no visible output, but your working directory will be clean.
+
+4.  **Recover a file you deleted (before committing)**: If you deleted a file but had not yet committed that deletion, you can bring it back.
+    ```
+    git restore <file_name>
+    ```
+    The deleted file will reappear in your working directory.
+
+**Part 2: Fixing Commits**
+
+1.  **Fix a typo in your last commit message**: If your most recent commit has a mistake in its message, you can easily correct it.
+    ```
+    git commit --amend
+    ```
+    This will open your default text editor, allowing you to edit the commit message. Save and close the editor to apply the changes.
+
+2.  **Add a forgotten file to the last commit**: If you forgot to include a file in your last commit, you can add it and then amend the commit.
+    ```
+    git add <forgotten_file_name>
+    git commit --amend --no-edit
+    ```
+    The `--no-edit` flag keeps the original commit message. The forgotten file will now be part of the last commit.
+
+3.  **Undo the last commit but KEEP the changes**: This is a safe way to undo your last commit. It removes the commit from your history but keeps all your changes, ready to be re-staged or modified.
+    ```
+    git reset --soft HEAD~1
+    ```
+    The last commit is undone, and your changes are kept as staged changes.
+
+4.  **Undo the last commit AND discard the changes**: **Warning**: This command not only undoes the last commit but also throws away all the changes associated with it. Use with extreme caution.
+    ```
+    git reset --hard HEAD~1
+    ```
+    The last commit is removed, and all associated changes are permanently discarded.
+
+## Original source
+This guide is based on the article "The Git Recovery Guide: How to Undo Anything (Without Panic)" by james_anderson_h, posted on the DEV Community platform. It explains how Git's internal logging and safety nets can be used to recover from common mistakes.
+
+## Notes & variations
+*   **Common mistake**: Using `git reset --hard` when you meant to use `git reset --soft`. The former discards changes, while the latter keeps them. Always double-check which command you are using.
+*   **Tip for better results**: Familiarize yourself with `git reflog`. This command shows a history of where your HEAD (your current position in the project) has been. It's your primary tool for finding the commit hash needed to recover work after a mistake.
+*   **Free tier alternative**: Git itself is free and open-source, so there are no tier limitations for using these recovery commands.
