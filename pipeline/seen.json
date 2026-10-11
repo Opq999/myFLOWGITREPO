@@ -24732,8 +24732,332 @@
     "643a10260d847cb96780091178bc3f2b192186261dfb6abfcc3c4a9b74481b63": {
       "url": "https://dev.to/codeswithroh/i-built-an-ai-that-only-works-when-my-phone-is-in-my-pocket-3ipn",
       "date": "2026-10-10"
+    },
+    "cb87ce0ffd9c3685f71f87f3af046c630c2d32cdb3f29894391338738b354eaa": {
+      "url": "https://news.ycombinator.com/item?id=49979306",
+      "date": "2026-10-11"
+    },
+    "c97d376cada1cc668be7c7a41b72730f865c0421412304482451240d1138feed": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1x1jdsz/gpt6_when_you_ask_a_yes_or_no_question",
+      "date": "2026-10-11"
+    },
+    "7291bd8b12952a0e561c0d2ef5dc8b1176c1e8b7c6f396472fe3eab45d51f768": {
+      "url": "https://simonwillison.net/2026/Oct/11/dwarf-fortress",
+      "date": "2026-10-11"
+    },
+    "458c04cd04ca960bc316608e56cd07220699b396a97ed54ff69d6fc28bffdaa7": {
+      "url": "https://github.com/morluto/rea",
+      "date": "2026-10-11"
+    },
+    "89ad67589adf870323a3833e189c5e0c13f015ee7641c8d6ad013f53a58aa945": {
+      "url": "https://news.ycombinator.com/item?id=49996713",
+      "date": "2026-10-11"
+    },
+    "d3612ff459da8b570925d705894c90cc505f7115ad7de13d002b32e0d7b2a47d": {
+      "url": "https://simonwillison.net/2026/Oct/10/python-actions",
+      "date": "2026-10-11"
+    },
+    "a685b3996f8412e3c569bb06360c728a66e48c00ef3a4b6e01135e492e05ad7f": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1x1stfv/everything_is_alright",
+      "date": "2026-10-11"
+    },
+    "51b6227273006399313d5b67bcc99ce52d8718811c2650d2bb7dbd0030d9c3b2": {
+      "url": "https://simonwillison.net/2026/Oct/10/the-new-york-times",
+      "date": "2026-10-11"
+    },
+    "4edb2b61a2665462e7e892b7dc8dbcb14b80ede921165f17187a2127f492145f": {
+      "url": "https://www.reddit.com/r/LangChain/comments/1wr7et9/early_2024_langchain_user_coming_back_around_to",
+      "date": "2026-10-11"
+    },
+    "7e720aeda47f0a423402183fd3dd073b0f9b2830ea7430dbc46902d24333d1cf": {
+      "url": "https://simonwillison.net/2026/Oct/9/deno-is-joining-cloudflare",
+      "date": "2026-10-11"
+    },
+    "0859fe0bd9af1ea78ebf3f2fe49f266f3137bc4ab3752a5bc8429098b410cd96": {
+      "url": "https://www.reddit.com/r/LangChain/comments/1wkn43u/my_agent_kept_acting_on_an_old_decision_even",
+      "date": "2026-10-11"
+    },
+    "39e6bd368c40b12952cf2dcecf457aeab746a6a1ea33e614b02c7129b262f365": {
+      "url": "https://simonwillison.net/2026/Oct/9/matthew-green",
+      "date": "2026-10-11"
+    },
+    "7e855293e573cd219a1a8154969d3240b697ac4953fa1489261f364d6427fc27": {
+      "url": "https://www.reddit.com/r/LangChain/comments/1wy0r0d/title_ai_agents_in_production_what_problems_are",
+      "date": "2026-10-11"
+    },
+    "6cb53bbd6b721016b18daaf4803e13cb6c7f31891e989a519337898a92b7faea": {
+      "url": "https://simonwillison.net/2026/Oct/9/built-using-my-voice",
+      "date": "2026-10-11"
+    },
+    "197c272a34e637af597dea961356990c49e8db3d6652ab20ac0bd65cc4838241": {
+      "url": "https://www.reddit.com/r/LangChain/comments/1wwp5wt/help_to_find_highquality_learning_resources",
+      "date": "2026-10-11"
+    },
+    "f5034dade94eb8023e8cc08fc74fa3443cf3687919a1ba7c07226e3913770ebc": {
+      "url": "https://simonwillison.net/2026/Oct/9/ttok",
+      "date": "2026-10-11"
+    },
+    "c2bbd6246bb5dd15eea295bc817131cc3743bffea60e60984631b8ee308bef1f": {
+      "url": "https://www.reddit.com/r/LangChain/comments/1wuhepv/langgraphjev_typed_decision_node_for_langgraph",
+      "date": "2026-10-11"
+    },
+    "f37003b32e1952f48d5b28035cb16d70112ec4cc6a2d2cc6e27dcfd45e514992": {
+      "url": "https://simonwillison.net/2026/Oct/8/ttok",
+      "date": "2026-10-11"
+    },
+    "6c99102c27dc48c54ec12a2411978ccc314ee0799ec7f7ffc656a1b548d0bf93": {
+      "url": "https://www.reddit.com/r/LangChain/comments/1wsymxw/reporting_agent_over_http_api_data_structured",
+      "date": "2026-10-11"
+    },
+    "3618833fba59bdc647a6bc0c0712217645f37d4e83fc0925e9bcfee4395f7d74": {
+      "url": "https://simonwillison.net/2026/Oct/8/carson-gross",
+      "date": "2026-10-11"
+    },
+    "3d5deac48dce71a6fe7f14b614872763d0a649e603fdd0377d70bbdcd92fbad7": {
+      "url": "https://www.reddit.com/r/LangChain/comments/1wsduk3/how_are_you_testing_ai_agents_before_deploying",
+      "date": "2026-10-11"
+    },
+    "6218fed10e32f470e0284ea46775bcd8bf22398506c9ec848e4309b9e2ee6cd1": {
+      "url": "https://simonwillison.net/2026/Oct/7/ben-affleck",
+      "date": "2026-10-11"
+    },
+    "014ff09af150c2967f49f05be76cbde17644bf5f64953174e6b83bbc26e0c45b": {
+      "url": "https://www.reddit.com/r/LangChain/comments/1wipd72/sharing_my_learnings_building_a_python",
+      "date": "2026-10-11"
+    },
+    "fdc864340b44ea6ec22983b3de016ce3dd3ff03686dd583791da884112a07b4d": {
+      "url": "https://simonwillison.net/2026/Oct/7/claude-haiku-5-5",
+      "date": "2026-10-11"
+    },
+    "0fbe42c6da1d02fce26ffd3b55ae5dfd20ced1010ac12d94b93229d676ddac70": {
+      "url": "https://www.reddit.com/r/LangChain/comments/1wh4xc8/looking_for_a_mentorteam_where_i_can_contribute",
+      "date": "2026-10-11"
+    },
+    "e5f022f9be79d8e96eab97cb427c55c1239b6f8684737940e9e4db30275e9304": {
+      "url": "https://www.latent.space/p/nyc2026",
+      "date": "2026-10-11"
+    },
+    "37a9382da22d11aae7ffb79d4d87ac5ece3b03f81a6819b0c34a24a1c15528fa": {
+      "url": "https://www.reddit.com/r/LangChain/comments/1wzk7ou/agent_built_with_langgraph_ran_unattended",
+      "date": "2026-10-11"
+    },
+    "9a2a489d753abcefd301a946bad857f5629c6f2058d97a9f43dd42d73cd72a25": {
+      "url": "https://www.latent.space/p/standard-bots",
+      "date": "2026-10-11"
+    },
+    "a13552c5ab9c2648b8865258e71d0404c57aa0ff99958cead8fba7d9d53a9934": {
+      "url": "https://www.reddit.com/r/LangChain/comments/1wyvrs5/should_i_include_narrative_in_openwiki",
+      "date": "2026-10-11"
+    },
+    "2e1397672f85f38dce73c9e9d116a083181fa3552851bb217cc6c5b802d23287": {
+      "url": "https://www.latent.space/p/ainews-typesafejev-at-100m-arr-75b",
+      "date": "2026-10-11"
+    },
+    "19daf39bd1cb93a87e4d820bd6dccc4f1dd41fe6d3d7c990ee99c242cf0fc524": {
+      "url": "https://www.reddit.com/r/LangChain/comments/1wsnnbp/for_anyone_whose_chains_work_in_dev_and_fall",
+      "date": "2026-10-11"
+    },
+    "68a694837125984e014d7340dff5d7661d0a149795f772eed18d5c6bf94a15cc": {
+      "url": "https://www.latent.space/p/biohub-deepmind",
+      "date": "2026-10-11"
+    },
+    "c3c6ed280ca2e72e611ea14d40680d4c34d01c28cce3611c949353c7e7ea5fa1": {
+      "url": "https://www.reddit.com/r/LangChain/comments/1wptxde/we_red_teamed_our_own_support_agent_with_a_long",
+      "date": "2026-10-11"
+    },
+    "9db9af42b7f614ecd07414a9f38a804b613711fde89f005871115c42fb9c4592": {
+      "url": "https://www.latent.space/p/ainews-not-much-happened-today-60f",
+      "date": "2026-10-11"
+    },
+    "5d1069fb4204c01ae00e4dfc3a496219070242c53d273da11669a0b2b520ea24": {
+      "url": "https://www.reddit.com/r/LangChain/comments/1wjhwa2/what_i_learned_while_implementing_faiss_vector",
+      "date": "2026-10-11"
+    },
+    "a092f744c7c11572ab7c55f16515fae980f8f0e50f0ea2c365f4837700296b60": {
+      "url": "https://www.latent.space/p/periodic",
+      "date": "2026-10-11"
+    },
+    "14fd66daefa26979e588c85b5bf495d12cc3703afad989470761bb175abf0564": {
+      "url": "https://www.reddit.com/r/LangChain/comments/1whtwd1/testing_qwen_38_27b_running_locally_on_a_single",
+      "date": "2026-10-11"
+    },
+    "c07b5023822db3bc05608ec23b3dfd75655bd3dfd89b6cc5c0495a66762d4955": {
+      "url": "https://www.latent.space/p/ainews-claude-haiku-55-better-than",
+      "date": "2026-10-11"
+    },
+    "acb38bc549b50f0b92e774af1c400a4686ee7ec31106756bc371416dbe3cdace": {
+      "url": "https://www.reddit.com/r/LangChain/comments/1x11lr6/we_built_a_slack_agent_that_can_buy_office",
+      "date": "2026-10-11"
+    },
+    "8fe6e5f2fddf3911b3c8a1e916525df271cc2525e1f585b52abbc6c2d4acb852": {
+      "url": "https://www.bensbites.com/p/text-is-so-2023",
+      "date": "2026-10-11"
+    },
+    "4f220c9009cd58f9ab83ccca71e973fc6639eadaa7423ad840f7054ac82dd0ff": {
+      "url": "https://www.reddit.com/r/LangChain/comments/1x04dni/introducing_managed_deepagents_v09",
+      "date": "2026-10-11"
+    },
+    "e05551817b225bef5e8ca8d6225aa3fed9bb03ffd013a0306b4527b10407beb2": {
+      "url": "https://huggingface.co/blog/allenai/impactful-scheduling",
+      "date": "2026-10-11"
+    },
+    "6839106acb6073620109b3b8964a284546173c444aa2a416de3523ca12c0e740": {
+      "url": "https://www.reddit.com/r/LangChain/comments/1wwdd4z/open_source_local_ui_to_test_mcp_tools_prompts",
+      "date": "2026-10-11"
+    },
+    "ffd2818196374b7e8d985c5ba0d85a7cf6f6fd71833912309c34424b62f62e05": {
+      "url": "https://huggingface.co/blog/building-with-ml-intern",
+      "date": "2026-10-11"
+    },
+    "16936fe462641e14a8c74fab507a072fc1ededfb4044d650ec8314f1f277c2a5": {
+      "url": "https://www.reddit.com/r/LangChain/comments/1wu39pg/i_built_a_zerodependency_cli_that_scans_langchain",
+      "date": "2026-10-11"
+    },
+    "88e871d5a8d26738db20168d7fe4b9e05a7b8640818c7b2a626052e0332f27b0": {
+      "url": "https://huggingface.co/blog/LiquidAI/open-d1",
+      "date": "2026-10-11"
+    },
+    "ef0d4411242c83b1ea68ea5b00b94ebe864aa20d8b40049a716ebc5bcb026168": {
+      "url": "https://www.reddit.com/r/LangChain/comments/1ws29n4/rag_oom_issue_to_process_pdf",
+      "date": "2026-10-11"
+    },
+    "16b7810afb00bdc03cf91abd83f9b804b576e5ff42133c9ae8d1a12944f61774": {
+      "url": "https://huggingface.co/blog/tiiuae/falcon-asr",
+      "date": "2026-10-11"
+    },
+    "b46086510fa1ad090b008382726c265abda357efdd1da37437ab5b372f0dbd28": {
+      "url": "https://www.reddit.com/r/LangChain/comments/1wrhc2d/clean_way_to_stop_a_langgraph_agent_acting_on",
+      "date": "2026-10-11"
+    },
+    "377afb641e4cb3d675c7ccbde78dba96a04225f84fa0cae8ef8da2a391994b25": {
+      "url": "https://www.interconnects.ai/p/i-expect-rapid-progress-but-not-towards",
+      "date": "2026-10-11"
+    },
+    "4a6e1cd4fff0bf751194b0e92154f447006f8bea2d32a69491bbaeec43344cd7": {
+      "url": "https://www.reddit.com/r/LangChain/comments/1wr6sfp/repeated_agent_evals_still_left_me_with_a_ci",
+      "date": "2026-10-11"
+    },
+    "e6945d81a698dd6f87794efd234f3604ebc196355444167b17298f210845f46a": {
+      "url": "https://newsletter.pragmaticengineer.com/p/the-pulse-new-trend-of-building-internal",
+      "date": "2026-10-11"
+    },
+    "ea63178c2b9ee46f400b11cc5d647d638c95c5baa662182e3020c8381bdc3793": {
+      "url": "https://www.reddit.com/r/LangChain/comments/1wpsjr9/a_green_pipeline_that_produced_nothing_for_two",
+      "date": "2026-10-11"
+    },
+    "adf6f12848f329eb0a4b8a645bf5a7881e82cb6524876b301d9a2de145e03a52": {
+      "url": "https://newsletter.pragmaticengineer.com/p/building-resilient-systems-with-sam",
+      "date": "2026-10-11"
+    },
+    "b716eea1453de6286a7462aa6066d93be339ec5932dbc01f42f852655b9ef686": {
+      "url": "https://www.reddit.com/r/LangChain/comments/1wob7ah/what_problems_have_u_faced_with_guardrails",
+      "date": "2026-10-11"
+    },
+    "85f07381d6a71ccbfa5315f3ffece93e7d9a4f0fe84d8d245cf106f41d11ea0f": {
+      "url": "https://www.reddit.com/r/LangChain/comments/1wo5bxo/i_built_a_local_runtime_check_for_ai_agent_tool",
+      "date": "2026-10-11"
+    },
+    "c89f12546e86d437f99227aca503ef1d81840d1c9d41d93dda0bd8fd0ee5c5fd": {
+      "url": "https://www.reddit.com/r/GetStudying/comments/1wsw7im/idk_how_people_can_study_for_so_long",
+      "date": "2026-10-11"
+    },
+    "d71d2ba469845eed4799c7d7cdccf70f8d3224e359be3240ecdc92b879d75010": {
+      "url": "https://www.reddit.com/r/GetStudying/comments/1wpjxcs/study_tips_for_dumb_people",
+      "date": "2026-10-11"
+    },
+    "b0b72a030366ad3594360999868064fb47fe9b2784cdc5d8c730ca2cfa9ba8fb": {
+      "url": "https://www.reddit.com/r/GetStudying/comments/1wk0tf0/how_many_hours_should_i_be_studying_per_day",
+      "date": "2026-10-11"
+    },
+    "cf30e8981cb1a16b04a355ef4486caee78f3bc61fc50c8d18898228ddd0c36aa": {
+      "url": "https://www.reddit.com/r/GetStudying/comments/1wqn8v9/day_125_of_studying_for_12_hours_until_the_end_of",
+      "date": "2026-10-11"
+    },
+    "4273ecfa4cd8fcc0946990e7a5e2f23201d0957e8022dad77df2fa8d6d734f2f": {
+      "url": "https://www.reddit.com/r/GetStudying/comments/1wy6cou/sat_in_the_library_with_my_gorgeous_chapter_1",
+      "date": "2026-10-11"
+    },
+    "2994a1f42c1da5e7eae78a133413a038ee68910f90f880d5dc1c0293a3e754c1": {
+      "url": "https://www.reddit.com/r/GetStudying/comments/1wnz9ur/im_doing_12_hours_studying_every_day",
+      "date": "2026-10-11"
+    },
+    "71769ff5b44af56ccf3e70d54aed31dff37603e632d4ee25f6c39d442d861c8d": {
+      "url": "https://www.reddit.com/r/GetStudying/comments/1wkk06z/how_to_stop_procrastination_and_actually_do",
+      "date": "2026-10-11"
+    },
+    "16e3231edf300cf0795bd05ecfcf0f41e56d9cbe6dea1220622a95a4075994e4": {
+      "url": "https://www.reddit.com/r/GetStudying/comments/1x0wf4u/reply_to_my_post_for_me_to_remind_you_to_study",
+      "date": "2026-10-11"
+    },
+    "0c754d62aa370d41663339d6dc1b52be91bcf4cfdf2bbbcb14093d4a836d9acf": {
+      "url": "https://www.reddit.com/r/GetStudying/comments/1wt2jy6/some_advice_ive_given_my_students_about_studying",
+      "date": "2026-10-11"
+    },
+    "1c0294e9e4e7f05ce9312d93127f01272dcc6fccad056bba18d6dfd4c10a8f2c": {
+      "url": "https://www.reddit.com/r/GetStudying/comments/1wfn72c/how_do_people_even_study_anything_no_quizlet_no",
+      "date": "2026-10-11"
+    },
+    "857a84d60d2ee4eaee2179fc5aaf955c649055673a295aee4850533553653840": {
+      "url": "https://www.reddit.com/r/GetStudying/comments/1wrhmrs/anyone_up_for_a_study_group",
+      "date": "2026-10-11"
+    },
+    "2d967789a2b5a8d71f55bc93b181d8f563812d6e69dbd8cdd6f84da0cb479ebc": {
+      "url": "https://www.reddit.com/r/GetStudying/comments/1wfz926/i_guess_im_depressed_or_smth_i_lost_all",
+      "date": "2026-10-11"
+    },
+    "9355942891f04bcf424347ee6913e36d4c5695c14eeb716a0a30ddb1c4a839af": {
+      "url": "https://www.reddit.com/r/GetStudying/comments/1wx4a9r/how_do_you_manage_studying_when_you_feel_sleepy",
+      "date": "2026-10-11"
+    },
+    "9b894b43e461878251a9c98451faa1ece379c14ebd217bbdc69d0230f2395c83": {
+      "url": "https://www.reddit.com/r/GetStudying/comments/1wr5e3z/fulltime_workers_how_do_you_find_the_motivation",
+      "date": "2026-10-11"
+    },
+    "94f527cf38f6113f2a2a66a0b70cd943106fc97636b9bd768bfbdeb9c61cded5": {
+      "url": "https://www.reddit.com/r/GetStudying/comments/1wxw2uq/what_do_you_guys_listen_towatch_while_studying",
+      "date": "2026-10-11"
+    },
+    "b685112414610ebe526d63ae9899fbff7317fd2568122e35c87b4c605b0cc733": {
+      "url": "https://www.reddit.com/r/GetStudying/comments/1x19qcg/quick_without_looking_at_your_notes_tell_me_about",
+      "date": "2026-10-11"
+    },
+    "13e790aff47405e0e61b9fd869bbc49b13f6d1ed22df8c23dcabe070d6dc31bd": {
+      "url": "https://www.reddit.com/r/GetStudying/comments/1wru4ox/how_do_you_actually_study_in_college",
+      "date": "2026-10-11"
+    },
+    "8bfd43574aaf9684b73b19c6319c74d2ffa61a116b675da7e448bf852f6d1eda": {
+      "url": "https://www.reddit.com/r/GetStudying/comments/1wuvezc/how_do_i_study_while_being_tired",
+      "date": "2026-10-11"
+    },
+    "7af15283dc538a734b82bb4261f28103e8c40cacb0f3032c8a0ea5aeb1d36ea5": {
+      "url": "https://www.reddit.com/r/GetStudying/comments/1wnczf5/i_dont_get_studying",
+      "date": "2026-10-11"
+    },
+    "c8a164bd6e2c3e41e5bd70d659e09fc3fc341f7b5dc4a4e0e029b08159f8cbce": {
+      "url": "https://www.reddit.com/r/GetStudying/comments/1x1jcic/i_have_no_idea_how_to_study_effectively",
+      "date": "2026-10-11"
+    },
+    "7bf6847cac0d9327ee01012bf39219e6da7a5b19ec8bf8621de5a113c136adbb": {
+      "url": "https://www.reddit.com/r/GetStudying/comments/1whfb66/is_there_a_way_to_quickly_memorize_textbook",
+      "date": "2026-10-11"
+    },
+    "93bff5db3bc67497fc400bb1496acd553493dc58561875a5118a8fd311fd6ede": {
+      "url": "https://www.reddit.com/r/GetStudying/comments/1wdtk4j/how_to_study_to_retain_info_longterm",
+      "date": "2026-10-11"
+    },
+    "543541868baddde4f91ef49a4275da40af6d496ac8dcab19c9562b0d1ae389ec": {
+      "url": "https://www.reddit.com/r/GetStudying/comments/1wy4l43/i_used_to_struggle_with_actually_starting_to",
+      "date": "2026-10-11"
+    },
+    "0bc4bdb00ab64fd552b2fc265f3ef28c3fe6b0bb6442250fbaf522976c7de4a4": {
+      "url": "https://www.reddit.com/r/GetStudying/comments/1webr28/any_good_studying_habits",
+      "date": "2026-10-11"
+    },
+    "a0be07962b3e28e6b3a5f414b3d9f6f17fe58e296bf68a31f619a9eeb38abd68": {
+      "url": "https://www.reddit.com/r/GetStudying/comments/1wthiu8/studying_after_being_stuck",
+      "date": "2026-10-11"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 1
+  "dailyPage": 2
 }

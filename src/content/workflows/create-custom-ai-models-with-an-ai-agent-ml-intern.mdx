@@ -1,0 +1,99 @@
+---
+title: "Create Custom AI Models with an AI Agent (ML Intern)"
+description: "Learn how an AI agent like ML Intern can help you build specialized AI models, even if they don't exist yet, by guiding the training process."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 180
+jobToBeDone: "Create custom, specialized AI models using an AI agent"
+tools:
+  - name: "HuggingChat"
+    url: "https://huggingface.co/chat"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Claude"
+    url: "https://claude.ai"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "GitHub"
+    url: "https://github.com"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Hugging Face Hub"
+    url: "https://huggingface.co/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://huggingface.co/blog/building-with-ml-intern"
+  platform: "blog"
+  author: "Hugging Face - Blog"
+  postedAt: 2026-10-08
+score: 8
+ingestedAt: 2026-10-11
+nigeriaNotes: "This workflow uses freemium chat tools like HuggingChat and Claude, which have free tiers for interaction. However, the core process of training a custom AI model with ML Intern involves compute costs, which the author states came to USD 16 for their project. This means you will need to budget for these costs, as the free tiers do not cover model training."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "Create a specialized AI model to identify specific Nigerian plant diseases for your agricultural science project."
+  - persona: "entrepreneur"
+    scenario: "Build a custom AI model to analyze customer feedback from WhatsApp chats for your e-commerce business."
+  - persona: "employee"
+    scenario: "Develop a faster, smaller AI model for internal document summarization to speed up your team's reporting."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+This entry describes how to use an AI agent called ML Intern, found within HuggingChat, to create custom AI models. An AI agent is a program that can plan and execute tasks using artificial intelligence, in this case, building specialized AI models that might not already exist.
+
+The author used ML Intern to create smaller, more efficient versions of existing models or entirely new models tailored to specific needs, like identifying plant diseases. The agent handles the complex technical steps of model training, evaluation, and publishing on Hugging Face hardware.
+
+This workflow is considered advanced because, while the interaction happens through a chat interface, effectively guiding the AI agent requires a deep understanding of AI concepts. You need to provide detailed, technical instructions in your prompts, specifying datasets, base models, training methods, and evaluation criteria. The author's prompts grew from 450 to 2,000 words, reflecting the complexity and iterative learning involved.
+
+Therefore, this is not a simple copy-paste recipe. Instead, it explains the process and the technical skills needed to leverage an AI agent for custom model creation, pointing to where you can find examples of the detailed prompts required.
+
+## What you can use it for
+*   **Create a smaller, faster version of an existing model**: The author created a 0.8B (0.8 billion parameters) version of a 9B (9 billion parameters) prompt rewriter, making it run on a CPU (Central Processing Unit, the main 'brain' of a computer) and use less memory.
+*   **Build a specialized model for a niche field**: For example, a model that can diagnose specific citrus plant diseases (like a mite problem or a magnesium deficiency) and suggest appropriate remedies.
+*   **Develop models that understand specific contexts**: The author mentions creating a camera-angle LoRA (Low-Rank Adaptation, a technique to efficiently adapt a large pre-trained model to a new task), which implies a model specialized in understanding visual perspectives.
+
+## Tools you need
+*   **HuggingChat** (freemium): A chat platform where you can interact with various AI models and agents, including ML Intern.
+*   **Claude** (freemium): An AI assistant used by the author to help create training datasets.
+*   **GitHub** (free): A platform for hosting code and project files, where the author's example prompts are stored.
+*   **Hugging Face Hub** (free): A central platform for sharing and discovering AI models, datasets, and demos, where ML Intern publishes the trained models.
+
+## How it actually works
+1.  **Access HuggingChat and enable ML Intern**: Go to HuggingChat and activate the ML Intern agent. The author states they started "as a message in HuggingChat with ML-intern switched on."
+2.  **Craft a detailed prompt**: This is the most critical step. The author's prompts were very long and specific, detailing the idea, why it's wanted, the dataset (a collection of data used to teach an AI model), the base model (a pre-trained AI model that serves as a starting point), and the training script (the code that defines how an AI model learns). They also included "Verified facts, do not re-derive" for information the agent shouldn't waste budget on rediscovering.
+    *   You can find examples of the author's prompts on GitHub at `yvrjsharma/ml-intern-prompts`. These prompts are complex and serve as a guide for the level of detail required.
+3.  **Include critical instructions**: The author highlights two key instructions:
+    *   Ask for a baseline score before training: For example, "Also report the base model's zero-shot score on the same metric before training so we can see the gain." This helps you understand if the trained model is actually better.
+    *   Request a smoke test with a check: For example, "I asked for 50 training steps, then a check that the saved weights had actually changed, before paying for the full run." This ensures basic functionality before committing to a full, costly training run.
+4.  **Define deliverables and set a budget**: At the end of your prompt, specify what you expect in the model card (a document describing the model) and set a strict cost limit, such as: "Cap total spend at USD 12 and ask me before exceeding it." ML Intern will ask for permission before executing paid jobs.
+5.  **Interact with ML Intern**: The agent will plan the work, ask for budget approval before spending, run tests, then train, evaluate, and publish the model on Hugging Face hardware. You will need to approve these steps as they come up.
+6.  **Review the results**: The final output is a public model on the Hugging Face Hub with its evaluation in the model card. You should review this to ensure the model meets your requirements.
+
+## Words you'll see, explained
+*   **AI agent**: A program that can plan and execute tasks using artificial intelligence.
+*   **Model**: An AI program trained to perform a specific task (e.g., generate text, classify images).
+*   **9B model**: A large AI model with 9 billion parameters, requiring significant memory and compute.
+*   **0.8B version**: A smaller AI model with 0.8 billion parameters, more efficient to run.
+*   **CPU**: Central Processing Unit, the main "brain" of a computer, generally slower for AI tasks than a GPU.
+*   **GPU**: Graphics Processing Unit, a specialized chip that makes AI training and inference much faster.
+*   **Tokens**: The basic units of text (words, parts of words, punctuation) that AI models process.
+*   **Training dataset**: A collection of data (e.g., text, images) used to teach an AI model.
+*   **Base model**: A pre-trained AI model that serves as a starting point for further specialization.
+*   **Training script**: The code that defines how an AI model learns from a dataset.
+*   **LoRA**: Low-Rank Adaptation, a technique to efficiently adapt a large pre-trained model to a new task with less data and compute.
+*   **Model card**: A document on Hugging Face Hub that describes an AI model, its purpose, limitations, and evaluation results.
+*   **Zero-shot score**: A measure of how well a model performs on a task it was not explicitly trained for, without any examples.
+*   **Smoke test**: A quick, basic test to ensure that the core functionality of a system is working before a full run.
+
+## Original source
+This workflow is based on a blog post by Yuvraj Sharma and Abubakar Abid from Hugging Face, published on the Hugging Face Blog. The article details how they used the ML Intern agent to create custom AI models that were not readily available.
+
+## Notes & variations
+*   **Do you even need this?** If your goal is to use an existing AI model for a general task (like summarizing text or generating images), you might not need to train a custom model. Many excellent pre-trained models are available on the Hugging Face Hub or through freemium chat applications like HuggingChat and Claude, which can be used without incurring training costs. This workflow is best for highly specialized or niche applications where existing models fall short.
+*   **Free-tier limits**: While the chat interfaces for HuggingChat and Claude offer free tiers for interaction, the actual process of training an AI model with ML Intern involves significant computational resources. The author's project, which included labeling nearly 9,000 examples, cost USD 16. Be aware that creating custom models will incur compute costs, and you will need to approve these expenses with ML Intern.
+*   **Common pitfall**: A common mistake is underestimating the complexity of writing an effective prompt for an AI agent like ML Intern. Vague or incomplete instructions can lead to wasted compute time and unsatisfactory results. Ensure your prompt is highly detailed, includes all necessary constraints (like budget), and specifies clear evaluation criteria.
+*   **Tip for better results**: Start with a very clear, specific goal for your custom model. Before writing your prompt, research existing datasets and base models that might be relevant. The more information and "verified facts" you can provide to ML Intern, the more efficiently it can work towards your desired outcome.
