@@ -1,0 +1,129 @@
+---
+title: "Investigate how AI-generated code handles errors with Qwen2.5-Coder and Semgrep"
+description: "Explore how AI-generated code handles errors. This research shows that automated tools like linters often flag false positives, requiring human review to understand true error-swallowing."
+category: "academic-research"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 180
+jobToBeDone: "Investigate if AI-generated code silently swallows errors"
+tools:
+  - name: "Ollama"
+    url: "https://ollama.com"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Semgrep"
+    url: "https://semgrep.dev"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Qwen2.5-Coder 1.5B"
+    url: "https://ollama.com/library/qwen2-coder"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/tauridev/does-ai-generated-code-silently-swallow-errors-120-measured-generations-every-flagged-case-was-a-241p"
+  platform: "blog"
+  author: "tauridev"
+  postedAt: 2026-09-15
+score: 7
+ingestedAt: 2026-10-14
+nigeriaNotes: "Running local LLMs like Qwen2.5-Coder via Ollama requires a powerful computer with sufficient RAM and CPU (or GPU), which may not be common for mobile-first users. The initial model download can be data-heavy (several gigabytes), but subsequent use is offline and data-light."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+This entry describes a research methodology to investigate a critical question: does AI-generated code silently hide errors? The author's experiment, using a small, locally run AI model (Qwen2.5-Coder) and a code scanning tool (Semgrep), found that automated checks alone are not enough to answer this question.
+
+This is an advanced workflow because it requires setting up and running large language models (LLMs) on your own computer, using a code linter, and then performing detailed manual analysis of the code. It's not a simple copy-paste task, as the exact steps and interpretation depend heavily on your technical understanding of code and error handling.
+
+The core finding is that whether code "swallows errors" (meaning it handles an error without clearly indicating it to the user or calling program) cannot be decided just by looking at the code's structure or syntax. What looks like a hidden error might actually be a documented, intentional fallback behavior, and only human review can tell the difference.
+
+## What you can use it for
+*   **Improve code quality**: Understand the common patterns of error handling in AI-generated code and identify potential risks.
+*   **Design better linters**: Learn the limitations of automated code analysis tools when it comes to detecting subtle issues like silent error swallowing.
+*   **Evaluate AI code generation**: Assess the robustness and reliability of code produced by different AI models for specific tasks.
+*   **Develop safer AI systems**: Inform strategies for integrating AI-generated code into applications, especially those where error handling is critical.
+
+## Tools you need
+*   **Ollama** (free): A tool that lets you run large language models (LLMs) on your own computer, without needing cloud services. This is how you'll run the Qwen2.5-Coder model.
+*   **Semgrep** (freemium): A code analysis tool that scans your code for patterns, helping find potential issues, security vulnerabilities, or enforce coding standards. It has a free tier for local use and open-source projects.
+*   **Qwen2.5-Coder 1.5B** (free): A specific AI model designed for generating code, which you will run through Ollama. The model itself is open-source and free to use.
+
+## How it actually works
+This workflow involves setting up a local AI model, generating code, scanning it with a linter, and then manually reviewing the results. The exact prompts and tasks are not provided by the author, so you will need to create your own to replicate the methodology.
+
+1.  **Set up Ollama**: Download and install Ollama on your computer. Follow the instructions on the official Ollama website for your operating system (Windows, macOS, or Linux). You should see Ollama running in your system tray or as a background service.
+
+2.  **Download Qwen2.5-Coder**: Open your terminal or command prompt and use Ollama to download the Qwen2.5-Coder model. This model is specifically mentioned by the author.
+
+    ```bash
+    # macOS or Linux
+    ollama run qwen2-coder:1.5b
+    ```
+
+    ```powershell
+    # Windows (PowerShell)
+    ollama run qwen2-coder:1.5b
+    ```
+
+    This command will download the model if it's not already present and then start an interactive chat session. You can type `bye` to exit the session.
+
+3.  **Generate code samples**: Define a set of programming tasks (e.g., "write a Python function to fetch JSON from a URL" or "write a TypeScript function to parse an integer"). Use Ollama with Qwen2.5-Coder to generate multiple code samples for each task. The author used 10 generations per task with varying "seeds" (random starting points) and a "temperature" of 0.7 (which controls how creative or random the output is). You can experiment with these settings in Ollama's API or command-line interface.
+
+    You should get a collection of Python and/or TypeScript functions saved as separate files.
+
+4.  **Install Semgrep**: Follow the installation instructions on the Semgrep website for your operating system. You should be able to run `semgrep --version` in your terminal to confirm it's installed.
+
+5.  **Create a Semgrep rule**: Write a Semgrep rule to identify potential "silent failure" patterns. The author's initial rule targeted `try/except` blocks that returned `None` or an empty value. A starting point for a Python rule might look for `try` blocks that catch exceptions and then return `None` or an empty list/dictionary without re-raising or logging.
+
+    ```yaml
+    # Example Semgrep rule (Python)
+    rules:
+      - id: python-silent-none-return
+        message: "Potential silent error handling: try/except returns None."
+        severity: WARNING
+        languages:
+          - python
+        patterns:
+          - pattern-inside: |
+              try:
+                ...
+              except $EXCEPTION:
+                return None
+    ```
+
+    You should save this rule in a `.yaml` file (e.g., `silent_error_rule.yaml`).
+
+6.  **Run Semgrep**: Execute Semgrep against your generated code samples using your custom rule.
+
+    ```bash
+    # macOS or Linux
+    semgrep -f silent_error_rule.yaml your_code_directory/
+    ```
+
+    ```powershell
+    # Windows (PowerShell)
+    semgrep -f silent_error_rule.yaml your_code_directory/
+    ```
+
+    You should see a list of files and line numbers where your Semgrep rule found a match.
+
+7.  **Hand-adjudicate results**: This is the most critical and time-consuming step. Manually review each piece of code flagged by Semgrep. Read the function's docstrings, comments, and consider its intended "contract" (what it's supposed to do and return). Determine if the `None` or empty return is a legitimate, documented fallback (e.g., `parse_int` returning `None` if input isn't a number) or a true "silent failure" where an unexpected error is hidden. The author found that many flagged cases were false positives or documented fallbacks, not true silent failures.
+
+## Words you'll see, explained
+*   **LLM (Large Language Model)**: An advanced AI program that can understand, generate, and process human language, including programming code.
+*   **Ollama**: A free, open-source tool that allows you to run various large language models (LLMs) directly on your own computer, using its processing power.
+*   **Semgrep**: A fast, open-source static analysis tool that scans code for patterns, helping developers find bugs, security vulnerabilities, and enforce coding standards.
+*   **Silent failure / Swallowed error**: This occurs when a program encounters an error but handles it in a way that doesn't clearly inform the user or the calling part of the program, often by returning a default or empty value without proper logging or re-raising the error.
+*   **Hand adjudication**: The process of manually reviewing and making a judgment about the results of an automated system, typically performed by human experts to ensure accuracy and context.
+*   **Docstring / Comment**: Explanatory text embedded within code that describes the purpose, behavior, inputs, outputs, and any special conditions (like error handling) of a function or code block.
+*   **Contract (of a function)**: The agreed-upon behavior and expectations of a function, specifying what inputs it accepts, what outputs it produces, and how it will behave under different conditions, including errors.
+
+## Original source
+This research was conducted by tauridev and published on the DEV Community blog. The author investigated whether AI-generated code silently swallows errors, documenting their findings and the refutation of their initial hypothesis through measurement.
+
+## Notes & variations
+*   **Do you even need this?**: For most everyday coding tasks, simply using standard linters, robust testing, and careful code review practices are sufficient to ensure good error handling. This workflow is primarily for academic research or deep investigation into AI model behavior, not for typical development.
+*   **Free-tier limits**: Ollama is free, but running LLMs locally requires a computer with significant processing power (CPU and RAM, or a dedicated GPU). Semgrep offers a generous free tier for local use and open-source projects, which is suitable for this kind of research.
+*   **Common pitfall**: Relying solely on automated tools like Semgrep to find "silent failures" can be misleading. As the original author discovered, many flagged cases might be false positives or legitimate, documented fallbacks. Human review and understanding of the code's context are essential.
+*   **Tip for better results**: When generating code with AI, try to include explicit instructions in your prompts about how errors should be handled (e.g., "raise an exception on invalid input," "return None if data is not found"). This can help the model generate code with clearer error contracts, making the adjudication process easier.

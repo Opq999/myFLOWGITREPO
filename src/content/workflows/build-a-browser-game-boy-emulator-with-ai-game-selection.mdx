@@ -1,0 +1,98 @@
+---
+title: "Build a Browser Game Boy Emulator with AI Game Selection"
+description: "Learn to create a web-based Game Boy Color emulator that uses AI to suggest games based on your mood, running locally on your machine."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 120
+jobToBeDone: "Build a browser-based Game Boy Color emulator with an AI-powered game selection feature"
+tools:
+  - name: "Gemma 3 (4B)"
+    url: "https://ai.google.dev/gemma"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Ollama"
+    url: "https://ollama.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "mGBA"
+    url: "https://mgba.io/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Vite"
+    url: "https://vitejs.dev/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "TypeScript"
+    url: "https://www.typescriptlang.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "WebAssembly"
+    url: "https://webassembly.org/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/0shuvo0/my-friends-game-boy-got-stolen-so-i-built-him-one-3lnn"
+  platform: "blog"
+  author: "0shuvo0"
+  postedAt: 2026-10-03
+score: 8
+ingestedAt: 2026-10-14
+nigeriaNotes: "This workflow requires running a local AI model (Gemma 3 4B) via Ollama, which can consume significant disk space and RAM. The core emulator functionality (mGBA, Vite, TypeScript) is data-light once set up. The AI component requires a machine capable of running the model locally, which might be a barrier for very low-spec devices or limited mobile data for initial downloads."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+
+This project is about building a Game Boy Color emulator that runs directly in your web browser. It's not just a regular emulator; it has a special feature that uses Artificial Intelligence (AI) to help you pick a game. Instead of scrolling through a long list of game titles, you can tell the AI what kind of game you feel like playing, like "I want a game with monsters," and it will choose a suitable game for you. This is achieved by running a small AI model, Gemma 3 (4B), on your own computer using a tool called Ollama.
+
+This approach is considered advanced because it involves setting up and running software locally, including a large AI model. The exact steps to get everything working are detailed within the project's code repository and may require some technical comfort. There isn't a simple, single set of copy-paste instructions that works for everyone without any prior knowledge, as it involves compiling code and configuring local services.
+
+## What you can use it for
+
+*   **Play classic games on your computer**: Enjoy Game Boy Color games directly in your web browser without needing to install separate software.
+*   **Discover games easily**: Get game recommendations based on your mood or preferences, making it faster to find something fun to play.
+*   **Build custom game experiences**: For those with technical skills, this project provides a foundation to experiment with AI-driven game selection or other interactive features.
+*   **Learn about local AI**: Understand how to run AI models on your own machine, which can be more private and cost-effective than using cloud services.
+*   **Create a personalized game console**: Imagine a browser-based console that learns your tastes and suggests games, offering a unique way to interact with your game collection.
+
+## Tools you need
+
+*   **Gemma 3 (4B)** (free): A small, powerful AI model that understands and generates text, used here for selecting games based on descriptions.
+*   **Ollama** (free): Software that makes it easy to download and run AI models like Gemma 3 on your own computer.
+*   **mGBA** (free): A high-quality emulator for Game Boy Advance and Game Boy Color games, compiled to run in a web browser.
+*   **Vite** (free): A fast build tool for modern web development, used to set up the project structure and development server.
+*   **TypeScript** (free): A programming language that adds types to JavaScript, helping to catch errors and make code more organized.
+*   **WebAssembly** (free): A technology that allows code written in languages like C++ (which mGBA is based on) to run in web browsers at near-native speed.
+
+## How it actually works
+
+1.  **Set up the emulator**: You'll need to clone the project's code from its GitHub repository. Then, you'll use Vite to set up the development environment. This involves installing project dependencies using a package manager like npm or yarn.
+2.  **Install the AI model**: Download and install the Gemma 3 (4B) model using Ollama. The project's `package.json` file contains a script, likely named `start:ai`, which helps in starting the Ollama server with the correct model.
+3.  **Add game ROMs**: Place your Game Boy Color game files (ROMs) into the `public/gameroms` folder within the project. The emulator can also load ROMs from ZIP files.
+4.  **Configure game list**: The list of available games is stored in a file, likely named `src/games.ts`. You'll need to add the names of your ROMs to this file so the AI knows what games are available.
+5.  **Run the application**: Use the Vite development server to start the emulator in your browser. The exact command to run the application, especially with the AI feature enabled, will be in the project's documentation or scripts (e.g., `npm run start:ai`).
+6.  **Interact with the AI**: Once the emulator is running, you can type your game request or use your microphone to speak it. The browser's speech recognition will capture your voice, and the AI will process your request along with the list of games to suggest one.
+
+Refer to the official GitHub repository for the most up-to-date and precise instructions.
+
+## Words you'll see, explained
+
+*   **Emulator**: A program that mimics the behavior of a specific computer system, allowing you to run software designed for that system on a different one (in this case, running Game Boy Color games on your computer).
+*   **WebAssembly (Wasm)**: A way to run code written in languages other than JavaScript (like C++) very quickly in a web browser.
+*   **Vite**: A modern, fast build tool for web projects that helps developers set up their development environment and package their code efficiently.
+*   **TypeScript**: A programming language that is a superset of JavaScript. It adds features like static typing, which helps catch errors before the code runs.
+*   **Ollama**: A tool that simplifies the process of downloading, setting up, and running large AI language models locally on your computer.
+*   **ROM**: A Read-Only Memory file that contains the data for a video game cartridge, allowing emulators to load and play the game.
+*   **AI Model**: A computer program trained on vast amounts of data to perform specific tasks, such as understanding language, generating text, or making predictions.
+
+## Original source
+
+This project was created by 0shuvo0 as a submission for the Hacktoberfest Weekend Challenge. It demonstrates how to build a browser-based Game Boy Color emulator with an integrated AI game selection feature, using Gemma 3 (4B) running locally via Ollama.
+
+## Notes & variations
+
+*   **Do you even need this?**: If you just want to play Game Boy Color games without the AI feature, many simpler, pre-built emulators are available online or as downloadable applications that require less setup.
+*   **Free-tier limits**: While the tools themselves are free, running the Gemma 3 (4B) model locally requires a reasonably powerful computer with sufficient RAM and storage space. The initial download of the model can be large.
+*   **Common pitfall**: Ensure Ollama is running and the `gemma3:4b` model is correctly installed and accessible before trying to use the AI game selection feature. If the AI doesn't respond, double-check that Ollama is active and the model is loaded.

@@ -1,0 +1,91 @@
+---
+title: "Apply AI-generated code changes to your VS Code project with ReptClip"
+description: "Learn how to use the ReptClip VS Code extension to send project files to a free AI chatbot, get code changes, and apply them directly to your project."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 15
+jobToBeDone: "Apply AI-generated code changes to a project in VS Code"
+tools:
+  - name: "VS Code"
+    url: "https://code.visualstudio.com"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "ReptClip"
+    url: "https://marketplace.visualstudio.com/items?itemName=effessdev.reptclip"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "AI Chatbot (e.g., ChatGPT)"
+    url: "https://chatgpt.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/effessdev/i-built-a-vs-code-extension-to-paste-your-project-into-free-chatbots-and-apply-the-diffs-in-one-5enn"
+  platform: "blog"
+  author: "effessdev"
+  postedAt: 2026-09-26
+score: 8
+ingestedAt: 2026-10-14
+nigeriaNotes: "This workflow relies on free tools and freemium AI chatbots, making it highly accessible. Data usage is minimal, mainly text for prompts and code."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "Fix bugs in your Python assignment code by pasting it into an AI chatbot and applying its suggested changes via ReptClip."
+  - persona: "employee"
+    scenario: "Refactor a small JavaScript function in your VS Code project by sending it to an AI chatbot and applying the diff with ReptClip."
+  - persona: "entrepreneur"
+    scenario: "Quickly add a new feature to your web app's frontend by getting code suggestions from an AI and applying them with ReptClip."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You'll be able to quickly send parts of your VS Code project to a free AI chatbot, get code changes (also called 'diffs'), and apply them back to your files with a single click. This approach streamlines the process of using AI for code modifications, avoiding manual copy-pasting of code blocks and reducing errors when applying changes. It's especially useful for making quick updates or refactoring small sections of a project.
+
+## Tools you need
+*   **VS Code** (free): A popular code editor where you will manage your project and apply changes.
+*   **ReptClip** (free): A VS Code extension that helps you send project context to AI chatbots and apply their suggested code changes.
+*   **AI Chatbot** (freemium): A conversational AI tool like ChatGPT, Claude, or Gemini, which will generate the code changes based on your project context and prompt.
+
+## Steps
+1.  **Install ReptClip**: Open VS Code. Go to the Extensions view (you can usually find it by clicking the square icon on the sidebar, or by pressing `Ctrl+Shift+X` on Windows/Linux or `Cmd+Shift+X` on macOS). Search for "ReptClip" and click "Install".
+    *   You should see the extension installed and a new "ReptClip" tab appear in the bottom panel of VS Code.
+
+2.  **Open the ReptClip tab**: In VS Code, look for the "ReptClip" tab in the bottom panel (where Terminal, Problems, and Output usually are). Click on it.
+    *   You should see the ReptClip interface with an input field labeled "Files to include".
+
+3.  **Specify files to include**: In the "Files to include" input field, type the names of the files you want the AI to consider. You can use patterns like `**/*.ts` (for all TypeScript files) or specific file paths (like `page.tsx`). Press `Enter` or `Tab` after each file to add it.
+    *   *Example from source*: The author added `page.tsx` and `AGENTS.md`.
+    *   As you type, you'll get suggestions. If a file matches, its name will turn green; otherwise, it will be yellow. The order you add files is preserved in the context.
+
+4.  **Copy project context**: After adding all desired files, press `Enter` again.
+    *   The project context (including your project's file structure and the content of the specified files, along with instructions for the AI on how to format its response) will be copied to your clipboard. You should see a notification confirming this. The context will look similar to the example provided in the source, starting with `# Project structure` and then the content of your files.
+
+5.  **Paste into an AI chatbot**: Open your preferred free AI chatbot (e.g., ChatGPT, Claude, Gemini) in your web browser. Paste the copied context into the chat input field (press `Ctrl+V` on Windows/Linux or `Cmd+V` on macOS).
+    *   The chatbot's input field will now contain your project context.
+
+6.  **Write your prompt**: Below the pasted context, type your request for the AI.
+    *   *Example from source*: The author's goal was to "redesign my website's landing page".
+    *   The author doesn't share their exact prompt; a starting point:
+
+    ```
+    Please redesign my website's landing page (page.tsx) to improve its visual appeal and add a clear call-to-action button. Provide the changes in the Search/Replace block format you were given.
+    ```
+
+    *   Send your message to the chatbot.
+
+7.  **Get AI-generated diffs**: The chatbot will generate code changes in a specific format, typically inside a code block. This format uses `SEARCH` and `REPLACE` blocks for each file modification.
+    *   You should see the chatbot's response containing one or more code blocks with the suggested changes. The format will be similar to the example shown in the source, starting with a file path like `src/models/user.py` followed by `SEARCH` and `REPLACE` sections.
+
+8.  **Copy the diffs**: Copy the entire code block containing the AI-generated diffs to your clipboard.
+    *   Make sure to copy the entire block, including the file paths and `SEARCH`/`REPLACE` sections.
+
+9.  **Apply the diffs in VS Code**: Go back to VS Code and the ReptClip tab. Click the "Apply Diffs" button.
+    *   The extension will read the diffs from your clipboard and apply them to the specified files in your project. You should see your files update with the new code. If there are any issues, ReptClip will usually provide feedback.
+
+## Original source
+This workflow was shared by effessdev on the DEV Community blog. It demonstrates how the ReptClip VS Code extension can be used to integrate AI chatbots into your coding workflow for applying code changes efficiently.
+
+## Notes & variations
+*   **Free-tier alternatives**: The workflow explicitly mentions "free chatbots," so any freemium AI chat service (like ChatGPT, Claude, or Gemini) will work.
+*   **Common mistake**: A common pitfall is not copying the *entire* diff block from the AI chatbot, or the chatbot generating diffs in a format ReptClip doesn't understand. Ensure the AI's output strictly follows the `SEARCH`/`REPLACE` block format shown in the example. If the AI doesn't follow the format, you might need to refine your prompt to explicitly ask for changes in "ReptClip format" or "Search/Replace blocks".
+*   **Tip for better results**: When providing your prompt to the AI, be as specific as possible about the changes you want. For example, instead of "redesign my landing page," try "redesign `page.tsx` to add a new hero section with a call-to-action button, using Tailwind CSS classes." Also, review the generated diffs carefully before applying them, as AI can sometimes introduce errors or unexpected changes.

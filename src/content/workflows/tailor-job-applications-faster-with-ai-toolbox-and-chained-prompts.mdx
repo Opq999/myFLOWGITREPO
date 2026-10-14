@@ -1,0 +1,87 @@
+---
+title: "Tailor Job Applications Faster with AI Toolbox and Chained Prompts"
+description: "Streamline your job applications by automatically tailoring your resume and cover letter to each job post using a chained AI workflow."
+category: "job-hunting"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 10
+jobToBeDone: "Automate job application tailoring with a single AI workflow"
+tools:
+  - name: "AI Toolbox"
+    url: "https://github.com/Ok-Negotiation-2587/AI-Toolbox"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Any AI Chatbot"
+    url: "https://chatgpt.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://www.reddit.com/r/ChatGPTPromptGenius/comments/1x39npm/finally_stopped_pasting_five_prompts_for_every/"
+  platform: "reddit"
+  author: "/u/Ok_Negotiation_2587"
+  postedAt: 2026-10-11
+score: 7
+ingestedAt: 2026-10-14
+nigeriaNotes: "AI Toolbox is a browser extension, which means it primarily works on desktop browsers like Chrome. Mobile browser support for extensions is limited, so this workflow might be challenging for mobile-first users. The data usage is light as it's text-based, and the AI Toolbox itself is free, relying on freemium AI chatbots."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You'll get a tailored set of resume bullet points, a custom cover letter, and a list of likely interview questions, all based on a specific job description and your resume. This approach uses a chain of AI prompts to first identify key requirements and your resume's gaps, then uses that information to create more accurate application materials.
+
+## Tools you need
+*   **AI Toolbox** (free): A browser extension for Chrome that lets you create and run sequences of AI prompts (called "chains") with a single input. It helps automate repetitive tasks with large language models.
+*   **Any AI Chatbot** (freemium): A large language model (LLM) like ChatGPT, Claude, or Gemini to power the AI Toolbox extension. AI Toolbox connects to these services to run the prompts.
+
+## Steps
+
+1.  **Install the AI Toolbox extension**: Open your Chrome browser on a desktop computer. Go to the AI Toolbox GitHub page: `https://github.com/Ok-Negotiation-2587/AI-Toolbox`. Follow the installation instructions provided in the `README.md` file. This usually involves downloading the extension files, unzipping them, and loading them as an "unpacked" extension in Chrome's `chrome://extensions` page. You should see the AI Toolbox icon appear in your browser's toolbar.
+
+2.  **Connect AI Toolbox to your AI chatbot**: Click the AI Toolbox icon in your browser toolbar. Follow the on-screen instructions to connect it to your preferred AI chatbot (e.g., ChatGPT, Claude, Gemini). This typically involves logging into the chatbot's website and granting permission to the extension. You should see a confirmation that the connection is successful.
+
+3.  **Create the job application chain**: Click the AI Toolbox icon again and open its main interface. Look for an option to "Create New Chain" or similar. You will need to add five separate "steps" to this chain, each with one of the prompts below. AI Toolbox allows you to use placeholders like `{{job_post}}` and `{{resume}}` which it will ask you to fill in when you run the chain.
+    *   Add the first step with this prompt:
+
+    ```
+    Here is a job post: {{job_post}} List the requirements in order of how much they seem to matter to this employer. Mark which are must-haves and which are nice-to-haves, and quote the line each one comes from.
+    ```
+
+    *   Add the second step with this prompt:
+
+    ```
+    Here is my resume: {{resume}} Go through each requirement from step 1 and say where my resume covers it, partly covers it, or doesn't. Be blunt about the gaps. Don't stretch anything to make it fit.
+    ```
+
+    *   Add the third step with this prompt:
+
+    ```
+    Rewrite my five most relevant resume bullets so they line up with the must-haves. Use only experience that's actually in my resume. If a bullet can't honestly cover a requirement, leave it alone and tell me.
+    ```
+
+    *   Add the fourth step with this prompt:
+
+    ```
+    Write a cover letter under 150 words. First sentence names the role and the strongest match. Address the biggest gap once, honestly, with what I'd do about it. No "I am excited to apply".
+    ```
+
+    *   Add the fifth step with this prompt:
+
+    ```
+    Give me the five interview questions I'm most likely to get, based on the gaps you found, and one sentence on how to answer each. The order matters.
+    ```
+
+    Save your new chain with a descriptive name, like "Job Application Tailor". You should see your new chain listed in AI Toolbox.
+
+4.  **Run the job application chain**: Open a new tab in your browser. In the message box of your connected AI chatbot (e.g., ChatGPT), type `..` (two periods). This is the shortcut to activate AI Toolbox. A menu should appear. Select your "Job Application Tailor" chain. AI Toolbox will then present a form asking for your `job_post` and `resume`. Paste the full job description into the `job_post` field. Paste your complete resume text into the `resume` field. Click "Run" or "Submit". The AI Toolbox will process the five prompts in sequence, passing the output of each step to the next. You should see the final combined output appear in your chatbot's interface.
+
+5.  **Review and refine your application materials**: Carefully read the generated resume bullets, cover letter, and interview questions. Check that the rewritten bullets accurately reflect your experience and align with the job's "must-haves." Ensure the cover letter is concise and addresses any major gaps honestly. Use the interview questions to prepare your responses, especially for areas where your resume might be weaker. You should have a complete set of tailored application materials and preparation notes.
+
+## Original source
+This workflow was shared by Reddit user /u/Ok_Negotiation_2587, who developed the AI Toolbox extension. They posted this method on Reddit, highlighting how chaining prompts can automate the job application process.
+
+## Notes & variations
+*   **Desktop-first**: AI Toolbox is a browser extension, which typically works best on desktop browsers like Chrome. Mobile browser support for extensions is limited, so this workflow might be harder to reproduce on a phone.
+*   **Manual alternative**: If installing AI Toolbox is too complex, you can still follow this workflow manually. Paste the job post and your resume into a freemium AI chatbot (like ChatGPT or Claude). Then, copy and paste each of the five prompts one by one, making sure to include the output from the previous step as context for the next. This takes more time but achieves a similar result.
+*   **Common mistake**: Not providing enough detail in your resume or the job post. The AI can only work with the information you give it. Ensure both inputs are complete and well-formatted for the best results.
+*   **Tip for better results**: Before running the chain, quickly read through the job description yourself to identify the absolute "must-have" skills. This will help you critically evaluate the AI's output and ensure it prioritizes the most important aspects.

@@ -1,0 +1,166 @@
+---
+title: "Create a Code Interviewer with Gemma and Ollama"
+description: "Build a local mock technical interviewer that analyzes your code, asks specific questions about it, and tracks your progress for job preparation."
+category: "job-hunting"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 45
+jobToBeDone: "Create a mock technical interviewer that analyzes a user's code and asks relevant questions"
+tools:
+  - name: "Ollama"
+    url: "https://ollama.com"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Gemma"
+    url: "https://ollama.com/library/gemma"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Git"
+    url: "https://git-scm.com"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Node.js"
+    url: "https://nodejs.org"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "npm"
+    url: "https://www.npmjs.com"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Mastra"
+    url: "https://github.com/yashksaini-coder/maestra"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/yashksaini/i-built-my-friend-a-mock-interviewer-that-read-his-rust-code-1gif"
+  platform: "blog"
+  author: "yashksaini"
+  postedAt: 2026-10-05
+score: 8
+ingestedAt: 2026-10-14
+nigeriaNotes: "This workflow runs entirely on your laptop using free, open-source tools. This means it uses no internet data after the initial downloads of the AI model and project code. This makes it very cost-effective and mobile-friendly once set up, as you can practice anywhere without an internet connection."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You'll get a personalized technical mock interviewer that runs on your own computer. This tool reads your actual code (specifically Rust or TypeScript), identifies tricky parts, and asks specific questions about them. This approach helps you practice for real-world senior interviews that often focus on your projects, rather than generic textbook questions.
+
+## Tools you need
+*   **Ollama** (free): A tool that lets you run large AI models directly on your computer, without needing an internet connection after the initial download.
+*   **Gemma** (free): An "open-weight" AI model from Google, meaning its core components are publicly available for anyone to use and run locally. It powers the interview questions in this workflow.
+*   **Git** (free): A system for tracking changes in computer code and for downloading projects from online platforms like GitHub.
+*   **Node.js** (free): A software environment that allows you to run JavaScript code on your computer, which is needed for the `grill` application.
+*   **npm** (free): The package manager for Node.js, used to install all the necessary parts (dependencies) for the `grill` project.
+*   **Mastra** (free): An open-source framework built with TypeScript that helps create AI agents. The `grill` tool uses this framework.
+
+## Steps
+To follow these steps, you will need to use a "terminal" (also called a command prompt or shell) on your computer. This is a program where you type commands instead of clicking buttons.
+
+1.  **Install Git**: Download and install Git from its official website. This tool is essential for downloading the `grill` project code.
+    *   **What to do**: Go to `https://git-scm.com/downloads` and follow the instructions for your operating system (Windows, macOS, or Linux).
+    *   **What you should see**: After installation, open your terminal and type `git --version`. You should see the installed Git version number.
+
+2.  **Install Node.js and npm**: Download and install Node.js, which includes npm, from its official website. This is required to run the `grill` application.
+    *   **What to do**: Go to `https://nodejs.org/en/download` and download the recommended LTS (Long Term Support) version for your operating system. Run the installer and follow the prompts.
+    *   **What you should see**: Open your terminal and type `node -v` and then `npm -v`. You should see the version numbers for Node.js and npm.
+
+3.  **Install Ollama**: Download and install Ollama, which will run the Gemma AI model locally on your computer.
+    *   **What to do**: Go to `https://ollama.com/download` and download the installer for your operating system. Run the installer and follow the prompts.
+    *   **What you should see**: After installation, open your terminal and type `ollama --version`. You should see the installed Ollama version number.
+
+4.  **Download the Gemma AI model**: Use Ollama to download the specific Gemma model needed for `grill`.
+    *   **What to do**: In your terminal, type the following command:
+
+    ```
+    ollama pull gemma:2b
+    ```
+
+    *   **What you should see**: Ollama will show progress as it downloads the model. Once complete, it will say something like "success". (Note: The source mentions `gemma3:4b`, but `gemma:2b` is a more common and smaller model that is easier to run on most laptops. If you have a powerful computer, you can try `gemma:7b` instead.)
+
+5.  **Clone the `grill` project**: Download the `grill` application code from GitHub using Git.
+    *   **What to do**: In your terminal, type:
+
+    ```
+    git clone https://github.com/yashksaini-coder/grill
+    ```
+
+    *   **What you should see**: Git will download the project files into a new folder named `grill` in your current directory.
+
+6.  **Navigate to the project folder**: Change your current location in the terminal to the `grill` project folder.
+    *   **What to do**: Type:
+
+    ```
+    cd grill
+    ```
+
+    *   **What you should see**: Your terminal prompt will change to show that you are now inside the `grill` directory.
+
+7.  **Install project dependencies**: Install all the additional software packages that `grill` needs to run.
+    *   **What to do**: Type:
+
+    ```
+    npm install
+    ```
+
+    *   **What you should see**: npm will download and install many packages. This may take a few minutes. You should see a message indicating successful installation, possibly with some warnings.
+
+8.  **Build the project**: Compile the `grill` application so it's ready to run.
+    *   **What to do**: Type:
+
+    ```
+    npm run build
+    ```
+
+    *   **What you should see**: The build process will run, and you should see messages indicating that the project was successfully built.
+
+9.  **Link `grill` globally**: Make the `grill` command available from any folder in your terminal.
+    *   **What to do**: Type:
+
+    ```
+    npm link grill
+    ```
+
+    *   **What you should see**: A message confirming that `grill` has been linked, making it accessible as a command.
+
+10. **Ingest your code repositories**: Tell `grill` which of your GitHub projects to analyze for interview questions. Replace `[your-github-username]/[repo-name]` with your actual GitHub username and repository name.
+    *   **What to do**: Type the command, using a public repository you want to practice with. For example, to ingest the `miccli` repository from user `AkashJana18`:
+
+    ```
+    grill ingest AkashJana18/miccli
+    ```
+
+    You can add more repositories by running `grill ingest` again with different paths.
+    *   **What you should see**: `grill` will process the repository, scanning for lines of code that are likely to be interview topics. It will report how many "spots" (potential question areas) it found.
+
+11. **Start a mock interview session**: Begin your practice interview.
+    *   **What to do**: Type:
+
+    ```
+    grill start
+    ```
+
+    By default, this will ask 5 questions. You can specify the number of questions (`-n`) and the language (`--lang`) if you ingested multiple types of code. For example, to ask 3 Rust-only questions:
+
+    ```
+    grill start -n 3 --lang rust
+    ```
+
+    *   **What you should see**: `grill` will present a code snippet from your ingested repositories and ask a question about it. You can type your answer, and it will provide a follow-up question and a grade.
+
+12. **View your weak spots**: After a few sessions, `grill` can show you areas where you struggled.
+    *   **What to do**: Type:
+
+    ```
+    grill report
+    ```
+
+    *   **What you should see**: `grill` will display a map of your weak spots, helping you focus your study.
+
+## Original source
+This workflow was created by yashksaini and shared on the DEV Community blog. It was a submission for the Hacktoberfest Weekend Challenge, built to help a friend prepare for technical interviews by analyzing their actual code.
+
+## Notes & variations
+*   **Common mistake**: A frequent error is forgetting to install all the prerequisites (Git, Node.js, Ollama) before trying to set up `grill`. Make sure each installation step is completed and verified before moving on. Also, ensure you have pulled the Gemma model using `ollama pull gemma:2b`.
+*   **Tip for better results**: Start by ingesting one of your smaller, simpler public repositories to get familiar with the process. Once you understand how `grill` works, you can add more complex projects. Pay close attention to the `grill report` to identify patterns in your weak areas and focus your learning there.
+*   **Free-tier viability**: This entire workflow is designed to run locally on your computer using free, open-source tools. There are no paid tiers or credit systems involved, making it completely free to use after the initial setup.

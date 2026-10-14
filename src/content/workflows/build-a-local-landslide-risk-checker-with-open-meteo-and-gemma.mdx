@@ -1,0 +1,88 @@
+---
+title: "Build a Local Landslide Risk Checker with Open-Meteo and Gemma"
+description: "Learn how to build a local tool that generates landslide risk messages based on rainfall forecasts, using Open-Meteo for data and Gemma via Ollama for messages."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 90
+jobToBeDone: "Build a local tool to generate landslide risk messages based on rainfall forecasts"
+tools:
+  - name: "Open-Meteo"
+    url: "https://open-meteo.com"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Ollama"
+    url: "https://ollama.com"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Gemma 3 4B"
+    url: "https://ai.google.dev/gemma"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Python"
+    url: "https://www.python.org"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "GitHub"
+    url: "https://github.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/siddhartha_bhattarai_a084/building-a-landslide-rain-check-for-a-friend-in-pokhara-2kfg"
+  platform: "blog"
+  author: "siddhartha_bhattarai_a084"
+  postedAt: 2026-10-04
+score: 10
+ingestedAt: 2026-10-14
+nigeriaNotes: "This workflow runs locally on your laptop, minimizing data usage after initial setup. Ollama and Gemma are free to use, making it viable for those with limited internet and budget."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+This entry describes how to build a custom, local application that checks for landslide risk based on rainfall forecasts. The author created this tool to provide actionable safety messages for a friend in a monsoon-prone area. It reads weather data, calculates a risk percentage, and generates short, forwardable messages in English and Nepali.
+
+This workflow is in Concept mode because it involves setting up a custom application from a code repository and running a large language model (LLM) locally on your computer using Ollama. It is not a simple copy-paste process that can be done on a phone or by a non-technical beginner. It requires comfort with command-line interfaces and basic programming concepts.
+
+The tool is designed to run entirely on a laptop, ensuring that sensitive information stays on your device and that it works even without an internet connection after initial setup. It combines open weather data with a local AI model to create a personalized risk assessment system.
+
+## What you can use it for
+*   **Generate local landslide risk messages**: Create custom safety alerts for specific geographical areas based on real-time rainfall forecasts.
+*   **Receive rainfall forecasts and risk percentages**: Get a clear overview of potential landslide risk for the next three days, including a percentage based on multiple forecast scenarios.
+*   **Create custom, forwardable safety messages**: Produce personalized messages in multiple languages (English and Nepali in this example) that can be easily shared via messaging apps like Viber or WhatsApp.
+*   **Understand local AI integration**: Learn how to combine open weather data from services like Open-Meteo with local AI models, such as Gemma running on Ollama, for practical, offline applications.
+
+## Tools you need
+*   **Open-Meteo** (free): Provides weather forecast data, including rainfall, without needing an API key.
+*   **Ollama** (free): A tool that lets you run large language models (LLMs) like Gemma on your own computer, without an internet connection after initial download.
+*   **Gemma 3 4B** (free): A smaller, powerful language model from Google that runs locally on your computer using Ollama to generate text messages.
+*   **Python** (free): A programming language needed to run the author's custom application and its dependencies.
+*   **GitHub** (freemium): A platform where the author's code is stored and shared, allowing you to download and run it.
+
+## How it actually works
+This workflow involves setting up and running a custom application from a GitHub repository. The exact steps and commands are detailed in the author's project documentation.
+
+1.  **Access the code**: Go to the author's GitHub repository for the project. The link is provided in the original source section.
+2.  **Set up Ollama and Gemma**: Install Ollama on your computer. Once Ollama is installed, use its command-line interface to download and set up the Gemma 3 4B model. This allows the model to run locally.
+3.  **Prepare the application**: Clone (download) the repository to your local machine. Then, install any required Python libraries (dependencies) that the project needs, usually listed in a `requirements.txt` file within the repository.
+4.  **Run the application**: Start the application, which will likely open a local web interface in your browser or run as a command-line tool. The author's tool has a user interface where you can select a district.
+5.  **Generate risk messages**: In the application, select a district (for example, Kaski, Nepal) and request a forecast for the next three days. The tool will fetch rainfall data from Open-Meteo.
+6.  **Review results**: The application will display a risk percentage based on its internal rainfall rules. It will also generate a forwardable message in English using the local Gemma model and provide a fixed message in Nepali. These messages can then be shared via messaging apps.
+
+## Words you'll see, explained
+*   **Ensemble forecasts**: Multiple weather predictions run with slightly different starting conditions to show a range of possible outcomes, making the forecast more reliable.
+*   **Rainfall rule**: A specific calculation or threshold based on rainfall data used by the application to determine potential landslide risk.
+*   **Ollama**: A software tool that allows you to run large language models (LLMs) on your own computer, offline, after an initial download.
+*   **Gemma 3 4B**: A smaller, efficient language model developed by Google, designed to run well on personal computers for tasks like generating text.
+*   **API (Application Programming Interface)**: A set of rules that allows different software applications to communicate with each other, often used to get data from online services.
+*   **F1 score**: A measure used to evaluate the accuracy of a model, especially when dealing with imbalanced data, combining how precise its predictions are and how many relevant predictions it finds.
+*   **AUC (Area Under the Curve)**: Another measure of a model's performance, showing its ability to distinguish between different categories or outcomes.
+
+## Original source
+This workflow is based on a project by Siddhartha Bhattarai, shared on the DEV Community platform. He developed this tool to provide landslide risk checks for a friend in Pokhara, Nepal. The code for this project is available on GitHub at `https://github.com/Siddhartha20242/priorlabshackathon`.
+
+## Notes & variations
+*   **Do you even need this?**: For basic weather information, many free weather apps are available. This workflow is best suited if you need a custom, local tool for specific hazard risk assessment, or if you want to learn how to integrate local AI models with real-world data.
+*   **Free-tier limits**: Open-Meteo provides free weather data. Ollama and the Gemma model are free to download and run on your own computer, but their performance depends on your laptop's processing power and memory.
+*   **Common pitfall**: Setting up a local development environment, including Python and Ollama, can be challenging for beginners. Carefully follow the installation instructions provided in the author's GitHub repository.
+*   **Tip for better results**: The author highlights that local context and data are crucial for accurate risk assessment. If adapting this tool for a different region, research and incorporate local geological and rainfall data to refine the risk rules.
