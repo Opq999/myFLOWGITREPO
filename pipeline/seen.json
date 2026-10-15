@@ -25836,8 +25836,192 @@
     "d324ab276ba47ba52f58b318c405e517f71d6cc99ce793cc110b8cc589ef8534": {
       "url": "https://dev.to/mrsaynothing/jev-decision-models-explained-2c7d",
       "date": "2026-10-14"
+    },
+    "154a39176d886b3bd0ff901eba3548e2c4f017582684514f11e4b984aa5100ed": {
+      "url": "https://simonwillison.net/2026/Oct/14/ai-is-mass-decompiling-games",
+      "date": "2026-10-15"
+    },
+    "ebe6714f1831ebc16a7fd132753a255397453f08d9cb797ae59faa3ce1c3a428": {
+      "url": "https://news.ycombinator.com/item?id=47200708",
+      "date": "2026-10-15"
+    },
+    "e01fca796460ec8490e0e1f27e74ec00776af345f54da108208c14a9e886f7bb": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1x3i6uc/im_actually_kind_of_excited_lol",
+      "date": "2026-10-15"
+    },
+    "e58311dcd1376969cb5988e8617965f7d96339e0b42314a5cd1453877376920c": {
+      "url": "https://simonwillison.net/2026/Oct/15/anthropic-tells-investors",
+      "date": "2026-10-15"
+    },
+    "f9fc592ad5493e6831b2681d662c8a828c0412246fb6182e7ea293d064457aa4": {
+      "url": "https://github.com/harvard-edge/cs249r_book",
+      "date": "2026-10-15"
+    },
+    "3e6e644f1b2b0e94cbd7e718f3e7eef8d169655a1b54f3f6f702d776b35d4d26": {
+      "url": "https://simonwillison.net/2026/Oct/14/tree-appreciator",
+      "date": "2026-10-15"
+    },
+    "3f2a46287c0578a69bfab9314c1697867df5db4ef3d22019e90c2944c6120fb2": {
+      "url": "https://github.com/srbhr/Resume-Matcher",
+      "date": "2026-10-15"
+    },
+    "baf6e9bbe788b53ebece43f3ef08b23f525665ede425e5cc67651418c208d450": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1x5vleb/one_thing_i_underestimated_when_starting_a",
+      "date": "2026-10-15"
+    },
+    "7e289d45dfc4cd8f5fef8ccf0acbcc0adf6f8e16304a965fe552f8f7e7a0426d": {
+      "url": "https://simonwillison.net/2026/Oct/13/redesigning-source-control-at-anthropic",
+      "date": "2026-10-15"
+    },
+    "35c077e1a207e58e07362405ea1dad37e8f2bc700f1829c6e92048eb43a14473": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1wl1tgc/wife_is_at_work_and_ive_got_a_few_hours_to_kill",
+      "date": "2026-10-15"
+    },
+    "6451d923eed6bbe644dbebbc5093d0f188ed202957ecf19260034f6171ffdcb7": {
+      "url": "https://simonwillison.net/2026/Oct/13/llm-gemini",
+      "date": "2026-10-15"
+    },
+    "38c820ccf229e8f8c0238d760161856612f9343584406279ad55c9c56566c382": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1wzzbfm/do_you_game_as_an_entrepreneur",
+      "date": "2026-10-15"
+    },
+    "e6734b2c11074d76a3ecb2a65529a7d43bb037e5070a020e304d67164364b24a": {
+      "url": "https://simonwillison.net/2026/Oct/13/web-edit",
+      "date": "2026-10-15"
+    },
+    "bf407dc4bbd47114ecea2308ac7f266b854e9cdd6b4ecb52eb985ca187f905f9": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1x0o8tl/what_do_you_do_when_a_client_wants_one_of_your",
+      "date": "2026-10-15"
+    },
+    "5ca8d6f055cb2e9fa5fb4b75b89724ee795c4d4558a2de016adb417fbf7b6324": {
+      "url": "https://simonwillison.net/2026/Oct/12/llm-meta-ai",
+      "date": "2026-10-15"
+    },
+    "7e60193a5a323b80036102788175a752fb0e9c2a6d3750d5313e5275a0f6804d": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1whbmdu/entrepreneur_moderator_applications_open_apply_now",
+      "date": "2026-10-15"
+    },
+    "97e3cba45007401f16113a4cc5c40ffd17f73a62913cd6e70cef15337aded5f8": {
+      "url": "https://simonwillison.net/2026/Oct/12/python-3-15-web-edit-profiling",
+      "date": "2026-10-15"
+    },
+    "19dac6f93c1b0b1b692b4f8f4bb6b59f057e7d556ff1ebf829720facdb4e9283": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1x18sjn/the_per_seat_pricing_model_punishes_you_for",
+      "date": "2026-10-15"
+    },
+    "2a289299a4bd88c4660151c6ed5c6eebf337c82487b51338029ed20d4516bb35": {
+      "url": "https://www.latent.space/p/ainews-modals-1b-arr-16b-series-d",
+      "date": "2026-10-15"
+    },
+    "dd3b19d4d1a59465e9702e6fa73a2c34071a7ebc52454e56fe088eaa2a8641e1": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1wh81er/how_to_make_an_additional_90000_from_1_client",
+      "date": "2026-10-15"
+    },
+    "247153705736c57d29c6ef695cd98ec909c9550878a56d25dea3d3578479faf5": {
+      "url": "https://www.latent.space/p/crossing-the-threshold",
+      "date": "2026-10-15"
+    },
+    "7b10350f05d0b9ec755af2079531fa060dd930351f8ae57aa231f59fe58b0266": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1x45lcw/what_was_the_first_business_compliance_task_that",
+      "date": "2026-10-15"
+    },
+    "649989f895c2f016c528f89e0a80df1e5061c7b8734f1d87da2d669d81784ab5": {
+      "url": "https://www.latent.space/p/lab-in-the-loop-at-compute-speed",
+      "date": "2026-10-15"
+    },
+    "81fccbd6997ebc36d41e72f467504f23ba4f1028c03774f4d8773a3c428e5183": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1x03wtw/how_to_navigate_a_corporate_take_over",
+      "date": "2026-10-15"
+    },
+    "43abc94dd1f0ca280d726daef1a3572ef411fdf94fc2545d408a70ead6a76293": {
+      "url": "https://www.latent.space/p/ainews-ai-engineer-nyc-gemini-4-argon",
+      "date": "2026-10-15"
+    },
+    "37fbd8959080bc073473beee2bfdb04f3f1ad42800249276f259be53d9ae6644": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1wwzfrg/youtube_video_production_for_b2b_companies",
+      "date": "2026-10-15"
+    },
+    "be997bf718606abb5880af09af5b7542b88bddb7c8a4aef7fb022ed70afe6563": {
+      "url": "https://www.latent.space/p/dyna",
+      "date": "2026-10-15"
+    },
+    "dfbd0bf4dac0ab41c2d402953ab6292c8b6f09a09214629d1a6020311a77363a": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1x1fh88/feedback_friday_rate_my_ideas_october_09_2026",
+      "date": "2026-10-15"
+    },
+    "9cce3c399f76353564ea8d13e19f96dcaa91e47ed738fd43821a8b46c8c38c81": {
+      "url": "https://www.bensbites.com/p/prompt-tips-from-anthropic",
+      "date": "2026-10-15"
+    },
+    "b3316f68c44b419bd36e705617deba5c47617be1bb846e95ac4ba26d5e307e97": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1wxa4ds/sunday_steam_vent_it_or_roast_it_october_04_2026",
+      "date": "2026-10-15"
+    },
+    "39052ad94a8a76cc68a2cb5d2b6325203b5875584233fbb5d6de6b8d63fe42e3": {
+      "url": "https://huggingface.co/blog/swiss-ai/apertus-v15-release-notes",
+      "date": "2026-10-15"
+    },
+    "f8d2de6a812b821b7cb207c7c58a00bc90ac71a57501b900b4e880c09c736ab0": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1wyav09/how_do_you_tell_when_a_big_customer_is_pulling",
+      "date": "2026-10-15"
+    },
+    "504a28fcb44d1a3d50f6e22cdc0f1f0da6134986c194362be75ac5abe645b09b": {
+      "url": "https://huggingface.co/blog/allenai/hiro-acev2",
+      "date": "2026-10-15"
+    },
+    "93576c1a343b97ca7c30114a752f46b65de4bc83bb61a2b9e6456c02dd45b42c": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1winh9f/would_you_pay_someone_to_hold_you_accountable",
+      "date": "2026-10-15"
+    },
+    "53911f98c21c784fce1ad32ff03581a81f8dabebaf6d23b86827f6c51a0cda80": {
+      "url": "https://huggingface.co/blog/LiquidAI/lfm25-24b-a2b",
+      "date": "2026-10-15"
+    },
+    "c5800aa0ae4fe2ac3606928a3dfb8295fe8110eefebef5567cb1267425beef3c": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1wi4jhx/advice_needed_side_business_is_at_a_crossroads",
+      "date": "2026-10-15"
+    },
+    "4e22e3d6436deca5fa28906441242791e6640883f9a2b13e6f58f8a7ea553e8a": {
+      "url": "https://newsletter.pragmaticengineer.com/p/ubers-ai-infra-from-the-inside",
+      "date": "2026-10-15"
+    },
+    "290604a1ff0a4ed3c490e720d33eef0b660b9b657a56cfb2a32f19b43eee0efe": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1ws8jxp/monday_mentorship_ask_anything_september_28_2026",
+      "date": "2026-10-15"
+    },
+    "f59a8be311b01ade0c92f5e80a9eed50c213fe41ed206aa2006cfbe81d6ca2f1": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1wy2tlo/monday_mentorship_ask_anything_october_05_2026",
+      "date": "2026-10-15"
+    },
+    "2d5ab8bd2b4c6c6f751cc3b901cbd3785c6aad52adf3536b5aa57a868693bedc": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1wmoikd/small_construction_business_53k_cash_mixed_with",
+      "date": "2026-10-15"
+    },
+    "e19fc75820bab04b3d4fe6a14c4624cb9fc8e222d3fabc2fac146889bd915e6c": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1wkh3ij/got_a_bit_of_free_time_today_and_feel_like",
+      "date": "2026-10-15"
+    },
+    "2bb8795556f3a95c5771a1eddabe08e398912f24eec26980f42275c7ba113fd4": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1wnhltb/which_one_of_these_is_the_best_business_idea",
+      "date": "2026-10-15"
+    },
+    "b2492a5a381ddf4abb1f7137d6ce80f78296a995e7eb1b4cfc62aadb37b6c90e": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1wwe9rx/opinions_on_ai_in_the_digital_product_space",
+      "date": "2026-10-15"
+    },
+    "25b88a503a4d448a0c221b9db2a392949b87d182a88b8ea344c42b3680b23d05": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1wtscro/prelaunch_fintech_founder_and_already_hitting",
+      "date": "2026-10-15"
+    },
+    "82af1f32bbdbf0f8298ecc90e5a2ebfb4aeb10666ffe2efc4fc22d47ac552ec6": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1wo3oud/business_coach_or_therapist",
+      "date": "2026-10-15"
+    },
+    "85cdd5e33242b05a31f37b128f7ba4257fe7de1102f795f5360e21d38a11b632": {
+      "url": "https://www.reddit.com/r/Entrepreneur/comments/1x4xy4h/hello_again_other_tidbits_on_acquiring_a_business",
+      "date": "2026-10-15"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 5
+  "dailyPage": 0
 }
