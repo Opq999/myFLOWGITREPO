@@ -1,0 +1,76 @@
+---
+title: "Configure ChatGPT and Claude to admit uncertainty and follow clear communication rules"
+description: "Learn how to set up ChatGPT and Claude to admit when they are unsure and follow specific communication rules. Get direct, factual answers without made-up information."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 7
+jobToBeDone: "Configure AI to admit uncertainty and follow specific communication rules"
+tools:
+  - name: "ChatGPT"
+    url: "https://chatgpt.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Claude"
+    url: "https://claude.ai"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://www.reddit.com/r/ChatGPTPromptGenius/comments/1x6eth5/the_7_lines_i_gave_chatgpt_and_claude/"
+  platform: "reddit"
+  author: "/u/Strange-Call5277"
+  postedAt: 2026-10-15
+score: 10
+ingestedAt: 2026-10-16
+nigeriaNotes: "This workflow works well on the free tiers of both ChatGPT and Claude. Data usage is very low, as it only involves text, making it suitable for mobile use with limited data plans."
+nigeriaUseCases:
+  - persona: "small-business"
+    scenario: "Draft professional WhatsApp replies to customer inquiries about product availability, ensuring the AI's tone is direct and doesn't use emojis or casual language."
+  - persona: "student"
+    scenario: "Get factual summaries for your CSC301 term paper without the AI inventing details, or ask for definitions for your JAMB Use of English exam, ensuring direct, accurate answers."
+  - persona: "employee"
+    scenario: "Summarize a long internal report for your manager, ensuring the AI provides a concise, factual overview without any conversational fluff, or draft a professional client email."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will configure your AI chatbot (ChatGPT or Claude) to be honest when it doesn't know an answer, preventing it from making up facts. It will also adopt a clear, direct, and professional communication style, avoiding greetings, emojis, or unnecessary filler. This approach helps you get reliable information and maintain a consistent, professional tone in your AI interactions.
+
+## Tools you need
+*   **ChatGPT** (freemium): An AI chatbot used to process and generate text based on your instructions.
+*   **Claude** (freemium): Another AI chatbot, similar to ChatGPT, used for text generation and following specific rules.
+
+## Steps
+1.  **Open your AI chatbot**: Go to either ChatGPT (chatgpt.com) or Claude (claude.ai) in your web browser or mobile app. Start a brand new conversation.
+    *   Expected: You should see an empty chat window, ready for your first message.
+
+2.  **Paste the setup prompt**: Copy the entire block of text below. This prompt tells the AI to remember the rules and then asks it to describe what it knows about you. Paste it into the message box and send it.
+
+    ```
+    Save the instruction below as a permanent instruction for how you answer me in all future chats. Keep the wording exactly. Then reply in the new style. Use only what you remember about me. Give 3 bullets: 2 on what I mostly use you for, 1 on something I don't use you for yet that would help me. If you don't remember enough, say so in one line instead of guessing. How to answer me, in every chat:
+    - Start with the answer. No greeting, no praise, no "Great question".
+    - Short, plain sentences. Common words. One idea per sentence.
+    - No emojis, no hype, no filler.
+    - Don't copy my tone or mood. Stay calm and direct.
+    - Don't end with offers like "let me know if you need anything else". Stop when the answer is complete.
+    - Ask a question only if you …
+    ```
+
+    *   Expected: The AI will respond, confirming it has saved the instructions (or acknowledging the request) and then attempting to answer the specific request about what it remembers about you. If it doesn't remember enough, it should explicitly state that. The author's original prompt cuts off the last instruction; paste it as-is.
+
+3.  **Verify the new style**: In the same chat, or a new one, ask the AI a simple question that might tempt it to guess or use filler.
+
+    ```
+    Tell me a surprising fact about the history of Nigerian music.
+    ```
+
+    *   Expected: The AI should respond directly, without greetings or filler, and in short, plain sentences. If it's unsure about a fact, it should explicitly state that it's guessing or doesn't know.
+
+## Original source
+This workflow was shared by Reddit user /u/Strange-Call5277 on the r/ChatGPT subreddit. They developed these instructions after an AI fabricated information in a client report, aiming to make AI models more transparent about their certainty and more professional in their communication.
+
+## Notes & variations
+*   **Reliable permanence**: For ChatGPT, you can also achieve similar permanent instructions by using its dedicated "Custom instructions" feature. Click your profile picture (bottom-left), then select "Custom instructions" and paste the rules into the "How would you like ChatGPT to respond?" box. This can sometimes be more reliable than relying solely on the AI's memory in a chat.
+*   **Common pitfall**: AI models, especially in free tiers, might occasionally "forget" instructions over very long conversations or across many new chats. If you notice the AI reverting to old habits, simply re-send the setup prompt from Step 2 in a new chat.
+*   **Tip for better results**: You can expand on these rules to include other specific communication preferences you have. For example, you could add a rule like "Always provide sources for factual claims" or "Summarize long answers into three bullet points."
