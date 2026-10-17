@@ -1,0 +1,52 @@
+---
+title: "Embed an AI Assistant and Documentation into Your Product with Documentation.AI"
+description: "Learn how to integrate an AI assistant and your documentation directly into your website or product using Documentation.AI, allowing users to find answers without leaving your app."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 15
+jobToBeDone: "Embed an AI assistant and documentation into a product or website"
+tools:
+  - name: "Documentation.AI"
+    url: "https://documentation.ai"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/documentationai_dev/how-to-embed-docs-and-an-ai-assistant-inside-your-product-with-documentationai-46j4"
+  platform: "blog"
+  author: "harsh2644"
+  postedAt: 2026-10-13
+score: 6
+ingestedAt: 2026-10-17
+nigeriaNotes: "Documentation.AI offers a usable free tier, making this workflow accessible. Data usage for loading the embedded docs and AI assistant is light, similar to browsing a standard webpage, which is suitable for mobile-first users."
+tiktokUrl: ""
+published: false
+---
+
+## What you'll get
+You will integrate your existing documentation and an AI assistant directly into your product or website. This allows your users to find answers and get help without leaving the page they are on, reducing friction and improving their experience.
+
+## Tools you need
+*   **Documentation.AI** (freemium): A platform for creating and hosting product documentation, which also provides tools to embed your docs and an AI assistant into other websites.
+
+## Steps
+1.  **Publish your documentation site**: Ensure your documentation is published and live on Documentation.AI. You need to have an Admin role in your organization.
+    You should see your docs site marked as "Live" in your Documentation.AI dashboard.
+2.  **Create an embed key**: Go to `Settings > Embed` in your Documentation.AI dashboard and click `Create key`. Fill in the required fields:
+    *   `Name`: A label for your key (e.g., "Web app").
+    *   `Allowed origins`: Add each website address where your docs will appear (e.g., `https://app.example.com`). For local development, also add your development server address (e.g., `http://localhost:5173`). Click `Add` after each one. Remember to use `https` for live sites; `http` only works for `localhost`, `127.0.0.1`, and `[::1]`. Wildcards are not supported, so list every environment.
+    *   `Expires`: Choose how long the key should be valid (e.g., "Never").
+    Click `Create key`, then copy the `Publishable key` (which starts with `pk_...`) from the dialog that appears.
+    You should have a unique `pk_...` key copied to your clipboard.
+3.  **Add the embed snippet to your website**: The author doesn't share the exact snippet here. You will need to find the specific JavaScript snippet provided by Documentation.AI (usually in the same `Settings > Embed` section or their official guides) and paste it into your website's HTML code, typically just before the closing `</body>` tag. You will replace a placeholder in the snippet with your `pk_...` key.
+    You should see the Documentation.AI widget (e.g., a help button, an embedded docs page, or an AI chat bar) appear on your website.
+4.  **Test the embedded docs and AI assistant**: Visit your website where you embedded the snippet. Interact with the embedded docs or AI assistant (e.g., click the help button, ask a question).
+    The docs pages should load correctly, and the AI assistant should provide cited answers from your documentation, all without requiring users to leave your product.
+
+## Original source
+This workflow is based on a blog post by harsh2644 titled 'How to Embed Docs and an AI Assistant Inside Your Product with Documentation.AI', published on the DEV Community blog.
+
+## Notes & variations
+*   **Free-tier alternatives**: While Documentation.AI offers a free tier, other documentation platforms like GitBook (freemium) also exist for hosting your docs. However, the specific AI assistant embedding feature might vary or be a paid option on alternatives.
+*   **Common mistake**: A frequent error is incorrectly setting the `Allowed origins` when creating your embed key. Ensure you list every exact domain (production, staging, local development) where your product will run, use `https` for live sites, and avoid paths or wildcards in the origin URLs.
+*   **Tip for better results**: Ensure your documentation is comprehensive and accurate *before* embedding the AI assistant, as the assistant relies on your existing content for its answers. If your docs are on a subpath of your domain or are private, be aware that these scenarios might require additional configuration steps like reverse proxy rules or extra sign-in steps.

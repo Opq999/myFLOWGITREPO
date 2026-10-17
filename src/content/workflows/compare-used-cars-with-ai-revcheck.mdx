@@ -1,0 +1,78 @@
+---
+title: "Compare Used Cars with AI: RevCheck"
+description: "Use RevCheck to compare two used car listings side-by-side. Get an AI-powered verdict on which car is the better purchase option before you visit."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 5
+jobToBeDone: "Compare used car listings to determine the better purchase option"
+tools:
+  - name: "RevCheck"
+    url: "https://georgievalex.github.io/revcheck/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Gemma 4"
+    url: "https://gemini.google.com/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "TabPFN"
+    url: "https://github.com/HazyResearch/tabpfn"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "DeepSeek V4"
+    url: "https://github.com/deepseek-ai/DeepSeek-Coder"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/alexgeorgiev17/revcheck-paste-two-used-car-listings-get-a-second-opinion-before-you-drive-across-town-1e7e"
+  platform: "blog"
+  author: "alexgeorgiev17"
+  postedAt: 2026-10-15
+score: 7
+ingestedAt: 2026-10-17
+nigeriaNotes: "The RevCheck tool is a web application, so data usage will be minimal, primarily for loading the webpage and submitting/receiving text. The underlying AI models (Gemma 4, TabPFN, DeepSeek V4) are used by the RevCheck service, not directly by the user, so their data usage is managed by the service provider."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will get a side-by-side comparison of two used car listings, along with an AI-generated verdict on which car is the better purchase. This tool helps you decide which car is worth a physical inspection, saving you time and potential disappointment.
+
+## Tools you need
+*   **RevCheck** (freemium): A web application that uses AI to compare car listings.
+*   **Gemma 4** (freemium): An AI model used by RevCheck to analyze car photos for condition and features.
+*   **TabPFN** (free): An AI model used by RevCheck to estimate a fair price range for the cars.
+*   **DeepSeek V4** (free): An AI model used by RevCheck to identify the car's engine and suggest specific checks.
+
+## Steps
+1.  **Open RevCheck**: Navigate to the RevCheck website on your mobile device or computer. The author suggests using the demo links provided to try it out.
+    *   Demo site: https://georgievalex.github.io/revcheck/
+    *   Example comparison links (you can paste these into the tool if they are still active, or find similar ones on car listing sites):
+        *   https://georgievalex.github.io/revcheck/?a=https://www.mobile.bg/obiava-11744111052659454-bmw-320-2-0d
+        *   https://georgievalex.github.io/revcheck/?b=https://www.mobile.bg/obiava-11787314145036432
+
+    You should see the RevCheck interface with fields to paste car listing URLs.
+
+2.  **Paste car listing URLs**: Find two used car listings you want to compare. Copy the web address (URL) for each listing and paste them into the designated fields on the RevCheck website. The author mentions using sites like mobile.bg and cars.bg.
+
+    You should see the two URLs entered into the tool.
+
+3.  **Initiate comparison**: Tick the box to confirm you want to compare the listings and then click the "Compare" button.
+
+    You should see a loading indicator or progress messages as the tool analyzes the listings.
+
+4.  **Review the report**: After about 30 seconds, the report will be generated. It will show a verdict first, followed by detailed cards for each car. These cards include:
+    *   An analysis of the photos by Gemma 4, checking for dents, scratches, and visible equipment.
+    *   The car's market position, comparing its price to similar listings.
+    *   A fair price range estimated by TabPFN.
+    *   Information on known weak spots for the specific engine, identified by DeepSeek V4, and what to check during a viewing.
+
+    You should see a clear, side-by-side comparison and a recommendation on which car is the better option.
+
+## Original source
+This workflow is based on RevCheck, a tool built by alexgeorgiev17 for the DEV Community as part of the Hacktoberfest Open-Source AI Challenge. It aims to help people make better used car purchase decisions by comparing listings using AI.
+
+## Notes & variations
+*   **Free tier viability**: The RevCheck tool itself is available for free use, with the author suggesting a limited number of free comparisons per day. Paid tiers are envisioned for frequent users like dealers.
+*   **Common mistake**: Relying solely on the AI report without performing your own due diligence or a physical inspection. The AI provides a strong recommendation, but it's a pre-screening tool, not a replacement for a mechanic's inspection.
+*   **Tip for better results**: Ensure the car listing URLs you paste are direct links to the specific car advertisement, not just the search results page. This will help the tool accurately fetch the correct information.

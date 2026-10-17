@@ -1,0 +1,95 @@
+---
+title: "Moderate Live Chat in Real-Time with Jev and Composio"
+description: "Learn how to use Jev and Composio to build a real-time AI chat moderation bot for Discord and Twitch, filtering messages quickly and affordably."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 60
+jobToBeDone: "Moderate live chat in real-time using AI for faster message filtering"
+tools:
+  - name: "Jev"
+    url: "https://github.com/TypeSafe/Jev"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Composio"
+    url: "https://composio.dev/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Discord"
+    url: "https://discord.com/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Twitch"
+    url: "https://www.twitch.tv/"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/composiodev/how-to-moderate-live-chat-in-real-time-with-jev-and-composio-discord-twitch-5ab0"
+  platform: "blog"
+  author: "shricodev"
+  postedAt: 2026-09-30
+score: 7
+ingestedAt: 2026-10-17
+nigeriaNotes: "Composio offers a free tier. Discord and Twitch are free to use. Data usage for chat moderation is very low, making it suitable for mobile and limited data plans."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+
+This workflow describes how to use a decision model called Jev, accessed through a tool called Composio, to moderate live chat on platforms like Discord and Twitch. Unlike typical AI models that generate text, Jev is designed to make quick decisions based on probabilities. For chat moderation, this means it can quickly tell you if a message is likely to be harmful, allowing for faster removal or review.
+
+The core idea is to use Jev's ability to provide a probability score for specific questions about a chat message. For example, you can ask Jev, "Is this a hostile comment at a person?" and it will return a number between 0 and 1. This score can then be used to automatically decide whether to delete the message, send it for human review, or leave it be. This approach is faster and cheaper than using a large language model (LLM) for the same task.
+
+This entry is in Concept Mode because the exact steps to set up and run the Jev decision model through Composio, and then connect it to Discord and Twitch bots, require technical knowledge and involve running code. The specific code and configuration details are available in the author's source code repository, which is the definitive guide for reproduction.
+
+## What you can use it for
+
+*   **Real-time chat filtering**: Automatically detect and remove harmful or inappropriate messages in live streams or community chats as they happen.
+*   **Faster moderation**: Significantly reduce the time it takes for human moderators to identify and act on problematic content.
+*   **Cost-effective moderation**: Use an AI model that is very cheap to run, making it accessible for individuals and small businesses.
+*   **Customizable moderation rules**: Define your own questions for Jev to answer, allowing you to tailor the moderation to your specific community guidelines.
+*   **Automated message flagging**: Automatically flag messages that fall into a grey area for human moderators to review, rather than deleting them outright.
+
+## Tools you need
+
+*   **Jev** (free): A decision model that provides probabilities for given questions, ideal for tasks like moderation.
+*   **Composio** (freemium): A platform that helps you easily integrate and use AI models like Jev without complex setup.
+*   **Discord** (freemium): A popular communication platform where you can set up bots to moderate chat.
+*   **Twitch** (freemium): A live streaming platform where you can integrate bots to moderate chat during broadcasts.
+
+## How it actually works
+
+1.  **Access the source code**: Go to the author's GitHub repository (link provided in the original source section) to find the project code.
+2.  **Set up Jev via Composio**: Follow the instructions in the repository to integrate Jev using Composio's tools. This will likely involve setting up an account with Composio and obtaining any necessary API keys.
+3.  **Build the Discord bot**: Use the provided code to create a Discord bot that connects to your server. This bot will listen for new messages.
+4.  **Connect Jev for moderation**: Configure the Discord bot to send new chat messages to Jev through Composio. Jev will evaluate the message based on predefined questions (e.g., "is this a hostile comment?").
+5.  **Implement moderation logic**: Based on Jev's probability score, the bot will either delete the message, flag it for review, or allow it to remain visible.
+6.  **Build the Twitch bot**: Adapt the same moderation logic for Twitch. This involves setting up a Twitch bot that uses EventSub to receive chat messages.
+7.  **Connect Jev for Twitch moderation**: Similar to Discord, send Twitch chat messages to Jev via Composio for evaluation.
+8.  **Implement Twitch moderation actions**: Use the Twitch API to delete messages or take other actions based on Jev's decision.
+
+*Note: The exact commands and code configuration will be found within the linked source code repository. This entry provides a general overview of the process.* 
+
+## Words you'll see, explained
+
+*   **Jev**: A type of AI model focused on making decisions and providing probabilities, rather than generating text.
+*   **Composio**: A service that simplifies the use of AI models like Jev by providing toolkits and managing integrations.
+*   **LLM (Large Language Model)**: A powerful AI model that can understand and generate human-like text, often used for tasks like writing and translation.
+*   **Probability**: A number between 0 and 1 that indicates how likely something is to happen or be true.
+*   **Noul**: A type of question Jev can answer, asking if something is true and returning a probability.
+*   **Choice**: A type of question Jev can answer, where it picks one option from a given list and provides probabilities.
+*   **Score**: A type of question Jev can answer, where it assigns a value from a defined range.
+*   **Discord.js**: A JavaScript library used to build bots for the Discord platform.
+*   **EventSub**: A Twitch service that allows applications to subscribe to real-time events, such as new chat messages.
+*   **Helix API**: Twitch's main API, used for interacting with Twitch data and performing actions like deleting messages.
+
+## Original source
+
+The author, shricodev, shared this workflow on the DEV Community platform. They explain how to use Jev, a decision model, with Composio to create a fast and affordable AI-powered chat moderation system for live streaming platforms like Discord and Twitch.
+
+## Notes & variations
+
+*   **Do you even need this?**: If your chat moderation needs are very simple (e.g., just blocking specific keywords), you might be able to achieve this with built-in moderation tools on Discord or Twitch, or simpler bots, without needing an AI model.
+*   **Free-tier limits**: Composio's free tier may have limits on usage. Check their pricing page for details. Jev itself is free, but running it might incur costs depending on how it's hosted or accessed.
+*   **Common pitfall**: Relying solely on AI for moderation can be risky. AI models can sometimes make mistakes or miss nuanced harmful content. It's recommended to keep human moderators involved, especially for sensitive communities or high-stakes situations.

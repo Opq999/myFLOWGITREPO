@@ -26156,8 +26156,436 @@
     "1d8d93d75ae066b92f9b7c9d7e15101992703a5e3d4f1c7b8fc01159b85fa7e2": {
       "url": "https://www.reddit.com/r/copywriting/comments/1wu0byu/mind_sharing_your_client_acquisition_tactics",
       "date": "2026-10-16"
+    },
+    "46b877b468355580d3ede6255dfa7f51a70423c3fea7cf72a5c35e8660d65e19": {
+      "url": "https://news.ycombinator.com/item?id=50127979",
+      "date": "2026-10-17"
+    },
+    "f138e044707094d469bfdd3d1baf1415dfbfbecc6e939f18904e9748aeea942d": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1x6528u/where_were_you_when_chatgpt_killed_big_pharma",
+      "date": "2026-10-17"
+    },
+    "3524d03e2978aa8dba7f3f32ec3c18215ff982f488df51ce12ae54df284767aa": {
+      "url": "https://dev.to/emmasofia/before-the-alarm-screams-at-3-am-predicting-liams-nocturnal-hypoglycemia-with-prior-labs-tabpfn-25mn",
+      "date": "2026-10-17"
+    },
+    "612cb0fe1ac738ae48780a2a116fe1217d53db45583ea42995fe2e546250a730": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1x6umt6/sign_of_the_times",
+      "date": "2026-10-17"
+    },
+    "ec28618f181dc4d9286e11324f129f9aaf0f57e11c15ba90a488d42f810f07ff": {
+      "url": "https://dev.to/georgekobaidze/georgian-language-benchmark-two-biggest-ai-labs-clash-in-a-language-that-doesnt-play-by-anyones-5b22",
+      "date": "2026-10-17"
+    },
+    "0fc45bf16e99b89588e1d621a2011bc30875b9652e13b20413528ecbd1b1bae8": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1x77neg/this_is_why_ram_prices_are_so_high",
+      "date": "2026-10-17"
+    },
+    "af96dea95e44719bbfd045ae97be326f46e4bf15de824437020794e915aecacd": {
+      "url": "https://dev.to/james_anderson_h/the-witness-was-the-suspect-why-ai-audit-logs-cant-be-trusted-2190",
+      "date": "2026-10-17"
+    },
+    "a0c1289a1582b2c18c6118165b0ace32a5672653373cc0ac0328c6ff205df436": {
+      "url": "https://www.reddit.com/r/LangChain/comments/1x63v3e/your_rag_chain_works_now_how_do_you_stop_it",
+      "date": "2026-10-17"
+    },
+    "df32049097d4d5cd29dc8d6208f577c7d914a33a4804226fb1d1b786aadb082f": {
+      "url": "https://dev.to/mikachu/what-best-practice-did-you-quietly-stop-following-53ne",
+      "date": "2026-10-17"
+    },
+    "c7cfddc9cb20f4fd5af55d85179658fb043797043f01f04880ab3ad301299296": {
+      "url": "https://www.reddit.com/r/LangChain/comments/1x5tl1u/does_your_langgraph_supervisor_need_another_look",
+      "date": "2026-10-17"
+    },
+    "c02dbf38a4ca8017a92a3c3de054c4100b52c8b1db624e2277d6b539ab842858": {
+      "url": "https://dev.to/gramli/i-vibe-coded-my-way-out-of-angular-upgrades-4fkh",
+      "date": "2026-10-17"
+    },
+    "27b0800157e4d151e626752e180a6b001c2911b24c4e9b39686aac3fccd46ca3": {
+      "url": "https://www.reddit.com/r/LangChain/comments/1x4tjfs/who_should_actually_control_an_ai_agents",
+      "date": "2026-10-17"
+    },
+    "97352a77409dee477bc1f6a7cac1cfb2f9417df3dbda449d720ea9c48860b73e": {
+      "url": "https://dev.to/mikachu/i-tried-to-prompt-a-3d-dev-library-into-existence-then-i-had-to-build-my-own-level-editor-37gf",
+      "date": "2026-10-17"
+    },
+    "eba5076f0e37a98ea5059cd0d4eadffc2f98d312a858827369e217ab19be8ffc": {
+      "url": "https://www.reddit.com/r/LangChain/comments/1wv41tr/extract_v25_rebuilding_extraction_agents_on",
+      "date": "2026-10-17"
+    },
+    "4f3bcbf3be042802fe784fc26735289c399ace4943944b5e746b095d1f5ab09c": {
+      "url": "https://dev.to/gde/local-embeddings-with-llamadart-how-llamas-share-secrets-46o",
+      "date": "2026-10-17"
+    },
+    "2e3ab7e265194a26230910d7d644f29338594fc992649157d1523dde5432e4e7": {
+      "url": "https://www.reddit.com/r/LangChain/comments/1x6uub8/where_should_human_corrections_happen_in_your",
+      "date": "2026-10-17"
+    },
+    "f809f30809b594833548d2121da5b244a65e3cf4aeeb3446229001f6dc92d1d5": {
+      "url": "https://dev.to/metalbear/how-our-engineering-team-uses-ai-part-ii-meat-proxies-148g",
+      "date": "2026-10-17"
+    },
+    "285191bbaba9493873f8dc5c1693b0a88f9c72878176c9a6862f223694557bf7": {
+      "url": "https://www.reddit.com/r/LangChain/comments/1x5ehbg/our_pm_wants_prompt_edit_access_which_parts_are",
+      "date": "2026-10-17"
+    },
+    "facb8ae761f36ebabc567911f2045f82f104435ef94d90c9bec4829933780b01": {
+      "url": "https://dev.to/dailycontext/building-better-agents-through-end-to-end-evals-pgh",
+      "date": "2026-10-17"
+    },
+    "8562eaca6e0d98d2a9ec53422139808c2347c32516a97244f7343763446fd474": {
+      "url": "https://www.reddit.com/r/GetStudying/comments/1x5m2im/how_do_i_stop_doomscrolling_overthinking_and",
+      "date": "2026-10-17"
+    },
+    "e12455829adfc1225113de890e12216267b3b0385c1a0bd869dfce205b968aea": {
+      "url": "https://dev.to/dailycontext/what-9050-ai-written-scripts-taught-me-about-slop-1g5n",
+      "date": "2026-10-17"
+    },
+    "58fd094a137d7ea87a2ef066047be914b9f300accec3e1b67b01ddfd6ebb8c8a": {
+      "url": "https://www.reddit.com/r/GetStudying/comments/1x35lew/little_studying_trick_i_use",
+      "date": "2026-10-17"
+    },
+    "a3efce6687e6e9742e9ee5bb6c082793688dd413f27128d45c451ed4b3a0aad8": {
+      "url": "https://dev.to/annavi11arrea1/social-ferris-wheel-sanity-is-the-hub-2m7j",
+      "date": "2026-10-17"
+    },
+    "affaa4f48b0416239c5ea8e2e603fd009ed4734d3ece4e937d6b8eb44b67e876": {
+      "url": "https://www.reddit.com/r/GetStudying/comments/1x7d0ro/typical_indian_family_read_my_chats_now_their",
+      "date": "2026-10-17"
+    },
+    "2511bb4e2971a8f23f4f8bdcc5dab852f83de17bc89416eac5afd47ee15d9f98": {
+      "url": "https://dev.to/kenielzep97/i-replaced-a-gate-that-accepted-everyone-with-a-gate-that-accepted-no-one-my-tests-couldnt-tell-2n37",
+      "date": "2026-10-17"
+    },
+    "ecf5f7b2eae00e95ba01709053afa74b4baf891d2e3fcb3b027828d6de18c23b": {
+      "url": "https://www.reddit.com/r/GetStudying/comments/1x2qhdf/i_work_harder_than_my_classmates_but_i_perform",
+      "date": "2026-10-17"
+    },
+    "1c742cb266daa6086d23fe76aa69c3e72776641ebf92574f0553dda5367e931b": {
+      "url": "https://dev.to/kenwalger/a-wine-cellar-that-remembers-what-you-used-to-believe-4i55",
+      "date": "2026-10-17"
+    },
+    "7723257190743d2828b934bb3d4de70fd17b2cc6da29b7e9cbbfa6ab1cc49c75": {
+      "url": "https://www.reddit.com/r/GetStudying/comments/1x74yis/did_well_today_in_class",
+      "date": "2026-10-17"
+    },
+    "6967511dfefdb27620815fa0a3bc6945282338ec628e5d778fbfed6b4db44292": {
+      "url": "https://dev.to/kenielzep97/the-data-was-public-the-agent-path-wasnt-so-his-mock-became-my-documentation-413a",
+      "date": "2026-10-17"
+    },
+    "fa3e0e564c65e8fa1f37aa360101e327a6b41aa364cefcc7c94857a2e56e0523": {
+      "url": "https://www.reddit.com/r/GetStudying/comments/1x3uguk/i_know_how_to_study_but_how_do_you_study_fast",
+      "date": "2026-10-17"
+    },
+    "4ad3ffe16d15af553d900f473ece8b6641a3601afd65d5043158dce03c33d787": {
+      "url": "https://dev.to/yashksaini/dev-log-hardening-webrtc-direct-and-solving-scm-leaks-i5k",
+      "date": "2026-10-17"
+    },
+    "406b965326bd1975f5aa55990af9e76dcb6d15a81b8c8a869e0a7dae210c8ca7": {
+      "url": "https://dev.to/effessdev/i-was-chasing-the-job-market-one-comment-on-devto-made-me-rethink-everything-4h20",
+      "date": "2026-10-17"
+    },
+    "d105e9aceab95fad9f1a33adcabbee666ef9cd88b87ffbcdf42963c891949350": {
+      "url": "https://dev.to/dannwaneri/i-built-a-lie-detector-for-ai-coding-agents-then-i-read-the-rules-1hhb",
+      "date": "2026-10-17"
+    },
+    "a2c4bf19b3169262d6dbb45c4e73704232eaa063b5f307f71d69527a95b5849d": {
+      "url": "https://dev.to/smtahosin/git-isnt-a-diff-tracker-how-blobs-trees-dag-commits-and-the-index-actually-work-under-the-hood-19eo",
+      "date": "2026-10-17"
+    },
+    "fd47a1768d5a4e94f53f627e78acfef4ea94d99449416bb384993d4a959eb3cc": {
+      "url": "https://dev.to/infoinlet1/i-let-my-ai-agents-merge-to-production-once-35ji",
+      "date": "2026-10-17"
+    },
+    "2b6fba73969e27b0964c1ef9df53d4388b11681a37a139d68cb5326af34a680d": {
+      "url": "https://dev.to/danielecangi/a-coding-system-that-refuses-to-trust-its-own-output-8dj",
+      "date": "2026-10-17"
+    },
+    "8b45f49ccbcd7c7499b720eb83b0c1337f226d42677eff7ed43c2a8a3b4e86e4": {
+      "url": "https://dev.to/peter/someone-hacked-the-freezers-at-400-french-supermarkets-5flm",
+      "date": "2026-10-17"
+    },
+    "aee4d77227e96d3eefb6272781461f5523b96a19b9be42923b71b0212145a7f3": {
+      "url": "https://dev.to/infoinlet1/a-junior-asked-me-how-i-knew-the-code-was-wrong-i-couldnt-answer-him-1m1i",
+      "date": "2026-10-17"
+    },
+    "28560e2d8d1a06901ce0564f19a013c8b8a8ef3b7e9a281cde8d18421a14eadd": {
+      "url": "https://dev.to/james_anderson_h/the-developer-triangle-dsa-ai-and-the-skill-that-actually-gets-you-hired-as-a-beginner-2g5m",
+      "date": "2026-10-17"
+    },
+    "09707a0855e8d7b89ae36695e4c2a91d74841896b80f28d7c52fea45714d48be": {
+      "url": "https://dev.to/apples_one_cd174284bffb/12-of-13-ai-models-knew-the-new-name-and-still-wrote-the-old-one-2jla",
+      "date": "2026-10-17"
+    },
+    "3d2374e8e9e33e7eef557ef642aa677b05940b41586d43d424bc0d4d35865994": {
+      "url": "https://dev.to/rudratosh/your-github-profile-shows-your-follower-count-it-also-shows-attackers-your-whole-attack-surface-j7b",
+      "date": "2026-10-17"
+    },
+    "68e20d018a841f18471a31d979c0254ab1b3769a1fb5898428ad1403d776b24e": {
+      "url": "https://dev.to/mikachu/ai-is-making-you-a-worse-engineer-and-a-better-employee-3cl3",
+      "date": "2026-10-17"
+    },
+    "4b6c00fdd6d896e9fd6ce10e296b86ee4b888dafdd161c8c7bb18cd175eaa469": {
+      "url": "https://dev.to/devopsdaily/hacktoberfest-2026-stopped-counting-prs-make-your-first-ones-anyway-one-a-day-377b",
+      "date": "2026-10-17"
+    },
+    "8fa0f6d482da124eae1043b37fb85628a6ae9f21b95164f5fe3eb90518ea8008": {
+      "url": "https://dev.to/soumyadeepdey/i-distilled-a-397b-model-into-a-4b-one-for-160-it-now-catches-28-of-33-park-alerts-that-should-bic",
+      "date": "2026-10-17"
+    },
+    "11eda26dea62f858eed3da2093cd2000199a00e9d769ed0c55edbd0ab049ba96": {
+      "url": "https://dev.to/harsh2644/the-better-you-get-at-coding-the-harder-it-gets-to-switch-off-1eio",
+      "date": "2026-10-17"
+    },
+    "1ec19814bde9c5d67814e4f2d8ccf61ed2622bc5a5bbb62b1501ee6b63877483": {
+      "url": "https://dev.to/metalbear/how-mondaycom-runs-agent-evals-against-real-dependencies-webinar-recap-41ge",
+      "date": "2026-10-17"
+    },
+    "bd835822eff39b039d79949caf2c675b18d3d9f28432089591cf34cad4e23121": {
+      "url": "https://dev.to/dj29/10-prompting-techniques-my-deep-learning-exam-taught-me-that-i-actually-use-now-43h0",
+      "date": "2026-10-17"
+    },
+    "e4fbcedf129c0e3f8f9028a0af6bf512606eccacc05000ab69701ddf2cdb3c3f": {
+      "url": "https://dev.to/lovestaco/we-rendered-a-hq-demo-video-on-a-free-farm-run-by-strangers-1440",
+      "date": "2026-10-17"
+    },
+    "bcd3524e8f8d26cc02493d40e7dd4c64bb3573d096deeb840ff394f3b9f4be68": {
+      "url": "https://dev.to/smtahosin/github-isnt-just-a-remote-git-server-how-spoke-clusters-fork-alternates-and-actions-runner-25ij",
+      "date": "2026-10-17"
+    },
+    "70bb29811f3bcd5c028179868b90f3dbf325092527a437938f15053250b5d72d": {
+      "url": "https://dev.to/alexgeorgiev17/car-meets-in-sofia-get-planned-in-chaos-so-i-made-an-open-model-read-the-chat-for-us-24nm",
+      "date": "2026-10-17"
+    },
+    "9589548275046ab4a0e5d2f1d4084193650f5bb2adc6c1f591c69abe1d0953d2": {
+      "url": "https://dev.to/documentationai_dev/how-to-embed-docs-and-an-ai-assistant-inside-your-product-with-documentationai-46j4",
+      "date": "2026-10-17"
+    },
+    "fa0af12209fc3cc5099f205445eda1265689bdb94f8c65f6175bf4d09ba3cd66": {
+      "url": "https://dev.to/marceli/curiosity-over-comfort-5cki",
+      "date": "2026-10-17"
+    },
+    "9b311c5f698482b99d700a8b64b1854dd40e7d2d207683d7cf1b28274ffbb9e5": {
+      "url": "https://dev.to/puneetkumar2010/crowdwide-is-almost-done-wooohooo-5d4c",
+      "date": "2026-10-17"
+    },
+    "ea119ec7074e64eee5e5a991f46a51ab3b71e34c1e772fe5cfdfc1d212eed3bf": {
+      "url": "https://dev.to/james_anderson_h/thrown-into-a-huge-unfamiliar-codebase-heres-your-survival-guide-2gah",
+      "date": "2026-10-17"
+    },
+    "5d325723a34fac5f30c74c618e981f298698a372b12c022d5b595606b2605580": {
+      "url": "https://dev.to/annavi11arrea1/dad-complains-about-electric-bill-so-i-built-him-an-energy-dashboard-and-found-the-panels-lied-3jhg",
+      "date": "2026-10-17"
+    },
+    "cb86fce5bd914d1c02557fcc30e1596c28606f02250206c4bbd51968f6745355": {
+      "url": "https://dev.to/dailycontext/memory-isnt-learning-why-ai-agents-keep-making-the-same-mistakes-cpc",
+      "date": "2026-10-17"
+    },
+    "5f8a32054b8ecc05a6b0bd14d91f5142a880223116eb53d2d36153c668e16688": {
+      "url": "https://dev.to/debashish_ghosal/i-trusted-my-agent-demos-for-years-then-i-built-a-gate-that-says-no-4183",
+      "date": "2026-10-17"
+    },
+    "b7e1a5a17707d6a3a58d599dda798052a8df485d88418ebfd69837bdd4ca3d18": {
+      "url": "https://dev.to/devopsdaily/the-yaml-norway-problem-and-crons-day-of-month-trap-two-config-formats-that-lie-to-you-a11",
+      "date": "2026-10-17"
+    },
+    "102d2b42e11c6028386a98d486d76c5d1b0cb853247f74f71374b6f26bfe621f": {
+      "url": "https://dev.to/adamthedeveloper/things-i-used-to-be-excited-about-as-a-kid-but-not-anymore-24p5",
+      "date": "2026-10-17"
+    },
+    "b82caecec5a8470e718bac0428812826ebfa34308577c741934fc866ec6b4416": {
+      "url": "https://dev.to/slabb/a-hash-chain-proves-the-ordering-four-attacks-prove-its-not-enough-59oe",
+      "date": "2026-10-17"
+    },
+    "488b658b2ebda558986cc7d24d8c3f98a9f6cf30379cf25676fa173f17528a90": {
+      "url": "https://dev.to/sarvar_04/i-built-an-open-weight-ai-that-prices-etsy-shops-on-your-laptop-24dk",
+      "date": "2026-10-17"
+    },
+    "2a3e6c4010c3ebb1df851eb849731298d55b99bdcdf79515eb0d551739a3f895": {
+      "url": "https://dev.to/mikachu/they-invited-me-to-apply-two-days-later-they-rejected-me-4mmf",
+      "date": "2026-10-17"
+    },
+    "855268faf1dc3dca3edbc9cf3f66370e809c5011bd4c696a2e043b6d95bf9a6f": {
+      "url": "https://dev.to/pengeszikra/single-line-cv-52bf",
+      "date": "2026-10-17"
+    },
+    "e071ff9dae6128677bf379b5e4d44ebc1d0a59321d42a8d41abd0fd1fe4fe024": {
+      "url": "https://dev.to/rudratosh/your-ai-agent-said-it-blocked-the-attack-i-read-the-source-of-5-tools-that-check-if-its-lying-l1n",
+      "date": "2026-10-17"
+    },
+    "28ce9ff0ed1af34d8b9201c96c8aced4d7386f5ef3e56da5e9bfdd2ce8032c24": {
+      "url": "https://dev.to/annavi11arrea1/blue-october-1jia",
+      "date": "2026-10-17"
+    },
+    "4d3fcc72d0afbad3a44ae1cf16a49578fd1111dda3efb923405af42ba6d7afd8": {
+      "url": "https://dev.to/composiodev/how-to-moderate-live-chat-in-real-time-with-jev-and-composio-discord-twitch-5ab0",
+      "date": "2026-10-17"
+    },
+    "9d4362f5574b374d4cd7665d0265781bebb1ba1adf8c0448b6a17dcb5f395b2d": {
+      "url": "https://dev.to/parsajiravand/nestjs-testing-module-provider-overrides-with-cheat-sheet-1o79",
+      "date": "2026-10-17"
+    },
+    "41db58dcfb42fabe8ba0300ce9c5218f5858e7cf83c0af84ed1afc9504fbd2b1": {
+      "url": "https://dev.to/debashish_ghosal/five-things-release-day-caught-that-six-weeks-of-green-tests-didnt-1lbf",
+      "date": "2026-10-17"
+    },
+    "62c653f763f8efe6483bc150935d794236e1aa1c2e97e2e549ba1aa09d3c9d03": {
+      "url": "https://dev.to/remdore/changing-def-to-async-def-let-one-blocking-call-freeze-an-entire-fastapi-app-4cjd",
+      "date": "2026-10-17"
+    },
+    "983ff671da1b6f6fcadeee84f48171341af60a018e0f679aed6488c4982c0f3b": {
+      "url": "https://dev.to/earlgreyhot1701d/on-saying-no-will-the-well-dry-up-4pe0",
+      "date": "2026-10-17"
+    },
+    "5f4ecf239732eadf5351776cc9d1162d9d3a65d48cb0f84e72c824b9c1fa3acb": {
+      "url": "https://dev.to/varshithvhegde/everything-about-this-secrets-manager-screamed-too-good-to-be-true-so-i-tested-that-5e8a",
+      "date": "2026-10-17"
+    },
+    "edcf0e22740884c410936ee180f4a0c815b2dd70ecd5307909aafd625b783917": {
+      "url": "https://dev.to/debashish_ghosal/i-cut-2490-agent-test-runs-to-206-and-kept-the-same-coverage-1cke",
+      "date": "2026-10-17"
+    },
+    "0871500fce00c4b1eb0d776b502ced87508fb531909edd9ccc746aced1b9119b": {
+      "url": "https://dev.to/earlgreyhot1701d/i-wrote-the-code-this-time-does-it-count-if-the-answer-was-wrong-1f2k",
+      "date": "2026-10-17"
+    },
+    "766b84af9e6129e045da2e911910516a5ccddb44d5e118af9d75bb886a4705eb": {
+      "url": "https://dev.to/alexgeorgiev17/bun-14s-bun-test-parallel-cuts-a-4-second-suite-to-about-1-second-4481",
+      "date": "2026-10-17"
+    },
+    "d3731a7cc945307e4a0de183c73d2677a5b875c213671bc4193a4b98cd3fb205": {
+      "url": "https://dev.to/remdore/tar-checksums-its-headers-and-never-your-files-ed6",
+      "date": "2026-10-17"
+    },
+    "af887e50f815f35d440c4624b1444f390c0d8eddd2f6499935e0758df15ee62e": {
+      "url": "https://dev.to/debashish_ghosal/i-built-two-agent-systems-each-one-proved-the-other-one-wrong-1f58",
+      "date": "2026-10-17"
+    },
+    "18b78b32805728e8e0f4e0dc8f0a4d2b1ef2595e2b7110e13019cbe424d93e5d": {
+      "url": "https://dev.to/smtahosin/zonejs-hijacked-your-browser-for-8-years-heres-what-replaced-it-20i5",
+      "date": "2026-10-17"
+    },
+    "b0f3e44c8060d72de486b8622497d5eb3b20a6f6294f5f69c647d87d0b4fb0b0": {
+      "url": "https://dev.to/sheships/how-i-actually-learn-new-skills-no-tutorial-required-3iia",
+      "date": "2026-10-17"
+    },
+    "a916840ec8c6d677b5e6357131cdf4895af27c2f0d20993655d2ff305d275f4f": {
+      "url": "https://dev.to/copyleftdev/algorithmic-trading-debug-your-backtest-before-upgrading-your-model-57gf",
+      "date": "2026-10-17"
+    },
+    "f2b86716ad22ba74c6ad6345cac3c5f36cacf63270028d9623db6be4f3dbd493": {
+      "url": "https://dev.to/cyclopt_dimitrisk/your-model-doesnt-need-more-training-it-needs-a-better-search-index-3mca",
+      "date": "2026-10-17"
+    },
+    "461dffb2649b12e5cc2d4f839077eebd428978a2a5a1d4bc5946029ef83ad252": {
+      "url": "https://dev.to/rudratosh/your-github-mcp-server-costs-55000-tokens-before-your-agent-reads-a-single-word-4eah",
+      "date": "2026-10-17"
+    },
+    "bd4eac177c16a81a3f7dba9eb3a658a14882990d6f04dbaab20d9cfa5f8d262f": {
+      "url": "https://dev.to/remdore/i-flipped-one-bit-in-an-image-file-png-died-jpeg-lied-35b3",
+      "date": "2026-10-17"
+    },
+    "fa479981636bea9d2a49ca9682aabbdff53947836a0e92431a8ef6ede95a2144": {
+      "url": "https://dev.to/alexgeorgiev17/revcheck-paste-two-used-car-listings-get-a-second-opinion-before-you-drive-across-town-1e7e",
+      "date": "2026-10-17"
+    },
+    "1a86c1c34546a1902e70070c70a62b5c567029de4e6a077b2054b66a3b210c3f": {
+      "url": "https://dev.to/parsajiravand/vue-definemodel-the-v-model-contract-explained-fc1",
+      "date": "2026-10-17"
+    },
+    "e5ad1111d9ec8bc8c8bff9481ac1dec7b9359a9b4b9979ce4df197c8c657bf7f": {
+      "url": "https://dev.to/rudratosh/i-spent-three-weekends-trying-to-secure-an-ai-agent-heres-everything-that-didnt-work-and-the-g5o",
+      "date": "2026-10-17"
+    },
+    "16798fe04abaf99f5262d4fe3e4c3d95b20f1ce22a23ee7daec764dd71940489": {
+      "url": "https://dev.to/remdore/temporal-finished-my-workflow-exactly-once-and-ran-its-first-step-four-times-59dh",
+      "date": "2026-10-17"
+    },
+    "2be7ab29a2d03870dc178818dac85625a8e573ba12de07a6e67b51d7f7e05a1b": {
+      "url": "https://dev.to/james_anderson_h/ai-made-your-easy-work-free-that-made-you-more-valuable-413f",
+      "date": "2026-10-17"
+    },
+    "1f5f854aa78b67fcbc8c57cf06fb3a00fff2d27b59e38b614bc59f7d18e981ab": {
+      "url": "https://dev.to/westernal/ai-stole-our-happy-place-28j1",
+      "date": "2026-10-17"
+    },
+    "c71d9d5db62a14b981a27c125f0debc495abadced5c53f3605f196b87cff279a": {
+      "url": "https://dev.to/gde/what-nobody-is-using-in-your-google-cloud-projects-and-what-it-costs-1k0",
+      "date": "2026-10-17"
+    },
+    "1da0e97d9e0bf5e2a1ffecf84e40d1b9b7cf810e2aa2df74c0c191c2e54acd87": {
+      "url": "https://dev.to/pavel_kkkkazantsev/i-tested-58-trading-hypotheses-48-failed-heres-the-framework-that-killed-them-1poe",
+      "date": "2026-10-17"
+    },
+    "005887765faee0a5576a8674ff31ba2214a305e2a40e11aa3368f962ab69c1b8": {
+      "url": "https://dev.to/abeera_lodhi/i-turned-the-reasoning-dial-to-high-on-4-models-it-fixed-one-thing-and-billed-me-for-everything-41o5",
+      "date": "2026-10-17"
+    },
+    "a347db4380349d2eda100697c396d2096bce7d4382574890fe5e44aee482223d": {
+      "url": "https://dev.to/pavel_kkkkazantsev/green-tests-broken-architecture-four-models-review-typescript-diffs-16ge",
+      "date": "2026-10-17"
+    },
+    "7906a4408c753231abca66c09eb89d5f632242c25b5ff1d85ff2070e543cea81": {
+      "url": "https://dev.to/parsajiravand/nestjs-guards-canactivate-executioncontext-reflector-1onm",
+      "date": "2026-10-17"
+    },
+    "3831bd948cff7e50b1fea9aa0156839ac5b26a96648b41183e9c8bcbb00c0d7f": {
+      "url": "https://dev.to/parsajiravand/react-derived-state-why-that-usestate-is-probably-a-bug-37h0",
+      "date": "2026-10-17"
+    },
+    "d335498cea0e3c56a7c46e4adcae0e74ddc48e7ff86f3463c80a8aedd7fe145f": {
+      "url": "https://dev.to/sehat1137/clean-architecture-in-python-with-fastapi-faststream-and-dishka-340k",
+      "date": "2026-10-17"
+    },
+    "294e4a8692c5a0f8301839cf56c64733f7f57d71014c9d5587b5772ce74e7344": {
+      "url": "https://dev.to/devopsdaily/we-measured-the-200x-claim-and-got-it-wrong-twice-first-5ch5",
+      "date": "2026-10-17"
+    },
+    "067690a0f4e3f5f984918cd97e1288aea9927398eb6839a9c7a5d74cf7332cc1": {
+      "url": "https://dev.to/mikachu/can-two-local-ai-agents-build-an-app-without-me-i-gave-them-6-rounds-to-find-out-ko1",
+      "date": "2026-10-17"
+    },
+    "03b6175500a1e263a547d96acca142dd15acf6656f6ddd4c167076ac5e1ba7b1": {
+      "url": "https://dev.to/copyleftdev/evidence-driven-development-give-your-coding-agent-something-to-prove-1h4k",
+      "date": "2026-10-17"
+    },
+    "4ffe189fb1ec0fc3a32e7199dfb91f3c3bcd2ee2cc10a383b234c26b8536dd2c": {
+      "url": "https://dev.to/dayvster/my-problem-with-omarchy-is-what-i-like-about-arch-2nk8",
+      "date": "2026-10-17"
+    },
+    "fb5570beccb8ed17a0b553cf97a30235595fe0125a56787ac9e0faaed7548c46": {
+      "url": "https://dev.to/parsajiravand/react-193-viewtransition-animate-state-without-losing-it-4kpp",
+      "date": "2026-10-17"
+    },
+    "11c4571f1170da315d6f133dcd27cfc6c60cb80f8d3bfe4c4de193dbb2a887ed": {
+      "url": "https://dev.to/paul_chen_90371fe7426cb44/harnessing-the-nondeterministic-machine-practical-lessons-in-agentic-ai-hardening-8bo",
+      "date": "2026-10-17"
+    },
+    "98dc4514fb425405ad0c95981d9d96db1e26d630db9ba4a2c27a6e2609a830df": {
+      "url": "https://dev.to/vadim_albarov/i-watermarked-100-texts-with-synthid-and-asked-local-llms-to-wash-it-out-the-detector-still-saw-500i",
+      "date": "2026-10-17"
+    },
+    "98b7662479811ca3a883c558c57ebefb4b3e7d2702e3e6c948eebc5ec7080e76": {
+      "url": "https://dev.to/mirshah12/i-set-a-trap-and-even-frontier-models-fell-for-it-i69",
+      "date": "2026-10-17"
+    },
+    "192fec583c93fed601035e3073d132121072508240652f62bf3e362a5d45ff65": {
+      "url": "https://dev.to/parsajiravand/vue-watch-vs-watcheffect-the-complete-guide-2f40",
+      "date": "2026-10-17"
+    },
+    "82c37358def80cd12e20be11973126722bd14a5ab2cafc19815471b26e9d7e0d": {
+      "url": "https://dev.to/tokenlat/your-agents-cost-problem-isnt-the-model-its-the-steps-you-never-measured-38ag",
+      "date": "2026-10-17"
+    },
+    "e36781a10d86a695e42a83e81721add7b7bd93cbc390ec0b0497b6fd5a5b3ad6": {
+      "url": "https://dev.to/anderson-devvs/building-role-based-authentication-with-firebase-in-a-react-vite-saas-app-4dog",
+      "date": "2026-10-17"
+    },
+    "d63bf7608bcb52975ff0d86f5d9eabe4ce27843c07b6450c88f9dd6701bc53c4": {
+      "url": "https://dev.to/nishikantaray/i-gave-8-llms-my-analytics-products-ai-job-the-cheap-ones-either-invent-a-reason-or-shrug-3f41",
+      "date": "2026-10-17"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 1
+  "dailyPage": 2
 }

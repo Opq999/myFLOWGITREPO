@@ -1,0 +1,58 @@
+---
+title: "Test AI Agents for Security Flaws with Promptfoo"
+description: "Learn how to use Promptfoo to test your AI agents for security vulnerabilities like prompt injection and data exfiltration."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 30
+jobToBeDone: "Test AI agents for security vulnerabilities."
+tools:
+  - name: "Promptfoo"
+    url: "https://www.promptfoo.dev/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/rudratosh/your-ai-agent-said-it-blocked-the-attack-i-read-the-source-of-5-tools-that-check-if-its-lying-l1n"
+  platform: "blog"
+  author: "rudratosh"
+  postedAt: 2026-10-13
+score: 8
+ingestedAt: 2026-10-17
+nigeriaNotes: "Promptfoo is a command-line tool, so it requires installation on a computer. Data usage is minimal as it tests prompts locally. Free tier is fully functional."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to use Promptfoo to test your AI agents for security vulnerabilities. This approach works by simulating attacks on your agent to see if it can be tricked into performing unintended actions, like sending sensitive data.
+## Tools you need
+*   **Promptfoo** (free): A tool for testing and evaluating AI prompts and agents.
+## Steps
+1.  **Install Promptfoo**: Follow the installation instructions for your operating system from the official Promptfoo website. This usually involves downloading an executable or using a package manager.
+2.  **Create a configuration file**: Create a file named `promptfooconfig.yaml` in a new folder. This file tells Promptfoo what to test and how.
+    ```yaml
+    redteam:
+      plugins:
+        - harmful
+        - pii
+        - prompt-extraction
+      strategies:
+        - jailbreak
+        - prompt-injection
+      targets:
+        - id: my-agent
+          config:
+            url: "http://localhost:3000/agent"
+    ```
+    *Note: The `url` in the `targets` section should be replaced with the actual address where your AI agent is running. The author does not specify the exact URL, so you will need to provide this based on your setup.*
+3.  **Run the tests**: Open your terminal or command prompt, navigate to the folder where you saved `promptfooconfig.yaml`, and run the following command:
+    ```bash
+    promptfoo eval --config promptfooconfig.yaml
+    ```
+    You should see Promptfoo start running various tests against your agent, reporting which attacks were successful or blocked.
+## Original source
+This workflow is based on an article by rudratosh posted on DEV Community. The author explored tools for testing AI agent security, focusing on identifying gaps where agents might lie about blocking attacks.
+## Notes & variations
+*   **Common mistake**: Forgetting to replace `http://localhost:3000/agent` with the correct URL for your AI agent. If the URL is wrong, Promptfoo won't be able to connect and test your agent.
+*   **Tip for better results**: Explore the different plugins and strategies available in Promptfoo (like `harmful`, `pii`, `jailbreak`, `prompt-injection`) to cover a wider range of potential security issues.
+*   **Alternative**: For simpler prompt testing without security focus, you can often use the chat interfaces of AI models directly. However, for dedicated security testing, Promptfoo is specifically designed for this purpose.

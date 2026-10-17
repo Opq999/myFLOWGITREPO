@@ -1,0 +1,96 @@
+---
+title: "Find and Price Unused Google Cloud Resources with Zombiescan"
+description: "Learn how to build and use a tool to scan your Google Cloud projects for forgotten resources and estimate their cleanup costs."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 30
+jobToBeDone: "Scan Google Cloud projects for unused resources and estimate cleanup costs"
+tools:
+  - name: "Zombiescan GCP"
+    url: "https://github.com/xbill9/zombiescan-gcp"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Google Cloud"
+    url: "https://cloud.google.com/"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Python"
+    url: "https://www.python.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "gcloud CLI"
+    url: "https://cloud.google.com/sdk/gcloud"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/gde/what-nobody-is-using-in-your-google-cloud-projects-and-what-it-costs-1k0"
+  platform: "blog"
+  author: "xbill"
+  postedAt: 2026-09-22
+score: 7
+ingestedAt: 2026-10-17
+nigeriaNotes: "Google Cloud usage incurs costs. While Zombiescan itself is free, running it against your projects will show you what you are already paying for. Be mindful of data usage when cloning repositories and installing Python packages."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will build and run a command-line tool that scans your Google Cloud projects for resources that are no longer in use but are still costing you money. This tool helps you identify and estimate the cost of cleaning up these 'ghost' resources, saving you money on your cloud bill. It's useful for anyone managing cloud infrastructure who wants to avoid unnecessary expenses.
+
+## Tools you need
+*   **Zombiescan GCP** (free): A command-line tool to scan Google Cloud for unused resources.
+*   **Google Cloud** (paid): Your cloud computing platform where your projects and resources are hosted. Usage of resources incurs costs.
+*   **Python** (free): A programming language used to build and run the Zombiescan tool.
+*   **gcloud CLI** (free): The command-line interface for Google Cloud, used for authentication and managing cloud resources.
+
+## Steps
+1.  **Clone the tool's code**: Download the Zombiescan tool from its online code repository.
+    ```bash
+    git clone https://github.com/xbill9/zombiescan-gcp
+    ```
+    You should see a new folder named `zombiescan-gcp` appear in your file system.
+
+2.  **Navigate into the tool's directory**: Open your command line and go into the folder you just downloaded.
+    ```bash
+    cd zombiescan-gcp
+    ```
+    Your command prompt should now show that you are inside the `zombiescan-gcp` directory.
+
+3.  **Install the tool's dependencies**: This command installs all the necessary libraries for Zombiescan to run, using a tool called `uv`.
+    ```bash
+    uv sync
+    ```
+    You will see a list of packages being installed. This might take a minute or two.
+
+4.  **Check the tool's version**: Verify that the tool is installed correctly by checking its version.
+    ```bash
+    uv run zombiescan --version
+    ```
+    You should see output like `zombiescan, version 0.1.0`.
+
+5.  **Install Zombiescan globally**: This makes the `zombiescan` command available from any directory on your computer.
+    ```bash
+    uv tool install git+https://github.com/xbill9/zombiescan-gcp
+    ```
+    This step might take a few minutes as it installs the tool system-wide.
+
+6.  **Authenticate with Google Cloud**: Log in to your Google Cloud account using the command-line tool. This allows Zombiescan to access your projects.
+    ```bash
+    gcloud auth application-default login
+    ```
+    Your web browser will open, prompting you to log in to your Google account and grant permissions. Once completed, you can close the browser tab.
+
+7.  **List available checks**: See what types of unused resources Zombiescan can look for.
+    ```bash
+    zombiescan checks
+    ```
+    You will see a list of checks, such as `disabled-kms-key`, `empty-vpc-network`, and `gke-idle-cluster`.
+
+## Original source
+This workflow is based on a guide by xbill, originally posted on the DEV Community platform. The author explains how to build a command-line tool from source code to find and price unused resources in Google Cloud projects, helping users reduce their cloud spending.
+
+## Notes & variations
+*   **Free tier alternative**: There isn't a direct free tier alternative for scanning Google Cloud resources. However, Google Cloud's own 'Recommender' tool offers some suggestions for cost optimization, though it may not be as comprehensive as Zombiescan.
+*   **Common pitfall**: Ensure you have the `gcloud` command-line tool installed and properly authenticated before running the scan. If authentication fails, Zombiescan won't be able to access your projects.
+*   **Tip for better results**: To get the most accurate cost estimates, make sure your Google Cloud Billing account is correctly set up and that the user account you authenticate with has sufficient read permissions across all the projects you want to scan.

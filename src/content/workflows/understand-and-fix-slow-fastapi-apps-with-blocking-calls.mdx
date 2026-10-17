@@ -1,0 +1,126 @@
+---
+title: "Understand and Fix Slow FastAPI Apps with Blocking Calls"
+description: "Learn why blocking calls freeze FastAPI applications and how to use asynchronous libraries like httpx to build fast, responsive APIs."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 30
+jobToBeDone: "Identify and mitigate performance issues caused by blocking calls in FastAPI async endpoints"
+tools:
+  - name: "Python"
+    url: "https://www.python.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "FastAPI"
+    url: "https://fastapi.tiangolo.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Starlette"
+    url: "https://www.starlette.io/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "uvicorn"
+    url: "https://www.uvicorn.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "anyio"
+    url: "https://anyio.readthedocs.io/en/stable/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "requests"
+    url: "https://requests.readthedocs.io/en/latest/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "httpx"
+    url: "https://www.python-httpx.org/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/remdore/changing-def-to-async-def-let-one-blocking-call-freeze-an-entire-fastapi-app-4cjd"
+  platform: "blog"
+  author: "remdore"
+  postedAt: 2026-10-13
+score: 8
+ingestedAt: 2026-10-17
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+This entry explains a critical performance issue in web applications built with FastAPI, a popular Python framework. When you write an `async def` function in Python, it's designed to handle many tasks at once without waiting. However, if you use a "blocking" function (one that stops everything until it finishes, like `requests.get` to fetch data from another website) inside an `async def` function, it can freeze your entire application.
+
+Imagine a single cashier serving a long line of customers. If one customer suddenly needs to wait for a long time (a blocking call), the cashier can't serve anyone else until that customer is done. This is what happens to your FastAPI server: an unrelated, fast part of your app can become thousands of times slower because one `async def` endpoint is blocked.
+
+The article details this problem, shows how severe the slowdown can be, and explains the correct way to handle these waiting tasks using "asynchronous" libraries. This is an advanced topic because it requires understanding how Python manages concurrent tasks and how to structure your code to avoid these performance bottlenecks.
+
+## What you can use it for
+*   **Build faster web APIs**: Learn to write FastAPI applications that can handle many users at the same time without slowing down.
+*   **Prevent server freezes**: Understand how to avoid common mistakes that can make your web server unresponsive.
+*   **Debug slow applications**: Identify why parts of your FastAPI app might be performing poorly and how to fix them.
+*   **Choose the right tools**: Know when to use `requests` (for simple, non-async scripts) versus `httpx` (for async web requests in FastAPI).
+
+## Tools you need
+*   **Python** (free): The programming language used to build FastAPI applications.
+*   **FastAPI** (free): A modern, fast web framework for building APIs with Python.
+*   **Starlette** (free): The lightweight ASGI framework that FastAPI is built on top of.
+*   **uvicorn** (free): A lightning-fast ASGI server, often used to run FastAPI applications.
+*   **anyio** (free): A library that provides a common interface for asynchronous operations, used by FastAPI and Starlette.
+*   **requests** (free): A popular Python library for making HTTP requests, but it is synchronous (blocking).
+*   **httpx** (free): An advanced Python library for making HTTP requests, with both synchronous and asynchronous capabilities.
+
+## How it actually works
+Understanding and fixing this issue requires a grasp of asynchronous programming in Python. Here's the conceptual path:
+
+1.  **Understand `async def` and the Event Loop**: In Python, `async def` functions run on a single "event loop" (a central manager that decides what task runs next). When an `async def` function needs to wait (e.g., for a network request), it tells the event loop it's waiting and lets other tasks run. This is key to handling many operations concurrently.
+
+2.  **Identify Blocking Calls**: A "blocking call" is any function that stops the current thread of execution until it completes. The `requests.get()` function is a common example. If you use `requests.get()` inside an `async def` FastAPI endpoint, it blocks the event loop, preventing other tasks from running.
+
+3.  **Use `def` for Blocking Code (with caution)**: FastAPI automatically moves `def` endpoints (regular Python functions) to a separate "thread pool" (a group of background workers). This means a blocking call in a `def` endpoint won't freeze the main event loop. However, this thread pool has a limited number of threads (often 40 by default), so too many concurrent blocking `def` calls can still cause issues.
+
+4.  **Adopt Asynchronous Libraries**: The proper solution for `async def` endpoints is to use "asynchronous" versions of libraries. For network requests, `httpx.AsyncClient` is the correct choice. It allows your `async def` function to `await` the network request without blocking the event loop, letting other tasks proceed.
+
+5.  **Refactor Endpoints**: If you have an `async def` endpoint that makes blocking calls, you need to rewrite those calls to use their asynchronous equivalents. The author illustrates the difference with these examples:
+
+    *   **Incorrect (blocking)**: This code will freeze your server if called in an `async def` endpoint because `requests.get` is a blocking call.
+
+    ```python
+    import requests
+    # ...
+    @app.get("/async_blocking")
+    async def async_blocking():
+        return requests.get("http://slow-api.com").json()
+    ```
+
+    *   **Correct (non-blocking)**: This code uses `httpx.AsyncClient` and `await`, allowing your server to handle other requests while waiting for the external API.
+
+    ```python
+    import httpx
+    # ...
+    client = httpx.AsyncClient() # Create an async client once
+    @app.get("/async_proper")
+    async def async_proper():
+        return (await client.get("http://slow-api.com")).json()
+    ```
+
+    The author doesn't provide a full, runnable example for a beginner. Implementing and testing this requires setting up a complete Python development environment, a FastAPI application, and potentially a separate "slow" service, which is beyond a beginner's scope.
+
+## Words you'll see, explained
+*   **FastAPI**: A modern, fast web framework for building APIs (Application Programming Interfaces) with Python.
+*   **Starlette**: The lightweight ASGI (Asynchronous Server Gateway Interface) framework that FastAPI is built on top of.
+*   **uvicorn**: A lightning-fast ASGI server, often used to run FastAPI applications.
+*   **anyio**: A library that provides a common interface for asynchronous operations, used by FastAPI and Starlette.
+*   **Event loop**: The central component in asynchronous Python that manages and schedules different tasks, allowing them to run without blocking each other.
+*   **Blocking call**: A function or operation that stops the entire program (or the current thread/event loop) from doing anything else until it finishes.
+*   **Async def**: A Python keyword used to define an asynchronous function, which can pause its own execution and allow other tasks to run.
+*   **Def**: The standard Python keyword for defining a regular function, which runs synchronously (one step after another).
+*   **Thread pool**: A collection of worker threads that can execute tasks in the background, separate from the main event loop.
+*   **requests**: A popular Python library for making HTTP requests, but it is synchronous (blocking), meaning it waits for a response before doing anything else.
+*   **httpx**: An advanced Python library for making HTTP requests, with both synchronous and asynchronous capabilities, allowing it to wait without blocking.
+
+## Original source
+This entry is based on an article by `remdore` on `DEV Community`. The author detailed how a seemingly small change from a `def` to an `async def` function can severely impact FastAPI application performance due to blocking calls, making a fast endpoint incredibly slow.
+
+## Notes & variations
+*   **Do you even need this?**: If you are building a very simple API that only handles a few requests at a time and doesn't make many external calls, you might not immediately hit these performance issues. However, understanding this concept is crucial for building scalable and responsive web services. For simpler cases, using `def` endpoints with blocking calls might be "good enough" until you hit the thread pool limit.
+*   **Free-tier limits**: All the tools mentioned (Python, FastAPI, httpx, etc.) are open-source and free to use. The "limits" here are more about your server's resources (CPU, memory) and the number of concurrent requests it can handle before performance degrades.
+*   **Common pitfall**: A very common mistake is to refactor a `def` endpoint to `async def` without also changing all the internal calls to their asynchronous equivalents. This makes the code *look* modern but can introduce severe performance bottlenecks, as highlighted by the author. Always ensure all I/O operations (like network requests, database calls, file I/O) within an `async def` function are also asynchronous (using `await`).

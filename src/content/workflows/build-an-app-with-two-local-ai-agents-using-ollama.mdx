@@ -1,0 +1,110 @@
+---
+title: "Build an App with Two Local AI Agents Using Ollama"
+description: "Learn how to set up two local AI agents, one for building and one for reviewing code, using Ollama and Python to create a simple application."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 60
+jobToBeDone: "Build a simple application using two local AI agents for development and code review"
+tools:
+  - name: "Ollama"
+    url: "https://ollama.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Qwen2.5-Coder"
+    url: "https://ollama.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Qwen3"
+    url: "https://ollama.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Python"
+    url: "https://www.python.org/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/mikachu/can-two-local-ai-agents-build-an-app-without-me-i-gave-them-6-rounds-to-find-out-ko1"
+  platform: "blog"
+  author: "mikachu"
+  postedAt: 2026-09-25
+score: 7
+ingestedAt: 2026-10-17
+nigeriaNotes: "Ollama and local models require significant disk space and RAM. Ensure your PC meets the minimum requirements. Data usage is minimal once models are downloaded, as processing happens locally."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to set up two local AI agents that work together to build a simple application. One agent acts as the developer, and the other as the code reviewer. This approach uses local AI models, meaning all processing happens on your computer without needing an internet connection or paid API services.
+
+## Tools you need
+*   **Ollama** (free): A tool that makes it easy to run large language models, like AI agents, on your computer.
+*   **Qwen2.5-Coder** (free): A specific AI model designed for coding tasks, used here as the builder agent.
+*   **Qwen3** (free): Another AI model, used here as the reviewer agent.
+*   **Python** (free): A programming language used to write the script that controls the AI agents.
+
+## Steps
+1.  **Install Ollama**: Download and install Ollama from its official website. This tool will manage and run your AI models locally.
+    You should see a confirmation that Ollama is installed and ready to use.
+2.  **Download the AI Models**: Open your terminal or command prompt and use Ollama to download the Qwen2.5-Coder and Qwen3 models. The author found smaller versions worked better on their machine.
+
+    ```bash
+    # Download the smaller Qwen2.5-Coder model for building
+    ollama pull qwen2.5-coder:3b
+
+    # Download the smaller Qwen3 model for reviewing
+    ollama pull qwen3:4b
+    ```
+
+    You should see progress bars as the models download. Once complete, Ollama will confirm the models are available.
+3.  **Set up the Project Workspace**: Create a new folder on your computer for this project. Inside this folder, you will also need a Python script to manage the agents.
+4.  **Write the Python Orchestration Script**: The author used a Python script to control how the two AI agents communicate. This script will send tasks to the builder agent and then send the builder's output to the reviewer agent. The author intentionally limited the agents' capabilities to only interact within this workspace for safety.
+
+    The author does not provide the exact Python code. A starting point would involve using Ollama's Python library or making direct API calls to Ollama to send prompts to each model and receive their responses. You would need to define functions for the 'Builder' and 'Reviewer' agents.
+
+    For example, a basic structure might look like this:
+
+    ```python
+    # This is a conceptual example, not the author's exact code.
+    # You will need to install the ollama Python library: pip install ollama
+
+    import ollama
+
+    def run_builder(prompt):
+        response = ollama.chat(model='qwen2.5-coder:3b', messages=[
+            {
+                'role': 'user',
+                'content': prompt,
+            },
+        ], options={'keep_alive': 0})
+        return response['message']['content']
+
+    def run_reviewer(task_prompt, built_code):
+        response = ollama.chat(model='qwen3:4b', messages=[
+            {
+                'role': 'user',
+                'content': f"Original Task: {task_prompt}\n\nCode Built:\n{built_code}\n\nReview this code based on the original task.",
+            },
+        ], options={'keep_alive': 0})
+        return response['message']['content']
+
+    # Example usage:
+    # product_request = "Create a simple Python script that prints 'Hello, World!'"
+    # proposed_code = run_builder(product_request)
+    # review_result = run_reviewer(product_request, proposed_code)
+    # print(review_result)
+    ```
+
+    You should expect to write code that defines how prompts are sent and how responses are processed.
+5.  **Define the Product Request**: Decide what simple application you want the AI agents to build. For instance, "Create a Python script that calculates the sum of two numbers."
+6.  **Run the Agents in Rounds**: Execute your Python script. The builder agent will receive the product request and generate code. This code is then passed to the reviewer agent, which will either approve it or suggest changes. The author repeated this process for 6 rounds, refining the application with each step.
+    You should see the output from each agent in your terminal, showing the code being generated and reviewed.
+
+## Original source
+The author, mikachu, explored the capabilities of local AI agents by setting up a system where one AI builds an application and another reviews its code. This experiment was documented on the DEV Community platform, highlighting the potential and challenges of using multiple local models for software development.
+
+## Notes & variations
+*   **Free-tier alternative**: This entire workflow is designed to run on free, local models, so there are no direct free-tier alternatives needed. The main constraint is your computer's hardware.
+*   **Common mistake**: Running larger models (like the author's initial 7B and 8B models) simultaneously can overwhelm your computer's RAM and GPU, making it very slow or unusable. Start with smaller models (like 3B and 4B) and ensure `keep_alive` is set to `0` in your Ollama requests to free up resources between turns.
+*   **Tip for better results**: Clearly define the roles and limitations of each agent in your prompts. For the builder, specify the desired output format. For the reviewer, instruct it to be specific about the changes needed.

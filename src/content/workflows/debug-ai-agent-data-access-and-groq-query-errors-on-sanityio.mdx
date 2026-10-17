@@ -1,0 +1,130 @@
+---
+title: "Debug AI Agent Data Access and GROQ Query Errors on Sanity.io"
+description: "Learn to diagnose why an AI agent might fail to access data from Sanity.io due to authentication issues or incorrect GROQ query syntax."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 60
+jobToBeDone: "Debug AI agent data access and GROQ query syntax errors on Sanity.io"
+tools:
+  - name: "curl"
+    url: "https://curl.se"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Sanity.io"
+    url: "https://www.sanity.io"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "GitHub"
+    url: "https://github.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/kenielzep97/the-data-was-public-the-agent-path-wasnt-so-his-mock-became-my-documentation-413a"
+  platform: "blog"
+  author: "kenielzep97"
+  postedAt: 2026-09-30
+score: 10
+ingestedAt: 2026-10-17
+nigeriaNotes: "This workflow involves developer tools and concepts. While Sanity.io has a free tier, understanding API authentication and debugging agent code requires technical comfort. Data usage for `curl` commands is minimal."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+An AI agent (a program that uses artificial intelligence to perform tasks) often needs to get data from a database or content platform like Sanity.io. This entry explains how to debug two common reasons why an AI agent might fail to access that data: either it's trying to use the wrong access path (like an authenticated door when it doesn't have the key), or its query (the specific request for data) has syntax errors.
+
+This is an advanced topic because it involves understanding how software communicates with online services (APIs), how to use command-line tools like `curl` to test these communications, and how to write precise queries in a language like GROQ. There isn't a simple, copy-paste recipe because every AI agent's code, Sanity.io project setup, and authentication details will be unique.
+
+Instead, this guide helps you understand the underlying problems and the general approach to diagnose them. It's about learning to think like a debugger when your AI agent isn't getting the data it needs.
+
+## What you can use it for
+*   **Diagnose API authentication issues**: Check if your AI agent is trying to access data through an endpoint (a specific web address for an API) that requires authentication (a secret key or token) it doesn't have.
+*   **Verify public data access**: Confirm if a dataset is truly publicly available or if it needs specific credentials to be accessed.
+*   **Debug GROQ query syntax**: Pinpoint errors in your Sanity.io queries, such as wrong field names, incorrect capitalization, or misplaced punctuation.
+*   **Understand agent data flow**: Trace how your AI agent attempts to retrieve information from a database, identifying where the process might be breaking down.
+
+## Tools you need
+*   **curl** (free): A command-line tool for making requests to web servers and APIs.
+*   **Sanity.io** (freemium): A content platform that stores your data, often queried by AI agents.
+*   **GitHub** (freemium): A platform for hosting code projects, where you might find agent code and pull requests.
+
+## How it actually works
+Debugging AI agent data access involves two main approaches: checking the data access path and debugging the query syntax.
+
+### 1. Check data access paths
+Your AI agent might be trying to access data through an authenticated endpoint (a protected web address) when it only has access to a public one, or vice-versa. You can use `curl` to test these paths directly.
+
+**Test public data access**: Run this command in your terminal. Replace `u58x3mt0.api.sanity.io` and `v2025-08-15/data/query/production` with the actual public API endpoint for your Sanity.io project.
+
+```
+curl -sS --get 'https://u58x3mt0.api.sanity.io/v2025-08-15/data/query/production' \
+--data-urlencode 'query=count(*)'
+```
+
+**What to expect**: You should see a JSON response showing the count of documents, like `{"query":"count(*) ","result":120,...}`. This means the public path works.
+
+**Test authenticated agent path**: If your agent uses a specific authenticated endpoint, you need to test that. The author's agent used an MCP (Managed Content Platform) endpoint. You would replace `ORG` with your actual Sanity.io organization ID and ensure you have the correct organization API token (not a project token, which Sanity.io might not accept for this type of endpoint).
+
+```
+curl -sS -o /dev/null -w '%{http_code}\n' \
+'https://api.sanity.io/v1/context/organizations/ORG/mcp/self-correcting-systems'
+```
+
+**What to expect**: If you get `401` (Unauthorized), it means the endpoint requires authentication that was not provided or was incorrect. If you get `200` (OK), the path is accessible, and the problem lies elsewhere.
+
+### 2. Debug GROQ query syntax
+Even if your agent can access the data, its GROQ queries (the language used to ask Sanity.io for data) might have errors. You need to compare your query against your actual Sanity.io schema (the blueprint of your data).
+
+**Example 1: Stray punctuation**
+
+*   **Broken query**: The author found a query with a stray dot that caused an HTTP 400 (Bad Request) error.
+
+    ```
+    *[_type == "claim" _id == "claim-ledger-population"][0].{status, expiryStatus}
+    ```
+
+*   **Correction**: Remove the extra dot between `[0]` and `{`.
+
+    ```
+    *[_type == "claim" _id == "claim-ledger-population"][0]{status, expiryStatus}
+    ```
+
+    **What to expect**: This corrected query should return a JSON object with the `status` and `expiryStatus` fields, like `{"status": "standing", "expiryStatus": "no_expiry_set"}`.
+
+**Example 2: Wrong field name or case sensitivity**
+
+*   **Broken query**: The author found a query that returned `null` because it used `findingRef` instead of `findings` and had incorrect capitalization (`finding-b1` instead of `finding-B1`).
+
+    ```
+    * [ _type == "patch" findingRef._ref == "finding-b1" ][ 0 ]
+    ```
+
+*   **Correction**: Use the correct field name (`findings`, which is an array) and ensure the ID matches the case in your data (`finding-B1`).
+
+    ```
+    * [ _type == "patch" "finding-B1" in findings [] . _ref ][ 0 ]{ sha , inMain }
+    ```
+
+    **What to expect**: This corrected query should return a JSON object with the `sha` and `inMain` fields, like `{"sha": "dd1a654", "inMain": false}`.
+
+To debug your own GROQ queries, use the Sanity Studio's Vision plugin. It allows you to test queries directly against your live dataset and see immediate results and errors.
+
+## Words you'll see, explained
+*   **AI Agent**: A program that uses artificial intelligence to perform tasks, often by interacting with other systems and data.
+*   **API (Application Programming Interface)**: A set of rules that allows different software applications to communicate with each other.
+*   **Endpoint**: A specific URL where an API can be accessed to perform an action or retrieve data.
+*   **Authentication**: The process of verifying a user's or system's identity, often using tokens or keys, to grant access to protected resources.
+*   **GROQ (Graph-Relational Object Queries)**: A query language specifically designed for Sanity.io to fetch and filter data.
+*   **Schema**: The structure or blueprint of your data, defining what types of information can be stored and how they are organized.
+*   **`curl`**: A command-line tool used to transfer data to or from a server, commonly used for testing web requests.
+*   **HTTP 401 Unauthorized**: An error code indicating that the request could not be authenticated, meaning you don't have the necessary credentials.
+*   **HTTP 400 Bad Request**: An error code indicating that the server could not understand the request due to invalid syntax.
+
+## Original source
+This entry is based on a blog post by kenielzep97 titled 'The Data Was Public. The Agent Path Wasn't. So His Mock Became My Documentation.' published on the DEV Community platform.
+
+## Notes & variations
+*   **Do you even need this?**: For simple data access, ensure your AI agent uses publicly available endpoints or has correctly provisioned API keys. For complex queries, test them directly in Sanity Studio's Vision tool before integrating them into your agent's code. This can save significant debugging time.
+*   **Free-tier limits**: Sanity.io offers a generous free tier for developers, which is sufficient for many projects. However, specific authenticated API access might require particular project or organization settings that could have usage limits or costs. The `curl` tool itself is free to use.
+*   **Common pitfall**: A common mistake is assuming that all data paths to the same underlying dataset are equally accessible. Always verify the exact endpoint your AI agent uses and its specific authentication requirements, as these can differ even for the same data source.

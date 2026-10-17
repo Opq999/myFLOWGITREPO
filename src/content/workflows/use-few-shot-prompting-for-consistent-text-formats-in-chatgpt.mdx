@@ -1,0 +1,80 @@
+---
+title: "Use Few-Shot Prompting for Consistent Text Formats in ChatGPT"
+description: "Learn to use few-shot prompting to generate consistent text formats, such as commit messages or transformed data, using examples in ChatGPT or Cursor."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 5
+jobToBeDone: "Generate consistent text formats using AI examples."
+tools:
+  - name: "ChatGPT"
+    url: "https://chatgpt.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Cursor"
+    url: "https://cursor.sh"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/dj29/10-prompting-techniques-my-deep-learning-exam-taught-me-that-i-actually-use-now-43h0"
+  platform: "blog"
+  author: "dj29"
+  postedAt: 2026-10-17
+score: 9
+ingestedAt: 2026-10-17
+nigeriaNotes: "Both ChatGPT and Cursor offer free tiers that are suitable for this workflow, requiring minimal data usage."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will get AI-generated text that matches a specific style or format you provide, such as consistent commit messages for your code projects or transformed data. This approach works by showing the AI a few examples, allowing it to learn the pattern and apply it to new inputs, saving you time on repetitive formatting tasks.
+
+## Tools you need
+*   **ChatGPT** (freemium): An AI chatbot for general questions and text generation.
+*   **Cursor** (freemium): An AI-powered code editor with a built-in chat assistant.
+
+## Steps
+1.  **Open your AI tool**: Go to ChatGPT (chatgpt.com) or open Cursor's chat interface. You should see a text input field ready for your prompt.
+2.  **Provide examples**: Paste your existing examples that show the style or format you want the AI to follow. The author's example uses commit messages:
+
+    ```
+    Here are my commit messages so far:
+    feat: add user authentication with JWT
+    fix: resolve null pointer in payment service
+    refactor: extract validation logic into middleware
+    ```
+
+    You should see your examples appear in the chat history.
+3.  **Ask for a new output**: After your examples, tell the AI what new item you want it to format, following the style of your examples.
+
+    ```
+    Now write a commit message for: I added rate limiting to the API endpoints.
+    Output:
+    ```
+
+    You should see the AI generate a new commit message that matches the style of your examples, like `feat: add rate limiting to API endpoints`.
+4.  **(Optional) Transform data formats**: You can also use this technique to convert data from one format to another. Provide examples of the "old format -> new format" pairs.
+
+    ```
+    Convert this old API response format to a new one:
+
+    Old: {"id": 1, "name": "Product A", "price": 10.00}
+    New: {"productId": "1", "productName": "Product A", "unitPrice": "10.00"}
+
+    Old: {"id": 2, "name": "Product B", "price": 25.50}
+    New: {"productId": "2", "productName": "Product B", "unitPrice": "25.50"}
+
+    Old: {"id": 3, "name": "Product C", "price": 5.00}
+    New:
+    ```
+
+    You should see the AI complete the new format for "Product C" based on your examples.
+
+## Original source
+This workflow is inspired by a blog post titled '10 Prompting Techniques My Deep Learning Exam Taught Me (That I Actually Use Now)' by dj29, shared on the DEV Community platform. The author explains how academic AI prompting theories can be applied to practical developer tasks.
+
+## Notes & variations
+*   **Free-tier alternatives**: The free tiers of ChatGPT and Cursor are generally sufficient for this type of task. Other freemium AI chatbots like Google Gemini (gemini.google.com) or Claude (claude.ai) can also be used.
+*   **Common mistake**: Not providing enough clear examples. If the AI doesn't pick up the pattern, try adding one or two more examples that clearly show the desired style or transformation.
+*   **Tip for better results**: Make your examples as consistent and distinct as possible. Highlight the specific elements you want the AI to learn (e.g., the `feat:` prefix, the casing, the level of detail).

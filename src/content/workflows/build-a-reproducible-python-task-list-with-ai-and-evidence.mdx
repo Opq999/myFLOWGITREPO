@@ -1,0 +1,91 @@
+---
+title: "Build a Reproducible Python Task List with AI and Evidence"
+description: "Learn to build a Python task list application with AI assistance, demonstrating falsifiable claims and evidence for reproducible results."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 30
+jobToBeDone: "Build a reproducible coding project with AI assistance, demonstrating falsifiable claims and evidence."
+tools:
+  - name: "Python"
+    url: "https://www.python.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "SQLite"
+    url: "https://www.sqlite.org/index.html"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Git"
+    url: "https://git-scm.com/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/copyleftdev/evidence-driven-development-give-your-coding-agent-something-to-prove-1h4k"
+  platform: "blog"
+  author: "copyleftdev"
+  postedAt: 2026-10-10
+score: 8
+ingestedAt: 2026-10-17
+nigeriaNotes: "This workflow is entirely offline and uses only free, locally installed tools. Data usage is negligible."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will create a simple Python application called Tiny Tasks that manages a to-do list. You will also learn how to deliberately break it and create evidence that shows how it works and why it fails. This approach helps ensure that AI-generated code is reliable and understandable by others.
+
+## Tools you need
+*   **Python** (free): A popular programming language used to build applications. You need version 3.10 or newer, which includes built-in support for SQLite.
+*   **SQLite** (free): A lightweight database that stores data in a single file. It's included with Python, so no separate installation is needed.
+*   **Git** (free): A system for tracking changes in code. You'll use it to download the project files.
+
+## Steps
+1.  **Download the project files**: Open your terminal or command prompt and clone the project repository from GitHub. This downloads all the necessary code and evidence files.
+    ```bash
+    git clone https://github.com/copyleftdev/evidence-driven-development.git
+    ```
+    You should see a new folder named `evidence-driven-development` appear on your computer.
+
+2.  **Navigate to the project directory**: In your terminal, change into the newly created project folder.
+    ```bash
+    cd evidence-driven-development
+    ```
+    Your terminal prompt should now show you are inside the project folder.
+
+3.  **Add your first task**: Run the Python script to add a task to your list. The `--request-id` helps track specific actions.
+    ```bash
+    python3 -m tiny_tasks add " Water plants " --request-id plant-1
+    ```
+    The script will run without errors, indicating the task was added.
+
+4.  **Attempt to add the same task again**: Run the same command again. This time, the script should behave differently, showing that the system recognizes this is a duplicate request.
+    ```bash
+    python3 -m tiny_tasks add " Water plants " --request-id plant-1
+    ```
+    The output should indicate that the task was not created again because the request ID was reused. The author notes this returns the original task with `created: false`.
+
+5.  **List your tasks**: See the tasks that have been added to your list.
+    ```bash
+    python3 -m tiny_tasks list
+    ```
+    You should see the "Water plants" task listed.
+
+6.  **Run the tests**: Execute the built-in tests to verify the application's behavior.
+    ```bash
+    python3 -m unittest discover -s tests -v
+    ```
+    The tests should run and report success, indicating that the application is working as expected.
+
+7.  **Examine the evidence**: Run a script that analyzes the results and generates evidence. This step demonstrates the core idea of evidence-driven development.
+    ```bash
+    python3 scripts/prove.py
+    ```
+    This script will output information about the experiments and their results, showing the evidence collected.
+
+## Original source
+This workflow is based on a tutorial by copyleftdev, shared on the DEV Community platform. It demonstrates a practical application of evidence-driven development principles using AI assistance for building reliable software.
+
+## Notes & variations
+*   **Free tier alternative**: All tools used here are free and run locally, so there are no free tier limitations.
+*   **Common mistake**: Trying to add the exact same task with the exact same `--request-id` multiple times without understanding that the system is designed to prevent duplicate entries for the same request.
+*   **Tip for better results**: Experiment with different `--request-id` values for the same task description to see how the application handles unique actions versus repeated requests. Also, explore the `tests` folder to understand how the application's behavior is verified.

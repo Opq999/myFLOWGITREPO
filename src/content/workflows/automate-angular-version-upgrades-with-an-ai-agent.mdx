@@ -1,0 +1,96 @@
+---
+title: "Automate Angular Version Upgrades with an AI Agent"
+description: "Learn how AI agents can automate complex software development tasks like Angular version upgrades. Understand the process of creating and refining an AI skill for technical maintenance."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 120
+jobToBeDone: "Automate Angular version upgrades using an AI agent"
+tools:
+  - name: "Codex (AI Agent Platform)"
+    url: "https://www.langchain.com/"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Angular"
+    url: "https://angular.io/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Git / GitHub"
+    url: "https://github.com/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Node.js"
+    url: "https://nodejs.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "npm"
+    url: "https://www.npmjs.com/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/gramli/i-vibe-coded-my-way-out-of-angular-upgrades-4fkh"
+  platform: "blog"
+  author: "gramli"
+  postedAt: 2026-10-15
+score: 7
+ingestedAt: 2026-10-17
+nigeriaNotes: "This workflow involves building and running custom AI agents, which typically requires technical setup and potentially paid API access to large language models. Free tiers for LLMs might have strict usage limits, making extensive development and testing costly. The author's specific 'Codex' tool is not identified as a publicly available product; the provided URL for 'Codex' is an example of a platform where similar AI agents can be developed. Data usage for running agent tasks can vary significantly based on project complexity and agent interactions."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+This entry describes how to use an AI agent (a computer program that uses artificial intelligence to perform tasks autonomously) to automate complex software development tasks, specifically upgrading Angular versions. Instead of manually following a multi-step guide, you can create an AI "skill" that handles the entire process, from creating a Git branch to validating the build.
+
+This is an advanced workflow because it involves designing, building, and refining a custom AI agent, rather than simply using a pre-made tool. The author used a platform they call "Codex" to develop this specialized "skill" for Angular upgrades.
+
+The exact instructions for building such an agent are not a simple copy-paste recipe. They involve an iterative process of defining the agent's goals, letting it generate an initial solution, and then debugging and refining its behavior based on real-world problems encountered during testing.
+
+## What you can use it for
+*   **Automate repetitive software maintenance tasks**: Use AI agents to handle routine updates for dependencies, frameworks, or libraries across multiple projects.
+*   **Ensure consistent application of best practices**: Program the agent to follow specific development guidelines and validation steps, reducing human error.
+*   **Catch common integration issues early**: Design agents to include validation steps (like checking `npm ci` or Node.js versions) that prevent problems from reaching your continuous integration (CI) pipeline.
+*   **Adapt to specific project requirements**: Build agents that can handle unique project needs, such as replacing a UI library during an upgrade.
+
+## Tools you need
+*   **Codex (AI Agent Platform)** (paid): The AI agent platform or framework used to create and run the Angular update skill. The author's specific "Codex" is not a public tool; the URL provided is an example of a platform where similar AI agents can be developed.
+*   **Angular** (free): The open-source web framework being upgraded.
+*   **Git / GitHub** (freemium): For version control, creating branches, and hosting code.
+*   **Node.js** (free): The JavaScript runtime environment.
+*   **npm** (free): Node Package Manager, for managing project dependencies.
+
+## How it actually works
+The core idea is to define the complex task of upgrading Angular to an AI agent. The author created a prompt for their "Codex" platform, describing what the "skill" should achieve. The goals included:
+
+1.  Following the official Angular Update Guide.
+2.  Creating a separate Git branch for the upgrade.
+3.  Handling migrations and dependency updates.
+4.  Validating that everything still builds and works correctly.
+5.  Following the same good practices a human developer would use.
+
+Codex generated an initial version of the skill. However, the author found that building an effective agent is an iterative process of refinement:
+
+1.  **Initial Problem (Local vs. Remote Sync)**: The first version worked locally but failed in the CI pipeline because `npm ci` (a command that installs packages based on a lock file) revealed inconsistencies. The solution was to add `npm ci` as an explicit validation step within the agent's workflow, ensuring the lock file was correct before considering the upgrade complete.
+2.  **Second Problem (npm Publishing)**: When trying to publish an Angular library, an `npm error code E404` occurred due to incompatible Node.js and npm versions required for trusted publishing. The author updated the skill to prefer the latest Node.js LTS (Long Term Support) version compatible with the target Angular version, and to ensure the npm version met publishing requirements.
+3.  **Third Problem (Skill Size)**: After these improvements, the agent's instructions became very long. To optimize for token limits (the maximum amount of text an AI model can process) and reduce costs, the author shortened the instructions, removed repetition, and focused on keeping the essential validation steps.
+
+After these refinements, the author successfully used the agent to upgrade three of their open-source projects, including a complex upgrade across three major Angular versions and a UI library replacement. This demonstrates that building AI agents for technical tasks is a process of continuous improvement and debugging.
+
+## Words you'll see, explained
+*   **AI Agent**: A computer program that uses artificial intelligence to perform tasks autonomously, often by interacting with other tools and systems.
+*   **Angular**: A popular open-source framework for building web applications, maintained by Google.
+*   **Git branch**: A separate line of development in a Git repository, allowing changes to be made without affecting the main project until ready.
+*   **CI pipeline (Continuous Integration)**: An automated process that builds, tests, and validates code changes whenever developers integrate new code into a shared repository.
+*   **npm ci**: A command in Node Package Manager (npm) that installs dependencies from a `package-lock.json` file, ensuring exact versions are used for consistent builds.
+*   **npm publish**: A command in Node Package Manager (npm) used to publish a package (like a library) to the npm registry, making it available for others to use.
+*   **Node.js LTS**: A Long Term Support (LTS) version of Node.js, which receives extended maintenance and is recommended for production environments due to its stability.
+*   **Token limits**: The maximum amount of text (measured in "tokens," which are parts of words) that an AI model can process or generate in a single interaction.
+
+## Original source
+This concept was shared by gramli on the DEV Community blog, detailing their experience in creating an AI agent to automate the often-tedious process of upgrading Angular versions for their open-source projects.
+
+## Notes & variations
+*   **Do you even need this?**: For simple, one-off Angular upgrades, following the official Angular CLI update commands or manual steps might be sufficient. This approach is most beneficial for developers who maintain multiple Angular projects and want to automate repetitive, complex upgrade processes.
+*   **Free-tier limits**: Building and running AI agents often involves using paid APIs for large language models. While some LLMs offer free tiers, they typically have strict usage limits that may not be sufficient for extensive development, testing, and running complex agent tasks.
+*   **Common pitfall**: Over-reliance on the AI agent without thorough human review and testing. Even with sophisticated validation steps, an AI agent might miss subtle issues or introduce unexpected side effects. Always review the changes made by the agent and test extensively, especially for critical projects.
+*   **Tip**: Start by building and refining your AI agent's "skill" on smaller, less critical projects. This allows you to iterate quickly, debug its behavior, and build confidence before deploying it to major production systems.

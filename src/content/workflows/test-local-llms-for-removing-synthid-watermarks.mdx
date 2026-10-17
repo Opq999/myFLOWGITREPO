@@ -1,0 +1,80 @@
+---
+title: "Test Local LLMs for Removing SynthID Watermarks"
+description: "Learn how to test if local AI models can remove Google's SynthID text watermarks. Understand the effectiveness of different LLMs in watermarking removal."
+category: "academic-research"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 120
+jobToBeDone: "Test the effectiveness of local LLMs in removing SynthID watermarks from AI-generated text"
+tools:
+  - name: "SynthID"
+    url: "https://deepmind.google/discover/blog/synthid-a-new-watermarking-technique-for-ai-generated-text/"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Qwen/Qwen3-4B-Instruct-2507"
+    url: "https://huggingface.co/Qwen/Qwen3-4B-Instruct-2507"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Hugging Face transformers"
+    url: "https://huggingface.co/docs/transformers/index"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Ollama"
+    url: "https://ollama.com/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/vadim_albarov/i-watermarked-100-texts-with-synthid-and-asked-local-llms-to-wash-it-out-the-detector-still-saw-500i"
+  platform: "blog"
+  author: "vadim_albarov"
+  postedAt: 2026-10-06
+score: 7
+ingestedAt: 2026-10-17
+nigeriaNotes: "This workflow requires a powerful laptop with a dedicated GPU (16GB VRAM recommended) and significant processing time. Data usage for downloading models and datasets is substantial. Free tiers for the LLMs and tools are available, but the hardware requirements are a major barrier for mobile-first or low-spec devices."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+This entry explains an experiment to test how well local AI models can remove a specific type of AI-generated text watermark called SynthID-Text. SynthID is a technology developed by Google DeepMind that adds a hidden signal to text created by AI, making it detectable. The experiment involved watermarking 100 pieces of text using SynthID and then using several different local AI models to rewrite these texts. The goal was to see if these rewrites could fool a SynthID detector.
+
+This is an advanced research topic. It's not a simple copy-paste recipe because it involves setting up specific AI models, training a detector, and running complex tests. The exact steps and code are detailed in research papers and code repositories, which can change as the tools evolve. This entry provides an overview and the general process, but reproducing it requires technical expertise and specific software setups.
+
+## What you can use it for
+*   **Assess AI text authenticity**: Understand how robust AI watermarking is against AI-powered text manipulation.
+*   **Compare LLM rewriting capabilities**: Evaluate how well different local AI models can alter text while preserving meaning.
+*   **Inform AI policy development**: Provide data on the effectiveness of watermarking in identifying AI-generated content.
+*   **Explore AI detection methods**: Learn about techniques like SynthID and Bayesian detectors for identifying AI-generated text.
+
+## Tools you need
+*   **SynthID** (paid): Google DeepMind's technology for watermarking AI-generated text.
+*   **Qwen/Qwen3-4B-Instruct-2507** (free): A specific local AI language model used for rewriting text.
+*   **Hugging Face transformers** (free): A library that provides tools and pre-trained models for natural language processing, including SynthID implementation.
+*   **Ollama** (free): A tool that makes it easy to run large language models locally on your computer.
+
+## How it actually works
+1.  **Set up a watermarking writer**: Use a local AI model (like Qwen/Qwen3-4B-Instruct-2507) configured with SynthID settings (e.g., number of keys, n-gram length, temperature) to generate 100 watermarked texts.
+2.  **Train a detector**: Follow a recipe from the Hugging Face transformers library to train a detector model. This involves using both watermarked and clean text examples. The detector learns to distinguish between them.
+3.  **Prepare test texts**: Create a diverse set of 100 topics across different genres (news, fiction, etc.), ensuring each topic is written both with and without the SynthID watermark by the watermarking model.
+4.  **Rewrite texts**: Use local AI models through Ollama (e.g., qwen3:4b-instruct) with a prompt like "rewrite this in your own words" to process the 100 watermarked texts.
+5.  **Test for watermarks**: Use the trained detector to analyze the rewritten texts and determine how many still show signs of being watermarked. The author also used a simpler "mean test" by checking the average "g-value" (a score indicating how often preferred tokens were used) against a threshold.
+6.  **Analyze results**: Compare the detection rates across different rewriting models and assess if rewriting a second time improves watermark removal (the author found it did not).
+
+## Words you'll see, explained
+*   **SynthID-Text**: A specific technology from Google DeepMind used to embed a hidden watermark into AI-generated text.
+*   **Local LLM**: A large language model that can be run on your own computer, rather than accessed through a website or cloud service.
+*   **Hugging Face transformers**: A popular open-source library that provides tools and pre-trained AI models for various natural language processing tasks.
+*   **Ollama**: A tool that simplifies the process of downloading and running large language models on your local machine.
+*   **Logits processor**: A component within an AI model that influences the selection of the next word or token during text generation.
+*   **g-value**: A score calculated by SynthID that indicates how often the model chose "preferred" tokens, which is higher in watermarked text.
+*   **Bayesian detector**: A type of AI model trained to classify text as either watermarked or clean based on patterns it learns.
+*   **Z-score**: A statistical measure used in the "mean test" to determine how far the average g-value of a text is from the expected value for clean text.
+*   **VRAM**: Video Random Access Memory, the memory used by a computer's graphics card (GPU), which is crucial for running large AI models.
+
+## Original source
+This workflow is based on an experiment described by vadim_albarov on the DEV Community platform. The author tested the effectiveness of local AI models in removing SynthID watermarks from AI-generated text, comparing detection rates using different models and methods.
+
+## Notes & variations
+*   **Do you even need this?**: For most users, simply understanding that AI watermarking exists and can be detected is sufficient. This experiment is for researchers or developers interested in the technical limitations of current watermarking and detection methods.
+*   **Free-tier limits**: While the models and tools mentioned (Qwen, Hugging Face transformers, Ollama) are free to use, the primary limitation is the need for powerful hardware, specifically a GPU with significant VRAM (16GB recommended), which is not typically available on basic computers or mobile devices.
+*   **Common pitfall**: Rewriting text multiple times does not necessarily improve watermark removal. The author found that a second rewrite did not significantly help in making the text undetectable by the watermark-text undetectable by the watermark-text undetectable by the watermark-text undetectable by the watermark-text undetectable by the watermark-text undetectable by the watermark-text undetectable by the watermark-text undetectable by the watermark-text undetectable by the watermark-text undetectable by the watermark-text undetectable by the watermark-text undetectable by the watermark-text undetectable by the watermark----text undetectable by the watermark---------------------------------------------------------------------text undetectable.

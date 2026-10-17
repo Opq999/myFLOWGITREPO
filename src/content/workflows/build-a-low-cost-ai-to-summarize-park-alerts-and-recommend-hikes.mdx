@@ -1,0 +1,94 @@
+---
+title: "Build a low-cost AI to summarize park alerts and recommend hikes"
+description: "This workflow is designed for very low cost ($1.60 setup, $0.13/1000 alerts for ongoing use) and minimal data. However, setting up the technical infrastructure may require paid cloud services."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 60
+jobToBeDone: "Build a low-cost AI system to summarize park alerts and provide hike recommendations"
+tools:
+  - name: "Qwen3.5-397B (Large Language Model API)"
+    url: "https://www.alibabacloud.com/product/machine-learning/pai"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Tinker (Custom Fine-tuning Framework)"
+    url: "https://github.com/SoumyaEXE/trailtruth"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Qwen3.5-4B (Fine-tuned Language Model)"
+    url: "https://www.alibabacloud.com/product/machine-learning/pai"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Temporal (Workflow Orchestration Platform)"
+    url: "https://temporal.io/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "National Park Service API"
+    url: "https://developer.nps.gov/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/soumyadeepdey/i-distilled-a-397b-model-into-a-4b-one-for-160-it-now-catches-28-of-33-park-alerts-that-should-bic"
+  platform: "blog"
+  author: "soumyadeepdey"
+  postedAt: 2026-10-10
+score: 8
+ingestedAt: 2026-10-17
+nigeriaNotes: "This workflow is designed for very low cost ($1.60 setup, $0.13/1000 alerts for ongoing use) and minimal data. However, setting up the technical infrastructure may require paid cloud services."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+
+This workflow shows how to build a smart system that automatically reads many park alerts and tells you if a hiking trail is safe to use (GO, CAUTION, or NO-GO). It does this by using a technique called "model distillation."
+
+Model distillation is like teaching a smaller, faster student model by showing it what a much larger, more powerful teacher model has learned. The teacher model first reads and labels a lot of information. Then, the student model is "fine-tuned" (trained further) on these labels, learning to do the same job but using fewer resources. This makes the system much cheaper to run and more efficient.
+
+This specific workflow is advanced because it involves using developer tools, working with code, and setting up complex systems like a workflow engine (Temporal) and a fine-tuning platform. It's not a simple copy-paste recipe, as the exact instructions and code live within a specific project repository and require technical skills to implement.
+
+## What you can use it for
+
+*   **Get automated safety alerts**: Automatically check official sources for safety warnings about places you care about, like national parks or local trails.
+*   **Summarize complex information**: Turn long, detailed text (like government alerts or news feeds) into short, actionable summaries.
+*   **Build low-cost AI assistants**: Create specialized AI tools that perform specific tasks very cheaply after an initial setup, by using smaller, fine-tuned models.
+*   **Automate decision-making**: Set up systems that make simple, clear decisions (like GO/NO-GO) based on incoming data, running on a schedule.
+
+## Tools you need
+
+*   **Qwen3.5-397B (Large Language Model API)** (paid): A powerful AI model used here as a "teacher" to label raw data.
+*   **Tinker (Custom Fine-tuning Framework)** (free): The author's custom code and framework used to fine-tune the smaller Qwen model. The code is open-source.
+*   **Qwen3.5-4B (Fine-tuned Language Model)** (paid): A smaller AI model, fine-tuned to perform the specific task of summarizing alerts and making recommendations. It incurs costs for running its predictions.
+*   **Temporal (Workflow Orchestration Platform)** (freemium): An open-source platform used to schedule and manage the weekly process of checking alerts and generating recommendations.
+*   **National Park Service API** (free): The official source for public data, used to fetch live park alerts.
+
+## How it actually works
+
+This workflow involves several technical steps, primarily implemented through code available in the author's open-source repository. It's not a direct copy-paste process for beginners, but here's the general path:
+
+1.  **Collect data**: The system uses the National Park Service API (`developer.nps.gov`) to gather live park alerts. This data is public government text.
+2.  **Label data with a "teacher" model**: A large language model (Qwen3.5-397B) is used to read and label these alerts. This means the large model processes each alert and assigns it a category or a GO/CAUTION/NO-GO recommendation, acting as an expert. The author paid $0.95 for this labeling step.
+3.  **Fine-tune a "student" model**: A smaller language model (Qwen3.5-4B) is then trained using the labels created by the larger model. This process, called LoRA fine-tuning, teaches the smaller model to mimic the larger model's decisions but more efficiently. The author used a custom framework called "Tinker" for this, which cost $0.41 for training.
+4.  **Evaluate the student model**: The fine-tuned smaller model is tested against a set of alerts it hasn't seen before, using the rangers' own categories as the correct answers. This step cost $0.25. The author found the fine-tuned 4B model improved significantly in catching critical alerts.
+5.  **Deploy and schedule the workflow**: The final, fine-tuned Qwen3.5-4B model is integrated into a "Temporal workflow." This workflow is set to run automatically once a week, fetching new alerts, processing them with the fine-tuned model, and generating a simple "trail card" (GO/CAUTION/NO-GO) for the parks you care about. The ongoing cost for running the student model is about $0.13 per 1,000 alerts.
+
+All the code, data splits, predictions, evaluation scripts, and the path to the trained model adapter are openly available in the author's GitHub repository: `SoumyaEXE/trailtruth`. To reproduce this, you would need to clone this repository, set up the necessary API keys (for the LLMs and NPS), and configure the Temporal workflow environment.
+
+## Words you'll see, explained
+
+*   **API (Application Programming Interface)**: A set of rules and tools that allows different software applications to communicate with each other. In this case, it's how the system gets alerts from the National Park Service or uses a large language model.
+*   **Fine-tuning**: The process of taking a pre-trained AI model and training it further on a smaller, specific dataset to make it better at a particular task.
+*   **Language Model (LLM)**: An AI program trained on vast amounts of text data to understand, generate, and respond to human language.
+*   **LoRA (Low-Rank Adaptation)**: A specific, efficient technique for fine-tuning large language models without needing to retrain the entire model, saving computational resources.
+*   **Model Distillation**: A technique where a smaller, simpler "student" model is trained to reproduce the behavior of a larger, more complex "teacher" model. This results in a more efficient model that can perform similar tasks.
+*   **Temporal**: An open-source platform for building and operating reliable, scalable, and durable applications and workflows. It helps schedule and manage long-running processes, like checking alerts weekly.
+
+## Original source
+
+This concept was developed by Soumyadeep Dey and shared on the DEV Community blog. The author demonstrated how to distill a large language model into a much smaller, more efficient one to process National Park Service alerts and provide actionable hiking recommendations at a very low cost.
+
+## Notes & variations
+
+*   **Do you even need this?** For simple, one-off alert checks, you might not need a full AI system. You could manually check the `developer.nps.gov` website or use a general-purpose AI chatbot (like ChatGPT, Claude, or Gemini) to summarize alerts by pasting them in. However, for automated, regular checks across many parks, this specialized, low-cost AI system is much more efficient.
+*   **Free-tier limits**: While the National Park Service API is free, using large language model APIs for labeling or inference often incurs costs, even if small. Fine-tuning platforms typically do not offer extensive free tiers for training. Temporal has an open-source core, but deploying and managing it in a production environment usually involves cloud hosting costs.
+*   **Common pitfall**: Relying solely on a base language model for critical decisions without fine-tuning. The author found that a base model, even with a long prompt, missed many critical "no-go" alerts. Fine-tuning on specific, labeled data significantly improves accuracy for specialized tasks like safety recommendations.

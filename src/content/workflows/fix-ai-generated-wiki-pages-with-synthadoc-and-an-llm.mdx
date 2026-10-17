@@ -1,0 +1,72 @@
+---
+title: "Fix AI-Generated Wiki Pages with Synthadoc and an LLM"
+description: "Learn how to use an LLM to identify and fix structural problems in AI-generated wiki pages, preventing duplicate content and improving clarity."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 15
+jobToBeDone: "Fix structural problems in AI-generated wiki pages using an LLM"
+tools:
+  - name: "Synthadoc"
+    url: "https://github.com/synthadocs/synthdoc"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "LLM"
+    url: "https://gemini.google.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/paul_chen_90371fe7426cb44/harnessing-the-nondeterministic-machine-practical-lessons-in-agentic-ai-hardening-8bo"
+  platform: "blog"
+  author: "paul_chen_90371fe7426cb44"
+  postedAt: 2026-10-16
+score: 7
+ingestedAt: 2026-10-17
+nigeriaNotes: "Synthadoc is open-source and can be run locally. Using a free tier of an LLM like Gemini will consume a small amount of data. Ensure you have a stable internet connection for the LLM interaction."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to use a Large Language Model (LLM) to identify and fix structural issues in wiki pages that were created by AI. This process helps prevent problems like duplicate headings or sections that are too short, ensuring your wiki content is clear and well-organized.
+
+This approach works because LLMs can understand the context and structure of text, allowing them to propose relevant edits to improve content health.
+
+## Tools you need
+*   **Synthadoc** (free): An open-source tool to help manage AI-generated wiki content.
+*   **LLM** (freemium): A Large Language Model, like Google Gemini, used for understanding and rewriting text. You can use the free version available on their website.
+
+## Steps
+1.  **Understand the problem**: The core issue is that AI can sometimes create wiki pages with structural flaws, such as repeating the same information under different headings or having headings without enough content. The goal is to use an LLM to find and fix these issues.
+2.  **Prepare your wiki page content**: You need the text of the wiki page you want to check. Copy the entire content of the page.
+3.  **Prompt the LLM to identify issues**: Use your chosen LLM (like Gemini) and provide it with the wiki page content. Ask it to find structural problems. The author of the original post used a heuristic scanner first, but for simplicity here, we'll ask the LLM directly. A starting prompt could be:
+
+    ```
+    Please review the following wiki page content and identify any structural problems. Look for issues such as duplicate headings, sections with very little content, or headings that do not seem to have relevant text below them. List the problems you find.
+
+    [Paste your wiki page content here]
+    ```
+
+    You should receive a list of identified structural issues from the LLM.
+4.  **Prompt the LLM to fix the issues**: Once you have the list of problems, provide the LLM with the original content again, along with the list of issues. Ask it to rewrite the page to fix these specific problems. Be clear that you want structural fixes, not a complete rewrite of the content's meaning. The author found that simply asking to "fix" could lead to unwanted rewrites. A more specific prompt is needed. A starting prompt could be:
+
+    ```
+    Here is a wiki page that needs structural improvements. The identified issues are:
+
+    [Paste the list of issues from the previous step here]
+
+    Please revise the following wiki page content to address these specific structural problems. Ensure that the core meaning and facts of the page are preserved. Present the revised content.
+
+    [Paste your wiki page content here again]
+    ```
+
+    You should receive a revised version of your wiki page content. Compare this new version carefully with the original to ensure the fixes are appropriate and that no important information has been lost or changed unintentionally.
+5.  **Review and approve the changes**: Carefully read the LLM's proposed changes. Check if the duplicate sections are removed, thin sections are merged or expanded, and headings are logically placed. Ensure the content still makes sense and retains its original intent. This step is crucial because LLMs can sometimes misunderstand instructions or make unintended changes.
+
+## Original source
+This workflow is inspired by lessons learned from the Synthadoc project, an open-source AI-native wiki engine. The author, Paul Chen, shared insights on how AI agents can sometimes misinterpret instructions, leading to unexpected results when trying to maintain content quality. The original post discusses practical challenges faced when using LLMs for automated content repair.
+
+## Notes & variations
+*   **Free-tier alternative**: If you find the free tier of your chosen LLM is not powerful enough, you might explore other free or low-cost LLM options available online, keeping data privacy in mind.
+*   **Common mistake**: A common pitfall is using a vague prompt like "fix the page." This can cause the LLM to rewrite the entire page based on its general knowledge, rather than addressing the specific structural issues you identified. Always be specific about the problems and the desired outcome.
+*   **Tip for better results**: Before asking the LLM to fix issues, you can first ask it to summarize the page or list its main headings. This helps you understand the current structure and better evaluate the proposed fixes.

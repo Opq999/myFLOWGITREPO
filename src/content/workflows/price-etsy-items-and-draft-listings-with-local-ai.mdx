@@ -1,0 +1,114 @@
+---
+title: "Price Etsy Items and Draft Listings with Local AI"
+description: "Learn to use a local AI model to price your Etsy shop items and draft compelling listings, keeping your data private."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 60
+jobToBeDone: "Price Etsy shop items and draft listings using a local AI model"
+tools:
+  - name: "TabPFN-v2"
+    url: "https://github.com/tabpfn/tabpfn"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Gemma 3"
+    url: "https://gemini.google.com/app"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "PricePilot"
+    url: "https://github.com/simplynadaf/pricepilot"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/sarvar_04/i-built-an-open-weight-ai-that-prices-etsy-shops-on-your-laptop-24dk"
+  platform: "blog"
+  author: "sarvar_04"
+  postedAt: 2026-10-15
+score: 8
+ingestedAt: 2026-10-17
+nigeriaNotes: "This workflow runs entirely offline on your laptop, making it ideal for users with limited or expensive data. The primary AI models are free to use locally. The main data usage would be during the initial download of the tools and any subsequent updates."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will set up a local AI tool called PricePilot that helps you price your Etsy shop items and draft listing descriptions. This tool runs entirely on your computer, meaning your sales data stays private and there are no monthly fees. It's useful for any online seller who wants to price items accurately and create effective listings without relying on external services.
+
+## Tools you need
+*   **TabPFN-v2** (free): A machine learning model used here to predict the selling price of an item based on its characteristics.
+*   **Gemma 3** (freemium): A large language model used to write compelling product titles, descriptions, and tags for your listings.
+*   **PricePilot** (free): The main application that brings TabPFN-v2 and Gemma 3 together to price items and draft listings.
+*   **Python** (free): A programming language needed to run the PricePilot application.
+*   **Git** (free): A tool to download the PricePilot code from its online repository.
+
+## Steps
+1.  **Install Git**: If you don't have Git installed, download and install it from the official Git website. This tool helps you download code from online sources.
+    *   Go to [https://git-scm.com/downloads](https://git-scm.com/downloads).
+    *   Download the installer for your operating system (Windows, macOS, or Linux).
+    *   Run the installer and follow the on-screen instructions. You can generally accept the default settings.
+    *   You should see a confirmation message or be able to open a Git command line tool.
+
+2.  **Install Python**: If you don't have Python installed, download and install it from the official Python website. Make sure to check the box that says "Add Python to PATH" during installation.
+    *   Go to [https://www.python.org/downloads/](https://www.python.org/downloads/).
+    *   Download the latest stable version for your operating system.
+    *   Run the installer. **Crucially, check the box that says "Add Python to PATH"** before clicking "Install Now". This makes Python easily accessible from your command line.
+    *   After installation, open a new command prompt or terminal and type `python --version`. You should see the Python version number printed.
+
+3.  **Clone the PricePilot repository**: Use Git to download the PricePilot code onto your computer.
+    *   Open your command prompt or terminal.
+    *   Navigate to a folder where you want to save the project (e.g., `cd Documents`).
+    *   Run the following command:
+
+    ```bash
+    git clone https://github.com/simplynadaf/pricepilot.git
+    ```
+
+    *   You should see messages indicating that the files are being downloaded. A new folder named `pricepilot` will appear in your chosen location.
+
+4.  **Navigate to the PricePilot directory**: Change your command prompt or terminal's current location to the newly downloaded PricePilot folder.
+    *   In your command prompt or terminal, run:
+
+    ```bash
+    cd pricepilot
+    ```
+
+    *   Your command prompt should now show that you are inside the `pricepilot` directory.
+
+5.  **Install required Python packages**: Use Python's package manager, pip, to install the libraries PricePilot needs to run.
+    *   In your command prompt or terminal (while still inside the `pricepilot` directory), run:
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+    *   You will see a list of packages being downloaded and installed. This might take a few minutes.
+
+6.  **Run PricePilot**: Execute the main Python script to start the application.
+    *   In your command prompt or terminal (still in the `pricepilot` directory), run:
+
+    ```bash
+    python run.py
+    ```
+
+    *   The application will start. It might take a moment to load the AI models. You should see output indicating the application is running, and potentially a local web address (like `http://127.0.0.1:5000`) that you can open in your web browser.
+
+7.  **Use PricePilot in your browser**: Open the provided web address in your browser to access the PricePilot interface.
+    *   Copy the local web address (e.g., `http://127.0.0.1:5000`) that appeared after running `python run.py`.
+    *   Paste this address into your web browser's address bar and press Enter.
+    *   You should see the PricePilot interface, where you can enter details about your item (like category, materials, size, photos, season) to get a price estimate and a drafted listing.
+
+8.  **Enter item details**: Fill in the form with information about the product you want to price and list.
+    *   The form will ask for details such as category, materials, size, hours to make, condition, number of photos, and the season.
+    *   Provide as much accurate information as possible.
+
+9.  **Get your price and listing**: PricePilot will process your input and provide a suggested price range and a draft for your item's title, description, and tags.
+    *   You will see a predicted selling price, a confidence range, and suggestions for how to improve the price (e.g., "offer personalization, about +$5").
+    *   A complete listing draft, including title, description, and search tags, will also be generated for you to review and use.
+
+## Original source
+This workflow is based on a project by sarvar_04, shared on DEV Community as part of the Hacktoberfest Open-Source AI Challenge. The author built "PricePilot" to help small sellers price their items accurately and create listings using AI models that run entirely on a user's laptop, ensuring data privacy and avoiding subscription fees.
+
+## Notes & variations
+*   **Free Tier Viability**: All core tools (TabPFN-v2, Gemma 3 via local setup, PricePilot) are free to use. Gemma 3 itself has a freemium web interface, but running it locally with tools like Ollama or LM Studio (which would be needed for full offline Gemma 3 use in this context) makes it free.
+*   **Common Pitfall**: Ensure Python is added to your system's PATH during installation. If it's not, commands like `pip` and `python` might not be recognized in the terminal, preventing you from installing the necessary packages or running the script.
+*   **Tip for Better Results**: The quality of the price prediction and listing draft heavily depends on the detail you provide in the input form. Be as specific and accurate as possible about your item's attributes, materials, and creation process to get the most relevant suggestions.
