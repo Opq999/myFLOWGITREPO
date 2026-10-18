@@ -1,0 +1,64 @@
+---
+title: "Build a Web-Based LaTeX Renderer with AI Prompts"
+description: "Learn how AI prompts can guide a code-generating model to build a web application that renders LaTeX directly from a URL fragment. Ideal for custom tools."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 30
+jobToBeDone: "Build a web-based LaTeX renderer using AI prompts"
+tools:
+  - name: "Claude Code"
+    url: "https://www.anthropic.com/product/claude-code"
+    pricing: "paid"
+    affiliateUrl: ""
+source:
+  url: "https://simonwillison.net/2026/Oct/15/latex/"
+  platform: "blog"
+  author: "Simon Willison"
+  postedAt: 2026-10-15
+score: 6
+ingestedAt: 2026-10-18
+tiktokUrl: ""
+published: false
+---
+
+## What this is, in plain English
+This entry describes how an advanced AI, specifically a code-generating model like Claude Code, can be used to build a custom web application. Instead of using an existing tool, you ask the AI to create one for you based on your detailed instructions. This is an advanced concept because it involves generating code and then deploying that code to make a working website, which requires technical skills.
+
+The specific goal here is to create a web-based LaTeX renderer. LaTeX is a document preparation system often used for scientific papers and complex math. The idea is to build a tool where you can share a link, and the LaTeX code embedded in the link's address (after the `#` symbol, called a fragment hash) is automatically displayed as a rendered document.
+
+There is no simple copy-paste recipe for this workflow because the exact instructions live within the AI's code generation process, and the resulting web application code would need to be set up and hosted on a web server. The author provides the prompt used to ask the AI to build this tool, but not the generated code or the steps to deploy it.
+
+## What you can use it for
+*   **Generate web tools**: Use AI to create custom web applications based on your descriptions, rather than building them from scratch.
+*   **Rapid prototyping**: Quickly get a working version of a web app idea to test its features and functionality.
+*   **Learn web development**: See how an AI constructs a web application from a high-level request, which can be a learning aid for understanding web technologies.
+*   **Create shareable content**: Build tools that allow users to share content, like LaTeX documents, via simple, bookmarkable URLs.
+
+## Tools you need
+*   **Claude Code** (paid): An AI assistant designed to help developers write, debug, and understand code.
+
+## How it actually works
+To build a web-based LaTeX renderer using AI, you would provide a detailed prompt to a code-generating AI like Claude Code. The AI would then generate the necessary web code (HTML, CSS, and JavaScript) to create the application. The author's prompt described the desired features, such as rendering LaTeX from a URL fragment, supporting compression, and including an editor view.
+
+Once the AI generates the code, you would need to set up a web development environment and deploy the code to a web server or hosting service for it to become a live, usable web application. The author doesn't share the exact generated code or the specific deployment steps, as these would depend on the AI's output and your chosen hosting method. The prompt used by the author was:
+
+```
+I want a tool where you can link to it with a fragment hash #code-here and it treats that code as LaTeX and renders it really effectively. It should also support a prefix which means the latex is compressed with a custom compression dictionary optimized for latex. Use the best available latex render library from a CDN (consider WebAssembly too). If loaded without a fragment hash show an editor you can paste latex into and then toggle to a "rendered" view. That rendered view should be bookmarkable. The #fragment view should let you switch to edit source too.
+```
+
+## Words you'll see, explained
+*   **LaTeX**: A document preparation system widely used for scientific papers, technical documents, and complex mathematical formulas.
+*   **Fragment hash (#)**: The part of a web address (URL) that comes after a hash symbol, often used to link to a specific section within a web page or, in this case, to pass data to the web application.
+*   **CDN (Content Delivery Network)**: A network of servers distributed globally that delivers web content, such as libraries and assets, quickly to users based on their geographical location.
+*   **WebAssembly**: A technology that allows code written in languages like C++ or Rust to run very fast directly within web browsers, improving performance for complex web applications.
+*   **Repo (Repository)**: A storage location for code, typically managed with version control systems like Git, where developers can track changes and collaborate.
+*   **iframe sandbox**: A security feature in web browsers that allows embedding content from other sources (like another web page) within a restricted environment, limiting what the embedded content can do.
+
+## Original source
+This concept was inspired by Simon Willison, who documented his process of having Claude Code build a LaTeX renderer. He was motivated by the web application Tiny Little Office, which cleverly stores document data within the URL's fragment hash.
+
+## Notes & variations
+*   **Do you even need this?**: If your goal is simply to render LaTeX, many free online tools exist, such as Overleaf, ShareLaTeX, or CodeCogs LaTeX Equation Editor. This workflow is for those who specifically want to *build their own* custom LaTeX renderer using AI.
+*   **Free-tier limits**: Claude Code is a paid developer service. While other code-generating AIs might offer free tiers (e.g., the Gemini API), the quality and complexity of the generated web application code can vary significantly, and extensive debugging or further development might still be required.
+*   **Common pitfall**: Expecting a fully functional, production-ready web application from a single AI prompt. AI-generated code often serves as a strong starting point but typically requires human review, debugging, security considerations, and further development to meet specific project needs.
