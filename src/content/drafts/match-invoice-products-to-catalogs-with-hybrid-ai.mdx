@@ -1,0 +1,78 @@
+---
+title: "Match Invoice Products to Catalogs with Hybrid AI"
+description: "Learn how to accurately match product names and codes from supplier invoices to your client's catalog using a combination of rule-based logic and AI for efficiency."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 180
+jobToBeDone: "Match products on supplier invoices to a client's catalog using a hybrid approach"
+tools:
+  - name: "Python"
+    url: "https://www.python.org"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Google Cloud Vision API"
+    url: "https://cloud.google.com/vision"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "OpenAI API"
+    url: "https://platform.openai.com"
+    pricing: "paid"
+    affiliateUrl: ""
+source:
+  url: "https://www.reddit.com/r/automation/comments/1wq2isj/to_ai_or_not_to_ai_the_question_is_what_to_ai_and/"
+  platform: "reddit"
+  author: "/u/tototoru"
+  postedAt: 2026-09-25
+score: 5
+ingestedAt: 2026-10-19
+nigeriaNotes: "This workflow requires significant technical skill and custom programming. The AI components (like OpenAI API or Google Cloud Vision API) are paid services, which can incur costs based on usage. For very small catalogs, a simpler, purely AI-based approach might be cheaper initially, but this hybrid method is designed for cost-efficiency at scale."
+tiktokUrl: ""
+published: false
+---
+
+## What this is, in plain English
+This workflow describes a smart way to automatically match product names and codes from supplier invoices to your own official product list (catalog). Suppliers often use different names or codes for the same products, which makes it hard to keep track of inventory and finances. This method combines fast, rule-based checks with AI to handle these differences efficiently.
+
+It's an advanced approach because it involves designing and building a custom software system. It uses several complex text-matching techniques and requires programming skills to set up. There isn't a simple copy-paste recipe because the exact instructions depend on your specific product catalog, invoice formats, and programming environment.
+
+## What you can use it for
+*   **Automate invoice processing**: Automatically link products on incoming invoices to your internal catalog, saving time and reducing manual effort.
+*   **Improve inventory management**: Ensure your stock records are accurate by correctly identifying products from suppliers.
+*   **Reduce data entry errors**: Minimize mistakes that happen when people manually try to match product names and codes.
+*   **Ensure accurate financial records**: Get a clearer picture of your purchases by standardizing product data from invoices.
+*   **Scale operations**: Handle a large volume of invoices efficiently without burning excessive AI processing costs.
+
+## Tools you need
+*   **Python** (free): A popular programming language used to build the custom logic for matching and scoring.
+*   **Google Cloud Vision API** (paid): A service that uses AI to extract text from images, useful for converting scanned invoices into digital text.
+*   **OpenAI API** (paid): A service that provides access to powerful AI models, used here for handling complex, low-confidence product matches.
+
+## How it actually works
+This workflow is a system design that you would implement using programming. The goal is to process most invoice lines with fast, deterministic rules before involving more expensive AI models.
+
+1.  **Extract text from invoices**: First, you need to get the text from your supplier invoices. This usually involves using an OCR (Optical Character Recognition) tool to convert scanned images or PDFs into digital text.
+2.  **Attempt barcode matching**: For each product line on the invoice, check if a barcode is present. Try to find an exact match for this barcode in your product catalog. If found, this is a high-confidence match.
+3.  **Attempt SKU matching**: If a barcode match fails, look for the SKU (Stock Keeping Unit) on the invoice line. First, try an exact match with your catalog SKUs. If that fails, try matching after removing any common suffixes from the invoice SKU.
+4.  **Tidy product names**: If barcode and SKU matching fail, prepare the product name from the invoice for better matching. This involves fixing common scanning errors (e.g., '1' read as 'I', '0' read as 'O') and standardizing units (e.g., changing "50 ml" to "50ml").
+5.  **Rank potential matches**: Using the tidied product name, compare it against your catalog. The author uses algorithms like BM25 (Best Match 25) for initial ranking and Levenshtein distance (which measures how different two words are) to give a second chance to words that don't match exactly.
+6.  **Filter and score candidates**: Apply strict rules to filter the ranked candidates. For example, a product is ruled out if its size (e.g., "50ml") or pack count doesn't agree with the catalog. The brand must also match. A match is only accepted if one product is clearly much better than others.
+7.  **Deterministic matching**: The steps above (barcode, SKU, name tidying, ranking, filtering) are all "deterministic," meaning they follow fixed rules and give the same answer every time. This process aims to match about 90% of invoice lines quickly and cheaply.
+8.  **Send low-confidence matches to AI**: Only the product lines that could not be matched with high confidence by the deterministic rules are sent to an AI model. The author mentions using a "small model" for this, but doesn't share the exact prompt or model details. This step uses AI as a last resort to save on processing costs.
+
+## Words you'll see, explained
+*   **OCR (Optical Character Recognition)**: Technology that converts images of text (like scanned documents) into editable and searchable digital text.
+*   **SKU (Stock Keeping Unit)**: A unique code or number used by a retailer to identify each product in its inventory.
+*   **BM25 (Best Match 25)**: A ranking function used by search engines to estimate the relevance of documents to a given search query.
+*   **Levenshtein distance**: A measure of the difference between two sequences (like words), calculated as the minimum number of single-character edits (insertions, deletions, or substitutions) required to change one word into the other.
+*   **Deterministic scoring**: A method of scoring or matching that uses fixed rules and always produces the same output for the same input, without any randomness or AI involvement.
+*   **Large-context models**: AI models that can process and understand very long pieces of text at once, useful for sending entire catalogs.
+*   **Tokens**: The basic units of text that AI models process. They can be whole words, parts of words, or punctuation marks. AI model usage is often billed by the number of tokens processed.
+
+## Original source
+This workflow was shared by Reddit user /u/tototoru on September 25, 2026. They described their experience building a system for an OCR project where product names on supplier invoices needed to be matched against a client's product catalog.
+
+## Notes & variations
+*   **Do you even need this?**: For very small product catalogs (under 5,000 items, as mentioned by the author), you might initially get away with sending the entire catalog to a large AI model with each invoice line. This is simpler to set up but can become very expensive in terms of "tokens" (AI processing cost) as your number of invoices grows. This hybrid approach is designed to be more cost-effective at scale.
+*   **Free-tier limits**: While Python is free, services like Google Cloud Vision API and OpenAI API are paid. They often offer a small free tier for testing, but real-world usage for many invoices will incur costs. Consider the Gemini API (from Google) which offers a more generous free tier for some models, as an alternative for the AI step.
+*   **Common pitfall**: Over-relying on AI for simple, exact matches. This can quickly lead to high costs. The strength of this workflow is using fast, rule-based logic for the majority of matches, reserving AI for only the truly difficult cases.
