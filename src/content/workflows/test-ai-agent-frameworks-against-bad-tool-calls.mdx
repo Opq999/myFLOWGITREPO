@@ -1,0 +1,97 @@
+---
+title: "Test AI Agent Frameworks Against Bad Tool Calls"
+description: "Learn how AI agent frameworks handle errors like malformed JSON or missing arguments when tools fail. Understand framework resilience."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 30
+jobToBeDone: "Evaluate the resilience of AI agent frameworks to malformed tool calls"
+tools:
+  - name: "pydantic-ai"
+    url: "https://github.com/pydantic-ai/pydantic-ai"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Microsoft AF"
+    url: "https://github.com/microsoft/autogen"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "LangGraph"
+    url: "https://langchain.com/langgraph"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "OpenAI Agents"
+    url: "https://github.com/openai/openai-python"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Google ADK"
+    url: "https://github.com/google/generative-ai-python"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "SmolAgents"
+    url: "https://github.com/smol-ai/smol-agents"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/code-with-rashid/eight-broken-tool-calls-how-six-agent-frameworks-recover-9k1"
+  platform: "blog"
+  author: "code-with-rashid"
+  postedAt: 2026-10-05
+score: 7
+ingestedAt: 2026-10-21
+nigeriaNotes: "These tools are primarily Python libraries. Running them locally requires Python installation. Data usage is minimal, mostly for model interactions if using cloud-based models. Free tiers are available for most libraries, but API calls to models like OpenAI's will incur costs."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+This entry is about testing how well different AI agent frameworks can handle errors when they try to use external tools. Imagine an AI agent as a smart assistant that can perform tasks. To do this, it often needs to use 'tools' – like a calculator, a search engine, or a calendar. Sometimes, the AI might try to use a tool incorrectly, for example, by sending it the wrong kind of information (like text when it expects numbers) or asking for a tool that doesn't exist. This entry looks at how six different AI frameworks (like LangGraph, OpenAI Agents, and others) deal with these mistakes. It's not a simple step-by-step guide because the exact way to run these tests involves setting up a specific testing environment and running Python code, which can change as the tools are updated. The original author created a 'resilience arena' to measure this.
+
+This is an advanced topic because it requires setting up a Python development environment and running code. The exact steps to reproduce the tests are found within the author's code repository, which is the most accurate source of truth. This entry explains the concept and the results, rather than providing a direct copy-paste recipe.
+
+## What you can use it for
+*   **Understand AI error handling**: See how different AI systems cope when they make mistakes calling external tools.
+*   **Choose a robust framework**: If you are building an AI agent, learn which frameworks are better at recovering from errors, saving you time and processing costs.
+*   **Debug AI applications**: Identify potential failure points in your own AI agent projects by seeing common errors and how they are handled.
+*   **Compare framework performance**: Get a clear, data-driven comparison of how well various agent frameworks perform under specific error conditions.
+
+## Tools you need
+*   **Python** (free): A popular programming language used for building AI applications. You'll need to install it on your computer.
+*   **pydantic-ai** (free): A Python library that helps define and validate data structures, often used in AI projects.
+*   **Microsoft AF** (free): Refers to Microsoft's Autogen framework, a toolkit for developing LLM applications.
+*   **LangGraph** (free): A library for building stateful, multi-agent applications with LangChain.
+*   **OpenAI Agents** (paid): A Python library from OpenAI for interacting with their models, which can be used to build agents. Requires an API key and payment for usage.
+*   **Google ADK** (free): Refers to Google's Generative AI SDK for Python, used to interact with Google's AI models.
+*   **SmolAgents** (free): An open-source project focused on building AI agents.
+
+## How it actually works
+To reproduce these tests, you would typically follow these steps:
+1.  **Set up your Python environment**: Ensure you have Python installed and create a virtual environment for the project.
+2.  **Clone the repository**: Download the code from the original author's GitHub repository.
+3.  **Install dependencies**: Use pip to install all the required Python libraries listed in the repository's requirements file.
+4.  **Run the resilience test**: Execute the provided Python script with specific arguments to run the tests. The author provides an example command:
+
+```bash
+python -m arena run --arena resilience --framework all --mode mock --no-scorecard
+```
+
+5.  **Analyze the results**: The script will output results showing how each framework handled eight different types of broken tool calls. The original source provides a link to the full findings.
+
+*Note: The exact commands and setup might vary slightly depending on updates to the repository. Always refer to the official repository for the most current instructions.*
+
+## Words you'll see, explained
+*   **Agent Framework**: A set of tools and libraries that help developers build AI applications that can perform tasks autonomously.
+*   **Tool Call**: When an AI agent tries to use an external function or service to get information or perform an action.
+*   **Malformed JSON**: Data that is supposed to be in a specific format (like a list or a set of key-value pairs) but is written incorrectly, so the computer cannot understand it.
+*   **Resilience**: The ability of a system, in this case, an AI framework, to withstand or recover from errors or unexpected situations.
+*   **Mock Behavior**: Testing an AI system using simulated or fake inputs and outputs, rather than real-world data, to isolate specific behaviors.
+*   **LLM Calls**: Refers to the number of times the AI model itself needs to be consulted during the process.
+*   **Transcript**: The record of the conversation or interaction between the AI model and the tools it uses.
+*   **Validation Layer**: A part of the framework that checks if the data or requests being sent are correct before they are processed further.
+
+## Original source
+This analysis was performed by code-with-rashid and published on DEV Community. It explores the robustness of various AI agent frameworks when faced with common errors in tool usage, providing a comparative look at their error-handling capabilities.
+
+## Notes & variations
+*   **Do you even need this?**: If you are just starting with AI agents and not deeply concerned about error handling under specific failure conditions, simpler frameworks or direct API calls might be sufficient. This is for advanced users or those building critical systems.
+*   **Free tier limits**: While the Python libraries themselves are often free, using AI models like those from OpenAI will incur costs based on usage. Ensure you manage your API keys and monitor your spending.
+*   **Common pitfall**: A major pitfall highlighted is when a framework's internal validation layer silently rejects a bad tool call without informing the AI model. This can lead to the model repeatedly sending the same incorrect call, wasting resources until its processing budget runs out, without ever learning from the correctinng the mistake.

@@ -1,0 +1,106 @@
+---
+title: "Prevent AI Agent Misbehavior: Authorization with Arcjet Guard SDK"
+description: "Learn how to prevent AI agents from taking unintended actions by implementing authorization checks. This advanced workflow uses Next.js, Vercel AI SDK, Gemini, and Arcjet Guard SDK."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 90
+jobToBeDone: "Prevent unintended actions by AI agents using authorization checks"
+tools:
+  - name: "Next.js"
+    url: "https://nextjs.org"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Vercel AI SDK"
+    url: "https://sdk.vercel.ai"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Gemini API"
+    url: "https://ai.google.dev"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Arcjet Guard SDK"
+    url: "https://arcjet.com"
+    pricing: "paid"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/shubhradev/your-auth-check-passed-the-agent-still-did-something-nobody-asked-for-156f"
+  platform: "blog"
+  author: "shubhradev"
+  postedAt: 2026-10-13
+score: 8
+ingestedAt: 2026-10-21
+nigeriaNotes: "This workflow requires a development environment and comfort with coding. While the Gemini API has a free tier, Arcjet Guard SDK is a paid service. Data usage will depend on your application's activity."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+This workflow explains how to stop AI agents from doing things they shouldn't, even if they technically have permission. Imagine an AI assistant that can file expense reports. Authorization checks usually confirm *who* is allowed to file expenses. But what if the AI *generates* a request to file an expense based on a document, and that request was never truly *intended* by a human? This is the "authorization gap" this workflow addresses.
+
+It shows how to add extra security checks to ensure that an AI agent's actions are not just allowed, but also genuinely intended. This is crucial for applications where AI agents can perform sensitive tasks. Because this involves building a web application and writing code, it is an advanced topic and cannot be reproduced with simple copy-paste steps. The exact instructions are part of a larger code project.
+
+## What you can use it for
+*   **Stop unintended financial transactions**: Prevent an AI agent from making purchases or filing expenses that a human didn't explicitly ask for.
+*   **Block unwanted data changes**: Ensure an AI agent doesn't accidentally delete or modify important information in a database.
+*   **Control communication**: Prevent an AI agent from sending emails or messages without clear human intent.
+*   **Secure sensitive operations**: Add an extra layer of safety to any AI-driven action that could have real-world consequences.
+
+## Tools you need
+*   **Next.js** (free): A framework for building modern web applications.
+*   **Vercel AI SDK** (free): A toolkit that helps you build AI-powered applications, making it easier to connect to different AI models.
+*   **Gemini API** (freemium): An AI model from Google that your application can use to understand and generate text. It offers a free tier for basic usage.
+*   **Arcjet Guard SDK** (paid): A software development kit that provides security features, including protection against prompt injection and unauthorized tool calls for AI agents.
+
+## How it actually works
+This workflow involves building a web application with Next.js and integrating several software development kits (SDKs). The core idea is to add security checks at two key points in your AI agent's process.
+
+1.  **Set up your application**: You start by creating a Next.js project and integrating the Vercel AI SDK to handle interactions with an AI model like Gemini. This forms the basic structure of your AI agent.
+2.  **Install Arcjet Guard SDK**: You will add the Arcjet Guard SDK to your project. This SDK provides the specific security functions needed for authorization.
+
+    ```bash
+    # macOS or Linux
+    npm install @arcjet/guard @arcjet/guard/vercel-ai/v7
+    # Windows (PowerShell)
+    npm install @arcjet/guard @arcjet/guard/vercel-ai/v7
+    ```
+
+3.  **Screen incoming documents**: Before your AI model even sees a document or user input, you use Arcjet's `detectPromptInjection` function. This checks the input for any malicious instructions (like trying to trick the AI into doing something it shouldn't). If a threat is found, the request is stopped immediately.
+
+    ```javascript
+    import { launchArcjet, detectPromptInjection } from "@arcjet/guard";
+    // ... other code ...
+    // Example usage (exact implementation depends on your app's structure)
+    // const arcjet = launchArcjet({ /* your Arcjet config */ });
+    // const result = await arcjet.detectPromptInjection(documentContent);
+    // if (result.isDenied) { /* block action */ }
+    ```
+
+4.  **Guard tool calls**: When your AI agent decides to perform an action (like calling a `fileExpenseReport` tool), you wrap that action with Arcjet's `guardTool` function. This provides a second check, ensuring that the specific tool call is genuinely intended and safe to execute.
+
+    ```javascript
+    import { guardTool } from "@arcjet/guard/vercel-ai/v7";
+    // ... other code ...
+    // Example usage (exact implementation depends on your app's structure)
+    // const guardedFileExpenseReport = guardTool(fileExpenseReportTool, { /* Arcjet config */ });
+    // await guardedFileExpenseReport(toolArguments);
+    ```
+
+The author's full code and detailed setup are available in the original source, which you would need to consult for the complete implementation.
+
+## Words you'll see, explained
+*   **AI agent**: A computer program that uses artificial intelligence to understand information and perform tasks, often by interacting with other tools or systems.
+*   **Authorization**: The process of determining what a user or an AI agent is allowed to do within a system, based on their identity and permissions.
+*   **Prompt injection**: A type of attack where malicious instructions are hidden within user input to trick an AI model into performing unintended or harmful actions.
+*   **Server Action**: A feature in the Next.js web framework that allows you to run server-side code directly from your client-side components, making it easier to build interactive applications.
+*   **Vercel AI SDK**: A collection of tools and libraries designed to help developers build applications that use AI models, simplifying common tasks like connecting to different AI services.
+*   **Gemini**: A family of powerful artificial intelligence models developed by Google, capable of understanding and generating various forms of content, including text.
+*   **Arcjet Guard SDK**: A software development kit that provides security features for applications, specifically designed to help protect against threats like prompt injection and to control how AI agents use tools.
+
+## Original source
+This concept was explored by shubhradev on the DEV Community blog. The author built a research assistant using Next.js, Vercel AI SDK, Gemini, and Arcjet Guard SDK to test how to prevent AI agents from taking unintended actions, even when they have the necessary permissions.
+
+## Notes & variations
+*   **Do you even need this?**: For very simple AI applications where the agent doesn't perform critical actions (like sending money or deleting data), you might not need such advanced authorization. A simpler approach, like careful prompt engineering or a human review step, could be enough. This workflow is best for high-stakes scenarios.
+*   **Free-tier limits**: While the Gemini API offers a free tier for basic usage, Arcjet Guard SDK is a paid service. You would need to consider the costs associated with using Arcjet for your application.
+*   **Common pitfall**: A common mistake is to rely on a single authorization check. The author emphasizes the importance of having multiple enforcement points, such as checking the input *before* the model processes it and then checking the tool call *before* it executes, to provide robust security.

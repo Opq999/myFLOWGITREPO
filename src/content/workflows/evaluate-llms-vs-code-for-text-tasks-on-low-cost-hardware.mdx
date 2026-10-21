@@ -1,0 +1,86 @@
+---
+title: "Evaluate LLMs vs. Code for Text Tasks on Low-Cost Hardware"
+description: "Learn when to use small language models versus simple code like regular expressions for text extraction and classification, especially on budget hardware."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 120
+jobToBeDone: "Evaluate small LLMs vs. deterministic code for text extraction and classification on low-cost hardware"
+tools:
+  - name: "Ollama"
+    url: "https://ollama.com"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/kenwalger/do-you-actually-need-an-llm-3n55"
+  platform: "blog"
+  author: "kenwalger"
+  postedAt: 2026-10-13
+score: 10
+ingestedAt: 2026-10-21
+nigeriaNotes: "This approach emphasizes using free, local models and simple code, which is ideal for mobile-first users and those with limited data or budget for cloud services. Running models locally on devices like a Raspberry Pi avoids ongoing costs."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+This entry explores a critical question for anyone building AI tools: do you always need a large language model (LLM) for text tasks? The author conducted an experiment comparing small, local LLMs with simple, deterministic code (like regular expressions) for common jobs like extracting information or classifying messages. The surprising finding was that for many specific tasks, deterministic code can be faster, more accurate, and use far less power than even small LLMs.
+
+This is an advanced concept because it involves setting up and running local language models, writing and testing code, and carefully evaluating performance metrics like speed and accuracy. There isn't a single copy-paste recipe because the exact instructions depend on the specific task you're trying to solve, the models you choose, and your hardware setup.
+
+The core idea is to always consider the "smallest thing that works" for a given problem. This means looking at simple code first, then small local models, then larger local models, and only then remote, powerful LLMs. This approach can save significant time, money, and computing resources.
+
+## What you can use it for
+*   **Extract specific data**: Pull out order numbers, tracking IDs, or product codes from customer messages reliably and quickly.
+*   **Classify simple requests**: Sort incoming emails into categories like "refund request" or "support query" based on clear keywords.
+*   **Automate basic text processing**: Clean up data, reformat text, or check for specific patterns without needing an internet connection or paying for API calls.
+*   **Optimize resource usage**: Choose the most efficient tool for a task, saving computing power and reducing costs, especially on low-cost hardware.
+*   **Build robust systems**: Rely on predictable, deterministic code for critical tasks where even small LLM errors are unacceptable.
+
+## Tools you need
+*   **Ollama** (free): A tool that lets you run large language models on your own computer, even without an internet connection.
+
+## How it actually works
+The core idea is to evaluate different approaches for a specific text task, starting with the simplest.
+
+1.  **Define your task and test cases**: Clearly state what you want to achieve (e.g., "extract order numbers"). Create a set of diverse test messages, including examples where the information is present, absent, or disguised by "decoys" (like other numbers that aren't order numbers). The author used 95 questions about a fictional winery, with 16 ambiguous classification messages.
+2.  **Predict outcomes**: Before you start coding or running models, write down what you expect each approach to do for every test case. This helps you stay objective. The author committed 22 predictions, marking each as confident, leaning, or coin flip.
+3.  **Implement deterministic code**: For tasks like extraction, try writing a regular expression (regex). A regex is a pattern that finds specific sequences of characters in text. For classification, simple `if` statements or lookup tables might work. For example, to find "ORD-" followed by six digits, a regex like `ORD-\d{6}` would be used.
+4.  **Set up local language models**: Install Ollama on your computer or a low-cost device like a Raspberry Pi. Then, download small language models like `smollm2:360m` or `qwen2.5:1.5b` through Ollama.
+    *   Open your terminal or command prompt.
+
+    ```bash
+    # macOS or Linux
+    ollama run smollm2:360m
+    ```
+
+    ```powershell
+    # Windows (PowerShell)
+    ollama run smollm2:360m
+    ```
+
+    This command will download and start the model. You can then interact with it or integrate it into a script.
+5.  **Run tests and compare results**: Feed your test cases to both your deterministic code and your chosen LLMs. Record the accuracy, speed, and resource usage for each. The author found that a regex achieved 30/30 correct extractions in zero milliseconds, while the best small LLM scored 28/30 and took five seconds per call.
+6.  **Evaluate and decide**: Based on your results, assign a verdict:
+    *   **Unnecessary**: Deterministic code already does this perfectly.
+    *   **Sufficient**: A small local model does it well enough to run without human checks.
+    *   **Marginal**: Usable, but a person needs to check the output.
+    *   **Insufficient**: The errors or slowness are not acceptable.
+    This helps you choose the "smallest thing that works" for your specific need.
+
+## Words you'll see, explained
+*   **LLM (Large Language Model)**: A type of artificial intelligence that can understand, generate, and process human language.
+*   **Deterministic code**: Computer code that always produces the same output for the same input, without any randomness or "thinking."
+*   **Regular expression (regex)**: A special sequence of characters that defines a search pattern, used for finding and manipulating text.
+*   **Ollama**: A free, open-source tool that allows you to run various large language models directly on your own computer.
+*   **Raspberry Pi**: A small, low-cost computer often used for learning programming, building electronics projects, and running lightweight applications.
+*   **GPU (Graphics Processing Unit)**: A specialized electronic circuit designed to rapidly manipulate and alter memory to accelerate the creation of images, also very effective for speeding up AI computations.
+
+## Original source
+This workflow is inspired by an experiment conducted by kenwalger, shared on the DEV Community blog. The author explored whether small language models were truly necessary for certain text processing tasks, comparing their performance against traditional deterministic code.
+
+## Notes & variations
+*   **Do you even need this?**: Absolutely. Before reaching for a powerful, resource-intensive LLM, always consider if a simpler, more efficient solution like a regular expression or a lookup table can do the job. This can save you money, improve speed, and make your systems more reliable.
+*   **Free-tier viability**: Ollama is free to download and run. The models it hosts are also free. The main cost consideration is the hardware you run it on (e.g., a Raspberry Pi or your existing computer). This makes it highly viable for those with limited budgets.
+*   **Common pitfall**: Over-relying on LLMs for tasks that don't require their full capabilities. LLMs can "hallucinate" (make up answers) or misinterpret simple instructions, leading to errors that deterministic code would avoid. For example, the author's best LLM missed an order number that was clearly present, returning "NONE."
+*   **Tip for better results**: For tasks where deterministic code isn't quite enough, consider a hybrid approach. Use simple code to handle the clear-cut cases, and only pass the ambiguous or complex cases to a small, local LLM. This combines the speed and reliability of code with the flexibility of AI.

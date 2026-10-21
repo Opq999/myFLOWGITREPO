@@ -1,0 +1,50 @@
+---
+title: "Make Claude Code Responses Concise with Custom Plugins"
+description: "Learn how to use open-source plugins to make Claude Code's responses more concise without losing important details. Improve your AI coding assistant."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 30
+jobToBeDone: "Make Claude Code's responses more concise without sacrificing quality by using custom plugins"
+tools:
+  - name: "Claude Code"
+    url: "https://code.claude.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "GitHub"
+    url: "https://github.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/nguyen_jesse_8602dc05abd6/making-claude-code-concise-without-making-it-dumber-the-engineering-behind-two-open-source-plugins-3ll9"
+  platform: "blog"
+  author: "nguyen_jesse_8602dc05abd6"
+  postedAt: 2026-09-22
+score: 7
+ingestedAt: 2026-10-21
+nigeriaNotes: "Claude Code is a paid tool. GitHub has a free tier for hosting your code. Data usage will depend on the length of your coding sessions and the complexity of the tasks."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to use custom plugins to make Claude Code provide more direct and concise answers. This approach aims to reduce verbosity while ensuring that critical information like warnings, assumptions, and exact numbers are not lost, leading to a more efficient AI coding assistant.
+
+## Tools you need
+*   **Claude Code** (paid): An AI coding assistant that helps with writing, debugging, and understanding code.
+*   **GitHub** (freemium): A platform for hosting and collaborating on code projects, used here to share open-source plugins.
+
+## Steps
+1.  **Understand the problem**: Claude Code can be overly verbose, providing long explanations when a shorter answer is sufficient. The goal is to make it more concise without making its answers less informative or accurate.
+2.  **Explore the "Clear Partner" plugin**: This plugin is designed to change how Claude Code communicates. It focuses on providing the answer first, without unnecessary introductions or summaries. It aims to be economical in the words it uses to report its work, not in the work itself.
+3.  **Implement conciseness rules**: The "Clear Partner" plugin uses specific instructions to ensure that important details are not omitted. These include warnings, constraints, assumptions, exact numbers, and tradeoffs. The plugin prioritizes explicit user constraints (e.g., "one sentence") over its default habits.
+4.  **Handle safety-critical warnings**: For warnings related to data loss, security risks, or irreversible actions, the plugin is designed to keep them as a single, short line with no additional explanation or alternatives. This is a measured approach to ensure critical safety information is delivered effectively.
+5.  **Integrate the plugin**: The article mentions that the "Clear Partner" plugin is a Markdown file that can be loaded as the system's communication layer. The exact steps to load this file into Claude Code are not detailed in the excerpt, but it is available on GitHub under an MIT license.
+
+## Original source
+This workflow is based on an article by nguyen_jesse_8602dc05abd6 posted on DEV Community. The author shares their engineering process for creating open-source plugins to improve Claude Code's conciseness and user interface.
+
+## Notes & variations
+*   **Free-tier alternative**: While Claude Code itself is a paid tool, you can explore prompt engineering techniques with free AI chat tools like ChatGPT, Claude.ai, or Gemini to practice crafting concise responses. However, these will not directly integrate as plugins into a coding environment.
+*   **Common mistake**: A common pitfall when trying to make AI responses concise is to simply tell it to "be concise" without further guidance. This can lead the AI to omit important details, making the answer shorter but less useful or even incorrect.
+*   **Tip for better results**: When crafting your own prompts or plugins, clearly define what constitutes "essential information" that should never be omitted, even when aiming for brevity. Specify the format for warnings and critical details.

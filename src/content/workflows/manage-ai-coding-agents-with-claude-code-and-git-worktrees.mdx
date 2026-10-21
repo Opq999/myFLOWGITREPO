@@ -1,0 +1,80 @@
+---
+title: "Manage AI Coding Agents with Claude Code and Git Worktrees"
+description: "Learn to run multiple AI coding agents simultaneously using Claude Code and Git worktrees to prevent conflicts and boost efficiency."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 15
+jobToBeDone: "Manage multiple AI coding agents to avoid semantic conflicts and improve efficiency"
+tools:
+  - name: "Claude Code"
+    url: "https://code.claude.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Git"
+    url: "https://git-scm.com"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/naw103/running-multiple-claude-code-agents-in-parallel-what-worktrees-cannot-see-4le7"
+  platform: "blog"
+  author: "naw103"
+  postedAt: 2026-10-18
+score: 7
+ingestedAt: 2026-10-21
+nigeriaNotes: "Claude Code is a paid service. Git is free and can be run offline. Data usage will depend on the size of your codebase and the length of your coding sessions."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to set up multiple AI coding agents, each working on a separate part of your project using Git worktrees. This prevents them from overwriting each other's work and helps avoid "semantic conflicts," where changes seem fine to Git but break the project's logic. This approach is useful when you need AI agents to collaborate on a codebase without interfering with each other.
+
+## Tools you need
+*   **Claude Code** (paid): An AI coding assistant that can help write and manage code.
+*   **Git** (free): A version control system used to track changes in code and manage different versions of a project.
+
+## Steps
+1.  **Set up a Git worktree for each AI agent**: For each agent you want to run, create a separate Git worktree. This gives each agent its own copy of the project files to work on independently.
+    *   If using Claude Code's built-in worktree feature, you might run a command like this, replacing `feature-auth` with a name for your agent's task:
+
+    ```bash
+    claude --worktree feature-auth
+    ```
+
+    *   Alternatively, use standard Git commands. Replace `../myapp-paypal` with the path where you want the new worktree and `agent/paypal` with a name for the agent's branch:
+
+    ```bash
+    git worktree add ../myapp-paypal -b agent/paypal
+    ```
+
+    After running this, you should see a new directory created for your worktree, and Git will confirm the new branch.
+
+2.  **Navigate into the new worktree**: Change your current directory to the newly created worktree.
+
+    ```bash
+    cd ../myapp-paypal
+    ```
+
+    You should now be inside the new worktree directory.
+
+3.  **Install dependencies for each worktree**: Since worktrees only check out tracked files, you need to install project dependencies (like libraries or packages) separately for each worktree. The exact command depends on your project's setup (e.g., `npm install`, `pip install -r requirements.txt`).
+
+    ```bash
+    # Example for a Node.js project
+    npm install
+    ```
+
+    You should see the project's dependencies being installed in the `node_modules` folder or similar.
+
+4.  **Assign distinct tasks to each agent**: To minimize conflicts, ensure each AI agent is tasked with changing different parts of the codebase. For example, one agent could work on user authentication, while another works on payment integration.
+
+5.  **Integrate changes carefully**: Designate one person or a single AI session to merge the work from all agents. This central point of integration helps manage conflicts that Git cannot automatically resolve.
+
+## Original source
+This workflow is based on an explanation by author naw103 on DEV Community. It addresses the challenge of managing multiple AI coding assistants by leveraging Git worktrees to isolate their work and prevent logical errors that standard code merging might miss.
+
+## Notes & variations
+*   **Free tier alternative**: While Claude Code is a paid tool, you can achieve a similar outcome using standard Git worktrees with any AI coding assistant or even by manually managing different branches for different tasks.
+*   **Common mistake**: Running multiple agents within the same project directory without separate worktrees. This leads to files being overwritten and build processes breaking.
+*   **Tip for better results**: Clearly define the scope of work for each agent and ensure their tasks do not overlap significantly. Regularly review the merged code to catch any semantic conflicts that Git misses.

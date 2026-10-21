@@ -1,0 +1,59 @@
+---
+title: "Check Water Fountains on Your Route with Open-Source AI"
+description: "Use a local AI tool to predict if water fountains along your planned route will be running, based on map data and photos."
+category: "academic-research"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 30
+jobToBeDone: "Determine if water fountains along a planned route are likely to be running"
+tools:
+  - name: "OpenStreetMap"
+    url: "https://www.openstreetmap.org"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "IGN"
+    url: "https://www.ign.fr/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Open vision model"
+    url: "https://github.com/dsiacci/fountains"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/dsiacci/will-the-fountains-on-my-ride-be-running-i-asked-3831-stream-observations-24e8"
+  platform: "blog"
+  author: "dsiacci"
+  postedAt: 2026-10-09
+score: 7
+ingestedAt: 2026-10-21
+nigeriaNotes: "This workflow requires downloading and running software locally, which can consume significant data. The 'Open vision model' is part of a specific open-source project that needs to be downloaded and set up on a laptop, not a mobile-first tool. Free tier viability is high as all mentioned tools are free, but the setup complexity makes it less accessible for mobile-only users."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will get a list of potential water fountains along a planned route, with an indication of whether they are likely to be running. This approach works by combining map data with AI analysis of road photos to help you plan your journey better.
+
+## Tools you need
+*   **OpenStreetMap** (free): A collaborative project to create a free, editable map of the world. Used here to find fountain locations.
+*   **IGN** (free): The French national mapping agency. Used here to find fountain locations, especially in France.
+*   **Open vision model** (free): This refers to a specific open-source AI model used within the 'fountains' tool to analyze photos and identify potential fountains.
+
+## Steps
+1.  **Prepare your ride data**: You will need a GPX file of your planned route. A GPX file is a standard format for recording GPS data, often created by GPS devices or smartphone apps.
+2.  **Set up the 'fountains' tool**: The author developed a tool called 'fountains' that runs on a laptop. You will need to download and install this tool. The exact steps for installation are not provided in the excerpt, but it is described as an open-source tool that runs on a laptop. You can find the project on GitHub.
+3.  **Input your route**: Once the tool is set up, you will drop your GPX file onto a local web page provided by the tool.
+4.  **Identify potential fountains**: The tool will list fountains found in OpenStreetMap or IGN within 250 meters of your route. It will also identify potential fountain locations based on clues like springs or streams shown on maps.
+5.  **Analyze photos with AI**: An open vision model will analyze photos taken from the road. It will highlight views where it detects something like a fountain. You will then decide if it is a fountain, not a fountain, or if you are unsure.
+6.  **Place fountains accurately**: If a fountain is visible in the photos but not correctly placed on the map, you can click on its location in the photos to place it accurately.
+7.  **Get running status predictions**: For each confirmed fountain, the tool will assign a status: likely, uncertain, or unlikely to be running. This is based on factors like recent rainfall, weather forecasts, altitude, and proximity to streams.
+8.  **Find alternative stops**: If there are long stretches without a likely fountain, the tool will suggest nearby open cafes, bakeries, or fuel stations.
+9.  **Export your route**: The tool can export your route with waypoints for the identified fountains, marked with their predicted running status (e.g., 'likely: Funtana di Leccia'). This can be transferred to a bike computer.
+
+## Original source
+This workflow is based on a blog post by dsiacci for the DEV Community, submitted as part of the Hacktoberfest Open-Source AI Challenge. The author describes building a tool called 'fountains' to help cyclists and hikers find reliable water sources on their routes.
+
+## Notes & variations
+*   **Free tier alternative**: All tools mentioned (OpenStreetMap, IGN, and the open-source vision model) are free to use. The main requirement is a laptop capable of running the 'fountains' tool.
+*   **Common pitfall**: Relying solely on the tool's prediction without carrying enough water. The author's rule is to always carry sufficient water as if all fountains were dry.
+*   **Tip for better results**: Manually marking fountains accurately in the photos, especially those not well-represented on maps, will improve the tool's predictions for your specific route.

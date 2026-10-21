@@ -1,0 +1,74 @@
+---
+title: "Automate Job Applications with AI Applyd Plugins"
+description: "Learn how to use AI plugins for ChatGPT and Claude to automatically apply for jobs, tailoring your resume and cover letter to each application."
+category: "job-hunting"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 15
+jobToBeDone: "Automate job applications using AI plugins for ChatGPT and Claude"
+tools:
+  - name: "ChatGPT"
+    url: "https://chatgpt.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Claude"
+    url: "https://claude.ai"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "AI Applyd MCP Server"
+    url: "https://mcp.aiapplyd.com/mcp"
+    pricing: "paid"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/aiapplyd/how-we-built-a-chatgpt-and-claude-plugin-that-applies-to-jobs-4cdg"
+  platform: "blog"
+  author: "whateverneveranywhere"
+  postedAt: 2026-10-15
+score: 7
+ingestedAt: 2026-10-21
+nigeriaNotes: "This workflow relies on AI chat platforms with free tiers, but the core AI Applyd service is paid. Data usage for sending applications is likely low, but depends on the complexity of the resume and cover letter generated. Ensure you have a stable internet connection for the AI to process applications."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to set up an AI assistant, like ChatGPT or Claude, to automatically apply for jobs on your behalf. This involves connecting a special tool that tailors your resume and cover letter to each job and submits the application through the employer's hiring system. This approach works by using AI plugins that act as intermediaries, understanding your resume and job requirements to create personalized applications.
+
+## Tools you need
+*   **ChatGPT** (freemium): An AI chatbot that can use plugins to perform specific tasks.
+*   **Claude** (freemium): Another AI chatbot that can use custom connectors for similar tasks.
+*   **AI Applyd MCP Server** (paid): This is the core service that connects your AI assistant to various hiring platforms. It requires a paid subscription to use.
+
+## Steps
+1.  **Access the AI Applyd MCP Server**: The server is hosted at `https://mcp.aiapplyd.com/mcp`. No API key is needed to access it, but the service itself is paid.
+2.  **Connect the AI Applyd plugin in ChatGPT**: 
+    *   Open ChatGPT and go to `Settings`.
+    *   Navigate to `Apps and Connectors`.
+    *   Turn `Developer mode` on.
+    *   Find the option to add a custom plugin or connector and enter the address `https://mcp.aiapplyd.com/mcp`.
+    *   You should see the AI Applyd plugin appear in your list of available tools.
+3.  **Connect the AI Applyd custom connector in Claude**: 
+    *   Open Claude and go to `Settings`.
+    *   Navigate to `Connectors`.
+    *   Select `Add custom connector`.
+    *   Enter the address `https://mcp.aiapplyd.com/mcp`.
+    *   The AI Applyd connector should now be available for use.
+4.  **Initiate the sign-in process**: The first time you try to use the AI Applyd tool within ChatGPT or Claude, it will fail intentionally. This is part of the sign-in process.
+    *   You will see an error message indicating a `401` status and protected-resource metadata. This message will prompt you to sign in.
+    *   A browser window will open for you to sign in using Google or a magic link. You will need to approve a consent screen.
+    *   After successful sign-in, the tool should be ready for use.
+5.  **Attach your resume in ChatGPT**: 
+    *   When you want to apply for a job, you can either paste your resume text directly into the chat or attach your resume file. To attach a file, look for an option to upload a document within the ChatGPT interface when interacting with the AI Applyd plugin.
+    *   The AI will then use this resume for tailoring applications.
+6.  **Ask the AI to apply for jobs**: Once connected and signed in, you can instruct the AI to find and apply for jobs.
+    *   For example, you could say: "Find software engineering jobs that match my skills and apply to them using my attached resume."
+    *   The AI will use the AI Applyd tool to search for suitable jobs, tailor your resume and cover letter, and submit applications to employer systems like Greenhouse, Lever, Ashby, Workable, Workday, and iCIMS.
+    *   You should receive confirmation when an application is successfully sent to the employer's system.
+
+## Original source
+This workflow is based on a blog post by whateverneveranywhere detailing how they built a plugin for ChatGPT and Claude that automates job applications. The post discusses the technical aspects of connecting the AI assistants to their AI Applyd service, including handling authentication and resume uploads.
+
+## Notes & variations
+*   **Free-tier alternative**: While the AI Applyd service itself is paid, you can use the free tiers of ChatGPT and Claude to interact with the AI. However, the core job application functionality requires a paid AI Applyd subscription.
+*   **Common mistake**: Users might expect the sign-in process to work seamlessly on the first try. Remember that the first tool call is designed to fail to initiate the OAuth sign-in flow. Be patient and follow the browser prompts.
+*   **Tip for better results**: Ensure your resume is up-to-date and clearly highlights the skills relevant to the jobs you are targeting. The AI will use this information to tailor your applications more effectively.

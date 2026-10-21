@@ -1,0 +1,119 @@
+---
+title: "Generate Marketing Content for Small Business Product Listings with DukaanDraft"
+description: "Learn how to use DukaanDraft, a local AI tool, to generate Instagram captions, product descriptions, and sales messages for your small business products."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 30
+jobToBeDone: "Generate marketing content for small business product listings"
+tools:
+  - name: "Ollama"
+    url: "https://ollama.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Gemma 3 4B"
+    url: "https://ollama.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Flask"
+    url: "https://flask.palletsprojects.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Python"
+    url: "https://www.python.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "HTML"
+    url: "https://developer.mozilla.org/en-US/docs/Web/HTML"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "CSS"
+    url: "https://developer.mozilla.org/en-US/docs/Web/CSS"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "JavaScript"
+    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/shikha_shukla_2469c41a94e/i-built-dukaandraft-a-local-ai-content-studio-for-small-businesses-5b63"
+  platform: "blog"
+  author: "shikha_shukla_2469c41a94e"
+  postedAt: 2026-10-13
+score: 7
+ingestedAt: 2026-10-21
+nigeriaNotes: "This workflow requires running software locally, which can be data-light after initial setup. Free tiers are sufficient for all listed tools."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+
+DukaanDraft is a local AI tool designed to help small businesses, like clothing resellers or online shop owners, create marketing content quickly. Instead of spending a lot of time writing product descriptions, social media posts, and sales messages for each new item, you can use DukaanDraft to generate these automatically. It takes basic product details you provide and turns them into ready-to-use content.
+
+This workflow is considered intermediate because it involves setting up and running software on your own computer. It uses a local AI model, meaning the AI runs directly on your machine rather than through a website. This requires some technical steps to get started, and the exact process can change as the software is updated. Therefore, it's not a simple copy-paste recipe but rather a concept for a powerful local tool.
+
+## What you can use it for
+
+*   **Generate Instagram Captions**: Get three different options for Instagram captions for your products, helping you choose the best one for your audience.
+*   **Write Product Titles**: Create attractive and descriptive titles for your products that grab attention.
+*   **Draft WhatsApp Sales Messages**: Quickly create messages to send to customers on WhatsApp, encouraging them to buy.
+*   **Develop Detailed Product Descriptions**: Generate comprehensive descriptions that cover all the important features of your product.
+*   **Identify Selling Points**: Highlight the key benefits and features that make your product stand out.
+*   **Find Relevant Hashtags**: Get a list of hashtags to increase the visibility of your social media posts.
+*   **Suggest Calls-to-Action**: Receive ideas for phrases that encourage customers to take the next step, like buying or inquiring.
+*   **Create Marketplace Listing Titles**: Craft effective titles for your products when listing them on online marketplaces.
+
+## Tools you need
+
+*   **Ollama** (free): A tool that lets you run AI models like Gemma 3 4B directly on your computer.
+*   **Gemma 3 4B** (free): An open-weight AI language model that generates the text content.
+*   **Flask** (free): A simple web framework in Python used to build the backend of the DukaanDraft application.
+*   **Python** (free): A programming language used to build the backend logic and connect different parts of the tool.
+*   **HTML, CSS, JavaScript** (free): Web technologies used to build the user interface that you interact with in your web browser.
+
+## How it actually works
+
+To use DukaanDraft, you would typically follow these steps:
+
+1.  **Set up Ollama**: Download and install Ollama on your computer. This allows you to run AI models locally.
+2.  **Download the Gemma 3 4B model**: Use Ollama to download the Gemma 3 4B model. The exact command will be provided by Ollama's documentation, but it usually looks something like `ollama pull gemma:3b`.
+3.  **Get the DukaanDraft code**: Clone the GitHub repository for DukaanDraft onto your computer. You will need Git installed for this.
+    ```bash
+    git clone https://github.com/Shikha18Shukla/DukaanDraft.git
+    ```
+4.  **Install Python dependencies**: Navigate to the cloned repository folder and install the necessary Python libraries using pip, which comes with Python.
+    ```bash
+    cd DukaanDraft
+    pip install -r requirements.txt
+    ```
+    (Note: The `requirements.txt` file lists all the Python packages needed, like Flask).
+5.  **Run the Flask backend**: Start the DukaanDraft application by running the Python Flask script.
+    ```bash
+    python app.py
+    ```
+    This command starts a local server that listens for your requests.
+6.  **Access the frontend**: Open your web browser and go to the local address provided by the Flask server, usually `http://127.0.0.1:5000/` or similar. This is where you will see the DukaanDraft interface.
+7.  **Enter product details**: Fill in the product name, category, price, features, and target audience in the web form.
+8.  **Generate content**: Select the desired language (English, Hindi, or Hinglish) and click the generate button. The application will send your details to the local Gemma 3 4B model via Ollama and display the generated marketing content.
+
+Refer to the official DukaanDraft GitHub repository for the most up-to-date and detailed instructions.
+
+## Words you'll see, explained
+
+*   **Local inference**: Running an AI model directly on your computer's hardware, rather than accessing it over the internet.
+*   **Open-weight language model**: An AI model whose architecture and weights (the learned parameters) are publicly available, allowing anyone to download and use them.
+*   **API (Application Programming Interface)**: A set of rules and tools that allows different software applications to communicate with each other.
+*   **JSON (JavaScript Object Notation)**: A lightweight format for storing and transporting data, often used when sending data between a server and a web page.
+*   **Prompt templates**: Pre-written structures for AI prompts that help guide the model to generate specific types of output.
+*   **Responsive frontend**: A website design that automatically adjusts its layout to look good and work well on any device, from a small phone screen to a large desktop monitor.
+
+## Original source
+
+This workflow is based on the project DukaanDraft, created by Shikha Shukla as a submission for the Hacktoberfest Open-Source AI Challenge. The project aims to provide small businesses with an AI-powered tool for generating marketing content locally.
+
+## Notes & variations
+
+*   **Do you even need this?**: If you only need occasional content generation and don't want to set up local software, free tiers of online AI chatbots like ChatGPT, Claude, or Gemini can also help you draft product descriptions and captions. However, DukaanDraft offers more specialized output and runs locally for privacy and offline use.
+*   **Free-tier limits**: All the tools mentioned (Ollama, Gemma 3 4B, Flask, Python, HTML, CSS, JavaScript) are free to use. The main limitation is your computer's processing power, which affects how quickly the AI generates content.
+*   **Common pitfall**: Ensure Ollama is running in the background and the Gemma 3 4B model is successfully downloaded before you try to generate content. If the application doesn't work, check Ollama's status and model availability first.

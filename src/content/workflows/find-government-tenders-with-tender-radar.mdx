@@ -1,0 +1,93 @@
+---
+title: "Find Government Tenders with Tender Radar"
+description: "Automate finding and evaluating government tenders for small contractors using local AI tools. Extract eligibility, match requirements, and estimate win probability."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 30
+jobToBeDone: "Automate finding and evaluating government tenders for small contractors"
+tools:
+  - name: "Ollama"
+    url: "https://ollama.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Gemma 4"
+    url: "https://ai.google.dev/gemma"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "TabPFN"
+    url: "https://github.com/HazyResearch/tabpfn"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/praneshnikhar/tender-radar-finding-government-tenders-for-small-contractors-entirely-on-their-own-laptop-466k"
+  platform: "blog"
+  author: "praneshnikhar"
+  postedAt: 2026-10-17
+score: 8
+ingestedAt: 2026-10-21
+nigeriaNotes: "This workflow runs entirely locally, making it suitable for areas with limited or expensive internet access. Data usage is minimal after the initial model download. Free tier availability is excellent as all core tools are free and run locally."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will get a system that helps small contractors find and evaluate government tenders automatically on their own computer. It extracts important requirements from tender notices, checks if your business meets them using your own documents, and even estimates your chances of winning. This approach works because it brings AI power to your local machine, keeping sensitive business data private and avoiding reliance on external services.
+
+## Tools you need
+*   **Ollama** (free): A tool to easily run AI models like Gemma 4 on your own computer.
+*   **Gemma 4** (free): A powerful AI model that can understand and extract information from text.
+*   **TabPFN** (free): A machine learning model used here to estimate the probability of winning a tender based on past performance.
+*   **Git** (free): Software to download code from online repositories like GitHub.
+
+## Steps
+1.  **Install Ollama**: Download and install Ollama from its official website. This tool will allow you to run AI models locally.
+    *   Go to ollama.com and download the installer for your operating system (Windows, macOS, or Linux).
+    *   Follow the on-screen instructions to complete the installation.
+    *   You should see a confirmation that Ollama is installed and running.
+
+2.  **Download the Tender Radar code**: Use Git to copy the project files from GitHub to your computer.
+    *   Open your computer's terminal or command prompt.
+    *   Navigate to the folder where you want to save the project.
+    *   Run the following command to clone the repository:
+    ```bash
+    git clone https://github.com/praneshnikhar/tender-radar
+```
+    *   You should see messages indicating that the files are being downloaded.
+
+3.  **Install the AI model**: Use Ollama to download and set up the Gemma 4 AI model.
+    *   Open your terminal or command prompt.
+    *   Navigate into the downloaded tender-radar folder: `cd tender-radar`.
+    *   Run the following command:
+    ```bash
+    ollama pull gemma4:latest
+```
+    *   You should see progress updates as the model downloads. This might take some time depending on your internet speed.
+
+4.  **Prepare the demo data**: The project includes sample data to test the system. You need to generate this.
+    *   Make sure you are in the `tender-radar` folder in your terminal.
+    *   Run the following command:
+    ```bash
+    python scripts/generate_demo_corpus.py
+```
+    *   This script will create sample tender and firm documents.
+
+5.  **Run the tender analysis**: Use the script to process sample tenders and see the results.
+    *   In your terminal, within the `tender-radar` folder, run:
+    ```bash
+    python scripts/eval_summary.py
+```
+    *   This command will analyze the demo tenders using the local Gemma 4 model and TabPFN. You should see output detailing the extracted clauses, eligibility matches, and win probabilities.
+
+6.  **View the dashboard**: Open the results in your web browser.
+    *   After running `eval_summary.py`, a local web server might start. The output should indicate the address, often `http://localhost:8000` or similar.
+    *   Open your web browser and go to that address.
+    *   You should see a dashboard showing ranked tenders, eligibility details with evidence, and win estimates.
+
+## Original source
+This workflow is based on a project by Pranesh Nikhar, shared on the DEV Community platform. It was built as a submission for the Hacktoberfest Open-Source AI Challenge, aiming to provide small contractors with a local tool for managing government tender opportunities.
+
+## Notes & variations
+*   **Free-tier alternative**: All the core tools used (Ollama, Gemma 4, TabPFN, Git) are free and run locally, so there are no free-tier limitations for this specific setup.
+*   **Common mistake**: Ensure you have enough RAM (at least 8GB recommended) for Ollama and the Gemma 4 model to run smoothly. If the analysis is very slow or crashes, your system might be struggling.
+*   **Tip for better results**: For real-world use, you would need to replace the demo data with your firm's actual documents (past bids, licenses, financials) and integrate with live tender portals, which requires more advanced coding as indicated in the original project's README.

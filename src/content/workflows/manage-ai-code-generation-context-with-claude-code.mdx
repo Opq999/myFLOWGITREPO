@@ -1,0 +1,57 @@
+---
+title: "Manage AI Code Generation Context with Claude Code"
+description: "Learn to manage AI code generation context and ensure quality on long projects using Claude Code with a wiki and hooks."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 30
+jobToBeDone: "Manage AI code generation context and ensure quality on long projects"
+tools:
+  - name: "Claude Code"
+    url: "https://code.claude.com"
+    pricing: "paid"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/muchassak/how-i-work-with-claude-code-memory-gates-and-the-mistakes-that-built-them-1n8l"
+  platform: "blog"
+  author: "muchassak"
+  postedAt: 2026-10-18
+score: 7
+ingestedAt: 2026-10-21
+nigeriaNotes: "Claude Code is a paid tool. Free tier viability is limited. Data usage depends on project size and interaction frequency."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to set up Claude Code to better remember project details and ensure code quality over long projects. This approach uses a wiki and specific hooks to maintain context and enforce standards, preventing common issues like forgetting agreements or accepting incomplete work.
+
+This method works by creating external memory and verification systems for the AI, making it more reliable for complex tasks.
+
+## Tools you need
+*   **Claude Code** (paid): An AI coding assistant that helps generate and manage code.
+
+## Steps
+1.  **Set up your project wiki**: Create a wiki for your project. The author uses a 76-line router file (CLAUDE.md) that directs tasks to specific wiki pages, along with a folder for research notes. The wiki itself contains 33 pages.
+    *   The author's wiki structure is detailed in a separate post, 'An LLM wiki: project memory for Claude Code'.
+2.  **Configure hooks**: Set up three hooks in `.claude/settings.json` to manage Claude's memory and behavior.
+    *   **SessionStart hook**: This hook runs at the start of a new chat, after resuming, or after a `/clear` command. It also runs after every compaction (when Claude summarizes its memory). It injects a card that summarizes how you work, what's currently happening in your Git repository, and any lessons learned.
+    *   **UserPromptSubmit hook**: This hook runs before Claude processes your prompt. It scores your prompt against the routing table and injects up to 5 best-matching wiki pages to provide relevant context.
+    *   **Stop hook**: This hook runs when Claude tries to finish a code block. It checks if the code has changed but the wiki hasn't been updated. If so, it prevents Claude from finishing, ensuring consistency.
+3.  **Implement correction compounding**: Turn every correction you give Claude into a rule. Write down corrections as a dated, imperative line in a `lessons.md` file. This file is injected into Claude's context by the SessionStart hook during every session.
+4.  **Establish "Done means proven" checks**: Ensure that Claude's work is not considered done until it passes several verification steps. These include:
+    *   Typechecking
+    *   Running tests
+    *   End-to-end (e2e) tests
+    *   Performance checks (e.g., Lighthouse scores)
+    *   Screenshots that Claude must review.
+    *   The author mentions that a rule that slips back into the workflow becomes a test.
+5.  **Organize for scale (optional)**: For larger projects, consider using sub-agents for research and fact-checking, setting up background builds, and defining hard rules for handling parallel sessions within a single repository.
+
+## Original source
+This workflow is adapted from a blog post by muchassak on DEV Community, detailing their personal setup for using Claude Code on real projects. The author shares lessons learned from mistakes made while building this system.
+
+## Notes & variations
+*   **Free-tier alternative**: Claude Code is a paid tool. For free alternatives that offer code generation, you might explore tools like GitHub Copilot (which has a free tier for students and verified open-source contributors) or free tiers of other AI coding assistants, though they may not offer the same level of context management.
+*   **Common mistake**: Relying solely on Claude's in-chat memory without external systems like a wiki or hooks. Claude can forget details, especially after context compaction, leading to inconsistent or incorrect code.
+*   **Tip for better results**: Regularly update your `lessons.md` file with every correction. This creates a growing knowledge base that Claude can reference, reducing the need to repeat instructions and improving the quality of its output over time.

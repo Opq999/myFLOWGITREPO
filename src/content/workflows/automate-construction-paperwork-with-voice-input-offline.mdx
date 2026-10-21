@@ -1,0 +1,148 @@
+---
+title: "Automate Construction Paperwork with Voice Input Offline"
+description: "Learn to use voice commands to generate construction change orders, daily logs, and delay notices offline using local AI tools."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 120
+jobToBeDone: "Automate construction field documentation using voice input offline."
+tools:
+  - name: "faster-whisper"
+    url: "https://github.com/guillaumekln/faster-whisper"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Gemma 2B"
+    url: "https://gemini.google.com/app"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Ollama"
+    url: "https://ollama.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Pydantic"
+    url: "https://docs.pydantic.dev/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "ChromaDB"
+    url: "https://www.trychroma.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "SQLite"
+    url: "https://www.sqlite.org/index.html"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Jinja2"
+    url: "https://jinja.palletsprojects.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "WeasyPrint"
+    url: "https://weasyprint.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Streamlit"
+    url: "https://streamlit.io/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Gradio"
+    url: "https://www.gradio.app/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "FastAPI"
+    url: "https://fastapi.tiangolo.com/"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/priyanshubh/subscribe-field-os-a-local-first-voice-os-for-construction-paperwork-bdn"
+  platform: "blog"
+  author: "priyanshubh"
+  postedAt: 2026-10-19
+score: 9
+ingestedAt: 2026-10-21
+nigeriaNotes: "This workflow requires significant local processing power and storage. While the tools themselves are free, running them locally on a standard laptop might be slow. Data usage is minimal after initial model downloads, as everything runs offline. Ensure sufficient disk space for models and databases."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+
+SubScribe Field OS is a system designed to help people working in construction, like electricians or plumbers, to quickly create important paperwork using just their voice. Imagine you're on a busy construction site and need to document extra work you did. Instead of stopping to type, you can just speak a sentence, and this system turns it into a professional document like a change order or a daily log. It works completely offline, meaning you don't need internet access, which is great for noisy or remote job sites. The system is built to run on a regular laptop, making it accessible for small businesses.
+
+This system is quite technical because it combines several different AI and software tools to work together. It's not a single app you can just download and use immediately. Instead, it's a collection of programs that need to be set up and connected. The exact steps to get it running involve installing software, downloading AI models, and configuring them, which requires some comfort with technical instructions. Because it's a custom-built system, there isn't a simple, one-click way to reproduce it without understanding how each piece works.
+
+## What you can use it for
+
+*   **Generate change orders instantly**: Speak details about extra work done, and get a contract-linked PDF change order ready for signature.
+*   **Create daily logs automatically**: Dictate your activities and observations for the day, and have a structured log created automatically.
+*   **Document delays efficiently**: Record reasons for project delays as you encounter them, generating official delay notices.
+*   **Improve profit margins**: By easily documenting all out-of-scope work, small contractors can ensure they get paid for everything they do.
+*   **Reduce administrative burden**: Spend less time on paperwork and more time on the actual work on site.
+
+## Tools you need
+
+*   **faster-whisper** (free): Used for converting spoken audio into text accurately, even in noisy environments.
+*   **Gemma 2B** (freemium): A small AI model that understands and processes the text to figure out what kind of document to create and what information to include.
+*   **Ollama** (free): Helps run AI models like Gemma 2B directly on your computer without needing a constant internet connection.
+*   **Pydantic** (free): A tool that helps organize and check the information the AI processes, making sure it's in the right format.
+*   **ChromaDB** (free): A local database used to store and quickly search through your existing construction contracts.
+*   **SQLite** (free): A simple database that keeps a local record of all the documents you create.
+*   **Jinja2** (free): A tool for creating templates, used here to design the layout of your documents.
+*   **WeasyPrint** (free): Converts your document templates into professional-looking PDF files.
+*   **Streamlit** (free): Used to build a simple, user-friendly interface for recording voice or uploading audio files.
+*   **Gradio** (free): Another tool for creating easy-to-use interfaces for AI applications.
+*   **FastAPI** (free): A framework for building web applications, used here to create a dashboard for managers to review documents.
+
+## How it actually works
+
+This workflow involves setting up and running several open-source tools locally on your computer. The exact commands and configuration will depend on your operating system and specific setup, but the general process is as follows:
+
+1.  **Set up your development environment**: You will need to install Python and a package manager like pip. The author used a Linux environment, so Windows users might need to use WSL (Windows Subsystem for Linux) or find equivalent commands.
+2.  **Install the core AI models and libraries**: This involves downloading `faster-whisper`, `Gemma 2B` (via Ollama), `Pydantic`, `ChromaDB`, `SQLite`, `Jinja2`, `WeasyPrint`, `Streamlit`, `Gradio`, and `FastAPI`. The author does not provide exact installation commands, but you would typically use pip to install Python packages and follow Ollama's instructions to download Gemma 2B.
+3.  **Prepare your contract data**: You need to load your subcontractor's original scope agreement PDF into ChromaDB. The author doesn't specify the exact process for this, but it likely involves a script to parse the PDF and add its content to the ChromaDB.
+4.  **Run the application interface**: Start the Streamlit or Gradio application. This will provide a web interface on your local machine where you can record audio or upload audio files.
+
+```bash
+# Example command to run Streamlit (exact command may vary)
+streamlit run your_app_file.py
+```
+
+5.  **Process voice input**: When you speak into the interface or upload an audio file, the system uses `faster-whisper` to transcribe it. A specialized vocabulary prompt is used to improve accuracy for construction terms.
+6.  **Route and validate information**: The transcribed text is sent to the `Gemma 2B` model (running via Ollama) to identify the document type and extract key details. `Pydantic` schemas are used to ensure the extracted information is structured correctly. If there are errors, the system retries.
+7.  **Retrieve contract context**: For change orders, the system searches your local `ChromaDB` for relevant clauses from your original contract to provide context to the AI.
+8.  **Generate the document**: Using `Jinja2` templates, the extracted and validated information, along with contract context, is used to create an HTML document. `WeasyPrint` then converts this HTML into a printable PDF.
+9.  **Save and review**: The finalized document is saved to a local `SQLite` database. A separate `FastAPI` dashboard might be available for off-site managers to review all generated documents.
+
+## Words you'll see, explained
+
+*   **Local-First**: An application that prioritizes running on your device rather than relying on the internet.
+*   **Voice OS**: An operating system or system that is primarily controlled and interacted with through voice commands.
+*   **Offline**: Works without an internet connection.
+*   **Construction Paperwork**: Documents commonly used in the construction industry, such as change orders, daily logs, and delay notices.
+*   **Change Order**: A modification to an existing construction contract, usually involving changes in scope, cost, or timeline.
+*   **Daily Log**: A record of activities, progress, and events that occurred on a construction site each day.
+*   **Delay Notice**: A formal notification that a project is experiencing delays, along with the reasons.
+*   **Tradespeople**: Skilled workers in a specific trade, such as electricians, plumbers, or HVAC technicians.
+*   **Subcontractors**: A person or company hired by a general contractor to perform a specific job.
+*   **Profit Margins**: The amount of profit a company makes on its sales.
+*   **Audio Transcription**: The process of converting spoken audio into written text.
+*   **Quantized**: A technique used to reduce the size and computational requirements of AI models, making them run faster on less powerful hardware.
+*   **CPU**: Central Processing Unit, the main chip in a computer that performs calculations.
+*   **Schema Routing**: Using a defined structure (schema) to guide and validate the output of an AI model.
+*   **Pydantic Schemas**: Specific data structures defined using the Pydantic library to ensure data is organized and validated correctly.
+*   **Orchestrator**: The part of the system that manages and coordinates the different tools and processes.
+*   **Contract RAG**: Retrieval Augmented Generation, a technique where an AI model retrieves relevant information from a knowledge base (like your contract) before generating a response.
+*   **ChromaDB**: A type of database optimized for storing and searching vector embeddings, useful for finding similar text passages.
+*   **Audit Trail**: A chronological record of all actions and transactions performed within a system.
+*   **Jinja2**: A templating engine for Python, used to create dynamic text files, like HTML for documents.
+*   **WeasyPrint**: A tool that converts HTML and CSS into PDF documents.
+*   **UI**: User Interface, the visual elements a user interacts with (e.g., buttons, text fields).
+*   **API**: Application Programming Interface, a way for different software programs to communicate with each other.
+
+## Original source
+
+This workflow was built by priyanshubh as a submission for the Hacktoberfest Open-Source AI Challenge. It was originally posted on DEV Community, a platform where developers share their projects and insights.
+
+## Notes & variations
+
+*   **Do you even need this?**: If you only need simple voice-to-text and don't require offline capabilities or complex document generation, a standard voice recorder app and a word processor might suffice. However, for automating structured paperwork directly from speech, this system offers significant advantages.
+*   **Free-tier limits**: All the core tools mentioned are open-source and free to use. The main limitation is the computational power of your own laptop. Running large AI models locally can be slow and require a good amount of RAM and disk space. Gemma 2B is a relatively small model, which helps, but performance will vary.
+*   **Common pitfall**: Ensure your construction-specific vocabulary is accurately captured in the prompt used for `faster-whisper`. If the transcription is poor due to jargon, the rest of the system will struggle. Also, make sure the `Pydantic` schemas precisely match the expected output format from `Gemma 2B` to avoid validation errors.

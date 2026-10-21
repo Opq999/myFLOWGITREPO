@@ -1,0 +1,133 @@
+---
+title: "Automate GitLab Contributions with an AI Coding Agent"
+description: "Learn how to use an AI coding agent to automate common tasks for contributing to GitLab projects, from analyzing issues to submitting merge requests, with human oversight."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 60
+jobToBeDone: "Contribute to GitLab projects using an AI coding agent"
+tools:
+  - name: "GitLab"
+    url: "https://gitlab.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "gitlab-agent-kit"
+    url: "https://gitlab.com/HamzaHassanain/gitlab-agent-kit"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Antigravity CLI (agy)"
+    url: "https://github.com/antigravity-cli/antigravity"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Claude Code"
+    url: "https://www.anthropic.com/api"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "glab (GitLab CLI)"
+    url: "https://gitlab.com/gitlab-org/cli"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Git"
+    url: "https://git-scm.com"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Python"
+    url: "https://www.python.org"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/hamzahassanain0/how-i-contribute-to-gitlab-with-a-coding-agent-and-approve-every-push-2a50"
+  platform: "blog"
+  author: "hamzahassanain0"
+  postedAt: 2026-10-20
+score: 8
+ingestedAt: 2026-10-21
+nigeriaNotes: "This workflow requires comfort with the command line and Git, and may involve paid API access for AI agents like Claude Code. Data usage for local scripts is light, but API calls will consume data."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+This workflow describes how to use a specialized AI program, called a coding agent, to help you contribute to GitLab projects. The agent automates many of the repetitive steps involved in finding, analyzing, and implementing changes, as well as drafting the necessary documentation like merge requests.
+It is an advanced setup because it requires comfort with using the command line, Git (a version control system), and Python programming. The exact instructions and configuration details are part of a specific open-source kit and its documentation, which can change over time.
+Because the agent handles complex interactions with GitLab and other tools, there isn't a simple copy-paste recipe for a beginner. Instead, this entry explains the overall approach and what you need to know to get started with this kind of automation.
+
+## What you can use it for
+*   **Automate repetitive tasks**: Let the agent handle common, time-consuming steps in open-source contributions, like issue analysis or drafting standard comments.
+*   **Speed up issue analysis**: Use the agent to quickly read through issue comments and project history to understand a problem and propose a solution plan.
+*   **Draft consistent merge requests**: The agent can write detailed merge request descriptions, ensuring they follow project templates and include necessary information like reproduction steps and test outputs.
+*   **Learn GitLab workflows**: By observing how the agent processes issues and interacts with GitLab, you can learn the standard contribution practices of different projects.
+
+## Tools you need
+*   **GitLab** (freemium): A platform for managing software development projects, including version control and collaboration.
+*   **gitlab-agent-kit** (free): An open-source collection of rules, workflows, and tools designed to automate GitLab contributions.
+*   **Antigravity CLI (agy)** (free): A command line interface tool that can run AI agents and their workflows.
+*   **Claude Code** (paid): An AI model from Anthropic, used here as the "brain" for the coding agent to understand and generate code or text.
+*   **glab (GitLab CLI)** (free): The official command line interface for GitLab, used by the agent to interact with GitLab.
+*   **Git** (free): A version control system essential for downloading and managing code repositories.
+*   **Python** (free): A programming language used to run the scripts and tools within the agent kit.
+
+## How it actually works
+This workflow involves setting up a local environment and configuring an AI agent to interact with GitLab. The exact steps are detailed in the `gitlab-agent-kit`'s official documentation (wiki). Here's a general path:
+
+1.  **Get the agent kit**: Open your terminal (on Windows, use WSL or Git Bash) and download the `gitlab-agent-kit` repository using Git:
+
+    ```
+    # macOS or Linux
+    git clone https://gitlab.com/HamzaHassanain/gitlab-agent-kit.git
+    cd gitlab-agent-kit
+    ```
+
+    ```
+    # Windows (PowerShell)
+    git clone https://gitlab.com/HamzaHassanain/gitlab-agent-kit.git
+    cd gitlab-agent-kit
+    ```
+
+    You should see a new folder named `gitlab-agent-kit` in your current directory.
+
+2.  **Initialize the kit**: Run the setup script provided in the kit. Replace `your-gitlab-username` with your actual GitLab username.
+
+    ```
+    # macOS or Linux
+    tools/init.sh your-gitlab-username
+    ```
+
+    ```
+    # Windows (PowerShell)
+    .\tools\init.sh your-gitlab-username
+    ```
+
+    This script prepares the kit for use.
+
+3.  **Set up your GitLab access**: Create a GitLab Personal Access Token with the necessary permissions (as described in the kit's documentation). Then, add this token to a file named `.env` in the `gitlab-agent-kit` folder. The kit's `gl.py` tool will use this token to connect to GitLab.
+    You can check if your token is working by running:
+
+    ```
+    python3 tools/gl.py me
+    ```
+
+    You should see your GitLab user information.
+
+4.  **Customize the agent's behavior**: Edit the `AGENTS.md` file to define your preferred tech stack and the GitLab projects you want the agent to work on. Also, customize `wording-instructions.md` by adding examples of your own GitLab comments; this teaches the agent your writing style for comments and merge request descriptions. You can also add more projects to `projects.json`.
+
+5.  **Run a workflow**: Once configured, you can use a tool like Antigravity CLI (`agy`) to start one of the kit's workflows (e.g., "scout" to find issues, "analyze" to plan a solution, "ship" to create a merge request). The author used `agy` with `glab` for their example.
+    The agent will perform its tasks, but importantly, it will ask for your approval before making any significant changes or posting comments to GitLab.
+
+## Words you'll see, explained
+*   **AI Coding Agent**: An AI program designed to understand development tasks, write code, and interact with software tools to automate parts of the coding process.
+*   **GitLab**: A web-based platform that provides tools for the entire software development lifecycle, including version control, issue tracking, and continuous integration.
+*   **CLI (Command Line Interface)**: A text-based way to interact with a computer program, where you type commands instead of clicking buttons with a mouse.
+*   **Repository (Repo)**: A central location where all the files for a project, along with their revision history, are stored and managed using a version control system like Git.
+*   **Merge Request (MR)**: In GitLab, a proposal to integrate changes from one branch of code into another, often requiring review and approval before merging.
+*   **Personal Access Token**: A secure credential that grants access to your GitLab account without needing your password, used by applications or scripts.
+*   **API (Application Programming Interface)**: A set of rules and definitions that allows different software applications to communicate with each other.
+
+## Original source
+This workflow was shared by hamzahassanain0 on the DEV Community blog. The author detailed how they use an AI coding agent to streamline their contributions to GitLab projects, emphasizing human oversight for every action. The underlying `gitlab-agent-kit` is publicly available.
+
+## Notes & variations
+*   **Do you even need this?**: For occasional or simple contributions to GitLab, manually following the contribution guidelines might be quicker and easier than setting up and configuring an AI agent. This workflow is best suited for individuals who contribute frequently or manage many projects, where the automation saves significant time over many tasks.
+*   **Free-tier limits**: While the `gitlab-agent-kit` and tools like Git, Python, `glab`, and `agy` are free, using powerful AI models like Claude Code typically requires a paid API subscription. Explore open-source or freemium AI models if budget is a concern, though they may require more technical setup.
+*   **Common pitfall**: Over-reliance on the agent without careful review. The author explicitly mentions "approve every push and every comment." Always review the agent's proposed actions, code, and text before approving to ensure quality and prevent unintended consequences.
+*   **Tip for better results**: Start by using the agent on small, well-defined issues or in a test environment. This allows you to build trust in its capabilities and fine-tune its configuration (especially `AGENTS.md` and `wording-instructions.md`) before tackling more critical contributions.

@@ -1,0 +1,55 @@
+---
+title: "Improve AI Recommendations by Filtering Search Results"
+description: "Learn how to refine AI-powered recommendations by filtering out irrelevant results based on shared words or sequels, improving your search accuracy."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 30
+jobToBeDone: "Improve semantic search recommendations by filtering out irrelevant results based on shared words or sequels"
+tools:
+  - name: "Postgres"
+    url: "https://www.postgresql.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "pgvector"
+    url: "https://github.com/pgvector/pgvector"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "LLM"
+    url: "https://openai.com/"
+    pricing: "paid"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/pushpendra2011/my-semantic-search-recommended-sharktopus-to-jaws-fans-1lig"
+  platform: "blog"
+  author: "pushpendra2011"
+  postedAt: 2026-10-20
+score: 7
+ingestedAt: 2026-10-21
+nigeriaNotes: "This workflow requires setting up a database and using an LLM, which can incur costs. Free tiers for LLMs might be limited in usage and performance. Data usage for queries and results is generally low, but the initial setup and model interaction could consume more data."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn how to improve AI-powered search recommendations by filtering out results that are too similar or only share common words with your original query. This approach helps ensure that recommendations are more meaningful and less repetitive, providing users with genuinely new suggestions.
+
+## Tools you need
+*   **Postgres** (free): A powerful, open-source relational database system used here to store and manage data, including the vector embeddings.
+*   **pgvector** (free): A PostgreSQL extension that allows you to store and query vector embeddings, which are numerical representations of data used in AI.
+*   **LLM** (paid): A Large Language Model, like those from OpenAI, used to process text queries and generate embeddings for semantic search.
+
+## Steps
+1.  **Understand the problem**: The author noticed that their semantic search, which uses AI to find similar items, was recommending sequels or items with only shared words (e.g., recommending "Sand Sharks" to "Jaws" fans). This happened because the AI was matching based on word similarity rather than true meaning.
+2.  **Address title-based matching**: The AI was embedding text that started with the item's title. This made items with similar titles appear close together, even if their descriptions were different. The fix involves re-embedding items without their titles or, as a workaround, demoting results that only share common words with the original title. The author implemented a rule to ignore very short words (like "naa") and words that are too common.
+    *   **Author's code snippet for filtering**: The author's code filters results, keeping those that don't share common title words first, and then adding back those that do. The exact implementation details for filtering based on word length and commonality are complex and depend on the specific words you want to exclude.
+3.  **Address sequel recommendations**: The AI was also recommending direct sequels (e.g., "Jaws 2" for "Jaws"). This is because sequels are inherently very similar. The fix is to use a "franchise key" (the first few meaningful words of a title) to identify and exclude other entries from the same franchise when recommending from a specific title.
+    *   **Author's code snippet for franchise filtering**: The author's code extracts a "franchise key" from titles to group related items. For example, "Jaws: The Revenge" would get a key like "jaws", and "The Witcher 3: Wild Hunt - Hearts of Stone" would get "witcher". This allows the system to avoid recommending items from the same franchise.
+
+## Original source
+This workflow is based on a blog post by pushpendra2011 on the DEV Community platform. The author shares their experience improving a recommendation site by addressing issues with AI-driven search results, specifically when recommendations were too literal or repetitive.
+
+## Notes & variations
+*   **Free tier alternative**: For a simpler, though less powerful, approach, you could manually curate lists of related items or use basic keyword matching. However, for true semantic search, an LLM is generally required.
+*   **Common mistake**: Relying solely on word overlap without considering meaning can lead to irrelevant recommendations. Ensure your AI model is trained or fine-tuned to understand context.
+*   **Tip for better results**: Experiment with different ways to generate your "franchise keys" or "title words" to best suit your data. For instance, you might want to include or exclude specific types of words based on your recommendation domain.

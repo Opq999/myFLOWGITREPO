@@ -1,0 +1,87 @@
+---
+title: "Create a Robust TypeScript Function Pipe Type"
+description: "Learn to build a recursive TypeScript type for a function pipe that validates intermediate step types, improving code safety."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 30
+jobToBeDone: "Create a robust TypeScript type for a function pipe that checks intermediate step types"
+tools:
+  - name: "TypeScript"
+    url: "https://www.typescriptlang.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Claude"
+    url: "https://claude.ai/"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/gabrielanhaia/type-a-pipe-that-checks-every-step-variadic-tuples-infer-and-one-recursive-type-2pah"
+  platform: "blog"
+  author: "gabrielanhaia"
+  postedAt: 2026-10-17
+score: 8
+ingestedAt: 2026-10-21
+nigeriaNotes: "TypeScript is a programming language that runs locally and requires no internet connection after initial setup. Claude is an AI assistant accessible via a web browser, with a free tier that has usage limits. Data usage for Claude is minimal for text-based interactions."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+
+This entry explains how to create a very specific and advanced type in TypeScript, a programming language used for building web applications. The goal is to make sure that when you chain multiple functions together in a sequence (called a 'pipe'), the output of one function correctly matches the input of the next. This helps prevent errors before your code even runs.
+
+The author builds a recursive type, which is a type that can refer to itself. This allows it to check every single function in the pipe, not just the first and the last. This approach is more thorough than simpler methods but is also more complex to write and understand.
+
+Because this involves deep concepts within TypeScript's type system, like variadic tuple types and recursive conditional types, it's not a simple copy-paste solution. The exact implementation can be intricate and requires a good understanding of TypeScript's advanced features. Therefore, this entry focuses on explaining the concept and the building blocks rather than providing a ready-to-use, beginner-friendly recipe.
+
+## What you can use it for
+
+*   **Preventing type errors in function pipelines**: Ensure that data passed between chained functions always has the correct format, catching mistakes early.
+*   **Improving code reliability**: Make your code more robust by guaranteeing that intermediate steps in a sequence are type-safe.
+*   **Documenting complex data flows**: The type itself serves as clear documentation for how data should transform through a series of functions.
+*   **Building safer libraries**: If you are creating a library that involves function composition, this type can be used to provide strong guarantees to your users.
+
+## Tools you need
+
+*   **TypeScript** (free): A programming language that adds static types to JavaScript, helping catch errors early.
+*   **Claude** (freemium): An AI assistant that can help explain complex code or generate examples, though not strictly required for understanding the type itself.
+
+## How it actually works
+
+This workflow involves writing advanced TypeScript code. The process described by the author involves several steps using specific TypeScript features:
+
+1.  **Understand the Goal**: The aim is to create a single TypeScript type that can validate a sequence of functions (a pipe), ensuring each function's output matches the next function's input.
+2.  **Helper Types**: The author starts by defining small helper types like `In` and `Out` to extract the input and output types of a single-argument function, and `First` and `Last` to get the first and last elements of a tuple (an ordered list of types).
+3.  **Naive Approach**: A basic `NaivePipe` type is shown, which only checks the input of the first function and the output of the last. This is insufficient because it ignores all the intermediate steps.
+4.  **Recursive Type for Full Checking**: The core of the solution is a recursive conditional type named `Check`. This type works by:
+    *   Taking the first function from the sequence (`Fns`).
+    *   Checking if the current input type (`Cur`) matches the input type required by that first function (`In F`).
+    *   If they match, it recursively calls itself (`Check`) with the rest of the functions (`Rest`), updating the current input type to be the output type of the function it just processed (`Out F`).
+    *   If they don't match, it returns a specific `PipeError` type indicating the mismatch.
+5.  **Using `infer` and Variadic Tuple Types**: Advanced TypeScript features like `infer` (to pull types out of complex type structures) and variadic tuple types (to handle tuples of any length) are crucial for making this recursive type work.
+6.  **Testing**: The author suggests testing this type using `@ts-expect-error` to see where it correctly identifies errors and where simpler overload-based approaches might still be necessary.
+
+The exact code for these types is detailed in the original source. To reproduce this, you would need to set up a TypeScript project and carefully type out the definitions provided.
+
+## Words you'll see, explained
+
+*   **TypeScript**: A programming language that builds on JavaScript by adding static type definitions, which helps catch errors during development.
+*   **Type**: A classification that determines what kind of value a variable can hold (e.g., a number, a string, a boolean) and what operations can be performed on it.
+*   **Pipe**: A programming pattern where the output of one function is passed as the input to the next function in a sequence.
+*   **Variadic Tuple Types**: A TypeScript feature that allows you to define types for tuples (ordered lists) that can have an arbitrary number of elements, or a specific number of elements followed by a rest element.
+*   **Recursive Type**: A type definition that refers to itself, allowing it to process data structures or sequences of unknown or variable length.
+*   **Conditional Types**: TypeScript types that allow you to choose between two possible types based on a condition, often using the `extends` keyword.
+*   **`infer` keyword**: Used within conditional types to declare type variables whose types are inferred from the type being checked.
+*   **Overloads**: In TypeScript, defining multiple function signatures for the same function name, each handling different parameter types or numbers.
+*   **`@ts-expect-error`**: A special comment in TypeScript used to tell the compiler to expect an error on the next line; if no error occurs, TypeScript will warn you.
+
+## Original source
+
+This explanation is based on a blog post by Gabriel Anhaia, shared on DEV Community. The author explores advanced techniques in TypeScript's type system to create a robust type for function piping, detailing the use of variadic tuples, inference, and recursive types to ensure type safety across all intermediate steps.
+
+## Notes & variations
+
+*   **Do you even need this?**: For many common use cases, simpler function chaining or libraries like Lodash's `flow` or Ramda's `pipe` with their built-in types might be sufficient and easier to manage. This advanced type is for situations demanding the absolute highest level of compile-time safety for complex pipelines.
+*   **Free-tier limits**: While TypeScript itself is free, using AI tools like Claude to help understand or debug these complex types might be subject to their respective free-tier usage limits.
+*   **Common pitfall**: A frequent mistake when building such recursive types is not correctly handling the base case (when the sequence of functions is empty or has only one function) or not properly constraining the types involved in the recursion, which can lead to infinite type expansion errors or incorrect type checking.

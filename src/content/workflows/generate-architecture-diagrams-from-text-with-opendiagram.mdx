@@ -1,0 +1,61 @@
+---
+title: "Generate Architecture Diagrams from Text with OpenDiagram"
+description: "Learn to generate editable architecture diagrams from text prompts using Gemini and Excalidraw with the OpenDiagram tool."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 15
+jobToBeDone: "Generate architecture diagrams from text prompts using a custom AI tool"
+tools:
+  - name: "Gemini"
+    url: "https://gemini.google.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Excalidraw"
+    url: "https://excalidraw.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "OpenDiagram"
+    url: "https://github.com/agasta/OpenDiagram"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/agasta/i-got-tired-of-ai-diagram-slop-so-i-built-an-open-source-ai-diagram-generator-on-excalidraw-32c4"
+  platform: "blog"
+  author: "agasta"
+  postedAt: 2026-09-26
+score: 8
+ingestedAt: 2026-10-21
+nigeriaNotes: "This workflow is mobile-friendly and uses free or freemium tools. Data usage is minimal, primarily text-based prompts and responses. Excalidraw can be used offline after initial load."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will generate editable architecture diagrams from simple text descriptions. This approach works because it separates the AI's job of understanding your system from the task of visual layout, using specialized tools for each part.
+
+## Tools you need
+*   **Gemini** (freemium): An AI model to understand your text prompt and describe the system components.
+*   **Excalidraw** (freemium): A virtual whiteboard tool that creates hand-drawn-style diagrams and allows for easy editing.
+*   **OpenDiagram** (free): A custom tool that takes the AI's description and turns it into an Excalidraw diagram.
+
+## Steps
+1.  **Describe your system**: Go to the OpenDiagram website. In the text box, describe the system you want to diagram. Be clear about the main components and how they interact. For example:
+
+    ```
+    Design a URL shortener: API, cache, database, click analytics.
+    ```
+
+    You should see a text output from the AI describing the components, without any layout information like coordinates or colors.
+
+2.  **Generate the diagram**: The OpenDiagram tool will automatically process the AI's output. You should see a diagram appear on the Excalidraw canvas. This diagram will have components, icons, and arrows that are arranged by a layout engine, not the AI.
+
+3.  **Edit the diagram**: Since the diagram is in Excalidraw, you can now click and drag any element (boxes, arrows) to reposition them. You can also add or change text. This allows you to fine-tune the diagram to your exact needs.
+
+## Original source
+This workflow is based on a blog post by agasta, who shared their experience building an open-source AI diagram generator called OpenDiagram. They were frustrated with the inconsistent output from AI models when asking for diagrams and created a solution that uses Gemini for system design and Excalidraw for visual editing.
+
+## Notes & variations
+*   **Free tier alternative**: While Gemini is used here, you could experiment with other AI models that output structured text descriptions. However, the OpenDiagram tool is specifically built to work with the output format it expects.
+*   **Common mistake**: Do not ask the AI to "draw" the diagram or specify layout details like "put X here." The OpenDiagram approach relies on the AI focusing only on describing the system components, letting the layout engine handle the visual arrangement.
+*   **Tip for better results**: Be very specific in your text prompt about the components and their functions. For example, instead of just "database," specify "Postgres database for storing user data."

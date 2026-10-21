@@ -1,0 +1,86 @@
+---
+title: "Develop Software with AI Assistance and Human Oversight"
+description: "Learn how to use AI tools like Claude Code and Claude chat for software development, with a focus on human review and testing for quality."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 30
+jobToBeDone: "Develop software with AI assistance, ensuring human oversight for quality and correctness"
+tools:
+  - name: "Claude Code"
+    url: "https://code.claude.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Claude"
+    url: "https://claude.ai"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "GitHub"
+    url: "https://github.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/nathanspeich/what-the-ai-isnt-allowed-to-do-163d"
+  platform: "blog"
+  author: "nathanspeich"
+  postedAt: 2026-09-24
+score: 7
+ingestedAt: 2026-10-21
+nigeriaNotes: "Claude Code is a paid tool. Claude chat has a free tier, but data usage can be significant for complex coding tasks. GitHub has a free tier for public repositories."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will learn a workflow for using AI to help write code, with a strong emphasis on human review and testing to catch errors. This approach ensures that AI assists in development but a person remains in charge of quality and final approval, making AI a tool rather than an autonomous agent.
+
+## Tools you need
+*   **Claude Code** (paid): An AI tool that works directly within your codebase to write and test code.
+*   **Claude** (freemium): A general AI chat assistant used here for planning changes and reviewing AI-generated reports.
+*   **GitHub** (freemium): A platform for hosting code and collaborating on software projects.
+
+## Steps
+1.  **Define the task**: Start with a filed issue that clearly describes what needs to be done and what 'done' looks like. This sets the goal for the AI.
+2.  **Plan the change with AI**: Use a general AI chat tool like Claude to help plan the change and write instructions for the AI coding tool. The author does not share their exact prompt for this planning stage; a starting point could be:
+
+    ```
+    I need to implement a feature for [briefly describe the feature]. The goal is to [describe the desired outcome]. Please outline the steps involved and suggest how to structure the code, considering the existing project context [briefly describe context if known].
+    ```
+
+    You should get a plan or a set of instructions for the next step.
+3.  **Generate code with AI**: Provide the instructions to an AI coding tool like Claude Code. The AI will read the project's rules and the issue to write the code. The author states Claude Code gets a fresh session for each task.
+
+    The author does not share the exact prompt given to Claude Code. It would likely involve pasting the plan or instructions generated in the previous step, along with context about the project.
+
+    You should get code written by the AI, along with a report on what it did.
+4.  **Review the AI's report**: The AI coding tool will generate a report on its actions. You and a general AI chat tool (like Claude) will review this report together. The author uses the second Claude chat to review the report.
+
+    The author does not share their exact prompt for reviewing the report. A starting point could be:
+
+    ```
+    Here is the report from Claude Code on the changes it made for [task name]:
+
+    [Paste Claude Code's report here]
+
+    Please help me review this report. Are there any potential issues, missing steps, or areas that need further clarification? Focus on whether the AI followed the instructions and if the outcome seems correct.
+    ```
+
+    You should get feedback on the AI's report, highlighting potential problems.
+5.  **Manually test the changes**: Open the website or application in a browser and use it as a user would to check if the AI-generated code works as expected. This step is crucial for catching user interface bugs that automated tests might miss. The author found a significant bug this way.
+
+    This step involves manual interaction with the software, not a specific prompt.
+
+    You should see the software behaving as expected, or identify bugs.
+6.  **Commit the changes**: If the review and manual testing are satisfactory, a person manually stages, commits, and pushes the changes to a code repository like GitHub. The AI is not allowed to perform these actions.
+
+    This step involves using Git commands or a GitHub interface, not AI prompts.
+
+    You should see the changes successfully added to your project's history.
+
+## Original source
+This workflow is based on a blog post by nathanspeich on DEV Community, detailing how they build software with AI assistance. The author explains their process of using AI tools like Claude Code for writing code and a separate Claude chat for planning and review, emphasizing the critical role of human oversight in the development cycle.
+
+## Notes & variations
+*   **Free-tier alternative**: While Claude Code is paid, you can use free AI coding assistants like GitHub Copilot's free tier (if available in your region) or explore open-source models run locally with tools like Ollama for code generation, though they may require more setup. The review step can still be done with the free tier of Claude or other free AI chatbots.
+*   **Common mistake**: Relying solely on automated tests (like unit tests) without manual browser testing. The author's experience shows that AI-generated code can pass all tests but still have user-facing bugs, especially in the user interface.
+*   **Tip for better results**: Clearly define 'done' for each task in the initial issue. The more specific your requirements and expected outcomes, the better the AI can understand and execute the task, and the easier it will be for you to review its work.

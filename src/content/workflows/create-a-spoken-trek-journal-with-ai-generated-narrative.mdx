@@ -1,0 +1,112 @@
+---
+title: "Create a Spoken Trek Journal with AI-Generated Narrative"
+description: "Turn voice notes and GPS data into a shareable trek journal with AI-generated narrative and photo captions. Uses local AI models."
+category: "content-creation"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 60
+jobToBeDone: "Create a spoken trek journal with AI-generated narrative and photo captions from voice notes and GPS data"
+tools:
+  - name: "Vite"
+    url: "https://vitejs.dev/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "TypeScript"
+    url: "https://www.typescriptlang.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "MediaRecorder API"
+    url: "https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder_API"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "IndexedDB"
+    url: "https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "OpenTracks"
+    url: "https://opentrackers.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "whisper.cpp"
+    url: "https://github.com/ggerganov/whisper.cpp"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Gemma"
+    url: "https://ai.google.dev/gemma"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Ollama"
+    url: "https://ollama.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Temporal"
+    url: "https://temporal.io/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "FastAPI"
+    url: "https://fastapi.tiangolo.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "SQLite"
+    url: "https://www.sqlite.org/index.html"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Render"
+    url: "https://render.com/"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/adityakumar2358/walkworth-walk-it-say-it-keep-it-a-spoken-trek-journal-on-local-open-source-ai-3jp4"
+  platform: "blog"
+  author: "adityakumar2358"
+  postedAt: 2026-10-10
+score: 8
+ingestedAt: 2026-10-21
+nigeriaNotes: "The workflow relies heavily on local processing (whisper.cpp, Gemma via Ollama) which is data-light and free after initial model downloads. Temporal and Render have free tiers suitable for personal projects. Offline functionality on the phone minimizes data usage during treks."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will create a spoken journal of your walks or treks. This journal will include your own voice notes, GPS location data, and AI-generated narrative that connects your thoughts and captions your photos. This approach is useful for anyone who wants a detailed record of their outdoor activities without constantly interacting with their phone.
+
+## Tools you need
+*   **Vite** (free): A fast build tool for web applications, used here to create the mobile app.
+*   **TypeScript** (free): A programming language that adds types to JavaScript, making code more reliable.
+*   **MediaRecorder API** (free): A web browser feature that allows recording audio and video.
+*   **IndexedDB** (free): A browser database for storing data locally on your device.
+*   **OpenTracks** (free): An open-source Android app for tracking your GPS route.
+*   **whisper.cpp** (free): A local, efficient version of OpenAI's Whisper model for transcribing audio.
+*   **Gemma** (free): A family of lightweight, state-of-the-art open models from Google, used for generating text.
+*   **Ollama** (free): A tool to easily run large language models like Gemma locally on your computer.
+*   **Temporal** (freemium): A platform for orchestrating complex workflows, used here to manage the journal creation process.
+*   **FastAPI** (free): A modern, fast web framework for building APIs with Python.
+*   **SQLite** (free): A lightweight, file-based database for storing data locally.
+*   **Render** (freemium): A cloud platform for hosting web applications and static sites.
+
+## Steps
+This workflow involves setting up a mobile application for recording and a local setup on your laptop for processing. The exact setup for the local AI models (whisper.cpp, Gemma, Ollama) and the Temporal workflow is complex and requires technical knowledge beyond simple copy-pasting. The author provides the code on GitHub for those who wish to build it themselves.
+
+1.  **Prepare the mobile app**: The author built a Progressive Web App (PWA) using Vite and TypeScript. This app is designed to be opened once on Wi-Fi to cache necessary files. It uses the MediaRecorder API to record voice notes and the IndexedDB to store them locally on your phone. The app is intended to be very simple to use on the trail, with a single button to start and stop recording.
+    *   **What to expect**: A web application that can record audio and store it offline.
+
+2.  **Track your route**: Use the OpenTracks app on your Android phone to continuously record your GPS location during your walk. This app runs in the background and captures your route data.
+    *   **What to expect**: A GPX file containing your walk's GPS track.
+
+3.  **Process recordings on your laptop**: After your walk, you will transfer your voice notes and GPS data to your laptop. Here, you will use several local tools to process this data:
+    *   **Transcribe audio**: Use `whisper.cpp` to convert your voice notes into text. This model can handle multiple languages, including Hindi, Marathi, and English, within the same recording.
+    *   **Generate journal content**: Use Gemma, run via Ollama, to process the transcribed text. Gemma will extract key observations, caption your photos, and write connecting sentences for your journal. The author mentions using `gemma3:4b` or `gemma3:12b` depending on machine capability, configured in `walkworth.config.toml`.
+    *   **Orchestrate the workflow**: Temporal is used to manage the entire process, from importing your recordings and GPS data to transcribing, aligning with the track, extracting information, and composing the final journal. Each step is designed to be durable and retryable.
+    *   **Store data**: FastAPI and SQLite are used on the laptop to manage the data during processing. No cloud database is used.
+    *   **What to expect**: Your raw voice notes and GPS data are transformed into structured text, photo captions, and a coherent narrative.
+
+4.  **Host the finished journal**: The final journal is hosted as a static site on Render.
+    *   **What to expect**: A shareable link to your completed trek journal.
+
+## Original source
+This workflow is based on the Walkworth project by adityakumar2358, submitted as part of the Hacktoberfest Open-Source AI Challenge. It aims to create a spoken trek journal using local, open-source AI models.
+
+## Notes & variations
+*   **Free tier viability**: All core AI processing (transcription and generation) happens locally on your machine using free, open-source tools. Temporal and Render offer generous free tiers suitable for personal use. This makes it highly viable for users in Nigeria and elsewhere.
+*   **Common pitfall**: Ensure your local AI models (Gemma, whisper.cpp) are correctly installed and configured. Incorrect setup can lead to transcription errors or poor journal generation.
+*   **Tip for better results**: Experiment with different Gemma model sizes (e.g., `gemma3:4b` vs. `gemma3:12b`) if your laptop has sufficient resources. Larger models may provide more nuanced and detailed journal entries. Also, speak clearly and concisely into the microphone for better transcription accuracy.

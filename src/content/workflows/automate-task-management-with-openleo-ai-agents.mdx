@@ -1,0 +1,68 @@
+---
+title: "Automate Task Management with OpenLeo AI Agents"
+description: "Learn how to set up OpenLeo, an open-source Trello-like tool, to automate task management by assigning cards to AI agents."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 30
+jobToBeDone: "Automate task management by assigning cards to AI agents in a Trello-like interface"
+tools:
+  - name: "OpenLeo"
+    url: "https://leooi.com/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Docker"
+    url: "https://www.docker.com/"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "OpenAI (ChatGPT)"
+    url: "https://chatgpt.com/"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://dev.to/ancs21/i-built-an-open-source-trello-where-a-custom-pi-agent-harness-does-the-cards-a16"
+  platform: "blog"
+  author: "ancs21"
+  postedAt: 2026-10-10
+score: 7
+ingestedAt: 2026-10-21
+nigeriaNotes: "OpenLeo is free and open-source. It uses your existing ChatGPT plan for AI capabilities, so no additional costs for AI processing. Data usage for the AI agents will depend on the complexity of the tasks assigned and the amount of text processed, but the core application itself is lightweight. Docker might require some disk space."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will set up OpenLeo, a free and open-source tool that looks and works like Trello but uses AI agents to complete tasks. This approach works by giving AI agents their own isolated computer environments to perform actions like browsing websites or filling forms, directly from your to-do list.
+
+## Tools you need
+*   **OpenLeo** (free): An open-source Trello-like application that uses AI agents.
+*   **Docker** (freemium): Software that lets you run applications in isolated environments called containers. This is used to give each OpenLeo board its own secure computer.
+*   **OpenAI (ChatGPT)** (freemium): Used for the AI capabilities of the agents. You'll sign in with your existing ChatGPT account.
+
+## Steps
+1.  **Get the OpenLeo code**: Download the project files from GitHub. The author recommends using `bun` for installation.
+    ```bash
+    git clone https://github.com/ancs21/openleo
+    cd openleo
+    bun install
+    ```
+    You should see a list of installed packages and no errors.
+2.  **Start OpenLeo**: Run the development server using `bun`.
+    ```bash
+    bun run dev
+    ```
+    You should see output indicating the server is running, and a URL like `http://127.0.0.1:3000` will be provided.
+3.  **Access OpenLeo**: Open your web browser and go to the URL provided in the previous step (usually `http://127.0.0.1:3000`).
+    You should see the OpenLeo application interface, which resembles a Trello board.
+4.  **Set up your first board**: Follow the on-screen instructions to set up your first board. This will involve creating an isolated computer environment for your board, which might use Docker or Apple's container runtime depending on your operating system.
+    You will see a confirmation that your board's environment is ready.
+5.  **Sign in with ChatGPT**: When prompted, sign in using your ChatGPT account. This connects OpenLeo to OpenAI's services so the AI agents can function.
+    You should be logged into OpenLeo, and the AI agents will now be able to use your existing ChatGPT plan.
+
+## Original source
+This workflow is based on a blog post by ancs21 on DEV Community. The author explains how they built OpenLeo, a personal to-do board where AI agents, managed by a custom harness, can pick up and complete tasks, aiming to reduce the manual effort of managing simple to-do items.
+
+## Notes & variations
+*   **Free tier alternative**: OpenLeo itself is free and open-source. The main cost is tied to your existing ChatGPT plan, which is freemium. If you don't have a ChatGPT account, you'll need to create one.
+*   **Common pitfall**: Ensure Docker is installed and running correctly on your system before starting OpenLeo, as it's crucial for creating the isolated environments for your boards. The author notes that the software is early and to back up your data before updating.
+*   **Tip for better results**: Experiment with assigning different types of tasks to your AI agents. Tasks that involve gathering information from websites or drafting simple text are good starting points. For more complex tasks, consider breaking them down into smaller steps that an agent can handle.
