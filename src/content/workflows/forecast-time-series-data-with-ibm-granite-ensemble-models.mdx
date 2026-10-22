@@ -1,0 +1,136 @@
+---
+title: "Forecast Time-Series Data with IBM Granite Ensemble Models"
+description: "Learn to combine multiple pre-trained IBM Granite models to generate more reliable time-series forecasts, including point predictions and quantile ranges, without needing to train your own models."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 25
+jobToBeDone: "Implement ensemble time-series forecasting with open-source models"
+tools:
+  - name: "Python"
+    url: "https://www.python.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "pandas"
+    url: "https://pandas.pydata.org/"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "granite-tsfm"
+    url: "https://huggingface.co/ibm-granite"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Hugging Face Hub"
+    url: "https://huggingface.co/models"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://huggingface.co/blog/ibm-research/granite-timeseries-ensemble-r1"
+  platform: "blog"
+  author: "Hugging Face - Blog"
+  postedAt: 2026-10-22
+score: 9
+ingestedAt: 2026-10-22
+nigeriaNotes: "This workflow uses free, open-source tools. The main data usage will be downloading the Python libraries and the pre-trained Granite models from Hugging Face, which can be several hundred megabytes in total. Subsequent runs will use less data. It's mobile-friendly if you use a cloud-based Python environment or WSL on Android."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "For your university final year project, predict future electricity demand for a Nigerian city using historical consumption data, generating both a central forecast and a range of possible outcomes."
+  - persona: "employee"
+    scenario: "As a data analyst, predict your company's monthly product sales for the next six months using historical data, providing management with a robust forecast and confidence intervals for strategic planning."
+  - persona: "entrepreneur"
+    scenario: "Forecast your online store's sales for the next quarter using past transaction data, helping you plan inventory and marketing campaigns more accurately."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will get a robust time-series forecast that combines predictions from four different IBM Granite models. This approach, called 'ensemble forecasting,' helps reduce the risk of relying on a single model and provides both a central prediction (point forecast) and a range of possible outcomes (quantile forecasts). It works by merging the strengths of complementary models without needing to train them yourself.
+
+## Tools you need
+*   **Python** (free): The programming language used to run the forecasting script.
+*   **pandas** (free): A Python library for handling and analyzing data, especially in table-like structures called DataFrames.
+*   **granite-tsfm** (free): The IBM Granite Time-Series Foundation Models library, which provides the ensemble forecasting tools.
+*   **Hugging Face Hub** (free): An online platform where the pre-trained Granite ensemble model is hosted and can be easily downloaded.
+
+## Steps
+
+1.  **Set up your Python environment**: If you don't have Python installed, download it from the official website. You will need Python 3.8 or newer. For Windows users, ensure you select the option to add Python to your PATH during installation.
+
+2.  **Install necessary libraries**: Open your terminal or command prompt and run the following commands to install the `granite-tsfm` and `pandas` libraries. These are essential for running the forecasting script.
+
+    ```bash
+    # macOS or Linux
+    pip install "granite-tsfm==0.3.11" pandas
+    ```
+
+    ```powershell
+    # Windows (PowerShell)
+    pip install "granite-tsfm==0.3.11" pandas
+    ```
+
+    You should see messages indicating that the packages were successfully installed.
+
+3.  **Create your Python script**: Open a text editor (like Notepad on Windows, TextEdit on Mac, or any code editor) and paste the following Python code. Save the file as `forecast_script.py` (or any name ending with `.py`) in a folder you can easily find.
+
+    ```python
+    import pandas as pd
+    from tsfm_public.models.ensemble.modeling_ensemble import QuantileEnsembleForecaster
+
+    # Load example time-series data
+    # This dataset contains electricity consumption data over time.
+    df = pd.read_csv(
+        "https://raw.githubusercontent.com/zhouhaoyi/ETDataset/main/ETT-small/ETTh1.csv",
+        parse_dates=["date"],
+    )
+
+    # Load the pre-trained Granite ensemble model from Hugging Face Hub
+    # This step downloads the four individual Granite models that make up the ensemble.
+    print("Loading ensemble model... This may take a moment as models are downloaded.")
+    ensemble = QuantileEnsembleForecaster.from_pretrained(
+        "ibm-granite/granite-timeseries-ensemble-r1",
+    )
+    print("Ensemble model loaded successfully.")
+
+    # Generate forecasts
+    # We use the last 1024 data points as context to predict the next 24 points.
+    # 'date' is the timestamp column, 'OT' is the target column we want to forecast.
+    print("Generating forecasts...")
+    result = ensemble(
+        df.tail(1024), # Use the last 1024 rows of the dataset as input
+        timestamp_column="date",
+        target_columns=["OT"],
+        context_length=1024, # Number of past data points to consider for prediction
+        prediction_length=24, # Number of future data points to predict
+    )
+    print("Forecasts generated.")
+
+    # Print the results
+    print("\n--- Point Forecasts (Central Predictions) ---")
+    print(result.prediction_outputs)
+
+    print("\n--- Quantile Forecasts (Prediction Ranges) ---")
+    print(result.quantile_outputs)
+    ```
+
+    This script will first load an example dataset, then download and load the ensemble model, and finally generate and print the forecasts. The `df.tail(1024)` part means it will use the most recent 1024 entries from the example data to make predictions.
+
+4.  **Run the script**: Open your terminal or command prompt, navigate to the folder where you saved `forecast_script.py`, and run the script using Python:
+
+    ```bash
+    python forecast_script.py
+    ```
+
+    You should see messages indicating the model loading process, followed by the generated point forecasts and quantile forecasts printed directly in your terminal. The first time you run this, it will take longer as the individual models are downloaded.
+
+5.  **Interpret the results**: The output will show two main sections:
+    *   `prediction_outputs`: These are the central, single-value forecasts for each of the next 24 time steps. This is your best guess for what will happen.
+    *   `quantile_outputs`: These provide a range of possible outcomes. By default, they show quantiles from 0.1 to 0.9. For example, the 0.1 and 0.9 quantiles define an 80% prediction interval, meaning there's an 80% chance the actual value will fall between these two numbers.
+
+    You should see a table-like output for both, showing the predicted values for the `OT` column over the next 24 steps.
+
+## Original source
+This ensemble forecasting method was introduced in a blog post by IBM Research on the Hugging Face Blog. The article highlights how combining multiple pre-trained Granite models can lead to more reliable time-series predictions.
+
+## Notes & variations
+*   **Common mistake**: Forgetting to install `pandas` or `granite-tsfm` will cause an `ImportError`. Make sure step 2 is completed successfully.
+*   **Data preparation**: The example uses a CSV file. For your own data, you'll need to load it into a pandas DataFrame. Ensure your timestamp column is correctly parsed as dates and your target columns are numeric.
+*   **Getting better results**: Experiment with `context_length` (how much past data the model sees) and `prediction_length` (how far into the future you want to predict). The optimal values depend on your specific dataset and forecasting needs. The author notes that the ensemble reduces guesswork about which single model to use, offering a sensible default.

@@ -27616,8 +27616,104 @@
     "033f684b6fdb6aaae1615a294780572c4f2996dd1a79c045485c6cf24bcf17f4": {
       "url": "https://dev.to/juanauriti/devto-can-schedule-posts-from-front-matter-its-own-documentation-doesnt-mention-the-field-38p9",
       "date": "2026-10-21"
+    },
+    "64722ecc1752269476177ac5911407f32c6cb5a8a5ebec2512cdc27d3475842f": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1xbvr3w/what_it_feels_like_to_use_claude",
+      "date": "2026-10-22"
+    },
+    "de377fdb3304eb693b546690a74c5bdaf998c7d65b10eb34190c6e78ca62dc77": {
+      "url": "https://simonwillison.net/2026/Oct/21/php-security-release",
+      "date": "2026-10-22"
+    },
+    "b21a27d732b2a4e15a3bfba443b3bb8cc3778baef7fb824e1c12819a0a06504a": {
+      "url": "https://www.reddit.com/r/productivity/comments/1xa8cb7/why_do_some_people_get_so_much_more_done_in_the",
+      "date": "2026-10-22"
+    },
+    "24e7bc55449594d80a5d59f663c85cd4d4af75cab8b534b3084efc9a8f93b16c": {
+      "url": "https://simonwillison.net/2026/Oct/21/panache",
+      "date": "2026-10-22"
+    },
+    "28dc766197a743808dd5fe489381eb04d40a83f517112680175a1d0177153d2e": {
+      "url": "https://simonwillison.net/2026/Oct/20/emudhra-certificates",
+      "date": "2026-10-22"
+    },
+    "d0f0045fb40f11c225017e1c492631ec8f89e383a86d3e4cf6cfaf417cedb1a4": {
+      "url": "https://simonwillison.net/2026/Oct/20/battledrones",
+      "date": "2026-10-22"
+    },
+    "439c9906884b8b638808b69e128a5e82377d1a909354acaeafcb6a5093d25aec": {
+      "url": "https://simonwillison.net/2026/Oct/16/sqlite-sparql-rust",
+      "date": "2026-10-22"
+    },
+    "4c49390f8994fee2de1edb4c4d070084b2ba8d5208352457830397dbe65170f5": {
+      "url": "https://www.latent.space/p/ainews-openais-patch-the-planet-program",
+      "date": "2026-10-22"
+    },
+    "1cd487805b8193f0c7f2bce96a0e62ba89ed8e7ca19e8dc10473f5614b1c7a1b": {
+      "url": "https://www.latent.space/p/claude-mods",
+      "date": "2026-10-22"
+    },
+    "9c99dc597b92594a7b49f4da5e89a024c963984fd0ce718bfd9839c32da1545c": {
+      "url": "https://www.latent.space/p/ainews-deepseek-deepinfer-open-source",
+      "date": "2026-10-22"
+    },
+    "db3c2eda6e56a446c36ed93c3dccaeba3672a2c93dce5ae723bf1cfb30b52604": {
+      "url": "https://www.latent.space/p/tenex",
+      "date": "2026-10-22"
+    },
+    "1aa70594680b7e71ad22d37b621acb6c827bf1275712e865beb3d2c01e18e18e": {
+      "url": "https://www.latent.space/p/sfcompute2",
+      "date": "2026-10-22"
+    },
+    "b4d241f6c37124aab9493803b7d291d7590d00ebb0d46b92ed58bf8c43b5518b": {
+      "url": "https://www.bensbites.com/p/claudes-personal-agent",
+      "date": "2026-10-22"
+    },
+    "7623f794020a436d66cc13e77806245fdb8ecdd4c8eb91d9122c5dd0892c6c3d": {
+      "url": "https://www.oneusefulthing.org/p/30-months-on-the-exponential-in-charts",
+      "date": "2026-10-22"
+    },
+    "0e5fad3ca5f8a881acf7d04bb62a3859c2c74e88d36ad866cc1ffd77a9610def": {
+      "url": "https://huggingface.co/blog/ibm-research/granite-timeseries-ensemble-r1",
+      "date": "2026-10-22"
+    },
+    "94a5f6526eada9bc0f52700eb51d921a09fcfe01b2b364c8982be81ac1418089": {
+      "url": "https://huggingface.co/blog/nvidia/kumo-relational",
+      "date": "2026-10-22"
+    },
+    "40a01666d562060bfdf96e1bee46311ea36b1fbc4128b476c54664266fe1cab8": {
+      "url": "https://huggingface.co/blog/Dharma-AI/vocabx-vocabulary-specialization",
+      "date": "2026-10-22"
+    },
+    "5b4e08461387ba3b44832eb32623a231bc98422af2b9c0aa208f73f388840205": {
+      "url": "https://huggingface.co/blog/amazon/profiling-torchneuron-part-1",
+      "date": "2026-10-22"
+    },
+    "c2ed162a157709f5cb47598d7a4a9ff0ca7927682ea3c9a0e259f86971bb2de7": {
+      "url": "https://huggingface.co/blog/ibm-granite/granite-speech-5",
+      "date": "2026-10-22"
+    },
+    "ef73bf2ace8ac67192910f29383fdaeabcc1f1c3f55e1ee321602bf2faa4d9c1": {
+      "url": "https://huggingface.co/blog/allenai/fairstress",
+      "date": "2026-10-22"
+    },
+    "39e60f901a735303e0c0ae9b731fee2baf79f5edd599caf7944297514c7c53bb": {
+      "url": "https://huggingface.co/blog/hf-torchtpu",
+      "date": "2026-10-22"
+    },
+    "a379ec2597bb3939186fc5541ac42f34429a7a6b22b0b8781a4cc4c4176c0c95": {
+      "url": "https://www.interconnects.ai/p/latest-open-artifacts-25-deepseek",
+      "date": "2026-10-22"
+    },
+    "7736181887ba1695b776c2b294071633a2ef8c9f3a8e90e867948b11e3c97614": {
+      "url": "https://newsletter.pragmaticengineer.com/p/the-revised-rules-of-engineering",
+      "date": "2026-10-22"
+    },
+    "b9a03b46a4b1fe5c223344c84dabf85c3d30ae636a2c32fa2b1df38b67e35cfc": {
+      "url": "https://newsletter.pragmaticengineer.com/p/whats-the-roi-of-software-engineers",
+      "date": "2026-10-22"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 0
+  "dailyPage": 1
 }
