@@ -1,0 +1,66 @@
+---
+title: "Look Up Hugging Face Models for AWS Trainium Compatibility"
+description: "Quickly find out if a Hugging Face model is compatible with AWS Trainium and get the script to run it. Ideal for planning AI deployments."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 5
+jobToBeDone: "Check if a Hugging Face model runs on AWS Trainium and get the script to run it"
+tools:
+  - name: "Hugging Face Spaces"
+    url: "https://huggingface.co/spaces"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://huggingface.co/blog/torch-neuronx-model-support"
+  platform: "blog"
+  author: "Hugging Face - Blog"
+  postedAt: 2026-10-23
+score: 5
+ingestedAt: 2026-10-23
+nigeriaNotes: "Checking model compatibility on Hugging Face Spaces is free and uses very little data, making it accessible on mobile. However, actually running models on AWS Trainium requires significant payment for cloud resources and can be data-intensive, which might be a barrier."
+tiktokUrl: ""
+published: false
+---
+
+## What you'll get
+You will get a clear answer on whether a specific Hugging Face model can run on AWS Trainium, a specialized chip designed for AI. If compatible, you'll also get the exact Python script and installation instructions needed to run that model on a Trainium instance. This approach helps you quickly assess model compatibility without needing to set up complex environments, saving time and resources when planning AI deployments.
+
+## Tools you need
+*   **Hugging Face Spaces** (freemium): A platform for hosting machine learning demos and apps, used here to check model compatibility.
+
+## Steps
+
+1.  **Open the model support tool**: Go to the Hugging Face Space designed to check AWS Trainium compatibility by visiting `https://huggingface.co/spaces/aws-neuron/torch-neuronx-model-support`.
+
+    You should see a web page titled "torch-neuronx model support" with a list of models and their compatibility status.
+
+2.  **Browse or search for a model**: The page starts with a "Selected" view of popular models. To find a specific model, you can:
+    *   Click on the "Trending" or "Downloads" tabs to see models ranked by popularity.
+    *   Type part of a model's name into the search bar to filter the list.
+
+    You should see a list of models, each with a "Result" (e.g., "PASS", "FAIL", "NOT TESTED"), the number of Trainium cores used, wall time, and peak device memory. If a model was not tested, the tool might explain why.
+
+3.  **View model details and script**: Click on a model from the list to see more details.
+
+    You should see a new section appear below the model list, showing the "Neuron stack" (software versions), "Packages to install", and a `run.py` script. This script is what you would use to run the model on an AWS Trainium instance.
+
+4.  **Copy the run script (optional)**: If the model passed the compatibility test, you can copy the `run.py` script provided. This script is ready to use if you have access to an AWS Trainium environment.
+
+    ```
+    # The author doesn't share the exact run.py script in the excerpt.
+    # The Hugging Face Space will display the full script after you select a compatible model.
+    # It typically loads the model using `from_pretrained`, handles sharding if needed,
+    # and generates text with a static cache and `torch.compile(backend="neuron")`.
+    # You will copy the complete script directly from the Space.
+    ```
+
+    You should have the full `run.py` script copied, ready to be saved to a file. The Space also provides a command to copy pre-compiled graphs, which can speed up subsequent runs.
+
+## Original source
+This workflow is based on a blog post from Hugging Face, written by David Corvoysier. The post introduces the `torch-neuronx` model support Space, which helps users check if Hugging Face models are compatible with AWS Trainium and provides the necessary scripts to run them.
+
+## Notes & variations
+*   **Free-tier viability**: Checking model compatibility on Hugging Face Spaces is completely free and requires minimal data. However, actually running a model on AWS Trainium requires an AWS account and will incur significant costs for the specialized hardware. There is no free tier for AWS Trainium instances.
+*   **Common mistake**: Do not confuse checking compatibility with actually running the model. This recipe only covers the lookup. Running the model on AWS Trainium requires advanced cloud setup, installing specific software (like `torch-neuronx`, `neuronx-cc`), and managing a `trn2` instance, which is beyond a beginner's scope and not covered here.
+*   **Tip for better results**: When searching for models, try different keywords or browse the "Trending" and "Downloads" tabs to discover models that are already known to work well with AWS Trainium. Pay attention to the "Result" column; "PASS" indicates full compatibility.

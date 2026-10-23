@@ -27712,8 +27712,304 @@
     "b9a03b46a4b1fe5c223344c84dabf85c3d30ae636a2c32fa2b1df38b67e35cfc": {
       "url": "https://newsletter.pragmaticengineer.com/p/whats-the-roi-of-software-engineers",
       "date": "2026-10-22"
+    },
+    "85e91384e1edb8deb0f3db72b44ce58c54d414c22f41fcd2fc26f3be8bebb282": {
+      "url": "https://news.ycombinator.com/item?id=50160198",
+      "date": "2026-10-23"
+    },
+    "ba874d7f534f696a225d52b21872ba59d648e3715da9fae50d6fd1ac27a7ae0d": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1xc281d/this_is_an_iq_test",
+      "date": "2026-10-23"
+    },
+    "d1cc4ab1d566d8152f4f0c6d65de84d367ceed2326f5785712ae538cff9db61e": {
+      "url": "https://simonwillison.net/2026/Oct/22/de-staat-freedom",
+      "date": "2026-10-23"
+    },
+    "385c19a396dc45aecd3c0d0d445d56254a65afa4574977c1d6e200599b99bcf3": {
+      "url": "https://github.com/cheaper-inference/OmniRoute",
+      "date": "2026-10-23"
+    },
+    "81c4f43b7098c32f48c97427f4b9c38a69713b54fb3a7815e49de62a0eae2101": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1xc99yn/damn",
+      "date": "2026-10-23"
+    },
+    "ee487a66d7e4ee85c2e1d6bef776b8647a95480a050cb50645860fe72a123c7f": {
+      "url": "https://simonwillison.net/2026/Oct/22/donating-agent-skills",
+      "date": "2026-10-23"
+    },
+    "b671985a76b088e5e3137a6aa6dcc48f259fd0831dcd44bbcc6ca8d47552badc": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1xbx2b2/its_over",
+      "date": "2026-10-23"
+    },
+    "6619134087094c0c5f5043fcef88073543475eaf039694c58d0825c9f1756e1b": {
+      "url": "https://simonwillison.net/2026/Oct/22/armin-ronacher",
+      "date": "2026-10-23"
+    },
+    "717e6331567eda8154b161084e4def5c4f3c04b76c7187a0f9ee96d60cc0cacf": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1xcmyru/making_your_own_game_is_getting_easier_my_mobile",
+      "date": "2026-10-23"
+    },
+    "b11a3832e61f812748a3f1073b478b0601512baff847c0e9e2fe7609facb940e": {
+      "url": "https://latent.space/p/ainews-black-october",
+      "date": "2026-10-23"
+    },
+    "08b491e4ee63d8e915e29ff45e03d644b828b68a0d3ea668a819a59fe75f6e62": {
+      "url": "https://www.reddit.com/r/GeminiAI/comments/1wq2px2/soon_in_2031",
+      "date": "2026-10-23"
+    },
+    "8347efbf60cad1ffc9bbfb662fe3e7f13579c9e23fe0449fabec9cc9171a1550": {
+      "url": "https://latent.space/p/modal-d",
+      "date": "2026-10-23"
+    },
+    "043609868e05f9633ea2b985eab74d3b0df1085b4b78eeba13a2ab6bc8868545": {
+      "url": "https://www.reddit.com/r/GeminiAI/comments/1wwdsmr/im_sorry_what",
+      "date": "2026-10-23"
+    },
+    "adabb743e4715d5e5fc675f4c6e83d3d67c4de0439a1f3af1f03af9278e9ef49": {
+      "url": "https://latent.space/p/moshi",
+      "date": "2026-10-23"
+    },
+    "3debc4232ea63d0500318e6b2ad3be18172f3eb7b835db2aa37e2b748b02985a": {
+      "url": "https://www.reddit.com/r/GeminiAI/comments/1x98khd/you_cant_access_argon_in_antigravity_if_you_got",
+      "date": "2026-10-23"
+    },
+    "be77c76cb6e9269878fad12073ecda7ecbc831d1a125cd6b53709d56c4f0ef0c": {
+      "url": "https://latent.space/p/ainews-openais-patch-the-planet-program",
+      "date": "2026-10-23"
+    },
+    "6ee3fac43ef4dbb2548d07ff7c646737c87992ab14b98c35d530e9f3a93f45aa": {
+      "url": "https://www.reddit.com/r/GeminiAI/comments/1x49m93/mark_teased_muse_wonder_today_and_released_it",
+      "date": "2026-10-23"
+    },
+    "00fdf2e65e5e5117a5057c8d1f379cba8a20220d9669fb91a5412d24a2acd7e7": {
+      "url": "https://latent.space/p/claude-mods",
+      "date": "2026-10-23"
+    },
+    "89529df249042d2850e5c52f7c9f81e87ace760fcfc36cdc09e7f160e8cff95f": {
+      "url": "https://www.reddit.com/r/GeminiAI/comments/1wufg38/holy_smoke_google_cooked_openai_and_anthropic",
+      "date": "2026-10-23"
+    },
+    "13bafceb1538461d968451035fbf05c077f02d8b1797f269b39b95883c759a96": {
+      "url": "https://latent.space/p/ainews-deepseek-deepinfer-open-source",
+      "date": "2026-10-23"
+    },
+    "4d469c4bd5b03bfc71ee5a2e9731daa22bc0db00595176a97248a3b945bb4be5": {
+      "url": "https://www.reddit.com/r/GeminiAI/comments/1wwalmc/wtf_google_getting_rid_of_free_gemini_flash_and",
+      "date": "2026-10-23"
+    },
+    "4cc64dc94597560ddef206098ab50b67cb0cbaf522b445e0a582b9db8a2066f6": {
+      "url": "https://latent.space/p/tenex",
+      "date": "2026-10-23"
+    },
+    "d73a9abd75c2c4173cbab91773cbbf7cde978146fc1e1a07c9753022302f756d": {
+      "url": "https://www.reddit.com/r/GeminiAI/comments/1wu4uii/gemini_free_student_offer_is_back",
+      "date": "2026-10-23"
+    },
+    "71409e0c76f0db2f6735431d5a21bfa38389033ce883a4c15be462e76992c53c": {
+      "url": "https://latent.space/p/sfcompute2",
+      "date": "2026-10-23"
+    },
+    "275e77071d76dcbc5f2750dff964ba875af2d77df9413e6364fca53e0c534973": {
+      "url": "https://www.reddit.com/r/GeminiAI/comments/1wxhstg/its_more_likely_that_well_see_haiku_55_first",
+      "date": "2026-10-23"
+    },
+    "2c09c3f9a6417fd50725dd5a2209d4ed19af23819495b62a274f41ce5b1b2d8e": {
+      "url": "https://latent.space/p/ainews-not-much-happened-today-f09",
+      "date": "2026-10-23"
+    },
+    "93e12e179bf01a28487afb3627558f733574ad98f8fe14349e4de6d5b945c84a": {
+      "url": "https://www.reddit.com/r/GeminiAI/comments/1x5nyfu/out_of_gemini_4_argon_usage_after_10_messages",
+      "date": "2026-10-23"
+    },
+    "2d6aa1727b5ee81054fbba21a2bc6562fad6b6c9fb6bca7ddd156addc35baa89": {
+      "url": "https://latent.space/p/ainews-high-taste-testers-ep-1",
+      "date": "2026-10-23"
+    },
+    "366041f6e10b4eed003c9292cd70c8ed922a22d7c2b38ccc79e452d84fb02461": {
+      "url": "https://www.reddit.com/r/GeminiAI/comments/1wyy9zg/day_6_no_gemini_4",
+      "date": "2026-10-23"
+    },
+    "389589b6b8bc00fe284a5d7be3d1fd6f6e200be0008af1026d6c9134a6f789f6": {
+      "url": "https://latent.space/p/ainews-agents-disprove-polysemanticity",
+      "date": "2026-10-23"
+    },
+    "d5a359f03c3435ca3e2a5a559c6eae1e360e11fdd7d16550338950362651a3d4": {
+      "url": "https://www.reddit.com/r/GeminiAI/comments/1x1sxnd/the_change_is_on",
+      "date": "2026-10-23"
+    },
+    "c83dec1114da9cfb2a6cc204b8e65f3b263a6e0de324f911aec5ebd490b2f9f9": {
+      "url": "https://latent.space/p/ainews-modals-1b-arr-16b-series-d",
+      "date": "2026-10-23"
+    },
+    "80b3108d17ca62c1996009ce5da54332ee6718660135d2b5589a58e21011152f": {
+      "url": "https://www.reddit.com/r/GeminiAI/comments/1x9plhu/cancel_your_subscriptions",
+      "date": "2026-10-23"
+    },
+    "800e88b7ff797cb48dc0d3bf1c6fa9205893fb81cb9656b70e4fea626f82aac5": {
+      "url": "https://latent.space/p/crossing-the-threshold",
+      "date": "2026-10-23"
+    },
+    "0d5b716abf17da45b87cad4b3415d8e9ed279d38cdd088ff217129606f6a3bfb": {
+      "url": "https://www.reddit.com/r/GeminiAI/comments/1x2awe9/new_benchmark_dropped",
+      "date": "2026-10-23"
+    },
+    "8dc18bead960d507fd898a88e7777cacb0aaf625f8d6abb514ecc6b57e4ed865": {
+      "url": "https://latent.space/p/lab-in-the-loop-at-compute-speed",
+      "date": "2026-10-23"
+    },
+    "9a952127137d9064d2b433a247f0c63334485b09823b168a80eda0d20aeab799": {
+      "url": "https://www.reddit.com/r/GeminiAI/comments/1x8ikye/gemini_4_argon_made_me_full_700_pages_book",
+      "date": "2026-10-23"
+    },
+    "1d5f8df4a8f958589b4556938adc0c4a4ecee8bffa10ca5d40523faced792d03": {
+      "url": "https://latent.space/p/ainews-ai-engineer-nyc-gemini-4-argon",
+      "date": "2026-10-23"
+    },
+    "0d9f07aeb29165214fe930d620cc7141eb683ef4cb70e580a2d5b49af675b46e": {
+      "url": "https://www.reddit.com/r/GeminiAI/comments/1x0u1yb/how_it_feels_using_38_flash",
+      "date": "2026-10-23"
+    },
+    "7d361849127305dbb18e19f678f5b8aacf3a547fdbb40fa15a448e200f116846": {
+      "url": "https://latent.space/p/dyna",
+      "date": "2026-10-23"
+    },
+    "d6f4c28d848d843746870a26bc79373eb7599c4a95aac742b517342e9ac13cd1": {
+      "url": "https://www.reddit.com/r/GeminiAI/comments/1xbuz4r/gemini_4_argon_credited_for_invaluable",
+      "date": "2026-10-23"
+    },
+    "9ee0cb7cc2b679d0d06f722993d73e4e8f28968f0c1ee909c2e19828588104cb": {
+      "url": "https://latent.space/p/ainews-meta-muse-wonder-and-wonder",
+      "date": "2026-10-23"
+    },
+    "e1e5faec1bab7c20251d9081c4011ee8acca5a3fa3573c9c59584b217f424927": {
+      "url": "https://www.reddit.com/r/GeminiAI/comments/1x5hq2g/gemini_bet_me_a_free_ultra_subscription_that_4",
+      "date": "2026-10-23"
+    },
+    "9d93024f8db90c5c9b47101b8d362d59a02190351b65c48250b5dc9477e3e23b": {
+      "url": "https://latent.space/p/claude-dynamic-workflows",
+      "date": "2026-10-23"
+    },
+    "3b1a1ae629aaf9e44978f6bde05cf7ac323c654a72208f5e1a7009f41748fd79": {
+      "url": "https://www.reddit.com/r/GeminiAI/comments/1x4o9u9/logan_4_will_be_released_today",
+      "date": "2026-10-23"
+    },
+    "04d6208c687016cfe74cefb97f29f0aa1a48c1c0cb88669dcde8d6f874a295e1": {
+      "url": "https://latent.space/p/nyc2026",
+      "date": "2026-10-23"
+    },
+    "8963c1742779219122e878999c21b298ec9e286f7f1163fecfffe01b3f9f4c8d": {
+      "url": "https://www.reddit.com/r/GeminiAI/comments/1wscvps/psa_google_ai_plus_will_no_longer_have_access_to",
+      "date": "2026-10-23"
+    },
+    "5050302520c74d2f080c124e850042381a1243a0ab24bd0c787dac588e4015d6": {
+      "url": "https://latent.space/p/standard-bots",
+      "date": "2026-10-23"
+    },
+    "31e950aa6dfb8fe6b143fb5269d1fd24ea6a54b6e6d840dd232ec39f60f3358b": {
+      "url": "https://www.reddit.com/r/GeminiAI/comments/1wzvelp/just_received_gemini_4_argon_on_my_account_seems",
+      "date": "2026-10-23"
+    },
+    "2b3f616d26d343fed7789052f7d45765c10f64079fafbd4a9ee06dcaf0e956ff": {
+      "url": "https://huggingface.co/blog/torch-neuronx-model-support",
+      "date": "2026-10-23"
+    },
+    "2a43e765a662b36bfcc68dd96465f7cfa1a86376f80bb4de87e223fc213ed458": {
+      "url": "https://www.reddit.com/r/GeminiAI/comments/1x7801r/well_they_finally_did_it",
+      "date": "2026-10-23"
+    },
+    "51888f116f5b083740bce79640ccacdc80055a08000c769931982fc83218805e": {
+      "url": "https://huggingface.co/blog/microsoft/thinkingbox-training",
+      "date": "2026-10-23"
+    },
+    "89394fa84ef347c20b1435fa53fdeda50a854217e7f995a38ade1aa18e70568e": {
+      "url": "https://www.reddit.com/r/GeminiAI/comments/1x32isq/reality",
+      "date": "2026-10-23"
+    },
+    "67297d2df9a3d7f196c35fa6ebbaab936e2f788f3fe9d6bed07634b74dd71599": {
+      "url": "https://huggingface.co/blog/allenai/olmoearth-v1-3",
+      "date": "2026-10-23"
+    },
+    "f156f78612d6bcdb1f45a63a05654f801560c7ed5ac919e62254c9ad3470ea13": {
+      "url": "https://www.reddit.com/r/GeminiAI/comments/1xbwoun/gemini_pov",
+      "date": "2026-10-23"
+    },
+    "47fe7477518d2d585bdfbd7f081c14d008a8d7b2725d7de6e9de98ef456eb524": {
+      "url": "https://newsletter.pragmaticengineer.com/p/the-pulse-do-we-need-to-rethink-software",
+      "date": "2026-10-23"
+    },
+    "c80ded1f961ab45ba0f2c289840ed796985d61e693d7981618ca0784badc9987": {
+      "url": "https://www.reddit.com/r/GeminiAI/comments/1x1qf45/coming_soon",
+      "date": "2026-10-23"
+    },
+    "a455a1235e82258731c8d65d1759d2c31438f02f7a8af04f6cd2f3ee594c0bc4": {
+      "url": "https://www.reddit.com/r/GeminiAI/comments/1wre2th/been_testing_the_new_gemini_model_at_work_for_10",
+      "date": "2026-10-23"
+    },
+    "4cc8bdf1f1277a11366d5ce93165fd76ddfa46c7a5c4a8a672210a5a58980316": {
+      "url": "https://www.reddit.com/r/freelance/comments/1x95uap/honestly_i_dont_think_i_could_go_back_to_a",
+      "date": "2026-10-23"
+    },
+    "614d50c68ff0b3df590ffaea3d2320457d36c70609e0a3532b08ba8051f62274": {
+      "url": "https://www.reddit.com/r/freelance/comments/1x3z60b/discovered_a_client_executed_my_proposal_with_a",
+      "date": "2026-10-23"
+    },
+    "5a435b0c76e132a3b5b1eced8544fc10cd3c43729d0b19076fcdfab112e32f66": {
+      "url": "https://www.reddit.com/r/freelance/comments/1wsfwt0/former_client_came_back_eight_months_after_we",
+      "date": "2026-10-23"
+    },
+    "1a716abaab3a60847ae60602bf60289489e660783f53c1d82e7e1ca9b7365a6f": {
+      "url": "https://www.reddit.com/r/freelance/comments/1x0xgky/client_owes_me_250_after_i_completed_their",
+      "date": "2026-10-23"
+    },
+    "c4fb3ee7770a3a43efc5b1c4498c414b9e8fba4fa31e72d7df3454d1075874bd": {
+      "url": "https://www.reddit.com/r/freelance/comments/1x1eaf6/exclient_and_her_husband_are_harassing_my_family",
+      "date": "2026-10-23"
+    },
+    "0fa980e5e5e5ec3db15f73591ef0e06da5ed8ac6bd1aef971b265c5e82a2bdf6": {
+      "url": "https://www.reddit.com/r/freelance/comments/1wp9v5t/is_there_ever_a_point_in_negotiating_if_youre_not",
+      "date": "2026-10-23"
+    },
+    "34b1ad647a58df4fe37b86f901b5340db90fa05501f132c95869f391407213f8": {
+      "url": "https://www.reddit.com/r/freelance/comments/1wxvn3c/sent_the_wrong_invoice_to_a_major_newspaper_they",
+      "date": "2026-10-23"
+    },
+    "34d68869f5993f63d95a86e9812ebe9c62d91e3098272889940a4da0b90f33d3": {
+      "url": "https://www.reddit.com/r/freelance/comments/1wyeo9h/clockify_screenshots_every_5_minutes_at_work",
+      "date": "2026-10-23"
+    },
+    "44a7b6ca681a8d3260ea1285465e8e9e26dcc3aeade2c8466b0dfdd43fecd65d": {
+      "url": "https://www.reddit.com/r/freelance/comments/1x7vsd6/startup_founder_wants_me_to_sign_an_8page",
+      "date": "2026-10-23"
+    },
+    "6e832ff6f6be00b27c7a5ec41e40343cfbceb82af36ca6dc0f03656ad7c9b8a7": {
+      "url": "https://www.reddit.com/r/freelance/comments/1x6vv8p/what_am_i_doing_wrong_why_is_it_that_hard_to",
+      "date": "2026-10-23"
+    },
+    "aab88a0d83bb5ab7f15628079839f195dfafae0d929b2a8874f3dcae76cf0436": {
+      "url": "https://www.reddit.com/r/freelance/comments/1wt28ns/staffing_agency_promoted_itself_to_my_references",
+      "date": "2026-10-23"
+    },
+    "3296473ff8cc8babcff4a998ac7019a1564b0186bb2b9bda8000816de2faea7f": {
+      "url": "https://www.reddit.com/r/freelance/comments/1wsh7v4/6_years_later_realizing_i_was_too_focused_on_the",
+      "date": "2026-10-23"
+    },
+    "3096bc839bac49558d7292cd6f7469353a45ee161724b9e128ba1a5f0dac5f7b": {
+      "url": "https://www.reddit.com/r/freelance/comments/1xcw29k/tried_scaling_my_freelance_business_now_having",
+      "date": "2026-10-23"
+    },
+    "91672e358e285cf750133dd4ed82eb8bec6c62da601cef95918b019757b9c931": {
+      "url": "https://www.reddit.com/r/freelance/comments/1xbzp74/should_i_charge_a_fee_after_a_client_rescheduled",
+      "date": "2026-10-23"
+    },
+    "ea2bdacdd42507d91919904982275520b64ef6815291eb8b62f85934fe6a7f9f": {
+      "url": "https://www.reddit.com/r/freelance/comments/1wzlm0q/getting_recommendation",
+      "date": "2026-10-23"
+    },
+    "8d11e94d485e13e73d198ff9e98df3c4e11f2190a5399f85975de1b9a262a82f": {
+      "url": "https://www.reddit.com/r/freelance/comments/1wxx5sy/contract_got_paused_after_1_month_should_i_take",
+      "date": "2026-10-23"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 1
+  "dailyPage": 2
 }
