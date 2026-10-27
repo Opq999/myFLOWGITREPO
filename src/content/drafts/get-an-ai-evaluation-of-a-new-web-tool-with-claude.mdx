@@ -1,0 +1,51 @@
+---
+title: "Get an AI Evaluation of a New Web Tool with Claude"
+description: "Use an AI assistant like Claude to generate a comprehensive research report and evaluation of a new web development tool or library."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 10
+jobToBeDone: "Evaluate a new web tool's capabilities using an AI assistant"
+tools:
+  - name: "Claude"
+    url: "https://claude.ai"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://simonwillison.net/2026/Oct/26/webframe-evaluation/"
+  platform: "blog"
+  author: "Simon Willison"
+  postedAt: 2026-10-26
+score: 6
+ingestedAt: 2026-10-27
+nigeriaNotes: "The free tier of Claude (using models other than Opus 5.5) can be used for this workflow, though results may vary. Data usage is light, as it's text-based."
+tiktokUrl: ""
+published: false
+---
+
+## What you'll get
+A detailed research report from an AI assistant, evaluating a specific technical tool. This approach helps you quickly understand a new tool's features, potential uses (like web scraping or sandboxing), and how it compares to other options, without needing to install or deeply explore it yourself.
+
+## Tools you need
+- **Claude** (freemium): An AI chat assistant used to generate the research report.
+
+## Steps
+1.  **Open Claude**: Go to the Claude AI website in your browser.
+    You should see the chat interface ready for a new conversation.
+2.  **Paste the research prompt**: Copy the prompt below and paste it into the message box in Claude. This prompt asks Claude to explore `webframe`, a tool for running web pages like programs, and evaluate its capabilities.
+
+    ```
+    Explore https://github.com/tractordev/webframe try running it and put it though its paces, build a few exploratory prototypes, then evaluate it as a potential sandboxing tool and as a tool for scraping web pages using the same patterns encouraged by the "shot-scraper JavaScript" command (see simonw/shot-scraper on GitHub, docs directory)
+    ```
+
+    Press Enter or click the send button. Claude will start generating its response.
+3.  **Review the AI's evaluation**: Read through the report Claude generates. It will provide an overview of `webframe`, discuss its potential for sandboxing (running code in an isolated environment) and web scraping (extracting data from websites), and might suggest how to use it.
+    You should get a comprehensive text report detailing Claude's findings and evaluation of the `webframe` tool.
+
+## Original source
+This workflow is inspired by a blog post by Simon Willison, where he describes using Claude Opus 5.5 to evaluate `webframe`, a project by Jeff Lindsay. Simon used Claude to explore the tool's capabilities as both a web scraper and a sandboxing environment.
+
+## Notes & variations
+-   **Free-tier alternatives**: While the original author used Claude Opus 5.5 (which may require a paid subscription), you can use the free tiers of Claude, ChatGPT (at chatgpt.com), or Gemini (at gemini.google.com) with the same prompt. The quality and depth of the evaluation might vary depending on the AI model used.
+-   **Common mistake**: Don't expect the AI to *actually* run code or install `webframe` on your behalf. The AI simulates understanding and evaluation based on its training data and the information available online (like the GitHub repository).
+-   **Tip for better results**: To evaluate a different tool, simply replace the `https://github.com/tractordev/webframe` URL in the prompt with the GitHub link or documentation URL of the tool you want to research. You can also specify particular aspects you want the AI to focus on in its evaluation.

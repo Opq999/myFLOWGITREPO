@@ -28584,8 +28584,236 @@
     "e9c5e1381e291bc23a8ae7719115d894823a098c45ca7fcf649064993a1be226": {
       "url": "https://www.reddit.com/r/copywriting/comments/1wzne5p/what_should_a_complete_beginner_learn_during",
       "date": "2026-10-26"
+    },
+    "7f102b1b2f4d747b81db200da2ee509984996b497ef5c5254d874c344b5fe383": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1xe3tev/what_are_we_doing_now_openai_the_guardrails_are",
+      "date": "2026-10-27"
+    },
+    "670bdc25a85edb1886da1f719bac36991fe8a3da8fa4b2fd98f124747c57fd2d": {
+      "url": "https://simonwillison.net/2026/Oct/26/gpt-61-terra",
+      "date": "2026-10-27"
+    },
+    "4683cd570ef39debe973a0779c44d0d575807db83f524edd67a24e4e1822f808": {
+      "url": "https://github.com/yetone/magpie",
+      "date": "2026-10-27"
+    },
+    "bb66e41c50197d0c28a283e91db6862b4ee88ac1781e2f3b60950de6dd9f5c2a": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1xddp4m/3_of_critical_software_security_bugs_in_all_of",
+      "date": "2026-10-27"
+    },
+    "7788db21557944ebc000e0af5688be0fa0e24b8ae3a9cae91786af692b0f3ef7": {
+      "url": "https://simonwillison.net/2026/Oct/26/jason-koebler",
+      "date": "2026-10-27"
+    },
+    "c5a3099a0798fd5595639574d9456e0f5efa64545446aee16d2cb54d6ca94515": {
+      "url": "https://github.com/cipher387/osint_stuff_tool_collection",
+      "date": "2026-10-27"
+    },
+    "3f861de4896e54eee9211740211f03beadefa9060171a5b842550a16664bd052": {
+      "url": "https://www.reddit.com/r/learnmachinelearning/comments/1wxo5q1/performing_linear_regression_using_the_normal",
+      "date": "2026-10-27"
+    },
+    "335251daca6e8721ddac29ef2c2fa8a639bb83d108374823a80bb4d4067858e2": {
+      "url": "https://simonwillison.net/2026/Oct/26/webframe-evaluation",
+      "date": "2026-10-27"
+    },
+    "d5a61010705eeca8a67b28e71109d43597fefb9c505e462ad5dd9e134c1ee17d": {
+      "url": "https://www.reddit.com/r/learnmachinelearning/comments/1xb2oyo/i_made_a_website_to_learn_machine_learning",
+      "date": "2026-10-27"
+    },
+    "f3da086cf64ca1574761f4f2ed858d32b35e06b10721375f3375e7f9b507d25c": {
+      "url": "https://latent.space/p/offline-coding",
+      "date": "2026-10-27"
+    },
+    "f0924747b33d9f4917e72345063ce5399ffd7ce47a5abf50d14f34415ade156a": {
+      "url": "https://www.reddit.com/r/learnmachinelearning/comments/1x6a7nv/fastest_path_to_jobready_ai_engineer",
+      "date": "2026-10-27"
+    },
+    "ca85c0384dbbb0fdea589f81f6682a4ade3999ec99701149775a3e44c434e8fe": {
+      "url": "https://latent.space/p/ainews-anthropic-s1",
+      "date": "2026-10-27"
+    },
+    "af5e4528531a78e7e9e5cd4183ccce6a2c10c02eae8dcfd9e568858bac6b52bc": {
+      "url": "https://www.reddit.com/r/learnmachinelearning/comments/1x8z3at/looking_for_a_competitive_consistent_study",
+      "date": "2026-10-27"
+    },
+    "628f391b66cfee5f6410253b57a774384555e1d93c9e018c500dc9622a15972f": {
+      "url": "https://www.bensbites.com/p/is-anthropic-the-best-business-in",
+      "date": "2026-10-27"
+    },
+    "603aa90fc8450443b05b00134bac91aa03562241d876fa386a3c93d965113ad7": {
+      "url": "https://www.reddit.com/r/learnmachinelearning/comments/1x812fc/anybody_knows_what_changed_that_made_ai_so_good",
+      "date": "2026-10-27"
+    },
+    "92316a92b37c2c8638888d23f0b0329e87b2849a5f98e9cbea7f0af59603b0c2": {
+      "url": "https://www.reddit.com/r/learnmachinelearning/comments/1x8xlqi/a_visual_field_guide_to_neural_network",
+      "date": "2026-10-27"
+    },
+    "7c507359d93cde86438f785e056f29f898b353eb6ed3693279309f301cff2e97": {
+      "url": "https://www.reddit.com/r/learnmachinelearning/comments/1x99obh/aiml_professionals_what_do_you_do_in_your_job",
+      "date": "2026-10-27"
+    },
+    "bc50da72df3ace64a17467a554ba2a6a65a129da7f5ceae506ba427b74058afe": {
+      "url": "https://www.reddit.com/r/learnmachinelearning/comments/1xdequy/i_made_a_free_vs_code_extension_that_shows_tensor",
+      "date": "2026-10-27"
+    },
+    "6aa00020aa28364fcb3cbcae03310622a2814b7643df8be3ae5d09d27884da5a": {
+      "url": "https://www.reddit.com/r/learnmachinelearning/comments/1x1bt96/overhyped_ideas_in_machine_learning",
+      "date": "2026-10-27"
+    },
+    "7df4bf32e87cc1153aa359a69fb978ba71c9ac690168711b746a405e5daa3f15": {
+      "url": "https://www.reddit.com/r/learnmachinelearning/comments/1x7lqkq/aiml_masters_degree_worth_it_in_2026",
+      "date": "2026-10-27"
+    },
+    "d768679ecef86e9533e4abff2063f8d5bca0ab63c1adee1e625d5ef1540e671f": {
+      "url": "https://www.reddit.com/r/learnmachinelearning/comments/1wzo723/machine_learning_algorithms_are_confusing_at_first",
+      "date": "2026-10-27"
+    },
+    "4f37791f19a8a4e687ab30a6e0d3603908448db1567de60bca162fc422ffafa3": {
+      "url": "https://www.reddit.com/r/learnmachinelearning/comments/1x3ddin/is_specializing_in_ai_engineering_or_ml",
+      "date": "2026-10-27"
+    },
+    "b0ee5127cc2e14d4887e15d2c05716e66d7bf64487438fe8b1ecfbd1884596e2": {
+      "url": "https://www.reddit.com/r/learnmachinelearning/comments/1wy9rm8/sharing_my_1_year_cs_selfstudy_roadmap_cs_ai_math",
+      "date": "2026-10-27"
+    },
+    "8d49caaee89e1b4adaf9f0bea8f7574b8ab1abec8d23177d2d9829a2ee1a0e04": {
+      "url": "https://www.reddit.com/r/learnmachinelearning/comments/1xdnqe0/not_able_to_clear_machine_learning_interviews",
+      "date": "2026-10-27"
+    },
+    "f7882e6a2044588a532b868a742741d3596fb6e93420052f196e09f016591e29": {
+      "url": "https://www.reddit.com/r/learnmachinelearning/comments/1xchcjc/how_well_do_you_really_know_pandas",
+      "date": "2026-10-27"
+    },
+    "c8be79be2fcc5bb1de25082fa0f76be7c90aa5c5fe6e358567ae2dc68399cf26": {
+      "url": "https://www.reddit.com/r/learnmachinelearning/comments/1xeg44z/a_free_interactive_book_that_goes_from_linear",
+      "date": "2026-10-27"
+    },
+    "9b0165645f98d73d9f07ccc629c8e2ceea0451ee098fd4c68a286df708785f70": {
+      "url": "https://www.reddit.com/r/learnmachinelearning/comments/1xebc2p/lets_do_legendary_cs336_language_modelling_from",
+      "date": "2026-10-27"
+    },
+    "b688eb2f69506607e79076bfe32b6d8e2e4b6751dd9ed7504c70e07067152628": {
+      "url": "https://www.reddit.com/r/learnmachinelearning/comments/1x9qilk/ai_and_ml_cheatsheets",
+      "date": "2026-10-27"
+    },
+    "34c4453683faafa736df07a3a8c04b70a307f544b410f7ea6cf230426fb7311e": {
+      "url": "https://www.reddit.com/r/learnmachinelearning/comments/1xevja9/ai_puzzles_a_new_format_between_a_benchmark_and",
+      "date": "2026-10-27"
+    },
+    "371dff423af40496aec9853928c7d398a6a68425934e4cc4fa636b2b9f98d9b9": {
+      "url": "https://www.reddit.com/r/learnmachinelearning/comments/1x468uo/would_you_leave_machine_learning_today",
+      "date": "2026-10-27"
+    },
+    "249a01f4d7243c988295dbda9a76be610c6dcb9f99e7c6c702310f5c33d173c0": {
+      "url": "https://www.reddit.com/r/learnmachinelearning/comments/1xfw932/i_created_a_page_about_andrej_karpathy_and_his",
+      "date": "2026-10-27"
+    },
+    "9f8b340f552ce6844547c583a4be71ac7e835b26a821fadc2d42d7f2954f1d5c": {
+      "url": "https://www.reddit.com/r/learnmachinelearning/comments/1xavov2/learn_neural_networks_from_scratch_free_github",
+      "date": "2026-10-27"
+    },
+    "54991811d30132bc231a9a05f0666c33421e2f0c25cc8a6cb0019f20351b62f4": {
+      "url": "https://www.reddit.com/r/learnmachinelearning/comments/1x0ozsd/are_we_underestimating_the_identity_problem",
+      "date": "2026-10-27"
+    },
+    "fb6ced54816f4b794b79021df4c89d08885f0db080bfd6bc0bc398b4308d2f22": {
+      "url": "https://www.reddit.com/r/resumes/comments/1wxj19w/should_i_be_including_a_summary_on_my_resume",
+      "date": "2026-10-27"
+    },
+    "db0edf567693b9a325a813ccec1eb676875ea51f861e7d6cf7cc091c998d98f4": {
+      "url": "https://www.reddit.com/r/resumes/comments/1xcqxot/5yoe_dataprogram_analyst_finance_analyst_or",
+      "date": "2026-10-27"
+    },
+    "c9a130a2ae72b436bc6daf605ae26aa1b75abfa805d9ddb1b9e09c4a0ed67680": {
+      "url": "https://www.reddit.com/r/resumes/comments/1xcm0ov/0_yoe_recent_graduate_entry_level_swe_nyc",
+      "date": "2026-10-27"
+    },
+    "b7515c9de7b809059b0d956dd787f7b030bc9a8e938b1c31cd72826c28b94842": {
+      "url": "https://www.reddit.com/r/resumes/comments/1xa8l1p/3_yoe_data_analyst_analytics_engineer_recently",
+      "date": "2026-10-27"
+    },
+    "4fbbc14c8c002ff2897f8aacfdfe9e204d80f1348559a395fe08b97617930ffe": {
+      "url": "https://www.reddit.com/r/resumes/comments/1xdvp0q/0_yoe_high_school_student_entry_level_retail_us",
+      "date": "2026-10-27"
+    },
+    "c747f50fa434fbfd3a9a6c335e00164ecec681b8ebfbd3ade47419eaa64c44e1": {
+      "url": "https://www.reddit.com/r/resumes/comments/1x5j00t/08_yoe_2026_grad_software_engineer_usa",
+      "date": "2026-10-27"
+    },
+    "e294d8b0d44a2c8a04da970d8bf6bd2d4c83055f08f69879593af9cff0815148": {
+      "url": "https://www.reddit.com/r/resumes/comments/1x9bndx/at_which_point_do_i_just_lie_in_the_resume",
+      "date": "2026-10-27"
+    },
+    "a68f54e420b8df67305b1372be61b26b255d288212d54f1479eeda14700058cc": {
+      "url": "https://www.reddit.com/r/resumes/comments/1xgbta2/11_yoe_unemployed_cnapct_united_states",
+      "date": "2026-10-27"
+    },
+    "b02805402bee8e6657b3505b7c8b00dc38473241c27e87b4911776a11ae861b6": {
+      "url": "https://www.reddit.com/r/resumes/comments/1xej9ep/is_it_wise_to_include_or_attach_your_grades_to",
+      "date": "2026-10-27"
+    },
+    "af465ef1821f818babecbb6089ef8ecaf0e00a94dfccd5674e450e45d71bc5bc": {
+      "url": "https://www.reddit.com/r/resumes/comments/1xcy0fb/resume_page_rule",
+      "date": "2026-10-27"
+    },
+    "ef49b28dc3a0325b3d2a902c4994076fc603f3ffd8ad3304d2176ebf943e6f68": {
+      "url": "https://www.reddit.com/r/resumes/comments/1x1570n/5_yoe_software_engineer_devops_engineer_sre_sri",
+      "date": "2026-10-27"
+    },
+    "531ee0285b672da0a71924ac8900c377a5ae607f4ecebd10d8f27df5e8f937e5": {
+      "url": "https://www.reddit.com/r/resumes/comments/1xg5fcd/15_yoe_unemployed_senior_compliance_manager_tx",
+      "date": "2026-10-27"
+    },
+    "2e603f3343b0f7b59c445456ae1ae2e1feb933cdf21f850ac1d3684bd298ed6b": {
+      "url": "https://www.reddit.com/r/resumes/comments/1xdhq0e/get_a_resume_score_in_sidebar_feels_like_a_scam",
+      "date": "2026-10-27"
+    },
+    "21efd21db9820fd95690bf2d656d319c4e4bc96b4930c12ed272b2e55800323a": {
+      "url": "https://www.reddit.com/r/resumes/comments/1xc92nv/22_yoe_senior_product_manager_senior_pm_founding",
+      "date": "2026-10-27"
+    },
+    "47c7e2954273a772de2cf173891b46ed54bc2b3e50aede277df69853c0431139": {
+      "url": "https://www.reddit.com/r/resumes/comments/1wzm6ir/8_yoe_software_engineer_senior_software_engineer",
+      "date": "2026-10-27"
+    },
+    "c802bf3dd127e78ebd9e18e2d8e42ec13e667789efe516e597dd3de2343820ef": {
+      "url": "https://www.reddit.com/r/resumes/comments/1wxoa1u/8_yoe_freelance_graphic_designer_any_level",
+      "date": "2026-10-27"
+    },
+    "dda7b7eafdab99775ebe12afa0b5112672b918e384e34d656e9f4cc85e11e795": {
+      "url": "https://www.reddit.com/r/resumes/comments/1xdgm51/2_yoe_unemployed_software_developer_north_europe",
+      "date": "2026-10-27"
+    },
+    "e4f5c65963070f7077e5e821376d3c4c0a26996d7a5b831893f1685b8e5c712f": {
+      "url": "https://www.reddit.com/r/resumes/comments/1x6qtup/0_years_somewhat_recent_graduate_entry_level",
+      "date": "2026-10-27"
+    },
+    "d7a41566303d7d41de4cbfe33337bd7393b2b1e386dfc546b125897a0c20d1c9": {
+      "url": "https://www.reddit.com/r/resumes/comments/1wwuxif/how_do_you_right_align_the_dates_like_this_on_a",
+      "date": "2026-10-27"
+    },
+    "60f1f4fc71017dba578525baee85f2d15f5c5d491c2dbb485df2515f2dc340dc": {
+      "url": "https://www.reddit.com/r/resumes/comments/1xg54p3/4_yoe_unemployed_business_analyst_netherlands",
+      "date": "2026-10-27"
+    },
+    "e3ff53765f21eb0da9ae6fee3a6b468dc635fd5486d727dae3be26ecdba6ea68": {
+      "url": "https://www.reddit.com/r/resumes/comments/1xfharq/20_yoe_chief_technology_officer_it_manager_united",
+      "date": "2026-10-27"
+    },
+    "74c5d8607c2956519d30facc6f1187ba1079e4a85edca0f7b7a8e162f3d62f64": {
+      "url": "https://www.reddit.com/r/resumes/comments/1xcm26e/accomplishments_andor_strengths_sections",
+      "date": "2026-10-27"
+    },
+    "d9d67910f258015554c36e3b8ad86a065095111e8a64a45678cd1a4b024a0e35": {
+      "url": "https://www.reddit.com/r/resumes/comments/1xbpjz6/1_yoe_unemployed_software_usa_200_applications_no",
+      "date": "2026-10-27"
+    },
+    "47075c78ba5dbf07529605fb0128d3f6a48e0b038bfb65a3e0e5863c60e29fa5": {
+      "url": "https://www.reddit.com/r/resumes/comments/1xayp69/9_yoe_unemployed_midsenior_software_engineer",
+      "date": "2026-10-27"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 5
+  "dailyPage": 0
 }

@@ -1,0 +1,85 @@
+---
+title: "Code Offline with an AI Agent: OpenCode and Ollama Setup"
+description: "Learn to set up an offline AI coding agent using OpenCode and Ollama on your laptop. Work on coding tasks without an internet connection, perfect for remote or travel situations."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 40
+jobToBeDone: "Set up and use an offline AI coding agent for development"
+tools:
+  - name: "OpenCode"
+    url: "https://opencode.ai"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Ollama"
+    url: "https://ollama.com"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://latent.space/p/offline-coding/"
+  platform: "blog"
+  author: "Rittika Jindal"
+  postedAt: 2026-10-27
+score: 10
+ingestedAt: 2026-10-27
+nigeriaNotes: "This workflow is ideal for areas with unreliable internet or power, as it allows you to code with AI entirely offline after an initial setup. Model downloads can be large (several gigabytes), so plan for a stable connection for the first-time setup."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "Explain a complex Python function in your project code offline for a school assignment using OpenCode and Ollama."
+  - persona: "employee"
+    scenario: "Debug a failing test case in your codebase without internet access by asking OpenCode to analyze the error."
+  - persona: "entrepreneur"
+    scenario: "Refactor a small section of your app's code offline to improve readability using OpenCode and a local LLM."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will set up an AI coding agent that runs entirely on your laptop, allowing you to work on coding tasks without needing an internet connection. This approach combines OpenCode, an open-source agent, with Ollama, a tool that runs large language models (LLMs) locally, using an open-weight model like Qwen. This setup is perfect for explaining functions, investigating failing tests, or refactoring small pieces of code even when you are offline.
+
+## Tools you need
+*   **OpenCode** (free): An open-source AI agent that interacts with your project files and sends requests to a local AI model.
+*   **Ollama** (free): A tool that lets you download and run large language models (LLMs) like Qwen directly on your computer.
+
+## Steps
+1.  **Install Ollama**: Go to the official Ollama website and download the installer for your operating system (macOS, Windows, or Linux). Follow the on-screen instructions to complete the installation.
+    You should see Ollama running in the background, often as an icon in your system tray or menu bar.
+
+2.  **Download the Qwen model**: Open your computer's terminal (Command Prompt or PowerShell on Windows, Terminal on macOS/Linux). Type the following command to download the Qwen 9B model. This step requires an active internet connection and may take some time as the model is several gigabytes in size.
+
+    ```
+    ollama run qwen:9b
+    ```
+
+    Ollama will start downloading the model. Once downloaded, it will automatically load and run the model, and you will see a prompt from Ollama, indicating it's ready.
+
+3.  **Install OpenCode**: OpenCode is a Python tool, so you will need Python and its package installer, `pip`, installed on your computer. If you don't have them, search online for 'install Python' for your operating system. Once Python and `pip` are ready, open your terminal again and type:
+
+    ```
+    pip install opencode-ai
+    ```
+
+    You should see messages indicating that OpenCode and its dependencies are being downloaded and installed. Once complete, you will return to your terminal prompt.
+
+4.  **Start OpenCode and connect to Ollama**: Navigate to your coding project folder in the terminal using the `cd` command (e.g., `cd /path/to/your/project`). Then, start OpenCode, telling it to use the Qwen model running via Ollama:
+
+    ```
+    opencode --model ollama/qwen:9b
+    ```
+
+    OpenCode will start up and connect to the Qwen model running locally through Ollama. You should see OpenCode's interface in your terminal, ready for your commands.
+
+5.  **Give OpenCode a task (offline)**: Now you can disconnect from the internet. Type your coding task directly into the OpenCode prompt. The author doesn't share their exact prompt, but here's a starting point:
+
+    ```
+    Explain the purpose and usage of the 'calculate_total' function in this project.
+    ```
+
+    OpenCode will read your project files and provide a response or propose changes. It will ask for your permission before running any commands or making edits, allowing you to review its actions.
+
+## Original source
+This workflow is based on an article by Rittika Jindal titled 'Coding From the Himalayas With an Offline AI Agent', published on the Latent Space blog. The author shares their experience using these tools to maintain a coding workflow even in remote locations with unreliable internet.
+
+## Notes & variations
+*   **Common Pitfall**: Ensure you have enough RAM (memory) on your computer. Running large language models like Qwen 9B locally requires significant system resources. If your computer struggles, consider trying a smaller model (e.g., `qwen:4b` if available via Ollama) or closing other demanding applications. Also, remember that the model download in Step 2 requires a stable internet connection; you cannot do this step offline.
+*   **Tip for Better Results**: Start with smaller, well-defined tasks for the AI agent, such as explaining a specific function or refactoring a small code block. This helps you understand how the agent works and allows you to review its suggestions more effectively.
