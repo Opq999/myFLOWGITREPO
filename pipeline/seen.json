@@ -29016,8 +29016,240 @@
     "cb308c8af8b93b1084293fa618ab54b226e10c6b70c16ed16bd571b2da6bc5f9": {
       "url": "https://www.reddit.com/r/Upwork/comments/1xblglt/my_final_30day_upwork_experiment",
       "date": "2026-10-28"
+    },
+    "396b520b681e3c35c215afb7b2519cf06807434f11d4a4c6793b117d0cc0333b": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1xhtn57/terminator_2_but_skynet_was_trained_on_linkedin",
+      "date": "2026-10-29"
+    },
+    "2d0c2102a71995514b23338e79af719982f436efcf063690f0088f0e58cc1737": {
+      "url": "https://simonwillison.net/2026/Oct/29/ben-hylak",
+      "date": "2026-10-29"
+    },
+    "397ea96c8ada62e49298846bed30b381033d194ddbfc0ef62f5d186c197de30f": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1xhoezl/low_on_cyan_d",
+      "date": "2026-10-29"
+    },
+    "bfb31ceb6c55c182711c88a7b3778b9caaae886909f663a2136ef45e0e2d03e1": {
+      "url": "https://simonwillison.net/2026/Oct/28/ted-sanders",
+      "date": "2026-10-29"
+    },
+    "2d54a7b8c17414689a4b5f2264cb6d0f4658fcdf6f4ef2f620fb4bf8df80a877": {
+      "url": "https://www.reddit.com/r/OpenAI/comments/1x5glxv/abdulrahman_alfozan_a_saudi_national_employed_as",
+      "date": "2026-10-29"
+    },
+    "5e9e44475572a25994c07da57873330178c828ee9ba90e6f782dcacb195057a9": {
+      "url": "https://simonwillison.net/2026/Oct/28/github-octoverse-2026",
+      "date": "2026-10-29"
+    },
+    "367e474c8e0af67ae541ae90570bdf8795865cc0a3474413a52e4db8d23ef0de": {
+      "url": "https://www.reddit.com/r/OpenAI/comments/1wtdn7h/dev_day_i_am_expecting_this",
+      "date": "2026-10-29"
+    },
+    "a1a23e154cf4eaa83c82b4d542873dd4d0645bef3c032474e5dc032a49988c19": {
+      "url": "https://latent.space/p/ainews-gemini-4-carbon",
+      "date": "2026-10-29"
+    },
+    "92239fa573291bdef4035131cf3d953cfaf506d8ad190d198f7ade911424d800": {
+      "url": "https://www.reddit.com/r/OpenAI/comments/1xg4hoi/openai_launches_gpt_61_terra",
+      "date": "2026-10-29"
+    },
+    "59788a007bb479e4775804dabc01a10e7976fb1296afca54180f0dfe990aa612": {
+      "url": "https://latent.space/p/supabase",
+      "date": "2026-10-29"
+    },
+    "082968d3e6bf916f95c7dc32d2d328c7eb653103555fbacfe620d0b0c7d8a63f": {
+      "url": "https://www.reddit.com/r/OpenAI/comments/1xfkqa2/openai_and_anthropic_cut_their_llm_prices_by_up",
+      "date": "2026-10-29"
+    },
+    "c2cdd8d02821d6b6c07582c6916c3a3c21629e1681434b26b1460e652bc75748": {
+      "url": "https://www.bensbites.com/p/ai-is-overwhelming-and-im-doing-it",
+      "date": "2026-10-29"
+    },
+    "ca162f716b1b5ba1ea21258841ff01596b943b83ff77ead42745d643e354dc5b": {
+      "url": "https://www.reddit.com/r/OpenAI/comments/1x3d4z1/thank_god",
+      "date": "2026-10-29"
+    },
+    "e508e29ae812fe586e8d04934be66406c6967422e675f969f84a3d3abfd18b22": {
+      "url": "https://huggingface.co/blog/ibm-granite/granite-switch-4-1-1",
+      "date": "2026-10-29"
+    },
+    "b61d30ed26d66f97c8ce92ae3a90b440bc2cb978698bcf3fdf989cd6fe9a46f3": {
+      "url": "https://www.reddit.com/r/OpenAI/comments/1xf37nf/cloudflare_is_aware_of_more_severe",
+      "date": "2026-10-29"
+    },
+    "718617961cab3abcc8e8a05120222629543523589403679efbd4712495667d4b": {
+      "url": "https://huggingface.co/blog/announcing-project-protostar",
+      "date": "2026-10-29"
+    },
+    "9845d7db7f762df8a3e6e9c0c8ddba8bf9b6c1d8effccc78f414ce508a4a740c": {
+      "url": "https://www.reddit.com/r/OpenAI/comments/1xcz4o0/google_deepmind_founder_hassabis_shortens_agi",
+      "date": "2026-10-29"
+    },
+    "b6b30743068c26272d898fb0a6f1ecbc2f9f86806ca564a0085874621ca143e5": {
+      "url": "https://huggingface.co/blog/mistral-large4",
+      "date": "2026-10-29"
+    },
+    "2037a31b1184bcecb3607f5ab8c9f8adbc98e21dddf3445d43a8617c68a0012f": {
+      "url": "https://www.reddit.com/r/OpenAI/comments/1xhjo1x/kinda_fucked_up",
+      "date": "2026-10-29"
+    },
+    "6394645bd5105adc5435eb92d86f0a9234c4d9608ebffb6215783e8187d812db": {
+      "url": "https://huggingface.co/blog/anydecisionmodel",
+      "date": "2026-10-29"
+    },
+    "dcc72018cdd92aa3f0309eeccb9a6e1e252ee5f640c7b6a7ee1d1d4dd497b0a3": {
+      "url": "https://www.reddit.com/r/OpenAI/comments/1x2fcws/first_they_came_for_the_call_centers",
+      "date": "2026-10-29"
+    },
+    "ffc191e430349a618395f2563a24871c286cc0cdf6d434f2da05ddf4a258e546": {
+      "url": "https://newsletter.pragmaticengineer.com/p/software-engineering-at-google-and",
+      "date": "2026-10-29"
+    },
+    "628355238f190a1ad5b7bf23718d9e8fa10e132c1fc096858f00f8fac37b17db": {
+      "url": "https://www.reddit.com/r/OpenAI/comments/1wvtedh/were_cooked_this_is_the_first_model_to_pass_the",
+      "date": "2026-10-29"
+    },
+    "859ff6456aa15b397b863a13ff2399a295b79112050f90568d11fadd68dcefea": {
+      "url": "https://www.reddit.com/r/OpenAI/comments/1xgyzcg/how_big_a_deal_is_this_claude_opus_55_if_these",
+      "date": "2026-10-29"
+    },
+    "43b7f8f42cc249c401408f474771342abf6853e8da7df432959d3b3a5f8eeda1": {
+      "url": "https://www.reddit.com/r/OpenAI/comments/1wtqyxh/the_premium_experience",
+      "date": "2026-10-29"
+    },
+    "a82bae023699b38c057738d40f990322193f0a80c91a82850c8d2a367169973e": {
+      "url": "https://www.reddit.com/r/OpenAI/comments/1xddmtq/3_of_critical_software_security_bugs_in_all_of",
+      "date": "2026-10-29"
+    },
+    "410d6dcc21a18fe41375c6347e7fe0774fb70f2c101232504e7da572f12b393c": {
+      "url": "https://www.reddit.com/r/OpenAI/comments/1wtg4f3/openai_launches_gpt61_sol",
+      "date": "2026-10-29"
+    },
+    "3b763363e5a60adcc48da12eedbaafe3e3c4c0c21ced39af39e05d15ea7b22a4": {
+      "url": "https://www.reddit.com/r/OpenAI/comments/1x045qs/gpt6_and_intelligent_ui_for_everyone",
+      "date": "2026-10-29"
+    },
+    "8460ea6444c0eff6d3ed13cbdf0d7a03dacc1916c5944ca0c40f580a19531525": {
+      "url": "https://www.reddit.com/r/OpenAI/comments/1x0z8wy/when_is_openai_changing_their_name_to_opensi",
+      "date": "2026-10-29"
+    },
+    "92bc3ca4338fe48a40b2cc6e1b09d377a64cee213398a1df695aef391602457b": {
+      "url": "https://www.reddit.com/r/OpenAI/comments/1wzg30i/openai_sharing_ai_progress_in_mathematics",
+      "date": "2026-10-29"
+    },
+    "d95bd93db16f1cf6d24891cbf34370d3e305e682de8260e6bcbc7b96084df488": {
+      "url": "https://www.reddit.com/r/OpenAI/comments/1wyoaw7/my_dot_burns_16b_tokens_a_day_on_since_day_one_on",
+      "date": "2026-10-29"
+    },
+    "cc71c333a55c242f77c7ad4335ed4f2bcf1d668fd7a6a26e308caf0150127512": {
+      "url": "https://www.reddit.com/r/OpenAI/comments/1xgiich/openai_announces_three_new_discoveries_in",
+      "date": "2026-10-29"
+    },
+    "3545c4dae4a4baf1b07d718a8b71e01b708b94acb9d97827e9a0407a2e3339a6": {
+      "url": "https://www.reddit.com/r/OpenAI/comments/1wu22ql/openai_cfo_sarah_friar_says_muse_instead_of_dots",
+      "date": "2026-10-29"
+    },
+    "44461c8528863a86e6e5ab73b4a4219510b732c58d9e960b7cfce4932ce1712a": {
+      "url": "https://www.reddit.com/r/OpenAI/comments/1x7oifk/cars_unite_men",
+      "date": "2026-10-29"
+    },
+    "c59d370479aa5937f726ba1be741a00c32e7bc1105df68bfdc1f84828525e39f": {
+      "url": "https://www.reddit.com/r/OpenAI/comments/1xapayu/right_now_millions_of_metas_ais_are_living",
+      "date": "2026-10-29"
+    },
+    "7b80c251f75a9886c412848d5fdd86d213f1f7bbc65432b53ff792e9b0409470": {
+      "url": "https://www.reddit.com/r/OpenAI/comments/1wtky3n/that_didnt_backfire_at_all",
+      "date": "2026-10-29"
+    },
+    "0e61ad483fa241e984a6a039866bfcdff4516673da75b3980c82856291efc3c0": {
+      "url": "https://www.reddit.com/r/OpenAI/comments/1xfapw3/chatgpt_is_building_detailed_psychological",
+      "date": "2026-10-29"
+    },
+    "a6176e7425320ba56f52a0721aae25cfb27abeaf7a48a0e82e8b2fa9cf58e309": {
+      "url": "https://www.reddit.com/r/OpenAI/comments/1wwa2ff/truly_groundbreaking_stuff",
+      "date": "2026-10-29"
+    },
+    "dde1c50bd923962da6ca32ca0da661b3e4580ae76bc73af541e376d1b62dc24b": {
+      "url": "https://www.reddit.com/r/productivity/comments/1wxmj0a/im_worried_that_my_life_is_destined_to_be_horrible",
+      "date": "2026-10-29"
+    },
+    "f4d379032e1bcb3c72255d8afdf32fbb4a33e8163dffb85b71e724bed4be2dc4": {
+      "url": "https://www.reddit.com/r/productivity/comments/1x5n9gf/nothing_is_interesting_to_me_except_being_on_my",
+      "date": "2026-10-29"
+    },
+    "39ff563e90d3b2f161c7a1902a5763fcfbcee50ec62ca135ed83bef973ea52dc": {
+      "url": "https://www.reddit.com/r/productivity/comments/1xctv3r/are_we_using_selfimprovement_to_avoid_doing_the",
+      "date": "2026-10-29"
+    },
+    "82031d7168189cba07fd6cc8e9a7fc75f43e7762e5b9db96a3f7d2576892468d": {
+      "url": "https://www.reddit.com/r/productivity/comments/1xb9jlp/my_procrastination_is_starting_to_ruin_my_life_i",
+      "date": "2026-10-29"
+    },
+    "7a36a4787b9909eafa7f26a79b2eb108b2d07153c3c0d527ed604aec5e1f758b": {
+      "url": "https://www.reddit.com/r/productivity/comments/1wy6r9t/i_am_not_motivated_to_do_anything_even_to_improve",
+      "date": "2026-10-29"
+    },
+    "b0753eec3f6a7efef6a88cf6699ef31c2f10adda6398ac6b47313fee3294a8e1": {
+      "url": "https://www.reddit.com/r/productivity/comments/1x3k2bk/what_does_your_productive_morning_routine",
+      "date": "2026-10-29"
+    },
+    "4e451a687de4686b080d869dc721f2284540a016972452d3642f9100b64fbee8": {
+      "url": "https://www.reddit.com/r/productivity/comments/1x1507h/do_10_push_ups_every_time_you_get_distracted",
+      "date": "2026-10-29"
+    },
+    "67f78719199a18e3d5fa40f1712eee4a8eb8afb009a3aae7452c0955dc0d8c78": {
+      "url": "https://www.reddit.com/r/productivity/comments/1xdcufe/how_do_i_stop_using_my_phone_to_fill_silence",
+      "date": "2026-10-29"
+    },
+    "410aa9f2fadf86e2767ce0c45097ca17c390fbc0ce1d72dd7deb068783372135": {
+      "url": "https://www.reddit.com/r/productivity/comments/1xcmi1e/why_tf_cant_i_get_out_of_bed_in_the_morning",
+      "date": "2026-10-29"
+    },
+    "84231e235e0b0bf428c288524365a26836bc1ab9c791e210f2ad9219cf1f93f4": {
+      "url": "https://www.reddit.com/r/productivity/comments/1x34wwy/please_help_me_im_so_distracted_and_its_ruining_me",
+      "date": "2026-10-29"
+    },
+    "07c74ec521b67fb55c311db7624a2d9f265c5e9ee70ec2a9db69069ac0b35a22": {
+      "url": "https://www.reddit.com/r/productivity/comments/1wvlriu/a_productivity_trick_that_works_for_me_techno",
+      "date": "2026-10-29"
+    },
+    "892c5817ecaa356c3c86c7d49d1e87759541046f4acc3f1555bb7ec17a7db870": {
+      "url": "https://www.reddit.com/r/productivity/comments/1wyv0w4/why_am_i_so_sleepy_during_the_day_even_after",
+      "date": "2026-10-29"
+    },
+    "e0ab83b934c3c07fbf83f24b787ada80a8be369078f834b7a143de7ebb571a96": {
+      "url": "https://www.reddit.com/r/productivity/comments/1x8iiwe/i_am_using_this_single_question_when_i_feel_like",
+      "date": "2026-10-29"
+    },
+    "9fc851d7d843a3cbba863afe80938da915bf53fde30d862a53c90788660d3d5d": {
+      "url": "https://www.reddit.com/r/productivity/comments/1x9z4li/i_started_listening_to_audiobooks_while_i_train",
+      "date": "2026-10-29"
+    },
+    "428b1fcc22cf27a0a0234c751fdf423c522609bff3a59e1c12dc956d20ab9114": {
+      "url": "https://www.reddit.com/r/productivity/comments/1xew90s/does_listening_to_music_actually_help_you",
+      "date": "2026-10-29"
+    },
+    "20476064f6871e345d6eb85576e0b19e961a3459ca5be85f580bf820e0863677": {
+      "url": "https://www.reddit.com/r/productivity/comments/1xfcru5/any_tips_for_taking_better_notes_during_calls",
+      "date": "2026-10-29"
+    },
+    "4ea7df0e19a3b9bdcc5a987488e9d50cf6c076db0da27793bd92fc1f5ff8740e": {
+      "url": "https://www.reddit.com/r/productivity/comments/1xg5nt7/overcoming_procrastination_starts_with",
+      "date": "2026-10-29"
+    },
+    "6986ad88edae02e1e35fdb852569773ae72889e07477e7bef8df1a0d038c18b4": {
+      "url": "https://www.reddit.com/r/productivity/comments/1xg0s0z/ive_finally_found_a_way_to_exercise_regularly",
+      "date": "2026-10-29"
+    },
+    "b37f35594f7e7323779b79b4d85b91d15de6b94378c812eb4647610e95176a61": {
+      "url": "https://www.reddit.com/r/productivity/comments/1xhilrn/how_can_i_make_more_money_with_my_free_time_at",
+      "date": "2026-10-29"
+    },
+    "8fecb2847ace75e8d0f8ff1cf7d8602b7f4a651a62694ca87e5b252d31ee3390": {
+      "url": "https://www.reddit.com/r/productivity/comments/1wumqhm/swapping_my_todo_list_for_a_done_list",
+      "date": "2026-10-29"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 1
+  "dailyPage": 2
 }
