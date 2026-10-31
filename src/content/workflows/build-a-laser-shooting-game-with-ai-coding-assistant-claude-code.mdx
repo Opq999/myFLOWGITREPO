@@ -1,0 +1,75 @@
+---
+title: "Build a Laser Shooting Game with AI Coding Assistant Claude Code"
+description: "Explore how an AI coding assistant like Claude Code can help develop complex applications that interact with the physical world, such as a laser dry-fire shooting game."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 90
+jobToBeDone: "Develop a physical-world interacting software application using an AI coding assistant"
+tools:
+  - name: "Claude Code"
+    url: "https://code.claude.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Webcam"
+    url: "https://en.wikipedia.org/wiki/Webcam"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://www.reddit.com/r/ClaudeAI/comments/1xeqtp1/i_built_a_laser_dryfire_shooting_game_with_claude/"
+  platform: "reddit"
+  author: "/u/vkorost"
+  postedAt: 2026-10-25
+score: 9
+ingestedAt: 2026-10-31
+nigeriaNotes: "Claude Code is a paid developer tool, so a subscription or credits are required. Developing and debugging software can involve significant data downloads and updates, which should be considered for mobile data plans."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "A final-year computer science student uses Claude Code to develop a webcam-based gesture control system for a smart home prototype, as part of their university project."
+  - persona: "entrepreneur"
+    scenario: "A tech entrepreneur uses Claude Code to rapidly prototype an interactive fitness game where users perform exercises in front of a webcam, getting real-time form feedback for a new startup."
+  - persona: "employee"
+    scenario: "A software developer in a manufacturing firm uses Claude Code to build a prototype quality control system that identifies defects on a production line using a webcam, improving product consistency."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+This entry describes how a developer used an AI coding assistant, Claude Code, to build a laser dry-fire shooting game called ScreenPlink. In this game, your computer monitor acts as the target. You use a special laser trainer pistol or cartridge to "shoot" at the screen. A webcam, placed next to the monitor, watches for the laser hits. The game then detects where the laser hit, shows a bullet hole, and scores your shot.
+
+The author explains that Claude Code wrote almost all the software code for this game. The developer's role was to design the game, direct the AI, test it by shooting at the monitor, and decide if the AI's code was acceptable.
+
+This workflow is advanced because it involves an AI agent developing and debugging a program that interacts with the physical world (seeing a monitor, detecting a laser). This is complex because the AI itself cannot "see" or "shoot." The author solved this by creating an "in-process MCP server," which allowed Claude Code to ask the running game application what it was measuring in real-time.
+
+## What you can use it for
+*   **Develop interactive games**: Create games that respond to physical actions, like shooting a laser at a screen.
+*   **Build physical-world applications**: Design software that uses cameras or other sensors to interact with the real environment.
+*   **AI-assisted software development**: Learn how to direct an AI coding assistant to write and debug complex programs.
+*   **Rapid prototyping**: Quickly build and test new software ideas, even those involving hardware.
+
+## Tools you need
+*   **Claude Code** (paid): An advanced AI coding assistant that helps write, debug, and refine software code.
+*   **Webcam** (free): A digital camera connected to your computer, used in this workflow to capture images of the monitor.
+
+## How it actually works
+1.  **Design your application**: Start by clearly outlining the game's rules, features, and how it should interact with physical devices like the webcam and laser.
+2.  **Direct the AI coding assistant**: Use Claude Code to generate the initial code for different parts of the application, such as image processing, game logic, and user interface.
+3.  **Enable AI-physical world interaction**: This is the most complex part. The author created an "in-process MCP server" to allow Claude Code to communicate with the running application. This server exposes real-time data, like the latest camera frame, so the AI can "see" what the application is measuring.
+4.  **Test and provide feedback**: Run the application, test its physical interactions (e.g., shoot the laser at the monitor), and observe the results. Provide detailed feedback to Claude Code on what worked and what needs debugging or improvement.
+5.  **Iterate and refine**: Continue directing Claude Code, testing, and providing feedback until the application functions as desired. The game includes a calibration step where the app photographs its own markers on the monitor to learn the camera-to-screen mapping, which is crucial for accuracy.
+
+## Words you'll see, explained
+*   **AI Coding Assistant**: A software tool that uses artificial intelligence to help developers write, debug, and improve computer code.
+*   **Dry-fire Shooting**: A practice method for firearms training that involves simulating shooting without using live ammunition, often with laser-emitting devices.
+*   **Webcam**: A digital camera connected to a computer, typically used for video calls, but here used to capture images of the monitor.
+*   **In-process MCP server**: A specialized component within a running software application that allows an external AI agent (like Claude Code) to access its internal data and state in real-time, enabling the AI to understand and debug physical interactions.
+*   **Off-axis**: Describes something that is not perfectly aligned or centered. In this context, the webcam can be placed at an angle to the monitor and still work.
+*   **Calibration**: The process of adjusting a system to ensure it performs accurately. For this game, it involves mapping the webcam's view to the exact pixels on the monitor.
+
+## Original source
+This concept was developed by Reddit user /u/vkorost, who shared their experience building the ScreenPlink laser dry-fire shooting game using Claude Code on the Reddit platform.
+
+## Notes & variations
+*   **Do you even need this?** While using an AI coding assistant for a custom game is powerful, if you only need a basic dry-fire shooting game, there are existing commercial or open-source applications that might be simpler to set up without extensive development.
+*   **Free-tier limits**: Claude Code is a paid service. There is no free tier for this developer product, so a subscription or credits are required to use it for development.
+*   **Common pitfall**: When working with AI coding assistants on physical-world interactions, it's easy to assume the AI "understands" the physical environment. Always provide clear, specific instructions and rigorous real-world testing to guide the AI and verify its code. The AI needs concrete data from the running application to debug effectively.
