@@ -1,0 +1,76 @@
+---
+title: "Analyze Shopper Gaze in Stores Using Open-Source AI"
+description: "Learn how open-source AI models can analyze security camera footage to estimate shopper gaze and generate attention heatmaps for store shelves."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 120
+jobToBeDone: "Generate shopper attention heatmaps from security camera footage"
+tools:
+  - name: "BrandPose GitHub Repository"
+    url: "https://github.com/escudero/brandpose"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://www.reddit.com/r/LLMDevs/comments/1x76vtw/i_built_a_shopper_attention_heatmap_using/"
+  platform: "reddit"
+  author: "/u/claudioe"
+  postedAt: 2026-10-16
+score: 8
+ingestedAt: 2026-11-03
+nigeriaNotes: "This workflow uses open-source code and models, meaning it's free to use. Data usage will primarily be for downloading the code and models, which can be significant (several GBs). Running the models locally requires a powerful computer, ideally with a GPU, which might be a barrier."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "A final-year Computer Science student uses this open-source AI project to generate attention heatmaps from security footage of a campus mini-mart, informing their thesis on optimizing product placement."
+  - persona: "employee"
+    scenario: "A data analyst at a major supermarket chain uses this open-source AI to generate attention heatmaps from in-store camera footage, evaluating the effectiveness of new product displays."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+This project explores how to create "shopper attention heatmaps" using only free, open-source AI models. A heatmap is a visual guide, often using colors, to show where people look most often in a store. The goal is to understand which parts of shelves or displays attract the most attention from customers.
+This approach is advanced because it requires you to download and run computer code, combine several complex AI models, and set up a specific technical environment. It's not a simple copy-paste task into a web tool.
+The exact instructions and steps are found within the project's code repository on GitHub, and they can change as the project is updated. This entry explains the concept and how it generally works, but you will need technical skills to reproduce it.
+
+## What you can use it for
+*   **Understand customer behavior**: See exactly where shoppers focus their attention on shelves or displays in a store.
+*   **Optimize store layouts**: Identify which product placements or store sections are most (or least) engaging for customers.
+*   **Improve product visibility**: Test different ways to arrange products to ensure they catch the eye of shoppers.
+*   **Analyze advertising effectiveness**: Measure how much attention in-store signs, promotions, or new product displays actually receive.
+
+## Tools you need
+*   **BrandPose GitHub Repository** (free): This is the collection of code and instructions that combines different AI models to create the shopper attention heatmaps.
+
+## How it actually works
+To use this project, you would typically follow these steps:
+1.  **Get the project code**: Download the entire BrandPose project from its GitHub repository to your computer.
+2.  **Set up your environment**: Install the necessary programming language (Python) and all the specific software libraries that the project needs. These details are usually provided in the project's documentation (like a `README` file).
+3.  **Provide video input**: Prepare a video file from a security camera that shows shoppers interacting with shelves or displays.
+4.  **Run the processing script**: Execute the main script provided in the BrandPose project. This script acts as a "pipeline" (a series of automated steps).
+5.  **Process video frames**: The script will go through your video frame by frame, using three main AI models:
+    *   **YOLO11-pose**: This model first finds people in each video frame and identifies key points on their bodies, like their head and shoulders.
+    *   **Gaze-LLE**: Using the information from YOLO11-pose, this model estimates the direction of each person's gaze (where they are looking).
+    *   **Depth Anything V2**: This model helps understand the 3D layout of the store and the distance to objects like shelves, which is crucial for accurately mapping where someone is looking in space.
+6.  **Accumulate attention**: The system collects all the gaze data over time and maps it onto the store's shelves or zones.
+7.  **Generate results**: The project then produces a heatmap, visually showing areas of high and low shopper attention, and can rank different store zones by how much attention they received.
+The author notes that this is an experiment, does not run in real time, and the estimates have not been formally checked against "ground truth" (manually verified accurate data).
+
+## Words you'll see, explained
+*   **Computer Vision**: A field of artificial intelligence that trains computers to "see" and understand information from images and videos, much like humans do.
+*   **Heatmap**: A visual representation of data where values are shown as colors, typically with warmer colors (like red) indicating higher values and cooler colors (like blue) indicating lower values.
+*   **Open-source models**: Artificial intelligence models whose underlying code is freely available for anyone to view, use, modify, and distribute.
+*   **YOLO11-pose**: A specific type of open-source AI model used in computer vision to detect people and estimate the positions of their body parts, known as "keypoints."
+*   **Gaze-LLE**: An open-source AI model designed to estimate the direction of a person's gaze, or where their eyes are looking.
+*   **Depth Anything V2**: An open-source AI model that estimates the distance of objects in a scene from a camera, helping to create a 3D understanding of the environment.
+*   **Pipeline**: In computing, a pipeline is a sequence of processing steps where the output of one step becomes the input for the next.
+*   **Ground truth**: In machine learning, this refers to data that is known to be absolutely correct and is used to train or evaluate the accuracy of an AI model.
+
+## Original source
+This concept was shared by Reddit user /u/claudioe, who experimented with combining several open-source computer vision models to create a shopper attention heatmap. Their work was inspired by commercial solutions and serves as an interesting starting point for exploring this technology.
+
+## Notes & variations
+*   **Do you even need this?**: If you need a ready-to-use solution without coding or technical setup, commercial products like CactusXR (Auki) offer similar capabilities out-of-the-box, though they come with a cost. This open-source project is for those who want to build and customize their own system.
+*   **Free-tier limits**: While the BrandPose project code and the AI models it uses are free, running them effectively requires a powerful computer, ideally one equipped with a GPU (Graphics Processing Unit). A GPU is a specialized chip that significantly speeds up the complex calculations needed for AI models, and without one, processing video can be extremely slow. The cost of such hardware is not included.
+*   **Common pitfall**: A major challenge is the computational power needed. Trying to run these advanced computer vision models on a basic laptop without a dedicated GPU will likely result in very long processing times, making the workflow impractical.
+*   **Tip for better results**: The author notes this is an experiment and not validated. When interpreting results, remember that the gaze estimates are not yet formally verified against real-world data, so treat them as an exploratory insight rather than definitive measurements.

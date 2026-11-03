@@ -1,0 +1,113 @@
+---
+title: "Automate Phone Calls with a Private AI Agent on Your Mac"
+description: "Learn how to set up a private AI phone agent on your Mac that answers and places calls using local AI models, keeping your conversations entirely on your device."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 180
+jobToBeDone: "Automate phone calls using a private, local AI agent"
+tools:
+  - name: "MLX"
+    url: "https://github.com/ml-explore/mlx"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Parakeet TDT"
+    url: "https://huggingface.co/nvidia/parakeet-tdt-0.6b"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Qwen3.5"
+    url: "https://huggingface.co/Qwen/Qwen1.5-4B-Chat"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Kokoro"
+    url: "https://huggingface.co/microsoft/kokoro-82m-tts"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Telnyx"
+    url: "https://telnyx.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Twilio"
+    url: "https://www.twilio.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Claude Code"
+    url: "https://code.claude.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "OpenAI API"
+    url: "https://openai.com/api/"
+    pricing: "paid"
+    affiliateUrl: ""
+source:
+  url: "https://www.reddit.com/r/LLMDevs/comments/1xh3n68/i_gave_my_local_llm_a_real_phone_number_to_make/"
+  platform: "reddit"
+  author: "/u/Agent007_MI9"
+  postedAt: 2026-10-27
+score: 7
+ingestedAt: 2026-11-03
+nigeriaNotes: "Initial setup requires significant data for model downloads (several gigabytes). Ongoing usage is minimal as AI models run directly on your device. Phone network services like Telnyx or Twilio are paid, typically starting around $1 per month for a phone number."
+nigeriaUseCases:
+  - persona: "entrepreneur"
+    scenario: "As a tech startup founder, build a custom, private AI agent on your Mac to automate initial customer support calls for your new service, ensuring all conversation data stays on your device."
+  - persona: "student"
+    scenario: "As a computer science student, develop a final year project using this workflow to create a local AI phone agent that screens spam calls, demonstrating practical application of MLX and SIP integration."
+  - persona: "employee"
+    scenario: "As an IT engineer, prototype a private AI agent on your Mac to automate internal appointment reminders for staff, ensuring sensitive scheduling data remains within the company's local network."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+This describes how to build a private AI phone agent that runs entirely on your Mac computer. Unlike commercial AI phone services, this approach keeps all your call audio, transcripts, and conversation details on your own device. This means no third-party company stores your sensitive phone conversations.
+
+This workflow cannot be reduced to simple copy-paste steps for a beginner. It requires technical skills like running code, configuring network protocols (SIP), and managing local AI models. The exact instructions would live within a code repository or a specific development environment, which can change as the tools update.
+
+The system uses local AI models for speech-to-text (converting voice to text), a large language model (LLM) for understanding and generating responses, and text-to-speech (converting text to voice). It connects to the phone network using a service like Telnyx or Twilio, allowing it to answer and place real phone calls.
+
+## What you can use it for
+*   **Automate customer service calls**: Handle simple inquiries or frequently asked questions without needing a human agent.
+*   **Screen unwanted calls**: Let the AI answer unknown numbers and filter out spam or telemarketers before you pick up.
+*   **Personal assistant for calls**: Make routine calls on your behalf, such as confirming appointments or gathering basic information.
+*   **Ensure private communication**: Keep sensitive phone conversations entirely on your device, avoiding third-party data storage.
+
+## Tools you need
+*   **MLX** (free): A machine learning framework developed by Apple for running AI models efficiently on Apple Silicon chips.
+*   **Parakeet TDT** (free): A speech-to-text model used for converting spoken words from phone calls into written text.
+*   **Qwen3.5** (free): A large language model (LLM) that acts as the AI's brain, understanding conversations and generating responses.
+*   **Kokoro** (free): A text-to-speech model that converts the AI's text responses into natural-sounding spoken words.
+*   **Telnyx** (paid): A service provider that offers phone numbers and connects your system to the public phone network using SIP.
+*   **Twilio** (paid): An alternative service provider for phone numbers and connecting to the phone network via SIP.
+*   **Claude Code** (paid): An optional developer API for a more advanced AI brain, if you choose to use an external service instead of local models.
+*   **OpenAI API** (paid): An optional developer API for a more advanced AI brain (like ChatGPT), if you choose to use an external service instead of local models.
+
+## How it actually works
+This workflow involves building and running a custom AI application on your Mac. The author developed their own version, so you would need to replicate or adapt a similar technical approach.
+
+1.  **Obtain Apple Silicon hardware**: You need a Mac computer with an Apple Silicon chip (e.g., M1, M2, M3 series) to run the MLX framework efficiently.
+2.  **Install the MLX framework**: Set up the MLX development environment on your Mac, which allows you to run AI models locally.
+3.  **Set up a SIP provider**: Choose a service like Telnyx or Twilio. You will need to create an account, obtain an API key, and purchase a phone number that your AI agent will use.
+4.  **Integrate local AI models**: Download and configure the specific speech-to-text (Parakeet TDT), large language model (Qwen3.5), and text-to-speech (Kokoro) models to work within your custom application.
+5.  **Develop and run the custom agent**: Write or adapt code that orchestrates these components. This typically involves using a Command Line Interface (CLI) to start the agent, manage calls, and interact with the phone network via SIP.
+6.  **Configure for external LLMs (optional)**: If you prefer a more powerful AI brain, you can configure your agent to use an external service like the Claude Code or OpenAI API instead of the local Qwen3.5 model. This would involve providing your API key for these services.
+
+## Words you'll see, explained
+*   **AI Phone Agent**: An artificial intelligence program that can answer and make phone calls automatically.
+*   **Local LLM**: A large language model (the AI's brain) that runs entirely on your own computer, rather than on a remote server.
+*   **Apple Silicon**: The custom computer chips designed by Apple for their Mac computers, such as the M1, M2, or M3 series.
+*   **MLX**: A machine learning framework developed by Apple to run AI models efficiently on Apple Silicon chips.
+*   **SIP (Session Initiation Protocol)**: A technical standard used for setting up, managing, and ending voice and video calls over the internet.
+*   **API Key**: A secret code that allows your program to access services from a company like Telnyx or Twilio, proving your identity and authorization.
+*   **CLI (Command Line Interface)**: A text-based way to interact with a computer program, where you type commands instead of clicking buttons or using a mouse.
+*   **Speech-to-Text**: Technology that converts spoken language from audio into written text.
+*   **Text-to-Speech**: Technology that converts written text into natural-sounding spoken language.
+
+## Original source
+This concept was shared by Reddit user /u/Agent007_MI9 on the Reddit platform. They described building a private AI phone agent that runs locally on their Mac, emphasizing privacy and control over call data.
+
+## Notes & variations
+Do you even need this? For many users, existing commercial AI phone agent services (like AgentPhone or Poke mentioned by the author) offer a much simpler, ready-to-use solution. The trade-off is that these services typically store your call data on their servers. This custom, local approach is best for those who prioritize absolute privacy and have the technical skills to build and maintain it.
+
+Free-tier limits: While the AI models themselves are free to download and run locally, the phone network services (Telnyx, Twilio) are paid. You will need to pay a monthly fee for a phone number and usage charges for calls. Running local models also requires a powerful Mac with Apple Silicon, which is a significant upfront cost.
+
+Common pitfall: The setup process is complex and can be challenging. You might encounter difficulties with installing development tools, configuring SIP connections, or debugging issues with the AI models. Network configuration and understanding how to integrate different software components require a good level of technical comfort.

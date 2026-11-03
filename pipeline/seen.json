@@ -29756,8 +29756,244 @@
     "96a0fdddedcec966f2cf8592366ca4a89dc07c29aeb89da4f9e166df6751b4a9": {
       "url": "https://www.reddit.com/r/learnprogramming/comments/1wxdngs/how_do_you_get_better_at_reading_and",
       "date": "2026-11-02"
+    },
+    "5b27bfa071191728b4e0ce64c944c3eb748d44fcd63ab270d0c725cb911b241b": {
+      "url": "https://news.ycombinator.com/item?id=50300683",
+      "date": "2026-11-03"
+    },
+    "9ed070591b0ddf96a2b197b82aed72f2461af794a23b2ad0a975a1a6e6075687": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1xl3w49/ram_needs_to_be_collectivized_for_the_greater_good",
+      "date": "2026-11-03"
+    },
+    "46933a36d2603a0bbc02a4ab06aaa85e5d632a59336c93b1a44fcecac92d5946": {
+      "url": "https://simonwillison.net/2026/Nov/3/a-sound-that-leaks-your-exact-location",
+      "date": "2026-11-03"
+    },
+    "e0f8a160ece1e702a77ef78af6bff31c6f2961f9d624b1ed44f443225ad37206": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1xlvsri/how_to_trap_sam_altman",
+      "date": "2026-11-03"
+    },
+    "449ed68b90056fbb63e7f9ab9f2181adbcba88a5b21fe5a8f6d53a04bba01e72": {
+      "url": "https://simonwillison.net/2026/Nov/3/october-newsletter",
+      "date": "2026-11-03"
+    },
+    "4a550d445b286b263ee126af488a85112db5ab8510b599bf11ebf4b50f084cd4": {
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1x76vtw/i_built_a_shopper_attention_heatmap_using",
+      "date": "2026-11-03"
+    },
+    "9d52bf97ae05725130debf62c26307f1348b41e58a4d68c72505f41357fbe3a8": {
+      "url": "https://simonwillison.net/2026/Nov/2/llm",
+      "date": "2026-11-03"
+    },
+    "cbce4dbba08418d37b81f1178c86222c4d94b60079f5237a77febfdc953c19a4": {
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1xe3vbw/i_took_apart_claude_code_opencode_and_pi_then",
+      "date": "2026-11-03"
+    },
+    "22262baef95a2fe53de0dcea86e5757f13dd3f77b6448abe445ec1e13c715475": {
+      "url": "https://latent.space/p/ainews-llms-can-read-write-neural-network-weights-weight-space-programming-cuts-autoresearch-out-of",
+      "date": "2026-11-03"
+    },
+    "40c6ebb460e1f3b3276e7cf0e776a7c7e18a43c32af474ce8a3a0b1ad62c64c6": {
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1xkebc5/googles_open_knowledge_format_okf_an",
+      "date": "2026-11-03"
+    },
+    "c90b220cbc29d50eb3b9f302362fe6ca10719d71d453afd309cc69df65a6d84a": {
+      "url": "https://latent.space/p/building-ai-for-lawyers-jacob-lauritzen-cto-of-legora",
+      "date": "2026-11-03"
+    },
+    "1149e3f40a23eb1bdd9d589e8a40e9dcd528acb49ccb6f58f71ab61e93524fff": {
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1xhj52a/developers_saving_10_hours_a_week_with_ai_dropped",
+      "date": "2026-11-03"
+    },
+    "3343cd5df22c7f0b9498b132e9224d2ded3a34e569be345197e88f4da4f7cd9d": {
+      "url": "https://latent.space/p/building_legal_agents_when_you_can_t_see_the_data_-_jacob_lauritzen_cto_of_legora",
+      "date": "2026-11-03"
+    },
+    "b9edf3af7f88d4bd748934714048af2ccfc91ac096d2f6978c21583739f52a10": {
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1wy6dm4/i_let_5_ai_models_fight_a_world_war_deepseek",
+      "date": "2026-11-03"
+    },
+    "a6ab1f019ed3aa91f8ae9bbfc09c7aff48dd5b7f6f8558762c3b2ca2c8bc64c2": {
+      "url": "https://www.bensbites.com/p/if-you-feel-behind-right-now-dont",
+      "date": "2026-11-03"
+    },
+    "3e7f7328ff12b46aba37cd3623f0772250f20dfd03e752455e1a29e4dd9811d2": {
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1x6dnrz/bank_of_america_hired_1000_contractors_to_patch",
+      "date": "2026-11-03"
+    },
+    "b05fd13d79e76b342d3b75b796117c261aa938a91cd535ffaf297d9053927ec5": {
+      "url": "https://huggingface.co/blog/ibm-research/cuga-harness",
+      "date": "2026-11-03"
+    },
+    "eecd43f7b16cdcdb2f2b871d5dc6b2c7b5b4be511215ac6ec8ed1f3a3ed86165": {
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1xhk193/after_6_months_of_daily_building_i_just_released",
+      "date": "2026-11-03"
+    },
+    "a6f54d325d31634f891659b5f3c8f6d5a46072f111d8835330333b2acd151981": {
+      "url": "https://huggingface.co/blog/transformers-mic",
+      "date": "2026-11-03"
+    },
+    "b14575125ab79321b5fd15572bde16a45626b1b22473bfc969578aa755cf260a": {
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1xitb9k/i_built_a_harness_that_everybody_on_my",
+      "date": "2026-11-03"
+    },
+    "f641e8ba701825534aeba1c6d1530e449fc52c1d2857f1391032501c70b2ddbe": {
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1xh3n68/i_gave_my_local_llm_a_real_phone_number_to_make",
+      "date": "2026-11-03"
+    },
+    "0d1803f588bfe59b97fc57ce01203bd794782d9c84aed25fb4e1fef4cc82cc4b": {
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1xjnhn7/deepseek_v41_flash_on_colab_uncensored_1187_toks",
+      "date": "2026-11-03"
+    },
+    "aa0f3c138d83b635a8af078cc1841ddcc4a6adf71c768e3d25b9f99af4f437c3": {
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1xgdoar/i_built_a_tiny_selfhostable_kanban_board_mcp",
+      "date": "2026-11-03"
+    },
+    "872f983196d253787f7a44f3100d972ff70e5998d44494aec0cdb8ef97eaef57": {
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1xh3uqz/watching_terminal_coding_agents_grep_a_500kline",
+      "date": "2026-11-03"
+    },
+    "3a638b6d2da8a67d922e5a91feebf472fc01d039e8d27ac3b40b6a548d81660a": {
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1x8wwhy/openspline_host_a_realtime_talking_avatar_on_a",
+      "date": "2026-11-03"
+    },
+    "0ba66adff435d6bd6f4818c9e318cb3fe9d563c0703c0c9e50604ae7668a819d": {
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1x6i0t5/a_harvard_study_found_ai_agents_increased_coding",
+      "date": "2026-11-03"
+    },
+    "7527a57d499af456b76da65dff043296b7de644b4394c65de742ecb42f0f8138": {
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1x55s84/a_post_from_localllama",
+      "date": "2026-11-03"
+    },
+    "932e1cd4025324bf14a2e9f6482473774e782e67bf30ad60252f60e6ca5117a6": {
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1wy4di2/aicoding_tools_could_be_breaking_the_junior",
+      "date": "2026-11-03"
+    },
+    "d36f47ef5170fce89390a1c75d43c751ccc97758bed13d5bb00401a3ea68b4ca": {
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1xattho/we_tested_jev_as_a_reranker_against_voyage_cohere",
+      "date": "2026-11-03"
+    },
+    "878220867aa0656c287b2fe689c910deea14358190b81e9e34cfb939b1840faa": {
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1x107xj/akbascore_mam_the_end_of_the_one_big_context",
+      "date": "2026-11-03"
+    },
+    "48242f3402e51fe3cae47480d02b6ebbaef3bbc135a6114531f5483c7c61a76f": {
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1x317c6/i_use_a_322m_local_model_to_judge_every_tool_call",
+      "date": "2026-11-03"
+    },
+    "86751c98c4d65d12767c90b67e20519aba40d57ed162b7dc62f265d145987563": {
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1xdm5gj/full_deepseekv41flash1017_510_gb_original_weights",
+      "date": "2026-11-03"
+    },
+    "1ab671f80a84df368560cb3f740f3a1da7cec1e9b1696cf3d0cba0d3e2871021": {
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1wzxgrj/how_far_can_a_27b_local_model_go_with_a",
+      "date": "2026-11-03"
+    },
+    "a6d4cb0e1fa175777f006e3d210ea5f2454c8b1b58abffa761de1cff5860f808": {
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1x6bk9l/reasoning_models_burn_tokens_they_dont_need_a",
+      "date": "2026-11-03"
+    },
+    "1c6680446c6366a664fadb1d24ee53e8b11014b36963d9b7eec6ccead0547af2": {
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1xcatnx/agent_memory_is_a_joke_right_now_how_are_you",
+      "date": "2026-11-03"
+    },
+    "268184b4f7b372b37070ba22cc8325eba7fb10a57be024c7c5df36cd37f1a03b": {
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1xaap1w/i_managed_to_run_a_realistic_talking_avatar",
+      "date": "2026-11-03"
+    },
+    "37173a32e9d37c259b5b33557067aabc781cbbf9d835e0804ccfea935b14b048": {
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1x58qog/i_made_a_pixelart_dungeon_to_keep_an_eye_on_all",
+      "date": "2026-11-03"
+    },
+    "80c52254ebf6f0938e11253fc18ff89dd20568536f7bff0e2a25c46903c727c4": {
+      "url": "https://www.reddit.com/r/resumes/comments/1xa952c/do_background_checks_catch_jobs_that_arent_on",
+      "date": "2026-11-03"
+    },
+    "95aab0c1b958589b3c819b712ecafa42c49e2dfe428e5c4ad5ffb61c98161d05": {
+      "url": "https://www.reddit.com/r/resumes/comments/1xduzte/0_years_cs_student_software_engineering_intern",
+      "date": "2026-11-03"
+    },
+    "5ef7736c11daeaf771212892fcfe1b02cd292f962d63d10ea0c41098a92e6531": {
+      "url": "https://www.reddit.com/r/resumes/comments/1xb4jyc/4_yoe_unemployed_software_engineer_canada",
+      "date": "2026-11-03"
+    },
+    "e048dcdd0dcee10bb2256834415f738545f610e1cf472281fbb2b084291141fe": {
+      "url": "https://www.reddit.com/r/resumes/comments/1xa18bc/8_yoe_functionally_unemployed_reputation_manager",
+      "date": "2026-11-03"
+    },
+    "b019b7eb2779f6c32b7a2a15634fbff78a6b103675a028fd7154c61581ff27d8": {
+      "url": "https://www.reddit.com/r/resumes/comments/1x0co8g/how_do_you_make_a_resume_with_no_experience",
+      "date": "2026-11-03"
+    },
+    "5f4a5f43fd2eb280f4fe1114508b5a07205c71ee80d06dd7d1c1ddcba476249d": {
+      "url": "https://www.reddit.com/r/resumes/comments/1x3ahc3/0_yoe_unemployment_ai_engineer_remote",
+      "date": "2026-11-03"
+    },
+    "ef87fa28481b9fc1d544c45db9e11ef272aafde8cd71a76045f49c7558fd3999": {
+      "url": "https://www.reddit.com/r/resumes/comments/1xk5olm/must_i_make_my_resume_atsfriendly_as_opposed_to",
+      "date": "2026-11-03"
+    },
+    "353cd80eda3412d33eb7ec24ff93996aea231bb453ea8235a010da861da1be45": {
+      "url": "https://www.reddit.com/r/resumes/comments/1xe93bb/0_yoe_new_grad_software_engineering_united_states",
+      "date": "2026-11-03"
+    },
+    "66385bb03a79d05dcd612396ea2cdac0191bdb7091cd2462b135c245988fca5d": {
+      "url": "https://www.reddit.com/r/resumes/comments/1xh9raj/0_yoe_highschool_student_parttime_ontario_too",
+      "date": "2026-11-03"
+    },
+    "c70a3e4e3ad0f6c052aec6f3198cab807ed04137177d0cc9e017f8dba68647f7": {
+      "url": "https://www.reddit.com/r/resumes/comments/1xcnra3/7_yoe_software_engineer_senior_software_engineer",
+      "date": "2026-11-03"
+    },
+    "1b2b42318add2c176a6e16137cf9d820950791ef72cba57965be97735c045a3c": {
+      "url": "https://www.reddit.com/r/resumes/comments/1x949my/7_yoe_unemployed_senior_software_developer_us",
+      "date": "2026-11-03"
+    },
+    "1f3903d6d185cab4f8783e262315b7d6127d2781bfac836bfdd5099ef4904f4d": {
+      "url": "https://www.reddit.com/r/resumes/comments/1xada4j/0_yoe_unemployed_it_usa_100_applications_no",
+      "date": "2026-11-03"
+    },
+    "9ebc81195770013a8123aa8ef70812a194395b00d86202bb49a1ac11111daac8": {
+      "url": "https://www.reddit.com/r/resumes/comments/1xio4yt/multipage_resumes",
+      "date": "2026-11-03"
+    },
+    "04f562214dafe9cbb31d70652c7ef51d4e2d87517e87f4c59c0b3743ebc5a535": {
+      "url": "https://www.reddit.com/r/resumes/comments/1x4qhn6/3_yoe_current_roleunemployed_it_support_network",
+      "date": "2026-11-03"
+    },
+    "5dae03d449fdcf3a98af779cd97e96ec8232276383ab12f6f4fb0fbf2afcc511": {
+      "url": "https://www.reddit.com/r/resumes/comments/1x32boc/14_yoe_unemployed_principalleadsenior_engineer",
+      "date": "2026-11-03"
+    },
+    "ea9c480ee19b7e0653874f36d1cf1319e6c30e537e52d06b1fe797da30977e49": {
+      "url": "https://www.reddit.com/r/resumes/comments/1xacc8c/0_yoe_unemployed_full_stack_engineer_us",
+      "date": "2026-11-03"
+    },
+    "69cc81ca8db614461d87a13198ff5a638001ac20031d486fab64d4d48386f3b6": {
+      "url": "https://www.reddit.com/r/resumes/comments/1x0b40k/5_yoe_unemployed_data_analyst_canadaus",
+      "date": "2026-11-03"
+    },
+    "3d504ee4fd5741af450424814977e55a0cffbda186dd5b98b3c487b0ee9d97a5": {
+      "url": "https://www.reddit.com/r/resumes/comments/1xjk4hi/0_yoe_hardware_engineer_validation_verification",
+      "date": "2026-11-03"
+    },
+    "3c9606c6c574163597ea584440952cd4697d95a0cb1861bc7b282349575f024f": {
+      "url": "https://www.reddit.com/r/resumes/comments/1x7h5gn/should_i_remove_education_or_only_the_date_of",
+      "date": "2026-11-03"
+    },
+    "51087a04d8ba79afc1d42e8e18e5f0f4e48ecf41d1a72d3ea73d9ef164f4abd2": {
+      "url": "https://www.reddit.com/r/resumes/comments/1xl180z/how_much_lying_can_you_actually_do",
+      "date": "2026-11-03"
+    },
+    "942720ec595955b96e8f68a585a22777e7e771a13d34bf2d1e5e4ef96a6c9b61": {
+      "url": "https://www.reddit.com/r/resumes/comments/1x4f47i/5_yoe_unemployed_business_analyst_strategy",
+      "date": "2026-11-03"
+    },
+    "e5650b9ba0b3feda8640ed77f87d5fc28795fcb1fcdc6bcc0160d695438e173f": {
+      "url": "https://www.reddit.com/r/resumes/comments/1x3y7lx/6_yoe_software_engineer_software_engineer_portugal",
+      "date": "2026-11-03"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 0
+  "dailyPage": 1
 }
