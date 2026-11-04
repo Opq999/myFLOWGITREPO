@@ -1,0 +1,110 @@
+---
+title: "Reduce Claude Code Token Costs by Disabling Agent Summaries"
+description: "Learn how to disable the agent summary feature in Claude Code to significantly reduce token consumption and save on API costs. This workflow uses a Bun preload script."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 15
+jobToBeDone: "Reduce token consumption in Claude Code by disabling agent summaries"
+tools:
+  - name: "Claude Code"
+    url: "https://code.claude.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Bun"
+    url: "https://bun.sh"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "curl"
+    url: "https://curl.se"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=50284255"
+  platform: "hackernews"
+  author: "NikZaal"
+  postedAt: 2026-10-29
+score: 7
+ingestedAt: 2026-11-04
+nigeriaNotes: "This workflow helps reduce costs for users of Claude Code, which is a paid service. While the tools Bun and curl are free, Claude Code itself requires payment. The script download is very small, so data usage is negligible."
+nigeriaUseCases:
+  - persona: "entrepreneur"
+    scenario: "As a tech entrepreneur building an MVP, reduce your monthly Claude Code API bill by 15-20% to save crucial capital for your startup's growth."
+  - persona: "employee"
+    scenario: "As a software developer, implement this workflow to cut your team's Claude Code token usage, helping your company manage project development costs more efficiently."
+  - persona: "student"
+    scenario: "As a computer science student developing a final year project or a coding side hustle, reduce your personal Claude Code API expenses to stretch your development budget further."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will disable the automatic agent summary feature in Claude Code, which can reduce your token usage by 15-20%. This saves you money on API costs by preventing Claude Code from repeatedly sending agent transcripts to the model for a short status line.
+
+## Tools you need
+*   **Claude Code** (paid): An AI coding assistant that uses Claude models. You will need an active subscription or credits.
+*   **Bun** (free): A fast JavaScript runtime used to run the preload script that modifies Claude Code's behavior.
+*   **curl** (free): A command-line tool for downloading files from the internet. It is usually pre-installed on most operating systems.
+
+## Steps
+
+1.  **Install Bun (if you don't have it)**: Bun is a fast JavaScript runtime. You need it to run the script that disables agent summaries. Open your terminal or PowerShell and run the command for your operating system:
+
+    # macOS or Linux
+    ```bash
+    curl -fsSL https://bun.sh/install | bash
+    ```
+
+    # Windows (PowerShell)
+    ```powershell
+    powershell -c "irm https://bun.sh/install.ps1 | iex"
+    ```
+
+    You should see output indicating Bun is being installed. After installation, close and reopen your terminal or PowerShell to ensure Bun is available.
+
+2.  **Download the no-agent-summary script**: This JavaScript file will be loaded by Bun to disable the agent summary feature. Run the command below to download it to a standard location on your system:
+
+    # macOS or Linux
+    ```bash
+    curl -fsSL https://gist.githubusercontent.com/flamerix-ai/c3905705cc4205e5de3011fa2e74efce/raw/no-agent-summary.js -o ~/.local/share/no-agent-summary.js
+    ```
+
+    # Windows (PowerShell)
+    ```powershell
+    curl -fsSL https://gist.githubusercontent.com/flamerix-ai/c3905705cc4205e5de3011fa2e74efce/raw/no-agent-summary.js -o "$HOME\.local\share\no-agent-summary.js"
+    ```
+
+    You should not see any output if the download is successful. The file `no-agent-summary.js` will be saved in the specified directory.
+
+3.  **Stop any running Claude Code daemon sessions**: A daemon is a background program that runs without a direct user interface. You need to stop any active Claude Code background processes before restarting it with the new settings.
+
+    ```bash
+    claude daemon stop --any
+    ```
+
+    You should see a message confirming that Claude Code daemon sessions have been stopped.
+
+4.  **Start Claude Code with the preload script**: Now, you will launch Claude Code, telling Bun to load your downloaded script before Claude Code fully starts. A preload script is a feature that loads a script before the main application starts, allowing it to modify how the application behaves.
+
+    # macOS or Linux
+    ```bash
+    BUN_OPTIONS="${BUN_OPTIONS:+$BUN_OPTIONS} --preload=$HOME/.local/share/no-agent-summary.js" claude
+    ```
+
+    # Windows (PowerShell)
+    ```powershell
+    $env:BUN_OPTIONS = "$env:BUN_OPTIONS --preload=$HOME\.local\share\no-agent-summary.js"
+    claude
+    ```
+
+    Claude Code should launch as usual. The agent summary feature, which typically displays a 3-word status line for background agents, should now be disabled.
+
+5.  **Verify the change (optional but recommended)**: The author doesn't share their exact verification steps, but you can check your Claude Code usage statistics over time or observe if the agent status lines are no longer updating in the agents panel. Reduced token usage (the basic units of text AI models process and are often billed by) in your Claude Code billing is the ultimate confirmation.
+
+## Original source
+This workflow is based on a solution shared by Flamerix AI on GitHub Gist, originally highlighted by NikZaal on Hacker News. It provides a method to reduce token consumption in Claude Code by disabling an agent summary feature.
+
+## Notes & variations
+*   **Common mistake**: Claude Code updates can silently undo this change. After any Claude Code update, you should re-run the steps to ensure the script is still active. Also, ensure the path to `no-agent-summary.js` is correct and that you stopped any running Claude Code daemons before restarting.
+*   **Tip for better results**: To make this change permanent for every Claude Code process, you would need to set the `BUN_OPTIONS` environment variable (a special setting on your computer that programs can read to change their behavior) globally on your system. The original source provides details for this under the 'Install' section for different platforms.
+*   **Free-tier alternatives**: This workflow specifically optimizes a paid tool (Claude Code). If you are looking for free alternatives to AI coding assistants, consider using free-tier large language models (LLMs) available through web interfaces like `chatgpt.com`, `claude.ai`, or `gemini.google.com` for coding help, or explore local LLMs that can run on your computer.

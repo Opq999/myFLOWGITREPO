@@ -29992,8 +29992,196 @@
     "e5650b9ba0b3feda8640ed77f87d5fc28795fcb1fcdc6bcc0160d695438e173f": {
       "url": "https://www.reddit.com/r/resumes/comments/1x3y7lx/6_yoe_software_engineer_software_engineer_portugal",
       "date": "2026-11-03"
+    },
+    "0b47f34ad8ed62f569f987694a58f2ebe964083bacfda11b633ae29fe74bf295": {
+      "url": "https://news.ycombinator.com/item?id=50302334",
+      "date": "2026-11-04"
+    },
+    "bf176a8111726e334f4476505127969be6dea847d84dfed000fc884cbb517b0d": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1xm8nvl/gpt61_the_worlds_best_model",
+      "date": "2026-11-04"
+    },
+    "b5cba0d011349b3bc50111809ab484ae3a7ae1efda7d7776ece58fac266468bd": {
+      "url": "https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights",
+      "date": "2026-11-04"
+    },
+    "623346e07f2b63477122750672d6e6cb814bd72a9f2d41b939d2325b3f94b296": {
+      "url": "https://news.ycombinator.com/item?id=50284255",
+      "date": "2026-11-04"
+    },
+    "25b9a34ab9e0409b38bc68a35440840446020c2638b7e055b5f7ca033c202d6a": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1xlx6lk/lmao",
+      "date": "2026-11-04"
+    },
+    "8d86676710497099b1091deb38df79f93e8f69b79a1b2cfae325c64584a4dfbe": {
+      "url": "https://huggingface.co/blog/allenai/statebench",
+      "date": "2026-11-04"
+    },
+    "0c479d4346045326fa7da6eaa19b24f1d881f7879b772cd3cb7ea92b8578895b": {
+      "url": "https://news.ycombinator.com/item?id=50337431",
+      "date": "2026-11-04"
+    },
+    "767b2b9aed702a144f2094eed12ad09fb3e369ed96c4aac6a70f2e6784bf619f": {
+      "url": "https://www.reddit.com/r/ChatGPTPro/comments/1xgamw4/ive_never_seen_gpt_6_pro_crash_out_like_this",
+      "date": "2026-11-04"
+    },
+    "4d3938441f216409a8f1b94cf7b0fdb4871145e54a0ab57799f0fbd11992bc85": {
+      "url": "https://huggingface.co/blog/ibm-research/palette-deck-building",
+      "date": "2026-11-04"
+    },
+    "a950b6d9c155a3d3d43c7f42dee4b1f3f78e6ac6116c10a28cf5b1df655256a2": {
+      "url": "https://www.reddit.com/r/ChatGPTPro/comments/1x1g9xq/chatgpt_wont_forget_everything",
+      "date": "2026-11-04"
+    },
+    "63945bc794809749828fed7a75412a51f17402e819c90a409ec9b785e40cb075": {
+      "url": "https://huggingface.co/blog/cwe-bench",
+      "date": "2026-11-04"
+    },
+    "09eefae74beb085e7f7bb9059b05df5a34da8d6e4e08e99cae40bc15dd079d51": {
+      "url": "https://www.reddit.com/r/ChatGPTPro/comments/1xaymiu/codex_vs_claude_for_coding_whats_the_real",
+      "date": "2026-11-04"
+    },
+    "89c8baa8c00d43ec0a1e2adec670d77cbb726fe0476cf4e4958d1f39cc7651da": {
+      "url": "https://newsletter.pragmaticengineer.com/p/how-software-engineering-is-changing",
+      "date": "2026-11-04"
+    },
+    "cf98e36cdb0eb74d63da54eb6e56985e5b46f92d6c089fecd0780101ef807c02": {
+      "url": "https://www.reddit.com/r/ChatGPTPro/comments/1xe6g09/chatgpt_plus_vs_claude_pro_20_for_learning_to_code",
+      "date": "2026-11-04"
+    },
+    "4d35e7a8f44426706fab64d835c19a4ab4b01797e8633b082dd8030070054dd8": {
+      "url": "https://www.reddit.com/r/ChatGPTPro/comments/1x7shk1/wondering_if_others_have_used_chatgpt_for_this",
+      "date": "2026-11-04"
+    },
+    "de12bd537d11bb91e37a1371c5be8b9fa09f5b6d2cc10f34f4ce21149406f44c": {
+      "url": "https://www.reddit.com/r/ChatGPTPro/comments/1x8zd68/i_built_a_chatgpt_operating_system",
+      "date": "2026-11-04"
+    },
+    "7fd59c67e9b14cdbf711f9fa0b49484ca38566965de7d5b548a21b99b421621a": {
+      "url": "https://www.reddit.com/r/ChatGPTPro/comments/1x4m9lb/paid_chatgpt_users_recurring_technical_failures",
+      "date": "2026-11-04"
+    },
+    "bc7f9bc5350836a82883aaee9b6cb91a02c3c3cf10179d3e0325cbdf6eae18e6": {
+      "url": "https://www.reddit.com/r/ChatGPTPro/comments/1x2f51k/deep_research_was_down",
+      "date": "2026-11-04"
+    },
+    "d360f519cb646ccbdc37caf53dca6d116ca0451d1c4de9e2d6e4fe263530b8b8": {
+      "url": "https://www.reddit.com/r/ChatGPTPro/comments/1x0hr23/claude_pro_vs_chatgpt_plus_which_one_is_actually",
+      "date": "2026-11-04"
+    },
+    "db3ab8b01609c0e3f4361851d93b85e0a00d3673d847c4822fa2715ab669b661": {
+      "url": "https://www.reddit.com/r/ChatGPTPro/comments/1x3xwhs/gpt6s_available_for_plus_users_in_regular_chat",
+      "date": "2026-11-04"
+    },
+    "2e17d049c248f17faf180cbf7cdd25d6dc44ef1b3ff3c96dc388f095bce6735e": {
+      "url": "https://www.reddit.com/r/ChatGPTPro/comments/1xkhxhb/combining_chat_and_work",
+      "date": "2026-11-04"
+    },
+    "4dc746f7b10987e27a4d684a25f385a16c9dcbc3ae7add8bd6ced391e3e23d98": {
+      "url": "https://www.reddit.com/r/ChatGPTPro/comments/1xbjj1h/a_different_use_for_workcodex_it_helps_you_clean",
+      "date": "2026-11-04"
+    },
+    "7133dcca739f021b2e462c7cbceb41307fbc4c8ef8a7d97d1620dc7c677b0415": {
+      "url": "https://www.reddit.com/r/ChatGPTPro/comments/1x8a1ki/sudden_spike_in_sol_61_usage",
+      "date": "2026-11-04"
+    },
+    "b5cd2197699d71e87f6f8a1be7869a2750122622aff2420818949482ec4ce7f9": {
+      "url": "https://www.reddit.com/r/ChatGPTPro/comments/1x5mouh/burning_through_usage_at_an_alarming_rate",
+      "date": "2026-11-04"
+    },
+    "cfeb3d85b5305873d49e894d9a230c0feedd6c28858c741d37d08d7e03fde28f": {
+      "url": "https://www.reddit.com/r/ChatGPTPro/comments/1xk0pl8/how_do_you_stop_reexplaining_your_work_context",
+      "date": "2026-11-04"
+    },
+    "2b463a89f6f83f1ab552d38fff08c938ac09e8de9a7475c049ea128d1cfc097b": {
+      "url": "https://www.reddit.com/r/ChatGPTPro/comments/1x5jwb3/chatgpt_playbooks_for_new_users",
+      "date": "2026-11-04"
+    },
+    "6f22b4f5df697586788837bd77474dfdfbe8f016369a7b41f7e29c2de38fbe9e": {
+      "url": "https://www.reddit.com/r/ChatGPTPro/comments/1x1mdqq/how_should_i_organize_files_folders_and_storage",
+      "date": "2026-11-04"
+    },
+    "83974a57b2b03e13b0663bdd2a54ffcb8e88e73856ed41362fe0294f017ca3cc": {
+      "url": "https://www.reddit.com/r/ChatGPTPro/comments/1xhn6zw/sol_61_usage_limit_depletes_much_faster",
+      "date": "2026-11-04"
+    },
+    "4588f72f90e95cf1f9d117115c947d7770bd10fe264fbb01ece41dd94eaf13f4": {
+      "url": "https://www.reddit.com/r/ChatGPTPro/comments/1x7fjg3/dots",
+      "date": "2026-11-04"
+    },
+    "ad6f30e15386d61509e0dfa882ee1bbf09b3ee5aa3ec4ee715862c0eaffc0b08": {
+      "url": "https://www.reddit.com/r/ChatGPTPro/comments/1x3zmlw/cant_decide_between_gpt_pro_and_claude",
+      "date": "2026-11-04"
+    },
+    "5f23d8eea235ba7129d785b50298faa1180b360743974d14fcece842f8326d24": {
+      "url": "https://www.reddit.com/r/ChatGPTPro/comments/1xlp29i/which_ai_tools_have_actually_saved_you_time_at",
+      "date": "2026-11-04"
+    },
+    "6e0ef84921909a2507623dcb585aaef8f5d75cfd3078251cad175dba485a8217": {
+      "url": "https://www.reddit.com/r/ChatGPTPro/comments/1xdh84c/200_pro_9797_cached_input_faster_quota_drain_and",
+      "date": "2026-11-04"
+    },
+    "11dbc50f91d96dface09fe6125c8d1227a2ebc0cb6f9fa34421d38f981e4d7f7": {
+      "url": "https://www.reddit.com/r/ChatGPTPro/comments/1xamr94/i_now_let_chatgpt_hand_a_task_to_a_separate_mac",
+      "date": "2026-11-04"
+    },
+    "f459ba23c25df0f1d4516f3435cbecbfcc400695c65d6931b49376ebac83a7ce": {
+      "url": "https://www.reddit.com/r/ChatGPTPro/comments/1x3h7n7/need_some_suggestions_to_burn_the_usage",
+      "date": "2026-11-04"
+    },
+    "73fb50d75308c7dd33df559e6b8477ce6d71f846ccd505d06bf101a8c31e1002": {
+      "url": "https://www.reddit.com/r/ChatGPTPro/comments/1x9jbsn/one_conversation_across_chat_work_and_codexwith",
+      "date": "2026-11-04"
+    },
+    "ab05f059aef5c0d566d403f3a0ec9a7fcc8fe96bfbfd4bec50dc661bde315057": {
+      "url": "https://www.reddit.com/r/copywriting/comments/1xixpkk/how_do_you_shift_to_physical_publications",
+      "date": "2026-11-04"
+    },
+    "88fd10095f44f324db453afab0526ce921614c869c26b4cb8b995dcc78420bcc": {
+      "url": "https://www.reddit.com/r/copywriting/comments/1xeeos1/how_do_i_find_business_to_write_spec_practice_help",
+      "date": "2026-11-04"
+    },
+    "8b2dd6e6b1800ebe4472e240b7a9bfcee9d5692f5eee35e907eaba7d722119e7": {
+      "url": "https://www.reddit.com/r/copywriting/comments/1xajlth/why_does_everyone_do_this_nowadays_what_emotion",
+      "date": "2026-11-04"
+    },
+    "61b7fb59e890645b1b956eb04efbf5f0723daa8155afd1a269c5783b44eebdf8": {
+      "url": "https://www.reddit.com/r/copywriting/comments/1xmxyg4/advice_for_someone_who_started_a_up_a_copywriting",
+      "date": "2026-11-04"
+    },
+    "0785b44793781d2358fca0d5ad99fef32ba1e3b749e740aec0bc98924eeba457": {
+      "url": "https://www.reddit.com/r/copywriting/comments/1xjd5ef/need_some_help",
+      "date": "2026-11-04"
+    },
+    "a8e601c412384d9171158d9f03298433a2ebd6d1ad9d3d0b5bf9ed599f714b60": {
+      "url": "https://www.reddit.com/r/copywriting/comments/1xi1kdu/how_are_we_talking_about_geo",
+      "date": "2026-11-04"
+    },
+    "aca72acfc73219f88a9431e0e60a47f837657b5a8c2614cdde78106483d533b6": {
+      "url": "https://www.reddit.com/r/copywriting/comments/1xhri3i/am_i_crazy",
+      "date": "2026-11-04"
+    },
+    "bb6292604fdb93c65a2caa284435787ce00316e2bcecb4e1b792c69313231576": {
+      "url": "https://www.reddit.com/r/copywriting/comments/1xgunqh/two_fashion_copywriting_opportunities_london",
+      "date": "2026-11-04"
+    },
+    "ecca49b6942977f3f7784d3071977a1b7d476fdad7c55a8d31ba7656c2ee8e93": {
+      "url": "https://www.reddit.com/r/copywriting/comments/1xmxxsn/looking_to_get_a_copywriting_job_where_to_start",
+      "date": "2026-11-04"
+    },
+    "8f4b16a912aecd31b660f6f7ca2e69c57fa2d6509c5b934465322ebd90e94e61": {
+      "url": "https://www.reddit.com/r/copywriting/comments/1xmrsig/how_can_i_get_my_first_opportunity_as_a_reel",
+      "date": "2026-11-04"
+    },
+    "142644f9c295ebb4c88a8fdbf7cf0dc3c167dfde461d09401f7ae5a444c56c3b": {
+      "url": "https://www.reddit.com/r/copywriting/comments/1xmeq37/copywriting_with_ai_or_still_training",
+      "date": "2026-11-04"
+    },
+    "208864761885690dfbf18651bb549d871cc57f70ccaab50efb9f22fdbb7a83cd": {
+      "url": "https://www.reddit.com/r/copywriting/comments/1xic0j8/hiring_looking_for_someone_who_can_write_the_best",
+      "date": "2026-11-04"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 1
+  "dailyPage": 2
 }
