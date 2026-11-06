@@ -1,0 +1,104 @@
+---
+title: "Modify LLM Behavior Without Retraining Using Heretic (Advanced)"
+description: "Learn how Heretic allows you to change large language model behavior, like reducing censorship or sycophancy, without expensive retraining. Requires technical setup."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 90
+jobToBeDone: "Modify large language model behavior without retraining"
+tools:
+  - name: "Heretic"
+    url: "https://github.com/p-e-w/heretic"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Python"
+    url: "https://www.python.org"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "PyTorch"
+    url: "https://pytorch.org"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Hugging Face"
+    url: "https://huggingface.co"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://github.com/p-e-w/heretic"
+  platform: "github"
+  author: "p-e-w"
+  postedAt: 2026-11-06
+score: 6
+ingestedAt: 2026-11-06
+nigeriaNotes: "This workflow requires a powerful computer with a dedicated graphics card (GPU), like a gaming PC, which may be a significant investment. It is not suitable for mobile devices or low-spec computers."
+tiktokUrl: ""
+published: false
+---
+
+## What this is, in plain English
+Heretic is a special tool that lets you change how large language models (LLMs) behave without needing to "retrain" them. Retraining is usually very expensive and requires huge computing power. Instead, Heretic uses clever mathematical techniques to "steer" the model's responses. You can make an LLM less censored, less "sycophantic" (meaning it doesn't just agree with everything you say), or reduce "slop" (meaning it gives more concise answers).
+
+This is an advanced process because it requires setting up a specific software environment on your computer and running commands in a terminal, which is a text-based interface for your computer. It also needs a powerful computer with a GPU (Graphics Processing Unit), which is a special chip that makes AI tasks much faster.
+
+The exact steps involve running code and configuring files, which can change as the tool updates. Therefore, there isn't a simple copy-paste recipe for beginners.
+
+## What you can use it for
+*   **Remove censorship**: Make a language model less likely to refuse certain prompts or topics.
+*   **Reduce sycophancy**: Make the model less agreeable and more likely to offer independent or critical perspectives.
+*   **Suppress "slop"**: Get more direct and concise answers from the model, avoiding overly verbose responses.
+*   **Alter emotional alignment**: Adjust the emotional tone or bias of the model's output.
+*   **Customize model behavior**: Apply specific behavioral changes to any LLM you can run on your own hardware.
+
+## Tools you need
+*   **Heretic** (free): An open-source Python library for modifying LLM behavior.
+*   **Python** (free): A popular programming language used to run Heretic. You'll need version 3.10 or newer.
+*   **PyTorch** (free): A powerful open-source library for machine learning, specifically for working with GPUs. You'll need version 2.6 or newer.
+*   **Hugging Face** (freemium): A platform where many pre-trained language models are shared. You'll use it to find models to modify and potentially upload your modified models.
+
+## How it actually works
+1.  **Prepare your environment**: You need to install Python (version 3.10 or newer) and PyTorch (version 2.6 or newer) on your computer. PyTorch installation is specific to your computer's graphics card (GPU), so you'll need to follow the instructions on the PyTorch website for your exact setup. This usually involves using a command-line interface (terminal).
+2.  **Install Heretic**: Once Python and PyTorch are ready, you will install the Heretic tool using Python's package installer. Open your terminal and run:
+
+    ```
+    # macOS or Linux
+    pip install -U heretic-llm
+
+    # Windows (PowerShell)
+    pip install -U heretic-llm
+    ```
+
+    You should see messages indicating that Heretic and its dependencies are being downloaded and installed.
+3.  **Choose a model**: Identify a large language model from Hugging Face that you want to modify. For example, `Qwen/Qwen3-4B-Instruct-2507`. Make sure your computer has enough memory and GPU power to run this model.
+4.  **Run Heretic**: In your terminal, you will run the Heretic command, specifying the model you want to modify. By default, Heretic will try to remove censorship.
+
+    ```
+    # macOS or Linux
+    heretic Qwen/Qwen3-4B-Instruct-2507
+
+    # Windows (PowerShell)
+    heretic Qwen/Qwen3-4B-Instruct-2507
+    ```
+
+    Replace `Qwen/Qwen3-4B-Instruct-2507` with the actual model name you chose. You should see output indicating Heretic is benchmarking your system and processing the model. This step can take 30-40 minutes or more, depending on your hardware and the model size.
+5.  **Apply different modifications (optional)**: If you want to do something other than censorship removal (like reducing "slop" or "sycophancy"), you need to use a configuration file. Heretic comes with example configuration files (e.g., `config.noslop.toml`, `config.nosyco.toml`) that you can find in the Heretic GitHub repository. To use one, you typically place the desired `.toml` file in the same folder where you run the `heretic` command, naming it `config.toml`. Alternatively, you can set an environment variable called `HERETIC_CONFIG_FILE` to point to the file's path before running Heretic. The author doesn't provide exact steps for setting environment variables or specific file paths, so refer to the Heretic documentation for detailed instructions.
+6.  **Save or test the modified model**: After processing, Heretic will give you options to save the modified model, upload it to Hugging Face, or chat with it to test its new behavior. The exact prompts for these options are not provided in the source.
+
+## Words you'll see, explained
+*   **Large Language Model (LLM)**: An AI program trained on vast amounts of text data that can understand and generate human-like text.
+*   **GPU (Graphics Processing Unit)**: A specialized electronic circuit designed to rapidly manipulate and alter memory to accelerate the creation of images in a frame buffer intended for output to a display device. In AI, GPUs are crucial for speeding up complex calculations.
+*   **Python environment**: A self-contained space on your computer where you can install specific versions of Python and its libraries without affecting other Python projects.
+*   **PyTorch**: An open-source machine learning library used for building and training neural networks, especially popular for deep learning applications.
+*   **Hugging Face**: A popular platform and community for machine learning, providing tools, datasets, and pre-trained models, especially for natural language processing.
+*   **Terminal / Command Line Interface (CLI)**: A text-based interface used to interact with your computer's operating system by typing commands, instead of using a mouse and graphical icons.
+*   **Censorship removal**: Modifying an LLM to be less restrictive or refuse fewer prompts, allowing it to generate responses on a wider range of topics.
+*   **Sycophancy reduction**: Changing an LLM's behavior so it is less likely to simply agree with the user and instead offers more independent or critical responses.
+*   **Slop suppression**: Making an LLM's responses more concise and to the point, reducing unnecessary verbosity.
+*   **Configuration file (.toml)**: A text file that contains settings and options for a software program, allowing you to customize its behavior without changing the program's code.
+
+## Original source
+This workflow is based on the "Heretic" project by p-e-w, an open-source tool available on GitHub. It was posted in November 2026.
+
+## Notes & variations
+*   **Do you even need this?**: Modifying an LLM with Heretic requires significant technical setup and a powerful computer. For many common tasks, simply using a well-tuned, publicly available LLM (like those on Hugging Face) or carefully crafting your prompts might achieve similar results without needing to modify the model itself. Consider if your goal truly requires altering the model's core behavior.
+*   **Hardware requirements**: This tool is designed to run on a "gaming PC" with a powerful GPU (like an RTX 3090). Running it on a computer without a dedicated GPU, or with an older/less powerful one, will be extremely slow or might not work at all.
+*   **Configuration files**: Heretic uses `.toml` files for different modification types. The source mentions that "Configuration files made for Heretic 1.x are not compatible with Heretic 2.x!" Always check the official Heretic GitHub repository for the latest configuration file formats and migration guides to avoid errors.
