@@ -1,0 +1,53 @@
+---
+title: "Systematically fact-check content drafts using ChatGPT's source-quoting prompt"
+description: "Use a detailed ChatGPT prompt to systematically fact-check prices, dates, and other claims in your content drafts, ensuring accuracy by requiring direct quotes from primary sources."
+category: "content-creation"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 10
+jobToBeDone: "Systematically fact-check content drafts using a detailed AI prompt"
+tools:
+  - name: "ChatGPT"
+    url: "https://chatgpt.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://www.reddit.com/r/ChatGPTPromptGenius/comments/1xq8mgc/telling_chatgpt_to_admit_what_it_doesnt_know_wont/"
+  platform: "reddit"
+  author: "/u/DutyOnly4308"
+  postedAt: 2026-11-07
+score: 6
+ingestedAt: 2026-11-08
+nigeriaNotes: "ChatGPT's free tier is available and effective for this workflow. Data usage is very light, making it suitable for mobile use with limited data plans."
+tiktokUrl: ""
+published: false
+---
+
+## What you'll get
+You will get a detailed list of every factual claim in your content draft. Each claim will have a verdict (CONFIRMED, WRONG, OUTDATED, NOT FOUND, or COULD NOT OPEN), a direct quote from its primary source, and the source's web address (URL). This approach forces the AI to provide evidence for every fact, preventing it from confidently generating incorrect information. It is useful for any content that contains facts, such as blog posts, product pages, or newsletters.
+
+## Tools you need
+*   **ChatGPT** (freemium): An AI chatbot that can understand and generate human-like text, used here to fact-check your content by searching the web.
+
+## Steps
+1.  **Open ChatGPT and enable web search**: Go to the ChatGPT website. Make sure the model you select has "Browse with Bing" or "Web Browsing" enabled. This feature allows the AI to search the internet for information.
+    *   You should see the chat interface ready, with an indication that web browsing is active (for example, a globe icon or a message).
+2.  **Prepare your draft**: Copy the entire text of the draft you want to fact-check.
+    *   Your draft is now ready to be pasted.
+3.  **Paste the fact-checking prompt**: Copy the exact prompt below and paste it into the ChatGPT chat box. Then, paste your draft immediately after the prompt.
+
+    ```
+    Fact-check the draft below before I publish it. 1. List every claim a reader could check: prices, plan limits, menu names and button labels, version numbers, system requirements, dates, statistics, quotes, and words like "only", "first", "free" or "no longer". 2. For each claim, name the primary source: the page of whoever creates that fact (the vendor's pricing page, the official docs, the original study). Not a blog that repeats it. 3. Open that page and copy the exact sentence that supports or contradicts the claim, with its URL. 4. Give each claim one verdict: CONFIRMED, WRONG, OUTDATED, NOT FOUND or COULD NOT OPEN. For WRONG and OUTDATED, write the corrected sentence. 5. Sort the list so the claims a reader pays for or follows step by step come first. Rules: - No quote, no CONFIRMED. - If you only saw a summary or a search snippet of the page, say so and use NOT FOUND. - If a page blocks you or asks for a login, use COULD NOT OPEN. Don't guess what it says. - ...
+    ```
+
+    *   ChatGPT will start processing your request, likely showing "browsing the web" activity. It will then output a structured list of claims, sources, quotes, web addresses (URLs), and verdicts.
+4.  **Review the fact-check results**: Carefully read through ChatGPT's output. Pay close attention to claims marked "WRONG", "OUTDATED", "NOT FOUND", or "COULD NOT OPEN".
+    *   You will have a clear understanding of which facts in your draft need correction or further investigation, backed by specific evidence or the lack of it.
+
+## Original source
+This fact-checking method was shared by Reddit user /u/DutyOnly4308 on the r/ChatGPT subreddit. The author developed this prompt to combat AI's tendency to confidently generate incorrect information, emphasizing the need for verifiable sources.
+
+## Notes & variations
+*   **Free-tier alternatives**: While ChatGPT's free tier works, other freemium AI chatbots like Google Gemini (gemini.google.com) or Claude (claude.ai) can also perform web searches and follow complex instructions. Their exact performance may vary.
+*   **Common mistake**: Don't forget to enable web browsing in ChatGPT. If it is not enabled, the AI will "hallucinate" (make up) sources and quotes, which defeats the purpose of this workflow.
+*   **Tip for better results**: For very long drafts, break them into smaller sections (for example, paragraph by paragraph or section by section) and fact-check each part separately. This helps the AI manage the information better and reduces the chance of errors or incomplete checks.

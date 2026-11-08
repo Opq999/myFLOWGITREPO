@@ -1,0 +1,63 @@
+---
+title: "Improve ChatGPT Translations with a Two-Step Polish"
+description: "Learn how to make AI-generated translations sound more natural and less like 'translationese' using a simple two-step polishing method with ChatGPT."
+category: "content-creation"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 7
+jobToBeDone: "Improve the naturalness and quality of AI-generated translations"
+tools:
+  - name: "ChatGPT"
+    url: "https://chatgpt.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://www.reddit.com/r/ChatGPTPromptGenius/comments/1xie44c/telling_chatgpt_to_sound_natural_doesnt_fix_its/"
+  platform: "reddit"
+  author: "/u/Ok_Negotiation_2587"
+  postedAt: 2026-10-29
+score: 10
+ingestedAt: 2026-11-08
+nigeriaNotes: "ChatGPT's free tier is suitable for this workflow, and data usage is minimal as you're only pasting text."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "Translate a foreign research paper abstract into Nigerian English for your assignment, ensuring it sounds natural."
+  - persona: "small-business"
+    scenario: "Translate customer reviews from French to Pidgin English for your Instagram page, making them sound authentic."
+  - persona: "employee"
+    scenario: "Translate a technical document from Mandarin to clear Nigerian English for your team's understanding."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will get a translation that sounds natural to a native speaker, free from awkward phrasing or sentence structures copied directly from the original language. This two-step approach works because it first allows the AI to translate literally, then prompts it to review its own output as if it were a native speaker, identifying and fixing stiff parts.
+
+## Tools you need
+*   **ChatGPT** (freemium): A chatbot powered by large language models (LLMs) for generating and polishing text.
+
+## Steps
+1.  **Translate the text**: Open ChatGPT and paste your text, asking it to translate into your target language. Remember to replace `{{language}}`, `{{reader}}`, and `{{text}}` with your specific details.
+
+    ```
+    Translate the text below into {{language}}. The reader is {{reader}}. Keep every fact, number and name exactly as it is. {{text}}
+    ```
+
+    You should get a translation that is factually correct but might still sound a bit unnatural or stiff.
+
+2.  **Polish the translation**: Take the translation ChatGPT just gave you. In the same chat, paste the following prompt to ask it to refine its own work. This helps it focus on natural language flow.
+
+    ```
+    Now read your translation as a native speaker of that language who has never seen the original. Rewrite every sentence that sounds translated: word order copied from the source, phrases nobody would actually say, or a tone that's wrong for this reader. Don't add or remove any meaning. Then provide the complete, polished translation.
+    ```
+
+    You should receive a revised translation that reads more smoothly and naturally, as if a native speaker had written it.
+
+## Original source
+This two-step translation method was shared by Reddit user /u/Ok_Negotiation_2587 on the platform Reddit. They developed this approach for improving AI translations after observing that directly asking models to "sound natural" often failed.
+
+## Notes & variations
+*   **Free-tier alternatives**: You can also use other freemium AI chatbots like [Claude.ai](https://claude.ai) or [Gemini](https://gemini.google.com) for this workflow. The prompts will work similarly.
+*   **Common mistake**: Do not try to tell the AI to "sound natural" or "avoid literal translation" in the very first translation step. The author's research suggests this can actually make the translation worse. The polishing step is where the naturalness is improved.
+*   **Tip for better results**: Be very specific about your `{{reader}}` in the first prompt. For example, "The reader is a high school student" or "The reader is a business professional." This helps the AI choose the right tone and vocabulary.
+*   **For languages you can't read**: The author mentions a third step for languages you can't read, but the specific prompt for this step was not provided in the excerpt. This step would likely involve asking the AI to explain *why* it made certain changes in the polishing step, or to highlight sentences that were particularly difficult to make natural.
