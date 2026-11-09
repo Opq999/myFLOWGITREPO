@@ -1,0 +1,95 @@
+---
+title: "Convert Three.js 3D Models to WebGL using Claude"
+description: "Learn how to convert a 3D model built with Three.js into plain JavaScript and WebGL using an AI chat tool like Claude. Get the code you need to display your model on the web."
+category: "coding"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 20
+jobToBeDone: "Convert a 3D model from Three.js to plain JavaScript and WebGL using an AI."
+tools:
+  - name: "Claude"
+    url: "https://claude.ai"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "Three.js"
+    url: "https://threejs.org"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://simonwillison.net/2026/Nov/9/hn-50421091/"
+  platform: "blog"
+  author: "Simon Willison"
+  postedAt: 2026-11-09
+score: 7
+ingestedAt: 2026-11-09
+nigeriaNotes: "Claude's free tier is suitable for this workflow. Data usage is minimal, involving text prompts and code output."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "A university student studying computer graphics can convert their Three.js assignment model to pure WebGL, fulfilling a course requirement to demonstrate understanding of low-level graphics APIs."
+  - persona: "employee"
+    scenario: "A web developer can convert an existing Three.js interactive 3D data visualization to pure WebGL, optimizing its performance for mobile users and reducing external library dependencies in a corporate project."
+  - persona: "entrepreneur"
+    scenario: "An entrepreneur building a web-based product with a custom 3D product viewer can convert their Three.js prototype to pure WebGL for finer control over rendering and potentially better performance on user devices."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will get a 3D model that was originally built using the Three.js library, rewritten in plain JavaScript and WebGL. This approach shows how advanced AI chat tools can translate complex code between different programming frameworks, saving you manual effort in coding.
+
+## Tools you need
+*   **Claude** (freemium): An AI chat assistant used to convert the 3D model code.
+*   **Three.js** (free): A JavaScript library for creating 3D graphics. You will need the code for an existing Three.js model to convert.
+
+## Steps
+1.  **Get your Three.js model code**: You need the JavaScript code for a 3D model built using the Three.js (pronounced 'three dot j-s') library. The author used a "Nudibranch themed Faberge Egg" model.
+    *What you should see*: You should have a block of JavaScript code that defines your Three.js model.
+2.  **Open Claude chat**: Go to the Claude website (claude.ai) and start a new chat.
+    *What you should see*: A new chat window where you can type messages to Claude.
+3.  **Paste your model code and prompt Claude**: Copy your Three.js model code. Then, paste it into the chat and ask Claude to convert it to plain JavaScript and WebGL (Web Graphics Library, a web technology that allows your browser to display interactive 3D graphics without needing extra plugins).
+    The author asked this in a chat thread where Claude had already helped build the Three.js model, so the context was already set. If starting a new chat, a more complete prompt would be:
+
+    ```
+    I have a 3D model built using Three.js. Please convert this model to plain JavaScript and WebGL, without using the Three.js library. Here is the Three.js code:
+
+    [paste your Three.js model code here]
+    ```
+
+    *What you should see*: Claude will process your request and generate a new block of JavaScript code that uses WebGL directly. It might also provide explanations or notes about the conversion.
+4.  **Save the WebGL code**: Copy the generated WebGL code from Claude. Open a simple text editor (like Notepad on Windows, TextEdit on Mac, or any code editor). Paste the code into a new file. To view it, you'll typically need to embed this JavaScript code within an HTML file.
+    *Example HTML structure*:
+    ```html
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>My WebGL Model</title>
+        <style>
+            body { margin: 0; overflow: hidden; }
+            canvas { display: block; }
+        </style>
+    </head>
+    <body>
+        <canvas id="webglCanvas"></canvas>
+        <script>
+            // PASTE YOUR WEBGLL CODE HERE
+            // Make sure your WebGL code targets the 'webglCanvas' element
+            // For example, it might start with:
+            // const canvas = document.getElementById('webglCanvas');
+            // const gl = canvas.getContext('webgl');
+            // ...
+        </script>
+    </body>
+    </html>
+    ```
+    Save this file as `index.html` (or any `.html` name) on your computer.
+    *What you should see*: A file named `index.html` containing your WebGL code.
+5.  **View your converted model**: Open the `index.html` file in a web browser (like Chrome, Firefox, or Edge).
+    *What you should see*: Your 3D model displayed in the browser, rendered using WebGL. The author noted that the converted model might not be "identical" to the original Three.js version.
+
+## Original source
+This workflow was inspired by an experiment by Simon Willison, shared on his blog. He used Claude to convert a Three.js 3D model of a Faberge Egg into plain JavaScript and WebGL.
+
+## Notes & variations
+*   **Free-tier alternatives**: Other freemium AI chat tools like ChatGPT (chatgpt.com) or Gemini (gemini.google.com) might also be able to perform similar code conversions, though results may vary.
+*   **Common mistake**: Expecting a perfect, identical conversion. As the author notes, the AI-generated code might differ slightly from the original, and you might need to make small adjustments to get the exact desired look or functionality. Always test the output.
+*   **Tip for better results**: Provide clear instructions to the AI. If your Three.js code has specific requirements or dependencies, mention them. You can also ask the AI to explain parts of the generated WebGL code if you don't understand them. If the first attempt isn't perfect, try refining your prompt or asking Claude to fix specific issues.

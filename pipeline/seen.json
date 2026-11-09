@@ -30816,8 +30816,56 @@
     "25b1ec7ee6c2a7c368b783ec5d6a674ac241527ef0d456f3cef1bc534a265dc4": {
       "url": "https://www.reddit.com/r/copywriting/comments/1x5qcdm/which_ai_is_best_for_copywriting",
       "date": "2026-11-08"
+    },
+    "ad2eb49e9021ebf4675308dc6a412c1cb66c7f566815b4fad8926df4e55449e5": {
+      "url": "https://news.ycombinator.com/item?id=50385272",
+      "date": "2026-11-09"
+    },
+    "45e8de741ea9e45e27af9a99efc11bba8c531ae287b8974d4e757b6413a660c0": {
+      "url": "https://simonwillison.net/2026/Nov/9/hn-50421091",
+      "date": "2026-11-09"
+    },
+    "2c38b580d423d1806fb6e643fd3bd3899f5f9a2da2245bf78d4f853f73b222ba": {
+      "url": "https://news.ycombinator.com/item?id=50415628",
+      "date": "2026-11-09"
+    },
+    "7a56e2062f93f8c0e4390f7ad3b798cb480a24170fa85961cca292378a685c71": {
+      "url": "https://simonwillison.net/2026/Nov/9/details-summary",
+      "date": "2026-11-09"
+    },
+    "71c843041955ebc1fdc113b08d577e957425247fdabb3a77b14664d5269af1d3": {
+      "url": "https://simonwillison.net/2026/Nov/8/sqlite-parse-number-c-vs-rust",
+      "date": "2026-11-09"
+    },
+    "dfd5aeba955b06505b60e1a3a252a0bedcd8d1692c4eb49aa5a262dd9c331b76": {
+      "url": "https://simonwillison.net/2026/Nov/7/hn-50407316",
+      "date": "2026-11-09"
+    },
+    "8674b402a758cea69482855c933bed9f9a87f087f5d453a35905136fecb92345": {
+      "url": "https://simonwillison.net/2026/Nov/3/hn-50354278",
+      "date": "2026-11-09"
+    },
+    "e4b7803bfd815ac51c281839025c64440ed4036b09aa95a50ad87bf4c1a931d0": {
+      "url": "https://latent.space/p/handshake",
+      "date": "2026-11-09"
+    },
+    "2c00110bd6231e5944e32b7c2b10255f3721d5597aa09b393fd97b57c877a8f7": {
+      "url": "https://latent.space/p/cs146s",
+      "date": "2026-11-09"
+    },
+    "15593d458c27dc60753d069391256bd2953a3845f58d0712434983439ae9f2d3": {
+      "url": "https://latent.space/p/one_million_ai_engineer_special_how_stanford_teaches_ai-native_engineering_mihail_eric_monaco",
+      "date": "2026-11-09"
+    },
+    "ac8f18750241a65f1eaff59406bf9b8d8a419cb23f6d29d213a586908db91264": {
+      "url": "https://huggingface.co/blog/nvidia/nemotron-personas-finance-japan",
+      "date": "2026-11-09"
+    },
+    "55d059b88c6c576a2f3d9ab40518505078744d93ab6e7c4bc3d7b8ab49056416": {
+      "url": "https://huggingface.co/blog/amazon/higher-order-pruning-experts",
+      "date": "2026-11-09"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 0
+  "dailyPage": 1
 }

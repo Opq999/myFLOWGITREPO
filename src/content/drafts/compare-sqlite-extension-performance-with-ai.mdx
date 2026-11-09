@@ -1,0 +1,113 @@
+---
+title: "Compare SQLite Extension Performance with AI"
+description: "Learn how AI can assist in researching and comparing technical implementations, such as SQLite extensions in C vs. Rust, including performance and code complexity."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 180
+jobToBeDone: "Research and compare technical implementations for a SQLite extension using AI"
+tools:
+  - name: "Claude"
+    url: "https://claude.ai"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "SQLite"
+    url: "https://sqlite.org"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Rust"
+    url: "https://www.rust-lang.org"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "C Compiler (e.g., GCC)"
+    url: "https://gcc.gnu.org"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Rusqlite"
+    url: "https://github.com/rusqlite/rusqlite"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "sqlite-loadable-rs"
+    url: "https://github.com/nalgeon/sqlite-loadable-rs"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://simonwillison.net/2026/Nov/8/sqlite-parse-number-c-vs-rust/"
+  platform: "blog"
+  author: "Simon Willison"
+  postedAt: 2026-11-08
+score: 6
+ingestedAt: 2026-11-09
+nigeriaNotes: "Claude's free tier is sufficient for the AI research. The development work is local and data-light, requiring minimal internet usage after initial tool downloads."
+tiktokUrl: ""
+published: false
+---
+
+## What this is, in plain English
+This workflow demonstrates how an AI chatbot, like Claude, can be used as a powerful research assistant for complex programming tasks. Specifically, it shows how to compare different ways to build a custom function for SQLite, which is a small, fast database often used in mobile apps and embedded systems.
+
+The author used AI to explore the differences between creating a `parse_number()` function (which converts text like "$1,234.56" into a number) using two different programming languages: C and Rust. The goal was to compare their performance (how fast they run) and the complexity and size of the resulting compiled code.
+
+This is an advanced workflow because it requires deep knowledge of programming languages (C and Rust), setting up specialized development environments, and understanding how to compile and benchmark software. It is not a simple copy-paste task, as the exact code and setup will vary based on your specific project and computer system.
+
+## What you can use it for
+*   **Compare programming language choices**: Use AI to get initial insights into which language might be better for a specific technical task, considering factors like performance, code complexity, or file size.
+*   **Prototype code snippets**: Ask AI to generate starting code for specific functions or components, such as a text parsing function for a database.
+*   **Benchmark performance**: Get AI to suggest methods or even generate code for testing the speed and efficiency of different software implementations.
+*   **Refine technical reports**: Use AI to help structure and write technical documentation or research reports based on your findings and benchmarks.
+
+## Tools you need
+*   **Claude** (freemium): An AI chatbot used for research, code generation, and report structuring.
+*   **SQLite** (free): A lightweight, file-based database system that you will be extending.
+*   **Rust** (free): A modern programming language known for its safety and speed, used for one of the extension implementations.
+*   **C Compiler (e.g., GCC)** (free): A software tool needed to compile C code into executable programs, used for the other extension implementation.
+*   **Rusqlite** (free): A Rust library that provides an interface for working with SQLite databases.
+*   **sqlite-loadable-rs** (free): A Rust library specifically designed to help create SQLite loadable extensions in Rust.
+
+## How it actually works
+This process involves using an AI as a guide and assistant for a technical development task. The exact steps and code will depend on your specific project and development environment.
+
+1.  **Define your technical problem**: Clearly describe the function or component you want to build and the specific aspects you want to compare (e.g., performance, code size, complexity). For this workflow, the author wanted a `parse_number()` function for SQLite.
+
+2.  **Prompt the AI for initial research**: Ask the AI to compare different approaches or programming languages for your problem. The author's prompt was:
+
+    ```
+    I'm thinking about a SQLite custom function 'parse_number(value)' that strips ',', ' ', '£' and '%', handles a leading '-', and returns 'NULL' for anything it can’t parse Explore the difference between building this as a SQLite extension in C v.s. in Rust - I want to compare performance and code complexity and size of the resulting .so (or whatever) file
+    ```
+
+    You should get a starting point for your research, including potential libraries or approaches.
+
+3.  **Iterate on code generation and refinement**: Based on the AI's initial suggestions, ask it to generate specific code snippets or functions. The author asked Claude to improve the C implementation:
+
+    ```
+    Try writing your own C function for parsing text into a decimal number that catches up to or beats the Rust implementation
+    ```
+
+    The AI will provide code that you can then test and refine.
+
+4.  **Implement and benchmark locally**: Take the AI-generated code, set up your development environment (install C compiler, Rust toolchain, SQLite development headers), compile the extensions, and run your own performance tests. This step requires significant technical skill to set up and execute accurately.
+
+5.  **Refine and report**: Use the AI to help structure your findings into a report. The author prompted:
+
+    ```
+    Rewrite the prototype as a research report to match the others in simonw/research
+    ```
+
+    This helps organize your technical results into a clear, understandable document.
+
+## Words you'll see, explained
+*   **SQLite**: A very small, fast, and self-contained database that stores all its data in a single file.
+*   **Extension**: An add-on program that adds new features or functions to an existing software, like SQLite.
+*   **C**: A powerful, low-level programming language often used for system programming and applications where speed is critical.
+*   **Rust**: A modern programming language known for its focus on safety, speed, and handling multiple tasks at once, often seen as an alternative to C++.
+*   **`.so` file**: A "shared object" file, which is a compiled library of code that programs can use (similar to a `.dll` file on Windows).
+*   **Benchmarking**: The process of testing and comparing the performance (e.g., speed or efficiency) of different programs or code snippets.
+*   **`strtod`**: A standard C programming function used to convert a string of text into a double-precision floating-point number.
+
+## Original source
+This concept is based on a blog post by Simon Willison, where he explored building a `parse_number()` SQLite extension in C versus Rust, using Claude as a research and coding assistant.
+
+## Notes & variations
+*   **Do you even need this?**: For simpler programming tasks or when existing documentation is clear, a direct search or reading official guides might be faster than involving AI for complex code generation. This AI-assisted approach is most valuable for exploring novel or highly specific technical comparisons where existing solutions are not readily available.
+*   **Free-tier limits**: Claude's free tier is generally sufficient for chat-based research and generating code snippets. However, very long or extremely complex requests might hit usage limits.
+*   **Common pitfall**: AI-generated code might contain errors, security vulnerabilities, or not be fully optimized for your specific use case. Always thoroughly test, verify, and understand any code provided by an AI before using it in a production environment.
