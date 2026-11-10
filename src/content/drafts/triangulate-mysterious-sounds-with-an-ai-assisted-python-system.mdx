@@ -1,0 +1,81 @@
+---
+title: "Triangulate Mysterious Sounds with an AI-Assisted Python System"
+description: "Learn how an AI-assisted Python system can pinpoint the source of elusive sounds in a room using multiple listening devices. Understand its capabilities and how it works."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 90
+jobToBeDone: "Triangulate the source of a mysterious beep using an AI-assisted custom software system"
+tools:
+  - name: "Claude Code"
+    url: "https://code.claude.com"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Python"
+    url: "https://www.python.org"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://simonwillison.net/2026/Nov/9/mysterious-beeps/"
+  platform: "blog"
+  author: "Simon Willison"
+  postedAt: 2026-11-09
+score: 5
+ingestedAt: 2026-11-10
+nigeriaNotes: "This workflow relies on Claude Code, which is a paid developer tool and does not offer a free tier. Python itself is free, but setting up the environment and running the server requires some technical comfort."
+tiktokUrl: ""
+published: false
+---
+
+## What this is, in plain English
+This is a custom software system called "Beep Locator" designed to find the exact spot where a sound, like a mysterious beep, is coming from in a room. It uses several devices (like phones or tablets) placed around the room to listen for the sound. By comparing when each device hears the sound, the system can figure out its origin.
+
+This is an advanced workflow because it requires you to set up and run a Python web server on your computer, which involves using a command line (terminal) and installing software. The original system was also built with the help of Claude Code, an AI tool for developers, which means the exact code and setup steps are complex and not a simple copy-paste for beginners. The instructions for building and running such a system typically live in a code repository and require technical skills to adapt and use.
+
+## What you can use it for
+*   **Locate hidden noise sources**: Pinpoint where an annoying, intermittent beep or hum is coming from in a cluttered room without having to search manually.
+*   **Test acoustic setups**: Understand how sound travels and reflects in a space by using the clapping mode to visualize sound propagation.
+*   **Develop custom sensor networks**: Learn the principles of using multiple devices to collect data and triangulate information, which can be applied to other sensor projects.
+*   **Explore AI-assisted software development**: See an example of how advanced AI tools like Claude Code can be used to help build complex, custom software systems.
+
+## Tools you need
+*   **Claude Code** (paid): An AI assistant for developers that can help generate code and build software systems.
+*   **Python** (free): A programming language used to run the web server that powers the Beep Locator system.
+*   **Multiple smart devices** (free): Phones, tablets, or laptops that can connect to a web browser and act as listening sensors.
+
+## How it actually works
+1.  **Use an AI assistant to generate the code**: The author used Claude Code to build the "Beep Locator" system. You would need to provide detailed prompts to an AI coding assistant (like Claude Code or a similar tool) describing the desired functionality: a Python web server, a UI for device connection, sound triangulation logic, and a map visualization. The author doesn't share their exact prompts; a starting point could be:
+
+    ```
+    Design and implement a Python web server for a "Beep Locator" system. It should allow multiple client devices (phones, tablets) to connect via a web browser. The server needs to:
+    1. Serve a web interface for a map visualization.
+    2. Handle connections from client devices, allowing them to act as sound listeners.
+    3. Implement a mechanism for devices to estimate their relative positions (e.g., by playing sounds to each other).
+    4. Provide a "Rough mode" in the UI to manually adjust device positions.
+    5. Listen for a specific "beep" sound across all connected devices.
+    6. Triangulate the source of the beep based on timing differences and display it on the map.
+    7. Include a "clapping mode" for testing sound detection and triangulation.
+    8. Log detected sounds and allow replaying them from individual devices.
+    ```
+
+    You would then iterate with the AI to refine the code, handle errors, and add features until a functional system is generated.
+2.  **Set up your Python environment**: Install Python on your computer if you haven't already. Then, install any necessary Python libraries (dependencies) that the generated code requires. This typically involves using `pip`, Python's package installer.
+3.  **Run the Python web server**: Open your computer's terminal or command prompt, navigate to the directory where your Python code is saved, and run the main Python script to start the web server. The exact command will depend on the generated code, but it often looks like `python app.py` or `python -m flask run`.
+4.  **Connect listening devices**: Once the server is running, open a web browser on your main computer and on all the other smart devices you want to use as listeners. Navigate to the local network address provided by your Python server (e.g., `http://192.168.1.100:5000`). The system will likely provide a QR code or a direct URL to simplify connecting additional devices.
+5.  **Calibrate device locations**: Use the "Rough mode" in the web interface to drag and drop icons representing your devices to their approximate physical locations in the room. The system may then use internal sounds to fine-tune these positions.
+6.  **Start listening for beeps**: Activate the listening mode on all connected devices. The system will then display detected beeps as an 'X' on the map and log them. You can use the "clapping mode" to test the system's accuracy by clapping your hands in different spots.
+
+## Words you'll see, explained
+*   **Python web server**: A program written in Python that runs on your computer and delivers web pages and services to other devices on your network, allowing them to interact with the Beep Locator system.
+*   **Triangulation**: A method of finding the exact location of something by measuring its distance or direction from three known points. In this case, it uses the timing of a sound reaching multiple devices to pinpoint its source.
+*   **UI (User Interface)**: The visual part of a software system that you interact with, like buttons, maps, and text fields, usually displayed in a web browser.
+*   **QR code**: A type of barcode that can be scanned by a phone camera to quickly open a website or connect to a service, used here to easily link listening devices to the system.
+*   **Terminal / Command Prompt**: A text-based interface on your computer where you can type commands to run programs, manage files, and control your system, used to start the Python web server.
+
+## Original source
+This concept was developed by Simon Willison and shared on his blog. He created the "Beep Locator" system with the help of Claude Code to find a mysterious sound in his home.
+
+## Notes & variations
+*   **Do you even need this?**: For a simple, one-off beep, manually searching or using a sound-level meter might be quicker and easier than building a complex system. This approach is best for persistent, hard-to-locate sounds in complex environments, or if you enjoy building custom tech solutions.
+*   **Free-tier limits**: Claude Code is a paid developer tool and does not offer a free tier for its advanced coding capabilities. Python itself is free and open-source.
+*   **Common pitfall**: Ensuring all your listening devices are on the same local network and can communicate with the Python web server can be tricky. Firewall settings or different Wi-Fi networks can prevent devices from connecting, leading to frustration. Double-check your network configuration if devices aren't showing up.

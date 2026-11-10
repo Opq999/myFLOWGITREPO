@@ -1,0 +1,125 @@
+---
+title: "Automate Customer Support Routing with Decision Models"
+description: "Learn how decision models can automate customer support ticket routing and classification, providing structured decisions and probabilities without generating text."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 60
+jobToBeDone: "Automate customer support ticket routing and classification with decision models"
+tools:
+  - name: "Hugging Face"
+    url: "https://huggingface.co"
+    pricing: "freemium"
+    affiliateUrl: ""
+  - name: "transformers"
+    url: "https://huggingface.co/docs/transformers/index"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "llama.cpp"
+    url: "https://github.com/ggerganov/llama.cpp"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://huggingface.co/blog/decision"
+  platform: "blog"
+  author: "Hugging Face - Blog"
+  postedAt: 2026-11-10
+score: 7
+ingestedAt: 2026-11-10
+nigeriaNotes: "This workflow is technically advanced and requires local computing power. Running models locally with `llama.cpp` or `transformers` is data-light after the initial download of the model (which can be several gigabytes). However, setting up the environment and running these tools requires comfort with coding and command-line interfaces, which might be a barrier for beginners on mobile devices."
+nigeriaUseCases:
+  - persona: "employee"
+    scenario: "An IT support analyst in a Nigerian tech company implements this to automatically classify incoming helpdesk tickets (e.g., 'network issue', 'software bug') and assign them to the correct support team."
+  - persona: "student"
+    scenario: "A computer science student uses this to build a project that automatically classifies incoming emails for a campus club (e.g., 'event inquiry', 'membership question') and routes them to the right volunteer."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+Decision models are a type of artificial intelligence that helps systems make specific choices quickly and reliably, without generating long text responses. Instead of asking an AI to write an answer, you ask it to pick from a list of predefined options and tell you how confident it is about each choice.
+
+This approach is especially useful for tasks like sorting customer support tickets, classifying documents, or routing requests, where you need a structured answer (like "Billing department" or "High urgency") rather than a free-form sentence. While regular large language models (LLMs) can also do this by generating JSON, decision models are designed to be more reliable and efficient for these specific tasks.
+
+This workflow is considered advanced because it requires setting up a programming environment, installing specific software libraries, and running code. It's not a simple copy-paste task for someone without technical experience. The exact steps often involve working with code notebooks or command-line tools, which can change as the underlying software updates.
+
+## What you can use it for
+*   **Automate customer support routing**: Automatically send incoming customer messages to the correct department (e.g., billing, technical support, sales) based on the message content.
+*   **Classify incoming requests**: Determine the urgency or type of a customer request (e.g., "refund request," "bug report," "new feature idea").
+*   **Filter content**: Automatically tag or categorize user-generated content based on predefined labels.
+*   **Structured data extraction**: Extract specific pieces of information from text into a structured format, like identifying product names or sentiment.
+
+## Tools you need
+*   **Hugging Face** (freemium): A platform for sharing and using AI models and datasets. You'll use it to find and download models.
+*   **transformers** (free): An open-source Python library from Hugging Face that makes it easy to use and train AI models, including decision models.
+*   **llama.cpp** (free): An open-source project that allows you to run large language models efficiently on your own computer, often without needing a powerful graphics card (GPU).
+
+## How it actually works
+This approach involves using specialized AI models to make structured decisions. The source excerpt shows two main ways to achieve this, both requiring some technical setup and coding comfort.
+
+1.  **Using a Large Language Model (LLM) to generate JSON**:
+    You can use a standard LLM and ask it to output its answer in a structured JSON format. This often involves running a model locally using tools like `llama.cpp`.
+    *   **Set up `llama.cpp`**: First, you would need to download and compile the `llama.cpp` project on your computer. This is a technical step that involves using a terminal or command prompt.
+    *   **Download a GGUF model**: Next, you would download a compatible model, such as `ggml-org/gemma-4-e4b-it-GGUF:Q4_0`, from Hugging Face. This model is specifically formatted for `llama.cpp`.
+    *   **Run the command**: Once `llama.cpp` is set up and the model is downloaded, you can run a command in your terminal to ask the model a question and request a JSON output. The author doesn't specify the exact steps for setting up `llama.cpp` or downloading the model, but the command would look like this:
+
+    ```bash
+    # macOS or Linux
+    ./llama.cpp/llama-cli -hf ggml-org/gemma-4-e4b-it-GGUF:Q4_0 "We have the following customer support ticket, \"I was charged twice for my subscription. I need a refund today.\" , which team should handle the request, how urgent it is, and whether the customer is requesting a refund. Give the answers in JSON."
+    ```
+    ```powershell
+    # Windows (PowerShell)
+    .\llama.cpp\llama-cli.exe -hf ggml-org/gemma-4-e4b-it-GGUF:Q4_0 "We have the following customer support ticket, `"I was charged twice for my subscription. I need a refund today.`" , which team should handle the request, how urgent it is, and whether the customer is requesting a refund. Give the answers in JSON."
+    ```
+    You should see a JSON output similar to the example provided in the source, with fields like `team_to_handle`, `urgency`, and `request_refund`.
+
+2.  **Using a dedicated Decision Model pipeline with `transformers`**:
+    A more specialized approach uses a "decision" pipeline from the `transformers` library, which is designed to directly evaluate options and return probabilities without generating text.
+    *   **Install Python and `transformers`**: You would need to have Python installed on your computer, then install the `transformers` library using a package manager like `pip`.
+    *   **Write and run a Python script**: You would write a short Python script that uses the `pipeline` function from `transformers`. This pipeline automatically downloads and uses a specific decision model, such as `autotrust/GEV-26B-Decide`. The script defines the "state" (your input text) and "questions" with predefined "criteria" (the possible answers). The author's example code is the starting point:
+
+    ```python
+    from transformers import pipeline
+
+    # Initialize the decision pipeline with a specific model
+    decide = pipeline("decision", model="autotrust/GEV-26B-Decide")
+
+    # Define the input state and the questions with possible choices
+    decision = decide(
+        {
+            "state": "I was charged twice for my order and want a refund.",
+            "questions": {
+                "department": {
+                    "type": "choice",
+                    "instructions": "Which team should handle this?",
+                    "criteria": {
+                        "billing": "Payments and refunds",
+                        "technical": "Bugs and technical issues",
+                        "sales": "Pricing and subscriptions"
+                    }
+                },
+                # You can add more questions here, for example, about urgency or refund status
+            }
+        }
+    )
+
+    # Print the decision result
+    print(decision)
+    ```
+    When you run this script, the `transformers` library will download the `autotrust/GEV-26B-Decide` model (if not already present) and then output a structured decision, including the chosen option, its confidence, and probabilities for all choices.
+
+## Words you'll see, explained
+*   **Decision Model**: An AI model designed to make specific choices from a predefined set of options, returning probabilities for each choice rather than generating free-form text.
+*   **Large Language Model (LLM)**: An AI model trained on vast amounts of text data, capable of understanding, generating, and summarizing human-like text.
+*   **JSON (JavaScript Object Notation)**: A lightweight data format that is easy for humans to read and write, and easy for machines to parse and generate; often used for sending data between a server and web application.
+*   **Pipeline (in `transformers`)**: A high-level function in the Hugging Face `transformers` library that simplifies using pre-trained models for specific tasks, handling all the complex setup behind the scenes.
+*   **GGUF**: A file format optimized for running large language models efficiently on various hardware, especially with `llama.cpp`.
+*   **GPU (Graphics Processing Unit)**: A specialized electronic circuit designed to rapidly manipulate and alter memory to accelerate the creation of images, but also highly effective for parallel processing tasks like AI model training and inference.
+
+## Original source
+This concept is explained in a blog post titled "Decision Models in Hugging Face" published by Hugging Face. The post introduces the idea of decision models as an alternative to traditional large language models for structured decision-making tasks.
+
+## Notes & variations
+*   **Do you even need this?** For very simple classification tasks, you might not need a full decision model or LLM. Simpler machine learning models (like logistic regression or support vector machines) can sometimes achieve good results with less computational overhead and easier setup, especially if you have a well-labeled dataset. Consider these alternatives if your needs are basic and you want to avoid complex AI setups.
+*   **Free-tier limits**: While `llama.cpp` and the `transformers` library are free to use, running large models locally requires significant computing power (RAM and CPU, or a good GPU). If you don't have suitable hardware, you might need to use paid cloud services for model inference, which can incur costs. Hugging Face offers paid inference endpoints for hosting models.
+*   **Common pitfall**: When using LLMs to generate JSON, they are not always guaranteed to follow the exact schema you request. They might produce invalid JSON or unexpected keys. Decision models, especially those integrated with libraries like `transformers`, are designed to provide more reliable and structured outputs for classification tasks.
