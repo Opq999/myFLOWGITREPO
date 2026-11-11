@@ -1,0 +1,107 @@
+---
+title: "Set up an Offline AI Survival Assistant with Kiwix and a Local LLM"
+description: "Create a portable, internet-free AI assistant for survival information, using local AI models and offline libraries like Wikipedia and medical guides."
+category: "sme-operations"
+badge: "sourced"
+difficulty: "intermediate"
+timeMinutes: 120
+jobToBeDone: "Set up an offline AI assistant for survival information"
+tools:
+  - name: "Git"
+    url: "https://git-scm.com"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Python"
+    url: "https://www.python.org"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Kiwix"
+    url: "https://www.kiwix.org"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Ollama"
+    url: "https://ollama.com"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://news.ycombinator.com/item?id=50380273"
+  platform: "hackernews"
+  author: "soloyo"
+  postedAt: 2026-11-05
+score: 9
+ingestedAt: 2026-11-11
+nigeriaNotes: "This workflow involves downloading very large files (1GB to 100+GB) for the AI model and offline libraries. This can be costly and time-consuming on mobile data or limited internet plans. Consider using a strong Wi-Fi connection for the initial setup. Once set up, it works completely offline."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "A medical student preparing for a pharmacology exam uses the offline medical Wikipedia to quickly look up drug interactions and dosages when campus Wi-Fi is down."
+  - persona: "employee"
+    scenario: "An IT support staff member in an office experiencing a network outage uses the offline technical manuals and troubleshooting guides to diagnose and fix common server issues."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will set up a portable, offline AI assistant that runs on your computer (Windows, macOS, or Linux) or even from a USB drive. This kit provides practical survival guides and a local AI that answers questions using these guides and offline libraries like Wikipedia, all without needing any internet connection. This approach is ideal for situations where internet access is unreliable or unavailable, ensuring you always have critical information at hand.
+
+## Tools you need
+*   **Git** (free): To download the project files from GitHub to your computer.
+*   **Python** (free): The programming language the survival assistant is built with. The kit can also download a portable version if you don't have Python installed.
+*   **Kiwix** (free): For accessing large offline libraries like medical Wikipedia, post-disaster manuals, and wikiHow.
+*   **Ollama** (free): An optional engine for running the local AI model, if you prefer it over the `llama.cpp` engine bundled with the kit.
+
+## Steps
+
+1.  **Install Git**: Download and install Git on your computer. This tool allows you to copy the project files from the internet.
+    *   **What to do**: Go to the official Git website and download the installer for your operating system (Windows, macOS, or Linux). Follow the installation instructions.
+    *   **What you should see**: Git will be installed on your computer. You can open a terminal or command prompt and type `git --version` to confirm it's working.
+
+2.  **Download the project files**: Open your computer's terminal (Command Prompt on Windows, Terminal on macOS/Linux) and use Git to download the survival AI project.
+    *   **What to do**:
+        *   On Windows, search for "Command Prompt" or "PowerShell" in the Start menu and open it.
+        *   On macOS, search for "Terminal" in Spotlight (Cmd+Space) and open it.
+        *   On Linux, open your preferred terminal application.
+        *   Type the following commands and press Enter after each:
+
+        ```
+        git clone https://github.com/sdalberto/ia-da-sobrevivencia.git
+        cd ia-da-sobrevivencia
+        ```
+    *   **What you should see**: Git will download all the project files into a new folder named `ia-da-sobrevivencia` in your current directory. The `cd` command will then take you inside this new folder.
+
+3.  **Prepare the kit (online, once)**: Run the setup script to download the AI model, Kiwix libraries, and optionally a portable Python version. This step requires an internet connection and can take a long time due to large file downloads.
+    *   **What to do**:
+        *   **On Windows**: Double-click the `preparar-kit.bat` file inside the `ia-da-sobrevivencia` folder.
+        *   **On macOS**: Double-click the `preparar-kit.command` file. The first time, you might need to right-click it and choose "Open" to bypass security warnings.
+        *   **On Linux**: Open your terminal, navigate to the `ia-da-sobrevivencia` folder (if you're not already there), and run:
+
+        ```
+        # Linux
+        ./preparar-kit.sh --lang en
+        ```
+        The script will ask you to choose:
+        *   **AI model size**: `leve` (light, 1 GB, needs 4 GB RAM), `padrao` (default, 2 GB, needs 8 GB RAM – recommended), or `forte` (strong, 4.7 GB, needs 16 GB RAM). Choose `padrao` for most users.
+        *   **Kiwix libraries**: `minimo` (~3–5 GB), `recomendado` (~25–40 GB), or `completo` (100+ GB, full Wikipedia). Choose `recomendado` for a good balance.
+        *   **Systems**: `this computer only` or `Windows + Linux + macOS` (for a universal USB kit).
+        *   **Portable Python**: Choose to include it if you don't have Python installed or want the kit to be fully self-contained.
+    *   **What you should see**: The script will download the chosen AI model, Kiwix libraries, and other necessary components. This process will show progress updates in your terminal/command prompt. It will finish by confirming the kit is prepared.
+
+4.  **Use the kit (offline)**: Once prepared, you can use the survival assistant without an internet connection.
+    *   **What to do**:
+        *   **On Windows**: Double-click `iniciar.bat` inside the `ia-da-sobrevivencia` folder, then press `EN` for English.
+        *   **On macOS**: Double-click `iniciar.command`.
+        *   **On Linux**: Open your terminal, navigate to the `ia-da-sobrevivencia` folder, and run:
+
+        ```
+        # Linux
+        ./iniciar.sh --lang en
+        ```
+    *   **What you should see**: Your web browser will automatically open to a local address (like `http://127.0.0.1:8000`). This is the web interface for your survival AI assistant. You can now ask questions and browse the guides offline.
+
+## Original source
+This workflow is based on the "Survival AI" project by sdalberto, shared on GitHub and highlighted on Hacker News by soloyo. The project aims to provide a fully offline AI assistant with practical guides and local language models for emergency situations.
+
+## Notes & variations
+*   **Data usage warning**: The initial setup (Step 3) requires downloading very large files (from 1GB to over 100GB). Ensure you have a stable, fast internet connection and are aware of potential data costs if using a metered plan.
+*   **Common mistake**: Forgetting to run `git clone` and `cd` in the correct order, or trying to run the `preparar-kit` or `iniciar` scripts from the wrong directory. Always make sure your terminal is inside the `ia-da-sobrevivencia` folder before running the scripts.
+*   **Tip for better results**: When preparing the kit, choose the `padrao` (default) AI model and `recomendado` Kiwix libraries if your computer has at least 8 GB of RAM and sufficient storage. This provides a good balance between performance and comprehensive information. If you have a powerful computer (16 GB RAM or more), the `forte` model offers even better AI responses.
+*   **Sharing locally**: The web interface that opens in your browser can be accessed by other devices (like phones) on the same local Wi-Fi network, even if there's no internet connection. This allows multiple people to use the survival assistant from their own devices.
