@@ -31240,8 +31240,256 @@
     "e6054cbc7460e3a22f6a5dfbc74e95c705c105d308047ab4160dedf12ac5ae2c": {
       "url": "https://www.reddit.com/r/smallbusiness/comments/1xcmkpe/we_are_struggling_getting_morning_traffic_coming",
       "date": "2026-11-11"
+    },
+    "645fa4d94adcdc73250d1b55917a9d6cd1e4ade0e46e3db6a4670211f3ef614b": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1xtan70/they_didnt_even_try_to_hide_it",
+      "date": "2026-11-12"
+    },
+    "8cfe95d5a7efcad0553086b91dc8b748def885df6f32755ce0e3fb7af3f221c2": {
+      "url": "https://simonwillison.net/2026/Nov/11/gemini-decisions-api",
+      "date": "2026-11-12"
+    },
+    "e583362d6ff0c781b3132dc7bdcd6825a68d65d572fda32824ae93f70c80e19e": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1xrqzp9/were_only_human_for_now",
+      "date": "2026-11-12"
+    },
+    "fd0e38b70a90d204adaa251f796f4033dadee0a8ed48afff758cf6c9d125f8dd": {
+      "url": "https://simonwillison.net/2026/Nov/11/aws-emulator",
+      "date": "2026-11-12"
+    },
+    "95f3c8c248827763dcd1523f226f6b88013d275d4e95cc2175f2ee9e330554df": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1xoz04q/does_anyone_else_just_enjoy_talking_with_ai",
+      "date": "2026-11-12"
+    },
+    "73a487a9dee9c9049eac50d937d38a177b73a599c3f57c8f0ab1daa22837690b": {
+      "url": "https://simonwillison.net/2026/Nov/11/tools-tags",
+      "date": "2026-11-12"
+    },
+    "2121bfb98609faa3c81d79c41d8daba83659c99488f2b7c13acdd8801237f9f9": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1xoruzb/abdul_elsayed_is_the_pause_ai_candidate_abdul",
+      "date": "2026-11-12"
+    },
+    "88d1ecd11797604c75de7d3d3a0062eec1f80048b291caa8608f41aa0aba8f8d": {
+      "url": "https://simonwillison.net/2026/Nov/11/llm",
+      "date": "2026-11-12"
+    },
+    "cdeda5eccdba3b3ba6947ab86fe77e775c1cda3b3206d268220e6642770ffe37": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1xtbyps/ram_altman",
+      "date": "2026-11-12"
+    },
+    "fd1e2e3d38e066835254487a108d2b38fbfa50342b16742eaa8adb0273ea6833": {
+      "url": "https://latent.space/p/ainews-d-day-decision-models-day",
+      "date": "2026-11-12"
+    },
+    "ea63962c5fd373ef798156e8e8a9d89fcf3223a94d0f1b97c6071f2b7e3a5b10": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1xiolct/qwen_image_21_trellis2_in_blender_from_a_prompt",
+      "date": "2026-11-12"
+    },
+    "dd56d7e6848c2558449f1c8559f3c30f0ddcabb41f2a9240d8b841080cbc1686": {
+      "url": "https://latent.space/p/jev-revolution",
+      "date": "2026-11-12"
+    },
+    "0bac1f07211c0121afa4248a796304b8dc407c1fa8493bd629bbb4985947c0ba": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1xiag6d/moss_sft_character_sheet",
+      "date": "2026-11-12"
+    },
+    "7522e135335eaa57ac071f0a4592091cadda900b640ccb3e5e2b23f6bf339d8a": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1xly4rw/my_h3_settings_that_generate_15_second_videos_in",
+      "date": "2026-11-12"
+    },
+    "cbda9238a3684b28e47a3f036110852a357804594dae3b990092eac946cda973": {
+      "url": "https://huggingface.co/blog/3d-lora-finetuning",
+      "date": "2026-11-12"
+    },
+    "924eb6a4d04098e2f0f1a63faa4d717780987752882c444a95f62411d60b6822": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1x89lgl/anime_characters_realistic_backgrounds_round_3",
+      "date": "2026-11-12"
+    },
+    "61e05cacc0543bd13f8381818ea65f1370e846b85ba2113656605244bbc23420": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1xni4yd/we_will_take_your_ram",
+      "date": "2026-11-12"
+    },
+    "5d3dc62e9c821d607e351c556da6883a761db0f94251a68528696a22b9fc34f9": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1x57e98/modern_ps2_style_playstation_2_graphic_lora_for",
+      "date": "2026-11-12"
+    },
+    "4eb89bea3cbbf8caf1f39b3cfb4971d6053db2f0b5b8b9690baea07db82085e3": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1x54q07/i_swore_at_claude_until_he_made_a_nodegroup_that",
+      "date": "2026-11-12"
+    },
+    "6fbdbc316b46809614261319d9a5ebbbad39474234a18ce0b975d14cbe811f5d": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1xt9ocv/minimax_h3_image_20mp_workflow",
+      "date": "2026-11-12"
+    },
+    "c23e4085ab9fefb827dab430719366275f2452004b936b0fc34c107a91f4132d": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1xhbb08/psa_10erosmax_beta_7_is_out",
+      "date": "2026-11-12"
+    },
+    "6e72eabda27782fce1c71161c25c03500d7086aa7571c551a61d06ab47adf952": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1x5olxa/minimax_h3_character_swap_time_consumption_and",
+      "date": "2026-11-12"
+    },
+    "b08300348f1a3e0f120315bf19e04c67f54bfcc32b4a9b3907b1b635ecdad240": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1xtyxzo/llms_just_got_twice_as_fast_in_comfyui",
+      "date": "2026-11-12"
+    },
+    "87f4c06949773373dffed3b10921b641fe345d49505d3b7c5f7ff8f69405f8fb": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1xjt4bg/ostris_releases_primal_vae_better_than_flux2_vae",
+      "date": "2026-11-12"
+    },
+    "7f6aae8e3ca81a72c610e816e4801b6cd5e0889025cfda036d1bc5e959a1eb30": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1xixgdb/speridlabs_idol_a_single_image_to_a_3d_gaussian",
+      "date": "2026-11-12"
+    },
+    "609f83e00fa04ca74766ef1280ebf686030d641a2d0841f240dbe06d91df8072": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1x7i7o9/mossimage_gens",
+      "date": "2026-11-12"
+    },
+    "1c8600be6dd685c6b6257b58c6079fad8fe7322e2cc15b2e1de22d7cce16148c": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1xd9186/pixtext_a_small_fast_model_for_fixing_text_in",
+      "date": "2026-11-12"
+    },
+    "fb1d38533224fded2fdac58480b6a5ee942baf595202893499a900afc4f58df3": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1xlfsjd/making_mossbase_look_good_for_realism_workflow",
+      "date": "2026-11-12"
+    },
+    "8c94928e24b6655f22159e3e3b8bce379ca27dd85e4983696be67188903c1ba2": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1x8t1v2/moss_is_uncensored",
+      "date": "2026-11-12"
+    },
+    "1fb0fc98c0fb8f7348ac1d5ce76c59e6bbffd0f1a749c77d13eae0f00640a6f7": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1xeewpg/so_is_civitai_slowly_becoming_a_paysite_now",
+      "date": "2026-11-12"
+    },
+    "fbbffcc923a8b8ead5eec473ee6698279faae46b66db28ebb90f445e23f1c77a": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1x7t5v0/moss_is_an_incredible_model_been_doing_some_early",
+      "date": "2026-11-12"
+    },
+    "14c23e2d06d31ad0ded7b761fda6c7311bf4cb6387280d2d4dad1cc0190602e3": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1xee5rc/minimax_vs_a_deadpan_ww2_soldier_lighting",
+      "date": "2026-11-12"
+    },
+    "94f0db035b119f8f0ff79ed67510423a02d53a6932a343b2257d08d2018ea7e1": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1xlp0kg/i_made_a_comfyui_tool_to_bring_back_earlier",
+      "date": "2026-11-12"
+    },
+    "f07c50a08353bf9c22ac6aa8ba3873e27c49e157b09489e59fb055deb910eda3": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1xs7f3x/full_friends_episode_minimax_h3",
+      "date": "2026-11-12"
+    },
+    "efc6202587aad964c4549e9152907f3dbc0240a4b807cbd2b444fab757ebf606": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1xkgrtn/oh_all_the_prose_and_shakespeare_level_prompting",
+      "date": "2026-11-12"
+    },
+    "d0e602518aca2f102c70e87abb1ffdc2ff62146036a9b7e1856e931da25a02b0": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1xk2jhh/minimax_h3_4k",
+      "date": "2026-11-12"
+    },
+    "f1cad3fb066a247074302d56d3b9b1d8d595edb5c004194fc687e7ac50c3592b": {
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1xaglnx/wild_encounter_zelda_gets_caught_up_with_pikachu",
+      "date": "2026-11-12"
+    },
+    "c41ef6522f413b939d35dca374b7d0e491caa32e55f2bc002251d08d465a2b66": {
+      "url": "https://www.reddit.com/r/Notion/comments/1xgx4ve/i_have_created_my_notion_companys_database_and_as",
+      "date": "2026-11-12"
+    },
+    "4578af24e65e9b97b5e663637d045edd37adf2d5bf03280c52238d9afde73c42": {
+      "url": "https://www.reddit.com/r/Notion/comments/1xd7s3r/default_fullwidth_pages",
+      "date": "2026-11-12"
+    },
+    "d7e9c61a0e24c4a083e862feef52e8eb9ad5b983d12238e67526d559ea4d0226": {
+      "url": "https://www.reddit.com/r/Notion/comments/1x7fgni/is_there_a_working_notion_client_for_linux_web",
+      "date": "2026-11-12"
+    },
+    "d125564481a1fc3d8b78073fef6a285a75d8fd9cf963156b6249fd199acac72b": {
+      "url": "https://www.reddit.com/r/Notion/comments/1xsh6n2/notion_ai_changed_my_life_and_ive_just_finished",
+      "date": "2026-11-12"
+    },
+    "696a00cc953d98c42db93ab4f6d3a64b3ddf99faede89734879664272d23c071": {
+      "url": "https://www.reddit.com/r/Notion/comments/1xpf8ty/currently_no_one_in_my_workspace_can_choose_a",
+      "date": "2026-11-12"
+    },
+    "0be1afcb8fa50df6839b0b8b8bbe882d8019792e2bed57240f2fa08c566cce4b": {
+      "url": "https://www.reddit.com/r/Notion/comments/1xkitdx/rant_the_absurd_trap_of_the_new_select_credits",
+      "date": "2026-11-12"
+    },
+    "03ca7d93b495b6be4352da661701b8f5d84eecb16a8b92f22eade9b6a41e7ee6": {
+      "url": "https://www.reddit.com/r/Notion/comments/1xjyter/notion_forcing_two_factor_authentication",
+      "date": "2026-11-12"
+    },
+    "dcd4b696923c263ffa3a6fac42af159e1c7def1bdfac45b3c88b71af00a2b933": {
+      "url": "https://www.reddit.com/r/Notion/comments/1xj51rh/best_aipowered_notetaking_system_for_work_and",
+      "date": "2026-11-12"
+    },
+    "27c88e49b40eb098b7b4aed4e5c60744223e27e64706fe3e4796c1080c367add": {
+      "url": "https://www.reddit.com/r/Notion/comments/1xiovrv/advanced_githubstyle_heatmaps_for_habits_pure",
+      "date": "2026-11-12"
+    },
+    "98a1a3c1b66e01dee4ba833c3d1e81688e29e55d20c025bb20672bd04250a05e": {
+      "url": "https://www.reddit.com/r/Notion/comments/1xftok4/command_search_shortcut_stopped_working_after_the",
+      "date": "2026-11-12"
+    },
+    "1d3fa2d7f0933ce9d00f0c6eb4bb4832c298a5981037116756b7a85713d4815f": {
+      "url": "https://www.reddit.com/r/Notion/comments/1xeohyv/how_i_organize_study_notes_with_notion",
+      "date": "2026-11-12"
+    },
+    "eb35227c926fb845576223ce80e5a1d9f6b1f635653a580d086433105d822306": {
+      "url": "https://www.reddit.com/r/Notion/comments/1xdwq28/how_are_you_using_notion_to_get_better_answers",
+      "date": "2026-11-12"
+    },
+    "082c1a1cd5bc95bf165a22b29542ba033acfd489ece1ccfada0bac505acfa54d": {
+      "url": "https://www.reddit.com/r/Notion/comments/1xav3rj/notion_ais_new_credit_system_can_someone_clarify",
+      "date": "2026-11-12"
+    },
+    "ad541f95492424b5ae9b562405b11f69f282b3fdd7ae350ef3fdb361c3e72f6c": {
+      "url": "https://www.reddit.com/r/Notion/comments/1xociou/did_meetings_change",
+      "date": "2026-11-12"
+    },
+    "8dfef7c416eb65465a18692f32b3c6249326790c1ae240a43c8963188d7182ac": {
+      "url": "https://www.reddit.com/r/Notion/comments/1xfv9bq/is_it_me_or_is_notion_changed_now_that_you_cant",
+      "date": "2026-11-12"
+    },
+    "e4546ba848fc95f73976f4534555cd251bbe99e34ee8c2e5cb69b1e29d5b5313": {
+      "url": "https://www.reddit.com/r/Notion/comments/1xfp9ut/can_notion_agent_mess_up_my_existing_workspace",
+      "date": "2026-11-12"
+    },
+    "58496c71560d80b0024fb704e8cc7949eabd1e67da6c8d3640fe7d4704171915": {
+      "url": "https://www.reddit.com/r/Notion/comments/1x6a20l/for_people_who_use_digital_and_paper_system",
+      "date": "2026-11-12"
+    },
+    "bf75daa363630ad822f5a38f9b47fb779d98f78bc72a1f96c13ae697713ad547": {
+      "url": "https://www.reddit.com/r/Notion/comments/1xsj4u6/coloredformatted_text_in_properties",
+      "date": "2026-11-12"
+    },
+    "66d1d243ff61d841a07eaa77779e294f4280418748094b5d801bf93c11fc5fa1": {
+      "url": "https://www.reddit.com/r/Notion/comments/1xrhztk/how_can_i_reference_the_parent_page_in_a_database",
+      "date": "2026-11-12"
+    },
+    "e598de2d7310c9ae47615e2a8accd4ff5bd312571d3a159bef7258f0e95a52bb": {
+      "url": "https://www.reddit.com/r/Notion/comments/1xmh0t6/notion_confirmed_my_ai_allowance_was_reduced_then",
+      "date": "2026-11-12"
+    },
+    "45c423ba3f43d7218d3cbd62ef58db106f364318ec85374efcaf07d90c265f44": {
+      "url": "https://www.reddit.com/r/Notion/comments/1xk9vkd/notion_is_great_instrument",
+      "date": "2026-11-12"
+    },
+    "154b6dedb0cdade90ed301bfeb0845de1fc819eba0729b3c7c4e238f604f2198": {
+      "url": "https://www.reddit.com/r/Notion/comments/1xizqb2/am_i_reading_this_right_is_my_monthly_credit",
+      "date": "2026-11-12"
+    },
+    "fdcd1ebe94988a02fd2e727ee4b3c3ea87a676c59ff0da47c2ba3bd9b2028427": {
+      "url": "https://www.reddit.com/r/Notion/comments/1xhjxsl/notion_html_apps",
+      "date": "2026-11-12"
+    },
+    "00d11cdc8e0378c8f4811b6ce871197b1eb811f202ccc0dadf0efa5acde734e9": {
+      "url": "https://www.reddit.com/r/Notion/comments/1xglgh7/went_from_60_loose_pages_to_one_dashboard_here_is",
+      "date": "2026-11-12"
+    },
+    "af01560d49c84803f0a27a9d7c2d705bda9bdc0f817c22c104c871525ffd4b57": {
+      "url": "https://www.reddit.com/r/Notion/comments/1xf8cis/how_do_you_keep_a_someday_list_from_becoming_a",
+      "date": "2026-11-12"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 3
+  "dailyPage": 4
 }

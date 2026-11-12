@@ -1,0 +1,85 @@
+---
+title: "Generate Consistent AI Video Scenes Across Cuts with ComfyUI H3"
+description: "Learn how ComfyUI H3 Continuity Studio helps maintain visual consistency in AI-generated video scenes, ensuring objects and environments stay the same across cuts and camera angles."
+category: "content-creation"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 90
+jobToBeDone: "Generate visually consistent AI video scenes across multiple cuts and camera angles"
+tools:
+  - name: "ComfyUI"
+    url: "https://github.com/comfyanonymous/ComfyUI"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "H3 Continuity Studio"
+    url: "https://github.com/KadoBOT/ComfyUI-H3-Continuity-Studio"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "H3 Story"
+    url: "https://github.com/KadoBOT/ComfyUI-H3-Continuity-Studio"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Ollama (optional)"
+    url: "https://ollama.com"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://www.reddit.com/r/StableDiffusion/comments/1xlp0kg/i_made_a_comfyui_tool_to_bring_back_earlier/"
+  platform: "reddit"
+  author: "/u/rambrogi"
+  postedAt: 2026-11-02
+score: 8
+ingestedAt: 2026-11-12
+nigeriaNotes: "This workflow requires significant local computing power (a GPU) and is not suitable for mobile devices. Free tiers for cloud GPUs are rare and often limited. Data usage for downloading models can be substantial."
+nigeriaUseCases:
+  - persona: "student"
+    scenario: "Create a consistent virtual walkthrough of a proposed building design for an architecture studio presentation, ensuring all rooms and details maintain visual continuity across different camera angles."
+  - persona: "employee"
+    scenario: "A marketing specialist in a real estate development company creates a consistent virtual tour of an unbuilt property, ensuring rooms and features look identical from various angles for client presentations."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+ComfyUI H3 Continuity Studio is an advanced tool designed to help you create AI-generated videos where scenes, objects, and characters remain visually consistent across different camera angles and cuts. Imagine generating a video of a room, then cutting to an exterior shot, and then returning to the same room from a different angle. This tool aims to ensure the room still looks identical, with all its details in place.
+
+This workflow is considered advanced because it requires setting up ComfyUI, which is a powerful, node-based visual programming interface for AI models. You also need to install custom add-ons (node packs) and understand how to build and manage complex workflows within this environment. It is not a simple copy-paste solution for beginners.
+
+The exact instructions for setting up and using this tool live within its GitHub repository and require comfort with technical steps like cloning repositories and running local software. The author also notes that achieving perfect results often requires judgment and retakes, meaning it's not a fully automated, one-click process.
+
+## What you can use it for
+*   **Create consistent video stories**: Generate AI videos where characters, rooms, or objects look the same even after scene changes or camera moves.
+*   **Produce virtual tours**: Make a video tour of a virtual house, moving between rooms and angles, without objects disappearing or changing unexpectedly.
+*   **Develop animated shorts**: Craft short animated stories where the environment and props remain consistent across different shots.
+*   **Experiment with AI video generation**: Explore advanced techniques for controlling visual elements and maintaining continuity in AI-generated video.
+
+## Tools you need
+*   **ComfyUI** (free): A powerful, open-source tool for building and running AI image and video generation workflows using a visual node-based interface.
+*   **H3 Continuity Studio** (free): A free add-on (node pack) for ComfyUI that helps maintain visual consistency across video scenes.
+*   **H3 Story** (free): An optional part of H3 Continuity Studio that can help plan and write the video timeline, working with an OpenAI-compatible endpoint.
+*   **Ollama (optional)** (free): A tool to run large language models (LLMs) locally on your computer, which can act as an "OpenAI-compatible endpoint" for H3 Story.
+
+## How it actually works
+1.  **Set up ComfyUI**: Download and install ComfyUI on your computer. This typically involves installing Python and requires a dedicated GPU (Graphics Processing Unit) for efficient operation.
+2.  **Install H3 Continuity Studio**: Follow the detailed instructions provided in the H3 Continuity Studio GitHub repository to add this custom node pack to your ComfyUI installation. This usually involves cloning the repository into ComfyUI's `custom_nodes` folder.
+3.  **Load example workflows**: Open ComfyUI and load one of the example workflow files (usually `.json` files) provided in the H3 Continuity Studio GitHub repository. These examples demonstrate how the continuity features work.
+4.  **Configure your scenes**: Within the ComfyUI interface, adjust the various nodes to define your video timeline. This includes writing prompts for different scenes, specifying camera movements, and setting up the continuity features to carry context between clips. The author's demo shows a sequence like a room, an exterior, a return inside, a different camera angle, and a final continuation.
+5.  **Generate and refine**: Run the workflow to generate your video clips. Review the results carefully and be prepared to make adjustments or perform "retakes" on individual clips to achieve the desired visual consistency, as the author notes this often requires judgment.
+6.  **(Optional) Use H3 Story**: If you want assistance in planning your video timeline, you can set up an OpenAI-compatible endpoint (for example, by running a local LLM like Ollama) and integrate H3 Story into your workflow to generate initial scene descriptions or story outlines.
+
+## Words you'll see, explained
+*   **ComfyUI**: A visual programming interface for AI models, letting you connect "nodes" (small functions) to build complex workflows.
+*   **Node pack**: A collection of custom functions or tools that can be added to ComfyUI to extend its capabilities.
+*   **GPU**: Graphics Processing Unit, a specialized computer chip that makes AI calculations much faster.
+*   **OpenAI-compatible endpoint**: A way for different software to talk to an AI language model, using a standard format similar to OpenAI's API.
+*   **Timeline**: In video editing, a sequence of clips arranged in order to form a complete video.
+*   **Visual consistency**: Ensuring that objects, characters, and environments look the same and maintain their properties across different shots or scenes in a video.
+
+## Original source
+This workflow was shared by /u/rambrogi on Reddit, showcasing their open-source tool, H3 Continuity Studio. The tool was developed as an entry for the ComfyUI Open Source Higgsfield contest, aiming to solve the challenge of maintaining visual consistency in AI-generated video.
+
+## Notes & variations
+*   **Do you even need this?**: For simpler AI video generation without strict continuity requirements, tools like RunwayML, Pika Labs, or even basic text-to-video models might be easier to start with. H3 Continuity Studio is for advanced control over scene consistency.
+*   **Free-tier limits**: Running ComfyUI and large AI models requires a powerful computer with a dedicated GPU. While ComfyUI and H3 Continuity Studio are free, accessing cloud GPUs (if you don't have one) typically involves paid services. Local LLMs like Ollama are free but also require local computing power.
+*   **Common pitfall**: Expecting perfect results on the first try. The author notes that "Memory doesn't guarantee perfect geometry" and "some of the first attempts had objects appearing or the camera jumping back to the old angle." Be prepared to iterate and make "retakes" to achieve the desired consistency.
+*   **Tip for better results**: Start with simple scenes and clear descriptions for each clip. Gradually add complexity. Use the "memory-on" feature to explicitly carry context between clips, and carefully review the generated frames for any inconsistencies.

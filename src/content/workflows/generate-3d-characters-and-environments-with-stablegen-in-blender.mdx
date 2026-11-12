@@ -1,0 +1,104 @@
+---
+title: "Generate 3D Characters and Environments with StableGen in Blender"
+description: "Learn how StableGen, a Blender add-on, uses local AI models to create and texture rigged 3D characters and environments from text prompts."
+category: "content-creation"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 180
+jobToBeDone: "Generate and texture rigged 3D characters and environments from text prompts"
+tools:
+  - name: "StableGen"
+    url: "https://github.com/sakalond/StableGen"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Blender"
+    url: "https://www.blender.org"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "ComfyUI"
+    url: "https://github.com/comfyanonymous/ComfyUI"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Unreal Engine"
+    url: "https://www.unrealengine.com"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Mixamo"
+    url: "https://www.mixamo.com"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://www.reddit.com/r/StableDiffusion/comments/1xiolct/qwen_image_21_trellis2_in_blender_from_a_prompt/"
+  platform: "reddit"
+  author: "/u/sakalond"
+  postedAt: 2026-10-29
+score: 7
+ingestedAt: 2026-11-12
+nigeriaNotes: "This workflow requires a powerful computer with a dedicated graphics card (like an RTX 4080 with 16GB VRAM), which is a significant barrier for most users. Running local AI models also involves large initial data downloads."
+nigeriaUseCases:
+  - persona: "entrepreneur"
+    scenario: "As a game developer, rapidly prototype diverse 3D characters and environments for your new mobile game targeting the Nigerian market."
+  - persona: "student"
+    scenario: "For your final year project in Computer Science or Architecture, generate unique 3D characters and props for a game prototype or detailed building models."
+  - persona: "employee"
+    scenario: "As a graphic designer or architect in an organization, generate custom 3D models for client presentations, marketing campaigns, or corporate training simulations."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+This workflow uses StableGen, a free and open-source add-on for Blender, to create 3D models, textures, and even rigged characters from simple text prompts. It works by connecting Blender to ComfyUI, a visual interface that runs powerful AI models directly on your computer (these are called local models). You can generate a basic 3D shape, then apply detailed textures, and even automatically add a 'skeleton' (rigging) so the character can be animated.
+
+This is an advanced workflow. It requires a powerful computer with a dedicated graphics card (like an NVIDIA RTX 4080 with 16GB of VRAM, which is the memory on your graphics card). Setting it up involves installing multiple software tools and downloading large AI models. The exact steps are complex and live within the project's user guide and GitHub repository, making it unsuitable for a simple copy-paste recipe.
+
+## What you can use it for
+*   **Create custom 3D characters**: Generate unique characters for games, animations, or virtual reality projects from a text description.
+*   **Design unique 3D props and environments**: Quickly build objects like furniture, vehicles, or entire village scenes for your 3D projects.
+*   **Quickly iterate on 3D model designs**: Experiment with different ideas by changing text prompts and seeing immediate 3D results.
+*   **Add realistic textures to generated models**: Automatically apply detailed surface appearances (like wood, metal, or fabric) to your 3D creations.
+*   **Rig characters for animation**: Prepare your generated characters for movement by adding an automatic 'skeleton' that can be controlled.
+
+## Tools you need
+*   **StableGen** (free): A Blender add-on that connects Blender to local AI models for 3D generation.
+*   **Blender** (free): Free and open-source 3D creation software used for modeling, animation, rendering, and more.
+*   **ComfyUI** (free): A powerful, node-based interface for running AI models locally on your computer.
+*   **Unreal Engine** (free): A professional 3D creation tool used for games, simulations, and interactive experiences.
+*   **Mixamo** (freemium): An online service by Adobe that provides free 3D character animations.
+
+## How it actually works
+This workflow involves setting up several advanced tools and local AI models on your computer. The author provides a detailed user guide on GitHub, which is the primary source for exact instructions. Here's a general overview of the process:
+
+1.  **Install Blender**: Download and install the latest version of Blender, the free 3D creation software.
+2.  **Set up ComfyUI**: Install ComfyUI, which acts as the backend for running the AI models. This often involves installing Python and specific libraries.
+3.  **Install StableGen add-on**: Download and install the StableGen add-on within Blender. This connects Blender to your ComfyUI setup.
+4.  **Download AI models**: Obtain the necessary AI models, such as TRELLIS.2 for mesh generation, Qwen Image 2.1 and Marigold V2 for texturing, and SkinTokens for auto-rigging. These models are typically large files and need to be placed in specific folders for ComfyUI to find them.
+5.  **Generate 3D assets in Blender**: Inside Blender, use the StableGen add-on panel. You will input a text prompt describing your desired 3D object or character. The add-on will then:
+    *   Generate a preview gallery of candidate images based on your prompt.
+    *   Allow you to pick an image, which TRELLIS.2 then uses to build the 3D mesh (the basic shape).
+    *   Texture the mesh using Qwen Image 2.1 and Marigold V2, which create realistic PBR maps (albedo, roughness, metallic, normal) from different camera views.
+    *   Optionally, use the Masked Edit feature to refine specific parts of the model by painting a region and describing changes.
+    *   Automatically rig the character using SkinTokens, preparing it for animation.
+6.  **Export and animate**: Export your generated 3D models (e.g., as GLB or FBX files) for use in other software like Unreal Engine. You can then use services like Mixamo to apply pre-made animations to your rigged characters.
+
+For precise, step-by-step instructions, always refer to the official StableGen user guide on GitHub.
+
+## Words you'll see, explained
+*   **Blender**: Free and open-source 3D creation software used for modeling, animation, rendering, and more.
+*   **Add-on**: A small program that adds new features or functions to existing software, like Blender.
+*   **ComfyUI**: A visual, node-based interface that helps you run and connect different AI models, especially for tasks like image and 3D generation.
+*   **Local models**: AI models that are downloaded and run directly on your own computer, rather than on a cloud server.
+*   **Mesh**: The basic wireframe structure of a 3D object, made up of points (vertices), lines (edges), and flat surfaces (faces).
+*   **Texturing**: The process of applying images or patterns to the surface of a 3D model to give it color, detail, and a realistic appearance.
+*   **PBR maps (Physically Based Rendering maps)**: Special image files (like albedo, roughness, metallic, normal) that provide detailed information to a 3D renderer, telling it how light should interact with a model's surface for highly realistic results.
+*   **Rigging**: The process of creating a 'skeleton' of interconnected bones for a 3D character, which allows it to be posed and animated.
+*   **Unreal Engine**: A powerful 3D creation tool and game engine used to build video games, simulations, and other interactive visual experiences.
+*   **Mixamo**: An online service by Adobe that offers a library of free 3D character animations that can be applied to rigged models.
+*   **VRAM (Video RAM)**: Dedicated memory on your computer's graphics card, which is crucial for running large AI models and handling complex 3D graphics.
+
+## Original source
+This advanced workflow was shared by Reddit user /u/sakalond, who developed the StableGen add-on. The author demonstrated its capabilities in a video, showcasing how to generate and texture 3D characters and environments using local AI models through Blender and ComfyUI.
+
+## Notes & variations
+*   **Do you even need this?**: If you only need simple 3D models or basic textures, consider easier online text-to-3D tools or simpler Blender tutorials that don't require complex AI setups. For basic character animation, Mixamo alone can be a good starting point if you have a pre-made rigged character.
+*   **Free-tier limits**: While StableGen, Blender, and ComfyUI are free and open-source, the requirement for a high-end graphics card (like an RTX 4080 with 16GB VRAM) is a significant cost barrier. Also, some of the AI models used (Qwen Image 2.1 and FIBO 2.0 Edit) are licensed for non-commercial use only, so check model licenses carefully before any commercial projects.
+*   **Common pitfall**: The most common challenge will be meeting the hardware requirements and correctly setting up all the interconnected software (Blender, ComfyUI, StableGen) and downloading the large AI models. Ensure your graphics card drivers are up to date and follow the StableGen user guide precisely.
