@@ -31744,8 +31744,132 @@
     "5a77b59b70cc590457920f3c755d72c449709355725afc13c9a3b0989575180d": {
       "url": "https://www.reddit.com/r/learnprogramming/comments/1xu7ewd/is_learning_c_still_makes_sense",
       "date": "2026-11-14"
+    },
+    "9fbcdf2c035df85db596f3d830f11be1e37f44d15dc04b8cc950d904cbfa73b7": {
+      "url": "https://news.ycombinator.com/item?id=50463899",
+      "date": "2026-11-15"
+    },
+    "dc544c587f27a5e9eb647c98d6ebd35edfa423a47d9199a956ad93936c353817": {
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1xv19ci/whole_cinematic_universe_be_like",
+      "date": "2026-11-15"
+    },
+    "9c481a0931060f36109eb2e6cd0ae316dc4877c8ea8000c5378e44dc8dc77b2d": {
+      "url": "https://simonwillison.net/2026/Nov/14/datasette-llm",
+      "date": "2026-11-15"
+    },
+    "033cb313b61eddbca63f32e59532b740c72bd4e60c19822deeab45ed40e6391d": {
+      "url": "https://news.ycombinator.com/item?id=50494244",
+      "date": "2026-11-15"
+    },
+    "def883285dccd0953b2fc540bb8d87fd5388de7ab29a57fe0710ca190968cd95": {
+      "url": "https://www.reddit.com/r/webdev/comments/1xa1tb7/jcrews_homepage_is_currently_just_a_json_health",
+      "date": "2026-11-15"
+    },
+    "c7271b7ac99ecdcd291f7997f30411cf66e3852ee453480b5b6bc2dd9d441786": {
+      "url": "https://simonwillison.net/2026/Nov/14/datasette-vega",
+      "date": "2026-11-15"
+    },
+    "a17757e9a8b00e5aa061de082d3837595fd15d9c899411acbddb7abf816d237c": {
+      "url": "https://www.reddit.com/r/webdev/comments/1x89u0m/why_do_300_clients_demand_10x_more_than_3000",
+      "date": "2026-11-15"
+    },
+    "eba8c0480eb85e20e49201775937da2eadf209173c538662f2e900126aa6ea82": {
+      "url": "https://magazine.sebastianraschka.com/p/understanding-positional-embeddings",
+      "date": "2026-11-15"
+    },
+    "f180c51d45c6808f493cc5d8153aa48a960a225a6715c2add63c3fd68f89b673": {
+      "url": "https://www.reddit.com/r/webdev/comments/1xf9trq/modern_motherfucking_website",
+      "date": "2026-11-15"
+    },
+    "4351355d0f9b7631cfce47c3cc4fe382ceb846f410efc9778a79c55fbec97bfb": {
+      "url": "https://www.reddit.com/r/webdev/comments/1xg0mlj/css_tricks_is_back",
+      "date": "2026-11-15"
+    },
+    "df44e2509a54d871c986a4f2cd1414e22227bbe9709357fbd52d7454f9cea187": {
+      "url": "https://www.reddit.com/r/webdev/comments/1xcdkrh/nobody_is_thinking_anymore",
+      "date": "2026-11-15"
+    },
+    "c6cd066c11d678c3c65455774eb658fbbdbf14feda964933a83f2781d44e9b90": {
+      "url": "https://www.reddit.com/r/webdev/comments/1x8xljs/sr_front_end_developer_that_just_got_laid_off_for",
+      "date": "2026-11-15"
+    },
+    "1f396e77d034ee9dfa3791cd026d853338fc0838238b3d47276ba32d16bb8a62": {
+      "url": "https://www.reddit.com/r/webdev/comments/1xh3ks9/manager_thinks_anything_can_be_coded_in_1_hour_or",
+      "date": "2026-11-15"
+    },
+    "331aa19e610167afe066c6b36e5feba5b00b25db609850ea96feba52763fe065": {
+      "url": "https://www.reddit.com/r/webdev/comments/1xaevy8/why_are_we_so_eager_to_automate_away_each_others",
+      "date": "2026-11-15"
+    },
+    "6c5695c9813454f9a3b2276be3a1df97fc28debfac78aeb092f17e31a3fde48e": {
+      "url": "https://www.reddit.com/r/webdev/comments/1xo91bx/how_we_saved_100_terabytes_of_memory_by",
+      "date": "2026-11-15"
+    },
+    "2712b46f0a2c762fd884b8d515f42fdac1f58a30d1e130ae310186cd7a8a443e": {
+      "url": "https://www.reddit.com/r/webdev/comments/1xqapdb/after_months_of_job_rejections_i_spent_2_years",
+      "date": "2026-11-15"
+    },
+    "80db1c60dc1c0e8a521600980e7430491ece8cc7e266394ee3056a36a12d8f82": {
+      "url": "https://www.reddit.com/r/webdev/comments/1xb72td/psa_upcoming_critical_php_security_release",
+      "date": "2026-11-15"
+    },
+    "6ac1618d05931dabe9c821f80f2402cfda4c1088ad7d756315667bb222c71ef5": {
+      "url": "https://www.reddit.com/r/webdev/comments/1xkcc8y/a_synoptic_to_help_my_dev_and_devops_colleagues",
+      "date": "2026-11-15"
+    },
+    "e869b3197d4e00952b75bd89aca6f458fd1a0b14e9b04b7706d372780798066b": {
+      "url": "https://www.reddit.com/r/webdev/comments/1xekhpt/the_holy_grail_100100100100_has_been_achieved",
+      "date": "2026-11-15"
+    },
+    "1e3b1fbc6a0ea3b0d312dc05ed0aa930e19216f43c425c691d7b25c44121339f": {
+      "url": "https://www.reddit.com/r/webdev/comments/1xvm3kp/what_is_this_type_of_prompt_called",
+      "date": "2026-11-15"
+    },
+    "12e9370afc5b8a70ee6e1b669c856d951536ed30017bf562a3c7692c68f66983": {
+      "url": "https://www.reddit.com/r/webdev/comments/1xhl5xh/your_ai_ui_skill_is_doing_the_part_you_were",
+      "date": "2026-11-15"
+    },
+    "b6c655dc44bfd0fb139278d9659012acb61b12091ea1c3ab2eb6495231c68511": {
+      "url": "https://www.reddit.com/r/webdev/comments/1xq9n7r/its_genuinely_depressing",
+      "date": "2026-11-15"
+    },
+    "218115b16f13e81a022c2392fabb81a1df9a9d59c37d4fa14a31d44cac52f9bb": {
+      "url": "https://www.reddit.com/r/webdev/comments/1xrb9gw/supabase_removed_my_billing_complaint_from",
+      "date": "2026-11-15"
+    },
+    "511dc3befa334d6f3f950c9543c94a6b6ffcff1b5ca978ccd591148008d09535": {
+      "url": "https://www.reddit.com/r/webdev/comments/1xk8xnf/procedural_almanac_a_javascript_library_of",
+      "date": "2026-11-15"
+    },
+    "2bb61694da84d6209d8dbd2bf3d4c513d679bcf26a9ef8f8b8704528c18fdbbf": {
+      "url": "https://www.reddit.com/r/webdev/comments/1x8bqrp/if_ai_fatigue_has_hit_you_i_have_a_question",
+      "date": "2026-11-15"
+    },
+    "393ec57b8122b4ef03208e7ab2b533dfacbe3c0e87d3b4d09fe9477b5c72e1ed": {
+      "url": "https://www.reddit.com/r/webdev/comments/1xq4df5/showoff_saturday_claybound_a_25d_platformer_built",
+      "date": "2026-11-15"
+    },
+    "177484d056760f2bf8be8a4e7c1bb136449f5ed53a5f5a41d681d27ae7cd1a55": {
+      "url": "https://www.reddit.com/r/webdev/comments/1xss9i4/its_only_monday_first_meeting_was_with_a_client",
+      "date": "2026-11-15"
+    },
+    "b281476adbc61d41ee9129464b236603afea804b163ba6e202f1374e940e873d": {
+      "url": "https://www.reddit.com/r/webdev/comments/1xr8a7o/back_to_handcoding_or_am_i_wasting_my_time",
+      "date": "2026-11-15"
+    },
+    "8d38189fd3f3b8921846d64d725874ce0e87093f8b776eb9a06af72f56a2cebf": {
+      "url": "https://www.reddit.com/r/webdev/comments/1xiquzi/dont_let_ai_steal_your_dreams",
+      "date": "2026-11-15"
+    },
+    "7f2d94b69a0597260d4cf87600eec13d67ee37542999b769d580c9a71511b7a9": {
+      "url": "https://www.reddit.com/r/webdev/comments/1xn0h0u/meta_is_it_even_worth_posting_to_rwebdev_at_this",
+      "date": "2026-11-15"
+    },
+    "e52b53c2cf493374ac34e60b4a347180d796449105ba42c37ada4c6b19207848": {
+      "url": "https://www.reddit.com/r/webdev/comments/1x9tnsf/laid_off_after_7_years_and_my_portfolio_is_a_2019",
+      "date": "2026-11-15"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 0
+  "dailyPage": 1
 }
