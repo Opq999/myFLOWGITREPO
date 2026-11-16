@@ -1,0 +1,105 @@
+---
+title: "Develop Interactive Geospatial Maps in Datasette with AI"
+description: "Learn how advanced AI models can assist in developing custom geospatial plugins for Datasette, combining MapLibre GL with open map data for interactive visualizations."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 120
+jobToBeDone: "Develop a Datasette geospatial plugin using an AI assistant"
+tools:
+  - name: "Datasette"
+    url: "https://datasette.io"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "MapLibre GL"
+    url: "https://maplibre.org"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "OpenFreeMap"
+    url: "https://openfreemap.org"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "Claude (Anthropic API)"
+    url: "https://www.anthropic.com/api"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Pyodide"
+    url: "https://pyodide.org"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "WebAssembly"
+    url: "https://webassembly.org"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://simonwillison.net/2026/Nov/15/datasette-maplibre/"
+  platform: "blog"
+  author: "Simon Willison"
+  postedAt: 2026-11-15
+score: 7
+ingestedAt: 2026-11-16
+nigeriaNotes: "Developing custom plugins with advanced AI models like Claude Fable 5.2 typically requires a paid API subscription, which can be a significant cost. The author's demo, however, runs directly in your browser and is data-light."
+nigeriaUseCases:
+  - persona: "entrepreneur"
+    scenario: "A logistics startup founder uses AI to build a custom Datasette plugin to visualize their dispatch riders' routes and customer drop-off points across Lagos, improving delivery planning."
+  - persona: "employee"
+    scenario: "A GIS analyst at a state urban planning agency uses AI to develop a custom Datasette plugin to visualize land use patterns and proposed infrastructure projects in Abuja, aiding urban development planning."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+This entry explains how an advanced AI assistant, like Claude Fable 5.2, can help a developer create custom software add-ons, called plugins. Specifically, it focuses on building a geospatial plugin for Datasette, a tool for exploring and publishing data. This plugin combines the MapLibre GL library for interactive maps with OpenFreeMap, a free source of map data.
+
+This is an advanced workflow because it involves software development and interacting with an AI model in a sophisticated way, beyond simple chat. The exact instructions for building such a plugin live within a developer's environment and depend on the specific code being written. Therefore, there isn't a simple copy-paste recipe for a beginner to reproduce the plugin development process itself.
+
+The author used a single, detailed prompt to guide the AI in creating the `datasette-maplibre` plugin, which can display geographic data like points and shapes on a map. The result is a powerful tool for visualizing location-based information directly within Datasette.
+
+## What you can use it for
+*   **Visualize geographic data**: Display locations, boundaries, or paths on an interactive map directly within Datasette.
+*   **Create custom map interfaces**: Build unique map features and interactions tailored to your specific data needs.
+*   **Explore open-source mapping**: Combine free map libraries like MapLibre GL and open data sources like OpenFreeMap for your projects.
+*   **Accelerate plugin development**: Use AI assistants to help write and iterate on code for new Datasette features, speeding up the development process.
+*   **Share interactive data**: Publish Datasette instances with embedded maps, allowing others to explore your geospatial data easily.
+
+## Tools you need
+*   **Datasette** (free): A tool for exploring and publishing data, often used with SQLite databases.
+*   **MapLibre GL** (free): An open-source JavaScript library for displaying interactive maps on the web.
+*   **OpenFreeMap** (free): A free server that provides vector map data, often used as a base layer for maps.
+*   **Claude (Anthropic API)** (paid): An advanced AI assistant, specifically the Fable 5.2 model mentioned by the author, used for generating code and assisting with development. This is typically accessed via a paid API.
+*   **Pyodide** (free): A project that allows Python code to run directly in a web browser.
+*   **WebAssembly** (free): A technology that enables high-performance code to run in web browsers, often used with Pyodide.
+
+## How it actually works
+This workflow describes how a developer can leverage an advanced AI assistant to create a Datasette plugin. The process involves guiding the AI with specific instructions and code examples.
+
+1.  **Understand Datasette plugin development**: Before starting, you would need a basic understanding of how Datasette plugins are structured and how they interact with Datasette's core functionality. This typically involves Python programming.
+2.  **Access an advanced AI assistant**: You would need access to a powerful AI model like Claude Fable 5.2, likely through a paid API or a specialized development environment. The author used a single, detailed prompt to guide the AI.
+3.  **Provide context to the AI**: The author instructed Claude to "Look at datasette-cluster-map and datasette-leaflet-geojson plugins, then look at ~/dev/tools/openfreemap-demo.html". This means you would need to provide the AI with the code or descriptions of existing plugins and relevant HTML examples. This could involve pasting code snippets, uploading files, or using an AI agent that can access your local development environment.
+4.  **Craft a detailed prompt**: Based on the context provided, you would write a comprehensive prompt asking the AI to generate the plugin code. The author's prompt was:
+    ```
+    Look at datasette-cluster-map and datasette-leaflet-geojson plugins, then look at ~/dev/tools/openfreemap-demo.html - then build a brand new Datasette plugin that uses maplibreGL and openfreemap and combines the features of those other two plugins - but be creative and think outside the box for other useful features the plugin might have
+    ```
+    You would adapt this prompt with your specific requirements and references to your own code or documentation.
+5.  **Iterate and refine with the AI**: The AI would generate initial code for the plugin. You would then review this code, provide feedback, and ask for revisions or additional features until the plugin meets your requirements.
+6.  **Integrate and test the plugin**: Once the AI generates the plugin code, you would integrate it into your Datasette environment, install necessary dependencies, and thoroughly test its functionality.
+7.  **Explore the author's demo**: The author provides a link to a comprehensive demo that works in Datasette Lite, showing the finished plugin in action. You can visit this link to see both GeoJSON shapes and latitude/longitude points displayed on the same map in your browser via Pyodide and WebAssembly.
+
+## Words you'll see, explained
+*   **Datasette**: A tool for exploring and publishing data, often from SQLite databases, as a website.
+*   **Geospatial**: Refers to data that is related to a specific location on the Earth's surface, like coordinates or geographic shapes.
+*   **Plugin**: An add-on or extension that adds new features or functionality to an existing software application, like Datasette.
+*   **MapLibre GL**: An open-source JavaScript library used for creating interactive, customizable maps on web pages.
+*   **OpenFreeMap**: A free server that provides vector map tiles, which are digital map data used to render detailed and interactive maps.
+*   **Pyodide**: A project that allows the Python programming language to run directly within a web browser environment.
+*   **WebAssembly**: A low-level code format that enables high-performance applications to run in web browsers, often used to speed up web-based tools.
+*   **GeoJSON**: A standard format for encoding various geographic data structures, such as points, lines, and polygons, for use with web maps.
+*   **WebGL**: A web technology that allows web browsers to display interactive 2D and 3D graphics without needing additional plugins.
+
+## Original source
+This workflow was inspired by a blog post by Simon Willison, titled "Release: datasette-maplibre 0.1a0". He shared his process of developing a new Datasette geospatial plugin using an advanced AI assistant.
+
+## Notes & variations
+*   **Do you even need this?**: If your goal is simply to view or explore existing geospatial data in Datasette, there might be simpler, pre-built Datasette plugins or other mapping tools available that don't require custom development or advanced AI interaction. This workflow is for those who need to build *new, custom* mapping features.
+*   **Free-tier limits**: The core development process described relies on an advanced AI model like Claude Fable 5.2, which is typically accessed via a paid API. This means the development part of this workflow is not free. However, the author's demo of the finished plugin runs in Datasette Lite directly in your browser, which is free to use and data-light.
+*   **Common pitfall**: Expecting the AI to produce perfect, ready-to-use code on the first try. Developing with AI is an iterative process. You'll likely need to provide clear instructions, review the generated code, and ask for revisions or debugging assistance. The AI acts as a powerful assistant, not a fully autonomous developer.
