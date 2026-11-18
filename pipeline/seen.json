@@ -32276,8 +32276,48 @@
     "ad5e1550bf6e39b1050d0220d253bd6326e532da90b9d43077222d1e28a3b7f7": {
       "url": "https://www.reddit.com/r/SaaS/comments/1xva28b/first_customer",
       "date": "2026-11-17"
+    },
+    "c1a27c5214a0d3eccbeffb0f13d959d3a7dc288e8a9cdee0110c25053af3785e": {
+      "url": "https://news.ycombinator.com/item?id=50463399",
+      "date": "2026-11-18"
+    },
+    "1c2cff6fe54921cead049fc67fe49d057f4cef91633596f08fcb182a305de71d": {
+      "url": "https://simonwillison.net/2026/Nov/18/daniel-stenberg",
+      "date": "2026-11-18"
+    },
+    "1e8c9128b5ed2b9d1e6abac8240134ccc7888a7f1268e4b7d9cd8352c81de4b8": {
+      "url": "https://github.com/mudler/LocalAI",
+      "date": "2026-11-18"
+    },
+    "52461be624b7e32fadebdc1891ecceff2b446488ed9b11785c71245ec8ca6623": {
+      "url": "https://simonwillison.net/2026/Nov/18/psf-end-of-year-fundraiser",
+      "date": "2026-11-18"
+    },
+    "e45fd791e1fe03c27509e5cfc6fcacfeb1c5b0665a232d00558d4f3fb339f62b": {
+      "url": "https://simonwillison.net/2026/Nov/17/external-sandboxes-for-coding-agents",
+      "date": "2026-11-18"
+    },
+    "82b169450b02e27d05b949928dfedb9d8fdbdeb171912bc893f9bbe7beab4383": {
+      "url": "https://simonwillison.net/2026/Nov/17/gpt62-astra-and-sol",
+      "date": "2026-11-18"
+    },
+    "889973f9137bec517ab22b15de73f718f9f4428e1216653788c73aec1aa34a3f": {
+      "url": "https://latent.space/p/ainews-gpt-6-2-astra-the-2-frontier-model-is-better-and-20-600-cheaper-but-has-mixed-reviews-6-2-sol",
+      "date": "2026-11-18"
+    },
+    "aef632472a5e3af7f91b4cd9c5d8e0ecee47135327c9822e26d24027e878b6a3": {
+      "url": "https://huggingface.co/blog/ibm-research/time-series-powered-streamhouse",
+      "date": "2026-11-18"
+    },
+    "ec56b5eff9affb1c339e466ce0f8237f0117032663d5db85034279f9f2a19228": {
+      "url": "https://huggingface.co/blog/moe-expert-streaming",
+      "date": "2026-11-18"
+    },
+    "5b89a2db7f60ae9099b72ca73768977f61c082125cbaf94b72c9c9bced5f17aa": {
+      "url": "https://huggingface.co/blog/rumble-2-flash",
+      "date": "2026-11-18"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 3
+  "dailyPage": 4
 }
