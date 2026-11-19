@@ -32316,8 +32316,48 @@
     "5b89a2db7f60ae9099b72ca73768977f61c082125cbaf94b72c9c9bced5f17aa": {
       "url": "https://huggingface.co/blog/rumble-2-flash",
       "date": "2026-11-18"
+    },
+    "e9246d021dde57889c642998a938302256e9e9fcf9e067699a9bce993b245e65": {
+      "url": "https://news.ycombinator.com/item?id=50529612",
+      "date": "2026-11-19"
+    },
+    "8c4432adfe17d06c6aff7a41de686e572f62b119104e0c0a22b9db0d33fe569b": {
+      "url": "https://simonwillison.net/2026/Nov/18/llm-gemini",
+      "date": "2026-11-19"
+    },
+    "db8cb72dd25534d42a097262d518b6cba3462a069adc22ef0eb531dfbd169c39": {
+      "url": "https://news.ycombinator.com/item?id=50510760",
+      "date": "2026-11-19"
+    },
+    "6b2d356ac9f74f194efe9c1e8b8258a9562efe83abaf91b65ce5441d198d9d17": {
+      "url": "https://simonwillison.net/2026/Nov/18/datasette-arrows",
+      "date": "2026-11-19"
+    },
+    "d095f837dfa59f6ca3be18e7e5a388a05edd149eebee0533bba3df7ab6cc3a81": {
+      "url": "https://latent.space/p/ainews-gemini-4-neon-gdm-s-opus-sol-contender",
+      "date": "2026-11-19"
+    },
+    "94224c12f01a2255938eee5c4a562db221b834dc368c0eafd89ed16e49c8bec3": {
+      "url": "https://www.bensbites.com/p/my-wife-thinks-ai-is-a-person",
+      "date": "2026-11-19"
+    },
+    "f0b81ce3c14612880642c854f15f292b941326a9491f444584b41bfe82ab7a56": {
+      "url": "https://huggingface.co/blog/RadixArk/daisyrose-27b-pushing-the-frontier-of-post-trainin",
+      "date": "2026-11-19"
+    },
+    "e55c8f2df06c07ffc92b5ea28b360b047797a023e968816743ef7e472d87d336": {
+      "url": "https://huggingface.co/blog/Dharma-AI/predicting-fine-tuning-time",
+      "date": "2026-11-19"
+    },
+    "6bdd117d6a37820da46787a0f15591f35365d6113256553c9145618cb6cd1a60": {
+      "url": "https://newsletter.pragmaticengineer.com/p/the-pulse-is-amazons-writing-culture",
+      "date": "2026-11-19"
+    },
+    "8f48c3599f5e6e237507cb0c8a4920ec06568645733c9f60be3a8485626fd169": {
+      "url": "https://newsletter.pragmaticengineer.com/p/software-factories-and-code-reviews",
+      "date": "2026-11-19"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 4
+  "dailyPage": 5
 }
