@@ -32356,8 +32356,48 @@
     "8f48c3599f5e6e237507cb0c8a4920ec06568645733c9f60be3a8485626fd169": {
       "url": "https://newsletter.pragmaticengineer.com/p/software-factories-and-code-reviews",
       "date": "2026-11-19"
+    },
+    "a621fb210cb5b7489d7e6ea2fb173c42d0eeba28f26853962499d4c5b8e07818": {
+      "url": "https://news.ycombinator.com/item?id=50541983",
+      "date": "2026-11-20"
+    },
+    "7220e54bdf8a93f9a841b3c0788017f9eeb83f5dc45906f47668bc47b8da5d02": {
+      "url": "https://simonwillison.net/2026/Nov/20/levent-alpoge",
+      "date": "2026-11-20"
+    },
+    "14444dc7b4eca89947b208fb3bb8a5943462217cb7599fc2155b5bbf35fcf329": {
+      "url": "https://github.com/Donchitos/Claude-Code-Game-Studios",
+      "date": "2026-11-20"
+    },
+    "3f7f7cffebe4ba5935ad38b2fb31ccca3134bd5c1847effc540e66dfdf2e4edc": {
+      "url": "https://simonwillison.net/2026/Nov/20/token-fraud-is-here-and-its-bad",
+      "date": "2026-11-20"
+    },
+    "53c9cfc459730775b617e37746ab1d62199139e4c9a581b77270aaa833288b18": {
+      "url": "https://github.com/onlook-dev/onlook",
+      "date": "2026-11-20"
+    },
+    "1df80ba4eb1bc7794fc5f584c8d0b7c9cedb46e59bc8cc3f037066a83af47611": {
+      "url": "https://simonwillison.net/2026/Nov/19/postgresql-19",
+      "date": "2026-11-20"
+    },
+    "7366786c561f97cd051ac4bac04ddd23a43de1ae799c82d4f910d9328403fe0c": {
+      "url": "https://github.com/milind-soni/OpenMausBot",
+      "date": "2026-11-20"
+    },
+    "6db12e7d3e6f36e3390faa74b0f0e19fefcd3df67a2313758734ea8c7596359f": {
+      "url": "https://latent.space/p/ainews-anthropic-successfully-completes-largest-ipo-in-history-valued-at-1-5t",
+      "date": "2026-11-20"
+    },
+    "bd15814c3ca88c7e6938656b658d3c4b50431b17f57b2680d01eb20a8e6e6ce2": {
+      "url": "https://latent.space/p/linear-scaling",
+      "date": "2026-11-20"
+    },
+    "701a571706ec6c00de8bbc6af8a9bc31d2eec98a2272e87a59a9e6a4a97a82f1": {
+      "url": "https://huggingface.co/blog/harness-adapters-at-scale",
+      "date": "2026-11-20"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 5
+  "dailyPage": 0
 }
