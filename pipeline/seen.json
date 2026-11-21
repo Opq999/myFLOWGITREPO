@@ -32396,8 +32396,32 @@
     "701a571706ec6c00de8bbc6af8a9bc31d2eec98a2272e87a59a9e6a4a97a82f1": {
       "url": "https://huggingface.co/blog/harness-adapters-at-scale",
       "date": "2026-11-20"
+    },
+    "11bc3938dedd9101953919ec1a818cca048eeb3cc87ec693223eb459f4336afb": {
+      "url": "https://news.ycombinator.com/item?id=50573166",
+      "date": "2026-11-21"
+    },
+    "0d8e213cc0d8372dce87a215fd23412427369685da1892efafdde9948a5803bb": {
+      "url": "https://simonwillison.net/2026/Nov/20/ravi-vakil",
+      "date": "2026-11-21"
+    },
+    "9a9494a08535ca6693cb8457bae9305a9c22214a88b08e9837798c7376f5b0ad": {
+      "url": "https://news.ycombinator.com/item?id=50508076",
+      "date": "2026-11-21"
+    },
+    "005f4a3e6757279a6c252e11d0ac28896c7064ed56d550e4a92bd8ff7a5eaa3b": {
+      "url": "https://latent.space/p/ainews-riemann-hypothesis-proved-twice-independently",
+      "date": "2026-11-21"
+    },
+    "3592d59cf6f86897a255a361c7c2b918531e79142fb821cf081d85adc2b90b01": {
+      "url": "https://latent.space/p/formal-verification",
+      "date": "2026-11-21"
+    },
+    "824c03b970f1dc58cad676334e63167d2af3b369add30c83b73e4ecb318d913d": {
+      "url": "https://huggingface.co/blog/inkling2mini",
+      "date": "2026-11-21"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 0
+  "dailyPage": 1
 }
