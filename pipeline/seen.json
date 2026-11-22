@@ -32420,8 +32420,20 @@
     "824c03b970f1dc58cad676334e63167d2af3b369add30c83b73e4ecb318d913d": {
       "url": "https://huggingface.co/blog/inkling2mini",
       "date": "2026-11-21"
+    },
+    "f1ec8c2a16ef3e5c36a6e057b0fc96cac41f2390ce18bb64bacaecbe268e95e2": {
+      "url": "https://news.ycombinator.com/item?id=50579297",
+      "date": "2026-11-22"
+    },
+    "aaa55aaf598950923826598344d69b7cb6cea73bf924c87d342a64c181b6202f": {
+      "url": "https://simonwillison.net/2026/Nov/21/muru",
+      "date": "2026-11-22"
+    },
+    "f54713977487b6ec70c41440edeeb5793050bd4211bfe6aa6dc8ae26c0a857c9": {
+      "url": "https://simonwillison.net/2026/Nov/20/llm-gemini",
+      "date": "2026-11-22"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 1
+  "dailyPage": 2
 }
