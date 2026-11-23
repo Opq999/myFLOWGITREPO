@@ -32432,8 +32432,20 @@
     "f54713977487b6ec70c41440edeeb5793050bd4211bfe6aa6dc8ae26c0a857c9": {
       "url": "https://simonwillison.net/2026/Nov/20/llm-gemini",
       "date": "2026-11-22"
+    },
+    "71ff2ee8bf23be9b6db78b94e4eaca1ffa2f48ab2ab7c4aba78c8d72717bfa48": {
+      "url": "https://simonwillison.net/2026/Nov/22/select-styling",
+      "date": "2026-11-23"
+    },
+    "eb2701ff66febea2729388256362b1e990ea44c9d3e87f78378f64a362cb43e9": {
+      "url": "https://huggingface.co/blog/allenai/robotrack",
+      "date": "2026-11-23"
+    },
+    "00d52199bef25f9eda98fa79c30b3c80d4e34af93f50b3c1b0911b599d05708b": {
+      "url": "https://huggingface.co/blog/agentic-evals",
+      "date": "2026-11-23"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 2
+  "dailyPage": 3
 }

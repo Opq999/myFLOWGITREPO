@@ -1,0 +1,77 @@
+---
+title: "Generate HTML Select Box Styles with Claude"
+description: "Learn to generate HTML examples for styling select boxes using Claude. Compare different styles across browsers to find your preferred look for web forms."
+category: "coding"
+badge: "sourced"
+difficulty: "beginner"
+timeMinutes: 7
+jobToBeDone: "Generate HTML examples to find preferred select box styling"
+tools:
+  - name: "Claude"
+    url: "https://claude.ai"
+    pricing: "freemium"
+    affiliateUrl: ""
+source:
+  url: "https://simonwillison.net/2026/Nov/22/select-styling/"
+  platform: "blog"
+  author: "Simon Willison"
+  postedAt: 2026-11-22
+score: 10
+ingestedAt: 2026-11-23
+nigeriaNotes: "The freemium version of Claude is suitable for this task, requiring minimal data for text input and output."
+nigeriaUseCases:
+  - persona: "entrepreneur"
+    scenario: "An entrepreneur launching an online store for their fashion brand can quickly generate and select a clean dropdown menu style for product size or color options on their website."
+  - persona: "student"
+    scenario: "A university student building a web application for their final year project (e.g., a course registration system) can quickly generate and select a professional dropdown menu style for their forms."
+  - persona: "employee"
+    scenario: "An employee working as a front-end developer can quickly generate and test different dropdown menu styles to ensure consistency across their company's internal tools or client-facing applications."
+tiktokUrl: ""
+published: true
+---
+
+## What you'll get
+You will get a complete HTML page that displays many different ways to style a `<select>` box (a dropdown menu) using CSS. This approach helps you quickly see how different styles look in your web browser, making it easy to choose the best design for your website or app.
+
+## Tools you need
+*   **Claude** (freemium): An AI chat assistant to generate the HTML and CSS code.
+
+## Steps
+1.  **Open Claude**: Go to the Claude chat website at `https://claude.ai`.
+    *   You should see the chat interface ready for your input.
+
+2.  **Paste the prompt**: Ask Claude to generate the HTML page for styling select boxes.
+    ```
+    Build an HTML page that shows all of the ways a select box can be styled, I plan to take screenshots in every desktop and mobile browser
+    ```
+    *   Claude will generate an HTML code block containing various `<select>` elements with different CSS styles.
+
+3.  **Copy the HTML code**: Locate the HTML code block provided by Claude. Most AI chat interfaces have a "copy code" button.
+    *   You should be able to copy the entire HTML code.
+
+4.  **Save the HTML code**: Open a simple text editor (like Notepad on Windows, TextEdit on Mac, or any code editor). Paste the copied HTML code into a new file. Save the file with an `.html` extension (for example, `select_styles.html`).
+    *   You will have an HTML file saved on your computer.
+
+5.  **Open in a browser**: Double-click the saved `.html` file on your computer.
+    *   Your web browser will open, displaying the HTML page with many different styled select boxes. You can now see how they look and compare them.
+
+6.  **Apply a specific style (optional)**: The author found a preferred CSS style. If you like it, you can replace the existing CSS for a select box in the generated HTML file, or use it in your own web project.
+    ```css
+    select {
+        appearance: none;
+        color: #1f2933;
+        padding: 0.5em 2.25em 0.5em 0.75em;
+        border: 1px solid #c4cbd3;
+        border-radius: 6px;
+        background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23667085' stroke-width='1.5'/%3E%3C/svg%3E") no-repeat right 0.75em center / 0.75em;
+    }
+    ```
+    *   If you apply this CSS, your select boxes will take on this specific, cleaner appearance.
+
+## Original source
+This workflow was shared by Simon Willison on his blog. He created this method to quickly compare different styling options for HTML select boxes across various web browsers.
+
+## Notes & variations
+**Free-tier alternatives**: You can also use other freemium AI chat assistants like ChatGPT (`https://chatgpt.com`) or Gemini (`https://gemini.google.com`) for this task.
+**Common mistake**: When saving your file, make sure it ends with `.html` (for example, `my_styles.html`). If you save it as `.txt`, your browser will not open it correctly. Also, remember that web browsers can sometimes override custom styles, so always test your page in different browsers.
+**Tip for better results**: Experiment with your prompt. You can ask the AI for specific types of styles, such as 'modern styles,' 'minimalist styles,' or 'styles for a dark theme.' Always test the generated page in multiple browsers (like Chrome, Firefox, Safari, and Edge) and on mobile devices to see how the styles appear differently.
