@@ -32444,8 +32444,48 @@
     "00d52199bef25f9eda98fa79c30b3c80d4e34af93f50b3c1b0911b599d05708b": {
       "url": "https://huggingface.co/blog/agentic-evals",
       "date": "2026-11-23"
+    },
+    "7eea171611f31c8f95c6e226f61955635ce9adf9e7d105467cd6d5dca1057023": {
+      "url": "https://simonwillison.net/2026/Nov/24/astra-historical-mystery",
+      "date": "2026-11-24"
+    },
+    "16a73b8e53c5832aba4bc3c09d70aa14206a7ca3094c5b563371227f73b5f952": {
+      "url": "https://github.com/virgiliojr94/book-to-skill",
+      "date": "2026-11-24"
+    },
+    "07fffdf07c77b17b4c63712a7a0738120e30970439cca6234d8b4b909c855881": {
+      "url": "https://simonwillison.net/2026/Nov/24/datasette-charts",
+      "date": "2026-11-24"
+    },
+    "3d5981388f51900a65b5d6abeab6dcfe63565d12fe183e7c8faab526650596e0": {
+      "url": "https://simonwillison.net/2026/Nov/24/datasette-agent",
+      "date": "2026-11-24"
+    },
+    "105d2dd6f5d647be40a42af6f7b2258c0b866f02cc018acac8e3318ab419ba75": {
+      "url": "https://simonwillison.net/2026/Nov/23/glm-54",
+      "date": "2026-11-24"
+    },
+    "981d6178a1cb2235349dabcf2de16fd4055a94c8b4c1e94b4c68471499fcb937": {
+      "url": "https://simonwillison.net/2026/Nov/23/ladybird",
+      "date": "2026-11-24"
+    },
+    "8985b71bb3ddf529a6c67f026d300034c739529fba961c5848be1c67c334ba10": {
+      "url": "https://latent.space/p/ainews-jensen-is-back-and-openai-shows-its-pretraining-curve-joined-by-microsoft",
+      "date": "2026-11-24"
+    },
+    "0a6e05088d090df026d44813d1d780548beec9b7e02e878fde69c6cb1dfc1d2d": {
+      "url": "https://www.bensbites.com/p/commitment-issues-app-edition",
+      "date": "2026-11-24"
+    },
+    "6a28e842b3bf4bfd8400220ee7c0735b0ecf3e38a0b3cb368303e1e3a450e25f": {
+      "url": "https://huggingface.co/blog/nvidia/microduck-obstacle-avoidance",
+      "date": "2026-11-24"
+    },
+    "dc798caa487b731e02dbf27a99a6b575297f3a403b1cda00fd557409f8d50432": {
+      "url": "https://newsletter.pragmaticengineer.com/p/the-pragmatic-engineer-essay-challenge",
+      "date": "2026-11-24"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 3
+  "dailyPage": 4
 }
