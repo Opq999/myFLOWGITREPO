@@ -32484,8 +32484,32 @@
     "dc798caa487b731e02dbf27a99a6b575297f3a403b1cda00fd557409f8d50432": {
       "url": "https://newsletter.pragmaticengineer.com/p/the-pragmatic-engineer-essay-challenge",
       "date": "2026-11-24"
+    },
+    "5e8eba5b15ac60442c06ba0c605298c68acc153c2342183b0f55f54aa4e85ddb": {
+      "url": "https://simonwillison.net/2026/Nov/24/llm-inflection-points",
+      "date": "2026-11-25"
+    },
+    "8a62ea05f675eb6ddfd1b499e750e87c3d7bc1033baee72f0041f99f90da5b91": {
+      "url": "https://simonwillison.net/2026/Nov/23/datasette-charts",
+      "date": "2026-11-25"
+    },
+    "2ec26a87fbca09280d1d189a5571ff0603c558c71c16b83951e5c1140a6d4618": {
+      "url": "https://latent.space/p/ainews-gemini-4-neon-marks-gdm-s-full-return-as-a-frontier-lab",
+      "date": "2026-11-25"
+    },
+    "0077e07924e43bf73f6b214e80c2636fd705749c1e6b72af3b822ac4ce5e9fb4": {
+      "url": "https://huggingface.co/blog/ibm-research/an-indic-voice-agent-with-cuga",
+      "date": "2026-11-25"
+    },
+    "df3be113c8aed13fbadf7f5fd23bf1c3fea1d6aa84ef1d6c6b80d5e4f468adf1": {
+      "url": "https://huggingface.co/blog/inkling-2-mini-inference-hillclimb",
+      "date": "2026-11-25"
+    },
+    "cbbac7c3e4543d8e26ad6f38ecaf42f4a455753faa7f9cc25343f4f8e9927be0": {
+      "url": "https://newsletter.pragmaticengineer.com/p/how-anthropic-builds-software-in",
+      "date": "2026-11-25"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 4
+  "dailyPage": 5
 }

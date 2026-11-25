@@ -1,0 +1,93 @@
+---
+title: "Build a Multilingual Voice Agent with CUGA for Knowledge-Based Q&A"
+description: "Learn how to build an advanced voice agent that answers questions in multiple languages by searching an English knowledge base, using the CUGA framework."
+category: "coding"
+badge: "sourced"
+difficulty: "advanced"
+timeMinutes: 180
+jobToBeDone: "Build a voice agent for multilingual, knowledge-base-grounded Q&A"
+tools:
+  - name: "CUGA"
+    url: "https://github.com/IBM/cuga"
+    pricing: "free"
+    affiliateUrl: ""
+  - name: "watsonx"
+    url: "https://www.ibm.com/watsonx"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "OpenAI API"
+    url: "https://openai.com/api"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "Sarvam AI"
+    url: "https://sarvam.ai"
+    pricing: "paid"
+    affiliateUrl: ""
+  - name: "intfloat/multilingual-e5-large"
+    url: "https://huggingface.co/intfloat/multilingual-e5-large"
+    pricing: "free"
+    affiliateUrl: ""
+source:
+  url: "https://huggingface.co/blog/ibm-research/an-indic-voice-agent-with-cuga"
+  platform: "blog"
+  author: "Hugging Face - Blog"
+  postedAt: 2026-11-25
+score: 7
+ingestedAt: 2026-11-25
+nigeriaNotes: "This advanced workflow requires server setup and uses paid APIs, making it less suitable for mobile-first, data-light, or free-tier-only use. Running open-source models locally requires significant computing resources."
+nigeriaUseCases:
+  - persona: "entrepreneur"
+    scenario: "Build a voice agent for your agri-tech startup that answers farmers' questions about crop diseases in Yoruba or Hausa, pulling information from English agricultural manuals."
+  - persona: "employee"
+    scenario: "Develop an internal voice assistant for bank staff to get spoken answers to HR policy questions in Pidgin or Igbo, based on the official English HR handbook."
+tiktokUrl: ""
+published: true
+---
+
+## What this is, in plain English
+CUGA (ConfigUrable Generalist Agent) is an open-source framework from IBM Research designed to help you build and manage AI agents. It handles the complex connections between different AI models, tools, and conversation flow, so you can focus on the agent's specific tasks.
+
+This workflow uses CUGA to create a voice agent that can understand spoken questions in various languages (like Hindi or Tamil) and provide spoken answers. The agent finds its answers by searching an English knowledge base, such as a PDF handbook, and only uses information found there.
+
+This is an advanced workflow because it involves setting up a software development kit (SDK), integrating multiple AI models (for speech-to-text, text-to-speech, and understanding meaning across languages), and implementing complex logic for searching and retrieving information across different languages. It is not a simple copy-paste solution for beginners.
+
+## What you can use it for
+*   **Build multilingual customer support bots**: Create agents that can understand and respond to customer queries in local languages, even if your main knowledge base is in English.
+*   **Develop educational tools**: Provide spoken answers from educational materials to students in their native tongue, making learning more accessible.
+*   **Create specialized assistants**: Build agents for specific domains (e.g., agriculture, health, finance) that cater to non-English speakers who prefer voice interaction.
+*   **Enable voice interaction for existing content**: Make your existing text-based information, like manuals or FAQs, accessible via voice in multiple languages.
+
+## Tools you need
+*   **CUGA** (free): An open-source agent framework from IBM Research that helps manage AI models and tools.
+*   **watsonx** (paid): IBM's enterprise AI platform, used here as an option for large language models.
+*   **OpenAI API** (paid): A service from OpenAI for accessing their advanced AI models, used here as an alternative to watsonx.
+*   **Sarvam AI** (paid): A cloud service providing speech-to-text and text-to-speech APIs, used for handling voice input and output.
+*   **intfloat/multilingual-e5-large** (free): An open-source embedding model that helps the agent understand the meaning of text across different languages.
+
+## How it actually works
+1.  **Understand CUGA**: Start by exploring the CUGA open-source project on GitHub. This is where the core code and documentation for the agent harness live.
+2.  **Set up the environment**: You will need to set up a development environment, likely involving Python, to work with the CUGA SDK. The exact steps will be in the CUGA documentation or a specific tutorial.
+3.  **Integrate speech layers**: Connect a speech-to-text service (like Sarvam AI or an open-source model like SraVaani running on your server) to convert spoken questions into text. Then, integrate a text-to-speech service (like Sarvam AI or Svara) to convert the agent's text answer back into spoken audio.
+4.  **Configure the knowledge engine**: Use CUGA's `agent.knowledge.search()` feature to parse your knowledge base (e.g., a PDF handbook), chunk it into smaller pieces, and create embeddings (numerical representations of text).
+5.  **Implement multilingual embeddings**: Replace CUGA's default English-only embedding model with a multilingual one, such as `intfloat/multilingual-e5-large`. The author notes this requires a "small workaround" detailed in their tutorial, which you would need to follow closely.
+6.  **Wire the agent logic**: Define the agent's behavior using CUGA, including how it processes the text, searches the knowledge base, and generates a grounded answer using a large language model (like those from watsonx or OpenAI).
+7.  **Add guardrails**: Implement rules to keep the agent focused on its domain (e.g., farming) and prevent it from making up answers outside its knowledge base.
+8.  **Test and refine**: Test the agent thoroughly, especially with non-English questions, to ensure it correctly retrieves information and provides accurate, spoken answers.
+
+## Words you'll see, explained
+*   **Agent harness**: A framework or toolkit that helps you build and manage AI agents by handling common tasks like connecting models and tools.
+*   **SDK (Software Development Kit)**: A set of tools and libraries that developers use to create applications for a specific platform or system.
+*   **Speech-to-text**: Technology that converts spoken language into written text.
+*   **Text-to-speech**: Technology that converts written text into spoken language.
+*   **Embedding model**: An AI model that converts words or sentences into numerical vectors, allowing computers to understand their meaning and relationships.
+*   **Cross-lingual retrieval**: The process of finding relevant information in one language when the search query is in a different language.
+*   **Knowledge base**: A collection of organized information, like documents or handbooks, that an AI agent can search to find answers.
+*   **Guardrails**: Rules or constraints built into an AI agent to ensure it behaves safely, stays on topic, and avoids generating inappropriate or incorrect responses.
+
+## Original source
+This workflow was originally published as a blog post by IBM Research authors Vrunda Gadesha, Cyril Shaji, Jobit Treesa Varughese, Nivetha Suruliraj, Anu Sugunan, Anupama Murthi, Jaydeep Sen, and Amith Singhee on the Hugging Face blog.
+
+## Notes & variations
+*   **Do you even need this?**: For simpler, text-only Q&A, you might not need a full agent harness like CUGA. Many AI platforms offer simpler ways to connect a large language model to a document for basic retrieval-augmented generation (RAG). However, CUGA is valuable for complex agent logic, tool management, and integrating custom components like multilingual embeddings and specific speech APIs.
+*   **Free-tier limits**: While CUGA itself is open-source and free, many of the powerful speech APIs (Sarvam AI) and large language models (OpenAI API, watsonx) mentioned are paid services. You might find limited free credits or trial periods, but sustained use will incur costs. Running open-source speech models (SraVaani, Svara) and embedding models (multilingual-e5-large) on your own server requires significant computing resources, which can be expensive to host.
+*   **Common pitfall**: A major challenge is ensuring "cross-lingual retrieval" works correctly. As the authors note, if your embedding model isn't truly multilingual, a question in one language might retrieve irrelevant passages from an English knowledge base, leading the agent to incorrectly state that the information isn't available. Always test your agent with non-English questions early to verify it finds the correct source pages.
