@@ -32508,8 +32508,64 @@
     "cbbac7c3e4543d8e26ad6f38ecaf42f4a455753faa7f9cc25343f4f8e9927be0": {
       "url": "https://newsletter.pragmaticengineer.com/p/how-anthropic-builds-software-in",
       "date": "2026-11-25"
+    },
+    "ec9747baa559202e43eedd652fe91fb6819ef784a5dedaa1598f93ea70afec28": {
+      "url": "https://news.ycombinator.com/item?id=50649360",
+      "date": "2026-11-26"
+    },
+    "dbe542754cd1612143a2eaa3ddd1710f7a623a3911b9014bc21d928db773bab8": {
+      "url": "https://simonwillison.net/2026/Nov/26/jack-despain-zhou",
+      "date": "2026-11-26"
+    },
+    "d44a29290b4311e2732a912eea738dddef836a986ffb101b74205cc9cd854b02": {
+      "url": "https://simonwillison.net/2026/Nov/26/sqlite3-rsync",
+      "date": "2026-11-26"
+    },
+    "fc654cd8c7a75232f8f6cfa269cc11b2923dd660969085d52e0871a9eb74a09a": {
+      "url": "https://simonwillison.net/2026/Nov/26/hn-50651685",
+      "date": "2026-11-26"
+    },
+    "3c53fbfc405d080f0b262faedbaede80b9004a3e81fc673b56aadb152d45e2a0": {
+      "url": "https://simonwillison.net/2026/Nov/25/scott-aaronson",
+      "date": "2026-11-26"
+    },
+    "9685432920849ecf90c70b30aa0f7de554eaf033009ef2bdbefa8b13adf02776": {
+      "url": "https://simonwillison.net/2026/Nov/25/datasette-charts",
+      "date": "2026-11-26"
+    },
+    "e22d419cf18743cb4fe31c3f9b50bbd6bc837def7fb76e969ef2ed431298721c": {
+      "url": "https://simonwillison.net/2026/Nov/24/datasette-charts-2",
+      "date": "2026-11-26"
+    },
+    "ccba21fa227260298e55b79c9996836d986534840bddc75b1973efbcf6192eef": {
+      "url": "https://latent.space/p/the_revolution_vs_the_renaissance_thariq_shihipar_openai",
+      "date": "2026-11-26"
+    },
+    "821974e79513fdfe0fe5fb7bfc8f255f31efec24d4123ff7503bf472a6d527f8": {
+      "url": "https://latent.space/p/ainews-math-proofs-are-landing-faster-than-we-can-read-them",
+      "date": "2026-11-26"
+    },
+    "e443815a071781e5becb6369c77b8260c4d9892a8ec5f99b161e65c271d6977d": {
+      "url": "https://latent.space/p/why_linear_says_issue_tracking_is_dead_cristina_cordova_coo",
+      "date": "2026-11-26"
+    },
+    "a734da9d3a1d876054f86e6e92e632f9c2a091a208fef8a96dd4cc4467d6055b": {
+      "url": "https://huggingface.co/blog/ggml-org/llamacpp-amd-bench",
+      "date": "2026-11-26"
+    },
+    "3d2697b636d74b834fc0e7341d4d275b2177cb68cfa6554cf0431f54189d28f2": {
+      "url": "https://huggingface.co/blog/nvidia/building-on-nemotron-35-parse-open-data-fine-tunin",
+      "date": "2026-11-26"
+    },
+    "819f2bb8e324e5e7f3ab174fd75a2e35e495da76ab1ed0dc431b91e93d876cbf": {
+      "url": "https://huggingface.co/blog/training-swarms",
+      "date": "2026-11-26"
+    },
+    "88bd06d7e0e9b82f43a3c7b49740216e6a1dfae7affc60d91ec0a4415c5ccb91": {
+      "url": "https://huggingface.co/blog/allenai/where-scientists-draw-the-line-on-ai-agents",
+      "date": "2026-11-26"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 5
+  "dailyPage": 0
 }
