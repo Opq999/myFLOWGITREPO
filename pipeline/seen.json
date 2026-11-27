@@ -32564,8 +32564,20 @@
     "88bd06d7e0e9b82f43a3c7b49740216e6a1dfae7affc60d91ec0a4415c5ccb91": {
       "url": "https://huggingface.co/blog/allenai/where-scientists-draw-the-line-on-ai-agents",
       "date": "2026-11-26"
+    },
+    "ea1348c2855120ec208c0a9746560fdc33f41b305cc540550ca4de17e7c2d410": {
+      "url": "https://news.ycombinator.com/item?id=50653477",
+      "date": "2026-11-27"
+    },
+    "5a4d59a63415e415d375d2d7cfcf2dd7529c453790fadbd98213d26917140810": {
+      "url": "https://latent.space/p/how-clay-builds-gtm-agents-jeff-barg-head-of-ai",
+      "date": "2026-11-27"
+    },
+    "c2bd7953104652e48b060cb836c5b0b220f5916987e34c7cb4215ee5c922c5b1": {
+      "url": "https://huggingface.co/blog/video-trainium3",
+      "date": "2026-11-27"
     }
   },
   "backfillPage": 23,
-  "dailyPage": 0
+  "dailyPage": 1
 }
